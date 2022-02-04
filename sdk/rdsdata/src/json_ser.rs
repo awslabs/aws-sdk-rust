@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_batch_execute_statement_input(
     input: &crate::input::BatchExecuteStatementInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.database {
-        object.key("database").string(var_1);
+        object.key("database").string(var_1.as_str());
     }
     if let Some(var_2) = &input.parameter_sets {
         let mut array_3 = object.key("parameterSets").start_array();
@@ -27,19 +27,19 @@ pub fn serialize_structure_crate_input_batch_execute_statement_input(
         array_3.finish();
     }
     if let Some(var_8) = &input.resource_arn {
-        object.key("resourceArn").string(var_8);
+        object.key("resourceArn").string(var_8.as_str());
     }
     if let Some(var_9) = &input.schema {
-        object.key("schema").string(var_9);
+        object.key("schema").string(var_9.as_str());
     }
     if let Some(var_10) = &input.secret_arn {
-        object.key("secretArn").string(var_10);
+        object.key("secretArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.sql {
-        object.key("sql").string(var_11);
+        object.key("sql").string(var_11.as_str());
     }
     if let Some(var_12) = &input.transaction_id {
-        object.key("transactionId").string(var_12);
+        object.key("transactionId").string(var_12.as_str());
     }
     Ok(())
 }
@@ -49,16 +49,16 @@ pub fn serialize_structure_crate_input_begin_transaction_input(
     input: &crate::input::BeginTransactionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.database {
-        object.key("database").string(var_13);
+        object.key("database").string(var_13.as_str());
     }
     if let Some(var_14) = &input.resource_arn {
-        object.key("resourceArn").string(var_14);
+        object.key("resourceArn").string(var_14.as_str());
     }
     if let Some(var_15) = &input.schema {
-        object.key("schema").string(var_15);
+        object.key("schema").string(var_15.as_str());
     }
     if let Some(var_16) = &input.secret_arn {
-        object.key("secretArn").string(var_16);
+        object.key("secretArn").string(var_16.as_str());
     }
     Ok(())
 }
@@ -68,13 +68,13 @@ pub fn serialize_structure_crate_input_commit_transaction_input(
     input: &crate::input::CommitTransactionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.resource_arn {
-        object.key("resourceArn").string(var_17);
+        object.key("resourceArn").string(var_17.as_str());
     }
     if let Some(var_18) = &input.secret_arn {
-        object.key("secretArn").string(var_18);
+        object.key("secretArn").string(var_18.as_str());
     }
     if let Some(var_19) = &input.transaction_id {
-        object.key("transactionId").string(var_19);
+        object.key("transactionId").string(var_19.as_str());
     }
     Ok(())
 }
@@ -84,19 +84,19 @@ pub fn serialize_structure_crate_input_execute_sql_input(
     input: &crate::input::ExecuteSqlInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.aws_secret_store_arn {
-        object.key("awsSecretStoreArn").string(var_20);
+        object.key("awsSecretStoreArn").string(var_20.as_str());
     }
     if let Some(var_21) = &input.database {
-        object.key("database").string(var_21);
+        object.key("database").string(var_21.as_str());
     }
     if let Some(var_22) = &input.db_cluster_or_instance_arn {
-        object.key("dbClusterOrInstanceArn").string(var_22);
+        object.key("dbClusterOrInstanceArn").string(var_22.as_str());
     }
     if let Some(var_23) = &input.schema {
-        object.key("schema").string(var_23);
+        object.key("schema").string(var_23.as_str());
     }
     if let Some(var_24) = &input.sql_statements {
-        object.key("sqlStatements").string(var_24);
+        object.key("sqlStatements").string(var_24.as_str());
     }
     Ok(())
 }
@@ -111,7 +111,7 @@ pub fn serialize_structure_crate_input_execute_statement_input(
             .boolean(input.continue_after_timeout);
     }
     if let Some(var_25) = &input.database {
-        object.key("database").string(var_25);
+        object.key("database").string(var_25.as_str());
     }
     if input.include_result_metadata {
         object
@@ -133,7 +133,7 @@ pub fn serialize_structure_crate_input_execute_statement_input(
         array_27.finish();
     }
     if let Some(var_30) = &input.resource_arn {
-        object.key("resourceArn").string(var_30);
+        object.key("resourceArn").string(var_30.as_str());
     }
     if let Some(var_31) = &input.result_set_options {
         let mut object_32 = object.key("resultSetOptions").start_object();
@@ -144,16 +144,16 @@ pub fn serialize_structure_crate_input_execute_statement_input(
         object_32.finish();
     }
     if let Some(var_33) = &input.schema {
-        object.key("schema").string(var_33);
+        object.key("schema").string(var_33.as_str());
     }
     if let Some(var_34) = &input.secret_arn {
-        object.key("secretArn").string(var_34);
+        object.key("secretArn").string(var_34.as_str());
     }
     if let Some(var_35) = &input.sql {
-        object.key("sql").string(var_35);
+        object.key("sql").string(var_35.as_str());
     }
     if let Some(var_36) = &input.transaction_id {
-        object.key("transactionId").string(var_36);
+        object.key("transactionId").string(var_36.as_str());
     }
     Ok(())
 }
@@ -163,13 +163,13 @@ pub fn serialize_structure_crate_input_rollback_transaction_input(
     input: &crate::input::RollbackTransactionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.resource_arn {
-        object.key("resourceArn").string(var_37);
+        object.key("resourceArn").string(var_37.as_str());
     }
     if let Some(var_38) = &input.secret_arn {
-        object.key("secretArn").string(var_38);
+        object.key("secretArn").string(var_38.as_str());
     }
     if let Some(var_39) = &input.transaction_id {
-        object.key("transactionId").string(var_39);
+        object.key("transactionId").string(var_39.as_str());
     }
     Ok(())
 }
@@ -179,7 +179,7 @@ pub fn serialize_structure_crate_model_sql_parameter(
     input: &crate::model::SqlParameter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.name {
-        object.key("name").string(var_40);
+        object.key("name").string(var_40.as_str());
     }
     if let Some(var_41) = &input.value {
         let mut object_42 = object.key("value").start_object();
@@ -226,7 +226,7 @@ pub fn serialize_union_crate_model_field(
             );
         }
         crate::model::Field::StringValue(inner) => {
-            object_42.key("stringValue").string(inner);
+            object_42.key("stringValue").string(inner.as_str());
         }
         crate::model::Field::BlobValue(inner) => {
             object_42
@@ -287,7 +287,7 @@ pub fn serialize_union_crate_model_array_value(
             let mut array_52 = object_45.key("stringValues").start_array();
             for item_53 in inner {
                 {
-                    array_52.value().string(item_53);
+                    array_52.value().string(item_53.as_str());
                 }
             }
             array_52.finish();

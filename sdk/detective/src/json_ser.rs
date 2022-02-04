@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_accept_invitation_input(
     input: &crate::input::AcceptInvitationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.graph_arn {
-        object.key("GraphArn").string(var_1);
+        object.key("GraphArn").string(var_1.as_str());
     }
     Ok(())
 }
@@ -17,7 +17,7 @@ pub fn serialize_structure_crate_input_create_graph_input(
         let mut object_3 = object.key("Tags").start_object();
         for (key_4, value_5) in var_2 {
             {
-                object_3.key(key_4).string(value_5);
+                object_3.key(key_4).string(value_5.as_str());
             }
         }
         object_3.finish();
@@ -46,10 +46,10 @@ pub fn serialize_structure_crate_input_create_members_input(
             .boolean(input.disable_email_notification);
     }
     if let Some(var_10) = &input.graph_arn {
-        object.key("GraphArn").string(var_10);
+        object.key("GraphArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.message {
-        object.key("Message").string(var_11);
+        object.key("Message").string(var_11.as_str());
     }
     Ok(())
 }
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_delete_graph_input(
     input: &crate::input::DeleteGraphInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.graph_arn {
-        object.key("GraphArn").string(var_12);
+        object.key("GraphArn").string(var_12.as_str());
     }
     Ok(())
 }
@@ -72,13 +72,13 @@ pub fn serialize_structure_crate_input_delete_members_input(
         let mut array_14 = object.key("AccountIds").start_array();
         for item_15 in var_13 {
             {
-                array_14.value().string(item_15);
+                array_14.value().string(item_15.as_str());
             }
         }
         array_14.finish();
     }
     if let Some(var_16) = &input.graph_arn {
-        object.key("GraphArn").string(var_16);
+        object.key("GraphArn").string(var_16.as_str());
     }
     Ok(())
 }
@@ -88,7 +88,7 @@ pub fn serialize_structure_crate_input_describe_organization_configuration_input
     input: &crate::input::DescribeOrganizationConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.graph_arn {
-        object.key("GraphArn").string(var_17);
+        object.key("GraphArn").string(var_17.as_str());
     }
     Ok(())
 }
@@ -98,7 +98,7 @@ pub fn serialize_structure_crate_input_disassociate_membership_input(
     input: &crate::input::DisassociateMembershipInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.graph_arn {
-        object.key("GraphArn").string(var_18);
+        object.key("GraphArn").string(var_18.as_str());
     }
     Ok(())
 }
@@ -108,7 +108,7 @@ pub fn serialize_structure_crate_input_enable_organization_admin_account_input(
     input: &crate::input::EnableOrganizationAdminAccountInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.account_id {
-        object.key("AccountId").string(var_19);
+        object.key("AccountId").string(var_19.as_str());
     }
     Ok(())
 }
@@ -121,13 +121,13 @@ pub fn serialize_structure_crate_input_get_members_input(
         let mut array_21 = object.key("AccountIds").start_array();
         for item_22 in var_20 {
             {
-                array_21.value().string(item_22);
+                array_21.value().string(item_22.as_str());
             }
         }
         array_21.finish();
     }
     if let Some(var_23) = &input.graph_arn {
-        object.key("GraphArn").string(var_23);
+        object.key("GraphArn").string(var_23.as_str());
     }
     Ok(())
 }
@@ -143,7 +143,7 @@ pub fn serialize_structure_crate_input_list_graphs_input(
         );
     }
     if let Some(var_25) = &input.next_token {
-        object.key("NextToken").string(var_25);
+        object.key("NextToken").string(var_25.as_str());
     }
     Ok(())
 }
@@ -159,7 +159,7 @@ pub fn serialize_structure_crate_input_list_invitations_input(
         );
     }
     if let Some(var_27) = &input.next_token {
-        object.key("NextToken").string(var_27);
+        object.key("NextToken").string(var_27.as_str());
     }
     Ok(())
 }
@@ -169,7 +169,7 @@ pub fn serialize_structure_crate_input_list_members_input(
     input: &crate::input::ListMembersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.graph_arn {
-        object.key("GraphArn").string(var_28);
+        object.key("GraphArn").string(var_28.as_str());
     }
     if let Some(var_29) = &input.max_results {
         object.key("MaxResults").number(
@@ -178,7 +178,7 @@ pub fn serialize_structure_crate_input_list_members_input(
         );
     }
     if let Some(var_30) = &input.next_token {
-        object.key("NextToken").string(var_30);
+        object.key("NextToken").string(var_30.as_str());
     }
     Ok(())
 }
@@ -194,7 +194,7 @@ pub fn serialize_structure_crate_input_list_organization_admin_accounts_input(
         );
     }
     if let Some(var_32) = &input.next_token {
-        object.key("NextToken").string(var_32);
+        object.key("NextToken").string(var_32.as_str());
     }
     Ok(())
 }
@@ -204,7 +204,7 @@ pub fn serialize_structure_crate_input_reject_invitation_input(
     input: &crate::input::RejectInvitationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.graph_arn {
-        object.key("GraphArn").string(var_33);
+        object.key("GraphArn").string(var_33.as_str());
     }
     Ok(())
 }
@@ -214,10 +214,10 @@ pub fn serialize_structure_crate_input_start_monitoring_member_input(
     input: &crate::input::StartMonitoringMemberInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.account_id {
-        object.key("AccountId").string(var_34);
+        object.key("AccountId").string(var_34.as_str());
     }
     if let Some(var_35) = &input.graph_arn {
-        object.key("GraphArn").string(var_35);
+        object.key("GraphArn").string(var_35.as_str());
     }
     Ok(())
 }
@@ -230,7 +230,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_37 = object.key("Tags").start_object();
         for (key_38, value_39) in var_36 {
             {
-                object_37.key(key_38).string(value_39);
+                object_37.key(key_38).string(value_39.as_str());
             }
         }
         object_37.finish();
@@ -246,7 +246,7 @@ pub fn serialize_structure_crate_input_update_organization_configuration_input(
         object.key("AutoEnable").boolean(input.auto_enable);
     }
     if let Some(var_40) = &input.graph_arn {
-        object.key("GraphArn").string(var_40);
+        object.key("GraphArn").string(var_40.as_str());
     }
     Ok(())
 }
@@ -256,10 +256,10 @@ pub fn serialize_structure_crate_model_account(
     input: &crate::model::Account,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.account_id {
-        object.key("AccountId").string(var_41);
+        object.key("AccountId").string(var_41.as_str());
     }
     if let Some(var_42) = &input.email_address {
-        object.key("EmailAddress").string(var_42);
+        object.key("EmailAddress").string(var_42.as_str());
     }
     Ok(())
 }

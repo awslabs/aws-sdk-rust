@@ -38,13 +38,13 @@ pub fn serialize_structure_crate_input_create_comment_input(
             .boolean(input.notify_collaborators);
     }
     if let Some(var_7) = &input.parent_id {
-        object.key("ParentId").string(var_7);
+        object.key("ParentId").string(var_7.as_str());
     }
     if let Some(var_8) = &input.text {
-        object.key("Text").string(var_8);
+        object.key("Text").string(var_8.as_str());
     }
     if let Some(var_9) = &input.thread_id {
-        object.key("ThreadId").string(var_9);
+        object.key("ThreadId").string(var_9.as_str());
     }
     if let Some(var_10) = &input.visibility {
         object.key("Visibility").string(var_10.as_str());
@@ -60,7 +60,7 @@ pub fn serialize_structure_crate_input_create_custom_metadata_input(
         let mut object_12 = object.key("CustomMetadata").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14);
+                object_12.key(key_13).string(value_14.as_str());
             }
         }
         object_12.finish();
@@ -73,10 +73,10 @@ pub fn serialize_structure_crate_input_create_folder_input(
     input: &crate::input::CreateFolderInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.name {
-        object.key("Name").string(var_15);
+        object.key("Name").string(var_15.as_str());
     }
     if let Some(var_16) = &input.parent_folder_id {
-        object.key("ParentFolderId").string(var_16);
+        object.key("ParentFolderId").string(var_16.as_str());
     }
     Ok(())
 }
@@ -89,7 +89,7 @@ pub fn serialize_structure_crate_input_create_labels_input(
         let mut array_18 = object.key("Labels").start_array();
         for item_19 in var_17 {
             {
-                array_18.value().string(item_19);
+                array_18.value().string(item_19.as_str());
             }
         }
         array_18.finish();
@@ -102,7 +102,7 @@ pub fn serialize_structure_crate_input_create_notification_subscription_input(
     input: &crate::input::CreateNotificationSubscriptionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.endpoint {
-        object.key("Endpoint").string(var_20);
+        object.key("Endpoint").string(var_20.as_str());
     }
     if let Some(var_21) = &input.protocol {
         object.key("Protocol").string(var_21.as_str());
@@ -118,16 +118,16 @@ pub fn serialize_structure_crate_input_create_user_input(
     input: &crate::input::CreateUserInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.email_address {
-        object.key("EmailAddress").string(var_23);
+        object.key("EmailAddress").string(var_23.as_str());
     }
     if let Some(var_24) = &input.given_name {
-        object.key("GivenName").string(var_24);
+        object.key("GivenName").string(var_24.as_str());
     }
     if let Some(var_25) = &input.organization_id {
-        object.key("OrganizationId").string(var_25);
+        object.key("OrganizationId").string(var_25.as_str());
     }
     if let Some(var_26) = &input.password {
-        object.key("Password").string(var_26);
+        object.key("Password").string(var_26.as_str());
     }
     if let Some(var_27) = &input.storage_rule {
         let mut object_28 = object.key("StorageRule").start_object();
@@ -135,13 +135,13 @@ pub fn serialize_structure_crate_input_create_user_input(
         object_28.finish();
     }
     if let Some(var_29) = &input.surname {
-        object.key("Surname").string(var_29);
+        object.key("Surname").string(var_29.as_str());
     }
     if let Some(var_30) = &input.time_zone_id {
-        object.key("TimeZoneId").string(var_30);
+        object.key("TimeZoneId").string(var_30.as_str());
     }
     if let Some(var_31) = &input.username {
-        object.key("Username").string(var_31);
+        object.key("Username").string(var_31.as_str());
     }
     Ok(())
 }
@@ -161,7 +161,7 @@ pub fn serialize_structure_crate_input_initiate_document_version_upload_input(
             .date_time(var_33, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_34) = &input.content_type {
-        object.key("ContentType").string(var_34);
+        object.key("ContentType").string(var_34.as_str());
     }
     if let Some(var_35) = &input.document_size_in_bytes {
         object.key("DocumentSizeInBytes").number(
@@ -170,13 +170,13 @@ pub fn serialize_structure_crate_input_initiate_document_version_upload_input(
         );
     }
     if let Some(var_36) = &input.id {
-        object.key("Id").string(var_36);
+        object.key("Id").string(var_36.as_str());
     }
     if let Some(var_37) = &input.name {
-        object.key("Name").string(var_37);
+        object.key("Name").string(var_37.as_str());
     }
     if let Some(var_38) = &input.parent_folder_id {
-        object.key("ParentFolderId").string(var_38);
+        object.key("ParentFolderId").string(var_38.as_str());
     }
     Ok(())
 }
@@ -186,10 +186,10 @@ pub fn serialize_structure_crate_input_update_document_input(
     input: &crate::input::UpdateDocumentInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.name {
-        object.key("Name").string(var_39);
+        object.key("Name").string(var_39.as_str());
     }
     if let Some(var_40) = &input.parent_folder_id {
-        object.key("ParentFolderId").string(var_40);
+        object.key("ParentFolderId").string(var_40.as_str());
     }
     if let Some(var_41) = &input.resource_state {
         object.key("ResourceState").string(var_41.as_str());
@@ -212,10 +212,10 @@ pub fn serialize_structure_crate_input_update_folder_input(
     input: &crate::input::UpdateFolderInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.name {
-        object.key("Name").string(var_43);
+        object.key("Name").string(var_43.as_str());
     }
     if let Some(var_44) = &input.parent_folder_id {
-        object.key("ParentFolderId").string(var_44);
+        object.key("ParentFolderId").string(var_44.as_str());
     }
     if let Some(var_45) = &input.resource_state {
         object.key("ResourceState").string(var_45.as_str());
@@ -228,7 +228,7 @@ pub fn serialize_structure_crate_input_update_user_input(
     input: &crate::input::UpdateUserInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.given_name {
-        object.key("GivenName").string(var_46);
+        object.key("GivenName").string(var_46.as_str());
     }
     if let Some(var_47) = &input.grant_poweruser_privileges {
         object
@@ -244,10 +244,10 @@ pub fn serialize_structure_crate_input_update_user_input(
         object_50.finish();
     }
     if let Some(var_51) = &input.surname {
-        object.key("Surname").string(var_51);
+        object.key("Surname").string(var_51.as_str());
     }
     if let Some(var_52) = &input.time_zone_id {
-        object.key("TimeZoneId").string(var_52);
+        object.key("TimeZoneId").string(var_52.as_str());
     }
     if let Some(var_53) = &input.r#type {
         object.key("Type").string(var_53.as_str());
@@ -263,7 +263,7 @@ pub fn serialize_structure_crate_model_notification_options(
         object.key("SendEmail").boolean(input.send_email);
     }
     if let Some(var_54) = &input.email_message {
-        object.key("EmailMessage").string(var_54);
+        object.key("EmailMessage").string(var_54.as_str());
     }
     Ok(())
 }
@@ -273,7 +273,7 @@ pub fn serialize_structure_crate_model_share_principal(
     input: &crate::model::SharePrincipal,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.id {
-        object.key("Id").string(var_55);
+        object.key("Id").string(var_55.as_str());
     }
     if let Some(var_56) = &input.r#type {
         object.key("Type").string(var_56.as_str());

@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_rule_input(
     input: &crate::input::CreateRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1);
+        object.key("Description").string(var_1.as_str());
     }
     if let Some(var_2) = &input.resource_tags {
         let mut array_3 = object.key("ResourceTags").start_array();
@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_list_rules_input(
         );
     }
     if let Some(var_14) = &input.next_token {
-        object.key("NextToken").string(var_14);
+        object.key("NextToken").string(var_14.as_str());
     }
     if let Some(var_15) = &input.resource_tags {
         let mut array_16 = object.key("ResourceTags").start_array();
@@ -98,7 +98,7 @@ pub fn serialize_structure_crate_input_update_rule_input(
     input: &crate::input::UpdateRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.description {
-        object.key("Description").string(var_24);
+        object.key("Description").string(var_24.as_str());
     }
     if let Some(var_25) = &input.resource_tags {
         let mut array_26 = object.key("ResourceTags").start_array();
@@ -130,10 +130,10 @@ pub fn serialize_structure_crate_model_resource_tag(
     input: &crate::model::ResourceTag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.resource_tag_key {
-        object.key("ResourceTagKey").string(var_32);
+        object.key("ResourceTagKey").string(var_32.as_str());
     }
     if let Some(var_33) = &input.resource_tag_value {
-        object.key("ResourceTagValue").string(var_33);
+        object.key("ResourceTagValue").string(var_33.as_str());
     }
     Ok(())
 }
@@ -159,10 +159,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.key {
-        object.key("Key").string(var_36);
+        object.key("Key").string(var_36.as_str());
     }
     if let Some(var_37) = &input.value {
-        object.key("Value").string(var_37);
+        object.key("Value").string(var_37.as_str());
     }
     Ok(())
 }

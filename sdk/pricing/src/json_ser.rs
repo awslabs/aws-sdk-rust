@@ -4,13 +4,13 @@ pub fn serialize_structure_crate_input_describe_services_input(
     input: &crate::input::DescribeServicesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.service_code {
-        object.key("ServiceCode").string(var_1);
+        object.key("ServiceCode").string(var_1.as_str());
     }
     if let Some(var_2) = &input.format_version {
-        object.key("FormatVersion").string(var_2);
+        object.key("FormatVersion").string(var_2.as_str());
     }
     if let Some(var_3) = &input.next_token {
-        object.key("NextToken").string(var_3);
+        object.key("NextToken").string(var_3.as_str());
     }
     if let Some(var_4) = &input.max_results {
         object.key("MaxResults").number(
@@ -26,13 +26,13 @@ pub fn serialize_structure_crate_input_get_attribute_values_input(
     input: &crate::input::GetAttributeValuesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.service_code {
-        object.key("ServiceCode").string(var_5);
+        object.key("ServiceCode").string(var_5.as_str());
     }
     if let Some(var_6) = &input.attribute_name {
-        object.key("AttributeName").string(var_6);
+        object.key("AttributeName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.next_token {
-        object.key("NextToken").string(var_7);
+        object.key("NextToken").string(var_7.as_str());
     }
     if let Some(var_8) = &input.max_results {
         object.key("MaxResults").number(
@@ -48,7 +48,7 @@ pub fn serialize_structure_crate_input_get_products_input(
     input: &crate::input::GetProductsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.service_code {
-        object.key("ServiceCode").string(var_9);
+        object.key("ServiceCode").string(var_9.as_str());
     }
     if let Some(var_10) = &input.filters {
         let mut array_11 = object.key("Filters").start_array();
@@ -62,10 +62,10 @@ pub fn serialize_structure_crate_input_get_products_input(
         array_11.finish();
     }
     if let Some(var_14) = &input.format_version {
-        object.key("FormatVersion").string(var_14);
+        object.key("FormatVersion").string(var_14.as_str());
     }
     if let Some(var_15) = &input.next_token {
-        object.key("NextToken").string(var_15);
+        object.key("NextToken").string(var_15.as_str());
     }
     if let Some(var_16) = &input.max_results {
         object.key("MaxResults").number(
@@ -84,10 +84,10 @@ pub fn serialize_structure_crate_model_filter(
         object.key("Type").string(var_17.as_str());
     }
     if let Some(var_18) = &input.field {
-        object.key("Field").string(var_18);
+        object.key("Field").string(var_18.as_str());
     }
     if let Some(var_19) = &input.value {
-        object.key("Value").string(var_19);
+        object.key("Value").string(var_19.as_str());
     }
     Ok(())
 }

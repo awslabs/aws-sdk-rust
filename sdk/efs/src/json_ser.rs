@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_create_access_point_input(
     input: &crate::input::CreateAccessPointInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
-        object.key("ClientToken").string(var_1);
+        object.key("ClientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.file_system_id {
-        object.key("FileSystemId").string(var_2);
+        object.key("FileSystemId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.posix_user {
         let mut object_4 = object.key("PosixUser").start_object();
@@ -38,19 +38,19 @@ pub fn serialize_structure_crate_input_create_file_system_input(
     input: &crate::input::CreateFileSystemInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.availability_zone_name {
-        object.key("AvailabilityZoneName").string(var_11);
+        object.key("AvailabilityZoneName").string(var_11.as_str());
     }
     if let Some(var_12) = &input.backup {
         object.key("Backup").boolean(*var_12);
     }
     if let Some(var_13) = &input.creation_token {
-        object.key("CreationToken").string(var_13);
+        object.key("CreationToken").string(var_13.as_str());
     }
     if let Some(var_14) = &input.encrypted {
         object.key("Encrypted").boolean(*var_14);
     }
     if let Some(var_15) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_15);
+        object.key("KmsKeyId").string(var_15.as_str());
     }
     if let Some(var_16) = &input.performance_mode {
         object.key("PerformanceMode").string(var_16.as_str());
@@ -83,22 +83,22 @@ pub fn serialize_structure_crate_input_create_mount_target_input(
     input: &crate::input::CreateMountTargetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.file_system_id {
-        object.key("FileSystemId").string(var_23);
+        object.key("FileSystemId").string(var_23.as_str());
     }
     if let Some(var_24) = &input.ip_address {
-        object.key("IpAddress").string(var_24);
+        object.key("IpAddress").string(var_24.as_str());
     }
     if let Some(var_25) = &input.security_groups {
         let mut array_26 = object.key("SecurityGroups").start_array();
         for item_27 in var_25 {
             {
-                array_26.value().string(item_27);
+                array_26.value().string(item_27.as_str());
             }
         }
         array_26.finish();
     }
     if let Some(var_28) = &input.subnet_id {
-        object.key("SubnetId").string(var_28);
+        object.key("SubnetId").string(var_28.as_str());
     }
     Ok(())
 }
@@ -150,7 +150,7 @@ pub fn serialize_structure_crate_input_delete_tags_input(
         let mut array_38 = object.key("TagKeys").start_array();
         for item_39 in var_37 {
             {
-                array_38.value().string(item_39);
+                array_38.value().string(item_39.as_str());
             }
         }
         array_38.finish();
@@ -169,7 +169,7 @@ pub fn serialize_structure_crate_input_describe_account_preferences_input(
         );
     }
     if let Some(var_41) = &input.next_token {
-        object.key("NextToken").string(var_41);
+        object.key("NextToken").string(var_41.as_str());
     }
     Ok(())
 }
@@ -182,7 +182,7 @@ pub fn serialize_structure_crate_input_modify_mount_target_security_groups_input
         let mut array_43 = object.key("SecurityGroups").start_array();
         for item_44 in var_42 {
             {
-                array_43.value().string(item_44);
+                array_43.value().string(item_44.as_str());
             }
         }
         array_43.finish();
@@ -222,7 +222,7 @@ pub fn serialize_structure_crate_input_put_file_system_policy_input(
             .boolean(input.bypass_policy_lockout_safety_check);
     }
     if let Some(var_48) = &input.policy {
-        object.key("Policy").string(var_48);
+        object.key("Policy").string(var_48.as_str());
     }
     Ok(())
 }
@@ -318,7 +318,7 @@ pub fn serialize_structure_crate_model_root_directory(
     input: &crate::model::RootDirectory,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_64) = &input.path {
-        object.key("Path").string(var_64);
+        object.key("Path").string(var_64.as_str());
     }
     if let Some(var_65) = &input.creation_info {
         let mut object_66 = object.key("CreationInfo").start_object();
@@ -333,10 +333,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.key {
-        object.key("Key").string(var_67);
+        object.key("Key").string(var_67.as_str());
     }
     if let Some(var_68) = &input.value {
-        object.key("Value").string(var_68);
+        object.key("Value").string(var_68.as_str());
     }
     Ok(())
 }
@@ -346,13 +346,13 @@ pub fn serialize_structure_crate_model_destination_to_create(
     input: &crate::model::DestinationToCreate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_69) = &input.region {
-        object.key("Region").string(var_69);
+        object.key("Region").string(var_69.as_str());
     }
     if let Some(var_70) = &input.availability_zone_name {
-        object.key("AvailabilityZoneName").string(var_70);
+        object.key("AvailabilityZoneName").string(var_70.as_str());
     }
     if let Some(var_71) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_71);
+        object.key("KmsKeyId").string(var_71.as_str());
     }
     Ok(())
 }
@@ -399,7 +399,7 @@ pub fn serialize_structure_crate_model_creation_info(
         );
     }
     if let Some(var_77) = &input.permissions {
-        object.key("Permissions").string(var_77);
+        object.key("Permissions").string(var_77.as_str());
     }
     Ok(())
 }

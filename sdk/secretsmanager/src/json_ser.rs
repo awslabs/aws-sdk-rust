@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_cancel_rotate_secret_input(
     input: &crate::input::CancelRotateSecretInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.secret_id {
-        object.key("SecretId").string(var_1);
+        object.key("SecretId").string(var_1.as_str());
     }
     Ok(())
 }
@@ -14,16 +14,16 @@ pub fn serialize_structure_crate_input_create_secret_input(
     input: &crate::input::CreateSecretInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2);
+        object.key("Name").string(var_2.as_str());
     }
     if let Some(var_3) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_3);
+        object.key("ClientRequestToken").string(var_3.as_str());
     }
     if let Some(var_4) = &input.description {
-        object.key("Description").string(var_4);
+        object.key("Description").string(var_4.as_str());
     }
     if let Some(var_5) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_5);
+        object.key("KmsKeyId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.secret_binary {
         object
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_create_secret_input(
             .string_unchecked(&aws_smithy_types::base64::encode(var_6));
     }
     if let Some(var_7) = &input.secret_string {
-        object.key("SecretString").string(var_7);
+        object.key("SecretString").string(var_7.as_str());
     }
     if let Some(var_8) = &input.tags {
         let mut array_9 = object.key("Tags").start_array();
@@ -71,7 +71,7 @@ pub fn serialize_structure_crate_input_delete_resource_policy_input(
     input: &crate::input::DeleteResourcePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.secret_id {
-        object.key("SecretId").string(var_16);
+        object.key("SecretId").string(var_16.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,7 @@ pub fn serialize_structure_crate_input_delete_secret_input(
     input: &crate::input::DeleteSecretInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.secret_id {
-        object.key("SecretId").string(var_17);
+        object.key("SecretId").string(var_17.as_str());
     }
     if let Some(var_18) = &input.recovery_window_in_days {
         object.key("RecoveryWindowInDays").number(
@@ -100,7 +100,7 @@ pub fn serialize_structure_crate_input_describe_secret_input(
     input: &crate::input::DescribeSecretInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.secret_id {
-        object.key("SecretId").string(var_20);
+        object.key("SecretId").string(var_20.as_str());
     }
     Ok(())
 }
@@ -116,7 +116,7 @@ pub fn serialize_structure_crate_input_get_random_password_input(
         );
     }
     if let Some(var_22) = &input.exclude_characters {
-        object.key("ExcludeCharacters").string(var_22);
+        object.key("ExcludeCharacters").string(var_22.as_str());
     }
     if let Some(var_23) = &input.exclude_numbers {
         object.key("ExcludeNumbers").boolean(*var_23);
@@ -144,7 +144,7 @@ pub fn serialize_structure_crate_input_get_resource_policy_input(
     input: &crate::input::GetResourcePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.secret_id {
-        object.key("SecretId").string(var_29);
+        object.key("SecretId").string(var_29.as_str());
     }
     Ok(())
 }
@@ -154,13 +154,13 @@ pub fn serialize_structure_crate_input_get_secret_value_input(
     input: &crate::input::GetSecretValueInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.secret_id {
-        object.key("SecretId").string(var_30);
+        object.key("SecretId").string(var_30.as_str());
     }
     if let Some(var_31) = &input.version_id {
-        object.key("VersionId").string(var_31);
+        object.key("VersionId").string(var_31.as_str());
     }
     if let Some(var_32) = &input.version_stage {
-        object.key("VersionStage").string(var_32);
+        object.key("VersionStage").string(var_32.as_str());
     }
     Ok(())
 }
@@ -176,7 +176,7 @@ pub fn serialize_structure_crate_input_list_secrets_input(
         );
     }
     if let Some(var_34) = &input.next_token {
-        object.key("NextToken").string(var_34);
+        object.key("NextToken").string(var_34.as_str());
     }
     if let Some(var_35) = &input.filters {
         let mut array_36 = object.key("Filters").start_array();
@@ -200,7 +200,7 @@ pub fn serialize_structure_crate_input_list_secret_version_ids_input(
     input: &crate::input::ListSecretVersionIdsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.secret_id {
-        object.key("SecretId").string(var_40);
+        object.key("SecretId").string(var_40.as_str());
     }
     if let Some(var_41) = &input.max_results {
         object.key("MaxResults").number(
@@ -209,7 +209,7 @@ pub fn serialize_structure_crate_input_list_secret_version_ids_input(
         );
     }
     if let Some(var_42) = &input.next_token {
-        object.key("NextToken").string(var_42);
+        object.key("NextToken").string(var_42.as_str());
     }
     if let Some(var_43) = &input.include_deprecated {
         object.key("IncludeDeprecated").boolean(*var_43);
@@ -222,10 +222,10 @@ pub fn serialize_structure_crate_input_put_resource_policy_input(
     input: &crate::input::PutResourcePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.secret_id {
-        object.key("SecretId").string(var_44);
+        object.key("SecretId").string(var_44.as_str());
     }
     if let Some(var_45) = &input.resource_policy {
-        object.key("ResourcePolicy").string(var_45);
+        object.key("ResourcePolicy").string(var_45.as_str());
     }
     if let Some(var_46) = &input.block_public_policy {
         object.key("BlockPublicPolicy").boolean(*var_46);
@@ -238,10 +238,10 @@ pub fn serialize_structure_crate_input_put_secret_value_input(
     input: &crate::input::PutSecretValueInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_47) = &input.secret_id {
-        object.key("SecretId").string(var_47);
+        object.key("SecretId").string(var_47.as_str());
     }
     if let Some(var_48) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_48);
+        object.key("ClientRequestToken").string(var_48.as_str());
     }
     if let Some(var_49) = &input.secret_binary {
         object
@@ -249,13 +249,13 @@ pub fn serialize_structure_crate_input_put_secret_value_input(
             .string_unchecked(&aws_smithy_types::base64::encode(var_49));
     }
     if let Some(var_50) = &input.secret_string {
-        object.key("SecretString").string(var_50);
+        object.key("SecretString").string(var_50.as_str());
     }
     if let Some(var_51) = &input.version_stages {
         let mut array_52 = object.key("VersionStages").start_array();
         for item_53 in var_51 {
             {
-                array_52.value().string(item_53);
+                array_52.value().string(item_53.as_str());
             }
         }
         array_52.finish();
@@ -268,13 +268,13 @@ pub fn serialize_structure_crate_input_remove_regions_from_replication_input(
     input: &crate::input::RemoveRegionsFromReplicationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.secret_id {
-        object.key("SecretId").string(var_54);
+        object.key("SecretId").string(var_54.as_str());
     }
     if let Some(var_55) = &input.remove_replica_regions {
         let mut array_56 = object.key("RemoveReplicaRegions").start_array();
         for item_57 in var_55 {
             {
-                array_56.value().string(item_57);
+                array_56.value().string(item_57.as_str());
             }
         }
         array_56.finish();
@@ -287,7 +287,7 @@ pub fn serialize_structure_crate_input_replicate_secret_to_regions_input(
     input: &crate::input::ReplicateSecretToRegionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_58) = &input.secret_id {
-        object.key("SecretId").string(var_58);
+        object.key("SecretId").string(var_58.as_str());
     }
     if let Some(var_59) = &input.add_replica_regions {
         let mut array_60 = object.key("AddReplicaRegions").start_array();
@@ -316,7 +316,7 @@ pub fn serialize_structure_crate_input_restore_secret_input(
     input: &crate::input::RestoreSecretInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.secret_id {
-        object.key("SecretId").string(var_63);
+        object.key("SecretId").string(var_63.as_str());
     }
     Ok(())
 }
@@ -326,13 +326,13 @@ pub fn serialize_structure_crate_input_rotate_secret_input(
     input: &crate::input::RotateSecretInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_64) = &input.secret_id {
-        object.key("SecretId").string(var_64);
+        object.key("SecretId").string(var_64.as_str());
     }
     if let Some(var_65) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_65);
+        object.key("ClientRequestToken").string(var_65.as_str());
     }
     if let Some(var_66) = &input.rotation_lambda_arn {
-        object.key("RotationLambdaARN").string(var_66);
+        object.key("RotationLambdaARN").string(var_66.as_str());
     }
     if let Some(var_67) = &input.rotation_rules {
         let mut object_68 = object.key("RotationRules").start_object();
@@ -350,7 +350,7 @@ pub fn serialize_structure_crate_input_stop_replication_to_replica_input(
     input: &crate::input::StopReplicationToReplicaInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_69) = &input.secret_id {
-        object.key("SecretId").string(var_69);
+        object.key("SecretId").string(var_69.as_str());
     }
     Ok(())
 }
@@ -360,7 +360,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.secret_id {
-        object.key("SecretId").string(var_70);
+        object.key("SecretId").string(var_70.as_str());
     }
     if let Some(var_71) = &input.tags {
         let mut array_72 = object.key("Tags").start_array();
@@ -381,13 +381,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_75) = &input.secret_id {
-        object.key("SecretId").string(var_75);
+        object.key("SecretId").string(var_75.as_str());
     }
     if let Some(var_76) = &input.tag_keys {
         let mut array_77 = object.key("TagKeys").start_array();
         for item_78 in var_76 {
             {
-                array_77.value().string(item_78);
+                array_77.value().string(item_78.as_str());
             }
         }
         array_77.finish();
@@ -400,16 +400,16 @@ pub fn serialize_structure_crate_input_update_secret_input(
     input: &crate::input::UpdateSecretInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_79) = &input.secret_id {
-        object.key("SecretId").string(var_79);
+        object.key("SecretId").string(var_79.as_str());
     }
     if let Some(var_80) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_80);
+        object.key("ClientRequestToken").string(var_80.as_str());
     }
     if let Some(var_81) = &input.description {
-        object.key("Description").string(var_81);
+        object.key("Description").string(var_81.as_str());
     }
     if let Some(var_82) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_82);
+        object.key("KmsKeyId").string(var_82.as_str());
     }
     if let Some(var_83) = &input.secret_binary {
         object
@@ -417,7 +417,7 @@ pub fn serialize_structure_crate_input_update_secret_input(
             .string_unchecked(&aws_smithy_types::base64::encode(var_83));
     }
     if let Some(var_84) = &input.secret_string {
-        object.key("SecretString").string(var_84);
+        object.key("SecretString").string(var_84.as_str());
     }
     Ok(())
 }
@@ -427,16 +427,16 @@ pub fn serialize_structure_crate_input_update_secret_version_stage_input(
     input: &crate::input::UpdateSecretVersionStageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_85) = &input.secret_id {
-        object.key("SecretId").string(var_85);
+        object.key("SecretId").string(var_85.as_str());
     }
     if let Some(var_86) = &input.version_stage {
-        object.key("VersionStage").string(var_86);
+        object.key("VersionStage").string(var_86.as_str());
     }
     if let Some(var_87) = &input.remove_from_version_id {
-        object.key("RemoveFromVersionId").string(var_87);
+        object.key("RemoveFromVersionId").string(var_87.as_str());
     }
     if let Some(var_88) = &input.move_to_version_id {
-        object.key("MoveToVersionId").string(var_88);
+        object.key("MoveToVersionId").string(var_88.as_str());
     }
     Ok(())
 }
@@ -446,10 +446,10 @@ pub fn serialize_structure_crate_input_validate_resource_policy_input(
     input: &crate::input::ValidateResourcePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_89) = &input.secret_id {
-        object.key("SecretId").string(var_89);
+        object.key("SecretId").string(var_89.as_str());
     }
     if let Some(var_90) = &input.resource_policy {
-        object.key("ResourcePolicy").string(var_90);
+        object.key("ResourcePolicy").string(var_90.as_str());
     }
     Ok(())
 }
@@ -459,10 +459,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_91) = &input.key {
-        object.key("Key").string(var_91);
+        object.key("Key").string(var_91.as_str());
     }
     if let Some(var_92) = &input.value {
-        object.key("Value").string(var_92);
+        object.key("Value").string(var_92.as_str());
     }
     Ok(())
 }
@@ -472,10 +472,10 @@ pub fn serialize_structure_crate_model_replica_region_type(
     input: &crate::model::ReplicaRegionType,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_93) = &input.region {
-        object.key("Region").string(var_93);
+        object.key("Region").string(var_93.as_str());
     }
     if let Some(var_94) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_94);
+        object.key("KmsKeyId").string(var_94.as_str());
     }
     Ok(())
 }
@@ -491,7 +491,7 @@ pub fn serialize_structure_crate_model_filter(
         let mut array_97 = object.key("Values").start_array();
         for item_98 in var_96 {
             {
-                array_97.value().string(item_98);
+                array_97.value().string(item_98.as_str());
             }
         }
         array_97.finish();

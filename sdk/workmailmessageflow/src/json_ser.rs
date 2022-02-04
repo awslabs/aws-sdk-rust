@@ -28,13 +28,13 @@ pub fn serialize_structure_crate_model_s3_reference(
     input: &crate::model::S3Reference,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.bucket {
-        object.key("bucket").string(var_5);
+        object.key("bucket").string(var_5.as_str());
     }
     if let Some(var_6) = &input.key {
-        object.key("key").string(var_6);
+        object.key("key").string(var_6.as_str());
     }
     if let Some(var_7) = &input.object_version {
-        object.key("objectVersion").string(var_7);
+        object.key("objectVersion").string(var_7.as_str());
     }
     Ok(())
 }

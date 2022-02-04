@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_associate_lenses_input(
         let mut array_2 = object.key("LensAliases").start_array();
         for item_3 in var_1 {
             {
-                array_2.value().string(item_3);
+                array_2.value().string(item_3.as_str());
             }
         }
         array_2.finish();
@@ -20,10 +20,10 @@ pub fn serialize_structure_crate_input_create_lens_share_input(
     input: &crate::input::CreateLensShareInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_4) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_4);
+        object.key("ClientRequestToken").string(var_4.as_str());
     }
     if let Some(var_5) = &input.shared_with {
-        object.key("SharedWith").string(var_5);
+        object.key("SharedWith").string(var_5.as_str());
     }
     Ok(())
 }
@@ -33,13 +33,13 @@ pub fn serialize_structure_crate_input_create_lens_version_input(
     input: &crate::input::CreateLensVersionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_6);
+        object.key("ClientRequestToken").string(var_6.as_str());
     }
     if input.is_major_version {
         object.key("IsMajorVersion").boolean(input.is_major_version);
     }
     if let Some(var_7) = &input.lens_version {
-        object.key("LensVersion").string(var_7);
+        object.key("LensVersion").string(var_7.as_str());
     }
     Ok(())
 }
@@ -49,10 +49,10 @@ pub fn serialize_structure_crate_input_create_milestone_input(
     input: &crate::input::CreateMilestoneInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_8);
+        object.key("ClientRequestToken").string(var_8.as_str());
     }
     if let Some(var_9) = &input.milestone_name {
-        object.key("MilestoneName").string(var_9);
+        object.key("MilestoneName").string(var_9.as_str());
     }
     Ok(())
 }
@@ -65,43 +65,43 @@ pub fn serialize_structure_crate_input_create_workload_input(
         let mut array_11 = object.key("AccountIds").start_array();
         for item_12 in var_10 {
             {
-                array_11.value().string(item_12);
+                array_11.value().string(item_12.as_str());
             }
         }
         array_11.finish();
     }
     if let Some(var_13) = &input.architectural_design {
-        object.key("ArchitecturalDesign").string(var_13);
+        object.key("ArchitecturalDesign").string(var_13.as_str());
     }
     if let Some(var_14) = &input.aws_regions {
         let mut array_15 = object.key("AwsRegions").start_array();
         for item_16 in var_14 {
             {
-                array_15.value().string(item_16);
+                array_15.value().string(item_16.as_str());
             }
         }
         array_15.finish();
     }
     if let Some(var_17) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_17);
+        object.key("ClientRequestToken").string(var_17.as_str());
     }
     if let Some(var_18) = &input.description {
-        object.key("Description").string(var_18);
+        object.key("Description").string(var_18.as_str());
     }
     if let Some(var_19) = &input.environment {
         object.key("Environment").string(var_19.as_str());
     }
     if let Some(var_20) = &input.industry {
-        object.key("Industry").string(var_20);
+        object.key("Industry").string(var_20.as_str());
     }
     if let Some(var_21) = &input.industry_type {
-        object.key("IndustryType").string(var_21);
+        object.key("IndustryType").string(var_21.as_str());
     }
     if let Some(var_22) = &input.lenses {
         let mut array_23 = object.key("Lenses").start_array();
         for item_24 in var_22 {
             {
-                array_23.value().string(item_24);
+                array_23.value().string(item_24.as_str());
             }
         }
         array_23.finish();
@@ -110,37 +110,37 @@ pub fn serialize_structure_crate_input_create_workload_input(
         let mut array_26 = object.key("NonAwsRegions").start_array();
         for item_27 in var_25 {
             {
-                array_26.value().string(item_27);
+                array_26.value().string(item_27.as_str());
             }
         }
         array_26.finish();
     }
     if let Some(var_28) = &input.notes {
-        object.key("Notes").string(var_28);
+        object.key("Notes").string(var_28.as_str());
     }
     if let Some(var_29) = &input.pillar_priorities {
         let mut array_30 = object.key("PillarPriorities").start_array();
         for item_31 in var_29 {
             {
-                array_30.value().string(item_31);
+                array_30.value().string(item_31.as_str());
             }
         }
         array_30.finish();
     }
     if let Some(var_32) = &input.review_owner {
-        object.key("ReviewOwner").string(var_32);
+        object.key("ReviewOwner").string(var_32.as_str());
     }
     if let Some(var_33) = &input.tags {
         let mut object_34 = object.key("Tags").start_object();
         for (key_35, value_36) in var_33 {
             {
-                object_34.key(key_35).string(value_36);
+                object_34.key(key_35).string(value_36.as_str());
             }
         }
         object_34.finish();
     }
     if let Some(var_37) = &input.workload_name {
-        object.key("WorkloadName").string(var_37);
+        object.key("WorkloadName").string(var_37.as_str());
     }
     Ok(())
 }
@@ -150,13 +150,13 @@ pub fn serialize_structure_crate_input_create_workload_share_input(
     input: &crate::input::CreateWorkloadShareInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_38);
+        object.key("ClientRequestToken").string(var_38.as_str());
     }
     if let Some(var_39) = &input.permission_type {
         object.key("PermissionType").string(var_39.as_str());
     }
     if let Some(var_40) = &input.shared_with {
-        object.key("SharedWith").string(var_40);
+        object.key("SharedWith").string(var_40.as_str());
     }
     Ok(())
 }
@@ -169,7 +169,7 @@ pub fn serialize_structure_crate_input_disassociate_lenses_input(
         let mut array_42 = object.key("LensAliases").start_array();
         for item_43 in var_41 {
             {
-                array_42.value().string(item_43);
+                array_42.value().string(item_43.as_str());
             }
         }
         array_42.finish();
@@ -182,19 +182,19 @@ pub fn serialize_structure_crate_input_import_lens_input(
     input: &crate::input::ImportLensInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_44);
+        object.key("ClientRequestToken").string(var_44.as_str());
     }
     if let Some(var_45) = &input.json_string {
-        object.key("JSONString").string(var_45);
+        object.key("JSONString").string(var_45.as_str());
     }
     if let Some(var_46) = &input.lens_alias {
-        object.key("LensAlias").string(var_46);
+        object.key("LensAlias").string(var_46.as_str());
     }
     if let Some(var_47) = &input.tags {
         let mut object_48 = object.key("Tags").start_object();
         for (key_49, value_50) in var_47 {
             {
-                object_48.key(key_49).string(value_50);
+                object_48.key(key_49).string(value_50.as_str());
             }
         }
         object_48.finish();
@@ -213,7 +213,7 @@ pub fn serialize_structure_crate_input_list_milestones_input(
         );
     }
     if let Some(var_51) = &input.next_token {
-        object.key("NextToken").string(var_51);
+        object.key("NextToken").string(var_51.as_str());
     }
     Ok(())
 }
@@ -229,10 +229,10 @@ pub fn serialize_structure_crate_input_list_notifications_input(
         );
     }
     if let Some(var_52) = &input.next_token {
-        object.key("NextToken").string(var_52);
+        object.key("NextToken").string(var_52.as_str());
     }
     if let Some(var_53) = &input.workload_id {
-        object.key("WorkloadId").string(var_53);
+        object.key("WorkloadId").string(var_53.as_str());
     }
     Ok(())
 }
@@ -248,10 +248,10 @@ pub fn serialize_structure_crate_input_list_workloads_input(
         );
     }
     if let Some(var_54) = &input.next_token {
-        object.key("NextToken").string(var_54);
+        object.key("NextToken").string(var_54.as_str());
     }
     if let Some(var_55) = &input.workload_name_prefix {
-        object.key("WorkloadNamePrefix").string(var_55);
+        object.key("WorkloadNamePrefix").string(var_55.as_str());
     }
     Ok(())
 }
@@ -264,7 +264,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_57 = object.key("Tags").start_object();
         for (key_58, value_59) in var_56 {
             {
-                object_57.key(key_58).string(value_59);
+                object_57.key(key_58).string(value_59.as_str());
             }
         }
         object_57.finish();
@@ -294,7 +294,7 @@ pub fn serialize_structure_crate_input_update_answer_input(
         object.key("IsApplicable").boolean(input.is_applicable);
     }
     if let Some(var_65) = &input.notes {
-        object.key("Notes").string(var_65);
+        object.key("Notes").string(var_65.as_str());
     }
     if let Some(var_66) = &input.reason {
         object.key("Reason").string(var_66.as_str());
@@ -303,7 +303,7 @@ pub fn serialize_structure_crate_input_update_answer_input(
         let mut array_68 = object.key("SelectedChoices").start_array();
         for item_69 in var_67 {
             {
-                array_68.value().string(item_69);
+                array_68.value().string(item_69.as_str());
             }
         }
         array_68.finish();
@@ -316,13 +316,13 @@ pub fn serialize_structure_crate_input_update_lens_review_input(
     input: &crate::input::UpdateLensReviewInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.lens_notes {
-        object.key("LensNotes").string(var_70);
+        object.key("LensNotes").string(var_70.as_str());
     }
     if let Some(var_71) = &input.pillar_notes {
         let mut object_72 = object.key("PillarNotes").start_object();
         for (key_73, value_74) in var_71 {
             {
-                object_72.key(key_73).string(value_74);
+                object_72.key(key_73).string(value_74.as_str());
             }
         }
         object_72.finish();
@@ -348,25 +348,25 @@ pub fn serialize_structure_crate_input_update_workload_input(
         let mut array_77 = object.key("AccountIds").start_array();
         for item_78 in var_76 {
             {
-                array_77.value().string(item_78);
+                array_77.value().string(item_78.as_str());
             }
         }
         array_77.finish();
     }
     if let Some(var_79) = &input.architectural_design {
-        object.key("ArchitecturalDesign").string(var_79);
+        object.key("ArchitecturalDesign").string(var_79.as_str());
     }
     if let Some(var_80) = &input.aws_regions {
         let mut array_81 = object.key("AwsRegions").start_array();
         for item_82 in var_80 {
             {
-                array_81.value().string(item_82);
+                array_81.value().string(item_82.as_str());
             }
         }
         array_81.finish();
     }
     if let Some(var_83) = &input.description {
-        object.key("Description").string(var_83);
+        object.key("Description").string(var_83.as_str());
     }
     if let Some(var_84) = &input.environment {
         object.key("Environment").string(var_84.as_str());
@@ -375,10 +375,10 @@ pub fn serialize_structure_crate_input_update_workload_input(
         object.key("ImprovementStatus").string(var_85.as_str());
     }
     if let Some(var_86) = &input.industry {
-        object.key("Industry").string(var_86);
+        object.key("Industry").string(var_86.as_str());
     }
     if let Some(var_87) = &input.industry_type {
-        object.key("IndustryType").string(var_87);
+        object.key("IndustryType").string(var_87.as_str());
     }
     if input.is_review_owner_update_acknowledged {
         object
@@ -389,28 +389,28 @@ pub fn serialize_structure_crate_input_update_workload_input(
         let mut array_89 = object.key("NonAwsRegions").start_array();
         for item_90 in var_88 {
             {
-                array_89.value().string(item_90);
+                array_89.value().string(item_90.as_str());
             }
         }
         array_89.finish();
     }
     if let Some(var_91) = &input.notes {
-        object.key("Notes").string(var_91);
+        object.key("Notes").string(var_91.as_str());
     }
     if let Some(var_92) = &input.pillar_priorities {
         let mut array_93 = object.key("PillarPriorities").start_array();
         for item_94 in var_92 {
             {
-                array_93.value().string(item_94);
+                array_93.value().string(item_94.as_str());
             }
         }
         array_93.finish();
     }
     if let Some(var_95) = &input.review_owner {
-        object.key("ReviewOwner").string(var_95);
+        object.key("ReviewOwner").string(var_95.as_str());
     }
     if let Some(var_96) = &input.workload_name {
-        object.key("WorkloadName").string(var_96);
+        object.key("WorkloadName").string(var_96.as_str());
     }
     Ok(())
 }
@@ -430,10 +430,10 @@ pub fn serialize_structure_crate_input_upgrade_lens_review_input(
     input: &crate::input::UpgradeLensReviewInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_98) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_98);
+        object.key("ClientRequestToken").string(var_98.as_str());
     }
     if let Some(var_99) = &input.milestone_name {
-        object.key("MilestoneName").string(var_99);
+        object.key("MilestoneName").string(var_99.as_str());
     }
     Ok(())
 }
@@ -449,7 +449,7 @@ pub fn serialize_structure_crate_model_choice_update(
         object.key("Reason").string(var_101.as_str());
     }
     if let Some(var_102) = &input.notes {
-        object.key("Notes").string(var_102);
+        object.key("Notes").string(var_102.as_str());
     }
     Ok(())
 }

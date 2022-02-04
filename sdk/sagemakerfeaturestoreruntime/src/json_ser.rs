@@ -46,13 +46,13 @@ pub fn serialize_structure_crate_model_batch_get_record_identifier(
     input: &crate::model::BatchGetRecordIdentifier,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.feature_group_name {
-        object.key("FeatureGroupName").string(var_9);
+        object.key("FeatureGroupName").string(var_9.as_str());
     }
     if let Some(var_10) = &input.record_identifiers_value_as_string {
         let mut array_11 = object.key("RecordIdentifiersValueAsString").start_array();
         for item_12 in var_10 {
             {
-                array_11.value().string(item_12);
+                array_11.value().string(item_12.as_str());
             }
         }
         array_11.finish();
@@ -61,7 +61,7 @@ pub fn serialize_structure_crate_model_batch_get_record_identifier(
         let mut array_14 = object.key("FeatureNames").start_array();
         for item_15 in var_13 {
             {
-                array_14.value().string(item_15);
+                array_14.value().string(item_15.as_str());
             }
         }
         array_14.finish();
@@ -74,10 +74,10 @@ pub fn serialize_structure_crate_model_feature_value(
     input: &crate::model::FeatureValue,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.feature_name {
-        object.key("FeatureName").string(var_16);
+        object.key("FeatureName").string(var_16.as_str());
     }
     if let Some(var_17) = &input.value_as_string {
-        object.key("ValueAsString").string(var_17);
+        object.key("ValueAsString").string(var_17.as_str());
     }
     Ok(())
 }

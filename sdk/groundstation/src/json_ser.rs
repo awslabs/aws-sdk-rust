@@ -9,13 +9,13 @@ pub fn serialize_structure_crate_input_create_config_input(
         object_2.finish();
     }
     if let Some(var_3) = &input.name {
-        object.key("name").string(var_3);
+        object.key("name").string(var_3.as_str());
     }
     if let Some(var_4) = &input.tags {
         let mut object_5 = object.key("tags").start_object();
         for (key_6, value_7) in var_4 {
             {
-                object_5.key(key_6).string(value_7);
+                object_5.key(key_6).string(value_7.as_str());
             }
         }
         object_5.finish();
@@ -45,7 +45,7 @@ pub fn serialize_structure_crate_input_create_dataflow_endpoint_group_input(
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
-                object_13.key(key_14).string(value_15);
+                object_13.key(key_14).string(value_15.as_str());
             }
         }
         object_13.finish();
@@ -76,7 +76,7 @@ pub fn serialize_structure_crate_input_create_mission_profile_input(
                 let mut array_21 = array_19.value().start_array();
                 for item_22 in item_20 {
                     {
-                        array_21.value().string(item_22);
+                        array_21.value().string(item_22.as_str());
                     }
                 }
                 array_21.finish();
@@ -91,19 +91,19 @@ pub fn serialize_structure_crate_input_create_mission_profile_input(
         );
     }
     if let Some(var_24) = &input.name {
-        object.key("name").string(var_24);
+        object.key("name").string(var_24.as_str());
     }
     if let Some(var_25) = &input.tags {
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
             {
-                object_26.key(key_27).string(value_28);
+                object_26.key(key_27).string(value_28.as_str());
             }
         }
         object_26.finish();
     }
     if let Some(var_29) = &input.tracking_config_arn {
-        object.key("trackingConfigArn").string(var_29);
+        object.key("trackingConfigArn").string(var_29.as_str());
     }
     Ok(())
 }
@@ -137,7 +137,7 @@ pub fn serialize_structure_crate_input_list_contacts_input(
             .date_time(var_32, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_33) = &input.ground_station {
-        object.key("groundStation").string(var_33);
+        object.key("groundStation").string(var_33.as_str());
     }
     if let Some(var_34) = &input.max_results {
         object.key("maxResults").number(
@@ -146,13 +146,13 @@ pub fn serialize_structure_crate_input_list_contacts_input(
         );
     }
     if let Some(var_35) = &input.mission_profile_arn {
-        object.key("missionProfileArn").string(var_35);
+        object.key("missionProfileArn").string(var_35.as_str());
     }
     if let Some(var_36) = &input.next_token {
-        object.key("nextToken").string(var_36);
+        object.key("nextToken").string(var_36.as_str());
     }
     if let Some(var_37) = &input.satellite_arn {
-        object.key("satelliteArn").string(var_37);
+        object.key("satelliteArn").string(var_37.as_str());
     }
     if let Some(var_38) = &input.start_time {
         object
@@ -181,13 +181,13 @@ pub fn serialize_structure_crate_input_reserve_contact_input(
             .date_time(var_42, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_43) = &input.ground_station {
-        object.key("groundStation").string(var_43);
+        object.key("groundStation").string(var_43.as_str());
     }
     if let Some(var_44) = &input.mission_profile_arn {
-        object.key("missionProfileArn").string(var_44);
+        object.key("missionProfileArn").string(var_44.as_str());
     }
     if let Some(var_45) = &input.satellite_arn {
-        object.key("satelliteArn").string(var_45);
+        object.key("satelliteArn").string(var_45.as_str());
     }
     if let Some(var_46) = &input.start_time {
         object
@@ -198,7 +198,7 @@ pub fn serialize_structure_crate_input_reserve_contact_input(
         let mut object_48 = object.key("tags").start_object();
         for (key_49, value_50) in var_47 {
             {
-                object_48.key(key_49).string(value_50);
+                object_48.key(key_49).string(value_50.as_str());
             }
         }
         object_48.finish();
@@ -214,7 +214,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_52 = object.key("tags").start_object();
         for (key_53, value_54) in var_51 {
             {
-                object_52.key(key_53).string(value_54);
+                object_52.key(key_53).string(value_54.as_str());
             }
         }
         object_52.finish();
@@ -232,7 +232,7 @@ pub fn serialize_structure_crate_input_update_config_input(
         object_56.finish();
     }
     if let Some(var_57) = &input.name {
-        object.key("name").string(var_57);
+        object.key("name").string(var_57.as_str());
     }
     Ok(())
 }
@@ -260,7 +260,7 @@ pub fn serialize_structure_crate_input_update_mission_profile_input(
                 let mut array_63 = array_61.value().start_array();
                 for item_64 in item_62 {
                     {
-                        array_63.value().string(item_64);
+                        array_63.value().string(item_64.as_str());
                     }
                 }
                 array_63.finish();
@@ -275,10 +275,10 @@ pub fn serialize_structure_crate_input_update_mission_profile_input(
         );
     }
     if let Some(var_66) = &input.name {
-        object.key("name").string(var_66);
+        object.key("name").string(var_66.as_str());
     }
     if let Some(var_67) = &input.tracking_config_arn {
-        object.key("trackingConfigArn").string(var_67);
+        object.key("trackingConfigArn").string(var_67.as_str());
     }
     Ok(())
 }
@@ -399,10 +399,10 @@ pub fn serialize_structure_crate_model_dataflow_endpoint_config(
     input: &crate::model::DataflowEndpointConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.dataflow_endpoint_name {
-        object.key("dataflowEndpointName").string(var_82);
+        object.key("dataflowEndpointName").string(var_82.as_str());
     }
     if let Some(var_83) = &input.dataflow_endpoint_region {
-        object.key("dataflowEndpointRegion").string(var_83);
+        object.key("dataflowEndpointRegion").string(var_83.as_str());
     }
     Ok(())
 }
@@ -463,7 +463,7 @@ pub fn serialize_structure_crate_model_uplink_echo_config(
         object.key("enabled").boolean(*var_95);
     }
     if let Some(var_96) = &input.antenna_uplink_config_arn {
-        object.key("antennaUplinkConfigArn").string(var_96);
+        object.key("antennaUplinkConfigArn").string(var_96.as_str());
     }
     Ok(())
 }
@@ -473,13 +473,13 @@ pub fn serialize_structure_crate_model_s3_recording_config(
     input: &crate::model::S3RecordingConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_97) = &input.bucket_arn {
-        object.key("bucketArn").string(var_97);
+        object.key("bucketArn").string(var_97.as_str());
     }
     if let Some(var_98) = &input.role_arn {
-        object.key("roleArn").string(var_98);
+        object.key("roleArn").string(var_98.as_str());
     }
     if let Some(var_99) = &input.prefix {
-        object.key("prefix").string(var_99);
+        object.key("prefix").string(var_99.as_str());
     }
     Ok(())
 }
@@ -492,7 +492,7 @@ pub fn serialize_structure_crate_model_security_details(
         let mut array_101 = object.key("subnetIds").start_array();
         for item_102 in var_100 {
             {
-                array_101.value().string(item_102);
+                array_101.value().string(item_102.as_str());
             }
         }
         array_101.finish();
@@ -501,13 +501,13 @@ pub fn serialize_structure_crate_model_security_details(
         let mut array_104 = object.key("securityGroupIds").start_array();
         for item_105 in var_103 {
             {
-                array_104.value().string(item_105);
+                array_104.value().string(item_105.as_str());
             }
         }
         array_104.finish();
     }
     if let Some(var_106) = &input.role_arn {
-        object.key("roleArn").string(var_106);
+        object.key("roleArn").string(var_106.as_str());
     }
     Ok(())
 }
@@ -517,7 +517,7 @@ pub fn serialize_structure_crate_model_dataflow_endpoint(
     input: &crate::model::DataflowEndpoint,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_107) = &input.name {
-        object.key("name").string(var_107);
+        object.key("name").string(var_107.as_str());
     }
     if let Some(var_108) = &input.address {
         let mut object_109 = object.key("address").start_object();
@@ -564,7 +564,7 @@ pub fn serialize_structure_crate_model_demodulation_config(
     input: &crate::model::DemodulationConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_117) = &input.unvalidated_json {
-        object.key("unvalidatedJSON").string(var_117);
+        object.key("unvalidatedJSON").string(var_117.as_str());
     }
     Ok(())
 }
@@ -574,7 +574,7 @@ pub fn serialize_structure_crate_model_decode_config(
     input: &crate::model::DecodeConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_118) = &input.unvalidated_json {
-        object.key("unvalidatedJSON").string(var_118);
+        object.key("unvalidatedJSON").string(var_118.as_str());
     }
     Ok(())
 }
@@ -615,7 +615,7 @@ pub fn serialize_structure_crate_model_socket_address(
     input: &crate::model::SocketAddress,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_124) = &input.name {
-        object.key("name").string(var_124);
+        object.key("name").string(var_124.as_str());
     }
     if let Some(var_125) = &input.port {
         object.key("port").number(

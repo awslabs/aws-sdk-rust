@@ -72,7 +72,7 @@ pub fn serialize_structure_crate_input_get_document_analysis_input(
     input: &crate::input::GetDocumentAnalysisInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.job_id {
-        object.key("JobId").string(var_16);
+        object.key("JobId").string(var_16.as_str());
     }
     if let Some(var_17) = &input.max_results {
         object.key("MaxResults").number(
@@ -81,7 +81,7 @@ pub fn serialize_structure_crate_input_get_document_analysis_input(
         );
     }
     if let Some(var_18) = &input.next_token {
-        object.key("NextToken").string(var_18);
+        object.key("NextToken").string(var_18.as_str());
     }
     Ok(())
 }
@@ -91,7 +91,7 @@ pub fn serialize_structure_crate_input_get_document_text_detection_input(
     input: &crate::input::GetDocumentTextDetectionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.job_id {
-        object.key("JobId").string(var_19);
+        object.key("JobId").string(var_19.as_str());
     }
     if let Some(var_20) = &input.max_results {
         object.key("MaxResults").number(
@@ -100,7 +100,7 @@ pub fn serialize_structure_crate_input_get_document_text_detection_input(
         );
     }
     if let Some(var_21) = &input.next_token {
-        object.key("NextToken").string(var_21);
+        object.key("NextToken").string(var_21.as_str());
     }
     Ok(())
 }
@@ -110,7 +110,7 @@ pub fn serialize_structure_crate_input_get_expense_analysis_input(
     input: &crate::input::GetExpenseAnalysisInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.job_id {
-        object.key("JobId").string(var_22);
+        object.key("JobId").string(var_22.as_str());
     }
     if let Some(var_23) = &input.max_results {
         object.key("MaxResults").number(
@@ -119,7 +119,7 @@ pub fn serialize_structure_crate_input_get_expense_analysis_input(
         );
     }
     if let Some(var_24) = &input.next_token {
-        object.key("NextToken").string(var_24);
+        object.key("NextToken").string(var_24.as_str());
     }
     Ok(())
 }
@@ -143,10 +143,10 @@ pub fn serialize_structure_crate_input_start_document_analysis_input(
         array_28.finish();
     }
     if let Some(var_30) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_30);
+        object.key("ClientRequestToken").string(var_30.as_str());
     }
     if let Some(var_31) = &input.job_tag {
-        object.key("JobTag").string(var_31);
+        object.key("JobTag").string(var_31.as_str());
     }
     if let Some(var_32) = &input.notification_channel {
         let mut object_33 = object.key("NotificationChannel").start_object();
@@ -162,7 +162,7 @@ pub fn serialize_structure_crate_input_start_document_analysis_input(
         object_35.finish();
     }
     if let Some(var_36) = &input.kms_key_id {
-        object.key("KMSKeyId").string(var_36);
+        object.key("KMSKeyId").string(var_36.as_str());
     }
     Ok(())
 }
@@ -177,10 +177,10 @@ pub fn serialize_structure_crate_input_start_document_text_detection_input(
         object_38.finish();
     }
     if let Some(var_39) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_39);
+        object.key("ClientRequestToken").string(var_39.as_str());
     }
     if let Some(var_40) = &input.job_tag {
-        object.key("JobTag").string(var_40);
+        object.key("JobTag").string(var_40.as_str());
     }
     if let Some(var_41) = &input.notification_channel {
         let mut object_42 = object.key("NotificationChannel").start_object();
@@ -196,7 +196,7 @@ pub fn serialize_structure_crate_input_start_document_text_detection_input(
         object_44.finish();
     }
     if let Some(var_45) = &input.kms_key_id {
-        object.key("KMSKeyId").string(var_45);
+        object.key("KMSKeyId").string(var_45.as_str());
     }
     Ok(())
 }
@@ -211,10 +211,10 @@ pub fn serialize_structure_crate_input_start_expense_analysis_input(
         object_47.finish();
     }
     if let Some(var_48) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_48);
+        object.key("ClientRequestToken").string(var_48.as_str());
     }
     if let Some(var_49) = &input.job_tag {
-        object.key("JobTag").string(var_49);
+        object.key("JobTag").string(var_49.as_str());
     }
     if let Some(var_50) = &input.notification_channel {
         let mut object_51 = object.key("NotificationChannel").start_object();
@@ -230,7 +230,7 @@ pub fn serialize_structure_crate_input_start_expense_analysis_input(
         object_53.finish();
     }
     if let Some(var_54) = &input.kms_key_id {
-        object.key("KMSKeyId").string(var_54);
+        object.key("KMSKeyId").string(var_54.as_str());
     }
     Ok(())
 }
@@ -257,10 +257,10 @@ pub fn serialize_structure_crate_model_human_loop_config(
     input: &crate::model::HumanLoopConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_58) = &input.human_loop_name {
-        object.key("HumanLoopName").string(var_58);
+        object.key("HumanLoopName").string(var_58.as_str());
     }
     if let Some(var_59) = &input.flow_definition_arn {
-        object.key("FlowDefinitionArn").string(var_59);
+        object.key("FlowDefinitionArn").string(var_59.as_str());
     }
     if let Some(var_60) = &input.data_attributes {
         let mut object_61 = object.key("DataAttributes").start_object();
@@ -290,10 +290,10 @@ pub fn serialize_structure_crate_model_notification_channel(
     input: &crate::model::NotificationChannel,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_64) = &input.sns_topic_arn {
-        object.key("SNSTopicArn").string(var_64);
+        object.key("SNSTopicArn").string(var_64.as_str());
     }
     if let Some(var_65) = &input.role_arn {
-        object.key("RoleArn").string(var_65);
+        object.key("RoleArn").string(var_65.as_str());
     }
     Ok(())
 }
@@ -303,10 +303,10 @@ pub fn serialize_structure_crate_model_output_config(
     input: &crate::model::OutputConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_66) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_66);
+        object.key("S3Bucket").string(var_66.as_str());
     }
     if let Some(var_67) = &input.s3_prefix {
-        object.key("S3Prefix").string(var_67);
+        object.key("S3Prefix").string(var_67.as_str());
     }
     Ok(())
 }
@@ -316,13 +316,13 @@ pub fn serialize_structure_crate_model_s3_object(
     input: &crate::model::S3Object,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.bucket {
-        object.key("Bucket").string(var_68);
+        object.key("Bucket").string(var_68.as_str());
     }
     if let Some(var_69) = &input.name {
-        object.key("Name").string(var_69);
+        object.key("Name").string(var_69.as_str());
     }
     if let Some(var_70) = &input.version {
-        object.key("Version").string(var_70);
+        object.key("Version").string(var_70.as_str());
     }
     Ok(())
 }

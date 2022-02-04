@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_configuration_set_input(
     input: &crate::input::CreateConfigurationSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_1);
+        object.key("ConfigurationSetName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.delivery_options {
         let mut object_3 = object.key("DeliveryOptions").start_object();
@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_create_configuration_set_event_destinatio
         object_15.finish();
     }
     if let Some(var_16) = &input.event_destination_name {
-        object.key("EventDestinationName").string(var_16);
+        object.key("EventDestinationName").string(var_16.as_str());
     }
     Ok(())
 }
@@ -63,7 +63,7 @@ pub fn serialize_structure_crate_input_create_dedicated_ip_pool_input(
     input: &crate::input::CreateDedicatedIpPoolInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.pool_name {
-        object.key("PoolName").string(var_17);
+        object.key("PoolName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
         let mut array_19 = object.key("Tags").start_array();
@@ -89,10 +89,10 @@ pub fn serialize_structure_crate_input_create_deliverability_test_report_input(
         object_23.finish();
     }
     if let Some(var_24) = &input.from_email_address {
-        object.key("FromEmailAddress").string(var_24);
+        object.key("FromEmailAddress").string(var_24.as_str());
     }
     if let Some(var_25) = &input.report_name {
-        object.key("ReportName").string(var_25);
+        object.key("ReportName").string(var_25.as_str());
     }
     if let Some(var_26) = &input.tags {
         let mut array_27 = object.key("Tags").start_array();
@@ -113,7 +113,7 @@ pub fn serialize_structure_crate_input_create_email_identity_input(
     input: &crate::input::CreateEmailIdentityInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.email_identity {
-        object.key("EmailIdentity").string(var_30);
+        object.key("EmailIdentity").string(var_30.as_str());
     }
     if let Some(var_31) = &input.tags {
         let mut array_32 = object.key("Tags").start_array();
@@ -156,7 +156,7 @@ pub fn serialize_structure_crate_input_put_configuration_set_delivery_options_in
     input: &crate::input::PutConfigurationSetDeliveryOptionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.sending_pool_name {
-        object.key("SendingPoolName").string(var_35);
+        object.key("SendingPoolName").string(var_35.as_str());
     }
     if let Some(var_36) = &input.tls_policy {
         object.key("TlsPolicy").string(var_36.as_str());
@@ -191,7 +191,7 @@ pub fn serialize_structure_crate_input_put_configuration_set_tracking_options_in
     input: &crate::input::PutConfigurationSetTrackingOptionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.custom_redirect_domain {
-        object.key("CustomRedirectDomain").string(var_37);
+        object.key("CustomRedirectDomain").string(var_37.as_str());
     }
     Ok(())
 }
@@ -201,7 +201,7 @@ pub fn serialize_structure_crate_input_put_dedicated_ip_in_pool_input(
     input: &crate::input::PutDedicatedIpInPoolInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.destination_pool_name {
-        object.key("DestinationPoolName").string(var_38);
+        object.key("DestinationPoolName").string(var_38.as_str());
     }
     Ok(())
 }
@@ -272,7 +272,7 @@ pub fn serialize_structure_crate_input_put_email_identity_mail_from_attributes_i
         object.key("BehaviorOnMxFailure").string(var_44.as_str());
     }
     if let Some(var_45) = &input.mail_from_domain {
-        object.key("MailFromDomain").string(var_45);
+        object.key("MailFromDomain").string(var_45.as_str());
     }
     Ok(())
 }
@@ -282,7 +282,7 @@ pub fn serialize_structure_crate_input_send_email_input(
     input: &crate::input::SendEmailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_46);
+        object.key("ConfigurationSetName").string(var_46.as_str());
     }
     if let Some(var_47) = &input.content {
         let mut object_48 = object.key("Content").start_object();
@@ -309,16 +309,18 @@ pub fn serialize_structure_crate_input_send_email_input(
         array_52.finish();
     }
     if let Some(var_55) = &input.feedback_forwarding_email_address {
-        object.key("FeedbackForwardingEmailAddress").string(var_55);
+        object
+            .key("FeedbackForwardingEmailAddress")
+            .string(var_55.as_str());
     }
     if let Some(var_56) = &input.from_email_address {
-        object.key("FromEmailAddress").string(var_56);
+        object.key("FromEmailAddress").string(var_56.as_str());
     }
     if let Some(var_57) = &input.reply_to_addresses {
         let mut array_58 = object.key("ReplyToAddresses").start_array();
         for item_59 in var_57 {
             {
-                array_58.value().string(item_59);
+                array_58.value().string(item_59.as_str());
             }
         }
         array_58.finish();
@@ -331,7 +333,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_60) = &input.resource_arn {
-        object.key("ResourceArn").string(var_60);
+        object.key("ResourceArn").string(var_60.as_str());
     }
     if let Some(var_61) = &input.tags {
         let mut array_62 = object.key("Tags").start_array();
@@ -370,7 +372,7 @@ pub fn serialize_structure_crate_model_delivery_options(
         object.key("TlsPolicy").string(var_67.as_str());
     }
     if let Some(var_68) = &input.sending_pool_name {
-        object.key("SendingPoolName").string(var_68);
+        object.key("SendingPoolName").string(var_68.as_str());
     }
     Ok(())
 }
@@ -407,10 +409,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.key {
-        object.key("Key").string(var_70);
+        object.key("Key").string(var_70.as_str());
     }
     if let Some(var_71) = &input.value {
-        object.key("Value").string(var_71);
+        object.key("Value").string(var_71.as_str());
     }
     Ok(())
 }
@@ -420,7 +422,7 @@ pub fn serialize_structure_crate_model_tracking_options(
     input: &crate::model::TrackingOptions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_72) = &input.custom_redirect_domain {
-        object.key("CustomRedirectDomain").string(var_72);
+        object.key("CustomRedirectDomain").string(var_72.as_str());
     }
     Ok(())
 }
@@ -500,7 +502,7 @@ pub fn serialize_structure_crate_model_domain_deliverability_tracking_option(
     input: &crate::model::DomainDeliverabilityTrackingOption,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_90) = &input.domain {
-        object.key("Domain").string(var_90);
+        object.key("Domain").string(var_90.as_str());
     }
     if let Some(var_91) = &input.subscription_start_date {
         object
@@ -526,7 +528,7 @@ pub fn serialize_structure_crate_model_destination(
         let mut array_95 = object.key("ToAddresses").start_array();
         for item_96 in var_94 {
             {
-                array_95.value().string(item_96);
+                array_95.value().string(item_96.as_str());
             }
         }
         array_95.finish();
@@ -535,7 +537,7 @@ pub fn serialize_structure_crate_model_destination(
         let mut array_98 = object.key("CcAddresses").start_array();
         for item_99 in var_97 {
             {
-                array_98.value().string(item_99);
+                array_98.value().string(item_99.as_str());
             }
         }
         array_98.finish();
@@ -544,7 +546,7 @@ pub fn serialize_structure_crate_model_destination(
         let mut array_101 = object.key("BccAddresses").start_array();
         for item_102 in var_100 {
             {
-                array_101.value().string(item_102);
+                array_101.value().string(item_102.as_str());
             }
         }
         array_101.finish();
@@ -557,10 +559,10 @@ pub fn serialize_structure_crate_model_message_tag(
     input: &crate::model::MessageTag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_103) = &input.name {
-        object.key("Name").string(var_103);
+        object.key("Name").string(var_103.as_str());
     }
     if let Some(var_104) = &input.value {
-        object.key("Value").string(var_104);
+        object.key("Value").string(var_104.as_str());
     }
     Ok(())
 }
@@ -570,10 +572,10 @@ pub fn serialize_structure_crate_model_kinesis_firehose_destination(
     input: &crate::model::KinesisFirehoseDestination,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_105) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_105);
+        object.key("IamRoleArn").string(var_105.as_str());
     }
     if let Some(var_106) = &input.delivery_stream_arn {
-        object.key("DeliveryStreamArn").string(var_106);
+        object.key("DeliveryStreamArn").string(var_106.as_str());
     }
     Ok(())
 }
@@ -601,7 +603,7 @@ pub fn serialize_structure_crate_model_sns_destination(
     input: &crate::model::SnsDestination,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_111) = &input.topic_arn {
-        object.key("TopicArn").string(var_111);
+        object.key("TopicArn").string(var_111.as_str());
     }
     Ok(())
 }
@@ -611,7 +613,7 @@ pub fn serialize_structure_crate_model_pinpoint_destination(
     input: &crate::model::PinpointDestination,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_112) = &input.application_arn {
-        object.key("ApplicationArn").string(var_112);
+        object.key("ApplicationArn").string(var_112.as_str());
     }
     Ok(())
 }
@@ -650,10 +652,10 @@ pub fn serialize_structure_crate_model_template(
     input: &crate::model::Template,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_118) = &input.template_arn {
-        object.key("TemplateArn").string(var_118);
+        object.key("TemplateArn").string(var_118.as_str());
     }
     if let Some(var_119) = &input.template_data {
-        object.key("TemplateData").string(var_119);
+        object.key("TemplateData").string(var_119.as_str());
     }
     Ok(())
 }
@@ -669,7 +671,7 @@ pub fn serialize_structure_crate_model_inbox_placement_tracking_option(
         let mut array_121 = object.key("TrackedIsps").start_array();
         for item_122 in var_120 {
             {
-                array_121.value().string(item_122);
+                array_121.value().string(item_122.as_str());
             }
         }
         array_121.finish();
@@ -682,13 +684,13 @@ pub fn serialize_structure_crate_model_cloud_watch_dimension_configuration(
     input: &crate::model::CloudWatchDimensionConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_123) = &input.dimension_name {
-        object.key("DimensionName").string(var_123);
+        object.key("DimensionName").string(var_123.as_str());
     }
     if let Some(var_124) = &input.dimension_value_source {
         object.key("DimensionValueSource").string(var_124.as_str());
     }
     if let Some(var_125) = &input.default_dimension_value {
-        object.key("DefaultDimensionValue").string(var_125);
+        object.key("DefaultDimensionValue").string(var_125.as_str());
     }
     Ok(())
 }
@@ -698,10 +700,10 @@ pub fn serialize_structure_crate_model_content(
     input: &crate::model::Content,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_126) = &input.data {
-        object.key("Data").string(var_126);
+        object.key("Data").string(var_126.as_str());
     }
     if let Some(var_127) = &input.charset {
-        object.key("Charset").string(var_127);
+        object.key("Charset").string(var_127.as_str());
     }
     Ok(())
 }

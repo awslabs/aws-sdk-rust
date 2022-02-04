@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_count_closed_workflow_executions_input(
     input: &crate::input::CountClosedWorkflowExecutionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.domain {
-        object.key("domain").string(var_1);
+        object.key("domain").string(var_1.as_str());
     }
     if let Some(var_2) = &input.start_time_filter {
         let mut object_3 = object.key("startTimeFilter").start_object();
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_count_open_workflow_executions_input(
     input: &crate::input::CountOpenWorkflowExecutionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.domain {
-        object.key("domain").string(var_14);
+        object.key("domain").string(var_14.as_str());
     }
     if let Some(var_15) = &input.start_time_filter {
         let mut object_16 = object.key("startTimeFilter").start_object();
@@ -98,7 +98,7 @@ pub fn serialize_structure_crate_input_count_pending_activity_tasks_input(
     input: &crate::input::CountPendingActivityTasksInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.domain {
-        object.key("domain").string(var_23);
+        object.key("domain").string(var_23.as_str());
     }
     if let Some(var_24) = &input.task_list {
         let mut object_25 = object.key("taskList").start_object();
@@ -113,7 +113,7 @@ pub fn serialize_structure_crate_input_count_pending_decision_tasks_input(
     input: &crate::input::CountPendingDecisionTasksInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.domain {
-        object.key("domain").string(var_26);
+        object.key("domain").string(var_26.as_str());
     }
     if let Some(var_27) = &input.task_list {
         let mut object_28 = object.key("taskList").start_object();
@@ -128,7 +128,7 @@ pub fn serialize_structure_crate_input_deprecate_activity_type_input(
     input: &crate::input::DeprecateActivityTypeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.domain {
-        object.key("domain").string(var_29);
+        object.key("domain").string(var_29.as_str());
     }
     if let Some(var_30) = &input.activity_type {
         let mut object_31 = object.key("activityType").start_object();
@@ -143,7 +143,7 @@ pub fn serialize_structure_crate_input_deprecate_domain_input(
     input: &crate::input::DeprecateDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.name {
-        object.key("name").string(var_32);
+        object.key("name").string(var_32.as_str());
     }
     Ok(())
 }
@@ -153,7 +153,7 @@ pub fn serialize_structure_crate_input_deprecate_workflow_type_input(
     input: &crate::input::DeprecateWorkflowTypeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.domain {
-        object.key("domain").string(var_33);
+        object.key("domain").string(var_33.as_str());
     }
     if let Some(var_34) = &input.workflow_type {
         let mut object_35 = object.key("workflowType").start_object();
@@ -168,7 +168,7 @@ pub fn serialize_structure_crate_input_describe_activity_type_input(
     input: &crate::input::DescribeActivityTypeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.domain {
-        object.key("domain").string(var_36);
+        object.key("domain").string(var_36.as_str());
     }
     if let Some(var_37) = &input.activity_type {
         let mut object_38 = object.key("activityType").start_object();
@@ -183,7 +183,7 @@ pub fn serialize_structure_crate_input_describe_domain_input(
     input: &crate::input::DescribeDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.name {
-        object.key("name").string(var_39);
+        object.key("name").string(var_39.as_str());
     }
     Ok(())
 }
@@ -193,7 +193,7 @@ pub fn serialize_structure_crate_input_describe_workflow_execution_input(
     input: &crate::input::DescribeWorkflowExecutionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.domain {
-        object.key("domain").string(var_40);
+        object.key("domain").string(var_40.as_str());
     }
     if let Some(var_41) = &input.execution {
         let mut object_42 = object.key("execution").start_object();
@@ -211,7 +211,7 @@ pub fn serialize_structure_crate_input_describe_workflow_type_input(
     input: &crate::input::DescribeWorkflowTypeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.domain {
-        object.key("domain").string(var_43);
+        object.key("domain").string(var_43.as_str());
     }
     if let Some(var_44) = &input.workflow_type {
         let mut object_45 = object.key("workflowType").start_object();
@@ -226,7 +226,7 @@ pub fn serialize_structure_crate_input_get_workflow_execution_history_input(
     input: &crate::input::GetWorkflowExecutionHistoryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.domain {
-        object.key("domain").string(var_46);
+        object.key("domain").string(var_46.as_str());
     }
     if let Some(var_47) = &input.execution {
         let mut object_48 = object.key("execution").start_object();
@@ -237,7 +237,7 @@ pub fn serialize_structure_crate_input_get_workflow_execution_history_input(
         object_48.finish();
     }
     if let Some(var_49) = &input.next_page_token {
-        object.key("nextPageToken").string(var_49);
+        object.key("nextPageToken").string(var_49.as_str());
     }
     if input.maximum_page_size != 0 {
         object.key("maximumPageSize").number(
@@ -256,16 +256,16 @@ pub fn serialize_structure_crate_input_list_activity_types_input(
     input: &crate::input::ListActivityTypesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.domain {
-        object.key("domain").string(var_50);
+        object.key("domain").string(var_50.as_str());
     }
     if let Some(var_51) = &input.name {
-        object.key("name").string(var_51);
+        object.key("name").string(var_51.as_str());
     }
     if let Some(var_52) = &input.registration_status {
         object.key("registrationStatus").string(var_52.as_str());
     }
     if let Some(var_53) = &input.next_page_token {
-        object.key("nextPageToken").string(var_53);
+        object.key("nextPageToken").string(var_53.as_str());
     }
     if input.maximum_page_size != 0 {
         object.key("maximumPageSize").number(
@@ -284,7 +284,7 @@ pub fn serialize_structure_crate_input_list_closed_workflow_executions_input(
     input: &crate::input::ListClosedWorkflowExecutionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.domain {
-        object.key("domain").string(var_54);
+        object.key("domain").string(var_54.as_str());
     }
     if let Some(var_55) = &input.start_time_filter {
         let mut object_56 = object.key("startTimeFilter").start_object();
@@ -332,7 +332,7 @@ pub fn serialize_structure_crate_input_list_closed_workflow_executions_input(
         object_66.finish();
     }
     if let Some(var_67) = &input.next_page_token {
-        object.key("nextPageToken").string(var_67);
+        object.key("nextPageToken").string(var_67.as_str());
     }
     if input.maximum_page_size != 0 {
         object.key("maximumPageSize").number(
@@ -351,7 +351,7 @@ pub fn serialize_structure_crate_input_list_domains_input(
     input: &crate::input::ListDomainsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.next_page_token {
-        object.key("nextPageToken").string(var_68);
+        object.key("nextPageToken").string(var_68.as_str());
     }
     if let Some(var_69) = &input.registration_status {
         object.key("registrationStatus").string(var_69.as_str());
@@ -373,7 +373,7 @@ pub fn serialize_structure_crate_input_list_open_workflow_executions_input(
     input: &crate::input::ListOpenWorkflowExecutionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.domain {
-        object.key("domain").string(var_70);
+        object.key("domain").string(var_70.as_str());
     }
     if let Some(var_71) = &input.start_time_filter {
         let mut object_72 = object.key("startTimeFilter").start_object();
@@ -397,7 +397,7 @@ pub fn serialize_structure_crate_input_list_open_workflow_executions_input(
         object_76.finish();
     }
     if let Some(var_77) = &input.next_page_token {
-        object.key("nextPageToken").string(var_77);
+        object.key("nextPageToken").string(var_77.as_str());
     }
     if input.maximum_page_size != 0 {
         object.key("maximumPageSize").number(
@@ -424,7 +424,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_80) = &input.resource_arn {
-        object.key("resourceArn").string(var_80);
+        object.key("resourceArn").string(var_80.as_str());
     }
     Ok(())
 }
@@ -434,16 +434,16 @@ pub fn serialize_structure_crate_input_list_workflow_types_input(
     input: &crate::input::ListWorkflowTypesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.domain {
-        object.key("domain").string(var_81);
+        object.key("domain").string(var_81.as_str());
     }
     if let Some(var_82) = &input.name {
-        object.key("name").string(var_82);
+        object.key("name").string(var_82.as_str());
     }
     if let Some(var_83) = &input.registration_status {
         object.key("registrationStatus").string(var_83.as_str());
     }
     if let Some(var_84) = &input.next_page_token {
-        object.key("nextPageToken").string(var_84);
+        object.key("nextPageToken").string(var_84.as_str());
     }
     if input.maximum_page_size != 0 {
         object.key("maximumPageSize").number(
@@ -462,7 +462,7 @@ pub fn serialize_structure_crate_input_poll_for_activity_task_input(
     input: &crate::input::PollForActivityTaskInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_85) = &input.domain {
-        object.key("domain").string(var_85);
+        object.key("domain").string(var_85.as_str());
     }
     if let Some(var_86) = &input.task_list {
         let mut object_87 = object.key("taskList").start_object();
@@ -470,7 +470,7 @@ pub fn serialize_structure_crate_input_poll_for_activity_task_input(
         object_87.finish();
     }
     if let Some(var_88) = &input.identity {
-        object.key("identity").string(var_88);
+        object.key("identity").string(var_88.as_str());
     }
     Ok(())
 }
@@ -480,7 +480,7 @@ pub fn serialize_structure_crate_input_poll_for_decision_task_input(
     input: &crate::input::PollForDecisionTaskInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_89) = &input.domain {
-        object.key("domain").string(var_89);
+        object.key("domain").string(var_89.as_str());
     }
     if let Some(var_90) = &input.task_list {
         let mut object_91 = object.key("taskList").start_object();
@@ -488,10 +488,10 @@ pub fn serialize_structure_crate_input_poll_for_decision_task_input(
         object_91.finish();
     }
     if let Some(var_92) = &input.identity {
-        object.key("identity").string(var_92);
+        object.key("identity").string(var_92.as_str());
     }
     if let Some(var_93) = &input.next_page_token {
-        object.key("nextPageToken").string(var_93);
+        object.key("nextPageToken").string(var_93.as_str());
     }
     if input.maximum_page_size != 0 {
         object.key("maximumPageSize").number(
@@ -510,10 +510,10 @@ pub fn serialize_structure_crate_input_record_activity_task_heartbeat_input(
     input: &crate::input::RecordActivityTaskHeartbeatInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_94) = &input.task_token {
-        object.key("taskToken").string(var_94);
+        object.key("taskToken").string(var_94.as_str());
     }
     if let Some(var_95) = &input.details {
-        object.key("details").string(var_95);
+        object.key("details").string(var_95.as_str());
     }
     Ok(())
 }
@@ -523,22 +523,26 @@ pub fn serialize_structure_crate_input_register_activity_type_input(
     input: &crate::input::RegisterActivityTypeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_96) = &input.domain {
-        object.key("domain").string(var_96);
+        object.key("domain").string(var_96.as_str());
     }
     if let Some(var_97) = &input.name {
-        object.key("name").string(var_97);
+        object.key("name").string(var_97.as_str());
     }
     if let Some(var_98) = &input.version {
-        object.key("version").string(var_98);
+        object.key("version").string(var_98.as_str());
     }
     if let Some(var_99) = &input.description {
-        object.key("description").string(var_99);
+        object.key("description").string(var_99.as_str());
     }
     if let Some(var_100) = &input.default_task_start_to_close_timeout {
-        object.key("defaultTaskStartToCloseTimeout").string(var_100);
+        object
+            .key("defaultTaskStartToCloseTimeout")
+            .string(var_100.as_str());
     }
     if let Some(var_101) = &input.default_task_heartbeat_timeout {
-        object.key("defaultTaskHeartbeatTimeout").string(var_101);
+        object
+            .key("defaultTaskHeartbeatTimeout")
+            .string(var_101.as_str());
     }
     if let Some(var_102) = &input.default_task_list {
         let mut object_103 = object.key("defaultTaskList").start_object();
@@ -546,17 +550,17 @@ pub fn serialize_structure_crate_input_register_activity_type_input(
         object_103.finish();
     }
     if let Some(var_104) = &input.default_task_priority {
-        object.key("defaultTaskPriority").string(var_104);
+        object.key("defaultTaskPriority").string(var_104.as_str());
     }
     if let Some(var_105) = &input.default_task_schedule_to_start_timeout {
         object
             .key("defaultTaskScheduleToStartTimeout")
-            .string(var_105);
+            .string(var_105.as_str());
     }
     if let Some(var_106) = &input.default_task_schedule_to_close_timeout {
         object
             .key("defaultTaskScheduleToCloseTimeout")
-            .string(var_106);
+            .string(var_106.as_str());
     }
     Ok(())
 }
@@ -566,15 +570,15 @@ pub fn serialize_structure_crate_input_register_domain_input(
     input: &crate::input::RegisterDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_107) = &input.name {
-        object.key("name").string(var_107);
+        object.key("name").string(var_107.as_str());
     }
     if let Some(var_108) = &input.description {
-        object.key("description").string(var_108);
+        object.key("description").string(var_108.as_str());
     }
     if let Some(var_109) = &input.workflow_execution_retention_period_in_days {
         object
             .key("workflowExecutionRetentionPeriodInDays")
-            .string(var_109);
+            .string(var_109.as_str());
     }
     if let Some(var_110) = &input.tags {
         let mut array_111 = object.key("tags").start_array();
@@ -598,24 +602,26 @@ pub fn serialize_structure_crate_input_register_workflow_type_input(
     input: &crate::input::RegisterWorkflowTypeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_114) = &input.domain {
-        object.key("domain").string(var_114);
+        object.key("domain").string(var_114.as_str());
     }
     if let Some(var_115) = &input.name {
-        object.key("name").string(var_115);
+        object.key("name").string(var_115.as_str());
     }
     if let Some(var_116) = &input.version {
-        object.key("version").string(var_116);
+        object.key("version").string(var_116.as_str());
     }
     if let Some(var_117) = &input.description {
-        object.key("description").string(var_117);
+        object.key("description").string(var_117.as_str());
     }
     if let Some(var_118) = &input.default_task_start_to_close_timeout {
-        object.key("defaultTaskStartToCloseTimeout").string(var_118);
+        object
+            .key("defaultTaskStartToCloseTimeout")
+            .string(var_118.as_str());
     }
     if let Some(var_119) = &input.default_execution_start_to_close_timeout {
         object
             .key("defaultExecutionStartToCloseTimeout")
-            .string(var_119);
+            .string(var_119.as_str());
     }
     if let Some(var_120) = &input.default_task_list {
         let mut object_121 = object.key("defaultTaskList").start_object();
@@ -623,13 +629,13 @@ pub fn serialize_structure_crate_input_register_workflow_type_input(
         object_121.finish();
     }
     if let Some(var_122) = &input.default_task_priority {
-        object.key("defaultTaskPriority").string(var_122);
+        object.key("defaultTaskPriority").string(var_122.as_str());
     }
     if let Some(var_123) = &input.default_child_policy {
         object.key("defaultChildPolicy").string(var_123.as_str());
     }
     if let Some(var_124) = &input.default_lambda_role {
-        object.key("defaultLambdaRole").string(var_124);
+        object.key("defaultLambdaRole").string(var_124.as_str());
     }
     Ok(())
 }
@@ -639,13 +645,13 @@ pub fn serialize_structure_crate_input_request_cancel_workflow_execution_input(
     input: &crate::input::RequestCancelWorkflowExecutionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_125) = &input.domain {
-        object.key("domain").string(var_125);
+        object.key("domain").string(var_125.as_str());
     }
     if let Some(var_126) = &input.workflow_id {
-        object.key("workflowId").string(var_126);
+        object.key("workflowId").string(var_126.as_str());
     }
     if let Some(var_127) = &input.run_id {
-        object.key("runId").string(var_127);
+        object.key("runId").string(var_127.as_str());
     }
     Ok(())
 }
@@ -655,10 +661,10 @@ pub fn serialize_structure_crate_input_respond_activity_task_canceled_input(
     input: &crate::input::RespondActivityTaskCanceledInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_128) = &input.task_token {
-        object.key("taskToken").string(var_128);
+        object.key("taskToken").string(var_128.as_str());
     }
     if let Some(var_129) = &input.details {
-        object.key("details").string(var_129);
+        object.key("details").string(var_129.as_str());
     }
     Ok(())
 }
@@ -668,10 +674,10 @@ pub fn serialize_structure_crate_input_respond_activity_task_completed_input(
     input: &crate::input::RespondActivityTaskCompletedInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_130) = &input.task_token {
-        object.key("taskToken").string(var_130);
+        object.key("taskToken").string(var_130.as_str());
     }
     if let Some(var_131) = &input.result {
-        object.key("result").string(var_131);
+        object.key("result").string(var_131.as_str());
     }
     Ok(())
 }
@@ -681,13 +687,13 @@ pub fn serialize_structure_crate_input_respond_activity_task_failed_input(
     input: &crate::input::RespondActivityTaskFailedInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_132) = &input.task_token {
-        object.key("taskToken").string(var_132);
+        object.key("taskToken").string(var_132.as_str());
     }
     if let Some(var_133) = &input.reason {
-        object.key("reason").string(var_133);
+        object.key("reason").string(var_133.as_str());
     }
     if let Some(var_134) = &input.details {
-        object.key("details").string(var_134);
+        object.key("details").string(var_134.as_str());
     }
     Ok(())
 }
@@ -697,7 +703,7 @@ pub fn serialize_structure_crate_input_respond_decision_task_completed_input(
     input: &crate::input::RespondDecisionTaskCompletedInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_135) = &input.task_token {
-        object.key("taskToken").string(var_135);
+        object.key("taskToken").string(var_135.as_str());
     }
     if let Some(var_136) = &input.decisions {
         let mut array_137 = object.key("decisions").start_array();
@@ -714,7 +720,7 @@ pub fn serialize_structure_crate_input_respond_decision_task_completed_input(
         array_137.finish();
     }
     if let Some(var_140) = &input.execution_context {
-        object.key("executionContext").string(var_140);
+        object.key("executionContext").string(var_140.as_str());
     }
     Ok(())
 }
@@ -724,19 +730,19 @@ pub fn serialize_structure_crate_input_signal_workflow_execution_input(
     input: &crate::input::SignalWorkflowExecutionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_141) = &input.domain {
-        object.key("domain").string(var_141);
+        object.key("domain").string(var_141.as_str());
     }
     if let Some(var_142) = &input.workflow_id {
-        object.key("workflowId").string(var_142);
+        object.key("workflowId").string(var_142.as_str());
     }
     if let Some(var_143) = &input.run_id {
-        object.key("runId").string(var_143);
+        object.key("runId").string(var_143.as_str());
     }
     if let Some(var_144) = &input.signal_name {
-        object.key("signalName").string(var_144);
+        object.key("signalName").string(var_144.as_str());
     }
     if let Some(var_145) = &input.input {
-        object.key("input").string(var_145);
+        object.key("input").string(var_145.as_str());
     }
     Ok(())
 }
@@ -746,10 +752,10 @@ pub fn serialize_structure_crate_input_start_workflow_execution_input(
     input: &crate::input::StartWorkflowExecutionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_146) = &input.domain {
-        object.key("domain").string(var_146);
+        object.key("domain").string(var_146.as_str());
     }
     if let Some(var_147) = &input.workflow_id {
-        object.key("workflowId").string(var_147);
+        object.key("workflowId").string(var_147.as_str());
     }
     if let Some(var_148) = &input.workflow_type {
         let mut object_149 = object.key("workflowType").start_object();
@@ -762,31 +768,35 @@ pub fn serialize_structure_crate_input_start_workflow_execution_input(
         object_151.finish();
     }
     if let Some(var_152) = &input.task_priority {
-        object.key("taskPriority").string(var_152);
+        object.key("taskPriority").string(var_152.as_str());
     }
     if let Some(var_153) = &input.input {
-        object.key("input").string(var_153);
+        object.key("input").string(var_153.as_str());
     }
     if let Some(var_154) = &input.execution_start_to_close_timeout {
-        object.key("executionStartToCloseTimeout").string(var_154);
+        object
+            .key("executionStartToCloseTimeout")
+            .string(var_154.as_str());
     }
     if let Some(var_155) = &input.tag_list {
         let mut array_156 = object.key("tagList").start_array();
         for item_157 in var_155 {
             {
-                array_156.value().string(item_157);
+                array_156.value().string(item_157.as_str());
             }
         }
         array_156.finish();
     }
     if let Some(var_158) = &input.task_start_to_close_timeout {
-        object.key("taskStartToCloseTimeout").string(var_158);
+        object
+            .key("taskStartToCloseTimeout")
+            .string(var_158.as_str());
     }
     if let Some(var_159) = &input.child_policy {
         object.key("childPolicy").string(var_159.as_str());
     }
     if let Some(var_160) = &input.lambda_role {
-        object.key("lambdaRole").string(var_160);
+        object.key("lambdaRole").string(var_160.as_str());
     }
     Ok(())
 }
@@ -796,7 +806,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_161) = &input.resource_arn {
-        object.key("resourceArn").string(var_161);
+        object.key("resourceArn").string(var_161.as_str());
     }
     if let Some(var_162) = &input.tags {
         let mut array_163 = object.key("tags").start_array();
@@ -820,19 +830,19 @@ pub fn serialize_structure_crate_input_terminate_workflow_execution_input(
     input: &crate::input::TerminateWorkflowExecutionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_166) = &input.domain {
-        object.key("domain").string(var_166);
+        object.key("domain").string(var_166.as_str());
     }
     if let Some(var_167) = &input.workflow_id {
-        object.key("workflowId").string(var_167);
+        object.key("workflowId").string(var_167.as_str());
     }
     if let Some(var_168) = &input.run_id {
-        object.key("runId").string(var_168);
+        object.key("runId").string(var_168.as_str());
     }
     if let Some(var_169) = &input.reason {
-        object.key("reason").string(var_169);
+        object.key("reason").string(var_169.as_str());
     }
     if let Some(var_170) = &input.details {
-        object.key("details").string(var_170);
+        object.key("details").string(var_170.as_str());
     }
     if let Some(var_171) = &input.child_policy {
         object.key("childPolicy").string(var_171.as_str());
@@ -845,7 +855,7 @@ pub fn serialize_structure_crate_input_undeprecate_activity_type_input(
     input: &crate::input::UndeprecateActivityTypeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_172) = &input.domain {
-        object.key("domain").string(var_172);
+        object.key("domain").string(var_172.as_str());
     }
     if let Some(var_173) = &input.activity_type {
         let mut object_174 = object.key("activityType").start_object();
@@ -860,7 +870,7 @@ pub fn serialize_structure_crate_input_undeprecate_domain_input(
     input: &crate::input::UndeprecateDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_175) = &input.name {
-        object.key("name").string(var_175);
+        object.key("name").string(var_175.as_str());
     }
     Ok(())
 }
@@ -870,7 +880,7 @@ pub fn serialize_structure_crate_input_undeprecate_workflow_type_input(
     input: &crate::input::UndeprecateWorkflowTypeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_176) = &input.domain {
-        object.key("domain").string(var_176);
+        object.key("domain").string(var_176.as_str());
     }
     if let Some(var_177) = &input.workflow_type {
         let mut object_178 = object.key("workflowType").start_object();
@@ -885,13 +895,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_179) = &input.resource_arn {
-        object.key("resourceArn").string(var_179);
+        object.key("resourceArn").string(var_179.as_str());
     }
     if let Some(var_180) = &input.tag_keys {
         let mut array_181 = object.key("tagKeys").start_array();
         for item_182 in var_180 {
             {
-                array_181.value().string(item_182);
+                array_181.value().string(item_182.as_str());
             }
         }
         array_181.finish();
@@ -921,7 +931,7 @@ pub fn serialize_structure_crate_model_workflow_execution_filter(
     input: &crate::model::WorkflowExecutionFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_185) = &input.workflow_id {
-        object.key("workflowId").string(var_185);
+        object.key("workflowId").string(var_185.as_str());
     }
     Ok(())
 }
@@ -931,10 +941,10 @@ pub fn serialize_structure_crate_model_workflow_type_filter(
     input: &crate::model::WorkflowTypeFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_186) = &input.name {
-        object.key("name").string(var_186);
+        object.key("name").string(var_186.as_str());
     }
     if let Some(var_187) = &input.version {
-        object.key("version").string(var_187);
+        object.key("version").string(var_187.as_str());
     }
     Ok(())
 }
@@ -944,7 +954,7 @@ pub fn serialize_structure_crate_model_tag_filter(
     input: &crate::model::TagFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_188) = &input.tag {
-        object.key("tag").string(var_188);
+        object.key("tag").string(var_188.as_str());
     }
     Ok(())
 }
@@ -964,7 +974,7 @@ pub fn serialize_structure_crate_model_task_list(
     input: &crate::model::TaskList,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_190) = &input.name {
-        object.key("name").string(var_190);
+        object.key("name").string(var_190.as_str());
     }
     Ok(())
 }
@@ -974,10 +984,10 @@ pub fn serialize_structure_crate_model_activity_type(
     input: &crate::model::ActivityType,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_191) = &input.name {
-        object.key("name").string(var_191);
+        object.key("name").string(var_191.as_str());
     }
     if let Some(var_192) = &input.version {
-        object.key("version").string(var_192);
+        object.key("version").string(var_192.as_str());
     }
     Ok(())
 }
@@ -987,10 +997,10 @@ pub fn serialize_structure_crate_model_workflow_type(
     input: &crate::model::WorkflowType,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_193) = &input.name {
-        object.key("name").string(var_193);
+        object.key("name").string(var_193.as_str());
     }
     if let Some(var_194) = &input.version {
-        object.key("version").string(var_194);
+        object.key("version").string(var_194.as_str());
     }
     Ok(())
 }
@@ -1000,10 +1010,10 @@ pub fn serialize_structure_crate_model_workflow_execution(
     input: &crate::model::WorkflowExecution,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_195) = &input.workflow_id {
-        object.key("workflowId").string(var_195);
+        object.key("workflowId").string(var_195.as_str());
     }
     if let Some(var_196) = &input.run_id {
-        object.key("runId").string(var_196);
+        object.key("runId").string(var_196.as_str());
     }
     Ok(())
 }
@@ -1013,10 +1023,10 @@ pub fn serialize_structure_crate_model_resource_tag(
     input: &crate::model::ResourceTag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_197) = &input.key {
-        object.key("key").string(var_197);
+        object.key("key").string(var_197.as_str());
     }
     if let Some(var_198) = &input.value {
-        object.key("value").string(var_198);
+        object.key("value").string(var_198.as_str());
     }
     Ok(())
 }
@@ -1135,16 +1145,18 @@ pub fn serialize_structure_crate_model_schedule_activity_task_decision_attribute
         object_227.finish();
     }
     if let Some(var_228) = &input.activity_id {
-        object.key("activityId").string(var_228);
+        object.key("activityId").string(var_228.as_str());
     }
     if let Some(var_229) = &input.control {
-        object.key("control").string(var_229);
+        object.key("control").string(var_229.as_str());
     }
     if let Some(var_230) = &input.input {
-        object.key("input").string(var_230);
+        object.key("input").string(var_230.as_str());
     }
     if let Some(var_231) = &input.schedule_to_close_timeout {
-        object.key("scheduleToCloseTimeout").string(var_231);
+        object
+            .key("scheduleToCloseTimeout")
+            .string(var_231.as_str());
     }
     if let Some(var_232) = &input.task_list {
         let mut object_233 = object.key("taskList").start_object();
@@ -1152,16 +1164,18 @@ pub fn serialize_structure_crate_model_schedule_activity_task_decision_attribute
         object_233.finish();
     }
     if let Some(var_234) = &input.task_priority {
-        object.key("taskPriority").string(var_234);
+        object.key("taskPriority").string(var_234.as_str());
     }
     if let Some(var_235) = &input.schedule_to_start_timeout {
-        object.key("scheduleToStartTimeout").string(var_235);
+        object
+            .key("scheduleToStartTimeout")
+            .string(var_235.as_str());
     }
     if let Some(var_236) = &input.start_to_close_timeout {
-        object.key("startToCloseTimeout").string(var_236);
+        object.key("startToCloseTimeout").string(var_236.as_str());
     }
     if let Some(var_237) = &input.heartbeat_timeout {
-        object.key("heartbeatTimeout").string(var_237);
+        object.key("heartbeatTimeout").string(var_237.as_str());
     }
     Ok(())
 }
@@ -1171,7 +1185,7 @@ pub fn serialize_structure_crate_model_request_cancel_activity_task_decision_att
     input: &crate::model::RequestCancelActivityTaskDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_238) = &input.activity_id {
-        object.key("activityId").string(var_238);
+        object.key("activityId").string(var_238.as_str());
     }
     Ok(())
 }
@@ -1181,7 +1195,7 @@ pub fn serialize_structure_crate_model_complete_workflow_execution_decision_attr
     input: &crate::model::CompleteWorkflowExecutionDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_239) = &input.result {
-        object.key("result").string(var_239);
+        object.key("result").string(var_239.as_str());
     }
     Ok(())
 }
@@ -1191,10 +1205,10 @@ pub fn serialize_structure_crate_model_fail_workflow_execution_decision_attribut
     input: &crate::model::FailWorkflowExecutionDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_240) = &input.reason {
-        object.key("reason").string(var_240);
+        object.key("reason").string(var_240.as_str());
     }
     if let Some(var_241) = &input.details {
-        object.key("details").string(var_241);
+        object.key("details").string(var_241.as_str());
     }
     Ok(())
 }
@@ -1204,7 +1218,7 @@ pub fn serialize_structure_crate_model_cancel_workflow_execution_decision_attrib
     input: &crate::model::CancelWorkflowExecutionDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_242) = &input.details {
-        object.key("details").string(var_242);
+        object.key("details").string(var_242.as_str());
     }
     Ok(())
 }
@@ -1214,10 +1228,12 @@ pub fn serialize_structure_crate_model_continue_as_new_workflow_execution_decisi
     input: &crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_243) = &input.input {
-        object.key("input").string(var_243);
+        object.key("input").string(var_243.as_str());
     }
     if let Some(var_244) = &input.execution_start_to_close_timeout {
-        object.key("executionStartToCloseTimeout").string(var_244);
+        object
+            .key("executionStartToCloseTimeout")
+            .string(var_244.as_str());
     }
     if let Some(var_245) = &input.task_list {
         let mut object_246 = object.key("taskList").start_object();
@@ -1225,10 +1241,12 @@ pub fn serialize_structure_crate_model_continue_as_new_workflow_execution_decisi
         object_246.finish();
     }
     if let Some(var_247) = &input.task_priority {
-        object.key("taskPriority").string(var_247);
+        object.key("taskPriority").string(var_247.as_str());
     }
     if let Some(var_248) = &input.task_start_to_close_timeout {
-        object.key("taskStartToCloseTimeout").string(var_248);
+        object
+            .key("taskStartToCloseTimeout")
+            .string(var_248.as_str());
     }
     if let Some(var_249) = &input.child_policy {
         object.key("childPolicy").string(var_249.as_str());
@@ -1237,16 +1255,16 @@ pub fn serialize_structure_crate_model_continue_as_new_workflow_execution_decisi
         let mut array_251 = object.key("tagList").start_array();
         for item_252 in var_250 {
             {
-                array_251.value().string(item_252);
+                array_251.value().string(item_252.as_str());
             }
         }
         array_251.finish();
     }
     if let Some(var_253) = &input.workflow_type_version {
-        object.key("workflowTypeVersion").string(var_253);
+        object.key("workflowTypeVersion").string(var_253.as_str());
     }
     if let Some(var_254) = &input.lambda_role {
-        object.key("lambdaRole").string(var_254);
+        object.key("lambdaRole").string(var_254.as_str());
     }
     Ok(())
 }
@@ -1256,10 +1274,10 @@ pub fn serialize_structure_crate_model_record_marker_decision_attributes(
     input: &crate::model::RecordMarkerDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_255) = &input.marker_name {
-        object.key("markerName").string(var_255);
+        object.key("markerName").string(var_255.as_str());
     }
     if let Some(var_256) = &input.details {
-        object.key("details").string(var_256);
+        object.key("details").string(var_256.as_str());
     }
     Ok(())
 }
@@ -1269,13 +1287,13 @@ pub fn serialize_structure_crate_model_start_timer_decision_attributes(
     input: &crate::model::StartTimerDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_257) = &input.timer_id {
-        object.key("timerId").string(var_257);
+        object.key("timerId").string(var_257.as_str());
     }
     if let Some(var_258) = &input.control {
-        object.key("control").string(var_258);
+        object.key("control").string(var_258.as_str());
     }
     if let Some(var_259) = &input.start_to_fire_timeout {
-        object.key("startToFireTimeout").string(var_259);
+        object.key("startToFireTimeout").string(var_259.as_str());
     }
     Ok(())
 }
@@ -1285,7 +1303,7 @@ pub fn serialize_structure_crate_model_cancel_timer_decision_attributes(
     input: &crate::model::CancelTimerDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_260) = &input.timer_id {
-        object.key("timerId").string(var_260);
+        object.key("timerId").string(var_260.as_str());
     }
     Ok(())
 }
@@ -1295,19 +1313,19 @@ pub fn serialize_structure_crate_model_signal_external_workflow_execution_decisi
     input: &crate::model::SignalExternalWorkflowExecutionDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_261) = &input.workflow_id {
-        object.key("workflowId").string(var_261);
+        object.key("workflowId").string(var_261.as_str());
     }
     if let Some(var_262) = &input.run_id {
-        object.key("runId").string(var_262);
+        object.key("runId").string(var_262.as_str());
     }
     if let Some(var_263) = &input.signal_name {
-        object.key("signalName").string(var_263);
+        object.key("signalName").string(var_263.as_str());
     }
     if let Some(var_264) = &input.input {
-        object.key("input").string(var_264);
+        object.key("input").string(var_264.as_str());
     }
     if let Some(var_265) = &input.control {
-        object.key("control").string(var_265);
+        object.key("control").string(var_265.as_str());
     }
     Ok(())
 }
@@ -1317,13 +1335,13 @@ pub fn serialize_structure_crate_model_request_cancel_external_workflow_executio
     input: &crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_266) = &input.workflow_id {
-        object.key("workflowId").string(var_266);
+        object.key("workflowId").string(var_266.as_str());
     }
     if let Some(var_267) = &input.run_id {
-        object.key("runId").string(var_267);
+        object.key("runId").string(var_267.as_str());
     }
     if let Some(var_268) = &input.control {
-        object.key("control").string(var_268);
+        object.key("control").string(var_268.as_str());
     }
     Ok(())
 }
@@ -1338,16 +1356,18 @@ pub fn serialize_structure_crate_model_start_child_workflow_execution_decision_a
         object_270.finish();
     }
     if let Some(var_271) = &input.workflow_id {
-        object.key("workflowId").string(var_271);
+        object.key("workflowId").string(var_271.as_str());
     }
     if let Some(var_272) = &input.control {
-        object.key("control").string(var_272);
+        object.key("control").string(var_272.as_str());
     }
     if let Some(var_273) = &input.input {
-        object.key("input").string(var_273);
+        object.key("input").string(var_273.as_str());
     }
     if let Some(var_274) = &input.execution_start_to_close_timeout {
-        object.key("executionStartToCloseTimeout").string(var_274);
+        object
+            .key("executionStartToCloseTimeout")
+            .string(var_274.as_str());
     }
     if let Some(var_275) = &input.task_list {
         let mut object_276 = object.key("taskList").start_object();
@@ -1355,10 +1375,12 @@ pub fn serialize_structure_crate_model_start_child_workflow_execution_decision_a
         object_276.finish();
     }
     if let Some(var_277) = &input.task_priority {
-        object.key("taskPriority").string(var_277);
+        object.key("taskPriority").string(var_277.as_str());
     }
     if let Some(var_278) = &input.task_start_to_close_timeout {
-        object.key("taskStartToCloseTimeout").string(var_278);
+        object
+            .key("taskStartToCloseTimeout")
+            .string(var_278.as_str());
     }
     if let Some(var_279) = &input.child_policy {
         object.key("childPolicy").string(var_279.as_str());
@@ -1367,13 +1389,13 @@ pub fn serialize_structure_crate_model_start_child_workflow_execution_decision_a
         let mut array_281 = object.key("tagList").start_array();
         for item_282 in var_280 {
             {
-                array_281.value().string(item_282);
+                array_281.value().string(item_282.as_str());
             }
         }
         array_281.finish();
     }
     if let Some(var_283) = &input.lambda_role {
-        object.key("lambdaRole").string(var_283);
+        object.key("lambdaRole").string(var_283.as_str());
     }
     Ok(())
 }
@@ -1383,19 +1405,19 @@ pub fn serialize_structure_crate_model_schedule_lambda_function_decision_attribu
     input: &crate::model::ScheduleLambdaFunctionDecisionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_284) = &input.id {
-        object.key("id").string(var_284);
+        object.key("id").string(var_284.as_str());
     }
     if let Some(var_285) = &input.name {
-        object.key("name").string(var_285);
+        object.key("name").string(var_285.as_str());
     }
     if let Some(var_286) = &input.control {
-        object.key("control").string(var_286);
+        object.key("control").string(var_286.as_str());
     }
     if let Some(var_287) = &input.input {
-        object.key("input").string(var_287);
+        object.key("input").string(var_287.as_str());
     }
     if let Some(var_288) = &input.start_to_close_timeout {
-        object.key("startToCloseTimeout").string(var_288);
+        object.key("startToCloseTimeout").string(var_288.as_str());
     }
     Ok(())
 }

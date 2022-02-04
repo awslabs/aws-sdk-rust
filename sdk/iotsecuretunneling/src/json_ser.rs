@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_close_tunnel_input(
     input: &crate::input::CloseTunnelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.tunnel_id {
-        object.key("tunnelId").string(var_1);
+        object.key("tunnelId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.delete {
         object.key("delete").boolean(*var_2);
@@ -17,7 +17,7 @@ pub fn serialize_structure_crate_input_describe_tunnel_input(
     input: &crate::input::DescribeTunnelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.tunnel_id {
-        object.key("tunnelId").string(var_3);
+        object.key("tunnelId").string(var_3.as_str());
     }
     Ok(())
 }
@@ -27,7 +27,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_4) = &input.resource_arn {
-        object.key("resourceArn").string(var_4);
+        object.key("resourceArn").string(var_4.as_str());
     }
     Ok(())
 }
@@ -37,7 +37,7 @@ pub fn serialize_structure_crate_input_list_tunnels_input(
     input: &crate::input::ListTunnelsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.thing_name {
-        object.key("thingName").string(var_5);
+        object.key("thingName").string(var_5.as_str());
     }
     if let Some(var_6) = &input.max_results {
         object.key("maxResults").number(
@@ -46,7 +46,7 @@ pub fn serialize_structure_crate_input_list_tunnels_input(
         );
     }
     if let Some(var_7) = &input.next_token {
-        object.key("nextToken").string(var_7);
+        object.key("nextToken").string(var_7.as_str());
     }
     Ok(())
 }
@@ -56,7 +56,7 @@ pub fn serialize_structure_crate_input_open_tunnel_input(
     input: &crate::input::OpenTunnelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.description {
-        object.key("description").string(var_8);
+        object.key("description").string(var_8.as_str());
     }
     if let Some(var_9) = &input.tags {
         let mut array_10 = object.key("tags").start_array();
@@ -90,7 +90,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.resource_arn {
-        object.key("resourceArn").string(var_17);
+        object.key("resourceArn").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
         let mut array_19 = object.key("tags").start_array();
@@ -111,13 +111,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.resource_arn {
-        object.key("resourceArn").string(var_22);
+        object.key("resourceArn").string(var_22.as_str());
     }
     if let Some(var_23) = &input.tag_keys {
         let mut array_24 = object.key("tagKeys").start_array();
         for item_25 in var_23 {
             {
-                array_24.value().string(item_25);
+                array_24.value().string(item_25.as_str());
             }
         }
         array_24.finish();
@@ -130,10 +130,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.key {
-        object.key("key").string(var_26);
+        object.key("key").string(var_26.as_str());
     }
     if let Some(var_27) = &input.value {
-        object.key("value").string(var_27);
+        object.key("value").string(var_27.as_str());
     }
     Ok(())
 }
@@ -143,13 +143,13 @@ pub fn serialize_structure_crate_model_destination_config(
     input: &crate::model::DestinationConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.thing_name {
-        object.key("thingName").string(var_28);
+        object.key("thingName").string(var_28.as_str());
     }
     if let Some(var_29) = &input.services {
         let mut array_30 = object.key("services").start_array();
         for item_31 in var_29 {
             {
-                array_30.value().string(item_31);
+                array_30.value().string(item_31.as_str());
             }
         }
         array_30.finish();

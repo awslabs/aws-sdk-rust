@@ -18,7 +18,7 @@ pub fn serialize_structure_crate_input_batch_meter_usage_input(
         array_2.finish();
     }
     if let Some(var_5) = &input.product_code {
-        object.key("ProductCode").string(var_5);
+        object.key("ProductCode").string(var_5.as_str());
     }
     Ok(())
 }
@@ -28,7 +28,7 @@ pub fn serialize_structure_crate_input_meter_usage_input(
     input: &crate::input::MeterUsageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.product_code {
-        object.key("ProductCode").string(var_6);
+        object.key("ProductCode").string(var_6.as_str());
     }
     if let Some(var_7) = &input.timestamp {
         object
@@ -36,7 +36,7 @@ pub fn serialize_structure_crate_input_meter_usage_input(
             .date_time(var_7, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_8) = &input.usage_dimension {
-        object.key("UsageDimension").string(var_8);
+        object.key("UsageDimension").string(var_8.as_str());
     }
     if let Some(var_9) = &input.usage_quantity {
         object.key("UsageQuantity").number(
@@ -69,7 +69,7 @@ pub fn serialize_structure_crate_input_register_usage_input(
     input: &crate::input::RegisterUsageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.product_code {
-        object.key("ProductCode").string(var_15);
+        object.key("ProductCode").string(var_15.as_str());
     }
     if let Some(var_16) = &input.public_key_version {
         object.key("PublicKeyVersion").number(
@@ -78,7 +78,7 @@ pub fn serialize_structure_crate_input_register_usage_input(
         );
     }
     if let Some(var_17) = &input.nonce {
-        object.key("Nonce").string(var_17);
+        object.key("Nonce").string(var_17.as_str());
     }
     Ok(())
 }
@@ -88,7 +88,7 @@ pub fn serialize_structure_crate_input_resolve_customer_input(
     input: &crate::input::ResolveCustomerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.registration_token {
-        object.key("RegistrationToken").string(var_18);
+        object.key("RegistrationToken").string(var_18.as_str());
     }
     Ok(())
 }
@@ -103,10 +103,10 @@ pub fn serialize_structure_crate_model_usage_record(
             .date_time(var_19, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_20) = &input.customer_identifier {
-        object.key("CustomerIdentifier").string(var_20);
+        object.key("CustomerIdentifier").string(var_20.as_str());
     }
     if let Some(var_21) = &input.dimension {
-        object.key("Dimension").string(var_21);
+        object.key("Dimension").string(var_21.as_str());
     }
     if let Some(var_22) = &input.quantity {
         object.key("Quantity").number(
@@ -160,10 +160,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.key {
-        object.key("Key").string(var_32);
+        object.key("Key").string(var_32.as_str());
     }
     if let Some(var_33) = &input.value {
-        object.key("Value").string(var_33);
+        object.key("Value").string(var_33.as_str());
     }
     Ok(())
 }

@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_add_application_cloud_watch_logging_optio
     input: &crate::input::AddApplicationCloudWatchLoggingOptionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.application_name {
-        object.key("ApplicationName").string(var_1);
+        object.key("ApplicationName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_input_add_application_cloud_watch_logging_optio
         object_4.finish();
     }
     if let Some(var_5) = &input.conditional_token {
-        object.key("ConditionalToken").string(var_5);
+        object.key("ConditionalToken").string(var_5.as_str());
     }
     Ok(())
 }
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_add_application_input_input(
     input: &crate::input::AddApplicationInputInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.application_name {
-        object.key("ApplicationName").string(var_6);
+        object.key("ApplicationName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_input_add_application_input_processing_configur
     input: &crate::input::AddApplicationInputProcessingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.application_name {
-        object.key("ApplicationName").string(var_10);
+        object.key("ApplicationName").string(var_10.as_str());
     }
     if let Some(var_11) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -61,7 +61,7 @@ pub fn serialize_structure_crate_input_add_application_input_processing_configur
         );
     }
     if let Some(var_12) = &input.input_id {
-        object.key("InputId").string(var_12);
+        object.key("InputId").string(var_12.as_str());
     }
     if let Some(var_13) = &input.input_processing_configuration {
         let mut object_14 = object.key("InputProcessingConfiguration").start_object();
@@ -79,7 +79,7 @@ pub fn serialize_structure_crate_input_add_application_output_input(
     input: &crate::input::AddApplicationOutputInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.application_name {
-        object.key("ApplicationName").string(var_15);
+        object.key("ApplicationName").string(var_15.as_str());
     }
     if let Some(var_16) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -100,7 +100,7 @@ pub fn serialize_structure_crate_input_add_application_reference_data_source_inp
     input: &crate::input::AddApplicationReferenceDataSourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.application_name {
-        object.key("ApplicationName").string(var_19);
+        object.key("ApplicationName").string(var_19.as_str());
     }
     if let Some(var_20) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -124,7 +124,7 @@ pub fn serialize_structure_crate_input_add_application_vpc_configuration_input(
     input: &crate::input::AddApplicationVpcConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.application_name {
-        object.key("ApplicationName").string(var_23);
+        object.key("ApplicationName").string(var_23.as_str());
     }
     if let Some(var_24) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -138,7 +138,7 @@ pub fn serialize_structure_crate_input_add_application_vpc_configuration_input(
         object_26.finish();
     }
     if let Some(var_27) = &input.conditional_token {
-        object.key("ConditionalToken").string(var_27);
+        object.key("ConditionalToken").string(var_27.as_str());
     }
     Ok(())
 }
@@ -148,16 +148,16 @@ pub fn serialize_structure_crate_input_create_application_input(
     input: &crate::input::CreateApplicationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.application_name {
-        object.key("ApplicationName").string(var_28);
+        object.key("ApplicationName").string(var_28.as_str());
     }
     if let Some(var_29) = &input.application_description {
-        object.key("ApplicationDescription").string(var_29);
+        object.key("ApplicationDescription").string(var_29.as_str());
     }
     if let Some(var_30) = &input.runtime_environment {
         object.key("RuntimeEnvironment").string(var_30.as_str());
     }
     if let Some(var_31) = &input.service_execution_role {
-        object.key("ServiceExecutionRole").string(var_31);
+        object.key("ServiceExecutionRole").string(var_31.as_str());
     }
     if let Some(var_32) = &input.application_configuration {
         let mut object_33 = object.key("ApplicationConfiguration").start_object();
@@ -203,7 +203,7 @@ pub fn serialize_structure_crate_input_create_application_presigned_url_input(
     input: &crate::input::CreateApplicationPresignedUrlInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.application_name {
-        object.key("ApplicationName").string(var_43);
+        object.key("ApplicationName").string(var_43.as_str());
     }
     if let Some(var_44) = &input.url_type {
         object.key("UrlType").string(var_44.as_str());
@@ -222,10 +222,10 @@ pub fn serialize_structure_crate_input_create_application_snapshot_input(
     input: &crate::input::CreateApplicationSnapshotInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.application_name {
-        object.key("ApplicationName").string(var_46);
+        object.key("ApplicationName").string(var_46.as_str());
     }
     if let Some(var_47) = &input.snapshot_name {
-        object.key("SnapshotName").string(var_47);
+        object.key("SnapshotName").string(var_47.as_str());
     }
     Ok(())
 }
@@ -235,7 +235,7 @@ pub fn serialize_structure_crate_input_delete_application_input(
     input: &crate::input::DeleteApplicationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.application_name {
-        object.key("ApplicationName").string(var_48);
+        object.key("ApplicationName").string(var_48.as_str());
     }
     if let Some(var_49) = &input.create_timestamp {
         object
@@ -250,7 +250,7 @@ pub fn serialize_structure_crate_input_delete_application_cloud_watch_logging_op
     input: &crate::input::DeleteApplicationCloudWatchLoggingOptionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.application_name {
-        object.key("ApplicationName").string(var_50);
+        object.key("ApplicationName").string(var_50.as_str());
     }
     if let Some(var_51) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -259,10 +259,12 @@ pub fn serialize_structure_crate_input_delete_application_cloud_watch_logging_op
         );
     }
     if let Some(var_52) = &input.cloud_watch_logging_option_id {
-        object.key("CloudWatchLoggingOptionId").string(var_52);
+        object
+            .key("CloudWatchLoggingOptionId")
+            .string(var_52.as_str());
     }
     if let Some(var_53) = &input.conditional_token {
-        object.key("ConditionalToken").string(var_53);
+        object.key("ConditionalToken").string(var_53.as_str());
     }
     Ok(())
 }
@@ -272,7 +274,7 @@ pub fn serialize_structure_crate_input_delete_application_input_processing_confi
     input: &crate::input::DeleteApplicationInputProcessingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.application_name {
-        object.key("ApplicationName").string(var_54);
+        object.key("ApplicationName").string(var_54.as_str());
     }
     if let Some(var_55) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -281,7 +283,7 @@ pub fn serialize_structure_crate_input_delete_application_input_processing_confi
         );
     }
     if let Some(var_56) = &input.input_id {
-        object.key("InputId").string(var_56);
+        object.key("InputId").string(var_56.as_str());
     }
     Ok(())
 }
@@ -291,7 +293,7 @@ pub fn serialize_structure_crate_input_delete_application_output_input(
     input: &crate::input::DeleteApplicationOutputInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_57) = &input.application_name {
-        object.key("ApplicationName").string(var_57);
+        object.key("ApplicationName").string(var_57.as_str());
     }
     if let Some(var_58) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -300,7 +302,7 @@ pub fn serialize_structure_crate_input_delete_application_output_input(
         );
     }
     if let Some(var_59) = &input.output_id {
-        object.key("OutputId").string(var_59);
+        object.key("OutputId").string(var_59.as_str());
     }
     Ok(())
 }
@@ -310,7 +312,7 @@ pub fn serialize_structure_crate_input_delete_application_reference_data_source_
     input: &crate::input::DeleteApplicationReferenceDataSourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_60) = &input.application_name {
-        object.key("ApplicationName").string(var_60);
+        object.key("ApplicationName").string(var_60.as_str());
     }
     if let Some(var_61) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -319,7 +321,7 @@ pub fn serialize_structure_crate_input_delete_application_reference_data_source_
         );
     }
     if let Some(var_62) = &input.reference_id {
-        object.key("ReferenceId").string(var_62);
+        object.key("ReferenceId").string(var_62.as_str());
     }
     Ok(())
 }
@@ -329,10 +331,10 @@ pub fn serialize_structure_crate_input_delete_application_snapshot_input(
     input: &crate::input::DeleteApplicationSnapshotInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.application_name {
-        object.key("ApplicationName").string(var_63);
+        object.key("ApplicationName").string(var_63.as_str());
     }
     if let Some(var_64) = &input.snapshot_name {
-        object.key("SnapshotName").string(var_64);
+        object.key("SnapshotName").string(var_64.as_str());
     }
     if let Some(var_65) = &input.snapshot_creation_timestamp {
         object
@@ -347,7 +349,7 @@ pub fn serialize_structure_crate_input_delete_application_vpc_configuration_inpu
     input: &crate::input::DeleteApplicationVpcConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_66) = &input.application_name {
-        object.key("ApplicationName").string(var_66);
+        object.key("ApplicationName").string(var_66.as_str());
     }
     if let Some(var_67) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -356,10 +358,10 @@ pub fn serialize_structure_crate_input_delete_application_vpc_configuration_inpu
         );
     }
     if let Some(var_68) = &input.vpc_configuration_id {
-        object.key("VpcConfigurationId").string(var_68);
+        object.key("VpcConfigurationId").string(var_68.as_str());
     }
     if let Some(var_69) = &input.conditional_token {
-        object.key("ConditionalToken").string(var_69);
+        object.key("ConditionalToken").string(var_69.as_str());
     }
     Ok(())
 }
@@ -369,7 +371,7 @@ pub fn serialize_structure_crate_input_describe_application_input(
     input: &crate::input::DescribeApplicationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.application_name {
-        object.key("ApplicationName").string(var_70);
+        object.key("ApplicationName").string(var_70.as_str());
     }
     if let Some(var_71) = &input.include_additional_details {
         object.key("IncludeAdditionalDetails").boolean(*var_71);
@@ -382,10 +384,10 @@ pub fn serialize_structure_crate_input_describe_application_snapshot_input(
     input: &crate::input::DescribeApplicationSnapshotInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_72) = &input.application_name {
-        object.key("ApplicationName").string(var_72);
+        object.key("ApplicationName").string(var_72.as_str());
     }
     if let Some(var_73) = &input.snapshot_name {
-        object.key("SnapshotName").string(var_73);
+        object.key("SnapshotName").string(var_73.as_str());
     }
     Ok(())
 }
@@ -395,7 +397,7 @@ pub fn serialize_structure_crate_input_describe_application_version_input(
     input: &crate::input::DescribeApplicationVersionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_74) = &input.application_name {
-        object.key("ApplicationName").string(var_74);
+        object.key("ApplicationName").string(var_74.as_str());
     }
     if let Some(var_75) = &input.application_version_id {
         object.key("ApplicationVersionId").number(
@@ -411,10 +413,10 @@ pub fn serialize_structure_crate_input_discover_input_schema_input(
     input: &crate::input::DiscoverInputSchemaInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_76) = &input.resource_arn {
-        object.key("ResourceARN").string(var_76);
+        object.key("ResourceARN").string(var_76.as_str());
     }
     if let Some(var_77) = &input.service_execution_role {
-        object.key("ServiceExecutionRole").string(var_77);
+        object.key("ServiceExecutionRole").string(var_77.as_str());
     }
     if let Some(var_78) = &input.input_starting_position_configuration {
         let mut object_79 = object
@@ -453,7 +455,7 @@ pub fn serialize_structure_crate_input_list_applications_input(
         );
     }
     if let Some(var_85) = &input.next_token {
-        object.key("NextToken").string(var_85);
+        object.key("NextToken").string(var_85.as_str());
     }
     Ok(())
 }
@@ -463,7 +465,7 @@ pub fn serialize_structure_crate_input_list_application_snapshots_input(
     input: &crate::input::ListApplicationSnapshotsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_86) = &input.application_name {
-        object.key("ApplicationName").string(var_86);
+        object.key("ApplicationName").string(var_86.as_str());
     }
     if let Some(var_87) = &input.limit {
         object.key("Limit").number(
@@ -472,7 +474,7 @@ pub fn serialize_structure_crate_input_list_application_snapshots_input(
         );
     }
     if let Some(var_88) = &input.next_token {
-        object.key("NextToken").string(var_88);
+        object.key("NextToken").string(var_88.as_str());
     }
     Ok(())
 }
@@ -482,7 +484,7 @@ pub fn serialize_structure_crate_input_list_application_versions_input(
     input: &crate::input::ListApplicationVersionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_89) = &input.application_name {
-        object.key("ApplicationName").string(var_89);
+        object.key("ApplicationName").string(var_89.as_str());
     }
     if let Some(var_90) = &input.limit {
         object.key("Limit").number(
@@ -491,7 +493,7 @@ pub fn serialize_structure_crate_input_list_application_versions_input(
         );
     }
     if let Some(var_91) = &input.next_token {
-        object.key("NextToken").string(var_91);
+        object.key("NextToken").string(var_91.as_str());
     }
     Ok(())
 }
@@ -501,7 +503,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_92) = &input.resource_arn {
-        object.key("ResourceARN").string(var_92);
+        object.key("ResourceARN").string(var_92.as_str());
     }
     Ok(())
 }
@@ -511,7 +513,7 @@ pub fn serialize_structure_crate_input_rollback_application_input(
     input: &crate::input::RollbackApplicationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_93) = &input.application_name {
-        object.key("ApplicationName").string(var_93);
+        object.key("ApplicationName").string(var_93.as_str());
     }
     if let Some(var_94) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -527,7 +529,7 @@ pub fn serialize_structure_crate_input_start_application_input(
     input: &crate::input::StartApplicationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_95) = &input.application_name {
-        object.key("ApplicationName").string(var_95);
+        object.key("ApplicationName").string(var_95.as_str());
     }
     if let Some(var_96) = &input.run_configuration {
         let mut object_97 = object.key("RunConfiguration").start_object();
@@ -542,7 +544,7 @@ pub fn serialize_structure_crate_input_stop_application_input(
     input: &crate::input::StopApplicationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_98) = &input.application_name {
-        object.key("ApplicationName").string(var_98);
+        object.key("ApplicationName").string(var_98.as_str());
     }
     if let Some(var_99) = &input.force {
         object.key("Force").boolean(*var_99);
@@ -555,7 +557,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_100) = &input.resource_arn {
-        object.key("ResourceARN").string(var_100);
+        object.key("ResourceARN").string(var_100.as_str());
     }
     if let Some(var_101) = &input.tags {
         let mut array_102 = object.key("Tags").start_array();
@@ -576,13 +578,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_105) = &input.resource_arn {
-        object.key("ResourceARN").string(var_105);
+        object.key("ResourceARN").string(var_105.as_str());
     }
     if let Some(var_106) = &input.tag_keys {
         let mut array_107 = object.key("TagKeys").start_array();
         for item_108 in var_106 {
             {
-                array_107.value().string(item_108);
+                array_107.value().string(item_108.as_str());
             }
         }
         array_107.finish();
@@ -595,7 +597,7 @@ pub fn serialize_structure_crate_input_update_application_input(
     input: &crate::input::UpdateApplicationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_109) = &input.application_name {
-        object.key("ApplicationName").string(var_109);
+        object.key("ApplicationName").string(var_109.as_str());
     }
     if let Some(var_110) = &input.current_application_version_id {
         object.key("CurrentApplicationVersionId").number(
@@ -612,7 +614,9 @@ pub fn serialize_structure_crate_input_update_application_input(
         object_112.finish();
     }
     if let Some(var_113) = &input.service_execution_role_update {
-        object.key("ServiceExecutionRoleUpdate").string(var_113);
+        object
+            .key("ServiceExecutionRoleUpdate")
+            .string(var_113.as_str());
     }
     if let Some(var_114) = &input.run_configuration_update {
         let mut object_115 = object.key("RunConfigurationUpdate").start_object();
@@ -637,7 +641,7 @@ pub fn serialize_structure_crate_input_update_application_input(
         array_117.finish();
     }
     if let Some(var_120) = &input.conditional_token {
-        object.key("ConditionalToken").string(var_120);
+        object.key("ConditionalToken").string(var_120.as_str());
     }
     Ok(())
 }
@@ -647,7 +651,7 @@ pub fn serialize_structure_crate_input_update_application_maintenance_configurat
     input: &crate::input::UpdateApplicationMaintenanceConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_121) = &input.application_name {
-        object.key("ApplicationName").string(var_121);
+        object.key("ApplicationName").string(var_121.as_str());
     }
     if let Some(var_122) = &input.application_maintenance_configuration_update {
         let mut object_123 = object
@@ -664,7 +668,7 @@ pub fn serialize_structure_crate_model_cloud_watch_logging_option(
     input: &crate::model::CloudWatchLoggingOption,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_124) = &input.log_stream_arn {
-        object.key("LogStreamARN").string(var_124);
+        object.key("LogStreamARN").string(var_124.as_str());
     }
     Ok(())
 }
@@ -674,7 +678,7 @@ pub fn serialize_structure_crate_model_input(
     input: &crate::model::Input,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_125) = &input.name_prefix {
-        object.key("NamePrefix").string(var_125);
+        object.key("NamePrefix").string(var_125.as_str());
     }
     if let Some(var_126) = &input.input_processing_configuration {
         let mut object_127 = object.key("InputProcessingConfiguration").start_object();
@@ -736,7 +740,7 @@ pub fn serialize_structure_crate_model_output(
     input: &crate::model::Output,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_138) = &input.name {
-        object.key("Name").string(var_138);
+        object.key("Name").string(var_138.as_str());
     }
     if let Some(var_139) = &input.kinesis_streams_output {
         let mut object_140 = object.key("KinesisStreamsOutput").start_object();
@@ -775,7 +779,7 @@ pub fn serialize_structure_crate_model_reference_data_source(
     input: &crate::model::ReferenceDataSource,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_147) = &input.table_name {
-        object.key("TableName").string(var_147);
+        object.key("TableName").string(var_147.as_str());
     }
     if let Some(var_148) = &input.s3_reference_data_source {
         let mut object_149 = object.key("S3ReferenceDataSource").start_object();
@@ -801,7 +805,7 @@ pub fn serialize_structure_crate_model_vpc_configuration(
         let mut array_153 = object.key("SubnetIds").start_array();
         for item_154 in var_152 {
             {
-                array_153.value().string(item_154);
+                array_153.value().string(item_154.as_str());
             }
         }
         array_153.finish();
@@ -810,7 +814,7 @@ pub fn serialize_structure_crate_model_vpc_configuration(
         let mut array_156 = object.key("SecurityGroupIds").start_array();
         for item_157 in var_155 {
             {
-                array_156.value().string(item_157);
+                array_156.value().string(item_157.as_str());
             }
         }
         array_156.finish();
@@ -896,10 +900,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_174) = &input.key {
-        object.key("Key").string(var_174);
+        object.key("Key").string(var_174.as_str());
     }
     if let Some(var_175) = &input.value {
-        object.key("Value").string(var_175);
+        object.key("Value").string(var_175.as_str());
     }
     Ok(())
 }
@@ -919,10 +923,10 @@ pub fn serialize_structure_crate_model_s3_configuration(
     input: &crate::model::S3Configuration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_177) = &input.bucket_arn {
-        object.key("BucketARN").string(var_177);
+        object.key("BucketARN").string(var_177.as_str());
     }
     if let Some(var_178) = &input.file_key {
-        object.key("FileKey").string(var_178);
+        object.key("FileKey").string(var_178.as_str());
     }
     Ok(())
 }
@@ -1071,10 +1075,12 @@ pub fn serialize_structure_crate_model_cloud_watch_logging_option_update(
     input: &crate::model::CloudWatchLoggingOptionUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_207) = &input.cloud_watch_logging_option_id {
-        object.key("CloudWatchLoggingOptionId").string(var_207);
+        object
+            .key("CloudWatchLoggingOptionId")
+            .string(var_207.as_str());
     }
     if let Some(var_208) = &input.log_stream_arn_update {
-        object.key("LogStreamARNUpdate").string(var_208);
+        object.key("LogStreamARNUpdate").string(var_208.as_str());
     }
     Ok(())
 }
@@ -1086,7 +1092,7 @@ pub fn serialize_structure_crate_model_application_maintenance_configuration_upd
     if let Some(var_209) = &input.application_maintenance_window_start_time_update {
         object
             .key("ApplicationMaintenanceWindowStartTimeUpdate")
-            .string(var_209);
+            .string(var_209.as_str());
     }
     Ok(())
 }
@@ -1096,7 +1102,7 @@ pub fn serialize_structure_crate_model_kinesis_streams_input(
     input: &crate::model::KinesisStreamsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_210) = &input.resource_arn {
-        object.key("ResourceARN").string(var_210);
+        object.key("ResourceARN").string(var_210.as_str());
     }
     Ok(())
 }
@@ -1106,7 +1112,7 @@ pub fn serialize_structure_crate_model_kinesis_firehose_input(
     input: &crate::model::KinesisFirehoseInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_211) = &input.resource_arn {
-        object.key("ResourceARN").string(var_211);
+        object.key("ResourceARN").string(var_211.as_str());
     }
     Ok(())
 }
@@ -1134,7 +1140,7 @@ pub fn serialize_structure_crate_model_source_schema(
         object_214.finish();
     }
     if let Some(var_215) = &input.record_encoding {
-        object.key("RecordEncoding").string(var_215);
+        object.key("RecordEncoding").string(var_215.as_str());
     }
     if let Some(var_216) = &input.record_columns {
         let mut array_217 = object.key("RecordColumns").start_array();
@@ -1158,7 +1164,7 @@ pub fn serialize_structure_crate_model_input_lambda_processor(
     input: &crate::model::InputLambdaProcessor,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_220) = &input.resource_arn {
-        object.key("ResourceARN").string(var_220);
+        object.key("ResourceARN").string(var_220.as_str());
     }
     Ok(())
 }
@@ -1168,7 +1174,7 @@ pub fn serialize_structure_crate_model_kinesis_streams_output(
     input: &crate::model::KinesisStreamsOutput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_221) = &input.resource_arn {
-        object.key("ResourceARN").string(var_221);
+        object.key("ResourceARN").string(var_221.as_str());
     }
     Ok(())
 }
@@ -1178,7 +1184,7 @@ pub fn serialize_structure_crate_model_kinesis_firehose_output(
     input: &crate::model::KinesisFirehoseOutput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_222) = &input.resource_arn {
-        object.key("ResourceARN").string(var_222);
+        object.key("ResourceARN").string(var_222.as_str());
     }
     Ok(())
 }
@@ -1188,7 +1194,7 @@ pub fn serialize_structure_crate_model_lambda_output(
     input: &crate::model::LambdaOutput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_223) = &input.resource_arn {
-        object.key("ResourceARN").string(var_223);
+        object.key("ResourceARN").string(var_223.as_str());
     }
     Ok(())
 }
@@ -1208,10 +1214,10 @@ pub fn serialize_structure_crate_model_s3_reference_data_source(
     input: &crate::model::S3ReferenceDataSource,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_225) = &input.bucket_arn {
-        object.key("BucketARN").string(var_225);
+        object.key("BucketARN").string(var_225.as_str());
     }
     if let Some(var_226) = &input.file_key {
-        object.key("FileKey").string(var_226);
+        object.key("FileKey").string(var_226.as_str());
     }
     Ok(())
 }
@@ -1398,7 +1404,7 @@ pub fn serialize_structure_crate_model_sql_run_configuration(
     input: &crate::model::SqlRunConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_264) = &input.input_id {
-        object.key("InputId").string(var_264);
+        object.key("InputId").string(var_264.as_str());
     }
     if let Some(var_265) = &input.input_starting_position_configuration {
         let mut object_266 = object
@@ -1423,7 +1429,7 @@ pub fn serialize_structure_crate_model_application_restore_configuration(
             .string(var_267.as_str());
     }
     if let Some(var_268) = &input.snapshot_name {
-        object.key("SnapshotName").string(var_268);
+        object.key("SnapshotName").string(var_268.as_str());
     }
     Ok(())
 }
@@ -1562,13 +1568,13 @@ pub fn serialize_structure_crate_model_vpc_configuration_update(
     input: &crate::model::VpcConfigurationUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_295) = &input.vpc_configuration_id {
-        object.key("VpcConfigurationId").string(var_295);
+        object.key("VpcConfigurationId").string(var_295.as_str());
     }
     if let Some(var_296) = &input.subnet_id_updates {
         let mut array_297 = object.key("SubnetIdUpdates").start_array();
         for item_298 in var_296 {
             {
-                array_297.value().string(item_298);
+                array_297.value().string(item_298.as_str());
             }
         }
         array_297.finish();
@@ -1577,7 +1583,7 @@ pub fn serialize_structure_crate_model_vpc_configuration_update(
         let mut array_300 = object.key("SecurityGroupIdUpdates").start_array();
         for item_301 in var_299 {
             {
-                array_300.value().string(item_301);
+                array_300.value().string(item_301.as_str());
             }
         }
         array_300.finish();
@@ -1654,13 +1660,13 @@ pub fn serialize_structure_crate_model_record_column(
     input: &crate::model::RecordColumn,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_315) = &input.name {
-        object.key("Name").string(var_315);
+        object.key("Name").string(var_315.as_str());
     }
     if let Some(var_316) = &input.mapping {
-        object.key("Mapping").string(var_316);
+        object.key("Mapping").string(var_316.as_str());
     }
     if let Some(var_317) = &input.sql_type {
-        object.key("SqlType").string(var_317);
+        object.key("SqlType").string(var_317.as_str());
     }
     Ok(())
 }
@@ -1736,13 +1742,13 @@ pub fn serialize_structure_crate_model_property_group(
     input: &crate::model::PropertyGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_329) = &input.property_group_id {
-        object.key("PropertyGroupId").string(var_329);
+        object.key("PropertyGroupId").string(var_329.as_str());
     }
     if let Some(var_330) = &input.property_map {
         let mut object_331 = object.key("PropertyMap").start_object();
         for (key_332, value_333) in var_330 {
             {
-                object_331.key(key_332).string(value_333);
+                object_331.key(key_332).string(value_333.as_str());
             }
         }
         object_331.finish();
@@ -1755,7 +1761,7 @@ pub fn serialize_structure_crate_model_code_content(
     input: &crate::model::CodeContent,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_334) = &input.text_content {
-        object.key("TextContent").string(var_334);
+        object.key("TextContent").string(var_334.as_str());
     }
     if let Some(var_335) = &input.zip_file_content {
         object
@@ -1841,10 +1847,10 @@ pub fn serialize_structure_crate_model_input_update(
     input: &crate::model::InputUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_348) = &input.input_id {
-        object.key("InputId").string(var_348);
+        object.key("InputId").string(var_348.as_str());
     }
     if let Some(var_349) = &input.name_prefix_update {
-        object.key("NamePrefixUpdate").string(var_349);
+        object.key("NamePrefixUpdate").string(var_349.as_str());
     }
     if let Some(var_350) = &input.input_processing_configuration_update {
         let mut object_351 = object
@@ -1896,10 +1902,10 @@ pub fn serialize_structure_crate_model_output_update(
     input: &crate::model::OutputUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_360) = &input.output_id {
-        object.key("OutputId").string(var_360);
+        object.key("OutputId").string(var_360.as_str());
     }
     if let Some(var_361) = &input.name_update {
-        object.key("NameUpdate").string(var_361);
+        object.key("NameUpdate").string(var_361.as_str());
     }
     if let Some(var_362) = &input.kinesis_streams_output_update {
         let mut object_363 = object.key("KinesisStreamsOutputUpdate").start_object();
@@ -1941,10 +1947,10 @@ pub fn serialize_structure_crate_model_reference_data_source_update(
     input: &crate::model::ReferenceDataSourceUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_370) = &input.reference_id {
-        object.key("ReferenceId").string(var_370);
+        object.key("ReferenceId").string(var_370.as_str());
     }
     if let Some(var_371) = &input.table_name_update {
-        object.key("TableNameUpdate").string(var_371);
+        object.key("TableNameUpdate").string(var_371.as_str());
     }
     if let Some(var_372) = &input.s3_reference_data_source_update {
         let mut object_373 = object.key("S3ReferenceDataSourceUpdate").start_object();
@@ -1967,7 +1973,7 @@ pub fn serialize_structure_crate_model_code_content_update(
     input: &crate::model::CodeContentUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_376) = &input.text_content_update {
-        object.key("TextContentUpdate").string(var_376);
+        object.key("TextContentUpdate").string(var_376.as_str());
     }
     if let Some(var_377) = &input.zip_file_content_update {
         object
@@ -2127,13 +2133,13 @@ pub fn serialize_structure_crate_model_s3_content_location(
     input: &crate::model::S3ContentLocation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_400) = &input.bucket_arn {
-        object.key("BucketARN").string(var_400);
+        object.key("BucketARN").string(var_400.as_str());
     }
     if let Some(var_401) = &input.file_key {
-        object.key("FileKey").string(var_401);
+        object.key("FileKey").string(var_401.as_str());
     }
     if let Some(var_402) = &input.object_version {
-        object.key("ObjectVersion").string(var_402);
+        object.key("ObjectVersion").string(var_402.as_str());
     }
     Ok(())
 }
@@ -2143,7 +2149,7 @@ pub fn serialize_structure_crate_model_glue_data_catalog_configuration(
     input: &crate::model::GlueDataCatalogConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_403) = &input.database_arn {
-        object.key("DatabaseARN").string(var_403);
+        object.key("DatabaseARN").string(var_403.as_str());
     }
     Ok(())
 }
@@ -2153,10 +2159,10 @@ pub fn serialize_structure_crate_model_s3_content_base_location(
     input: &crate::model::S3ContentBaseLocation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_404) = &input.bucket_arn {
-        object.key("BucketARN").string(var_404);
+        object.key("BucketARN").string(var_404.as_str());
     }
     if let Some(var_405) = &input.base_path {
-        object.key("BasePath").string(var_405);
+        object.key("BasePath").string(var_405.as_str());
     }
     Ok(())
 }
@@ -2166,13 +2172,13 @@ pub fn serialize_structure_crate_model_maven_reference(
     input: &crate::model::MavenReference,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_406) = &input.group_id {
-        object.key("GroupId").string(var_406);
+        object.key("GroupId").string(var_406.as_str());
     }
     if let Some(var_407) = &input.artifact_id {
-        object.key("ArtifactId").string(var_407);
+        object.key("ArtifactId").string(var_407.as_str());
     }
     if let Some(var_408) = &input.version {
-        object.key("Version").string(var_408);
+        object.key("Version").string(var_408.as_str());
     }
     Ok(())
 }
@@ -2197,7 +2203,7 @@ pub fn serialize_structure_crate_model_kinesis_streams_input_update(
     input: &crate::model::KinesisStreamsInputUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_411) = &input.resource_arn_update {
-        object.key("ResourceARNUpdate").string(var_411);
+        object.key("ResourceARNUpdate").string(var_411.as_str());
     }
     Ok(())
 }
@@ -2207,7 +2213,7 @@ pub fn serialize_structure_crate_model_kinesis_firehose_input_update(
     input: &crate::model::KinesisFirehoseInputUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_412) = &input.resource_arn_update {
-        object.key("ResourceARNUpdate").string(var_412);
+        object.key("ResourceARNUpdate").string(var_412.as_str());
     }
     Ok(())
 }
@@ -2222,7 +2228,7 @@ pub fn serialize_structure_crate_model_input_schema_update(
         object_414.finish();
     }
     if let Some(var_415) = &input.record_encoding_update {
-        object.key("RecordEncodingUpdate").string(var_415);
+        object.key("RecordEncodingUpdate").string(var_415.as_str());
     }
     if let Some(var_416) = &input.record_column_updates {
         let mut array_417 = object.key("RecordColumnUpdates").start_array();
@@ -2259,7 +2265,7 @@ pub fn serialize_structure_crate_model_kinesis_streams_output_update(
     input: &crate::model::KinesisStreamsOutputUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_421) = &input.resource_arn_update {
-        object.key("ResourceARNUpdate").string(var_421);
+        object.key("ResourceARNUpdate").string(var_421.as_str());
     }
     Ok(())
 }
@@ -2269,7 +2275,7 @@ pub fn serialize_structure_crate_model_kinesis_firehose_output_update(
     input: &crate::model::KinesisFirehoseOutputUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_422) = &input.resource_arn_update {
-        object.key("ResourceARNUpdate").string(var_422);
+        object.key("ResourceARNUpdate").string(var_422.as_str());
     }
     Ok(())
 }
@@ -2279,7 +2285,7 @@ pub fn serialize_structure_crate_model_lambda_output_update(
     input: &crate::model::LambdaOutputUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_423) = &input.resource_arn_update {
-        object.key("ResourceARNUpdate").string(var_423);
+        object.key("ResourceARNUpdate").string(var_423.as_str());
     }
     Ok(())
 }
@@ -2289,10 +2295,10 @@ pub fn serialize_structure_crate_model_s3_reference_data_source_update(
     input: &crate::model::S3ReferenceDataSourceUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_424) = &input.bucket_arn_update {
-        object.key("BucketARNUpdate").string(var_424);
+        object.key("BucketARNUpdate").string(var_424.as_str());
     }
     if let Some(var_425) = &input.file_key_update {
-        object.key("FileKeyUpdate").string(var_425);
+        object.key("FileKeyUpdate").string(var_425.as_str());
     }
     Ok(())
 }
@@ -2302,13 +2308,13 @@ pub fn serialize_structure_crate_model_s3_content_location_update(
     input: &crate::model::S3ContentLocationUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_426) = &input.bucket_arn_update {
-        object.key("BucketARNUpdate").string(var_426);
+        object.key("BucketARNUpdate").string(var_426.as_str());
     }
     if let Some(var_427) = &input.file_key_update {
-        object.key("FileKeyUpdate").string(var_427);
+        object.key("FileKeyUpdate").string(var_427.as_str());
     }
     if let Some(var_428) = &input.object_version_update {
-        object.key("ObjectVersionUpdate").string(var_428);
+        object.key("ObjectVersionUpdate").string(var_428.as_str());
     }
     Ok(())
 }
@@ -2318,7 +2324,7 @@ pub fn serialize_structure_crate_model_glue_data_catalog_configuration_update(
     input: &crate::model::GlueDataCatalogConfigurationUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_429) = &input.database_arn_update {
-        object.key("DatabaseARNUpdate").string(var_429);
+        object.key("DatabaseARNUpdate").string(var_429.as_str());
     }
     Ok(())
 }
@@ -2328,10 +2334,10 @@ pub fn serialize_structure_crate_model_s3_content_base_location_update(
     input: &crate::model::S3ContentBaseLocationUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_430) = &input.bucket_arn_update {
-        object.key("BucketARNUpdate").string(var_430);
+        object.key("BucketARNUpdate").string(var_430.as_str());
     }
     if let Some(var_431) = &input.base_path_update {
-        object.key("BasePathUpdate").string(var_431);
+        object.key("BasePathUpdate").string(var_431.as_str());
     }
     Ok(())
 }
@@ -2341,7 +2347,7 @@ pub fn serialize_structure_crate_model_json_mapping_parameters(
     input: &crate::model::JsonMappingParameters,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_432) = &input.record_row_path {
-        object.key("RecordRowPath").string(var_432);
+        object.key("RecordRowPath").string(var_432.as_str());
     }
     Ok(())
 }
@@ -2351,10 +2357,10 @@ pub fn serialize_structure_crate_model_csv_mapping_parameters(
     input: &crate::model::CsvMappingParameters,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_433) = &input.record_row_delimiter {
-        object.key("RecordRowDelimiter").string(var_433);
+        object.key("RecordRowDelimiter").string(var_433.as_str());
     }
     if let Some(var_434) = &input.record_column_delimiter {
-        object.key("RecordColumnDelimiter").string(var_434);
+        object.key("RecordColumnDelimiter").string(var_434.as_str());
     }
     Ok(())
 }
@@ -2364,7 +2370,7 @@ pub fn serialize_structure_crate_model_input_lambda_processor_update(
     input: &crate::model::InputLambdaProcessorUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_435) = &input.resource_arn_update {
-        object.key("ResourceARNUpdate").string(var_435);
+        object.key("ResourceARNUpdate").string(var_435.as_str());
     }
     Ok(())
 }

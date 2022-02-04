@@ -12,16 +12,16 @@ pub fn serialize_structure_crate_input_create_connector_input(
         let mut object_4 = object.key("connectorConfiguration").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6);
+                object_4.key(key_5).string(value_6.as_str());
             }
         }
         object_4.finish();
     }
     if let Some(var_7) = &input.connector_description {
-        object.key("connectorDescription").string(var_7);
+        object.key("connectorDescription").string(var_7.as_str());
     }
     if let Some(var_8) = &input.connector_name {
-        object.key("connectorName").string(var_8);
+        object.key("connectorName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.kafka_cluster {
         let mut object_10 = object.key("kafkaCluster").start_object();
@@ -47,7 +47,7 @@ pub fn serialize_structure_crate_input_create_connector_input(
         object_14.finish();
     }
     if let Some(var_15) = &input.kafka_connect_version {
-        object.key("kafkaConnectVersion").string(var_15);
+        object.key("kafkaConnectVersion").string(var_15.as_str());
     }
     if let Some(var_16) = &input.log_delivery {
         let mut object_17 = object.key("logDelivery").start_object();
@@ -66,7 +66,9 @@ pub fn serialize_structure_crate_input_create_connector_input(
         array_19.finish();
     }
     if let Some(var_22) = &input.service_execution_role_arn {
-        object.key("serviceExecutionRoleArn").string(var_22);
+        object
+            .key("serviceExecutionRoleArn")
+            .string(var_22.as_str());
     }
     if let Some(var_23) = &input.worker_configuration {
         let mut object_24 = object.key("workerConfiguration").start_object();
@@ -87,7 +89,7 @@ pub fn serialize_structure_crate_input_create_custom_plugin_input(
         object.key("contentType").string(var_25.as_str());
     }
     if let Some(var_26) = &input.description {
-        object.key("description").string(var_26);
+        object.key("description").string(var_26.as_str());
     }
     if let Some(var_27) = &input.location {
         let mut object_28 = object.key("location").start_object();
@@ -98,7 +100,7 @@ pub fn serialize_structure_crate_input_create_custom_plugin_input(
         object_28.finish();
     }
     if let Some(var_29) = &input.name {
-        object.key("name").string(var_29);
+        object.key("name").string(var_29.as_str());
     }
     Ok(())
 }
@@ -108,13 +110,13 @@ pub fn serialize_structure_crate_input_create_worker_configuration_input(
     input: &crate::input::CreateWorkerConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.description {
-        object.key("description").string(var_30);
+        object.key("description").string(var_30.as_str());
     }
     if let Some(var_31) = &input.name {
-        object.key("name").string(var_31);
+        object.key("name").string(var_31.as_str());
     }
     if let Some(var_32) = &input.properties_file_content {
-        object.key("propertiesFileContent").string(var_32);
+        object.key("propertiesFileContent").string(var_32.as_str());
     }
     Ok(())
 }
@@ -224,7 +226,7 @@ pub fn serialize_structure_crate_model_worker_configuration(
         );
     }
     if let Some(var_47) = &input.worker_configuration_arn {
-        object.key("workerConfigurationArn").string(var_47);
+        object.key("workerConfigurationArn").string(var_47.as_str());
     }
     Ok(())
 }
@@ -323,7 +325,7 @@ pub fn serialize_structure_crate_model_apache_kafka_cluster(
     input: &crate::model::ApacheKafkaCluster,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_58) = &input.bootstrap_servers {
-        object.key("bootstrapServers").string(var_58);
+        object.key("bootstrapServers").string(var_58.as_str());
     }
     if let Some(var_59) = &input.vpc {
         let mut object_60 = object.key("vpc").start_object();
@@ -366,7 +368,7 @@ pub fn serialize_structure_crate_model_custom_plugin(
     input: &crate::model::CustomPlugin,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.custom_plugin_arn {
-        object.key("customPluginArn").string(var_67);
+        object.key("customPluginArn").string(var_67.as_str());
     }
     {
         object.key("revision").number(
@@ -382,13 +384,13 @@ pub fn serialize_structure_crate_model_s3_location(
     input: &crate::model::S3Location,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.bucket_arn {
-        object.key("bucketArn").string(var_68);
+        object.key("bucketArn").string(var_68.as_str());
     }
     if let Some(var_69) = &input.file_key {
-        object.key("fileKey").string(var_69);
+        object.key("fileKey").string(var_69.as_str());
     }
     if let Some(var_70) = &input.object_version {
-        object.key("objectVersion").string(var_70);
+        object.key("objectVersion").string(var_70.as_str());
     }
     Ok(())
 }
@@ -487,7 +489,7 @@ pub fn serialize_structure_crate_model_vpc(
         let mut array_76 = object.key("securityGroups").start_array();
         for item_77 in var_75 {
             {
-                array_76.value().string(item_77);
+                array_76.value().string(item_77.as_str());
             }
         }
         array_76.finish();
@@ -496,7 +498,7 @@ pub fn serialize_structure_crate_model_vpc(
         let mut array_79 = object.key("subnets").start_array();
         for item_80 in var_78 {
             {
-                array_79.value().string(item_80);
+                array_79.value().string(item_80.as_str());
             }
         }
         array_79.finish();
@@ -512,7 +514,7 @@ pub fn serialize_structure_crate_model_cloud_watch_logs_log_delivery(
         object.key("enabled").boolean(input.enabled);
     }
     if let Some(var_81) = &input.log_group {
-        object.key("logGroup").string(var_81);
+        object.key("logGroup").string(var_81.as_str());
     }
     Ok(())
 }
@@ -522,7 +524,7 @@ pub fn serialize_structure_crate_model_firehose_log_delivery(
     input: &crate::model::FirehoseLogDelivery,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.delivery_stream {
-        object.key("deliveryStream").string(var_82);
+        object.key("deliveryStream").string(var_82.as_str());
     }
     {
         object.key("enabled").boolean(input.enabled);
@@ -535,13 +537,13 @@ pub fn serialize_structure_crate_model_s3_log_delivery(
     input: &crate::model::S3LogDelivery,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_83) = &input.bucket {
-        object.key("bucket").string(var_83);
+        object.key("bucket").string(var_83.as_str());
     }
     {
         object.key("enabled").boolean(input.enabled);
     }
     if let Some(var_84) = &input.prefix {
-        object.key("prefix").string(var_84);
+        object.key("prefix").string(var_84.as_str());
     }
     Ok(())
 }

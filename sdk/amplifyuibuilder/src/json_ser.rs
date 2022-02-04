@@ -4,13 +4,13 @@ pub fn serialize_structure_crate_model_create_component_data(
     input: &crate::model::CreateComponentData,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.name {
-        object.key("name").string(var_1);
+        object.key("name").string(var_1.as_str());
     }
     if let Some(var_2) = &input.source_id {
-        object.key("sourceId").string(var_2);
+        object.key("sourceId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.component_type {
-        object.key("componentType").string(var_3);
+        object.key("componentType").string(var_3.as_str());
     }
     if let Some(var_4) = &input.properties {
         let mut object_5 = object.key("properties").start_object();
@@ -61,7 +61,7 @@ pub fn serialize_structure_crate_model_create_component_data(
                 let mut object_21 = object_18.key(key_19).start_object();
                 for (key_22, value_23) in value_20 {
                     {
-                        object_21.key(key_22).string(value_23);
+                        object_21.key(key_22).string(value_23.as_str());
                     }
                 }
                 object_21.finish();
@@ -98,7 +98,7 @@ pub fn serialize_structure_crate_model_create_component_data(
         let mut object_35 = object.key("tags").start_object();
         for (key_36, value_37) in var_34 {
             {
-                object_35.key(key_36).string(value_37);
+                object_35.key(key_36).string(value_37.as_str());
             }
         }
         object_35.finish();
@@ -111,7 +111,7 @@ pub fn serialize_structure_crate_model_create_theme_data(
     input: &crate::model::CreateThemeData,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.name {
-        object.key("name").string(var_38);
+        object.key("name").string(var_38.as_str());
     }
     if let Some(var_39) = &input.values {
         let mut array_40 = object.key("values").start_array();
@@ -145,7 +145,7 @@ pub fn serialize_structure_crate_model_create_theme_data(
         let mut object_48 = object.key("tags").start_object();
         for (key_49, value_50) in var_47 {
             {
-                object_48.key(key_49).string(value_50);
+                object_48.key(key_49).string(value_50.as_str());
             }
         }
         object_48.finish();
@@ -158,10 +158,10 @@ pub fn serialize_structure_crate_model_exchange_code_for_token_request_body(
     input: &crate::model::ExchangeCodeForTokenRequestBody,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_51) = &input.code {
-        object.key("code").string(var_51);
+        object.key("code").string(var_51.as_str());
     }
     if let Some(var_52) = &input.redirect_uri {
-        object.key("redirectUri").string(var_52);
+        object.key("redirectUri").string(var_52.as_str());
     }
     Ok(())
 }
@@ -171,7 +171,7 @@ pub fn serialize_structure_crate_model_refresh_token_request_body(
     input: &crate::model::RefreshTokenRequestBody,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.token {
-        object.key("token").string(var_53);
+        object.key("token").string(var_53.as_str());
     }
     Ok(())
 }
@@ -181,16 +181,16 @@ pub fn serialize_structure_crate_model_update_component_data(
     input: &crate::model::UpdateComponentData,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.id {
-        object.key("id").string(var_54);
+        object.key("id").string(var_54.as_str());
     }
     if let Some(var_55) = &input.name {
-        object.key("name").string(var_55);
+        object.key("name").string(var_55.as_str());
     }
     if let Some(var_56) = &input.source_id {
-        object.key("sourceId").string(var_56);
+        object.key("sourceId").string(var_56.as_str());
     }
     if let Some(var_57) = &input.component_type {
-        object.key("componentType").string(var_57);
+        object.key("componentType").string(var_57.as_str());
     }
     if let Some(var_58) = &input.properties {
         let mut object_59 = object.key("properties").start_object();
@@ -241,7 +241,7 @@ pub fn serialize_structure_crate_model_update_component_data(
                 let mut object_75 = object_72.key(key_73).start_object();
                 for (key_76, value_77) in value_74 {
                     {
-                        object_75.key(key_76).string(value_77);
+                        object_75.key(key_76).string(value_77.as_str());
                     }
                 }
                 object_75.finish();
@@ -282,10 +282,10 @@ pub fn serialize_structure_crate_model_update_theme_data(
     input: &crate::model::UpdateThemeData,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_88) = &input.id {
-        object.key("id").string(var_88);
+        object.key("id").string(var_88.as_str());
     }
     if let Some(var_89) = &input.name {
-        object.key("name").string(var_89);
+        object.key("name").string(var_89.as_str());
     }
     if let Some(var_90) = &input.values {
         let mut array_91 = object.key("values").start_array();
@@ -323,7 +323,7 @@ pub fn serialize_structure_crate_model_component_property(
     input: &crate::model::ComponentProperty,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_98) = &input.value {
-        object.key("value").string(var_98);
+        object.key("value").string(var_98.as_str());
     }
     if let Some(var_99) = &input.binding_properties {
         let mut object_100 = object.key("bindingProperties").start_object();
@@ -342,10 +342,10 @@ pub fn serialize_structure_crate_model_component_property(
         object_102.finish();
     }
     if let Some(var_103) = &input.default_value {
-        object.key("defaultValue").string(var_103);
+        object.key("defaultValue").string(var_103.as_str());
     }
     if let Some(var_104) = &input.model {
-        object.key("model").string(var_104);
+        object.key("model").string(var_104.as_str());
     }
     if let Some(var_105) = &input.bindings {
         let mut object_106 = object.key("bindings").start_object();
@@ -362,10 +362,10 @@ pub fn serialize_structure_crate_model_component_property(
         object_106.finish();
     }
     if let Some(var_110) = &input.event {
-        object.key("event").string(var_110);
+        object.key("event").string(var_110.as_str());
     }
     if let Some(var_111) = &input.user_attribute {
-        object.key("userAttribute").string(var_111);
+        object.key("userAttribute").string(var_111.as_str());
     }
     if let Some(var_112) = &input.concat {
         let mut array_113 = object.key("concat").start_array();
@@ -393,10 +393,10 @@ pub fn serialize_structure_crate_model_component_property(
         object.key("configured").boolean(*var_118);
     }
     if let Some(var_119) = &input.r#type {
-        object.key("type").string(var_119);
+        object.key("type").string(var_119.as_str());
     }
     if let Some(var_120) = &input.imported_value {
-        object.key("importedValue").string(var_120);
+        object.key("importedValue").string(var_120.as_str());
     }
     Ok(())
 }
@@ -406,10 +406,10 @@ pub fn serialize_structure_crate_model_component_child(
     input: &crate::model::ComponentChild,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_121) = &input.component_type {
-        object.key("componentType").string(var_121);
+        object.key("componentType").string(var_121.as_str());
     }
     if let Some(var_122) = &input.name {
-        object.key("name").string(var_122);
+        object.key("name").string(var_122.as_str());
     }
     if let Some(var_123) = &input.properties {
         let mut object_124 = object.key("properties").start_object();
@@ -450,7 +450,7 @@ pub fn serialize_structure_crate_model_component_variant(
         let mut object_133 = object.key("variantValues").start_object();
         for (key_134, value_135) in var_132 {
             {
-                object_133.key(key_134).string(value_135);
+                object_133.key(key_134).string(value_135.as_str());
             }
         }
         object_133.finish();
@@ -462,7 +462,7 @@ pub fn serialize_structure_crate_model_component_variant(
                 let mut object_140 = object_137.key(key_138).start_object();
                 for (key_141, value_142) in value_139 {
                     {
-                        object_140.key(key_141).string(value_142);
+                        object_140.key(key_141).string(value_142.as_str());
                     }
                 }
                 object_140.finish();
@@ -478,7 +478,7 @@ pub fn serialize_structure_crate_model_component_binding_properties_value(
     input: &crate::model::ComponentBindingPropertiesValue,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_143) = &input.r#type {
-        object.key("type").string(var_143);
+        object.key("type").string(var_143.as_str());
     }
     if let Some(var_144) = &input.binding_properties {
         let mut object_145 = object.key("bindingProperties").start_object();
@@ -486,7 +486,7 @@ pub fn serialize_structure_crate_model_component_binding_properties_value(
         object_145.finish();
     }
     if let Some(var_146) = &input.default_value {
-        object.key("defaultValue").string(var_146);
+        object.key("defaultValue").string(var_146.as_str());
     }
     Ok(())
 }
@@ -496,7 +496,7 @@ pub fn serialize_structure_crate_model_component_data_configuration(
     input: &crate::model::ComponentDataConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_147) = &input.model {
-        object.key("model").string(var_147);
+        object.key("model").string(var_147.as_str());
     }
     if let Some(var_148) = &input.sort {
         let mut array_149 = object.key("sort").start_array();
@@ -521,7 +521,7 @@ pub fn serialize_structure_crate_model_component_data_configuration(
         let mut array_155 = object.key("identifiers").start_array();
         for item_156 in var_154 {
             {
-                array_155.value().string(item_156);
+                array_155.value().string(item_156.as_str());
             }
         }
         array_155.finish();
@@ -534,7 +534,7 @@ pub fn serialize_structure_crate_model_theme_values(
     input: &crate::model::ThemeValues,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_157) = &input.key {
-        object.key("key").string(var_157);
+        object.key("key").string(var_157.as_str());
     }
     if let Some(var_158) = &input.value {
         let mut object_159 = object.key("value").start_object();
@@ -549,10 +549,10 @@ pub fn serialize_structure_crate_model_component_property_binding_properties(
     input: &crate::model::ComponentPropertyBindingProperties,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_160) = &input.property {
-        object.key("property").string(var_160);
+        object.key("property").string(var_160.as_str());
     }
     if let Some(var_161) = &input.field {
-        object.key("field").string(var_161);
+        object.key("field").string(var_161.as_str());
     }
     Ok(())
 }
@@ -562,10 +562,10 @@ pub fn serialize_structure_crate_model_form_binding_element(
     input: &crate::model::FormBindingElement,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_162) = &input.element {
-        object.key("element").string(var_162);
+        object.key("element").string(var_162.as_str());
     }
     if let Some(var_163) = &input.property {
-        object.key("property").string(var_163);
+        object.key("property").string(var_163.as_str());
     }
     Ok(())
 }
@@ -575,16 +575,16 @@ pub fn serialize_structure_crate_model_component_condition_property(
     input: &crate::model::ComponentConditionProperty,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_164) = &input.property {
-        object.key("property").string(var_164);
+        object.key("property").string(var_164.as_str());
     }
     if let Some(var_165) = &input.field {
-        object.key("field").string(var_165);
+        object.key("field").string(var_165.as_str());
     }
     if let Some(var_166) = &input.operator {
-        object.key("operator").string(var_166);
+        object.key("operator").string(var_166.as_str());
     }
     if let Some(var_167) = &input.operand {
-        object.key("operand").string(var_167);
+        object.key("operand").string(var_167.as_str());
     }
     if let Some(var_168) = &input.then {
         let mut object_169 = object.key("then").start_object();
@@ -610,10 +610,10 @@ pub fn serialize_structure_crate_model_component_binding_properties_value_proper
     input: &crate::model::ComponentBindingPropertiesValueProperties,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_172) = &input.model {
-        object.key("model").string(var_172);
+        object.key("model").string(var_172.as_str());
     }
     if let Some(var_173) = &input.field {
-        object.key("field").string(var_173);
+        object.key("field").string(var_173.as_str());
     }
     if let Some(var_174) = &input.predicates {
         let mut array_175 = object.key("predicates").start_array();
@@ -630,16 +630,16 @@ pub fn serialize_structure_crate_model_component_binding_properties_value_proper
         array_175.finish();
     }
     if let Some(var_178) = &input.user_attribute {
-        object.key("userAttribute").string(var_178);
+        object.key("userAttribute").string(var_178.as_str());
     }
     if let Some(var_179) = &input.bucket {
-        object.key("bucket").string(var_179);
+        object.key("bucket").string(var_179.as_str());
     }
     if let Some(var_180) = &input.key {
-        object.key("key").string(var_180);
+        object.key("key").string(var_180.as_str());
     }
     if let Some(var_181) = &input.default_value {
-        object.key("defaultValue").string(var_181);
+        object.key("defaultValue").string(var_181.as_str());
     }
     Ok(())
 }
@@ -649,7 +649,7 @@ pub fn serialize_structure_crate_model_sort_property(
     input: &crate::model::SortProperty,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_182) = &input.field {
-        object.key("field").string(var_182);
+        object.key("field").string(var_182.as_str());
     }
     if let Some(var_183) = &input.direction {
         object.key("direction").string(var_183.as_str());
@@ -690,13 +690,13 @@ pub fn serialize_structure_crate_model_predicate(
         array_189.finish();
     }
     if let Some(var_192) = &input.field {
-        object.key("field").string(var_192);
+        object.key("field").string(var_192.as_str());
     }
     if let Some(var_193) = &input.operator {
-        object.key("operator").string(var_193);
+        object.key("operator").string(var_193.as_str());
     }
     if let Some(var_194) = &input.operand {
-        object.key("operand").string(var_194);
+        object.key("operand").string(var_194.as_str());
     }
     Ok(())
 }
@@ -706,7 +706,7 @@ pub fn serialize_structure_crate_model_theme_value(
     input: &crate::model::ThemeValue,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_195) = &input.value {
-        object.key("value").string(var_195);
+        object.key("value").string(var_195.as_str());
     }
     if let Some(var_196) = &input.children {
         let mut array_197 = object.key("children").start_array();

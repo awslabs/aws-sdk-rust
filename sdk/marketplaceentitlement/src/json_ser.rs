@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_get_entitlements_input(
     input: &crate::input::GetEntitlementsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.product_code {
-        object.key("ProductCode").string(var_1);
+        object.key("ProductCode").string(var_1.as_str());
     }
     if let Some(var_2) = &input.filter {
         let mut object_3 = object.key("Filter").start_object();
@@ -13,7 +13,7 @@ pub fn serialize_structure_crate_input_get_entitlements_input(
                 let mut array_6 = object_3.key(key_4.as_str()).start_array();
                 for item_7 in value_5 {
                     {
-                        array_6.value().string(item_7);
+                        array_6.value().string(item_7.as_str());
                     }
                 }
                 array_6.finish();
@@ -22,7 +22,7 @@ pub fn serialize_structure_crate_input_get_entitlements_input(
         object_3.finish();
     }
     if let Some(var_8) = &input.next_token {
-        object.key("NextToken").string(var_8);
+        object.key("NextToken").string(var_8.as_str());
     }
     if let Some(var_9) = &input.max_results {
         object.key("MaxResults").number(

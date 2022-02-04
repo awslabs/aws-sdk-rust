@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_put_lexicon_input(
     input: &crate::input::PutLexiconInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.content {
-        object.key("Content").string(var_1);
+        object.key("Content").string(var_1.as_str());
     }
     Ok(())
 }
@@ -23,7 +23,7 @@ pub fn serialize_structure_crate_input_start_speech_synthesis_task_input(
         let mut array_5 = object.key("LexiconNames").start_array();
         for item_6 in var_4 {
             {
-                array_5.value().string(item_6);
+                array_5.value().string(item_6.as_str());
             }
         }
         array_5.finish();
@@ -32,16 +32,16 @@ pub fn serialize_structure_crate_input_start_speech_synthesis_task_input(
         object.key("OutputFormat").string(var_7.as_str());
     }
     if let Some(var_8) = &input.output_s3_bucket_name {
-        object.key("OutputS3BucketName").string(var_8);
+        object.key("OutputS3BucketName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.output_s3_key_prefix {
-        object.key("OutputS3KeyPrefix").string(var_9);
+        object.key("OutputS3KeyPrefix").string(var_9.as_str());
     }
     if let Some(var_10) = &input.sample_rate {
-        object.key("SampleRate").string(var_10);
+        object.key("SampleRate").string(var_10.as_str());
     }
     if let Some(var_11) = &input.sns_topic_arn {
-        object.key("SnsTopicArn").string(var_11);
+        object.key("SnsTopicArn").string(var_11.as_str());
     }
     if let Some(var_12) = &input.speech_mark_types {
         let mut array_13 = object.key("SpeechMarkTypes").start_array();
@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_start_speech_synthesis_task_input(
         array_13.finish();
     }
     if let Some(var_15) = &input.text {
-        object.key("Text").string(var_15);
+        object.key("Text").string(var_15.as_str());
     }
     if let Some(var_16) = &input.text_type {
         object.key("TextType").string(var_16.as_str());
@@ -78,7 +78,7 @@ pub fn serialize_structure_crate_input_synthesize_speech_input(
         let mut array_21 = object.key("LexiconNames").start_array();
         for item_22 in var_20 {
             {
-                array_21.value().string(item_22);
+                array_21.value().string(item_22.as_str());
             }
         }
         array_21.finish();
@@ -87,7 +87,7 @@ pub fn serialize_structure_crate_input_synthesize_speech_input(
         object.key("OutputFormat").string(var_23.as_str());
     }
     if let Some(var_24) = &input.sample_rate {
-        object.key("SampleRate").string(var_24);
+        object.key("SampleRate").string(var_24.as_str());
     }
     if let Some(var_25) = &input.speech_mark_types {
         let mut array_26 = object.key("SpeechMarkTypes").start_array();
@@ -99,7 +99,7 @@ pub fn serialize_structure_crate_input_synthesize_speech_input(
         array_26.finish();
     }
     if let Some(var_28) = &input.text {
-        object.key("Text").string(var_28);
+        object.key("Text").string(var_28.as_str());
     }
     if let Some(var_29) = &input.text_type {
         object.key("TextType").string(var_29.as_str());

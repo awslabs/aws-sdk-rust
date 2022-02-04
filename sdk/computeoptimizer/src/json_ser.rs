@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_describe_recommendation_export_jobs_input
         let mut array_8 = object.key("jobIds").start_array();
         for item_9 in var_7 {
             {
-                array_8.value().string(item_9);
+                array_8.value().string(item_9.as_str());
             }
         }
         array_8.finish();
@@ -51,7 +51,7 @@ pub fn serialize_structure_crate_input_describe_recommendation_export_jobs_input
         array_11.finish();
     }
     if let Some(var_14) = &input.next_token {
-        object.key("nextToken").string(var_14);
+        object.key("nextToken").string(var_14.as_str());
     }
     if let Some(var_15) = &input.max_results {
         object.key("maxResults").number(
@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_export_auto_scaling_group_recommendations
         let mut array_17 = object.key("accountIds").start_array();
         for item_18 in var_16 {
             {
-                array_17.value().string(item_18);
+                array_17.value().string(item_18.as_str());
             }
         }
         array_17.finish();
@@ -130,7 +130,7 @@ pub fn serialize_structure_crate_input_export_ebs_volume_recommendations_input(
         let mut array_32 = object.key("accountIds").start_array();
         for item_33 in var_31 {
             {
-                array_32.value().string(item_33);
+                array_32.value().string(item_33.as_str());
             }
         }
         array_32.finish();
@@ -185,7 +185,7 @@ pub fn serialize_structure_crate_input_export_ec2_instance_recommendations_input
         let mut array_45 = object.key("accountIds").start_array();
         for item_46 in var_44 {
             {
-                array_45.value().string(item_46);
+                array_45.value().string(item_46.as_str());
             }
         }
         array_45.finish();
@@ -245,7 +245,7 @@ pub fn serialize_structure_crate_input_export_lambda_function_recommendations_in
         let mut array_60 = object.key("accountIds").start_array();
         for item_61 in var_59 {
             {
-                array_60.value().string(item_61);
+                array_60.value().string(item_61.as_str());
             }
         }
         array_60.finish();
@@ -297,7 +297,7 @@ pub fn serialize_structure_crate_input_get_auto_scaling_group_recommendations_in
         let mut array_73 = object.key("accountIds").start_array();
         for item_74 in var_72 {
             {
-                array_73.value().string(item_74);
+                array_73.value().string(item_74.as_str());
             }
         }
         array_73.finish();
@@ -306,13 +306,13 @@ pub fn serialize_structure_crate_input_get_auto_scaling_group_recommendations_in
         let mut array_76 = object.key("autoScalingGroupArns").start_array();
         for item_77 in var_75 {
             {
-                array_76.value().string(item_77);
+                array_76.value().string(item_77.as_str());
             }
         }
         array_76.finish();
     }
     if let Some(var_78) = &input.next_token {
-        object.key("nextToken").string(var_78);
+        object.key("nextToken").string(var_78.as_str());
     }
     if let Some(var_79) = &input.max_results {
         object.key("maxResults").number(
@@ -350,13 +350,13 @@ pub fn serialize_structure_crate_input_get_ebs_volume_recommendations_input(
         let mut array_87 = object.key("volumeArns").start_array();
         for item_88 in var_86 {
             {
-                array_87.value().string(item_88);
+                array_87.value().string(item_88.as_str());
             }
         }
         array_87.finish();
     }
     if let Some(var_89) = &input.next_token {
-        object.key("nextToken").string(var_89);
+        object.key("nextToken").string(var_89.as_str());
     }
     if let Some(var_90) = &input.max_results {
         object.key("maxResults").number(
@@ -382,7 +382,7 @@ pub fn serialize_structure_crate_input_get_ebs_volume_recommendations_input(
         let mut array_96 = object.key("accountIds").start_array();
         for item_97 in var_95 {
             {
-                array_96.value().string(item_97);
+                array_96.value().string(item_97.as_str());
             }
         }
         array_96.finish();
@@ -398,13 +398,13 @@ pub fn serialize_structure_crate_input_get_ec2_instance_recommendations_input(
         let mut array_99 = object.key("instanceArns").start_array();
         for item_100 in var_98 {
             {
-                array_99.value().string(item_100);
+                array_99.value().string(item_100.as_str());
             }
         }
         array_99.finish();
     }
     if let Some(var_101) = &input.next_token {
-        object.key("nextToken").string(var_101);
+        object.key("nextToken").string(var_101.as_str());
     }
     if let Some(var_102) = &input.max_results {
         object.key("maxResults").number(
@@ -427,7 +427,7 @@ pub fn serialize_structure_crate_input_get_ec2_instance_recommendations_input(
         let mut array_108 = object.key("accountIds").start_array();
         for item_109 in var_107 {
             {
-                array_108.value().string(item_109);
+                array_108.value().string(item_109.as_str());
             }
         }
         array_108.finish();
@@ -448,7 +448,7 @@ pub fn serialize_structure_crate_input_get_ec2_recommendation_projected_metrics_
     input: &crate::input::GetEc2RecommendationProjectedMetricsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_112) = &input.instance_arn {
-        object.key("instanceArn").string(var_112);
+        object.key("instanceArn").string(var_112.as_str());
     }
     if let Some(var_113) = &input.stat {
         object.key("stat").string(var_113.as_str());
@@ -485,7 +485,7 @@ pub fn serialize_structure_crate_input_get_effective_recommendation_preferences_
     input: &crate::input::GetEffectiveRecommendationPreferencesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_118) = &input.resource_arn {
-        object.key("resourceArn").string(var_118);
+        object.key("resourceArn").string(var_118.as_str());
     }
     Ok(())
 }
@@ -509,7 +509,7 @@ pub fn serialize_structure_crate_input_get_enrollment_statuses_for_organization_
         array_120.finish();
     }
     if let Some(var_123) = &input.next_token {
-        object.key("nextToken").string(var_123);
+        object.key("nextToken").string(var_123.as_str());
     }
     if let Some(var_124) = &input.max_results {
         object.key("maxResults").number(
@@ -528,7 +528,7 @@ pub fn serialize_structure_crate_input_get_lambda_function_recommendations_input
         let mut array_126 = object.key("functionArns").start_array();
         for item_127 in var_125 {
             {
-                array_126.value().string(item_127);
+                array_126.value().string(item_127.as_str());
             }
         }
         array_126.finish();
@@ -537,7 +537,7 @@ pub fn serialize_structure_crate_input_get_lambda_function_recommendations_input
         let mut array_129 = object.key("accountIds").start_array();
         for item_130 in var_128 {
             {
-                array_129.value().string(item_130);
+                array_129.value().string(item_130.as_str());
             }
         }
         array_129.finish();
@@ -554,7 +554,7 @@ pub fn serialize_structure_crate_input_get_lambda_function_recommendations_input
         array_132.finish();
     }
     if let Some(var_135) = &input.next_token {
-        object.key("nextToken").string(var_135);
+        object.key("nextToken").string(var_135.as_str());
     }
     if let Some(var_136) = &input.max_results {
         object.key("maxResults").number(
@@ -578,7 +578,7 @@ pub fn serialize_structure_crate_input_get_recommendation_preferences_input(
         object_139.finish();
     }
     if let Some(var_140) = &input.next_token {
-        object.key("nextToken").string(var_140);
+        object.key("nextToken").string(var_140.as_str());
     }
     if let Some(var_141) = &input.max_results {
         object.key("maxResults").number(
@@ -597,13 +597,13 @@ pub fn serialize_structure_crate_input_get_recommendation_summaries_input(
         let mut array_143 = object.key("accountIds").start_array();
         for item_144 in var_142 {
             {
-                array_143.value().string(item_144);
+                array_143.value().string(item_144.as_str());
             }
         }
         array_143.finish();
     }
     if let Some(var_145) = &input.next_token {
-        object.key("nextToken").string(var_145);
+        object.key("nextToken").string(var_145.as_str());
     }
     if let Some(var_146) = &input.max_results {
         object.key("maxResults").number(
@@ -660,7 +660,7 @@ pub fn serialize_structure_crate_model_scope(
         object.key("name").string(var_153.as_str());
     }
     if let Some(var_154) = &input.value {
-        object.key("value").string(var_154);
+        object.key("value").string(var_154.as_str());
     }
     Ok(())
 }
@@ -676,7 +676,7 @@ pub fn serialize_structure_crate_model_job_filter(
         let mut array_157 = object.key("values").start_array();
         for item_158 in var_156 {
             {
-                array_157.value().string(item_158);
+                array_157.value().string(item_158.as_str());
             }
         }
         array_157.finish();
@@ -695,7 +695,7 @@ pub fn serialize_structure_crate_model_filter(
         let mut array_161 = object.key("values").start_array();
         for item_162 in var_160 {
             {
-                array_161.value().string(item_162);
+                array_161.value().string(item_162.as_str());
             }
         }
         array_161.finish();
@@ -708,10 +708,10 @@ pub fn serialize_structure_crate_model_s3_destination_config(
     input: &crate::model::S3DestinationConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_163) = &input.bucket {
-        object.key("bucket").string(var_163);
+        object.key("bucket").string(var_163.as_str());
     }
     if let Some(var_164) = &input.key_prefix {
-        object.key("keyPrefix").string(var_164);
+        object.key("keyPrefix").string(var_164.as_str());
     }
     Ok(())
 }
@@ -743,7 +743,7 @@ pub fn serialize_structure_crate_model_ebs_filter(
         let mut array_170 = object.key("values").start_array();
         for item_171 in var_169 {
             {
-                array_170.value().string(item_171);
+                array_170.value().string(item_171.as_str());
             }
         }
         array_170.finish();
@@ -762,7 +762,7 @@ pub fn serialize_structure_crate_model_lambda_function_recommendation_filter(
         let mut array_174 = object.key("values").start_array();
         for item_175 in var_173 {
             {
-                array_174.value().string(item_175);
+                array_174.value().string(item_175.as_str());
             }
         }
         array_174.finish();
@@ -781,7 +781,7 @@ pub fn serialize_structure_crate_model_enrollment_filter(
         let mut array_178 = object.key("values").start_array();
         for item_179 in var_177 {
             {
-                array_178.value().string(item_179);
+                array_178.value().string(item_179.as_str());
             }
         }
         array_178.finish();

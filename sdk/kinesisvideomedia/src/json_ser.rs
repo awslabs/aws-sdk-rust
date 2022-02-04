@@ -9,10 +9,10 @@ pub fn serialize_structure_crate_input_get_media_input(
         object_2.finish();
     }
     if let Some(var_3) = &input.stream_arn {
-        object.key("StreamARN").string(var_3);
+        object.key("StreamARN").string(var_3.as_str());
     }
     if let Some(var_4) = &input.stream_name {
-        object.key("StreamName").string(var_4);
+        object.key("StreamName").string(var_4.as_str());
     }
     Ok(())
 }
@@ -25,7 +25,7 @@ pub fn serialize_structure_crate_model_start_selector(
         object.key("StartSelectorType").string(var_5.as_str());
     }
     if let Some(var_6) = &input.after_fragment_number {
-        object.key("AfterFragmentNumber").string(var_6);
+        object.key("AfterFragmentNumber").string(var_6.as_str());
     }
     if let Some(var_7) = &input.start_timestamp {
         object
@@ -33,7 +33,7 @@ pub fn serialize_structure_crate_model_start_selector(
             .date_time(var_7, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_8) = &input.continuation_token {
-        object.key("ContinuationToken").string(var_8);
+        object.key("ContinuationToken").string(var_8.as_str());
     }
     Ok(())
 }

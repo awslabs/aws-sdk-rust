@@ -18,7 +18,7 @@ pub fn serialize_structure_crate_input_create_order_input(
         array_2.finish();
     }
     if let Some(var_5) = &input.outpost_identifier {
-        object.key("OutpostIdentifier").string(var_5);
+        object.key("OutpostIdentifier").string(var_5.as_str());
     }
     if let Some(var_6) = &input.payment_option {
         object.key("PaymentOption").string(var_6.as_str());
@@ -34,19 +34,19 @@ pub fn serialize_structure_crate_input_create_outpost_input(
     input: &crate::input::CreateOutpostInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_8);
+        object.key("AvailabilityZone").string(var_8.as_str());
     }
     if let Some(var_9) = &input.availability_zone_id {
-        object.key("AvailabilityZoneId").string(var_9);
+        object.key("AvailabilityZoneId").string(var_9.as_str());
     }
     if let Some(var_10) = &input.description {
-        object.key("Description").string(var_10);
+        object.key("Description").string(var_10.as_str());
     }
     if let Some(var_11) = &input.name {
-        object.key("Name").string(var_11);
+        object.key("Name").string(var_11.as_str());
     }
     if let Some(var_12) = &input.site_id {
-        object.key("SiteId").string(var_12);
+        object.key("SiteId").string(var_12.as_str());
     }
     if let Some(var_13) = &input.supported_hardware_type {
         object.key("SupportedHardwareType").string(var_13.as_str());
@@ -55,7 +55,7 @@ pub fn serialize_structure_crate_input_create_outpost_input(
         let mut object_15 = object.key("Tags").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17);
+                object_15.key(key_16).string(value_17.as_str());
             }
         }
         object_15.finish();
@@ -68,13 +68,13 @@ pub fn serialize_structure_crate_input_create_site_input(
     input: &crate::input::CreateSiteInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.description {
-        object.key("Description").string(var_18);
+        object.key("Description").string(var_18.as_str());
     }
     if let Some(var_19) = &input.name {
-        object.key("Name").string(var_19);
+        object.key("Name").string(var_19.as_str());
     }
     if let Some(var_20) = &input.notes {
-        object.key("Notes").string(var_20);
+        object.key("Notes").string(var_20.as_str());
     }
     if let Some(var_21) = &input.operating_address {
         let mut object_22 = object.key("OperatingAddress").start_object();
@@ -98,7 +98,7 @@ pub fn serialize_structure_crate_input_create_site_input(
         let mut object_28 = object.key("Tags").start_object();
         for (key_29, value_30) in var_27 {
             {
-                object_28.key(key_29).string(value_30);
+                object_28.key(key_29).string(value_30.as_str());
             }
         }
         object_28.finish();
@@ -114,7 +114,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_32 = object.key("Tags").start_object();
         for (key_33, value_34) in var_31 {
             {
-                object_32.key(key_33).string(value_34);
+                object_32.key(key_33).string(value_34.as_str());
             }
         }
         object_32.finish();
@@ -127,10 +127,10 @@ pub fn serialize_structure_crate_input_update_outpost_input(
     input: &crate::input::UpdateOutpostInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.description {
-        object.key("Description").string(var_35);
+        object.key("Description").string(var_35.as_str());
     }
     if let Some(var_36) = &input.name {
-        object.key("Name").string(var_36);
+        object.key("Name").string(var_36.as_str());
     }
     if let Some(var_37) = &input.supported_hardware_type {
         object.key("SupportedHardwareType").string(var_37.as_str());
@@ -143,13 +143,13 @@ pub fn serialize_structure_crate_input_update_site_input(
     input: &crate::input::UpdateSiteInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.description {
-        object.key("Description").string(var_38);
+        object.key("Description").string(var_38.as_str());
     }
     if let Some(var_39) = &input.name {
-        object.key("Name").string(var_39);
+        object.key("Name").string(var_39.as_str());
     }
     if let Some(var_40) = &input.notes {
-        object.key("Notes").string(var_40);
+        object.key("Notes").string(var_40.as_str());
     }
     Ok(())
 }
@@ -210,7 +210,7 @@ pub fn serialize_structure_crate_model_line_item_request(
     input: &crate::model::LineItemRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.catalog_item_id {
-        object.key("CatalogItemId").string(var_53);
+        object.key("CatalogItemId").string(var_53.as_str());
     }
     if input.quantity != 0 {
         object.key("Quantity").number(
@@ -226,37 +226,37 @@ pub fn serialize_structure_crate_model_address(
     input: &crate::model::Address,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.contact_name {
-        object.key("ContactName").string(var_54);
+        object.key("ContactName").string(var_54.as_str());
     }
     if let Some(var_55) = &input.contact_phone_number {
-        object.key("ContactPhoneNumber").string(var_55);
+        object.key("ContactPhoneNumber").string(var_55.as_str());
     }
     if let Some(var_56) = &input.address_line1 {
-        object.key("AddressLine1").string(var_56);
+        object.key("AddressLine1").string(var_56.as_str());
     }
     if let Some(var_57) = &input.address_line2 {
-        object.key("AddressLine2").string(var_57);
+        object.key("AddressLine2").string(var_57.as_str());
     }
     if let Some(var_58) = &input.address_line3 {
-        object.key("AddressLine3").string(var_58);
+        object.key("AddressLine3").string(var_58.as_str());
     }
     if let Some(var_59) = &input.city {
-        object.key("City").string(var_59);
+        object.key("City").string(var_59.as_str());
     }
     if let Some(var_60) = &input.state_or_region {
-        object.key("StateOrRegion").string(var_60);
+        object.key("StateOrRegion").string(var_60.as_str());
     }
     if let Some(var_61) = &input.district_or_county {
-        object.key("DistrictOrCounty").string(var_61);
+        object.key("DistrictOrCounty").string(var_61.as_str());
     }
     if let Some(var_62) = &input.postal_code {
-        object.key("PostalCode").string(var_62);
+        object.key("PostalCode").string(var_62.as_str());
     }
     if let Some(var_63) = &input.country_code {
-        object.key("CountryCode").string(var_63);
+        object.key("CountryCode").string(var_63.as_str());
     }
     if let Some(var_64) = &input.municipality {
-        object.key("Municipality").string(var_64);
+        object.key("Municipality").string(var_64.as_str());
     }
     Ok(())
 }

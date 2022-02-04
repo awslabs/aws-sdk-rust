@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_add_tags_to_certificate_input(
     input: &crate::input::AddTagsToCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_1);
+        object.key("CertificateArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.tags {
         let mut array_3 = object.key("Tags").start_array();
@@ -25,7 +25,7 @@ pub fn serialize_structure_crate_input_delete_certificate_input(
     input: &crate::input::DeleteCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_6);
+        object.key("CertificateArn").string(var_6.as_str());
     }
     Ok(())
 }
@@ -35,7 +35,7 @@ pub fn serialize_structure_crate_input_describe_certificate_input(
     input: &crate::input::DescribeCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_7);
+        object.key("CertificateArn").string(var_7.as_str());
     }
     Ok(())
 }
@@ -45,7 +45,7 @@ pub fn serialize_structure_crate_input_export_certificate_input(
     input: &crate::input::ExportCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_8);
+        object.key("CertificateArn").string(var_8.as_str());
     }
     if let Some(var_9) = &input.passphrase {
         object
@@ -60,7 +60,7 @@ pub fn serialize_structure_crate_input_get_certificate_input(
     input: &crate::input::GetCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_10);
+        object.key("CertificateArn").string(var_10.as_str());
     }
     Ok(())
 }
@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_import_certificate_input(
     input: &crate::input::ImportCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_11);
+        object.key("CertificateArn").string(var_11.as_str());
     }
     if let Some(var_12) = &input.certificate {
         object
@@ -120,7 +120,7 @@ pub fn serialize_structure_crate_input_list_certificates_input(
         object_23.finish();
     }
     if let Some(var_24) = &input.next_token {
-        object.key("NextToken").string(var_24);
+        object.key("NextToken").string(var_24.as_str());
     }
     if let Some(var_25) = &input.max_items {
         object.key("MaxItems").number(
@@ -136,7 +136,7 @@ pub fn serialize_structure_crate_input_list_tags_for_certificate_input(
     input: &crate::input::ListTagsForCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_26);
+        object.key("CertificateArn").string(var_26.as_str());
     }
     Ok(())
 }
@@ -154,7 +154,7 @@ pub fn serialize_structure_crate_input_put_account_configuration_input(
         object_28.finish();
     }
     if let Some(var_29) = &input.idempotency_token {
-        object.key("IdempotencyToken").string(var_29);
+        object.key("IdempotencyToken").string(var_29.as_str());
     }
     Ok(())
 }
@@ -164,7 +164,7 @@ pub fn serialize_structure_crate_input_remove_tags_from_certificate_input(
     input: &crate::input::RemoveTagsFromCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_30);
+        object.key("CertificateArn").string(var_30.as_str());
     }
     if let Some(var_31) = &input.tags {
         let mut array_32 = object.key("Tags").start_array();
@@ -185,7 +185,7 @@ pub fn serialize_structure_crate_input_renew_certificate_input(
     input: &crate::input::RenewCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_35);
+        object.key("CertificateArn").string(var_35.as_str());
     }
     Ok(())
 }
@@ -195,7 +195,7 @@ pub fn serialize_structure_crate_input_request_certificate_input(
     input: &crate::input::RequestCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.domain_name {
-        object.key("DomainName").string(var_36);
+        object.key("DomainName").string(var_36.as_str());
     }
     if let Some(var_37) = &input.validation_method {
         object.key("ValidationMethod").string(var_37.as_str());
@@ -204,13 +204,13 @@ pub fn serialize_structure_crate_input_request_certificate_input(
         let mut array_39 = object.key("SubjectAlternativeNames").start_array();
         for item_40 in var_38 {
             {
-                array_39.value().string(item_40);
+                array_39.value().string(item_40.as_str());
             }
         }
         array_39.finish();
     }
     if let Some(var_41) = &input.idempotency_token {
-        object.key("IdempotencyToken").string(var_41);
+        object.key("IdempotencyToken").string(var_41.as_str());
     }
     if let Some(var_42) = &input.domain_validation_options {
         let mut array_43 = object.key("DomainValidationOptions").start_array();
@@ -235,7 +235,9 @@ pub fn serialize_structure_crate_input_request_certificate_input(
         object_47.finish();
     }
     if let Some(var_48) = &input.certificate_authority_arn {
-        object.key("CertificateAuthorityArn").string(var_48);
+        object
+            .key("CertificateAuthorityArn")
+            .string(var_48.as_str());
     }
     if let Some(var_49) = &input.tags {
         let mut array_50 = object.key("Tags").start_array();
@@ -256,13 +258,13 @@ pub fn serialize_structure_crate_input_resend_validation_email_input(
     input: &crate::input::ResendValidationEmailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_53);
+        object.key("CertificateArn").string(var_53.as_str());
     }
     if let Some(var_54) = &input.domain {
-        object.key("Domain").string(var_54);
+        object.key("Domain").string(var_54.as_str());
     }
     if let Some(var_55) = &input.validation_domain {
-        object.key("ValidationDomain").string(var_55);
+        object.key("ValidationDomain").string(var_55.as_str());
     }
     Ok(())
 }
@@ -272,7 +274,7 @@ pub fn serialize_structure_crate_input_update_certificate_options_input(
     input: &crate::input::UpdateCertificateOptionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_56) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_56);
+        object.key("CertificateArn").string(var_56.as_str());
     }
     if let Some(var_57) = &input.options {
         let mut object_58 = object.key("Options").start_object();
@@ -290,10 +292,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.key {
-        object.key("Key").string(var_59);
+        object.key("Key").string(var_59.as_str());
     }
     if let Some(var_60) = &input.value {
-        object.key("Value").string(var_60);
+        object.key("Value").string(var_60.as_str());
     }
     Ok(())
 }
@@ -350,10 +352,10 @@ pub fn serialize_structure_crate_model_domain_validation_option(
     input: &crate::model::DomainValidationOption,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_71) = &input.domain_name {
-        object.key("DomainName").string(var_71);
+        object.key("DomainName").string(var_71.as_str());
     }
     if let Some(var_72) = &input.validation_domain {
-        object.key("ValidationDomain").string(var_72);
+        object.key("ValidationDomain").string(var_72.as_str());
     }
     Ok(())
 }

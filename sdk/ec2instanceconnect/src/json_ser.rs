@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_send_serial_console_ssh_public_key_input(
     input: &crate::input::SendSerialConsoleSshPublicKeyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.instance_id {
-        object.key("InstanceId").string(var_1);
+        object.key("InstanceId").string(var_1.as_str());
     }
     if input.serial_port != 0 {
         object.key("SerialPort").number(
@@ -13,7 +13,7 @@ pub fn serialize_structure_crate_input_send_serial_console_ssh_public_key_input(
         );
     }
     if let Some(var_2) = &input.ssh_public_key {
-        object.key("SSHPublicKey").string(var_2);
+        object.key("SSHPublicKey").string(var_2.as_str());
     }
     Ok(())
 }
@@ -23,16 +23,16 @@ pub fn serialize_structure_crate_input_send_ssh_public_key_input(
     input: &crate::input::SendSshPublicKeyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.instance_id {
-        object.key("InstanceId").string(var_3);
+        object.key("InstanceId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.instance_os_user {
-        object.key("InstanceOSUser").string(var_4);
+        object.key("InstanceOSUser").string(var_4.as_str());
     }
     if let Some(var_5) = &input.ssh_public_key {
-        object.key("SSHPublicKey").string(var_5);
+        object.key("SSHPublicKey").string(var_5.as_str());
     }
     if let Some(var_6) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_6);
+        object.key("AvailabilityZone").string(var_6.as_str());
     }
     Ok(())
 }

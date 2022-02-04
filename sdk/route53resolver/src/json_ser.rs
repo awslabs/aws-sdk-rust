@@ -4,13 +4,13 @@ pub fn serialize_structure_crate_input_associate_firewall_rule_group_input(
     input: &crate::input::AssociateFirewallRuleGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.creator_request_id {
-        object.key("CreatorRequestId").string(var_1);
+        object.key("CreatorRequestId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.firewall_rule_group_id {
-        object.key("FirewallRuleGroupId").string(var_2);
+        object.key("FirewallRuleGroupId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.vpc_id {
-        object.key("VpcId").string(var_3);
+        object.key("VpcId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.priority {
         object.key("Priority").number(
@@ -19,7 +19,7 @@ pub fn serialize_structure_crate_input_associate_firewall_rule_group_input(
         );
     }
     if let Some(var_5) = &input.name {
-        object.key("Name").string(var_5);
+        object.key("Name").string(var_5.as_str());
     }
     if let Some(var_6) = &input.mutation_protection {
         object.key("MutationProtection").string(var_6.as_str());
@@ -43,7 +43,7 @@ pub fn serialize_structure_crate_input_associate_resolver_endpoint_ip_address_in
     input: &crate::input::AssociateResolverEndpointIpAddressInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.resolver_endpoint_id {
-        object.key("ResolverEndpointId").string(var_11);
+        object.key("ResolverEndpointId").string(var_11.as_str());
     }
     if let Some(var_12) = &input.ip_address {
         let mut object_13 = object.key("IpAddress").start_object();
@@ -58,10 +58,12 @@ pub fn serialize_structure_crate_input_associate_resolver_query_log_config_input
     input: &crate::input::AssociateResolverQueryLogConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.resolver_query_log_config_id {
-        object.key("ResolverQueryLogConfigId").string(var_14);
+        object
+            .key("ResolverQueryLogConfigId")
+            .string(var_14.as_str());
     }
     if let Some(var_15) = &input.resource_id {
-        object.key("ResourceId").string(var_15);
+        object.key("ResourceId").string(var_15.as_str());
     }
     Ok(())
 }
@@ -71,13 +73,13 @@ pub fn serialize_structure_crate_input_associate_resolver_rule_input(
     input: &crate::input::AssociateResolverRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.resolver_rule_id {
-        object.key("ResolverRuleId").string(var_16);
+        object.key("ResolverRuleId").string(var_16.as_str());
     }
     if let Some(var_17) = &input.name {
-        object.key("Name").string(var_17);
+        object.key("Name").string(var_17.as_str());
     }
     if let Some(var_18) = &input.vpc_id {
-        object.key("VPCId").string(var_18);
+        object.key("VPCId").string(var_18.as_str());
     }
     Ok(())
 }
@@ -87,10 +89,10 @@ pub fn serialize_structure_crate_input_create_firewall_domain_list_input(
     input: &crate::input::CreateFirewallDomainListInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.creator_request_id {
-        object.key("CreatorRequestId").string(var_19);
+        object.key("CreatorRequestId").string(var_19.as_str());
     }
     if let Some(var_20) = &input.name {
-        object.key("Name").string(var_20);
+        object.key("Name").string(var_20.as_str());
     }
     if let Some(var_21) = &input.tags {
         let mut array_22 = object.key("Tags").start_array();
@@ -111,13 +113,13 @@ pub fn serialize_structure_crate_input_create_firewall_rule_input(
     input: &crate::input::CreateFirewallRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.creator_request_id {
-        object.key("CreatorRequestId").string(var_25);
+        object.key("CreatorRequestId").string(var_25.as_str());
     }
     if let Some(var_26) = &input.firewall_rule_group_id {
-        object.key("FirewallRuleGroupId").string(var_26);
+        object.key("FirewallRuleGroupId").string(var_26.as_str());
     }
     if let Some(var_27) = &input.firewall_domain_list_id {
-        object.key("FirewallDomainListId").string(var_27);
+        object.key("FirewallDomainListId").string(var_27.as_str());
     }
     if let Some(var_28) = &input.priority {
         object.key("Priority").number(
@@ -132,7 +134,7 @@ pub fn serialize_structure_crate_input_create_firewall_rule_input(
         object.key("BlockResponse").string(var_30.as_str());
     }
     if let Some(var_31) = &input.block_override_domain {
-        object.key("BlockOverrideDomain").string(var_31);
+        object.key("BlockOverrideDomain").string(var_31.as_str());
     }
     if let Some(var_32) = &input.block_override_dns_type {
         object.key("BlockOverrideDnsType").string(var_32.as_str());
@@ -144,7 +146,7 @@ pub fn serialize_structure_crate_input_create_firewall_rule_input(
         );
     }
     if let Some(var_34) = &input.name {
-        object.key("Name").string(var_34);
+        object.key("Name").string(var_34.as_str());
     }
     Ok(())
 }
@@ -154,10 +156,10 @@ pub fn serialize_structure_crate_input_create_firewall_rule_group_input(
     input: &crate::input::CreateFirewallRuleGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.creator_request_id {
-        object.key("CreatorRequestId").string(var_35);
+        object.key("CreatorRequestId").string(var_35.as_str());
     }
     if let Some(var_36) = &input.name {
-        object.key("Name").string(var_36);
+        object.key("Name").string(var_36.as_str());
     }
     if let Some(var_37) = &input.tags {
         let mut array_38 = object.key("Tags").start_array();
@@ -178,16 +180,16 @@ pub fn serialize_structure_crate_input_create_resolver_endpoint_input(
     input: &crate::input::CreateResolverEndpointInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.creator_request_id {
-        object.key("CreatorRequestId").string(var_41);
+        object.key("CreatorRequestId").string(var_41.as_str());
     }
     if let Some(var_42) = &input.name {
-        object.key("Name").string(var_42);
+        object.key("Name").string(var_42.as_str());
     }
     if let Some(var_43) = &input.security_group_ids {
         let mut array_44 = object.key("SecurityGroupIds").start_array();
         for item_45 in var_43 {
             {
-                array_44.value().string(item_45);
+                array_44.value().string(item_45.as_str());
             }
         }
         array_44.finish();
@@ -228,13 +230,13 @@ pub fn serialize_structure_crate_input_create_resolver_query_log_config_input(
     input: &crate::input::CreateResolverQueryLogConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.name {
-        object.key("Name").string(var_55);
+        object.key("Name").string(var_55.as_str());
     }
     if let Some(var_56) = &input.destination_arn {
-        object.key("DestinationArn").string(var_56);
+        object.key("DestinationArn").string(var_56.as_str());
     }
     if let Some(var_57) = &input.creator_request_id {
-        object.key("CreatorRequestId").string(var_57);
+        object.key("CreatorRequestId").string(var_57.as_str());
     }
     if let Some(var_58) = &input.tags {
         let mut array_59 = object.key("Tags").start_array();
@@ -255,16 +257,16 @@ pub fn serialize_structure_crate_input_create_resolver_rule_input(
     input: &crate::input::CreateResolverRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_62) = &input.creator_request_id {
-        object.key("CreatorRequestId").string(var_62);
+        object.key("CreatorRequestId").string(var_62.as_str());
     }
     if let Some(var_63) = &input.name {
-        object.key("Name").string(var_63);
+        object.key("Name").string(var_63.as_str());
     }
     if let Some(var_64) = &input.rule_type {
         object.key("RuleType").string(var_64.as_str());
     }
     if let Some(var_65) = &input.domain_name {
-        object.key("DomainName").string(var_65);
+        object.key("DomainName").string(var_65.as_str());
     }
     if let Some(var_66) = &input.target_ips {
         let mut array_67 = object.key("TargetIps").start_array();
@@ -281,7 +283,7 @@ pub fn serialize_structure_crate_input_create_resolver_rule_input(
         array_67.finish();
     }
     if let Some(var_70) = &input.resolver_endpoint_id {
-        object.key("ResolverEndpointId").string(var_70);
+        object.key("ResolverEndpointId").string(var_70.as_str());
     }
     if let Some(var_71) = &input.tags {
         let mut array_72 = object.key("Tags").start_array();
@@ -302,7 +304,7 @@ pub fn serialize_structure_crate_input_delete_firewall_domain_list_input(
     input: &crate::input::DeleteFirewallDomainListInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_75) = &input.firewall_domain_list_id {
-        object.key("FirewallDomainListId").string(var_75);
+        object.key("FirewallDomainListId").string(var_75.as_str());
     }
     Ok(())
 }
@@ -312,10 +314,10 @@ pub fn serialize_structure_crate_input_delete_firewall_rule_input(
     input: &crate::input::DeleteFirewallRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_76) = &input.firewall_rule_group_id {
-        object.key("FirewallRuleGroupId").string(var_76);
+        object.key("FirewallRuleGroupId").string(var_76.as_str());
     }
     if let Some(var_77) = &input.firewall_domain_list_id {
-        object.key("FirewallDomainListId").string(var_77);
+        object.key("FirewallDomainListId").string(var_77.as_str());
     }
     Ok(())
 }
@@ -325,7 +327,7 @@ pub fn serialize_structure_crate_input_delete_firewall_rule_group_input(
     input: &crate::input::DeleteFirewallRuleGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_78) = &input.firewall_rule_group_id {
-        object.key("FirewallRuleGroupId").string(var_78);
+        object.key("FirewallRuleGroupId").string(var_78.as_str());
     }
     Ok(())
 }
@@ -335,7 +337,7 @@ pub fn serialize_structure_crate_input_delete_resolver_endpoint_input(
     input: &crate::input::DeleteResolverEndpointInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_79) = &input.resolver_endpoint_id {
-        object.key("ResolverEndpointId").string(var_79);
+        object.key("ResolverEndpointId").string(var_79.as_str());
     }
     Ok(())
 }
@@ -345,7 +347,9 @@ pub fn serialize_structure_crate_input_delete_resolver_query_log_config_input(
     input: &crate::input::DeleteResolverQueryLogConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_80) = &input.resolver_query_log_config_id {
-        object.key("ResolverQueryLogConfigId").string(var_80);
+        object
+            .key("ResolverQueryLogConfigId")
+            .string(var_80.as_str());
     }
     Ok(())
 }
@@ -355,7 +359,7 @@ pub fn serialize_structure_crate_input_delete_resolver_rule_input(
     input: &crate::input::DeleteResolverRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.resolver_rule_id {
-        object.key("ResolverRuleId").string(var_81);
+        object.key("ResolverRuleId").string(var_81.as_str());
     }
     Ok(())
 }
@@ -365,7 +369,9 @@ pub fn serialize_structure_crate_input_disassociate_firewall_rule_group_input(
     input: &crate::input::DisassociateFirewallRuleGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.firewall_rule_group_association_id {
-        object.key("FirewallRuleGroupAssociationId").string(var_82);
+        object
+            .key("FirewallRuleGroupAssociationId")
+            .string(var_82.as_str());
     }
     Ok(())
 }
@@ -375,7 +381,7 @@ pub fn serialize_structure_crate_input_disassociate_resolver_endpoint_ip_address
     input: &crate::input::DisassociateResolverEndpointIpAddressInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_83) = &input.resolver_endpoint_id {
-        object.key("ResolverEndpointId").string(var_83);
+        object.key("ResolverEndpointId").string(var_83.as_str());
     }
     if let Some(var_84) = &input.ip_address {
         let mut object_85 = object.key("IpAddress").start_object();
@@ -390,10 +396,12 @@ pub fn serialize_structure_crate_input_disassociate_resolver_query_log_config_in
     input: &crate::input::DisassociateResolverQueryLogConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_86) = &input.resolver_query_log_config_id {
-        object.key("ResolverQueryLogConfigId").string(var_86);
+        object
+            .key("ResolverQueryLogConfigId")
+            .string(var_86.as_str());
     }
     if let Some(var_87) = &input.resource_id {
-        object.key("ResourceId").string(var_87);
+        object.key("ResourceId").string(var_87.as_str());
     }
     Ok(())
 }
@@ -403,10 +411,10 @@ pub fn serialize_structure_crate_input_disassociate_resolver_rule_input(
     input: &crate::input::DisassociateResolverRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_88) = &input.vpc_id {
-        object.key("VPCId").string(var_88);
+        object.key("VPCId").string(var_88.as_str());
     }
     if let Some(var_89) = &input.resolver_rule_id {
-        object.key("ResolverRuleId").string(var_89);
+        object.key("ResolverRuleId").string(var_89.as_str());
     }
     Ok(())
 }
@@ -416,7 +424,7 @@ pub fn serialize_structure_crate_input_get_firewall_config_input(
     input: &crate::input::GetFirewallConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_90) = &input.resource_id {
-        object.key("ResourceId").string(var_90);
+        object.key("ResourceId").string(var_90.as_str());
     }
     Ok(())
 }
@@ -426,7 +434,7 @@ pub fn serialize_structure_crate_input_get_firewall_domain_list_input(
     input: &crate::input::GetFirewallDomainListInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_91) = &input.firewall_domain_list_id {
-        object.key("FirewallDomainListId").string(var_91);
+        object.key("FirewallDomainListId").string(var_91.as_str());
     }
     Ok(())
 }
@@ -436,7 +444,7 @@ pub fn serialize_structure_crate_input_get_firewall_rule_group_input(
     input: &crate::input::GetFirewallRuleGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_92) = &input.firewall_rule_group_id {
-        object.key("FirewallRuleGroupId").string(var_92);
+        object.key("FirewallRuleGroupId").string(var_92.as_str());
     }
     Ok(())
 }
@@ -446,7 +454,9 @@ pub fn serialize_structure_crate_input_get_firewall_rule_group_association_input
     input: &crate::input::GetFirewallRuleGroupAssociationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_93) = &input.firewall_rule_group_association_id {
-        object.key("FirewallRuleGroupAssociationId").string(var_93);
+        object
+            .key("FirewallRuleGroupAssociationId")
+            .string(var_93.as_str());
     }
     Ok(())
 }
@@ -456,7 +466,7 @@ pub fn serialize_structure_crate_input_get_firewall_rule_group_policy_input(
     input: &crate::input::GetFirewallRuleGroupPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_94) = &input.arn {
-        object.key("Arn").string(var_94);
+        object.key("Arn").string(var_94.as_str());
     }
     Ok(())
 }
@@ -466,7 +476,7 @@ pub fn serialize_structure_crate_input_get_resolver_config_input(
     input: &crate::input::GetResolverConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_95) = &input.resource_id {
-        object.key("ResourceId").string(var_95);
+        object.key("ResourceId").string(var_95.as_str());
     }
     Ok(())
 }
@@ -476,7 +486,7 @@ pub fn serialize_structure_crate_input_get_resolver_dnssec_config_input(
     input: &crate::input::GetResolverDnssecConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_96) = &input.resource_id {
-        object.key("ResourceId").string(var_96);
+        object.key("ResourceId").string(var_96.as_str());
     }
     Ok(())
 }
@@ -486,7 +496,7 @@ pub fn serialize_structure_crate_input_get_resolver_endpoint_input(
     input: &crate::input::GetResolverEndpointInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_97) = &input.resolver_endpoint_id {
-        object.key("ResolverEndpointId").string(var_97);
+        object.key("ResolverEndpointId").string(var_97.as_str());
     }
     Ok(())
 }
@@ -496,7 +506,9 @@ pub fn serialize_structure_crate_input_get_resolver_query_log_config_input(
     input: &crate::input::GetResolverQueryLogConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_98) = &input.resolver_query_log_config_id {
-        object.key("ResolverQueryLogConfigId").string(var_98);
+        object
+            .key("ResolverQueryLogConfigId")
+            .string(var_98.as_str());
     }
     Ok(())
 }
@@ -508,7 +520,7 @@ pub fn serialize_structure_crate_input_get_resolver_query_log_config_association
     if let Some(var_99) = &input.resolver_query_log_config_association_id {
         object
             .key("ResolverQueryLogConfigAssociationId")
-            .string(var_99);
+            .string(var_99.as_str());
     }
     Ok(())
 }
@@ -518,7 +530,7 @@ pub fn serialize_structure_crate_input_get_resolver_query_log_config_policy_inpu
     input: &crate::input::GetResolverQueryLogConfigPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_100) = &input.arn {
-        object.key("Arn").string(var_100);
+        object.key("Arn").string(var_100.as_str());
     }
     Ok(())
 }
@@ -528,7 +540,7 @@ pub fn serialize_structure_crate_input_get_resolver_rule_input(
     input: &crate::input::GetResolverRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_101) = &input.resolver_rule_id {
-        object.key("ResolverRuleId").string(var_101);
+        object.key("ResolverRuleId").string(var_101.as_str());
     }
     Ok(())
 }
@@ -538,7 +550,9 @@ pub fn serialize_structure_crate_input_get_resolver_rule_association_input(
     input: &crate::input::GetResolverRuleAssociationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_102) = &input.resolver_rule_association_id {
-        object.key("ResolverRuleAssociationId").string(var_102);
+        object
+            .key("ResolverRuleAssociationId")
+            .string(var_102.as_str());
     }
     Ok(())
 }
@@ -548,7 +562,7 @@ pub fn serialize_structure_crate_input_get_resolver_rule_policy_input(
     input: &crate::input::GetResolverRulePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_103) = &input.arn {
-        object.key("Arn").string(var_103);
+        object.key("Arn").string(var_103.as_str());
     }
     Ok(())
 }
@@ -558,13 +572,13 @@ pub fn serialize_structure_crate_input_import_firewall_domains_input(
     input: &crate::input::ImportFirewallDomainsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_104) = &input.firewall_domain_list_id {
-        object.key("FirewallDomainListId").string(var_104);
+        object.key("FirewallDomainListId").string(var_104.as_str());
     }
     if let Some(var_105) = &input.operation {
         object.key("Operation").string(var_105.as_str());
     }
     if let Some(var_106) = &input.domain_file_url {
-        object.key("DomainFileUrl").string(var_106);
+        object.key("DomainFileUrl").string(var_106.as_str());
     }
     Ok(())
 }
@@ -580,7 +594,7 @@ pub fn serialize_structure_crate_input_list_firewall_configs_input(
         );
     }
     if let Some(var_108) = &input.next_token {
-        object.key("NextToken").string(var_108);
+        object.key("NextToken").string(var_108.as_str());
     }
     Ok(())
 }
@@ -596,7 +610,7 @@ pub fn serialize_structure_crate_input_list_firewall_domain_lists_input(
         );
     }
     if let Some(var_110) = &input.next_token {
-        object.key("NextToken").string(var_110);
+        object.key("NextToken").string(var_110.as_str());
     }
     Ok(())
 }
@@ -606,7 +620,7 @@ pub fn serialize_structure_crate_input_list_firewall_domains_input(
     input: &crate::input::ListFirewallDomainsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_111) = &input.firewall_domain_list_id {
-        object.key("FirewallDomainListId").string(var_111);
+        object.key("FirewallDomainListId").string(var_111.as_str());
     }
     if let Some(var_112) = &input.max_results {
         object.key("MaxResults").number(
@@ -615,7 +629,7 @@ pub fn serialize_structure_crate_input_list_firewall_domains_input(
         );
     }
     if let Some(var_113) = &input.next_token {
-        object.key("NextToken").string(var_113);
+        object.key("NextToken").string(var_113.as_str());
     }
     Ok(())
 }
@@ -625,10 +639,10 @@ pub fn serialize_structure_crate_input_list_firewall_rule_group_associations_inp
     input: &crate::input::ListFirewallRuleGroupAssociationsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_114) = &input.firewall_rule_group_id {
-        object.key("FirewallRuleGroupId").string(var_114);
+        object.key("FirewallRuleGroupId").string(var_114.as_str());
     }
     if let Some(var_115) = &input.vpc_id {
-        object.key("VpcId").string(var_115);
+        object.key("VpcId").string(var_115.as_str());
     }
     if let Some(var_116) = &input.priority {
         object.key("Priority").number(
@@ -646,7 +660,7 @@ pub fn serialize_structure_crate_input_list_firewall_rule_group_associations_inp
         );
     }
     if let Some(var_119) = &input.next_token {
-        object.key("NextToken").string(var_119);
+        object.key("NextToken").string(var_119.as_str());
     }
     Ok(())
 }
@@ -662,7 +676,7 @@ pub fn serialize_structure_crate_input_list_firewall_rule_groups_input(
         );
     }
     if let Some(var_121) = &input.next_token {
-        object.key("NextToken").string(var_121);
+        object.key("NextToken").string(var_121.as_str());
     }
     Ok(())
 }
@@ -672,7 +686,7 @@ pub fn serialize_structure_crate_input_list_firewall_rules_input(
     input: &crate::input::ListFirewallRulesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_122) = &input.firewall_rule_group_id {
-        object.key("FirewallRuleGroupId").string(var_122);
+        object.key("FirewallRuleGroupId").string(var_122.as_str());
     }
     if let Some(var_123) = &input.priority {
         object.key("Priority").number(
@@ -690,7 +704,7 @@ pub fn serialize_structure_crate_input_list_firewall_rules_input(
         );
     }
     if let Some(var_126) = &input.next_token {
-        object.key("NextToken").string(var_126);
+        object.key("NextToken").string(var_126.as_str());
     }
     Ok(())
 }
@@ -706,7 +720,7 @@ pub fn serialize_structure_crate_input_list_resolver_configs_input(
         );
     }
     if let Some(var_128) = &input.next_token {
-        object.key("NextToken").string(var_128);
+        object.key("NextToken").string(var_128.as_str());
     }
     Ok(())
 }
@@ -722,7 +736,7 @@ pub fn serialize_structure_crate_input_list_resolver_dnssec_configs_input(
         );
     }
     if let Some(var_130) = &input.next_token {
-        object.key("NextToken").string(var_130);
+        object.key("NextToken").string(var_130.as_str());
     }
     if let Some(var_131) = &input.filters {
         let mut array_132 = object.key("Filters").start_array();
@@ -743,7 +757,7 @@ pub fn serialize_structure_crate_input_list_resolver_endpoint_ip_addresses_input
     input: &crate::input::ListResolverEndpointIpAddressesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_135) = &input.resolver_endpoint_id {
-        object.key("ResolverEndpointId").string(var_135);
+        object.key("ResolverEndpointId").string(var_135.as_str());
     }
     if let Some(var_136) = &input.max_results {
         object.key("MaxResults").number(
@@ -752,7 +766,7 @@ pub fn serialize_structure_crate_input_list_resolver_endpoint_ip_addresses_input
         );
     }
     if let Some(var_137) = &input.next_token {
-        object.key("NextToken").string(var_137);
+        object.key("NextToken").string(var_137.as_str());
     }
     Ok(())
 }
@@ -768,7 +782,7 @@ pub fn serialize_structure_crate_input_list_resolver_endpoints_input(
         );
     }
     if let Some(var_139) = &input.next_token {
-        object.key("NextToken").string(var_139);
+        object.key("NextToken").string(var_139.as_str());
     }
     if let Some(var_140) = &input.filters {
         let mut array_141 = object.key("Filters").start_array();
@@ -795,7 +809,7 @@ pub fn serialize_structure_crate_input_list_resolver_query_log_config_associatio
         );
     }
     if let Some(var_145) = &input.next_token {
-        object.key("NextToken").string(var_145);
+        object.key("NextToken").string(var_145.as_str());
     }
     if let Some(var_146) = &input.filters {
         let mut array_147 = object.key("Filters").start_array();
@@ -809,7 +823,7 @@ pub fn serialize_structure_crate_input_list_resolver_query_log_config_associatio
         array_147.finish();
     }
     if let Some(var_150) = &input.sort_by {
-        object.key("SortBy").string(var_150);
+        object.key("SortBy").string(var_150.as_str());
     }
     if let Some(var_151) = &input.sort_order {
         object.key("SortOrder").string(var_151.as_str());
@@ -828,7 +842,7 @@ pub fn serialize_structure_crate_input_list_resolver_query_log_configs_input(
         );
     }
     if let Some(var_153) = &input.next_token {
-        object.key("NextToken").string(var_153);
+        object.key("NextToken").string(var_153.as_str());
     }
     if let Some(var_154) = &input.filters {
         let mut array_155 = object.key("Filters").start_array();
@@ -842,7 +856,7 @@ pub fn serialize_structure_crate_input_list_resolver_query_log_configs_input(
         array_155.finish();
     }
     if let Some(var_158) = &input.sort_by {
-        object.key("SortBy").string(var_158);
+        object.key("SortBy").string(var_158.as_str());
     }
     if let Some(var_159) = &input.sort_order {
         object.key("SortOrder").string(var_159.as_str());
@@ -861,7 +875,7 @@ pub fn serialize_structure_crate_input_list_resolver_rule_associations_input(
         );
     }
     if let Some(var_161) = &input.next_token {
-        object.key("NextToken").string(var_161);
+        object.key("NextToken").string(var_161.as_str());
     }
     if let Some(var_162) = &input.filters {
         let mut array_163 = object.key("Filters").start_array();
@@ -888,7 +902,7 @@ pub fn serialize_structure_crate_input_list_resolver_rules_input(
         );
     }
     if let Some(var_167) = &input.next_token {
-        object.key("NextToken").string(var_167);
+        object.key("NextToken").string(var_167.as_str());
     }
     if let Some(var_168) = &input.filters {
         let mut array_169 = object.key("Filters").start_array();
@@ -909,7 +923,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_172) = &input.resource_arn {
-        object.key("ResourceArn").string(var_172);
+        object.key("ResourceArn").string(var_172.as_str());
     }
     if let Some(var_173) = &input.max_results {
         object.key("MaxResults").number(
@@ -918,7 +932,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
         );
     }
     if let Some(var_174) = &input.next_token {
-        object.key("NextToken").string(var_174);
+        object.key("NextToken").string(var_174.as_str());
     }
     Ok(())
 }
@@ -928,10 +942,12 @@ pub fn serialize_structure_crate_input_put_firewall_rule_group_policy_input(
     input: &crate::input::PutFirewallRuleGroupPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_175) = &input.arn {
-        object.key("Arn").string(var_175);
+        object.key("Arn").string(var_175.as_str());
     }
     if let Some(var_176) = &input.firewall_rule_group_policy {
-        object.key("FirewallRuleGroupPolicy").string(var_176);
+        object
+            .key("FirewallRuleGroupPolicy")
+            .string(var_176.as_str());
     }
     Ok(())
 }
@@ -941,10 +957,12 @@ pub fn serialize_structure_crate_input_put_resolver_query_log_config_policy_inpu
     input: &crate::input::PutResolverQueryLogConfigPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_177) = &input.arn {
-        object.key("Arn").string(var_177);
+        object.key("Arn").string(var_177.as_str());
     }
     if let Some(var_178) = &input.resolver_query_log_config_policy {
-        object.key("ResolverQueryLogConfigPolicy").string(var_178);
+        object
+            .key("ResolverQueryLogConfigPolicy")
+            .string(var_178.as_str());
     }
     Ok(())
 }
@@ -954,10 +972,10 @@ pub fn serialize_structure_crate_input_put_resolver_rule_policy_input(
     input: &crate::input::PutResolverRulePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_179) = &input.arn {
-        object.key("Arn").string(var_179);
+        object.key("Arn").string(var_179.as_str());
     }
     if let Some(var_180) = &input.resolver_rule_policy {
-        object.key("ResolverRulePolicy").string(var_180);
+        object.key("ResolverRulePolicy").string(var_180.as_str());
     }
     Ok(())
 }
@@ -967,7 +985,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_181) = &input.resource_arn {
-        object.key("ResourceArn").string(var_181);
+        object.key("ResourceArn").string(var_181.as_str());
     }
     if let Some(var_182) = &input.tags {
         let mut array_183 = object.key("Tags").start_array();
@@ -988,13 +1006,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_186) = &input.resource_arn {
-        object.key("ResourceArn").string(var_186);
+        object.key("ResourceArn").string(var_186.as_str());
     }
     if let Some(var_187) = &input.tag_keys {
         let mut array_188 = object.key("TagKeys").start_array();
         for item_189 in var_187 {
             {
-                array_188.value().string(item_189);
+                array_188.value().string(item_189.as_str());
             }
         }
         array_188.finish();
@@ -1007,7 +1025,7 @@ pub fn serialize_structure_crate_input_update_firewall_config_input(
     input: &crate::input::UpdateFirewallConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_190) = &input.resource_id {
-        object.key("ResourceId").string(var_190);
+        object.key("ResourceId").string(var_190.as_str());
     }
     if let Some(var_191) = &input.firewall_fail_open {
         object.key("FirewallFailOpen").string(var_191.as_str());
@@ -1020,7 +1038,7 @@ pub fn serialize_structure_crate_input_update_firewall_domains_input(
     input: &crate::input::UpdateFirewallDomainsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_192) = &input.firewall_domain_list_id {
-        object.key("FirewallDomainListId").string(var_192);
+        object.key("FirewallDomainListId").string(var_192.as_str());
     }
     if let Some(var_193) = &input.operation {
         object.key("Operation").string(var_193.as_str());
@@ -1029,7 +1047,7 @@ pub fn serialize_structure_crate_input_update_firewall_domains_input(
         let mut array_195 = object.key("Domains").start_array();
         for item_196 in var_194 {
             {
-                array_195.value().string(item_196);
+                array_195.value().string(item_196.as_str());
             }
         }
         array_195.finish();
@@ -1042,10 +1060,10 @@ pub fn serialize_structure_crate_input_update_firewall_rule_input(
     input: &crate::input::UpdateFirewallRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_197) = &input.firewall_rule_group_id {
-        object.key("FirewallRuleGroupId").string(var_197);
+        object.key("FirewallRuleGroupId").string(var_197.as_str());
     }
     if let Some(var_198) = &input.firewall_domain_list_id {
-        object.key("FirewallDomainListId").string(var_198);
+        object.key("FirewallDomainListId").string(var_198.as_str());
     }
     if let Some(var_199) = &input.priority {
         object.key("Priority").number(
@@ -1060,7 +1078,7 @@ pub fn serialize_structure_crate_input_update_firewall_rule_input(
         object.key("BlockResponse").string(var_201.as_str());
     }
     if let Some(var_202) = &input.block_override_domain {
-        object.key("BlockOverrideDomain").string(var_202);
+        object.key("BlockOverrideDomain").string(var_202.as_str());
     }
     if let Some(var_203) = &input.block_override_dns_type {
         object.key("BlockOverrideDnsType").string(var_203.as_str());
@@ -1072,7 +1090,7 @@ pub fn serialize_structure_crate_input_update_firewall_rule_input(
         );
     }
     if let Some(var_205) = &input.name {
-        object.key("Name").string(var_205);
+        object.key("Name").string(var_205.as_str());
     }
     Ok(())
 }
@@ -1082,7 +1100,9 @@ pub fn serialize_structure_crate_input_update_firewall_rule_group_association_in
     input: &crate::input::UpdateFirewallRuleGroupAssociationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_206) = &input.firewall_rule_group_association_id {
-        object.key("FirewallRuleGroupAssociationId").string(var_206);
+        object
+            .key("FirewallRuleGroupAssociationId")
+            .string(var_206.as_str());
     }
     if let Some(var_207) = &input.priority {
         object.key("Priority").number(
@@ -1094,7 +1114,7 @@ pub fn serialize_structure_crate_input_update_firewall_rule_group_association_in
         object.key("MutationProtection").string(var_208.as_str());
     }
     if let Some(var_209) = &input.name {
-        object.key("Name").string(var_209);
+        object.key("Name").string(var_209.as_str());
     }
     Ok(())
 }
@@ -1104,7 +1124,7 @@ pub fn serialize_structure_crate_input_update_resolver_config_input(
     input: &crate::input::UpdateResolverConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_210) = &input.resource_id {
-        object.key("ResourceId").string(var_210);
+        object.key("ResourceId").string(var_210.as_str());
     }
     if let Some(var_211) = &input.autodefined_reverse_flag {
         object
@@ -1119,7 +1139,7 @@ pub fn serialize_structure_crate_input_update_resolver_dnssec_config_input(
     input: &crate::input::UpdateResolverDnssecConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_212) = &input.resource_id {
-        object.key("ResourceId").string(var_212);
+        object.key("ResourceId").string(var_212.as_str());
     }
     if let Some(var_213) = &input.validation {
         object.key("Validation").string(var_213.as_str());
@@ -1132,10 +1152,10 @@ pub fn serialize_structure_crate_input_update_resolver_endpoint_input(
     input: &crate::input::UpdateResolverEndpointInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_214) = &input.resolver_endpoint_id {
-        object.key("ResolverEndpointId").string(var_214);
+        object.key("ResolverEndpointId").string(var_214.as_str());
     }
     if let Some(var_215) = &input.name {
-        object.key("Name").string(var_215);
+        object.key("Name").string(var_215.as_str());
     }
     Ok(())
 }
@@ -1145,7 +1165,7 @@ pub fn serialize_structure_crate_input_update_resolver_rule_input(
     input: &crate::input::UpdateResolverRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_216) = &input.resolver_rule_id {
-        object.key("ResolverRuleId").string(var_216);
+        object.key("ResolverRuleId").string(var_216.as_str());
     }
     if let Some(var_217) = &input.config {
         let mut object_218 = object.key("Config").start_object();
@@ -1163,10 +1183,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_219) = &input.key {
-        object.key("Key").string(var_219);
+        object.key("Key").string(var_219.as_str());
     }
     if let Some(var_220) = &input.value {
-        object.key("Value").string(var_220);
+        object.key("Value").string(var_220.as_str());
     }
     Ok(())
 }
@@ -1176,13 +1196,13 @@ pub fn serialize_structure_crate_model_ip_address_update(
     input: &crate::model::IpAddressUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_221) = &input.ip_id {
-        object.key("IpId").string(var_221);
+        object.key("IpId").string(var_221.as_str());
     }
     if let Some(var_222) = &input.subnet_id {
-        object.key("SubnetId").string(var_222);
+        object.key("SubnetId").string(var_222.as_str());
     }
     if let Some(var_223) = &input.ip {
-        object.key("Ip").string(var_223);
+        object.key("Ip").string(var_223.as_str());
     }
     Ok(())
 }
@@ -1192,10 +1212,10 @@ pub fn serialize_structure_crate_model_ip_address_request(
     input: &crate::model::IpAddressRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_224) = &input.subnet_id {
-        object.key("SubnetId").string(var_224);
+        object.key("SubnetId").string(var_224.as_str());
     }
     if let Some(var_225) = &input.ip {
-        object.key("Ip").string(var_225);
+        object.key("Ip").string(var_225.as_str());
     }
     Ok(())
 }
@@ -1205,7 +1225,7 @@ pub fn serialize_structure_crate_model_target_address(
     input: &crate::model::TargetAddress,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_226) = &input.ip {
-        object.key("Ip").string(var_226);
+        object.key("Ip").string(var_226.as_str());
     }
     if let Some(var_227) = &input.port {
         object.key("Port").number(
@@ -1221,13 +1241,13 @@ pub fn serialize_structure_crate_model_filter(
     input: &crate::model::Filter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_228) = &input.name {
-        object.key("Name").string(var_228);
+        object.key("Name").string(var_228.as_str());
     }
     if let Some(var_229) = &input.values {
         let mut array_230 = object.key("Values").start_array();
         for item_231 in var_229 {
             {
-                array_230.value().string(item_231);
+                array_230.value().string(item_231.as_str());
             }
         }
         array_230.finish();
@@ -1240,7 +1260,7 @@ pub fn serialize_structure_crate_model_resolver_rule_config(
     input: &crate::model::ResolverRuleConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_232) = &input.name {
-        object.key("Name").string(var_232);
+        object.key("Name").string(var_232.as_str());
     }
     if let Some(var_233) = &input.target_ips {
         let mut array_234 = object.key("TargetIps").start_array();
@@ -1257,7 +1277,7 @@ pub fn serialize_structure_crate_model_resolver_rule_config(
         array_234.finish();
     }
     if let Some(var_237) = &input.resolver_endpoint_id {
-        object.key("ResolverEndpointId").string(var_237);
+        object.key("ResolverEndpointId").string(var_237.as_str());
     }
     Ok(())
 }

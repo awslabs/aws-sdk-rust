@@ -4,25 +4,25 @@ pub fn serialize_structure_crate_input_query_forecast_input(
     input: &crate::input::QueryForecastInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.forecast_arn {
-        object.key("ForecastArn").string(var_1);
+        object.key("ForecastArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.start_date {
-        object.key("StartDate").string(var_2);
+        object.key("StartDate").string(var_2.as_str());
     }
     if let Some(var_3) = &input.end_date {
-        object.key("EndDate").string(var_3);
+        object.key("EndDate").string(var_3.as_str());
     }
     if let Some(var_4) = &input.filters {
         let mut object_5 = object.key("Filters").start_object();
         for (key_6, value_7) in var_4 {
             {
-                object_5.key(key_6).string(value_7);
+                object_5.key(key_6).string(value_7.as_str());
             }
         }
         object_5.finish();
     }
     if let Some(var_8) = &input.next_token {
-        object.key("NextToken").string(var_8);
+        object.key("NextToken").string(var_8.as_str());
     }
     Ok(())
 }

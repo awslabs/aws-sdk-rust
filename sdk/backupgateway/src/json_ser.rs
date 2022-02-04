@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_associate_gateway_to_server_input(
     input: &crate::input::AssociateGatewayToServerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.gateway_arn {
-        object.key("GatewayArn").string(var_1);
+        object.key("GatewayArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.server_arn {
-        object.key("ServerArn").string(var_2);
+        object.key("ServerArn").string(var_2.as_str());
     }
     Ok(())
 }
@@ -17,10 +17,10 @@ pub fn serialize_structure_crate_input_create_gateway_input(
     input: &crate::input::CreateGatewayInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.activation_key {
-        object.key("ActivationKey").string(var_3);
+        object.key("ActivationKey").string(var_3.as_str());
     }
     if let Some(var_4) = &input.gateway_display_name {
-        object.key("GatewayDisplayName").string(var_4);
+        object.key("GatewayDisplayName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.gateway_type {
         object.key("GatewayType").string(var_5.as_str());
@@ -44,7 +44,7 @@ pub fn serialize_structure_crate_input_delete_gateway_input(
     input: &crate::input::DeleteGatewayInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.gateway_arn {
-        object.key("GatewayArn").string(var_10);
+        object.key("GatewayArn").string(var_10.as_str());
     }
     Ok(())
 }
@@ -54,7 +54,7 @@ pub fn serialize_structure_crate_input_delete_hypervisor_input(
     input: &crate::input::DeleteHypervisorInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.hypervisor_arn {
-        object.key("HypervisorArn").string(var_11);
+        object.key("HypervisorArn").string(var_11.as_str());
     }
     Ok(())
 }
@@ -64,7 +64,7 @@ pub fn serialize_structure_crate_input_disassociate_gateway_from_server_input(
     input: &crate::input::DisassociateGatewayFromServerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.gateway_arn {
-        object.key("GatewayArn").string(var_12);
+        object.key("GatewayArn").string(var_12.as_str());
     }
     Ok(())
 }
@@ -74,19 +74,19 @@ pub fn serialize_structure_crate_input_import_hypervisor_configuration_input(
     input: &crate::input::ImportHypervisorConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.name {
-        object.key("Name").string(var_13);
+        object.key("Name").string(var_13.as_str());
     }
     if let Some(var_14) = &input.host {
-        object.key("Host").string(var_14);
+        object.key("Host").string(var_14.as_str());
     }
     if let Some(var_15) = &input.username {
-        object.key("Username").string(var_15);
+        object.key("Username").string(var_15.as_str());
     }
     if let Some(var_16) = &input.password {
-        object.key("Password").string(var_16);
+        object.key("Password").string(var_16.as_str());
     }
     if let Some(var_17) = &input.kms_key_arn {
-        object.key("KmsKeyArn").string(var_17);
+        object.key("KmsKeyArn").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
         let mut array_19 = object.key("Tags").start_array();
@@ -113,7 +113,7 @@ pub fn serialize_structure_crate_input_list_gateways_input(
         );
     }
     if let Some(var_23) = &input.next_token {
-        object.key("NextToken").string(var_23);
+        object.key("NextToken").string(var_23.as_str());
     }
     Ok(())
 }
@@ -129,7 +129,7 @@ pub fn serialize_structure_crate_input_list_hypervisors_input(
         );
     }
     if let Some(var_25) = &input.next_token {
-        object.key("NextToken").string(var_25);
+        object.key("NextToken").string(var_25.as_str());
     }
     Ok(())
 }
@@ -139,7 +139,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.resource_arn {
-        object.key("ResourceArn").string(var_26);
+        object.key("ResourceArn").string(var_26.as_str());
     }
     Ok(())
 }
@@ -155,7 +155,7 @@ pub fn serialize_structure_crate_input_list_virtual_machines_input(
         );
     }
     if let Some(var_28) = &input.next_token {
-        object.key("NextToken").string(var_28);
+        object.key("NextToken").string(var_28.as_str());
     }
     Ok(())
 }
@@ -165,7 +165,7 @@ pub fn serialize_structure_crate_input_put_maintenance_start_time_input(
     input: &crate::input::PutMaintenanceStartTimeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.gateway_arn {
-        object.key("GatewayArn").string(var_29);
+        object.key("GatewayArn").string(var_29.as_str());
     }
     if let Some(var_30) = &input.hour_of_day {
         object.key("HourOfDay").number(
@@ -199,7 +199,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.resource_arn {
-        object.key("ResourceARN").string(var_34);
+        object.key("ResourceARN").string(var_34.as_str());
     }
     if let Some(var_35) = &input.tags {
         let mut array_36 = object.key("Tags").start_array();
@@ -220,16 +220,16 @@ pub fn serialize_structure_crate_input_test_hypervisor_configuration_input(
     input: &crate::input::TestHypervisorConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.gateway_arn {
-        object.key("GatewayArn").string(var_39);
+        object.key("GatewayArn").string(var_39.as_str());
     }
     if let Some(var_40) = &input.host {
-        object.key("Host").string(var_40);
+        object.key("Host").string(var_40.as_str());
     }
     if let Some(var_41) = &input.username {
-        object.key("Username").string(var_41);
+        object.key("Username").string(var_41.as_str());
     }
     if let Some(var_42) = &input.password {
-        object.key("Password").string(var_42);
+        object.key("Password").string(var_42.as_str());
     }
     Ok(())
 }
@@ -239,13 +239,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.resource_arn {
-        object.key("ResourceARN").string(var_43);
+        object.key("ResourceARN").string(var_43.as_str());
     }
     if let Some(var_44) = &input.tag_keys {
         let mut array_45 = object.key("TagKeys").start_array();
         for item_46 in var_44 {
             {
-                array_45.value().string(item_46);
+                array_45.value().string(item_46.as_str());
             }
         }
         array_45.finish();
@@ -258,10 +258,10 @@ pub fn serialize_structure_crate_input_update_gateway_information_input(
     input: &crate::input::UpdateGatewayInformationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_47) = &input.gateway_arn {
-        object.key("GatewayArn").string(var_47);
+        object.key("GatewayArn").string(var_47.as_str());
     }
     if let Some(var_48) = &input.gateway_display_name {
-        object.key("GatewayDisplayName").string(var_48);
+        object.key("GatewayDisplayName").string(var_48.as_str());
     }
     Ok(())
 }
@@ -271,16 +271,16 @@ pub fn serialize_structure_crate_input_update_hypervisor_input(
     input: &crate::input::UpdateHypervisorInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.hypervisor_arn {
-        object.key("HypervisorArn").string(var_49);
+        object.key("HypervisorArn").string(var_49.as_str());
     }
     if let Some(var_50) = &input.host {
-        object.key("Host").string(var_50);
+        object.key("Host").string(var_50.as_str());
     }
     if let Some(var_51) = &input.username {
-        object.key("Username").string(var_51);
+        object.key("Username").string(var_51.as_str());
     }
     if let Some(var_52) = &input.password {
-        object.key("Password").string(var_52);
+        object.key("Password").string(var_52.as_str());
     }
     Ok(())
 }
@@ -290,10 +290,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.key {
-        object.key("Key").string(var_53);
+        object.key("Key").string(var_53.as_str());
     }
     if let Some(var_54) = &input.value {
-        object.key("Value").string(var_54);
+        object.key("Value").string(var_54.as_str());
     }
     Ok(())
 }

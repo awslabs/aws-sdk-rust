@@ -4,10 +4,12 @@ pub fn serialize_structure_crate_input_accept_resource_share_invitation_input(
     input: &crate::input::AcceptResourceShareInvitationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1);
+        object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.resource_share_invitation_arn {
-        object.key("resourceShareInvitationArn").string(var_2);
+        object
+            .key("resourceShareInvitationArn")
+            .string(var_2.as_str());
     }
     Ok(())
 }
@@ -17,13 +19,13 @@ pub fn serialize_structure_crate_input_associate_resource_share_input(
     input: &crate::input::AssociateResourceShareInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.client_token {
-        object.key("clientToken").string(var_3);
+        object.key("clientToken").string(var_3.as_str());
     }
     if let Some(var_4) = &input.principals {
         let mut array_5 = object.key("principals").start_array();
         for item_6 in var_4 {
             {
-                array_5.value().string(item_6);
+                array_5.value().string(item_6.as_str());
             }
         }
         array_5.finish();
@@ -32,13 +34,13 @@ pub fn serialize_structure_crate_input_associate_resource_share_input(
         let mut array_8 = object.key("resourceArns").start_array();
         for item_9 in var_7 {
             {
-                array_8.value().string(item_9);
+                array_8.value().string(item_9.as_str());
             }
         }
         array_8.finish();
     }
     if let Some(var_10) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_10);
+        object.key("resourceShareArn").string(var_10.as_str());
     }
     Ok(())
 }
@@ -48,10 +50,10 @@ pub fn serialize_structure_crate_input_associate_resource_share_permission_input
     input: &crate::input::AssociateResourceSharePermissionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.client_token {
-        object.key("clientToken").string(var_11);
+        object.key("clientToken").string(var_11.as_str());
     }
     if let Some(var_12) = &input.permission_arn {
-        object.key("permissionArn").string(var_12);
+        object.key("permissionArn").string(var_12.as_str());
     }
     if let Some(var_13) = &input.permission_version {
         object.key("permissionVersion").number(
@@ -63,7 +65,7 @@ pub fn serialize_structure_crate_input_associate_resource_share_permission_input
         object.key("replace").boolean(*var_14);
     }
     if let Some(var_15) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_15);
+        object.key("resourceShareArn").string(var_15.as_str());
     }
     Ok(())
 }
@@ -76,16 +78,16 @@ pub fn serialize_structure_crate_input_create_resource_share_input(
         object.key("allowExternalPrincipals").boolean(*var_16);
     }
     if let Some(var_17) = &input.client_token {
-        object.key("clientToken").string(var_17);
+        object.key("clientToken").string(var_17.as_str());
     }
     if let Some(var_18) = &input.name {
-        object.key("name").string(var_18);
+        object.key("name").string(var_18.as_str());
     }
     if let Some(var_19) = &input.permission_arns {
         let mut array_20 = object.key("permissionArns").start_array();
         for item_21 in var_19 {
             {
-                array_20.value().string(item_21);
+                array_20.value().string(item_21.as_str());
             }
         }
         array_20.finish();
@@ -94,7 +96,7 @@ pub fn serialize_structure_crate_input_create_resource_share_input(
         let mut array_23 = object.key("principals").start_array();
         for item_24 in var_22 {
             {
-                array_23.value().string(item_24);
+                array_23.value().string(item_24.as_str());
             }
         }
         array_23.finish();
@@ -103,7 +105,7 @@ pub fn serialize_structure_crate_input_create_resource_share_input(
         let mut array_26 = object.key("resourceArns").start_array();
         for item_27 in var_25 {
             {
-                array_26.value().string(item_27);
+                array_26.value().string(item_27.as_str());
             }
         }
         array_26.finish();
@@ -127,13 +129,13 @@ pub fn serialize_structure_crate_input_disassociate_resource_share_input(
     input: &crate::input::DisassociateResourceShareInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.client_token {
-        object.key("clientToken").string(var_32);
+        object.key("clientToken").string(var_32.as_str());
     }
     if let Some(var_33) = &input.principals {
         let mut array_34 = object.key("principals").start_array();
         for item_35 in var_33 {
             {
-                array_34.value().string(item_35);
+                array_34.value().string(item_35.as_str());
             }
         }
         array_34.finish();
@@ -142,13 +144,13 @@ pub fn serialize_structure_crate_input_disassociate_resource_share_input(
         let mut array_37 = object.key("resourceArns").start_array();
         for item_38 in var_36 {
             {
-                array_37.value().string(item_38);
+                array_37.value().string(item_38.as_str());
             }
         }
         array_37.finish();
     }
     if let Some(var_39) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_39);
+        object.key("resourceShareArn").string(var_39.as_str());
     }
     Ok(())
 }
@@ -158,13 +160,13 @@ pub fn serialize_structure_crate_input_disassociate_resource_share_permission_in
     input: &crate::input::DisassociateResourceSharePermissionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.client_token {
-        object.key("clientToken").string(var_40);
+        object.key("clientToken").string(var_40.as_str());
     }
     if let Some(var_41) = &input.permission_arn {
-        object.key("permissionArn").string(var_41);
+        object.key("permissionArn").string(var_41.as_str());
     }
     if let Some(var_42) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_42);
+        object.key("resourceShareArn").string(var_42.as_str());
     }
     Ok(())
 }
@@ -174,7 +176,7 @@ pub fn serialize_structure_crate_input_get_permission_input(
     input: &crate::input::GetPermissionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.permission_arn {
-        object.key("permissionArn").string(var_43);
+        object.key("permissionArn").string(var_43.as_str());
     }
     if let Some(var_44) = &input.permission_version {
         object.key("permissionVersion").number(
@@ -196,16 +198,16 @@ pub fn serialize_structure_crate_input_get_resource_policies_input(
         );
     }
     if let Some(var_46) = &input.next_token {
-        object.key("nextToken").string(var_46);
+        object.key("nextToken").string(var_46.as_str());
     }
     if let Some(var_47) = &input.principal {
-        object.key("principal").string(var_47);
+        object.key("principal").string(var_47.as_str());
     }
     if let Some(var_48) = &input.resource_arns {
         let mut array_49 = object.key("resourceArns").start_array();
         for item_50 in var_48 {
             {
-                array_49.value().string(item_50);
+                array_49.value().string(item_50.as_str());
             }
         }
         array_49.finish();
@@ -230,19 +232,19 @@ pub fn serialize_structure_crate_input_get_resource_share_associations_input(
         );
     }
     if let Some(var_54) = &input.next_token {
-        object.key("nextToken").string(var_54);
+        object.key("nextToken").string(var_54.as_str());
     }
     if let Some(var_55) = &input.principal {
-        object.key("principal").string(var_55);
+        object.key("principal").string(var_55.as_str());
     }
     if let Some(var_56) = &input.resource_arn {
-        object.key("resourceArn").string(var_56);
+        object.key("resourceArn").string(var_56.as_str());
     }
     if let Some(var_57) = &input.resource_share_arns {
         let mut array_58 = object.key("resourceShareArns").start_array();
         for item_59 in var_57 {
             {
-                array_58.value().string(item_59);
+                array_58.value().string(item_59.as_str());
             }
         }
         array_58.finish();
@@ -261,13 +263,13 @@ pub fn serialize_structure_crate_input_get_resource_share_invitations_input(
         );
     }
     if let Some(var_61) = &input.next_token {
-        object.key("nextToken").string(var_61);
+        object.key("nextToken").string(var_61.as_str());
     }
     if let Some(var_62) = &input.resource_share_arns {
         let mut array_63 = object.key("resourceShareArns").start_array();
         for item_64 in var_62 {
             {
-                array_63.value().string(item_64);
+                array_63.value().string(item_64.as_str());
             }
         }
         array_63.finish();
@@ -276,7 +278,7 @@ pub fn serialize_structure_crate_input_get_resource_share_invitations_input(
         let mut array_66 = object.key("resourceShareInvitationArns").start_array();
         for item_67 in var_65 {
             {
-                array_66.value().string(item_67);
+                array_66.value().string(item_67.as_str());
             }
         }
         array_66.finish();
@@ -295,13 +297,13 @@ pub fn serialize_structure_crate_input_get_resource_shares_input(
         );
     }
     if let Some(var_69) = &input.name {
-        object.key("name").string(var_69);
+        object.key("name").string(var_69.as_str());
     }
     if let Some(var_70) = &input.next_token {
-        object.key("nextToken").string(var_70);
+        object.key("nextToken").string(var_70.as_str());
     }
     if let Some(var_71) = &input.permission_arn {
-        object.key("permissionArn").string(var_71);
+        object.key("permissionArn").string(var_71.as_str());
     }
     if let Some(var_72) = &input.resource_owner {
         object.key("resourceOwner").string(var_72.as_str());
@@ -310,7 +312,7 @@ pub fn serialize_structure_crate_input_get_resource_shares_input(
         let mut array_74 = object.key("resourceShareArns").start_array();
         for item_75 in var_73 {
             {
-                array_74.value().string(item_75);
+                array_74.value().string(item_75.as_str());
             }
         }
         array_74.finish();
@@ -346,13 +348,15 @@ pub fn serialize_structure_crate_input_list_pending_invitation_resources_input(
         );
     }
     if let Some(var_82) = &input.next_token {
-        object.key("nextToken").string(var_82);
+        object.key("nextToken").string(var_82.as_str());
     }
     if let Some(var_83) = &input.resource_region_scope {
         object.key("resourceRegionScope").string(var_83.as_str());
     }
     if let Some(var_84) = &input.resource_share_invitation_arn {
-        object.key("resourceShareInvitationArn").string(var_84);
+        object
+            .key("resourceShareInvitationArn")
+            .string(var_84.as_str());
     }
     Ok(())
 }
@@ -368,10 +372,10 @@ pub fn serialize_structure_crate_input_list_permissions_input(
         );
     }
     if let Some(var_86) = &input.next_token {
-        object.key("nextToken").string(var_86);
+        object.key("nextToken").string(var_86.as_str());
     }
     if let Some(var_87) = &input.resource_type {
-        object.key("resourceType").string(var_87);
+        object.key("resourceType").string(var_87.as_str());
     }
     Ok(())
 }
@@ -387,10 +391,10 @@ pub fn serialize_structure_crate_input_list_permission_versions_input(
         );
     }
     if let Some(var_89) = &input.next_token {
-        object.key("nextToken").string(var_89);
+        object.key("nextToken").string(var_89.as_str());
     }
     if let Some(var_90) = &input.permission_arn {
-        object.key("permissionArn").string(var_90);
+        object.key("permissionArn").string(var_90.as_str());
     }
     Ok(())
 }
@@ -406,19 +410,19 @@ pub fn serialize_structure_crate_input_list_principals_input(
         );
     }
     if let Some(var_92) = &input.next_token {
-        object.key("nextToken").string(var_92);
+        object.key("nextToken").string(var_92.as_str());
     }
     if let Some(var_93) = &input.principals {
         let mut array_94 = object.key("principals").start_array();
         for item_95 in var_93 {
             {
-                array_94.value().string(item_95);
+                array_94.value().string(item_95.as_str());
             }
         }
         array_94.finish();
     }
     if let Some(var_96) = &input.resource_arn {
-        object.key("resourceArn").string(var_96);
+        object.key("resourceArn").string(var_96.as_str());
     }
     if let Some(var_97) = &input.resource_owner {
         object.key("resourceOwner").string(var_97.as_str());
@@ -427,13 +431,13 @@ pub fn serialize_structure_crate_input_list_principals_input(
         let mut array_99 = object.key("resourceShareArns").start_array();
         for item_100 in var_98 {
             {
-                array_99.value().string(item_100);
+                array_99.value().string(item_100.as_str());
             }
         }
         array_99.finish();
     }
     if let Some(var_101) = &input.resource_type {
-        object.key("resourceType").string(var_101);
+        object.key("resourceType").string(var_101.as_str());
     }
     Ok(())
 }
@@ -449,16 +453,16 @@ pub fn serialize_structure_crate_input_list_resources_input(
         );
     }
     if let Some(var_103) = &input.next_token {
-        object.key("nextToken").string(var_103);
+        object.key("nextToken").string(var_103.as_str());
     }
     if let Some(var_104) = &input.principal {
-        object.key("principal").string(var_104);
+        object.key("principal").string(var_104.as_str());
     }
     if let Some(var_105) = &input.resource_arns {
         let mut array_106 = object.key("resourceArns").start_array();
         for item_107 in var_105 {
             {
-                array_106.value().string(item_107);
+                array_106.value().string(item_107.as_str());
             }
         }
         array_106.finish();
@@ -473,13 +477,13 @@ pub fn serialize_structure_crate_input_list_resources_input(
         let mut array_111 = object.key("resourceShareArns").start_array();
         for item_112 in var_110 {
             {
-                array_111.value().string(item_112);
+                array_111.value().string(item_112.as_str());
             }
         }
         array_111.finish();
     }
     if let Some(var_113) = &input.resource_type {
-        object.key("resourceType").string(var_113);
+        object.key("resourceType").string(var_113.as_str());
     }
     Ok(())
 }
@@ -495,10 +499,10 @@ pub fn serialize_structure_crate_input_list_resource_share_permissions_input(
         );
     }
     if let Some(var_115) = &input.next_token {
-        object.key("nextToken").string(var_115);
+        object.key("nextToken").string(var_115.as_str());
     }
     if let Some(var_116) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_116);
+        object.key("resourceShareArn").string(var_116.as_str());
     }
     Ok(())
 }
@@ -514,7 +518,7 @@ pub fn serialize_structure_crate_input_list_resource_types_input(
         );
     }
     if let Some(var_118) = &input.next_token {
-        object.key("nextToken").string(var_118);
+        object.key("nextToken").string(var_118.as_str());
     }
     if let Some(var_119) = &input.resource_region_scope {
         object.key("resourceRegionScope").string(var_119.as_str());
@@ -527,10 +531,12 @@ pub fn serialize_structure_crate_input_reject_resource_share_invitation_input(
     input: &crate::input::RejectResourceShareInvitationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_120) = &input.client_token {
-        object.key("clientToken").string(var_120);
+        object.key("clientToken").string(var_120.as_str());
     }
     if let Some(var_121) = &input.resource_share_invitation_arn {
-        object.key("resourceShareInvitationArn").string(var_121);
+        object
+            .key("resourceShareInvitationArn")
+            .string(var_121.as_str());
     }
     Ok(())
 }
@@ -540,7 +546,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_122) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_122);
+        object.key("resourceShareArn").string(var_122.as_str());
     }
     if let Some(var_123) = &input.tags {
         let mut array_124 = object.key("tags").start_array();
@@ -561,13 +567,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_127) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_127);
+        object.key("resourceShareArn").string(var_127.as_str());
     }
     if let Some(var_128) = &input.tag_keys {
         let mut array_129 = object.key("tagKeys").start_array();
         for item_130 in var_128 {
             {
-                array_129.value().string(item_130);
+                array_129.value().string(item_130.as_str());
             }
         }
         array_129.finish();
@@ -583,13 +589,13 @@ pub fn serialize_structure_crate_input_update_resource_share_input(
         object.key("allowExternalPrincipals").boolean(*var_131);
     }
     if let Some(var_132) = &input.client_token {
-        object.key("clientToken").string(var_132);
+        object.key("clientToken").string(var_132.as_str());
     }
     if let Some(var_133) = &input.name {
-        object.key("name").string(var_133);
+        object.key("name").string(var_133.as_str());
     }
     if let Some(var_134) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_134);
+        object.key("resourceShareArn").string(var_134.as_str());
     }
     Ok(())
 }
@@ -599,10 +605,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_135) = &input.key {
-        object.key("key").string(var_135);
+        object.key("key").string(var_135.as_str());
     }
     if let Some(var_136) = &input.value {
-        object.key("value").string(var_136);
+        object.key("value").string(var_136.as_str());
     }
     Ok(())
 }
@@ -612,13 +618,13 @@ pub fn serialize_structure_crate_model_tag_filter(
     input: &crate::model::TagFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_137) = &input.tag_key {
-        object.key("tagKey").string(var_137);
+        object.key("tagKey").string(var_137.as_str());
     }
     if let Some(var_138) = &input.tag_values {
         let mut array_139 = object.key("tagValues").start_array();
         for item_140 in var_138 {
             {
-                array_139.value().string(item_140);
+                array_139.value().string(item_140.as_str());
             }
         }
         array_139.finish();

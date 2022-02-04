@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_describe_affected_accounts_for_organizati
     input: &crate::input::DescribeAffectedAccountsForOrganizationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.event_arn {
-        object.key("eventArn").string(var_1);
+        object.key("eventArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.next_token {
-        object.key("nextToken").string(var_2);
+        object.key("nextToken").string(var_2.as_str());
     }
     if let Some(var_3) = &input.max_results {
         object.key("maxResults").number(
@@ -28,10 +28,10 @@ pub fn serialize_structure_crate_input_describe_affected_entities_input(
         object_5.finish();
     }
     if let Some(var_6) = &input.locale {
-        object.key("locale").string(var_6);
+        object.key("locale").string(var_6.as_str());
     }
     if let Some(var_7) = &input.next_token {
-        object.key("nextToken").string(var_7);
+        object.key("nextToken").string(var_7.as_str());
     }
     if let Some(var_8) = &input.max_results {
         object.key("maxResults").number(
@@ -61,10 +61,10 @@ pub fn serialize_structure_crate_input_describe_affected_entities_for_organizati
         array_10.finish();
     }
     if let Some(var_13) = &input.locale {
-        object.key("locale").string(var_13);
+        object.key("locale").string(var_13.as_str());
     }
     if let Some(var_14) = &input.next_token {
-        object.key("nextToken").string(var_14);
+        object.key("nextToken").string(var_14.as_str());
     }
     if let Some(var_15) = &input.max_results {
         object.key("maxResults").number(
@@ -83,7 +83,7 @@ pub fn serialize_structure_crate_input_describe_entity_aggregates_input(
         let mut array_17 = object.key("eventArns").start_array();
         for item_18 in var_16 {
             {
-                array_17.value().string(item_18);
+                array_17.value().string(item_18.as_str());
             }
         }
         array_17.finish();
@@ -110,7 +110,7 @@ pub fn serialize_structure_crate_input_describe_event_aggregates_input(
         );
     }
     if let Some(var_23) = &input.next_token {
-        object.key("nextToken").string(var_23);
+        object.key("nextToken").string(var_23.as_str());
     }
     Ok(())
 }
@@ -123,13 +123,13 @@ pub fn serialize_structure_crate_input_describe_event_details_input(
         let mut array_25 = object.key("eventArns").start_array();
         for item_26 in var_24 {
             {
-                array_25.value().string(item_26);
+                array_25.value().string(item_26.as_str());
             }
         }
         array_25.finish();
     }
     if let Some(var_27) = &input.locale {
-        object.key("locale").string(var_27);
+        object.key("locale").string(var_27.as_str());
     }
     Ok(())
 }
@@ -153,7 +153,7 @@ pub fn serialize_structure_crate_input_describe_event_details_for_organization_i
         array_29.finish();
     }
     if let Some(var_32) = &input.locale {
-        object.key("locale").string(var_32);
+        object.key("locale").string(var_32.as_str());
     }
     Ok(())
 }
@@ -168,7 +168,7 @@ pub fn serialize_structure_crate_input_describe_events_input(
         object_34.finish();
     }
     if let Some(var_35) = &input.next_token {
-        object.key("nextToken").string(var_35);
+        object.key("nextToken").string(var_35.as_str());
     }
     if let Some(var_36) = &input.max_results {
         object.key("maxResults").number(
@@ -177,7 +177,7 @@ pub fn serialize_structure_crate_input_describe_events_input(
         );
     }
     if let Some(var_37) = &input.locale {
-        object.key("locale").string(var_37);
+        object.key("locale").string(var_37.as_str());
     }
     Ok(())
 }
@@ -195,7 +195,7 @@ pub fn serialize_structure_crate_input_describe_events_for_organization_input(
         object_39.finish();
     }
     if let Some(var_40) = &input.next_token {
-        object.key("nextToken").string(var_40);
+        object.key("nextToken").string(var_40.as_str());
     }
     if let Some(var_41) = &input.max_results {
         object.key("maxResults").number(
@@ -204,7 +204,7 @@ pub fn serialize_structure_crate_input_describe_events_for_organization_input(
         );
     }
     if let Some(var_42) = &input.locale {
-        object.key("locale").string(var_42);
+        object.key("locale").string(var_42.as_str());
     }
     Ok(())
 }
@@ -219,10 +219,10 @@ pub fn serialize_structure_crate_input_describe_event_types_input(
         object_44.finish();
     }
     if let Some(var_45) = &input.locale {
-        object.key("locale").string(var_45);
+        object.key("locale").string(var_45.as_str());
     }
     if let Some(var_46) = &input.next_token {
-        object.key("nextToken").string(var_46);
+        object.key("nextToken").string(var_46.as_str());
     }
     if let Some(var_47) = &input.max_results {
         object.key("maxResults").number(
@@ -241,7 +241,7 @@ pub fn serialize_structure_crate_model_entity_filter(
         let mut array_49 = object.key("eventArns").start_array();
         for item_50 in var_48 {
             {
-                array_49.value().string(item_50);
+                array_49.value().string(item_50.as_str());
             }
         }
         array_49.finish();
@@ -250,7 +250,7 @@ pub fn serialize_structure_crate_model_entity_filter(
         let mut array_52 = object.key("entityArns").start_array();
         for item_53 in var_51 {
             {
-                array_52.value().string(item_53);
+                array_52.value().string(item_53.as_str());
             }
         }
         array_52.finish();
@@ -259,7 +259,7 @@ pub fn serialize_structure_crate_model_entity_filter(
         let mut array_55 = object.key("entityValues").start_array();
         for item_56 in var_54 {
             {
-                array_55.value().string(item_56);
+                array_55.value().string(item_56.as_str());
             }
         }
         array_55.finish();
@@ -285,7 +285,7 @@ pub fn serialize_structure_crate_model_entity_filter(
                 let mut object_64 = array_62.value().start_object();
                 for (key_65, value_66) in item_63 {
                     {
-                        object_64.key(key_65).string(value_66);
+                        object_64.key(key_65).string(value_66.as_str());
                     }
                 }
                 object_64.finish();
@@ -310,10 +310,10 @@ pub fn serialize_structure_crate_model_event_account_filter(
     input: &crate::model::EventAccountFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.event_arn {
-        object.key("eventArn").string(var_70);
+        object.key("eventArn").string(var_70.as_str());
     }
     if let Some(var_71) = &input.aws_account_id {
-        object.key("awsAccountId").string(var_71);
+        object.key("awsAccountId").string(var_71.as_str());
     }
     Ok(())
 }
@@ -326,7 +326,7 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_73 = object.key("eventArns").start_array();
         for item_74 in var_72 {
             {
-                array_73.value().string(item_74);
+                array_73.value().string(item_74.as_str());
             }
         }
         array_73.finish();
@@ -335,7 +335,7 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_76 = object.key("eventTypeCodes").start_array();
         for item_77 in var_75 {
             {
-                array_76.value().string(item_77);
+                array_76.value().string(item_77.as_str());
             }
         }
         array_76.finish();
@@ -344,7 +344,7 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_79 = object.key("services").start_array();
         for item_80 in var_78 {
             {
-                array_79.value().string(item_80);
+                array_79.value().string(item_80.as_str());
             }
         }
         array_79.finish();
@@ -353,7 +353,7 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_82 = object.key("regions").start_array();
         for item_83 in var_81 {
             {
-                array_82.value().string(item_83);
+                array_82.value().string(item_83.as_str());
             }
         }
         array_82.finish();
@@ -362,7 +362,7 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_85 = object.key("availabilityZones").start_array();
         for item_86 in var_84 {
             {
-                array_85.value().string(item_86);
+                array_85.value().string(item_86.as_str());
             }
         }
         array_85.finish();
@@ -413,7 +413,7 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_100 = object.key("entityArns").start_array();
         for item_101 in var_99 {
             {
-                array_100.value().string(item_101);
+                array_100.value().string(item_101.as_str());
             }
         }
         array_100.finish();
@@ -422,7 +422,7 @@ pub fn serialize_structure_crate_model_event_filter(
         let mut array_103 = object.key("entityValues").start_array();
         for item_104 in var_102 {
             {
-                array_103.value().string(item_104);
+                array_103.value().string(item_104.as_str());
             }
         }
         array_103.finish();
@@ -443,7 +443,7 @@ pub fn serialize_structure_crate_model_event_filter(
                 let mut object_111 = array_109.value().start_object();
                 for (key_112, value_113) in item_110 {
                     {
-                        object_111.key(key_112).string(value_113);
+                        object_111.key(key_112).string(value_113.as_str());
                     }
                 }
                 object_111.finish();
@@ -471,7 +471,7 @@ pub fn serialize_structure_crate_model_organization_event_filter(
         let mut array_118 = object.key("eventTypeCodes").start_array();
         for item_119 in var_117 {
             {
-                array_118.value().string(item_119);
+                array_118.value().string(item_119.as_str());
             }
         }
         array_118.finish();
@@ -480,7 +480,7 @@ pub fn serialize_structure_crate_model_organization_event_filter(
         let mut array_121 = object.key("awsAccountIds").start_array();
         for item_122 in var_120 {
             {
-                array_121.value().string(item_122);
+                array_121.value().string(item_122.as_str());
             }
         }
         array_121.finish();
@@ -489,7 +489,7 @@ pub fn serialize_structure_crate_model_organization_event_filter(
         let mut array_124 = object.key("services").start_array();
         for item_125 in var_123 {
             {
-                array_124.value().string(item_125);
+                array_124.value().string(item_125.as_str());
             }
         }
         array_124.finish();
@@ -498,7 +498,7 @@ pub fn serialize_structure_crate_model_organization_event_filter(
         let mut array_127 = object.key("regions").start_array();
         for item_128 in var_126 {
             {
-                array_127.value().string(item_128);
+                array_127.value().string(item_128.as_str());
             }
         }
         array_127.finish();
@@ -522,7 +522,7 @@ pub fn serialize_structure_crate_model_organization_event_filter(
         let mut array_136 = object.key("entityArns").start_array();
         for item_137 in var_135 {
             {
-                array_136.value().string(item_137);
+                array_136.value().string(item_137.as_str());
             }
         }
         array_136.finish();
@@ -531,7 +531,7 @@ pub fn serialize_structure_crate_model_organization_event_filter(
         let mut array_139 = object.key("entityValues").start_array();
         for item_140 in var_138 {
             {
-                array_139.value().string(item_140);
+                array_139.value().string(item_140.as_str());
             }
         }
         array_139.finish();
@@ -565,7 +565,7 @@ pub fn serialize_structure_crate_model_event_type_filter(
         let mut array_148 = object.key("eventTypeCodes").start_array();
         for item_149 in var_147 {
             {
-                array_148.value().string(item_149);
+                array_148.value().string(item_149.as_str());
             }
         }
         array_148.finish();
@@ -574,7 +574,7 @@ pub fn serialize_structure_crate_model_event_type_filter(
         let mut array_151 = object.key("services").start_array();
         for item_152 in var_150 {
             {
-                array_151.value().string(item_152);
+                array_151.value().string(item_152.as_str());
             }
         }
         array_151.finish();

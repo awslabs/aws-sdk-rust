@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_describe_group_input(
     input: &crate::input::DescribeGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.identity_store_id {
-        object.key("IdentityStoreId").string(var_1);
+        object.key("IdentityStoreId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.group_id {
-        object.key("GroupId").string(var_2);
+        object.key("GroupId").string(var_2.as_str());
     }
     Ok(())
 }
@@ -17,10 +17,10 @@ pub fn serialize_structure_crate_input_describe_user_input(
     input: &crate::input::DescribeUserInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.identity_store_id {
-        object.key("IdentityStoreId").string(var_3);
+        object.key("IdentityStoreId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.user_id {
-        object.key("UserId").string(var_4);
+        object.key("UserId").string(var_4.as_str());
     }
     Ok(())
 }
@@ -30,7 +30,7 @@ pub fn serialize_structure_crate_input_list_groups_input(
     input: &crate::input::ListGroupsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.identity_store_id {
-        object.key("IdentityStoreId").string(var_5);
+        object.key("IdentityStoreId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.max_results {
         object.key("MaxResults").number(
@@ -39,7 +39,7 @@ pub fn serialize_structure_crate_input_list_groups_input(
         );
     }
     if let Some(var_7) = &input.next_token {
-        object.key("NextToken").string(var_7);
+        object.key("NextToken").string(var_7.as_str());
     }
     if let Some(var_8) = &input.filters {
         let mut array_9 = object.key("Filters").start_array();
@@ -60,7 +60,7 @@ pub fn serialize_structure_crate_input_list_users_input(
     input: &crate::input::ListUsersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.identity_store_id {
-        object.key("IdentityStoreId").string(var_12);
+        object.key("IdentityStoreId").string(var_12.as_str());
     }
     if let Some(var_13) = &input.max_results {
         object.key("MaxResults").number(
@@ -69,7 +69,7 @@ pub fn serialize_structure_crate_input_list_users_input(
         );
     }
     if let Some(var_14) = &input.next_token {
-        object.key("NextToken").string(var_14);
+        object.key("NextToken").string(var_14.as_str());
     }
     if let Some(var_15) = &input.filters {
         let mut array_16 = object.key("Filters").start_array();
@@ -90,10 +90,10 @@ pub fn serialize_structure_crate_model_filter(
     input: &crate::model::Filter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.attribute_path {
-        object.key("AttributePath").string(var_19);
+        object.key("AttributePath").string(var_19.as_str());
     }
     if let Some(var_20) = &input.attribute_value {
-        object.key("AttributeValue").string(var_20);
+        object.key("AttributeValue").string(var_20.as_str());
     }
     Ok(())
 }

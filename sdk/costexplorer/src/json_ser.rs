@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_create_cost_category_definition_input(
     input: &crate::input::CreateCostCategoryDefinitionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.name {
-        object.key("Name").string(var_5);
+        object.key("Name").string(var_5.as_str());
     }
     if let Some(var_6) = &input.rule_version {
         object.key("RuleVersion").string(var_6.as_str());
@@ -51,7 +51,7 @@ pub fn serialize_structure_crate_input_create_cost_category_definition_input(
         array_8.finish();
     }
     if let Some(var_11) = &input.default_value {
-        object.key("DefaultValue").string(var_11);
+        object.key("DefaultValue").string(var_11.as_str());
     }
     if let Some(var_12) = &input.split_charge_rules {
         let mut array_13 = object.key("SplitChargeRules").start_array();
@@ -75,7 +75,7 @@ pub fn serialize_structure_crate_input_delete_anomaly_monitor_input(
     input: &crate::input::DeleteAnomalyMonitorInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.monitor_arn {
-        object.key("MonitorArn").string(var_16);
+        object.key("MonitorArn").string(var_16.as_str());
     }
     Ok(())
 }
@@ -85,7 +85,7 @@ pub fn serialize_structure_crate_input_delete_anomaly_subscription_input(
     input: &crate::input::DeleteAnomalySubscriptionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.subscription_arn {
-        object.key("SubscriptionArn").string(var_17);
+        object.key("SubscriptionArn").string(var_17.as_str());
     }
     Ok(())
 }
@@ -95,7 +95,7 @@ pub fn serialize_structure_crate_input_delete_cost_category_definition_input(
     input: &crate::input::DeleteCostCategoryDefinitionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.cost_category_arn {
-        object.key("CostCategoryArn").string(var_18);
+        object.key("CostCategoryArn").string(var_18.as_str());
     }
     Ok(())
 }
@@ -105,10 +105,10 @@ pub fn serialize_structure_crate_input_describe_cost_category_definition_input(
     input: &crate::input::DescribeCostCategoryDefinitionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.cost_category_arn {
-        object.key("CostCategoryArn").string(var_19);
+        object.key("CostCategoryArn").string(var_19.as_str());
     }
     if let Some(var_20) = &input.effective_on {
-        object.key("EffectiveOn").string(var_20);
+        object.key("EffectiveOn").string(var_20.as_str());
     }
     Ok(())
 }
@@ -118,7 +118,7 @@ pub fn serialize_structure_crate_input_get_anomalies_input(
     input: &crate::input::GetAnomaliesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.monitor_arn {
-        object.key("MonitorArn").string(var_21);
+        object.key("MonitorArn").string(var_21.as_str());
     }
     if let Some(var_22) = &input.date_interval {
         let mut object_23 = object.key("DateInterval").start_object();
@@ -140,7 +140,7 @@ pub fn serialize_structure_crate_input_get_anomalies_input(
         object_26.finish();
     }
     if let Some(var_27) = &input.next_page_token {
-        object.key("NextPageToken").string(var_27);
+        object.key("NextPageToken").string(var_27.as_str());
     }
     if let Some(var_28) = &input.max_results {
         object.key("MaxResults").number(
@@ -159,13 +159,13 @@ pub fn serialize_structure_crate_input_get_anomaly_monitors_input(
         let mut array_30 = object.key("MonitorArnList").start_array();
         for item_31 in var_29 {
             {
-                array_30.value().string(item_31);
+                array_30.value().string(item_31.as_str());
             }
         }
         array_30.finish();
     }
     if let Some(var_32) = &input.next_page_token {
-        object.key("NextPageToken").string(var_32);
+        object.key("NextPageToken").string(var_32.as_str());
     }
     if let Some(var_33) = &input.max_results {
         object.key("MaxResults").number(
@@ -184,16 +184,16 @@ pub fn serialize_structure_crate_input_get_anomaly_subscriptions_input(
         let mut array_35 = object.key("SubscriptionArnList").start_array();
         for item_36 in var_34 {
             {
-                array_35.value().string(item_36);
+                array_35.value().string(item_36.as_str());
             }
         }
         array_35.finish();
     }
     if let Some(var_37) = &input.monitor_arn {
-        object.key("MonitorArn").string(var_37);
+        object.key("MonitorArn").string(var_37.as_str());
     }
     if let Some(var_38) = &input.next_page_token {
-        object.key("NextPageToken").string(var_38);
+        object.key("NextPageToken").string(var_38.as_str());
     }
     if let Some(var_39) = &input.max_results {
         object.key("MaxResults").number(
@@ -225,7 +225,7 @@ pub fn serialize_structure_crate_input_get_cost_and_usage_input(
         let mut array_46 = object.key("Metrics").start_array();
         for item_47 in var_45 {
             {
-                array_46.value().string(item_47);
+                array_46.value().string(item_47.as_str());
             }
         }
         array_46.finish();
@@ -245,7 +245,7 @@ pub fn serialize_structure_crate_input_get_cost_and_usage_input(
         array_49.finish();
     }
     if let Some(var_52) = &input.next_page_token {
-        object.key("NextPageToken").string(var_52);
+        object.key("NextPageToken").string(var_52.as_str());
     }
     Ok(())
 }
@@ -271,7 +271,7 @@ pub fn serialize_structure_crate_input_get_cost_and_usage_with_resources_input(
         let mut array_59 = object.key("Metrics").start_array();
         for item_60 in var_58 {
             {
-                array_59.value().string(item_60);
+                array_59.value().string(item_60.as_str());
             }
         }
         array_59.finish();
@@ -291,7 +291,7 @@ pub fn serialize_structure_crate_input_get_cost_and_usage_with_resources_input(
         array_62.finish();
     }
     if let Some(var_65) = &input.next_page_token {
-        object.key("NextPageToken").string(var_65);
+        object.key("NextPageToken").string(var_65.as_str());
     }
     Ok(())
 }
@@ -301,7 +301,7 @@ pub fn serialize_structure_crate_input_get_cost_categories_input(
     input: &crate::input::GetCostCategoriesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_66) = &input.search_string {
-        object.key("SearchString").string(var_66);
+        object.key("SearchString").string(var_66.as_str());
     }
     if let Some(var_67) = &input.time_period {
         let mut object_68 = object.key("TimePeriod").start_object();
@@ -309,7 +309,7 @@ pub fn serialize_structure_crate_input_get_cost_categories_input(
         object_68.finish();
     }
     if let Some(var_69) = &input.cost_category_name {
-        object.key("CostCategoryName").string(var_69);
+        object.key("CostCategoryName").string(var_69.as_str());
     }
     if let Some(var_70) = &input.filter {
         let mut object_71 = object.key("Filter").start_object();
@@ -337,7 +337,7 @@ pub fn serialize_structure_crate_input_get_cost_categories_input(
         );
     }
     if let Some(var_76) = &input.next_page_token {
-        object.key("NextPageToken").string(var_76);
+        object.key("NextPageToken").string(var_76.as_str());
     }
     Ok(())
 }
@@ -376,7 +376,7 @@ pub fn serialize_structure_crate_input_get_dimension_values_input(
     input: &crate::input::GetDimensionValuesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_84) = &input.search_string {
-        object.key("SearchString").string(var_84);
+        object.key("SearchString").string(var_84.as_str());
     }
     if let Some(var_85) = &input.time_period {
         let mut object_86 = object.key("TimePeriod").start_object();
@@ -415,7 +415,7 @@ pub fn serialize_structure_crate_input_get_dimension_values_input(
         );
     }
     if let Some(var_95) = &input.next_page_token {
-        object.key("NextPageToken").string(var_95);
+        object.key("NextPageToken").string(var_95.as_str());
     }
     Ok(())
 }
@@ -455,13 +455,13 @@ pub fn serialize_structure_crate_input_get_reservation_coverage_input(
         let mut array_106 = object.key("Metrics").start_array();
         for item_107 in var_105 {
             {
-                array_106.value().string(item_107);
+                array_106.value().string(item_107.as_str());
             }
         }
         array_106.finish();
     }
     if let Some(var_108) = &input.next_page_token {
-        object.key("NextPageToken").string(var_108);
+        object.key("NextPageToken").string(var_108.as_str());
     }
     if let Some(var_109) = &input.sort_by {
         let mut object_110 = object.key("SortBy").start_object();
@@ -482,10 +482,10 @@ pub fn serialize_structure_crate_input_get_reservation_purchase_recommendation_i
     input: &crate::input::GetReservationPurchaseRecommendationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_112) = &input.account_id {
-        object.key("AccountId").string(var_112);
+        object.key("AccountId").string(var_112.as_str());
     }
     if let Some(var_113) = &input.service {
-        object.key("Service").string(var_113);
+        object.key("Service").string(var_113.as_str());
     }
     if let Some(var_114) = &input.filter {
         let mut object_115 = object.key("Filter").start_object();
@@ -519,7 +519,7 @@ pub fn serialize_structure_crate_input_get_reservation_purchase_recommendation_i
         );
     }
     if let Some(var_122) = &input.next_page_token {
-        object.key("NextPageToken").string(var_122);
+        object.key("NextPageToken").string(var_122.as_str());
     }
     Ok(())
 }
@@ -561,7 +561,7 @@ pub fn serialize_structure_crate_input_get_reservation_utilization_input(
         object_133.finish();
     }
     if let Some(var_134) = &input.next_page_token {
-        object.key("NextPageToken").string(var_134);
+        object.key("NextPageToken").string(var_134.as_str());
     }
     if let Some(var_135) = &input.max_results {
         object.key("MaxResults").number(
@@ -590,7 +590,7 @@ pub fn serialize_structure_crate_input_get_rightsizing_recommendation_input(
         object_139.finish();
     }
     if let Some(var_140) = &input.service {
-        object.key("Service").string(var_140);
+        object.key("Service").string(var_140.as_str());
     }
     if input.page_size != 0 {
         object.key("PageSize").number(
@@ -599,7 +599,7 @@ pub fn serialize_structure_crate_input_get_rightsizing_recommendation_input(
         );
     }
     if let Some(var_141) = &input.next_page_token {
-        object.key("NextPageToken").string(var_141);
+        object.key("NextPageToken").string(var_141.as_str());
     }
     Ok(())
 }
@@ -639,13 +639,13 @@ pub fn serialize_structure_crate_input_get_savings_plans_coverage_input(
         let mut array_152 = object.key("Metrics").start_array();
         for item_153 in var_151 {
             {
-                array_152.value().string(item_153);
+                array_152.value().string(item_153.as_str());
             }
         }
         array_152.finish();
     }
     if let Some(var_154) = &input.next_token {
-        object.key("NextToken").string(var_154);
+        object.key("NextToken").string(var_154.as_str());
     }
     if let Some(var_155) = &input.max_results {
         object.key("MaxResults").number(
@@ -678,7 +678,7 @@ pub fn serialize_structure_crate_input_get_savings_plans_purchase_recommendation
         object.key("AccountScope").string(var_161.as_str());
     }
     if let Some(var_162) = &input.next_page_token {
-        object.key("NextPageToken").string(var_162);
+        object.key("NextPageToken").string(var_162.as_str());
     }
     if input.page_size != 0 {
         object.key("PageSize").number(
@@ -746,7 +746,7 @@ pub fn serialize_structure_crate_input_get_savings_plans_utilization_details_inp
         array_178.finish();
     }
     if let Some(var_180) = &input.next_token {
-        object.key("NextToken").string(var_180);
+        object.key("NextToken").string(var_180.as_str());
     }
     if let Some(var_181) = &input.max_results {
         object.key("MaxResults").number(
@@ -767,7 +767,7 @@ pub fn serialize_structure_crate_input_get_tags_input(
     input: &crate::input::GetTagsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_184) = &input.search_string {
-        object.key("SearchString").string(var_184);
+        object.key("SearchString").string(var_184.as_str());
     }
     if let Some(var_185) = &input.time_period {
         let mut object_186 = object.key("TimePeriod").start_object();
@@ -775,7 +775,7 @@ pub fn serialize_structure_crate_input_get_tags_input(
         object_186.finish();
     }
     if let Some(var_187) = &input.tag_key {
-        object.key("TagKey").string(var_187);
+        object.key("TagKey").string(var_187.as_str());
     }
     if let Some(var_188) = &input.filter {
         let mut object_189 = object.key("Filter").start_object();
@@ -803,7 +803,7 @@ pub fn serialize_structure_crate_input_get_tags_input(
         );
     }
     if let Some(var_194) = &input.next_page_token {
-        object.key("NextPageToken").string(var_194);
+        object.key("NextPageToken").string(var_194.as_str());
     }
     Ok(())
 }
@@ -842,10 +842,10 @@ pub fn serialize_structure_crate_input_list_cost_category_definitions_input(
     input: &crate::input::ListCostCategoryDefinitionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_202) = &input.effective_on {
-        object.key("EffectiveOn").string(var_202);
+        object.key("EffectiveOn").string(var_202.as_str());
     }
     if let Some(var_203) = &input.next_token {
-        object.key("NextToken").string(var_203);
+        object.key("NextToken").string(var_203.as_str());
     }
     if let Some(var_204) = &input.max_results {
         object.key("MaxResults").number(
@@ -861,7 +861,7 @@ pub fn serialize_structure_crate_input_provide_anomaly_feedback_input(
     input: &crate::input::ProvideAnomalyFeedbackInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_205) = &input.anomaly_id {
-        object.key("AnomalyId").string(var_205);
+        object.key("AnomalyId").string(var_205.as_str());
     }
     if let Some(var_206) = &input.feedback {
         object.key("Feedback").string(var_206.as_str());
@@ -874,10 +874,10 @@ pub fn serialize_structure_crate_input_update_anomaly_monitor_input(
     input: &crate::input::UpdateAnomalyMonitorInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_207) = &input.monitor_arn {
-        object.key("MonitorArn").string(var_207);
+        object.key("MonitorArn").string(var_207.as_str());
     }
     if let Some(var_208) = &input.monitor_name {
-        object.key("MonitorName").string(var_208);
+        object.key("MonitorName").string(var_208.as_str());
     }
     Ok(())
 }
@@ -887,7 +887,7 @@ pub fn serialize_structure_crate_input_update_anomaly_subscription_input(
     input: &crate::input::UpdateAnomalySubscriptionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_209) = &input.subscription_arn {
-        object.key("SubscriptionArn").string(var_209);
+        object.key("SubscriptionArn").string(var_209.as_str());
     }
     if let Some(var_210) = &input.threshold {
         object.key("Threshold").number(
@@ -902,7 +902,7 @@ pub fn serialize_structure_crate_input_update_anomaly_subscription_input(
         let mut array_213 = object.key("MonitorArnList").start_array();
         for item_214 in var_212 {
             {
-                array_213.value().string(item_214);
+                array_213.value().string(item_214.as_str());
             }
         }
         array_213.finish();
@@ -922,7 +922,7 @@ pub fn serialize_structure_crate_input_update_anomaly_subscription_input(
         array_216.finish();
     }
     if let Some(var_219) = &input.subscription_name {
-        object.key("SubscriptionName").string(var_219);
+        object.key("SubscriptionName").string(var_219.as_str());
     }
     Ok(())
 }
@@ -932,7 +932,7 @@ pub fn serialize_structure_crate_input_update_cost_category_definition_input(
     input: &crate::input::UpdateCostCategoryDefinitionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_220) = &input.cost_category_arn {
-        object.key("CostCategoryArn").string(var_220);
+        object.key("CostCategoryArn").string(var_220.as_str());
     }
     if let Some(var_221) = &input.rule_version {
         object.key("RuleVersion").string(var_221.as_str());
@@ -952,7 +952,7 @@ pub fn serialize_structure_crate_input_update_cost_category_definition_input(
         array_223.finish();
     }
     if let Some(var_226) = &input.default_value {
-        object.key("DefaultValue").string(var_226);
+        object.key("DefaultValue").string(var_226.as_str());
     }
     if let Some(var_227) = &input.split_charge_rules {
         let mut array_228 = object.key("SplitChargeRules").start_array();
@@ -976,19 +976,19 @@ pub fn serialize_structure_crate_model_anomaly_monitor(
     input: &crate::model::AnomalyMonitor,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_231) = &input.monitor_arn {
-        object.key("MonitorArn").string(var_231);
+        object.key("MonitorArn").string(var_231.as_str());
     }
     if let Some(var_232) = &input.monitor_name {
-        object.key("MonitorName").string(var_232);
+        object.key("MonitorName").string(var_232.as_str());
     }
     if let Some(var_233) = &input.creation_date {
-        object.key("CreationDate").string(var_233);
+        object.key("CreationDate").string(var_233.as_str());
     }
     if let Some(var_234) = &input.last_updated_date {
-        object.key("LastUpdatedDate").string(var_234);
+        object.key("LastUpdatedDate").string(var_234.as_str());
     }
     if let Some(var_235) = &input.last_evaluated_date {
-        object.key("LastEvaluatedDate").string(var_235);
+        object.key("LastEvaluatedDate").string(var_235.as_str());
     }
     if let Some(var_236) = &input.monitor_type {
         object.key("MonitorType").string(var_236.as_str());
@@ -1015,16 +1015,16 @@ pub fn serialize_structure_crate_model_anomaly_subscription(
     input: &crate::model::AnomalySubscription,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_240) = &input.subscription_arn {
-        object.key("SubscriptionArn").string(var_240);
+        object.key("SubscriptionArn").string(var_240.as_str());
     }
     if let Some(var_241) = &input.account_id {
-        object.key("AccountId").string(var_241);
+        object.key("AccountId").string(var_241.as_str());
     }
     if let Some(var_242) = &input.monitor_arn_list {
         let mut array_243 = object.key("MonitorArnList").start_array();
         for item_244 in var_242 {
             {
-                array_243.value().string(item_244);
+                array_243.value().string(item_244.as_str());
             }
         }
         array_243.finish();
@@ -1053,7 +1053,7 @@ pub fn serialize_structure_crate_model_anomaly_subscription(
         object.key("Frequency").string(var_250.as_str());
     }
     if let Some(var_251) = &input.subscription_name {
-        object.key("SubscriptionName").string(var_251);
+        object.key("SubscriptionName").string(var_251.as_str());
     }
     Ok(())
 }
@@ -1063,7 +1063,7 @@ pub fn serialize_structure_crate_model_cost_category_rule(
     input: &crate::model::CostCategoryRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_252) = &input.value {
-        object.key("Value").string(var_252);
+        object.key("Value").string(var_252.as_str());
     }
     if let Some(var_253) = &input.rule {
         let mut object_254 = object.key("Rule").start_object();
@@ -1089,13 +1089,13 @@ pub fn serialize_structure_crate_model_cost_category_split_charge_rule(
     input: &crate::model::CostCategorySplitChargeRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_258) = &input.source {
-        object.key("Source").string(var_258);
+        object.key("Source").string(var_258.as_str());
     }
     if let Some(var_259) = &input.targets {
         let mut array_260 = object.key("Targets").start_array();
         for item_261 in var_259 {
             {
-                array_260.value().string(item_261);
+                array_260.value().string(item_261.as_str());
             }
         }
         array_260.finish();
@@ -1122,10 +1122,10 @@ pub fn serialize_structure_crate_model_anomaly_date_interval(
     input: &crate::model::AnomalyDateInterval,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_267) = &input.start_date {
-        object.key("StartDate").string(var_267);
+        object.key("StartDate").string(var_267.as_str());
     }
     if let Some(var_268) = &input.end_date {
-        object.key("EndDate").string(var_268);
+        object.key("EndDate").string(var_268.as_str());
     }
     Ok(())
 }
@@ -1157,10 +1157,10 @@ pub fn serialize_structure_crate_model_date_interval(
     input: &crate::model::DateInterval,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_270) = &input.start {
-        object.key("Start").string(var_270);
+        object.key("Start").string(var_270.as_str());
     }
     if let Some(var_271) = &input.end {
-        object.key("End").string(var_271);
+        object.key("End").string(var_271.as_str());
     }
     Ok(())
 }
@@ -1234,7 +1234,7 @@ pub fn serialize_structure_crate_model_group_definition(
         object.key("Type").string(var_288.as_str());
     }
     if let Some(var_289) = &input.key {
-        object.key("Key").string(var_289);
+        object.key("Key").string(var_289.as_str());
     }
     Ok(())
 }
@@ -1244,7 +1244,7 @@ pub fn serialize_structure_crate_model_sort_definition(
     input: &crate::model::SortDefinition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_290) = &input.key {
-        object.key("Key").string(var_290);
+        object.key("Key").string(var_290.as_str());
     }
     if let Some(var_291) = &input.sort_order {
         object.key("SortOrder").string(var_291.as_str());
@@ -1287,7 +1287,7 @@ pub fn serialize_structure_crate_model_subscriber(
     input: &crate::model::Subscriber,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_295) = &input.address {
-        object.key("Address").string(var_295);
+        object.key("Address").string(var_295.as_str());
     }
     if let Some(var_296) = &input.r#type {
         object.key("Type").string(var_296.as_str());
@@ -1306,7 +1306,7 @@ pub fn serialize_structure_crate_model_cost_category_inherited_value_dimension(
         object.key("DimensionName").string(var_298.as_str());
     }
     if let Some(var_299) = &input.dimension_key {
-        object.key("DimensionKey").string(var_299);
+        object.key("DimensionKey").string(var_299.as_str());
     }
     Ok(())
 }
@@ -1322,7 +1322,7 @@ pub fn serialize_structure_crate_model_cost_category_split_charge_rule_parameter
         let mut array_302 = object.key("Values").start_array();
         for item_303 in var_301 {
             {
-                array_302.value().string(item_303);
+                array_302.value().string(item_303.as_str());
             }
         }
         array_302.finish();
@@ -1341,7 +1341,7 @@ pub fn serialize_structure_crate_model_dimension_values(
         let mut array_306 = object.key("Values").start_array();
         for item_307 in var_305 {
             {
-                array_306.value().string(item_307);
+                array_306.value().string(item_307.as_str());
             }
         }
         array_306.finish();
@@ -1363,13 +1363,13 @@ pub fn serialize_structure_crate_model_tag_values(
     input: &crate::model::TagValues,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_311) = &input.key {
-        object.key("Key").string(var_311);
+        object.key("Key").string(var_311.as_str());
     }
     if let Some(var_312) = &input.values {
         let mut array_313 = object.key("Values").start_array();
         for item_314 in var_312 {
             {
-                array_313.value().string(item_314);
+                array_313.value().string(item_314.as_str());
             }
         }
         array_313.finish();
@@ -1391,13 +1391,13 @@ pub fn serialize_structure_crate_model_cost_category_values(
     input: &crate::model::CostCategoryValues,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_318) = &input.key {
-        object.key("Key").string(var_318);
+        object.key("Key").string(var_318.as_str());
     }
     if let Some(var_319) = &input.values {
         let mut array_320 = object.key("Values").start_array();
         for item_321 in var_319 {
             {
-                array_320.value().string(item_321);
+                array_320.value().string(item_321.as_str());
             }
         }
         array_320.finish();

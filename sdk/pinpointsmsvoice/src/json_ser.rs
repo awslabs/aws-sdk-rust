@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_configuration_set_input(
     input: &crate::input::CreateConfigurationSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_1);
+        object.key("ConfigurationSetName").string(var_1.as_str());
     }
     Ok(())
 }
@@ -22,7 +22,7 @@ pub fn serialize_structure_crate_input_create_configuration_set_event_destinatio
         object_3.finish();
     }
     if let Some(var_4) = &input.event_destination_name {
-        object.key("EventDestinationName").string(var_4);
+        object.key("EventDestinationName").string(var_4.as_str());
     }
     Ok(())
 }
@@ -32,10 +32,10 @@ pub fn serialize_structure_crate_input_send_voice_message_input(
     input: &crate::input::SendVoiceMessageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.caller_id {
-        object.key("CallerId").string(var_5);
+        object.key("CallerId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_6);
+        object.key("ConfigurationSetName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.content {
         let mut object_8 = object.key("Content").start_object();
@@ -46,10 +46,10 @@ pub fn serialize_structure_crate_input_send_voice_message_input(
         object_8.finish();
     }
     if let Some(var_9) = &input.destination_phone_number {
-        object.key("DestinationPhoneNumber").string(var_9);
+        object.key("DestinationPhoneNumber").string(var_9.as_str());
     }
     if let Some(var_10) = &input.origination_phone_number {
-        object.key("OriginationPhoneNumber").string(var_10);
+        object.key("OriginationPhoneNumber").string(var_10.as_str());
     }
     Ok(())
 }
@@ -142,10 +142,10 @@ pub fn serialize_structure_crate_model_cloud_watch_logs_destination(
     input: &crate::model::CloudWatchLogsDestination,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_28);
+        object.key("IamRoleArn").string(var_28.as_str());
     }
     if let Some(var_29) = &input.log_group_arn {
-        object.key("LogGroupArn").string(var_29);
+        object.key("LogGroupArn").string(var_29.as_str());
     }
     Ok(())
 }
@@ -155,10 +155,10 @@ pub fn serialize_structure_crate_model_kinesis_firehose_destination(
     input: &crate::model::KinesisFirehoseDestination,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.delivery_stream_arn {
-        object.key("DeliveryStreamArn").string(var_30);
+        object.key("DeliveryStreamArn").string(var_30.as_str());
     }
     if let Some(var_31) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_31);
+        object.key("IamRoleArn").string(var_31.as_str());
     }
     Ok(())
 }
@@ -168,7 +168,7 @@ pub fn serialize_structure_crate_model_sns_destination(
     input: &crate::model::SnsDestination,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.topic_arn {
-        object.key("TopicArn").string(var_32);
+        object.key("TopicArn").string(var_32.as_str());
     }
     Ok(())
 }
@@ -178,7 +178,7 @@ pub fn serialize_structure_crate_model_call_instructions_message_type(
     input: &crate::model::CallInstructionsMessageType,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.text {
-        object.key("Text").string(var_33);
+        object.key("Text").string(var_33.as_str());
     }
     Ok(())
 }
@@ -188,13 +188,13 @@ pub fn serialize_structure_crate_model_plain_text_message_type(
     input: &crate::model::PlainTextMessageType,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.language_code {
-        object.key("LanguageCode").string(var_34);
+        object.key("LanguageCode").string(var_34.as_str());
     }
     if let Some(var_35) = &input.text {
-        object.key("Text").string(var_35);
+        object.key("Text").string(var_35.as_str());
     }
     if let Some(var_36) = &input.voice_id {
-        object.key("VoiceId").string(var_36);
+        object.key("VoiceId").string(var_36.as_str());
     }
     Ok(())
 }
@@ -204,13 +204,13 @@ pub fn serialize_structure_crate_model_ssml_message_type(
     input: &crate::model::SsmlMessageType,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.language_code {
-        object.key("LanguageCode").string(var_37);
+        object.key("LanguageCode").string(var_37.as_str());
     }
     if let Some(var_38) = &input.text {
-        object.key("Text").string(var_38);
+        object.key("Text").string(var_38.as_str());
     }
     if let Some(var_39) = &input.voice_id {
-        object.key("VoiceId").string(var_39);
+        object.key("VoiceId").string(var_39.as_str());
     }
     Ok(())
 }

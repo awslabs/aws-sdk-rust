@@ -4,16 +4,16 @@ pub fn serialize_structure_crate_input_associate_file_system_aliases_input(
     input: &crate::input::AssociateFileSystemAliasesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_1);
+        object.key("ClientRequestToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.file_system_id {
-        object.key("FileSystemId").string(var_2);
+        object.key("FileSystemId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.aliases {
         let mut array_4 = object.key("Aliases").start_array();
         for item_5 in var_3 {
             {
-                array_4.value().string(item_5);
+                array_4.value().string(item_5.as_str());
             }
         }
         array_4.finish();
@@ -26,7 +26,7 @@ pub fn serialize_structure_crate_input_cancel_data_repository_task_input(
     input: &crate::input::CancelDataRepositoryTaskInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.task_id {
-        object.key("TaskId").string(var_6);
+        object.key("TaskId").string(var_6.as_str());
     }
     Ok(())
 }
@@ -36,16 +36,16 @@ pub fn serialize_structure_crate_input_copy_backup_input(
     input: &crate::input::CopyBackupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_7);
+        object.key("ClientRequestToken").string(var_7.as_str());
     }
     if let Some(var_8) = &input.source_backup_id {
-        object.key("SourceBackupId").string(var_8);
+        object.key("SourceBackupId").string(var_8.as_str());
     }
     if let Some(var_9) = &input.source_region {
-        object.key("SourceRegion").string(var_9);
+        object.key("SourceRegion").string(var_9.as_str());
     }
     if let Some(var_10) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_10);
+        object.key("KmsKeyId").string(var_10.as_str());
     }
     if let Some(var_11) = &input.copy_tags {
         object.key("CopyTags").boolean(*var_11);
@@ -69,10 +69,10 @@ pub fn serialize_structure_crate_input_create_backup_input(
     input: &crate::input::CreateBackupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.file_system_id {
-        object.key("FileSystemId").string(var_16);
+        object.key("FileSystemId").string(var_16.as_str());
     }
     if let Some(var_17) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_17);
+        object.key("ClientRequestToken").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
         let mut array_19 = object.key("Tags").start_array();
@@ -86,7 +86,7 @@ pub fn serialize_structure_crate_input_create_backup_input(
         array_19.finish();
     }
     if let Some(var_22) = &input.volume_id {
-        object.key("VolumeId").string(var_22);
+        object.key("VolumeId").string(var_22.as_str());
     }
     Ok(())
 }
@@ -96,13 +96,13 @@ pub fn serialize_structure_crate_input_create_data_repository_association_input(
     input: &crate::input::CreateDataRepositoryAssociationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.file_system_id {
-        object.key("FileSystemId").string(var_23);
+        object.key("FileSystemId").string(var_23.as_str());
     }
     if let Some(var_24) = &input.file_system_path {
-        object.key("FileSystemPath").string(var_24);
+        object.key("FileSystemPath").string(var_24.as_str());
     }
     if let Some(var_25) = &input.data_repository_path {
-        object.key("DataRepositoryPath").string(var_25);
+        object.key("DataRepositoryPath").string(var_25.as_str());
     }
     if let Some(var_26) = &input.batch_import_meta_data_on_create {
         object.key("BatchImportMetaDataOnCreate").boolean(*var_26);
@@ -122,7 +122,7 @@ pub fn serialize_structure_crate_input_create_data_repository_association_input(
         object_29.finish();
     }
     if let Some(var_30) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_30);
+        object.key("ClientRequestToken").string(var_30.as_str());
     }
     if let Some(var_31) = &input.tags {
         let mut array_32 = object.key("Tags").start_array();
@@ -149,13 +149,13 @@ pub fn serialize_structure_crate_input_create_data_repository_task_input(
         let mut array_37 = object.key("Paths").start_array();
         for item_38 in var_36 {
             {
-                array_37.value().string(item_38);
+                array_37.value().string(item_38.as_str());
             }
         }
         array_37.finish();
     }
     if let Some(var_39) = &input.file_system_id {
-        object.key("FileSystemId").string(var_39);
+        object.key("FileSystemId").string(var_39.as_str());
     }
     if let Some(var_40) = &input.report {
         let mut object_41 = object.key("Report").start_object();
@@ -163,7 +163,7 @@ pub fn serialize_structure_crate_input_create_data_repository_task_input(
         object_41.finish();
     }
     if let Some(var_42) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_42);
+        object.key("ClientRequestToken").string(var_42.as_str());
     }
     if let Some(var_43) = &input.tags {
         let mut array_44 = object.key("Tags").start_array();
@@ -184,7 +184,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
     input: &crate::input::CreateFileSystemInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_47) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_47);
+        object.key("ClientRequestToken").string(var_47.as_str());
     }
     if let Some(var_48) = &input.file_system_type {
         object.key("FileSystemType").string(var_48.as_str());
@@ -202,7 +202,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
         let mut array_52 = object.key("SubnetIds").start_array();
         for item_53 in var_51 {
             {
-                array_52.value().string(item_53);
+                array_52.value().string(item_53.as_str());
             }
         }
         array_52.finish();
@@ -211,7 +211,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
         let mut array_55 = object.key("SecurityGroupIds").start_array();
         for item_56 in var_54 {
             {
-                array_55.value().string(item_56);
+                array_55.value().string(item_56.as_str());
             }
         }
         array_55.finish();
@@ -228,7 +228,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
         array_58.finish();
     }
     if let Some(var_61) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_61);
+        object.key("KmsKeyId").string(var_61.as_str());
     }
     if let Some(var_62) = &input.windows_configuration {
         let mut object_63 = object.key("WindowsConfiguration").start_object();
@@ -255,7 +255,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
         object_67.finish();
     }
     if let Some(var_68) = &input.file_system_type_version {
-        object.key("FileSystemTypeVersion").string(var_68);
+        object.key("FileSystemTypeVersion").string(var_68.as_str());
     }
     if let Some(var_69) = &input.open_zfs_configuration {
         let mut object_70 = object.key("OpenZFSConfiguration").start_object();
@@ -273,16 +273,16 @@ pub fn serialize_structure_crate_input_create_file_system_from_backup_input(
     input: &crate::input::CreateFileSystemFromBackupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_71) = &input.backup_id {
-        object.key("BackupId").string(var_71);
+        object.key("BackupId").string(var_71.as_str());
     }
     if let Some(var_72) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_72);
+        object.key("ClientRequestToken").string(var_72.as_str());
     }
     if let Some(var_73) = &input.subnet_ids {
         let mut array_74 = object.key("SubnetIds").start_array();
         for item_75 in var_73 {
             {
-                array_74.value().string(item_75);
+                array_74.value().string(item_75.as_str());
             }
         }
         array_74.finish();
@@ -291,7 +291,7 @@ pub fn serialize_structure_crate_input_create_file_system_from_backup_input(
         let mut array_77 = object.key("SecurityGroupIds").start_array();
         for item_78 in var_76 {
             {
-                array_77.value().string(item_78);
+                array_77.value().string(item_78.as_str());
             }
         }
         array_77.finish();
@@ -327,10 +327,10 @@ pub fn serialize_structure_crate_input_create_file_system_from_backup_input(
         object.key("StorageType").string(var_87.as_str());
     }
     if let Some(var_88) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_88);
+        object.key("KmsKeyId").string(var_88.as_str());
     }
     if let Some(var_89) = &input.file_system_type_version {
-        object.key("FileSystemTypeVersion").string(var_89);
+        object.key("FileSystemTypeVersion").string(var_89.as_str());
     }
     if let Some(var_90) = &input.open_zfs_configuration {
         let mut object_91 = object.key("OpenZFSConfiguration").start_object();
@@ -348,13 +348,13 @@ pub fn serialize_structure_crate_input_create_snapshot_input(
     input: &crate::input::CreateSnapshotInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_92) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_92);
+        object.key("ClientRequestToken").string(var_92.as_str());
     }
     if let Some(var_93) = &input.name {
-        object.key("Name").string(var_93);
+        object.key("Name").string(var_93.as_str());
     }
     if let Some(var_94) = &input.volume_id {
-        object.key("VolumeId").string(var_94);
+        object.key("VolumeId").string(var_94.as_str());
     }
     if let Some(var_95) = &input.tags {
         let mut array_96 = object.key("Tags").start_array();
@@ -383,16 +383,16 @@ pub fn serialize_structure_crate_input_create_storage_virtual_machine_input(
         object_100.finish();
     }
     if let Some(var_101) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_101);
+        object.key("ClientRequestToken").string(var_101.as_str());
     }
     if let Some(var_102) = &input.file_system_id {
-        object.key("FileSystemId").string(var_102);
+        object.key("FileSystemId").string(var_102.as_str());
     }
     if let Some(var_103) = &input.name {
-        object.key("Name").string(var_103);
+        object.key("Name").string(var_103.as_str());
     }
     if let Some(var_104) = &input.svm_admin_password {
-        object.key("SvmAdminPassword").string(var_104);
+        object.key("SvmAdminPassword").string(var_104.as_str());
     }
     if let Some(var_105) = &input.tags {
         let mut array_106 = object.key("Tags").start_array();
@@ -418,13 +418,13 @@ pub fn serialize_structure_crate_input_create_volume_input(
     input: &crate::input::CreateVolumeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_110) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_110);
+        object.key("ClientRequestToken").string(var_110.as_str());
     }
     if let Some(var_111) = &input.volume_type {
         object.key("VolumeType").string(var_111.as_str());
     }
     if let Some(var_112) = &input.name {
-        object.key("Name").string(var_112);
+        object.key("Name").string(var_112.as_str());
     }
     if let Some(var_113) = &input.ontap_configuration {
         let mut object_114 = object.key("OntapConfiguration").start_object();
@@ -461,13 +461,13 @@ pub fn serialize_structure_crate_input_create_volume_from_backup_input(
     input: &crate::input::CreateVolumeFromBackupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_121) = &input.backup_id {
-        object.key("BackupId").string(var_121);
+        object.key("BackupId").string(var_121.as_str());
     }
     if let Some(var_122) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_122);
+        object.key("ClientRequestToken").string(var_122.as_str());
     }
     if let Some(var_123) = &input.name {
-        object.key("Name").string(var_123);
+        object.key("Name").string(var_123.as_str());
     }
     if let Some(var_124) = &input.ontap_configuration {
         let mut object_125 = object.key("OntapConfiguration").start_object();
@@ -496,10 +496,10 @@ pub fn serialize_structure_crate_input_delete_backup_input(
     input: &crate::input::DeleteBackupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_130) = &input.backup_id {
-        object.key("BackupId").string(var_130);
+        object.key("BackupId").string(var_130.as_str());
     }
     if let Some(var_131) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_131);
+        object.key("ClientRequestToken").string(var_131.as_str());
     }
     Ok(())
 }
@@ -509,10 +509,10 @@ pub fn serialize_structure_crate_input_delete_data_repository_association_input(
     input: &crate::input::DeleteDataRepositoryAssociationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_132) = &input.association_id {
-        object.key("AssociationId").string(var_132);
+        object.key("AssociationId").string(var_132.as_str());
     }
     if let Some(var_133) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_133);
+        object.key("ClientRequestToken").string(var_133.as_str());
     }
     if let Some(var_134) = &input.delete_data_in_file_system {
         object.key("DeleteDataInFileSystem").boolean(*var_134);
@@ -525,10 +525,10 @@ pub fn serialize_structure_crate_input_delete_file_system_input(
     input: &crate::input::DeleteFileSystemInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_135) = &input.file_system_id {
-        object.key("FileSystemId").string(var_135);
+        object.key("FileSystemId").string(var_135.as_str());
     }
     if let Some(var_136) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_136);
+        object.key("ClientRequestToken").string(var_136.as_str());
     }
     if let Some(var_137) = &input.windows_configuration {
         let mut object_138 = object.key("WindowsConfiguration").start_object();
@@ -562,10 +562,10 @@ pub fn serialize_structure_crate_input_delete_snapshot_input(
     input: &crate::input::DeleteSnapshotInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_143) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_143);
+        object.key("ClientRequestToken").string(var_143.as_str());
     }
     if let Some(var_144) = &input.snapshot_id {
-        object.key("SnapshotId").string(var_144);
+        object.key("SnapshotId").string(var_144.as_str());
     }
     Ok(())
 }
@@ -575,10 +575,12 @@ pub fn serialize_structure_crate_input_delete_storage_virtual_machine_input(
     input: &crate::input::DeleteStorageVirtualMachineInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_145) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_145);
+        object.key("ClientRequestToken").string(var_145.as_str());
     }
     if let Some(var_146) = &input.storage_virtual_machine_id {
-        object.key("StorageVirtualMachineId").string(var_146);
+        object
+            .key("StorageVirtualMachineId")
+            .string(var_146.as_str());
     }
     Ok(())
 }
@@ -588,10 +590,10 @@ pub fn serialize_structure_crate_input_delete_volume_input(
     input: &crate::input::DeleteVolumeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_147) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_147);
+        object.key("ClientRequestToken").string(var_147.as_str());
     }
     if let Some(var_148) = &input.volume_id {
-        object.key("VolumeId").string(var_148);
+        object.key("VolumeId").string(var_148.as_str());
     }
     if let Some(var_149) = &input.ontap_configuration {
         let mut object_150 = object.key("OntapConfiguration").start_object();
@@ -620,7 +622,7 @@ pub fn serialize_structure_crate_input_describe_backups_input(
         let mut array_154 = object.key("BackupIds").start_array();
         for item_155 in var_153 {
             {
-                array_154.value().string(item_155);
+                array_154.value().string(item_155.as_str());
             }
         }
         array_154.finish();
@@ -643,7 +645,7 @@ pub fn serialize_structure_crate_input_describe_backups_input(
         );
     }
     if let Some(var_161) = &input.next_token {
-        object.key("NextToken").string(var_161);
+        object.key("NextToken").string(var_161.as_str());
     }
     Ok(())
 }
@@ -656,7 +658,7 @@ pub fn serialize_structure_crate_input_describe_data_repository_associations_inp
         let mut array_163 = object.key("AssociationIds").start_array();
         for item_164 in var_162 {
             {
-                array_163.value().string(item_164);
+                array_163.value().string(item_164.as_str());
             }
         }
         array_163.finish();
@@ -679,7 +681,7 @@ pub fn serialize_structure_crate_input_describe_data_repository_associations_inp
         );
     }
     if let Some(var_170) = &input.next_token {
-        object.key("NextToken").string(var_170);
+        object.key("NextToken").string(var_170.as_str());
     }
     Ok(())
 }
@@ -692,7 +694,7 @@ pub fn serialize_structure_crate_input_describe_data_repository_tasks_input(
         let mut array_172 = object.key("TaskIds").start_array();
         for item_173 in var_171 {
             {
-                array_172.value().string(item_173);
+                array_172.value().string(item_173.as_str());
             }
         }
         array_172.finish();
@@ -718,7 +720,7 @@ pub fn serialize_structure_crate_input_describe_data_repository_tasks_input(
         );
     }
     if let Some(var_179) = &input.next_token {
-        object.key("NextToken").string(var_179);
+        object.key("NextToken").string(var_179.as_str());
     }
     Ok(())
 }
@@ -728,10 +730,10 @@ pub fn serialize_structure_crate_input_describe_file_system_aliases_input(
     input: &crate::input::DescribeFileSystemAliasesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_180) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_180);
+        object.key("ClientRequestToken").string(var_180.as_str());
     }
     if let Some(var_181) = &input.file_system_id {
-        object.key("FileSystemId").string(var_181);
+        object.key("FileSystemId").string(var_181.as_str());
     }
     if let Some(var_182) = &input.max_results {
         object.key("MaxResults").number(
@@ -740,7 +742,7 @@ pub fn serialize_structure_crate_input_describe_file_system_aliases_input(
         );
     }
     if let Some(var_183) = &input.next_token {
-        object.key("NextToken").string(var_183);
+        object.key("NextToken").string(var_183.as_str());
     }
     Ok(())
 }
@@ -753,7 +755,7 @@ pub fn serialize_structure_crate_input_describe_file_systems_input(
         let mut array_185 = object.key("FileSystemIds").start_array();
         for item_186 in var_184 {
             {
-                array_185.value().string(item_186);
+                array_185.value().string(item_186.as_str());
             }
         }
         array_185.finish();
@@ -765,7 +767,7 @@ pub fn serialize_structure_crate_input_describe_file_systems_input(
         );
     }
     if let Some(var_188) = &input.next_token {
-        object.key("NextToken").string(var_188);
+        object.key("NextToken").string(var_188.as_str());
     }
     Ok(())
 }
@@ -778,7 +780,7 @@ pub fn serialize_structure_crate_input_describe_snapshots_input(
         let mut array_190 = object.key("SnapshotIds").start_array();
         for item_191 in var_189 {
             {
-                array_190.value().string(item_191);
+                array_190.value().string(item_191.as_str());
             }
         }
         array_190.finish();
@@ -804,7 +806,7 @@ pub fn serialize_structure_crate_input_describe_snapshots_input(
         );
     }
     if let Some(var_197) = &input.next_token {
-        object.key("NextToken").string(var_197);
+        object.key("NextToken").string(var_197.as_str());
     }
     Ok(())
 }
@@ -817,7 +819,7 @@ pub fn serialize_structure_crate_input_describe_storage_virtual_machines_input(
         let mut array_199 = object.key("StorageVirtualMachineIds").start_array();
         for item_200 in var_198 {
             {
-                array_199.value().string(item_200);
+                array_199.value().string(item_200.as_str());
             }
         }
         array_199.finish();
@@ -843,7 +845,7 @@ pub fn serialize_structure_crate_input_describe_storage_virtual_machines_input(
         );
     }
     if let Some(var_206) = &input.next_token {
-        object.key("NextToken").string(var_206);
+        object.key("NextToken").string(var_206.as_str());
     }
     Ok(())
 }
@@ -856,7 +858,7 @@ pub fn serialize_structure_crate_input_describe_volumes_input(
         let mut array_208 = object.key("VolumeIds").start_array();
         for item_209 in var_207 {
             {
-                array_208.value().string(item_209);
+                array_208.value().string(item_209.as_str());
             }
         }
         array_208.finish();
@@ -882,7 +884,7 @@ pub fn serialize_structure_crate_input_describe_volumes_input(
         );
     }
     if let Some(var_215) = &input.next_token {
-        object.key("NextToken").string(var_215);
+        object.key("NextToken").string(var_215.as_str());
     }
     Ok(())
 }
@@ -892,16 +894,16 @@ pub fn serialize_structure_crate_input_disassociate_file_system_aliases_input(
     input: &crate::input::DisassociateFileSystemAliasesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_216) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_216);
+        object.key("ClientRequestToken").string(var_216.as_str());
     }
     if let Some(var_217) = &input.file_system_id {
-        object.key("FileSystemId").string(var_217);
+        object.key("FileSystemId").string(var_217.as_str());
     }
     if let Some(var_218) = &input.aliases {
         let mut array_219 = object.key("Aliases").start_array();
         for item_220 in var_218 {
             {
-                array_219.value().string(item_220);
+                array_219.value().string(item_220.as_str());
             }
         }
         array_219.finish();
@@ -914,7 +916,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_221) = &input.resource_arn {
-        object.key("ResourceARN").string(var_221);
+        object.key("ResourceARN").string(var_221.as_str());
     }
     if let Some(var_222) = &input.max_results {
         object.key("MaxResults").number(
@@ -923,7 +925,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
         );
     }
     if let Some(var_223) = &input.next_token {
-        object.key("NextToken").string(var_223);
+        object.key("NextToken").string(var_223.as_str());
     }
     Ok(())
 }
@@ -933,10 +935,10 @@ pub fn serialize_structure_crate_input_release_file_system_nfs_v3_locks_input(
     input: &crate::input::ReleaseFileSystemNfsV3LocksInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_224) = &input.file_system_id {
-        object.key("FileSystemId").string(var_224);
+        object.key("FileSystemId").string(var_224.as_str());
     }
     if let Some(var_225) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_225);
+        object.key("ClientRequestToken").string(var_225.as_str());
     }
     Ok(())
 }
@@ -946,13 +948,13 @@ pub fn serialize_structure_crate_input_restore_volume_from_snapshot_input(
     input: &crate::input::RestoreVolumeFromSnapshotInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_226) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_226);
+        object.key("ClientRequestToken").string(var_226.as_str());
     }
     if let Some(var_227) = &input.volume_id {
-        object.key("VolumeId").string(var_227);
+        object.key("VolumeId").string(var_227.as_str());
     }
     if let Some(var_228) = &input.snapshot_id {
-        object.key("SnapshotId").string(var_228);
+        object.key("SnapshotId").string(var_228.as_str());
     }
     if let Some(var_229) = &input.options {
         let mut array_230 = object.key("Options").start_array();
@@ -971,7 +973,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_232) = &input.resource_arn {
-        object.key("ResourceARN").string(var_232);
+        object.key("ResourceARN").string(var_232.as_str());
     }
     if let Some(var_233) = &input.tags {
         let mut array_234 = object.key("Tags").start_array();
@@ -992,13 +994,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_237) = &input.resource_arn {
-        object.key("ResourceARN").string(var_237);
+        object.key("ResourceARN").string(var_237.as_str());
     }
     if let Some(var_238) = &input.tag_keys {
         let mut array_239 = object.key("TagKeys").start_array();
         for item_240 in var_238 {
             {
-                array_239.value().string(item_240);
+                array_239.value().string(item_240.as_str());
             }
         }
         array_239.finish();
@@ -1011,10 +1013,10 @@ pub fn serialize_structure_crate_input_update_data_repository_association_input(
     input: &crate::input::UpdateDataRepositoryAssociationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_241) = &input.association_id {
-        object.key("AssociationId").string(var_241);
+        object.key("AssociationId").string(var_241.as_str());
     }
     if let Some(var_242) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_242);
+        object.key("ClientRequestToken").string(var_242.as_str());
     }
     if let Some(var_243) = &input.imported_file_chunk_size {
         object.key("ImportedFileChunkSize").number(
@@ -1038,10 +1040,10 @@ pub fn serialize_structure_crate_input_update_file_system_input(
     input: &crate::input::UpdateFileSystemInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_246) = &input.file_system_id {
-        object.key("FileSystemId").string(var_246);
+        object.key("FileSystemId").string(var_246.as_str());
     }
     if let Some(var_247) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_247);
+        object.key("ClientRequestToken").string(var_247.as_str());
     }
     if let Some(var_248) = &input.storage_capacity {
         object.key("StorageCapacity").number(
@@ -1089,13 +1091,13 @@ pub fn serialize_structure_crate_input_update_snapshot_input(
     input: &crate::input::UpdateSnapshotInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_257) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_257);
+        object.key("ClientRequestToken").string(var_257.as_str());
     }
     if let Some(var_258) = &input.name {
-        object.key("Name").string(var_258);
+        object.key("Name").string(var_258.as_str());
     }
     if let Some(var_259) = &input.snapshot_id {
-        object.key("SnapshotId").string(var_259);
+        object.key("SnapshotId").string(var_259.as_str());
     }
     Ok(())
 }
@@ -1113,13 +1115,15 @@ pub fn serialize_structure_crate_input_update_storage_virtual_machine_input(
         object_261.finish();
     }
     if let Some(var_262) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_262);
+        object.key("ClientRequestToken").string(var_262.as_str());
     }
     if let Some(var_263) = &input.storage_virtual_machine_id {
-        object.key("StorageVirtualMachineId").string(var_263);
+        object
+            .key("StorageVirtualMachineId")
+            .string(var_263.as_str());
     }
     if let Some(var_264) = &input.svm_admin_password {
-        object.key("SvmAdminPassword").string(var_264);
+        object.key("SvmAdminPassword").string(var_264.as_str());
     }
     Ok(())
 }
@@ -1129,10 +1133,10 @@ pub fn serialize_structure_crate_input_update_volume_input(
     input: &crate::input::UpdateVolumeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_265) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_265);
+        object.key("ClientRequestToken").string(var_265.as_str());
     }
     if let Some(var_266) = &input.volume_id {
-        object.key("VolumeId").string(var_266);
+        object.key("VolumeId").string(var_266.as_str());
     }
     if let Some(var_267) = &input.ontap_configuration {
         let mut object_268 = object.key("OntapConfiguration").start_object();
@@ -1143,7 +1147,7 @@ pub fn serialize_structure_crate_input_update_volume_input(
         object_268.finish();
     }
     if let Some(var_269) = &input.name {
-        object.key("Name").string(var_269);
+        object.key("Name").string(var_269.as_str());
     }
     if let Some(var_270) = &input.open_zfs_configuration {
         let mut object_271 = object.key("OpenZFSConfiguration").start_object();
@@ -1161,10 +1165,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_272) = &input.key {
-        object.key("Key").string(var_272);
+        object.key("Key").string(var_272.as_str());
     }
     if let Some(var_273) = &input.value {
-        object.key("Value").string(var_273);
+        object.key("Value").string(var_273.as_str());
     }
     Ok(())
 }
@@ -1200,7 +1204,7 @@ pub fn serialize_structure_crate_model_completion_report(
         object.key("Enabled").boolean(*var_278);
     }
     if let Some(var_279) = &input.path {
-        object.key("Path").string(var_279);
+        object.key("Path").string(var_279.as_str());
     }
     if let Some(var_280) = &input.format {
         object.key("Format").string(var_280.as_str());
@@ -1216,7 +1220,7 @@ pub fn serialize_structure_crate_model_create_file_system_windows_configuration(
     input: &crate::model::CreateFileSystemWindowsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_282) = &input.active_directory_id {
-        object.key("ActiveDirectoryId").string(var_282);
+        object.key("ActiveDirectoryId").string(var_282.as_str());
     }
     if let Some(var_283) = &input.self_managed_active_directory_configuration {
         let mut object_284 = object
@@ -1229,7 +1233,7 @@ pub fn serialize_structure_crate_model_create_file_system_windows_configuration(
         object.key("DeploymentType").string(var_285.as_str());
     }
     if let Some(var_286) = &input.preferred_subnet_id {
-        object.key("PreferredSubnetId").string(var_286);
+        object.key("PreferredSubnetId").string(var_286.as_str());
     }
     if let Some(var_287) = &input.throughput_capacity {
         object.key("ThroughputCapacity").number(
@@ -1238,10 +1242,14 @@ pub fn serialize_structure_crate_model_create_file_system_windows_configuration(
         );
     }
     if let Some(var_288) = &input.weekly_maintenance_start_time {
-        object.key("WeeklyMaintenanceStartTime").string(var_288);
+        object
+            .key("WeeklyMaintenanceStartTime")
+            .string(var_288.as_str());
     }
     if let Some(var_289) = &input.daily_automatic_backup_start_time {
-        object.key("DailyAutomaticBackupStartTime").string(var_289);
+        object
+            .key("DailyAutomaticBackupStartTime")
+            .string(var_289.as_str());
     }
     if let Some(var_290) = &input.automatic_backup_retention_days {
         object.key("AutomaticBackupRetentionDays").number(
@@ -1256,7 +1264,7 @@ pub fn serialize_structure_crate_model_create_file_system_windows_configuration(
         let mut array_293 = object.key("Aliases").start_array();
         for item_294 in var_292 {
             {
-                array_293.value().string(item_294);
+                array_293.value().string(item_294.as_str());
             }
         }
         array_293.finish();
@@ -1277,13 +1285,15 @@ pub fn serialize_structure_crate_model_create_file_system_lustre_configuration(
     input: &crate::model::CreateFileSystemLustreConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_297) = &input.weekly_maintenance_start_time {
-        object.key("WeeklyMaintenanceStartTime").string(var_297);
+        object
+            .key("WeeklyMaintenanceStartTime")
+            .string(var_297.as_str());
     }
     if let Some(var_298) = &input.import_path {
-        object.key("ImportPath").string(var_298);
+        object.key("ImportPath").string(var_298.as_str());
     }
     if let Some(var_299) = &input.export_path {
-        object.key("ExportPath").string(var_299);
+        object.key("ExportPath").string(var_299.as_str());
     }
     if let Some(var_300) = &input.imported_file_chunk_size {
         object.key("ImportedFileChunkSize").number(
@@ -1304,7 +1314,9 @@ pub fn serialize_structure_crate_model_create_file_system_lustre_configuration(
         );
     }
     if let Some(var_304) = &input.daily_automatic_backup_start_time {
-        object.key("DailyAutomaticBackupStartTime").string(var_304);
+        object
+            .key("DailyAutomaticBackupStartTime")
+            .string(var_304.as_str());
     }
     if let Some(var_305) = &input.automatic_backup_retention_days {
         object.key("AutomaticBackupRetentionDays").number(
@@ -1343,16 +1355,20 @@ pub fn serialize_structure_crate_model_create_file_system_ontap_configuration(
         );
     }
     if let Some(var_312) = &input.daily_automatic_backup_start_time {
-        object.key("DailyAutomaticBackupStartTime").string(var_312);
+        object
+            .key("DailyAutomaticBackupStartTime")
+            .string(var_312.as_str());
     }
     if let Some(var_313) = &input.deployment_type {
         object.key("DeploymentType").string(var_313.as_str());
     }
     if let Some(var_314) = &input.endpoint_ip_address_range {
-        object.key("EndpointIpAddressRange").string(var_314);
+        object
+            .key("EndpointIpAddressRange")
+            .string(var_314.as_str());
     }
     if let Some(var_315) = &input.fsx_admin_password {
-        object.key("FsxAdminPassword").string(var_315);
+        object.key("FsxAdminPassword").string(var_315.as_str());
     }
     if let Some(var_316) = &input.disk_iops_configuration {
         let mut object_317 = object.key("DiskIopsConfiguration").start_object();
@@ -1363,13 +1379,13 @@ pub fn serialize_structure_crate_model_create_file_system_ontap_configuration(
         object_317.finish();
     }
     if let Some(var_318) = &input.preferred_subnet_id {
-        object.key("PreferredSubnetId").string(var_318);
+        object.key("PreferredSubnetId").string(var_318.as_str());
     }
     if let Some(var_319) = &input.route_table_ids {
         let mut array_320 = object.key("RouteTableIds").start_array();
         for item_321 in var_319 {
             {
-                array_320.value().string(item_321);
+                array_320.value().string(item_321.as_str());
             }
         }
         array_320.finish();
@@ -1381,7 +1397,9 @@ pub fn serialize_structure_crate_model_create_file_system_ontap_configuration(
         );
     }
     if let Some(var_323) = &input.weekly_maintenance_start_time {
-        object.key("WeeklyMaintenanceStartTime").string(var_323);
+        object
+            .key("WeeklyMaintenanceStartTime")
+            .string(var_323.as_str());
     }
     Ok(())
 }
@@ -1403,7 +1421,9 @@ pub fn serialize_structure_crate_model_create_file_system_open_zfs_configuration
         object.key("CopyTagsToVolumes").boolean(*var_326);
     }
     if let Some(var_327) = &input.daily_automatic_backup_start_time {
-        object.key("DailyAutomaticBackupStartTime").string(var_327);
+        object
+            .key("DailyAutomaticBackupStartTime")
+            .string(var_327.as_str());
     }
     if let Some(var_328) = &input.deployment_type {
         object.key("DeploymentType").string(var_328.as_str());
@@ -1415,7 +1435,9 @@ pub fn serialize_structure_crate_model_create_file_system_open_zfs_configuration
         );
     }
     if let Some(var_330) = &input.weekly_maintenance_start_time {
-        object.key("WeeklyMaintenanceStartTime").string(var_330);
+        object
+            .key("WeeklyMaintenanceStartTime")
+            .string(var_330.as_str());
     }
     if let Some(var_331) = &input.disk_iops_configuration {
         let mut object_332 = object.key("DiskIopsConfiguration").start_object();
@@ -1441,7 +1463,7 @@ pub fn serialize_structure_crate_model_create_svm_active_directory_configuration
     input: &crate::model::CreateSvmActiveDirectoryConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_335) = &input.net_bios_name {
-        object.key("NetBiosName").string(var_335);
+        object.key("NetBiosName").string(var_335.as_str());
     }
     if let Some(var_336) = &input.self_managed_active_directory_configuration {
         let mut object_337 = object
@@ -1458,7 +1480,7 @@ pub fn serialize_structure_crate_model_create_ontap_volume_configuration(
     input: &crate::model::CreateOntapVolumeConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_338) = &input.junction_path {
-        object.key("JunctionPath").string(var_338);
+        object.key("JunctionPath").string(var_338.as_str());
     }
     if let Some(var_339) = &input.security_style {
         object.key("SecurityStyle").string(var_339.as_str());
@@ -1473,7 +1495,9 @@ pub fn serialize_structure_crate_model_create_ontap_volume_configuration(
         object.key("StorageEfficiencyEnabled").boolean(*var_341);
     }
     if let Some(var_342) = &input.storage_virtual_machine_id {
-        object.key("StorageVirtualMachineId").string(var_342);
+        object
+            .key("StorageVirtualMachineId")
+            .string(var_342.as_str());
     }
     if let Some(var_343) = &input.tiering_policy {
         let mut object_344 = object.key("TieringPolicy").start_object();
@@ -1488,7 +1512,7 @@ pub fn serialize_structure_crate_model_create_open_zfs_volume_configuration(
     input: &crate::model::CreateOpenZfsVolumeConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_345) = &input.parent_volume_id {
-        object.key("ParentVolumeId").string(var_345);
+        object.key("ParentVolumeId").string(var_345.as_str());
     }
     if let Some(var_346) = &input.storage_capacity_reservation_gi_b {
         object.key("StorageCapacityReservationGiB").number(
@@ -1658,7 +1682,7 @@ pub fn serialize_structure_crate_model_filter(
         let mut array_386 = object.key("Values").start_array();
         for item_387 in var_385 {
             {
-                array_386.value().string(item_387);
+                array_386.value().string(item_387.as_str());
             }
         }
         array_386.finish();
@@ -1677,7 +1701,7 @@ pub fn serialize_structure_crate_model_data_repository_task_filter(
         let mut array_390 = object.key("Values").start_array();
         for item_391 in var_389 {
             {
-                array_390.value().string(item_391);
+                array_390.value().string(item_391.as_str());
             }
         }
         array_390.finish();
@@ -1696,7 +1720,7 @@ pub fn serialize_structure_crate_model_snapshot_filter(
         let mut array_394 = object.key("Values").start_array();
         for item_395 in var_393 {
             {
-                array_394.value().string(item_395);
+                array_394.value().string(item_395.as_str());
             }
         }
         array_394.finish();
@@ -1715,7 +1739,7 @@ pub fn serialize_structure_crate_model_storage_virtual_machine_filter(
         let mut array_398 = object.key("Values").start_array();
         for item_399 in var_397 {
             {
-                array_398.value().string(item_399);
+                array_398.value().string(item_399.as_str());
             }
         }
         array_398.finish();
@@ -1734,7 +1758,7 @@ pub fn serialize_structure_crate_model_volume_filter(
         let mut array_402 = object.key("Values").start_array();
         for item_403 in var_401 {
             {
-                array_402.value().string(item_403);
+                array_402.value().string(item_403.as_str());
             }
         }
         array_402.finish();
@@ -1747,10 +1771,14 @@ pub fn serialize_structure_crate_model_update_file_system_windows_configuration(
     input: &crate::model::UpdateFileSystemWindowsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_404) = &input.weekly_maintenance_start_time {
-        object.key("WeeklyMaintenanceStartTime").string(var_404);
+        object
+            .key("WeeklyMaintenanceStartTime")
+            .string(var_404.as_str());
     }
     if let Some(var_405) = &input.daily_automatic_backup_start_time {
-        object.key("DailyAutomaticBackupStartTime").string(var_405);
+        object
+            .key("DailyAutomaticBackupStartTime")
+            .string(var_405.as_str());
     }
     if let Some(var_406) = &input.automatic_backup_retention_days {
         object.key("AutomaticBackupRetentionDays").number(
@@ -1787,10 +1815,14 @@ pub fn serialize_structure_crate_model_update_file_system_lustre_configuration(
     input: &crate::model::UpdateFileSystemLustreConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_412) = &input.weekly_maintenance_start_time {
-        object.key("WeeklyMaintenanceStartTime").string(var_412);
+        object
+            .key("WeeklyMaintenanceStartTime")
+            .string(var_412.as_str());
     }
     if let Some(var_413) = &input.daily_automatic_backup_start_time {
-        object.key("DailyAutomaticBackupStartTime").string(var_413);
+        object
+            .key("DailyAutomaticBackupStartTime")
+            .string(var_413.as_str());
     }
     if let Some(var_414) = &input.automatic_backup_retention_days {
         object.key("AutomaticBackupRetentionDays").number(
@@ -1826,13 +1858,17 @@ pub fn serialize_structure_crate_model_update_file_system_ontap_configuration(
         );
     }
     if let Some(var_420) = &input.daily_automatic_backup_start_time {
-        object.key("DailyAutomaticBackupStartTime").string(var_420);
+        object
+            .key("DailyAutomaticBackupStartTime")
+            .string(var_420.as_str());
     }
     if let Some(var_421) = &input.fsx_admin_password {
-        object.key("FsxAdminPassword").string(var_421);
+        object.key("FsxAdminPassword").string(var_421.as_str());
     }
     if let Some(var_422) = &input.weekly_maintenance_start_time {
-        object.key("WeeklyMaintenanceStartTime").string(var_422);
+        object
+            .key("WeeklyMaintenanceStartTime")
+            .string(var_422.as_str());
     }
     if let Some(var_423) = &input.disk_iops_configuration {
         let mut object_424 = object.key("DiskIopsConfiguration").start_object();
@@ -1862,7 +1898,9 @@ pub fn serialize_structure_crate_model_update_file_system_open_zfs_configuration
         object.key("CopyTagsToVolumes").boolean(*var_427);
     }
     if let Some(var_428) = &input.daily_automatic_backup_start_time {
-        object.key("DailyAutomaticBackupStartTime").string(var_428);
+        object
+            .key("DailyAutomaticBackupStartTime")
+            .string(var_428.as_str());
     }
     if let Some(var_429) = &input.throughput_capacity {
         object.key("ThroughputCapacity").number(
@@ -1871,7 +1909,9 @@ pub fn serialize_structure_crate_model_update_file_system_open_zfs_configuration
         );
     }
     if let Some(var_430) = &input.weekly_maintenance_start_time {
-        object.key("WeeklyMaintenanceStartTime").string(var_430);
+        object
+            .key("WeeklyMaintenanceStartTime")
+            .string(var_430.as_str());
     }
     if let Some(var_431) = &input.disk_iops_configuration {
         let mut object_432 = object.key("DiskIopsConfiguration").start_object();
@@ -1903,7 +1943,7 @@ pub fn serialize_structure_crate_model_update_ontap_volume_configuration(
     input: &crate::model::UpdateOntapVolumeConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_435) = &input.junction_path {
-        object.key("JunctionPath").string(var_435);
+        object.key("JunctionPath").string(var_435.as_str());
     }
     if let Some(var_436) = &input.security_style {
         object.key("SecurityStyle").string(var_436.as_str());
@@ -2015,27 +2055,29 @@ pub fn serialize_structure_crate_model_self_managed_active_directory_configurati
     input: &crate::model::SelfManagedActiveDirectoryConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_459) = &input.domain_name {
-        object.key("DomainName").string(var_459);
+        object.key("DomainName").string(var_459.as_str());
     }
     if let Some(var_460) = &input.organizational_unit_distinguished_name {
         object
             .key("OrganizationalUnitDistinguishedName")
-            .string(var_460);
+            .string(var_460.as_str());
     }
     if let Some(var_461) = &input.file_system_administrators_group {
-        object.key("FileSystemAdministratorsGroup").string(var_461);
+        object
+            .key("FileSystemAdministratorsGroup")
+            .string(var_461.as_str());
     }
     if let Some(var_462) = &input.user_name {
-        object.key("UserName").string(var_462);
+        object.key("UserName").string(var_462.as_str());
     }
     if let Some(var_463) = &input.password {
-        object.key("Password").string(var_463);
+        object.key("Password").string(var_463.as_str());
     }
     if let Some(var_464) = &input.dns_ips {
         let mut array_465 = object.key("DnsIps").start_array();
         for item_466 in var_464 {
             {
-                array_465.value().string(item_466);
+                array_465.value().string(item_466.as_str());
             }
         }
         array_465.finish();
@@ -2058,7 +2100,7 @@ pub fn serialize_structure_crate_model_windows_audit_log_create_configuration(
             .string(var_468.as_str());
     }
     if let Some(var_469) = &input.audit_log_destination {
-        object.key("AuditLogDestination").string(var_469);
+        object.key("AuditLogDestination").string(var_469.as_str());
     }
     Ok(())
 }
@@ -2071,7 +2113,7 @@ pub fn serialize_structure_crate_model_lustre_log_create_configuration(
         object.key("Level").string(var_470.as_str());
     }
     if let Some(var_471) = &input.destination {
-        object.key("Destination").string(var_471);
+        object.key("Destination").string(var_471.as_str());
     }
     Ok(())
 }
@@ -2157,7 +2199,7 @@ pub fn serialize_structure_crate_model_create_open_zfs_origin_snapshot_configura
     input: &crate::model::CreateOpenZfsOriginSnapshotConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_487) = &input.snapshot_arn {
-        object.key("SnapshotARN").string(var_487);
+        object.key("SnapshotARN").string(var_487.as_str());
     }
     if let Some(var_488) = &input.copy_strategy {
         object.key("CopyStrategy").string(var_488.as_str());
@@ -2213,16 +2255,16 @@ pub fn serialize_structure_crate_model_self_managed_active_directory_configurati
     input: &crate::model::SelfManagedActiveDirectoryConfigurationUpdates,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_496) = &input.user_name {
-        object.key("UserName").string(var_496);
+        object.key("UserName").string(var_496.as_str());
     }
     if let Some(var_497) = &input.password {
-        object.key("Password").string(var_497);
+        object.key("Password").string(var_497.as_str());
     }
     if let Some(var_498) = &input.dns_ips {
         let mut array_499 = object.key("DnsIps").start_array();
         for item_500 in var_498 {
             {
-                array_499.value().string(item_500);
+                array_499.value().string(item_500.as_str());
             }
         }
         array_499.finish();
@@ -2235,13 +2277,13 @@ pub fn serialize_structure_crate_model_open_zfs_client_configuration(
     input: &crate::model::OpenZfsClientConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_501) = &input.clients {
-        object.key("Clients").string(var_501);
+        object.key("Clients").string(var_501.as_str());
     }
     if let Some(var_502) = &input.options {
         let mut array_503 = object.key("Options").start_array();
         for item_504 in var_502 {
             {
-                array_503.value().string(item_504);
+                array_503.value().string(item_504.as_str());
             }
         }
         array_503.finish();

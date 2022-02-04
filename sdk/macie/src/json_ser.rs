@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_associate_member_account_input(
     input: &crate::input::AssociateMemberAccountInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.member_account_id {
-        object.key("memberAccountId").string(var_1);
+        object.key("memberAccountId").string(var_1.as_str());
     }
     Ok(())
 }
@@ -14,7 +14,7 @@ pub fn serialize_structure_crate_input_associate_s3_resources_input(
     input: &crate::input::AssociateS3ResourcesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.member_account_id {
-        object.key("memberAccountId").string(var_2);
+        object.key("memberAccountId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.s3_resources {
         let mut array_4 = object.key("s3Resources").start_array();
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_disassociate_member_account_input(
     input: &crate::input::DisassociateMemberAccountInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.member_account_id {
-        object.key("memberAccountId").string(var_7);
+        object.key("memberAccountId").string(var_7.as_str());
     }
     Ok(())
 }
@@ -48,7 +48,7 @@ pub fn serialize_structure_crate_input_disassociate_s3_resources_input(
     input: &crate::input::DisassociateS3ResourcesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.member_account_id {
-        object.key("memberAccountId").string(var_8);
+        object.key("memberAccountId").string(var_8.as_str());
     }
     if let Some(var_9) = &input.associated_s3_resources {
         let mut array_10 = object.key("associatedS3Resources").start_array();
@@ -72,7 +72,7 @@ pub fn serialize_structure_crate_input_list_member_accounts_input(
     input: &crate::input::ListMemberAccountsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.next_token {
-        object.key("nextToken").string(var_13);
+        object.key("nextToken").string(var_13.as_str());
     }
     if let Some(var_14) = &input.max_results {
         object.key("maxResults").number(
@@ -88,10 +88,10 @@ pub fn serialize_structure_crate_input_list_s3_resources_input(
     input: &crate::input::ListS3ResourcesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.member_account_id {
-        object.key("memberAccountId").string(var_15);
+        object.key("memberAccountId").string(var_15.as_str());
     }
     if let Some(var_16) = &input.next_token {
-        object.key("nextToken").string(var_16);
+        object.key("nextToken").string(var_16.as_str());
     }
     if let Some(var_17) = &input.max_results {
         object.key("maxResults").number(
@@ -107,7 +107,7 @@ pub fn serialize_structure_crate_input_update_s3_resources_input(
     input: &crate::input::UpdateS3ResourcesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.member_account_id {
-        object.key("memberAccountId").string(var_18);
+        object.key("memberAccountId").string(var_18.as_str());
     }
     if let Some(var_19) = &input.s3_resources_update {
         let mut array_20 = object.key("s3ResourcesUpdate").start_array();
@@ -131,10 +131,10 @@ pub fn serialize_structure_crate_model_s3_resource_classification(
     input: &crate::model::S3ResourceClassification,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.bucket_name {
-        object.key("bucketName").string(var_23);
+        object.key("bucketName").string(var_23.as_str());
     }
     if let Some(var_24) = &input.prefix {
-        object.key("prefix").string(var_24);
+        object.key("prefix").string(var_24.as_str());
     }
     if let Some(var_25) = &input.classification_type {
         let mut object_26 = object.key("classificationType").start_object();
@@ -152,10 +152,10 @@ pub fn serialize_structure_crate_model_s3_resource(
     input: &crate::model::S3Resource,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.bucket_name {
-        object.key("bucketName").string(var_27);
+        object.key("bucketName").string(var_27.as_str());
     }
     if let Some(var_28) = &input.prefix {
-        object.key("prefix").string(var_28);
+        object.key("prefix").string(var_28.as_str());
     }
     Ok(())
 }
@@ -165,10 +165,10 @@ pub fn serialize_structure_crate_model_s3_resource_classification_update(
     input: &crate::model::S3ResourceClassificationUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.bucket_name {
-        object.key("bucketName").string(var_29);
+        object.key("bucketName").string(var_29.as_str());
     }
     if let Some(var_30) = &input.prefix {
-        object.key("prefix").string(var_30);
+        object.key("prefix").string(var_30.as_str());
     }
     if let Some(var_31) = &input.classification_type_update {
         let mut object_32 = object.key("classificationTypeUpdate").start_object();

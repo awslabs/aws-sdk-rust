@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_associate_created_artifact_input(
     input: &crate::input::AssociateCreatedArtifactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.progress_update_stream {
-        object.key("ProgressUpdateStream").string(var_1);
+        object.key("ProgressUpdateStream").string(var_1.as_str());
     }
     if let Some(var_2) = &input.migration_task_name {
-        object.key("MigrationTaskName").string(var_2);
+        object.key("MigrationTaskName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.created_artifact {
         let mut object_4 = object.key("CreatedArtifact").start_object();
@@ -25,10 +25,10 @@ pub fn serialize_structure_crate_input_associate_discovered_resource_input(
     input: &crate::input::AssociateDiscoveredResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.progress_update_stream {
-        object.key("ProgressUpdateStream").string(var_5);
+        object.key("ProgressUpdateStream").string(var_5.as_str());
     }
     if let Some(var_6) = &input.migration_task_name {
-        object.key("MigrationTaskName").string(var_6);
+        object.key("MigrationTaskName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.discovered_resource {
         let mut object_8 = object.key("DiscoveredResource").start_object();
@@ -46,7 +46,9 @@ pub fn serialize_structure_crate_input_create_progress_update_stream_input(
     input: &crate::input::CreateProgressUpdateStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.progress_update_stream_name {
-        object.key("ProgressUpdateStreamName").string(var_9);
+        object
+            .key("ProgressUpdateStreamName")
+            .string(var_9.as_str());
     }
     if input.dry_run {
         object.key("DryRun").boolean(input.dry_run);
@@ -59,7 +61,9 @@ pub fn serialize_structure_crate_input_delete_progress_update_stream_input(
     input: &crate::input::DeleteProgressUpdateStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.progress_update_stream_name {
-        object.key("ProgressUpdateStreamName").string(var_10);
+        object
+            .key("ProgressUpdateStreamName")
+            .string(var_10.as_str());
     }
     if input.dry_run {
         object.key("DryRun").boolean(input.dry_run);
@@ -72,7 +76,7 @@ pub fn serialize_structure_crate_input_describe_application_state_input(
     input: &crate::input::DescribeApplicationStateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.application_id {
-        object.key("ApplicationId").string(var_11);
+        object.key("ApplicationId").string(var_11.as_str());
     }
     Ok(())
 }
@@ -82,10 +86,10 @@ pub fn serialize_structure_crate_input_describe_migration_task_input(
     input: &crate::input::DescribeMigrationTaskInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.progress_update_stream {
-        object.key("ProgressUpdateStream").string(var_12);
+        object.key("ProgressUpdateStream").string(var_12.as_str());
     }
     if let Some(var_13) = &input.migration_task_name {
-        object.key("MigrationTaskName").string(var_13);
+        object.key("MigrationTaskName").string(var_13.as_str());
     }
     Ok(())
 }
@@ -95,13 +99,13 @@ pub fn serialize_structure_crate_input_disassociate_created_artifact_input(
     input: &crate::input::DisassociateCreatedArtifactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.progress_update_stream {
-        object.key("ProgressUpdateStream").string(var_14);
+        object.key("ProgressUpdateStream").string(var_14.as_str());
     }
     if let Some(var_15) = &input.migration_task_name {
-        object.key("MigrationTaskName").string(var_15);
+        object.key("MigrationTaskName").string(var_15.as_str());
     }
     if let Some(var_16) = &input.created_artifact_name {
-        object.key("CreatedArtifactName").string(var_16);
+        object.key("CreatedArtifactName").string(var_16.as_str());
     }
     if input.dry_run {
         object.key("DryRun").boolean(input.dry_run);
@@ -114,13 +118,13 @@ pub fn serialize_structure_crate_input_disassociate_discovered_resource_input(
     input: &crate::input::DisassociateDiscoveredResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.progress_update_stream {
-        object.key("ProgressUpdateStream").string(var_17);
+        object.key("ProgressUpdateStream").string(var_17.as_str());
     }
     if let Some(var_18) = &input.migration_task_name {
-        object.key("MigrationTaskName").string(var_18);
+        object.key("MigrationTaskName").string(var_18.as_str());
     }
     if let Some(var_19) = &input.configuration_id {
-        object.key("ConfigurationId").string(var_19);
+        object.key("ConfigurationId").string(var_19.as_str());
     }
     if input.dry_run {
         object.key("DryRun").boolean(input.dry_run);
@@ -133,10 +137,10 @@ pub fn serialize_structure_crate_input_import_migration_task_input(
     input: &crate::input::ImportMigrationTaskInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.progress_update_stream {
-        object.key("ProgressUpdateStream").string(var_20);
+        object.key("ProgressUpdateStream").string(var_20.as_str());
     }
     if let Some(var_21) = &input.migration_task_name {
-        object.key("MigrationTaskName").string(var_21);
+        object.key("MigrationTaskName").string(var_21.as_str());
     }
     if input.dry_run {
         object.key("DryRun").boolean(input.dry_run);
@@ -152,13 +156,13 @@ pub fn serialize_structure_crate_input_list_application_states_input(
         let mut array_23 = object.key("ApplicationIds").start_array();
         for item_24 in var_22 {
             {
-                array_23.value().string(item_24);
+                array_23.value().string(item_24.as_str());
             }
         }
         array_23.finish();
     }
     if let Some(var_25) = &input.next_token {
-        object.key("NextToken").string(var_25);
+        object.key("NextToken").string(var_25.as_str());
     }
     if let Some(var_26) = &input.max_results {
         object.key("MaxResults").number(
@@ -174,13 +178,13 @@ pub fn serialize_structure_crate_input_list_created_artifacts_input(
     input: &crate::input::ListCreatedArtifactsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.progress_update_stream {
-        object.key("ProgressUpdateStream").string(var_27);
+        object.key("ProgressUpdateStream").string(var_27.as_str());
     }
     if let Some(var_28) = &input.migration_task_name {
-        object.key("MigrationTaskName").string(var_28);
+        object.key("MigrationTaskName").string(var_28.as_str());
     }
     if let Some(var_29) = &input.next_token {
-        object.key("NextToken").string(var_29);
+        object.key("NextToken").string(var_29.as_str());
     }
     if let Some(var_30) = &input.max_results {
         object.key("MaxResults").number(
@@ -196,13 +200,13 @@ pub fn serialize_structure_crate_input_list_discovered_resources_input(
     input: &crate::input::ListDiscoveredResourcesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_31) = &input.progress_update_stream {
-        object.key("ProgressUpdateStream").string(var_31);
+        object.key("ProgressUpdateStream").string(var_31.as_str());
     }
     if let Some(var_32) = &input.migration_task_name {
-        object.key("MigrationTaskName").string(var_32);
+        object.key("MigrationTaskName").string(var_32.as_str());
     }
     if let Some(var_33) = &input.next_token {
-        object.key("NextToken").string(var_33);
+        object.key("NextToken").string(var_33.as_str());
     }
     if let Some(var_34) = &input.max_results {
         object.key("MaxResults").number(
@@ -218,7 +222,7 @@ pub fn serialize_structure_crate_input_list_migration_tasks_input(
     input: &crate::input::ListMigrationTasksInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.next_token {
-        object.key("NextToken").string(var_35);
+        object.key("NextToken").string(var_35.as_str());
     }
     if let Some(var_36) = &input.max_results {
         object.key("MaxResults").number(
@@ -227,7 +231,7 @@ pub fn serialize_structure_crate_input_list_migration_tasks_input(
         );
     }
     if let Some(var_37) = &input.resource_name {
-        object.key("ResourceName").string(var_37);
+        object.key("ResourceName").string(var_37.as_str());
     }
     Ok(())
 }
@@ -237,7 +241,7 @@ pub fn serialize_structure_crate_input_list_progress_update_streams_input(
     input: &crate::input::ListProgressUpdateStreamsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.next_token {
-        object.key("NextToken").string(var_38);
+        object.key("NextToken").string(var_38.as_str());
     }
     if let Some(var_39) = &input.max_results {
         object.key("MaxResults").number(
@@ -253,7 +257,7 @@ pub fn serialize_structure_crate_input_notify_application_state_input(
     input: &crate::input::NotifyApplicationStateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.application_id {
-        object.key("ApplicationId").string(var_40);
+        object.key("ApplicationId").string(var_40.as_str());
     }
     if let Some(var_41) = &input.status {
         object.key("Status").string(var_41.as_str());
@@ -274,10 +278,10 @@ pub fn serialize_structure_crate_input_notify_migration_task_state_input(
     input: &crate::input::NotifyMigrationTaskStateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.progress_update_stream {
-        object.key("ProgressUpdateStream").string(var_43);
+        object.key("ProgressUpdateStream").string(var_43.as_str());
     }
     if let Some(var_44) = &input.migration_task_name {
-        object.key("MigrationTaskName").string(var_44);
+        object.key("MigrationTaskName").string(var_44.as_str());
     }
     if let Some(var_45) = &input.task {
         let mut object_46 = object.key("Task").start_object();
@@ -306,10 +310,10 @@ pub fn serialize_structure_crate_input_put_resource_attributes_input(
     input: &crate::input::PutResourceAttributesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.progress_update_stream {
-        object.key("ProgressUpdateStream").string(var_48);
+        object.key("ProgressUpdateStream").string(var_48.as_str());
     }
     if let Some(var_49) = &input.migration_task_name {
-        object.key("MigrationTaskName").string(var_49);
+        object.key("MigrationTaskName").string(var_49.as_str());
     }
     if let Some(var_50) = &input.resource_attribute_list {
         let mut array_51 = object.key("ResourceAttributeList").start_array();
@@ -336,10 +340,10 @@ pub fn serialize_structure_crate_model_created_artifact(
     input: &crate::model::CreatedArtifact,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.name {
-        object.key("Name").string(var_54);
+        object.key("Name").string(var_54.as_str());
     }
     if let Some(var_55) = &input.description {
-        object.key("Description").string(var_55);
+        object.key("Description").string(var_55.as_str());
     }
     Ok(())
 }
@@ -349,10 +353,10 @@ pub fn serialize_structure_crate_model_discovered_resource(
     input: &crate::model::DiscoveredResource,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_56) = &input.configuration_id {
-        object.key("ConfigurationId").string(var_56);
+        object.key("ConfigurationId").string(var_56.as_str());
     }
     if let Some(var_57) = &input.description {
-        object.key("Description").string(var_57);
+        object.key("Description").string(var_57.as_str());
     }
     Ok(())
 }
@@ -365,7 +369,7 @@ pub fn serialize_structure_crate_model_task(
         object.key("Status").string(var_58.as_str());
     }
     if let Some(var_59) = &input.status_detail {
-        object.key("StatusDetail").string(var_59);
+        object.key("StatusDetail").string(var_59.as_str());
     }
     if let Some(var_60) = &input.progress_percent {
         object.key("ProgressPercent").number(
@@ -384,7 +388,7 @@ pub fn serialize_structure_crate_model_resource_attribute(
         object.key("Type").string(var_61.as_str());
     }
     if let Some(var_62) = &input.value {
-        object.key("Value").string(var_62);
+        object.key("Value").string(var_62.as_str());
     }
     Ok(())
 }

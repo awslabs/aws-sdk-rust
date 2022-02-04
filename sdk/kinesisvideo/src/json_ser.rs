@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_signaling_channel_input(
     input: &crate::input::CreateSignalingChannelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.channel_name {
-        object.key("ChannelName").string(var_1);
+        object.key("ChannelName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.channel_type {
         object.key("ChannelType").string(var_2.as_str());
@@ -42,22 +42,22 @@ pub fn serialize_structure_crate_input_create_stream_input(
         );
     }
     if let Some(var_10) = &input.device_name {
-        object.key("DeviceName").string(var_10);
+        object.key("DeviceName").string(var_10.as_str());
     }
     if let Some(var_11) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_11);
+        object.key("KmsKeyId").string(var_11.as_str());
     }
     if let Some(var_12) = &input.media_type {
-        object.key("MediaType").string(var_12);
+        object.key("MediaType").string(var_12.as_str());
     }
     if let Some(var_13) = &input.stream_name {
-        object.key("StreamName").string(var_13);
+        object.key("StreamName").string(var_13.as_str());
     }
     if let Some(var_14) = &input.tags {
         let mut object_15 = object.key("Tags").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17);
+                object_15.key(key_16).string(value_17.as_str());
             }
         }
         object_15.finish();
@@ -70,10 +70,10 @@ pub fn serialize_structure_crate_input_delete_signaling_channel_input(
     input: &crate::input::DeleteSignalingChannelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.channel_arn {
-        object.key("ChannelARN").string(var_18);
+        object.key("ChannelARN").string(var_18.as_str());
     }
     if let Some(var_19) = &input.current_version {
-        object.key("CurrentVersion").string(var_19);
+        object.key("CurrentVersion").string(var_19.as_str());
     }
     Ok(())
 }
@@ -83,10 +83,10 @@ pub fn serialize_structure_crate_input_delete_stream_input(
     input: &crate::input::DeleteStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.current_version {
-        object.key("CurrentVersion").string(var_20);
+        object.key("CurrentVersion").string(var_20.as_str());
     }
     if let Some(var_21) = &input.stream_arn {
-        object.key("StreamARN").string(var_21);
+        object.key("StreamARN").string(var_21.as_str());
     }
     Ok(())
 }
@@ -96,10 +96,10 @@ pub fn serialize_structure_crate_input_describe_signaling_channel_input(
     input: &crate::input::DescribeSignalingChannelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.channel_arn {
-        object.key("ChannelARN").string(var_22);
+        object.key("ChannelARN").string(var_22.as_str());
     }
     if let Some(var_23) = &input.channel_name {
-        object.key("ChannelName").string(var_23);
+        object.key("ChannelName").string(var_23.as_str());
     }
     Ok(())
 }
@@ -109,10 +109,10 @@ pub fn serialize_structure_crate_input_describe_stream_input(
     input: &crate::input::DescribeStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.stream_arn {
-        object.key("StreamARN").string(var_24);
+        object.key("StreamARN").string(var_24.as_str());
     }
     if let Some(var_25) = &input.stream_name {
-        object.key("StreamName").string(var_25);
+        object.key("StreamName").string(var_25.as_str());
     }
     Ok(())
 }
@@ -125,10 +125,10 @@ pub fn serialize_structure_crate_input_get_data_endpoint_input(
         object.key("APIName").string(var_26.as_str());
     }
     if let Some(var_27) = &input.stream_arn {
-        object.key("StreamARN").string(var_27);
+        object.key("StreamARN").string(var_27.as_str());
     }
     if let Some(var_28) = &input.stream_name {
-        object.key("StreamName").string(var_28);
+        object.key("StreamName").string(var_28.as_str());
     }
     Ok(())
 }
@@ -138,7 +138,7 @@ pub fn serialize_structure_crate_input_get_signaling_channel_endpoint_input(
     input: &crate::input::GetSignalingChannelEndpointInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.channel_arn {
-        object.key("ChannelARN").string(var_29);
+        object.key("ChannelARN").string(var_29.as_str());
     }
     if let Some(var_30) = &input.single_master_channel_endpoint_configuration {
         let mut object_31 = object
@@ -169,7 +169,7 @@ pub fn serialize_structure_crate_input_list_signaling_channels_input(
         );
     }
     if let Some(var_35) = &input.next_token {
-        object.key("NextToken").string(var_35);
+        object.key("NextToken").string(var_35.as_str());
     }
     Ok(())
 }
@@ -185,7 +185,7 @@ pub fn serialize_structure_crate_input_list_streams_input(
         );
     }
     if let Some(var_37) = &input.next_token {
-        object.key("NextToken").string(var_37);
+        object.key("NextToken").string(var_37.as_str());
     }
     if let Some(var_38) = &input.stream_name_condition {
         let mut object_39 = object.key("StreamNameCondition").start_object();
@@ -203,10 +203,10 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.next_token {
-        object.key("NextToken").string(var_40);
+        object.key("NextToken").string(var_40.as_str());
     }
     if let Some(var_41) = &input.resource_arn {
-        object.key("ResourceARN").string(var_41);
+        object.key("ResourceARN").string(var_41.as_str());
     }
     Ok(())
 }
@@ -216,13 +216,13 @@ pub fn serialize_structure_crate_input_list_tags_for_stream_input(
     input: &crate::input::ListTagsForStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.next_token {
-        object.key("NextToken").string(var_42);
+        object.key("NextToken").string(var_42.as_str());
     }
     if let Some(var_43) = &input.stream_arn {
-        object.key("StreamARN").string(var_43);
+        object.key("StreamARN").string(var_43.as_str());
     }
     if let Some(var_44) = &input.stream_name {
-        object.key("StreamName").string(var_44);
+        object.key("StreamName").string(var_44.as_str());
     }
     Ok(())
 }
@@ -232,7 +232,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.resource_arn {
-        object.key("ResourceARN").string(var_45);
+        object.key("ResourceARN").string(var_45.as_str());
     }
     if let Some(var_46) = &input.tags {
         let mut array_47 = object.key("Tags").start_array();
@@ -253,16 +253,16 @@ pub fn serialize_structure_crate_input_tag_stream_input(
     input: &crate::input::TagStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.stream_arn {
-        object.key("StreamARN").string(var_50);
+        object.key("StreamARN").string(var_50.as_str());
     }
     if let Some(var_51) = &input.stream_name {
-        object.key("StreamName").string(var_51);
+        object.key("StreamName").string(var_51.as_str());
     }
     if let Some(var_52) = &input.tags {
         let mut object_53 = object.key("Tags").start_object();
         for (key_54, value_55) in var_52 {
             {
-                object_53.key(key_54).string(value_55);
+                object_53.key(key_54).string(value_55.as_str());
             }
         }
         object_53.finish();
@@ -275,13 +275,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_56) = &input.resource_arn {
-        object.key("ResourceARN").string(var_56);
+        object.key("ResourceARN").string(var_56.as_str());
     }
     if let Some(var_57) = &input.tag_key_list {
         let mut array_58 = object.key("TagKeyList").start_array();
         for item_59 in var_57 {
             {
-                array_58.value().string(item_59);
+                array_58.value().string(item_59.as_str());
             }
         }
         array_58.finish();
@@ -294,16 +294,16 @@ pub fn serialize_structure_crate_input_untag_stream_input(
     input: &crate::input::UntagStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_60) = &input.stream_arn {
-        object.key("StreamARN").string(var_60);
+        object.key("StreamARN").string(var_60.as_str());
     }
     if let Some(var_61) = &input.stream_name {
-        object.key("StreamName").string(var_61);
+        object.key("StreamName").string(var_61.as_str());
     }
     if let Some(var_62) = &input.tag_key_list {
         let mut array_63 = object.key("TagKeyList").start_array();
         for item_64 in var_62 {
             {
-                array_63.value().string(item_64);
+                array_63.value().string(item_64.as_str());
             }
         }
         array_63.finish();
@@ -316,7 +316,7 @@ pub fn serialize_structure_crate_input_update_data_retention_input(
     input: &crate::input::UpdateDataRetentionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.current_version {
-        object.key("CurrentVersion").string(var_65);
+        object.key("CurrentVersion").string(var_65.as_str());
     }
     if let Some(var_66) = &input.data_retention_change_in_hours {
         object.key("DataRetentionChangeInHours").number(
@@ -328,10 +328,10 @@ pub fn serialize_structure_crate_input_update_data_retention_input(
         object.key("Operation").string(var_67.as_str());
     }
     if let Some(var_68) = &input.stream_arn {
-        object.key("StreamARN").string(var_68);
+        object.key("StreamARN").string(var_68.as_str());
     }
     if let Some(var_69) = &input.stream_name {
-        object.key("StreamName").string(var_69);
+        object.key("StreamName").string(var_69.as_str());
     }
     Ok(())
 }
@@ -341,10 +341,10 @@ pub fn serialize_structure_crate_input_update_signaling_channel_input(
     input: &crate::input::UpdateSignalingChannelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.channel_arn {
-        object.key("ChannelARN").string(var_70);
+        object.key("ChannelARN").string(var_70.as_str());
     }
     if let Some(var_71) = &input.current_version {
-        object.key("CurrentVersion").string(var_71);
+        object.key("CurrentVersion").string(var_71.as_str());
     }
     if let Some(var_72) = &input.single_master_configuration {
         let mut object_73 = object.key("SingleMasterConfiguration").start_object();
@@ -362,19 +362,19 @@ pub fn serialize_structure_crate_input_update_stream_input(
     input: &crate::input::UpdateStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_74) = &input.current_version {
-        object.key("CurrentVersion").string(var_74);
+        object.key("CurrentVersion").string(var_74.as_str());
     }
     if let Some(var_75) = &input.device_name {
-        object.key("DeviceName").string(var_75);
+        object.key("DeviceName").string(var_75.as_str());
     }
     if let Some(var_76) = &input.media_type {
-        object.key("MediaType").string(var_76);
+        object.key("MediaType").string(var_76.as_str());
     }
     if let Some(var_77) = &input.stream_arn {
-        object.key("StreamARN").string(var_77);
+        object.key("StreamARN").string(var_77.as_str());
     }
     if let Some(var_78) = &input.stream_name {
-        object.key("StreamName").string(var_78);
+        object.key("StreamName").string(var_78.as_str());
     }
     Ok(())
 }
@@ -397,10 +397,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_80) = &input.key {
-        object.key("Key").string(var_80);
+        object.key("Key").string(var_80.as_str());
     }
     if let Some(var_81) = &input.value {
-        object.key("Value").string(var_81);
+        object.key("Value").string(var_81.as_str());
     }
     Ok(())
 }
@@ -432,7 +432,7 @@ pub fn serialize_structure_crate_model_channel_name_condition(
         object.key("ComparisonOperator").string(var_86.as_str());
     }
     if let Some(var_87) = &input.comparison_value {
-        object.key("ComparisonValue").string(var_87);
+        object.key("ComparisonValue").string(var_87.as_str());
     }
     Ok(())
 }
@@ -445,7 +445,7 @@ pub fn serialize_structure_crate_model_stream_name_condition(
         object.key("ComparisonOperator").string(var_88.as_str());
     }
     if let Some(var_89) = &input.comparison_value {
-        object.key("ComparisonValue").string(var_89);
+        object.key("ComparisonValue").string(var_89.as_str());
     }
     Ok(())
 }

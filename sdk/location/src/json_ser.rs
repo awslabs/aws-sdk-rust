@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_associate_tracker_consumer_input(
     input: &crate::input::AssociateTrackerConsumerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.consumer_arn {
-        object.key("ConsumerArn").string(var_1);
+        object.key("ConsumerArn").string(var_1.as_str());
     }
     Ok(())
 }
@@ -17,7 +17,7 @@ pub fn serialize_structure_crate_input_batch_delete_device_position_history_inpu
         let mut array_3 = object.key("DeviceIds").start_array();
         for item_4 in var_2 {
             {
-                array_3.value().string(item_4);
+                array_3.value().string(item_4.as_str());
             }
         }
         array_3.finish();
@@ -33,7 +33,7 @@ pub fn serialize_structure_crate_input_batch_delete_geofence_input(
         let mut array_6 = object.key("GeofenceIds").start_array();
         for item_7 in var_5 {
             {
-                array_6.value().string(item_7);
+                array_6.value().string(item_7.as_str());
             }
         }
         array_6.finish();
@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_batch_get_device_position_input(
         let mut array_13 = object.key("DeviceIds").start_array();
         for item_14 in var_12 {
             {
-                array_13.value().string(item_14);
+                array_13.value().string(item_14.as_str());
             }
         }
         array_13.finish();
@@ -280,25 +280,25 @@ pub fn serialize_structure_crate_input_create_geofence_collection_input(
     input: &crate::input::CreateGeofenceCollectionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.collection_name {
-        object.key("CollectionName").string(var_61);
+        object.key("CollectionName").string(var_61.as_str());
     }
     if let Some(var_62) = &input.description {
-        object.key("Description").string(var_62);
+        object.key("Description").string(var_62.as_str());
     }
     if let Some(var_63) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_63);
+        object.key("KmsKeyId").string(var_63.as_str());
     }
     if let Some(var_64) = &input.pricing_plan {
         object.key("PricingPlan").string(var_64.as_str());
     }
     if let Some(var_65) = &input.pricing_plan_data_source {
-        object.key("PricingPlanDataSource").string(var_65);
+        object.key("PricingPlanDataSource").string(var_65.as_str());
     }
     if let Some(var_66) = &input.tags {
         let mut object_67 = object.key("Tags").start_object();
         for (key_68, value_69) in var_66 {
             {
-                object_67.key(key_68).string(value_69);
+                object_67.key(key_68).string(value_69.as_str());
             }
         }
         object_67.finish();
@@ -316,10 +316,10 @@ pub fn serialize_structure_crate_input_create_map_input(
         object_71.finish();
     }
     if let Some(var_72) = &input.description {
-        object.key("Description").string(var_72);
+        object.key("Description").string(var_72.as_str());
     }
     if let Some(var_73) = &input.map_name {
-        object.key("MapName").string(var_73);
+        object.key("MapName").string(var_73.as_str());
     }
     if let Some(var_74) = &input.pricing_plan {
         object.key("PricingPlan").string(var_74.as_str());
@@ -328,7 +328,7 @@ pub fn serialize_structure_crate_input_create_map_input(
         let mut object_76 = object.key("Tags").start_object();
         for (key_77, value_78) in var_75 {
             {
-                object_76.key(key_77).string(value_78);
+                object_76.key(key_77).string(value_78.as_str());
             }
         }
         object_76.finish();
@@ -341,7 +341,7 @@ pub fn serialize_structure_crate_input_create_place_index_input(
     input: &crate::input::CreatePlaceIndexInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_79) = &input.data_source {
-        object.key("DataSource").string(var_79);
+        object.key("DataSource").string(var_79.as_str());
     }
     if let Some(var_80) = &input.data_source_configuration {
         let mut object_81 = object.key("DataSourceConfiguration").start_object();
@@ -352,10 +352,10 @@ pub fn serialize_structure_crate_input_create_place_index_input(
         object_81.finish();
     }
     if let Some(var_82) = &input.description {
-        object.key("Description").string(var_82);
+        object.key("Description").string(var_82.as_str());
     }
     if let Some(var_83) = &input.index_name {
-        object.key("IndexName").string(var_83);
+        object.key("IndexName").string(var_83.as_str());
     }
     if let Some(var_84) = &input.pricing_plan {
         object.key("PricingPlan").string(var_84.as_str());
@@ -364,7 +364,7 @@ pub fn serialize_structure_crate_input_create_place_index_input(
         let mut object_86 = object.key("Tags").start_object();
         for (key_87, value_88) in var_85 {
             {
-                object_86.key(key_87).string(value_88);
+                object_86.key(key_87).string(value_88.as_str());
             }
         }
         object_86.finish();
@@ -377,13 +377,13 @@ pub fn serialize_structure_crate_input_create_route_calculator_input(
     input: &crate::input::CreateRouteCalculatorInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_89) = &input.calculator_name {
-        object.key("CalculatorName").string(var_89);
+        object.key("CalculatorName").string(var_89.as_str());
     }
     if let Some(var_90) = &input.data_source {
-        object.key("DataSource").string(var_90);
+        object.key("DataSource").string(var_90.as_str());
     }
     if let Some(var_91) = &input.description {
-        object.key("Description").string(var_91);
+        object.key("Description").string(var_91.as_str());
     }
     if let Some(var_92) = &input.pricing_plan {
         object.key("PricingPlan").string(var_92.as_str());
@@ -392,7 +392,7 @@ pub fn serialize_structure_crate_input_create_route_calculator_input(
         let mut object_94 = object.key("Tags").start_object();
         for (key_95, value_96) in var_93 {
             {
-                object_94.key(key_95).string(value_96);
+                object_94.key(key_95).string(value_96.as_str());
             }
         }
         object_94.finish();
@@ -405,10 +405,10 @@ pub fn serialize_structure_crate_input_create_tracker_input(
     input: &crate::input::CreateTrackerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_97) = &input.description {
-        object.key("Description").string(var_97);
+        object.key("Description").string(var_97.as_str());
     }
     if let Some(var_98) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_98);
+        object.key("KmsKeyId").string(var_98.as_str());
     }
     if let Some(var_99) = &input.position_filtering {
         object.key("PositionFiltering").string(var_99.as_str());
@@ -417,19 +417,19 @@ pub fn serialize_structure_crate_input_create_tracker_input(
         object.key("PricingPlan").string(var_100.as_str());
     }
     if let Some(var_101) = &input.pricing_plan_data_source {
-        object.key("PricingPlanDataSource").string(var_101);
+        object.key("PricingPlanDataSource").string(var_101.as_str());
     }
     if let Some(var_102) = &input.tags {
         let mut object_103 = object.key("Tags").start_object();
         for (key_104, value_105) in var_102 {
             {
-                object_103.key(key_104).string(value_105);
+                object_103.key(key_104).string(value_105.as_str());
             }
         }
         object_103.finish();
     }
     if let Some(var_106) = &input.tracker_name {
-        object.key("TrackerName").string(var_106);
+        object.key("TrackerName").string(var_106.as_str());
     }
     Ok(())
 }
@@ -444,7 +444,7 @@ pub fn serialize_structure_crate_input_get_device_position_history_input(
             .date_time(var_107, aws_smithy_types::date_time::Format::DateTime)?;
     }
     if let Some(var_108) = &input.next_token {
-        object.key("NextToken").string(var_108);
+        object.key("NextToken").string(var_108.as_str());
     }
     if let Some(var_109) = &input.start_time_inclusive {
         object
@@ -465,7 +465,7 @@ pub fn serialize_structure_crate_input_list_device_positions_input(
         );
     }
     if let Some(var_111) = &input.next_token {
-        object.key("NextToken").string(var_111);
+        object.key("NextToken").string(var_111.as_str());
     }
     Ok(())
 }
@@ -481,7 +481,7 @@ pub fn serialize_structure_crate_input_list_geofence_collections_input(
         );
     }
     if let Some(var_113) = &input.next_token {
-        object.key("NextToken").string(var_113);
+        object.key("NextToken").string(var_113.as_str());
     }
     Ok(())
 }
@@ -491,7 +491,7 @@ pub fn serialize_structure_crate_input_list_geofences_input(
     input: &crate::input::ListGeofencesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_114) = &input.next_token {
-        object.key("NextToken").string(var_114);
+        object.key("NextToken").string(var_114.as_str());
     }
     Ok(())
 }
@@ -507,7 +507,7 @@ pub fn serialize_structure_crate_input_list_maps_input(
         );
     }
     if let Some(var_116) = &input.next_token {
-        object.key("NextToken").string(var_116);
+        object.key("NextToken").string(var_116.as_str());
     }
     Ok(())
 }
@@ -523,7 +523,7 @@ pub fn serialize_structure_crate_input_list_place_indexes_input(
         );
     }
     if let Some(var_118) = &input.next_token {
-        object.key("NextToken").string(var_118);
+        object.key("NextToken").string(var_118.as_str());
     }
     Ok(())
 }
@@ -539,7 +539,7 @@ pub fn serialize_structure_crate_input_list_route_calculators_input(
         );
     }
     if let Some(var_120) = &input.next_token {
-        object.key("NextToken").string(var_120);
+        object.key("NextToken").string(var_120.as_str());
     }
     Ok(())
 }
@@ -555,7 +555,7 @@ pub fn serialize_structure_crate_input_list_tracker_consumers_input(
         );
     }
     if let Some(var_122) = &input.next_token {
-        object.key("NextToken").string(var_122);
+        object.key("NextToken").string(var_122.as_str());
     }
     Ok(())
 }
@@ -571,7 +571,7 @@ pub fn serialize_structure_crate_input_list_trackers_input(
         );
     }
     if let Some(var_124) = &input.next_token {
-        object.key("NextToken").string(var_124);
+        object.key("NextToken").string(var_124.as_str());
     }
     Ok(())
 }
@@ -596,7 +596,7 @@ pub fn serialize_structure_crate_input_search_place_index_for_position_input(
     input: &crate::input::SearchPlaceIndexForPositionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_127) = &input.language {
-        object.key("Language").string(var_127);
+        object.key("Language").string(var_127.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -651,13 +651,13 @@ pub fn serialize_structure_crate_input_search_place_index_for_suggestions_input(
         let mut array_138 = object.key("FilterCountries").start_array();
         for item_139 in var_137 {
             {
-                array_138.value().string(item_139);
+                array_138.value().string(item_139.as_str());
             }
         }
         array_138.finish();
     }
     if let Some(var_140) = &input.language {
-        object.key("Language").string(var_140);
+        object.key("Language").string(var_140.as_str());
     }
     if let Some(var_141) = &input.max_results {
         object.key("MaxResults").number(
@@ -666,7 +666,7 @@ pub fn serialize_structure_crate_input_search_place_index_for_suggestions_input(
         );
     }
     if let Some(var_142) = &input.text {
-        object.key("Text").string(var_142);
+        object.key("Text").string(var_142.as_str());
     }
     Ok(())
 }
@@ -703,13 +703,13 @@ pub fn serialize_structure_crate_input_search_place_index_for_text_input(
         let mut array_150 = object.key("FilterCountries").start_array();
         for item_151 in var_149 {
             {
-                array_150.value().string(item_151);
+                array_150.value().string(item_151.as_str());
             }
         }
         array_150.finish();
     }
     if let Some(var_152) = &input.language {
-        object.key("Language").string(var_152);
+        object.key("Language").string(var_152.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -718,7 +718,7 @@ pub fn serialize_structure_crate_input_search_place_index_for_text_input(
         );
     }
     if let Some(var_153) = &input.text {
-        object.key("Text").string(var_153);
+        object.key("Text").string(var_153.as_str());
     }
     Ok(())
 }
@@ -731,7 +731,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_155 = object.key("Tags").start_object();
         for (key_156, value_157) in var_154 {
             {
-                object_155.key(key_156).string(value_157);
+                object_155.key(key_156).string(value_157.as_str());
             }
         }
         object_155.finish();
@@ -744,13 +744,13 @@ pub fn serialize_structure_crate_input_update_geofence_collection_input(
     input: &crate::input::UpdateGeofenceCollectionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_158) = &input.description {
-        object.key("Description").string(var_158);
+        object.key("Description").string(var_158.as_str());
     }
     if let Some(var_159) = &input.pricing_plan {
         object.key("PricingPlan").string(var_159.as_str());
     }
     if let Some(var_160) = &input.pricing_plan_data_source {
-        object.key("PricingPlanDataSource").string(var_160);
+        object.key("PricingPlanDataSource").string(var_160.as_str());
     }
     Ok(())
 }
@@ -760,7 +760,7 @@ pub fn serialize_structure_crate_input_update_map_input(
     input: &crate::input::UpdateMapInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_161) = &input.description {
-        object.key("Description").string(var_161);
+        object.key("Description").string(var_161.as_str());
     }
     if let Some(var_162) = &input.pricing_plan {
         object.key("PricingPlan").string(var_162.as_str());
@@ -781,7 +781,7 @@ pub fn serialize_structure_crate_input_update_place_index_input(
         object_164.finish();
     }
     if let Some(var_165) = &input.description {
-        object.key("Description").string(var_165);
+        object.key("Description").string(var_165.as_str());
     }
     if let Some(var_166) = &input.pricing_plan {
         object.key("PricingPlan").string(var_166.as_str());
@@ -794,7 +794,7 @@ pub fn serialize_structure_crate_input_update_route_calculator_input(
     input: &crate::input::UpdateRouteCalculatorInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_167) = &input.description {
-        object.key("Description").string(var_167);
+        object.key("Description").string(var_167.as_str());
     }
     if let Some(var_168) = &input.pricing_plan {
         object.key("PricingPlan").string(var_168.as_str());
@@ -807,7 +807,7 @@ pub fn serialize_structure_crate_input_update_tracker_input(
     input: &crate::input::UpdateTrackerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_169) = &input.description {
-        object.key("Description").string(var_169);
+        object.key("Description").string(var_169.as_str());
     }
     if let Some(var_170) = &input.position_filtering {
         object.key("PositionFiltering").string(var_170.as_str());
@@ -816,7 +816,7 @@ pub fn serialize_structure_crate_input_update_tracker_input(
         object.key("PricingPlan").string(var_171.as_str());
     }
     if let Some(var_172) = &input.pricing_plan_data_source {
-        object.key("PricingPlanDataSource").string(var_172);
+        object.key("PricingPlanDataSource").string(var_172.as_str());
     }
     Ok(())
 }
@@ -826,7 +826,7 @@ pub fn serialize_structure_crate_model_device_position_update(
     input: &crate::model::DevicePositionUpdate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_173) = &input.device_id {
-        object.key("DeviceId").string(var_173);
+        object.key("DeviceId").string(var_173.as_str());
     }
     if let Some(var_174) = &input.sample_time {
         object
@@ -857,7 +857,7 @@ pub fn serialize_structure_crate_model_device_position_update(
         let mut object_181 = object.key("PositionProperties").start_object();
         for (key_182, value_183) in var_180 {
             {
-                object_181.key(key_182).string(value_183);
+                object_181.key(key_182).string(value_183.as_str());
             }
         }
         object_181.finish();
@@ -870,7 +870,7 @@ pub fn serialize_structure_crate_model_batch_put_geofence_request_entry(
     input: &crate::model::BatchPutGeofenceRequestEntry,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_184) = &input.geofence_id {
-        object.key("GeofenceId").string(var_184);
+        object.key("GeofenceId").string(var_184.as_str());
     }
     if let Some(var_185) = &input.geometry {
         let mut object_186 = object.key("Geometry").start_object();
@@ -927,7 +927,7 @@ pub fn serialize_structure_crate_model_map_configuration(
     input: &crate::model::MapConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_195) = &input.style {
-        object.key("Style").string(var_195);
+        object.key("Style").string(var_195.as_str());
     }
     Ok(())
 }

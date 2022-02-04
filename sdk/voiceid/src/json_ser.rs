@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_create_domain_input(
     input: &crate::input::CreateDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1);
+        object.key("Name").string(var_1.as_str());
     }
     if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2);
+        object.key("Description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.server_side_encryption_configuration {
         let mut object_4 = object
@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_create_domain_input(
         object_4.finish();
     }
     if let Some(var_5) = &input.client_token {
-        object.key("ClientToken").string(var_5);
+        object.key("ClientToken").string(var_5.as_str());
     }
     if let Some(var_6) = &input.tags {
         let mut array_7 = object.key("Tags").start_array();
@@ -41,7 +41,7 @@ pub fn serialize_structure_crate_input_delete_domain_input(
     input: &crate::input::DeleteDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.domain_id {
-        object.key("DomainId").string(var_10);
+        object.key("DomainId").string(var_10.as_str());
     }
     Ok(())
 }
@@ -51,10 +51,10 @@ pub fn serialize_structure_crate_input_delete_fraudster_input(
     input: &crate::input::DeleteFraudsterInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.domain_id {
-        object.key("DomainId").string(var_11);
+        object.key("DomainId").string(var_11.as_str());
     }
     if let Some(var_12) = &input.fraudster_id {
-        object.key("FraudsterId").string(var_12);
+        object.key("FraudsterId").string(var_12.as_str());
     }
     Ok(())
 }
@@ -64,10 +64,10 @@ pub fn serialize_structure_crate_input_delete_speaker_input(
     input: &crate::input::DeleteSpeakerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.domain_id {
-        object.key("DomainId").string(var_13);
+        object.key("DomainId").string(var_13.as_str());
     }
     if let Some(var_14) = &input.speaker_id {
-        object.key("SpeakerId").string(var_14);
+        object.key("SpeakerId").string(var_14.as_str());
     }
     Ok(())
 }
@@ -77,7 +77,7 @@ pub fn serialize_structure_crate_input_describe_domain_input(
     input: &crate::input::DescribeDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.domain_id {
-        object.key("DomainId").string(var_15);
+        object.key("DomainId").string(var_15.as_str());
     }
     Ok(())
 }
@@ -87,10 +87,10 @@ pub fn serialize_structure_crate_input_describe_fraudster_input(
     input: &crate::input::DescribeFraudsterInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.domain_id {
-        object.key("DomainId").string(var_16);
+        object.key("DomainId").string(var_16.as_str());
     }
     if let Some(var_17) = &input.fraudster_id {
-        object.key("FraudsterId").string(var_17);
+        object.key("FraudsterId").string(var_17.as_str());
     }
     Ok(())
 }
@@ -100,10 +100,10 @@ pub fn serialize_structure_crate_input_describe_fraudster_registration_job_input
     input: &crate::input::DescribeFraudsterRegistrationJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.domain_id {
-        object.key("DomainId").string(var_18);
+        object.key("DomainId").string(var_18.as_str());
     }
     if let Some(var_19) = &input.job_id {
-        object.key("JobId").string(var_19);
+        object.key("JobId").string(var_19.as_str());
     }
     Ok(())
 }
@@ -113,10 +113,10 @@ pub fn serialize_structure_crate_input_describe_speaker_input(
     input: &crate::input::DescribeSpeakerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.domain_id {
-        object.key("DomainId").string(var_20);
+        object.key("DomainId").string(var_20.as_str());
     }
     if let Some(var_21) = &input.speaker_id {
-        object.key("SpeakerId").string(var_21);
+        object.key("SpeakerId").string(var_21.as_str());
     }
     Ok(())
 }
@@ -126,10 +126,10 @@ pub fn serialize_structure_crate_input_describe_speaker_enrollment_job_input(
     input: &crate::input::DescribeSpeakerEnrollmentJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.domain_id {
-        object.key("DomainId").string(var_22);
+        object.key("DomainId").string(var_22.as_str());
     }
     if let Some(var_23) = &input.job_id {
-        object.key("JobId").string(var_23);
+        object.key("JobId").string(var_23.as_str());
     }
     Ok(())
 }
@@ -139,10 +139,10 @@ pub fn serialize_structure_crate_input_evaluate_session_input(
     input: &crate::input::EvaluateSessionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.domain_id {
-        object.key("DomainId").string(var_24);
+        object.key("DomainId").string(var_24.as_str());
     }
     if let Some(var_25) = &input.session_name_or_id {
-        object.key("SessionNameOrId").string(var_25);
+        object.key("SessionNameOrId").string(var_25.as_str());
     }
     Ok(())
 }
@@ -158,7 +158,7 @@ pub fn serialize_structure_crate_input_list_domains_input(
         );
     }
     if let Some(var_27) = &input.next_token {
-        object.key("NextToken").string(var_27);
+        object.key("NextToken").string(var_27.as_str());
     }
     Ok(())
 }
@@ -168,7 +168,7 @@ pub fn serialize_structure_crate_input_list_fraudster_registration_jobs_input(
     input: &crate::input::ListFraudsterRegistrationJobsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.domain_id {
-        object.key("DomainId").string(var_28);
+        object.key("DomainId").string(var_28.as_str());
     }
     if let Some(var_29) = &input.job_status {
         object.key("JobStatus").string(var_29.as_str());
@@ -180,7 +180,7 @@ pub fn serialize_structure_crate_input_list_fraudster_registration_jobs_input(
         );
     }
     if let Some(var_31) = &input.next_token {
-        object.key("NextToken").string(var_31);
+        object.key("NextToken").string(var_31.as_str());
     }
     Ok(())
 }
@@ -190,7 +190,7 @@ pub fn serialize_structure_crate_input_list_speaker_enrollment_jobs_input(
     input: &crate::input::ListSpeakerEnrollmentJobsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.domain_id {
-        object.key("DomainId").string(var_32);
+        object.key("DomainId").string(var_32.as_str());
     }
     if let Some(var_33) = &input.job_status {
         object.key("JobStatus").string(var_33.as_str());
@@ -202,7 +202,7 @@ pub fn serialize_structure_crate_input_list_speaker_enrollment_jobs_input(
         );
     }
     if let Some(var_35) = &input.next_token {
-        object.key("NextToken").string(var_35);
+        object.key("NextToken").string(var_35.as_str());
     }
     Ok(())
 }
@@ -212,7 +212,7 @@ pub fn serialize_structure_crate_input_list_speakers_input(
     input: &crate::input::ListSpeakersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.domain_id {
-        object.key("DomainId").string(var_36);
+        object.key("DomainId").string(var_36.as_str());
     }
     if let Some(var_37) = &input.max_results {
         object.key("MaxResults").number(
@@ -221,7 +221,7 @@ pub fn serialize_structure_crate_input_list_speakers_input(
         );
     }
     if let Some(var_38) = &input.next_token {
-        object.key("NextToken").string(var_38);
+        object.key("NextToken").string(var_38.as_str());
     }
     Ok(())
 }
@@ -231,7 +231,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.resource_arn {
-        object.key("ResourceArn").string(var_39);
+        object.key("ResourceArn").string(var_39.as_str());
     }
     Ok(())
 }
@@ -241,10 +241,10 @@ pub fn serialize_structure_crate_input_opt_out_speaker_input(
     input: &crate::input::OptOutSpeakerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.domain_id {
-        object.key("DomainId").string(var_40);
+        object.key("DomainId").string(var_40.as_str());
     }
     if let Some(var_41) = &input.speaker_id {
-        object.key("SpeakerId").string(var_41);
+        object.key("SpeakerId").string(var_41.as_str());
     }
     Ok(())
 }
@@ -254,16 +254,16 @@ pub fn serialize_structure_crate_input_start_fraudster_registration_job_input(
     input: &crate::input::StartFraudsterRegistrationJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.client_token {
-        object.key("ClientToken").string(var_42);
+        object.key("ClientToken").string(var_42.as_str());
     }
     if let Some(var_43) = &input.job_name {
-        object.key("JobName").string(var_43);
+        object.key("JobName").string(var_43.as_str());
     }
     if let Some(var_44) = &input.domain_id {
-        object.key("DomainId").string(var_44);
+        object.key("DomainId").string(var_44.as_str());
     }
     if let Some(var_45) = &input.data_access_role_arn {
-        object.key("DataAccessRoleArn").string(var_45);
+        object.key("DataAccessRoleArn").string(var_45.as_str());
     }
     if let Some(var_46) = &input.registration_config {
         let mut object_47 = object.key("RegistrationConfig").start_object();
@@ -294,16 +294,16 @@ pub fn serialize_structure_crate_input_start_speaker_enrollment_job_input(
     input: &crate::input::StartSpeakerEnrollmentJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.client_token {
-        object.key("ClientToken").string(var_52);
+        object.key("ClientToken").string(var_52.as_str());
     }
     if let Some(var_53) = &input.job_name {
-        object.key("JobName").string(var_53);
+        object.key("JobName").string(var_53.as_str());
     }
     if let Some(var_54) = &input.domain_id {
-        object.key("DomainId").string(var_54);
+        object.key("DomainId").string(var_54.as_str());
     }
     if let Some(var_55) = &input.data_access_role_arn {
-        object.key("DataAccessRoleArn").string(var_55);
+        object.key("DataAccessRoleArn").string(var_55.as_str());
     }
     if let Some(var_56) = &input.enrollment_config {
         let mut object_57 = object.key("EnrollmentConfig").start_object();
@@ -331,7 +331,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_62) = &input.resource_arn {
-        object.key("ResourceArn").string(var_62);
+        object.key("ResourceArn").string(var_62.as_str());
     }
     if let Some(var_63) = &input.tags {
         let mut array_64 = object.key("Tags").start_array();
@@ -352,13 +352,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.resource_arn {
-        object.key("ResourceArn").string(var_67);
+        object.key("ResourceArn").string(var_67.as_str());
     }
     if let Some(var_68) = &input.tag_keys {
         let mut array_69 = object.key("TagKeys").start_array();
         for item_70 in var_68 {
             {
-                array_69.value().string(item_70);
+                array_69.value().string(item_70.as_str());
             }
         }
         array_69.finish();
@@ -371,13 +371,13 @@ pub fn serialize_structure_crate_input_update_domain_input(
     input: &crate::input::UpdateDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_71) = &input.domain_id {
-        object.key("DomainId").string(var_71);
+        object.key("DomainId").string(var_71.as_str());
     }
     if let Some(var_72) = &input.name {
-        object.key("Name").string(var_72);
+        object.key("Name").string(var_72.as_str());
     }
     if let Some(var_73) = &input.description {
-        object.key("Description").string(var_73);
+        object.key("Description").string(var_73.as_str());
     }
     if let Some(var_74) = &input.server_side_encryption_configuration {
         let mut object_75 = object
@@ -397,7 +397,7 @@ pub fn serialize_structure_crate_model_server_side_encryption_configuration(
     input: &crate::model::ServerSideEncryptionConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_76) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_76);
+        object.key("KmsKeyId").string(var_76.as_str());
     }
     Ok(())
 }
@@ -407,10 +407,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_77) = &input.key {
-        object.key("Key").string(var_77);
+        object.key("Key").string(var_77.as_str());
     }
     if let Some(var_78) = &input.value {
-        object.key("Value").string(var_78);
+        object.key("Value").string(var_78.as_str());
     }
     Ok(())
 }
@@ -438,7 +438,7 @@ pub fn serialize_structure_crate_model_input_data_config(
     input: &crate::model::InputDataConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.s3_uri {
-        object.key("S3Uri").string(var_81);
+        object.key("S3Uri").string(var_81.as_str());
     }
     Ok(())
 }
@@ -448,10 +448,10 @@ pub fn serialize_structure_crate_model_output_data_config(
     input: &crate::model::OutputDataConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.s3_uri {
-        object.key("S3Uri").string(var_82);
+        object.key("S3Uri").string(var_82.as_str());
     }
     if let Some(var_83) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_83);
+        object.key("KmsKeyId").string(var_83.as_str());
     }
     Ok(())
 }

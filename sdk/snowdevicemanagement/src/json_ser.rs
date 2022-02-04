@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_task_input(
     input: &crate::input::CreateTaskInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1);
+        object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.command {
         let mut object_3 = object.key("command").start_object();
@@ -12,13 +12,13 @@ pub fn serialize_structure_crate_input_create_task_input(
         object_3.finish();
     }
     if let Some(var_4) = &input.description {
-        object.key("description").string(var_4);
+        object.key("description").string(var_4.as_str());
     }
     if let Some(var_5) = &input.tags {
         let mut object_6 = object.key("tags").start_object();
         for (key_7, value_8) in var_5 {
             {
-                object_6.key(key_7).string(value_8);
+                object_6.key(key_7).string(value_8.as_str());
             }
         }
         object_6.finish();
@@ -27,7 +27,7 @@ pub fn serialize_structure_crate_input_create_task_input(
         let mut array_10 = object.key("targets").start_array();
         for item_11 in var_9 {
             {
-                array_10.value().string(item_11);
+                array_10.value().string(item_11.as_str());
             }
         }
         array_10.finish();
@@ -43,7 +43,7 @@ pub fn serialize_structure_crate_input_describe_device_ec2_instances_input(
         let mut array_13 = object.key("instanceIds").start_array();
         for item_14 in var_12 {
             {
-                array_13.value().string(item_14);
+                array_13.value().string(item_14.as_str());
             }
         }
         array_13.finish();
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_16 = object.key("tags").start_object();
         for (key_17, value_18) in var_15 {
             {
-                object_16.key(key_17).string(value_18);
+                object_16.key(key_17).string(value_18.as_str());
             }
         }
         object_16.finish();

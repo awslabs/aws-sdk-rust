@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_get_routing_control_state_input(
     input: &crate::input::GetRoutingControlStateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.routing_control_arn {
-        object.key("RoutingControlArn").string(var_1);
+        object.key("RoutingControlArn").string(var_1.as_str());
     }
     Ok(())
 }
@@ -14,7 +14,7 @@ pub fn serialize_structure_crate_input_update_routing_control_state_input(
     input: &crate::input::UpdateRoutingControlStateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.routing_control_arn {
-        object.key("RoutingControlArn").string(var_2);
+        object.key("RoutingControlArn").string(var_2.as_str());
     }
     if let Some(var_3) = &input.routing_control_state {
         object.key("RoutingControlState").string(var_3.as_str());
@@ -45,7 +45,7 @@ pub fn serialize_structure_crate_model_update_routing_control_state_entry(
     input: &crate::model::UpdateRoutingControlStateEntry,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.routing_control_arn {
-        object.key("RoutingControlArn").string(var_8);
+        object.key("RoutingControlArn").string(var_8.as_str());
     }
     if let Some(var_9) = &input.routing_control_state {
         object.key("RoutingControlState").string(var_9.as_str());

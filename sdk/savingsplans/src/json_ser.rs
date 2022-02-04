@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_create_savings_plan_input(
     input: &crate::input::CreateSavingsPlanInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1);
+        object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.commitment {
-        object.key("commitment").string(var_2);
+        object.key("commitment").string(var_2.as_str());
     }
     if let Some(var_3) = &input.purchase_time {
         object
@@ -15,19 +15,19 @@ pub fn serialize_structure_crate_input_create_savings_plan_input(
             .date_time(var_3, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_4) = &input.savings_plan_offering_id {
-        object.key("savingsPlanOfferingId").string(var_4);
+        object.key("savingsPlanOfferingId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.tags {
         let mut object_6 = object.key("tags").start_object();
         for (key_7, value_8) in var_5 {
             {
-                object_6.key(key_7).string(value_8);
+                object_6.key(key_7).string(value_8.as_str());
             }
         }
         object_6.finish();
     }
     if let Some(var_9) = &input.upfront_payment_amount {
-        object.key("upfrontPaymentAmount").string(var_9);
+        object.key("upfrontPaymentAmount").string(var_9.as_str());
     }
     Ok(())
 }
@@ -37,7 +37,7 @@ pub fn serialize_structure_crate_input_delete_queued_savings_plan_input(
     input: &crate::input::DeleteQueuedSavingsPlanInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.savings_plan_id {
-        object.key("savingsPlanId").string(var_10);
+        object.key("savingsPlanId").string(var_10.as_str());
     }
     Ok(())
 }
@@ -67,10 +67,10 @@ pub fn serialize_structure_crate_input_describe_savings_plan_rates_input(
         );
     }
     if let Some(var_16) = &input.next_token {
-        object.key("nextToken").string(var_16);
+        object.key("nextToken").string(var_16.as_str());
     }
     if let Some(var_17) = &input.savings_plan_id {
-        object.key("savingsPlanId").string(var_17);
+        object.key("savingsPlanId").string(var_17.as_str());
     }
     Ok(())
 }
@@ -100,13 +100,13 @@ pub fn serialize_structure_crate_input_describe_savings_plans_input(
         );
     }
     if let Some(var_23) = &input.next_token {
-        object.key("nextToken").string(var_23);
+        object.key("nextToken").string(var_23.as_str());
     }
     if let Some(var_24) = &input.savings_plan_arns {
         let mut array_25 = object.key("savingsPlanArns").start_array();
         for item_26 in var_24 {
             {
-                array_25.value().string(item_26);
+                array_25.value().string(item_26.as_str());
             }
         }
         array_25.finish();
@@ -115,7 +115,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_input(
         let mut array_28 = object.key("savingsPlanIds").start_array();
         for item_29 in var_27 {
             {
-                array_28.value().string(item_29);
+                array_28.value().string(item_29.as_str());
             }
         }
         array_28.finish();
@@ -154,13 +154,13 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offering_rates_inp
         );
     }
     if let Some(var_37) = &input.next_token {
-        object.key("nextToken").string(var_37);
+        object.key("nextToken").string(var_37.as_str());
     }
     if let Some(var_38) = &input.operations {
         let mut array_39 = object.key("operations").start_array();
         for item_40 in var_38 {
             {
-                array_39.value().string(item_40);
+                array_39.value().string(item_40.as_str());
             }
         }
         array_39.finish();
@@ -178,7 +178,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offering_rates_inp
         let mut array_45 = object.key("savingsPlanOfferingIds").start_array();
         for item_46 in var_44 {
             {
-                array_45.value().string(item_46);
+                array_45.value().string(item_46.as_str());
             }
         }
         array_45.finish();
@@ -214,7 +214,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offering_rates_inp
         let mut array_57 = object.key("usageTypes").start_array();
         for item_58 in var_56 {
             {
-                array_57.value().string(item_58);
+                array_57.value().string(item_58.as_str());
             }
         }
         array_57.finish();
@@ -239,7 +239,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offerings_input(
         let mut array_63 = object.key("descriptions").start_array();
         for item_64 in var_62 {
             {
-                array_63.value().string(item_64);
+                array_63.value().string(item_64.as_str());
             }
         }
         array_63.finish();
@@ -274,13 +274,13 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offerings_input(
         );
     }
     if let Some(var_72) = &input.next_token {
-        object.key("nextToken").string(var_72);
+        object.key("nextToken").string(var_72.as_str());
     }
     if let Some(var_73) = &input.offering_ids {
         let mut array_74 = object.key("offeringIds").start_array();
         for item_75 in var_73 {
             {
-                array_74.value().string(item_75);
+                array_74.value().string(item_75.as_str());
             }
         }
         array_74.finish();
@@ -289,7 +289,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offerings_input(
         let mut array_77 = object.key("operations").start_array();
         for item_78 in var_76 {
             {
-                array_77.value().string(item_78);
+                array_77.value().string(item_78.as_str());
             }
         }
         array_77.finish();
@@ -319,7 +319,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offerings_input(
         let mut array_87 = object.key("serviceCodes").start_array();
         for item_88 in var_86 {
             {
-                array_87.value().string(item_88);
+                array_87.value().string(item_88.as_str());
             }
         }
         array_87.finish();
@@ -328,7 +328,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offerings_input(
         let mut array_90 = object.key("usageTypes").start_array();
         for item_91 in var_89 {
             {
-                array_90.value().string(item_91);
+                array_90.value().string(item_91.as_str());
             }
         }
         array_90.finish();
@@ -341,7 +341,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_92) = &input.resource_arn {
-        object.key("resourceArn").string(var_92);
+        object.key("resourceArn").string(var_92.as_str());
     }
     Ok(())
 }
@@ -351,13 +351,13 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_93) = &input.resource_arn {
-        object.key("resourceArn").string(var_93);
+        object.key("resourceArn").string(var_93.as_str());
     }
     if let Some(var_94) = &input.tags {
         let mut object_95 = object.key("tags").start_object();
         for (key_96, value_97) in var_94 {
             {
-                object_95.key(key_96).string(value_97);
+                object_95.key(key_96).string(value_97.as_str());
             }
         }
         object_95.finish();
@@ -370,13 +370,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_98) = &input.resource_arn {
-        object.key("resourceArn").string(var_98);
+        object.key("resourceArn").string(var_98.as_str());
     }
     if let Some(var_99) = &input.tag_keys {
         let mut array_100 = object.key("tagKeys").start_array();
         for item_101 in var_99 {
             {
-                array_100.value().string(item_101);
+                array_100.value().string(item_101.as_str());
             }
         }
         array_100.finish();
@@ -395,7 +395,7 @@ pub fn serialize_structure_crate_model_savings_plan_rate_filter(
         let mut array_104 = object.key("values").start_array();
         for item_105 in var_103 {
             {
-                array_104.value().string(item_105);
+                array_104.value().string(item_105.as_str());
             }
         }
         array_104.finish();
@@ -414,7 +414,7 @@ pub fn serialize_structure_crate_model_savings_plan_filter(
         let mut array_108 = object.key("values").start_array();
         for item_109 in var_107 {
             {
-                array_108.value().string(item_109);
+                array_108.value().string(item_109.as_str());
             }
         }
         array_108.finish();
@@ -433,7 +433,7 @@ pub fn serialize_structure_crate_model_savings_plan_offering_rate_filter_element
         let mut array_112 = object.key("values").start_array();
         for item_113 in var_111 {
             {
-                array_112.value().string(item_113);
+                array_112.value().string(item_113.as_str());
             }
         }
         array_112.finish();
@@ -452,7 +452,7 @@ pub fn serialize_structure_crate_model_savings_plan_offering_filter_element(
         let mut array_116 = object.key("values").start_array();
         for item_117 in var_115 {
             {
-                array_116.value().string(item_117);
+                array_116.value().string(item_117.as_str());
             }
         }
         array_116.finish();

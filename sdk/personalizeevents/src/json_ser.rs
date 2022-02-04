@@ -15,13 +15,13 @@ pub fn serialize_structure_crate_input_put_events_input(
         array_2.finish();
     }
     if let Some(var_5) = &input.session_id {
-        object.key("sessionId").string(var_5);
+        object.key("sessionId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.tracking_id {
-        object.key("trackingId").string(var_6);
+        object.key("trackingId").string(var_6.as_str());
     }
     if let Some(var_7) = &input.user_id {
-        object.key("userId").string(var_7);
+        object.key("userId").string(var_7.as_str());
     }
     Ok(())
 }
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_put_items_input(
     input: &crate::input::PutItemsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.dataset_arn {
-        object.key("datasetArn").string(var_8);
+        object.key("datasetArn").string(var_8.as_str());
     }
     if let Some(var_9) = &input.items {
         let mut array_10 = object.key("items").start_array();
@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_input_put_users_input(
     input: &crate::input::PutUsersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.dataset_arn {
-        object.key("datasetArn").string(var_13);
+        object.key("datasetArn").string(var_13.as_str());
     }
     if let Some(var_14) = &input.users {
         let mut array_15 = object.key("users").start_array();
@@ -73,10 +73,10 @@ pub fn serialize_structure_crate_model_event(
     input: &crate::model::Event,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.event_id {
-        object.key("eventId").string(var_18);
+        object.key("eventId").string(var_18.as_str());
     }
     if let Some(var_19) = &input.event_type {
-        object.key("eventType").string(var_19);
+        object.key("eventType").string(var_19.as_str());
     }
     if let Some(var_20) = &input.event_value {
         object.key("eventValue").number(
@@ -85,10 +85,10 @@ pub fn serialize_structure_crate_model_event(
         );
     }
     if let Some(var_21) = &input.item_id {
-        object.key("itemId").string(var_21);
+        object.key("itemId").string(var_21.as_str());
     }
     if let Some(var_22) = &input.properties {
-        object.key("properties").string(var_22);
+        object.key("properties").string(var_22.as_str());
     }
     if let Some(var_23) = &input.sent_at {
         object
@@ -96,13 +96,13 @@ pub fn serialize_structure_crate_model_event(
             .date_time(var_23, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_24) = &input.recommendation_id {
-        object.key("recommendationId").string(var_24);
+        object.key("recommendationId").string(var_24.as_str());
     }
     if let Some(var_25) = &input.impression {
         let mut array_26 = object.key("impression").start_array();
         for item_27 in var_25 {
             {
-                array_26.value().string(item_27);
+                array_26.value().string(item_27.as_str());
             }
         }
         array_26.finish();
@@ -115,10 +115,10 @@ pub fn serialize_structure_crate_model_item(
     input: &crate::model::Item,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.item_id {
-        object.key("itemId").string(var_28);
+        object.key("itemId").string(var_28.as_str());
     }
     if let Some(var_29) = &input.properties {
-        object.key("properties").string(var_29);
+        object.key("properties").string(var_29.as_str());
     }
     Ok(())
 }
@@ -128,10 +128,10 @@ pub fn serialize_structure_crate_model_user(
     input: &crate::model::User,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.user_id {
-        object.key("userId").string(var_30);
+        object.key("userId").string(var_30.as_str());
     }
     if let Some(var_31) = &input.properties {
-        object.key("properties").string(var_31);
+        object.key("properties").string(var_31.as_str());
     }
     Ok(())
 }
