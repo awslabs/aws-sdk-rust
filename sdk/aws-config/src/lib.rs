@@ -77,8 +77,12 @@ pub mod imds;
 mod json_credentials;
 
 mod fs_util;
-mod http_provider;
+
+mod http_credential_provider;
+
 pub mod sso;
+
+pub mod connector;
 
 // Re-export types from smithy-types
 pub use aws_smithy_types::retry::RetryConfig;
@@ -114,7 +118,9 @@ pub use loader::ConfigLoader;
 mod loader {
     use std::sync::Arc;
 
+    use crate::connector::default_connector;
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
+    use aws_smithy_client::http_connector::{HttpConnector, HttpSettings};
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;
     use aws_types::app_name::AppName;
@@ -140,6 +146,7 @@ mod loader {
         sleep: Option<Arc<dyn AsyncSleep>>,
         timeout_config: Option<TimeoutConfig>,
         provider_config: Option<ProviderConfig>,
+        http_connector: Option<HttpConnector>,
     }
 
     impl ConfigLoader {
@@ -201,6 +208,12 @@ mod loader {
         pub fn sleep_impl(mut self, sleep: impl AsyncSleep + 'static) -> Self {
             // it's possible that we could wrapping an `Arc in an `Arc` and that's OK
             self.sleep = Some(Arc::new(sleep));
+            self
+        }
+
+        /// Override the [`HttpConnector`] used to build [`Config`](aws_types::config::Config).
+        pub fn http_connector(mut self, http_connector: HttpConnector) -> Self {
+            self.http_connector = Some(http_connector);
             self
         }
 
@@ -315,6 +328,14 @@ mod loader {
                 self.sleep
             };
 
+            let http_connector: HttpConnector = if let Some(http_connector) = self.http_connector {
+                http_connector
+            } else {
+                let settings = HttpSettings::default().with_timeout_config(timeout_config.clone());
+                let sleep_impl = sleep_impl.clone();
+                HttpConnector::Prebuilt(default_connector(&settings, sleep_impl))
+            };
+
             let credentials_provider = if let Some(provider) = self.credentials_provider {
                 provider
             } else {
@@ -327,7 +348,8 @@ mod loader {
                 .region(region)
                 .retry_config(retry_config)
                 .timeout_config(timeout_config)
-                .credentials_provider(credentials_provider);
+                .credentials_provider(credentials_provider)
+                .http_connector(http_connector);
 
             builder.set_app_name(app_name);
             builder.set_sleep_impl(sleep_impl);
@@ -373,66 +395,5 @@ mod loader {
                 "akid"
             );
         }
-    }
-}
-
-mod connector {
-
-    // create a default connector given the currently enabled cargo features.
-    // rustls  | native tls | result
-    // -----------------------------
-    // yes     | yes        | rustls
-    // yes     | no         | rustls
-    // no      | yes        | native_tls
-    // no      | no         | no default
-
-    use crate::provider_config::HttpSettings;
-    use aws_smithy_async::rt::sleep::AsyncSleep;
-    use aws_smithy_client::erase::DynConnector;
-    use std::sync::Arc;
-
-    // unused when all crate features are disabled
-    #[allow(dead_code)]
-    pub(crate) fn expect_connector(connector: Option<DynConnector>) -> DynConnector {
-        connector.expect("A connector was not available. Either set a custom connector or enable the `rustls` and `native-tls` crate features.")
-    }
-
-    #[cfg(any(feature = "rustls", feature = "native-tls"))]
-    fn base(
-        settings: &HttpSettings,
-        sleep: Option<Arc<dyn AsyncSleep>>,
-    ) -> aws_smithy_client::hyper_ext::Builder {
-        let mut hyper =
-            aws_smithy_client::hyper_ext::Adapter::builder().timeout(&settings.timeout_settings);
-        if let Some(sleep) = sleep {
-            hyper = hyper.sleep_impl(sleep);
-        }
-        hyper
-    }
-
-    #[cfg(feature = "rustls")]
-    pub(crate) fn default_connector(
-        settings: &HttpSettings,
-        sleep: Option<Arc<dyn AsyncSleep>>,
-    ) -> Option<DynConnector> {
-        let hyper = base(settings, sleep).build(aws_smithy_client::conns::https());
-        Some(DynConnector::new(hyper))
-    }
-
-    #[cfg(all(not(feature = "rustls"), feature = "native-tls"))]
-    pub(crate) fn default_connector(
-        settings: &HttpSettings,
-        sleep: Option<Arc<dyn AsyncSleep>>,
-    ) -> Option<DynConnector> {
-        let hyper = base(settings, sleep).build(aws_smithy_client::conns::native_tls());
-        Some(DynConnector::new(hyper))
-    }
-
-    #[cfg(not(any(feature = "rustls", feature = "native-tls")))]
-    pub(crate) fn default_connector(
-        _settings: &HttpSettings,
-        _sleep: Option<Arc<dyn AsyncSleep>>,
-    ) -> Option<DynConnector> {
-        None
     }
 }

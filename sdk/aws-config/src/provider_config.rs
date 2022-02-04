@@ -5,17 +5,19 @@
 
 //! Configuration Options for Credential Providers
 
-use crate::connector::default_connector;
-use std::error::Error;
-
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use aws_smithy_client::erase::DynConnector;
-use aws_smithy_client::timeout;
 use aws_types::os_shim_internal::{Env, Fs, TimeSource};
-use aws_types::region::Region;
+use aws_types::{
+    http_connector::{HttpConnector, HttpSettings},
+    region::Region,
+};
+
+use std::error::Error;
 use std::fmt::{Debug, Formatter};
 use std::sync::Arc;
 
+use crate::connector::default_connector;
 use http::Uri;
 use hyper::client::connect::Connection;
 use tokio::io::{AsyncRead, AsyncWrite};
@@ -38,38 +40,6 @@ pub struct ProviderConfig {
     region: Option<Region>,
 }
 
-pub(crate) type MakeConnectorFn =
-    dyn Fn(&HttpSettings, Option<Arc<dyn AsyncSleep>>) -> Option<DynConnector> + Send + Sync;
-
-#[derive(Clone)]
-pub(crate) enum HttpConnector {
-    Prebuilt(Option<DynConnector>),
-    ConnectorFn(Arc<MakeConnectorFn>),
-}
-
-impl Default for HttpConnector {
-    fn default() -> Self {
-        Self::ConnectorFn(Arc::new(
-            |settings: &HttpSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
-                default_connector(settings, sleep)
-            },
-        ))
-    }
-}
-
-impl HttpConnector {
-    fn make_connector(
-        &self,
-        settings: &HttpSettings,
-        sleep: Option<Arc<dyn AsyncSleep>>,
-    ) -> Option<DynConnector> {
-        match self {
-            HttpConnector::Prebuilt(conn) => conn.clone(),
-            HttpConnector::ConnectorFn(func) => func(settings, sleep),
-        }
-    }
-}
-
 impl Debug for ProviderConfig {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         f.debug_struct("ProviderConfig")
@@ -83,11 +53,17 @@ impl Debug for ProviderConfig {
 
 impl Default for ProviderConfig {
     fn default() -> Self {
+        let connector = HttpConnector::ConnectorFn(Arc::new(
+            |settings: &HttpSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
+                default_connector(settings, sleep)
+            },
+        ));
+
         Self {
             env: Env::default(),
             fs: Fs::default(),
             time_source: TimeSource::default(),
-            connector: HttpConnector::default(),
+            connector,
             sleep: default_async_sleep(),
             region: None,
         }
@@ -113,18 +89,6 @@ impl ProviderConfig {
             region: None,
         }
     }
-}
-
-/// HttpSettings for HTTP connectors
-///
-/// # Stability
-/// As HTTP settings stabilize, they will move to `aws-types::config::Config` so that they
-/// can be used to configure HTTP connectors for service clients.
-#[non_exhaustive]
-#[derive(Default)]
-pub(crate) struct HttpSettings {
-    #[allow(dead_code)] // Always set, but only referenced in certain feature configurations
-    pub(crate) timeout_settings: timeout::Settings,
 }
 
 impl ProviderConfig {
@@ -201,12 +165,12 @@ impl ProviderConfig {
     #[allow(dead_code)]
     pub(crate) fn default_connector(&self) -> Option<DynConnector> {
         self.connector
-            .make_connector(&HttpSettings::default(), self.sleep.clone())
+            .connector(&HttpSettings::default(), self.sleep.clone())
     }
 
     #[allow(dead_code)]
     pub(crate) fn connector(&self, settings: &HttpSettings) -> Option<DynConnector> {
-        self.connector.make_connector(settings, self.sleep.clone())
+        self.connector.connector(settings, self.sleep.clone())
     }
 
     #[allow(dead_code)]
@@ -284,8 +248,8 @@ impl ProviderConfig {
         C::Error: Into<Box<dyn Error + Send + Sync + 'static>>,
     {
         let connector_fn = move |settings: &HttpSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
-            let mut builder = aws_smithy_client::hyper_ext::Adapter::builder()
-                .timeout(&settings.timeout_settings);
+            let mut builder =
+                aws_smithy_client::hyper_ext::Adapter::builder().timeout(&settings.timeout_config);
             if let Some(sleep) = sleep {
                 builder = builder.sleep_impl(sleep);
             };

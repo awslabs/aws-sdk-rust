@@ -8,15 +8,16 @@
 use aws_sdk_sts::error::AssumeRoleErrorKind;
 use aws_sdk_sts::middleware::DefaultMiddleware;
 use aws_sdk_sts::operation::AssumeRole;
+use aws_smithy_async::rt::sleep::default_async_sleep;
+use aws_smithy_client::erase::DynConnector;
+use aws_smithy_client::http_connector::HttpSettings;
+use aws_smithy_http::result::SdkError;
 use aws_types::credentials::{
     self, future, CredentialsError, ProvideCredentials, SharedCredentialsProvider,
 };
 use aws_types::region::Region;
 
-use crate::provider_config::HttpSettings;
-use aws_smithy_async::rt::sleep::default_async_sleep;
-use aws_smithy_client::erase::DynConnector;
-use aws_smithy_http::result::SdkError;
+use crate::connector::{default_connector, expect_connector};
 use tracing::Instrument;
 
 /// Credentials provider that uses credentials provided by another provider to assume a role
@@ -134,7 +135,7 @@ impl AssumeRoleProviderBuilder {
             .build();
 
         let conn = self.connection.unwrap_or_else(|| {
-            crate::connector::expect_connector(crate::connector::default_connector(
+            expect_connector(default_connector(
                 &HttpSettings::default(),
                 default_async_sleep(),
             ))

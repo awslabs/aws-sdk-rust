@@ -13,22 +13,24 @@
 use crate::fs_util::{home_dir, Os};
 use crate::json_credentials::{json_parse_loop, InvalidJsonCredentials};
 use crate::provider_config::ProviderConfig;
+
 use aws_sdk_sso::middleware::DefaultMiddleware as SsoMiddleware;
 use aws_sdk_sso::model::RoleCredentials;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
-
 use aws_types::credentials::{CredentialsError, ProvideCredentials};
 use aws_types::os_shim_internal::{Env, Fs};
 use aws_types::region::Region;
 use aws_types::{credentials, Credentials};
-use ring::digest;
+
 use std::convert::TryInto;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use std::io;
 use std::path::PathBuf;
+
+use ring::digest;
 use zeroize::Zeroizing;
 
 impl crate::provider_config::ProviderConfig {
@@ -36,7 +38,7 @@ impl crate::provider_config::ProviderConfig {
         &self,
     ) -> aws_smithy_client::Client<aws_smithy_client::erase::DynConnector, SsoMiddleware> {
         use crate::connector::expect_connector;
-        use crate::provider_config::HttpSettings;
+        use aws_smithy_client::http_connector::HttpSettings;
 
         aws_smithy_client::Builder::<(), SsoMiddleware>::new()
             .connector(expect_connector(self.connector(&HttpSettings::default())))
