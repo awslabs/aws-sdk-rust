@@ -7131,15 +7131,12 @@ pub fn deser_prefix_header_get_object_get_object_output_metadata(
     aws_smithy_http::header::ParseError,
 > {
     let headers = aws_smithy_http::header::headers_for_prefix(header_map, "x-amz-meta-");
-    let out: std::result::Result<_, _> = headers
-        .map(|(key, header_name)| {
-            let values = header_map.get_all(header_name);
-            crate::http_serde::deser_prefix_header_get_object_get_object_output_metadata_inner(
-                values.iter(),
-            )
-            .map(|v| (key.to_string(), v.unwrap()))
-        })
-        .collect();
+    let out: std::result::Result<_, _> = headers.map(|(key, header_name)| {
+                            let values = header_map.get_all(header_name);
+                            crate::http_serde::deser_prefix_header_get_object_get_object_output_metadata_inner(values.iter()).map(|v| (key.to_string(), v.expect(
+                                "we have checked there is at least one value for this header name; please file a bug report under https://github.com/awslabs/smithy-rs/issues
+                            ")))
+                        }).collect();
     out.map(Some)
 }
 
@@ -7608,15 +7605,12 @@ pub fn deser_prefix_header_head_object_head_object_output_metadata(
     aws_smithy_http::header::ParseError,
 > {
     let headers = aws_smithy_http::header::headers_for_prefix(header_map, "x-amz-meta-");
-    let out: std::result::Result<_, _> = headers
-        .map(|(key, header_name)| {
-            let values = header_map.get_all(header_name);
-            crate::http_serde::deser_prefix_header_head_object_head_object_output_metadata_inner(
-                values.iter(),
-            )
-            .map(|v| (key.to_string(), v.unwrap()))
-        })
-        .collect();
+    let out: std::result::Result<_, _> = headers.map(|(key, header_name)| {
+                            let values = header_map.get_all(header_name);
+                            crate::http_serde::deser_prefix_header_head_object_head_object_output_metadata_inner(values.iter()).map(|v| (key.to_string(), v.expect(
+                                "we have checked there is at least one value for this header name; please file a bug report under https://github.com/awslabs/smithy-rs/issues
+                            ")))
+                        }).collect();
     out.map(Some)
 }
 
