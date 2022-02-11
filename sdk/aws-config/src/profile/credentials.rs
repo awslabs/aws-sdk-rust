@@ -166,13 +166,13 @@ impl ProfileFileCredentialsProvider {
     }
 
     async fn load_credentials(&self) -> credentials::Result {
-        let profile = build_provider_chain(
+        let inner_provider = build_provider_chain(
             &self.provider_config,
             &self.factory,
             self.profile_override.as_deref(),
         )
-        .await;
-        let inner_provider = profile.map_err(|err| match err {
+        .await
+        .map_err(|err| match err {
             ProfileFileError::NoProfilesDefined
             | ProfileFileError::ProfileDidNotContainCredentials { .. } => {
                 CredentialsError::not_loaded(err)
