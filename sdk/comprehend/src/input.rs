@@ -98,15 +98,12 @@ impl BatchDetectDominantLanguageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_detect_dominant_language(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -277,14 +274,13 @@ impl BatchDetectEntitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_detect_entities(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_detect_entities(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -455,16 +451,15 @@ impl BatchDetectKeyPhrasesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_detect_key_phrases(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -635,16 +630,15 @@ impl BatchDetectSentimentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_detect_sentiment(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -815,14 +809,13 @@ impl BatchDetectSyntaxInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_detect_syntax(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_detect_syntax(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -981,14 +974,13 @@ impl ClassifyDocumentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_classify_document(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_classify_document(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1150,14 +1142,13 @@ impl ContainsPiiEntitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_contains_pii_entities(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_contains_pii_entities(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1503,16 +1494,15 @@ impl CreateDocumentClassifierInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_document_classifier(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1740,14 +1730,13 @@ impl CreateEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2058,16 +2047,15 @@ impl CreateEntityRecognizerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_entity_recognizer(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2218,16 +2206,15 @@ impl DeleteDocumentClassifierInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_document_classifier(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2374,14 +2361,13 @@ impl DeleteEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2531,16 +2517,15 @@ impl DeleteEntityRecognizerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_entity_recognizer(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2689,15 +2674,12 @@ impl DescribeDocumentClassificationJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_document_classification_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2848,16 +2830,15 @@ impl DescribeDocumentClassifierInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_document_classifier(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3006,15 +2987,12 @@ impl DescribeDominantLanguageDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_dominant_language_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3161,14 +3139,13 @@ impl DescribeEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_endpoint(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_endpoint(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3317,15 +3294,12 @@ impl DescribeEntitiesDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_entities_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3476,16 +3450,15 @@ impl DescribeEntityRecognizerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_entity_recognizer(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3633,15 +3606,12 @@ impl DescribeEventsDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_events_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3790,15 +3760,12 @@ impl DescribeKeyPhrasesDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_key_phrases_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3947,15 +3914,12 @@ impl DescribePiiEntitiesDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_pii_entities_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4104,15 +4068,12 @@ impl DescribeSentimentDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_sentiment_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4260,15 +4221,12 @@ impl DescribeTopicsDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_topics_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4413,16 +4371,15 @@ impl DetectDominantLanguageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_detect_dominant_language(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4600,14 +4557,13 @@ impl DetectEntitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_entities(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_detect_entities(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4769,14 +4725,13 @@ impl DetectKeyPhrasesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_key_phrases(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_detect_key_phrases(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4938,14 +4893,13 @@ impl DetectPiiEntitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_pii_entities(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_detect_pii_entities(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5107,14 +5061,13 @@ impl DetectSentimentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_detect_sentiment(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_detect_sentiment(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5276,13 +5229,13 @@ impl DetectSyntaxInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detect_syntax(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_detect_syntax(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5458,15 +5411,12 @@ impl ListDocumentClassificationJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_document_classification_jobs(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5641,16 +5591,15 @@ impl ListDocumentClassifiersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_document_classifiers(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5811,15 +5760,12 @@ impl ListDocumentClassifierSummariesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_document_classifier_summaries(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5995,15 +5941,12 @@ impl ListDominantLanguageDetectionJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_dominant_language_detection_jobs(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6177,13 +6120,13 @@ impl ListEndpointsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_endpoints(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_endpoints(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6358,16 +6301,15 @@ impl ListEntitiesDetectionJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_entities_detection_jobs(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6541,16 +6483,15 @@ impl ListEntityRecognizersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_entity_recognizers(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6711,15 +6652,12 @@ impl ListEntityRecognizerSummariesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_entity_recognizer_summaries(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6894,16 +6832,15 @@ impl ListEventsDetectionJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_events_detection_jobs(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7078,15 +7015,12 @@ impl ListKeyPhrasesDetectionJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_key_phrases_detection_jobs(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7262,15 +7196,12 @@ impl ListPiiEntitiesDetectionJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_pii_entities_detection_jobs(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7445,15 +7376,12 @@ impl ListSentimentDetectionJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_sentiment_detection_jobs(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7600,16 +7528,15 @@ impl ListTagsForResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7784,16 +7711,15 @@ impl ListTopicsDetectionJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_topics_detection_jobs(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8079,15 +8005,12 @@ impl StartDocumentClassificationJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_document_classification_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8358,15 +8281,12 @@ impl StartDominantLanguageDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_dominant_language_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8666,16 +8586,15 @@ impl StartEntitiesDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_entities_detection_job(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8943,16 +8862,15 @@ impl StartEventsDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_events_detection_job(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9237,15 +9155,12 @@ impl StartKeyPhrasesDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_key_phrases_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9525,15 +9440,12 @@ impl StartPiiEntitiesDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_pii_entities_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9818,15 +9730,12 @@ impl StartSentimentDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_sentiment_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10108,16 +10017,15 @@ impl StartTopicsDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_topics_detection_job(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10266,15 +10174,12 @@ impl StopDominantLanguageDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_dominant_language_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10422,16 +10327,15 @@ impl StopEntitiesDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_entities_detection_job(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10578,16 +10482,15 @@ impl StopEventsDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_events_detection_job(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10735,15 +10638,12 @@ impl StopKeyPhrasesDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_key_phrases_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10891,15 +10791,12 @@ impl StopPiiEntitiesDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_pii_entities_detection_job(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11047,16 +10944,15 @@ impl StopSentimentDetectionJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_sentiment_detection_job(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11208,15 +11104,12 @@ impl StopTrainingDocumentClassifierInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_training_document_classifier(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11368,15 +11261,12 @@ impl StopTrainingEntityRecognizerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_training_entity_recognizer(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11544,13 +11434,13 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11718,13 +11608,13 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11916,14 +11806,13 @@ impl UpdateEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_endpoint(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_endpoint(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),

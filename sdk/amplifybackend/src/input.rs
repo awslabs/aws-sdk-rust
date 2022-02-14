@@ -149,13 +149,13 @@ impl CloneBackendInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_clone_backend(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_clone_backend(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -354,13 +354,13 @@ impl CreateBackendInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_backend(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_backend(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -563,14 +563,13 @@ impl CreateBackendApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_api(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_backend_api(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -777,14 +776,13 @@ impl CreateBackendAuthInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_auth(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_backend_auth(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -957,14 +955,13 @@ impl CreateBackendConfigInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_config(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_backend_config(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1171,16 +1168,15 @@ impl CreateBackendStorageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_backend_storage(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1333,13 +1329,11 @@ impl CreateTokenInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1519,13 +1513,11 @@ impl DeleteBackendInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1740,14 +1732,13 @@ impl DeleteBackendApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_backend_api(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_backend_api(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1955,14 +1946,13 @@ impl DeleteBackendAuthInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_backend_auth(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_backend_auth(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2185,16 +2175,15 @@ impl DeleteBackendStorageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_backend_storage(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2379,13 +2368,11 @@ impl DeleteTokenInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2586,16 +2573,15 @@ impl GenerateBackendApiModelsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_generate_backend_api_models(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2768,13 +2754,13 @@ impl GetBackendInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_backend(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_backend(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2997,14 +2983,13 @@ impl GetBackendApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_backend_api(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_backend_api(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3212,16 +3197,15 @@ impl GetBackendApiModelsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_backend_api_models(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3429,14 +3413,13 @@ impl GetBackendAuthInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_backend_auth(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_backend_auth(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3652,13 +3635,11 @@ impl GetBackendJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3858,14 +3839,13 @@ impl GetBackendStorageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_backend_storage(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_backend_storage(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4048,13 +4028,11 @@ impl GetTokenInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4294,14 +4272,13 @@ impl ImportBackendAuthInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_backend_auth(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_import_backend_auth(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4521,16 +4498,15 @@ impl ImportBackendStorageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_import_backend_storage(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4783,14 +4759,13 @@ impl ListBackendJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_backend_jobs(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_backend_jobs(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4932,14 +4907,13 @@ impl ListS3BucketsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_s3_buckets(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_s3_buckets(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5109,14 +5083,13 @@ impl RemoveAllBackendsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_all_backends(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_remove_all_backends(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5269,13 +5242,11 @@ impl RemoveBackendConfigInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5490,14 +5461,13 @@ impl UpdateBackendApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_api(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_backend_api(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5724,14 +5694,13 @@ impl UpdateBackendAuthInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_auth(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_backend_auth(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5904,14 +5873,13 @@ impl UpdateBackendConfigInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_config(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_backend_config(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6156,14 +6124,13 @@ impl UpdateBackendJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_job(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_backend_job(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6390,16 +6357,15 @@ impl UpdateBackendStorageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_backend_storage(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),

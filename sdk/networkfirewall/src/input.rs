@@ -139,16 +139,15 @@ impl AssociateFirewallPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_firewall_policy(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -351,14 +350,13 @@ impl AssociateSubnetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_subnets(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_associate_subnets(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -632,14 +630,13 @@ impl CreateFirewallInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_firewall(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_firewall(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -853,16 +850,15 @@ impl CreateFirewallPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_firewall_policy(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1150,14 +1146,13 @@ impl CreateRuleGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_rule_group(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_rule_group(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1323,14 +1318,13 @@ impl DeleteFirewallInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_firewall(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_firewall(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1499,16 +1493,15 @@ impl DeleteFirewallPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_firewall_policy(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1655,16 +1648,15 @@ impl DeleteResourcePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1849,14 +1841,13 @@ impl DeleteRuleGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_rule_group(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_rule_group(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2022,14 +2013,13 @@ impl DescribeFirewallInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_firewall(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_firewall(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2198,16 +2188,15 @@ impl DescribeFirewallPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_firewall_policy(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2375,15 +2364,12 @@ impl DescribeLoggingConfigurationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_logging_configuration(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2530,16 +2516,15 @@ impl DescribeResourcePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_resource_policy(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2724,14 +2709,13 @@ impl DescribeRuleGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_rule_group(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_rule_group(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2917,16 +2901,15 @@ impl DescribeRuleGroupMetadataInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_rule_group_metadata(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3129,14 +3112,13 @@ impl DisassociateSubnetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_subnets(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_subnets(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3295,16 +3277,15 @@ impl ListFirewallPoliciesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_firewall_policies(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3484,13 +3465,13 @@ impl ListFirewallsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_firewalls(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_firewalls(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3664,14 +3645,13 @@ impl ListRuleGroupsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_rule_groups(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_rule_groups(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3842,16 +3822,15 @@ impl ListTagsForResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4038,14 +4017,13 @@ impl PutResourcePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4213,13 +4191,13 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4387,13 +4365,13 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4589,15 +4567,12 @@ impl UpdateFirewallDeleteProtectionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_delete_protection(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4792,16 +4767,15 @@ impl UpdateFirewallDescriptionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_description(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5027,16 +5001,15 @@ impl UpdateFirewallPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_policy(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5237,15 +5210,12 @@ impl UpdateFirewallPolicyChangeProtectionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_policy_change_protection(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5427,16 +5397,15 @@ impl UpdateLoggingConfigurationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_logging_configuration(
                 &self,
-            )?;
+            )?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5700,14 +5669,13 @@ impl UpdateRuleGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_rule_group(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_rule_group(&self)?,
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5903,15 +5871,12 @@ impl UpdateSubnetChangeProtectionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body =
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_subnet_change_protection(&self)?
-        ;
+        );
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),

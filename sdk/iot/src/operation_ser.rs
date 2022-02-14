@@ -347,20 +347,16 @@ pub fn serialize_operation_crate_operation_create_thing_type(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_create_topic_rule_input(
+pub fn serialize_payload_create_topic_rule_input(
     payload: &std::option::Option<crate::model::TopicRulePayload>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_json_unsetpayload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_json_unsetpayload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_create_topic_rule_input_topic_rule_payload(payload)?
-    ))
+    )
 }
 
 pub fn serialize_operation_crate_operation_create_topic_rule_destination(
@@ -605,20 +601,16 @@ pub fn serialize_operation_crate_operation_remove_thing_from_thing_group(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_replace_topic_rule_input(
+pub fn serialize_payload_replace_topic_rule_input(
     payload: &std::option::Option<crate::model::TopicRulePayload>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_json_unsetpayload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_json_unsetpayload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_replace_topic_rule_input_topic_rule_payload(payload)?
-    ))
+    )
 }
 
 pub fn serialize_operation_crate_operation_search_index(
@@ -644,20 +636,16 @@ pub fn serialize_operation_crate_operation_set_default_authorizer(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_set_logging_options_input(
+pub fn serialize_payload_set_logging_options_input(
     payload: &std::option::Option<crate::model::LoggingOptionsPayload>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_json_unsetpayload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_json_unsetpayload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_set_logging_options_input_logging_options_payload(payload)?
-    ))
+    )
 }
 
 pub fn serialize_operation_crate_operation_set_v2_logging_level(
