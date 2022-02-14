@@ -48,15 +48,14 @@ pub fn serialize_operation_crate_operation_create_profiling_group(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_post_agent_profile_input(
+pub fn serialize_payload_post_agent_profile_input(
     payload: std::option::Option<aws_smithy_types::Blob>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => return Ok(Vec::new()),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(aws_smithy_http::body::SdkBody::from(payload.into_inner()))
+    Ok(payload.into_inner())
 }
 
 pub fn serialize_operation_crate_operation_put_permission(

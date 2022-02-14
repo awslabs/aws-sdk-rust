@@ -39,15 +39,14 @@ pub fn serialize_operation_crate_operation_create_revision(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_send_api_asset_input(
-    payload: &std::option::Option<std::string::String>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
-    let payload = match payload.as_ref() {
+pub fn serialize_payload_send_api_asset_input(
+    payload: std::option::Option<std::string::String>,
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
+    let payload = match payload {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => return Ok(Vec::new()),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(aws_smithy_http::body::SdkBody::from(payload.to_string()))
+    Ok(payload.into_bytes())
 }
 
 pub fn serialize_operation_crate_operation_tag_resource(

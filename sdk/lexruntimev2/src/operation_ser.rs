@@ -19,9 +19,8 @@ pub fn serialize_operation_crate_operation_recognize_text(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_recognize_utterance_input(
+pub fn serialize_payload_recognize_utterance_input(
     payload: aws_smithy_http::byte_stream::ByteStream,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
-    #[allow(clippy::useless_conversion)]
-    Ok(aws_smithy_http::body::SdkBody::from(payload.into_inner()))
+) -> Result<aws_smithy_http::byte_stream::ByteStream, aws_smithy_http::operation::BuildError> {
+    Ok(payload)
 }

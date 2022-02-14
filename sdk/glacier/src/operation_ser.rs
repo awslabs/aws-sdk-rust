@@ -9,36 +9,28 @@ pub fn serialize_operation_crate_operation_add_tags_to_vault(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_initiate_job_input(
+pub fn serialize_payload_initiate_job_input(
     payload: &std::option::Option<crate::model::JobParameters>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_json_unsetpayload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_json_unsetpayload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_initiate_job_input_job_parameters(payload)?
-    ))
+    )
 }
 
-pub fn ser_payload_initiate_vault_lock_input(
+pub fn serialize_payload_initiate_vault_lock_input(
     payload: &std::option::Option<crate::model::VaultLockPolicy>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_json_unsetpayload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_json_unsetpayload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_initiate_vault_lock_input_policy(payload)?
-    ))
+    )
 }
 
 pub fn serialize_operation_crate_operation_remove_tags_from_vault(
@@ -67,50 +59,40 @@ pub fn serialize_operation_crate_operation_set_data_retrieval_policy(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_set_vault_access_policy_input(
+pub fn serialize_payload_set_vault_access_policy_input(
     payload: &std::option::Option<crate::model::VaultAccessPolicy>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_json_unsetpayload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_json_unsetpayload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_set_vault_access_policy_input_policy(payload)?
-    ))
+    )
 }
 
-pub fn ser_payload_set_vault_notifications_input(
+pub fn serialize_payload_set_vault_notifications_input(
     payload: &std::option::Option<crate::model::VaultNotificationConfig>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_json_unsetpayload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_json_unsetpayload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::operation_ser::serialize_member_com_amazonaws_glacier_synthetic_set_vault_notifications_input_vault_notification_config(payload)?
-    ))
+    )
 }
 
-pub fn ser_payload_upload_archive_input(
+pub fn serialize_payload_upload_archive_input(
     payload: aws_smithy_http::byte_stream::ByteStream,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
-    #[allow(clippy::useless_conversion)]
-    Ok(aws_smithy_http::body::SdkBody::from(payload.into_inner()))
+) -> Result<aws_smithy_http::byte_stream::ByteStream, aws_smithy_http::operation::BuildError> {
+    Ok(payload)
 }
 
-pub fn ser_payload_upload_multipart_part_input(
+pub fn serialize_payload_upload_multipart_part_input(
     payload: aws_smithy_http::byte_stream::ByteStream,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
-    #[allow(clippy::useless_conversion)]
-    Ok(aws_smithy_http::body::SdkBody::from(payload.into_inner()))
+) -> Result<aws_smithy_http::byte_stream::ByteStream, aws_smithy_http::operation::BuildError> {
+    Ok(payload)
 }
 
 pub fn rest_json_unsetpayload() -> std::vec::Vec<u8> {

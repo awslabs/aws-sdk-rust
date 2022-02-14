@@ -31,20 +31,16 @@ pub fn serialize_operation_crate_operation_create_access_point_for_object_lambda
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_create_bucket_input(
+pub fn serialize_payload_create_bucket_input(
     payload: &std::option::Option<crate::model::CreateBucketConfiguration>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_xml_unset_payload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_xml_unset_payload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_create_bucket_input_create_bucket_configuration(payload)?
-    ))
+    )
 }
 
 pub fn serialize_operation_crate_operation_create_job(
@@ -141,20 +137,16 @@ pub fn serialize_operation_crate_operation_put_access_point_policy_for_object_la
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_put_bucket_lifecycle_configuration_input(
+pub fn serialize_payload_put_bucket_lifecycle_configuration_input(
     payload: &std::option::Option<crate::model::LifecycleConfiguration>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_xml_unset_payload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_xml_unset_payload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_put_bucket_lifecycle_configuration_input_lifecycle_configuration(payload)?
-    ))
+    )
 }
 
 pub fn serialize_operation_crate_operation_put_bucket_policy(
@@ -172,20 +164,16 @@ pub fn serialize_operation_crate_operation_put_bucket_policy(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_put_bucket_tagging_input(
+pub fn serialize_payload_put_bucket_tagging_input(
     payload: &std::option::Option<crate::model::Tagging>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_xml_unset_payload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_xml_unset_payload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_put_bucket_tagging_input_tagging(payload)?
-    ))
+    )
 }
 
 pub fn serialize_operation_crate_operation_put_job_tagging(
@@ -220,20 +208,16 @@ pub fn serialize_operation_crate_operation_put_multi_region_access_point_policy(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn ser_payload_put_public_access_block_input(
+pub fn serialize_payload_put_public_access_block_input(
     payload: &std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => {
-            return Ok(aws_smithy_http::body::SdkBody::from(
-                crate::operation_ser::rest_xml_unset_payload(),
-            ))
-        }
+        None => return Ok(crate::operation_ser::rest_xml_unset_payload()),
     };
-    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+    Ok(
         crate::xml_ser::serialize_member_com_amazonaws_s3control_synthetic_put_public_access_block_input_public_access_block_configuration(payload)?
-    ))
+    )
 }
 
 pub fn serialize_operation_crate_operation_put_storage_lens_configuration(
@@ -269,5 +253,5 @@ pub fn serialize_operation_crate_operation_put_storage_lens_configuration_taggin
 }
 
 pub fn rest_xml_unset_payload() -> std::vec::Vec<u8> {
-    vec![]
+    Vec::new()
 }

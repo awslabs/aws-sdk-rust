@@ -274,7 +274,8 @@ impl StartMedicalStreamTranscriptionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = {
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from({
             let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new();
             let signer = _config.new_event_stream_signer(properties.clone());
             let adapter: aws_smithy_http::event_stream::MessageStreamAdapter<
@@ -283,13 +284,10 @@ impl StartMedicalStreamTranscriptionInput {
             > = self.audio_stream.into_body_stream(marshaller, signer);
             let body: aws_smithy_http::body::SdkBody = hyper::Body::wrap_stream(adapter).into();
             body
-        };
+        });
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -776,7 +774,8 @@ impl StartStreamTranscriptionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = {
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from({
             let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new();
             let signer = _config.new_event_stream_signer(properties.clone());
             let adapter: aws_smithy_http::event_stream::MessageStreamAdapter<
@@ -785,13 +784,10 @@ impl StartStreamTranscriptionInput {
             > = self.audio_stream.into_body_stream(marshaller, signer);
             let body: aws_smithy_http::body::SdkBody = hyper::Body::wrap_stream(adapter).into();
             body
-        };
+        });
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = aws_smithy_http::operation::Request::from_parts(
-            request.map(aws_smithy_http::body::SdkBody::from),
-            properties,
-        );
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
