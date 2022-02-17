@@ -14,20 +14,14 @@ publish = false
 name = "s3_service"
 path = "src/s3-service-lib.rs"
 [dependencies.aws-config]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/aws-config"
 version = "0.6.0"
 
 [dependencies.aws-endpoint]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/aws-endpoint"
 version = "0.6.0"
 
 [dependencies.aws-sdk-s3]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/s3"
 version = "0.6.0"
 
