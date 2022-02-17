@@ -10,10 +10,14 @@ publish = false
 bytes = "1"
 
 [dependencies.aws-config]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/aws-config"
 version = "0.6.0"
 
 [dependencies.aws-sdk-polly]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/polly"
 version = "0.6.0"
 

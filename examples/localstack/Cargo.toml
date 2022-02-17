@@ -10,22 +10,32 @@ publish = false
 http = "0.2"
 
 [dependencies.aws-config]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/aws-config"
 version = "0.6.0"
 
 [dependencies.aws-sdk-s3]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/s3"
 version = "0.6.0"
 
 [dependencies.aws-sdk-sqs]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/sqs"
 version = "0.6.0"
 
 [dependencies.aws-types]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/aws-types"
 version = "0.6.0"
 
 [dependencies.aws-smithy-http]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/aws-smithy-http"
 version = "0.36.0"
 
