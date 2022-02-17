@@ -6,14 +6,10 @@ authors = ["Alistair McLean <mclean@amazon.com>", "Doug Schwartz <dougsch@amazon
 edition = "2018"
 publish = false
 [dependencies.aws-config]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/aws-config"
 version = "0.6.0"
 
 [dependencies.aws-sdk-medialive]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/medialive"
 version = "0.6.0"
 

@@ -10,20 +10,14 @@ publish = false
 chrono = "0.4"
 
 [dependencies.aws-config]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/aws-config"
 version = "0.6.0"
 
 [dependencies.aws-sdk-cognitoidentity]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/cognitoidentity"
 version = "0.6.0"
 
 [dependencies.aws-smithy-types-convert]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 features = ["convert-chrono"]
 path = "../../sdk/aws-smithy-types-convert"
 version = "0.36.0"

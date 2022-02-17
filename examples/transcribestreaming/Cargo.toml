@@ -12,14 +12,10 @@ bytes = "1"
 hound = "3.4"
 
 [dependencies.aws-config]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/aws-config"
 version = "0.6.0"
 
 [dependencies.aws-sdk-transcribestreaming]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/transcribestreaming"
 version = "0.6.0"
 

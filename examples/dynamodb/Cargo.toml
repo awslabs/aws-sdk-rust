@@ -13,40 +13,28 @@ serde_json = "1"
 tokio-stream = "0.1.8"
 
 [dependencies.aws-config]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/aws-config"
 version = "0.6.0"
 
 [dependencies.aws-sdk-dynamodb]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/dynamodb"
 version = "0.6.0"
 
 [dependencies.aws-http]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/aws-http"
 version = "0.6.0"
 
 [dependencies.aws-smithy-client]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 features = ["client-hyper", "rustls", "rt-tokio"]
 path = "../../sdk/aws-smithy-client"
 version = "0.36.0"
 
 [dependencies.aws-smithy-http]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 features = ["rt-tokio"]
 path = "../../sdk/aws-smithy-http"
 version = "0.36.0"
 
 [dependencies.aws-smithy-types]
-git = "https://github.com/awslabs/aws-sdk-rust"
-branch = "next"
 path = "../../sdk/aws-smithy-types"
 version = "0.36.0"
 
