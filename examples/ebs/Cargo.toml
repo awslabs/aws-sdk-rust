@@ -11,14 +11,20 @@ base64 = "0.13.0"
 sha2 = "0.9.5"
 
 [dependencies.aws-config]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/aws-config"
 version = "0.6.0"
 
 [dependencies.aws-sdk-ebs]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/ebs"
 version = "0.6.0"
 
 [dependencies.aws-sdk-ec2]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/ec2"
 version = "0.6.0"
 

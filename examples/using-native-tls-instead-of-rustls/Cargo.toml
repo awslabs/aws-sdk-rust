@@ -6,20 +6,26 @@ authors = ["Zelda Hessler zhessler@amazon.com>"]
 edition = "2018"
 publish = false
 [dependencies.aws-config]
-features = ["native-tls", "rt-tokio"]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 default-features = false
+features = ["native-tls", "rt-tokio"]
 path = "../../sdk/aws-config"
 version = "0.6.0"
 
 [dependencies.aws-sdk-s3]
-features = ["native-tls"]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 default-features = false
+features = ["native-tls"]
 path = "../../sdk/s3"
 version = "0.6.0"
 
 [dependencies.aws-sdk-sts]
-features = ["native-tls"]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 default-features = false
+features = ["native-tls"]
 path = "../../sdk/sts"
 version = "0.6.0"
 

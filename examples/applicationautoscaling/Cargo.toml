@@ -6,10 +6,14 @@ authors = ["John DiSanti <jdisanti@amazon.com>, Doug Schwartz <dougsch@amazon.co
 edition = "2018"
 publish = false
 [dependencies.aws-config]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/aws-config"
 version = "0.6.0"
 
 [dependencies.aws-sdk-applicationautoscaling]
+git = "https://github.com/awslabs/aws-sdk-rust"
+branch = "next"
 path = "../../sdk/applicationautoscaling"
 version = "0.6.0"
 
