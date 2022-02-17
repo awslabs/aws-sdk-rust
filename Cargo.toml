@@ -39,6 +39,7 @@ members = [
     "examples/secretsmanager",
     "examples/ses",
     "examples/setting_timeouts",
+    "examples/sitewise",
     "examples/snowball",
     "examples/sns",
     "examples/sqs",
