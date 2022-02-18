@@ -188,8 +188,7 @@ def main():
     subparser_run.add_argument("-s", required=True, type=int, dest="start_inclusive", help="Range start inclusive")
     subparser_run.add_argument("-e", required=True, type=int, dest="end_exclusive", help="Range end exclusive")
     subparser_run.add_argument("-f", required=True, type=str, dest="folder", help="Name of the folder containing the "
-                                                                                  "crates you want to generate a "
-                                                                                  "matrix for") 
+                                                                                  "crates you want to run a command on")
     subparser_run.add_argument("cmd", type=str, nargs=argparse.ONE_OR_MORE)
 
     args = parser.parse_args()
