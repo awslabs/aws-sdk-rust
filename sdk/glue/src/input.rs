@@ -2759,12 +2759,12 @@ pub mod check_schema_version_validity_input {
         pub(crate) schema_definition: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
             self.data_format = Some(input);
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DataFormat>,
@@ -5977,12 +5977,12 @@ pub mod create_schema_input {
             self.schema_name = input;
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
             self.data_format = Some(input);
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DataFormat>,
@@ -31873,6 +31873,7 @@ pub mod update_table_input {
         pub(crate) table_input: std::option::Option<crate::model::TableInput>,
         pub(crate) skip_archive: std::option::Option<bool>,
         pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -31934,6 +31935,16 @@ pub mod update_table_input {
             self.transaction_id = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateTableInput`](crate::input::UpdateTableInput)
         pub fn build(
             self,
@@ -31947,6 +31958,7 @@ pub mod update_table_input {
                 table_input: self.table_input,
                 skip_archive: self.skip_archive,
                 transaction_id: self.transaction_id,
+                version_id: self.version_id,
             })
         }
     }
@@ -32777,6 +32789,8 @@ pub struct UpdateTableInput {
     pub skip_archive: std::option::Option<bool>,
     /// <p>The transaction ID at which to update the table contents. </p>
     pub transaction_id: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub version_id: std::option::Option<std::string::String>,
 }
 impl UpdateTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -32799,6 +32813,10 @@ impl UpdateTableInput {
     pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32808,6 +32826,7 @@ impl std::fmt::Debug for UpdateTableInput {
         formatter.field("table_input", &self.table_input);
         formatter.field("skip_archive", &self.skip_archive);
         formatter.field("transaction_id", &self.transaction_id);
+        formatter.field("version_id", &self.version_id);
         formatter.finish()
     }
 }
@@ -38154,7 +38173,7 @@ pub struct CreateSchemaInput {
     pub registry_id: std::option::Option<crate::model::RegistryId>,
     /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
     pub schema_name: std::option::Option<std::string::String>,
-    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The compatibility mode of the schema. The possible values are:</p>
     /// <ul>
@@ -38188,7 +38207,7 @@ impl CreateSchemaInput {
     pub fn schema_name(&self) -> std::option::Option<&str> {
         self.schema_name.as_deref()
     }
-    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
         self.data_format.as_ref()
     }
@@ -39170,13 +39189,13 @@ impl std::fmt::Debug for CreateBlueprintInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckSchemaVersionValidityInput {
-    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The definition of the schema that has to be validated.</p>
     pub schema_definition: std::option::Option<std::string::String>,
 }
 impl CheckSchemaVersionValidityInput {
-    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
         self.data_format.as_ref()
     }

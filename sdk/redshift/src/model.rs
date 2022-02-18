@@ -6378,6 +6378,8 @@ pub struct DataShareAssociation {
     pub consumer_identifier: std::option::Option<std::string::String>,
     /// <p>The status of the datashare that is associated.</p>
     pub status: std::option::Option<crate::model::DataShareStatus>,
+    /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
+    pub consumer_region: std::option::Option<std::string::String>,
     /// <p>The creation date of the datashare that is associated.</p>
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status change data of the datashare that is associated.</p>
@@ -6391,6 +6393,10 @@ impl DataShareAssociation {
     /// <p>The status of the datashare that is associated.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::DataShareStatus> {
         self.status.as_ref()
+    }
+    /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
+    pub fn consumer_region(&self) -> std::option::Option<&str> {
+        self.consumer_region.as_deref()
     }
     /// <p>The creation date of the datashare that is associated.</p>
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
@@ -6406,6 +6412,7 @@ impl std::fmt::Debug for DataShareAssociation {
         let mut formatter = f.debug_struct("DataShareAssociation");
         formatter.field("consumer_identifier", &self.consumer_identifier);
         formatter.field("status", &self.status);
+        formatter.field("consumer_region", &self.consumer_region);
         formatter.field("created_date", &self.created_date);
         formatter.field("status_change_date", &self.status_change_date);
         formatter.finish()
@@ -6419,6 +6426,7 @@ pub mod data_share_association {
     pub struct Builder {
         pub(crate) consumer_identifier: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DataShareStatus>,
+        pub(crate) consumer_region: std::option::Option<std::string::String>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status_change_date: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -6447,6 +6455,19 @@ pub mod data_share_association {
             input: std::option::Option<crate::model::DataShareStatus>,
         ) -> Self {
             self.status = input;
+            self
+        }
+        /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
+        pub fn consumer_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_region = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
+        pub fn set_consumer_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_region = input;
             self
         }
         /// <p>The creation date of the datashare that is associated.</p>
@@ -6480,6 +6501,7 @@ pub mod data_share_association {
             crate::model::DataShareAssociation {
                 consumer_identifier: self.consumer_identifier,
                 status: self.status,
+                consumer_region: self.consumer_region,
                 created_date: self.created_date,
                 status_change_date: self.status_change_date,
             }
@@ -7244,6 +7266,8 @@ pub enum UsageLimitFeatureType {
     #[allow(missing_docs)] // documentation missing in model
     ConcurrencyScaling,
     #[allow(missing_docs)] // documentation missing in model
+    CrossRegionDatasharing,
+    #[allow(missing_docs)] // documentation missing in model
     Spectrum,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7252,6 +7276,7 @@ impl std::convert::From<&str> for UsageLimitFeatureType {
     fn from(s: &str) -> Self {
         match s {
             "concurrency-scaling" => UsageLimitFeatureType::ConcurrencyScaling,
+            "cross-region-datasharing" => UsageLimitFeatureType::CrossRegionDatasharing,
             "spectrum" => UsageLimitFeatureType::Spectrum,
             other => UsageLimitFeatureType::Unknown(other.to_owned()),
         }
@@ -7269,13 +7294,18 @@ impl UsageLimitFeatureType {
     pub fn as_str(&self) -> &str {
         match self {
             UsageLimitFeatureType::ConcurrencyScaling => "concurrency-scaling",
+            UsageLimitFeatureType::CrossRegionDatasharing => "cross-region-datasharing",
             UsageLimitFeatureType::Spectrum => "spectrum",
             UsageLimitFeatureType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["concurrency-scaling", "spectrum"]
+        &[
+            "concurrency-scaling",
+            "cross-region-datasharing",
+            "spectrum",
+        ]
     }
 }
 impl AsRef<str> for UsageLimitFeatureType {
@@ -9541,14 +9571,14 @@ impl SnapshotSchedule {
     }
 }
 
-/// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination region.</p>
+/// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>
 /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotCopyGrant {
     /// <p>The name of the snapshot copy grant.</p>
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
+    /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9558,7 +9588,7 @@ impl SnapshotCopyGrant {
     pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
         self.snapshot_copy_grant_name.as_deref()
     }
-    /// <p>The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
+    /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -9600,12 +9630,12 @@ pub mod snapshot_copy_grant {
             self.snapshot_copy_grant_name = input;
             self
         }
-        /// <p>The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
+        /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
+        /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self

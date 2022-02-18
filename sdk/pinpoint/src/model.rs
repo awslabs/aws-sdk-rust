@@ -33293,6 +33293,8 @@ pub struct ApplicationResponse {
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the application. Each tag consists of a required tag key and an associated tag value.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The date and time when the Application was created.</p>
+    pub creation_date: std::option::Option<std::string::String>,
 }
 impl ApplicationResponse {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -33314,6 +33316,10 @@ impl ApplicationResponse {
     {
         self.tags.as_ref()
     }
+    /// <p>The date and time when the Application was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
 }
 impl std::fmt::Debug for ApplicationResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33322,6 +33328,7 @@ impl std::fmt::Debug for ApplicationResponse {
         formatter.field("id", &self.id);
         formatter.field("name", &self.name);
         formatter.field("tags", &self.tags);
+        formatter.field("creation_date", &self.creation_date);
         formatter.finish()
     }
 }
@@ -33337,6 +33344,7 @@ pub mod application_response {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) creation_date: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -33394,6 +33402,19 @@ pub mod application_response {
             self.tags = input;
             self
         }
+        /// <p>The date and time when the Application was created.</p>
+        pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.creation_date = Some(input.into());
+            self
+        }
+        /// <p>The date and time when the Application was created.</p>
+        pub fn set_creation_date(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.creation_date = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ApplicationResponse`](crate::model::ApplicationResponse)
         pub fn build(self) -> crate::model::ApplicationResponse {
             crate::model::ApplicationResponse {
@@ -33401,6 +33422,7 @@ pub mod application_response {
                 id: self.id,
                 name: self.name,
                 tags: self.tags,
+                creation_date: self.creation_date,
             }
         }
     }

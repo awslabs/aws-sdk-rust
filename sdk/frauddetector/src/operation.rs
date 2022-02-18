@@ -1196,6 +1196,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventPrediction {
     }
 }
 
+/// Operation shape for `GetEventPredictionMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_event_prediction_metadata`](crate::client::Client::get_event_prediction_metadata).
+///
+/// See [`crate::client::fluent_builders::GetEventPredictionMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetEventPredictionMetadata {
+    _private: (),
+}
+impl GetEventPredictionMetadata {
+    /// Creates a new builder-style object to manufacture [`GetEventPredictionMetadataInput`](crate::input::GetEventPredictionMetadataInput)
+    pub fn builder() -> crate::input::get_event_prediction_metadata_input::Builder {
+        crate::input::get_event_prediction_metadata_input::Builder::default()
+    }
+    /// Creates a new `GetEventPredictionMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetEventPredictionMetadata {
+    type Output = std::result::Result<
+        crate::output::GetEventPredictionMetadataOutput,
+        crate::error::GetEventPredictionMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_event_prediction_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_get_event_prediction_metadata_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetEventTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1483,6 +1517,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVariables {
             crate::operation_deser::parse_get_variables_error(response)
         } else {
             crate::operation_deser::parse_get_variables_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListEventPredictions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_event_predictions`](crate::client::Client::list_event_predictions).
+///
+/// See [`crate::client::fluent_builders::ListEventPredictions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEventPredictions {
+    _private: (),
+}
+impl ListEventPredictions {
+    /// Creates a new builder-style object to manufacture [`ListEventPredictionsInput`](crate::input::ListEventPredictionsInput)
+    pub fn builder() -> crate::input::list_event_predictions_input::Builder {
+        crate::input::list_event_predictions_input::Builder::default()
+    }
+    /// Creates a new `ListEventPredictions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListEventPredictions {
+    type Output = std::result::Result<
+        crate::output::ListEventPredictionsOutput,
+        crate::error::ListEventPredictionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_event_predictions_error(response)
+        } else {
+            crate::operation_deser::parse_list_event_predictions_response(response)
         }
     }
 }

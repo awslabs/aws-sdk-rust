@@ -4404,12 +4404,12 @@ pub mod create_endpoint_config_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
+        /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
         pub fn async_inference_config(mut self, input: crate::model::AsyncInferenceConfig) -> Self {
             self.async_inference_config = Some(input);
             self
         }
-        /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
+        /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
         pub fn set_async_inference_config(
             mut self,
             input: std::option::Option<crate::model::AsyncInferenceConfig>,
@@ -36845,20 +36845,20 @@ pub mod list_model_packages_input {
             self.model_package_group_name = input;
             self
         }
-        /// <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>
+        /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
         /// <ul>
+        /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
         /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-        /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>
         /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
         /// </ul>
         pub fn model_package_type(mut self, input: crate::model::ModelPackageType) -> Self {
             self.model_package_type = Some(input);
             self
         }
-        /// <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>
+        /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
         /// <ul>
+        /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
         /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-        /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>
         /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
         /// </ul>
         pub fn set_model_package_type(
@@ -55971,10 +55971,10 @@ pub struct ListModelPackagesInput {
     pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
     pub model_package_group_name: std::option::Option<std::string::String>,
-    /// <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>
+    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
     /// <ul>
+    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
     /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>
     /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
     /// </ul>
     pub model_package_type: std::option::Option<crate::model::ModelPackageType>,
@@ -56010,10 +56010,10 @@ impl ListModelPackagesInput {
     pub fn model_package_group_name(&self) -> std::option::Option<&str> {
         self.model_package_group_name.as_deref()
     }
-    /// <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>
+    /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
     /// <ul>
+    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
     /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>
     /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
     /// </ul>
     pub fn model_package_type(&self) -> std::option::Option<&crate::model::ModelPackageType> {
@@ -63113,7 +63113,7 @@ pub struct CreateEndpointConfigInput {
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
+    /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
     pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
 }
 impl CreateEndpointConfigInput {
@@ -63149,7 +63149,7 @@ impl CreateEndpointConfigInput {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
+    /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
     pub fn async_inference_config(
         &self,
     ) -> std::option::Option<&crate::model::AsyncInferenceConfig> {

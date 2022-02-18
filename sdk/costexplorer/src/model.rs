@@ -1320,6 +1320,8 @@ pub enum Dimension {
     #[allow(missing_docs)] // documentation missing in model
     InstanceTypeFamily,
     #[allow(missing_docs)] // documentation missing in model
+    InvoicingEntity,
+    #[allow(missing_docs)] // documentation missing in model
     LegalEntityName,
     #[allow(missing_docs)] // documentation missing in model
     LinkedAccount,
@@ -1378,6 +1380,7 @@ impl std::convert::From<&str> for Dimension {
             "DEPLOYMENT_OPTION" => Dimension::DeploymentOption,
             "INSTANCE_TYPE" => Dimension::InstanceType,
             "INSTANCE_TYPE_FAMILY" => Dimension::InstanceTypeFamily,
+            "INVOICING_ENTITY" => Dimension::InvoicingEntity,
             "LEGAL_ENTITY_NAME" => Dimension::LegalEntityName,
             "LINKED_ACCOUNT" => Dimension::LinkedAccount,
             "LINKED_ACCOUNT_NAME" => Dimension::LinkedAccountName,
@@ -1424,6 +1427,7 @@ impl Dimension {
             Dimension::DeploymentOption => "DEPLOYMENT_OPTION",
             Dimension::InstanceType => "INSTANCE_TYPE",
             Dimension::InstanceTypeFamily => "INSTANCE_TYPE_FAMILY",
+            Dimension::InvoicingEntity => "INVOICING_ENTITY",
             Dimension::LegalEntityName => "LEGAL_ENTITY_NAME",
             Dimension::LinkedAccount => "LINKED_ACCOUNT",
             Dimension::LinkedAccountName => "LINKED_ACCOUNT_NAME",
@@ -1461,6 +1465,7 @@ impl Dimension {
             "DEPLOYMENT_OPTION",
             "INSTANCE_TYPE",
             "INSTANCE_TYPE_FAMILY",
+            "INVOICING_ENTITY",
             "LEGAL_ENTITY_NAME",
             "LINKED_ACCOUNT",
             "LINKED_ACCOUNT_NAME",

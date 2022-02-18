@@ -232,7 +232,7 @@ pub enum Error {
     ),
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// <p>SNS has responded that there is a problem with the SND topic specified.</p>
+    /// <p>SNS has responded that there is a problem with the SNS topic specified.</p>
     SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),
     /// <p>You do not have permission to publish to the SNS topic ARN.</p>
     SnsNoAuthorizationFault(crate::error::SnsNoAuthorizationFault),

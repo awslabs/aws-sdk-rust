@@ -1996,6 +1996,60 @@ impl RestoreManagedPrefixListVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RestoreImageFromRecycleBinOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub r#return: std::option::Option<bool>,
+}
+impl RestoreImageFromRecycleBinOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
+impl std::fmt::Debug for RestoreImageFromRecycleBinOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RestoreImageFromRecycleBinOutput");
+        formatter.field("r#return", &self.r#return);
+        formatter.finish()
+    }
+}
+/// See [`RestoreImageFromRecycleBinOutput`](crate::output::RestoreImageFromRecycleBinOutput)
+pub mod restore_image_from_recycle_bin_output {
+    /// A builder for [`RestoreImageFromRecycleBinOutput`](crate::output::RestoreImageFromRecycleBinOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#return: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
+            self
+        }
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RestoreImageFromRecycleBinOutput`](crate::output::RestoreImageFromRecycleBinOutput)
+        pub fn build(self) -> crate::output::RestoreImageFromRecycleBinOutput {
+            crate::output::RestoreImageFromRecycleBinOutput {
+                r#return: self.r#return,
+            }
+        }
+    }
+}
+impl RestoreImageFromRecycleBinOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreImageFromRecycleBinOutput`](crate::output::RestoreImageFromRecycleBinOutput)
+    pub fn builder() -> crate::output::restore_image_from_recycle_bin_output::Builder {
+        crate::output::restore_image_from_recycle_bin_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreAddressToClassicOutput {
     /// <p>The Elastic IP address.</p>
     pub public_ip: std::option::Option<std::string::String>,
@@ -7354,6 +7408,88 @@ impl ListSnapshotsInRecycleBinOutput {
     /// Creates a new builder-style object to manufacture [`ListSnapshotsInRecycleBinOutput`](crate::output::ListSnapshotsInRecycleBinOutput)
     pub fn builder() -> crate::output::list_snapshots_in_recycle_bin_output::Builder {
         crate::output::list_snapshots_in_recycle_bin_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListImagesInRecycleBinOutput {
+    /// <p>Information about the AMIs.</p>
+    pub images: std::option::Option<std::vec::Vec<crate::model::ImageRecycleBinInfo>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImagesInRecycleBinOutput {
+    /// <p>Information about the AMIs.</p>
+    pub fn images(&self) -> std::option::Option<&[crate::model::ImageRecycleBinInfo]> {
+        self.images.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListImagesInRecycleBinOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListImagesInRecycleBinOutput");
+        formatter.field("images", &self.images);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListImagesInRecycleBinOutput`](crate::output::ListImagesInRecycleBinOutput)
+pub mod list_images_in_recycle_bin_output {
+    /// A builder for [`ListImagesInRecycleBinOutput`](crate::output::ListImagesInRecycleBinOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) images: std::option::Option<std::vec::Vec<crate::model::ImageRecycleBinInfo>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `images`.
+        ///
+        /// To override the contents of this collection use [`set_images`](Self::set_images).
+        ///
+        /// <p>Information about the AMIs.</p>
+        pub fn images(mut self, input: crate::model::ImageRecycleBinInfo) -> Self {
+            let mut v = self.images.unwrap_or_default();
+            v.push(input);
+            self.images = Some(v);
+            self
+        }
+        /// <p>Information about the AMIs.</p>
+        pub fn set_images(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImageRecycleBinInfo>>,
+        ) -> Self {
+            self.images = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListImagesInRecycleBinOutput`](crate::output::ListImagesInRecycleBinOutput)
+        pub fn build(self) -> crate::output::ListImagesInRecycleBinOutput {
+            crate::output::ListImagesInRecycleBinOutput {
+                images: self.images,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListImagesInRecycleBinOutput {
+    /// Creates a new builder-style object to manufacture [`ListImagesInRecycleBinOutput`](crate::output::ListImagesInRecycleBinOutput)
+    pub fn builder() -> crate::output::list_images_in_recycle_bin_output::Builder {
+        crate::output::list_images_in_recycle_bin_output::Builder::default()
     }
 }
 

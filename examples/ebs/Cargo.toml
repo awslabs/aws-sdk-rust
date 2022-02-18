@@ -12,15 +12,15 @@ sha2 = "0.9.5"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-ebs]
 path = "../../sdk/ebs"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-ec2]
 path = "../../sdk/ec2"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.tokio]
 version = "1"

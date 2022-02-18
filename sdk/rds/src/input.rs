@@ -3567,7 +3567,7 @@ pub mod create_db_cluster_input {
         /// <p>A DB subnet group to associate with this DB cluster.</p>
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
@@ -3576,7 +3576,7 @@ pub mod create_db_cluster_input {
         /// <p>A DB subnet group to associate with this DB cluster.</p>
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_subnet_group_name(
             mut self,
@@ -5796,13 +5796,15 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
-        /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
+        /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
-        /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
+        /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7062,7 +7064,7 @@ pub mod create_db_instance_read_replica_input {
         /// <li> <p>Not specify a DB subnet group. All these read replicas are created outside of any VPC.</p> </li>
         /// </ul> </li>
         /// </ul>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
@@ -7079,7 +7081,7 @@ pub mod create_db_instance_read_replica_input {
         /// <li> <p>Not specify a DB subnet group. All these read replicas are created outside of any VPC.</p> </li>
         /// </ul> </li>
         /// </ul>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8860,15 +8862,25 @@ pub mod create_db_subnet_group_input {
     }
     impl Builder {
         /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
-        /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p> </li>
+        /// <li> <p>Must not be default.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// </ul>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
         }
         /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
-        /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p> </li>
+        /// <li> <p>Must not be default.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// </ul>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12055,9 +12067,8 @@ pub mod delete_db_subnet_group_input {
         /// <p>The name of the database subnet group to delete.</p> <note>
         /// <p>You can't delete the default subnet group.</p>
         /// </note>
-        /// <p>Constraints:</p>
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
@@ -12065,9 +12076,8 @@ pub mod delete_db_subnet_group_input {
         /// <p>The name of the database subnet group to delete.</p> <note>
         /// <p>You can't delete the default subnet group.</p>
         /// </note>
-        /// <p>Constraints:</p>
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14525,10 +14535,10 @@ pub mod describe_db_clusters_input {
         /// <p>A filter that specifies one or more DB clusters to describe.</p>
         /// <p>Supported filters:</p>
         /// <ul>
-        /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list will only include information about the DB clusters associated with these clone groups.</p> </li>
-        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p> </li>
-        /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list will only include information about the DB clusters associated with these domains.</p> </li>
-        /// <li> <p> <code>engine</code> - Accepts engine names. The results list will only include information about the DB clusters for these engines.</p> </li>
+        /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
+        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
+        /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
+        /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
@@ -14539,10 +14549,10 @@ pub mod describe_db_clusters_input {
         /// <p>A filter that specifies one or more DB clusters to describe.</p>
         /// <p>Supported filters:</p>
         /// <ul>
-        /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list will only include information about the DB clusters associated with these clone groups.</p> </li>
-        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p> </li>
-        /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list will only include information about the DB clusters associated with these domains.</p> </li>
-        /// <li> <p> <code>engine</code> - Accepts engine names. The results list will only include information about the DB clusters for these engines.</p> </li>
+        /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
+        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
+        /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
+        /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -15284,14 +15294,52 @@ pub mod describe_db_engine_versions_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>This parameter isn't currently supported.</p>
+        /// <p>A filter that specifies one or more DB engine versions to describe.</p>
+        /// <p>Supported filters:</p>
+        /// <ul>
+        /// <li> <p> <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes information about the DB engine versions for these parameter group families. </p> </li>
+        /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine versions for these engines. </p> </li>
+        /// <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB engine versions for these engine modes. Valid DB engine modes are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>global</code> </p> </li>
+        /// <li> <p> <code>multimaster</code> </p> </li>
+        /// <li> <p> <code>parallelquery</code> </p> </li>
+        /// <li> <p> <code>provisioned</code> </p> </li>
+        /// <li> <p> <code>serverless</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB engine versions for these engine versions. </p> </li>
+        /// <li> <p> <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB engine versions for these statuses. Valid statuses are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>available</code> </p> </li>
+        /// <li> <p> <code>deprecated</code> </p> </li>
+        /// </ul> </li>
+        /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>This parameter isn't currently supported.</p>
+        /// <p>A filter that specifies one or more DB engine versions to describe.</p>
+        /// <p>Supported filters:</p>
+        /// <ul>
+        /// <li> <p> <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes information about the DB engine versions for these parameter group families. </p> </li>
+        /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine versions for these engines. </p> </li>
+        /// <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB engine versions for these engine modes. Valid DB engine modes are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>global</code> </p> </li>
+        /// <li> <p> <code>multimaster</code> </p> </li>
+        /// <li> <p> <code>parallelquery</code> </p> </li>
+        /// <li> <p> <code>provisioned</code> </p> </li>
+        /// <li> <p> <code>serverless</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB engine versions for these engine versions. </p> </li>
+        /// <li> <p> <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB engine versions for these statuses. Valid statuses are the following: </p>
+        /// <ul>
+        /// <li> <p> <code>available</code> </p> </li>
+        /// <li> <p> <code>deprecated</code> </p> </li>
+        /// </ul> </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -15811,11 +15859,11 @@ pub mod describe_db_instances_input {
         /// <p>A filter that specifies one or more DB instances to describe.</p>
         /// <p>Supported filters:</p>
         /// <ul>
-        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
-        /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list will only include information about the DB instances identified by these ARNs.</p> </li>
+        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
+        /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
         /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include information about the DB instances identified by these DB instance resource identifiers.</p> </li>
-        /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list will only include information about the DB instances associated with these domains.</p> </li>
-        /// <li> <p> <code>engine</code> - Accepts engine names. The results list will only include information about the DB instances for these engines.</p> </li>
+        /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
+        /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
@@ -15826,11 +15874,11 @@ pub mod describe_db_instances_input {
         /// <p>A filter that specifies one or more DB instances to describe.</p>
         /// <p>Supported filters:</p>
         /// <ul>
-        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
-        /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list will only include information about the DB instances identified by these ARNs.</p> </li>
+        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
+        /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
         /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include information about the DB instances identified by these DB instance resource identifiers.</p> </li>
-        /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list will only include information about the DB instances associated with these domains.</p> </li>
-        /// <li> <p> <code>engine</code> - Accepts engine names. The results list will only include information about the DB instances for these engines.</p> </li>
+        /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
+        /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -20998,8 +21046,8 @@ pub mod describe_pending_maintenance_actions_input {
         /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
         /// <p>Supported filters:</p>
         /// <ul>
-        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
-        /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only include pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
+        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
+        /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
@@ -21010,8 +21058,8 @@ pub mod describe_pending_maintenance_actions_input {
         /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
         /// <p>Supported filters:</p>
         /// <ul>
-        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
-        /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only include pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
+        /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
+        /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -24100,13 +24148,13 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
-        /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
+        /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next maintenance window.</p>
         /// </note>
         /// <p>Default: The existing name setting</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p> </li>
-        /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li>
+        /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p> </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn db_instance_parameter_group_name(
@@ -24117,13 +24165,13 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
-        /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
+        /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next maintenance window.</p>
         /// </note>
         /// <p>Default: The existing name setting</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p> </li>
-        /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li>
+        /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p> </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_db_instance_parameter_group_name(
@@ -25292,7 +25340,7 @@ pub mod modify_db_instance_input {
         /// <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you enable <code>ApplyImmediately</code>.</p>
         /// <p> This parameter doesn't apply to RDS Custom.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-        /// <p>Example: <code>mySubnetGroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
@@ -25301,7 +25349,7 @@ pub mod modify_db_instance_input {
         /// <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you enable <code>ApplyImmediately</code>.</p>
         /// <p> This parameter doesn't apply to RDS Custom.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-        /// <p>Example: <code>mySubnetGroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27644,14 +27692,14 @@ pub mod modify_db_subnet_group_input {
     impl Builder {
         /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
         }
         /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31065,15 +31113,15 @@ pub mod restore_db_cluster_from_s3_input {
             self
         }
         /// <p>A DB subnet group to associate with the restored DB cluster.</p>
-        /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup. </p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
         }
         /// <p>A DB subnet group to associate with the restored DB cluster.</p>
-        /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup. </p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31819,7 +31867,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         }
         /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
@@ -31827,7 +31875,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         }
         /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_subnet_group_name(
             mut self,
@@ -32117,14 +32165,14 @@ pub mod restore_db_cluster_from_snapshot_input {
         }
         /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
         /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
-        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_instance_class = Some(input.into());
             self
         }
         /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
         /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
-        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_db_cluster_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32535,7 +32583,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         }
         /// <p>The DB subnet group name to use for the new DB cluster.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
@@ -32543,7 +32591,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         }
         /// <p>The DB subnet group name to use for the new DB cluster.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_subnet_group_name(
             mut self,
@@ -33196,14 +33244,14 @@ pub mod restore_db_instance_from_db_snapshot_input {
         }
         /// <p>The DB subnet group name to use for the new instance.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
         }
         /// <p>The DB subnet group name to use for the new instance.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33459,12 +33507,16 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self.domain = input;
             self
         }
-        /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
+        /// <p>In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If there are no new tags, RDS looks for the tags from the source DB instance for the DB snapshot, and then adds those tags to the restored DB instance.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags"> Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.</p>
         pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
             self.copy_tags_to_snapshot = Some(input);
             self
         }
-        /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
+        /// <p>In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If there are no new tags, RDS looks for the tags from the source DB instance for the DB snapshot, and then adds those tags to the restored DB instance.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags"> Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.</p>
         pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_snapshot = input;
             self
@@ -33626,7 +33678,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
         /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
         /// </ul>
-        /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.</p>
+        /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting is required for RDS Custom.</p>
         pub fn custom_iam_instance_profile(
             mut self,
@@ -33641,7 +33693,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
         /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
         /// </ul>
-        /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.</p>
+        /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting is required for RDS Custom.</p>
         pub fn set_custom_iam_instance_profile(
             mut self,
@@ -34059,11 +34111,15 @@ pub mod restore_db_instance_from_s3_input {
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
+        /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
+        /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -34923,14 +34979,14 @@ pub mod restore_db_instance_to_point_in_time_input {
         }
         /// <p>The DB subnet group name to use for the new instance.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
         }
         /// <p>The DB subnet group name to use for the new instance.</p>
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-        /// <p>Example: <code>mySubnetgroup</code> </p>
+        /// <p>Example: <code>mydbsubnetgroup</code> </p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37847,7 +37903,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The DB subnet group name to use for the new instance.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -38033,7 +38089,7 @@ impl RestoreDbInstanceToPointInTimeInput {
     }
     /// <p>The DB subnet group name to use for the new instance.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -38339,6 +38395,8 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint. </p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>A DB subnet group to associate with this DB instance.</p>
+    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Constraints:</p>
@@ -38510,6 +38568,8 @@ impl RestoreDbInstanceFromS3Input {
         self.availability_zone.as_deref()
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
+    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -38794,7 +38854,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The DB subnet group name to use for the new instance.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -38863,7 +38923,9 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
+    /// <p>In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If there are no new tags, RDS looks for the tags from the source DB instance for the DB snapshot, and then adds those tags to the restored DB instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags"> Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -38906,7 +38968,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
     /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
     /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.</p>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
     pub custom_iam_instance_profile: std::option::Option<std::string::String>,
     /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
@@ -38955,7 +39017,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     }
     /// <p>The DB subnet group name to use for the new instance.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -39054,7 +39116,9 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
+    /// <p>In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If there are no new tags, RDS looks for the tags from the source DB instance for the DB snapshot, and then adds those tags to the restored DB instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags"> Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
@@ -39115,7 +39179,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
     /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
     /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.</p>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
     pub fn custom_iam_instance_profile(&self) -> std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
@@ -39232,7 +39296,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     pub port: std::option::Option<i32>,
     /// <p>The DB subnet group name to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the option group for the new DB cluster.</p>
@@ -39392,7 +39456,7 @@ impl RestoreDbClusterToPointInTimeInput {
     }
     /// <p>The DB subnet group name to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
@@ -39636,7 +39700,7 @@ pub struct RestoreDbClusterFromSnapshotInput {
     pub port: std::option::Option<i32>,
     /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The database name for the restored DB cluster.</p>
@@ -39710,7 +39774,7 @@ pub struct RestoreDbClusterFromSnapshotInput {
     pub domain_iam_role_name: std::option::Option<std::string::String>,
     /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
-    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub db_cluster_instance_class: std::option::Option<std::string::String>,
     /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>
     /// <p> Valid values: <code>io1</code> </p>
@@ -39807,7 +39871,7 @@ impl RestoreDbClusterFromSnapshotInput {
     }
     /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
@@ -39915,7 +39979,7 @@ impl RestoreDbClusterFromSnapshotInput {
     }
     /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
-    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn db_cluster_instance_class(&self) -> std::option::Option<&str> {
         self.db_cluster_instance_class.as_deref()
     }
@@ -40030,8 +40094,8 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>A list of EC2 VPC security groups to associate with the restored DB cluster.</p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A DB subnet group to associate with the restored DB cluster.</p>
-    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup. </p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the database engine to be used for this DB cluster.</p>
     /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), and <code>aurora-postgresql</code> </p>
@@ -40172,8 +40236,8 @@ impl RestoreDbClusterFromS3Input {
         self.vpc_security_group_ids.as_deref()
     }
     /// <p>A DB subnet group to associate with the restored DB cluster.</p>
-    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup. </p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -41075,7 +41139,7 @@ impl std::fmt::Debug for ModifyEventSubscriptionInput {
 pub struct ModifyDbSubnetGroupInput {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The description for the DB subnet group.</p>
     pub db_subnet_group_description: std::option::Option<std::string::String>,
@@ -41085,7 +41149,7 @@ pub struct ModifyDbSubnetGroupInput {
 impl ModifyDbSubnetGroupInput {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -41451,7 +41515,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you enable <code>ApplyImmediately</code>.</p>
     /// <p> This parameter doesn't apply to RDS Custom.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetGroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -41736,7 +41800,7 @@ impl ModifyDbInstanceInput {
     /// <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you enable <code>ApplyImmediately</code>.</p>
     /// <p> This parameter doesn't apply to RDS Custom.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
-    /// <p>Example: <code>mySubnetGroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -42417,13 +42481,13 @@ pub struct ModifyDbClusterInput {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub allow_major_version_upgrade: bool,
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
-    /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
+    /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next maintenance window.</p>
     /// </note>
     /// <p>Default: The existing name setting</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p> </li>
-    /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li>
+    /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub db_instance_parameter_group_name: std::option::Option<std::string::String>,
@@ -42627,13 +42691,13 @@ impl ModifyDbClusterInput {
         self.allow_major_version_upgrade
     }
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
-    /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't rebooted automatically. Also, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
+    /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next maintenance window.</p>
     /// </note>
     /// <p>Default: The existing name setting</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p> </li>
-    /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li>
+    /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn db_instance_parameter_group_name(&self) -> std::option::Option<&str> {
@@ -43532,8 +43596,8 @@ pub struct DescribePendingMaintenanceActionsInput {
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only include pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>. </p>
@@ -43551,8 +43615,8 @@ impl DescribePendingMaintenanceActionsInput {
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only include pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list only includes pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -44999,11 +45063,11 @@ pub struct DescribeDbInstancesInput {
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list will only include information about the DB instances identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
     /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include information about the DB instances identified by these DB instance resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list will only include information about the DB instances associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list will only include information about the DB instances for these engines.</p> </li>
+    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results. </p>
@@ -45025,11 +45089,11 @@ impl DescribeDbInstancesInput {
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list will only include information about the DB instances identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
     /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include information about the DB instances identified by these DB instance resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list will only include information about the DB instances associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list will only include information about the DB instances for these engines.</p> </li>
+    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -45173,7 +45237,26 @@ pub struct DescribeDbEngineVersionsInput {
     /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
     /// </ul>
     pub db_parameter_group_family: std::option::Option<std::string::String>,
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more DB engine versions to describe.</p>
+    /// <p>Supported filters:</p>
+    /// <ul>
+    /// <li> <p> <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes information about the DB engine versions for these parameter group families. </p> </li>
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine versions for these engines. </p> </li>
+    /// <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB engine versions for these engine modes. Valid DB engine modes are the following: </p>
+    /// <ul>
+    /// <li> <p> <code>global</code> </p> </li>
+    /// <li> <p> <code>multimaster</code> </p> </li>
+    /// <li> <p> <code>parallelquery</code> </p> </li>
+    /// <li> <p> <code>provisioned</code> </p> </li>
+    /// <li> <p> <code>serverless</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB engine versions for these engine versions. </p> </li>
+    /// <li> <p> <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB engine versions for these statuses. Valid statuses are the following: </p>
+    /// <ul>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>deprecated</code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p>
     /// <p>Default: 100</p>
@@ -45229,7 +45312,26 @@ impl DescribeDbEngineVersionsInput {
     pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
         self.db_parameter_group_family.as_deref()
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more DB engine versions to describe.</p>
+    /// <p>Supported filters:</p>
+    /// <ul>
+    /// <li> <p> <code>db-parameter-group-family</code> - Accepts parameter groups family names. The results list only includes information about the DB engine versions for these parameter group families. </p> </li>
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB engine versions for these engines. </p> </li>
+    /// <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list only includes information about the DB engine versions for these engine modes. Valid DB engine modes are the following: </p>
+    /// <ul>
+    /// <li> <p> <code>global</code> </p> </li>
+    /// <li> <p> <code>multimaster</code> </p> </li>
+    /// <li> <p> <code>parallelquery</code> </p> </li>
+    /// <li> <p> <code>provisioned</code> </p> </li>
+    /// <li> <p> <code>serverless</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>engine-version</code> - Accepts engine versions. The results list only includes information about the DB engine versions for these engine versions. </p> </li>
+    /// <li> <p> <code>status</code> - Accepts engine version statuses. The results list only includes information about the DB engine versions for these statuses. Valid statuses are the following: </p>
+    /// <ul>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>deprecated</code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -45450,10 +45552,10 @@ pub struct DescribeDbClustersInput {
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list will only include information about the DB clusters associated with these clone groups.</p> </li>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list will only include information about the DB clusters associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list will only include information about the DB clusters for these engines.</p> </li>
+    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p>
@@ -45477,10 +45579,10 @@ impl DescribeDbClustersInput {
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list will only include information about the DB clusters associated with these clone groups.</p> </li>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list will only include information about the DB clusters associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list will only include information about the DB clusters for these engines.</p> </li>
+    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -46037,18 +46139,16 @@ pub struct DeleteDbSubnetGroupInput {
     /// <p>The name of the database subnet group to delete.</p> <note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
-    /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteDbSubnetGroupInput {
     /// <p>The name of the database subnet group to delete.</p> <note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
-    /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -46769,8 +46869,13 @@ impl std::fmt::Debug for CreateEventSubscriptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbSubnetGroupInput {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
-    /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p> </li>
+    /// <li> <p>Must not be default.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The description for the DB subnet group.</p>
     pub db_subnet_group_description: std::option::Option<std::string::String>,
@@ -46781,8 +46886,13 @@ pub struct CreateDbSubnetGroupInput {
 }
 impl CreateDbSubnetGroupInput {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
-    /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p> </li>
+    /// <li> <p>Must not be default.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -47246,7 +47356,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <li> <p>Not specify a DB subnet group. All these read replicas are created outside of any VPC.</p> </li>
     /// </ul> </li>
     /// </ul>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p> A list of Amazon EC2 VPC security groups to associate with the read replica. </p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -47438,7 +47548,7 @@ impl CreateDbInstanceReadReplicaInput {
     /// <li> <p>Not specify a DB subnet group. All these read replicas are created outside of any VPC.</p> </li>
     /// </ul> </li>
     /// </ul>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -47847,7 +47957,8 @@ pub struct CreateDbInstanceInput {
     /// </note>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>A DB subnet group to associate with this DB instance.</p>
-    /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
+    /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a>. </p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
@@ -48307,7 +48418,8 @@ impl CreateDbInstanceInput {
         self.availability_zone.as_deref()
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
-    /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
+    /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -48977,7 +49089,7 @@ pub struct CreateDbClusterInput {
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the database engine to be used for this DB cluster.</p>
@@ -49269,7 +49381,7 @@ impl CreateDbClusterInput {
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()

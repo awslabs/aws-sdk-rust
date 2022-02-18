@@ -1722,6 +1722,136 @@ impl std::error::Error for DescribeDomainAutoTunesError {
     }
 }
 
+/// Error type for the `DescribeDomainChangeProgress` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeDomainChangeProgressError {
+    /// Kind of error that occurred.
+    pub kind: DescribeDomainChangeProgressErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeDomainChangeProgress` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeDomainChangeProgressErrorKind {
+    /// <p>An error occurred while processing the request.</p>
+    BaseException(crate::error::BaseException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeDomainChangeProgressError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeDomainChangeProgressErrorKind::BaseException(_inner) => _inner.fmt(f),
+            DescribeDomainChangeProgressErrorKind::InternalException(_inner) => _inner.fmt(f),
+            DescribeDomainChangeProgressErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeDomainChangeProgressErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeDomainChangeProgressErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeDomainChangeProgressError {
+    fn code(&self) -> Option<&str> {
+        DescribeDomainChangeProgressError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeDomainChangeProgressError {
+    /// Creates a new `DescribeDomainChangeProgressError`.
+    pub fn new(kind: DescribeDomainChangeProgressErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeDomainChangeProgressError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeDomainChangeProgressErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeDomainChangeProgressError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeDomainChangeProgressErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeDomainChangeProgressErrorKind::BaseException`.
+    pub fn is_base_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDomainChangeProgressErrorKind::BaseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDomainChangeProgressErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDomainChangeProgressErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDomainChangeProgressErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDomainChangeProgressErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDomainChangeProgressErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDomainChangeProgressErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeDomainChangeProgressError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeDomainChangeProgressErrorKind::BaseException(_inner) => Some(_inner),
+            DescribeDomainChangeProgressErrorKind::InternalException(_inner) => Some(_inner),
+            DescribeDomainChangeProgressErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeDomainChangeProgressErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeDomainChangeProgressErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeElasticsearchDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

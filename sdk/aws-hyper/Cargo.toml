@@ -1,6 +1,6 @@
 [package]
 name = "aws-hyper"
-version = "0.6.0"
+version = "0.7.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "This crate has been removed and is deprecated."
 edition = "2018"

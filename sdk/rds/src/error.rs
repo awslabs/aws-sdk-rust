@@ -4001,7 +4001,7 @@ pub struct CreateEventSubscriptionError {
 pub enum CreateEventSubscriptionErrorKind {
     /// <p>You have reached the maximum number of event subscriptions.</p>
     EventSubscriptionQuotaExceededFault(crate::error::EventSubscriptionQuotaExceededFault),
-    /// <p>SNS has responded that there is a problem with the SND topic specified.</p>
+    /// <p>SNS has responded that there is a problem with the SNS topic specified.</p>
     SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),
     /// <p>You do not have permission to publish to the SNS topic ARN.</p>
     SnsNoAuthorizationFault(crate::error::SnsNoAuthorizationFault),
@@ -13036,7 +13036,7 @@ pub struct ModifyEventSubscriptionError {
 pub enum ModifyEventSubscriptionErrorKind {
     /// <p>You have reached the maximum number of event subscriptions.</p>
     EventSubscriptionQuotaExceededFault(crate::error::EventSubscriptionQuotaExceededFault),
-    /// <p>SNS has responded that there is a problem with the SND topic specified.</p>
+    /// <p>SNS has responded that there is a problem with the SNS topic specified.</p>
     SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),
     /// <p>You do not have permission to publish to the SNS topic ARN.</p>
     SnsNoAuthorizationFault(crate::error::SnsNoAuthorizationFault),
@@ -22577,7 +22577,7 @@ impl SnsNoAuthorizationFault {
     }
 }
 
-/// <p>SNS has responded that there is a problem with the SND topic specified.</p>
+/// <p>SNS has responded that there is a problem with the SNS topic specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsInvalidTopicFault {

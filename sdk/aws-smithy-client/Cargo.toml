@@ -5,7 +5,7 @@ required-features = ["test-util", "rt-tokio"]
 
 [package]
 name = "aws-smithy-client"
-version = "0.36.0"
+version = "0.37.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "Client for smithy-rs."
 edition = "2018"
@@ -34,19 +34,19 @@ tracing = "0.1"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "0.36.0"
+version = "0.37.0"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.36.0"
+version = "0.37.0"
 
 [dependencies.aws-smithy-http-tower]
 path = "../aws-smithy-http-tower"
-version = "0.36.0"
+version = "0.37.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "0.36.0"
+version = "0.37.0"
 
 [dependencies.hyper]
 version = "0.14"
@@ -76,7 +76,7 @@ features = ["util", "retry"]
 [dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
 optional = true
-version = "0.36.0"
+version = "0.37.0"
 
 [dependencies.serde]
 version = "1"
@@ -95,7 +95,7 @@ features = ["full", "test-util"]
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
 features = ["rt-tokio"]
-version = "0.36.0"
+version = "0.37.0"
 
 [dev-dependencies.serde]
 version = "1"

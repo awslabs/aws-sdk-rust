@@ -6644,6 +6644,216 @@ impl GetEventPredictionInput {
     }
 }
 
+/// See [`GetEventPredictionMetadataInput`](crate::input::GetEventPredictionMetadataInput)
+pub mod get_event_prediction_metadata_input {
+    /// A builder for [`GetEventPredictionMetadataInput`](crate::input::GetEventPredictionMetadataInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_id: std::option::Option<std::string::String>,
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) detector_id: std::option::Option<std::string::String>,
+        pub(crate) detector_version_id: std::option::Option<std::string::String>,
+        pub(crate) prediction_timestamp: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The event ID. </p>
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_id = Some(input.into());
+            self
+        }
+        /// <p> The event ID. </p>
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_id = input;
+            self
+        }
+        /// <p> The event type associated with the detector specified for the prediction. </p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        /// <p> The event type associated with the detector specified for the prediction. </p>
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_id = Some(input.into());
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_id = input;
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_version_id = Some(input.into());
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn set_detector_version_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.detector_version_id = input;
+            self
+        }
+        /// <p> The timestamp that defines when the prediction was generated. </p>
+        pub fn prediction_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prediction_timestamp = Some(input.into());
+            self
+        }
+        /// <p> The timestamp that defines when the prediction was generated. </p>
+        pub fn set_prediction_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.prediction_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEventPredictionMetadataInput`](crate::input::GetEventPredictionMetadataInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetEventPredictionMetadataInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetEventPredictionMetadataInput {
+                event_id: self.event_id,
+                event_type_name: self.event_type_name,
+                detector_id: self.detector_id,
+                detector_version_id: self.detector_version_id,
+                prediction_timestamp: self.prediction_timestamp,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetEventPredictionMetadataInputOperationOutputAlias =
+    crate::operation::GetEventPredictionMetadata;
+#[doc(hidden)]
+pub type GetEventPredictionMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetEventPredictionMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`GetEventPredictionMetadata`](crate::operation::GetEventPredictionMetadata)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetEventPredictionMetadata,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetEventPredictionMetadataInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetEventPredictionMetadataInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetEventPredictionMetadataInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.GetEventPredictionMetadata",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_event_prediction_metadata(&self)?
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetEventPredictionMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetEventPredictionMetadata",
+            "frauddetector",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetEventPredictionMetadataInput`](crate::input::GetEventPredictionMetadataInput)
+    pub fn builder() -> crate::input::get_event_prediction_metadata_input::Builder {
+        crate::input::get_event_prediction_metadata_input::Builder::default()
+    }
+}
+
 /// See [`GetEventTypesInput`](crate::input::GetEventTypesInput)
 pub mod get_event_types_input {
     /// A builder for [`GetEventTypesInput`](crate::input::GetEventTypesInput)
@@ -8226,6 +8436,248 @@ impl GetVariablesInput {
     /// Creates a new builder-style object to manufacture [`GetVariablesInput`](crate::input::GetVariablesInput)
     pub fn builder() -> crate::input::get_variables_input::Builder {
         crate::input::get_variables_input::Builder::default()
+    }
+}
+
+/// See [`ListEventPredictionsInput`](crate::input::ListEventPredictionsInput)
+pub mod list_event_predictions_input {
+    /// A builder for [`ListEventPredictionsInput`](crate::input::ListEventPredictionsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_id: std::option::Option<crate::model::FilterCondition>,
+        pub(crate) event_type: std::option::Option<crate::model::FilterCondition>,
+        pub(crate) detector_id: std::option::Option<crate::model::FilterCondition>,
+        pub(crate) detector_version_id: std::option::Option<crate::model::FilterCondition>,
+        pub(crate) prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> The event ID. </p>
+        pub fn event_id(mut self, input: crate::model::FilterCondition) -> Self {
+            self.event_id = Some(input);
+            self
+        }
+        /// <p> The event ID. </p>
+        pub fn set_event_id(
+            mut self,
+            input: std::option::Option<crate::model::FilterCondition>,
+        ) -> Self {
+            self.event_id = input;
+            self
+        }
+        /// <p> The event type associated with the detector. </p>
+        pub fn event_type(mut self, input: crate::model::FilterCondition) -> Self {
+            self.event_type = Some(input);
+            self
+        }
+        /// <p> The event type associated with the detector. </p>
+        pub fn set_event_type(
+            mut self,
+            input: std::option::Option<crate::model::FilterCondition>,
+        ) -> Self {
+            self.event_type = input;
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn detector_id(mut self, input: crate::model::FilterCondition) -> Self {
+            self.detector_id = Some(input);
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn set_detector_id(
+            mut self,
+            input: std::option::Option<crate::model::FilterCondition>,
+        ) -> Self {
+            self.detector_id = input;
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn detector_version_id(mut self, input: crate::model::FilterCondition) -> Self {
+            self.detector_version_id = Some(input);
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn set_detector_version_id(
+            mut self,
+            input: std::option::Option<crate::model::FilterCondition>,
+        ) -> Self {
+            self.detector_version_id = input;
+            self
+        }
+        /// <p> The time period for when the predictions were generated. </p>
+        pub fn prediction_time_range(mut self, input: crate::model::PredictionTimeRange) -> Self {
+            self.prediction_time_range = Some(input);
+            self
+        }
+        /// <p> The time period for when the predictions were generated. </p>
+        pub fn set_prediction_time_range(
+            mut self,
+            input: std::option::Option<crate::model::PredictionTimeRange>,
+        ) -> Self {
+            self.prediction_time_range = input;
+            self
+        }
+        /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p> The maximum number of predictions to return for the request. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p> The maximum number of predictions to return for the request. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEventPredictionsInput`](crate::input::ListEventPredictionsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListEventPredictionsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListEventPredictionsInput {
+                event_id: self.event_id,
+                event_type: self.event_type,
+                detector_id: self.detector_id,
+                detector_version_id: self.detector_version_id,
+                prediction_time_range: self.prediction_time_range,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListEventPredictionsInputOperationOutputAlias = crate::operation::ListEventPredictions;
+#[doc(hidden)]
+pub type ListEventPredictionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListEventPredictionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListEventPredictions`](crate::operation::ListEventPredictions)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListEventPredictions,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListEventPredictionsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListEventPredictionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListEventPredictionsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.ListEventPredictions",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_event_predictions(
+                &self,
+            )?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEventPredictions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEventPredictions",
+            "frauddetector",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListEventPredictionsInput`](crate::input::ListEventPredictionsInput)
+    pub fn builder() -> crate::input::list_event_predictions_input::Builder {
+        crate::input::list_event_predictions_input::Builder::default()
     }
 }
 
@@ -13392,6 +13844,69 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEventPredictionsInput {
+    /// <p> The event ID. </p>
+    pub event_id: std::option::Option<crate::model::FilterCondition>,
+    /// <p> The event type associated with the detector. </p>
+    pub event_type: std::option::Option<crate::model::FilterCondition>,
+    /// <p> The detector ID. </p>
+    pub detector_id: std::option::Option<crate::model::FilterCondition>,
+    /// <p> The detector version ID. </p>
+    pub detector_version_id: std::option::Option<crate::model::FilterCondition>,
+    /// <p> The time period for when the predictions were generated. </p>
+    pub prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
+    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p> The maximum number of predictions to return for the request. </p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListEventPredictionsInput {
+    /// <p> The event ID. </p>
+    pub fn event_id(&self) -> std::option::Option<&crate::model::FilterCondition> {
+        self.event_id.as_ref()
+    }
+    /// <p> The event type associated with the detector. </p>
+    pub fn event_type(&self) -> std::option::Option<&crate::model::FilterCondition> {
+        self.event_type.as_ref()
+    }
+    /// <p> The detector ID. </p>
+    pub fn detector_id(&self) -> std::option::Option<&crate::model::FilterCondition> {
+        self.detector_id.as_ref()
+    }
+    /// <p> The detector version ID. </p>
+    pub fn detector_version_id(&self) -> std::option::Option<&crate::model::FilterCondition> {
+        self.detector_version_id.as_ref()
+    }
+    /// <p> The time period for when the predictions were generated. </p>
+    pub fn prediction_time_range(&self) -> std::option::Option<&crate::model::PredictionTimeRange> {
+        self.prediction_time_range.as_ref()
+    }
+    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of predictions to return for the request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListEventPredictionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEventPredictionsInput");
+        formatter.field("event_id", &self.event_id);
+        formatter.field("event_type", &self.event_type);
+        formatter.field("detector_id", &self.detector_id);
+        formatter.field("detector_version_id", &self.detector_version_id);
+        formatter.field("prediction_time_range", &self.prediction_time_range);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVariablesInput {
     /// <p>The name of the variable. </p>
     pub name: std::option::Option<std::string::String>,
@@ -13697,6 +14212,55 @@ impl std::fmt::Debug for GetEventTypesInput {
         formatter.field("name", &self.name);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEventPredictionMetadataInput {
+    /// <p> The event ID. </p>
+    pub event_id: std::option::Option<std::string::String>,
+    /// <p> The event type associated with the detector specified for the prediction. </p>
+    pub event_type_name: std::option::Option<std::string::String>,
+    /// <p> The detector ID. </p>
+    pub detector_id: std::option::Option<std::string::String>,
+    /// <p> The detector version ID. </p>
+    pub detector_version_id: std::option::Option<std::string::String>,
+    /// <p> The timestamp that defines when the prediction was generated. </p>
+    pub prediction_timestamp: std::option::Option<std::string::String>,
+}
+impl GetEventPredictionMetadataInput {
+    /// <p> The event ID. </p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p> The event type associated with the detector specified for the prediction. </p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p> The detector ID. </p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p> The detector version ID. </p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+    /// <p> The timestamp that defines when the prediction was generated. </p>
+    pub fn prediction_timestamp(&self) -> std::option::Option<&str> {
+        self.prediction_timestamp.as_deref()
+    }
+}
+impl std::fmt::Debug for GetEventPredictionMetadataInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEventPredictionMetadataInput");
+        formatter.field("event_id", &self.event_id);
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("detector_id", &self.detector_id);
+        formatter.field("detector_version_id", &self.detector_version_id);
+        formatter.field("prediction_timestamp", &self.prediction_timestamp);
         formatter.finish()
     }
 }

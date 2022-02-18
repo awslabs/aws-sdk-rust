@@ -12284,6 +12284,38 @@ pub fn parse_import_volume_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_images_in_recycle_bin_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListImagesInRecycleBinOutput,
+    crate::error::ListImagesInRecycleBinError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListImagesInRecycleBinError::unhandled)?;
+    Err(crate::error::ListImagesInRecycleBinError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_images_in_recycle_bin_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListImagesInRecycleBinOutput,
+    crate::error::ListImagesInRecycleBinError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_images_in_recycle_bin_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_list_images_in_recycle_bin(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListImagesInRecycleBinError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_snapshots_in_recycle_bin_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -15115,6 +15147,40 @@ pub fn parse_restore_address_to_classic_response(
             output,
         )
         .map_err(crate::error::RestoreAddressToClassicError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_image_from_recycle_bin_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreImageFromRecycleBinOutput,
+    crate::error::RestoreImageFromRecycleBinError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RestoreImageFromRecycleBinError::unhandled)?;
+    Err(crate::error::RestoreImageFromRecycleBinError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_image_from_recycle_bin_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreImageFromRecycleBinOutput,
+    crate::error::RestoreImageFromRecycleBinError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::restore_image_from_recycle_bin_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_restore_image_from_recycle_bin(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RestoreImageFromRecycleBinError::unhandled)?;
         output.build()
     })
 }

@@ -233,6 +233,95 @@ impl StartExperimentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTargetResourceTypesOutput {
+    /// <p>The target resource types.</p>
+    pub target_resource_types:
+        std::option::Option<std::vec::Vec<crate::model::TargetResourceTypeSummary>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTargetResourceTypesOutput {
+    /// <p>The target resource types.</p>
+    pub fn target_resource_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::TargetResourceTypeSummary]> {
+        self.target_resource_types.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTargetResourceTypesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTargetResourceTypesOutput");
+        formatter.field("target_resource_types", &self.target_resource_types);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListTargetResourceTypesOutput`](crate::output::ListTargetResourceTypesOutput)
+pub mod list_target_resource_types_output {
+    /// A builder for [`ListTargetResourceTypesOutput`](crate::output::ListTargetResourceTypesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_resource_types:
+            std::option::Option<std::vec::Vec<crate::model::TargetResourceTypeSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `target_resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_target_resource_types`](Self::set_target_resource_types).
+        ///
+        /// <p>The target resource types.</p>
+        pub fn target_resource_types(
+            mut self,
+            input: crate::model::TargetResourceTypeSummary,
+        ) -> Self {
+            let mut v = self.target_resource_types.unwrap_or_default();
+            v.push(input);
+            self.target_resource_types = Some(v);
+            self
+        }
+        /// <p>The target resource types.</p>
+        pub fn set_target_resource_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetResourceTypeSummary>>,
+        ) -> Self {
+            self.target_resource_types = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTargetResourceTypesOutput`](crate::output::ListTargetResourceTypesOutput)
+        pub fn build(self) -> crate::output::ListTargetResourceTypesOutput {
+            crate::output::ListTargetResourceTypesOutput {
+                target_resource_types: self.target_resource_types,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListTargetResourceTypesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTargetResourceTypesOutput`](crate::output::ListTargetResourceTypesOutput)
+    pub fn builder() -> crate::output::list_target_resource_types_output::Builder {
+        crate::output::list_target_resource_types_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
     pub tags:
@@ -553,6 +642,63 @@ impl ListActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListActionsOutput`](crate::output::ListActionsOutput)
     pub fn builder() -> crate::output::list_actions_output::Builder {
         crate::output::list_actions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTargetResourceTypeOutput {
+    /// <p>Information about the resource type.</p>
+    pub target_resource_type: std::option::Option<crate::model::TargetResourceType>,
+}
+impl GetTargetResourceTypeOutput {
+    /// <p>Information about the resource type.</p>
+    pub fn target_resource_type(&self) -> std::option::Option<&crate::model::TargetResourceType> {
+        self.target_resource_type.as_ref()
+    }
+}
+impl std::fmt::Debug for GetTargetResourceTypeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTargetResourceTypeOutput");
+        formatter.field("target_resource_type", &self.target_resource_type);
+        formatter.finish()
+    }
+}
+/// See [`GetTargetResourceTypeOutput`](crate::output::GetTargetResourceTypeOutput)
+pub mod get_target_resource_type_output {
+    /// A builder for [`GetTargetResourceTypeOutput`](crate::output::GetTargetResourceTypeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_resource_type: std::option::Option<crate::model::TargetResourceType>,
+    }
+    impl Builder {
+        /// <p>Information about the resource type.</p>
+        pub fn target_resource_type(mut self, input: crate::model::TargetResourceType) -> Self {
+            self.target_resource_type = Some(input);
+            self
+        }
+        /// <p>Information about the resource type.</p>
+        pub fn set_target_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::TargetResourceType>,
+        ) -> Self {
+            self.target_resource_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTargetResourceTypeOutput`](crate::output::GetTargetResourceTypeOutput)
+        pub fn build(self) -> crate::output::GetTargetResourceTypeOutput {
+            crate::output::GetTargetResourceTypeOutput {
+                target_resource_type: self.target_resource_type,
+            }
+        }
+    }
+}
+impl GetTargetResourceTypeOutput {
+    /// Creates a new builder-style object to manufacture [`GetTargetResourceTypeOutput`](crate::output::GetTargetResourceTypeOutput)
+    pub fn builder() -> crate::output::get_target_resource_type_output::Builder {
+        crate::output::get_target_resource_type_output::Builder::default()
     }
 }
 

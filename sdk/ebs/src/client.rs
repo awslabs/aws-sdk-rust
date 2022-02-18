@@ -126,9 +126,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`first_snapshot_id(impl Into<String>)`](crate::client::fluent_builders::ListChangedBlocks::first_snapshot_id) / [`set_first_snapshot_id(Option<String>)`](crate::client::fluent_builders::ListChangedBlocks::set_first_snapshot_id): <p>The ID of the first snapshot to use for the comparison.</p> <important>   <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>  </important>
     ///   - [`second_snapshot_id(impl Into<String>)`](crate::client::fluent_builders::ListChangedBlocks::second_snapshot_id) / [`set_second_snapshot_id(Option<String>)`](crate::client::fluent_builders::ListChangedBlocks::set_second_snapshot_id): <p>The ID of the second snapshot to use for the comparison.</p> <important>   <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>  </important>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChangedBlocks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChangedBlocks::set_next_token): <p>The token to request the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChangedBlocks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChangedBlocks::set_max_results): <p>The number of results to return.</p>
-    ///   - [`starting_block_index(i32)`](crate::client::fluent_builders::ListChangedBlocks::starting_block_index) / [`set_starting_block_index(Option<i32>)`](crate::client::fluent_builders::ListChangedBlocks::set_starting_block_index): <p>The block index from which the comparison should start.</p>  <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChangedBlocks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChangedBlocks::set_next_token): <p>The token to request the next page of results.</p>  <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChangedBlocks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChangedBlocks::set_max_results): <p>The maximum number of blocks to be returned by the request.</p>  <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>  <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
+    ///   - [`starting_block_index(i32)`](crate::client::fluent_builders::ListChangedBlocks::starting_block_index) / [`set_starting_block_index(Option<i32>)`](crate::client::fluent_builders::ListChangedBlocks::set_starting_block_index): <p>The block index from which the comparison should start.</p>  <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>  <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     /// - On success, responds with [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput) with field(s):
     ///   - [`changed_blocks(Option<Vec<ChangedBlock>>)`](crate::output::ListChangedBlocksOutput::changed_blocks): <p>An array of objects containing information about the changed blocks.</p>
     ///   - [`expiry_time(Option<DateTime>)`](crate::output::ListChangedBlocksOutput::expiry_time): <p>The time when the <code>BlockToken</code> expires.</p>
@@ -144,9 +144,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::ListSnapshotBlocks::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::ListSnapshotBlocks::set_snapshot_id): <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSnapshotBlocks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSnapshotBlocks::set_next_token): <p>The token to request the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSnapshotBlocks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSnapshotBlocks::set_max_results): <p>The number of results to return.</p>
-    ///   - [`starting_block_index(i32)`](crate::client::fluent_builders::ListSnapshotBlocks::starting_block_index) / [`set_starting_block_index(Option<i32>)`](crate::client::fluent_builders::ListSnapshotBlocks::set_starting_block_index): <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSnapshotBlocks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSnapshotBlocks::set_next_token): <p>The token to request the next page of results.</p>  <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSnapshotBlocks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSnapshotBlocks::set_max_results): <p>The maximum number of blocks to be returned by the request.</p>  <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>  <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
+    ///   - [`starting_block_index(i32)`](crate::client::fluent_builders::ListSnapshotBlocks::starting_block_index) / [`set_starting_block_index(Option<i32>)`](crate::client::fluent_builders::ListSnapshotBlocks::set_starting_block_index): <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>  <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     /// - On success, responds with [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput) with field(s):
     ///   - [`blocks(Option<Vec<Block>>)`](crate::output::ListSnapshotBlocksOutput::blocks): <p>An array of objects containing information about the blocks.</p>
     ///   - [`expiry_time(Option<DateTime>)`](crate::output::ListSnapshotBlocksOutput::expiry_time): <p>The time when the <code>BlockToken</code> expires.</p>
@@ -473,33 +473,41 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to return.</p>
+        /// <p>The maximum number of blocks to be returned by the request.</p>
+        /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+        /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The number of results to return.</p>
+        /// <p>The maximum number of blocks to be returned by the request.</p>
+        /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+        /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The block index from which the comparison should start.</p>
         /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn starting_block_index(mut self, input: i32) -> Self {
             self.inner = self.inner.starting_block_index(input);
             self
         }
         /// <p>The block index from which the comparison should start.</p>
         /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn set_starting_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_starting_block_index(input);
             self
@@ -564,31 +572,39 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to return.</p>
+        /// <p>The maximum number of blocks to be returned by the request.</p>
+        /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+        /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The number of results to return.</p>
+        /// <p>The maximum number of blocks to be returned by the request.</p>
+        /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+        /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn starting_block_index(mut self, input: i32) -> Self {
             self.inner = self.inner.starting_block_index(input);
             self
         }
         /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn set_starting_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_starting_block_index(input);
             self

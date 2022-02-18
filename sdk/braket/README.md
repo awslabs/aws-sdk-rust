@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.6.0"
-aws-sdk-braket = "0.6.0"
+aws-config = "0.7.0"
+aws-sdk-braket = "0.7.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

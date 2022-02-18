@@ -204,6 +204,9 @@ where
                 crate::error::DeleteExperimentErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
+                crate::error::DeleteExperimentErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::DeleteExperimentErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -337,6 +340,9 @@ where
                 crate::error::GetExperimentErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
+                crate::error::GetExperimentErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::GetExperimentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -417,6 +423,9 @@ where
                 crate::error::GetLaunchErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
+                crate::error::GetLaunchErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::GetLaunchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -455,6 +464,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListExperimentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListExperimentsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::ListExperimentsErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
@@ -631,6 +643,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StartLaunchErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
+                }
+                crate::error::StartLaunchErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::StartLaunchErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)

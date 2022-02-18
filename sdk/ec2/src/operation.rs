@@ -13701,6 +13701,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportVolume {
     }
 }
 
+/// Operation shape for `ListImagesInRecycleBin`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_images_in_recycle_bin`](crate::client::Client::list_images_in_recycle_bin).
+///
+/// See [`crate::client::fluent_builders::ListImagesInRecycleBin`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListImagesInRecycleBin {
+    _private: (),
+}
+impl ListImagesInRecycleBin {
+    /// Creates a new builder-style object to manufacture [`ListImagesInRecycleBinInput`](crate::input::ListImagesInRecycleBinInput)
+    pub fn builder() -> crate::input::list_images_in_recycle_bin_input::Builder {
+        crate::input::list_images_in_recycle_bin_input::Builder::default()
+    }
+    /// Creates a new `ListImagesInRecycleBin` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListImagesInRecycleBin {
+    type Output = std::result::Result<
+        crate::output::ListImagesInRecycleBinOutput,
+        crate::error::ListImagesInRecycleBinError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_images_in_recycle_bin_error(response)
+        } else {
+            crate::operation_deser::parse_list_images_in_recycle_bin_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListSnapshotsInRecycleBin`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -16931,6 +16965,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreAddressToClassic 
             crate::operation_deser::parse_restore_address_to_classic_error(response)
         } else {
             crate::operation_deser::parse_restore_address_to_classic_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RestoreImageFromRecycleBin`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`restore_image_from_recycle_bin`](crate::client::Client::restore_image_from_recycle_bin).
+///
+/// See [`crate::client::fluent_builders::RestoreImageFromRecycleBin`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RestoreImageFromRecycleBin {
+    _private: (),
+}
+impl RestoreImageFromRecycleBin {
+    /// Creates a new builder-style object to manufacture [`RestoreImageFromRecycleBinInput`](crate::input::RestoreImageFromRecycleBinInput)
+    pub fn builder() -> crate::input::restore_image_from_recycle_bin_input::Builder {
+        crate::input::restore_image_from_recycle_bin_input::Builder::default()
+    }
+    /// Creates a new `RestoreImageFromRecycleBin` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RestoreImageFromRecycleBin {
+    type Output = std::result::Result<
+        crate::output::RestoreImageFromRecycleBinOutput,
+        crate::error::RestoreImageFromRecycleBinError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_restore_image_from_recycle_bin_error(response)
+        } else {
+            crate::operation_deser::parse_restore_image_from_recycle_bin_response(response)
         }
     }
 }

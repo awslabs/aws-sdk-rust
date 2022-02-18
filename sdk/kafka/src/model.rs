@@ -1699,6 +1699,8 @@ impl ConfigurationInfo {
 pub struct BrokerEbsVolumeInfo {
     /// <p>The ID of the broker to update.</p>
     pub kafka_broker_node_id: std::option::Option<std::string::String>,
+    /// EBS volume provisioned throughput information.
+    pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>Size of the EBS volume to update.</p>
     pub volume_size_gb: i32,
 }
@@ -1706,6 +1708,12 @@ impl BrokerEbsVolumeInfo {
     /// <p>The ID of the broker to update.</p>
     pub fn kafka_broker_node_id(&self) -> std::option::Option<&str> {
         self.kafka_broker_node_id.as_deref()
+    }
+    /// EBS volume provisioned throughput information.
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
+        self.provisioned_throughput.as_ref()
     }
     /// <p>Size of the EBS volume to update.</p>
     pub fn volume_size_gb(&self) -> i32 {
@@ -1716,6 +1724,7 @@ impl std::fmt::Debug for BrokerEbsVolumeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BrokerEbsVolumeInfo");
         formatter.field("kafka_broker_node_id", &self.kafka_broker_node_id);
+        formatter.field("provisioned_throughput", &self.provisioned_throughput);
         formatter.field("volume_size_gb", &self.volume_size_gb);
         formatter.finish()
     }
@@ -1727,6 +1736,7 @@ pub mod broker_ebs_volume_info {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kafka_broker_node_id: std::option::Option<std::string::String>,
+        pub(crate) provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
         pub(crate) volume_size_gb: std::option::Option<i32>,
     }
     impl Builder {
@@ -1743,6 +1753,22 @@ pub mod broker_ebs_volume_info {
             self.kafka_broker_node_id = input;
             self
         }
+        /// EBS volume provisioned throughput information.
+        pub fn provisioned_throughput(
+            mut self,
+            input: crate::model::ProvisionedThroughput,
+        ) -> Self {
+            self.provisioned_throughput = Some(input);
+            self
+        }
+        /// EBS volume provisioned throughput information.
+        pub fn set_provisioned_throughput(
+            mut self,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
+        ) -> Self {
+            self.provisioned_throughput = input;
+            self
+        }
         /// <p>Size of the EBS volume to update.</p>
         pub fn volume_size_gb(mut self, input: i32) -> Self {
             self.volume_size_gb = Some(input);
@@ -1757,6 +1783,7 @@ pub mod broker_ebs_volume_info {
         pub fn build(self) -> crate::model::BrokerEbsVolumeInfo {
             crate::model::BrokerEbsVolumeInfo {
                 kafka_broker_node_id: self.kafka_broker_node_id,
+                provisioned_throughput: self.provisioned_throughput,
                 volume_size_gb: self.volume_size_gb.unwrap_or_default(),
             }
         }
@@ -1766,6 +1793,79 @@ impl BrokerEbsVolumeInfo {
     /// Creates a new builder-style object to manufacture [`BrokerEbsVolumeInfo`](crate::model::BrokerEbsVolumeInfo)
     pub fn builder() -> crate::model::broker_ebs_volume_info::Builder {
         crate::model::broker_ebs_volume_info::Builder::default()
+    }
+}
+
+/// Contains information about provisioned throughput for EBS storage volumes attached to kafka broker nodes.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProvisionedThroughput {
+    /// Provisioned throughput is enabled or not.
+    pub enabled: bool,
+    /// Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+    pub volume_throughput: i32,
+}
+impl ProvisionedThroughput {
+    /// Provisioned throughput is enabled or not.
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+    pub fn volume_throughput(&self) -> i32 {
+        self.volume_throughput
+    }
+}
+impl std::fmt::Debug for ProvisionedThroughput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProvisionedThroughput");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("volume_throughput", &self.volume_throughput);
+        formatter.finish()
+    }
+}
+/// See [`ProvisionedThroughput`](crate::model::ProvisionedThroughput)
+pub mod provisioned_throughput {
+    /// A builder for [`ProvisionedThroughput`](crate::model::ProvisionedThroughput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) volume_throughput: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Provisioned throughput is enabled or not.
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// Provisioned throughput is enabled or not.
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+        pub fn volume_throughput(mut self, input: i32) -> Self {
+            self.volume_throughput = Some(input);
+            self
+        }
+        /// Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
+        pub fn set_volume_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_throughput = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProvisionedThroughput`](crate::model::ProvisionedThroughput)
+        pub fn build(self) -> crate::model::ProvisionedThroughput {
+            crate::model::ProvisionedThroughput {
+                enabled: self.enabled.unwrap_or_default(),
+                volume_throughput: self.volume_throughput.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ProvisionedThroughput {
+    /// Creates a new builder-style object to manufacture [`ProvisionedThroughput`](crate::model::ProvisionedThroughput)
+    pub fn builder() -> crate::model::provisioned_throughput::Builder {
+        crate::model::provisioned_throughput::Builder::default()
     }
 }
 
@@ -3874,10 +3974,18 @@ impl StorageInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsStorageInfo {
+    /// EBS volume provisioned throughput information.
+    pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
     pub volume_size: i32,
 }
 impl EbsStorageInfo {
+    /// EBS volume provisioned throughput information.
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
+        self.provisioned_throughput.as_ref()
+    }
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
     pub fn volume_size(&self) -> i32 {
         self.volume_size
@@ -3886,6 +3994,7 @@ impl EbsStorageInfo {
 impl std::fmt::Debug for EbsStorageInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EbsStorageInfo");
+        formatter.field("provisioned_throughput", &self.provisioned_throughput);
         formatter.field("volume_size", &self.volume_size);
         formatter.finish()
     }
@@ -3896,9 +4005,26 @@ pub mod ebs_storage_info {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
         pub(crate) volume_size: std::option::Option<i32>,
     }
     impl Builder {
+        /// EBS volume provisioned throughput information.
+        pub fn provisioned_throughput(
+            mut self,
+            input: crate::model::ProvisionedThroughput,
+        ) -> Self {
+            self.provisioned_throughput = Some(input);
+            self
+        }
+        /// EBS volume provisioned throughput information.
+        pub fn set_provisioned_throughput(
+            mut self,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
+        ) -> Self {
+            self.provisioned_throughput = input;
+            self
+        }
         /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
         pub fn volume_size(mut self, input: i32) -> Self {
             self.volume_size = Some(input);
@@ -3912,6 +4038,7 @@ pub mod ebs_storage_info {
         /// Consumes the builder and constructs a [`EbsStorageInfo`](crate::model::EbsStorageInfo)
         pub fn build(self) -> crate::model::EbsStorageInfo {
             crate::model::EbsStorageInfo {
+                provisioned_throughput: self.provisioned_throughput,
                 volume_size: self.volume_size.unwrap_or_default(),
             }
         }

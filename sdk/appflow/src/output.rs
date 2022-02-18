@@ -146,6 +146,36 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnregisterConnectorOutput {}
+impl std::fmt::Debug for UnregisterConnectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UnregisterConnectorOutput");
+        formatter.finish()
+    }
+}
+/// See [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
+pub mod unregister_connector_output {
+    /// A builder for [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
+        pub fn build(self) -> crate::output::UnregisterConnectorOutput {
+            crate::output::UnregisterConnectorOutput {}
+        }
+    }
+}
+impl UnregisterConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
+    pub fn builder() -> crate::output::unregister_connector_output::Builder {
+        crate::output::unregister_connector_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
 impl std::fmt::Debug for TagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -347,6 +377,63 @@ impl StartFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisterConnectorOutput {
+    /// <p>The ARN of the connector being registered.</p>
+    pub connector_arn: std::option::Option<std::string::String>,
+}
+impl RegisterConnectorOutput {
+    /// <p>The ARN of the connector being registered.</p>
+    pub fn connector_arn(&self) -> std::option::Option<&str> {
+        self.connector_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for RegisterConnectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisterConnectorOutput");
+        formatter.field("connector_arn", &self.connector_arn);
+        formatter.finish()
+    }
+}
+/// See [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput)
+pub mod register_connector_output {
+    /// A builder for [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connector_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the connector being registered.</p>
+        pub fn connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the connector being registered.</p>
+        pub fn set_connector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput)
+        pub fn build(self) -> crate::output::RegisterConnectorOutput {
+            crate::output::RegisterConnectorOutput {
+                connector_arn: self.connector_arn,
+            }
+        }
+    }
+}
+impl RegisterConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput)
+    pub fn builder() -> crate::output::register_connector_output::Builder {
+        crate::output::register_connector_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub tags:
@@ -496,6 +583,88 @@ impl ListFlowsOutput {
     /// Creates a new builder-style object to manufacture [`ListFlowsOutput`](crate::output::ListFlowsOutput)
     pub fn builder() -> crate::output::list_flows_output::Builder {
         crate::output::list_flows_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListConnectorsOutput {
+    /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
+    pub connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
+    /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConnectorsOutput {
+    /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
+    pub fn connectors(&self) -> std::option::Option<&[crate::model::ConnectorDetail]> {
+        self.connectors.as_deref()
+    }
+    /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListConnectorsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListConnectorsOutput");
+        formatter.field("connectors", &self.connectors);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
+pub mod list_connectors_output {
+    /// A builder for [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `connectors`.
+        ///
+        /// To override the contents of this collection use [`set_connectors`](Self::set_connectors).
+        ///
+        /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
+        pub fn connectors(mut self, input: crate::model::ConnectorDetail) -> Self {
+            let mut v = self.connectors.unwrap_or_default();
+            v.push(input);
+            self.connectors = Some(v);
+            self
+        }
+        /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
+        pub fn set_connectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
+        ) -> Self {
+            self.connectors = input;
+            self
+        }
+        /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
+        pub fn build(self) -> crate::output::ListConnectorsOutput {
+            crate::output::ListConnectorsOutput {
+                connectors: self.connectors,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListConnectorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
+    pub fn builder() -> crate::output::list_connectors_output::Builder {
+        crate::output::list_connectors_output::Builder::default()
     }
 }
 
@@ -1099,6 +1268,8 @@ pub struct DescribeConnectorsOutput {
             crate::model::ConnectorConfiguration,
         >,
     >,
+    /// <p>Information about the connectors supported in Amazon AppFlow.</p>
+    pub connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
     /// <p> The pagination token for the next page of data. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -1114,6 +1285,10 @@ impl DescribeConnectorsOutput {
     > {
         self.connector_configurations.as_ref()
     }
+    /// <p>Information about the connectors supported in Amazon AppFlow.</p>
+    pub fn connectors(&self) -> std::option::Option<&[crate::model::ConnectorDetail]> {
+        self.connectors.as_deref()
+    }
     /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -1123,6 +1298,7 @@ impl std::fmt::Debug for DescribeConnectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectorsOutput");
         formatter.field("connector_configurations", &self.connector_configurations);
+        formatter.field("connectors", &self.connectors);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
@@ -1139,6 +1315,7 @@ pub mod describe_connectors_output {
                 crate::model::ConnectorConfiguration,
             >,
         >,
+        pub(crate) connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1170,6 +1347,25 @@ pub mod describe_connectors_output {
             self.connector_configurations = input;
             self
         }
+        /// Appends an item to `connectors`.
+        ///
+        /// To override the contents of this collection use [`set_connectors`](Self::set_connectors).
+        ///
+        /// <p>Information about the connectors supported in Amazon AppFlow.</p>
+        pub fn connectors(mut self, input: crate::model::ConnectorDetail) -> Self {
+            let mut v = self.connectors.unwrap_or_default();
+            v.push(input);
+            self.connectors = Some(v);
+            self
+        }
+        /// <p>Information about the connectors supported in Amazon AppFlow.</p>
+        pub fn set_connectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
+        ) -> Self {
+            self.connectors = input;
+            self
+        }
         /// <p> The pagination token for the next page of data. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
@@ -1184,6 +1380,7 @@ pub mod describe_connectors_output {
         pub fn build(self) -> crate::output::DescribeConnectorsOutput {
             crate::output::DescribeConnectorsOutput {
                 connector_configurations: self.connector_configurations,
+                connectors: self.connectors,
                 next_token: self.next_token,
             }
         }
@@ -1349,6 +1546,69 @@ impl DescribeConnectorEntityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput)
     pub fn builder() -> crate::output::describe_connector_entity_output::Builder {
         crate::output::describe_connector_entity_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeConnectorOutput {
+    /// <p>Configuration info of all the connectors that the user requested.</p>
+    pub connector_configuration: std::option::Option<crate::model::ConnectorConfiguration>,
+}
+impl DescribeConnectorOutput {
+    /// <p>Configuration info of all the connectors that the user requested.</p>
+    pub fn connector_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorConfiguration> {
+        self.connector_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeConnectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeConnectorOutput");
+        formatter.field("connector_configuration", &self.connector_configuration);
+        formatter.finish()
+    }
+}
+/// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
+pub mod describe_connector_output {
+    /// A builder for [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connector_configuration:
+            std::option::Option<crate::model::ConnectorConfiguration>,
+    }
+    impl Builder {
+        /// <p>Configuration info of all the connectors that the user requested.</p>
+        pub fn connector_configuration(
+            mut self,
+            input: crate::model::ConnectorConfiguration,
+        ) -> Self {
+            self.connector_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration info of all the connectors that the user requested.</p>
+        pub fn set_connector_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorConfiguration>,
+        ) -> Self {
+            self.connector_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
+        pub fn build(self) -> crate::output::DescribeConnectorOutput {
+            crate::output::DescribeConnectorOutput {
+                connector_configuration: self.connector_configuration,
+            }
+        }
+    }
+}
+impl DescribeConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
+    pub fn builder() -> crate::output::describe_connector_output::Builder {
+        crate::output::describe_connector_output::Builder::default()
     }
 }
 

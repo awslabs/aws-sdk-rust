@@ -9,19 +9,19 @@ publish = false
 features = ["native-tls", "rt-tokio"]
 default-features = false
 path = "../../sdk/aws-config"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-s3]
 features = ["native-tls"]
 default-features = false
 path = "../../sdk/s3"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-sts]
 features = ["native-tls"]
 default-features = false
 path = "../../sdk/sts"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.tokio]
 version = "1"

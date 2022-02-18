@@ -63,7 +63,7 @@ impl UpdateNotificationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBudgetActionOutput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -73,7 +73,7 @@ pub struct UpdateBudgetActionOutput {
     pub new_action: std::option::Option<crate::model::Action>,
 }
 impl UpdateBudgetActionOutput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -112,12 +112,12 @@ pub mod update_budget_action_output {
         pub(crate) new_action: std::option::Option<crate::model::Action>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -204,7 +204,7 @@ impl UpdateBudgetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteBudgetActionOutput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -214,7 +214,7 @@ pub struct ExecuteBudgetActionOutput {
     pub execution_type: std::option::Option<crate::model::ExecutionType>,
 }
 impl ExecuteBudgetActionOutput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -253,12 +253,12 @@ pub mod execute_budget_action_output {
         pub(crate) execution_type: std::option::Option<crate::model::ExecutionType>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -900,7 +900,7 @@ impl DescribeBudgetActionHistoriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionOutput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -908,7 +908,7 @@ pub struct DescribeBudgetActionOutput {
     pub action: std::option::Option<crate::model::Action>,
 }
 impl DescribeBudgetActionOutput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -941,12 +941,12 @@ pub mod describe_budget_action_output {
         pub(crate) action: std::option::Option<crate::model::Action>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1106,15 +1106,15 @@ impl DeleteNotificationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBudgetActionOutput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p> A budget action resource. </p>
+    /// <p>A budget action resource. </p>
     pub action: std::option::Option<crate::model::Action>,
 }
 impl DeleteBudgetActionOutput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -1122,7 +1122,7 @@ impl DeleteBudgetActionOutput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p> A budget action resource. </p>
+    /// <p>A budget action resource. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::Action> {
         self.action.as_ref()
     }
@@ -1147,12 +1147,12 @@ pub mod delete_budget_action_output {
         pub(crate) action: std::option::Option<crate::model::Action>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1167,12 +1167,12 @@ pub mod delete_budget_action_output {
             self.budget_name = input;
             self
         }
-        /// <p> A budget action resource. </p>
+        /// <p>A budget action resource. </p>
         pub fn action(mut self, input: crate::model::Action) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p> A budget action resource. </p>
+        /// <p>A budget action resource. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -1288,7 +1288,7 @@ impl CreateNotificationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBudgetActionOutput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -1296,7 +1296,7 @@ pub struct CreateBudgetActionOutput {
     pub action_id: std::option::Option<std::string::String>,
 }
 impl CreateBudgetActionOutput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -1329,12 +1329,12 @@ pub mod create_budget_action_output {
         pub(crate) action_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self

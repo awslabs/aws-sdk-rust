@@ -702,7 +702,8 @@ pub struct CanaryCodeInput {
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>The S3 version ID of your script.</p>
     pub s3_version: std::option::Option<std::string::String>,
-    /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 256 Kb.</p>
+    /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
+    /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
     pub zip_file: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The entry point to use for the source code when running the canary. This value must end with the string <code>.handler</code>. The string is limited to 29 characters or fewer.</p>
     pub handler: std::option::Option<std::string::String>,
@@ -720,7 +721,8 @@ impl CanaryCodeInput {
     pub fn s3_version(&self) -> std::option::Option<&str> {
         self.s3_version.as_deref()
     }
-    /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 256 Kb.</p>
+    /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
+    /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
     pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
@@ -783,12 +785,14 @@ pub mod canary_code_input {
             self.s3_version = input;
             self
         }
-        /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 256 Kb.</p>
+        /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
+        /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 256 Kb.</p>
+        /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
+        /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.zip_file = input;
             self

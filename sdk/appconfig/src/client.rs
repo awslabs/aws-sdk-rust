@@ -115,7 +115,7 @@ impl Client {
     ///   - [`retrieval_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::retrieval_role_arn) / [`set_retrieval_role_arn(Option<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>   <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>  </important>
     ///   - [`validators(Vec<Validator>)`](crate::client::fluent_builders::CreateConfigurationProfile::validators) / [`set_validators(Option<Vec<Validator>>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_validators): <p>A list of methods for validating the configuration.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateConfigurationProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_tags): <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::type) / [`set_type(Option<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
+    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::type) / [`set_type(Option<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_type): <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>  <p> <code>AWS.AppConfig.FeatureFlags</code> </p>  <p> <code>AWS.Freeform</code> </p>
     /// - On success, responds with [`CreateConfigurationProfileOutput`](crate::output::CreateConfigurationProfileOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::CreateConfigurationProfileOutput::application_id): <p>The application ID.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateConfigurationProfileOutput::id): <p>The configuration profile ID.</p>
@@ -124,7 +124,7 @@ impl Client {
     ///   - [`location_uri(Option<String>)`](crate::output::CreateConfigurationProfileOutput::location_uri): <p>The URI location of the configuration.</p>
     ///   - [`retrieval_role_arn(Option<String>)`](crate::output::CreateConfigurationProfileOutput::retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     ///   - [`validators(Option<Vec<Validator>>)`](crate::output::CreateConfigurationProfileOutput::validators): <p>A list of methods for validating the configuration.</p>
-    ///   - [`r#type(Option<String>)`](crate::output::CreateConfigurationProfileOutput::type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    ///   - [`r#type(Option<String>)`](crate::output::CreateConfigurationProfileOutput::type): <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>  <p> <code>AWS.AppConfig.FeatureFlags</code> </p>  <p> <code>AWS.Freeform</code> </p>
     /// - On failure, responds with [`SdkError<CreateConfigurationProfileError>`](crate::error::CreateConfigurationProfileError)
     pub fn create_configuration_profile(&self) -> fluent_builders::CreateConfigurationProfile {
         fluent_builders::CreateConfigurationProfile::new(self.handle.clone())
@@ -271,7 +271,7 @@ impl Client {
     ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::GetConfiguration::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::GetConfiguration::set_client_id): <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
     ///   - [`client_configuration_version(impl Into<String>)`](crate::client::fluent_builders::GetConfiguration::client_configuration_version) / [`set_client_configuration_version(Option<String>)`](crate::client::fluent_builders::GetConfiguration::set_client_configuration_version): <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>   <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>   <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>  </important>  <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
     /// - On success, responds with [`GetConfigurationOutput`](crate::output::GetConfigurationOutput) with field(s):
-    ///   - [`content(Option<Blob>)`](crate::output::GetConfigurationOutput::content): <p>The content of the configuration or the configuration data.</p> <important>   <p>Compare the configuration version numbers of the configuration cached locally on your machine and the configuration number in the the header. If the configuration numbers are the same, the content can be ignored. The <code>Content</code> section only appears if the system finds new or updated configuration data. If the system doesn't find new or updated configuration data, then the <code>Content</code> section is not returned.</p>  </important>
+    ///   - [`content(Option<Blob>)`](crate::output::GetConfigurationOutput::content): <p>The content of the configuration or the configuration data.</p> <important>   <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>  </important>
     ///   - [`configuration_version(Option<String>)`](crate::output::GetConfigurationOutput::configuration_version): <p>The configuration version.</p>
     ///   - [`content_type(Option<String>)`](crate::output::GetConfigurationOutput::content_type): <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     /// - On failure, responds with [`SdkError<GetConfigurationError>`](crate::error::GetConfigurationError)
@@ -291,7 +291,7 @@ impl Client {
     ///   - [`location_uri(Option<String>)`](crate::output::GetConfigurationProfileOutput::location_uri): <p>The URI location of the configuration.</p>
     ///   - [`retrieval_role_arn(Option<String>)`](crate::output::GetConfigurationProfileOutput::retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     ///   - [`validators(Option<Vec<Validator>>)`](crate::output::GetConfigurationProfileOutput::validators): <p>A list of methods for validating the configuration.</p>
-    ///   - [`r#type(Option<String>)`](crate::output::GetConfigurationProfileOutput::type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    ///   - [`r#type(Option<String>)`](crate::output::GetConfigurationProfileOutput::type): <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>  <p> <code>AWS.AppConfig.FeatureFlags</code> </p>  <p> <code>AWS.Freeform</code> </p>
     /// - On failure, responds with [`SdkError<GetConfigurationProfileError>`](crate::error::GetConfigurationProfileError)
     pub fn get_configuration_profile(&self) -> fluent_builders::GetConfigurationProfile {
         fluent_builders::GetConfigurationProfile::new(self.handle.clone())
@@ -397,7 +397,7 @@ impl Client {
     ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::set_application_id): <p>The application ID.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConfigurationProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListConfigurationProfiles::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::set_next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
-    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::type) / [`set_type(Option<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::set_type): <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
+    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::type) / [`set_type(Option<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::set_type): <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a freeform configuration.</p>
     /// - On success, responds with [`ListConfigurationProfilesOutput`](crate::output::ListConfigurationProfilesOutput) with field(s):
     ///   - [`items(Option<Vec<ConfigurationProfileSummary>>)`](crate::output::ListConfigurationProfilesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListConfigurationProfilesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -411,8 +411,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_application_id): <p>The application ID.</p>
     ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_environment_id): <p>The environment ID.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeployments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeployments::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeployments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeployments::set_max_results): <p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_next_token): <p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p>
     /// - On success, responds with [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput) with field(s):
     ///   - [`items(Option<Vec<DeploymentSummary>>)`](crate::output::ListDeploymentsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -589,7 +589,7 @@ impl Client {
     ///   - [`location_uri(Option<String>)`](crate::output::UpdateConfigurationProfileOutput::location_uri): <p>The URI location of the configuration.</p>
     ///   - [`retrieval_role_arn(Option<String>)`](crate::output::UpdateConfigurationProfileOutput::retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     ///   - [`validators(Option<Vec<Validator>>)`](crate::output::UpdateConfigurationProfileOutput::validators): <p>A list of methods for validating the configuration.</p>
-    ///   - [`r#type(Option<String>)`](crate::output::UpdateConfigurationProfileOutput::type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    ///   - [`r#type(Option<String>)`](crate::output::UpdateConfigurationProfileOutput::type): <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>  <p> <code>AWS.AppConfig.FeatureFlags</code> </p>  <p> <code>AWS.Freeform</code> </p>
     /// - On failure, responds with [`SdkError<UpdateConfigurationProfileError>`](crate::error::UpdateConfigurationProfileError)
     pub fn update_configuration_profile(&self) -> fluent_builders::UpdateConfigurationProfile {
         fluent_builders::UpdateConfigurationProfile::new(self.handle.clone())
@@ -748,7 +748,7 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p>The URI location of the configuration data.</p> </li>
     /// <li> <p>The Identity and Access Management (IAM) role that provides access to the configuration data.</p> </li>
-    /// <li> <p>A validator for the configuration data. Available validators include either a JSON Schema or an Lambda function.</p> </li>
+    /// <li> <p>A validator for the configuration data. Available validators include either a JSON Schema or an Amazon Web Services Lambda function.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create a Configuration and a Configuration Profile</a> in the <i>AppConfig User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -904,12 +904,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p> <code>AWS.Freeform</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.r#type(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p> <code>AWS.Freeform</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -1684,9 +1688,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConfiguration`.
     ///
-    /// <p>Retrieves information about a configuration.</p> <important>
-    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
-    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
+    /// <p>Retrieves the latest deployed configuration.</p> <important>
+    /// <p>Note the following important information.</p>
+    /// <ul>
+    /// <li> <p>This API action has been deprecated. Calls to receive configuration data should use the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html">StartConfigurationSession</a> and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> APIs instead. </p> </li>
+    /// <li> <p> <code>GetConfiguration</code> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.</p> </li>
+    /// <li> <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p> <p>To avoid excess charges, we recommend you use the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html">StartConfigurationSession</a> and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html">GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to continue using <code>GetConfiguration</code>, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to <code>GetConfiguration</code>.</p> </li>
+    /// </ul>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfiguration {
@@ -2297,12 +2305,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a freeform configuration.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.r#type(input.into());
             self
         }
-        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a freeform configuration.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -2310,7 +2318,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeployments`.
     ///
-    /// <p>Lists the deployments for an environment.</p>
+    /// <p>Lists the deployments for an environment in descending deployment number order.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeployments {
         handle: std::sync::Arc<super::Handle>,
@@ -2382,22 +2390,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_id(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        /// <p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        /// <p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self

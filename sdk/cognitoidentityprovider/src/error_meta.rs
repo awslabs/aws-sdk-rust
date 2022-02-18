@@ -7,7 +7,7 @@ pub enum Error {
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
-    /// <p>This exception is thrown if the provided code does not match what the server was expecting.</p>
+    /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
@@ -21,67 +21,67 @@ pub enum Error {
     GroupExistsException(crate::error::GroupExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
+    /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the specified OAuth flow is invalid.</p>
+    /// <p>This exception is thrown when the specified OAuth flow is not valid.</p>
     InvalidOAuthFlowException(crate::error::InvalidOAuthFlowException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid password.</p>
+    /// <p>This exception is thrown when Amazon Cognito encounters an invalid password.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration doesn't have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is not valid for the role provided for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
-    /// <p>This exception is thrown when the user pool configuration is invalid.</p>
+    /// <p>This exception is thrown when the user pool configuration is not valid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
     /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>This exception is thrown when Amazon Cognito cannot find a multi-factor authentication (MFA) method.</p>
+    /// <p>This exception is thrown when Amazon Cognito can't find a multi-factor authentication (MFA) method.</p>
     MfaMethodNotFoundException(crate::error::MfaMethodNotFoundException),
-    /// <p>This exception is thrown when a user is not authorized.</p>
+    /// <p>This exception is thrown when a user isn't authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
     /// <p>This exception is thrown when a precondition is not met.</p>
     PreconditionNotMetException(crate::error::PreconditionNotMetException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service can't find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the specified scope does not exist.</p>
+    /// <p>This exception is thrown when the specified scope doesn't exist.</p>
     ScopeDoesNotExistException(crate::error::ScopeDoesNotExistException),
-    /// <p>This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled for the user pool.</p>
+    /// <p>This exception is thrown when the software token time-based one-time password (TOTP) multi-factor authentication (MFA) isn't activated for the user pool.</p>
     SoftwareTokenMfaNotFoundException(crate::error::SoftwareTokenMfaNotFoundException),
-    /// <p>This exception is thrown when the user has made too many failed attempts for a given action (e.g., sign in).</p>
+    /// <p>This exception is thrown when the user has made too many failed attempts for a given action, such as sign-in.</p>
     TooManyFailedAttemptsException(crate::error::TooManyFailedAttemptsException),
     /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the request is not authorized. This can happen due to an invalid access token in the request.</p>
+    /// <p>Exception that is thrown when the request isn't authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
+    /// <p>This exception is thrown when Amazon Cognito encounters an unexpected exception with Lambda.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the specified identifier is not supported.</p>
+    /// <p>This exception is thrown when the specified identifier isn't supported.</p>
     UnsupportedIdentityProviderException(crate::error::UnsupportedIdentityProviderException),
-    /// <p>This exception is thrown when you attempt to perform an operation that is not enabled for the user pool client.</p>
+    /// <p>Exception that is thrown when you attempt to perform an operation that isn't enabled for the user pool client.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// <p>This exception is thrown when an unsupported token is passed to an operation.</p>
+    /// <p>Exception that is thrown when an unsupported token is passed to an operation.</p>
     UnsupportedTokenTypeException(crate::error::UnsupportedTokenTypeException),
     /// <p>The request failed because the user is in an unsupported state.</p>
     UnsupportedUserStateException(crate::error::UnsupportedUserStateException),
-    /// <p>This exception is thrown when you are trying to modify a user pool while a user import job is in progress for that pool.</p>
+    /// <p>This exception is thrown when you're trying to modify a user pool while a user import job is in progress for that pool.</p>
     UserImportInProgressException(crate::error::UserImportInProgressException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
-    /// <p>This exception is thrown when a user is not confirmed successfully.</p>
+    /// <p>This exception is thrown when a user isn't confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
-    /// <p>This exception is thrown when a user is not found.</p>
+    /// <p>This exception is thrown when a user isn't found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
-    /// <p>This exception is thrown when user pool add-ons are not enabled.</p>
+    /// <p>This exception is thrown when user pool add-ons aren't enabled.</p>
     UserPoolAddOnNotEnabledException(crate::error::UserPoolAddOnNotEnabledException),
-    /// <p>This exception is thrown when a user pool tag cannot be set or updated.</p>
+    /// <p>This exception is thrown when a user pool tag can't be set or updated.</p>
     UserPoolTaggingException(crate::error::UserPoolTaggingException),
     /// <p>This exception is thrown when Amazon Cognito encounters a user name that already exists in the user pool.</p>
     UsernameExistsException(crate::error::UsernameExistsException),

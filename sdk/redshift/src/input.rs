@@ -368,6 +368,7 @@ pub mod associate_data_share_consumer_input {
         pub(crate) data_share_arn: std::option::Option<std::string::String>,
         pub(crate) associate_entire_account: std::option::Option<bool>,
         pub(crate) consumer_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_region: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
@@ -403,6 +404,19 @@ pub mod associate_data_share_consumer_input {
             self.consumer_arn = input;
             self
         }
+        /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
+        pub fn consumer_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_region = Some(input.into());
+            self
+        }
+        /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
+        pub fn set_consumer_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_region = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateDataShareConsumerInput`](crate::input::AssociateDataShareConsumerInput)
         pub fn build(
             self,
@@ -414,6 +428,7 @@ pub mod associate_data_share_consumer_input {
                 data_share_arn: self.data_share_arn,
                 associate_entire_account: self.associate_entire_account,
                 consumer_arn: self.consumer_arn,
+                consumer_region: self.consumer_region,
             })
         }
     }
@@ -2351,7 +2366,7 @@ pub mod create_cluster_input {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
         /// </ul>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
@@ -2364,7 +2379,7 @@ pub mod create_cluster_input {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
         /// </ul>
         pub fn set_master_user_password(
             mut self,
@@ -2730,16 +2745,16 @@ pub mod create_cluster_input {
         ///
         /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
         ///
-        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-        /// <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
+        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+        /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         pub fn iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.iam_roles.unwrap_or_default();
             v.push(input.into());
             self.iam_roles = Some(v);
             self
         }
-        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-        /// <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
+        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+        /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         pub fn set_iam_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5087,12 +5102,12 @@ pub mod create_snapshot_copy_grant_input {
             self.snapshot_copy_grant_name = input;
             self
         }
-        /// <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+        /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+        /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -5697,12 +5712,12 @@ pub mod create_usage_limit_input {
             self.feature_type = input;
             self
         }
-        /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. </p>
+        /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
         pub fn limit_type(mut self, input: crate::model::UsageLimitLimitType) -> Self {
             self.limit_type = Some(input);
             self
         }
-        /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. </p>
+        /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
         pub fn set_limit_type(
             mut self,
             input: std::option::Option<crate::model::UsageLimitLimitType>,
@@ -16632,6 +16647,7 @@ pub mod disassociate_data_share_consumer_input {
         pub(crate) data_share_arn: std::option::Option<std::string::String>,
         pub(crate) disassociate_entire_account: std::option::Option<bool>,
         pub(crate) consumer_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_region: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
@@ -16667,6 +16683,19 @@ pub mod disassociate_data_share_consumer_input {
             self.consumer_arn = input;
             self
         }
+        /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
+        pub fn consumer_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_region = Some(input.into());
+            self
+        }
+        /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
+        pub fn set_consumer_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_region = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateDataShareConsumerInput`](crate::input::DisassociateDataShareConsumerInput)
         pub fn build(
             self,
@@ -16678,6 +16707,7 @@ pub mod disassociate_data_share_consumer_input {
                 data_share_arn: self.data_share_arn,
                 disassociate_entire_account: self.disassociate_entire_account,
                 consumer_arn: self.consumer_arn,
+                consumer_region: self.consumer_region,
             })
         }
     }
@@ -18399,7 +18429,7 @@ pub mod modify_cluster_input {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
         /// </ul>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
@@ -18415,7 +18445,7 @@ pub mod modify_cluster_input {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
         /// </ul>
         pub fn set_master_user_password(
             mut self,
@@ -19060,14 +19090,14 @@ pub mod modify_cluster_iam_roles_input {
         ///
         /// To override the contents of this collection use [`set_add_iam_roles`](Self::set_add_iam_roles).
         ///
-        /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles with a single cluster in a single request.</p>
+        /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
         pub fn add_iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.add_iam_roles.unwrap_or_default();
             v.push(input.into());
             self.add_iam_roles = Some(v);
             self
         }
-        /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles with a single cluster in a single request.</p>
+        /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
         pub fn set_add_iam_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19079,14 +19109,14 @@ pub mod modify_cluster_iam_roles_input {
         ///
         /// To override the contents of this collection use [`set_remove_iam_roles`](Self::set_remove_iam_roles).
         ///
-        /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate up to 10 IAM roles from a single cluster in a single request.</p>
+        /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
         pub fn remove_iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.remove_iam_roles.unwrap_or_default();
             v.push(input.into());
             self.remove_iam_roles = Some(v);
             self
         }
-        /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate up to 10 IAM roles from a single cluster in a single request.</p>
+        /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
         pub fn set_remove_iam_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -22867,16 +22897,16 @@ pub mod restore_from_cluster_snapshot_input {
         ///
         /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
         ///
-        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-        /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
+        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+        /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         pub fn iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.iam_roles.unwrap_or_default();
             v.push(input.into());
             self.iam_roles = Some(v);
             self
         }
-        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-        /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
+        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+        /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         pub fn set_iam_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -24946,8 +24976,8 @@ pub struct RestoreFromClusterSnapshotInput {
     pub enhanced_vpc_routing: std::option::Option<bool>,
     /// <p>Reserved.</p>
     pub additional_info: std::option::Option<std::string::String>,
-    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-    /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+    /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.</p>
     pub maintenance_track_name: std::option::Option<std::string::String>,
@@ -25097,8 +25127,8 @@ impl RestoreFromClusterSnapshotInput {
     pub fn additional_info(&self) -> std::option::Option<&str> {
         self.additional_info.as_deref()
     }
-    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-    /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+    /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn iam_roles(&self) -> std::option::Option<&[std::string::String]> {
         self.iam_roles.as_deref()
     }
@@ -25912,9 +25942,9 @@ impl std::fmt::Debug for ModifyClusterMaintenanceInput {
 pub struct ModifyClusterIamRolesInput {
     /// <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles with a single cluster in a single request.</p>
+    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
     pub add_iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate up to 10 IAM roles from a single cluster in a single request.</p>
+    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
     pub remove_iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
     pub default_iam_role_arn: std::option::Option<std::string::String>,
@@ -25924,11 +25954,11 @@ impl ModifyClusterIamRolesInput {
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles with a single cluster in a single request.</p>
+    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
     pub fn add_iam_roles(&self) -> std::option::Option<&[std::string::String]> {
         self.add_iam_roles.as_deref()
     }
-    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate up to 10 IAM roles from a single cluster in a single request.</p>
+    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
     pub fn remove_iam_roles(&self) -> std::option::Option<&[std::string::String]> {
         self.remove_iam_roles.as_deref()
     }
@@ -26018,7 +26048,7 @@ pub struct ModifyClusterInput {
     /// <li> <p>Must contain at least one uppercase letter.</p> </li>
     /// <li> <p>Must contain at least one lowercase letter.</p> </li>
     /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
     /// </ul>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
@@ -26136,7 +26166,7 @@ impl ModifyClusterInput {
     /// <li> <p>Must contain at least one uppercase letter.</p> </li>
     /// <li> <p>Must contain at least one lowercase letter.</p> </li>
     /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
     /// </ul>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -26709,6 +26739,8 @@ pub struct DisassociateDataShareConsumerInput {
     pub disassociate_entire_account: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
     pub consumer_arn: std::option::Option<std::string::String>,
+    /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
+    pub consumer_region: std::option::Option<std::string::String>,
 }
 impl DisassociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
@@ -26723,6 +26755,10 @@ impl DisassociateDataShareConsumerInput {
     pub fn consumer_arn(&self) -> std::option::Option<&str> {
         self.consumer_arn.as_deref()
     }
+    /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
+    pub fn consumer_region(&self) -> std::option::Option<&str> {
+        self.consumer_region.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateDataShareConsumerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26733,6 +26769,7 @@ impl std::fmt::Debug for DisassociateDataShareConsumerInput {
             &self.disassociate_entire_account,
         );
         formatter.field("consumer_arn", &self.consumer_arn);
+        formatter.field("consumer_region", &self.consumer_region);
         formatter.finish()
     }
 }
@@ -29135,7 +29172,7 @@ pub struct CreateUsageLimitInput {
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Redshift feature that you want to limit.</p>
     pub feature_type: std::option::Option<crate::model::UsageLimitFeatureType>,
-    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. </p>
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
     pub limit_type: std::option::Option<crate::model::UsageLimitLimitType>,
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
     pub amount: i64,
@@ -29155,7 +29192,7 @@ impl CreateUsageLimitInput {
     pub fn feature_type(&self) -> std::option::Option<&crate::model::UsageLimitFeatureType> {
         self.feature_type.as_ref()
     }
-    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. </p>
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
     pub fn limit_type(&self) -> std::option::Option<&crate::model::UsageLimitLimitType> {
         self.limit_type.as_ref()
     }
@@ -29288,7 +29325,7 @@ pub struct CreateSnapshotCopyGrantInput {
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+    /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -29306,7 +29343,7 @@ impl CreateSnapshotCopyGrantInput {
     pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
         self.snapshot_copy_grant_name.as_deref()
     }
-    /// <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+    /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -29929,7 +29966,7 @@ pub struct CreateClusterInput {
     /// <li> <p>Must contain at least one uppercase letter.</p> </li>
     /// <li> <p>Must contain at least one lowercase letter.</p> </li>
     /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
     /// </ul>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>A list of security groups to be associated with this cluster.</p>
@@ -30011,8 +30048,8 @@ pub struct CreateClusterInput {
     pub enhanced_vpc_routing: std::option::Option<bool>,
     /// <p>Reserved.</p>
     pub additional_info: std::option::Option<std::string::String>,
-    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-    /// <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+    /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
     pub maintenance_track_name: std::option::Option<std::string::String>,
@@ -30088,7 +30125,7 @@ impl CreateClusterInput {
     /// <li> <p>Must contain at least one uppercase letter.</p> </li>
     /// <li> <p>Must contain at least one lowercase letter.</p> </li>
     /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
     /// </ul>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -30214,8 +30251,8 @@ impl CreateClusterInput {
     pub fn additional_info(&self) -> std::option::Option<&str> {
         self.additional_info.as_deref()
     }
-    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-    /// <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+    /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn iam_roles(&self) -> std::option::Option<&[std::string::String]> {
         self.iam_roles.as_deref()
     }
@@ -30687,6 +30724,8 @@ pub struct AssociateDataShareConsumerInput {
     pub associate_entire_account: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
     pub consumer_arn: std::option::Option<std::string::String>,
+    /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
+    pub consumer_region: std::option::Option<std::string::String>,
 }
 impl AssociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
@@ -30701,6 +30740,10 @@ impl AssociateDataShareConsumerInput {
     pub fn consumer_arn(&self) -> std::option::Option<&str> {
         self.consumer_arn.as_deref()
     }
+    /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
+    pub fn consumer_region(&self) -> std::option::Option<&str> {
+        self.consumer_region.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateDataShareConsumerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30708,6 +30751,7 @@ impl std::fmt::Debug for AssociateDataShareConsumerInput {
         formatter.field("data_share_arn", &self.data_share_arn);
         formatter.field("associate_entire_account", &self.associate_entire_account);
         formatter.field("consumer_arn", &self.consumer_arn);
+        formatter.field("consumer_region", &self.consumer_region);
         formatter.finish()
     }
 }

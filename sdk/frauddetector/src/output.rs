@@ -793,6 +793,98 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEventPredictionsOutput {
+    /// <p> The summary of the past predictions. </p>
+    pub event_prediction_summaries:
+        std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>,
+    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEventPredictionsOutput {
+    /// <p> The summary of the past predictions. </p>
+    pub fn event_prediction_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventPredictionSummary]> {
+        self.event_prediction_summaries.as_deref()
+    }
+    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListEventPredictionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEventPredictionsOutput");
+        formatter.field(
+            "event_prediction_summaries",
+            &self.event_prediction_summaries,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput)
+pub mod list_event_predictions_output {
+    /// A builder for [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_prediction_summaries:
+            std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `event_prediction_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_event_prediction_summaries`](Self::set_event_prediction_summaries).
+        ///
+        /// <p> The summary of the past predictions. </p>
+        pub fn event_prediction_summaries(
+            mut self,
+            input: crate::model::EventPredictionSummary,
+        ) -> Self {
+            let mut v = self.event_prediction_summaries.unwrap_or_default();
+            v.push(input);
+            self.event_prediction_summaries = Some(v);
+            self
+        }
+        /// <p> The summary of the past predictions. </p>
+        pub fn set_event_prediction_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>,
+        ) -> Self {
+            self.event_prediction_summaries = input;
+            self
+        }
+        /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput)
+        pub fn build(self) -> crate::output::ListEventPredictionsOutput {
+            crate::output::ListEventPredictionsOutput {
+                event_prediction_summaries: self.event_prediction_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListEventPredictionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput)
+    pub fn builder() -> crate::output::list_event_predictions_output::Builder {
+        crate::output::list_event_predictions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVariablesOutput {
     /// <p>The names of the variables returned. </p>
     pub variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
@@ -1693,6 +1785,404 @@ impl GetEventTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetEventTypesOutput`](crate::output::GetEventTypesOutput)
     pub fn builder() -> crate::output::get_event_types_output::Builder {
         crate::output::get_event_types_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEventPredictionMetadataOutput {
+    /// <p> The event ID. </p>
+    pub event_id: std::option::Option<std::string::String>,
+    /// <p> The event type associated with the detector specified for this prediction. </p>
+    pub event_type_name: std::option::Option<std::string::String>,
+    /// <p> The entity ID. </p>
+    pub entity_id: std::option::Option<std::string::String>,
+    /// <p> The entity type. </p>
+    pub entity_type: std::option::Option<std::string::String>,
+    /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
+    pub event_timestamp: std::option::Option<std::string::String>,
+    /// <p> The detector ID. </p>
+    pub detector_id: std::option::Option<std::string::String>,
+    /// <p> The detector version ID. </p>
+    pub detector_version_id: std::option::Option<std::string::String>,
+    /// <p> The status of the detector version. </p>
+    pub detector_version_status: std::option::Option<std::string::String>,
+    /// <p> A list of event variables that influenced the prediction scores. </p>
+    pub event_variables: std::option::Option<std::vec::Vec<crate::model::EventVariableSummary>>,
+    /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
+    pub rules: std::option::Option<std::vec::Vec<crate::model::EvaluatedRule>>,
+    /// <p> The execution mode of the rule used for evaluating variable values. </p>
+    pub rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
+    /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
+    pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> Model versions that were evaluated for generating predictions. </p>
+    pub evaluated_model_versions:
+        std::option::Option<std::vec::Vec<crate::model::EvaluatedModelVersion>>,
+    /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
+    pub evaluated_external_models:
+        std::option::Option<std::vec::Vec<crate::model::EvaluatedExternalModel>>,
+    /// <p>The timestamp that defines when the prediction was generated. </p>
+    pub prediction_timestamp: std::option::Option<std::string::String>,
+}
+impl GetEventPredictionMetadataOutput {
+    /// <p> The event ID. </p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p> The event type associated with the detector specified for this prediction. </p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p> The entity ID. </p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p> The entity type. </p>
+    pub fn entity_type(&self) -> std::option::Option<&str> {
+        self.entity_type.as_deref()
+    }
+    /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
+    pub fn event_timestamp(&self) -> std::option::Option<&str> {
+        self.event_timestamp.as_deref()
+    }
+    /// <p> The detector ID. </p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p> The detector version ID. </p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+    /// <p> The status of the detector version. </p>
+    pub fn detector_version_status(&self) -> std::option::Option<&str> {
+        self.detector_version_status.as_deref()
+    }
+    /// <p> A list of event variables that influenced the prediction scores. </p>
+    pub fn event_variables(&self) -> std::option::Option<&[crate::model::EventVariableSummary]> {
+        self.event_variables.as_deref()
+    }
+    /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::EvaluatedRule]> {
+        self.rules.as_deref()
+    }
+    /// <p> The execution mode of the rule used for evaluating variable values. </p>
+    pub fn rule_execution_mode(&self) -> std::option::Option<&crate::model::RuleExecutionMode> {
+        self.rule_execution_mode.as_ref()
+    }
+    /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
+    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
+        self.outcomes.as_deref()
+    }
+    /// <p> Model versions that were evaluated for generating predictions. </p>
+    pub fn evaluated_model_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::EvaluatedModelVersion]> {
+        self.evaluated_model_versions.as_deref()
+    }
+    /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
+    pub fn evaluated_external_models(
+        &self,
+    ) -> std::option::Option<&[crate::model::EvaluatedExternalModel]> {
+        self.evaluated_external_models.as_deref()
+    }
+    /// <p>The timestamp that defines when the prediction was generated. </p>
+    pub fn prediction_timestamp(&self) -> std::option::Option<&str> {
+        self.prediction_timestamp.as_deref()
+    }
+}
+impl std::fmt::Debug for GetEventPredictionMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEventPredictionMetadataOutput");
+        formatter.field("event_id", &self.event_id);
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("entity_id", &self.entity_id);
+        formatter.field("entity_type", &self.entity_type);
+        formatter.field("event_timestamp", &self.event_timestamp);
+        formatter.field("detector_id", &self.detector_id);
+        formatter.field("detector_version_id", &self.detector_version_id);
+        formatter.field("detector_version_status", &self.detector_version_status);
+        formatter.field("event_variables", &self.event_variables);
+        formatter.field("rules", &self.rules);
+        formatter.field("rule_execution_mode", &self.rule_execution_mode);
+        formatter.field("outcomes", &self.outcomes);
+        formatter.field("evaluated_model_versions", &self.evaluated_model_versions);
+        formatter.field("evaluated_external_models", &self.evaluated_external_models);
+        formatter.field("prediction_timestamp", &self.prediction_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput)
+pub mod get_event_prediction_metadata_output {
+    /// A builder for [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_id: std::option::Option<std::string::String>,
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) entity_id: std::option::Option<std::string::String>,
+        pub(crate) entity_type: std::option::Option<std::string::String>,
+        pub(crate) event_timestamp: std::option::Option<std::string::String>,
+        pub(crate) detector_id: std::option::Option<std::string::String>,
+        pub(crate) detector_version_id: std::option::Option<std::string::String>,
+        pub(crate) detector_version_status: std::option::Option<std::string::String>,
+        pub(crate) event_variables:
+            std::option::Option<std::vec::Vec<crate::model::EventVariableSummary>>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::EvaluatedRule>>,
+        pub(crate) rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
+        pub(crate) outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) evaluated_model_versions:
+            std::option::Option<std::vec::Vec<crate::model::EvaluatedModelVersion>>,
+        pub(crate) evaluated_external_models:
+            std::option::Option<std::vec::Vec<crate::model::EvaluatedExternalModel>>,
+        pub(crate) prediction_timestamp: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The event ID. </p>
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_id = Some(input.into());
+            self
+        }
+        /// <p> The event ID. </p>
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_id = input;
+            self
+        }
+        /// <p> The event type associated with the detector specified for this prediction. </p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        /// <p> The event type associated with the detector specified for this prediction. </p>
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// <p> The entity ID. </p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_id = Some(input.into());
+            self
+        }
+        /// <p> The entity ID. </p>
+        pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_id = input;
+            self
+        }
+        /// <p> The entity type. </p>
+        pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_type = Some(input.into());
+            self
+        }
+        /// <p> The entity type. </p>
+        pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_type = input;
+            self
+        }
+        /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
+        pub fn event_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_timestamp = Some(input.into());
+            self
+        }
+        /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
+        pub fn set_event_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_timestamp = input;
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_id = Some(input.into());
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_id = input;
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_version_id = Some(input.into());
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn set_detector_version_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.detector_version_id = input;
+            self
+        }
+        /// <p> The status of the detector version. </p>
+        pub fn detector_version_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_version_status = Some(input.into());
+            self
+        }
+        /// <p> The status of the detector version. </p>
+        pub fn set_detector_version_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.detector_version_status = input;
+            self
+        }
+        /// Appends an item to `event_variables`.
+        ///
+        /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
+        ///
+        /// <p> A list of event variables that influenced the prediction scores. </p>
+        pub fn event_variables(mut self, input: crate::model::EventVariableSummary) -> Self {
+            let mut v = self.event_variables.unwrap_or_default();
+            v.push(input);
+            self.event_variables = Some(v);
+            self
+        }
+        /// <p> A list of event variables that influenced the prediction scores. </p>
+        pub fn set_event_variables(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EventVariableSummary>>,
+        ) -> Self {
+            self.event_variables = input;
+            self
+        }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
+        pub fn rules(mut self, input: crate::model::EvaluatedRule) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input);
+            self.rules = Some(v);
+            self
+        }
+        /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EvaluatedRule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
+        /// <p> The execution mode of the rule used for evaluating variable values. </p>
+        pub fn rule_execution_mode(mut self, input: crate::model::RuleExecutionMode) -> Self {
+            self.rule_execution_mode = Some(input);
+            self
+        }
+        /// <p> The execution mode of the rule used for evaluating variable values. </p>
+        pub fn set_rule_execution_mode(
+            mut self,
+            input: std::option::Option<crate::model::RuleExecutionMode>,
+        ) -> Self {
+            self.rule_execution_mode = input;
+            self
+        }
+        /// Appends an item to `outcomes`.
+        ///
+        /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
+        ///
+        /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
+        pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.outcomes.unwrap_or_default();
+            v.push(input.into());
+            self.outcomes = Some(v);
+            self
+        }
+        /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
+        pub fn set_outcomes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.outcomes = input;
+            self
+        }
+        /// Appends an item to `evaluated_model_versions`.
+        ///
+        /// To override the contents of this collection use [`set_evaluated_model_versions`](Self::set_evaluated_model_versions).
+        ///
+        /// <p> Model versions that were evaluated for generating predictions. </p>
+        pub fn evaluated_model_versions(
+            mut self,
+            input: crate::model::EvaluatedModelVersion,
+        ) -> Self {
+            let mut v = self.evaluated_model_versions.unwrap_or_default();
+            v.push(input);
+            self.evaluated_model_versions = Some(v);
+            self
+        }
+        /// <p> Model versions that were evaluated for generating predictions. </p>
+        pub fn set_evaluated_model_versions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EvaluatedModelVersion>>,
+        ) -> Self {
+            self.evaluated_model_versions = input;
+            self
+        }
+        /// Appends an item to `evaluated_external_models`.
+        ///
+        /// To override the contents of this collection use [`set_evaluated_external_models`](Self::set_evaluated_external_models).
+        ///
+        /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
+        pub fn evaluated_external_models(
+            mut self,
+            input: crate::model::EvaluatedExternalModel,
+        ) -> Self {
+            let mut v = self.evaluated_external_models.unwrap_or_default();
+            v.push(input);
+            self.evaluated_external_models = Some(v);
+            self
+        }
+        /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
+        pub fn set_evaluated_external_models(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EvaluatedExternalModel>>,
+        ) -> Self {
+            self.evaluated_external_models = input;
+            self
+        }
+        /// <p>The timestamp that defines when the prediction was generated. </p>
+        pub fn prediction_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prediction_timestamp = Some(input.into());
+            self
+        }
+        /// <p>The timestamp that defines when the prediction was generated. </p>
+        pub fn set_prediction_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.prediction_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput)
+        pub fn build(self) -> crate::output::GetEventPredictionMetadataOutput {
+            crate::output::GetEventPredictionMetadataOutput {
+                event_id: self.event_id,
+                event_type_name: self.event_type_name,
+                entity_id: self.entity_id,
+                entity_type: self.entity_type,
+                event_timestamp: self.event_timestamp,
+                detector_id: self.detector_id,
+                detector_version_id: self.detector_version_id,
+                detector_version_status: self.detector_version_status,
+                event_variables: self.event_variables,
+                rules: self.rules,
+                rule_execution_mode: self.rule_execution_mode,
+                outcomes: self.outcomes,
+                evaluated_model_versions: self.evaluated_model_versions,
+                evaluated_external_models: self.evaluated_external_models,
+                prediction_timestamp: self.prediction_timestamp,
+            }
+        }
+    }
+}
+impl GetEventPredictionMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput)
+    pub fn builder() -> crate::output::get_event_prediction_metadata_output::Builder {
+        crate::output::get_event_prediction_metadata_output::Builder::default()
     }
 }
 

@@ -499,6 +499,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateWebACL {
     }
 }
 
+/// Operation shape for `GenerateMobileSdkReleaseUrl`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`generate_mobile_sdk_release_url`](crate::client::Client::generate_mobile_sdk_release_url).
+///
+/// See [`crate::client::fluent_builders::GenerateMobileSdkReleaseUrl`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GenerateMobileSdkReleaseUrl {
+    _private: (),
+}
+impl GenerateMobileSdkReleaseUrl {
+    /// Creates a new builder-style object to manufacture [`GenerateMobileSdkReleaseUrlInput`](crate::input::GenerateMobileSdkReleaseUrlInput)
+    pub fn builder() -> crate::input::generate_mobile_sdk_release_url_input::Builder {
+        crate::input::generate_mobile_sdk_release_url_input::Builder::default()
+    }
+    /// Creates a new `GenerateMobileSdkReleaseUrl` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GenerateMobileSdkReleaseUrl {
+    type Output = std::result::Result<
+        crate::output::GenerateMobileSdkReleaseUrlOutput,
+        crate::error::GenerateMobileSdkReleaseUrlError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_generate_mobile_sdk_release_url_error(response)
+        } else {
+            crate::operation_deser::parse_generate_mobile_sdk_release_url_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetIPSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -594,6 +628,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedRuleSet {
             crate::operation_deser::parse_get_managed_rule_set_error(response)
         } else {
             crate::operation_deser::parse_get_managed_rule_set_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetMobileSdkRelease`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_mobile_sdk_release`](crate::client::Client::get_mobile_sdk_release).
+///
+/// See [`crate::client::fluent_builders::GetMobileSdkRelease`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMobileSdkRelease {
+    _private: (),
+}
+impl GetMobileSdkRelease {
+    /// Creates a new builder-style object to manufacture [`GetMobileSdkReleaseInput`](crate::input::GetMobileSdkReleaseInput)
+    pub fn builder() -> crate::input::get_mobile_sdk_release_input::Builder {
+        crate::input::get_mobile_sdk_release_input::Builder::default()
+    }
+    /// Creates a new `GetMobileSdkRelease` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetMobileSdkRelease {
+    type Output = std::result::Result<
+        crate::output::GetMobileSdkReleaseOutput,
+        crate::error::GetMobileSdkReleaseError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_mobile_sdk_release_error(response)
+        } else {
+            crate::operation_deser::parse_get_mobile_sdk_release_response(response)
         }
     }
 }
@@ -997,6 +1065,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedRuleSets {
             crate::operation_deser::parse_list_managed_rule_sets_error(response)
         } else {
             crate::operation_deser::parse_list_managed_rule_sets_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListMobileSdkReleases`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_mobile_sdk_releases`](crate::client::Client::list_mobile_sdk_releases).
+///
+/// See [`crate::client::fluent_builders::ListMobileSdkReleases`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMobileSdkReleases {
+    _private: (),
+}
+impl ListMobileSdkReleases {
+    /// Creates a new builder-style object to manufacture [`ListMobileSdkReleasesInput`](crate::input::ListMobileSdkReleasesInput)
+    pub fn builder() -> crate::input::list_mobile_sdk_releases_input::Builder {
+        crate::input::list_mobile_sdk_releases_input::Builder::default()
+    }
+    /// Creates a new `ListMobileSdkReleases` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListMobileSdkReleases {
+    type Output = std::result::Result<
+        crate::output::ListMobileSdkReleasesOutput,
+        crate::error::ListMobileSdkReleasesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_mobile_sdk_releases_error(response)
+        } else {
+            crate::operation_deser::parse_list_mobile_sdk_releases_response(response)
         }
     }
 }

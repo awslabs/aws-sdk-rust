@@ -34589,7 +34589,7 @@ pub struct PipelineExecutionStep {
     pub step_status: std::option::Option<crate::model::StepStatus>,
     /// <p>If this pipeline execution step was cached, details on the cache hit.</p>
     pub cache_hit_result: std::option::Option<crate::model::CacheHitResult>,
-    /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for Amazon SageMaker Pipelines steps</a>.</p>
+    /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker Pipelines steps</a>.</p>
     pub attempt_count: i32,
     /// <p>The reason why the step failed execution. This is only returned if the step failed its execution.</p>
     pub failure_reason: std::option::Option<std::string::String>,
@@ -34625,7 +34625,7 @@ impl PipelineExecutionStep {
     pub fn cache_hit_result(&self) -> std::option::Option<&crate::model::CacheHitResult> {
         self.cache_hit_result.as_ref()
     }
-    /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for Amazon SageMaker Pipelines steps</a>.</p>
+    /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker Pipelines steps</a>.</p>
     pub fn attempt_count(&self) -> i32 {
         self.attempt_count
     }
@@ -34760,12 +34760,12 @@ pub mod pipeline_execution_step {
             self.cache_hit_result = input;
             self
         }
-        /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for Amazon SageMaker Pipelines steps</a>.</p>
+        /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker Pipelines steps</a>.</p>
         pub fn attempt_count(mut self, input: i32) -> Self {
             self.attempt_count = Some(input);
             self
         }
-        /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for Amazon SageMaker Pipelines steps</a>.</p>
+        /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker Pipelines steps</a>.</p>
         pub fn set_attempt_count(mut self, input: std::option::Option<i32>) -> Self {
             self.attempt_count = input;
             self
@@ -34868,6 +34868,8 @@ pub struct PipelineExecutionStepMetadata {
     pub clarify_check: std::option::Option<crate::model::ClarifyCheckStepMetadata>,
     /// <p>The configurations and outcomes of an EMR step execution.</p>
     pub emr: std::option::Option<crate::model::EmrStepMetadata>,
+    /// <p>The configurations and outcomes of a Fail step execution.</p>
+    pub fail: std::option::Option<crate::model::FailStepMetadata>,
 }
 impl PipelineExecutionStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -34938,6 +34940,10 @@ impl PipelineExecutionStepMetadata {
     pub fn emr(&self) -> std::option::Option<&crate::model::EmrStepMetadata> {
         self.emr.as_ref()
     }
+    /// <p>The configurations and outcomes of a Fail step execution.</p>
+    pub fn fail(&self) -> std::option::Option<&crate::model::FailStepMetadata> {
+        self.fail.as_ref()
+    }
 }
 impl std::fmt::Debug for PipelineExecutionStepMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34954,6 +34960,7 @@ impl std::fmt::Debug for PipelineExecutionStepMetadata {
         formatter.field("quality_check", &self.quality_check);
         formatter.field("clarify_check", &self.clarify_check);
         formatter.field("emr", &self.emr);
+        formatter.field("fail", &self.fail);
         formatter.finish()
     }
 }
@@ -34975,6 +34982,7 @@ pub mod pipeline_execution_step_metadata {
         pub(crate) quality_check: std::option::Option<crate::model::QualityCheckStepMetadata>,
         pub(crate) clarify_check: std::option::Option<crate::model::ClarifyCheckStepMetadata>,
         pub(crate) emr: std::option::Option<crate::model::EmrStepMetadata>,
+        pub(crate) fail: std::option::Option<crate::model::FailStepMetadata>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -35173,6 +35181,19 @@ pub mod pipeline_execution_step_metadata {
             self.emr = input;
             self
         }
+        /// <p>The configurations and outcomes of a Fail step execution.</p>
+        pub fn fail(mut self, input: crate::model::FailStepMetadata) -> Self {
+            self.fail = Some(input);
+            self
+        }
+        /// <p>The configurations and outcomes of a Fail step execution.</p>
+        pub fn set_fail(
+            mut self,
+            input: std::option::Option<crate::model::FailStepMetadata>,
+        ) -> Self {
+            self.fail = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PipelineExecutionStepMetadata`](crate::model::PipelineExecutionStepMetadata)
         pub fn build(self) -> crate::model::PipelineExecutionStepMetadata {
             crate::model::PipelineExecutionStepMetadata {
@@ -35188,6 +35209,7 @@ pub mod pipeline_execution_step_metadata {
                 quality_check: self.quality_check,
                 clarify_check: self.clarify_check,
                 emr: self.emr,
+                fail: self.fail,
             }
         }
     }
@@ -35196,6 +35218,63 @@ impl PipelineExecutionStepMetadata {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionStepMetadata`](crate::model::PipelineExecutionStepMetadata)
     pub fn builder() -> crate::model::pipeline_execution_step_metadata::Builder {
         crate::model::pipeline_execution_step_metadata::Builder::default()
+    }
+}
+
+/// <p>The container for the metadata for Fail step.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FailStepMetadata {
+    /// <p>A message that you define and then is processed and rendered by the Fail step when the error occurs.</p>
+    pub error_message: std::option::Option<std::string::String>,
+}
+impl FailStepMetadata {
+    /// <p>A message that you define and then is processed and rendered by the Fail step when the error occurs.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
+impl std::fmt::Debug for FailStepMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FailStepMetadata");
+        formatter.field("error_message", &self.error_message);
+        formatter.finish()
+    }
+}
+/// See [`FailStepMetadata`](crate::model::FailStepMetadata)
+pub mod fail_step_metadata {
+    /// A builder for [`FailStepMetadata`](crate::model::FailStepMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message that you define and then is processed and rendered by the Fail step when the error occurs.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>A message that you define and then is processed and rendered by the Fail step when the error occurs.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FailStepMetadata`](crate::model::FailStepMetadata)
+        pub fn build(self) -> crate::model::FailStepMetadata {
+            crate::model::FailStepMetadata {
+                error_message: self.error_message,
+            }
+        }
+    }
+}
+impl FailStepMetadata {
+    /// Creates a new builder-style object to manufacture [`FailStepMetadata`](crate::model::FailStepMetadata)
+    pub fn builder() -> crate::model::fail_step_metadata::Builder {
+        crate::model::fail_step_metadata::Builder::default()
     }
 }
 
@@ -36573,6 +36652,8 @@ pub struct PipelineExecutionSummary {
     pub pipeline_execution_description: std::option::Option<std::string::String>,
     /// <p>The display name of the pipeline execution.</p>
     pub pipeline_execution_display_name: std::option::Option<std::string::String>,
+    /// <p>A message generated by SageMaker Pipelines describing why the pipeline execution failed.</p>
+    pub pipeline_execution_failure_reason: std::option::Option<std::string::String>,
 }
 impl PipelineExecutionSummary {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
@@ -36597,6 +36678,10 @@ impl PipelineExecutionSummary {
     pub fn pipeline_execution_display_name(&self) -> std::option::Option<&str> {
         self.pipeline_execution_display_name.as_deref()
     }
+    /// <p>A message generated by SageMaker Pipelines describing why the pipeline execution failed.</p>
+    pub fn pipeline_execution_failure_reason(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for PipelineExecutionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36611,6 +36696,10 @@ impl std::fmt::Debug for PipelineExecutionSummary {
         formatter.field(
             "pipeline_execution_display_name",
             &self.pipeline_execution_display_name,
+        );
+        formatter.field(
+            "pipeline_execution_failure_reason",
+            &self.pipeline_execution_failure_reason,
         );
         formatter.finish()
     }
@@ -36627,6 +36716,7 @@ pub mod pipeline_execution_summary {
             std::option::Option<crate::model::PipelineExecutionStatus>,
         pub(crate) pipeline_execution_description: std::option::Option<std::string::String>,
         pub(crate) pipeline_execution_display_name: std::option::Option<std::string::String>,
+        pub(crate) pipeline_execution_failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
@@ -36703,6 +36793,22 @@ pub mod pipeline_execution_summary {
             self.pipeline_execution_display_name = input;
             self
         }
+        /// <p>A message generated by SageMaker Pipelines describing why the pipeline execution failed.</p>
+        pub fn pipeline_execution_failure_reason(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.pipeline_execution_failure_reason = Some(input.into());
+            self
+        }
+        /// <p>A message generated by SageMaker Pipelines describing why the pipeline execution failed.</p>
+        pub fn set_pipeline_execution_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pipeline_execution_failure_reason = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PipelineExecutionSummary`](crate::model::PipelineExecutionSummary)
         pub fn build(self) -> crate::model::PipelineExecutionSummary {
             crate::model::PipelineExecutionSummary {
@@ -36711,6 +36817,7 @@ pub mod pipeline_execution_summary {
                 pipeline_execution_status: self.pipeline_execution_status,
                 pipeline_execution_description: self.pipeline_execution_description,
                 pipeline_execution_display_name: self.pipeline_execution_display_name,
+                pipeline_execution_failure_reason: self.pipeline_execution_failure_reason,
             }
         }
     }
@@ -45683,6 +45790,8 @@ pub enum TargetPlatformAccelerator {
     #[allow(missing_docs)] // documentation missing in model
     Mali,
     #[allow(missing_docs)] // documentation missing in model
+    Nna,
+    #[allow(missing_docs)] // documentation missing in model
     Nvidia,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -45692,6 +45801,7 @@ impl std::convert::From<&str> for TargetPlatformAccelerator {
         match s {
             "INTEL_GRAPHICS" => TargetPlatformAccelerator::IntelGraphics,
             "MALI" => TargetPlatformAccelerator::Mali,
+            "NNA" => TargetPlatformAccelerator::Nna,
             "NVIDIA" => TargetPlatformAccelerator::Nvidia,
             other => TargetPlatformAccelerator::Unknown(other.to_owned()),
         }
@@ -45710,13 +45820,14 @@ impl TargetPlatformAccelerator {
         match self {
             TargetPlatformAccelerator::IntelGraphics => "INTEL_GRAPHICS",
             TargetPlatformAccelerator::Mali => "MALI",
+            TargetPlatformAccelerator::Nna => "NNA",
             TargetPlatformAccelerator::Nvidia => "NVIDIA",
             TargetPlatformAccelerator::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["INTEL_GRAPHICS", "MALI", "NVIDIA"]
+        &["INTEL_GRAPHICS", "MALI", "NNA", "NVIDIA"]
     }
 }
 impl AsRef<str> for TargetPlatformAccelerator {
@@ -47103,17 +47214,24 @@ impl AsRef<str> for AutoMlMetricEnum {
 pub struct CandidateArtifactLocations {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
     pub explainability: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
+    pub model_insights: std::option::Option<std::string::String>,
 }
 impl CandidateArtifactLocations {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
     pub fn explainability(&self) -> std::option::Option<&str> {
         self.explainability.as_deref()
     }
+    /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
+    pub fn model_insights(&self) -> std::option::Option<&str> {
+        self.model_insights.as_deref()
+    }
 }
 impl std::fmt::Debug for CandidateArtifactLocations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CandidateArtifactLocations");
         formatter.field("explainability", &self.explainability);
+        formatter.field("model_insights", &self.model_insights);
         formatter.finish()
     }
 }
@@ -47124,6 +47242,7 @@ pub mod candidate_artifact_locations {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) explainability: std::option::Option<std::string::String>,
+        pub(crate) model_insights: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
@@ -47139,10 +47258,24 @@ pub mod candidate_artifact_locations {
             self.explainability = input;
             self
         }
+        /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
+        pub fn model_insights(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_insights = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
+        pub fn set_model_insights(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_insights = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CandidateArtifactLocations`](crate::model::CandidateArtifactLocations)
         pub fn build(self) -> crate::model::CandidateArtifactLocations {
             crate::model::CandidateArtifactLocations {
                 explainability: self.explainability,
+                model_insights: self.model_insights,
             }
         }
     }
@@ -48109,11 +48242,15 @@ pub enum AutoMlJobSecondaryStatus {
     #[allow(missing_docs)] // documentation missing in model
     GeneratingExplainabilityReport,
     #[allow(missing_docs)] // documentation missing in model
+    GeneratingModelInsightsReport,
+    #[allow(missing_docs)] // documentation missing in model
     MaxAutoMlJobRuntimeReached,
     #[allow(missing_docs)] // documentation missing in model
     MaxCandidatesReached,
     #[allow(missing_docs)] // documentation missing in model
     ModelDeploymentError,
+    #[allow(missing_docs)] // documentation missing in model
+    ModelInsightsError,
     #[allow(missing_docs)] // documentation missing in model
     ModelTuning,
     #[allow(missing_docs)] // documentation missing in model
@@ -48140,9 +48277,13 @@ impl std::convert::From<&str> for AutoMlJobSecondaryStatus {
             "GeneratingExplainabilityReport" => {
                 AutoMlJobSecondaryStatus::GeneratingExplainabilityReport
             }
+            "GeneratingModelInsightsReport" => {
+                AutoMlJobSecondaryStatus::GeneratingModelInsightsReport
+            }
             "MaxAutoMLJobRuntimeReached" => AutoMlJobSecondaryStatus::MaxAutoMlJobRuntimeReached,
             "MaxCandidatesReached" => AutoMlJobSecondaryStatus::MaxCandidatesReached,
             "ModelDeploymentError" => AutoMlJobSecondaryStatus::ModelDeploymentError,
+            "ModelInsightsError" => AutoMlJobSecondaryStatus::ModelInsightsError,
             "ModelTuning" => AutoMlJobSecondaryStatus::ModelTuning,
             "Starting" => AutoMlJobSecondaryStatus::Starting,
             "Stopped" => AutoMlJobSecondaryStatus::Stopped,
@@ -48174,9 +48315,13 @@ impl AutoMlJobSecondaryStatus {
             AutoMlJobSecondaryStatus::GeneratingExplainabilityReport => {
                 "GeneratingExplainabilityReport"
             }
+            AutoMlJobSecondaryStatus::GeneratingModelInsightsReport => {
+                "GeneratingModelInsightsReport"
+            }
             AutoMlJobSecondaryStatus::MaxAutoMlJobRuntimeReached => "MaxAutoMLJobRuntimeReached",
             AutoMlJobSecondaryStatus::MaxCandidatesReached => "MaxCandidatesReached",
             AutoMlJobSecondaryStatus::ModelDeploymentError => "ModelDeploymentError",
+            AutoMlJobSecondaryStatus::ModelInsightsError => "ModelInsightsError",
             AutoMlJobSecondaryStatus::ModelTuning => "ModelTuning",
             AutoMlJobSecondaryStatus::Starting => "Starting",
             AutoMlJobSecondaryStatus::Stopped => "Stopped",
@@ -48195,9 +48340,11 @@ impl AutoMlJobSecondaryStatus {
             "Failed",
             "FeatureEngineering",
             "GeneratingExplainabilityReport",
+            "GeneratingModelInsightsReport",
             "MaxAutoMLJobRuntimeReached",
             "MaxCandidatesReached",
             "ModelDeploymentError",
+            "ModelInsightsError",
             "ModelTuning",
             "Starting",
             "Stopped",

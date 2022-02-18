@@ -28,13 +28,15 @@ pub struct Service {
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>The runtime configuration of instances (scaling units) of this service.</p>
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
-    /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed CMK.</p>
+    /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
     pub health_check_configuration: std::option::Option<crate::model::HealthCheckConfiguration>,
     /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
     pub auto_scaling_configuration_summary:
         std::option::Option<crate::model::AutoScalingConfigurationSummary>,
+    /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
+    pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
 }
 impl Service {
     /// <p>The customer-provided service name.</p>
@@ -83,7 +85,7 @@ impl Service {
     ) -> std::option::Option<&crate::model::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
-    /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed CMK.</p>
+    /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
     pub fn encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
@@ -100,6 +102,12 @@ impl Service {
         &self,
     ) -> std::option::Option<&crate::model::AutoScalingConfigurationSummary> {
         self.auto_scaling_configuration_summary.as_ref()
+    }
+    /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+        self.network_configuration.as_ref()
     }
 }
 impl std::fmt::Debug for Service {
@@ -124,6 +132,7 @@ impl std::fmt::Debug for Service {
             "auto_scaling_configuration_summary",
             &self.auto_scaling_configuration_summary,
         );
+        formatter.field("network_configuration", &self.network_configuration);
         formatter.finish()
     }
 }
@@ -149,6 +158,7 @@ pub mod service {
             std::option::Option<crate::model::HealthCheckConfiguration>,
         pub(crate) auto_scaling_configuration_summary:
             std::option::Option<crate::model::AutoScalingConfigurationSummary>,
+        pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     }
     impl Builder {
         /// <p>The customer-provided service name.</p>
@@ -280,7 +290,7 @@ pub mod service {
             self.instance_configuration = input;
             self
         }
-        /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed CMK.</p>
+        /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
         pub fn encryption_configuration(
             mut self,
             input: crate::model::EncryptionConfiguration,
@@ -288,7 +298,7 @@ pub mod service {
             self.encryption_configuration = Some(input);
             self
         }
-        /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed CMK.</p>
+        /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -328,6 +338,19 @@ pub mod service {
             self.auto_scaling_configuration_summary = input;
             self
         }
+        /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.network_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
+        pub fn set_network_configuration(
+            mut self,
+            input: std::option::Option<crate::model::NetworkConfiguration>,
+        ) -> Self {
+            self.network_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Service`](crate::model::Service)
         pub fn build(self) -> crate::model::Service {
             crate::model::Service {
@@ -344,6 +367,7 @@ pub mod service {
                 encryption_configuration: self.encryption_configuration,
                 health_check_configuration: self.health_check_configuration,
                 auto_scaling_configuration_summary: self.auto_scaling_configuration_summary,
+                network_configuration: self.network_configuration,
             }
         }
     }
@@ -352,6 +376,205 @@ impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service)
     pub fn builder() -> crate::model::service::Builder {
         crate::model::service::Builder::default()
+    }
+}
+
+/// <p>Describes configuration settings related to network traffic of an App Runner service. Consists of embedded objects for each configurable network feature.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NetworkConfiguration {
+    /// <p>Network configuration settings for outbound message traffic.</p>
+    pub egress_configuration: std::option::Option<crate::model::EgressConfiguration>,
+}
+impl NetworkConfiguration {
+    /// <p>Network configuration settings for outbound message traffic.</p>
+    pub fn egress_configuration(&self) -> std::option::Option<&crate::model::EgressConfiguration> {
+        self.egress_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for NetworkConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkConfiguration");
+        formatter.field("egress_configuration", &self.egress_configuration);
+        formatter.finish()
+    }
+}
+/// See [`NetworkConfiguration`](crate::model::NetworkConfiguration)
+pub mod network_configuration {
+    /// A builder for [`NetworkConfiguration`](crate::model::NetworkConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) egress_configuration: std::option::Option<crate::model::EgressConfiguration>,
+    }
+    impl Builder {
+        /// <p>Network configuration settings for outbound message traffic.</p>
+        pub fn egress_configuration(mut self, input: crate::model::EgressConfiguration) -> Self {
+            self.egress_configuration = Some(input);
+            self
+        }
+        /// <p>Network configuration settings for outbound message traffic.</p>
+        pub fn set_egress_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EgressConfiguration>,
+        ) -> Self {
+            self.egress_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::model::NetworkConfiguration)
+        pub fn build(self) -> crate::model::NetworkConfiguration {
+            crate::model::NetworkConfiguration {
+                egress_configuration: self.egress_configuration,
+            }
+        }
+    }
+}
+impl NetworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration)
+    pub fn builder() -> crate::model::network_configuration::Builder {
+        crate::model::network_configuration::Builder::default()
+    }
+}
+
+/// <p>Describes configuration settings related to outbound network traffic of an App Runner service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EgressConfiguration {
+    /// <p>The type of egress configuration.</p>
+    /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
+    /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
+    pub egress_type: std::option::Option<crate::model::EgressType>,
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
+    pub vpc_connector_arn: std::option::Option<std::string::String>,
+}
+impl EgressConfiguration {
+    /// <p>The type of egress configuration.</p>
+    /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
+    /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
+    pub fn egress_type(&self) -> std::option::Option<&crate::model::EgressType> {
+        self.egress_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
+    pub fn vpc_connector_arn(&self) -> std::option::Option<&str> {
+        self.vpc_connector_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for EgressConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EgressConfiguration");
+        formatter.field("egress_type", &self.egress_type);
+        formatter.field("vpc_connector_arn", &self.vpc_connector_arn);
+        formatter.finish()
+    }
+}
+/// See [`EgressConfiguration`](crate::model::EgressConfiguration)
+pub mod egress_configuration {
+    /// A builder for [`EgressConfiguration`](crate::model::EgressConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) egress_type: std::option::Option<crate::model::EgressType>,
+        pub(crate) vpc_connector_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of egress configuration.</p>
+        /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
+        /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
+        pub fn egress_type(mut self, input: crate::model::EgressType) -> Self {
+            self.egress_type = Some(input);
+            self
+        }
+        /// <p>The type of egress configuration.</p>
+        /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
+        /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
+        pub fn set_egress_type(
+            mut self,
+            input: std::option::Option<crate::model::EgressType>,
+        ) -> Self {
+            self.egress_type = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
+        pub fn vpc_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_connector_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
+        pub fn set_vpc_connector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_connector_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EgressConfiguration`](crate::model::EgressConfiguration)
+        pub fn build(self) -> crate::model::EgressConfiguration {
+            crate::model::EgressConfiguration {
+                egress_type: self.egress_type,
+                vpc_connector_arn: self.vpc_connector_arn,
+            }
+        }
+    }
+}
+impl EgressConfiguration {
+    /// Creates a new builder-style object to manufacture [`EgressConfiguration`](crate::model::EgressConfiguration)
+    pub fn builder() -> crate::model::egress_configuration::Builder {
+        crate::model::egress_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EgressType {
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    #[allow(missing_docs)] // documentation missing in model
+    Vpc,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EgressType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEFAULT" => EgressType::Default,
+            "VPC" => EgressType::Vpc,
+            other => EgressType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EgressType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EgressType::from(s))
+    }
+}
+impl EgressType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EgressType::Default => "DEFAULT",
+            EgressType::Vpc => "VPC",
+            EgressType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT", "VPC"]
+    }
+}
+impl AsRef<str> for EgressType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1289,7 +1512,7 @@ impl std::fmt::Debug for ImageConfiguration {
             "runtime_environment_variables",
             &self.runtime_environment_variables,
         );
-        formatter.field("start_command", &self.start_command);
+        formatter.field("start_command", &"*** Sensitive Data Redacted ***");
         formatter.field("port", &self.port);
         formatter.finish()
     }
@@ -2133,6 +2356,292 @@ impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>Describes an App Runner VPC connector resource. A VPC connector describes the Amazon Virtual Private Cloud (Amazon VPC) that an App Runner service is associated with, and the subnets and security group that are used.</p>
+/// <p>Multiple revisions of a connector might have the same <code>Name</code> and different <code>Revision</code> values.</p> <note>
+/// <p>At this time, App Runner supports only one revision per name.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VpcConnector {
+    /// <p>The customer-provided VPC connector name.</p>
+    pub vpc_connector_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of this VPC connector.</p>
+    pub vpc_connector_arn: std::option::Option<std::string::String>,
+    /// <p>The revision of this VPC connector. It's unique among all the active connectors (<code>"Status": "ACTIVE"</code>) that share the same <code>Name</code>.</p> <note>
+    /// <p>At this time, App Runner supports only one revision per name.</p>
+    /// </note>
+    pub vpc_connector_revision: i32,
+    /// <p>A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets of a single Amazon VPC.</p>
+    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of IDs of security groups that App Runner uses for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The current state of the VPC connector. If the status of a connector revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive connector revisions are permanently removed some time after they are deleted.</p>
+    pub status: std::option::Option<crate::model::VpcConnectorStatus>,
+    /// <p>The time when the VPC connector was created. It's in Unix time stamp format.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time when the VPC connector was deleted. It's in Unix time stamp format.</p>
+    pub deleted_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl VpcConnector {
+    /// <p>The customer-provided VPC connector name.</p>
+    pub fn vpc_connector_name(&self) -> std::option::Option<&str> {
+        self.vpc_connector_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of this VPC connector.</p>
+    pub fn vpc_connector_arn(&self) -> std::option::Option<&str> {
+        self.vpc_connector_arn.as_deref()
+    }
+    /// <p>The revision of this VPC connector. It's unique among all the active connectors (<code>"Status": "ACTIVE"</code>) that share the same <code>Name</code>.</p> <note>
+    /// <p>At this time, App Runner supports only one revision per name.</p>
+    /// </note>
+    pub fn vpc_connector_revision(&self) -> i32 {
+        self.vpc_connector_revision
+    }
+    /// <p>A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets of a single Amazon VPC.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>A list of IDs of security groups that App Runner uses for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The current state of the VPC connector. If the status of a connector revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive connector revisions are permanently removed some time after they are deleted.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VpcConnectorStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time when the VPC connector was created. It's in Unix time stamp format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the VPC connector was deleted. It's in Unix time stamp format.</p>
+    pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.deleted_at.as_ref()
+    }
+}
+impl std::fmt::Debug for VpcConnector {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VpcConnector");
+        formatter.field("vpc_connector_name", &self.vpc_connector_name);
+        formatter.field("vpc_connector_arn", &self.vpc_connector_arn);
+        formatter.field("vpc_connector_revision", &self.vpc_connector_revision);
+        formatter.field("subnets", &self.subnets);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("status", &self.status);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("deleted_at", &self.deleted_at);
+        formatter.finish()
+    }
+}
+/// See [`VpcConnector`](crate::model::VpcConnector)
+pub mod vpc_connector {
+    /// A builder for [`VpcConnector`](crate::model::VpcConnector)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_connector_name: std::option::Option<std::string::String>,
+        pub(crate) vpc_connector_arn: std::option::Option<std::string::String>,
+        pub(crate) vpc_connector_revision: std::option::Option<i32>,
+        pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) status: std::option::Option<crate::model::VpcConnectorStatus>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deleted_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The customer-provided VPC connector name.</p>
+        pub fn vpc_connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_connector_name = Some(input.into());
+            self
+        }
+        /// <p>The customer-provided VPC connector name.</p>
+        pub fn set_vpc_connector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_connector_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of this VPC connector.</p>
+        pub fn vpc_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_connector_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of this VPC connector.</p>
+        pub fn set_vpc_connector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_connector_arn = input;
+            self
+        }
+        /// <p>The revision of this VPC connector. It's unique among all the active connectors (<code>"Status": "ACTIVE"</code>) that share the same <code>Name</code>.</p> <note>
+        /// <p>At this time, App Runner supports only one revision per name.</p>
+        /// </note>
+        pub fn vpc_connector_revision(mut self, input: i32) -> Self {
+            self.vpc_connector_revision = Some(input);
+            self
+        }
+        /// <p>The revision of this VPC connector. It's unique among all the active connectors (<code>"Status": "ACTIVE"</code>) that share the same <code>Name</code>.</p> <note>
+        /// <p>At this time, App Runner supports only one revision per name.</p>
+        /// </note>
+        pub fn set_vpc_connector_revision(mut self, input: std::option::Option<i32>) -> Self {
+            self.vpc_connector_revision = input;
+            self
+        }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets of a single Amazon VPC.</p>
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnets.unwrap_or_default();
+            v.push(input.into());
+            self.subnets = Some(v);
+            self
+        }
+        /// <p>A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets of a single Amazon VPC.</p>
+        pub fn set_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnets = input;
+            self
+        }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>A list of IDs of security groups that App Runner uses for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_groups.unwrap_or_default();
+            v.push(input.into());
+            self.security_groups = Some(v);
+            self
+        }
+        /// <p>A list of IDs of security groups that App Runner uses for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+        pub fn set_security_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_groups = input;
+            self
+        }
+        /// <p>The current state of the VPC connector. If the status of a connector revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive connector revisions are permanently removed some time after they are deleted.</p>
+        pub fn status(mut self, input: crate::model::VpcConnectorStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The current state of the VPC connector. If the status of a connector revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive connector revisions are permanently removed some time after they are deleted.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::VpcConnectorStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The time when the VPC connector was created. It's in Unix time stamp format.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The time when the VPC connector was created. It's in Unix time stamp format.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The time when the VPC connector was deleted. It's in Unix time stamp format.</p>
+        pub fn deleted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.deleted_at = Some(input);
+            self
+        }
+        /// <p>The time when the VPC connector was deleted. It's in Unix time stamp format.</p>
+        pub fn set_deleted_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.deleted_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcConnector`](crate::model::VpcConnector)
+        pub fn build(self) -> crate::model::VpcConnector {
+            crate::model::VpcConnector {
+                vpc_connector_name: self.vpc_connector_name,
+                vpc_connector_arn: self.vpc_connector_arn,
+                vpc_connector_revision: self.vpc_connector_revision.unwrap_or_default(),
+                subnets: self.subnets,
+                security_groups: self.security_groups,
+                status: self.status,
+                created_at: self.created_at,
+                deleted_at: self.deleted_at,
+            }
+        }
+    }
+}
+impl VpcConnector {
+    /// Creates a new builder-style object to manufacture [`VpcConnector`](crate::model::VpcConnector)
+    pub fn builder() -> crate::model::vpc_connector::Builder {
+        crate::model::vpc_connector::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VpcConnectorStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VpcConnectorStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => VpcConnectorStatus::Active,
+            "INACTIVE" => VpcConnectorStatus::Inactive,
+            other => VpcConnectorStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VpcConnectorStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VpcConnectorStatus::from(s))
+    }
+}
+impl VpcConnectorStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VpcConnectorStatus::Active => "ACTIVE",
+            VpcConnectorStatus::Inactive => "INACTIVE",
+            VpcConnectorStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "INACTIVE"]
+    }
+}
+impl AsRef<str> for VpcConnectorStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3318,9 +3827,10 @@ impl AsRef<str> for CertificateValidationRecordStatus {
     }
 }
 
-/// <p>Describes an App Runner automatic scaling configuration resource. Multiple revisions of a configuration have the same <code>AutoScalingConfigurationName</code> and different <code>AutoScalingConfigurationRevision</code> values.</p>
+/// <p>Describes an App Runner automatic scaling configuration resource.</p>
 /// <p>A higher <code>MinSize</code> increases the spread of your App Runner service over more Availability Zones in the Amazon Web Services Region. The tradeoff is a higher minimal cost.</p>
 /// <p>A lower <code>MaxSize</code> controls your cost. The tradeoff is lower responsiveness during peak demand.</p>
+/// <p>Multiple revisions of a configuration might have the same <code>AutoScalingConfigurationName</code> and different <code>AutoScalingConfigurationRevision</code> values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoScalingConfiguration {

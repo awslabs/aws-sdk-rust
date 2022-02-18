@@ -1885,6 +1885,121 @@ impl std::error::Error for DeleteEntityRecognizerError {
     }
 }
 
+/// Error type for the `DeleteResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteResourcePolicyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteResourcePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteResourcePolicyErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteResourcePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteResourcePolicyErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteResourcePolicyError {
+    fn code(&self) -> Option<&str> {
+        DeleteResourcePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteResourcePolicyError {
+    /// Creates a new `DeleteResourcePolicyError`.
+    pub fn new(kind: DeleteResourcePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteResourcePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteResourcePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteResourcePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteResourcePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeDocumentClassificationJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3091,6 +3206,121 @@ impl std::error::Error for DescribePiiEntitiesDetectionJobError {
     }
 }
 
+/// Error type for the `DescribeResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeResourcePolicyError {
+    /// Kind of error that occurred.
+    pub kind: DescribeResourcePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeResourcePolicyErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeResourcePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeResourcePolicyErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeResourcePolicyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeResourcePolicyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeResourcePolicyError {
+    fn code(&self) -> Option<&str> {
+        DescribeResourcePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeResourcePolicyError {
+    /// Creates a new `DescribeResourcePolicyError`.
+    pub fn new(kind: DescribeResourcePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeResourcePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeResourcePolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeResourcePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeResourcePolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePolicyErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePolicyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeResourcePolicyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeResourcePolicyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeResourcePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeResourcePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeSentimentDetectionJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4108,6 +4338,175 @@ impl std::error::Error for DetectSyntaxError {
             DetectSyntaxErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             DetectSyntaxErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
             DetectSyntaxErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ImportModel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ImportModelError {
+    /// Kind of error that occurred.
+    pub kind: ImportModelErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ImportModel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ImportModelErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
+    KmsKeyValidationException(crate::error::KmsKeyValidationException),
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
+    ResourceUnavailableException(crate::error::ResourceUnavailableException),
+    /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ImportModelError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ImportModelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ImportModelErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ImportModelErrorKind::KmsKeyValidationException(_inner) => _inner.fmt(f),
+            ImportModelErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            ImportModelErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
+            ImportModelErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ImportModelErrorKind::ResourceUnavailableException(_inner) => _inner.fmt(f),
+            ImportModelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ImportModelErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
+            ImportModelErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ImportModelError {
+    fn code(&self) -> Option<&str> {
+        ImportModelError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ImportModelError {
+    /// Creates a new `ImportModelError`.
+    pub fn new(kind: ImportModelErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ImportModelError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ImportModelErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ImportModelError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ImportModelErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ImportModelErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, ImportModelErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ImportModelErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(&self.kind, ImportModelErrorKind::InvalidRequestException(_))
+    }
+    /// Returns `true` if the error kind is `ImportModelErrorKind::KmsKeyValidationException`.
+    pub fn is_kms_key_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportModelErrorKind::KmsKeyValidationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportModelErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(&self.kind, ImportModelErrorKind::ResourceInUseException(_))
+    }
+    /// Returns `true` if the error kind is `ImportModelErrorKind::ResourceLimitExceededException`.
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportModelErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportModelErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportModelErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportModelErrorKind::ResourceUnavailableException`.
+    pub fn is_resource_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportModelErrorKind::ResourceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportModelErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportModelErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportModelErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(&self.kind, ImportModelErrorKind::TooManyTagsException(_))
+    }
+}
+impl std::error::Error for ImportModelError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ImportModelErrorKind::InternalServerException(_inner) => Some(_inner),
+            ImportModelErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ImportModelErrorKind::KmsKeyValidationException(_inner) => Some(_inner),
+            ImportModelErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            ImportModelErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
+            ImportModelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ImportModelErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
+            ImportModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ImportModelErrorKind::TooManyTagsException(_inner) => Some(_inner),
+            ImportModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5892,6 +6291,121 @@ impl std::error::Error for ListTopicsDetectionJobsError {
             ListTopicsDetectionJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTopicsDetectionJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListTopicsDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `PutResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutResourcePolicyError {
+    /// Kind of error that occurred.
+    pub kind: PutResourcePolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PutResourcePolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutResourcePolicyErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutResourcePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutResourcePolicyErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutResourcePolicyError {
+    fn code(&self) -> Option<&str> {
+        PutResourcePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutResourcePolicyError {
+    /// Creates a new `PutResourcePolicyError`.
+    pub fn new(kind: PutResourcePolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutResourcePolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutResourcePolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for PutResourcePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutResourcePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

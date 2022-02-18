@@ -2425,6 +2425,184 @@ impl DescribeDomainAutoTunesInput {
     }
 }
 
+/// See [`DescribeDomainChangeProgressInput`](crate::input::DescribeDomainChangeProgressInput)
+pub mod describe_domain_change_progress_input {
+    /// A builder for [`DescribeDomainChangeProgressInput`](crate::input::DescribeDomainChangeProgressInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) change_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The domain you want to get the progress information about.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The domain you want to get the progress information about.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+        pub fn change_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.change_id = Some(input.into());
+            self
+        }
+        /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+        pub fn set_change_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDomainChangeProgressInput`](crate::input::DescribeDomainChangeProgressInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeDomainChangeProgressInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeDomainChangeProgressInput {
+                domain_name: self.domain_name,
+                change_id: self.change_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeDomainChangeProgressInputOperationOutputAlias =
+    crate::operation::DescribeDomainChangeProgress;
+#[doc(hidden)]
+pub type DescribeDomainChangeProgressInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeDomainChangeProgressInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeDomainChangeProgress`](crate::operation::DescribeDomainChangeProgress)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeDomainChangeProgress,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeDomainChangeProgressInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_9 = &_input.domain_name;
+            let input_9 =
+                input_9
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let domain_name = aws_smithy_http::label::fmt_string(input_9, false);
+            if domain_name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/2015-01-01/es/domain/{DomainName}/progress",
+                DomainName = domain_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::DescribeDomainChangeProgressInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_10) = &_input.change_id {
+                query.push_kv("changeid", &aws_smithy_http::query::fmt_string(&inner_10));
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeDomainChangeProgressInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeDomainChangeProgressInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeDomainChangeProgress::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeDomainChangeProgress",
+            "elasticsearchservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressInput`](crate::input::DescribeDomainChangeProgressInput)
+    pub fn builder() -> crate::input::describe_domain_change_progress_input::Builder {
+        crate::input::describe_domain_change_progress_input::Builder::default()
+    }
+}
+
 /// See [`DescribeElasticsearchDomainInput`](crate::input::DescribeElasticsearchDomainInput)
 pub mod describe_elasticsearch_domain_input {
     /// A builder for [`DescribeElasticsearchDomainInput`](crate::input::DescribeElasticsearchDomainInput)
@@ -2480,15 +2658,15 @@ impl DescribeElasticsearchDomainInput {
             _input: &crate::input::DescribeElasticsearchDomainInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_9 = &_input.domain_name;
-            let input_9 =
-                input_9
+            let input_11 = &_input.domain_name;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_9, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_11, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -2635,15 +2813,15 @@ impl DescribeElasticsearchDomainConfigInput {
             _input: &crate::input::DescribeElasticsearchDomainConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_10 = &_input.domain_name;
-            let input_10 =
-                input_10
+            let input_12 = &_input.domain_name;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_10, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_12, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -2978,30 +3156,30 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
             _input: &crate::input::DescribeElasticsearchInstanceTypeLimitsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_11 = &_input.elasticsearch_version;
-            let input_11 =
-                input_11
+            let input_13 = &_input.elasticsearch_version;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "elasticsearch_version",
                         details: "cannot be empty or unset",
                     })?;
-            let elasticsearch_version = aws_smithy_http::label::fmt_string(input_11, false);
+            let elasticsearch_version = aws_smithy_http::label::fmt_string(input_13, false);
             if elasticsearch_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "elasticsearch_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_12 = &_input.instance_type;
-            let input_12 =
-                input_12
+            let input_14 = &_input.instance_type;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_type",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_type = aws_smithy_http::label::fmt_string(input_12, false);
+            let instance_type = aws_smithy_http::label::fmt_string(input_14, false);
             if instance_type.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_type",
@@ -3022,8 +3200,8 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_13) = &_input.domain_name {
-                query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_13));
+            if let Some(inner_15) = &_input.domain_name {
+                query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_15));
             }
             Ok(())
         }
@@ -3789,8 +3967,8 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_14) = &_input.reserved_elasticsearch_instance_offering_id {
-                query.push_kv("offeringId", &aws_smithy_http::query::fmt_string(&inner_14));
+            if let Some(inner_16) = &_input.reserved_elasticsearch_instance_offering_id {
+                query.push_kv("offeringId", &aws_smithy_http::query::fmt_string(&inner_16));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -3798,8 +3976,8 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_15) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+            if let Some(inner_17) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
             }
             Ok(())
         }
@@ -3975,10 +4153,10 @@ impl DescribeReservedElasticsearchInstancesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_16) = &_input.reserved_elasticsearch_instance_id {
+            if let Some(inner_18) = &_input.reserved_elasticsearch_instance_id {
                 query.push_kv(
                     "reservationId",
-                    &aws_smithy_http::query::fmt_string(&inner_16),
+                    &aws_smithy_http::query::fmt_string(&inner_18),
                 );
             }
             if _input.max_results != 0 {
@@ -3987,8 +4165,8 @@ impl DescribeReservedElasticsearchInstancesInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_17) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+            if let Some(inner_19) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
             }
             Ok(())
         }
@@ -4135,30 +4313,30 @@ impl DissociatePackageInput {
             _input: &crate::input::DissociatePackageInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.package_id;
-            let input_18 =
-                input_18
+            let input_20 = &_input.package_id;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     })?;
-            let package_id = aws_smithy_http::label::fmt_string(input_18, false);
+            let package_id = aws_smithy_http::label::fmt_string(input_20, false);
             if package_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_19 = &_input.domain_name;
-            let input_19 =
-                input_19
+            let input_21 = &_input.domain_name;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_19, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_21, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -4314,8 +4492,8 @@ impl GetCompatibleElasticsearchVersionsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_20) = &_input.domain_name {
-                query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_20));
+            if let Some(inner_22) = &_input.domain_name {
+                query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_22));
             }
             Ok(())
         }
@@ -4475,15 +4653,15 @@ impl GetPackageVersionHistoryInput {
             _input: &crate::input::GetPackageVersionHistoryInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_21 = &_input.package_id;
-            let input_21 =
-                input_21
+            let input_23 = &_input.package_id;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     })?;
-            let package_id = aws_smithy_http::label::fmt_string(input_21, false);
+            let package_id = aws_smithy_http::label::fmt_string(input_23, false);
             if package_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
@@ -4509,8 +4687,8 @@ impl GetPackageVersionHistoryInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_22) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
+            if let Some(inner_24) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
             }
             Ok(())
         }
@@ -4669,15 +4847,15 @@ impl GetUpgradeHistoryInput {
             _input: &crate::input::GetUpgradeHistoryInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_23 = &_input.domain_name;
-            let input_23 =
-                input_23
+            let input_25 = &_input.domain_name;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_23, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_25, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -4703,8 +4881,8 @@ impl GetUpgradeHistoryInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_24) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+            if let Some(inner_26) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
             }
             Ok(())
         }
@@ -4839,15 +5017,15 @@ impl GetUpgradeStatusInput {
             _input: &crate::input::GetUpgradeStatusInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_25 = &_input.domain_name;
-            let input_25 =
-                input_25
+            let input_27 = &_input.domain_name;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_25, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_27, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -5003,8 +5181,8 @@ impl ListDomainNamesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_26) = &_input.engine_type {
-                query.push_kv("engineType", &aws_smithy_http::query::fmt_string(&inner_26));
+            if let Some(inner_28) = &_input.engine_type {
+                query.push_kv("engineType", &aws_smithy_http::query::fmt_string(&inner_28));
             }
             Ok(())
         }
@@ -5163,15 +5341,15 @@ impl ListDomainsForPackageInput {
             _input: &crate::input::ListDomainsForPackageInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_27 = &_input.package_id;
-            let input_27 =
-                input_27
+            let input_29 = &_input.package_id;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     })?;
-            let package_id = aws_smithy_http::label::fmt_string(input_27, false);
+            let package_id = aws_smithy_http::label::fmt_string(input_29, false);
             if package_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
@@ -5197,8 +5375,8 @@ impl ListDomainsForPackageInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_28) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+            if let Some(inner_30) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
             }
             Ok(())
         }
@@ -5374,15 +5552,15 @@ impl ListElasticsearchInstanceTypesInput {
             _input: &crate::input::ListElasticsearchInstanceTypesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_29 = &_input.elasticsearch_version;
-            let input_29 =
-                input_29
+            let input_31 = &_input.elasticsearch_version;
+            let input_31 =
+                input_31
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "elasticsearch_version",
                         details: "cannot be empty or unset",
                     })?;
-            let elasticsearch_version = aws_smithy_http::label::fmt_string(input_29, false);
+            let elasticsearch_version = aws_smithy_http::label::fmt_string(input_31, false);
             if elasticsearch_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "elasticsearch_version",
@@ -5402,8 +5580,8 @@ impl ListElasticsearchInstanceTypesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_30) = &_input.domain_name {
-                query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_30));
+            if let Some(inner_32) = &_input.domain_name {
+                query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_32));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -5411,8 +5589,8 @@ impl ListElasticsearchInstanceTypesInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_31) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+            if let Some(inner_33) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
             }
             Ok(())
         }
@@ -5574,8 +5752,8 @@ impl ListElasticsearchVersionsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_32) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+            if let Some(inner_34) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
             }
             Ok(())
         }
@@ -5734,15 +5912,15 @@ impl ListPackagesForDomainInput {
             _input: &crate::input::ListPackagesForDomainInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_33 = &_input.domain_name;
-            let input_33 =
-                input_33
+            let input_35 = &_input.domain_name;
+            let input_35 =
+                input_35
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_33, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_35, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -5768,8 +5946,8 @@ impl ListPackagesForDomainInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_34) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+            if let Some(inner_36) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
             }
             Ok(())
         }
@@ -5908,8 +6086,8 @@ impl ListTagsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_35) = &_input.arn {
-                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_35));
+            if let Some(inner_37) = &_input.arn {
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_37));
             }
             Ok(())
         }
@@ -6240,16 +6418,16 @@ impl RejectInboundCrossClusterSearchConnectionInput {
             _input: &crate::input::RejectInboundCrossClusterSearchConnectionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_36 = &_input.cross_cluster_search_connection_id;
-            let input_36 =
-                input_36
+            let input_38 = &_input.cross_cluster_search_connection_id;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "cross_cluster_search_connection_id",
                         details: "cannot be empty or unset",
                     })?;
             let cross_cluster_search_connection_id =
-                aws_smithy_http::label::fmt_string(input_36, false);
+                aws_smithy_http::label::fmt_string(input_38, false);
             if cross_cluster_search_connection_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "cross_cluster_search_connection_id",
@@ -6971,15 +7149,15 @@ impl UpdateElasticsearchDomainConfigInput {
             _input: &crate::input::UpdateElasticsearchDomainConfigInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_37 = &_input.domain_name;
-            let input_37 =
-                input_37
+            let input_39 = &_input.domain_name;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_37, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_39, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -8424,6 +8602,34 @@ impl std::fmt::Debug for DescribeElasticsearchDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeElasticsearchDomainInput");
         formatter.field("domain_name", &self.domain_name);
+        formatter.finish()
+    }
+}
+
+/// <p>Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the domain name and optional change specific identity for which you want progress information. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDomainChangeProgressInput {
+    /// <p>The domain you want to get the progress information about.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+    pub change_id: std::option::Option<std::string::String>,
+}
+impl DescribeDomainChangeProgressInput {
+    /// <p>The domain you want to get the progress information about.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+    pub fn change_id(&self) -> std::option::Option<&str> {
+        self.change_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeDomainChangeProgressInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDomainChangeProgressInput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("change_id", &self.change_id);
         formatter.finish()
     }
 }

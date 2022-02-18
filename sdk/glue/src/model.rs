@@ -9292,6 +9292,8 @@ pub struct Table {
     pub target_table: std::option::Option<crate::model::TableIdentifier>,
     /// <p>The ID of the Data Catalog in which the table resides.</p>
     pub catalog_id: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub version_id: std::option::Option<std::string::String>,
 }
 impl Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
@@ -9375,6 +9377,10 @@ impl Table {
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Table {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9401,6 +9407,7 @@ impl std::fmt::Debug for Table {
         );
         formatter.field("target_table", &self.target_table);
         formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("version_id", &self.version_id);
         formatter.finish()
     }
 }
@@ -9431,6 +9438,7 @@ pub mod table {
         pub(crate) is_registered_with_lake_formation: std::option::Option<bool>,
         pub(crate) target_table: std::option::Option<crate::model::TableIdentifier>,
         pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
@@ -9681,6 +9689,16 @@ pub mod table {
             self.catalog_id = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Table`](crate::model::Table)
         pub fn build(self) -> crate::model::Table {
             crate::model::Table {
@@ -9705,6 +9723,7 @@ pub mod table {
                     .unwrap_or_default(),
                 target_table: self.target_table,
                 catalog_id: self.catalog_id,
+                version_id: self.version_id,
             }
         }
     }
@@ -16053,6 +16072,8 @@ pub enum DataFormat {
     Avro,
     #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
+    Protobuf,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -16061,6 +16082,7 @@ impl std::convert::From<&str> for DataFormat {
         match s {
             "AVRO" => DataFormat::Avro,
             "JSON" => DataFormat::Json,
+            "PROTOBUF" => DataFormat::Protobuf,
             other => DataFormat::Unknown(other.to_owned()),
         }
     }
@@ -16078,12 +16100,13 @@ impl DataFormat {
         match self {
             DataFormat::Avro => "AVRO",
             DataFormat::Json => "JSON",
+            DataFormat::Protobuf => "PROTOBUF",
             DataFormat::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["AVRO", "JSON"]
+        &["AVRO", "JSON", "PROTOBUF"]
     }
 }
 impl AsRef<str> for DataFormat {

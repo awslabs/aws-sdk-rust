@@ -194,7 +194,10 @@ pub mod create_auto_scaling_configuration_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+        /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
+        /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+        /// </note>
         pub fn auto_scaling_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -202,7 +205,10 @@ pub mod create_auto_scaling_configuration_input {
             self.auto_scaling_configuration_name = Some(input.into());
             self
         }
-        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+        /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
+        /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+        /// </note>
         pub fn set_auto_scaling_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -613,14 +619,15 @@ pub mod create_service_input {
         pub(crate) health_check_configuration:
             std::option::Option<crate::model::HealthCheckConfiguration>,
         pub(crate) auto_scaling_configuration_arn: std::option::Option<std::string::String>,
+        pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     }
     impl Builder {
-        /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+        /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_name = Some(input.into());
             self
         }
-        /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+        /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -658,14 +665,14 @@ pub mod create_service_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
+        /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
+        /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -673,7 +680,7 @@ pub mod create_service_input {
             self.tags = input;
             self
         }
-        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
+        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
         pub fn encryption_configuration(
             mut self,
             input: crate::model::EncryptionConfiguration,
@@ -681,7 +688,7 @@ pub mod create_service_input {
             self.encryption_configuration = Some(input);
             self
         }
-        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
+        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -689,7 +696,7 @@ pub mod create_service_input {
             self.encryption_configuration = input;
             self
         }
-        /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+        /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
         pub fn health_check_configuration(
             mut self,
             input: crate::model::HealthCheckConfiguration,
@@ -697,7 +704,7 @@ pub mod create_service_input {
             self.health_check_configuration = Some(input);
             self
         }
-        /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+        /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
         pub fn set_health_check_configuration(
             mut self,
             input: std::option::Option<crate::model::HealthCheckConfiguration>,
@@ -705,7 +712,7 @@ pub mod create_service_input {
             self.health_check_configuration = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -713,12 +720,25 @@ pub mod create_service_input {
             self.auto_scaling_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.auto_scaling_configuration_arn = input;
+            self
+        }
+        /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.network_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+        pub fn set_network_configuration(
+            mut self,
+            input: std::option::Option<crate::model::NetworkConfiguration>,
+        ) -> Self {
+            self.network_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateServiceInput`](crate::input::CreateServiceInput)
@@ -736,6 +756,7 @@ pub mod create_service_input {
                 encryption_configuration: self.encryption_configuration,
                 health_check_configuration: self.health_check_configuration,
                 auto_scaling_configuration_arn: self.auto_scaling_configuration_arn,
+                network_configuration: self.network_configuration,
             })
         }
     }
@@ -858,6 +879,225 @@ impl CreateServiceInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceInput`](crate::input::CreateServiceInput)
     pub fn builder() -> crate::input::create_service_input::Builder {
         crate::input::create_service_input::Builder::default()
+    }
+}
+
+/// See [`CreateVpcConnectorInput`](crate::input::CreateVpcConnectorInput)
+pub mod create_vpc_connector_input {
+    /// A builder for [`CreateVpcConnectorInput`](crate::input::CreateVpcConnectorInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_connector_name: std::option::Option<std::string::String>,
+        pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>A name for the VPC connector.</p>
+        pub fn vpc_connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_connector_name = Some(input.into());
+            self
+        }
+        /// <p>A name for the VPC connector.</p>
+        pub fn set_vpc_connector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_connector_name = input;
+            self
+        }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnets.unwrap_or_default();
+            v.push(input.into());
+            self.subnets = Some(v);
+            self
+        }
+        /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+        pub fn set_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnets = input;
+            self
+        }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_groups.unwrap_or_default();
+            v.push(input.into());
+            self.security_groups = Some(v);
+            self
+        }
+        /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+        pub fn set_security_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_groups = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVpcConnectorInput`](crate::input::CreateVpcConnectorInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateVpcConnectorInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateVpcConnectorInput {
+                vpc_connector_name: self.vpc_connector_name,
+                subnets: self.subnets,
+                security_groups: self.security_groups,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateVpcConnectorInputOperationOutputAlias = crate::operation::CreateVpcConnector;
+#[doc(hidden)]
+pub type CreateVpcConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateVpcConnectorInput {
+    /// Consumes the builder and constructs an Operation<[`CreateVpcConnector`](crate::operation::CreateVpcConnector)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateVpcConnector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateVpcConnectorInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateVpcConnectorInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateVpcConnectorInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AppRunner.CreateVpcConnector",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_vpc_connector(&self)?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateVpcConnector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateVpcConnector",
+            "apprunner",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateVpcConnectorInput`](crate::input::CreateVpcConnectorInput)
+    pub fn builder() -> crate::input::create_vpc_connector_input::Builder {
+        crate::input::create_vpc_connector_input::Builder::default()
     }
 }
 
@@ -1329,6 +1569,164 @@ impl DeleteServiceInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceInput`](crate::input::DeleteServiceInput)
     pub fn builder() -> crate::input::delete_service_input::Builder {
         crate::input::delete_service_input::Builder::default()
+    }
+}
+
+/// See [`DeleteVpcConnectorInput`](crate::input::DeleteVpcConnectorInput)
+pub mod delete_vpc_connector_input {
+    /// A builder for [`DeleteVpcConnectorInput`](crate::input::DeleteVpcConnectorInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_connector_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
+        /// <p>The ARN must be a full VPC connector ARN.</p>
+        pub fn vpc_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_connector_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
+        /// <p>The ARN must be a full VPC connector ARN.</p>
+        pub fn set_vpc_connector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_connector_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVpcConnectorInput`](crate::input::DeleteVpcConnectorInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteVpcConnectorInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteVpcConnectorInput {
+                vpc_connector_arn: self.vpc_connector_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteVpcConnectorInputOperationOutputAlias = crate::operation::DeleteVpcConnector;
+#[doc(hidden)]
+pub type DeleteVpcConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteVpcConnectorInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteVpcConnector`](crate::operation::DeleteVpcConnector)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteVpcConnector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteVpcConnectorInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteVpcConnectorInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteVpcConnectorInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AppRunner.DeleteVpcConnector",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_vpc_connector(&self)?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteVpcConnector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteVpcConnector",
+            "apprunner",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteVpcConnectorInput`](crate::input::DeleteVpcConnectorInput)
+    pub fn builder() -> crate::input::delete_vpc_connector_input::Builder {
+        crate::input::delete_vpc_connector_input::Builder::default()
     }
 }
 
@@ -1827,6 +2225,166 @@ impl DescribeServiceInput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceInput`](crate::input::DescribeServiceInput)
     pub fn builder() -> crate::input::describe_service_input::Builder {
         crate::input::describe_service_input::Builder::default()
+    }
+}
+
+/// See [`DescribeVpcConnectorInput`](crate::input::DescribeVpcConnectorInput)
+pub mod describe_vpc_connector_input {
+    /// A builder for [`DescribeVpcConnectorInput`](crate::input::DescribeVpcConnectorInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_connector_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+        /// <p>The ARN must be a full VPC connector ARN.</p>
+        pub fn vpc_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_connector_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+        /// <p>The ARN must be a full VPC connector ARN.</p>
+        pub fn set_vpc_connector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_connector_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVpcConnectorInput`](crate::input::DescribeVpcConnectorInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeVpcConnectorInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeVpcConnectorInput {
+                vpc_connector_arn: self.vpc_connector_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeVpcConnectorInputOperationOutputAlias = crate::operation::DescribeVpcConnector;
+#[doc(hidden)]
+pub type DescribeVpcConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeVpcConnectorInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeVpcConnector`](crate::operation::DescribeVpcConnector)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeVpcConnector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeVpcConnectorInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeVpcConnectorInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeVpcConnectorInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AppRunner.DescribeVpcConnector",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_vpc_connector(
+                &self,
+            )?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeVpcConnector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeVpcConnector",
+            "apprunner",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeVpcConnectorInput`](crate::input::DescribeVpcConnectorInput)
+    pub fn builder() -> crate::input::describe_vpc_connector_input::Builder {
+        crate::input::describe_vpc_connector_input::Builder::default()
     }
 }
 
@@ -2893,6 +3451,175 @@ impl ListTagsForResourceInput {
     }
 }
 
+/// See [`ListVpcConnectorsInput`](crate::input::ListVpcConnectorsInput)
+pub mod list_vpc_connectors_input {
+    /// A builder for [`ListVpcConnectorsInput`](crate::input::ListVpcConnectorsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+        /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+        /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+        /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+        /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVpcConnectorsInput`](crate::input::ListVpcConnectorsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListVpcConnectorsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListVpcConnectorsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListVpcConnectorsInputOperationOutputAlias = crate::operation::ListVpcConnectors;
+#[doc(hidden)]
+pub type ListVpcConnectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListVpcConnectorsInput {
+    /// Consumes the builder and constructs an Operation<[`ListVpcConnectors`](crate::operation::ListVpcConnectors)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListVpcConnectors,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListVpcConnectorsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListVpcConnectorsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListVpcConnectorsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AppRunner.ListVpcConnectors",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_vpc_connectors(&self)?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListVpcConnectors::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListVpcConnectors",
+            "apprunner",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListVpcConnectorsInput`](crate::input::ListVpcConnectorsInput)
+    pub fn builder() -> crate::input::list_vpc_connectors_input::Builder {
+        crate::input::list_vpc_connectors_input::Builder::default()
+    }
+}
+
 /// See [`PauseServiceInput`](crate::input::PauseServiceInput)
 pub mod pause_service_input {
     /// A builder for [`PauseServiceInput`](crate::input::PauseServiceInput)
@@ -3716,6 +4443,7 @@ pub mod update_service_input {
         pub(crate) auto_scaling_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) health_check_configuration:
             std::option::Option<crate::model::HealthCheckConfiguration>,
+        pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
@@ -3759,7 +4487,7 @@ pub mod update_service_input {
             self.instance_configuration = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -3767,7 +4495,7 @@ pub mod update_service_input {
             self.auto_scaling_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3775,7 +4503,7 @@ pub mod update_service_input {
             self.auto_scaling_configuration_arn = input;
             self
         }
-        /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+        /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
         pub fn health_check_configuration(
             mut self,
             input: crate::model::HealthCheckConfiguration,
@@ -3783,12 +4511,25 @@ pub mod update_service_input {
             self.health_check_configuration = Some(input);
             self
         }
-        /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+        /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
         pub fn set_health_check_configuration(
             mut self,
             input: std::option::Option<crate::model::HealthCheckConfiguration>,
         ) -> Self {
             self.health_check_configuration = input;
+            self
+        }
+        /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.network_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+        pub fn set_network_configuration(
+            mut self,
+            input: std::option::Option<crate::model::NetworkConfiguration>,
+        ) -> Self {
+            self.network_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::input::UpdateServiceInput)
@@ -3804,6 +4545,7 @@ pub mod update_service_input {
                 instance_configuration: self.instance_configuration,
                 auto_scaling_configuration_arn: self.auto_scaling_configuration_arn,
                 health_check_configuration: self.health_check_configuration,
+                network_configuration: self.network_configuration,
             })
         }
     }
@@ -3940,10 +4682,12 @@ pub struct UpdateServiceInput {
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
-    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
-    /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+    /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     pub health_check_configuration: std::option::Option<crate::model::HealthCheckConfiguration>,
+    /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+    pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
 }
 impl UpdateServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
@@ -3961,15 +4705,21 @@ impl UpdateServiceInput {
     ) -> std::option::Option<&crate::model::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
     pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
-    /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+    /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     pub fn health_check_configuration(
         &self,
     ) -> std::option::Option<&crate::model::HealthCheckConfiguration> {
         self.health_check_configuration.as_ref()
+    }
+    /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+        self.network_configuration.as_ref()
     }
 }
 impl std::fmt::Debug for UpdateServiceInput {
@@ -3986,6 +4736,7 @@ impl std::fmt::Debug for UpdateServiceInput {
             "health_check_configuration",
             &self.health_check_configuration,
         );
+        formatter.field("network_configuration", &self.network_configuration);
         formatter.finish()
     }
 }
@@ -4109,6 +4860,38 @@ impl std::fmt::Debug for PauseServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PauseServiceInput");
         formatter.field("service_arn", &self.service_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListVpcConnectorsInput {
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpcConnectorsInput {
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListVpcConnectorsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListVpcConnectorsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -4330,6 +5113,29 @@ impl std::fmt::Debug for DisassociateCustomDomainInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeVpcConnectorInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+    /// <p>The ARN must be a full VPC connector ARN.</p>
+    pub vpc_connector_arn: std::option::Option<std::string::String>,
+}
+impl DescribeVpcConnectorInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+    /// <p>The ARN must be a full VPC connector ARN.</p>
+    pub fn vpc_connector_arn(&self) -> std::option::Option<&str> {
+        self.vpc_connector_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeVpcConnectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeVpcConnectorInput");
+        formatter.field("vpc_connector_arn", &self.vpc_connector_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
     pub service_arn: std::option::Option<std::string::String>,
@@ -4416,6 +5222,29 @@ impl std::fmt::Debug for DescribeAutoScalingConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteVpcConnectorInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
+    /// <p>The ARN must be a full VPC connector ARN.</p>
+    pub vpc_connector_arn: std::option::Option<std::string::String>,
+}
+impl DeleteVpcConnectorInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
+    /// <p>The ARN must be a full VPC connector ARN.</p>
+    pub fn vpc_connector_arn(&self) -> std::option::Option<&str> {
+        self.vpc_connector_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteVpcConnectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteVpcConnectorInput");
+        formatter.field("vpc_connector_arn", &self.vpc_connector_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
     pub service_arn: std::option::Option<std::string::String>,
@@ -4484,24 +5313,68 @@ impl std::fmt::Debug for DeleteAutoScalingConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateVpcConnectorInput {
+    /// <p>A name for the VPC connector.</p>
+    pub vpc_connector_name: std::option::Option<std::string::String>,
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateVpcConnectorInput {
+    /// <p>A name for the VPC connector.</p>
+    pub fn vpc_connector_name(&self) -> std::option::Option<&str> {
+        self.vpc_connector_name.as_deref()
+    }
+    /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateVpcConnectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateVpcConnectorInput");
+        formatter.field("vpc_connector_name", &self.vpc_connector_name);
+        formatter.field("subnets", &self.subnets);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceInput {
-    /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+    /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
-    /// <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
+    /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
+    /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
-    /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+    /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     pub health_check_configuration: std::option::Option<crate::model::HealthCheckConfiguration>,
-    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
+    /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+    pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
 }
 impl CreateServiceInput {
-    /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+    /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
@@ -4515,25 +5388,31 @@ impl CreateServiceInput {
     ) -> std::option::Option<&crate::model::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
-    /// <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
+    /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
+    /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
     pub fn encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
-    /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+    /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     pub fn health_check_configuration(
         &self,
     ) -> std::option::Option<&crate::model::HealthCheckConfiguration> {
         self.health_check_configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
     pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_arn.as_deref()
+    }
+    /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+        self.network_configuration.as_ref()
     }
 }
 impl std::fmt::Debug for CreateServiceInput {
@@ -4552,6 +5431,7 @@ impl std::fmt::Debug for CreateServiceInput {
             "auto_scaling_configuration_arn",
             &self.auto_scaling_configuration_arn,
         );
+        formatter.field("network_configuration", &self.network_configuration);
         formatter.finish()
     }
 }
@@ -4595,7 +5475,10 @@ impl std::fmt::Debug for CreateConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAutoScalingConfigurationInput {
-    /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+    /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+    /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
+    /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+    /// </note>
     pub auto_scaling_configuration_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
     /// <p>Default: <code>100</code> </p>
@@ -4611,7 +5494,10 @@ pub struct CreateAutoScalingConfigurationInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAutoScalingConfigurationInput {
-    /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+    /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+    /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
+    /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+    /// </note>
     pub fn auto_scaling_configuration_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_name.as_deref()
     }

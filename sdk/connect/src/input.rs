@@ -19499,6 +19499,7 @@ pub mod start_chat_contact_input {
         pub(crate) participant_details: std::option::Option<crate::model::ParticipantDetails>,
         pub(crate) initial_message: std::option::Option<crate::model::ChatMessage>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) chat_duration_in_minutes: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -19589,6 +19590,16 @@ pub mod start_chat_contact_input {
             self.client_token = input;
             self
         }
+        /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+        pub fn chat_duration_in_minutes(mut self, input: i32) -> Self {
+            self.chat_duration_in_minutes = Some(input);
+            self
+        }
+        /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+        pub fn set_chat_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.chat_duration_in_minutes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartChatContactInput`](crate::input::StartChatContactInput)
         pub fn build(
             self,
@@ -19603,6 +19614,7 @@ pub mod start_chat_contact_input {
                 participant_details: self.participant_details,
                 initial_message: self.initial_message,
                 client_token: self.client_token,
+                chat_duration_in_minutes: self.chat_duration_in_minutes,
             })
         }
     }
@@ -22737,12 +22749,12 @@ pub mod update_contact_flow_metadata_input {
             self.contact_flow_id = input;
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>TThe name of the contact flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>TThe name of the contact flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -29600,7 +29612,7 @@ pub struct UpdateContactFlowMetadataInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the contact flow.</p>
     pub contact_flow_id: std::option::Option<std::string::String>,
-    /// <p>The name of the contact flow.</p>
+    /// <p>TThe name of the contact flow.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the contact flow.</p>
     pub description: std::option::Option<std::string::String>,
@@ -29616,7 +29628,7 @@ impl UpdateContactFlowMetadataInput {
     pub fn contact_flow_id(&self) -> std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>The name of the contact flow.</p>
+    /// <p>TThe name of the contact flow.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -30329,6 +30341,8 @@ pub struct StartChatContactInput {
     pub initial_message: std::option::Option<crate::model::ChatMessage>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+    pub chat_duration_in_minutes: std::option::Option<i32>,
 }
 impl StartChatContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -30360,6 +30374,10 @@ impl StartChatContactInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+    pub fn chat_duration_in_minutes(&self) -> std::option::Option<i32> {
+        self.chat_duration_in_minutes
+    }
 }
 impl std::fmt::Debug for StartChatContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30370,6 +30388,7 @@ impl std::fmt::Debug for StartChatContactInput {
         formatter.field("participant_details", &self.participant_details);
         formatter.field("initial_message", &self.initial_message);
         formatter.field("client_token", &self.client_token);
+        formatter.field("chat_duration_in_minutes", &self.chat_duration_in_minutes);
         formatter.finish()
     }
 }

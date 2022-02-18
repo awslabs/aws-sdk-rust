@@ -105,7 +105,7 @@ impl Client {
     ///   - [`enable_branch_auto_build(bool)`](crate::client::fluent_builders::CreateApp::enable_branch_auto_build) / [`set_enable_branch_auto_build(Option<bool>)`](crate::client::fluent_builders::CreateApp::set_enable_branch_auto_build): <p> Enables the auto building of branches for an Amplify app. </p>
     ///   - [`enable_branch_auto_deletion(bool)`](crate::client::fluent_builders::CreateApp::enable_branch_auto_deletion) / [`set_enable_branch_auto_deletion(Option<bool>)`](crate::client::fluent_builders::CreateApp::set_enable_branch_auto_deletion): <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     ///   - [`enable_basic_auth(bool)`](crate::client::fluent_builders::CreateApp::enable_basic_auth) / [`set_enable_basic_auth(Option<bool>)`](crate::client::fluent_builders::CreateApp::set_enable_basic_auth): <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
-    ///   - [`basic_auth_credentials(impl Into<String>)`](crate::client::fluent_builders::CreateApp::basic_auth_credentials) / [`set_basic_auth_credentials(Option<String>)`](crate::client::fluent_builders::CreateApp::set_basic_auth_credentials): <p> The credentials for basic authorization for an Amplify app. </p>
+    ///   - [`basic_auth_credentials(impl Into<String>)`](crate::client::fluent_builders::CreateApp::basic_auth_credentials) / [`set_basic_auth_credentials(Option<String>)`](crate::client::fluent_builders::CreateApp::set_basic_auth_credentials): <p> The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     ///   - [`custom_rules(Vec<CustomRule>)`](crate::client::fluent_builders::CreateApp::custom_rules) / [`set_custom_rules(Option<Vec<CustomRule>>)`](crate::client::fluent_builders::CreateApp::set_custom_rules): <p> The custom rewrite and redirect rules for an Amplify app. </p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApp::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApp::set_tags): <p> The tag for an Amplify app. </p>
     ///   - [`build_spec(impl Into<String>)`](crate::client::fluent_builders::CreateApp::build_spec) / [`set_build_spec(Option<String>)`](crate::client::fluent_builders::CreateApp::set_build_spec): <p> The build specification (build spec) for an Amplify app. </p>
@@ -143,7 +143,7 @@ impl Client {
     ///   - [`enable_notification(bool)`](crate::client::fluent_builders::CreateBranch::enable_notification) / [`set_enable_notification(Option<bool>)`](crate::client::fluent_builders::CreateBranch::set_enable_notification): <p> Enables notifications for the branch. </p>
     ///   - [`enable_auto_build(bool)`](crate::client::fluent_builders::CreateBranch::enable_auto_build) / [`set_enable_auto_build(Option<bool>)`](crate::client::fluent_builders::CreateBranch::set_enable_auto_build): <p> Enables auto building for the branch. </p>
     ///   - [`environment_variables(HashMap<String, String>)`](crate::client::fluent_builders::CreateBranch::environment_variables) / [`set_environment_variables(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateBranch::set_environment_variables): <p> The environment variables for the branch. </p>
-    ///   - [`basic_auth_credentials(impl Into<String>)`](crate::client::fluent_builders::CreateBranch::basic_auth_credentials) / [`set_basic_auth_credentials(Option<String>)`](crate::client::fluent_builders::CreateBranch::set_basic_auth_credentials): <p> The basic authorization credentials for the branch. </p>
+    ///   - [`basic_auth_credentials(impl Into<String>)`](crate::client::fluent_builders::CreateBranch::basic_auth_credentials) / [`set_basic_auth_credentials(Option<String>)`](crate::client::fluent_builders::CreateBranch::set_basic_auth_credentials): <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     ///   - [`enable_basic_auth(bool)`](crate::client::fluent_builders::CreateBranch::enable_basic_auth) / [`set_enable_basic_auth(Option<bool>)`](crate::client::fluent_builders::CreateBranch::set_enable_basic_auth): <p> Enables basic authorization for the branch. </p>
     ///   - [`enable_performance_mode(bool)`](crate::client::fluent_builders::CreateBranch::enable_performance_mode) / [`set_enable_performance_mode(Option<bool>)`](crate::client::fluent_builders::CreateBranch::set_enable_performance_mode): <p>Enables performance mode for the branch.</p>  <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateBranch::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateBranch::set_tags): <p> The tag for the branch. </p>
@@ -534,7 +534,7 @@ impl Client {
     ///   - [`enable_branch_auto_build(bool)`](crate::client::fluent_builders::UpdateApp::enable_branch_auto_build) / [`set_enable_branch_auto_build(Option<bool>)`](crate::client::fluent_builders::UpdateApp::set_enable_branch_auto_build): <p> Enables branch auto-building for an Amplify app. </p>
     ///   - [`enable_branch_auto_deletion(bool)`](crate::client::fluent_builders::UpdateApp::enable_branch_auto_deletion) / [`set_enable_branch_auto_deletion(Option<bool>)`](crate::client::fluent_builders::UpdateApp::set_enable_branch_auto_deletion): <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     ///   - [`enable_basic_auth(bool)`](crate::client::fluent_builders::UpdateApp::enable_basic_auth) / [`set_enable_basic_auth(Option<bool>)`](crate::client::fluent_builders::UpdateApp::set_enable_basic_auth): <p> Enables basic authorization for an Amplify app. </p>
-    ///   - [`basic_auth_credentials(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::basic_auth_credentials) / [`set_basic_auth_credentials(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_basic_auth_credentials): <p> The basic authorization credentials for an Amplify app. </p>
+    ///   - [`basic_auth_credentials(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::basic_auth_credentials) / [`set_basic_auth_credentials(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_basic_auth_credentials): <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     ///   - [`custom_rules(Vec<CustomRule>)`](crate::client::fluent_builders::UpdateApp::custom_rules) / [`set_custom_rules(Option<Vec<CustomRule>>)`](crate::client::fluent_builders::UpdateApp::set_custom_rules): <p> The custom redirect and rewrite rules for an Amplify app. </p>
     ///   - [`build_spec(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::build_spec) / [`set_build_spec(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_build_spec): <p> The build specification (build spec) for an Amplify app. </p>
     ///   - [`custom_headers(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::custom_headers) / [`set_custom_headers(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_custom_headers): <p>The custom HTTP headers for an Amplify app.</p>
@@ -561,7 +561,7 @@ impl Client {
     ///   - [`enable_notification(bool)`](crate::client::fluent_builders::UpdateBranch::enable_notification) / [`set_enable_notification(Option<bool>)`](crate::client::fluent_builders::UpdateBranch::set_enable_notification): <p> Enables notifications for the branch. </p>
     ///   - [`enable_auto_build(bool)`](crate::client::fluent_builders::UpdateBranch::enable_auto_build) / [`set_enable_auto_build(Option<bool>)`](crate::client::fluent_builders::UpdateBranch::set_enable_auto_build): <p> Enables auto building for the branch. </p>
     ///   - [`environment_variables(HashMap<String, String>)`](crate::client::fluent_builders::UpdateBranch::environment_variables) / [`set_environment_variables(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateBranch::set_environment_variables): <p> The environment variables for the branch. </p>
-    ///   - [`basic_auth_credentials(impl Into<String>)`](crate::client::fluent_builders::UpdateBranch::basic_auth_credentials) / [`set_basic_auth_credentials(Option<String>)`](crate::client::fluent_builders::UpdateBranch::set_basic_auth_credentials): <p> The basic authorization credentials for the branch. </p>
+    ///   - [`basic_auth_credentials(impl Into<String>)`](crate::client::fluent_builders::UpdateBranch::basic_auth_credentials) / [`set_basic_auth_credentials(Option<String>)`](crate::client::fluent_builders::UpdateBranch::set_basic_auth_credentials): <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     ///   - [`enable_basic_auth(bool)`](crate::client::fluent_builders::UpdateBranch::enable_basic_auth) / [`set_enable_basic_auth(Option<bool>)`](crate::client::fluent_builders::UpdateBranch::set_enable_basic_auth): <p> Enables basic authorization for the branch. </p>
     ///   - [`enable_performance_mode(bool)`](crate::client::fluent_builders::UpdateBranch::enable_performance_mode) / [`set_enable_performance_mode(Option<bool>)`](crate::client::fluent_builders::UpdateBranch::set_enable_performance_mode): <p>Enables performance mode for the branch.</p>  <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     ///   - [`build_spec(impl Into<String>)`](crate::client::fluent_builders::UpdateBranch::build_spec) / [`set_build_spec(Option<String>)`](crate::client::fluent_builders::UpdateBranch::set_build_spec): <p> The build specification (build spec) for the branch. </p>
@@ -780,12 +780,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_basic_auth(input);
             self
         }
-        /// <p> The credentials for basic authorization for an Amplify app. </p>
+        /// <p> The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
-        /// <p> The credentials for basic authorization for an Amplify app. </p>
+        /// <p> The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn set_basic_auth_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1127,12 +1127,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_variables(input);
             self
         }
-        /// <p> The basic authorization credentials for the branch. </p>
+        /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
-        /// <p> The basic authorization credentials for the branch. </p>
+        /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn set_basic_auth_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3597,12 +3597,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_basic_auth(input);
             self
         }
-        /// <p> The basic authorization credentials for an Amplify app. </p>
+        /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
-        /// <p> The basic authorization credentials for an Amplify app. </p>
+        /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn set_basic_auth_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3862,12 +3862,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_variables(input);
             self
         }
-        /// <p> The basic authorization credentials for the branch. </p>
+        /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
-        /// <p> The basic authorization credentials for the branch. </p>
+        /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn set_basic_auth_credentials(
             mut self,
             input: std::option::Option<std::string::String>,

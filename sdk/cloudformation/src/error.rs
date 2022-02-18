@@ -14,7 +14,7 @@ pub struct ActivateTypeError {
 pub enum ActivateTypeErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -112,7 +112,7 @@ pub struct BatchDescribeTypeConfigurationsError {
 pub enum BatchDescribeTypeConfigurationsErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified extension configuration cannot be found.</p>
+    /// <p>The specified extension configuration can't be found.</p>
     TypeConfigurationNotFoundException(crate::error::TypeConfigurationNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -412,7 +412,7 @@ pub enum CreateChangeSetErrorKind {
     /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -528,7 +528,7 @@ pub enum CreateStackErrorKind {
     /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
@@ -647,7 +647,7 @@ pub enum CreateStackInstancesErrorKind {
     /// <p>The specified operation isn't valid.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
@@ -655,7 +655,7 @@ pub enum CreateStackInstancesErrorKind {
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed.</p>
     StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -800,7 +800,7 @@ pub enum CreateStackSetErrorKind {
     /// <p>The specified resource exists, but has been changed.</p>
     CreatedButModifiedException(crate::error::CreatedButModifiedException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified name is already in use.</p>
     NameAlreadyExistsException(crate::error::NameAlreadyExistsException),
@@ -915,7 +915,7 @@ pub struct DeactivateTypeError {
 pub enum DeactivateTypeErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1208,7 +1208,7 @@ pub enum DeleteStackInstancesErrorKind {
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed.</p>
     StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1447,7 +1447,7 @@ pub struct DeregisterTypeError {
 pub enum DeregisterTypeErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1628,7 +1628,7 @@ pub struct DescribeChangeSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeChangeSetErrorKind {
-    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>
+    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> operation.</p>
     ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1704,6 +1704,99 @@ impl std::error::Error for DescribeChangeSetError {
         match &self.kind {
             DescribeChangeSetErrorKind::ChangeSetNotFoundException(_inner) => Some(_inner),
             DescribeChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeChangeSetHooks` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeChangeSetHooksError {
+    /// Kind of error that occurred.
+    pub kind: DescribeChangeSetHooksErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeChangeSetHooks` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeChangeSetHooksErrorKind {
+    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> operation.</p>
+    ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeChangeSetHooksError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeChangeSetHooksErrorKind::ChangeSetNotFoundException(_inner) => _inner.fmt(f),
+            DescribeChangeSetHooksErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeChangeSetHooksError {
+    fn code(&self) -> Option<&str> {
+        DescribeChangeSetHooksError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeChangeSetHooksError {
+    /// Creates a new `DescribeChangeSetHooksError`.
+    pub fn new(kind: DescribeChangeSetHooksErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeChangeSetHooksError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeChangeSetHooksErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeChangeSetHooksError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeChangeSetHooksErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeChangeSetHooksErrorKind::ChangeSetNotFoundException`.
+    pub fn is_change_set_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeChangeSetHooksErrorKind::ChangeSetNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeChangeSetHooksError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeChangeSetHooksErrorKind::ChangeSetNotFoundException(_inner) => Some(_inner),
+            DescribeChangeSetHooksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2612,7 +2705,7 @@ pub struct DescribeTypeError {
 pub enum DescribeTypeErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3162,7 +3255,7 @@ pub struct ExecuteChangeSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteChangeSetErrorKind {
-    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>
+    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> operation.</p>
     ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
     /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
@@ -3370,7 +3463,7 @@ pub struct GetTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTemplateErrorKind {
-    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>
+    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> operation.</p>
     ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3559,17 +3652,17 @@ pub enum ImportStacksToStackSetErrorKind {
     /// <p>The specified operation isn't valid.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
     /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
-    /// <p>The specified stack ARN doesn’t exist or stack doesn’t exist corresponding to the ARN in input.</p>
+    /// <p>The specified stack ARN doesn't exist or stack doesn't exist corresponding to the ARN in input.</p>
     StackNotFoundException(crate::error::StackNotFoundException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed.</p>
     StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4788,7 +4881,7 @@ pub struct PublishTypeError {
 pub enum PublishTypeErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4884,9 +4977,9 @@ pub struct RecordHandlerProgressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RecordHandlerProgressErrorKind {
-    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
+    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation doesn't return this error to users.</p>
     InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
-    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
+    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation doesn't return this error to users.</p>
     OperationStatusCheckFailedException(crate::error::OperationStatusCheckFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5354,7 +5447,7 @@ pub struct SetTypeConfigurationError {
 pub enum SetTypeConfigurationErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5458,7 +5551,7 @@ pub struct SetTypeDefaultVersionError {
 pub enum SetTypeDefaultVersionErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5759,7 +5852,7 @@ pub struct TestTypeError {
 pub enum TestTypeErrorKind {
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified extension does not exist in the CloudFormation registry.</p>
+    /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5969,7 +6062,7 @@ pub enum UpdateStackInstancesErrorKind {
     StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed.</p>
     StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6121,7 +6214,7 @@ pub enum UpdateStackSetErrorKind {
     StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed.</p>
     StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6410,7 +6503,7 @@ impl std::error::Error for ValidateTemplateError {
     }
 }
 
-/// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
+/// <p>Another operation has been performed on this stack set since the specified operation was performed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaleRequestException {
@@ -6922,7 +7015,7 @@ impl InsufficientCapabilitiesException {
     }
 }
 
-/// <p>The specified extension does not exist in the CloudFormation registry.</p>
+/// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeNotFoundException {
@@ -7114,7 +7207,7 @@ impl OperationNotFoundException {
     }
 }
 
-/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
+/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation doesn't return this error to users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationStatusCheckFailedException {
@@ -7178,7 +7271,7 @@ impl OperationStatusCheckFailedException {
     }
 }
 
-/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
+/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation doesn't return this error to users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateTransitionException {
@@ -7242,7 +7335,7 @@ impl InvalidStateTransitionException {
     }
 }
 
-/// <p>The specified stack ARN doesn’t exist or stack doesn’t exist corresponding to the ARN in input.</p>
+/// <p>The specified stack ARN doesn't exist or stack doesn't exist corresponding to the ARN in input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackNotFoundException {
@@ -7307,7 +7400,7 @@ impl StackNotFoundException {
 }
 
 /// <p>The quota for the resource has already been reached.</p>
-/// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
+/// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -7371,7 +7464,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>
+/// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeSetNotFoundException {
@@ -7755,7 +7848,7 @@ impl AlreadyExistsException {
     }
 }
 
-/// <p>The specified extension configuration cannot be found.</p>
+/// <p>The specified extension configuration can't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeConfigurationNotFoundException {

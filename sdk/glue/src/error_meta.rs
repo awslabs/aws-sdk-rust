@@ -862,6 +862,9 @@ where
                 crate::error::CreateRegistryErrorKind::AlreadyExistsException(inner) => {
                     Error::AlreadyExistsException(inner)
                 }
+                crate::error::CreateRegistryErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
                 crate::error::CreateRegistryErrorKind::InternalServiceException(inner) => {
                     Error::InternalServiceException(inner)
                 }
@@ -889,6 +892,9 @@ where
                 }
                 crate::error::CreateSchemaErrorKind::AlreadyExistsException(inner) => {
                     Error::AlreadyExistsException(inner)
+                }
+                crate::error::CreateSchemaErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
                 }
                 crate::error::CreateSchemaErrorKind::EntityNotFoundException(inner) => {
                     Error::EntityNotFoundException(inner)

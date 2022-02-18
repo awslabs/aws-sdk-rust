@@ -14,14 +14,14 @@ pub mod batch_meter_usage_input {
         ///
         /// To override the contents of this collection use [`set_usage_records`](Self::set_usage_records).
         ///
-        /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>
+        /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
         pub fn usage_records(mut self, input: crate::model::UsageRecord) -> Self {
             let mut v = self.usage_records.unwrap_or_default();
             v.push(input);
             self.usage_records = Some(v);
             self
         }
-        /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>
+        /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
         pub fn set_usage_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
@@ -199,12 +199,12 @@ pub mod meter_usage_input {
             self.product_code = input;
             self
         }
-        /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
+        /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
+        /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
         pub fn set_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -235,12 +235,12 @@ pub mod meter_usage_input {
             self.usage_quantity = input;
             self
         }
-        /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not specified.</p>
+        /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not specified.</p>
+        /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -249,16 +249,16 @@ pub mod meter_usage_input {
         ///
         /// To override the contents of this collection use [`set_usage_allocations`](Self::set_usage_allocations).
         ///
-        /// <p>The set of UsageAllocations to submit.</p>
-        /// <p>The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each UsageAllocation must have a unique set of tags (include no tags).</p>
+        /// <p>The set of <code>UsageAllocations</code> to submit.</p>
+        /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
         pub fn usage_allocations(mut self, input: crate::model::UsageAllocation) -> Self {
             let mut v = self.usage_allocations.unwrap_or_default();
             v.push(input);
             self.usage_allocations = Some(v);
             self
         }
-        /// <p>The set of UsageAllocations to submit.</p>
-        /// <p>The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each UsageAllocation must have a unique set of tags (include no tags).</p>
+        /// <p>The set of <code>UsageAllocations</code> to submit.</p>
+        /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
         pub fn set_usage_allocations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageAllocation>>,
@@ -591,12 +591,12 @@ pub mod resolve_customer_input {
         pub(crate) registration_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>
+        /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
         pub fn registration_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.registration_token = Some(input.into());
             self
         }
-        /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>
+        /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
         pub fn set_registration_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -738,15 +738,15 @@ impl ResolveCustomerInput {
     }
 }
 
-/// <p>Contains input to the ResolveCustomer operation.</p>
+/// <p>Contains input to the <code>ResolveCustomer</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveCustomerInput {
-    /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>
+    /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
     pub registration_token: std::option::Option<std::string::String>,
 }
 impl ResolveCustomerInput {
-    /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>
+    /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
     pub fn registration_token(&self) -> std::option::Option<&str> {
         self.registration_token.as_deref()
     }
@@ -800,16 +800,16 @@ impl std::fmt::Debug for RegisterUsageInput {
 pub struct MeterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub product_code: std::option::Option<std::string::String>,
-    /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
+    /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
     pub usage_dimension: std::option::Option<std::string::String>,
     /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
     pub usage_quantity: std::option::Option<i32>,
-    /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not specified.</p>
+    /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
     pub dry_run: std::option::Option<bool>,
-    /// <p>The set of UsageAllocations to submit.</p>
-    /// <p>The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each UsageAllocation must have a unique set of tags (include no tags).</p>
+    /// <p>The set of <code>UsageAllocations</code> to submit.</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
     pub usage_allocations: std::option::Option<std::vec::Vec<crate::model::UsageAllocation>>,
 }
 impl MeterUsageInput {
@@ -817,7 +817,7 @@ impl MeterUsageInput {
     pub fn product_code(&self) -> std::option::Option<&str> {
         self.product_code.as_deref()
     }
-    /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
+    /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
@@ -829,12 +829,12 @@ impl MeterUsageInput {
     pub fn usage_quantity(&self) -> std::option::Option<i32> {
         self.usage_quantity
     }
-    /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not specified.</p>
+    /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The set of UsageAllocations to submit.</p>
-    /// <p>The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each UsageAllocation must have a unique set of tags (include no tags).</p>
+    /// <p>The set of <code>UsageAllocations</code> to submit.</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
     pub fn usage_allocations(&self) -> std::option::Option<&[crate::model::UsageAllocation]> {
         self.usage_allocations.as_deref()
     }
@@ -852,17 +852,17 @@ impl std::fmt::Debug for MeterUsageInput {
     }
 }
 
-/// <p>A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application.</p>
+/// <p>A <code>BatchMeterUsageRequest</code> contains <code>UsageRecords</code>, which indicate quantities of usage within your application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchMeterUsageInput {
-    /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>
+    /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
     pub usage_records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub product_code: std::option::Option<std::string::String>,
 }
 impl BatchMeterUsageInput {
-    /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>
+    /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
     pub fn usage_records(&self) -> std::option::Option<&[crate::model::UsageRecord]> {
         self.usage_records.as_deref()
     }

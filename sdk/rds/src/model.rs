@@ -14057,6 +14057,8 @@ pub struct UpgradeTarget {
     pub supports_parallel_query: std::option::Option<bool>,
     /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
     pub supports_global_databases: std::option::Option<bool>,
+    /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
+    pub supports_babelfish: std::option::Option<bool>,
 }
 impl UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
@@ -14091,6 +14093,10 @@ impl UpgradeTarget {
     pub fn supports_global_databases(&self) -> std::option::Option<bool> {
         self.supports_global_databases
     }
+    /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
+    pub fn supports_babelfish(&self) -> std::option::Option<bool> {
+        self.supports_babelfish
+    }
 }
 impl std::fmt::Debug for UpgradeTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14103,6 +14109,7 @@ impl std::fmt::Debug for UpgradeTarget {
         formatter.field("supported_engine_modes", &self.supported_engine_modes);
         formatter.field("supports_parallel_query", &self.supports_parallel_query);
         formatter.field("supports_global_databases", &self.supports_global_databases);
+        formatter.field("supports_babelfish", &self.supports_babelfish);
         formatter.finish()
     }
 }
@@ -14120,6 +14127,7 @@ pub mod upgrade_target {
         pub(crate) supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) supports_parallel_query: std::option::Option<bool>,
         pub(crate) supports_global_databases: std::option::Option<bool>,
+        pub(crate) supports_babelfish: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the upgrade target database engine.</p>
@@ -14214,6 +14222,16 @@ pub mod upgrade_target {
             self.supports_global_databases = input;
             self
         }
+        /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
+        pub fn supports_babelfish(mut self, input: bool) -> Self {
+            self.supports_babelfish = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
+        pub fn set_supports_babelfish(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_babelfish = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpgradeTarget`](crate::model::UpgradeTarget)
         pub fn build(self) -> crate::model::UpgradeTarget {
             crate::model::UpgradeTarget {
@@ -14225,6 +14243,7 @@ pub mod upgrade_target {
                 supported_engine_modes: self.supported_engine_modes,
                 supports_parallel_query: self.supports_parallel_query,
                 supports_global_databases: self.supports_global_databases,
+                supports_babelfish: self.supports_babelfish,
             }
         }
     }
@@ -18697,6 +18716,8 @@ pub struct DbEngineVersion {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    pub supports_babelfish: bool,
 }
 impl DbEngineVersion {
     /// <p>The name of the database engine.</p>
@@ -18811,6 +18832,10 @@ impl DbEngineVersion {
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
     }
+    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    pub fn supports_babelfish(&self) -> bool {
+        self.supports_babelfish
+    }
 }
 impl std::fmt::Debug for DbEngineVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18855,6 +18880,7 @@ impl std::fmt::Debug for DbEngineVersion {
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("create_time", &self.create_time);
         formatter.field("tag_list", &self.tag_list);
+        formatter.field("supports_babelfish", &self.supports_babelfish);
         formatter.finish()
     }
 }
@@ -18893,6 +18919,7 @@ pub mod db_engine_version {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) supports_babelfish: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -19279,6 +19306,16 @@ pub mod db_engine_version {
             self.tag_list = input;
             self
         }
+        /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+        pub fn supports_babelfish(mut self, input: bool) -> Self {
+            self.supports_babelfish = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+        pub fn set_supports_babelfish(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_babelfish = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbEngineVersion`](crate::model::DbEngineVersion)
         pub fn build(self) -> crate::model::DbEngineVersion {
             crate::model::DbEngineVersion {
@@ -19310,6 +19347,7 @@ pub mod db_engine_version {
                 kms_key_id: self.kms_key_id,
                 create_time: self.create_time,
                 tag_list: self.tag_list,
+                supports_babelfish: self.supports_babelfish.unwrap_or_default(),
             }
         }
     }

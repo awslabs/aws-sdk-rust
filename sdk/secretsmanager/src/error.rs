@@ -14,7 +14,7 @@ pub struct CancelRotateSecretError {
 pub enum CancelRotateSecretErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -143,11 +143,13 @@ pub struct CreateSecretError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSecretErrorKind {
+    /// <p>Secrets Manager can't decrypt the protected secret text using the provided KMS key. </p>
+    DecryptionFailure(crate::error::DecryptionFailure),
     /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the KMS key is available, enabled, and not in an invalid state. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -172,6 +174,7 @@ pub enum CreateSecretErrorKind {
 impl std::fmt::Display for CreateSecretError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateSecretErrorKind::DecryptionFailure(_inner) => _inner.fmt(f),
             CreateSecretErrorKind::EncryptionFailure(_inner) => _inner.fmt(f),
             CreateSecretErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
             CreateSecretErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -235,6 +238,10 @@ impl CreateSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CreateSecretErrorKind::DecryptionFailure`.
+    pub fn is_decryption_failure(&self) -> bool {
+        matches!(&self.kind, CreateSecretErrorKind::DecryptionFailure(_))
+    }
     /// Returns `true` if the error kind is `CreateSecretErrorKind::EncryptionFailure`.
     pub fn is_encryption_failure(&self) -> bool {
         matches!(&self.kind, CreateSecretErrorKind::EncryptionFailure(_))
@@ -293,6 +300,7 @@ impl CreateSecretError {
 impl std::error::Error for CreateSecretError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateSecretErrorKind::DecryptionFailure(_inner) => Some(_inner),
             CreateSecretErrorKind::EncryptionFailure(_inner) => Some(_inner),
             CreateSecretErrorKind::InternalServiceError(_inner) => Some(_inner),
             CreateSecretErrorKind::InvalidParameterException(_inner) => Some(_inner),
@@ -322,7 +330,7 @@ pub struct DeleteResourcePolicyError {
 pub enum DeleteResourcePolicyErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -453,7 +461,7 @@ pub struct DeleteSecretError {
 pub enum DeleteSecretErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -581,7 +589,7 @@ pub struct DescribeSecretError {
 pub enum DescribeSecretErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -693,7 +701,7 @@ pub struct GetRandomPasswordError {
 pub enum GetRandomPasswordErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -813,7 +821,7 @@ pub struct GetResourcePolicyError {
 pub enum GetResourcePolicyErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -946,7 +954,7 @@ pub enum GetSecretValueErrorKind {
     DecryptionFailure(crate::error::DecryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -1082,7 +1090,7 @@ pub enum ListSecretsErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>The <code>NextToken</code> value is invalid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1194,7 +1202,7 @@ pub enum ListSecretVersionIdsErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>The <code>NextToken</code> value is invalid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1318,7 +1326,7 @@ pub struct PutResourcePolicyError {
 pub enum PutResourcePolicyErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -1469,11 +1477,13 @@ pub struct PutSecretValueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutSecretValueErrorKind {
+    /// <p>Secrets Manager can't decrypt the protected secret text using the provided KMS key. </p>
+    DecryptionFailure(crate::error::DecryptionFailure),
     /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the KMS key is available, enabled, and not in an invalid state. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -1494,6 +1504,7 @@ pub enum PutSecretValueErrorKind {
 impl std::fmt::Display for PutSecretValueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            PutSecretValueErrorKind::DecryptionFailure(_inner) => _inner.fmt(f),
             PutSecretValueErrorKind::EncryptionFailure(_inner) => _inner.fmt(f),
             PutSecretValueErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
             PutSecretValueErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -1555,6 +1566,10 @@ impl PutSecretValueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `PutSecretValueErrorKind::DecryptionFailure`.
+    pub fn is_decryption_failure(&self) -> bool {
+        matches!(&self.kind, PutSecretValueErrorKind::DecryptionFailure(_))
+    }
     /// Returns `true` if the error kind is `PutSecretValueErrorKind::EncryptionFailure`.
     pub fn is_encryption_failure(&self) -> bool {
         matches!(&self.kind, PutSecretValueErrorKind::EncryptionFailure(_))
@@ -1602,6 +1617,7 @@ impl PutSecretValueError {
 impl std::error::Error for PutSecretValueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            PutSecretValueErrorKind::DecryptionFailure(_inner) => Some(_inner),
             PutSecretValueErrorKind::EncryptionFailure(_inner) => Some(_inner),
             PutSecretValueErrorKind::InternalServiceError(_inner) => Some(_inner),
             PutSecretValueErrorKind::InvalidParameterException(_inner) => Some(_inner),
@@ -1629,7 +1645,7 @@ pub struct RemoveRegionsFromReplicationError {
 pub enum RemoveRegionsFromReplicationErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -1768,7 +1784,7 @@ pub struct ReplicateSecretToRegionsError {
 pub enum ReplicateSecretToRegionsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -1899,7 +1915,7 @@ pub struct RestoreSecretError {
 pub enum RestoreSecretErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -2027,7 +2043,7 @@ pub struct RotateSecretError {
 pub enum RotateSecretErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -2155,7 +2171,7 @@ pub struct StopReplicationToReplicaError {
 pub enum StopReplicationToReplicaErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -2286,7 +2302,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -2411,7 +2427,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -2537,11 +2553,13 @@ pub struct UpdateSecretError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSecretErrorKind {
+    /// <p>Secrets Manager can't decrypt the protected secret text using the provided KMS key. </p>
+    DecryptionFailure(crate::error::DecryptionFailure),
     /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the KMS key is available, enabled, and not in an invalid state. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -2566,6 +2584,7 @@ pub enum UpdateSecretErrorKind {
 impl std::fmt::Display for UpdateSecretError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateSecretErrorKind::DecryptionFailure(_inner) => _inner.fmt(f),
             UpdateSecretErrorKind::EncryptionFailure(_inner) => _inner.fmt(f),
             UpdateSecretErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
             UpdateSecretErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -2629,6 +2648,10 @@ impl UpdateSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UpdateSecretErrorKind::DecryptionFailure`.
+    pub fn is_decryption_failure(&self) -> bool {
+        matches!(&self.kind, UpdateSecretErrorKind::DecryptionFailure(_))
+    }
     /// Returns `true` if the error kind is `UpdateSecretErrorKind::EncryptionFailure`.
     pub fn is_encryption_failure(&self) -> bool {
         matches!(&self.kind, UpdateSecretErrorKind::EncryptionFailure(_))
@@ -2687,6 +2710,7 @@ impl UpdateSecretError {
 impl std::error::Error for UpdateSecretError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateSecretErrorKind::DecryptionFailure(_inner) => Some(_inner),
             UpdateSecretErrorKind::EncryptionFailure(_inner) => Some(_inner),
             UpdateSecretErrorKind::InternalServiceError(_inner) => Some(_inner),
             UpdateSecretErrorKind::InvalidParameterException(_inner) => Some(_inner),
@@ -2716,7 +2740,7 @@ pub struct UpdateSecretVersionStageError {
 pub enum UpdateSecretVersionStageErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -2858,7 +2882,7 @@ pub struct ValidateResourcePolicyError {
 pub enum ValidateResourcePolicyErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -3186,7 +3210,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>The parameter name is invalid value.</p>
+/// <p>The parameter name or value is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -3570,6 +3594,70 @@ impl EncryptionFailure {
     }
 }
 
+/// <p>Secrets Manager can't decrypt the protected secret text using the provided KMS key. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DecryptionFailure {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DecryptionFailure {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DecryptionFailure");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl DecryptionFailure {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DecryptionFailure {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DecryptionFailure")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DecryptionFailure {}
+/// See [`DecryptionFailure`](crate::error::DecryptionFailure)
+pub mod decryption_failure {
+    /// A builder for [`DecryptionFailure`](crate::error::DecryptionFailure)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DecryptionFailure`](crate::error::DecryptionFailure)
+        pub fn build(self) -> crate::error::DecryptionFailure {
+            crate::error::DecryptionFailure {
+                message: self.message,
+            }
+        }
+    }
+}
+impl DecryptionFailure {
+    /// Creates a new builder-style object to manufacture [`DecryptionFailure`](crate::error::DecryptionFailure)
+    pub fn builder() -> crate::error::decryption_failure::Builder {
+        crate::error::decryption_failure::Builder::default()
+    }
+}
+
 /// <p>The <code>BlockPublicPolicy</code> parameter is set to true, and the resource policy did not prevent broad access to the secret.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3593,8 +3681,8 @@ impl PublicPolicyException {
 impl std::fmt::Display for PublicPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PublicPolicyException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -3657,8 +3745,8 @@ impl InvalidNextTokenException {
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -3695,69 +3783,5 @@ impl InvalidNextTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     pub fn builder() -> crate::error::invalid_next_token_exception::Builder {
         crate::error::invalid_next_token_exception::Builder::default()
-    }
-}
-
-/// <p>Secrets Manager can't decrypt the protected secret text using the provided KMS key. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DecryptionFailure {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DecryptionFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecryptionFailure");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl DecryptionFailure {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DecryptionFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DecryptionFailure")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DecryptionFailure {}
-/// See [`DecryptionFailure`](crate::error::DecryptionFailure)
-pub mod decryption_failure {
-    /// A builder for [`DecryptionFailure`](crate::error::DecryptionFailure)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DecryptionFailure`](crate::error::DecryptionFailure)
-        pub fn build(self) -> crate::error::DecryptionFailure {
-            crate::error::DecryptionFailure {
-                message: self.message,
-            }
-        }
-    }
-}
-impl DecryptionFailure {
-    /// Creates a new builder-style object to manufacture [`DecryptionFailure`](crate::error::DecryptionFailure)
-    pub fn builder() -> crate::error::decryption_failure::Builder {
-        crate::error::decryption_failure::Builder::default()
     }
 }

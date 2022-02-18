@@ -133,6 +133,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateService {
     }
 }
 
+/// Operation shape for `CreateVpcConnector`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_vpc_connector`](crate::client::Client::create_vpc_connector).
+///
+/// See [`crate::client::fluent_builders::CreateVpcConnector`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateVpcConnector {
+    _private: (),
+}
+impl CreateVpcConnector {
+    /// Creates a new builder-style object to manufacture [`CreateVpcConnectorInput`](crate::input::CreateVpcConnectorInput)
+    pub fn builder() -> crate::input::create_vpc_connector_input::Builder {
+        crate::input::create_vpc_connector_input::Builder::default()
+    }
+    /// Creates a new `CreateVpcConnector` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateVpcConnector {
+    type Output = std::result::Result<
+        crate::output::CreateVpcConnectorOutput,
+        crate::error::CreateVpcConnectorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_vpc_connector_error(response)
+        } else {
+            crate::operation_deser::parse_create_vpc_connector_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteAutoScalingConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -229,6 +263,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteService {
             crate::operation_deser::parse_delete_service_error(response)
         } else {
             crate::operation_deser::parse_delete_service_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteVpcConnector`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_vpc_connector`](crate::client::Client::delete_vpc_connector).
+///
+/// See [`crate::client::fluent_builders::DeleteVpcConnector`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteVpcConnector {
+    _private: (),
+}
+impl DeleteVpcConnector {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcConnectorInput`](crate::input::DeleteVpcConnectorInput)
+    pub fn builder() -> crate::input::delete_vpc_connector_input::Builder {
+        crate::input::delete_vpc_connector_input::Builder::default()
+    }
+    /// Creates a new `DeleteVpcConnector` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcConnector {
+    type Output = std::result::Result<
+        crate::output::DeleteVpcConnectorOutput,
+        crate::error::DeleteVpcConnectorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_vpc_connector_error(response)
+        } else {
+            crate::operation_deser::parse_delete_vpc_connector_response(response)
         }
     }
 }
@@ -331,6 +399,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeService {
             crate::operation_deser::parse_describe_service_error(response)
         } else {
             crate::operation_deser::parse_describe_service_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeVpcConnector`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_vpc_connector`](crate::client::Client::describe_vpc_connector).
+///
+/// See [`crate::client::fluent_builders::DescribeVpcConnector`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeVpcConnector {
+    _private: (),
+}
+impl DescribeVpcConnector {
+    /// Creates a new builder-style object to manufacture [`DescribeVpcConnectorInput`](crate::input::DescribeVpcConnectorInput)
+    pub fn builder() -> crate::input::describe_vpc_connector_input::Builder {
+        crate::input::describe_vpc_connector_input::Builder::default()
+    }
+    /// Creates a new `DescribeVpcConnector` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcConnector {
+    type Output = std::result::Result<
+        crate::output::DescribeVpcConnectorOutput,
+        crate::error::DescribeVpcConnectorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_vpc_connector_error(response)
+        } else {
+            crate::operation_deser::parse_describe_vpc_connector_response(response)
         }
     }
 }
@@ -531,6 +633,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListVpcConnectors`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_vpc_connectors`](crate::client::Client::list_vpc_connectors).
+///
+/// See [`crate::client::fluent_builders::ListVpcConnectors`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListVpcConnectors {
+    _private: (),
+}
+impl ListVpcConnectors {
+    /// Creates a new builder-style object to manufacture [`ListVpcConnectorsInput`](crate::input::ListVpcConnectorsInput)
+    pub fn builder() -> crate::input::list_vpc_connectors_input::Builder {
+        crate::input::list_vpc_connectors_input::Builder::default()
+    }
+    /// Creates a new `ListVpcConnectors` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListVpcConnectors {
+    type Output = std::result::Result<
+        crate::output::ListVpcConnectorsOutput,
+        crate::error::ListVpcConnectorsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_vpc_connectors_error(response)
+        } else {
+            crate::operation_deser::parse_list_vpc_connectors_response(response)
         }
     }
 }

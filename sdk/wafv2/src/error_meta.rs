@@ -559,6 +559,26 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GenerateMobileSdkReleaseUrlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GenerateMobileSdkReleaseUrlError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+                crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+                crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+                crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+                crate::error::GenerateMobileSdkReleaseUrlErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIPSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -636,6 +656,35 @@ where
                     Error::WafNonexistentItemException(inner)
                 }
                 crate::error::GetManagedRuleSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMobileSdkReleaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetMobileSdkReleaseError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetMobileSdkReleaseErrorKind::WafInternalErrorException(inner) => {
+                    Error::WafInternalErrorException(inner)
+                }
+                crate::error::GetMobileSdkReleaseErrorKind::WafInvalidOperationException(inner) => {
+                    Error::WafInvalidOperationException(inner)
+                }
+                crate::error::GetMobileSdkReleaseErrorKind::WafInvalidParameterException(inner) => {
+                    Error::WafInvalidParameterException(inner)
+                }
+                crate::error::GetMobileSdkReleaseErrorKind::WafNonexistentItemException(inner) => {
+                    Error::WafNonexistentItemException(inner)
+                }
+                crate::error::GetMobileSdkReleaseErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -949,6 +998,33 @@ where
                     Error::WafInvalidParameterException(inner)
                 }
                 crate::error::ListManagedRuleSetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMobileSdkReleasesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListMobileSdkReleasesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListMobileSdkReleasesErrorKind::WafInternalErrorException(inner) => {
+                    Error::WafInternalErrorException(inner)
+                }
+                crate::error::ListMobileSdkReleasesErrorKind::WafInvalidOperationException(
+                    inner,
+                ) => Error::WafInvalidOperationException(inner),
+                crate::error::ListMobileSdkReleasesErrorKind::WafInvalidParameterException(
+                    inner,
+                ) => Error::WafInvalidParameterException(inner),
+                crate::error::ListMobileSdkReleasesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

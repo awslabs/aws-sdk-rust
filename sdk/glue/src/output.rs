@@ -4747,7 +4747,7 @@ pub struct GetSchemaVersionOutput {
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The schema definition for the schema ID.</p>
     pub schema_definition: std::option::Option<std::string::String>,
-    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub schema_arn: std::option::Option<std::string::String>,
@@ -4767,7 +4767,7 @@ impl GetSchemaVersionOutput {
     pub fn schema_definition(&self) -> std::option::Option<&str> {
         self.schema_definition.as_deref()
     }
-    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
         self.data_format.as_ref()
     }
@@ -4842,12 +4842,12 @@ pub mod get_schema_version_output {
             self.schema_definition = input;
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
             self.data_format = Some(input);
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DataFormat>,
@@ -4927,7 +4927,7 @@ pub struct GetSchemaByDefinitionOutput {
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub schema_arn: std::option::Option<std::string::String>,
-    /// <p>The data format of the schema definition. Currently only <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The status of the schema version.</p>
     pub status: std::option::Option<crate::model::SchemaVersionStatus>,
@@ -4943,7 +4943,7 @@ impl GetSchemaByDefinitionOutput {
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
-    /// <p>The data format of the schema definition. Currently only <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
         self.data_format.as_ref()
     }
@@ -5003,12 +5003,12 @@ pub mod get_schema_by_definition_output {
             self.schema_arn = input;
             self
         }
-        /// <p>The data format of the schema definition. Currently only <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
             self.data_format = Some(input);
             self
         }
-        /// <p>The data format of the schema definition. Currently only <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DataFormat>,
@@ -5072,7 +5072,7 @@ pub struct GetSchemaOutput {
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>A description of schema if specified when created</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The compatibility mode of the schema.</p>
     pub compatibility: std::option::Option<crate::model::Compatibility>,
@@ -5110,7 +5110,7 @@ impl GetSchemaOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
         self.data_format.as_ref()
     }
@@ -5236,12 +5236,12 @@ pub mod get_schema_output {
             self.description = input;
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
             self.data_format = Some(input);
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DataFormat>,
@@ -9930,7 +9930,7 @@ pub struct CreateSchemaOutput {
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>A description of the schema if specified when created.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The schema compatibility mode.</p>
     pub compatibility: std::option::Option<crate::model::Compatibility>,
@@ -9971,7 +9971,7 @@ impl CreateSchemaOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
         self.data_format.as_ref()
     }
@@ -10108,12 +10108,12 @@ pub mod create_schema_output {
             self.description = input;
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
             self.data_format = Some(input);
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DataFormat>,

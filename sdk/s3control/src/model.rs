@@ -4352,6 +4352,8 @@ pub struct JobProgressSummary {
     pub number_of_tasks_succeeded: std::option::Option<i64>,
     /// <p></p>
     pub number_of_tasks_failed: std::option::Option<i64>,
+    /// <p>The JobTimers attribute of a job's progress summary.</p>
+    pub timers: std::option::Option<crate::model::JobTimers>,
 }
 impl JobProgressSummary {
     /// <p></p>
@@ -4366,6 +4368,10 @@ impl JobProgressSummary {
     pub fn number_of_tasks_failed(&self) -> std::option::Option<i64> {
         self.number_of_tasks_failed
     }
+    /// <p>The JobTimers attribute of a job's progress summary.</p>
+    pub fn timers(&self) -> std::option::Option<&crate::model::JobTimers> {
+        self.timers.as_ref()
+    }
 }
 impl std::fmt::Debug for JobProgressSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4373,6 +4379,7 @@ impl std::fmt::Debug for JobProgressSummary {
         formatter.field("total_number_of_tasks", &self.total_number_of_tasks);
         formatter.field("number_of_tasks_succeeded", &self.number_of_tasks_succeeded);
         formatter.field("number_of_tasks_failed", &self.number_of_tasks_failed);
+        formatter.field("timers", &self.timers);
         formatter.finish()
     }
 }
@@ -4385,6 +4392,7 @@ pub mod job_progress_summary {
         pub(crate) total_number_of_tasks: std::option::Option<i64>,
         pub(crate) number_of_tasks_succeeded: std::option::Option<i64>,
         pub(crate) number_of_tasks_failed: std::option::Option<i64>,
+        pub(crate) timers: std::option::Option<crate::model::JobTimers>,
     }
     impl Builder {
         /// <p></p>
@@ -4417,12 +4425,23 @@ pub mod job_progress_summary {
             self.number_of_tasks_failed = input;
             self
         }
+        /// <p>The JobTimers attribute of a job's progress summary.</p>
+        pub fn timers(mut self, input: crate::model::JobTimers) -> Self {
+            self.timers = Some(input);
+            self
+        }
+        /// <p>The JobTimers attribute of a job's progress summary.</p>
+        pub fn set_timers(mut self, input: std::option::Option<crate::model::JobTimers>) -> Self {
+            self.timers = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobProgressSummary`](crate::model::JobProgressSummary)
         pub fn build(self) -> crate::model::JobProgressSummary {
             crate::model::JobProgressSummary {
                 total_number_of_tasks: self.total_number_of_tasks,
                 number_of_tasks_succeeded: self.number_of_tasks_succeeded,
                 number_of_tasks_failed: self.number_of_tasks_failed,
+                timers: self.timers,
             }
         }
     }
@@ -4431,6 +4450,66 @@ impl JobProgressSummary {
     /// Creates a new builder-style object to manufacture [`JobProgressSummary`](crate::model::JobProgressSummary)
     pub fn builder() -> crate::model::job_progress_summary::Builder {
         crate::model::job_progress_summary::Builder::default()
+    }
+}
+
+/// <p>Provides timing details for the job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobTimers {
+    /// <p>Indicates the elapsed time in seconds the job has been in the Active job state.</p>
+    pub elapsed_time_in_active_seconds: std::option::Option<i64>,
+}
+impl JobTimers {
+    /// <p>Indicates the elapsed time in seconds the job has been in the Active job state.</p>
+    pub fn elapsed_time_in_active_seconds(&self) -> std::option::Option<i64> {
+        self.elapsed_time_in_active_seconds
+    }
+}
+impl std::fmt::Debug for JobTimers {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobTimers");
+        formatter.field(
+            "elapsed_time_in_active_seconds",
+            &self.elapsed_time_in_active_seconds,
+        );
+        formatter.finish()
+    }
+}
+/// See [`JobTimers`](crate::model::JobTimers)
+pub mod job_timers {
+    /// A builder for [`JobTimers`](crate::model::JobTimers)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) elapsed_time_in_active_seconds: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Indicates the elapsed time in seconds the job has been in the Active job state.</p>
+        pub fn elapsed_time_in_active_seconds(mut self, input: i64) -> Self {
+            self.elapsed_time_in_active_seconds = Some(input);
+            self
+        }
+        /// <p>Indicates the elapsed time in seconds the job has been in the Active job state.</p>
+        pub fn set_elapsed_time_in_active_seconds(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.elapsed_time_in_active_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobTimers`](crate::model::JobTimers)
+        pub fn build(self) -> crate::model::JobTimers {
+            crate::model::JobTimers {
+                elapsed_time_in_active_seconds: self.elapsed_time_in_active_seconds,
+            }
+        }
+    }
+}
+impl JobTimers {
+    /// Creates a new builder-style object to manufacture [`JobTimers`](crate::model::JobTimers)
+    pub fn builder() -> crate::model::job_timers::Builder {
+        crate::model::job_timers::Builder::default()
     }
 }
 
@@ -4462,6 +4541,8 @@ pub enum OperationName {
     S3PutObjectRetention,
     #[allow(missing_docs)] // documentation missing in model
     S3PutObjectTagging,
+    #[allow(missing_docs)] // documentation missing in model
+    S3ReplicateObject,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -4476,6 +4557,7 @@ impl std::convert::From<&str> for OperationName {
             "S3PutObjectLegalHold" => OperationName::S3PutObjectLegalHold,
             "S3PutObjectRetention" => OperationName::S3PutObjectRetention,
             "S3PutObjectTagging" => OperationName::S3PutObjectTagging,
+            "S3ReplicateObject" => OperationName::S3ReplicateObject,
             other => OperationName::Unknown(other.to_owned()),
         }
     }
@@ -4499,6 +4581,7 @@ impl OperationName {
             OperationName::S3PutObjectLegalHold => "S3PutObjectLegalHold",
             OperationName::S3PutObjectRetention => "S3PutObjectRetention",
             OperationName::S3PutObjectTagging => "S3PutObjectTagging",
+            OperationName::S3ReplicateObject => "S3ReplicateObject",
             OperationName::Unknown(s) => s.as_ref(),
         }
     }
@@ -4513,6 +4596,7 @@ impl OperationName {
             "S3PutObjectLegalHold",
             "S3PutObjectRetention",
             "S3PutObjectTagging",
+            "S3ReplicateObject",
         ]
     }
 }
@@ -6110,6 +6194,11 @@ pub struct JobDescriptor {
     pub suspended_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
     pub suspended_cause: std::option::Option<std::string::String>,
+    /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
+    pub manifest_generator: std::option::Option<crate::model::JobManifestGenerator>,
+    /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
+    pub generated_manifest_descriptor:
+        std::option::Option<crate::model::S3GeneratedManifestDescriptor>,
 }
 impl JobDescriptor {
     /// <p>The ID for the specified job.</p>
@@ -6180,6 +6269,16 @@ impl JobDescriptor {
     pub fn suspended_cause(&self) -> std::option::Option<&str> {
         self.suspended_cause.as_deref()
     }
+    /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
+    pub fn manifest_generator(&self) -> std::option::Option<&crate::model::JobManifestGenerator> {
+        self.manifest_generator.as_ref()
+    }
+    /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
+    pub fn generated_manifest_descriptor(
+        &self,
+    ) -> std::option::Option<&crate::model::S3GeneratedManifestDescriptor> {
+        self.generated_manifest_descriptor.as_ref()
+    }
 }
 impl std::fmt::Debug for JobDescriptor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6201,6 +6300,11 @@ impl std::fmt::Debug for JobDescriptor {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("suspended_date", &self.suspended_date);
         formatter.field("suspended_cause", &self.suspended_cause);
+        formatter.field("manifest_generator", &self.manifest_generator);
+        formatter.field(
+            "generated_manifest_descriptor",
+            &self.generated_manifest_descriptor,
+        );
         formatter.finish()
     }
 }
@@ -6227,6 +6331,9 @@ pub mod job_descriptor {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) suspended_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) suspended_cause: std::option::Option<std::string::String>,
+        pub(crate) manifest_generator: std::option::Option<crate::model::JobManifestGenerator>,
+        pub(crate) generated_manifest_descriptor:
+            std::option::Option<crate::model::S3GeneratedManifestDescriptor>,
     }
     impl Builder {
         /// <p>The ID for the specified job.</p>
@@ -6432,6 +6539,35 @@ pub mod job_descriptor {
             self.suspended_cause = input;
             self
         }
+        /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
+        pub fn manifest_generator(mut self, input: crate::model::JobManifestGenerator) -> Self {
+            self.manifest_generator = Some(input);
+            self
+        }
+        /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
+        pub fn set_manifest_generator(
+            mut self,
+            input: std::option::Option<crate::model::JobManifestGenerator>,
+        ) -> Self {
+            self.manifest_generator = input;
+            self
+        }
+        /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
+        pub fn generated_manifest_descriptor(
+            mut self,
+            input: crate::model::S3GeneratedManifestDescriptor,
+        ) -> Self {
+            self.generated_manifest_descriptor = Some(input);
+            self
+        }
+        /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
+        pub fn set_generated_manifest_descriptor(
+            mut self,
+            input: std::option::Option<crate::model::S3GeneratedManifestDescriptor>,
+        ) -> Self {
+            self.generated_manifest_descriptor = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobDescriptor`](crate::model::JobDescriptor)
         pub fn build(self) -> crate::model::JobDescriptor {
             crate::model::JobDescriptor {
@@ -6452,6 +6588,8 @@ pub mod job_descriptor {
                 role_arn: self.role_arn,
                 suspended_date: self.suspended_date,
                 suspended_cause: self.suspended_cause,
+                manifest_generator: self.manifest_generator,
+                generated_manifest_descriptor: self.generated_manifest_descriptor,
             }
         }
     }
@@ -6460,6 +6598,946 @@ impl JobDescriptor {
     /// Creates a new builder-style object to manufacture [`JobDescriptor`](crate::model::JobDescriptor)
     pub fn builder() -> crate::model::job_descriptor::Builder {
         crate::model::job_descriptor::Builder::default()
+    }
+}
+
+/// <p>Describes the specified job's generated manifest. Batch Operations jobs created with a ManifestGenerator populate details of this descriptor after execution of the ManifestGenerator.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3GeneratedManifestDescriptor {
+    /// <p>The format of the generated manifest.</p>
+    pub format: std::option::Option<crate::model::GeneratedManifestFormat>,
+    /// <p>Contains the information required to locate a manifest object.</p>
+    pub location: std::option::Option<crate::model::JobManifestLocation>,
+}
+impl S3GeneratedManifestDescriptor {
+    /// <p>The format of the generated manifest.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::GeneratedManifestFormat> {
+        self.format.as_ref()
+    }
+    /// <p>Contains the information required to locate a manifest object.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::JobManifestLocation> {
+        self.location.as_ref()
+    }
+}
+impl std::fmt::Debug for S3GeneratedManifestDescriptor {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3GeneratedManifestDescriptor");
+        formatter.field("format", &self.format);
+        formatter.field("location", &self.location);
+        formatter.finish()
+    }
+}
+/// See [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor)
+pub mod s3_generated_manifest_descriptor {
+    /// A builder for [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) format: std::option::Option<crate::model::GeneratedManifestFormat>,
+        pub(crate) location: std::option::Option<crate::model::JobManifestLocation>,
+    }
+    impl Builder {
+        /// <p>The format of the generated manifest.</p>
+        pub fn format(mut self, input: crate::model::GeneratedManifestFormat) -> Self {
+            self.format = Some(input);
+            self
+        }
+        /// <p>The format of the generated manifest.</p>
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::GeneratedManifestFormat>,
+        ) -> Self {
+            self.format = input;
+            self
+        }
+        /// <p>Contains the information required to locate a manifest object.</p>
+        pub fn location(mut self, input: crate::model::JobManifestLocation) -> Self {
+            self.location = Some(input);
+            self
+        }
+        /// <p>Contains the information required to locate a manifest object.</p>
+        pub fn set_location(
+            mut self,
+            input: std::option::Option<crate::model::JobManifestLocation>,
+        ) -> Self {
+            self.location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor)
+        pub fn build(self) -> crate::model::S3GeneratedManifestDescriptor {
+            crate::model::S3GeneratedManifestDescriptor {
+                format: self.format,
+                location: self.location,
+            }
+        }
+    }
+}
+impl S3GeneratedManifestDescriptor {
+    /// Creates a new builder-style object to manufacture [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor)
+    pub fn builder() -> crate::model::s3_generated_manifest_descriptor::Builder {
+        crate::model::s3_generated_manifest_descriptor::Builder::default()
+    }
+}
+
+/// <p>Contains the information required to locate a manifest object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobManifestLocation {
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub object_arn: std::option::Option<std::string::String>,
+    /// <p>The optional version ID to identify a specific version of the manifest object.</p>
+    pub object_version_id: std::option::Option<std::string::String>,
+    /// <p>The ETag for the specified manifest object.</p>
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl JobManifestLocation {
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn object_arn(&self) -> std::option::Option<&str> {
+        self.object_arn.as_deref()
+    }
+    /// <p>The optional version ID to identify a specific version of the manifest object.</p>
+    pub fn object_version_id(&self) -> std::option::Option<&str> {
+        self.object_version_id.as_deref()
+    }
+    /// <p>The ETag for the specified manifest object.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+}
+impl std::fmt::Debug for JobManifestLocation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobManifestLocation");
+        formatter.field("object_arn", &self.object_arn);
+        formatter.field("object_version_id", &self.object_version_id);
+        formatter.field("e_tag", &self.e_tag);
+        formatter.finish()
+    }
+}
+/// See [`JobManifestLocation`](crate::model::JobManifestLocation)
+pub mod job_manifest_location {
+    /// A builder for [`JobManifestLocation`](crate::model::JobManifestLocation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) object_arn: std::option::Option<std::string::String>,
+        pub(crate) object_version_id: std::option::Option<std::string::String>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+        /// </important>
+        pub fn object_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+        /// </important>
+        pub fn set_object_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_arn = input;
+            self
+        }
+        /// <p>The optional version ID to identify a specific version of the manifest object.</p>
+        pub fn object_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object_version_id = Some(input.into());
+            self
+        }
+        /// <p>The optional version ID to identify a specific version of the manifest object.</p>
+        pub fn set_object_version_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.object_version_id = input;
+            self
+        }
+        /// <p>The ETag for the specified manifest object.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The ETag for the specified manifest object.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobManifestLocation`](crate::model::JobManifestLocation)
+        pub fn build(self) -> crate::model::JobManifestLocation {
+            crate::model::JobManifestLocation {
+                object_arn: self.object_arn,
+                object_version_id: self.object_version_id,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl JobManifestLocation {
+    /// Creates a new builder-style object to manufacture [`JobManifestLocation`](crate::model::JobManifestLocation)
+    pub fn builder() -> crate::model::job_manifest_location::Builder {
+        crate::model::job_manifest_location::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum GeneratedManifestFormat {
+    #[allow(missing_docs)] // documentation missing in model
+    S3InventoryReportCsv20211130,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for GeneratedManifestFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "S3InventoryReport_CSV_20211130" => {
+                GeneratedManifestFormat::S3InventoryReportCsv20211130
+            }
+            other => GeneratedManifestFormat::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for GeneratedManifestFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(GeneratedManifestFormat::from(s))
+    }
+}
+impl GeneratedManifestFormat {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            GeneratedManifestFormat::S3InventoryReportCsv20211130 => {
+                "S3InventoryReport_CSV_20211130"
+            }
+            GeneratedManifestFormat::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["S3InventoryReport_CSV_20211130"]
+    }
+}
+impl AsRef<str> for GeneratedManifestFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Configures the type of the job's ManifestGenerator.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum JobManifestGenerator {
+    /// <p>The S3 job ManifestGenerator's configuration details.</p>
+    S3JobManifestGenerator(crate::model::S3JobManifestGenerator),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
+}
+impl JobManifestGenerator {
+    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`S3JobManifestGenerator`](crate::model::JobManifestGenerator::S3JobManifestGenerator), extracting the inner [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_job_manifest_generator(
+        &self,
+    ) -> std::result::Result<&crate::model::S3JobManifestGenerator, &Self> {
+        if let JobManifestGenerator::S3JobManifestGenerator(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3JobManifestGenerator`](crate::model::JobManifestGenerator::S3JobManifestGenerator).
+    pub fn is_s3_job_manifest_generator(&self) -> bool {
+        self.as_s3_job_manifest_generator().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
+}
+
+/// <p>The container for the service that will create the S3 manifest.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3JobManifestGenerator {
+    /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
+    pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>The source bucket used by the ManifestGenerator.</p>
+    pub source_bucket: std::option::Option<std::string::String>,
+    /// <p>Specifies the location the generated manifest will be written to.</p>
+    pub manifest_output_location: std::option::Option<crate::model::S3ManifestOutputLocation>,
+    /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
+    pub filter: std::option::Option<crate::model::JobManifestGeneratorFilter>,
+    /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
+    pub enable_manifest_output: bool,
+}
+impl S3JobManifestGenerator {
+    /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
+    /// <p>The source bucket used by the ManifestGenerator.</p>
+    pub fn source_bucket(&self) -> std::option::Option<&str> {
+        self.source_bucket.as_deref()
+    }
+    /// <p>Specifies the location the generated manifest will be written to.</p>
+    pub fn manifest_output_location(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ManifestOutputLocation> {
+        self.manifest_output_location.as_ref()
+    }
+    /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::JobManifestGeneratorFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
+    pub fn enable_manifest_output(&self) -> bool {
+        self.enable_manifest_output
+    }
+}
+impl std::fmt::Debug for S3JobManifestGenerator {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3JobManifestGenerator");
+        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field("source_bucket", &self.source_bucket);
+        formatter.field("manifest_output_location", &self.manifest_output_location);
+        formatter.field("filter", &self.filter);
+        formatter.field("enable_manifest_output", &self.enable_manifest_output);
+        formatter.finish()
+    }
+}
+/// See [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator)
+pub mod s3_job_manifest_generator {
+    /// A builder for [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) source_bucket: std::option::Option<std::string::String>,
+        pub(crate) manifest_output_location:
+            std::option::Option<crate::model::S3ManifestOutputLocation>,
+        pub(crate) filter: std::option::Option<crate::model::JobManifestGeneratorFilter>,
+        pub(crate) enable_manifest_output: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expected_bucket_owner = input;
+            self
+        }
+        /// <p>The source bucket used by the ManifestGenerator.</p>
+        pub fn source_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_bucket = Some(input.into());
+            self
+        }
+        /// <p>The source bucket used by the ManifestGenerator.</p>
+        pub fn set_source_bucket(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_bucket = input;
+            self
+        }
+        /// <p>Specifies the location the generated manifest will be written to.</p>
+        pub fn manifest_output_location(
+            mut self,
+            input: crate::model::S3ManifestOutputLocation,
+        ) -> Self {
+            self.manifest_output_location = Some(input);
+            self
+        }
+        /// <p>Specifies the location the generated manifest will be written to.</p>
+        pub fn set_manifest_output_location(
+            mut self,
+            input: std::option::Option<crate::model::S3ManifestOutputLocation>,
+        ) -> Self {
+            self.manifest_output_location = input;
+            self
+        }
+        /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
+        pub fn filter(mut self, input: crate::model::JobManifestGeneratorFilter) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p>Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::JobManifestGeneratorFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
+        /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
+        pub fn enable_manifest_output(mut self, input: bool) -> Self {
+            self.enable_manifest_output = Some(input);
+            self
+        }
+        /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
+        pub fn set_enable_manifest_output(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_manifest_output = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator)
+        pub fn build(self) -> crate::model::S3JobManifestGenerator {
+            crate::model::S3JobManifestGenerator {
+                expected_bucket_owner: self.expected_bucket_owner,
+                source_bucket: self.source_bucket,
+                manifest_output_location: self.manifest_output_location,
+                filter: self.filter,
+                enable_manifest_output: self.enable_manifest_output.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl S3JobManifestGenerator {
+    /// Creates a new builder-style object to manufacture [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator)
+    pub fn builder() -> crate::model::s3_job_manifest_generator::Builder {
+        crate::model::s3_job_manifest_generator::Builder::default()
+    }
+}
+
+/// <p>The filter used to describe a set of objects for the job's manifest.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobManifestGeneratorFilter {
+    /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
+    pub eligible_for_replication: std::option::Option<bool>,
+    /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+    pub created_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+    pub created_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+    pub object_replication_statuses:
+        std::option::Option<std::vec::Vec<crate::model::ReplicationStatus>>,
+}
+impl JobManifestGeneratorFilter {
+    /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
+    pub fn eligible_for_replication(&self) -> std::option::Option<bool> {
+        self.eligible_for_replication
+    }
+    /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_after.as_ref()
+    }
+    /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_before.as_ref()
+    }
+    /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+    pub fn object_replication_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationStatus]> {
+        self.object_replication_statuses.as_deref()
+    }
+}
+impl std::fmt::Debug for JobManifestGeneratorFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobManifestGeneratorFilter");
+        formatter.field("eligible_for_replication", &self.eligible_for_replication);
+        formatter.field("created_after", &self.created_after);
+        formatter.field("created_before", &self.created_before);
+        formatter.field(
+            "object_replication_statuses",
+            &self.object_replication_statuses,
+        );
+        formatter.finish()
+    }
+}
+/// See [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter)
+pub mod job_manifest_generator_filter {
+    /// A builder for [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) eligible_for_replication: std::option::Option<bool>,
+        pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) object_replication_statuses:
+            std::option::Option<std::vec::Vec<crate::model::ReplicationStatus>>,
+    }
+    impl Builder {
+        /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
+        pub fn eligible_for_replication(mut self, input: bool) -> Self {
+            self.eligible_for_replication = Some(input);
+            self
+        }
+        /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
+        pub fn set_eligible_for_replication(mut self, input: std::option::Option<bool>) -> Self {
+            self.eligible_for_replication = input;
+            self
+        }
+        /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_after = Some(input);
+            self
+        }
+        /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+        pub fn set_created_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_after = input;
+            self
+        }
+        /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_before = Some(input);
+            self
+        }
+        /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+        pub fn set_created_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_before = input;
+            self
+        }
+        /// Appends an item to `object_replication_statuses`.
+        ///
+        /// To override the contents of this collection use [`set_object_replication_statuses`](Self::set_object_replication_statuses).
+        ///
+        /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+        pub fn object_replication_statuses(
+            mut self,
+            input: crate::model::ReplicationStatus,
+        ) -> Self {
+            let mut v = self.object_replication_statuses.unwrap_or_default();
+            v.push(input);
+            self.object_replication_statuses = Some(v);
+            self
+        }
+        /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+        pub fn set_object_replication_statuses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatus>>,
+        ) -> Self {
+            self.object_replication_statuses = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter)
+        pub fn build(self) -> crate::model::JobManifestGeneratorFilter {
+            crate::model::JobManifestGeneratorFilter {
+                eligible_for_replication: self.eligible_for_replication,
+                created_after: self.created_after,
+                created_before: self.created_before,
+                object_replication_statuses: self.object_replication_statuses,
+            }
+        }
+    }
+}
+impl JobManifestGeneratorFilter {
+    /// Creates a new builder-style object to manufacture [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter)
+    pub fn builder() -> crate::model::job_manifest_generator_filter::Builder {
+        crate::model::job_manifest_generator_filter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReplicationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Replica,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReplicationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => ReplicationStatus::Completed,
+            "FAILED" => ReplicationStatus::Failed,
+            "NONE" => ReplicationStatus::None,
+            "REPLICA" => ReplicationStatus::Replica,
+            other => ReplicationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReplicationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReplicationStatus::from(s))
+    }
+}
+impl ReplicationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReplicationStatus::Completed => "COMPLETED",
+            ReplicationStatus::Failed => "FAILED",
+            ReplicationStatus::None => "NONE",
+            ReplicationStatus::Replica => "REPLICA",
+            ReplicationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "FAILED", "NONE", "REPLICA"]
+    }
+}
+impl AsRef<str> for ReplicationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Location details for where the generated manifest should be written.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3ManifestOutputLocation {
+    /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
+    pub expected_manifest_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>The bucket ARN the generated manifest should be written to.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
+    pub manifest_prefix: std::option::Option<std::string::String>,
+    /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
+    pub manifest_encryption: std::option::Option<crate::model::GeneratedManifestEncryption>,
+    /// <p>The format of the generated manifest.</p>
+    pub manifest_format: std::option::Option<crate::model::GeneratedManifestFormat>,
+}
+impl S3ManifestOutputLocation {
+    /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
+    pub fn expected_manifest_bucket_owner(&self) -> std::option::Option<&str> {
+        self.expected_manifest_bucket_owner.as_deref()
+    }
+    /// <p>The bucket ARN the generated manifest should be written to.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
+    pub fn manifest_prefix(&self) -> std::option::Option<&str> {
+        self.manifest_prefix.as_deref()
+    }
+    /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
+    pub fn manifest_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::GeneratedManifestEncryption> {
+        self.manifest_encryption.as_ref()
+    }
+    /// <p>The format of the generated manifest.</p>
+    pub fn manifest_format(&self) -> std::option::Option<&crate::model::GeneratedManifestFormat> {
+        self.manifest_format.as_ref()
+    }
+}
+impl std::fmt::Debug for S3ManifestOutputLocation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3ManifestOutputLocation");
+        formatter.field(
+            "expected_manifest_bucket_owner",
+            &self.expected_manifest_bucket_owner,
+        );
+        formatter.field("bucket", &self.bucket);
+        formatter.field("manifest_prefix", &self.manifest_prefix);
+        formatter.field("manifest_encryption", &self.manifest_encryption);
+        formatter.field("manifest_format", &self.manifest_format);
+        formatter.finish()
+    }
+}
+/// See [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation)
+pub mod s3_manifest_output_location {
+    /// A builder for [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) expected_manifest_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) manifest_prefix: std::option::Option<std::string::String>,
+        pub(crate) manifest_encryption:
+            std::option::Option<crate::model::GeneratedManifestEncryption>,
+        pub(crate) manifest_format: std::option::Option<crate::model::GeneratedManifestFormat>,
+    }
+    impl Builder {
+        /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
+        pub fn expected_manifest_bucket_owner(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.expected_manifest_bucket_owner = Some(input.into());
+            self
+        }
+        /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
+        pub fn set_expected_manifest_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expected_manifest_bucket_owner = input;
+            self
+        }
+        /// <p>The bucket ARN the generated manifest should be written to.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>The bucket ARN the generated manifest should be written to.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
+        pub fn manifest_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.manifest_prefix = Some(input.into());
+            self
+        }
+        /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
+        pub fn set_manifest_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.manifest_prefix = input;
+            self
+        }
+        /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
+        pub fn manifest_encryption(
+            mut self,
+            input: crate::model::GeneratedManifestEncryption,
+        ) -> Self {
+            self.manifest_encryption = Some(input);
+            self
+        }
+        /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
+        pub fn set_manifest_encryption(
+            mut self,
+            input: std::option::Option<crate::model::GeneratedManifestEncryption>,
+        ) -> Self {
+            self.manifest_encryption = input;
+            self
+        }
+        /// <p>The format of the generated manifest.</p>
+        pub fn manifest_format(mut self, input: crate::model::GeneratedManifestFormat) -> Self {
+            self.manifest_format = Some(input);
+            self
+        }
+        /// <p>The format of the generated manifest.</p>
+        pub fn set_manifest_format(
+            mut self,
+            input: std::option::Option<crate::model::GeneratedManifestFormat>,
+        ) -> Self {
+            self.manifest_format = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation)
+        pub fn build(self) -> crate::model::S3ManifestOutputLocation {
+            crate::model::S3ManifestOutputLocation {
+                expected_manifest_bucket_owner: self.expected_manifest_bucket_owner,
+                bucket: self.bucket,
+                manifest_prefix: self.manifest_prefix,
+                manifest_encryption: self.manifest_encryption,
+                manifest_format: self.manifest_format,
+            }
+        }
+    }
+}
+impl S3ManifestOutputLocation {
+    /// Creates a new builder-style object to manufacture [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation)
+    pub fn builder() -> crate::model::s3_manifest_output_location::Builder {
+        crate::model::s3_manifest_output_location::Builder::default()
+    }
+}
+
+/// <p>The encryption configuration to use when storing the generated manifest.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GeneratedManifestEncryption {
+    /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
+    pub sses3: std::option::Option<crate::model::Sses3Encryption>,
+    /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
+    pub ssekms: std::option::Option<crate::model::SsekmsEncryption>,
+}
+impl GeneratedManifestEncryption {
+    /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
+    pub fn sses3(&self) -> std::option::Option<&crate::model::Sses3Encryption> {
+        self.sses3.as_ref()
+    }
+    /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
+    pub fn ssekms(&self) -> std::option::Option<&crate::model::SsekmsEncryption> {
+        self.ssekms.as_ref()
+    }
+}
+impl std::fmt::Debug for GeneratedManifestEncryption {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GeneratedManifestEncryption");
+        formatter.field("sses3", &self.sses3);
+        formatter.field("ssekms", &self.ssekms);
+        formatter.finish()
+    }
+}
+/// See [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption)
+pub mod generated_manifest_encryption {
+    /// A builder for [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sses3: std::option::Option<crate::model::Sses3Encryption>,
+        pub(crate) ssekms: std::option::Option<crate::model::SsekmsEncryption>,
+    }
+    impl Builder {
+        /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
+        pub fn sses3(mut self, input: crate::model::Sses3Encryption) -> Self {
+            self.sses3 = Some(input);
+            self
+        }
+        /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
+        pub fn set_sses3(
+            mut self,
+            input: std::option::Option<crate::model::Sses3Encryption>,
+        ) -> Self {
+            self.sses3 = input;
+            self
+        }
+        /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
+        pub fn ssekms(mut self, input: crate::model::SsekmsEncryption) -> Self {
+            self.ssekms = Some(input);
+            self
+        }
+        /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
+        pub fn set_ssekms(
+            mut self,
+            input: std::option::Option<crate::model::SsekmsEncryption>,
+        ) -> Self {
+            self.ssekms = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption)
+        pub fn build(self) -> crate::model::GeneratedManifestEncryption {
+            crate::model::GeneratedManifestEncryption {
+                sses3: self.sses3,
+                ssekms: self.ssekms,
+            }
+        }
+    }
+}
+impl GeneratedManifestEncryption {
+    /// Creates a new builder-style object to manufacture [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption)
+    pub fn builder() -> crate::model::generated_manifest_encryption::Builder {
+        crate::model::generated_manifest_encryption::Builder::default()
+    }
+}
+
+/// <p>Configuration for the use of SSE-KMS to encrypt generated manifest objects.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SsekmsEncryption {
+    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting generated manifest objects.</p>
+    pub key_id: std::option::Option<std::string::String>,
+}
+impl SsekmsEncryption {
+    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting generated manifest objects.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+}
+impl std::fmt::Debug for SsekmsEncryption {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SsekmsEncryption");
+        formatter.field("key_id", &self.key_id);
+        formatter.finish()
+    }
+}
+/// See [`SsekmsEncryption`](crate::model::SsekmsEncryption)
+pub mod ssekms_encryption {
+    /// A builder for [`SsekmsEncryption`](crate::model::SsekmsEncryption)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting generated manifest objects.</p>
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
+            self
+        }
+        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting generated manifest objects.</p>
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SsekmsEncryption`](crate::model::SsekmsEncryption)
+        pub fn build(self) -> crate::model::SsekmsEncryption {
+            crate::model::SsekmsEncryption {
+                key_id: self.key_id,
+            }
+        }
+    }
+}
+impl SsekmsEncryption {
+    /// Creates a new builder-style object to manufacture [`SsekmsEncryption`](crate::model::SsekmsEncryption)
+    pub fn builder() -> crate::model::ssekms_encryption::Builder {
+        crate::model::ssekms_encryption::Builder::default()
+    }
+}
+
+/// <p>Configuration for the use of SSE-S3 to encrypt generated manifest objects.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Sses3Encryption {}
+impl std::fmt::Debug for Sses3Encryption {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Sses3Encryption");
+        formatter.finish()
+    }
+}
+/// See [`Sses3Encryption`](crate::model::Sses3Encryption)
+pub mod sses3_encryption {
+    /// A builder for [`Sses3Encryption`](crate::model::Sses3Encryption)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`Sses3Encryption`](crate::model::Sses3Encryption)
+        pub fn build(self) -> crate::model::Sses3Encryption {
+            crate::model::Sses3Encryption {}
+        }
+    }
+}
+impl Sses3Encryption {
+    /// Creates a new builder-style object to manufacture [`Sses3Encryption`](crate::model::Sses3Encryption)
+    pub fn builder() -> crate::model::sses3_encryption::Builder {
+        crate::model::sses3_encryption::Builder::default()
     }
 }
 
@@ -6826,6 +7904,8 @@ pub struct JobOperation {
     pub s3_put_object_legal_hold: std::option::Option<crate::model::S3SetObjectLegalHoldOperation>,
     /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub s3_put_object_retention: std::option::Option<crate::model::S3SetObjectRetentionOperation>,
+    /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
+    pub s3_replicate_object: std::option::Option<crate::model::S3ReplicateObjectOperation>,
 }
 impl JobOperation {
     /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
@@ -6870,6 +7950,12 @@ impl JobOperation {
     ) -> std::option::Option<&crate::model::S3SetObjectRetentionOperation> {
         self.s3_put_object_retention.as_ref()
     }
+    /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
+    pub fn s3_replicate_object(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ReplicateObjectOperation> {
+        self.s3_replicate_object.as_ref()
+    }
 }
 impl std::fmt::Debug for JobOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6885,6 +7971,7 @@ impl std::fmt::Debug for JobOperation {
         );
         formatter.field("s3_put_object_legal_hold", &self.s3_put_object_legal_hold);
         formatter.field("s3_put_object_retention", &self.s3_put_object_retention);
+        formatter.field("s3_replicate_object", &self.s3_replicate_object);
         formatter.finish()
     }
 }
@@ -6907,6 +7994,8 @@ pub mod job_operation {
             std::option::Option<crate::model::S3SetObjectLegalHoldOperation>,
         pub(crate) s3_put_object_retention:
             std::option::Option<crate::model::S3SetObjectRetentionOperation>,
+        pub(crate) s3_replicate_object:
+            std::option::Option<crate::model::S3ReplicateObjectOperation>,
     }
     impl Builder {
         /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
@@ -7028,6 +8117,22 @@ pub mod job_operation {
             self.s3_put_object_retention = input;
             self
         }
+        /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
+        pub fn s3_replicate_object(
+            mut self,
+            input: crate::model::S3ReplicateObjectOperation,
+        ) -> Self {
+            self.s3_replicate_object = Some(input);
+            self
+        }
+        /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
+        pub fn set_s3_replicate_object(
+            mut self,
+            input: std::option::Option<crate::model::S3ReplicateObjectOperation>,
+        ) -> Self {
+            self.s3_replicate_object = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobOperation`](crate::model::JobOperation)
         pub fn build(self) -> crate::model::JobOperation {
             crate::model::JobOperation {
@@ -7039,6 +8144,7 @@ pub mod job_operation {
                 s3_initiate_restore_object: self.s3_initiate_restore_object,
                 s3_put_object_legal_hold: self.s3_put_object_legal_hold,
                 s3_put_object_retention: self.s3_put_object_retention,
+                s3_replicate_object: self.s3_replicate_object,
             }
         }
     }
@@ -7047,6 +8153,36 @@ impl JobOperation {
     /// Creates a new builder-style object to manufacture [`JobOperation`](crate::model::JobOperation)
     pub fn builder() -> crate::model::job_operation::Builder {
         crate::model::job_operation::Builder::default()
+    }
+}
+
+/// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3ReplicateObjectOperation {}
+impl std::fmt::Debug for S3ReplicateObjectOperation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3ReplicateObjectOperation");
+        formatter.finish()
+    }
+}
+/// See [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation)
+pub mod s3_replicate_object_operation {
+    /// A builder for [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation)
+        pub fn build(self) -> crate::model::S3ReplicateObjectOperation {
+            crate::model::S3ReplicateObjectOperation {}
+        }
+    }
+}
+impl S3ReplicateObjectOperation {
+    /// Creates a new builder-style object to manufacture [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation)
+    pub fn builder() -> crate::model::s3_replicate_object_operation::Builder {
+        crate::model::s3_replicate_object_operation::Builder::default()
     }
 }
 
@@ -7436,17 +8572,17 @@ impl AsRef<str> for S3ObjectLockLegalHoldStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3InitiateRestoreObjectOperation {
-    /// <p>This argument specifies how long the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
+    /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
     /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
-    /// <p>S3 Batch Operations jobs can operate either on S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
+    /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
     pub expiration_in_days: std::option::Option<i32>,
     /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
     pub glacier_job_tier: std::option::Option<crate::model::S3GlacierJobTier>,
 }
 impl S3InitiateRestoreObjectOperation {
-    /// <p>This argument specifies how long the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
+    /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
     /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
-    /// <p>S3 Batch Operations jobs can operate either on S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
+    /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
     pub fn expiration_in_days(&self) -> std::option::Option<i32> {
         self.expiration_in_days
     }
@@ -7473,16 +8609,16 @@ pub mod s3_initiate_restore_object_operation {
         pub(crate) glacier_job_tier: std::option::Option<crate::model::S3GlacierJobTier>,
     }
     impl Builder {
-        /// <p>This argument specifies how long the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
+        /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
         /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
-        /// <p>S3 Batch Operations jobs can operate either on S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
+        /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
         pub fn expiration_in_days(mut self, input: i32) -> Self {
             self.expiration_in_days = Some(input);
             self
         }
-        /// <p>This argument specifies how long the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
+        /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
         /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
-        /// <p>S3 Batch Operations jobs can operate either on S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
+        /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
         pub fn set_expiration_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.expiration_in_days = input;
             self
@@ -8363,7 +9499,7 @@ pub struct S3CopyObjectOperation {
     pub metadata_directive: std::option::Option<crate::model::S3MetadataDirective>,
     /// <p></p>
     pub modified_since_constraint: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p></p>
+    /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
     pub new_object_metadata: std::option::Option<crate::model::S3ObjectMetadata>,
     /// <p></p>
     pub new_object_tagging: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
@@ -8413,7 +9549,7 @@ impl S3CopyObjectOperation {
     pub fn modified_since_constraint(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_since_constraint.as_ref()
     }
-    /// <p></p>
+    /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
     pub fn new_object_metadata(&self) -> std::option::Option<&crate::model::S3ObjectMetadata> {
         self.new_object_metadata.as_ref()
     }
@@ -8603,12 +9739,12 @@ pub mod s3_copy_object_operation {
             self.modified_since_constraint = input;
             self
         }
-        /// <p></p>
+        /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
         pub fn new_object_metadata(mut self, input: crate::model::S3ObjectMetadata) -> Self {
             self.new_object_metadata = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
         pub fn set_new_object_metadata(
             mut self,
             input: std::option::Option<crate::model::S3ObjectMetadata>,
@@ -8867,6 +10003,8 @@ pub enum S3StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     Glacier,
     #[allow(missing_docs)] // documentation missing in model
+    GlacierIr,
+    #[allow(missing_docs)] // documentation missing in model
     IntelligentTiering,
     #[allow(missing_docs)] // documentation missing in model
     OnezoneIa,
@@ -8882,6 +10020,7 @@ impl std::convert::From<&str> for S3StorageClass {
         match s {
             "DEEP_ARCHIVE" => S3StorageClass::DeepArchive,
             "GLACIER" => S3StorageClass::Glacier,
+            "GLACIER_IR" => S3StorageClass::GlacierIr,
             "INTELLIGENT_TIERING" => S3StorageClass::IntelligentTiering,
             "ONEZONE_IA" => S3StorageClass::OnezoneIa,
             "STANDARD" => S3StorageClass::Standard,
@@ -8903,6 +10042,7 @@ impl S3StorageClass {
         match self {
             S3StorageClass::DeepArchive => "DEEP_ARCHIVE",
             S3StorageClass::Glacier => "GLACIER",
+            S3StorageClass::GlacierIr => "GLACIER_IR",
             S3StorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
             S3StorageClass::OnezoneIa => "ONEZONE_IA",
             S3StorageClass::Standard => "STANDARD",
@@ -8915,6 +10055,7 @@ impl S3StorageClass {
         &[
             "DEEP_ARCHIVE",
             "GLACIER",
+            "GLACIER_IR",
             "INTELLIGENT_TIERING",
             "ONEZONE_IA",
             "STANDARD",
@@ -9451,109 +10592,6 @@ impl JobManifest {
     /// Creates a new builder-style object to manufacture [`JobManifest`](crate::model::JobManifest)
     pub fn builder() -> crate::model::job_manifest::Builder {
         crate::model::job_manifest::Builder::default()
-    }
-}
-
-/// <p>Contains the information required to locate a manifest object.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct JobManifestLocation {
-    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
-    /// </important>
-    pub object_arn: std::option::Option<std::string::String>,
-    /// <p>The optional version ID to identify a specific version of the manifest object.</p>
-    pub object_version_id: std::option::Option<std::string::String>,
-    /// <p>The ETag for the specified manifest object.</p>
-    pub e_tag: std::option::Option<std::string::String>,
-}
-impl JobManifestLocation {
-    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
-    /// </important>
-    pub fn object_arn(&self) -> std::option::Option<&str> {
-        self.object_arn.as_deref()
-    }
-    /// <p>The optional version ID to identify a specific version of the manifest object.</p>
-    pub fn object_version_id(&self) -> std::option::Option<&str> {
-        self.object_version_id.as_deref()
-    }
-    /// <p>The ETag for the specified manifest object.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
-        self.e_tag.as_deref()
-    }
-}
-impl std::fmt::Debug for JobManifestLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobManifestLocation");
-        formatter.field("object_arn", &self.object_arn);
-        formatter.field("object_version_id", &self.object_version_id);
-        formatter.field("e_tag", &self.e_tag);
-        formatter.finish()
-    }
-}
-/// See [`JobManifestLocation`](crate::model::JobManifestLocation)
-pub mod job_manifest_location {
-    /// A builder for [`JobManifestLocation`](crate::model::JobManifestLocation)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) object_arn: std::option::Option<std::string::String>,
-        pub(crate) object_version_id: std::option::Option<std::string::String>,
-        pub(crate) e_tag: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
-        /// </important>
-        pub fn object_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.object_arn = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
-        /// </important>
-        pub fn set_object_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_arn = input;
-            self
-        }
-        /// <p>The optional version ID to identify a specific version of the manifest object.</p>
-        pub fn object_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.object_version_id = Some(input.into());
-            self
-        }
-        /// <p>The optional version ID to identify a specific version of the manifest object.</p>
-        pub fn set_object_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_version_id = input;
-            self
-        }
-        /// <p>The ETag for the specified manifest object.</p>
-        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(input.into());
-            self
-        }
-        /// <p>The ETag for the specified manifest object.</p>
-        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`JobManifestLocation`](crate::model::JobManifestLocation)
-        pub fn build(self) -> crate::model::JobManifestLocation {
-            crate::model::JobManifestLocation {
-                object_arn: self.object_arn,
-                object_version_id: self.object_version_id,
-                e_tag: self.e_tag,
-            }
-        }
-    }
-}
-impl JobManifestLocation {
-    /// Creates a new builder-style object to manufacture [`JobManifestLocation`](crate::model::JobManifestLocation)
-    pub fn builder() -> crate::model::job_manifest_location::Builder {
-        crate::model::job_manifest_location::Builder::default()
     }
 }
 

@@ -886,6 +886,9 @@ pub fn serialize_structure_crate_model_aws_security_finding(
         )?;
         object_196.finish();
     }
+    if input.sample {
+        object.key("Sample").boolean(input.sample);
+    }
     Ok(())
 }
 
@@ -2298,6 +2301,20 @@ pub fn serialize_structure_crate_model_aws_security_finding_filters(
         }
         array_578.finish();
     }
+    if let Some(var_581) = &input.sample {
+        let mut array_582 = object.key("Sample").start_array();
+        for item_583 in var_581 {
+            {
+                let mut object_584 = array_582.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_boolean_filter(
+                    &mut object_584,
+                    item_583,
+                )?;
+                object_584.finish();
+            }
+        }
+        array_582.finish();
+    }
     Ok(())
 }
 
@@ -2305,11 +2322,11 @@ pub fn serialize_structure_crate_model_account_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AccountDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_581) = &input.account_id {
-        object.key("AccountId").string(var_581.as_str());
+    if let Some(var_585) = &input.account_id {
+        object.key("AccountId").string(var_585.as_str());
     }
-    if let Some(var_582) = &input.email {
-        object.key("Email").string(var_582.as_str());
+    if let Some(var_586) = &input.email {
+        object.key("Email").string(var_586.as_str());
     }
     Ok(())
 }
@@ -2318,11 +2335,11 @@ pub fn serialize_structure_crate_model_sort_criterion(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SortCriterion,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_583) = &input.field {
-        object.key("Field").string(var_583.as_str());
+    if let Some(var_587) = &input.field {
+        object.key("Field").string(var_587.as_str());
     }
-    if let Some(var_584) = &input.sort_order {
-        object.key("SortOrder").string(var_584.as_str());
+    if let Some(var_588) = &input.sort_order {
+        object.key("SortOrder").string(var_588.as_str());
     }
     Ok(())
 }
@@ -2337,8 +2354,8 @@ pub fn serialize_structure_crate_model_severity(
             aws_smithy_types::Number::Float((input.product).into()),
         );
     }
-    if let Some(var_585) = &input.label {
-        object.key("Label").string(var_585.as_str());
+    if let Some(var_589) = &input.label {
+        object.key("Label").string(var_589.as_str());
     }
     if input.normalized != 0 {
         object.key("Normalized").number(
@@ -2346,8 +2363,8 @@ pub fn serialize_structure_crate_model_severity(
             aws_smithy_types::Number::NegInt((input.normalized).into()),
         );
     }
-    if let Some(var_586) = &input.original {
-        object.key("Original").string(var_586.as_str());
+    if let Some(var_590) = &input.original {
+        object.key("Original").string(var_590.as_str());
     }
     Ok(())
 }
@@ -2356,10 +2373,10 @@ pub fn serialize_structure_crate_model_remediation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Remediation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_587) = &input.recommendation {
-        let mut object_588 = object.key("Recommendation").start_object();
-        crate::json_ser::serialize_structure_crate_model_recommendation(&mut object_588, var_587)?;
-        object_588.finish();
+    if let Some(var_591) = &input.recommendation {
+        let mut object_592 = object.key("Recommendation").start_object();
+        crate::json_ser::serialize_structure_crate_model_recommendation(&mut object_592, var_591)?;
+        object_592.finish();
     }
     Ok(())
 }
@@ -2368,17 +2385,17 @@ pub fn serialize_structure_crate_model_malware(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Malware,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_589) = &input.name {
-        object.key("Name").string(var_589.as_str());
+    if let Some(var_593) = &input.name {
+        object.key("Name").string(var_593.as_str());
     }
-    if let Some(var_590) = &input.r#type {
-        object.key("Type").string(var_590.as_str());
+    if let Some(var_594) = &input.r#type {
+        object.key("Type").string(var_594.as_str());
     }
-    if let Some(var_591) = &input.path {
-        object.key("Path").string(var_591.as_str());
+    if let Some(var_595) = &input.path {
+        object.key("Path").string(var_595.as_str());
     }
-    if let Some(var_592) = &input.state {
-        object.key("State").string(var_592.as_str());
+    if let Some(var_596) = &input.state {
+        object.key("State").string(var_596.as_str());
     }
     Ok(())
 }
@@ -2387,22 +2404,22 @@ pub fn serialize_structure_crate_model_network(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Network,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_593) = &input.direction {
-        object.key("Direction").string(var_593.as_str());
+    if let Some(var_597) = &input.direction {
+        object.key("Direction").string(var_597.as_str());
     }
-    if let Some(var_594) = &input.protocol {
-        object.key("Protocol").string(var_594.as_str());
+    if let Some(var_598) = &input.protocol {
+        object.key("Protocol").string(var_598.as_str());
     }
-    if let Some(var_595) = &input.open_port_range {
-        let mut object_596 = object.key("OpenPortRange").start_object();
-        crate::json_ser::serialize_structure_crate_model_port_range(&mut object_596, var_595)?;
-        object_596.finish();
+    if let Some(var_599) = &input.open_port_range {
+        let mut object_600 = object.key("OpenPortRange").start_object();
+        crate::json_ser::serialize_structure_crate_model_port_range(&mut object_600, var_599)?;
+        object_600.finish();
     }
-    if let Some(var_597) = &input.source_ip_v4 {
-        object.key("SourceIpV4").string(var_597.as_str());
+    if let Some(var_601) = &input.source_ip_v4 {
+        object.key("SourceIpV4").string(var_601.as_str());
     }
-    if let Some(var_598) = &input.source_ip_v6 {
-        object.key("SourceIpV6").string(var_598.as_str());
+    if let Some(var_602) = &input.source_ip_v6 {
+        object.key("SourceIpV6").string(var_602.as_str());
     }
     if input.source_port != 0 {
         object.key("SourcePort").number(
@@ -2410,17 +2427,17 @@ pub fn serialize_structure_crate_model_network(
             aws_smithy_types::Number::NegInt((input.source_port).into()),
         );
     }
-    if let Some(var_599) = &input.source_domain {
-        object.key("SourceDomain").string(var_599.as_str());
+    if let Some(var_603) = &input.source_domain {
+        object.key("SourceDomain").string(var_603.as_str());
     }
-    if let Some(var_600) = &input.source_mac {
-        object.key("SourceMac").string(var_600.as_str());
+    if let Some(var_604) = &input.source_mac {
+        object.key("SourceMac").string(var_604.as_str());
     }
-    if let Some(var_601) = &input.destination_ip_v4 {
-        object.key("DestinationIpV4").string(var_601.as_str());
+    if let Some(var_605) = &input.destination_ip_v4 {
+        object.key("DestinationIpV4").string(var_605.as_str());
     }
-    if let Some(var_602) = &input.destination_ip_v6 {
-        object.key("DestinationIpV6").string(var_602.as_str());
+    if let Some(var_606) = &input.destination_ip_v6 {
+        object.key("DestinationIpV6").string(var_606.as_str());
     }
     if input.destination_port != 0 {
         object.key("DestinationPort").number(
@@ -2428,8 +2445,8 @@ pub fn serialize_structure_crate_model_network(
             aws_smithy_types::Number::NegInt((input.destination_port).into()),
         );
     }
-    if let Some(var_603) = &input.destination_domain {
-        object.key("DestinationDomain").string(var_603.as_str());
+    if let Some(var_607) = &input.destination_domain {
+        object.key("DestinationDomain").string(var_607.as_str());
     }
     Ok(())
 }
@@ -2438,21 +2455,21 @@ pub fn serialize_structure_crate_model_network_path_component(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NetworkPathComponent,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_604) = &input.component_id {
-        object.key("ComponentId").string(var_604.as_str());
+    if let Some(var_608) = &input.component_id {
+        object.key("ComponentId").string(var_608.as_str());
     }
-    if let Some(var_605) = &input.component_type {
-        object.key("ComponentType").string(var_605.as_str());
+    if let Some(var_609) = &input.component_type {
+        object.key("ComponentType").string(var_609.as_str());
     }
-    if let Some(var_606) = &input.egress {
-        let mut object_607 = object.key("Egress").start_object();
-        crate::json_ser::serialize_structure_crate_model_network_header(&mut object_607, var_606)?;
-        object_607.finish();
+    if let Some(var_610) = &input.egress {
+        let mut object_611 = object.key("Egress").start_object();
+        crate::json_ser::serialize_structure_crate_model_network_header(&mut object_611, var_610)?;
+        object_611.finish();
     }
-    if let Some(var_608) = &input.ingress {
-        let mut object_609 = object.key("Ingress").start_object();
-        crate::json_ser::serialize_structure_crate_model_network_header(&mut object_609, var_608)?;
-        object_609.finish();
+    if let Some(var_612) = &input.ingress {
+        let mut object_613 = object.key("Ingress").start_object();
+        crate::json_ser::serialize_structure_crate_model_network_header(&mut object_613, var_612)?;
+        object_613.finish();
     }
     Ok(())
 }
@@ -2461,11 +2478,11 @@ pub fn serialize_structure_crate_model_process_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProcessDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_610) = &input.name {
-        object.key("Name").string(var_610.as_str());
+    if let Some(var_614) = &input.name {
+        object.key("Name").string(var_614.as_str());
     }
-    if let Some(var_611) = &input.path {
-        object.key("Path").string(var_611.as_str());
+    if let Some(var_615) = &input.path {
+        object.key("Path").string(var_615.as_str());
     }
     if input.pid != 0 {
         object.key("Pid").number(
@@ -2479,11 +2496,11 @@ pub fn serialize_structure_crate_model_process_details(
             aws_smithy_types::Number::NegInt((input.parent_pid).into()),
         );
     }
-    if let Some(var_612) = &input.launched_at {
-        object.key("LaunchedAt").string(var_612.as_str());
+    if let Some(var_616) = &input.launched_at {
+        object.key("LaunchedAt").string(var_616.as_str());
     }
-    if let Some(var_613) = &input.terminated_at {
-        object.key("TerminatedAt").string(var_613.as_str());
+    if let Some(var_617) = &input.terminated_at {
+        object.key("TerminatedAt").string(var_617.as_str());
     }
     Ok(())
 }
@@ -2492,23 +2509,23 @@ pub fn serialize_structure_crate_model_threat_intel_indicator(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ThreatIntelIndicator,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_614) = &input.r#type {
-        object.key("Type").string(var_614.as_str());
+    if let Some(var_618) = &input.r#type {
+        object.key("Type").string(var_618.as_str());
     }
-    if let Some(var_615) = &input.value {
-        object.key("Value").string(var_615.as_str());
+    if let Some(var_619) = &input.value {
+        object.key("Value").string(var_619.as_str());
     }
-    if let Some(var_616) = &input.category {
-        object.key("Category").string(var_616.as_str());
+    if let Some(var_620) = &input.category {
+        object.key("Category").string(var_620.as_str());
     }
-    if let Some(var_617) = &input.last_observed_at {
-        object.key("LastObservedAt").string(var_617.as_str());
+    if let Some(var_621) = &input.last_observed_at {
+        object.key("LastObservedAt").string(var_621.as_str());
     }
-    if let Some(var_618) = &input.source {
-        object.key("Source").string(var_618.as_str());
+    if let Some(var_622) = &input.source {
+        object.key("Source").string(var_622.as_str());
     }
-    if let Some(var_619) = &input.source_url {
-        object.key("SourceUrl").string(var_619.as_str());
+    if let Some(var_623) = &input.source_url {
+        object.key("SourceUrl").string(var_623.as_str());
     }
     Ok(())
 }
@@ -2517,45 +2534,45 @@ pub fn serialize_structure_crate_model_resource(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Resource,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_620) = &input.r#type {
-        object.key("Type").string(var_620.as_str());
+    if let Some(var_624) = &input.r#type {
+        object.key("Type").string(var_624.as_str());
     }
-    if let Some(var_621) = &input.id {
-        object.key("Id").string(var_621.as_str());
+    if let Some(var_625) = &input.id {
+        object.key("Id").string(var_625.as_str());
     }
-    if let Some(var_622) = &input.partition {
-        object.key("Partition").string(var_622.as_str());
+    if let Some(var_626) = &input.partition {
+        object.key("Partition").string(var_626.as_str());
     }
-    if let Some(var_623) = &input.region {
-        object.key("Region").string(var_623.as_str());
+    if let Some(var_627) = &input.region {
+        object.key("Region").string(var_627.as_str());
     }
-    if let Some(var_624) = &input.resource_role {
-        object.key("ResourceRole").string(var_624.as_str());
+    if let Some(var_628) = &input.resource_role {
+        object.key("ResourceRole").string(var_628.as_str());
     }
-    if let Some(var_625) = &input.tags {
-        let mut object_626 = object.key("Tags").start_object();
-        for (key_627, value_628) in var_625 {
+    if let Some(var_629) = &input.tags {
+        let mut object_630 = object.key("Tags").start_object();
+        for (key_631, value_632) in var_629 {
             {
-                object_626.key(key_627).string(value_628.as_str());
+                object_630.key(key_631).string(value_632.as_str());
             }
         }
-        object_626.finish();
-    }
-    if let Some(var_629) = &input.data_classification {
-        let mut object_630 = object.key("DataClassification").start_object();
-        crate::json_ser::serialize_structure_crate_model_data_classification_details(
-            &mut object_630,
-            var_629,
-        )?;
         object_630.finish();
     }
-    if let Some(var_631) = &input.details {
-        let mut object_632 = object.key("Details").start_object();
-        crate::json_ser::serialize_structure_crate_model_resource_details(
-            &mut object_632,
-            var_631,
+    if let Some(var_633) = &input.data_classification {
+        let mut object_634 = object.key("DataClassification").start_object();
+        crate::json_ser::serialize_structure_crate_model_data_classification_details(
+            &mut object_634,
+            var_633,
         )?;
-        object_632.finish();
+        object_634.finish();
+    }
+    if let Some(var_635) = &input.details {
+        let mut object_636 = object.key("Details").start_object();
+        crate::json_ser::serialize_structure_crate_model_resource_details(
+            &mut object_636,
+            var_635,
+        )?;
+        object_636.finish();
     }
     Ok(())
 }
@@ -2564,31 +2581,31 @@ pub fn serialize_structure_crate_model_compliance(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Compliance,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_633) = &input.status {
-        object.key("Status").string(var_633.as_str());
+    if let Some(var_637) = &input.status {
+        object.key("Status").string(var_637.as_str());
     }
-    if let Some(var_634) = &input.related_requirements {
-        let mut array_635 = object.key("RelatedRequirements").start_array();
-        for item_636 in var_634 {
+    if let Some(var_638) = &input.related_requirements {
+        let mut array_639 = object.key("RelatedRequirements").start_array();
+        for item_640 in var_638 {
             {
-                array_635.value().string(item_636.as_str());
+                array_639.value().string(item_640.as_str());
             }
         }
-        array_635.finish();
+        array_639.finish();
     }
-    if let Some(var_637) = &input.status_reasons {
-        let mut array_638 = object.key("StatusReasons").start_array();
-        for item_639 in var_637 {
+    if let Some(var_641) = &input.status_reasons {
+        let mut array_642 = object.key("StatusReasons").start_array();
+        for item_643 in var_641 {
             {
-                let mut object_640 = array_638.value().start_object();
+                let mut object_644 = array_642.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_status_reason(
-                    &mut object_640,
-                    item_639,
+                    &mut object_644,
+                    item_643,
                 )?;
-                object_640.finish();
+                object_644.finish();
             }
         }
-        array_638.finish();
+        array_642.finish();
     }
     Ok(())
 }
@@ -2597,8 +2614,8 @@ pub fn serialize_structure_crate_model_workflow(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Workflow,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_641) = &input.status {
-        object.key("Status").string(var_641.as_str());
+    if let Some(var_645) = &input.status {
+        object.key("Status").string(var_645.as_str());
     }
     Ok(())
 }
@@ -2607,14 +2624,14 @@ pub fn serialize_structure_crate_model_note(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Note,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_642) = &input.text {
-        object.key("Text").string(var_642.as_str());
+    if let Some(var_646) = &input.text {
+        object.key("Text").string(var_646.as_str());
     }
-    if let Some(var_643) = &input.updated_by {
-        object.key("UpdatedBy").string(var_643.as_str());
+    if let Some(var_647) = &input.updated_by {
+        object.key("UpdatedBy").string(var_647.as_str());
     }
-    if let Some(var_644) = &input.updated_at {
-        object.key("UpdatedAt").string(var_644.as_str());
+    if let Some(var_648) = &input.updated_at {
+        object.key("UpdatedAt").string(var_648.as_str());
     }
     Ok(())
 }
@@ -2623,59 +2640,59 @@ pub fn serialize_structure_crate_model_vulnerability(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Vulnerability,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_645) = &input.id {
-        object.key("Id").string(var_645.as_str());
+    if let Some(var_649) = &input.id {
+        object.key("Id").string(var_649.as_str());
     }
-    if let Some(var_646) = &input.vulnerable_packages {
-        let mut array_647 = object.key("VulnerablePackages").start_array();
-        for item_648 in var_646 {
-            {
-                let mut object_649 = array_647.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_software_package(
-                    &mut object_649,
-                    item_648,
-                )?;
-                object_649.finish();
-            }
-        }
-        array_647.finish();
-    }
-    if let Some(var_650) = &input.cvss {
-        let mut array_651 = object.key("Cvss").start_array();
+    if let Some(var_650) = &input.vulnerable_packages {
+        let mut array_651 = object.key("VulnerablePackages").start_array();
         for item_652 in var_650 {
             {
                 let mut object_653 = array_651.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_cvss(&mut object_653, item_652)?;
+                crate::json_ser::serialize_structure_crate_model_software_package(
+                    &mut object_653,
+                    item_652,
+                )?;
                 object_653.finish();
             }
         }
         array_651.finish();
     }
-    if let Some(var_654) = &input.related_vulnerabilities {
-        let mut array_655 = object.key("RelatedVulnerabilities").start_array();
+    if let Some(var_654) = &input.cvss {
+        let mut array_655 = object.key("Cvss").start_array();
         for item_656 in var_654 {
             {
-                array_655.value().string(item_656.as_str());
+                let mut object_657 = array_655.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_cvss(&mut object_657, item_656)?;
+                object_657.finish();
             }
         }
         array_655.finish();
     }
-    if let Some(var_657) = &input.vendor {
-        let mut object_658 = object.key("Vendor").start_object();
-        crate::json_ser::serialize_structure_crate_model_vulnerability_vendor(
-            &mut object_658,
-            var_657,
-        )?;
-        object_658.finish();
-    }
-    if let Some(var_659) = &input.reference_urls {
-        let mut array_660 = object.key("ReferenceUrls").start_array();
-        for item_661 in var_659 {
+    if let Some(var_658) = &input.related_vulnerabilities {
+        let mut array_659 = object.key("RelatedVulnerabilities").start_array();
+        for item_660 in var_658 {
             {
-                array_660.value().string(item_661.as_str());
+                array_659.value().string(item_660.as_str());
             }
         }
-        array_660.finish();
+        array_659.finish();
+    }
+    if let Some(var_661) = &input.vendor {
+        let mut object_662 = object.key("Vendor").start_object();
+        crate::json_ser::serialize_structure_crate_model_vulnerability_vendor(
+            &mut object_662,
+            var_661,
+        )?;
+        object_662.finish();
+    }
+    if let Some(var_663) = &input.reference_urls {
+        let mut array_664 = object.key("ReferenceUrls").start_array();
+        for item_665 in var_663 {
+            {
+                array_664.value().string(item_665.as_str());
+            }
+        }
+        array_664.finish();
     }
     Ok(())
 }
@@ -2684,8 +2701,8 @@ pub fn serialize_structure_crate_model_patch_summary(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PatchSummary,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_662) = &input.id {
-        object.key("Id").string(var_662.as_str());
+    if let Some(var_666) = &input.id {
+        object.key("Id").string(var_666.as_str());
     }
     if input.installed_count != 0 {
         object.key("InstalledCount").number(
@@ -2723,17 +2740,17 @@ pub fn serialize_structure_crate_model_patch_summary(
             aws_smithy_types::Number::NegInt((input.installed_pending_reboot).into()),
         );
     }
-    if let Some(var_663) = &input.operation_start_time {
-        object.key("OperationStartTime").string(var_663.as_str());
+    if let Some(var_667) = &input.operation_start_time {
+        object.key("OperationStartTime").string(var_667.as_str());
     }
-    if let Some(var_664) = &input.operation_end_time {
-        object.key("OperationEndTime").string(var_664.as_str());
+    if let Some(var_668) = &input.operation_end_time {
+        object.key("OperationEndTime").string(var_668.as_str());
     }
-    if let Some(var_665) = &input.reboot_option {
-        object.key("RebootOption").string(var_665.as_str());
+    if let Some(var_669) = &input.reboot_option {
+        object.key("RebootOption").string(var_669.as_str());
     }
-    if let Some(var_666) = &input.operation {
-        object.key("Operation").string(var_666.as_str());
+    if let Some(var_670) = &input.operation {
+        object.key("Operation").string(var_670.as_str());
     }
     Ok(())
 }
@@ -2742,40 +2759,40 @@ pub fn serialize_structure_crate_model_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Action,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_667) = &input.action_type {
-        object.key("ActionType").string(var_667.as_str());
+    if let Some(var_671) = &input.action_type {
+        object.key("ActionType").string(var_671.as_str());
     }
-    if let Some(var_668) = &input.network_connection_action {
-        let mut object_669 = object.key("NetworkConnectionAction").start_object();
+    if let Some(var_672) = &input.network_connection_action {
+        let mut object_673 = object.key("NetworkConnectionAction").start_object();
         crate::json_ser::serialize_structure_crate_model_network_connection_action(
-            &mut object_669,
-            var_668,
-        )?;
-        object_669.finish();
-    }
-    if let Some(var_670) = &input.aws_api_call_action {
-        let mut object_671 = object.key("AwsApiCallAction").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_api_call_action(
-            &mut object_671,
-            var_670,
-        )?;
-        object_671.finish();
-    }
-    if let Some(var_672) = &input.dns_request_action {
-        let mut object_673 = object.key("DnsRequestAction").start_object();
-        crate::json_ser::serialize_structure_crate_model_dns_request_action(
             &mut object_673,
             var_672,
         )?;
         object_673.finish();
     }
-    if let Some(var_674) = &input.port_probe_action {
-        let mut object_675 = object.key("PortProbeAction").start_object();
-        crate::json_ser::serialize_structure_crate_model_port_probe_action(
+    if let Some(var_674) = &input.aws_api_call_action {
+        let mut object_675 = object.key("AwsApiCallAction").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_api_call_action(
             &mut object_675,
             var_674,
         )?;
         object_675.finish();
+    }
+    if let Some(var_676) = &input.dns_request_action {
+        let mut object_677 = object.key("DnsRequestAction").start_object();
+        crate::json_ser::serialize_structure_crate_model_dns_request_action(
+            &mut object_677,
+            var_676,
+        )?;
+        object_677.finish();
+    }
+    if let Some(var_678) = &input.port_probe_action {
+        let mut object_679 = object.key("PortProbeAction").start_object();
+        crate::json_ser::serialize_structure_crate_model_port_probe_action(
+            &mut object_679,
+            var_678,
+        )?;
+        object_679.finish();
     }
     Ok(())
 }
@@ -2796,36 +2813,36 @@ pub fn serialize_structure_crate_model_finding_provider_fields(
             aws_smithy_types::Number::NegInt((input.criticality).into()),
         );
     }
-    if let Some(var_676) = &input.related_findings {
-        let mut array_677 = object.key("RelatedFindings").start_array();
-        for item_678 in var_676 {
+    if let Some(var_680) = &input.related_findings {
+        let mut array_681 = object.key("RelatedFindings").start_array();
+        for item_682 in var_680 {
             {
-                let mut object_679 = array_677.value().start_object();
+                let mut object_683 = array_681.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_related_finding(
-                    &mut object_679,
-                    item_678,
+                    &mut object_683,
+                    item_682,
                 )?;
-                object_679.finish();
+                object_683.finish();
             }
         }
-        array_677.finish();
+        array_681.finish();
     }
-    if let Some(var_680) = &input.severity {
-        let mut object_681 = object.key("Severity").start_object();
+    if let Some(var_684) = &input.severity {
+        let mut object_685 = object.key("Severity").start_object();
         crate::json_ser::serialize_structure_crate_model_finding_provider_severity(
-            &mut object_681,
-            var_680,
+            &mut object_685,
+            var_684,
         )?;
-        object_681.finish();
+        object_685.finish();
     }
-    if let Some(var_682) = &input.types {
-        let mut array_683 = object.key("Types").start_array();
-        for item_684 in var_682 {
+    if let Some(var_686) = &input.types {
+        let mut array_687 = object.key("Types").start_array();
+        for item_688 in var_686 {
             {
-                array_683.value().string(item_684.as_str());
+                array_687.value().string(item_688.as_str());
             }
         }
-        array_683.finish();
+        array_687.finish();
     }
     Ok(())
 }
@@ -2834,11 +2851,11 @@ pub fn serialize_structure_crate_model_string_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StringFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_685) = &input.value {
-        object.key("Value").string(var_685.as_str());
+    if let Some(var_689) = &input.value {
+        object.key("Value").string(var_689.as_str());
     }
-    if let Some(var_686) = &input.comparison {
-        object.key("Comparison").string(var_686.as_str());
+    if let Some(var_690) = &input.comparison {
+        object.key("Comparison").string(var_690.as_str());
     }
     Ok(())
 }
@@ -2847,16 +2864,16 @@ pub fn serialize_structure_crate_model_date_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DateFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_687) = &input.start {
-        object.key("Start").string(var_687.as_str());
+    if let Some(var_691) = &input.start {
+        object.key("Start").string(var_691.as_str());
     }
-    if let Some(var_688) = &input.end {
-        object.key("End").string(var_688.as_str());
+    if let Some(var_692) = &input.end {
+        object.key("End").string(var_692.as_str());
     }
-    if let Some(var_689) = &input.date_range {
-        let mut object_690 = object.key("DateRange").start_object();
-        crate::json_ser::serialize_structure_crate_model_date_range(&mut object_690, var_689)?;
-        object_690.finish();
+    if let Some(var_693) = &input.date_range {
+        let mut object_694 = object.key("DateRange").start_object();
+        crate::json_ser::serialize_structure_crate_model_date_range(&mut object_694, var_693)?;
+        object_694.finish();
     }
     Ok(())
 }
@@ -2890,14 +2907,14 @@ pub fn serialize_structure_crate_model_map_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MapFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_691) = &input.key {
-        object.key("Key").string(var_691.as_str());
+    if let Some(var_695) = &input.key {
+        object.key("Key").string(var_695.as_str());
     }
-    if let Some(var_692) = &input.value {
-        object.key("Value").string(var_692.as_str());
+    if let Some(var_696) = &input.value {
+        object.key("Value").string(var_696.as_str());
     }
-    if let Some(var_693) = &input.comparison {
-        object.key("Comparison").string(var_693.as_str());
+    if let Some(var_697) = &input.comparison {
+        object.key("Comparison").string(var_697.as_str());
     }
     Ok(())
 }
@@ -2906,8 +2923,8 @@ pub fn serialize_structure_crate_model_ip_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::IpFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_694) = &input.cidr {
-        object.key("Cidr").string(var_694.as_str());
+    if let Some(var_698) = &input.cidr {
+        object.key("Cidr").string(var_698.as_str());
     }
     Ok(())
 }
@@ -2916,8 +2933,18 @@ pub fn serialize_structure_crate_model_keyword_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::KeywordFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_695) = &input.value {
-        object.key("Value").string(var_695.as_str());
+    if let Some(var_699) = &input.value {
+        object.key("Value").string(var_699.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_boolean_filter(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::BooleanFilter,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if input.value {
+        object.key("Value").boolean(input.value);
     }
     Ok(())
 }
@@ -2926,11 +2953,11 @@ pub fn serialize_structure_crate_model_recommendation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Recommendation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_696) = &input.text {
-        object.key("Text").string(var_696.as_str());
+    if let Some(var_700) = &input.text {
+        object.key("Text").string(var_700.as_str());
     }
-    if let Some(var_697) = &input.url {
-        object.key("Url").string(var_697.as_str());
+    if let Some(var_701) = &input.url {
+        object.key("Url").string(var_701.as_str());
     }
     Ok(())
 }
@@ -2958,24 +2985,24 @@ pub fn serialize_structure_crate_model_network_header(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NetworkHeader,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_698) = &input.protocol {
-        object.key("Protocol").string(var_698.as_str());
+    if let Some(var_702) = &input.protocol {
+        object.key("Protocol").string(var_702.as_str());
     }
-    if let Some(var_699) = &input.destination {
-        let mut object_700 = object.key("Destination").start_object();
+    if let Some(var_703) = &input.destination {
+        let mut object_704 = object.key("Destination").start_object();
         crate::json_ser::serialize_structure_crate_model_network_path_component_details(
-            &mut object_700,
-            var_699,
+            &mut object_704,
+            var_703,
         )?;
-        object_700.finish();
+        object_704.finish();
     }
-    if let Some(var_701) = &input.source {
-        let mut object_702 = object.key("Source").start_object();
+    if let Some(var_705) = &input.source {
+        let mut object_706 = object.key("Source").start_object();
         crate::json_ser::serialize_structure_crate_model_network_path_component_details(
-            &mut object_702,
-            var_701,
+            &mut object_706,
+            var_705,
         )?;
-        object_702.finish();
+        object_706.finish();
     }
     Ok(())
 }
@@ -2984,18 +3011,18 @@ pub fn serialize_structure_crate_model_data_classification_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DataClassificationDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_703) = &input.detailed_results_location {
+    if let Some(var_707) = &input.detailed_results_location {
         object
             .key("DetailedResultsLocation")
-            .string(var_703.as_str());
+            .string(var_707.as_str());
     }
-    if let Some(var_704) = &input.result {
-        let mut object_705 = object.key("Result").start_object();
+    if let Some(var_708) = &input.result {
+        let mut object_709 = object.key("Result").start_object();
         crate::json_ser::serialize_structure_crate_model_classification_result(
-            &mut object_705,
-            var_704,
+            &mut object_709,
+            var_708,
         )?;
-        object_705.finish();
+        object_709.finish();
     }
     Ok(())
 }
@@ -3004,493 +3031,493 @@ pub fn serialize_structure_crate_model_resource_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_706) = &input.aws_auto_scaling_auto_scaling_group {
-        let mut object_707 = object.key("AwsAutoScalingAutoScalingGroup").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_details(&mut object_707, var_706)?;
-        object_707.finish();
-    }
-    if let Some(var_708) = &input.aws_code_build_project {
-        let mut object_709 = object.key("AwsCodeBuildProject").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_code_build_project_details(
-            &mut object_709,
-            var_708,
-        )?;
-        object_709.finish();
-    }
-    if let Some(var_710) = &input.aws_cloud_front_distribution {
-        let mut object_711 = object.key("AwsCloudFrontDistribution").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_details(
-            &mut object_711,
-            var_710,
-        )?;
+    if let Some(var_710) = &input.aws_auto_scaling_auto_scaling_group {
+        let mut object_711 = object.key("AwsAutoScalingAutoScalingGroup").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_details(&mut object_711, var_710)?;
         object_711.finish();
     }
-    if let Some(var_712) = &input.aws_ec2_instance {
-        let mut object_713 = object.key("AwsEc2Instance").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ec2_instance_details(
+    if let Some(var_712) = &input.aws_code_build_project {
+        let mut object_713 = object.key("AwsCodeBuildProject").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_code_build_project_details(
             &mut object_713,
             var_712,
         )?;
         object_713.finish();
     }
-    if let Some(var_714) = &input.aws_ec2_network_interface {
-        let mut object_715 = object.key("AwsEc2NetworkInterface").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ec2_network_interface_details(
+    if let Some(var_714) = &input.aws_cloud_front_distribution {
+        let mut object_715 = object.key("AwsCloudFrontDistribution").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_details(
             &mut object_715,
             var_714,
         )?;
         object_715.finish();
     }
-    if let Some(var_716) = &input.aws_ec2_security_group {
-        let mut object_717 = object.key("AwsEc2SecurityGroup").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_details(
+    if let Some(var_716) = &input.aws_ec2_instance {
+        let mut object_717 = object.key("AwsEc2Instance").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ec2_instance_details(
             &mut object_717,
             var_716,
         )?;
         object_717.finish();
     }
-    if let Some(var_718) = &input.aws_ec2_volume {
-        let mut object_719 = object.key("AwsEc2Volume").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ec2_volume_details(
+    if let Some(var_718) = &input.aws_ec2_network_interface {
+        let mut object_719 = object.key("AwsEc2NetworkInterface").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ec2_network_interface_details(
             &mut object_719,
             var_718,
         )?;
         object_719.finish();
     }
-    if let Some(var_720) = &input.aws_ec2_vpc {
-        let mut object_721 = object.key("AwsEc2Vpc").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ec2_vpc_details(
+    if let Some(var_720) = &input.aws_ec2_security_group {
+        let mut object_721 = object.key("AwsEc2SecurityGroup").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_details(
             &mut object_721,
             var_720,
         )?;
         object_721.finish();
     }
-    if let Some(var_722) = &input.aws_ec2_eip {
-        let mut object_723 = object.key("AwsEc2Eip").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ec2_eip_details(
+    if let Some(var_722) = &input.aws_ec2_volume {
+        let mut object_723 = object.key("AwsEc2Volume").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ec2_volume_details(
             &mut object_723,
             var_722,
         )?;
         object_723.finish();
     }
-    if let Some(var_724) = &input.aws_ec2_subnet {
-        let mut object_725 = object.key("AwsEc2Subnet").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ec2_subnet_details(
+    if let Some(var_724) = &input.aws_ec2_vpc {
+        let mut object_725 = object.key("AwsEc2Vpc").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ec2_vpc_details(
             &mut object_725,
             var_724,
         )?;
         object_725.finish();
     }
-    if let Some(var_726) = &input.aws_ec2_network_acl {
-        let mut object_727 = object.key("AwsEc2NetworkAcl").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ec2_network_acl_details(
+    if let Some(var_726) = &input.aws_ec2_eip {
+        let mut object_727 = object.key("AwsEc2Eip").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ec2_eip_details(
             &mut object_727,
             var_726,
         )?;
         object_727.finish();
     }
-    if let Some(var_728) = &input.aws_elbv2_load_balancer {
-        let mut object_729 = object.key("AwsElbv2LoadBalancer").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elbv2_load_balancer_details(
+    if let Some(var_728) = &input.aws_ec2_subnet {
+        let mut object_729 = object.key("AwsEc2Subnet").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ec2_subnet_details(
             &mut object_729,
             var_728,
         )?;
         object_729.finish();
     }
-    if let Some(var_730) = &input.aws_elastic_beanstalk_environment {
-        let mut object_731 = object.key("AwsElasticBeanstalkEnvironment").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elastic_beanstalk_environment_details(
+    if let Some(var_730) = &input.aws_ec2_network_acl {
+        let mut object_731 = object.key("AwsEc2NetworkAcl").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ec2_network_acl_details(
             &mut object_731,
             var_730,
         )?;
         object_731.finish();
     }
-    if let Some(var_732) = &input.aws_elasticsearch_domain {
-        let mut object_733 = object.key("AwsElasticsearchDomain").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_details(
+    if let Some(var_732) = &input.aws_elbv2_load_balancer {
+        let mut object_733 = object.key("AwsElbv2LoadBalancer").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elbv2_load_balancer_details(
             &mut object_733,
             var_732,
         )?;
         object_733.finish();
     }
-    if let Some(var_734) = &input.aws_s3_bucket {
-        let mut object_735 = object.key("AwsS3Bucket").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_details(
+    if let Some(var_734) = &input.aws_elastic_beanstalk_environment {
+        let mut object_735 = object.key("AwsElasticBeanstalkEnvironment").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elastic_beanstalk_environment_details(
             &mut object_735,
             var_734,
         )?;
         object_735.finish();
     }
-    if let Some(var_736) = &input.aws_s3_account_public_access_block {
-        let mut object_737 = object.key("AwsS3AccountPublicAccessBlock").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_account_public_access_block_details(&mut object_737, var_736)?;
+    if let Some(var_736) = &input.aws_elasticsearch_domain {
+        let mut object_737 = object.key("AwsElasticsearchDomain").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_details(
+            &mut object_737,
+            var_736,
+        )?;
         object_737.finish();
     }
-    if let Some(var_738) = &input.aws_s3_object {
-        let mut object_739 = object.key("AwsS3Object").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_object_details(
+    if let Some(var_738) = &input.aws_s3_bucket {
+        let mut object_739 = object.key("AwsS3Bucket").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_details(
             &mut object_739,
             var_738,
         )?;
         object_739.finish();
     }
-    if let Some(var_740) = &input.aws_secrets_manager_secret {
-        let mut object_741 = object.key("AwsSecretsManagerSecret").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_secrets_manager_secret_details(
-            &mut object_741,
-            var_740,
-        )?;
+    if let Some(var_740) = &input.aws_s3_account_public_access_block {
+        let mut object_741 = object.key("AwsS3AccountPublicAccessBlock").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_account_public_access_block_details(&mut object_741, var_740)?;
         object_741.finish();
     }
-    if let Some(var_742) = &input.aws_iam_access_key {
-        let mut object_743 = object.key("AwsIamAccessKey").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_iam_access_key_details(
+    if let Some(var_742) = &input.aws_s3_object {
+        let mut object_743 = object.key("AwsS3Object").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_object_details(
             &mut object_743,
             var_742,
         )?;
         object_743.finish();
     }
-    if let Some(var_744) = &input.aws_iam_user {
-        let mut object_745 = object.key("AwsIamUser").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_iam_user_details(
+    if let Some(var_744) = &input.aws_secrets_manager_secret {
+        let mut object_745 = object.key("AwsSecretsManagerSecret").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_secrets_manager_secret_details(
             &mut object_745,
             var_744,
         )?;
         object_745.finish();
     }
-    if let Some(var_746) = &input.aws_iam_policy {
-        let mut object_747 = object.key("AwsIamPolicy").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_iam_policy_details(
+    if let Some(var_746) = &input.aws_iam_access_key {
+        let mut object_747 = object.key("AwsIamAccessKey").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_iam_access_key_details(
             &mut object_747,
             var_746,
         )?;
         object_747.finish();
     }
-    if let Some(var_748) = &input.aws_api_gateway_v2_stage {
-        let mut object_749 = object.key("AwsApiGatewayV2Stage").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_v2_stage_details(
+    if let Some(var_748) = &input.aws_iam_user {
+        let mut object_749 = object.key("AwsIamUser").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_iam_user_details(
             &mut object_749,
             var_748,
         )?;
         object_749.finish();
     }
-    if let Some(var_750) = &input.aws_api_gateway_v2_api {
-        let mut object_751 = object.key("AwsApiGatewayV2Api").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_v2_api_details(
+    if let Some(var_750) = &input.aws_iam_policy {
+        let mut object_751 = object.key("AwsIamPolicy").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_iam_policy_details(
             &mut object_751,
             var_750,
         )?;
         object_751.finish();
     }
-    if let Some(var_752) = &input.aws_dynamo_db_table {
-        let mut object_753 = object.key("AwsDynamoDbTable").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_details(
+    if let Some(var_752) = &input.aws_api_gateway_v2_stage {
+        let mut object_753 = object.key("AwsApiGatewayV2Stage").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_v2_stage_details(
             &mut object_753,
             var_752,
         )?;
         object_753.finish();
     }
-    if let Some(var_754) = &input.aws_api_gateway_stage {
-        let mut object_755 = object.key("AwsApiGatewayStage").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_stage_details(
+    if let Some(var_754) = &input.aws_api_gateway_v2_api {
+        let mut object_755 = object.key("AwsApiGatewayV2Api").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_v2_api_details(
             &mut object_755,
             var_754,
         )?;
         object_755.finish();
     }
-    if let Some(var_756) = &input.aws_api_gateway_rest_api {
-        let mut object_757 = object.key("AwsApiGatewayRestApi").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_rest_api_details(
+    if let Some(var_756) = &input.aws_dynamo_db_table {
+        let mut object_757 = object.key("AwsDynamoDbTable").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_details(
             &mut object_757,
             var_756,
         )?;
         object_757.finish();
     }
-    if let Some(var_758) = &input.aws_cloud_trail_trail {
-        let mut object_759 = object.key("AwsCloudTrailTrail").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_cloud_trail_trail_details(
+    if let Some(var_758) = &input.aws_api_gateway_stage {
+        let mut object_759 = object.key("AwsApiGatewayStage").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_stage_details(
             &mut object_759,
             var_758,
         )?;
         object_759.finish();
     }
-    if let Some(var_760) = &input.aws_ssm_patch_compliance {
-        let mut object_761 = object.key("AwsSsmPatchCompliance").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ssm_patch_compliance_details(
+    if let Some(var_760) = &input.aws_api_gateway_rest_api {
+        let mut object_761 = object.key("AwsApiGatewayRestApi").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_rest_api_details(
             &mut object_761,
             var_760,
         )?;
         object_761.finish();
     }
-    if let Some(var_762) = &input.aws_certificate_manager_certificate {
-        let mut object_763 = object
-            .key("AwsCertificateManagerCertificate")
-            .start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_details(&mut object_763, var_762)?;
+    if let Some(var_762) = &input.aws_cloud_trail_trail {
+        let mut object_763 = object.key("AwsCloudTrailTrail").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_cloud_trail_trail_details(
+            &mut object_763,
+            var_762,
+        )?;
         object_763.finish();
     }
-    if let Some(var_764) = &input.aws_redshift_cluster {
-        let mut object_765 = object.key("AwsRedshiftCluster").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_details(
+    if let Some(var_764) = &input.aws_ssm_patch_compliance {
+        let mut object_765 = object.key("AwsSsmPatchCompliance").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ssm_patch_compliance_details(
             &mut object_765,
             var_764,
         )?;
         object_765.finish();
     }
-    if let Some(var_766) = &input.aws_elb_load_balancer {
-        let mut object_767 = object.key("AwsElbLoadBalancer").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_details(
-            &mut object_767,
-            var_766,
-        )?;
+    if let Some(var_766) = &input.aws_certificate_manager_certificate {
+        let mut object_767 = object
+            .key("AwsCertificateManagerCertificate")
+            .start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_details(&mut object_767, var_766)?;
         object_767.finish();
     }
-    if let Some(var_768) = &input.aws_iam_group {
-        let mut object_769 = object.key("AwsIamGroup").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_iam_group_details(
+    if let Some(var_768) = &input.aws_redshift_cluster {
+        let mut object_769 = object.key("AwsRedshiftCluster").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_details(
             &mut object_769,
             var_768,
         )?;
         object_769.finish();
     }
-    if let Some(var_770) = &input.aws_iam_role {
-        let mut object_771 = object.key("AwsIamRole").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_iam_role_details(
+    if let Some(var_770) = &input.aws_elb_load_balancer {
+        let mut object_771 = object.key("AwsElbLoadBalancer").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_details(
             &mut object_771,
             var_770,
         )?;
         object_771.finish();
     }
-    if let Some(var_772) = &input.aws_kms_key {
-        let mut object_773 = object.key("AwsKmsKey").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_kms_key_details(
+    if let Some(var_772) = &input.aws_iam_group {
+        let mut object_773 = object.key("AwsIamGroup").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_iam_group_details(
             &mut object_773,
             var_772,
         )?;
         object_773.finish();
     }
-    if let Some(var_774) = &input.aws_lambda_function {
-        let mut object_775 = object.key("AwsLambdaFunction").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_lambda_function_details(
+    if let Some(var_774) = &input.aws_iam_role {
+        let mut object_775 = object.key("AwsIamRole").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_iam_role_details(
             &mut object_775,
             var_774,
         )?;
         object_775.finish();
     }
-    if let Some(var_776) = &input.aws_lambda_layer_version {
-        let mut object_777 = object.key("AwsLambdaLayerVersion").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_lambda_layer_version_details(
+    if let Some(var_776) = &input.aws_kms_key {
+        let mut object_777 = object.key("AwsKmsKey").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_kms_key_details(
             &mut object_777,
             var_776,
         )?;
         object_777.finish();
     }
-    if let Some(var_778) = &input.aws_rds_db_instance {
-        let mut object_779 = object.key("AwsRdsDbInstance").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_rds_db_instance_details(
+    if let Some(var_778) = &input.aws_lambda_function {
+        let mut object_779 = object.key("AwsLambdaFunction").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_lambda_function_details(
             &mut object_779,
             var_778,
         )?;
         object_779.finish();
     }
-    if let Some(var_780) = &input.aws_sns_topic {
-        let mut object_781 = object.key("AwsSnsTopic").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_sns_topic_details(
+    if let Some(var_780) = &input.aws_lambda_layer_version {
+        let mut object_781 = object.key("AwsLambdaLayerVersion").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_lambda_layer_version_details(
             &mut object_781,
             var_780,
         )?;
         object_781.finish();
     }
-    if let Some(var_782) = &input.aws_sqs_queue {
-        let mut object_783 = object.key("AwsSqsQueue").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_sqs_queue_details(
+    if let Some(var_782) = &input.aws_rds_db_instance {
+        let mut object_783 = object.key("AwsRdsDbInstance").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_rds_db_instance_details(
             &mut object_783,
             var_782,
         )?;
         object_783.finish();
     }
-    if let Some(var_784) = &input.aws_waf_web_acl {
-        let mut object_785 = object.key("AwsWafWebAcl").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_waf_web_acl_details(
+    if let Some(var_784) = &input.aws_sns_topic {
+        let mut object_785 = object.key("AwsSnsTopic").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_sns_topic_details(
             &mut object_785,
             var_784,
         )?;
         object_785.finish();
     }
-    if let Some(var_786) = &input.aws_rds_db_snapshot {
-        let mut object_787 = object.key("AwsRdsDbSnapshot").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_rds_db_snapshot_details(
+    if let Some(var_786) = &input.aws_sqs_queue {
+        let mut object_787 = object.key("AwsSqsQueue").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_sqs_queue_details(
             &mut object_787,
             var_786,
         )?;
         object_787.finish();
     }
-    if let Some(var_788) = &input.aws_rds_db_cluster_snapshot {
-        let mut object_789 = object.key("AwsRdsDbClusterSnapshot").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_rds_db_cluster_snapshot_details(
+    if let Some(var_788) = &input.aws_waf_web_acl {
+        let mut object_789 = object.key("AwsWafWebAcl").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_waf_web_acl_details(
             &mut object_789,
             var_788,
         )?;
         object_789.finish();
     }
-    if let Some(var_790) = &input.aws_rds_db_cluster {
-        let mut object_791 = object.key("AwsRdsDbCluster").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_rds_db_cluster_details(
+    if let Some(var_790) = &input.aws_rds_db_snapshot {
+        let mut object_791 = object.key("AwsRdsDbSnapshot").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_rds_db_snapshot_details(
             &mut object_791,
             var_790,
         )?;
         object_791.finish();
     }
-    if let Some(var_792) = &input.aws_ecs_cluster {
-        let mut object_793 = object.key("AwsEcsCluster").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_details(
+    if let Some(var_792) = &input.aws_rds_db_cluster_snapshot {
+        let mut object_793 = object.key("AwsRdsDbClusterSnapshot").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_rds_db_cluster_snapshot_details(
             &mut object_793,
             var_792,
         )?;
         object_793.finish();
     }
-    if let Some(var_794) = &input.aws_ecs_task_definition {
-        let mut object_795 = object.key("AwsEcsTaskDefinition").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_details(
+    if let Some(var_794) = &input.aws_rds_db_cluster {
+        let mut object_795 = object.key("AwsRdsDbCluster").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_rds_db_cluster_details(
             &mut object_795,
             var_794,
         )?;
         object_795.finish();
     }
-    if let Some(var_796) = &input.container {
-        let mut object_797 = object.key("Container").start_object();
-        crate::json_ser::serialize_structure_crate_model_container_details(
+    if let Some(var_796) = &input.aws_ecs_cluster {
+        let mut object_797 = object.key("AwsEcsCluster").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_details(
             &mut object_797,
             var_796,
         )?;
         object_797.finish();
     }
-    if let Some(var_798) = &input.other {
-        let mut object_799 = object.key("Other").start_object();
-        for (key_800, value_801) in var_798 {
-            {
-                object_799.key(key_800).string(value_801.as_str());
-            }
-        }
+    if let Some(var_798) = &input.aws_ecs_task_definition {
+        let mut object_799 = object.key("AwsEcsTaskDefinition").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_details(
+            &mut object_799,
+            var_798,
+        )?;
         object_799.finish();
     }
-    if let Some(var_802) = &input.aws_rds_event_subscription {
-        let mut object_803 = object.key("AwsRdsEventSubscription").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_rds_event_subscription_details(
-            &mut object_803,
-            var_802,
+    if let Some(var_800) = &input.container {
+        let mut object_801 = object.key("Container").start_object();
+        crate::json_ser::serialize_structure_crate_model_container_details(
+            &mut object_801,
+            var_800,
         )?;
+        object_801.finish();
+    }
+    if let Some(var_802) = &input.other {
+        let mut object_803 = object.key("Other").start_object();
+        for (key_804, value_805) in var_802 {
+            {
+                object_803.key(key_804).string(value_805.as_str());
+            }
+        }
         object_803.finish();
     }
-    if let Some(var_804) = &input.aws_ecs_service {
-        let mut object_805 = object.key("AwsEcsService").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_details(
-            &mut object_805,
-            var_804,
+    if let Some(var_806) = &input.aws_rds_event_subscription {
+        let mut object_807 = object.key("AwsRdsEventSubscription").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_rds_event_subscription_details(
+            &mut object_807,
+            var_806,
         )?;
-        object_805.finish();
-    }
-    if let Some(var_806) = &input.aws_auto_scaling_launch_configuration {
-        let mut object_807 = object
-            .key("AwsAutoScalingLaunchConfiguration")
-            .start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_launch_configuration_details(&mut object_807, var_806)?;
         object_807.finish();
     }
-    if let Some(var_808) = &input.aws_ec2_vpn_connection {
-        let mut object_809 = object.key("AwsEc2VpnConnection").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ec2_vpn_connection_details(
+    if let Some(var_808) = &input.aws_ecs_service {
+        let mut object_809 = object.key("AwsEcsService").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_details(
             &mut object_809,
             var_808,
         )?;
         object_809.finish();
     }
-    if let Some(var_810) = &input.aws_ecr_container_image {
-        let mut object_811 = object.key("AwsEcrContainerImage").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecr_container_image_details(
-            &mut object_811,
-            var_810,
-        )?;
+    if let Some(var_810) = &input.aws_auto_scaling_launch_configuration {
+        let mut object_811 = object
+            .key("AwsAutoScalingLaunchConfiguration")
+            .start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_launch_configuration_details(&mut object_811, var_810)?;
         object_811.finish();
     }
-    if let Some(var_812) = &input.aws_open_search_service_domain {
-        let mut object_813 = object.key("AwsOpenSearchServiceDomain").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_details(
+    if let Some(var_812) = &input.aws_ec2_vpn_connection {
+        let mut object_813 = object.key("AwsEc2VpnConnection").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ec2_vpn_connection_details(
             &mut object_813,
             var_812,
         )?;
         object_813.finish();
     }
-    if let Some(var_814) = &input.aws_ec2_vpc_endpoint_service {
-        let mut object_815 = object.key("AwsEc2VpcEndpointService").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ec2_vpc_endpoint_service_details(
+    if let Some(var_814) = &input.aws_ecr_container_image {
+        let mut object_815 = object.key("AwsEcrContainerImage").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecr_container_image_details(
             &mut object_815,
             var_814,
         )?;
         object_815.finish();
     }
-    if let Some(var_816) = &input.aws_xray_encryption_config {
-        let mut object_817 = object.key("AwsXrayEncryptionConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_xray_encryption_config_details(
+    if let Some(var_816) = &input.aws_open_search_service_domain {
+        let mut object_817 = object.key("AwsOpenSearchServiceDomain").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_details(
             &mut object_817,
             var_816,
         )?;
         object_817.finish();
     }
-    if let Some(var_818) = &input.aws_waf_rate_based_rule {
-        let mut object_819 = object.key("AwsWafRateBasedRule").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_waf_rate_based_rule_details(
+    if let Some(var_818) = &input.aws_ec2_vpc_endpoint_service {
+        let mut object_819 = object.key("AwsEc2VpcEndpointService").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ec2_vpc_endpoint_service_details(
             &mut object_819,
             var_818,
         )?;
         object_819.finish();
     }
-    if let Some(var_820) = &input.aws_waf_regional_rate_based_rule {
-        let mut object_821 = object.key("AwsWafRegionalRateBasedRule").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_waf_regional_rate_based_rule_details(
+    if let Some(var_820) = &input.aws_xray_encryption_config {
+        let mut object_821 = object.key("AwsXrayEncryptionConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_xray_encryption_config_details(
             &mut object_821,
             var_820,
         )?;
         object_821.finish();
     }
-    if let Some(var_822) = &input.aws_ecr_repository {
-        let mut object_823 = object.key("AwsEcrRepository").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecr_repository_details(
+    if let Some(var_822) = &input.aws_waf_rate_based_rule {
+        let mut object_823 = object.key("AwsWafRateBasedRule").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_waf_rate_based_rule_details(
             &mut object_823,
             var_822,
         )?;
         object_823.finish();
     }
-    if let Some(var_824) = &input.aws_eks_cluster {
-        let mut object_825 = object.key("AwsEksCluster").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_eks_cluster_details(
+    if let Some(var_824) = &input.aws_waf_regional_rate_based_rule {
+        let mut object_825 = object.key("AwsWafRegionalRateBasedRule").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_waf_regional_rate_based_rule_details(
             &mut object_825,
             var_824,
         )?;
         object_825.finish();
     }
-    if let Some(var_826) = &input.aws_network_firewall_firewall_policy {
-        let mut object_827 = object
-            .key("AwsNetworkFirewallFirewallPolicy")
-            .start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_network_firewall_firewall_policy_details(&mut object_827, var_826)?;
+    if let Some(var_826) = &input.aws_ecr_repository {
+        let mut object_827 = object.key("AwsEcrRepository").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecr_repository_details(
+            &mut object_827,
+            var_826,
+        )?;
         object_827.finish();
     }
-    if let Some(var_828) = &input.aws_network_firewall_firewall {
-        let mut object_829 = object.key("AwsNetworkFirewallFirewall").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_network_firewall_firewall_details(
+    if let Some(var_828) = &input.aws_eks_cluster {
+        let mut object_829 = object.key("AwsEksCluster").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_eks_cluster_details(
             &mut object_829,
             var_828,
         )?;
         object_829.finish();
     }
-    if let Some(var_830) = &input.aws_network_firewall_rule_group {
-        let mut object_831 = object.key("AwsNetworkFirewallRuleGroup").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_network_firewall_rule_group_details(
-            &mut object_831,
-            var_830,
-        )?;
+    if let Some(var_830) = &input.aws_network_firewall_firewall_policy {
+        let mut object_831 = object
+            .key("AwsNetworkFirewallFirewallPolicy")
+            .start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_network_firewall_firewall_policy_details(&mut object_831, var_830)?;
         object_831.finish();
+    }
+    if let Some(var_832) = &input.aws_network_firewall_firewall {
+        let mut object_833 = object.key("AwsNetworkFirewallFirewall").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_network_firewall_firewall_details(
+            &mut object_833,
+            var_832,
+        )?;
+        object_833.finish();
+    }
+    if let Some(var_834) = &input.aws_network_firewall_rule_group {
+        let mut object_835 = object.key("AwsNetworkFirewallRuleGroup").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_network_firewall_rule_group_details(
+            &mut object_835,
+            var_834,
+        )?;
+        object_835.finish();
     }
     Ok(())
 }
@@ -3499,11 +3526,11 @@ pub fn serialize_structure_crate_model_status_reason(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StatusReason,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_832) = &input.reason_code {
-        object.key("ReasonCode").string(var_832.as_str());
+    if let Some(var_836) = &input.reason_code {
+        object.key("ReasonCode").string(var_836.as_str());
     }
-    if let Some(var_833) = &input.description {
-        object.key("Description").string(var_833.as_str());
+    if let Some(var_837) = &input.description {
+        object.key("Description").string(var_837.as_str());
     }
     Ok(())
 }
@@ -3512,26 +3539,26 @@ pub fn serialize_structure_crate_model_software_package(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SoftwarePackage,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_834) = &input.name {
-        object.key("Name").string(var_834.as_str());
+    if let Some(var_838) = &input.name {
+        object.key("Name").string(var_838.as_str());
     }
-    if let Some(var_835) = &input.version {
-        object.key("Version").string(var_835.as_str());
+    if let Some(var_839) = &input.version {
+        object.key("Version").string(var_839.as_str());
     }
-    if let Some(var_836) = &input.epoch {
-        object.key("Epoch").string(var_836.as_str());
+    if let Some(var_840) = &input.epoch {
+        object.key("Epoch").string(var_840.as_str());
     }
-    if let Some(var_837) = &input.release {
-        object.key("Release").string(var_837.as_str());
+    if let Some(var_841) = &input.release {
+        object.key("Release").string(var_841.as_str());
     }
-    if let Some(var_838) = &input.architecture {
-        object.key("Architecture").string(var_838.as_str());
+    if let Some(var_842) = &input.architecture {
+        object.key("Architecture").string(var_842.as_str());
     }
-    if let Some(var_839) = &input.package_manager {
-        object.key("PackageManager").string(var_839.as_str());
+    if let Some(var_843) = &input.package_manager {
+        object.key("PackageManager").string(var_843.as_str());
     }
-    if let Some(var_840) = &input.file_path {
-        object.key("FilePath").string(var_840.as_str());
+    if let Some(var_844) = &input.file_path {
+        object.key("FilePath").string(var_844.as_str());
     }
     Ok(())
 }
@@ -3540,8 +3567,8 @@ pub fn serialize_structure_crate_model_cvss(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Cvss,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_841) = &input.version {
-        object.key("Version").string(var_841.as_str());
+    if let Some(var_845) = &input.version {
+        object.key("Version").string(var_845.as_str());
     }
     if input.base_score != 0.0 {
         object.key("BaseScore").number(
@@ -3549,25 +3576,25 @@ pub fn serialize_structure_crate_model_cvss(
             aws_smithy_types::Number::Float((input.base_score).into()),
         );
     }
-    if let Some(var_842) = &input.base_vector {
-        object.key("BaseVector").string(var_842.as_str());
+    if let Some(var_846) = &input.base_vector {
+        object.key("BaseVector").string(var_846.as_str());
     }
-    if let Some(var_843) = &input.source {
-        object.key("Source").string(var_843.as_str());
+    if let Some(var_847) = &input.source {
+        object.key("Source").string(var_847.as_str());
     }
-    if let Some(var_844) = &input.adjustments {
-        let mut array_845 = object.key("Adjustments").start_array();
-        for item_846 in var_844 {
+    if let Some(var_848) = &input.adjustments {
+        let mut array_849 = object.key("Adjustments").start_array();
+        for item_850 in var_848 {
             {
-                let mut object_847 = array_845.value().start_object();
+                let mut object_851 = array_849.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_adjustment(
-                    &mut object_847,
-                    item_846,
+                    &mut object_851,
+                    item_850,
                 )?;
-                object_847.finish();
+                object_851.finish();
             }
         }
-        array_845.finish();
+        array_849.finish();
     }
     Ok(())
 }
@@ -3576,20 +3603,20 @@ pub fn serialize_structure_crate_model_vulnerability_vendor(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VulnerabilityVendor,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_848) = &input.name {
-        object.key("Name").string(var_848.as_str());
+    if let Some(var_852) = &input.name {
+        object.key("Name").string(var_852.as_str());
     }
-    if let Some(var_849) = &input.url {
-        object.key("Url").string(var_849.as_str());
+    if let Some(var_853) = &input.url {
+        object.key("Url").string(var_853.as_str());
     }
-    if let Some(var_850) = &input.vendor_severity {
-        object.key("VendorSeverity").string(var_850.as_str());
+    if let Some(var_854) = &input.vendor_severity {
+        object.key("VendorSeverity").string(var_854.as_str());
     }
-    if let Some(var_851) = &input.vendor_created_at {
-        object.key("VendorCreatedAt").string(var_851.as_str());
+    if let Some(var_855) = &input.vendor_created_at {
+        object.key("VendorCreatedAt").string(var_855.as_str());
     }
-    if let Some(var_852) = &input.vendor_updated_at {
-        object.key("VendorUpdatedAt").string(var_852.as_str());
+    if let Some(var_856) = &input.vendor_updated_at {
+        object.key("VendorUpdatedAt").string(var_856.as_str());
     }
     Ok(())
 }
@@ -3598,35 +3625,35 @@ pub fn serialize_structure_crate_model_network_connection_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NetworkConnectionAction,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_853) = &input.connection_direction {
-        object.key("ConnectionDirection").string(var_853.as_str());
+    if let Some(var_857) = &input.connection_direction {
+        object.key("ConnectionDirection").string(var_857.as_str());
     }
-    if let Some(var_854) = &input.remote_ip_details {
-        let mut object_855 = object.key("RemoteIpDetails").start_object();
+    if let Some(var_858) = &input.remote_ip_details {
+        let mut object_859 = object.key("RemoteIpDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_action_remote_ip_details(
-            &mut object_855,
-            var_854,
-        )?;
-        object_855.finish();
-    }
-    if let Some(var_856) = &input.remote_port_details {
-        let mut object_857 = object.key("RemotePortDetails").start_object();
-        crate::json_ser::serialize_structure_crate_model_action_remote_port_details(
-            &mut object_857,
-            var_856,
-        )?;
-        object_857.finish();
-    }
-    if let Some(var_858) = &input.local_port_details {
-        let mut object_859 = object.key("LocalPortDetails").start_object();
-        crate::json_ser::serialize_structure_crate_model_action_local_port_details(
             &mut object_859,
             var_858,
         )?;
         object_859.finish();
     }
-    if let Some(var_860) = &input.protocol {
-        object.key("Protocol").string(var_860.as_str());
+    if let Some(var_860) = &input.remote_port_details {
+        let mut object_861 = object.key("RemotePortDetails").start_object();
+        crate::json_ser::serialize_structure_crate_model_action_remote_port_details(
+            &mut object_861,
+            var_860,
+        )?;
+        object_861.finish();
+    }
+    if let Some(var_862) = &input.local_port_details {
+        let mut object_863 = object.key("LocalPortDetails").start_object();
+        crate::json_ser::serialize_structure_crate_model_action_local_port_details(
+            &mut object_863,
+            var_862,
+        )?;
+        object_863.finish();
+    }
+    if let Some(var_864) = &input.protocol {
+        object.key("Protocol").string(var_864.as_str());
     }
     if input.blocked {
         object.key("Blocked").boolean(input.blocked);
@@ -3638,45 +3665,45 @@ pub fn serialize_structure_crate_model_aws_api_call_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsApiCallAction,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_861) = &input.api {
-        object.key("Api").string(var_861.as_str());
+    if let Some(var_865) = &input.api {
+        object.key("Api").string(var_865.as_str());
     }
-    if let Some(var_862) = &input.service_name {
-        object.key("ServiceName").string(var_862.as_str());
+    if let Some(var_866) = &input.service_name {
+        object.key("ServiceName").string(var_866.as_str());
     }
-    if let Some(var_863) = &input.caller_type {
-        object.key("CallerType").string(var_863.as_str());
+    if let Some(var_867) = &input.caller_type {
+        object.key("CallerType").string(var_867.as_str());
     }
-    if let Some(var_864) = &input.remote_ip_details {
-        let mut object_865 = object.key("RemoteIpDetails").start_object();
+    if let Some(var_868) = &input.remote_ip_details {
+        let mut object_869 = object.key("RemoteIpDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_action_remote_ip_details(
-            &mut object_865,
-            var_864,
+            &mut object_869,
+            var_868,
         )?;
-        object_865.finish();
-    }
-    if let Some(var_866) = &input.domain_details {
-        let mut object_867 = object.key("DomainDetails").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_api_call_action_domain_details(
-            &mut object_867,
-            var_866,
-        )?;
-        object_867.finish();
-    }
-    if let Some(var_868) = &input.affected_resources {
-        let mut object_869 = object.key("AffectedResources").start_object();
-        for (key_870, value_871) in var_868 {
-            {
-                object_869.key(key_870).string(value_871.as_str());
-            }
-        }
         object_869.finish();
     }
-    if let Some(var_872) = &input.first_seen {
-        object.key("FirstSeen").string(var_872.as_str());
+    if let Some(var_870) = &input.domain_details {
+        let mut object_871 = object.key("DomainDetails").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_api_call_action_domain_details(
+            &mut object_871,
+            var_870,
+        )?;
+        object_871.finish();
     }
-    if let Some(var_873) = &input.last_seen {
-        object.key("LastSeen").string(var_873.as_str());
+    if let Some(var_872) = &input.affected_resources {
+        let mut object_873 = object.key("AffectedResources").start_object();
+        for (key_874, value_875) in var_872 {
+            {
+                object_873.key(key_874).string(value_875.as_str());
+            }
+        }
+        object_873.finish();
+    }
+    if let Some(var_876) = &input.first_seen {
+        object.key("FirstSeen").string(var_876.as_str());
+    }
+    if let Some(var_877) = &input.last_seen {
+        object.key("LastSeen").string(var_877.as_str());
     }
     Ok(())
 }
@@ -3685,11 +3712,11 @@ pub fn serialize_structure_crate_model_dns_request_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DnsRequestAction,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_874) = &input.domain {
-        object.key("Domain").string(var_874.as_str());
+    if let Some(var_878) = &input.domain {
+        object.key("Domain").string(var_878.as_str());
     }
-    if let Some(var_875) = &input.protocol {
-        object.key("Protocol").string(var_875.as_str());
+    if let Some(var_879) = &input.protocol {
+        object.key("Protocol").string(var_879.as_str());
     }
     if input.blocked {
         object.key("Blocked").boolean(input.blocked);
@@ -3701,19 +3728,19 @@ pub fn serialize_structure_crate_model_port_probe_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PortProbeAction,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_876) = &input.port_probe_details {
-        let mut array_877 = object.key("PortProbeDetails").start_array();
-        for item_878 in var_876 {
+    if let Some(var_880) = &input.port_probe_details {
+        let mut array_881 = object.key("PortProbeDetails").start_array();
+        for item_882 in var_880 {
             {
-                let mut object_879 = array_877.value().start_object();
+                let mut object_883 = array_881.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_port_probe_detail(
-                    &mut object_879,
-                    item_878,
+                    &mut object_883,
+                    item_882,
                 )?;
-                object_879.finish();
+                object_883.finish();
             }
         }
-        array_877.finish();
+        array_881.finish();
     }
     if input.blocked {
         object.key("Blocked").boolean(input.blocked);
@@ -3725,11 +3752,11 @@ pub fn serialize_structure_crate_model_finding_provider_severity(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FindingProviderSeverity,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_880) = &input.label {
-        object.key("Label").string(var_880.as_str());
+    if let Some(var_884) = &input.label {
+        object.key("Label").string(var_884.as_str());
     }
-    if let Some(var_881) = &input.original {
-        object.key("Original").string(var_881.as_str());
+    if let Some(var_885) = &input.original {
+        object.key("Original").string(var_885.as_str());
     }
     Ok(())
 }
@@ -3744,8 +3771,8 @@ pub fn serialize_structure_crate_model_date_range(
             aws_smithy_types::Number::NegInt((input.value).into()),
         );
     }
-    if let Some(var_882) = &input.unit {
-        object.key("Unit").string(var_882.as_str());
+    if let Some(var_886) = &input.unit {
+        object.key("Unit").string(var_886.as_str());
     }
     Ok(())
 }
@@ -3754,28 +3781,28 @@ pub fn serialize_structure_crate_model_network_path_component_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NetworkPathComponentDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_883) = &input.address {
-        let mut array_884 = object.key("Address").start_array();
-        for item_885 in var_883 {
+    if let Some(var_887) = &input.address {
+        let mut array_888 = object.key("Address").start_array();
+        for item_889 in var_887 {
             {
-                array_884.value().string(item_885.as_str());
+                array_888.value().string(item_889.as_str());
             }
         }
-        array_884.finish();
+        array_888.finish();
     }
-    if let Some(var_886) = &input.port_ranges {
-        let mut array_887 = object.key("PortRanges").start_array();
-        for item_888 in var_886 {
+    if let Some(var_890) = &input.port_ranges {
+        let mut array_891 = object.key("PortRanges").start_array();
+        for item_892 in var_890 {
             {
-                let mut object_889 = array_887.value().start_object();
+                let mut object_893 = array_891.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_port_range(
-                    &mut object_889,
-                    item_888,
+                    &mut object_893,
+                    item_892,
                 )?;
-                object_889.finish();
+                object_893.finish();
             }
         }
-        array_887.finish();
+        array_891.finish();
     }
     Ok(())
 }
@@ -3784,8 +3811,8 @@ pub fn serialize_structure_crate_model_classification_result(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ClassificationResult,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_890) = &input.mime_type {
-        object.key("MimeType").string(var_890.as_str());
+    if let Some(var_894) = &input.mime_type {
+        object.key("MimeType").string(var_894.as_str());
     }
     if input.size_classified != 0 {
         object.key("SizeClassified").number(
@@ -3798,35 +3825,35 @@ pub fn serialize_structure_crate_model_classification_result(
             .key("AdditionalOccurrences")
             .boolean(input.additional_occurrences);
     }
-    if let Some(var_891) = &input.status {
-        let mut object_892 = object.key("Status").start_object();
+    if let Some(var_895) = &input.status {
+        let mut object_896 = object.key("Status").start_object();
         crate::json_ser::serialize_structure_crate_model_classification_status(
-            &mut object_892,
-            var_891,
+            &mut object_896,
+            var_895,
         )?;
-        object_892.finish();
+        object_896.finish();
     }
-    if let Some(var_893) = &input.sensitive_data {
-        let mut array_894 = object.key("SensitiveData").start_array();
-        for item_895 in var_893 {
+    if let Some(var_897) = &input.sensitive_data {
+        let mut array_898 = object.key("SensitiveData").start_array();
+        for item_899 in var_897 {
             {
-                let mut object_896 = array_894.value().start_object();
+                let mut object_900 = array_898.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sensitive_data_result(
-                    &mut object_896,
-                    item_895,
+                    &mut object_900,
+                    item_899,
                 )?;
-                object_896.finish();
+                object_900.finish();
             }
         }
-        array_894.finish();
+        array_898.finish();
     }
-    if let Some(var_897) = &input.custom_data_identifiers {
-        let mut object_898 = object.key("CustomDataIdentifiers").start_object();
+    if let Some(var_901) = &input.custom_data_identifiers {
+        let mut object_902 = object.key("CustomDataIdentifiers").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_data_identifiers_result(
-            &mut object_898,
-            var_897,
+            &mut object_902,
+            var_901,
         )?;
-        object_898.finish();
+        object_902.finish();
     }
     Ok(())
 }
@@ -3835,22 +3862,22 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_detai
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsAutoScalingAutoScalingGroupDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_899) = &input.launch_configuration_name {
+    if let Some(var_903) = &input.launch_configuration_name {
         object
             .key("LaunchConfigurationName")
-            .string(var_899.as_str());
+            .string(var_903.as_str());
     }
-    if let Some(var_900) = &input.load_balancer_names {
-        let mut array_901 = object.key("LoadBalancerNames").start_array();
-        for item_902 in var_900 {
+    if let Some(var_904) = &input.load_balancer_names {
+        let mut array_905 = object.key("LoadBalancerNames").start_array();
+        for item_906 in var_904 {
             {
-                array_901.value().string(item_902.as_str());
+                array_905.value().string(item_906.as_str());
             }
         }
-        array_901.finish();
+        array_905.finish();
     }
-    if let Some(var_903) = &input.health_check_type {
-        object.key("HealthCheckType").string(var_903.as_str());
+    if let Some(var_907) = &input.health_check_type {
+        object.key("HealthCheckType").string(var_907.as_str());
     }
     if input.health_check_grace_period != 0 {
         object.key("HealthCheckGracePeriod").number(
@@ -3858,24 +3885,24 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_detai
             aws_smithy_types::Number::NegInt((input.health_check_grace_period).into()),
         );
     }
-    if let Some(var_904) = &input.created_time {
-        object.key("CreatedTime").string(var_904.as_str());
+    if let Some(var_908) = &input.created_time {
+        object.key("CreatedTime").string(var_908.as_str());
     }
-    if let Some(var_905) = &input.mixed_instances_policy {
-        let mut object_906 = object.key("MixedInstancesPolicy").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details(&mut object_906, var_905)?;
-        object_906.finish();
+    if let Some(var_909) = &input.mixed_instances_policy {
+        let mut object_910 = object.key("MixedInstancesPolicy").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details(&mut object_910, var_909)?;
+        object_910.finish();
     }
-    if let Some(var_907) = &input.availability_zones {
-        let mut array_908 = object.key("AvailabilityZones").start_array();
-        for item_909 in var_907 {
+    if let Some(var_911) = &input.availability_zones {
+        let mut array_912 = object.key("AvailabilityZones").start_array();
+        for item_913 in var_911 {
             {
-                let mut object_910 = array_908.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_availability_zones_list_details(&mut object_910, item_909)?;
-                object_910.finish();
+                let mut object_914 = array_912.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_availability_zones_list_details(&mut object_914, item_913)?;
+                object_914.finish();
             }
         }
-        array_908.finish();
+        array_912.finish();
     }
     Ok(())
 }
@@ -3884,54 +3911,54 @@ pub fn serialize_structure_crate_model_aws_code_build_project_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCodeBuildProjectDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_911) = &input.encryption_key {
-        object.key("EncryptionKey").string(var_911.as_str());
+    if let Some(var_915) = &input.encryption_key {
+        object.key("EncryptionKey").string(var_915.as_str());
     }
-    if let Some(var_912) = &input.artifacts {
-        let mut array_913 = object.key("Artifacts").start_array();
-        for item_914 in var_912 {
+    if let Some(var_916) = &input.artifacts {
+        let mut array_917 = object.key("Artifacts").start_array();
+        for item_918 in var_916 {
             {
-                let mut object_915 = array_913.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_code_build_project_artifacts_details(&mut object_915, item_914)?;
-                object_915.finish();
+                let mut object_919 = array_917.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_code_build_project_artifacts_details(&mut object_919, item_918)?;
+                object_919.finish();
             }
         }
-        array_913.finish();
+        array_917.finish();
     }
-    if let Some(var_916) = &input.environment {
-        let mut object_917 = object.key("Environment").start_object();
+    if let Some(var_920) = &input.environment {
+        let mut object_921 = object.key("Environment").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_code_build_project_environment(
-            &mut object_917,
-            var_916,
+            &mut object_921,
+            var_920,
         )?;
-        object_917.finish();
+        object_921.finish();
     }
-    if let Some(var_918) = &input.name {
-        object.key("Name").string(var_918.as_str());
+    if let Some(var_922) = &input.name {
+        object.key("Name").string(var_922.as_str());
     }
-    if let Some(var_919) = &input.source {
-        let mut object_920 = object.key("Source").start_object();
+    if let Some(var_923) = &input.source {
+        let mut object_924 = object.key("Source").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_code_build_project_source(
-            &mut object_920,
-            var_919,
+            &mut object_924,
+            var_923,
         )?;
-        object_920.finish();
+        object_924.finish();
     }
-    if let Some(var_921) = &input.service_role {
-        object.key("ServiceRole").string(var_921.as_str());
+    if let Some(var_925) = &input.service_role {
+        object.key("ServiceRole").string(var_925.as_str());
     }
-    if let Some(var_922) = &input.logs_config {
-        let mut object_923 = object.key("LogsConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_code_build_project_logs_config_details(&mut object_923, var_922)?;
-        object_923.finish();
+    if let Some(var_926) = &input.logs_config {
+        let mut object_927 = object.key("LogsConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_code_build_project_logs_config_details(&mut object_927, var_926)?;
+        object_927.finish();
     }
-    if let Some(var_924) = &input.vpc_config {
-        let mut object_925 = object.key("VpcConfig").start_object();
+    if let Some(var_928) = &input.vpc_config {
+        let mut object_929 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_code_build_project_vpc_config(
-            &mut object_925,
-            var_924,
+            &mut object_929,
+            var_928,
         )?;
-        object_925.finish();
+        object_929.finish();
     }
     Ok(())
 }
@@ -3940,59 +3967,59 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_926) = &input.cache_behaviors {
-        let mut object_927 = object.key("CacheBehaviors").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_cache_behaviors(&mut object_927, var_926)?;
-        object_927.finish();
+    if let Some(var_930) = &input.cache_behaviors {
+        let mut object_931 = object.key("CacheBehaviors").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_cache_behaviors(&mut object_931, var_930)?;
+        object_931.finish();
     }
-    if let Some(var_928) = &input.default_cache_behavior {
-        let mut object_929 = object.key("DefaultCacheBehavior").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_default_cache_behavior(&mut object_929, var_928)?;
-        object_929.finish();
+    if let Some(var_932) = &input.default_cache_behavior {
+        let mut object_933 = object.key("DefaultCacheBehavior").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_default_cache_behavior(&mut object_933, var_932)?;
+        object_933.finish();
     }
-    if let Some(var_930) = &input.default_root_object {
-        object.key("DefaultRootObject").string(var_930.as_str());
+    if let Some(var_934) = &input.default_root_object {
+        object.key("DefaultRootObject").string(var_934.as_str());
     }
-    if let Some(var_931) = &input.domain_name {
-        object.key("DomainName").string(var_931.as_str());
+    if let Some(var_935) = &input.domain_name {
+        object.key("DomainName").string(var_935.as_str());
     }
-    if let Some(var_932) = &input.e_tag {
-        object.key("ETag").string(var_932.as_str());
+    if let Some(var_936) = &input.e_tag {
+        object.key("ETag").string(var_936.as_str());
     }
-    if let Some(var_933) = &input.last_modified_time {
-        object.key("LastModifiedTime").string(var_933.as_str());
+    if let Some(var_937) = &input.last_modified_time {
+        object.key("LastModifiedTime").string(var_937.as_str());
     }
-    if let Some(var_934) = &input.logging {
-        let mut object_935 = object.key("Logging").start_object();
+    if let Some(var_938) = &input.logging {
+        let mut object_939 = object.key("Logging").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_logging(
-            &mut object_935,
-            var_934,
+            &mut object_939,
+            var_938,
         )?;
-        object_935.finish();
-    }
-    if let Some(var_936) = &input.origins {
-        let mut object_937 = object.key("Origins").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origins(
-            &mut object_937,
-            var_936,
-        )?;
-        object_937.finish();
-    }
-    if let Some(var_938) = &input.origin_groups {
-        let mut object_939 = object.key("OriginGroups").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_groups(&mut object_939, var_938)?;
         object_939.finish();
     }
-    if let Some(var_940) = &input.viewer_certificate {
-        let mut object_941 = object.key("ViewerCertificate").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_viewer_certificate(&mut object_941, var_940)?;
+    if let Some(var_940) = &input.origins {
+        let mut object_941 = object.key("Origins").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origins(
+            &mut object_941,
+            var_940,
+        )?;
         object_941.finish();
     }
-    if let Some(var_942) = &input.status {
-        object.key("Status").string(var_942.as_str());
+    if let Some(var_942) = &input.origin_groups {
+        let mut object_943 = object.key("OriginGroups").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_groups(&mut object_943, var_942)?;
+        object_943.finish();
     }
-    if let Some(var_943) = &input.web_acl_id {
-        object.key("WebAclId").string(var_943.as_str());
+    if let Some(var_944) = &input.viewer_certificate {
+        let mut object_945 = object.key("ViewerCertificate").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_viewer_certificate(&mut object_945, var_944)?;
+        object_945.finish();
+    }
+    if let Some(var_946) = &input.status {
+        object.key("Status").string(var_946.as_str());
+    }
+    if let Some(var_947) = &input.web_acl_id {
+        object.key("WebAclId").string(var_947.as_str());
     }
     Ok(())
 }
@@ -4001,55 +4028,55 @@ pub fn serialize_structure_crate_model_aws_ec2_instance_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2InstanceDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_944) = &input.r#type {
-        object.key("Type").string(var_944.as_str());
+    if let Some(var_948) = &input.r#type {
+        object.key("Type").string(var_948.as_str());
     }
-    if let Some(var_945) = &input.image_id {
-        object.key("ImageId").string(var_945.as_str());
+    if let Some(var_949) = &input.image_id {
+        object.key("ImageId").string(var_949.as_str());
     }
-    if let Some(var_946) = &input.ip_v4_addresses {
-        let mut array_947 = object.key("IpV4Addresses").start_array();
-        for item_948 in var_946 {
+    if let Some(var_950) = &input.ip_v4_addresses {
+        let mut array_951 = object.key("IpV4Addresses").start_array();
+        for item_952 in var_950 {
             {
-                array_947.value().string(item_948.as_str());
+                array_951.value().string(item_952.as_str());
             }
         }
-        array_947.finish();
+        array_951.finish();
     }
-    if let Some(var_949) = &input.ip_v6_addresses {
-        let mut array_950 = object.key("IpV6Addresses").start_array();
-        for item_951 in var_949 {
+    if let Some(var_953) = &input.ip_v6_addresses {
+        let mut array_954 = object.key("IpV6Addresses").start_array();
+        for item_955 in var_953 {
             {
-                array_950.value().string(item_951.as_str());
+                array_954.value().string(item_955.as_str());
             }
         }
-        array_950.finish();
+        array_954.finish();
     }
-    if let Some(var_952) = &input.key_name {
-        object.key("KeyName").string(var_952.as_str());
+    if let Some(var_956) = &input.key_name {
+        object.key("KeyName").string(var_956.as_str());
     }
-    if let Some(var_953) = &input.iam_instance_profile_arn {
-        object.key("IamInstanceProfileArn").string(var_953.as_str());
+    if let Some(var_957) = &input.iam_instance_profile_arn {
+        object.key("IamInstanceProfileArn").string(var_957.as_str());
     }
-    if let Some(var_954) = &input.vpc_id {
-        object.key("VpcId").string(var_954.as_str());
+    if let Some(var_958) = &input.vpc_id {
+        object.key("VpcId").string(var_958.as_str());
     }
-    if let Some(var_955) = &input.subnet_id {
-        object.key("SubnetId").string(var_955.as_str());
+    if let Some(var_959) = &input.subnet_id {
+        object.key("SubnetId").string(var_959.as_str());
     }
-    if let Some(var_956) = &input.launched_at {
-        object.key("LaunchedAt").string(var_956.as_str());
+    if let Some(var_960) = &input.launched_at {
+        object.key("LaunchedAt").string(var_960.as_str());
     }
-    if let Some(var_957) = &input.network_interfaces {
-        let mut array_958 = object.key("NetworkInterfaces").start_array();
-        for item_959 in var_957 {
+    if let Some(var_961) = &input.network_interfaces {
+        let mut array_962 = object.key("NetworkInterfaces").start_array();
+        for item_963 in var_961 {
             {
-                let mut object_960 = array_958.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_instance_network_interfaces_details(&mut object_960, item_959)?;
-                object_960.finish();
+                let mut object_964 = array_962.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_instance_network_interfaces_details(&mut object_964, item_963)?;
+                object_964.finish();
             }
         }
-        array_958.finish();
+        array_962.finish();
     }
     Ok(())
 }
@@ -4058,60 +4085,60 @@ pub fn serialize_structure_crate_model_aws_ec2_network_interface_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2NetworkInterfaceDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_961) = &input.attachment {
-        let mut object_962 = object.key("Attachment").start_object();
+    if let Some(var_965) = &input.attachment {
+        let mut object_966 = object.key("Attachment").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_ec2_network_interface_attachment(
-            &mut object_962,
-            var_961,
+            &mut object_966,
+            var_965,
         )?;
-        object_962.finish();
+        object_966.finish();
     }
-    if let Some(var_963) = &input.network_interface_id {
-        object.key("NetworkInterfaceId").string(var_963.as_str());
+    if let Some(var_967) = &input.network_interface_id {
+        object.key("NetworkInterfaceId").string(var_967.as_str());
     }
-    if let Some(var_964) = &input.security_groups {
-        let mut array_965 = object.key("SecurityGroups").start_array();
-        for item_966 in var_964 {
+    if let Some(var_968) = &input.security_groups {
+        let mut array_969 = object.key("SecurityGroups").start_array();
+        for item_970 in var_968 {
             {
-                let mut object_967 = array_965.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_network_interface_security_group(&mut object_967, item_966)?;
-                object_967.finish();
+                let mut object_971 = array_969.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_network_interface_security_group(&mut object_971, item_970)?;
+                object_971.finish();
             }
         }
-        array_965.finish();
+        array_969.finish();
     }
     if input.source_dest_check {
         object
             .key("SourceDestCheck")
             .boolean(input.source_dest_check);
     }
-    if let Some(var_968) = &input.ip_v6_addresses {
-        let mut array_969 = object.key("IpV6Addresses").start_array();
-        for item_970 in var_968 {
-            {
-                let mut object_971 = array_969.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_network_interface_ip_v6_address_detail(&mut object_971, item_970)?;
-                object_971.finish();
-            }
-        }
-        array_969.finish();
-    }
-    if let Some(var_972) = &input.private_ip_addresses {
-        let mut array_973 = object.key("PrivateIpAddresses").start_array();
+    if let Some(var_972) = &input.ip_v6_addresses {
+        let mut array_973 = object.key("IpV6Addresses").start_array();
         for item_974 in var_972 {
             {
                 let mut object_975 = array_973.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_network_interface_private_ip_address_detail(&mut object_975, item_974)?;
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_network_interface_ip_v6_address_detail(&mut object_975, item_974)?;
                 object_975.finish();
             }
         }
         array_973.finish();
     }
-    if let Some(var_976) = &input.public_dns_name {
-        object.key("PublicDnsName").string(var_976.as_str());
+    if let Some(var_976) = &input.private_ip_addresses {
+        let mut array_977 = object.key("PrivateIpAddresses").start_array();
+        for item_978 in var_976 {
+            {
+                let mut object_979 = array_977.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_network_interface_private_ip_address_detail(&mut object_979, item_978)?;
+                object_979.finish();
+            }
+        }
+        array_977.finish();
     }
-    if let Some(var_977) = &input.public_ip {
-        object.key("PublicIp").string(var_977.as_str());
+    if let Some(var_980) = &input.public_dns_name {
+        object.key("PublicDnsName").string(var_980.as_str());
+    }
+    if let Some(var_981) = &input.public_ip {
+        object.key("PublicIp").string(var_981.as_str());
     }
     Ok(())
 }
@@ -4120,31 +4147,20 @@ pub fn serialize_structure_crate_model_aws_ec2_security_group_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2SecurityGroupDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_978) = &input.group_name {
-        object.key("GroupName").string(var_978.as_str());
+    if let Some(var_982) = &input.group_name {
+        object.key("GroupName").string(var_982.as_str());
     }
-    if let Some(var_979) = &input.group_id {
-        object.key("GroupId").string(var_979.as_str());
+    if let Some(var_983) = &input.group_id {
+        object.key("GroupId").string(var_983.as_str());
     }
-    if let Some(var_980) = &input.owner_id {
-        object.key("OwnerId").string(var_980.as_str());
+    if let Some(var_984) = &input.owner_id {
+        object.key("OwnerId").string(var_984.as_str());
     }
-    if let Some(var_981) = &input.vpc_id {
-        object.key("VpcId").string(var_981.as_str());
+    if let Some(var_985) = &input.vpc_id {
+        object.key("VpcId").string(var_985.as_str());
     }
-    if let Some(var_982) = &input.ip_permissions {
-        let mut array_983 = object.key("IpPermissions").start_array();
-        for item_984 in var_982 {
-            {
-                let mut object_985 = array_983.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_ip_permission(&mut object_985, item_984)?;
-                object_985.finish();
-            }
-        }
-        array_983.finish();
-    }
-    if let Some(var_986) = &input.ip_permissions_egress {
-        let mut array_987 = object.key("IpPermissionsEgress").start_array();
+    if let Some(var_986) = &input.ip_permissions {
+        let mut array_987 = object.key("IpPermissions").start_array();
         for item_988 in var_986 {
             {
                 let mut object_989 = array_987.value().start_object();
@@ -4154,6 +4170,17 @@ pub fn serialize_structure_crate_model_aws_ec2_security_group_details(
         }
         array_987.finish();
     }
+    if let Some(var_990) = &input.ip_permissions_egress {
+        let mut array_991 = object.key("IpPermissionsEgress").start_array();
+        for item_992 in var_990 {
+            {
+                let mut object_993 = array_991.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_ip_permission(&mut object_993, item_992)?;
+                object_993.finish();
+            }
+        }
+        array_991.finish();
+    }
     Ok(())
 }
 
@@ -4161,8 +4188,8 @@ pub fn serialize_structure_crate_model_aws_ec2_volume_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2VolumeDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_990) = &input.create_time {
-        object.key("CreateTime").string(var_990.as_str());
+    if let Some(var_994) = &input.create_time {
+        object.key("CreateTime").string(var_994.as_str());
     }
     if input.encrypted {
         object.key("Encrypted").boolean(input.encrypted);
@@ -4173,42 +4200,21 @@ pub fn serialize_structure_crate_model_aws_ec2_volume_details(
             aws_smithy_types::Number::NegInt((input.size).into()),
         );
     }
-    if let Some(var_991) = &input.snapshot_id {
-        object.key("SnapshotId").string(var_991.as_str());
+    if let Some(var_995) = &input.snapshot_id {
+        object.key("SnapshotId").string(var_995.as_str());
     }
-    if let Some(var_992) = &input.status {
-        object.key("Status").string(var_992.as_str());
+    if let Some(var_996) = &input.status {
+        object.key("Status").string(var_996.as_str());
     }
-    if let Some(var_993) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_993.as_str());
+    if let Some(var_997) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_997.as_str());
     }
-    if let Some(var_994) = &input.attachments {
-        let mut array_995 = object.key("Attachments").start_array();
-        for item_996 in var_994 {
-            {
-                let mut object_997 = array_995.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_volume_attachment(
-                    &mut object_997,
-                    item_996,
-                )?;
-                object_997.finish();
-            }
-        }
-        array_995.finish();
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_aws_ec2_vpc_details(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AwsEc2VpcDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_998) = &input.cidr_block_association_set {
-        let mut array_999 = object.key("CidrBlockAssociationSet").start_array();
+    if let Some(var_998) = &input.attachments {
+        let mut array_999 = object.key("Attachments").start_array();
         for item_1000 in var_998 {
             {
                 let mut object_1001 = array_999.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_cidr_block_association(
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_volume_attachment(
                     &mut object_1001,
                     item_1000,
                 )?;
@@ -4217,12 +4223,19 @@ pub fn serialize_structure_crate_model_aws_ec2_vpc_details(
         }
         array_999.finish();
     }
-    if let Some(var_1002) = &input.ipv6_cidr_block_association_set {
-        let mut array_1003 = object.key("Ipv6CidrBlockAssociationSet").start_array();
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_aws_ec2_vpc_details(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::AwsEc2VpcDetails,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_1002) = &input.cidr_block_association_set {
+        let mut array_1003 = object.key("CidrBlockAssociationSet").start_array();
         for item_1004 in var_1002 {
             {
                 let mut object_1005 = array_1003.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_ipv6_cidr_block_association(
+                crate::json_ser::serialize_structure_crate_model_cidr_block_association(
                     &mut object_1005,
                     item_1004,
                 )?;
@@ -4231,11 +4244,25 @@ pub fn serialize_structure_crate_model_aws_ec2_vpc_details(
         }
         array_1003.finish();
     }
-    if let Some(var_1006) = &input.dhcp_options_id {
-        object.key("DhcpOptionsId").string(var_1006.as_str());
+    if let Some(var_1006) = &input.ipv6_cidr_block_association_set {
+        let mut array_1007 = object.key("Ipv6CidrBlockAssociationSet").start_array();
+        for item_1008 in var_1006 {
+            {
+                let mut object_1009 = array_1007.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_ipv6_cidr_block_association(
+                    &mut object_1009,
+                    item_1008,
+                )?;
+                object_1009.finish();
+            }
+        }
+        array_1007.finish();
     }
-    if let Some(var_1007) = &input.state {
-        object.key("State").string(var_1007.as_str());
+    if let Some(var_1010) = &input.dhcp_options_id {
+        object.key("DhcpOptionsId").string(var_1010.as_str());
+    }
+    if let Some(var_1011) = &input.state {
+        object.key("State").string(var_1011.as_str());
     }
     Ok(())
 }
@@ -4244,37 +4271,37 @@ pub fn serialize_structure_crate_model_aws_ec2_eip_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2EipDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1008) = &input.instance_id {
-        object.key("InstanceId").string(var_1008.as_str());
+    if let Some(var_1012) = &input.instance_id {
+        object.key("InstanceId").string(var_1012.as_str());
     }
-    if let Some(var_1009) = &input.public_ip {
-        object.key("PublicIp").string(var_1009.as_str());
+    if let Some(var_1013) = &input.public_ip {
+        object.key("PublicIp").string(var_1013.as_str());
     }
-    if let Some(var_1010) = &input.allocation_id {
-        object.key("AllocationId").string(var_1010.as_str());
+    if let Some(var_1014) = &input.allocation_id {
+        object.key("AllocationId").string(var_1014.as_str());
     }
-    if let Some(var_1011) = &input.association_id {
-        object.key("AssociationId").string(var_1011.as_str());
+    if let Some(var_1015) = &input.association_id {
+        object.key("AssociationId").string(var_1015.as_str());
     }
-    if let Some(var_1012) = &input.domain {
-        object.key("Domain").string(var_1012.as_str());
+    if let Some(var_1016) = &input.domain {
+        object.key("Domain").string(var_1016.as_str());
     }
-    if let Some(var_1013) = &input.public_ipv4_pool {
-        object.key("PublicIpv4Pool").string(var_1013.as_str());
+    if let Some(var_1017) = &input.public_ipv4_pool {
+        object.key("PublicIpv4Pool").string(var_1017.as_str());
     }
-    if let Some(var_1014) = &input.network_border_group {
-        object.key("NetworkBorderGroup").string(var_1014.as_str());
+    if let Some(var_1018) = &input.network_border_group {
+        object.key("NetworkBorderGroup").string(var_1018.as_str());
     }
-    if let Some(var_1015) = &input.network_interface_id {
-        object.key("NetworkInterfaceId").string(var_1015.as_str());
+    if let Some(var_1019) = &input.network_interface_id {
+        object.key("NetworkInterfaceId").string(var_1019.as_str());
     }
-    if let Some(var_1016) = &input.network_interface_owner_id {
+    if let Some(var_1020) = &input.network_interface_owner_id {
         object
             .key("NetworkInterfaceOwnerId")
-            .string(var_1016.as_str());
+            .string(var_1020.as_str());
     }
-    if let Some(var_1017) = &input.private_ip_address {
-        object.key("PrivateIpAddress").string(var_1017.as_str());
+    if let Some(var_1021) = &input.private_ip_address {
+        object.key("PrivateIpAddress").string(var_1021.as_str());
     }
     Ok(())
 }
@@ -4288,11 +4315,11 @@ pub fn serialize_structure_crate_model_aws_ec2_subnet_details(
             .key("AssignIpv6AddressOnCreation")
             .boolean(input.assign_ipv6_address_on_creation);
     }
-    if let Some(var_1018) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_1018.as_str());
+    if let Some(var_1022) = &input.availability_zone {
+        object.key("AvailabilityZone").string(var_1022.as_str());
     }
-    if let Some(var_1019) = &input.availability_zone_id {
-        object.key("AvailabilityZoneId").string(var_1019.as_str());
+    if let Some(var_1023) = &input.availability_zone_id {
+        object.key("AvailabilityZoneId").string(var_1023.as_str());
     }
     if input.available_ip_address_count != 0 {
         object.key("AvailableIpAddressCount").number(
@@ -4300,8 +4327,8 @@ pub fn serialize_structure_crate_model_aws_ec2_subnet_details(
             aws_smithy_types::Number::NegInt((input.available_ip_address_count).into()),
         );
     }
-    if let Some(var_1020) = &input.cidr_block {
-        object.key("CidrBlock").string(var_1020.as_str());
+    if let Some(var_1024) = &input.cidr_block {
+        object.key("CidrBlock").string(var_1024.as_str());
     }
     if input.default_for_az {
         object.key("DefaultForAz").boolean(input.default_for_az);
@@ -4311,34 +4338,34 @@ pub fn serialize_structure_crate_model_aws_ec2_subnet_details(
             .key("MapPublicIpOnLaunch")
             .boolean(input.map_public_ip_on_launch);
     }
-    if let Some(var_1021) = &input.owner_id {
-        object.key("OwnerId").string(var_1021.as_str());
+    if let Some(var_1025) = &input.owner_id {
+        object.key("OwnerId").string(var_1025.as_str());
     }
-    if let Some(var_1022) = &input.state {
-        object.key("State").string(var_1022.as_str());
+    if let Some(var_1026) = &input.state {
+        object.key("State").string(var_1026.as_str());
     }
-    if let Some(var_1023) = &input.subnet_arn {
-        object.key("SubnetArn").string(var_1023.as_str());
+    if let Some(var_1027) = &input.subnet_arn {
+        object.key("SubnetArn").string(var_1027.as_str());
     }
-    if let Some(var_1024) = &input.subnet_id {
-        object.key("SubnetId").string(var_1024.as_str());
+    if let Some(var_1028) = &input.subnet_id {
+        object.key("SubnetId").string(var_1028.as_str());
     }
-    if let Some(var_1025) = &input.vpc_id {
-        object.key("VpcId").string(var_1025.as_str());
+    if let Some(var_1029) = &input.vpc_id {
+        object.key("VpcId").string(var_1029.as_str());
     }
-    if let Some(var_1026) = &input.ipv6_cidr_block_association_set {
-        let mut array_1027 = object.key("Ipv6CidrBlockAssociationSet").start_array();
-        for item_1028 in var_1026 {
+    if let Some(var_1030) = &input.ipv6_cidr_block_association_set {
+        let mut array_1031 = object.key("Ipv6CidrBlockAssociationSet").start_array();
+        for item_1032 in var_1030 {
             {
-                let mut object_1029 = array_1027.value().start_object();
+                let mut object_1033 = array_1031.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ipv6_cidr_block_association(
-                    &mut object_1029,
-                    item_1028,
+                    &mut object_1033,
+                    item_1032,
                 )?;
-                object_1029.finish();
+                object_1033.finish();
             }
         }
-        array_1027.finish();
+        array_1031.finish();
     }
     Ok(())
 }
@@ -4350,35 +4377,21 @@ pub fn serialize_structure_crate_model_aws_ec2_network_acl_details(
     if input.is_default {
         object.key("IsDefault").boolean(input.is_default);
     }
-    if let Some(var_1030) = &input.network_acl_id {
-        object.key("NetworkAclId").string(var_1030.as_str());
+    if let Some(var_1034) = &input.network_acl_id {
+        object.key("NetworkAclId").string(var_1034.as_str());
     }
-    if let Some(var_1031) = &input.owner_id {
-        object.key("OwnerId").string(var_1031.as_str());
+    if let Some(var_1035) = &input.owner_id {
+        object.key("OwnerId").string(var_1035.as_str());
     }
-    if let Some(var_1032) = &input.vpc_id {
-        object.key("VpcId").string(var_1032.as_str());
+    if let Some(var_1036) = &input.vpc_id {
+        object.key("VpcId").string(var_1036.as_str());
     }
-    if let Some(var_1033) = &input.associations {
-        let mut array_1034 = object.key("Associations").start_array();
-        for item_1035 in var_1033 {
-            {
-                let mut object_1036 = array_1034.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_network_acl_association(
-                    &mut object_1036,
-                    item_1035,
-                )?;
-                object_1036.finish();
-            }
-        }
-        array_1034.finish();
-    }
-    if let Some(var_1037) = &input.entries {
-        let mut array_1038 = object.key("Entries").start_array();
+    if let Some(var_1037) = &input.associations {
+        let mut array_1038 = object.key("Associations").start_array();
         for item_1039 in var_1037 {
             {
                 let mut object_1040 = array_1038.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_network_acl_entry(
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_network_acl_association(
                     &mut object_1040,
                     item_1039,
                 )?;
@@ -4387,19 +4400,12 @@ pub fn serialize_structure_crate_model_aws_ec2_network_acl_details(
         }
         array_1038.finish();
     }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_aws_elbv2_load_balancer_details(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AwsElbv2LoadBalancerDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1041) = &input.availability_zones {
-        let mut array_1042 = object.key("AvailabilityZones").start_array();
+    if let Some(var_1041) = &input.entries {
+        let mut array_1042 = object.key("Entries").start_array();
         for item_1043 in var_1041 {
             {
                 let mut object_1044 = array_1042.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_availability_zone(
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_network_acl_entry(
                     &mut object_1044,
                     item_1043,
                 )?;
@@ -4408,59 +4414,80 @@ pub fn serialize_structure_crate_model_aws_elbv2_load_balancer_details(
         }
         array_1042.finish();
     }
-    if let Some(var_1045) = &input.canonical_hosted_zone_id {
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_aws_elbv2_load_balancer_details(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::AwsElbv2LoadBalancerDetails,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_1045) = &input.availability_zones {
+        let mut array_1046 = object.key("AvailabilityZones").start_array();
+        for item_1047 in var_1045 {
+            {
+                let mut object_1048 = array_1046.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_availability_zone(
+                    &mut object_1048,
+                    item_1047,
+                )?;
+                object_1048.finish();
+            }
+        }
+        array_1046.finish();
+    }
+    if let Some(var_1049) = &input.canonical_hosted_zone_id {
         object
             .key("CanonicalHostedZoneId")
-            .string(var_1045.as_str());
+            .string(var_1049.as_str());
     }
-    if let Some(var_1046) = &input.created_time {
-        object.key("CreatedTime").string(var_1046.as_str());
+    if let Some(var_1050) = &input.created_time {
+        object.key("CreatedTime").string(var_1050.as_str());
     }
-    if let Some(var_1047) = &input.dns_name {
-        object.key("DNSName").string(var_1047.as_str());
+    if let Some(var_1051) = &input.dns_name {
+        object.key("DNSName").string(var_1051.as_str());
     }
-    if let Some(var_1048) = &input.ip_address_type {
-        object.key("IpAddressType").string(var_1048.as_str());
+    if let Some(var_1052) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_1052.as_str());
     }
-    if let Some(var_1049) = &input.scheme {
-        object.key("Scheme").string(var_1049.as_str());
+    if let Some(var_1053) = &input.scheme {
+        object.key("Scheme").string(var_1053.as_str());
     }
-    if let Some(var_1050) = &input.security_groups {
-        let mut array_1051 = object.key("SecurityGroups").start_array();
-        for item_1052 in var_1050 {
+    if let Some(var_1054) = &input.security_groups {
+        let mut array_1055 = object.key("SecurityGroups").start_array();
+        for item_1056 in var_1054 {
             {
-                array_1051.value().string(item_1052.as_str());
+                array_1055.value().string(item_1056.as_str());
             }
         }
-        array_1051.finish();
+        array_1055.finish();
     }
-    if let Some(var_1053) = &input.state {
-        let mut object_1054 = object.key("State").start_object();
+    if let Some(var_1057) = &input.state {
+        let mut object_1058 = object.key("State").start_object();
         crate::json_ser::serialize_structure_crate_model_load_balancer_state(
-            &mut object_1054,
-            var_1053,
+            &mut object_1058,
+            var_1057,
         )?;
-        object_1054.finish();
+        object_1058.finish();
     }
-    if let Some(var_1055) = &input.r#type {
-        object.key("Type").string(var_1055.as_str());
+    if let Some(var_1059) = &input.r#type {
+        object.key("Type").string(var_1059.as_str());
     }
-    if let Some(var_1056) = &input.vpc_id {
-        object.key("VpcId").string(var_1056.as_str());
+    if let Some(var_1060) = &input.vpc_id {
+        object.key("VpcId").string(var_1060.as_str());
     }
-    if let Some(var_1057) = &input.load_balancer_attributes {
-        let mut array_1058 = object.key("LoadBalancerAttributes").start_array();
-        for item_1059 in var_1057 {
+    if let Some(var_1061) = &input.load_balancer_attributes {
+        let mut array_1062 = object.key("LoadBalancerAttributes").start_array();
+        for item_1063 in var_1061 {
             {
-                let mut object_1060 = array_1058.value().start_object();
+                let mut object_1064 = array_1062.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_elbv2_load_balancer_attribute(
-                    &mut object_1060,
-                    item_1059,
+                    &mut object_1064,
+                    item_1063,
                 )?;
-                object_1060.finish();
+                object_1064.finish();
             }
         }
-        array_1058.finish();
+        array_1062.finish();
     }
     Ok(())
 }
@@ -4469,74 +4496,74 @@ pub fn serialize_structure_crate_model_aws_elastic_beanstalk_environment_details
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElasticBeanstalkEnvironmentDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1061) = &input.application_name {
-        object.key("ApplicationName").string(var_1061.as_str());
+    if let Some(var_1065) = &input.application_name {
+        object.key("ApplicationName").string(var_1065.as_str());
     }
-    if let Some(var_1062) = &input.cname {
-        object.key("Cname").string(var_1062.as_str());
+    if let Some(var_1066) = &input.cname {
+        object.key("Cname").string(var_1066.as_str());
     }
-    if let Some(var_1063) = &input.date_created {
-        object.key("DateCreated").string(var_1063.as_str());
+    if let Some(var_1067) = &input.date_created {
+        object.key("DateCreated").string(var_1067.as_str());
     }
-    if let Some(var_1064) = &input.date_updated {
-        object.key("DateUpdated").string(var_1064.as_str());
+    if let Some(var_1068) = &input.date_updated {
+        object.key("DateUpdated").string(var_1068.as_str());
     }
-    if let Some(var_1065) = &input.description {
-        object.key("Description").string(var_1065.as_str());
+    if let Some(var_1069) = &input.description {
+        object.key("Description").string(var_1069.as_str());
     }
-    if let Some(var_1066) = &input.endpoint_url {
-        object.key("EndpointUrl").string(var_1066.as_str());
+    if let Some(var_1070) = &input.endpoint_url {
+        object.key("EndpointUrl").string(var_1070.as_str());
     }
-    if let Some(var_1067) = &input.environment_arn {
-        object.key("EnvironmentArn").string(var_1067.as_str());
+    if let Some(var_1071) = &input.environment_arn {
+        object.key("EnvironmentArn").string(var_1071.as_str());
     }
-    if let Some(var_1068) = &input.environment_id {
-        object.key("EnvironmentId").string(var_1068.as_str());
+    if let Some(var_1072) = &input.environment_id {
+        object.key("EnvironmentId").string(var_1072.as_str());
     }
-    if let Some(var_1069) = &input.environment_links {
-        let mut array_1070 = object.key("EnvironmentLinks").start_array();
-        for item_1071 in var_1069 {
+    if let Some(var_1073) = &input.environment_links {
+        let mut array_1074 = object.key("EnvironmentLinks").start_array();
+        for item_1075 in var_1073 {
             {
-                let mut object_1072 = array_1070.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_elastic_beanstalk_environment_environment_link(&mut object_1072, item_1071)?;
-                object_1072.finish();
+                let mut object_1076 = array_1074.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_elastic_beanstalk_environment_environment_link(&mut object_1076, item_1075)?;
+                object_1076.finish();
             }
         }
-        array_1070.finish();
+        array_1074.finish();
     }
-    if let Some(var_1073) = &input.environment_name {
-        object.key("EnvironmentName").string(var_1073.as_str());
+    if let Some(var_1077) = &input.environment_name {
+        object.key("EnvironmentName").string(var_1077.as_str());
     }
-    if let Some(var_1074) = &input.option_settings {
-        let mut array_1075 = object.key("OptionSettings").start_array();
-        for item_1076 in var_1074 {
+    if let Some(var_1078) = &input.option_settings {
+        let mut array_1079 = object.key("OptionSettings").start_array();
+        for item_1080 in var_1078 {
             {
-                let mut object_1077 = array_1075.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_elastic_beanstalk_environment_option_setting(&mut object_1077, item_1076)?;
-                object_1077.finish();
+                let mut object_1081 = array_1079.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_elastic_beanstalk_environment_option_setting(&mut object_1081, item_1080)?;
+                object_1081.finish();
             }
         }
-        array_1075.finish();
+        array_1079.finish();
     }
-    if let Some(var_1078) = &input.platform_arn {
-        object.key("PlatformArn").string(var_1078.as_str());
+    if let Some(var_1082) = &input.platform_arn {
+        object.key("PlatformArn").string(var_1082.as_str());
     }
-    if let Some(var_1079) = &input.solution_stack_name {
-        object.key("SolutionStackName").string(var_1079.as_str());
+    if let Some(var_1083) = &input.solution_stack_name {
+        object.key("SolutionStackName").string(var_1083.as_str());
     }
-    if let Some(var_1080) = &input.status {
-        object.key("Status").string(var_1080.as_str());
+    if let Some(var_1084) = &input.status {
+        object.key("Status").string(var_1084.as_str());
     }
-    if let Some(var_1081) = &input.tier {
-        let mut object_1082 = object.key("Tier").start_object();
+    if let Some(var_1085) = &input.tier {
+        let mut object_1086 = object.key("Tier").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_elastic_beanstalk_environment_tier(
-            &mut object_1082,
-            var_1081,
+            &mut object_1086,
+            var_1085,
         )?;
-        object_1082.finish();
+        object_1086.finish();
     }
-    if let Some(var_1083) = &input.version_label {
-        object.key("VersionLabel").string(var_1083.as_str());
+    if let Some(var_1087) = &input.version_label {
+        object.key("VersionLabel").string(var_1087.as_str());
     }
     Ok(())
 }
@@ -4545,67 +4572,67 @@ pub fn serialize_structure_crate_model_aws_elasticsearch_domain_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElasticsearchDomainDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1084) = &input.access_policies {
-        object.key("AccessPolicies").string(var_1084.as_str());
+    if let Some(var_1088) = &input.access_policies {
+        object.key("AccessPolicies").string(var_1088.as_str());
     }
-    if let Some(var_1085) = &input.domain_endpoint_options {
-        let mut object_1086 = object.key("DomainEndpointOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_domain_endpoint_options(&mut object_1086, var_1085)?;
-        object_1086.finish();
+    if let Some(var_1089) = &input.domain_endpoint_options {
+        let mut object_1090 = object.key("DomainEndpointOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_domain_endpoint_options(&mut object_1090, var_1089)?;
+        object_1090.finish();
     }
-    if let Some(var_1087) = &input.domain_id {
-        object.key("DomainId").string(var_1087.as_str());
+    if let Some(var_1091) = &input.domain_id {
+        object.key("DomainId").string(var_1091.as_str());
     }
-    if let Some(var_1088) = &input.domain_name {
-        object.key("DomainName").string(var_1088.as_str());
+    if let Some(var_1092) = &input.domain_name {
+        object.key("DomainName").string(var_1092.as_str());
     }
-    if let Some(var_1089) = &input.endpoint {
-        object.key("Endpoint").string(var_1089.as_str());
+    if let Some(var_1093) = &input.endpoint {
+        object.key("Endpoint").string(var_1093.as_str());
     }
-    if let Some(var_1090) = &input.endpoints {
-        let mut object_1091 = object.key("Endpoints").start_object();
-        for (key_1092, value_1093) in var_1090 {
+    if let Some(var_1094) = &input.endpoints {
+        let mut object_1095 = object.key("Endpoints").start_object();
+        for (key_1096, value_1097) in var_1094 {
             {
-                object_1091.key(key_1092).string(value_1093.as_str());
+                object_1095.key(key_1096).string(value_1097.as_str());
             }
         }
-        object_1091.finish();
+        object_1095.finish();
     }
-    if let Some(var_1094) = &input.elasticsearch_version {
-        object.key("ElasticsearchVersion").string(var_1094.as_str());
+    if let Some(var_1098) = &input.elasticsearch_version {
+        object.key("ElasticsearchVersion").string(var_1098.as_str());
     }
-    if let Some(var_1095) = &input.elasticsearch_cluster_config {
-        let mut object_1096 = object.key("ElasticsearchClusterConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_elasticsearch_cluster_config_details(&mut object_1096, var_1095)?;
-        object_1096.finish();
-    }
-    if let Some(var_1097) = &input.encryption_at_rest_options {
-        let mut object_1098 = object.key("EncryptionAtRestOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_encryption_at_rest_options(&mut object_1098, var_1097)?;
-        object_1098.finish();
-    }
-    if let Some(var_1099) = &input.log_publishing_options {
-        let mut object_1100 = object.key("LogPublishingOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_log_publishing_options(&mut object_1100, var_1099)?;
+    if let Some(var_1099) = &input.elasticsearch_cluster_config {
+        let mut object_1100 = object.key("ElasticsearchClusterConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_elasticsearch_cluster_config_details(&mut object_1100, var_1099)?;
         object_1100.finish();
     }
-    if let Some(var_1101) = &input.node_to_node_encryption_options {
-        let mut object_1102 = object.key("NodeToNodeEncryptionOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_node_to_node_encryption_options(&mut object_1102, var_1101)?;
+    if let Some(var_1101) = &input.encryption_at_rest_options {
+        let mut object_1102 = object.key("EncryptionAtRestOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_encryption_at_rest_options(&mut object_1102, var_1101)?;
         object_1102.finish();
     }
-    if let Some(var_1103) = &input.service_software_options {
-        let mut object_1104 = object.key("ServiceSoftwareOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_service_software_options(&mut object_1104, var_1103)?;
+    if let Some(var_1103) = &input.log_publishing_options {
+        let mut object_1104 = object.key("LogPublishingOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_log_publishing_options(&mut object_1104, var_1103)?;
         object_1104.finish();
     }
-    if let Some(var_1105) = &input.vpc_options {
-        let mut object_1106 = object.key("VPCOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_vpc_options(
-            &mut object_1106,
-            var_1105,
-        )?;
+    if let Some(var_1105) = &input.node_to_node_encryption_options {
+        let mut object_1106 = object.key("NodeToNodeEncryptionOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_node_to_node_encryption_options(&mut object_1106, var_1105)?;
         object_1106.finish();
+    }
+    if let Some(var_1107) = &input.service_software_options {
+        let mut object_1108 = object.key("ServiceSoftwareOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_service_software_options(&mut object_1108, var_1107)?;
+        object_1108.finish();
+    }
+    if let Some(var_1109) = &input.vpc_options {
+        let mut object_1110 = object.key("VPCOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_vpc_options(
+            &mut object_1110,
+            var_1109,
+        )?;
+        object_1110.finish();
     }
     Ok(())
 }
@@ -4614,66 +4641,66 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1107) = &input.owner_id {
-        object.key("OwnerId").string(var_1107.as_str());
+    if let Some(var_1111) = &input.owner_id {
+        object.key("OwnerId").string(var_1111.as_str());
     }
-    if let Some(var_1108) = &input.owner_name {
-        object.key("OwnerName").string(var_1108.as_str());
+    if let Some(var_1112) = &input.owner_name {
+        object.key("OwnerName").string(var_1112.as_str());
     }
-    if let Some(var_1109) = &input.owner_account_id {
-        object.key("OwnerAccountId").string(var_1109.as_str());
+    if let Some(var_1113) = &input.owner_account_id {
+        object.key("OwnerAccountId").string(var_1113.as_str());
     }
-    if let Some(var_1110) = &input.created_at {
-        object.key("CreatedAt").string(var_1110.as_str());
+    if let Some(var_1114) = &input.created_at {
+        object.key("CreatedAt").string(var_1114.as_str());
     }
-    if let Some(var_1111) = &input.server_side_encryption_configuration {
-        let mut object_1112 = object
+    if let Some(var_1115) = &input.server_side_encryption_configuration {
+        let mut object_1116 = object
             .key("ServerSideEncryptionConfiguration")
             .start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_server_side_encryption_configuration(&mut object_1112, var_1111)?;
-        object_1112.finish();
-    }
-    if let Some(var_1113) = &input.bucket_lifecycle_configuration {
-        let mut object_1114 = object.key("BucketLifecycleConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_details(&mut object_1114, var_1113)?;
-        object_1114.finish();
-    }
-    if let Some(var_1115) = &input.public_access_block_configuration {
-        let mut object_1116 = object.key("PublicAccessBlockConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_account_public_access_block_details(&mut object_1116, var_1115)?;
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_server_side_encryption_configuration(&mut object_1116, var_1115)?;
         object_1116.finish();
     }
-    if let Some(var_1117) = &input.access_control_list {
-        object.key("AccessControlList").string(var_1117.as_str());
+    if let Some(var_1117) = &input.bucket_lifecycle_configuration {
+        let mut object_1118 = object.key("BucketLifecycleConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_details(&mut object_1118, var_1117)?;
+        object_1118.finish();
     }
-    if let Some(var_1118) = &input.bucket_logging_configuration {
-        let mut object_1119 = object.key("BucketLoggingConfiguration").start_object();
+    if let Some(var_1119) = &input.public_access_block_configuration {
+        let mut object_1120 = object.key("PublicAccessBlockConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_account_public_access_block_details(&mut object_1120, var_1119)?;
+        object_1120.finish();
+    }
+    if let Some(var_1121) = &input.access_control_list {
+        object.key("AccessControlList").string(var_1121.as_str());
+    }
+    if let Some(var_1122) = &input.bucket_logging_configuration {
+        let mut object_1123 = object.key("BucketLoggingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_logging_configuration(
-            &mut object_1119,
-            var_1118,
-        )?;
-        object_1119.finish();
-    }
-    if let Some(var_1120) = &input.bucket_website_configuration {
-        let mut object_1121 = object.key("BucketWebsiteConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_website_configuration(
-            &mut object_1121,
-            var_1120,
-        )?;
-        object_1121.finish();
-    }
-    if let Some(var_1122) = &input.bucket_notification_configuration {
-        let mut object_1123 = object.key("BucketNotificationConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_notification_configuration(
             &mut object_1123,
             var_1122,
         )?;
         object_1123.finish();
     }
-    if let Some(var_1124) = &input.bucket_versioning_configuration {
-        let mut object_1125 = object.key("BucketVersioningConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_versioning_configuration(&mut object_1125, var_1124)?;
+    if let Some(var_1124) = &input.bucket_website_configuration {
+        let mut object_1125 = object.key("BucketWebsiteConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_website_configuration(
+            &mut object_1125,
+            var_1124,
+        )?;
         object_1125.finish();
+    }
+    if let Some(var_1126) = &input.bucket_notification_configuration {
+        let mut object_1127 = object.key("BucketNotificationConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_notification_configuration(
+            &mut object_1127,
+            var_1126,
+        )?;
+        object_1127.finish();
+    }
+    if let Some(var_1128) = &input.bucket_versioning_configuration {
+        let mut object_1129 = object.key("BucketVersioningConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_versioning_configuration(&mut object_1129, var_1128)?;
+        object_1129.finish();
     }
     Ok(())
 }
@@ -4709,23 +4736,23 @@ pub fn serialize_structure_crate_model_aws_s3_object_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3ObjectDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1126) = &input.last_modified {
-        object.key("LastModified").string(var_1126.as_str());
+    if let Some(var_1130) = &input.last_modified {
+        object.key("LastModified").string(var_1130.as_str());
     }
-    if let Some(var_1127) = &input.e_tag {
-        object.key("ETag").string(var_1127.as_str());
+    if let Some(var_1131) = &input.e_tag {
+        object.key("ETag").string(var_1131.as_str());
     }
-    if let Some(var_1128) = &input.version_id {
-        object.key("VersionId").string(var_1128.as_str());
+    if let Some(var_1132) = &input.version_id {
+        object.key("VersionId").string(var_1132.as_str());
     }
-    if let Some(var_1129) = &input.content_type {
-        object.key("ContentType").string(var_1129.as_str());
+    if let Some(var_1133) = &input.content_type {
+        object.key("ContentType").string(var_1133.as_str());
     }
-    if let Some(var_1130) = &input.server_side_encryption {
-        object.key("ServerSideEncryption").string(var_1130.as_str());
+    if let Some(var_1134) = &input.server_side_encryption {
+        object.key("ServerSideEncryption").string(var_1134.as_str());
     }
-    if let Some(var_1131) = &input.ssekms_key_id {
-        object.key("SSEKMSKeyId").string(var_1131.as_str());
+    if let Some(var_1135) = &input.ssekms_key_id {
+        object.key("SSEKMSKeyId").string(var_1135.as_str());
     }
     Ok(())
 }
@@ -4734,38 +4761,38 @@ pub fn serialize_structure_crate_model_aws_secrets_manager_secret_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsSecretsManagerSecretDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1132) = &input.rotation_rules {
-        let mut object_1133 = object.key("RotationRules").start_object();
+    if let Some(var_1136) = &input.rotation_rules {
+        let mut object_1137 = object.key("RotationRules").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_secrets_manager_secret_rotation_rules(
-            &mut object_1133,
-            var_1132,
+            &mut object_1137,
+            var_1136,
         )?;
-        object_1133.finish();
+        object_1137.finish();
     }
     if input.rotation_occurred_within_frequency {
         object
             .key("RotationOccurredWithinFrequency")
             .boolean(input.rotation_occurred_within_frequency);
     }
-    if let Some(var_1134) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_1134.as_str());
+    if let Some(var_1138) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_1138.as_str());
     }
     if input.rotation_enabled {
         object
             .key("RotationEnabled")
             .boolean(input.rotation_enabled);
     }
-    if let Some(var_1135) = &input.rotation_lambda_arn {
-        object.key("RotationLambdaArn").string(var_1135.as_str());
+    if let Some(var_1139) = &input.rotation_lambda_arn {
+        object.key("RotationLambdaArn").string(var_1139.as_str());
     }
     if input.deleted {
         object.key("Deleted").boolean(input.deleted);
     }
-    if let Some(var_1136) = &input.name {
-        object.key("Name").string(var_1136.as_str());
+    if let Some(var_1140) = &input.name {
+        object.key("Name").string(var_1140.as_str());
     }
-    if let Some(var_1137) = &input.description {
-        object.key("Description").string(var_1137.as_str());
+    if let Some(var_1141) = &input.description {
+        object.key("Description").string(var_1141.as_str());
     }
     Ok(())
 }
@@ -4774,37 +4801,37 @@ pub fn serialize_structure_crate_model_aws_iam_access_key_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamAccessKeyDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1138) = &input.user_name {
-        object.key("UserName").string(var_1138.as_str());
+    if let Some(var_1142) = &input.user_name {
+        object.key("UserName").string(var_1142.as_str());
     }
-    if let Some(var_1139) = &input.status {
-        object.key("Status").string(var_1139.as_str());
+    if let Some(var_1143) = &input.status {
+        object.key("Status").string(var_1143.as_str());
     }
-    if let Some(var_1140) = &input.created_at {
-        object.key("CreatedAt").string(var_1140.as_str());
+    if let Some(var_1144) = &input.created_at {
+        object.key("CreatedAt").string(var_1144.as_str());
     }
-    if let Some(var_1141) = &input.principal_id {
-        object.key("PrincipalId").string(var_1141.as_str());
+    if let Some(var_1145) = &input.principal_id {
+        object.key("PrincipalId").string(var_1145.as_str());
     }
-    if let Some(var_1142) = &input.principal_type {
-        object.key("PrincipalType").string(var_1142.as_str());
+    if let Some(var_1146) = &input.principal_type {
+        object.key("PrincipalType").string(var_1146.as_str());
     }
-    if let Some(var_1143) = &input.principal_name {
-        object.key("PrincipalName").string(var_1143.as_str());
+    if let Some(var_1147) = &input.principal_name {
+        object.key("PrincipalName").string(var_1147.as_str());
     }
-    if let Some(var_1144) = &input.account_id {
-        object.key("AccountId").string(var_1144.as_str());
+    if let Some(var_1148) = &input.account_id {
+        object.key("AccountId").string(var_1148.as_str());
     }
-    if let Some(var_1145) = &input.access_key_id {
-        object.key("AccessKeyId").string(var_1145.as_str());
+    if let Some(var_1149) = &input.access_key_id {
+        object.key("AccessKeyId").string(var_1149.as_str());
     }
-    if let Some(var_1146) = &input.session_context {
-        let mut object_1147 = object.key("SessionContext").start_object();
+    if let Some(var_1150) = &input.session_context {
+        let mut object_1151 = object.key("SessionContext").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_iam_access_key_session_context(
-            &mut object_1147,
-            var_1146,
+            &mut object_1151,
+            var_1150,
         )?;
-        object_1147.finish();
+        object_1151.finish();
     }
     Ok(())
 }
@@ -4813,62 +4840,62 @@ pub fn serialize_structure_crate_model_aws_iam_user_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamUserDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1148) = &input.attached_managed_policies {
-        let mut array_1149 = object.key("AttachedManagedPolicies").start_array();
-        for item_1150 in var_1148 {
+    if let Some(var_1152) = &input.attached_managed_policies {
+        let mut array_1153 = object.key("AttachedManagedPolicies").start_array();
+        for item_1154 in var_1152 {
             {
-                let mut object_1151 = array_1149.value().start_object();
+                let mut object_1155 = array_1153.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_iam_attached_managed_policy(
-                    &mut object_1151,
-                    item_1150,
+                    &mut object_1155,
+                    item_1154,
                 )?;
-                object_1151.finish();
+                object_1155.finish();
             }
         }
-        array_1149.finish();
+        array_1153.finish();
     }
-    if let Some(var_1152) = &input.create_date {
-        object.key("CreateDate").string(var_1152.as_str());
+    if let Some(var_1156) = &input.create_date {
+        object.key("CreateDate").string(var_1156.as_str());
     }
-    if let Some(var_1153) = &input.group_list {
-        let mut array_1154 = object.key("GroupList").start_array();
-        for item_1155 in var_1153 {
+    if let Some(var_1157) = &input.group_list {
+        let mut array_1158 = object.key("GroupList").start_array();
+        for item_1159 in var_1157 {
             {
-                array_1154.value().string(item_1155.as_str());
+                array_1158.value().string(item_1159.as_str());
             }
         }
-        array_1154.finish();
+        array_1158.finish();
     }
-    if let Some(var_1156) = &input.path {
-        object.key("Path").string(var_1156.as_str());
+    if let Some(var_1160) = &input.path {
+        object.key("Path").string(var_1160.as_str());
     }
-    if let Some(var_1157) = &input.permissions_boundary {
-        let mut object_1158 = object.key("PermissionsBoundary").start_object();
+    if let Some(var_1161) = &input.permissions_boundary {
+        let mut object_1162 = object.key("PermissionsBoundary").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_iam_permissions_boundary(
-            &mut object_1158,
-            var_1157,
+            &mut object_1162,
+            var_1161,
         )?;
-        object_1158.finish();
+        object_1162.finish();
     }
-    if let Some(var_1159) = &input.user_id {
-        object.key("UserId").string(var_1159.as_str());
+    if let Some(var_1163) = &input.user_id {
+        object.key("UserId").string(var_1163.as_str());
     }
-    if let Some(var_1160) = &input.user_name {
-        object.key("UserName").string(var_1160.as_str());
+    if let Some(var_1164) = &input.user_name {
+        object.key("UserName").string(var_1164.as_str());
     }
-    if let Some(var_1161) = &input.user_policy_list {
-        let mut array_1162 = object.key("UserPolicyList").start_array();
-        for item_1163 in var_1161 {
+    if let Some(var_1165) = &input.user_policy_list {
+        let mut array_1166 = object.key("UserPolicyList").start_array();
+        for item_1167 in var_1165 {
             {
-                let mut object_1164 = array_1162.value().start_object();
+                let mut object_1168 = array_1166.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_iam_user_policy(
-                    &mut object_1164,
-                    item_1163,
+                    &mut object_1168,
+                    item_1167,
                 )?;
-                object_1164.finish();
+                object_1168.finish();
             }
         }
-        array_1162.finish();
+        array_1166.finish();
     }
     Ok(())
 }
@@ -4883,20 +4910,20 @@ pub fn serialize_structure_crate_model_aws_iam_policy_details(
             aws_smithy_types::Number::NegInt((input.attachment_count).into()),
         );
     }
-    if let Some(var_1165) = &input.create_date {
-        object.key("CreateDate").string(var_1165.as_str());
+    if let Some(var_1169) = &input.create_date {
+        object.key("CreateDate").string(var_1169.as_str());
     }
-    if let Some(var_1166) = &input.default_version_id {
-        object.key("DefaultVersionId").string(var_1166.as_str());
+    if let Some(var_1170) = &input.default_version_id {
+        object.key("DefaultVersionId").string(var_1170.as_str());
     }
-    if let Some(var_1167) = &input.description {
-        object.key("Description").string(var_1167.as_str());
+    if let Some(var_1171) = &input.description {
+        object.key("Description").string(var_1171.as_str());
     }
     if input.is_attachable {
         object.key("IsAttachable").boolean(input.is_attachable);
     }
-    if let Some(var_1168) = &input.path {
-        object.key("Path").string(var_1168.as_str());
+    if let Some(var_1172) = &input.path {
+        object.key("Path").string(var_1172.as_str());
     }
     if input.permissions_boundary_usage_count != 0 {
         object.key("PermissionsBoundaryUsageCount").number(
@@ -4904,28 +4931,28 @@ pub fn serialize_structure_crate_model_aws_iam_policy_details(
             aws_smithy_types::Number::NegInt((input.permissions_boundary_usage_count).into()),
         );
     }
-    if let Some(var_1169) = &input.policy_id {
-        object.key("PolicyId").string(var_1169.as_str());
+    if let Some(var_1173) = &input.policy_id {
+        object.key("PolicyId").string(var_1173.as_str());
     }
-    if let Some(var_1170) = &input.policy_name {
-        object.key("PolicyName").string(var_1170.as_str());
+    if let Some(var_1174) = &input.policy_name {
+        object.key("PolicyName").string(var_1174.as_str());
     }
-    if let Some(var_1171) = &input.policy_version_list {
-        let mut array_1172 = object.key("PolicyVersionList").start_array();
-        for item_1173 in var_1171 {
+    if let Some(var_1175) = &input.policy_version_list {
+        let mut array_1176 = object.key("PolicyVersionList").start_array();
+        for item_1177 in var_1175 {
             {
-                let mut object_1174 = array_1172.value().start_object();
+                let mut object_1178 = array_1176.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_iam_policy_version(
-                    &mut object_1174,
-                    item_1173,
+                    &mut object_1178,
+                    item_1177,
                 )?;
-                object_1174.finish();
+                object_1178.finish();
             }
         }
-        array_1172.finish();
+        array_1176.finish();
     }
-    if let Some(var_1175) = &input.update_date {
-        object.key("UpdateDate").string(var_1175.as_str());
+    if let Some(var_1179) = &input.update_date {
+        object.key("UpdateDate").string(var_1179.as_str());
     }
     Ok(())
 }
@@ -4934,64 +4961,64 @@ pub fn serialize_structure_crate_model_aws_api_gateway_v2_stage_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsApiGatewayV2StageDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1176) = &input.client_certificate_id {
-        object.key("ClientCertificateId").string(var_1176.as_str());
+    if let Some(var_1180) = &input.client_certificate_id {
+        object.key("ClientCertificateId").string(var_1180.as_str());
     }
-    if let Some(var_1177) = &input.created_date {
-        object.key("CreatedDate").string(var_1177.as_str());
+    if let Some(var_1181) = &input.created_date {
+        object.key("CreatedDate").string(var_1181.as_str());
     }
-    if let Some(var_1178) = &input.description {
-        object.key("Description").string(var_1178.as_str());
+    if let Some(var_1182) = &input.description {
+        object.key("Description").string(var_1182.as_str());
     }
-    if let Some(var_1179) = &input.default_route_settings {
-        let mut object_1180 = object.key("DefaultRouteSettings").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_v2_route_settings(
-            &mut object_1180,
-            var_1179,
-        )?;
-        object_1180.finish();
-    }
-    if let Some(var_1181) = &input.deployment_id {
-        object.key("DeploymentId").string(var_1181.as_str());
-    }
-    if let Some(var_1182) = &input.last_updated_date {
-        object.key("LastUpdatedDate").string(var_1182.as_str());
-    }
-    if let Some(var_1183) = &input.route_settings {
-        let mut object_1184 = object.key("RouteSettings").start_object();
+    if let Some(var_1183) = &input.default_route_settings {
+        let mut object_1184 = object.key("DefaultRouteSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_api_gateway_v2_route_settings(
             &mut object_1184,
             var_1183,
         )?;
         object_1184.finish();
     }
-    if let Some(var_1185) = &input.stage_name {
-        object.key("StageName").string(var_1185.as_str());
+    if let Some(var_1185) = &input.deployment_id {
+        object.key("DeploymentId").string(var_1185.as_str());
     }
-    if let Some(var_1186) = &input.stage_variables {
-        let mut object_1187 = object.key("StageVariables").start_object();
-        for (key_1188, value_1189) in var_1186 {
+    if let Some(var_1186) = &input.last_updated_date {
+        object.key("LastUpdatedDate").string(var_1186.as_str());
+    }
+    if let Some(var_1187) = &input.route_settings {
+        let mut object_1188 = object.key("RouteSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_v2_route_settings(
+            &mut object_1188,
+            var_1187,
+        )?;
+        object_1188.finish();
+    }
+    if let Some(var_1189) = &input.stage_name {
+        object.key("StageName").string(var_1189.as_str());
+    }
+    if let Some(var_1190) = &input.stage_variables {
+        let mut object_1191 = object.key("StageVariables").start_object();
+        for (key_1192, value_1193) in var_1190 {
             {
-                object_1187.key(key_1188).string(value_1189.as_str());
+                object_1191.key(key_1192).string(value_1193.as_str());
             }
         }
-        object_1187.finish();
-    }
-    if let Some(var_1190) = &input.access_log_settings {
-        let mut object_1191 = object.key("AccessLogSettings").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_access_log_settings(
-            &mut object_1191,
-            var_1190,
-        )?;
         object_1191.finish();
+    }
+    if let Some(var_1194) = &input.access_log_settings {
+        let mut object_1195 = object.key("AccessLogSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_api_gateway_access_log_settings(
+            &mut object_1195,
+            var_1194,
+        )?;
+        object_1195.finish();
     }
     if input.auto_deploy {
         object.key("AutoDeploy").boolean(input.auto_deploy);
     }
-    if let Some(var_1192) = &input.last_deployment_status_message {
+    if let Some(var_1196) = &input.last_deployment_status_message {
         object
             .key("LastDeploymentStatusMessage")
-            .string(var_1192.as_str());
+            .string(var_1196.as_str());
     }
     if input.api_gateway_managed {
         object
@@ -5005,44 +5032,44 @@ pub fn serialize_structure_crate_model_aws_api_gateway_v2_api_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsApiGatewayV2ApiDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1193) = &input.api_endpoint {
-        object.key("ApiEndpoint").string(var_1193.as_str());
+    if let Some(var_1197) = &input.api_endpoint {
+        object.key("ApiEndpoint").string(var_1197.as_str());
     }
-    if let Some(var_1194) = &input.api_id {
-        object.key("ApiId").string(var_1194.as_str());
+    if let Some(var_1198) = &input.api_id {
+        object.key("ApiId").string(var_1198.as_str());
     }
-    if let Some(var_1195) = &input.api_key_selection_expression {
+    if let Some(var_1199) = &input.api_key_selection_expression {
         object
             .key("ApiKeySelectionExpression")
-            .string(var_1195.as_str());
+            .string(var_1199.as_str());
     }
-    if let Some(var_1196) = &input.created_date {
-        object.key("CreatedDate").string(var_1196.as_str());
+    if let Some(var_1200) = &input.created_date {
+        object.key("CreatedDate").string(var_1200.as_str());
     }
-    if let Some(var_1197) = &input.description {
-        object.key("Description").string(var_1197.as_str());
+    if let Some(var_1201) = &input.description {
+        object.key("Description").string(var_1201.as_str());
     }
-    if let Some(var_1198) = &input.version {
-        object.key("Version").string(var_1198.as_str());
+    if let Some(var_1202) = &input.version {
+        object.key("Version").string(var_1202.as_str());
     }
-    if let Some(var_1199) = &input.name {
-        object.key("Name").string(var_1199.as_str());
+    if let Some(var_1203) = &input.name {
+        object.key("Name").string(var_1203.as_str());
     }
-    if let Some(var_1200) = &input.protocol_type {
-        object.key("ProtocolType").string(var_1200.as_str());
+    if let Some(var_1204) = &input.protocol_type {
+        object.key("ProtocolType").string(var_1204.as_str());
     }
-    if let Some(var_1201) = &input.route_selection_expression {
+    if let Some(var_1205) = &input.route_selection_expression {
         object
             .key("RouteSelectionExpression")
-            .string(var_1201.as_str());
+            .string(var_1205.as_str());
     }
-    if let Some(var_1202) = &input.cors_configuration {
-        let mut object_1203 = object.key("CorsConfiguration").start_object();
+    if let Some(var_1206) = &input.cors_configuration {
+        let mut object_1207 = object.key("CorsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_cors_configuration(
-            &mut object_1203,
-            var_1202,
+            &mut object_1207,
+            var_1206,
         )?;
-        object_1203.finish();
+        object_1207.finish();
     }
     Ok(())
 }
@@ -5051,41 +5078,41 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1204) = &input.attribute_definitions {
-        let mut array_1205 = object.key("AttributeDefinitions").start_array();
-        for item_1206 in var_1204 {
+    if let Some(var_1208) = &input.attribute_definitions {
+        let mut array_1209 = object.key("AttributeDefinitions").start_array();
+        for item_1210 in var_1208 {
             {
-                let mut object_1207 = array_1205.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_attribute_definition(&mut object_1207, item_1206)?;
-                object_1207.finish();
+                let mut object_1211 = array_1209.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_attribute_definition(&mut object_1211, item_1210)?;
+                object_1211.finish();
             }
         }
-        array_1205.finish();
+        array_1209.finish();
     }
-    if let Some(var_1208) = &input.billing_mode_summary {
-        let mut object_1209 = object.key("BillingModeSummary").start_object();
+    if let Some(var_1212) = &input.billing_mode_summary {
+        let mut object_1213 = object.key("BillingModeSummary").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_billing_mode_summary(
-            &mut object_1209,
-            var_1208,
+            &mut object_1213,
+            var_1212,
         )?;
-        object_1209.finish();
+        object_1213.finish();
     }
-    if let Some(var_1210) = &input.creation_date_time {
-        object.key("CreationDateTime").string(var_1210.as_str());
+    if let Some(var_1214) = &input.creation_date_time {
+        object.key("CreationDateTime").string(var_1214.as_str());
     }
-    if let Some(var_1211) = &input.global_secondary_indexes {
-        let mut array_1212 = object.key("GlobalSecondaryIndexes").start_array();
-        for item_1213 in var_1211 {
+    if let Some(var_1215) = &input.global_secondary_indexes {
+        let mut array_1216 = object.key("GlobalSecondaryIndexes").start_array();
+        for item_1217 in var_1215 {
             {
-                let mut object_1214 = array_1212.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_global_secondary_index(&mut object_1214, item_1213)?;
-                object_1214.finish();
+                let mut object_1218 = array_1216.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_global_secondary_index(&mut object_1218, item_1217)?;
+                object_1218.finish();
             }
         }
-        array_1212.finish();
+        array_1216.finish();
     }
-    if let Some(var_1215) = &input.global_table_version {
-        object.key("GlobalTableVersion").string(var_1215.as_str());
+    if let Some(var_1219) = &input.global_table_version {
+        object.key("GlobalTableVersion").string(var_1219.as_str());
     }
     if input.item_count != 0 {
         object.key("ItemCount").number(
@@ -5093,85 +5120,85 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_details(
             aws_smithy_types::Number::NegInt((input.item_count).into()),
         );
     }
-    if let Some(var_1216) = &input.key_schema {
-        let mut array_1217 = object.key("KeySchema").start_array();
-        for item_1218 in var_1216 {
+    if let Some(var_1220) = &input.key_schema {
+        let mut array_1221 = object.key("KeySchema").start_array();
+        for item_1222 in var_1220 {
             {
-                let mut object_1219 = array_1217.value().start_object();
+                let mut object_1223 = array_1221.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_key_schema(
-                    &mut object_1219,
-                    item_1218,
+                    &mut object_1223,
+                    item_1222,
                 )?;
-                object_1219.finish();
+                object_1223.finish();
             }
         }
-        array_1217.finish();
+        array_1221.finish();
     }
-    if let Some(var_1220) = &input.latest_stream_arn {
-        object.key("LatestStreamArn").string(var_1220.as_str());
+    if let Some(var_1224) = &input.latest_stream_arn {
+        object.key("LatestStreamArn").string(var_1224.as_str());
     }
-    if let Some(var_1221) = &input.latest_stream_label {
-        object.key("LatestStreamLabel").string(var_1221.as_str());
+    if let Some(var_1225) = &input.latest_stream_label {
+        object.key("LatestStreamLabel").string(var_1225.as_str());
     }
-    if let Some(var_1222) = &input.local_secondary_indexes {
-        let mut array_1223 = object.key("LocalSecondaryIndexes").start_array();
-        for item_1224 in var_1222 {
+    if let Some(var_1226) = &input.local_secondary_indexes {
+        let mut array_1227 = object.key("LocalSecondaryIndexes").start_array();
+        for item_1228 in var_1226 {
             {
-                let mut object_1225 = array_1223.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_local_secondary_index(&mut object_1225, item_1224)?;
-                object_1225.finish();
+                let mut object_1229 = array_1227.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_local_secondary_index(&mut object_1229, item_1228)?;
+                object_1229.finish();
             }
         }
-        array_1223.finish();
+        array_1227.finish();
     }
-    if let Some(var_1226) = &input.provisioned_throughput {
-        let mut object_1227 = object.key("ProvisionedThroughput").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_provisioned_throughput(&mut object_1227, var_1226)?;
-        object_1227.finish();
+    if let Some(var_1230) = &input.provisioned_throughput {
+        let mut object_1231 = object.key("ProvisionedThroughput").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_provisioned_throughput(&mut object_1231, var_1230)?;
+        object_1231.finish();
     }
-    if let Some(var_1228) = &input.replicas {
-        let mut array_1229 = object.key("Replicas").start_array();
-        for item_1230 in var_1228 {
+    if let Some(var_1232) = &input.replicas {
+        let mut array_1233 = object.key("Replicas").start_array();
+        for item_1234 in var_1232 {
             {
-                let mut object_1231 = array_1229.value().start_object();
+                let mut object_1235 = array_1233.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_replica(
-                    &mut object_1231,
-                    item_1230,
+                    &mut object_1235,
+                    item_1234,
                 )?;
-                object_1231.finish();
+                object_1235.finish();
             }
         }
-        array_1229.finish();
+        array_1233.finish();
     }
-    if let Some(var_1232) = &input.restore_summary {
-        let mut object_1233 = object.key("RestoreSummary").start_object();
+    if let Some(var_1236) = &input.restore_summary {
+        let mut object_1237 = object.key("RestoreSummary").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_restore_summary(
-            &mut object_1233,
-            var_1232,
-        )?;
-        object_1233.finish();
-    }
-    if let Some(var_1234) = &input.sse_description {
-        let mut object_1235 = object.key("SseDescription").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_sse_description(
-            &mut object_1235,
-            var_1234,
-        )?;
-        object_1235.finish();
-    }
-    if let Some(var_1236) = &input.stream_specification {
-        let mut object_1237 = object.key("StreamSpecification").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_stream_specification(
             &mut object_1237,
             var_1236,
         )?;
         object_1237.finish();
     }
-    if let Some(var_1238) = &input.table_id {
-        object.key("TableId").string(var_1238.as_str());
+    if let Some(var_1238) = &input.sse_description {
+        let mut object_1239 = object.key("SseDescription").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_sse_description(
+            &mut object_1239,
+            var_1238,
+        )?;
+        object_1239.finish();
     }
-    if let Some(var_1239) = &input.table_name {
-        object.key("TableName").string(var_1239.as_str());
+    if let Some(var_1240) = &input.stream_specification {
+        let mut object_1241 = object.key("StreamSpecification").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_stream_specification(
+            &mut object_1241,
+            var_1240,
+        )?;
+        object_1241.finish();
+    }
+    if let Some(var_1242) = &input.table_id {
+        object.key("TableId").string(var_1242.as_str());
+    }
+    if let Some(var_1243) = &input.table_name {
+        object.key("TableName").string(var_1243.as_str());
     }
     if input.table_size_bytes != 0 {
         object.key("TableSizeBytes").number(
@@ -5179,8 +5206,8 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_details(
             aws_smithy_types::Number::NegInt((input.table_size_bytes).into()),
         );
     }
-    if let Some(var_1240) = &input.table_status {
-        object.key("TableStatus").string(var_1240.as_str());
+    if let Some(var_1244) = &input.table_status {
+        object.key("TableStatus").string(var_1244.as_str());
     }
     Ok(())
 }
@@ -5189,82 +5216,82 @@ pub fn serialize_structure_crate_model_aws_api_gateway_stage_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsApiGatewayStageDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1241) = &input.deployment_id {
-        object.key("DeploymentId").string(var_1241.as_str());
+    if let Some(var_1245) = &input.deployment_id {
+        object.key("DeploymentId").string(var_1245.as_str());
     }
-    if let Some(var_1242) = &input.client_certificate_id {
-        object.key("ClientCertificateId").string(var_1242.as_str());
+    if let Some(var_1246) = &input.client_certificate_id {
+        object.key("ClientCertificateId").string(var_1246.as_str());
     }
-    if let Some(var_1243) = &input.stage_name {
-        object.key("StageName").string(var_1243.as_str());
+    if let Some(var_1247) = &input.stage_name {
+        object.key("StageName").string(var_1247.as_str());
     }
-    if let Some(var_1244) = &input.description {
-        object.key("Description").string(var_1244.as_str());
+    if let Some(var_1248) = &input.description {
+        object.key("Description").string(var_1248.as_str());
     }
     if input.cache_cluster_enabled {
         object
             .key("CacheClusterEnabled")
             .boolean(input.cache_cluster_enabled);
     }
-    if let Some(var_1245) = &input.cache_cluster_size {
-        object.key("CacheClusterSize").string(var_1245.as_str());
+    if let Some(var_1249) = &input.cache_cluster_size {
+        object.key("CacheClusterSize").string(var_1249.as_str());
     }
-    if let Some(var_1246) = &input.cache_cluster_status {
-        object.key("CacheClusterStatus").string(var_1246.as_str());
+    if let Some(var_1250) = &input.cache_cluster_status {
+        object.key("CacheClusterStatus").string(var_1250.as_str());
     }
-    if let Some(var_1247) = &input.method_settings {
-        let mut array_1248 = object.key("MethodSettings").start_array();
-        for item_1249 in var_1247 {
+    if let Some(var_1251) = &input.method_settings {
+        let mut array_1252 = object.key("MethodSettings").start_array();
+        for item_1253 in var_1251 {
             {
-                let mut object_1250 = array_1248.value().start_object();
+                let mut object_1254 = array_1252.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_api_gateway_method_settings(
-                    &mut object_1250,
-                    item_1249,
+                    &mut object_1254,
+                    item_1253,
                 )?;
-                object_1250.finish();
+                object_1254.finish();
             }
         }
-        array_1248.finish();
+        array_1252.finish();
     }
-    if let Some(var_1251) = &input.variables {
-        let mut object_1252 = object.key("Variables").start_object();
-        for (key_1253, value_1254) in var_1251 {
+    if let Some(var_1255) = &input.variables {
+        let mut object_1256 = object.key("Variables").start_object();
+        for (key_1257, value_1258) in var_1255 {
             {
-                object_1252.key(key_1253).string(value_1254.as_str());
+                object_1256.key(key_1257).string(value_1258.as_str());
             }
         }
-        object_1252.finish();
+        object_1256.finish();
     }
-    if let Some(var_1255) = &input.documentation_version {
-        object.key("DocumentationVersion").string(var_1255.as_str());
+    if let Some(var_1259) = &input.documentation_version {
+        object.key("DocumentationVersion").string(var_1259.as_str());
     }
-    if let Some(var_1256) = &input.access_log_settings {
-        let mut object_1257 = object.key("AccessLogSettings").start_object();
+    if let Some(var_1260) = &input.access_log_settings {
+        let mut object_1261 = object.key("AccessLogSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_api_gateway_access_log_settings(
-            &mut object_1257,
-            var_1256,
+            &mut object_1261,
+            var_1260,
         )?;
-        object_1257.finish();
+        object_1261.finish();
     }
-    if let Some(var_1258) = &input.canary_settings {
-        let mut object_1259 = object.key("CanarySettings").start_object();
+    if let Some(var_1262) = &input.canary_settings {
+        let mut object_1263 = object.key("CanarySettings").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_api_gateway_canary_settings(
-            &mut object_1259,
-            var_1258,
+            &mut object_1263,
+            var_1262,
         )?;
-        object_1259.finish();
+        object_1263.finish();
     }
     if input.tracing_enabled {
         object.key("TracingEnabled").boolean(input.tracing_enabled);
     }
-    if let Some(var_1260) = &input.created_date {
-        object.key("CreatedDate").string(var_1260.as_str());
+    if let Some(var_1264) = &input.created_date {
+        object.key("CreatedDate").string(var_1264.as_str());
     }
-    if let Some(var_1261) = &input.last_updated_date {
-        object.key("LastUpdatedDate").string(var_1261.as_str());
+    if let Some(var_1265) = &input.last_updated_date {
+        object.key("LastUpdatedDate").string(var_1265.as_str());
     }
-    if let Some(var_1262) = &input.web_acl_arn {
-        object.key("WebAclArn").string(var_1262.as_str());
+    if let Some(var_1266) = &input.web_acl_arn {
+        object.key("WebAclArn").string(var_1266.as_str());
     }
     Ok(())
 }
@@ -5273,29 +5300,29 @@ pub fn serialize_structure_crate_model_aws_api_gateway_rest_api_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsApiGatewayRestApiDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1263) = &input.id {
-        object.key("Id").string(var_1263.as_str());
+    if let Some(var_1267) = &input.id {
+        object.key("Id").string(var_1267.as_str());
     }
-    if let Some(var_1264) = &input.name {
-        object.key("Name").string(var_1264.as_str());
+    if let Some(var_1268) = &input.name {
+        object.key("Name").string(var_1268.as_str());
     }
-    if let Some(var_1265) = &input.description {
-        object.key("Description").string(var_1265.as_str());
+    if let Some(var_1269) = &input.description {
+        object.key("Description").string(var_1269.as_str());
     }
-    if let Some(var_1266) = &input.created_date {
-        object.key("CreatedDate").string(var_1266.as_str());
+    if let Some(var_1270) = &input.created_date {
+        object.key("CreatedDate").string(var_1270.as_str());
     }
-    if let Some(var_1267) = &input.version {
-        object.key("Version").string(var_1267.as_str());
+    if let Some(var_1271) = &input.version {
+        object.key("Version").string(var_1271.as_str());
     }
-    if let Some(var_1268) = &input.binary_media_types {
-        let mut array_1269 = object.key("BinaryMediaTypes").start_array();
-        for item_1270 in var_1268 {
+    if let Some(var_1272) = &input.binary_media_types {
+        let mut array_1273 = object.key("BinaryMediaTypes").start_array();
+        for item_1274 in var_1272 {
             {
-                array_1269.value().string(item_1270.as_str());
+                array_1273.value().string(item_1274.as_str());
             }
         }
-        array_1269.finish();
+        array_1273.finish();
     }
     if input.minimum_compression_size != 0 {
         object.key("MinimumCompressionSize").number(
@@ -5303,16 +5330,16 @@ pub fn serialize_structure_crate_model_aws_api_gateway_rest_api_details(
             aws_smithy_types::Number::NegInt((input.minimum_compression_size).into()),
         );
     }
-    if let Some(var_1271) = &input.api_key_source {
-        object.key("ApiKeySource").string(var_1271.as_str());
+    if let Some(var_1275) = &input.api_key_source {
+        object.key("ApiKeySource").string(var_1275.as_str());
     }
-    if let Some(var_1272) = &input.endpoint_configuration {
-        let mut object_1273 = object.key("EndpointConfiguration").start_object();
+    if let Some(var_1276) = &input.endpoint_configuration {
+        let mut object_1277 = object.key("EndpointConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_api_gateway_endpoint_configuration(
-            &mut object_1273,
-            var_1272,
+            &mut object_1277,
+            var_1276,
         )?;
-        object_1273.finish();
+        object_1277.finish();
     }
     Ok(())
 }
@@ -5321,23 +5348,23 @@ pub fn serialize_structure_crate_model_aws_cloud_trail_trail_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudTrailTrailDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1274) = &input.cloud_watch_logs_log_group_arn {
+    if let Some(var_1278) = &input.cloud_watch_logs_log_group_arn {
         object
             .key("CloudWatchLogsLogGroupArn")
-            .string(var_1274.as_str());
+            .string(var_1278.as_str());
     }
-    if let Some(var_1275) = &input.cloud_watch_logs_role_arn {
+    if let Some(var_1279) = &input.cloud_watch_logs_role_arn {
         object
             .key("CloudWatchLogsRoleArn")
-            .string(var_1275.as_str());
+            .string(var_1279.as_str());
     }
     if input.has_custom_event_selectors {
         object
             .key("HasCustomEventSelectors")
             .boolean(input.has_custom_event_selectors);
     }
-    if let Some(var_1276) = &input.home_region {
-        object.key("HomeRegion").string(var_1276.as_str());
+    if let Some(var_1280) = &input.home_region {
+        object.key("HomeRegion").string(var_1280.as_str());
     }
     if input.include_global_service_events {
         object
@@ -5354,31 +5381,31 @@ pub fn serialize_structure_crate_model_aws_cloud_trail_trail_details(
             .key("IsOrganizationTrail")
             .boolean(input.is_organization_trail);
     }
-    if let Some(var_1277) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_1277.as_str());
+    if let Some(var_1281) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_1281.as_str());
     }
     if input.log_file_validation_enabled {
         object
             .key("LogFileValidationEnabled")
             .boolean(input.log_file_validation_enabled);
     }
-    if let Some(var_1278) = &input.name {
-        object.key("Name").string(var_1278.as_str());
+    if let Some(var_1282) = &input.name {
+        object.key("Name").string(var_1282.as_str());
     }
-    if let Some(var_1279) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_1279.as_str());
+    if let Some(var_1283) = &input.s3_bucket_name {
+        object.key("S3BucketName").string(var_1283.as_str());
     }
-    if let Some(var_1280) = &input.s3_key_prefix {
-        object.key("S3KeyPrefix").string(var_1280.as_str());
+    if let Some(var_1284) = &input.s3_key_prefix {
+        object.key("S3KeyPrefix").string(var_1284.as_str());
     }
-    if let Some(var_1281) = &input.sns_topic_arn {
-        object.key("SnsTopicArn").string(var_1281.as_str());
+    if let Some(var_1285) = &input.sns_topic_arn {
+        object.key("SnsTopicArn").string(var_1285.as_str());
     }
-    if let Some(var_1282) = &input.sns_topic_name {
-        object.key("SnsTopicName").string(var_1282.as_str());
+    if let Some(var_1286) = &input.sns_topic_name {
+        object.key("SnsTopicName").string(var_1286.as_str());
     }
-    if let Some(var_1283) = &input.trail_arn {
-        object.key("TrailArn").string(var_1283.as_str());
+    if let Some(var_1287) = &input.trail_arn {
+        object.key("TrailArn").string(var_1287.as_str());
     }
     Ok(())
 }
@@ -5387,10 +5414,10 @@ pub fn serialize_structure_crate_model_aws_ssm_patch_compliance_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsSsmPatchComplianceDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1284) = &input.patch {
-        let mut object_1285 = object.key("Patch").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ssm_patch(&mut object_1285, var_1284)?;
-        object_1285.finish();
+    if let Some(var_1288) = &input.patch {
+        let mut object_1289 = object.key("Patch").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ssm_patch(&mut object_1289, var_1288)?;
+        object_1289.finish();
     }
     Ok(())
 }
@@ -5399,116 +5426,116 @@ pub fn serialize_structure_crate_model_aws_certificate_manager_certificate_detai
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCertificateManagerCertificateDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1286) = &input.certificate_authority_arn {
+    if let Some(var_1290) = &input.certificate_authority_arn {
         object
             .key("CertificateAuthorityArn")
-            .string(var_1286.as_str());
+            .string(var_1290.as_str());
     }
-    if let Some(var_1287) = &input.created_at {
-        object.key("CreatedAt").string(var_1287.as_str());
+    if let Some(var_1291) = &input.created_at {
+        object.key("CreatedAt").string(var_1291.as_str());
     }
-    if let Some(var_1288) = &input.domain_name {
-        object.key("DomainName").string(var_1288.as_str());
+    if let Some(var_1292) = &input.domain_name {
+        object.key("DomainName").string(var_1292.as_str());
     }
-    if let Some(var_1289) = &input.domain_validation_options {
-        let mut array_1290 = object.key("DomainValidationOptions").start_array();
-        for item_1291 in var_1289 {
-            {
-                let mut object_1292 = array_1290.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_domain_validation_option(&mut object_1292, item_1291)?;
-                object_1292.finish();
-            }
-        }
-        array_1290.finish();
-    }
-    if let Some(var_1293) = &input.extended_key_usages {
-        let mut array_1294 = object.key("ExtendedKeyUsages").start_array();
+    if let Some(var_1293) = &input.domain_validation_options {
+        let mut array_1294 = object.key("DomainValidationOptions").start_array();
         for item_1295 in var_1293 {
             {
                 let mut object_1296 = array_1294.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_extended_key_usage(&mut object_1296, item_1295)?;
+                crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_domain_validation_option(&mut object_1296, item_1295)?;
                 object_1296.finish();
             }
         }
         array_1294.finish();
     }
-    if let Some(var_1297) = &input.failure_reason {
-        object.key("FailureReason").string(var_1297.as_str());
-    }
-    if let Some(var_1298) = &input.imported_at {
-        object.key("ImportedAt").string(var_1298.as_str());
-    }
-    if let Some(var_1299) = &input.in_use_by {
-        let mut array_1300 = object.key("InUseBy").start_array();
-        for item_1301 in var_1299 {
+    if let Some(var_1297) = &input.extended_key_usages {
+        let mut array_1298 = object.key("ExtendedKeyUsages").start_array();
+        for item_1299 in var_1297 {
             {
-                array_1300.value().string(item_1301.as_str());
+                let mut object_1300 = array_1298.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_extended_key_usage(&mut object_1300, item_1299)?;
+                object_1300.finish();
             }
         }
-        array_1300.finish();
+        array_1298.finish();
     }
-    if let Some(var_1302) = &input.issued_at {
-        object.key("IssuedAt").string(var_1302.as_str());
+    if let Some(var_1301) = &input.failure_reason {
+        object.key("FailureReason").string(var_1301.as_str());
     }
-    if let Some(var_1303) = &input.issuer {
-        object.key("Issuer").string(var_1303.as_str());
+    if let Some(var_1302) = &input.imported_at {
+        object.key("ImportedAt").string(var_1302.as_str());
     }
-    if let Some(var_1304) = &input.key_algorithm {
-        object.key("KeyAlgorithm").string(var_1304.as_str());
-    }
-    if let Some(var_1305) = &input.key_usages {
-        let mut array_1306 = object.key("KeyUsages").start_array();
-        for item_1307 in var_1305 {
+    if let Some(var_1303) = &input.in_use_by {
+        let mut array_1304 = object.key("InUseBy").start_array();
+        for item_1305 in var_1303 {
             {
-                let mut object_1308 = array_1306.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_key_usage(&mut object_1308, item_1307)?;
-                object_1308.finish();
+                array_1304.value().string(item_1305.as_str());
             }
         }
-        array_1306.finish();
+        array_1304.finish();
     }
-    if let Some(var_1309) = &input.not_after {
-        object.key("NotAfter").string(var_1309.as_str());
+    if let Some(var_1306) = &input.issued_at {
+        object.key("IssuedAt").string(var_1306.as_str());
     }
-    if let Some(var_1310) = &input.not_before {
-        object.key("NotBefore").string(var_1310.as_str());
+    if let Some(var_1307) = &input.issuer {
+        object.key("Issuer").string(var_1307.as_str());
     }
-    if let Some(var_1311) = &input.options {
-        let mut object_1312 = object.key("Options").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_options(&mut object_1312, var_1311)?;
-        object_1312.finish();
+    if let Some(var_1308) = &input.key_algorithm {
+        object.key("KeyAlgorithm").string(var_1308.as_str());
     }
-    if let Some(var_1313) = &input.renewal_eligibility {
-        object.key("RenewalEligibility").string(var_1313.as_str());
-    }
-    if let Some(var_1314) = &input.renewal_summary {
-        let mut object_1315 = object.key("RenewalSummary").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_renewal_summary(&mut object_1315, var_1314)?;
-        object_1315.finish();
-    }
-    if let Some(var_1316) = &input.serial {
-        object.key("Serial").string(var_1316.as_str());
-    }
-    if let Some(var_1317) = &input.signature_algorithm {
-        object.key("SignatureAlgorithm").string(var_1317.as_str());
-    }
-    if let Some(var_1318) = &input.status {
-        object.key("Status").string(var_1318.as_str());
-    }
-    if let Some(var_1319) = &input.subject {
-        object.key("Subject").string(var_1319.as_str());
-    }
-    if let Some(var_1320) = &input.subject_alternative_names {
-        let mut array_1321 = object.key("SubjectAlternativeNames").start_array();
-        for item_1322 in var_1320 {
+    if let Some(var_1309) = &input.key_usages {
+        let mut array_1310 = object.key("KeyUsages").start_array();
+        for item_1311 in var_1309 {
             {
-                array_1321.value().string(item_1322.as_str());
+                let mut object_1312 = array_1310.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_key_usage(&mut object_1312, item_1311)?;
+                object_1312.finish();
             }
         }
-        array_1321.finish();
+        array_1310.finish();
     }
-    if let Some(var_1323) = &input.r#type {
-        object.key("Type").string(var_1323.as_str());
+    if let Some(var_1313) = &input.not_after {
+        object.key("NotAfter").string(var_1313.as_str());
+    }
+    if let Some(var_1314) = &input.not_before {
+        object.key("NotBefore").string(var_1314.as_str());
+    }
+    if let Some(var_1315) = &input.options {
+        let mut object_1316 = object.key("Options").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_options(&mut object_1316, var_1315)?;
+        object_1316.finish();
+    }
+    if let Some(var_1317) = &input.renewal_eligibility {
+        object.key("RenewalEligibility").string(var_1317.as_str());
+    }
+    if let Some(var_1318) = &input.renewal_summary {
+        let mut object_1319 = object.key("RenewalSummary").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_renewal_summary(&mut object_1319, var_1318)?;
+        object_1319.finish();
+    }
+    if let Some(var_1320) = &input.serial {
+        object.key("Serial").string(var_1320.as_str());
+    }
+    if let Some(var_1321) = &input.signature_algorithm {
+        object.key("SignatureAlgorithm").string(var_1321.as_str());
+    }
+    if let Some(var_1322) = &input.status {
+        object.key("Status").string(var_1322.as_str());
+    }
+    if let Some(var_1323) = &input.subject {
+        object.key("Subject").string(var_1323.as_str());
+    }
+    if let Some(var_1324) = &input.subject_alternative_names {
+        let mut array_1325 = object.key("SubjectAlternativeNames").start_array();
+        for item_1326 in var_1324 {
+            {
+                array_1325.value().string(item_1326.as_str());
+            }
+        }
+        array_1325.finish();
+    }
+    if let Some(var_1327) = &input.r#type {
+        object.key("Type").string(var_1327.as_str());
     }
     Ok(())
 }
@@ -5528,160 +5555,160 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_details(
             aws_smithy_types::Number::NegInt((input.automated_snapshot_retention_period).into()),
         );
     }
-    if let Some(var_1324) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_1324.as_str());
+    if let Some(var_1328) = &input.availability_zone {
+        object.key("AvailabilityZone").string(var_1328.as_str());
     }
-    if let Some(var_1325) = &input.cluster_availability_status {
+    if let Some(var_1329) = &input.cluster_availability_status {
         object
             .key("ClusterAvailabilityStatus")
-            .string(var_1325.as_str());
+            .string(var_1329.as_str());
     }
-    if let Some(var_1326) = &input.cluster_create_time {
-        object.key("ClusterCreateTime").string(var_1326.as_str());
+    if let Some(var_1330) = &input.cluster_create_time {
+        object.key("ClusterCreateTime").string(var_1330.as_str());
     }
-    if let Some(var_1327) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_1327.as_str());
+    if let Some(var_1331) = &input.cluster_identifier {
+        object.key("ClusterIdentifier").string(var_1331.as_str());
     }
-    if let Some(var_1328) = &input.cluster_nodes {
-        let mut array_1329 = object.key("ClusterNodes").start_array();
-        for item_1330 in var_1328 {
-            {
-                let mut object_1331 = array_1329.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_cluster_node(
-                    &mut object_1331,
-                    item_1330,
-                )?;
-                object_1331.finish();
-            }
-        }
-        array_1329.finish();
-    }
-    if let Some(var_1332) = &input.cluster_parameter_groups {
-        let mut array_1333 = object.key("ClusterParameterGroups").start_array();
+    if let Some(var_1332) = &input.cluster_nodes {
+        let mut array_1333 = object.key("ClusterNodes").start_array();
         for item_1334 in var_1332 {
             {
                 let mut object_1335 = array_1333.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_cluster_parameter_group(&mut object_1335, item_1334)?;
+                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_cluster_node(
+                    &mut object_1335,
+                    item_1334,
+                )?;
                 object_1335.finish();
             }
         }
         array_1333.finish();
     }
-    if let Some(var_1336) = &input.cluster_public_key {
-        object.key("ClusterPublicKey").string(var_1336.as_str());
+    if let Some(var_1336) = &input.cluster_parameter_groups {
+        let mut array_1337 = object.key("ClusterParameterGroups").start_array();
+        for item_1338 in var_1336 {
+            {
+                let mut object_1339 = array_1337.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_cluster_parameter_group(&mut object_1339, item_1338)?;
+                object_1339.finish();
+            }
+        }
+        array_1337.finish();
     }
-    if let Some(var_1337) = &input.cluster_revision_number {
+    if let Some(var_1340) = &input.cluster_public_key {
+        object.key("ClusterPublicKey").string(var_1340.as_str());
+    }
+    if let Some(var_1341) = &input.cluster_revision_number {
         object
             .key("ClusterRevisionNumber")
-            .string(var_1337.as_str());
+            .string(var_1341.as_str());
     }
-    if let Some(var_1338) = &input.cluster_security_groups {
-        let mut array_1339 = object.key("ClusterSecurityGroups").start_array();
-        for item_1340 in var_1338 {
+    if let Some(var_1342) = &input.cluster_security_groups {
+        let mut array_1343 = object.key("ClusterSecurityGroups").start_array();
+        for item_1344 in var_1342 {
             {
-                let mut object_1341 = array_1339.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_cluster_security_group(&mut object_1341, item_1340)?;
-                object_1341.finish();
+                let mut object_1345 = array_1343.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_cluster_security_group(&mut object_1345, item_1344)?;
+                object_1345.finish();
             }
         }
-        array_1339.finish();
+        array_1343.finish();
     }
-    if let Some(var_1342) = &input.cluster_snapshot_copy_status {
-        let mut object_1343 = object.key("ClusterSnapshotCopyStatus").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_cluster_snapshot_copy_status(&mut object_1343, var_1342)?;
-        object_1343.finish();
+    if let Some(var_1346) = &input.cluster_snapshot_copy_status {
+        let mut object_1347 = object.key("ClusterSnapshotCopyStatus").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_cluster_snapshot_copy_status(&mut object_1347, var_1346)?;
+        object_1347.finish();
     }
-    if let Some(var_1344) = &input.cluster_status {
-        object.key("ClusterStatus").string(var_1344.as_str());
+    if let Some(var_1348) = &input.cluster_status {
+        object.key("ClusterStatus").string(var_1348.as_str());
     }
-    if let Some(var_1345) = &input.cluster_subnet_group_name {
+    if let Some(var_1349) = &input.cluster_subnet_group_name {
         object
             .key("ClusterSubnetGroupName")
-            .string(var_1345.as_str());
+            .string(var_1349.as_str());
     }
-    if let Some(var_1346) = &input.cluster_version {
-        object.key("ClusterVersion").string(var_1346.as_str());
+    if let Some(var_1350) = &input.cluster_version {
+        object.key("ClusterVersion").string(var_1350.as_str());
     }
-    if let Some(var_1347) = &input.db_name {
-        object.key("DBName").string(var_1347.as_str());
+    if let Some(var_1351) = &input.db_name {
+        object.key("DBName").string(var_1351.as_str());
     }
-    if let Some(var_1348) = &input.deferred_maintenance_windows {
-        let mut array_1349 = object.key("DeferredMaintenanceWindows").start_array();
-        for item_1350 in var_1348 {
+    if let Some(var_1352) = &input.deferred_maintenance_windows {
+        let mut array_1353 = object.key("DeferredMaintenanceWindows").start_array();
+        for item_1354 in var_1352 {
             {
-                let mut object_1351 = array_1349.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_deferred_maintenance_window(&mut object_1351, item_1350)?;
-                object_1351.finish();
+                let mut object_1355 = array_1353.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_deferred_maintenance_window(&mut object_1355, item_1354)?;
+                object_1355.finish();
             }
         }
-        array_1349.finish();
+        array_1353.finish();
     }
-    if let Some(var_1352) = &input.elastic_ip_status {
-        let mut object_1353 = object.key("ElasticIpStatus").start_object();
+    if let Some(var_1356) = &input.elastic_ip_status {
+        let mut object_1357 = object.key("ElasticIpStatus").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_elastic_ip_status(
-            &mut object_1353,
-            var_1352,
+            &mut object_1357,
+            var_1356,
         )?;
-        object_1353.finish();
+        object_1357.finish();
     }
-    if let Some(var_1354) = &input.elastic_resize_number_of_node_options {
+    if let Some(var_1358) = &input.elastic_resize_number_of_node_options {
         object
             .key("ElasticResizeNumberOfNodeOptions")
-            .string(var_1354.as_str());
+            .string(var_1358.as_str());
     }
     if input.encrypted {
         object.key("Encrypted").boolean(input.encrypted);
     }
-    if let Some(var_1355) = &input.endpoint {
-        let mut object_1356 = object.key("Endpoint").start_object();
+    if let Some(var_1359) = &input.endpoint {
+        let mut object_1360 = object.key("Endpoint").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_endpoint(
-            &mut object_1356,
-            var_1355,
+            &mut object_1360,
+            var_1359,
         )?;
-        object_1356.finish();
+        object_1360.finish();
     }
     if input.enhanced_vpc_routing {
         object
             .key("EnhancedVpcRouting")
             .boolean(input.enhanced_vpc_routing);
     }
-    if let Some(var_1357) = &input.expected_next_snapshot_schedule_time {
+    if let Some(var_1361) = &input.expected_next_snapshot_schedule_time {
         object
             .key("ExpectedNextSnapshotScheduleTime")
-            .string(var_1357.as_str());
+            .string(var_1361.as_str());
     }
-    if let Some(var_1358) = &input.expected_next_snapshot_schedule_time_status {
+    if let Some(var_1362) = &input.expected_next_snapshot_schedule_time_status {
         object
             .key("ExpectedNextSnapshotScheduleTimeStatus")
-            .string(var_1358.as_str());
+            .string(var_1362.as_str());
     }
-    if let Some(var_1359) = &input.hsm_status {
-        let mut object_1360 = object.key("HsmStatus").start_object();
+    if let Some(var_1363) = &input.hsm_status {
+        let mut object_1364 = object.key("HsmStatus").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_hsm_status(
-            &mut object_1360,
-            var_1359,
+            &mut object_1364,
+            var_1363,
         )?;
-        object_1360.finish();
+        object_1364.finish();
     }
-    if let Some(var_1361) = &input.iam_roles {
-        let mut array_1362 = object.key("IamRoles").start_array();
-        for item_1363 in var_1361 {
+    if let Some(var_1365) = &input.iam_roles {
+        let mut array_1366 = object.key("IamRoles").start_array();
+        for item_1367 in var_1365 {
             {
-                let mut object_1364 = array_1362.value().start_object();
+                let mut object_1368 = array_1366.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_iam_role(
-                    &mut object_1364,
-                    item_1363,
+                    &mut object_1368,
+                    item_1367,
                 )?;
-                object_1364.finish();
+                object_1368.finish();
             }
         }
-        array_1362.finish();
+        array_1366.finish();
     }
-    if let Some(var_1365) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_1365.as_str());
+    if let Some(var_1369) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_1369.as_str());
     }
-    if let Some(var_1366) = &input.maintenance_track_name {
-        object.key("MaintenanceTrackName").string(var_1366.as_str());
+    if let Some(var_1370) = &input.maintenance_track_name {
+        object.key("MaintenanceTrackName").string(var_1370.as_str());
     }
     if input.manual_snapshot_retention_period != 0 {
         object.key("ManualSnapshotRetentionPeriod").number(
@@ -5689,16 +5716,16 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_details(
             aws_smithy_types::Number::NegInt((input.manual_snapshot_retention_period).into()),
         );
     }
-    if let Some(var_1367) = &input.master_username {
-        object.key("MasterUsername").string(var_1367.as_str());
+    if let Some(var_1371) = &input.master_username {
+        object.key("MasterUsername").string(var_1371.as_str());
     }
-    if let Some(var_1368) = &input.next_maintenance_window_start_time {
+    if let Some(var_1372) = &input.next_maintenance_window_start_time {
         object
             .key("NextMaintenanceWindowStartTime")
-            .string(var_1368.as_str());
+            .string(var_1372.as_str());
     }
-    if let Some(var_1369) = &input.node_type {
-        object.key("NodeType").string(var_1369.as_str());
+    if let Some(var_1373) = &input.node_type {
+        object.key("NodeType").string(var_1373.as_str());
     }
     if input.number_of_nodes != 0 {
         object.key("NumberOfNodes").number(
@@ -5706,69 +5733,69 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_details(
             aws_smithy_types::Number::NegInt((input.number_of_nodes).into()),
         );
     }
-    if let Some(var_1370) = &input.pending_actions {
-        let mut array_1371 = object.key("PendingActions").start_array();
-        for item_1372 in var_1370 {
+    if let Some(var_1374) = &input.pending_actions {
+        let mut array_1375 = object.key("PendingActions").start_array();
+        for item_1376 in var_1374 {
             {
-                array_1371.value().string(item_1372.as_str());
+                array_1375.value().string(item_1376.as_str());
             }
         }
-        array_1371.finish();
+        array_1375.finish();
     }
-    if let Some(var_1373) = &input.pending_modified_values {
-        let mut object_1374 = object.key("PendingModifiedValues").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_pending_modified_values(&mut object_1374, var_1373)?;
-        object_1374.finish();
+    if let Some(var_1377) = &input.pending_modified_values {
+        let mut object_1378 = object.key("PendingModifiedValues").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_pending_modified_values(&mut object_1378, var_1377)?;
+        object_1378.finish();
     }
-    if let Some(var_1375) = &input.preferred_maintenance_window {
+    if let Some(var_1379) = &input.preferred_maintenance_window {
         object
             .key("PreferredMaintenanceWindow")
-            .string(var_1375.as_str());
+            .string(var_1379.as_str());
     }
     if input.publicly_accessible {
         object
             .key("PubliclyAccessible")
             .boolean(input.publicly_accessible);
     }
-    if let Some(var_1376) = &input.resize_info {
-        let mut object_1377 = object.key("ResizeInfo").start_object();
+    if let Some(var_1380) = &input.resize_info {
+        let mut object_1381 = object.key("ResizeInfo").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_resize_info(
-            &mut object_1377,
-            var_1376,
+            &mut object_1381,
+            var_1380,
         )?;
-        object_1377.finish();
+        object_1381.finish();
     }
-    if let Some(var_1378) = &input.restore_status {
-        let mut object_1379 = object.key("RestoreStatus").start_object();
+    if let Some(var_1382) = &input.restore_status {
+        let mut object_1383 = object.key("RestoreStatus").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_restore_status(
-            &mut object_1379,
-            var_1378,
+            &mut object_1383,
+            var_1382,
         )?;
-        object_1379.finish();
+        object_1383.finish();
     }
-    if let Some(var_1380) = &input.snapshot_schedule_identifier {
+    if let Some(var_1384) = &input.snapshot_schedule_identifier {
         object
             .key("SnapshotScheduleIdentifier")
-            .string(var_1380.as_str());
+            .string(var_1384.as_str());
     }
-    if let Some(var_1381) = &input.snapshot_schedule_state {
+    if let Some(var_1385) = &input.snapshot_schedule_state {
         object
             .key("SnapshotScheduleState")
-            .string(var_1381.as_str());
+            .string(var_1385.as_str());
     }
-    if let Some(var_1382) = &input.vpc_id {
-        object.key("VpcId").string(var_1382.as_str());
+    if let Some(var_1386) = &input.vpc_id {
+        object.key("VpcId").string(var_1386.as_str());
     }
-    if let Some(var_1383) = &input.vpc_security_groups {
-        let mut array_1384 = object.key("VpcSecurityGroups").start_array();
-        for item_1385 in var_1383 {
+    if let Some(var_1387) = &input.vpc_security_groups {
+        let mut array_1388 = object.key("VpcSecurityGroups").start_array();
+        for item_1389 in var_1387 {
             {
-                let mut object_1386 = array_1384.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_vpc_security_group(&mut object_1386, item_1385)?;
-                object_1386.finish();
+                let mut object_1390 = array_1388.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_vpc_security_group(&mut object_1390, item_1389)?;
+                object_1390.finish();
             }
         }
-        array_1384.finish();
+        array_1388.finish();
     }
     Ok(())
 }
@@ -5777,122 +5804,122 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElbLoadBalancerDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1387) = &input.availability_zones {
-        let mut array_1388 = object.key("AvailabilityZones").start_array();
-        for item_1389 in var_1387 {
+    if let Some(var_1391) = &input.availability_zones {
+        let mut array_1392 = object.key("AvailabilityZones").start_array();
+        for item_1393 in var_1391 {
             {
-                array_1388.value().string(item_1389.as_str());
+                array_1392.value().string(item_1393.as_str());
             }
         }
-        array_1388.finish();
+        array_1392.finish();
     }
-    if let Some(var_1390) = &input.backend_server_descriptions {
-        let mut array_1391 = object.key("BackendServerDescriptions").start_array();
-        for item_1392 in var_1390 {
+    if let Some(var_1394) = &input.backend_server_descriptions {
+        let mut array_1395 = object.key("BackendServerDescriptions").start_array();
+        for item_1396 in var_1394 {
             {
-                let mut object_1393 = array_1391.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_backend_server_description(&mut object_1393, item_1392)?;
-                object_1393.finish();
+                let mut object_1397 = array_1395.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_backend_server_description(&mut object_1397, item_1396)?;
+                object_1397.finish();
             }
         }
-        array_1391.finish();
+        array_1395.finish();
     }
-    if let Some(var_1394) = &input.canonical_hosted_zone_name {
+    if let Some(var_1398) = &input.canonical_hosted_zone_name {
         object
             .key("CanonicalHostedZoneName")
-            .string(var_1394.as_str());
+            .string(var_1398.as_str());
     }
-    if let Some(var_1395) = &input.canonical_hosted_zone_name_id {
+    if let Some(var_1399) = &input.canonical_hosted_zone_name_id {
         object
             .key("CanonicalHostedZoneNameID")
-            .string(var_1395.as_str());
+            .string(var_1399.as_str());
     }
-    if let Some(var_1396) = &input.created_time {
-        object.key("CreatedTime").string(var_1396.as_str());
+    if let Some(var_1400) = &input.created_time {
+        object.key("CreatedTime").string(var_1400.as_str());
     }
-    if let Some(var_1397) = &input.dns_name {
-        object.key("DnsName").string(var_1397.as_str());
+    if let Some(var_1401) = &input.dns_name {
+        object.key("DnsName").string(var_1401.as_str());
     }
-    if let Some(var_1398) = &input.health_check {
-        let mut object_1399 = object.key("HealthCheck").start_object();
+    if let Some(var_1402) = &input.health_check {
+        let mut object_1403 = object.key("HealthCheck").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_health_check(
-            &mut object_1399,
-            var_1398,
+            &mut object_1403,
+            var_1402,
         )?;
-        object_1399.finish();
+        object_1403.finish();
     }
-    if let Some(var_1400) = &input.instances {
-        let mut array_1401 = object.key("Instances").start_array();
-        for item_1402 in var_1400 {
-            {
-                let mut object_1403 = array_1401.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_instance(
-                    &mut object_1403,
-                    item_1402,
-                )?;
-                object_1403.finish();
-            }
-        }
-        array_1401.finish();
-    }
-    if let Some(var_1404) = &input.listener_descriptions {
-        let mut array_1405 = object.key("ListenerDescriptions").start_array();
+    if let Some(var_1404) = &input.instances {
+        let mut array_1405 = object.key("Instances").start_array();
         for item_1406 in var_1404 {
             {
                 let mut object_1407 = array_1405.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_listener_description(&mut object_1407, item_1406)?;
+                crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_instance(
+                    &mut object_1407,
+                    item_1406,
+                )?;
                 object_1407.finish();
             }
         }
         array_1405.finish();
     }
-    if let Some(var_1408) = &input.load_balancer_attributes {
-        let mut object_1409 = object.key("LoadBalancerAttributes").start_object();
+    if let Some(var_1408) = &input.listener_descriptions {
+        let mut array_1409 = object.key("ListenerDescriptions").start_array();
+        for item_1410 in var_1408 {
+            {
+                let mut object_1411 = array_1409.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_listener_description(&mut object_1411, item_1410)?;
+                object_1411.finish();
+            }
+        }
+        array_1409.finish();
+    }
+    if let Some(var_1412) = &input.load_balancer_attributes {
+        let mut object_1413 = object.key("LoadBalancerAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_attributes(
-            &mut object_1409,
-            var_1408,
+            &mut object_1413,
+            var_1412,
         )?;
-        object_1409.finish();
+        object_1413.finish();
     }
-    if let Some(var_1410) = &input.load_balancer_name {
-        object.key("LoadBalancerName").string(var_1410.as_str());
+    if let Some(var_1414) = &input.load_balancer_name {
+        object.key("LoadBalancerName").string(var_1414.as_str());
     }
-    if let Some(var_1411) = &input.policies {
-        let mut object_1412 = object.key("Policies").start_object();
+    if let Some(var_1415) = &input.policies {
+        let mut object_1416 = object.key("Policies").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_policies(
-            &mut object_1412,
-            var_1411,
+            &mut object_1416,
+            var_1415,
         )?;
-        object_1412.finish();
+        object_1416.finish();
     }
-    if let Some(var_1413) = &input.scheme {
-        object.key("Scheme").string(var_1413.as_str());
+    if let Some(var_1417) = &input.scheme {
+        object.key("Scheme").string(var_1417.as_str());
     }
-    if let Some(var_1414) = &input.security_groups {
-        let mut array_1415 = object.key("SecurityGroups").start_array();
-        for item_1416 in var_1414 {
+    if let Some(var_1418) = &input.security_groups {
+        let mut array_1419 = object.key("SecurityGroups").start_array();
+        for item_1420 in var_1418 {
             {
-                array_1415.value().string(item_1416.as_str());
+                array_1419.value().string(item_1420.as_str());
             }
         }
-        array_1415.finish();
+        array_1419.finish();
     }
-    if let Some(var_1417) = &input.source_security_group {
-        let mut object_1418 = object.key("SourceSecurityGroup").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_source_security_group(&mut object_1418, var_1417)?;
-        object_1418.finish();
+    if let Some(var_1421) = &input.source_security_group {
+        let mut object_1422 = object.key("SourceSecurityGroup").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_source_security_group(&mut object_1422, var_1421)?;
+        object_1422.finish();
     }
-    if let Some(var_1419) = &input.subnets {
-        let mut array_1420 = object.key("Subnets").start_array();
-        for item_1421 in var_1419 {
+    if let Some(var_1423) = &input.subnets {
+        let mut array_1424 = object.key("Subnets").start_array();
+        for item_1425 in var_1423 {
             {
-                array_1420.value().string(item_1421.as_str());
+                array_1424.value().string(item_1425.as_str());
             }
         }
-        array_1420.finish();
+        array_1424.finish();
     }
-    if let Some(var_1422) = &input.vpc_id {
-        object.key("VpcId").string(var_1422.as_str());
+    if let Some(var_1426) = &input.vpc_id {
+        object.key("VpcId").string(var_1426.as_str());
     }
     Ok(())
 }
@@ -5901,45 +5928,45 @@ pub fn serialize_structure_crate_model_aws_iam_group_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamGroupDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1423) = &input.attached_managed_policies {
-        let mut array_1424 = object.key("AttachedManagedPolicies").start_array();
-        for item_1425 in var_1423 {
+    if let Some(var_1427) = &input.attached_managed_policies {
+        let mut array_1428 = object.key("AttachedManagedPolicies").start_array();
+        for item_1429 in var_1427 {
             {
-                let mut object_1426 = array_1424.value().start_object();
+                let mut object_1430 = array_1428.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_iam_attached_managed_policy(
-                    &mut object_1426,
-                    item_1425,
+                    &mut object_1430,
+                    item_1429,
                 )?;
-                object_1426.finish();
+                object_1430.finish();
             }
         }
-        array_1424.finish();
+        array_1428.finish();
     }
-    if let Some(var_1427) = &input.create_date {
-        object.key("CreateDate").string(var_1427.as_str());
+    if let Some(var_1431) = &input.create_date {
+        object.key("CreateDate").string(var_1431.as_str());
     }
-    if let Some(var_1428) = &input.group_id {
-        object.key("GroupId").string(var_1428.as_str());
+    if let Some(var_1432) = &input.group_id {
+        object.key("GroupId").string(var_1432.as_str());
     }
-    if let Some(var_1429) = &input.group_name {
-        object.key("GroupName").string(var_1429.as_str());
+    if let Some(var_1433) = &input.group_name {
+        object.key("GroupName").string(var_1433.as_str());
     }
-    if let Some(var_1430) = &input.group_policy_list {
-        let mut array_1431 = object.key("GroupPolicyList").start_array();
-        for item_1432 in var_1430 {
+    if let Some(var_1434) = &input.group_policy_list {
+        let mut array_1435 = object.key("GroupPolicyList").start_array();
+        for item_1436 in var_1434 {
             {
-                let mut object_1433 = array_1431.value().start_object();
+                let mut object_1437 = array_1435.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_iam_group_policy(
-                    &mut object_1433,
-                    item_1432,
+                    &mut object_1437,
+                    item_1436,
                 )?;
-                object_1433.finish();
+                object_1437.finish();
             }
         }
-        array_1431.finish();
+        array_1435.finish();
     }
-    if let Some(var_1434) = &input.path {
-        object.key("Path").string(var_1434.as_str());
+    if let Some(var_1438) = &input.path {
+        object.key("Path").string(var_1438.as_str());
     }
     Ok(())
 }
@@ -5948,69 +5975,69 @@ pub fn serialize_structure_crate_model_aws_iam_role_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamRoleDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1435) = &input.assume_role_policy_document {
+    if let Some(var_1439) = &input.assume_role_policy_document {
         object
             .key("AssumeRolePolicyDocument")
-            .string(var_1435.as_str());
+            .string(var_1439.as_str());
     }
-    if let Some(var_1436) = &input.attached_managed_policies {
-        let mut array_1437 = object.key("AttachedManagedPolicies").start_array();
-        for item_1438 in var_1436 {
+    if let Some(var_1440) = &input.attached_managed_policies {
+        let mut array_1441 = object.key("AttachedManagedPolicies").start_array();
+        for item_1442 in var_1440 {
             {
-                let mut object_1439 = array_1437.value().start_object();
+                let mut object_1443 = array_1441.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_iam_attached_managed_policy(
-                    &mut object_1439,
-                    item_1438,
+                    &mut object_1443,
+                    item_1442,
                 )?;
-                object_1439.finish();
+                object_1443.finish();
             }
         }
-        array_1437.finish();
+        array_1441.finish();
     }
-    if let Some(var_1440) = &input.create_date {
-        object.key("CreateDate").string(var_1440.as_str());
+    if let Some(var_1444) = &input.create_date {
+        object.key("CreateDate").string(var_1444.as_str());
     }
-    if let Some(var_1441) = &input.instance_profile_list {
-        let mut array_1442 = object.key("InstanceProfileList").start_array();
-        for item_1443 in var_1441 {
+    if let Some(var_1445) = &input.instance_profile_list {
+        let mut array_1446 = object.key("InstanceProfileList").start_array();
+        for item_1447 in var_1445 {
             {
-                let mut object_1444 = array_1442.value().start_object();
+                let mut object_1448 = array_1446.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_iam_instance_profile(
-                    &mut object_1444,
-                    item_1443,
+                    &mut object_1448,
+                    item_1447,
                 )?;
-                object_1444.finish();
+                object_1448.finish();
             }
         }
-        array_1442.finish();
+        array_1446.finish();
     }
-    if let Some(var_1445) = &input.permissions_boundary {
-        let mut object_1446 = object.key("PermissionsBoundary").start_object();
+    if let Some(var_1449) = &input.permissions_boundary {
+        let mut object_1450 = object.key("PermissionsBoundary").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_iam_permissions_boundary(
-            &mut object_1446,
-            var_1445,
+            &mut object_1450,
+            var_1449,
         )?;
-        object_1446.finish();
+        object_1450.finish();
     }
-    if let Some(var_1447) = &input.role_id {
-        object.key("RoleId").string(var_1447.as_str());
+    if let Some(var_1451) = &input.role_id {
+        object.key("RoleId").string(var_1451.as_str());
     }
-    if let Some(var_1448) = &input.role_name {
-        object.key("RoleName").string(var_1448.as_str());
+    if let Some(var_1452) = &input.role_name {
+        object.key("RoleName").string(var_1452.as_str());
     }
-    if let Some(var_1449) = &input.role_policy_list {
-        let mut array_1450 = object.key("RolePolicyList").start_array();
-        for item_1451 in var_1449 {
+    if let Some(var_1453) = &input.role_policy_list {
+        let mut array_1454 = object.key("RolePolicyList").start_array();
+        for item_1455 in var_1453 {
             {
-                let mut object_1452 = array_1450.value().start_object();
+                let mut object_1456 = array_1454.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_iam_role_policy(
-                    &mut object_1452,
-                    item_1451,
+                    &mut object_1456,
+                    item_1455,
                 )?;
-                object_1452.finish();
+                object_1456.finish();
             }
         }
-        array_1450.finish();
+        array_1454.finish();
     }
     if input.max_session_duration != 0 {
         object.key("MaxSessionDuration").number(
@@ -6018,8 +6045,8 @@ pub fn serialize_structure_crate_model_aws_iam_role_details(
             aws_smithy_types::Number::NegInt((input.max_session_duration).into()),
         );
     }
-    if let Some(var_1453) = &input.path {
-        object.key("Path").string(var_1453.as_str());
+    if let Some(var_1457) = &input.path {
+        object.key("Path").string(var_1457.as_str());
     }
     Ok(())
 }
@@ -6028,8 +6055,8 @@ pub fn serialize_structure_crate_model_aws_kms_key_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsKmsKeyDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1454) = &input.aws_account_id {
-        object.key("AWSAccountId").string(var_1454.as_str());
+    if let Some(var_1458) = &input.aws_account_id {
+        object.key("AWSAccountId").string(var_1458.as_str());
     }
     if input.creation_date != 0.0 {
         object.key("CreationDate").number(
@@ -6037,20 +6064,20 @@ pub fn serialize_structure_crate_model_aws_kms_key_details(
             aws_smithy_types::Number::Float((input.creation_date).into()),
         );
     }
-    if let Some(var_1455) = &input.key_id {
-        object.key("KeyId").string(var_1455.as_str());
+    if let Some(var_1459) = &input.key_id {
+        object.key("KeyId").string(var_1459.as_str());
     }
-    if let Some(var_1456) = &input.key_manager {
-        object.key("KeyManager").string(var_1456.as_str());
+    if let Some(var_1460) = &input.key_manager {
+        object.key("KeyManager").string(var_1460.as_str());
     }
-    if let Some(var_1457) = &input.key_state {
-        object.key("KeyState").string(var_1457.as_str());
+    if let Some(var_1461) = &input.key_state {
+        object.key("KeyState").string(var_1461.as_str());
     }
-    if let Some(var_1458) = &input.origin {
-        object.key("Origin").string(var_1458.as_str());
+    if let Some(var_1462) = &input.origin {
+        object.key("Origin").string(var_1462.as_str());
     }
-    if let Some(var_1459) = &input.description {
-        object.key("Description").string(var_1459.as_str());
+    if let Some(var_1463) = &input.description {
+        object.key("Description").string(var_1463.as_str());
     }
     if input.key_rotation_status {
         object
@@ -6064,61 +6091,61 @@ pub fn serialize_structure_crate_model_aws_lambda_function_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsLambdaFunctionDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1460) = &input.code {
-        let mut object_1461 = object.key("Code").start_object();
+    if let Some(var_1464) = &input.code {
+        let mut object_1465 = object.key("Code").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_lambda_function_code(
-            &mut object_1461,
-            var_1460,
+            &mut object_1465,
+            var_1464,
         )?;
-        object_1461.finish();
+        object_1465.finish();
     }
-    if let Some(var_1462) = &input.code_sha256 {
-        object.key("CodeSha256").string(var_1462.as_str());
+    if let Some(var_1466) = &input.code_sha256 {
+        object.key("CodeSha256").string(var_1466.as_str());
     }
-    if let Some(var_1463) = &input.dead_letter_config {
-        let mut object_1464 = object.key("DeadLetterConfig").start_object();
+    if let Some(var_1467) = &input.dead_letter_config {
+        let mut object_1468 = object.key("DeadLetterConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_lambda_function_dead_letter_config(
-            &mut object_1464,
-            var_1463,
+            &mut object_1468,
+            var_1467,
         )?;
-        object_1464.finish();
+        object_1468.finish();
     }
-    if let Some(var_1465) = &input.environment {
-        let mut object_1466 = object.key("Environment").start_object();
+    if let Some(var_1469) = &input.environment {
+        let mut object_1470 = object.key("Environment").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_lambda_function_environment(
-            &mut object_1466,
-            var_1465,
+            &mut object_1470,
+            var_1469,
         )?;
-        object_1466.finish();
+        object_1470.finish();
     }
-    if let Some(var_1467) = &input.function_name {
-        object.key("FunctionName").string(var_1467.as_str());
+    if let Some(var_1471) = &input.function_name {
+        object.key("FunctionName").string(var_1471.as_str());
     }
-    if let Some(var_1468) = &input.handler {
-        object.key("Handler").string(var_1468.as_str());
+    if let Some(var_1472) = &input.handler {
+        object.key("Handler").string(var_1472.as_str());
     }
-    if let Some(var_1469) = &input.kms_key_arn {
-        object.key("KmsKeyArn").string(var_1469.as_str());
+    if let Some(var_1473) = &input.kms_key_arn {
+        object.key("KmsKeyArn").string(var_1473.as_str());
     }
-    if let Some(var_1470) = &input.last_modified {
-        object.key("LastModified").string(var_1470.as_str());
+    if let Some(var_1474) = &input.last_modified {
+        object.key("LastModified").string(var_1474.as_str());
     }
-    if let Some(var_1471) = &input.layers {
-        let mut array_1472 = object.key("Layers").start_array();
-        for item_1473 in var_1471 {
+    if let Some(var_1475) = &input.layers {
+        let mut array_1476 = object.key("Layers").start_array();
+        for item_1477 in var_1475 {
             {
-                let mut object_1474 = array_1472.value().start_object();
+                let mut object_1478 = array_1476.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_lambda_function_layer(
-                    &mut object_1474,
-                    item_1473,
+                    &mut object_1478,
+                    item_1477,
                 )?;
-                object_1474.finish();
+                object_1478.finish();
             }
         }
-        array_1472.finish();
+        array_1476.finish();
     }
-    if let Some(var_1475) = &input.master_arn {
-        object.key("MasterArn").string(var_1475.as_str());
+    if let Some(var_1479) = &input.master_arn {
+        object.key("MasterArn").string(var_1479.as_str());
     }
     if input.memory_size != 0 {
         object.key("MemorySize").number(
@@ -6126,14 +6153,14 @@ pub fn serialize_structure_crate_model_aws_lambda_function_details(
             aws_smithy_types::Number::NegInt((input.memory_size).into()),
         );
     }
-    if let Some(var_1476) = &input.revision_id {
-        object.key("RevisionId").string(var_1476.as_str());
+    if let Some(var_1480) = &input.revision_id {
+        object.key("RevisionId").string(var_1480.as_str());
     }
-    if let Some(var_1477) = &input.role {
-        object.key("Role").string(var_1477.as_str());
+    if let Some(var_1481) = &input.role {
+        object.key("Role").string(var_1481.as_str());
     }
-    if let Some(var_1478) = &input.runtime {
-        object.key("Runtime").string(var_1478.as_str());
+    if let Some(var_1482) = &input.runtime {
+        object.key("Runtime").string(var_1482.as_str());
     }
     if input.timeout != 0 {
         object.key("Timeout").number(
@@ -6141,24 +6168,24 @@ pub fn serialize_structure_crate_model_aws_lambda_function_details(
             aws_smithy_types::Number::NegInt((input.timeout).into()),
         );
     }
-    if let Some(var_1479) = &input.tracing_config {
-        let mut object_1480 = object.key("TracingConfig").start_object();
+    if let Some(var_1483) = &input.tracing_config {
+        let mut object_1484 = object.key("TracingConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_lambda_function_tracing_config(
-            &mut object_1480,
-            var_1479,
+            &mut object_1484,
+            var_1483,
         )?;
-        object_1480.finish();
+        object_1484.finish();
     }
-    if let Some(var_1481) = &input.vpc_config {
-        let mut object_1482 = object.key("VpcConfig").start_object();
+    if let Some(var_1485) = &input.vpc_config {
+        let mut object_1486 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_lambda_function_vpc_config(
-            &mut object_1482,
-            var_1481,
+            &mut object_1486,
+            var_1485,
         )?;
-        object_1482.finish();
+        object_1486.finish();
     }
-    if let Some(var_1483) = &input.version {
-        object.key("Version").string(var_1483.as_str());
+    if let Some(var_1487) = &input.version {
+        object.key("Version").string(var_1487.as_str());
     }
     Ok(())
 }
@@ -6173,17 +6200,17 @@ pub fn serialize_structure_crate_model_aws_lambda_layer_version_details(
             aws_smithy_types::Number::NegInt((input.version).into()),
         );
     }
-    if let Some(var_1484) = &input.compatible_runtimes {
-        let mut array_1485 = object.key("CompatibleRuntimes").start_array();
-        for item_1486 in var_1484 {
+    if let Some(var_1488) = &input.compatible_runtimes {
+        let mut array_1489 = object.key("CompatibleRuntimes").start_array();
+        for item_1490 in var_1488 {
             {
-                array_1485.value().string(item_1486.as_str());
+                array_1489.value().string(item_1490.as_str());
             }
         }
-        array_1485.finish();
+        array_1489.finish();
     }
-    if let Some(var_1487) = &input.created_date {
-        object.key("CreatedDate").string(var_1487.as_str());
+    if let Some(var_1491) = &input.created_date {
+        object.key("CreatedDate").string(var_1491.as_str());
     }
     Ok(())
 }
@@ -6192,30 +6219,30 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbInstanceDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1488) = &input.associated_roles {
-        let mut array_1489 = object.key("AssociatedRoles").start_array();
-        for item_1490 in var_1488 {
+    if let Some(var_1492) = &input.associated_roles {
+        let mut array_1493 = object.key("AssociatedRoles").start_array();
+        for item_1494 in var_1492 {
             {
-                let mut object_1491 = array_1489.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_rds_db_instance_associated_role(&mut object_1491, item_1490)?;
-                object_1491.finish();
+                let mut object_1495 = array_1493.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_rds_db_instance_associated_role(&mut object_1495, item_1494)?;
+                object_1495.finish();
             }
         }
-        array_1489.finish();
+        array_1493.finish();
     }
-    if let Some(var_1492) = &input.ca_certificate_identifier {
+    if let Some(var_1496) = &input.ca_certificate_identifier {
         object
             .key("CACertificateIdentifier")
-            .string(var_1492.as_str());
+            .string(var_1496.as_str());
     }
-    if let Some(var_1493) = &input.db_cluster_identifier {
-        object.key("DBClusterIdentifier").string(var_1493.as_str());
+    if let Some(var_1497) = &input.db_cluster_identifier {
+        object.key("DBClusterIdentifier").string(var_1497.as_str());
     }
-    if let Some(var_1494) = &input.db_instance_identifier {
-        object.key("DBInstanceIdentifier").string(var_1494.as_str());
+    if let Some(var_1498) = &input.db_instance_identifier {
+        object.key("DBInstanceIdentifier").string(var_1498.as_str());
     }
-    if let Some(var_1495) = &input.db_instance_class {
-        object.key("DBInstanceClass").string(var_1495.as_str());
+    if let Some(var_1499) = &input.db_instance_class {
+        object.key("DBInstanceClass").string(var_1499.as_str());
     }
     if input.db_instance_port != 0 {
         object.key("DbInstancePort").number(
@@ -6223,41 +6250,41 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_details(
             aws_smithy_types::Number::NegInt((input.db_instance_port).into()),
         );
     }
-    if let Some(var_1496) = &input.dbi_resource_id {
-        object.key("DbiResourceId").string(var_1496.as_str());
+    if let Some(var_1500) = &input.dbi_resource_id {
+        object.key("DbiResourceId").string(var_1500.as_str());
     }
-    if let Some(var_1497) = &input.db_name {
-        object.key("DBName").string(var_1497.as_str());
+    if let Some(var_1501) = &input.db_name {
+        object.key("DBName").string(var_1501.as_str());
     }
     if input.deletion_protection {
         object
             .key("DeletionProtection")
             .boolean(input.deletion_protection);
     }
-    if let Some(var_1498) = &input.endpoint {
-        let mut object_1499 = object.key("Endpoint").start_object();
+    if let Some(var_1502) = &input.endpoint {
+        let mut object_1503 = object.key("Endpoint").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_rds_db_instance_endpoint(
-            &mut object_1499,
-            var_1498,
+            &mut object_1503,
+            var_1502,
         )?;
-        object_1499.finish();
+        object_1503.finish();
     }
-    if let Some(var_1500) = &input.engine {
-        object.key("Engine").string(var_1500.as_str());
+    if let Some(var_1504) = &input.engine {
+        object.key("Engine").string(var_1504.as_str());
     }
-    if let Some(var_1501) = &input.engine_version {
-        object.key("EngineVersion").string(var_1501.as_str());
+    if let Some(var_1505) = &input.engine_version {
+        object.key("EngineVersion").string(var_1505.as_str());
     }
     if input.iam_database_authentication_enabled {
         object
             .key("IAMDatabaseAuthenticationEnabled")
             .boolean(input.iam_database_authentication_enabled);
     }
-    if let Some(var_1502) = &input.instance_create_time {
-        object.key("InstanceCreateTime").string(var_1502.as_str());
+    if let Some(var_1506) = &input.instance_create_time {
+        object.key("InstanceCreateTime").string(var_1506.as_str());
     }
-    if let Some(var_1503) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_1503.as_str());
+    if let Some(var_1507) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_1507.as_str());
     }
     if input.publicly_accessible {
         object
@@ -6269,33 +6296,33 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_details(
             .key("StorageEncrypted")
             .boolean(input.storage_encrypted);
     }
-    if let Some(var_1504) = &input.tde_credential_arn {
-        object.key("TdeCredentialArn").string(var_1504.as_str());
+    if let Some(var_1508) = &input.tde_credential_arn {
+        object.key("TdeCredentialArn").string(var_1508.as_str());
     }
-    if let Some(var_1505) = &input.vpc_security_groups {
-        let mut array_1506 = object.key("VpcSecurityGroups").start_array();
-        for item_1507 in var_1505 {
+    if let Some(var_1509) = &input.vpc_security_groups {
+        let mut array_1510 = object.key("VpcSecurityGroups").start_array();
+        for item_1511 in var_1509 {
             {
-                let mut object_1508 = array_1506.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_rds_db_instance_vpc_security_group(&mut object_1508, item_1507)?;
-                object_1508.finish();
+                let mut object_1512 = array_1510.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_rds_db_instance_vpc_security_group(&mut object_1512, item_1511)?;
+                object_1512.finish();
             }
         }
-        array_1506.finish();
+        array_1510.finish();
     }
     if input.multi_az {
         object.key("MultiAz").boolean(input.multi_az);
     }
-    if let Some(var_1509) = &input.enhanced_monitoring_resource_arn {
+    if let Some(var_1513) = &input.enhanced_monitoring_resource_arn {
         object
             .key("EnhancedMonitoringResourceArn")
-            .string(var_1509.as_str());
+            .string(var_1513.as_str());
     }
-    if let Some(var_1510) = &input.db_instance_status {
-        object.key("DbInstanceStatus").string(var_1510.as_str());
+    if let Some(var_1514) = &input.db_instance_status {
+        object.key("DbInstanceStatus").string(var_1514.as_str());
     }
-    if let Some(var_1511) = &input.master_username {
-        object.key("MasterUsername").string(var_1511.as_str());
+    if let Some(var_1515) = &input.master_username {
+        object.key("MasterUsername").string(var_1515.as_str());
     }
     if input.allocated_storage != 0 {
         object.key("AllocatedStorage").number(
@@ -6303,10 +6330,10 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_details(
             aws_smithy_types::Number::NegInt((input.allocated_storage).into()),
         );
     }
-    if let Some(var_1512) = &input.preferred_backup_window {
+    if let Some(var_1516) = &input.preferred_backup_window {
         object
             .key("PreferredBackupWindow")
-            .string(var_1512.as_str());
+            .string(var_1516.as_str());
     }
     if input.backup_retention_period != 0 {
         object.key("BackupRetentionPeriod").number(
@@ -6314,86 +6341,86 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_details(
             aws_smithy_types::Number::NegInt((input.backup_retention_period).into()),
         );
     }
-    if let Some(var_1513) = &input.db_security_groups {
-        let mut array_1514 = object.key("DbSecurityGroups").start_array();
-        for item_1515 in var_1513 {
+    if let Some(var_1517) = &input.db_security_groups {
+        let mut array_1518 = object.key("DbSecurityGroups").start_array();
+        for item_1519 in var_1517 {
             {
-                array_1514.value().string(item_1515.as_str());
+                array_1518.value().string(item_1519.as_str());
             }
         }
-        array_1514.finish();
+        array_1518.finish();
     }
-    if let Some(var_1516) = &input.db_parameter_groups {
-        let mut array_1517 = object.key("DbParameterGroups").start_array();
-        for item_1518 in var_1516 {
+    if let Some(var_1520) = &input.db_parameter_groups {
+        let mut array_1521 = object.key("DbParameterGroups").start_array();
+        for item_1522 in var_1520 {
             {
-                let mut object_1519 = array_1517.value().start_object();
+                let mut object_1523 = array_1521.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_rds_db_parameter_group(
-                    &mut object_1519,
-                    item_1518,
+                    &mut object_1523,
+                    item_1522,
                 )?;
-                object_1519.finish();
+                object_1523.finish();
             }
         }
-        array_1517.finish();
+        array_1521.finish();
     }
-    if let Some(var_1520) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_1520.as_str());
+    if let Some(var_1524) = &input.availability_zone {
+        object.key("AvailabilityZone").string(var_1524.as_str());
     }
-    if let Some(var_1521) = &input.db_subnet_group {
-        let mut object_1522 = object.key("DbSubnetGroup").start_object();
+    if let Some(var_1525) = &input.db_subnet_group {
+        let mut object_1526 = object.key("DbSubnetGroup").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_rds_db_subnet_group(
-            &mut object_1522,
-            var_1521,
+            &mut object_1526,
+            var_1525,
         )?;
-        object_1522.finish();
+        object_1526.finish();
     }
-    if let Some(var_1523) = &input.preferred_maintenance_window {
+    if let Some(var_1527) = &input.preferred_maintenance_window {
         object
             .key("PreferredMaintenanceWindow")
-            .string(var_1523.as_str());
+            .string(var_1527.as_str());
     }
-    if let Some(var_1524) = &input.pending_modified_values {
-        let mut object_1525 = object.key("PendingModifiedValues").start_object();
+    if let Some(var_1528) = &input.pending_modified_values {
+        let mut object_1529 = object.key("PendingModifiedValues").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_rds_db_pending_modified_values(
-            &mut object_1525,
-            var_1524,
+            &mut object_1529,
+            var_1528,
         )?;
-        object_1525.finish();
+        object_1529.finish();
     }
-    if let Some(var_1526) = &input.latest_restorable_time {
-        object.key("LatestRestorableTime").string(var_1526.as_str());
+    if let Some(var_1530) = &input.latest_restorable_time {
+        object.key("LatestRestorableTime").string(var_1530.as_str());
     }
     if input.auto_minor_version_upgrade {
         object
             .key("AutoMinorVersionUpgrade")
             .boolean(input.auto_minor_version_upgrade);
     }
-    if let Some(var_1527) = &input.read_replica_source_db_instance_identifier {
+    if let Some(var_1531) = &input.read_replica_source_db_instance_identifier {
         object
             .key("ReadReplicaSourceDBInstanceIdentifier")
-            .string(var_1527.as_str());
+            .string(var_1531.as_str());
     }
-    if let Some(var_1528) = &input.read_replica_db_instance_identifiers {
-        let mut array_1529 = object.key("ReadReplicaDBInstanceIdentifiers").start_array();
-        for item_1530 in var_1528 {
+    if let Some(var_1532) = &input.read_replica_db_instance_identifiers {
+        let mut array_1533 = object.key("ReadReplicaDBInstanceIdentifiers").start_array();
+        for item_1534 in var_1532 {
             {
-                array_1529.value().string(item_1530.as_str());
+                array_1533.value().string(item_1534.as_str());
             }
         }
-        array_1529.finish();
+        array_1533.finish();
     }
-    if let Some(var_1531) = &input.read_replica_db_cluster_identifiers {
-        let mut array_1532 = object.key("ReadReplicaDBClusterIdentifiers").start_array();
-        for item_1533 in var_1531 {
+    if let Some(var_1535) = &input.read_replica_db_cluster_identifiers {
+        let mut array_1536 = object.key("ReadReplicaDBClusterIdentifiers").start_array();
+        for item_1537 in var_1535 {
             {
-                array_1532.value().string(item_1533.as_str());
+                array_1536.value().string(item_1537.as_str());
             }
         }
-        array_1532.finish();
+        array_1536.finish();
     }
-    if let Some(var_1534) = &input.license_model {
-        object.key("LicenseModel").string(var_1534.as_str());
+    if let Some(var_1538) = &input.license_model {
+        object.key("LicenseModel").string(var_1538.as_str());
     }
     if input.iops != 0 {
         object.key("Iops").number(
@@ -6401,55 +6428,55 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_details(
             aws_smithy_types::Number::NegInt((input.iops).into()),
         );
     }
-    if let Some(var_1535) = &input.option_group_memberships {
-        let mut array_1536 = object.key("OptionGroupMemberships").start_array();
-        for item_1537 in var_1535 {
+    if let Some(var_1539) = &input.option_group_memberships {
+        let mut array_1540 = object.key("OptionGroupMemberships").start_array();
+        for item_1541 in var_1539 {
             {
-                let mut object_1538 = array_1536.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_rds_db_option_group_membership(&mut object_1538, item_1537)?;
-                object_1538.finish();
+                let mut object_1542 = array_1540.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_rds_db_option_group_membership(&mut object_1542, item_1541)?;
+                object_1542.finish();
             }
         }
-        array_1536.finish();
+        array_1540.finish();
     }
-    if let Some(var_1539) = &input.character_set_name {
-        object.key("CharacterSetName").string(var_1539.as_str());
+    if let Some(var_1543) = &input.character_set_name {
+        object.key("CharacterSetName").string(var_1543.as_str());
     }
-    if let Some(var_1540) = &input.secondary_availability_zone {
+    if let Some(var_1544) = &input.secondary_availability_zone {
         object
             .key("SecondaryAvailabilityZone")
-            .string(var_1540.as_str());
+            .string(var_1544.as_str());
     }
-    if let Some(var_1541) = &input.status_infos {
-        let mut array_1542 = object.key("StatusInfos").start_array();
-        for item_1543 in var_1541 {
+    if let Some(var_1545) = &input.status_infos {
+        let mut array_1546 = object.key("StatusInfos").start_array();
+        for item_1547 in var_1545 {
             {
-                let mut object_1544 = array_1542.value().start_object();
+                let mut object_1548 = array_1546.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_rds_db_status_info(
-                    &mut object_1544,
-                    item_1543,
+                    &mut object_1548,
+                    item_1547,
                 )?;
-                object_1544.finish();
+                object_1548.finish();
             }
         }
-        array_1542.finish();
+        array_1546.finish();
     }
-    if let Some(var_1545) = &input.storage_type {
-        object.key("StorageType").string(var_1545.as_str());
+    if let Some(var_1549) = &input.storage_type {
+        object.key("StorageType").string(var_1549.as_str());
     }
-    if let Some(var_1546) = &input.domain_memberships {
-        let mut array_1547 = object.key("DomainMemberships").start_array();
-        for item_1548 in var_1546 {
+    if let Some(var_1550) = &input.domain_memberships {
+        let mut array_1551 = object.key("DomainMemberships").start_array();
+        for item_1552 in var_1550 {
             {
-                let mut object_1549 = array_1547.value().start_object();
+                let mut object_1553 = array_1551.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_rds_db_domain_membership(
-                    &mut object_1549,
-                    item_1548,
+                    &mut object_1553,
+                    item_1552,
                 )?;
-                object_1549.finish();
+                object_1553.finish();
             }
         }
-        array_1547.finish();
+        array_1551.finish();
     }
     if input.copy_tags_to_snapshot {
         object
@@ -6462,8 +6489,8 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_details(
             aws_smithy_types::Number::NegInt((input.monitoring_interval).into()),
         );
     }
-    if let Some(var_1550) = &input.monitoring_role_arn {
-        object.key("MonitoringRoleArn").string(var_1550.as_str());
+    if let Some(var_1554) = &input.monitoring_role_arn {
+        object.key("MonitoringRoleArn").string(var_1554.as_str());
     }
     if input.promotion_tier != 0 {
         object.key("PromotionTier").number(
@@ -6471,18 +6498,18 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_details(
             aws_smithy_types::Number::NegInt((input.promotion_tier).into()),
         );
     }
-    if let Some(var_1551) = &input.timezone {
-        object.key("Timezone").string(var_1551.as_str());
+    if let Some(var_1555) = &input.timezone {
+        object.key("Timezone").string(var_1555.as_str());
     }
     if input.performance_insights_enabled {
         object
             .key("PerformanceInsightsEnabled")
             .boolean(input.performance_insights_enabled);
     }
-    if let Some(var_1552) = &input.performance_insights_kms_key_id {
+    if let Some(var_1556) = &input.performance_insights_kms_key_id {
         object
             .key("PerformanceInsightsKmsKeyId")
-            .string(var_1552.as_str());
+            .string(var_1556.as_str());
     }
     if input.performance_insights_retention_period != 0 {
         object.key("PerformanceInsightsRetentionPeriod").number(
@@ -6490,36 +6517,36 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_details(
             aws_smithy_types::Number::NegInt((input.performance_insights_retention_period).into()),
         );
     }
-    if let Some(var_1553) = &input.enabled_cloud_watch_logs_exports {
-        let mut array_1554 = object.key("EnabledCloudWatchLogsExports").start_array();
-        for item_1555 in var_1553 {
+    if let Some(var_1557) = &input.enabled_cloud_watch_logs_exports {
+        let mut array_1558 = object.key("EnabledCloudWatchLogsExports").start_array();
+        for item_1559 in var_1557 {
             {
-                array_1554.value().string(item_1555.as_str());
+                array_1558.value().string(item_1559.as_str());
             }
         }
-        array_1554.finish();
+        array_1558.finish();
     }
-    if let Some(var_1556) = &input.processor_features {
-        let mut array_1557 = object.key("ProcessorFeatures").start_array();
-        for item_1558 in var_1556 {
+    if let Some(var_1560) = &input.processor_features {
+        let mut array_1561 = object.key("ProcessorFeatures").start_array();
+        for item_1562 in var_1560 {
             {
-                let mut object_1559 = array_1557.value().start_object();
+                let mut object_1563 = array_1561.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_rds_db_processor_feature(
-                    &mut object_1559,
-                    item_1558,
+                    &mut object_1563,
+                    item_1562,
                 )?;
-                object_1559.finish();
+                object_1563.finish();
             }
         }
-        array_1557.finish();
+        array_1561.finish();
     }
-    if let Some(var_1560) = &input.listener_endpoint {
-        let mut object_1561 = object.key("ListenerEndpoint").start_object();
+    if let Some(var_1564) = &input.listener_endpoint {
+        let mut object_1565 = object.key("ListenerEndpoint").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_rds_db_instance_endpoint(
-            &mut object_1561,
-            var_1560,
+            &mut object_1565,
+            var_1564,
         )?;
-        object_1561.finish();
+        object_1565.finish();
     }
     if input.max_allocated_storage != 0 {
         object.key("MaxAllocatedStorage").number(
@@ -6534,28 +6561,28 @@ pub fn serialize_structure_crate_model_aws_sns_topic_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsSnsTopicDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1562) = &input.kms_master_key_id {
-        object.key("KmsMasterKeyId").string(var_1562.as_str());
+    if let Some(var_1566) = &input.kms_master_key_id {
+        object.key("KmsMasterKeyId").string(var_1566.as_str());
     }
-    if let Some(var_1563) = &input.subscription {
-        let mut array_1564 = object.key("Subscription").start_array();
-        for item_1565 in var_1563 {
+    if let Some(var_1567) = &input.subscription {
+        let mut array_1568 = object.key("Subscription").start_array();
+        for item_1569 in var_1567 {
             {
-                let mut object_1566 = array_1564.value().start_object();
+                let mut object_1570 = array_1568.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_sns_topic_subscription(
-                    &mut object_1566,
-                    item_1565,
+                    &mut object_1570,
+                    item_1569,
                 )?;
-                object_1566.finish();
+                object_1570.finish();
             }
         }
-        array_1564.finish();
+        array_1568.finish();
     }
-    if let Some(var_1567) = &input.topic_name {
-        object.key("TopicName").string(var_1567.as_str());
+    if let Some(var_1571) = &input.topic_name {
+        object.key("TopicName").string(var_1571.as_str());
     }
-    if let Some(var_1568) = &input.owner {
-        object.key("Owner").string(var_1568.as_str());
+    if let Some(var_1572) = &input.owner {
+        object.key("Owner").string(var_1572.as_str());
     }
     Ok(())
 }
@@ -6570,14 +6597,14 @@ pub fn serialize_structure_crate_model_aws_sqs_queue_details(
             aws_smithy_types::Number::NegInt((input.kms_data_key_reuse_period_seconds).into()),
         );
     }
-    if let Some(var_1569) = &input.kms_master_key_id {
-        object.key("KmsMasterKeyId").string(var_1569.as_str());
+    if let Some(var_1573) = &input.kms_master_key_id {
+        object.key("KmsMasterKeyId").string(var_1573.as_str());
     }
-    if let Some(var_1570) = &input.queue_name {
-        object.key("QueueName").string(var_1570.as_str());
+    if let Some(var_1574) = &input.queue_name {
+        object.key("QueueName").string(var_1574.as_str());
     }
-    if let Some(var_1571) = &input.dead_letter_target_arn {
-        object.key("DeadLetterTargetArn").string(var_1571.as_str());
+    if let Some(var_1575) = &input.dead_letter_target_arn {
+        object.key("DeadLetterTargetArn").string(var_1575.as_str());
     }
     Ok(())
 }
@@ -6586,28 +6613,28 @@ pub fn serialize_structure_crate_model_aws_waf_web_acl_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsWafWebAclDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1572) = &input.name {
-        object.key("Name").string(var_1572.as_str());
+    if let Some(var_1576) = &input.name {
+        object.key("Name").string(var_1576.as_str());
     }
-    if let Some(var_1573) = &input.default_action {
-        object.key("DefaultAction").string(var_1573.as_str());
+    if let Some(var_1577) = &input.default_action {
+        object.key("DefaultAction").string(var_1577.as_str());
     }
-    if let Some(var_1574) = &input.rules {
-        let mut array_1575 = object.key("Rules").start_array();
-        for item_1576 in var_1574 {
+    if let Some(var_1578) = &input.rules {
+        let mut array_1579 = object.key("Rules").start_array();
+        for item_1580 in var_1578 {
             {
-                let mut object_1577 = array_1575.value().start_object();
+                let mut object_1581 = array_1579.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_waf_web_acl_rule(
-                    &mut object_1577,
-                    item_1576,
+                    &mut object_1581,
+                    item_1580,
                 )?;
-                object_1577.finish();
+                object_1581.finish();
             }
         }
-        array_1575.finish();
+        array_1579.finish();
     }
-    if let Some(var_1578) = &input.web_acl_id {
-        object.key("WebAclId").string(var_1578.as_str());
+    if let Some(var_1582) = &input.web_acl_id {
+        object.key("WebAclId").string(var_1582.as_str());
     }
     Ok(())
 }
@@ -6616,17 +6643,17 @@ pub fn serialize_structure_crate_model_aws_rds_db_snapshot_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbSnapshotDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1579) = &input.db_snapshot_identifier {
-        object.key("DbSnapshotIdentifier").string(var_1579.as_str());
+    if let Some(var_1583) = &input.db_snapshot_identifier {
+        object.key("DbSnapshotIdentifier").string(var_1583.as_str());
     }
-    if let Some(var_1580) = &input.db_instance_identifier {
-        object.key("DbInstanceIdentifier").string(var_1580.as_str());
+    if let Some(var_1584) = &input.db_instance_identifier {
+        object.key("DbInstanceIdentifier").string(var_1584.as_str());
     }
-    if let Some(var_1581) = &input.snapshot_create_time {
-        object.key("SnapshotCreateTime").string(var_1581.as_str());
+    if let Some(var_1585) = &input.snapshot_create_time {
+        object.key("SnapshotCreateTime").string(var_1585.as_str());
     }
-    if let Some(var_1582) = &input.engine {
-        object.key("Engine").string(var_1582.as_str());
+    if let Some(var_1586) = &input.engine {
+        object.key("Engine").string(var_1586.as_str());
     }
     if input.allocated_storage != 0 {
         object.key("AllocatedStorage").number(
@@ -6634,8 +6661,8 @@ pub fn serialize_structure_crate_model_aws_rds_db_snapshot_details(
             aws_smithy_types::Number::NegInt((input.allocated_storage).into()),
         );
     }
-    if let Some(var_1583) = &input.status {
-        object.key("Status").string(var_1583.as_str());
+    if let Some(var_1587) = &input.status {
+        object.key("Status").string(var_1587.as_str());
     }
     if input.port != 0 {
         object.key("Port").number(
@@ -6643,26 +6670,26 @@ pub fn serialize_structure_crate_model_aws_rds_db_snapshot_details(
             aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_1584) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_1584.as_str());
+    if let Some(var_1588) = &input.availability_zone {
+        object.key("AvailabilityZone").string(var_1588.as_str());
     }
-    if let Some(var_1585) = &input.vpc_id {
-        object.key("VpcId").string(var_1585.as_str());
+    if let Some(var_1589) = &input.vpc_id {
+        object.key("VpcId").string(var_1589.as_str());
     }
-    if let Some(var_1586) = &input.instance_create_time {
-        object.key("InstanceCreateTime").string(var_1586.as_str());
+    if let Some(var_1590) = &input.instance_create_time {
+        object.key("InstanceCreateTime").string(var_1590.as_str());
     }
-    if let Some(var_1587) = &input.master_username {
-        object.key("MasterUsername").string(var_1587.as_str());
+    if let Some(var_1591) = &input.master_username {
+        object.key("MasterUsername").string(var_1591.as_str());
     }
-    if let Some(var_1588) = &input.engine_version {
-        object.key("EngineVersion").string(var_1588.as_str());
+    if let Some(var_1592) = &input.engine_version {
+        object.key("EngineVersion").string(var_1592.as_str());
     }
-    if let Some(var_1589) = &input.license_model {
-        object.key("LicenseModel").string(var_1589.as_str());
+    if let Some(var_1593) = &input.license_model {
+        object.key("LicenseModel").string(var_1593.as_str());
     }
-    if let Some(var_1590) = &input.snapshot_type {
-        object.key("SnapshotType").string(var_1590.as_str());
+    if let Some(var_1594) = &input.snapshot_type {
+        object.key("SnapshotType").string(var_1594.as_str());
     }
     if input.iops != 0 {
         object.key("Iops").number(
@@ -6670,8 +6697,8 @@ pub fn serialize_structure_crate_model_aws_rds_db_snapshot_details(
             aws_smithy_types::Number::NegInt((input.iops).into()),
         );
     }
-    if let Some(var_1591) = &input.option_group_name {
-        object.key("OptionGroupName").string(var_1591.as_str());
+    if let Some(var_1595) = &input.option_group_name {
+        object.key("OptionGroupName").string(var_1595.as_str());
     }
     if input.percent_progress != 0 {
         object.key("PercentProgress").number(
@@ -6679,50 +6706,50 @@ pub fn serialize_structure_crate_model_aws_rds_db_snapshot_details(
             aws_smithy_types::Number::NegInt((input.percent_progress).into()),
         );
     }
-    if let Some(var_1592) = &input.source_region {
-        object.key("SourceRegion").string(var_1592.as_str());
+    if let Some(var_1596) = &input.source_region {
+        object.key("SourceRegion").string(var_1596.as_str());
     }
-    if let Some(var_1593) = &input.source_db_snapshot_identifier {
+    if let Some(var_1597) = &input.source_db_snapshot_identifier {
         object
             .key("SourceDbSnapshotIdentifier")
-            .string(var_1593.as_str());
+            .string(var_1597.as_str());
     }
-    if let Some(var_1594) = &input.storage_type {
-        object.key("StorageType").string(var_1594.as_str());
+    if let Some(var_1598) = &input.storage_type {
+        object.key("StorageType").string(var_1598.as_str());
     }
-    if let Some(var_1595) = &input.tde_credential_arn {
-        object.key("TdeCredentialArn").string(var_1595.as_str());
+    if let Some(var_1599) = &input.tde_credential_arn {
+        object.key("TdeCredentialArn").string(var_1599.as_str());
     }
     if input.encrypted {
         object.key("Encrypted").boolean(input.encrypted);
     }
-    if let Some(var_1596) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_1596.as_str());
+    if let Some(var_1600) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_1600.as_str());
     }
-    if let Some(var_1597) = &input.timezone {
-        object.key("Timezone").string(var_1597.as_str());
+    if let Some(var_1601) = &input.timezone {
+        object.key("Timezone").string(var_1601.as_str());
     }
     if input.iam_database_authentication_enabled {
         object
             .key("IamDatabaseAuthenticationEnabled")
             .boolean(input.iam_database_authentication_enabled);
     }
-    if let Some(var_1598) = &input.processor_features {
-        let mut array_1599 = object.key("ProcessorFeatures").start_array();
-        for item_1600 in var_1598 {
+    if let Some(var_1602) = &input.processor_features {
+        let mut array_1603 = object.key("ProcessorFeatures").start_array();
+        for item_1604 in var_1602 {
             {
-                let mut object_1601 = array_1599.value().start_object();
+                let mut object_1605 = array_1603.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_rds_db_processor_feature(
-                    &mut object_1601,
-                    item_1600,
+                    &mut object_1605,
+                    item_1604,
                 )?;
-                object_1601.finish();
+                object_1605.finish();
             }
         }
-        array_1599.finish();
+        array_1603.finish();
     }
-    if let Some(var_1602) = &input.dbi_resource_id {
-        object.key("DbiResourceId").string(var_1602.as_str());
+    if let Some(var_1606) = &input.dbi_resource_id {
+        object.key("DbiResourceId").string(var_1606.as_str());
     }
     Ok(())
 }
@@ -6731,20 +6758,20 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_snapshot_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbClusterSnapshotDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1603) = &input.availability_zones {
-        let mut array_1604 = object.key("AvailabilityZones").start_array();
-        for item_1605 in var_1603 {
+    if let Some(var_1607) = &input.availability_zones {
+        let mut array_1608 = object.key("AvailabilityZones").start_array();
+        for item_1609 in var_1607 {
             {
-                array_1604.value().string(item_1605.as_str());
+                array_1608.value().string(item_1609.as_str());
             }
         }
-        array_1604.finish();
+        array_1608.finish();
     }
-    if let Some(var_1606) = &input.snapshot_create_time {
-        object.key("SnapshotCreateTime").string(var_1606.as_str());
+    if let Some(var_1610) = &input.snapshot_create_time {
+        object.key("SnapshotCreateTime").string(var_1610.as_str());
     }
-    if let Some(var_1607) = &input.engine {
-        object.key("Engine").string(var_1607.as_str());
+    if let Some(var_1611) = &input.engine {
+        object.key("Engine").string(var_1611.as_str());
     }
     if input.allocated_storage != 0 {
         object.key("AllocatedStorage").number(
@@ -6752,8 +6779,8 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_snapshot_details(
             aws_smithy_types::Number::NegInt((input.allocated_storage).into()),
         );
     }
-    if let Some(var_1608) = &input.status {
-        object.key("Status").string(var_1608.as_str());
+    if let Some(var_1612) = &input.status {
+        object.key("Status").string(var_1612.as_str());
     }
     if input.port != 0 {
         object.key("Port").number(
@@ -6761,23 +6788,23 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_snapshot_details(
             aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_1609) = &input.vpc_id {
-        object.key("VpcId").string(var_1609.as_str());
+    if let Some(var_1613) = &input.vpc_id {
+        object.key("VpcId").string(var_1613.as_str());
     }
-    if let Some(var_1610) = &input.cluster_create_time {
-        object.key("ClusterCreateTime").string(var_1610.as_str());
+    if let Some(var_1614) = &input.cluster_create_time {
+        object.key("ClusterCreateTime").string(var_1614.as_str());
     }
-    if let Some(var_1611) = &input.master_username {
-        object.key("MasterUsername").string(var_1611.as_str());
+    if let Some(var_1615) = &input.master_username {
+        object.key("MasterUsername").string(var_1615.as_str());
     }
-    if let Some(var_1612) = &input.engine_version {
-        object.key("EngineVersion").string(var_1612.as_str());
+    if let Some(var_1616) = &input.engine_version {
+        object.key("EngineVersion").string(var_1616.as_str());
     }
-    if let Some(var_1613) = &input.license_model {
-        object.key("LicenseModel").string(var_1613.as_str());
+    if let Some(var_1617) = &input.license_model {
+        object.key("LicenseModel").string(var_1617.as_str());
     }
-    if let Some(var_1614) = &input.snapshot_type {
-        object.key("SnapshotType").string(var_1614.as_str());
+    if let Some(var_1618) = &input.snapshot_type {
+        object.key("SnapshotType").string(var_1618.as_str());
     }
     if input.percent_progress != 0 {
         object.key("PercentProgress").number(
@@ -6790,16 +6817,16 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_snapshot_details(
             .key("StorageEncrypted")
             .boolean(input.storage_encrypted);
     }
-    if let Some(var_1615) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_1615.as_str());
+    if let Some(var_1619) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_1619.as_str());
     }
-    if let Some(var_1616) = &input.db_cluster_identifier {
-        object.key("DbClusterIdentifier").string(var_1616.as_str());
+    if let Some(var_1620) = &input.db_cluster_identifier {
+        object.key("DbClusterIdentifier").string(var_1620.as_str());
     }
-    if let Some(var_1617) = &input.db_cluster_snapshot_identifier {
+    if let Some(var_1621) = &input.db_cluster_snapshot_identifier {
         object
             .key("DbClusterSnapshotIdentifier")
-            .string(var_1617.as_str());
+            .string(var_1621.as_str());
     }
     if input.iam_database_authentication_enabled {
         object
@@ -6819,14 +6846,14 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_details(
             aws_smithy_types::Number::NegInt((input.allocated_storage).into()),
         );
     }
-    if let Some(var_1618) = &input.availability_zones {
-        let mut array_1619 = object.key("AvailabilityZones").start_array();
-        for item_1620 in var_1618 {
+    if let Some(var_1622) = &input.availability_zones {
+        let mut array_1623 = object.key("AvailabilityZones").start_array();
+        for item_1624 in var_1622 {
             {
-                array_1619.value().string(item_1620.as_str());
+                array_1623.value().string(item_1624.as_str());
             }
         }
-        array_1619.finish();
+        array_1623.finish();
     }
     if input.backup_retention_period != 0 {
         object.key("BackupRetentionPeriod").number(
@@ -6834,35 +6861,35 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_details(
             aws_smithy_types::Number::NegInt((input.backup_retention_period).into()),
         );
     }
-    if let Some(var_1621) = &input.database_name {
-        object.key("DatabaseName").string(var_1621.as_str());
+    if let Some(var_1625) = &input.database_name {
+        object.key("DatabaseName").string(var_1625.as_str());
     }
-    if let Some(var_1622) = &input.status {
-        object.key("Status").string(var_1622.as_str());
+    if let Some(var_1626) = &input.status {
+        object.key("Status").string(var_1626.as_str());
     }
-    if let Some(var_1623) = &input.endpoint {
-        object.key("Endpoint").string(var_1623.as_str());
+    if let Some(var_1627) = &input.endpoint {
+        object.key("Endpoint").string(var_1627.as_str());
     }
-    if let Some(var_1624) = &input.reader_endpoint {
-        object.key("ReaderEndpoint").string(var_1624.as_str());
+    if let Some(var_1628) = &input.reader_endpoint {
+        object.key("ReaderEndpoint").string(var_1628.as_str());
     }
-    if let Some(var_1625) = &input.custom_endpoints {
-        let mut array_1626 = object.key("CustomEndpoints").start_array();
-        for item_1627 in var_1625 {
+    if let Some(var_1629) = &input.custom_endpoints {
+        let mut array_1630 = object.key("CustomEndpoints").start_array();
+        for item_1631 in var_1629 {
             {
-                array_1626.value().string(item_1627.as_str());
+                array_1630.value().string(item_1631.as_str());
             }
         }
-        array_1626.finish();
+        array_1630.finish();
     }
     if input.multi_az {
         object.key("MultiAz").boolean(input.multi_az);
     }
-    if let Some(var_1628) = &input.engine {
-        object.key("Engine").string(var_1628.as_str());
+    if let Some(var_1632) = &input.engine {
+        object.key("Engine").string(var_1632.as_str());
     }
-    if let Some(var_1629) = &input.engine_version {
-        object.key("EngineVersion").string(var_1629.as_str());
+    if let Some(var_1633) = &input.engine_version {
+        object.key("EngineVersion").string(var_1633.as_str());
     }
     if input.port != 0 {
         object.key("Port").number(
@@ -6870,78 +6897,78 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_details(
             aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_1630) = &input.master_username {
-        object.key("MasterUsername").string(var_1630.as_str());
+    if let Some(var_1634) = &input.master_username {
+        object.key("MasterUsername").string(var_1634.as_str());
     }
-    if let Some(var_1631) = &input.preferred_backup_window {
+    if let Some(var_1635) = &input.preferred_backup_window {
         object
             .key("PreferredBackupWindow")
-            .string(var_1631.as_str());
+            .string(var_1635.as_str());
     }
-    if let Some(var_1632) = &input.preferred_maintenance_window {
+    if let Some(var_1636) = &input.preferred_maintenance_window {
         object
             .key("PreferredMaintenanceWindow")
-            .string(var_1632.as_str());
+            .string(var_1636.as_str());
     }
-    if let Some(var_1633) = &input.read_replica_identifiers {
-        let mut array_1634 = object.key("ReadReplicaIdentifiers").start_array();
-        for item_1635 in var_1633 {
+    if let Some(var_1637) = &input.read_replica_identifiers {
+        let mut array_1638 = object.key("ReadReplicaIdentifiers").start_array();
+        for item_1639 in var_1637 {
             {
-                array_1634.value().string(item_1635.as_str());
+                array_1638.value().string(item_1639.as_str());
             }
         }
-        array_1634.finish();
+        array_1638.finish();
     }
-    if let Some(var_1636) = &input.vpc_security_groups {
-        let mut array_1637 = object.key("VpcSecurityGroups").start_array();
-        for item_1638 in var_1636 {
+    if let Some(var_1640) = &input.vpc_security_groups {
+        let mut array_1641 = object.key("VpcSecurityGroups").start_array();
+        for item_1642 in var_1640 {
             {
-                let mut object_1639 = array_1637.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_rds_db_instance_vpc_security_group(&mut object_1639, item_1638)?;
-                object_1639.finish();
+                let mut object_1643 = array_1641.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_rds_db_instance_vpc_security_group(&mut object_1643, item_1642)?;
+                object_1643.finish();
             }
         }
-        array_1637.finish();
+        array_1641.finish();
     }
-    if let Some(var_1640) = &input.hosted_zone_id {
-        object.key("HostedZoneId").string(var_1640.as_str());
+    if let Some(var_1644) = &input.hosted_zone_id {
+        object.key("HostedZoneId").string(var_1644.as_str());
     }
     if input.storage_encrypted {
         object
             .key("StorageEncrypted")
             .boolean(input.storage_encrypted);
     }
-    if let Some(var_1641) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_1641.as_str());
+    if let Some(var_1645) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_1645.as_str());
     }
-    if let Some(var_1642) = &input.db_cluster_resource_id {
-        object.key("DbClusterResourceId").string(var_1642.as_str());
+    if let Some(var_1646) = &input.db_cluster_resource_id {
+        object.key("DbClusterResourceId").string(var_1646.as_str());
     }
-    if let Some(var_1643) = &input.associated_roles {
-        let mut array_1644 = object.key("AssociatedRoles").start_array();
-        for item_1645 in var_1643 {
+    if let Some(var_1647) = &input.associated_roles {
+        let mut array_1648 = object.key("AssociatedRoles").start_array();
+        for item_1649 in var_1647 {
             {
-                let mut object_1646 = array_1644.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_rds_db_cluster_associated_role(&mut object_1646, item_1645)?;
-                object_1646.finish();
+                let mut object_1650 = array_1648.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_rds_db_cluster_associated_role(&mut object_1650, item_1649)?;
+                object_1650.finish();
             }
         }
-        array_1644.finish();
+        array_1648.finish();
     }
-    if let Some(var_1647) = &input.cluster_create_time {
-        object.key("ClusterCreateTime").string(var_1647.as_str());
+    if let Some(var_1651) = &input.cluster_create_time {
+        object.key("ClusterCreateTime").string(var_1651.as_str());
     }
-    if let Some(var_1648) = &input.enabled_cloud_watch_logs_exports {
-        let mut array_1649 = object.key("EnabledCloudWatchLogsExports").start_array();
-        for item_1650 in var_1648 {
+    if let Some(var_1652) = &input.enabled_cloud_watch_logs_exports {
+        let mut array_1653 = object.key("EnabledCloudWatchLogsExports").start_array();
+        for item_1654 in var_1652 {
             {
-                array_1649.value().string(item_1650.as_str());
+                array_1653.value().string(item_1654.as_str());
             }
         }
-        array_1649.finish();
+        array_1653.finish();
     }
-    if let Some(var_1651) = &input.engine_mode {
-        object.key("EngineMode").string(var_1651.as_str());
+    if let Some(var_1655) = &input.engine_mode {
+        object.key("EngineMode").string(var_1655.as_str());
     }
     if input.deletion_protection {
         object
@@ -6953,8 +6980,8 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_details(
             .key("HttpEndpointEnabled")
             .boolean(input.http_endpoint_enabled);
     }
-    if let Some(var_1652) = &input.activity_stream_status {
-        object.key("ActivityStreamStatus").string(var_1652.as_str());
+    if let Some(var_1656) = &input.activity_stream_status {
+        object.key("ActivityStreamStatus").string(var_1656.as_str());
     }
     if input.copy_tags_to_snapshot {
         object
@@ -6966,55 +6993,55 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_details(
             .key("CrossAccountClone")
             .boolean(input.cross_account_clone);
     }
-    if let Some(var_1653) = &input.domain_memberships {
-        let mut array_1654 = object.key("DomainMemberships").start_array();
-        for item_1655 in var_1653 {
+    if let Some(var_1657) = &input.domain_memberships {
+        let mut array_1658 = object.key("DomainMemberships").start_array();
+        for item_1659 in var_1657 {
             {
-                let mut object_1656 = array_1654.value().start_object();
+                let mut object_1660 = array_1658.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_rds_db_domain_membership(
-                    &mut object_1656,
-                    item_1655,
+                    &mut object_1660,
+                    item_1659,
                 )?;
-                object_1656.finish();
+                object_1660.finish();
             }
         }
-        array_1654.finish();
+        array_1658.finish();
     }
-    if let Some(var_1657) = &input.db_cluster_parameter_group {
+    if let Some(var_1661) = &input.db_cluster_parameter_group {
         object
             .key("DbClusterParameterGroup")
-            .string(var_1657.as_str());
+            .string(var_1661.as_str());
     }
-    if let Some(var_1658) = &input.db_subnet_group {
-        object.key("DbSubnetGroup").string(var_1658.as_str());
+    if let Some(var_1662) = &input.db_subnet_group {
+        object.key("DbSubnetGroup").string(var_1662.as_str());
     }
-    if let Some(var_1659) = &input.db_cluster_option_group_memberships {
-        let mut array_1660 = object.key("DbClusterOptionGroupMemberships").start_array();
-        for item_1661 in var_1659 {
+    if let Some(var_1663) = &input.db_cluster_option_group_memberships {
+        let mut array_1664 = object.key("DbClusterOptionGroupMemberships").start_array();
+        for item_1665 in var_1663 {
             {
-                let mut object_1662 = array_1660.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_rds_db_cluster_option_group_membership(&mut object_1662, item_1661)?;
-                object_1662.finish();
+                let mut object_1666 = array_1664.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_rds_db_cluster_option_group_membership(&mut object_1666, item_1665)?;
+                object_1666.finish();
             }
         }
-        array_1660.finish();
+        array_1664.finish();
     }
-    if let Some(var_1663) = &input.db_cluster_identifier {
-        object.key("DbClusterIdentifier").string(var_1663.as_str());
+    if let Some(var_1667) = &input.db_cluster_identifier {
+        object.key("DbClusterIdentifier").string(var_1667.as_str());
     }
-    if let Some(var_1664) = &input.db_cluster_members {
-        let mut array_1665 = object.key("DbClusterMembers").start_array();
-        for item_1666 in var_1664 {
+    if let Some(var_1668) = &input.db_cluster_members {
+        let mut array_1669 = object.key("DbClusterMembers").start_array();
+        for item_1670 in var_1668 {
             {
-                let mut object_1667 = array_1665.value().start_object();
+                let mut object_1671 = array_1669.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_rds_db_cluster_member(
-                    &mut object_1667,
-                    item_1666,
+                    &mut object_1671,
+                    item_1670,
                 )?;
-                object_1667.finish();
+                object_1671.finish();
             }
         }
-        array_1665.finish();
+        array_1669.finish();
     }
     if input.iam_database_authentication_enabled {
         object
@@ -7028,44 +7055,44 @@ pub fn serialize_structure_crate_model_aws_ecs_cluster_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsClusterDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1668) = &input.capacity_providers {
-        let mut array_1669 = object.key("CapacityProviders").start_array();
-        for item_1670 in var_1668 {
+    if let Some(var_1672) = &input.capacity_providers {
+        let mut array_1673 = object.key("CapacityProviders").start_array();
+        for item_1674 in var_1672 {
             {
-                array_1669.value().string(item_1670.as_str());
+                array_1673.value().string(item_1674.as_str());
             }
         }
-        array_1669.finish();
+        array_1673.finish();
     }
-    if let Some(var_1671) = &input.cluster_settings {
-        let mut array_1672 = object.key("ClusterSettings").start_array();
-        for item_1673 in var_1671 {
+    if let Some(var_1675) = &input.cluster_settings {
+        let mut array_1676 = object.key("ClusterSettings").start_array();
+        for item_1677 in var_1675 {
             {
-                let mut object_1674 = array_1672.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_cluster_settings_details(&mut object_1674, item_1673)?;
-                object_1674.finish();
+                let mut object_1678 = array_1676.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_cluster_settings_details(&mut object_1678, item_1677)?;
+                object_1678.finish();
             }
         }
-        array_1672.finish();
+        array_1676.finish();
     }
-    if let Some(var_1675) = &input.configuration {
-        let mut object_1676 = object.key("Configuration").start_object();
+    if let Some(var_1679) = &input.configuration {
+        let mut object_1680 = object.key("Configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_configuration_details(
-            &mut object_1676,
-            var_1675,
+            &mut object_1680,
+            var_1679,
         )?;
-        object_1676.finish();
+        object_1680.finish();
     }
-    if let Some(var_1677) = &input.default_capacity_provider_strategy {
-        let mut array_1678 = object.key("DefaultCapacityProviderStrategy").start_array();
-        for item_1679 in var_1677 {
+    if let Some(var_1681) = &input.default_capacity_provider_strategy {
+        let mut array_1682 = object.key("DefaultCapacityProviderStrategy").start_array();
+        for item_1683 in var_1681 {
             {
-                let mut object_1680 = array_1678.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_default_capacity_provider_strategy_details(&mut object_1680, item_1679)?;
-                object_1680.finish();
+                let mut object_1684 = array_1682.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_default_capacity_provider_strategy_details(&mut object_1684, item_1683)?;
+                object_1684.finish();
             }
         }
-        array_1678.finish();
+        array_1682.finish();
     }
     Ok(())
 }
@@ -7074,87 +7101,87 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1681) = &input.container_definitions {
-        let mut array_1682 = object.key("ContainerDefinitions").start_array();
-        for item_1683 in var_1681 {
+    if let Some(var_1685) = &input.container_definitions {
+        let mut array_1686 = object.key("ContainerDefinitions").start_array();
+        for item_1687 in var_1685 {
             {
-                let mut object_1684 = array_1682.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_details(&mut object_1684, item_1683)?;
-                object_1684.finish();
+                let mut object_1688 = array_1686.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_details(&mut object_1688, item_1687)?;
+                object_1688.finish();
             }
         }
-        array_1682.finish();
+        array_1686.finish();
     }
-    if let Some(var_1685) = &input.cpu {
-        object.key("Cpu").string(var_1685.as_str());
+    if let Some(var_1689) = &input.cpu {
+        object.key("Cpu").string(var_1689.as_str());
     }
-    if let Some(var_1686) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_1686.as_str());
+    if let Some(var_1690) = &input.execution_role_arn {
+        object.key("ExecutionRoleArn").string(var_1690.as_str());
     }
-    if let Some(var_1687) = &input.family {
-        object.key("Family").string(var_1687.as_str());
+    if let Some(var_1691) = &input.family {
+        object.key("Family").string(var_1691.as_str());
     }
-    if let Some(var_1688) = &input.inference_accelerators {
-        let mut array_1689 = object.key("InferenceAccelerators").start_array();
-        for item_1690 in var_1688 {
+    if let Some(var_1692) = &input.inference_accelerators {
+        let mut array_1693 = object.key("InferenceAccelerators").start_array();
+        for item_1694 in var_1692 {
             {
-                let mut object_1691 = array_1689.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_inference_accelerators_details(&mut object_1691, item_1690)?;
-                object_1691.finish();
+                let mut object_1695 = array_1693.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_inference_accelerators_details(&mut object_1695, item_1694)?;
+                object_1695.finish();
             }
         }
-        array_1689.finish();
+        array_1693.finish();
     }
-    if let Some(var_1692) = &input.ipc_mode {
-        object.key("IpcMode").string(var_1692.as_str());
+    if let Some(var_1696) = &input.ipc_mode {
+        object.key("IpcMode").string(var_1696.as_str());
     }
-    if let Some(var_1693) = &input.memory {
-        object.key("Memory").string(var_1693.as_str());
+    if let Some(var_1697) = &input.memory {
+        object.key("Memory").string(var_1697.as_str());
     }
-    if let Some(var_1694) = &input.network_mode {
-        object.key("NetworkMode").string(var_1694.as_str());
+    if let Some(var_1698) = &input.network_mode {
+        object.key("NetworkMode").string(var_1698.as_str());
     }
-    if let Some(var_1695) = &input.pid_mode {
-        object.key("PidMode").string(var_1695.as_str());
+    if let Some(var_1699) = &input.pid_mode {
+        object.key("PidMode").string(var_1699.as_str());
     }
-    if let Some(var_1696) = &input.placement_constraints {
-        let mut array_1697 = object.key("PlacementConstraints").start_array();
-        for item_1698 in var_1696 {
+    if let Some(var_1700) = &input.placement_constraints {
+        let mut array_1701 = object.key("PlacementConstraints").start_array();
+        for item_1702 in var_1700 {
             {
-                let mut object_1699 = array_1697.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_placement_constraints_details(&mut object_1699, item_1698)?;
-                object_1699.finish();
+                let mut object_1703 = array_1701.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_placement_constraints_details(&mut object_1703, item_1702)?;
+                object_1703.finish();
             }
         }
-        array_1697.finish();
+        array_1701.finish();
     }
-    if let Some(var_1700) = &input.proxy_configuration {
-        let mut object_1701 = object.key("ProxyConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_proxy_configuration_details(&mut object_1701, var_1700)?;
-        object_1701.finish();
+    if let Some(var_1704) = &input.proxy_configuration {
+        let mut object_1705 = object.key("ProxyConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_proxy_configuration_details(&mut object_1705, var_1704)?;
+        object_1705.finish();
     }
-    if let Some(var_1702) = &input.requires_compatibilities {
-        let mut array_1703 = object.key("RequiresCompatibilities").start_array();
-        for item_1704 in var_1702 {
-            {
-                array_1703.value().string(item_1704.as_str());
-            }
-        }
-        array_1703.finish();
-    }
-    if let Some(var_1705) = &input.task_role_arn {
-        object.key("TaskRoleArn").string(var_1705.as_str());
-    }
-    if let Some(var_1706) = &input.volumes {
-        let mut array_1707 = object.key("Volumes").start_array();
+    if let Some(var_1706) = &input.requires_compatibilities {
+        let mut array_1707 = object.key("RequiresCompatibilities").start_array();
         for item_1708 in var_1706 {
             {
-                let mut object_1709 = array_1707.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_volumes_details(&mut object_1709, item_1708)?;
-                object_1709.finish();
+                array_1707.value().string(item_1708.as_str());
             }
         }
         array_1707.finish();
+    }
+    if let Some(var_1709) = &input.task_role_arn {
+        object.key("TaskRoleArn").string(var_1709.as_str());
+    }
+    if let Some(var_1710) = &input.volumes {
+        let mut array_1711 = object.key("Volumes").start_array();
+        for item_1712 in var_1710 {
+            {
+                let mut object_1713 = array_1711.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_volumes_details(&mut object_1713, item_1712)?;
+                object_1713.finish();
+            }
+        }
+        array_1711.finish();
     }
     Ok(())
 }
@@ -7163,17 +7190,17 @@ pub fn serialize_structure_crate_model_container_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ContainerDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1710) = &input.name {
-        object.key("Name").string(var_1710.as_str());
+    if let Some(var_1714) = &input.name {
+        object.key("Name").string(var_1714.as_str());
     }
-    if let Some(var_1711) = &input.image_id {
-        object.key("ImageId").string(var_1711.as_str());
+    if let Some(var_1715) = &input.image_id {
+        object.key("ImageId").string(var_1715.as_str());
     }
-    if let Some(var_1712) = &input.image_name {
-        object.key("ImageName").string(var_1712.as_str());
+    if let Some(var_1716) = &input.image_name {
+        object.key("ImageName").string(var_1716.as_str());
     }
-    if let Some(var_1713) = &input.launched_at {
-        object.key("LaunchedAt").string(var_1713.as_str());
+    if let Some(var_1717) = &input.launched_at {
+        object.key("LaunchedAt").string(var_1717.as_str());
     }
     Ok(())
 }
@@ -7182,49 +7209,49 @@ pub fn serialize_structure_crate_model_aws_rds_event_subscription_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsEventSubscriptionDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1714) = &input.cust_subscription_id {
-        object.key("CustSubscriptionId").string(var_1714.as_str());
+    if let Some(var_1718) = &input.cust_subscription_id {
+        object.key("CustSubscriptionId").string(var_1718.as_str());
     }
-    if let Some(var_1715) = &input.customer_aws_id {
-        object.key("CustomerAwsId").string(var_1715.as_str());
+    if let Some(var_1719) = &input.customer_aws_id {
+        object.key("CustomerAwsId").string(var_1719.as_str());
     }
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
     }
-    if let Some(var_1716) = &input.event_categories_list {
-        let mut array_1717 = object.key("EventCategoriesList").start_array();
-        for item_1718 in var_1716 {
+    if let Some(var_1720) = &input.event_categories_list {
+        let mut array_1721 = object.key("EventCategoriesList").start_array();
+        for item_1722 in var_1720 {
             {
-                array_1717.value().string(item_1718.as_str());
+                array_1721.value().string(item_1722.as_str());
             }
         }
-        array_1717.finish();
+        array_1721.finish();
     }
-    if let Some(var_1719) = &input.event_subscription_arn {
-        object.key("EventSubscriptionArn").string(var_1719.as_str());
+    if let Some(var_1723) = &input.event_subscription_arn {
+        object.key("EventSubscriptionArn").string(var_1723.as_str());
     }
-    if let Some(var_1720) = &input.sns_topic_arn {
-        object.key("SnsTopicArn").string(var_1720.as_str());
+    if let Some(var_1724) = &input.sns_topic_arn {
+        object.key("SnsTopicArn").string(var_1724.as_str());
     }
-    if let Some(var_1721) = &input.source_ids_list {
-        let mut array_1722 = object.key("SourceIdsList").start_array();
-        for item_1723 in var_1721 {
+    if let Some(var_1725) = &input.source_ids_list {
+        let mut array_1726 = object.key("SourceIdsList").start_array();
+        for item_1727 in var_1725 {
             {
-                array_1722.value().string(item_1723.as_str());
+                array_1726.value().string(item_1727.as_str());
             }
         }
-        array_1722.finish();
+        array_1726.finish();
     }
-    if let Some(var_1724) = &input.source_type {
-        object.key("SourceType").string(var_1724.as_str());
+    if let Some(var_1728) = &input.source_type {
+        object.key("SourceType").string(var_1728.as_str());
     }
-    if let Some(var_1725) = &input.status {
-        object.key("Status").string(var_1725.as_str());
+    if let Some(var_1729) = &input.status {
+        object.key("Status").string(var_1729.as_str());
     }
-    if let Some(var_1726) = &input.subscription_creation_time {
+    if let Some(var_1730) = &input.subscription_creation_time {
         object
             .key("SubscriptionCreationTime")
-            .string(var_1726.as_str());
+            .string(var_1730.as_str());
     }
     Ok(())
 }
@@ -7233,29 +7260,29 @@ pub fn serialize_structure_crate_model_aws_ecs_service_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsServiceDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1727) = &input.capacity_provider_strategy {
-        let mut array_1728 = object.key("CapacityProviderStrategy").start_array();
-        for item_1729 in var_1727 {
+    if let Some(var_1731) = &input.capacity_provider_strategy {
+        let mut array_1732 = object.key("CapacityProviderStrategy").start_array();
+        for item_1733 in var_1731 {
             {
-                let mut object_1730 = array_1728.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_service_capacity_provider_strategy_details(&mut object_1730, item_1729)?;
-                object_1730.finish();
+                let mut object_1734 = array_1732.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_service_capacity_provider_strategy_details(&mut object_1734, item_1733)?;
+                object_1734.finish();
             }
         }
-        array_1728.finish();
+        array_1732.finish();
     }
-    if let Some(var_1731) = &input.cluster {
-        object.key("Cluster").string(var_1731.as_str());
+    if let Some(var_1735) = &input.cluster {
+        object.key("Cluster").string(var_1735.as_str());
     }
-    if let Some(var_1732) = &input.deployment_configuration {
-        let mut object_1733 = object.key("DeploymentConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_deployment_configuration_details(&mut object_1733, var_1732)?;
-        object_1733.finish();
+    if let Some(var_1736) = &input.deployment_configuration {
+        let mut object_1737 = object.key("DeploymentConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_deployment_configuration_details(&mut object_1737, var_1736)?;
+        object_1737.finish();
     }
-    if let Some(var_1734) = &input.deployment_controller {
-        let mut object_1735 = object.key("DeploymentController").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_deployment_controller_details(&mut object_1735, var_1734)?;
-        object_1735.finish();
+    if let Some(var_1738) = &input.deployment_controller {
+        let mut object_1739 = object.key("DeploymentController").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_deployment_controller_details(&mut object_1739, var_1738)?;
+        object_1739.finish();
     }
     if input.desired_count != 0 {
         object.key("DesiredCount").number(
@@ -7279,81 +7306,81 @@ pub fn serialize_structure_crate_model_aws_ecs_service_details(
             aws_smithy_types::Number::NegInt((input.health_check_grace_period_seconds).into()),
         );
     }
-    if let Some(var_1736) = &input.launch_type {
-        object.key("LaunchType").string(var_1736.as_str());
+    if let Some(var_1740) = &input.launch_type {
+        object.key("LaunchType").string(var_1740.as_str());
     }
-    if let Some(var_1737) = &input.load_balancers {
-        let mut array_1738 = object.key("LoadBalancers").start_array();
-        for item_1739 in var_1737 {
+    if let Some(var_1741) = &input.load_balancers {
+        let mut array_1742 = object.key("LoadBalancers").start_array();
+        for item_1743 in var_1741 {
             {
-                let mut object_1740 = array_1738.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_service_load_balancers_details(&mut object_1740, item_1739)?;
-                object_1740.finish();
+                let mut object_1744 = array_1742.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_service_load_balancers_details(&mut object_1744, item_1743)?;
+                object_1744.finish();
             }
         }
-        array_1738.finish();
+        array_1742.finish();
     }
-    if let Some(var_1741) = &input.name {
-        object.key("Name").string(var_1741.as_str());
+    if let Some(var_1745) = &input.name {
+        object.key("Name").string(var_1745.as_str());
     }
-    if let Some(var_1742) = &input.network_configuration {
-        let mut object_1743 = object.key("NetworkConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_network_configuration_details(&mut object_1743, var_1742)?;
-        object_1743.finish();
+    if let Some(var_1746) = &input.network_configuration {
+        let mut object_1747 = object.key("NetworkConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_network_configuration_details(&mut object_1747, var_1746)?;
+        object_1747.finish();
     }
-    if let Some(var_1744) = &input.placement_constraints {
-        let mut array_1745 = object.key("PlacementConstraints").start_array();
-        for item_1746 in var_1744 {
-            {
-                let mut object_1747 = array_1745.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_service_placement_constraints_details(&mut object_1747, item_1746)?;
-                object_1747.finish();
-            }
-        }
-        array_1745.finish();
-    }
-    if let Some(var_1748) = &input.placement_strategies {
-        let mut array_1749 = object.key("PlacementStrategies").start_array();
+    if let Some(var_1748) = &input.placement_constraints {
+        let mut array_1749 = object.key("PlacementConstraints").start_array();
         for item_1750 in var_1748 {
             {
                 let mut object_1751 = array_1749.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_service_placement_strategies_details(&mut object_1751, item_1750)?;
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_service_placement_constraints_details(&mut object_1751, item_1750)?;
                 object_1751.finish();
             }
         }
         array_1749.finish();
     }
-    if let Some(var_1752) = &input.platform_version {
-        object.key("PlatformVersion").string(var_1752.as_str());
-    }
-    if let Some(var_1753) = &input.propagate_tags {
-        object.key("PropagateTags").string(var_1753.as_str());
-    }
-    if let Some(var_1754) = &input.role {
-        object.key("Role").string(var_1754.as_str());
-    }
-    if let Some(var_1755) = &input.scheduling_strategy {
-        object.key("SchedulingStrategy").string(var_1755.as_str());
-    }
-    if let Some(var_1756) = &input.service_arn {
-        object.key("ServiceArn").string(var_1756.as_str());
-    }
-    if let Some(var_1757) = &input.service_name {
-        object.key("ServiceName").string(var_1757.as_str());
-    }
-    if let Some(var_1758) = &input.service_registries {
-        let mut array_1759 = object.key("ServiceRegistries").start_array();
-        for item_1760 in var_1758 {
+    if let Some(var_1752) = &input.placement_strategies {
+        let mut array_1753 = object.key("PlacementStrategies").start_array();
+        for item_1754 in var_1752 {
             {
-                let mut object_1761 = array_1759.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_service_service_registries_details(&mut object_1761, item_1760)?;
-                object_1761.finish();
+                let mut object_1755 = array_1753.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_service_placement_strategies_details(&mut object_1755, item_1754)?;
+                object_1755.finish();
             }
         }
-        array_1759.finish();
+        array_1753.finish();
     }
-    if let Some(var_1762) = &input.task_definition {
-        object.key("TaskDefinition").string(var_1762.as_str());
+    if let Some(var_1756) = &input.platform_version {
+        object.key("PlatformVersion").string(var_1756.as_str());
+    }
+    if let Some(var_1757) = &input.propagate_tags {
+        object.key("PropagateTags").string(var_1757.as_str());
+    }
+    if let Some(var_1758) = &input.role {
+        object.key("Role").string(var_1758.as_str());
+    }
+    if let Some(var_1759) = &input.scheduling_strategy {
+        object.key("SchedulingStrategy").string(var_1759.as_str());
+    }
+    if let Some(var_1760) = &input.service_arn {
+        object.key("ServiceArn").string(var_1760.as_str());
+    }
+    if let Some(var_1761) = &input.service_name {
+        object.key("ServiceName").string(var_1761.as_str());
+    }
+    if let Some(var_1762) = &input.service_registries {
+        let mut array_1763 = object.key("ServiceRegistries").start_array();
+        for item_1764 in var_1762 {
+            {
+                let mut object_1765 = array_1763.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_service_service_registries_details(&mut object_1765, item_1764)?;
+                object_1765.finish();
+            }
+        }
+        array_1763.finish();
+    }
+    if let Some(var_1766) = &input.task_definition {
+        object.key("TaskDefinition").string(var_1766.as_str());
     }
     Ok(())
 }
@@ -7367,85 +7394,85 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_launch_configuration_det
             .key("AssociatePublicIpAddress")
             .boolean(input.associate_public_ip_address);
     }
-    if let Some(var_1763) = &input.block_device_mappings {
-        let mut array_1764 = object.key("BlockDeviceMappings").start_array();
-        for item_1765 in var_1763 {
+    if let Some(var_1767) = &input.block_device_mappings {
+        let mut array_1768 = object.key("BlockDeviceMappings").start_array();
+        for item_1769 in var_1767 {
             {
-                let mut object_1766 = array_1764.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_launch_configuration_block_device_mappings_details(&mut object_1766, item_1765)?;
-                object_1766.finish();
+                let mut object_1770 = array_1768.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_launch_configuration_block_device_mappings_details(&mut object_1770, item_1769)?;
+                object_1770.finish();
             }
         }
-        array_1764.finish();
+        array_1768.finish();
     }
-    if let Some(var_1767) = &input.classic_link_vpc_id {
-        object.key("ClassicLinkVpcId").string(var_1767.as_str());
+    if let Some(var_1771) = &input.classic_link_vpc_id {
+        object.key("ClassicLinkVpcId").string(var_1771.as_str());
     }
-    if let Some(var_1768) = &input.classic_link_vpc_security_groups {
-        let mut array_1769 = object.key("ClassicLinkVpcSecurityGroups").start_array();
-        for item_1770 in var_1768 {
+    if let Some(var_1772) = &input.classic_link_vpc_security_groups {
+        let mut array_1773 = object.key("ClassicLinkVpcSecurityGroups").start_array();
+        for item_1774 in var_1772 {
             {
-                array_1769.value().string(item_1770.as_str());
+                array_1773.value().string(item_1774.as_str());
             }
         }
-        array_1769.finish();
+        array_1773.finish();
     }
-    if let Some(var_1771) = &input.created_time {
-        object.key("CreatedTime").string(var_1771.as_str());
+    if let Some(var_1775) = &input.created_time {
+        object.key("CreatedTime").string(var_1775.as_str());
     }
     if input.ebs_optimized {
         object.key("EbsOptimized").boolean(input.ebs_optimized);
     }
-    if let Some(var_1772) = &input.iam_instance_profile {
-        object.key("IamInstanceProfile").string(var_1772.as_str());
+    if let Some(var_1776) = &input.iam_instance_profile {
+        object.key("IamInstanceProfile").string(var_1776.as_str());
     }
-    if let Some(var_1773) = &input.image_id {
-        object.key("ImageId").string(var_1773.as_str());
+    if let Some(var_1777) = &input.image_id {
+        object.key("ImageId").string(var_1777.as_str());
     }
-    if let Some(var_1774) = &input.instance_monitoring {
-        let mut object_1775 = object.key("InstanceMonitoring").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_launch_configuration_instance_monitoring_details(&mut object_1775, var_1774)?;
-        object_1775.finish();
+    if let Some(var_1778) = &input.instance_monitoring {
+        let mut object_1779 = object.key("InstanceMonitoring").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_launch_configuration_instance_monitoring_details(&mut object_1779, var_1778)?;
+        object_1779.finish();
     }
-    if let Some(var_1776) = &input.instance_type {
-        object.key("InstanceType").string(var_1776.as_str());
+    if let Some(var_1780) = &input.instance_type {
+        object.key("InstanceType").string(var_1780.as_str());
     }
-    if let Some(var_1777) = &input.kernel_id {
-        object.key("KernelId").string(var_1777.as_str());
+    if let Some(var_1781) = &input.kernel_id {
+        object.key("KernelId").string(var_1781.as_str());
     }
-    if let Some(var_1778) = &input.key_name {
-        object.key("KeyName").string(var_1778.as_str());
+    if let Some(var_1782) = &input.key_name {
+        object.key("KeyName").string(var_1782.as_str());
     }
-    if let Some(var_1779) = &input.launch_configuration_name {
+    if let Some(var_1783) = &input.launch_configuration_name {
         object
             .key("LaunchConfigurationName")
-            .string(var_1779.as_str());
+            .string(var_1783.as_str());
     }
-    if let Some(var_1780) = &input.placement_tenancy {
-        object.key("PlacementTenancy").string(var_1780.as_str());
+    if let Some(var_1784) = &input.placement_tenancy {
+        object.key("PlacementTenancy").string(var_1784.as_str());
     }
-    if let Some(var_1781) = &input.ramdisk_id {
-        object.key("RamdiskId").string(var_1781.as_str());
+    if let Some(var_1785) = &input.ramdisk_id {
+        object.key("RamdiskId").string(var_1785.as_str());
     }
-    if let Some(var_1782) = &input.security_groups {
-        let mut array_1783 = object.key("SecurityGroups").start_array();
-        for item_1784 in var_1782 {
+    if let Some(var_1786) = &input.security_groups {
+        let mut array_1787 = object.key("SecurityGroups").start_array();
+        for item_1788 in var_1786 {
             {
-                array_1783.value().string(item_1784.as_str());
+                array_1787.value().string(item_1788.as_str());
             }
         }
-        array_1783.finish();
+        array_1787.finish();
     }
-    if let Some(var_1785) = &input.spot_price {
-        object.key("SpotPrice").string(var_1785.as_str());
+    if let Some(var_1789) = &input.spot_price {
+        object.key("SpotPrice").string(var_1789.as_str());
     }
-    if let Some(var_1786) = &input.user_data {
-        object.key("UserData").string(var_1786.as_str());
+    if let Some(var_1790) = &input.user_data {
+        object.key("UserData").string(var_1790.as_str());
     }
-    if let Some(var_1787) = &input.metadata_options {
-        let mut object_1788 = object.key("MetadataOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_launch_configuration_metadata_options(&mut object_1788, var_1787)?;
-        object_1788.finish();
+    if let Some(var_1791) = &input.metadata_options {
+        let mut object_1792 = object.key("MetadataOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_launch_configuration_metadata_options(&mut object_1792, var_1791)?;
+        object_1792.finish();
     }
     Ok(())
 }
@@ -7454,61 +7481,61 @@ pub fn serialize_structure_crate_model_aws_ec2_vpn_connection_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2VpnConnectionDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1789) = &input.vpn_connection_id {
-        object.key("VpnConnectionId").string(var_1789.as_str());
+    if let Some(var_1793) = &input.vpn_connection_id {
+        object.key("VpnConnectionId").string(var_1793.as_str());
     }
-    if let Some(var_1790) = &input.state {
-        object.key("State").string(var_1790.as_str());
+    if let Some(var_1794) = &input.state {
+        object.key("State").string(var_1794.as_str());
     }
-    if let Some(var_1791) = &input.customer_gateway_id {
-        object.key("CustomerGatewayId").string(var_1791.as_str());
+    if let Some(var_1795) = &input.customer_gateway_id {
+        object.key("CustomerGatewayId").string(var_1795.as_str());
     }
-    if let Some(var_1792) = &input.customer_gateway_configuration {
+    if let Some(var_1796) = &input.customer_gateway_configuration {
         object
             .key("CustomerGatewayConfiguration")
-            .string(var_1792.as_str());
+            .string(var_1796.as_str());
     }
-    if let Some(var_1793) = &input.r#type {
-        object.key("Type").string(var_1793.as_str());
+    if let Some(var_1797) = &input.r#type {
+        object.key("Type").string(var_1797.as_str());
     }
-    if let Some(var_1794) = &input.vpn_gateway_id {
-        object.key("VpnGatewayId").string(var_1794.as_str());
+    if let Some(var_1798) = &input.vpn_gateway_id {
+        object.key("VpnGatewayId").string(var_1798.as_str());
     }
-    if let Some(var_1795) = &input.category {
-        object.key("Category").string(var_1795.as_str());
+    if let Some(var_1799) = &input.category {
+        object.key("Category").string(var_1799.as_str());
     }
-    if let Some(var_1796) = &input.vgw_telemetry {
-        let mut array_1797 = object.key("VgwTelemetry").start_array();
-        for item_1798 in var_1796 {
+    if let Some(var_1800) = &input.vgw_telemetry {
+        let mut array_1801 = object.key("VgwTelemetry").start_array();
+        for item_1802 in var_1800 {
             {
-                let mut object_1799 = array_1797.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_vpn_connection_vgw_telemetry_details(&mut object_1799, item_1798)?;
-                object_1799.finish();
+                let mut object_1803 = array_1801.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_vpn_connection_vgw_telemetry_details(&mut object_1803, item_1802)?;
+                object_1803.finish();
             }
         }
-        array_1797.finish();
+        array_1801.finish();
     }
-    if let Some(var_1800) = &input.options {
-        let mut object_1801 = object.key("Options").start_object();
+    if let Some(var_1804) = &input.options {
+        let mut object_1805 = object.key("Options").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_ec2_vpn_connection_options_details(
-            &mut object_1801,
-            var_1800,
+            &mut object_1805,
+            var_1804,
         )?;
-        object_1801.finish();
+        object_1805.finish();
     }
-    if let Some(var_1802) = &input.routes {
-        let mut array_1803 = object.key("Routes").start_array();
-        for item_1804 in var_1802 {
+    if let Some(var_1806) = &input.routes {
+        let mut array_1807 = object.key("Routes").start_array();
+        for item_1808 in var_1806 {
             {
-                let mut object_1805 = array_1803.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_vpn_connection_routes_details(&mut object_1805, item_1804)?;
-                object_1805.finish();
+                let mut object_1809 = array_1807.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_vpn_connection_routes_details(&mut object_1809, item_1808)?;
+                object_1809.finish();
             }
         }
-        array_1803.finish();
+        array_1807.finish();
     }
-    if let Some(var_1806) = &input.transit_gateway_id {
-        object.key("TransitGatewayId").string(var_1806.as_str());
+    if let Some(var_1810) = &input.transit_gateway_id {
+        object.key("TransitGatewayId").string(var_1810.as_str());
     }
     Ok(())
 }
@@ -7517,29 +7544,29 @@ pub fn serialize_structure_crate_model_aws_ecr_container_image_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcrContainerImageDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1807) = &input.registry_id {
-        object.key("RegistryId").string(var_1807.as_str());
+    if let Some(var_1811) = &input.registry_id {
+        object.key("RegistryId").string(var_1811.as_str());
     }
-    if let Some(var_1808) = &input.repository_name {
-        object.key("RepositoryName").string(var_1808.as_str());
+    if let Some(var_1812) = &input.repository_name {
+        object.key("RepositoryName").string(var_1812.as_str());
     }
-    if let Some(var_1809) = &input.architecture {
-        object.key("Architecture").string(var_1809.as_str());
+    if let Some(var_1813) = &input.architecture {
+        object.key("Architecture").string(var_1813.as_str());
     }
-    if let Some(var_1810) = &input.image_digest {
-        object.key("ImageDigest").string(var_1810.as_str());
+    if let Some(var_1814) = &input.image_digest {
+        object.key("ImageDigest").string(var_1814.as_str());
     }
-    if let Some(var_1811) = &input.image_tags {
-        let mut array_1812 = object.key("ImageTags").start_array();
-        for item_1813 in var_1811 {
+    if let Some(var_1815) = &input.image_tags {
+        let mut array_1816 = object.key("ImageTags").start_array();
+        for item_1817 in var_1815 {
             {
-                array_1812.value().string(item_1813.as_str());
+                array_1816.value().string(item_1817.as_str());
             }
         }
-        array_1812.finish();
+        array_1816.finish();
     }
-    if let Some(var_1814) = &input.image_published_at {
-        object.key("ImagePublishedAt").string(var_1814.as_str());
+    if let Some(var_1818) = &input.image_published_at {
+        object.key("ImagePublishedAt").string(var_1818.as_str());
     }
     Ok(())
 }
@@ -7548,67 +7575,67 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsOpenSearchServiceDomainDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1815) = &input.arn {
-        object.key("Arn").string(var_1815.as_str());
+    if let Some(var_1819) = &input.arn {
+        object.key("Arn").string(var_1819.as_str());
     }
-    if let Some(var_1816) = &input.access_policies {
-        object.key("AccessPolicies").string(var_1816.as_str());
+    if let Some(var_1820) = &input.access_policies {
+        object.key("AccessPolicies").string(var_1820.as_str());
     }
-    if let Some(var_1817) = &input.domain_name {
-        object.key("DomainName").string(var_1817.as_str());
+    if let Some(var_1821) = &input.domain_name {
+        object.key("DomainName").string(var_1821.as_str());
     }
-    if let Some(var_1818) = &input.id {
-        object.key("Id").string(var_1818.as_str());
+    if let Some(var_1822) = &input.id {
+        object.key("Id").string(var_1822.as_str());
     }
-    if let Some(var_1819) = &input.domain_endpoint {
-        object.key("DomainEndpoint").string(var_1819.as_str());
+    if let Some(var_1823) = &input.domain_endpoint {
+        object.key("DomainEndpoint").string(var_1823.as_str());
     }
-    if let Some(var_1820) = &input.engine_version {
-        object.key("EngineVersion").string(var_1820.as_str());
+    if let Some(var_1824) = &input.engine_version {
+        object.key("EngineVersion").string(var_1824.as_str());
     }
-    if let Some(var_1821) = &input.encryption_at_rest_options {
-        let mut object_1822 = object.key("EncryptionAtRestOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_encryption_at_rest_options_details(&mut object_1822, var_1821)?;
-        object_1822.finish();
-    }
-    if let Some(var_1823) = &input.node_to_node_encryption_options {
-        let mut object_1824 = object.key("NodeToNodeEncryptionOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_node_to_node_encryption_options_details(&mut object_1824, var_1823)?;
-        object_1824.finish();
-    }
-    if let Some(var_1825) = &input.service_software_options {
-        let mut object_1826 = object.key("ServiceSoftwareOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_service_software_options_details(&mut object_1826, var_1825)?;
+    if let Some(var_1825) = &input.encryption_at_rest_options {
+        let mut object_1826 = object.key("EncryptionAtRestOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_encryption_at_rest_options_details(&mut object_1826, var_1825)?;
         object_1826.finish();
     }
-    if let Some(var_1827) = &input.cluster_config {
-        let mut object_1828 = object.key("ClusterConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_cluster_config_details(&mut object_1828, var_1827)?;
+    if let Some(var_1827) = &input.node_to_node_encryption_options {
+        let mut object_1828 = object.key("NodeToNodeEncryptionOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_node_to_node_encryption_options_details(&mut object_1828, var_1827)?;
         object_1828.finish();
     }
-    if let Some(var_1829) = &input.domain_endpoint_options {
-        let mut object_1830 = object.key("DomainEndpointOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_domain_endpoint_options_details(&mut object_1830, var_1829)?;
+    if let Some(var_1829) = &input.service_software_options {
+        let mut object_1830 = object.key("ServiceSoftwareOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_service_software_options_details(&mut object_1830, var_1829)?;
         object_1830.finish();
     }
-    if let Some(var_1831) = &input.vpc_options {
-        let mut object_1832 = object.key("VpcOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_vpc_options_details(&mut object_1832, var_1831)?;
+    if let Some(var_1831) = &input.cluster_config {
+        let mut object_1832 = object.key("ClusterConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_cluster_config_details(&mut object_1832, var_1831)?;
         object_1832.finish();
     }
-    if let Some(var_1833) = &input.log_publishing_options {
-        let mut object_1834 = object.key("LogPublishingOptions").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_log_publishing_options_details(&mut object_1834, var_1833)?;
+    if let Some(var_1833) = &input.domain_endpoint_options {
+        let mut object_1834 = object.key("DomainEndpointOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_domain_endpoint_options_details(&mut object_1834, var_1833)?;
         object_1834.finish();
     }
-    if let Some(var_1835) = &input.domain_endpoints {
-        let mut object_1836 = object.key("DomainEndpoints").start_object();
-        for (key_1837, value_1838) in var_1835 {
+    if let Some(var_1835) = &input.vpc_options {
+        let mut object_1836 = object.key("VpcOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_vpc_options_details(&mut object_1836, var_1835)?;
+        object_1836.finish();
+    }
+    if let Some(var_1837) = &input.log_publishing_options {
+        let mut object_1838 = object.key("LogPublishingOptions").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_log_publishing_options_details(&mut object_1838, var_1837)?;
+        object_1838.finish();
+    }
+    if let Some(var_1839) = &input.domain_endpoints {
+        let mut object_1840 = object.key("DomainEndpoints").start_object();
+        for (key_1841, value_1842) in var_1839 {
             {
-                object_1836.key(key_1837).string(value_1838.as_str());
+                object_1840.key(key_1841).string(value_1842.as_str());
             }
         }
-        object_1836.finish();
+        object_1840.finish();
     }
     Ok(())
 }
@@ -7622,69 +7649,69 @@ pub fn serialize_structure_crate_model_aws_ec2_vpc_endpoint_service_details(
             .key("AcceptanceRequired")
             .boolean(input.acceptance_required);
     }
-    if let Some(var_1839) = &input.availability_zones {
-        let mut array_1840 = object.key("AvailabilityZones").start_array();
-        for item_1841 in var_1839 {
+    if let Some(var_1843) = &input.availability_zones {
+        let mut array_1844 = object.key("AvailabilityZones").start_array();
+        for item_1845 in var_1843 {
             {
-                array_1840.value().string(item_1841.as_str());
+                array_1844.value().string(item_1845.as_str());
             }
         }
-        array_1840.finish();
+        array_1844.finish();
     }
-    if let Some(var_1842) = &input.base_endpoint_dns_names {
-        let mut array_1843 = object.key("BaseEndpointDnsNames").start_array();
-        for item_1844 in var_1842 {
+    if let Some(var_1846) = &input.base_endpoint_dns_names {
+        let mut array_1847 = object.key("BaseEndpointDnsNames").start_array();
+        for item_1848 in var_1846 {
             {
-                array_1843.value().string(item_1844.as_str());
+                array_1847.value().string(item_1848.as_str());
             }
         }
-        array_1843.finish();
+        array_1847.finish();
     }
     if input.manages_vpc_endpoints {
         object
             .key("ManagesVpcEndpoints")
             .boolean(input.manages_vpc_endpoints);
     }
-    if let Some(var_1845) = &input.gateway_load_balancer_arns {
-        let mut array_1846 = object.key("GatewayLoadBalancerArns").start_array();
-        for item_1847 in var_1845 {
+    if let Some(var_1849) = &input.gateway_load_balancer_arns {
+        let mut array_1850 = object.key("GatewayLoadBalancerArns").start_array();
+        for item_1851 in var_1849 {
             {
-                array_1846.value().string(item_1847.as_str());
+                array_1850.value().string(item_1851.as_str());
             }
         }
-        array_1846.finish();
+        array_1850.finish();
     }
-    if let Some(var_1848) = &input.network_load_balancer_arns {
-        let mut array_1849 = object.key("NetworkLoadBalancerArns").start_array();
-        for item_1850 in var_1848 {
+    if let Some(var_1852) = &input.network_load_balancer_arns {
+        let mut array_1853 = object.key("NetworkLoadBalancerArns").start_array();
+        for item_1854 in var_1852 {
             {
-                array_1849.value().string(item_1850.as_str());
+                array_1853.value().string(item_1854.as_str());
             }
         }
-        array_1849.finish();
+        array_1853.finish();
     }
-    if let Some(var_1851) = &input.private_dns_name {
-        object.key("PrivateDnsName").string(var_1851.as_str());
+    if let Some(var_1855) = &input.private_dns_name {
+        object.key("PrivateDnsName").string(var_1855.as_str());
     }
-    if let Some(var_1852) = &input.service_id {
-        object.key("ServiceId").string(var_1852.as_str());
+    if let Some(var_1856) = &input.service_id {
+        object.key("ServiceId").string(var_1856.as_str());
     }
-    if let Some(var_1853) = &input.service_name {
-        object.key("ServiceName").string(var_1853.as_str());
+    if let Some(var_1857) = &input.service_name {
+        object.key("ServiceName").string(var_1857.as_str());
     }
-    if let Some(var_1854) = &input.service_state {
-        object.key("ServiceState").string(var_1854.as_str());
+    if let Some(var_1858) = &input.service_state {
+        object.key("ServiceState").string(var_1858.as_str());
     }
-    if let Some(var_1855) = &input.service_type {
-        let mut array_1856 = object.key("ServiceType").start_array();
-        for item_1857 in var_1855 {
+    if let Some(var_1859) = &input.service_type {
+        let mut array_1860 = object.key("ServiceType").start_array();
+        for item_1861 in var_1859 {
             {
-                let mut object_1858 = array_1856.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_vpc_endpoint_service_service_type_details(&mut object_1858, item_1857)?;
-                object_1858.finish();
+                let mut object_1862 = array_1860.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_vpc_endpoint_service_service_type_details(&mut object_1862, item_1861)?;
+                object_1862.finish();
             }
         }
-        array_1856.finish();
+        array_1860.finish();
     }
     Ok(())
 }
@@ -7693,14 +7720,14 @@ pub fn serialize_structure_crate_model_aws_xray_encryption_config_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsXrayEncryptionConfigDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1859) = &input.key_id {
-        object.key("KeyId").string(var_1859.as_str());
+    if let Some(var_1863) = &input.key_id {
+        object.key("KeyId").string(var_1863.as_str());
     }
-    if let Some(var_1860) = &input.status {
-        object.key("Status").string(var_1860.as_str());
+    if let Some(var_1864) = &input.status {
+        object.key("Status").string(var_1864.as_str());
     }
-    if let Some(var_1861) = &input.r#type {
-        object.key("Type").string(var_1861.as_str());
+    if let Some(var_1865) = &input.r#type {
+        object.key("Type").string(var_1865.as_str());
     }
     Ok(())
 }
@@ -7709,14 +7736,14 @@ pub fn serialize_structure_crate_model_aws_waf_rate_based_rule_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsWafRateBasedRuleDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1862) = &input.metric_name {
-        object.key("MetricName").string(var_1862.as_str());
+    if let Some(var_1866) = &input.metric_name {
+        object.key("MetricName").string(var_1866.as_str());
     }
-    if let Some(var_1863) = &input.name {
-        object.key("Name").string(var_1863.as_str());
+    if let Some(var_1867) = &input.name {
+        object.key("Name").string(var_1867.as_str());
     }
-    if let Some(var_1864) = &input.rate_key {
-        object.key("RateKey").string(var_1864.as_str());
+    if let Some(var_1868) = &input.rate_key {
+        object.key("RateKey").string(var_1868.as_str());
     }
     if input.rate_limit != 0 {
         object.key("RateLimit").number(
@@ -7724,19 +7751,19 @@ pub fn serialize_structure_crate_model_aws_waf_rate_based_rule_details(
             aws_smithy_types::Number::NegInt((input.rate_limit).into()),
         );
     }
-    if let Some(var_1865) = &input.rule_id {
-        object.key("RuleId").string(var_1865.as_str());
+    if let Some(var_1869) = &input.rule_id {
+        object.key("RuleId").string(var_1869.as_str());
     }
-    if let Some(var_1866) = &input.match_predicates {
-        let mut array_1867 = object.key("MatchPredicates").start_array();
-        for item_1868 in var_1866 {
+    if let Some(var_1870) = &input.match_predicates {
+        let mut array_1871 = object.key("MatchPredicates").start_array();
+        for item_1872 in var_1870 {
             {
-                let mut object_1869 = array_1867.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_waf_rate_based_rule_match_predicate(&mut object_1869, item_1868)?;
-                object_1869.finish();
+                let mut object_1873 = array_1871.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_waf_rate_based_rule_match_predicate(&mut object_1873, item_1872)?;
+                object_1873.finish();
             }
         }
-        array_1867.finish();
+        array_1871.finish();
     }
     Ok(())
 }
@@ -7745,14 +7772,14 @@ pub fn serialize_structure_crate_model_aws_waf_regional_rate_based_rule_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsWafRegionalRateBasedRuleDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1870) = &input.metric_name {
-        object.key("MetricName").string(var_1870.as_str());
+    if let Some(var_1874) = &input.metric_name {
+        object.key("MetricName").string(var_1874.as_str());
     }
-    if let Some(var_1871) = &input.name {
-        object.key("Name").string(var_1871.as_str());
+    if let Some(var_1875) = &input.name {
+        object.key("Name").string(var_1875.as_str());
     }
-    if let Some(var_1872) = &input.rate_key {
-        object.key("RateKey").string(var_1872.as_str());
+    if let Some(var_1876) = &input.rate_key {
+        object.key("RateKey").string(var_1876.as_str());
     }
     if input.rate_limit != 0 {
         object.key("RateLimit").number(
@@ -7760,19 +7787,19 @@ pub fn serialize_structure_crate_model_aws_waf_regional_rate_based_rule_details(
             aws_smithy_types::Number::NegInt((input.rate_limit).into()),
         );
     }
-    if let Some(var_1873) = &input.rule_id {
-        object.key("RuleId").string(var_1873.as_str());
+    if let Some(var_1877) = &input.rule_id {
+        object.key("RuleId").string(var_1877.as_str());
     }
-    if let Some(var_1874) = &input.match_predicates {
-        let mut array_1875 = object.key("MatchPredicates").start_array();
-        for item_1876 in var_1874 {
+    if let Some(var_1878) = &input.match_predicates {
+        let mut array_1879 = object.key("MatchPredicates").start_array();
+        for item_1880 in var_1878 {
             {
-                let mut object_1877 = array_1875.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_waf_regional_rate_based_rule_match_predicate(&mut object_1877, item_1876)?;
-                object_1877.finish();
+                let mut object_1881 = array_1879.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_waf_regional_rate_based_rule_match_predicate(&mut object_1881, item_1880)?;
+                object_1881.finish();
             }
         }
-        array_1875.finish();
+        array_1879.finish();
     }
     Ok(())
 }
@@ -7781,27 +7808,27 @@ pub fn serialize_structure_crate_model_aws_ecr_repository_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcrRepositoryDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1878) = &input.arn {
-        object.key("Arn").string(var_1878.as_str());
+    if let Some(var_1882) = &input.arn {
+        object.key("Arn").string(var_1882.as_str());
     }
-    if let Some(var_1879) = &input.image_scanning_configuration {
-        let mut object_1880 = object.key("ImageScanningConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecr_repository_image_scanning_configuration_details(&mut object_1880, var_1879)?;
-        object_1880.finish();
+    if let Some(var_1883) = &input.image_scanning_configuration {
+        let mut object_1884 = object.key("ImageScanningConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecr_repository_image_scanning_configuration_details(&mut object_1884, var_1883)?;
+        object_1884.finish();
     }
-    if let Some(var_1881) = &input.image_tag_mutability {
-        object.key("ImageTagMutability").string(var_1881.as_str());
+    if let Some(var_1885) = &input.image_tag_mutability {
+        object.key("ImageTagMutability").string(var_1885.as_str());
     }
-    if let Some(var_1882) = &input.lifecycle_policy {
-        let mut object_1883 = object.key("LifecyclePolicy").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecr_repository_lifecycle_policy_details(&mut object_1883, var_1882)?;
-        object_1883.finish();
+    if let Some(var_1886) = &input.lifecycle_policy {
+        let mut object_1887 = object.key("LifecyclePolicy").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecr_repository_lifecycle_policy_details(&mut object_1887, var_1886)?;
+        object_1887.finish();
     }
-    if let Some(var_1884) = &input.repository_name {
-        object.key("RepositoryName").string(var_1884.as_str());
+    if let Some(var_1888) = &input.repository_name {
+        object.key("RepositoryName").string(var_1888.as_str());
     }
-    if let Some(var_1885) = &input.repository_policy_text {
-        object.key("RepositoryPolicyText").string(var_1885.as_str());
+    if let Some(var_1889) = &input.repository_policy_text {
+        object.key("RepositoryPolicyText").string(var_1889.as_str());
     }
     Ok(())
 }
@@ -7810,41 +7837,41 @@ pub fn serialize_structure_crate_model_aws_eks_cluster_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEksClusterDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1886) = &input.arn {
-        object.key("Arn").string(var_1886.as_str());
+    if let Some(var_1890) = &input.arn {
+        object.key("Arn").string(var_1890.as_str());
     }
-    if let Some(var_1887) = &input.certificate_authority_data {
+    if let Some(var_1891) = &input.certificate_authority_data {
         object
             .key("CertificateAuthorityData")
-            .string(var_1887.as_str());
+            .string(var_1891.as_str());
     }
-    if let Some(var_1888) = &input.cluster_status {
-        object.key("ClusterStatus").string(var_1888.as_str());
+    if let Some(var_1892) = &input.cluster_status {
+        object.key("ClusterStatus").string(var_1892.as_str());
     }
-    if let Some(var_1889) = &input.endpoint {
-        object.key("Endpoint").string(var_1889.as_str());
+    if let Some(var_1893) = &input.endpoint {
+        object.key("Endpoint").string(var_1893.as_str());
     }
-    if let Some(var_1890) = &input.name {
-        object.key("Name").string(var_1890.as_str());
+    if let Some(var_1894) = &input.name {
+        object.key("Name").string(var_1894.as_str());
     }
-    if let Some(var_1891) = &input.resources_vpc_config {
-        let mut object_1892 = object.key("ResourcesVpcConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_eks_cluster_resources_vpc_config_details(&mut object_1892, var_1891)?;
-        object_1892.finish();
-    }
-    if let Some(var_1893) = &input.role_arn {
-        object.key("RoleArn").string(var_1893.as_str());
-    }
-    if let Some(var_1894) = &input.version {
-        object.key("Version").string(var_1894.as_str());
-    }
-    if let Some(var_1895) = &input.logging {
-        let mut object_1896 = object.key("Logging").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_eks_cluster_logging_details(
-            &mut object_1896,
-            var_1895,
-        )?;
+    if let Some(var_1895) = &input.resources_vpc_config {
+        let mut object_1896 = object.key("ResourcesVpcConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_eks_cluster_resources_vpc_config_details(&mut object_1896, var_1895)?;
         object_1896.finish();
+    }
+    if let Some(var_1897) = &input.role_arn {
+        object.key("RoleArn").string(var_1897.as_str());
+    }
+    if let Some(var_1898) = &input.version {
+        object.key("Version").string(var_1898.as_str());
+    }
+    if let Some(var_1899) = &input.logging {
+        let mut object_1900 = object.key("Logging").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_eks_cluster_logging_details(
+            &mut object_1900,
+            var_1899,
+        )?;
+        object_1900.finish();
     }
     Ok(())
 }
@@ -7853,25 +7880,25 @@ pub fn serialize_structure_crate_model_aws_network_firewall_firewall_policy_deta
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsNetworkFirewallFirewallPolicyDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1897) = &input.firewall_policy {
-        let mut object_1898 = object.key("FirewallPolicy").start_object();
+    if let Some(var_1901) = &input.firewall_policy {
+        let mut object_1902 = object.key("FirewallPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_firewall_policy_details(
-            &mut object_1898,
-            var_1897,
+            &mut object_1902,
+            var_1901,
         )?;
-        object_1898.finish();
+        object_1902.finish();
     }
-    if let Some(var_1899) = &input.firewall_policy_arn {
-        object.key("FirewallPolicyArn").string(var_1899.as_str());
+    if let Some(var_1903) = &input.firewall_policy_arn {
+        object.key("FirewallPolicyArn").string(var_1903.as_str());
     }
-    if let Some(var_1900) = &input.firewall_policy_id {
-        object.key("FirewallPolicyId").string(var_1900.as_str());
+    if let Some(var_1904) = &input.firewall_policy_id {
+        object.key("FirewallPolicyId").string(var_1904.as_str());
     }
-    if let Some(var_1901) = &input.firewall_policy_name {
-        object.key("FirewallPolicyName").string(var_1901.as_str());
+    if let Some(var_1905) = &input.firewall_policy_name {
+        object.key("FirewallPolicyName").string(var_1905.as_str());
     }
-    if let Some(var_1902) = &input.description {
-        object.key("Description").string(var_1902.as_str());
+    if let Some(var_1906) = &input.description {
+        object.key("Description").string(var_1906.as_str());
     }
     Ok(())
 }
@@ -7885,20 +7912,20 @@ pub fn serialize_structure_crate_model_aws_network_firewall_firewall_details(
             .key("DeleteProtection")
             .boolean(input.delete_protection);
     }
-    if let Some(var_1903) = &input.description {
-        object.key("Description").string(var_1903.as_str());
+    if let Some(var_1907) = &input.description {
+        object.key("Description").string(var_1907.as_str());
     }
-    if let Some(var_1904) = &input.firewall_arn {
-        object.key("FirewallArn").string(var_1904.as_str());
+    if let Some(var_1908) = &input.firewall_arn {
+        object.key("FirewallArn").string(var_1908.as_str());
     }
-    if let Some(var_1905) = &input.firewall_id {
-        object.key("FirewallId").string(var_1905.as_str());
+    if let Some(var_1909) = &input.firewall_id {
+        object.key("FirewallId").string(var_1909.as_str());
     }
-    if let Some(var_1906) = &input.firewall_name {
-        object.key("FirewallName").string(var_1906.as_str());
+    if let Some(var_1910) = &input.firewall_name {
+        object.key("FirewallName").string(var_1910.as_str());
     }
-    if let Some(var_1907) = &input.firewall_policy_arn {
-        object.key("FirewallPolicyArn").string(var_1907.as_str());
+    if let Some(var_1911) = &input.firewall_policy_arn {
+        object.key("FirewallPolicyArn").string(var_1911.as_str());
     }
     if input.firewall_policy_change_protection {
         object
@@ -7910,19 +7937,19 @@ pub fn serialize_structure_crate_model_aws_network_firewall_firewall_details(
             .key("SubnetChangeProtection")
             .boolean(input.subnet_change_protection);
     }
-    if let Some(var_1908) = &input.subnet_mappings {
-        let mut array_1909 = object.key("SubnetMappings").start_array();
-        for item_1910 in var_1908 {
+    if let Some(var_1912) = &input.subnet_mappings {
+        let mut array_1913 = object.key("SubnetMappings").start_array();
+        for item_1914 in var_1912 {
             {
-                let mut object_1911 = array_1909.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_network_firewall_firewall_subnet_mappings_details(&mut object_1911, item_1910)?;
-                object_1911.finish();
+                let mut object_1915 = array_1913.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_network_firewall_firewall_subnet_mappings_details(&mut object_1915, item_1914)?;
+                object_1915.finish();
             }
         }
-        array_1909.finish();
+        array_1913.finish();
     }
-    if let Some(var_1912) = &input.vpc_id {
-        object.key("VpcId").string(var_1912.as_str());
+    if let Some(var_1916) = &input.vpc_id {
+        object.key("VpcId").string(var_1916.as_str());
     }
     Ok(())
 }
@@ -7937,28 +7964,28 @@ pub fn serialize_structure_crate_model_aws_network_firewall_rule_group_details(
             aws_smithy_types::Number::NegInt((input.capacity).into()),
         );
     }
-    if let Some(var_1913) = &input.description {
-        object.key("Description").string(var_1913.as_str());
+    if let Some(var_1917) = &input.description {
+        object.key("Description").string(var_1917.as_str());
     }
-    if let Some(var_1914) = &input.rule_group {
-        let mut object_1915 = object.key("RuleGroup").start_object();
+    if let Some(var_1918) = &input.rule_group {
+        let mut object_1919 = object.key("RuleGroup").start_object();
         crate::json_ser::serialize_structure_crate_model_rule_group_details(
-            &mut object_1915,
-            var_1914,
+            &mut object_1919,
+            var_1918,
         )?;
-        object_1915.finish();
+        object_1919.finish();
     }
-    if let Some(var_1916) = &input.rule_group_arn {
-        object.key("RuleGroupArn").string(var_1916.as_str());
+    if let Some(var_1920) = &input.rule_group_arn {
+        object.key("RuleGroupArn").string(var_1920.as_str());
     }
-    if let Some(var_1917) = &input.rule_group_id {
-        object.key("RuleGroupId").string(var_1917.as_str());
+    if let Some(var_1921) = &input.rule_group_id {
+        object.key("RuleGroupId").string(var_1921.as_str());
     }
-    if let Some(var_1918) = &input.rule_group_name {
-        object.key("RuleGroupName").string(var_1918.as_str());
+    if let Some(var_1922) = &input.rule_group_name {
+        object.key("RuleGroupName").string(var_1922.as_str());
     }
-    if let Some(var_1919) = &input.r#type {
-        object.key("Type").string(var_1919.as_str());
+    if let Some(var_1923) = &input.r#type {
+        object.key("Type").string(var_1923.as_str());
     }
     Ok(())
 }
@@ -7967,11 +7994,11 @@ pub fn serialize_structure_crate_model_adjustment(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Adjustment,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1920) = &input.metric {
-        object.key("Metric").string(var_1920.as_str());
+    if let Some(var_1924) = &input.metric {
+        object.key("Metric").string(var_1924.as_str());
     }
-    if let Some(var_1921) = &input.reason {
-        object.key("Reason").string(var_1921.as_str());
+    if let Some(var_1925) = &input.reason {
+        object.key("Reason").string(var_1925.as_str());
     }
     Ok(())
 }
@@ -7980,31 +8007,31 @@ pub fn serialize_structure_crate_model_action_remote_ip_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ActionRemoteIpDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1922) = &input.ip_address_v4 {
-        object.key("IpAddressV4").string(var_1922.as_str());
+    if let Some(var_1926) = &input.ip_address_v4 {
+        object.key("IpAddressV4").string(var_1926.as_str());
     }
-    if let Some(var_1923) = &input.organization {
-        let mut object_1924 = object.key("Organization").start_object();
+    if let Some(var_1927) = &input.organization {
+        let mut object_1928 = object.key("Organization").start_object();
         crate::json_ser::serialize_structure_crate_model_ip_organization_details(
-            &mut object_1924,
-            var_1923,
+            &mut object_1928,
+            var_1927,
         )?;
-        object_1924.finish();
-    }
-    if let Some(var_1925) = &input.country {
-        let mut object_1926 = object.key("Country").start_object();
-        crate::json_ser::serialize_structure_crate_model_country(&mut object_1926, var_1925)?;
-        object_1926.finish();
-    }
-    if let Some(var_1927) = &input.city {
-        let mut object_1928 = object.key("City").start_object();
-        crate::json_ser::serialize_structure_crate_model_city(&mut object_1928, var_1927)?;
         object_1928.finish();
     }
-    if let Some(var_1929) = &input.geo_location {
-        let mut object_1930 = object.key("GeoLocation").start_object();
-        crate::json_ser::serialize_structure_crate_model_geo_location(&mut object_1930, var_1929)?;
+    if let Some(var_1929) = &input.country {
+        let mut object_1930 = object.key("Country").start_object();
+        crate::json_ser::serialize_structure_crate_model_country(&mut object_1930, var_1929)?;
         object_1930.finish();
+    }
+    if let Some(var_1931) = &input.city {
+        let mut object_1932 = object.key("City").start_object();
+        crate::json_ser::serialize_structure_crate_model_city(&mut object_1932, var_1931)?;
+        object_1932.finish();
+    }
+    if let Some(var_1933) = &input.geo_location {
+        let mut object_1934 = object.key("GeoLocation").start_object();
+        crate::json_ser::serialize_structure_crate_model_geo_location(&mut object_1934, var_1933)?;
+        object_1934.finish();
     }
     Ok(())
 }
@@ -8019,8 +8046,8 @@ pub fn serialize_structure_crate_model_action_remote_port_details(
             aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_1931) = &input.port_name {
-        object.key("PortName").string(var_1931.as_str());
+    if let Some(var_1935) = &input.port_name {
+        object.key("PortName").string(var_1935.as_str());
     }
     Ok(())
 }
@@ -8035,8 +8062,8 @@ pub fn serialize_structure_crate_model_action_local_port_details(
             aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_1932) = &input.port_name {
-        object.key("PortName").string(var_1932.as_str());
+    if let Some(var_1936) = &input.port_name {
+        object.key("PortName").string(var_1936.as_str());
     }
     Ok(())
 }
@@ -8045,8 +8072,8 @@ pub fn serialize_structure_crate_model_aws_api_call_action_domain_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsApiCallActionDomainDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1933) = &input.domain {
-        object.key("Domain").string(var_1933.as_str());
+    if let Some(var_1937) = &input.domain {
+        object.key("Domain").string(var_1937.as_str());
     }
     Ok(())
 }
@@ -8055,29 +8082,29 @@ pub fn serialize_structure_crate_model_port_probe_detail(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PortProbeDetail,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1934) = &input.local_port_details {
-        let mut object_1935 = object.key("LocalPortDetails").start_object();
+    if let Some(var_1938) = &input.local_port_details {
+        let mut object_1939 = object.key("LocalPortDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_action_local_port_details(
-            &mut object_1935,
-            var_1934,
-        )?;
-        object_1935.finish();
-    }
-    if let Some(var_1936) = &input.local_ip_details {
-        let mut object_1937 = object.key("LocalIpDetails").start_object();
-        crate::json_ser::serialize_structure_crate_model_action_local_ip_details(
-            &mut object_1937,
-            var_1936,
-        )?;
-        object_1937.finish();
-    }
-    if let Some(var_1938) = &input.remote_ip_details {
-        let mut object_1939 = object.key("RemoteIpDetails").start_object();
-        crate::json_ser::serialize_structure_crate_model_action_remote_ip_details(
             &mut object_1939,
             var_1938,
         )?;
         object_1939.finish();
+    }
+    if let Some(var_1940) = &input.local_ip_details {
+        let mut object_1941 = object.key("LocalIpDetails").start_object();
+        crate::json_ser::serialize_structure_crate_model_action_local_ip_details(
+            &mut object_1941,
+            var_1940,
+        )?;
+        object_1941.finish();
+    }
+    if let Some(var_1942) = &input.remote_ip_details {
+        let mut object_1943 = object.key("RemoteIpDetails").start_object();
+        crate::json_ser::serialize_structure_crate_model_action_remote_ip_details(
+            &mut object_1943,
+            var_1942,
+        )?;
+        object_1943.finish();
     }
     Ok(())
 }
@@ -8086,11 +8113,11 @@ pub fn serialize_structure_crate_model_classification_status(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ClassificationStatus,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1940) = &input.code {
-        object.key("Code").string(var_1940.as_str());
+    if let Some(var_1944) = &input.code {
+        object.key("Code").string(var_1944.as_str());
     }
-    if let Some(var_1941) = &input.reason {
-        object.key("Reason").string(var_1941.as_str());
+    if let Some(var_1945) = &input.reason {
+        object.key("Reason").string(var_1945.as_str());
     }
     Ok(())
 }
@@ -8099,42 +8126,18 @@ pub fn serialize_structure_crate_model_sensitive_data_result(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SensitiveDataResult,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1942) = &input.category {
-        object.key("Category").string(var_1942.as_str());
+    if let Some(var_1946) = &input.category {
+        object.key("Category").string(var_1946.as_str());
     }
-    if let Some(var_1943) = &input.detections {
-        let mut array_1944 = object.key("Detections").start_array();
-        for item_1945 in var_1943 {
-            {
-                let mut object_1946 = array_1944.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_sensitive_data_detections(
-                    &mut object_1946,
-                    item_1945,
-                )?;
-                object_1946.finish();
-            }
-        }
-        array_1944.finish();
-    }
-    if input.total_count != 0 {
-        object.key("TotalCount").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.total_count).into()),
-        );
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_custom_data_identifiers_result(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CustomDataIdentifiersResult,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1947) = &input.detections {
         let mut array_1948 = object.key("Detections").start_array();
         for item_1949 in var_1947 {
             {
                 let mut object_1950 = array_1948.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_custom_data_identifiers_detections(&mut object_1950, item_1949)?;
+                crate::json_ser::serialize_structure_crate_model_sensitive_data_detections(
+                    &mut object_1950,
+                    item_1949,
+                )?;
                 object_1950.finish();
             }
         }
@@ -8149,19 +8152,43 @@ pub fn serialize_structure_crate_model_custom_data_identifiers_result(
     Ok(())
 }
 
+pub fn serialize_structure_crate_model_custom_data_identifiers_result(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::CustomDataIdentifiersResult,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_1951) = &input.detections {
+        let mut array_1952 = object.key("Detections").start_array();
+        for item_1953 in var_1951 {
+            {
+                let mut object_1954 = array_1952.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_custom_data_identifiers_detections(&mut object_1954, item_1953)?;
+                object_1954.finish();
+            }
+        }
+        array_1952.finish();
+    }
+    if input.total_count != 0 {
+        object.key("TotalCount").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.total_count).into()),
+        );
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1951) = &input.instances_distribution {
-        let mut object_1952 = object.key("InstancesDistribution").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details(&mut object_1952, var_1951)?;
-        object_1952.finish();
+    if let Some(var_1955) = &input.instances_distribution {
+        let mut object_1956 = object.key("InstancesDistribution").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details(&mut object_1956, var_1955)?;
+        object_1956.finish();
     }
-    if let Some(var_1953) = &input.launch_template {
-        let mut object_1954 = object.key("LaunchTemplate").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details(&mut object_1954, var_1953)?;
-        object_1954.finish();
+    if let Some(var_1957) = &input.launch_template {
+        let mut object_1958 = object.key("LaunchTemplate").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details(&mut object_1958, var_1957)?;
+        object_1958.finish();
     }
     Ok(())
 }
@@ -8170,8 +8197,8 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_avail
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1955) = &input.value {
-        object.key("Value").string(var_1955.as_str());
+    if let Some(var_1959) = &input.value {
+        object.key("Value").string(var_1959.as_str());
     }
     Ok(())
 }
@@ -8180,36 +8207,36 @@ pub fn serialize_structure_crate_model_aws_code_build_project_artifacts_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCodeBuildProjectArtifactsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1956) = &input.artifact_identifier {
-        object.key("ArtifactIdentifier").string(var_1956.as_str());
+    if let Some(var_1960) = &input.artifact_identifier {
+        object.key("ArtifactIdentifier").string(var_1960.as_str());
     }
     if input.encryption_disabled {
         object
             .key("EncryptionDisabled")
             .boolean(input.encryption_disabled);
     }
-    if let Some(var_1957) = &input.location {
-        object.key("Location").string(var_1957.as_str());
+    if let Some(var_1961) = &input.location {
+        object.key("Location").string(var_1961.as_str());
     }
-    if let Some(var_1958) = &input.name {
-        object.key("Name").string(var_1958.as_str());
+    if let Some(var_1962) = &input.name {
+        object.key("Name").string(var_1962.as_str());
     }
-    if let Some(var_1959) = &input.namespace_type {
-        object.key("NamespaceType").string(var_1959.as_str());
+    if let Some(var_1963) = &input.namespace_type {
+        object.key("NamespaceType").string(var_1963.as_str());
     }
     if input.override_artifact_name {
         object
             .key("OverrideArtifactName")
             .boolean(input.override_artifact_name);
     }
-    if let Some(var_1960) = &input.packaging {
-        object.key("Packaging").string(var_1960.as_str());
+    if let Some(var_1964) = &input.packaging {
+        object.key("Packaging").string(var_1964.as_str());
     }
-    if let Some(var_1961) = &input.path {
-        object.key("Path").string(var_1961.as_str());
+    if let Some(var_1965) = &input.path {
+        object.key("Path").string(var_1965.as_str());
     }
-    if let Some(var_1962) = &input.r#type {
-        object.key("Type").string(var_1962.as_str());
+    if let Some(var_1966) = &input.r#type {
+        object.key("Type").string(var_1966.as_str());
     }
     Ok(())
 }
@@ -8218,35 +8245,35 @@ pub fn serialize_structure_crate_model_aws_code_build_project_environment(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCodeBuildProjectEnvironment,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1963) = &input.certificate {
-        object.key("Certificate").string(var_1963.as_str());
+    if let Some(var_1967) = &input.certificate {
+        object.key("Certificate").string(var_1967.as_str());
     }
-    if let Some(var_1964) = &input.environment_variables {
-        let mut array_1965 = object.key("EnvironmentVariables").start_array();
-        for item_1966 in var_1964 {
+    if let Some(var_1968) = &input.environment_variables {
+        let mut array_1969 = object.key("EnvironmentVariables").start_array();
+        for item_1970 in var_1968 {
             {
-                let mut object_1967 = array_1965.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_code_build_project_environment_environment_variables_details(&mut object_1967, item_1966)?;
-                object_1967.finish();
+                let mut object_1971 = array_1969.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_code_build_project_environment_environment_variables_details(&mut object_1971, item_1970)?;
+                object_1971.finish();
             }
         }
-        array_1965.finish();
+        array_1969.finish();
     }
     if input.privileged_mode {
         object.key("PrivilegedMode").boolean(input.privileged_mode);
     }
-    if let Some(var_1968) = &input.image_pull_credentials_type {
+    if let Some(var_1972) = &input.image_pull_credentials_type {
         object
             .key("ImagePullCredentialsType")
-            .string(var_1968.as_str());
+            .string(var_1972.as_str());
     }
-    if let Some(var_1969) = &input.registry_credential {
-        let mut object_1970 = object.key("RegistryCredential").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_code_build_project_environment_registry_credential(&mut object_1970, var_1969)?;
-        object_1970.finish();
+    if let Some(var_1973) = &input.registry_credential {
+        let mut object_1974 = object.key("RegistryCredential").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_code_build_project_environment_registry_credential(&mut object_1974, var_1973)?;
+        object_1974.finish();
     }
-    if let Some(var_1971) = &input.r#type {
-        object.key("Type").string(var_1971.as_str());
+    if let Some(var_1975) = &input.r#type {
+        object.key("Type").string(var_1975.as_str());
     }
     Ok(())
 }
@@ -8255,11 +8282,11 @@ pub fn serialize_structure_crate_model_aws_code_build_project_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCodeBuildProjectSource,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1972) = &input.r#type {
-        object.key("Type").string(var_1972.as_str());
+    if let Some(var_1976) = &input.r#type {
+        object.key("Type").string(var_1976.as_str());
     }
-    if let Some(var_1973) = &input.location {
-        object.key("Location").string(var_1973.as_str());
+    if let Some(var_1977) = &input.location {
+        object.key("Location").string(var_1977.as_str());
     }
     if input.git_clone_depth != 0 {
         object.key("GitCloneDepth").number(
@@ -8277,15 +8304,15 @@ pub fn serialize_structure_crate_model_aws_code_build_project_logs_config_detail
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCodeBuildProjectLogsConfigDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1974) = &input.cloud_watch_logs {
-        let mut object_1975 = object.key("CloudWatchLogs").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_code_build_project_logs_config_cloud_watch_logs_details(&mut object_1975, var_1974)?;
-        object_1975.finish();
+    if let Some(var_1978) = &input.cloud_watch_logs {
+        let mut object_1979 = object.key("CloudWatchLogs").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_code_build_project_logs_config_cloud_watch_logs_details(&mut object_1979, var_1978)?;
+        object_1979.finish();
     }
-    if let Some(var_1976) = &input.s3_logs {
-        let mut object_1977 = object.key("S3Logs").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_code_build_project_logs_config_s3_logs_details(&mut object_1977, var_1976)?;
-        object_1977.finish();
+    if let Some(var_1980) = &input.s3_logs {
+        let mut object_1981 = object.key("S3Logs").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_code_build_project_logs_config_s3_logs_details(&mut object_1981, var_1980)?;
+        object_1981.finish();
     }
     Ok(())
 }
@@ -8294,26 +8321,26 @@ pub fn serialize_structure_crate_model_aws_code_build_project_vpc_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCodeBuildProjectVpcConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1978) = &input.vpc_id {
-        object.key("VpcId").string(var_1978.as_str());
+    if let Some(var_1982) = &input.vpc_id {
+        object.key("VpcId").string(var_1982.as_str());
     }
-    if let Some(var_1979) = &input.subnets {
-        let mut array_1980 = object.key("Subnets").start_array();
-        for item_1981 in var_1979 {
+    if let Some(var_1983) = &input.subnets {
+        let mut array_1984 = object.key("Subnets").start_array();
+        for item_1985 in var_1983 {
             {
-                array_1980.value().string(item_1981.as_str());
+                array_1984.value().string(item_1985.as_str());
             }
         }
-        array_1980.finish();
+        array_1984.finish();
     }
-    if let Some(var_1982) = &input.security_group_ids {
-        let mut array_1983 = object.key("SecurityGroupIds").start_array();
-        for item_1984 in var_1982 {
+    if let Some(var_1986) = &input.security_group_ids {
+        let mut array_1987 = object.key("SecurityGroupIds").start_array();
+        for item_1988 in var_1986 {
             {
-                array_1983.value().string(item_1984.as_str());
+                array_1987.value().string(item_1988.as_str());
             }
         }
-        array_1983.finish();
+        array_1987.finish();
     }
     Ok(())
 }
@@ -8322,16 +8349,16 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_cache_behavi
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionCacheBehaviors,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1985) = &input.items {
-        let mut array_1986 = object.key("Items").start_array();
-        for item_1987 in var_1985 {
+    if let Some(var_1989) = &input.items {
+        let mut array_1990 = object.key("Items").start_array();
+        for item_1991 in var_1989 {
             {
-                let mut object_1988 = array_1986.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_cache_behavior(&mut object_1988, item_1987)?;
-                object_1988.finish();
+                let mut object_1992 = array_1990.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_cache_behavior(&mut object_1992, item_1991)?;
+                object_1992.finish();
             }
         }
-        array_1986.finish();
+        array_1990.finish();
     }
     Ok(())
 }
@@ -8340,8 +8367,8 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_default_cach
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionDefaultCacheBehavior,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1989) = &input.viewer_protocol_policy {
-        object.key("ViewerProtocolPolicy").string(var_1989.as_str());
+    if let Some(var_1993) = &input.viewer_protocol_policy {
+        object.key("ViewerProtocolPolicy").string(var_1993.as_str());
     }
     Ok(())
 }
@@ -8350,8 +8377,8 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_logging(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionLogging,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1990) = &input.bucket {
-        object.key("Bucket").string(var_1990.as_str());
+    if let Some(var_1994) = &input.bucket {
+        object.key("Bucket").string(var_1994.as_str());
     }
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
@@ -8359,8 +8386,8 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_logging(
     if input.include_cookies {
         object.key("IncludeCookies").boolean(input.include_cookies);
     }
-    if let Some(var_1991) = &input.prefix {
-        object.key("Prefix").string(var_1991.as_str());
+    if let Some(var_1995) = &input.prefix {
+        object.key("Prefix").string(var_1995.as_str());
     }
     Ok(())
 }
@@ -8369,30 +8396,12 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_origins(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionOrigins,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1992) = &input.items {
-        let mut array_1993 = object.key("Items").start_array();
-        for item_1994 in var_1992 {
-            {
-                let mut object_1995 = array_1993.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_item(&mut object_1995, item_1994)?;
-                object_1995.finish();
-            }
-        }
-        array_1993.finish();
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_aws_cloud_front_distribution_origin_groups(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AwsCloudFrontDistributionOriginGroups,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1996) = &input.items {
         let mut array_1997 = object.key("Items").start_array();
         for item_1998 in var_1996 {
             {
                 let mut object_1999 = array_1997.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_group(&mut object_1999, item_1998)?;
+                crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_item(&mut object_1999, item_1998)?;
                 object_1999.finish();
             }
         }
@@ -8401,34 +8410,52 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_origin_group
     Ok(())
 }
 
+pub fn serialize_structure_crate_model_aws_cloud_front_distribution_origin_groups(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::AwsCloudFrontDistributionOriginGroups,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_2000) = &input.items {
+        let mut array_2001 = object.key("Items").start_array();
+        for item_2002 in var_2000 {
+            {
+                let mut object_2003 = array_2001.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_group(&mut object_2003, item_2002)?;
+                object_2003.finish();
+            }
+        }
+        array_2001.finish();
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_model_aws_cloud_front_distribution_viewer_certificate(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionViewerCertificate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2000) = &input.acm_certificate_arn {
-        object.key("AcmCertificateArn").string(var_2000.as_str());
+    if let Some(var_2004) = &input.acm_certificate_arn {
+        object.key("AcmCertificateArn").string(var_2004.as_str());
     }
-    if let Some(var_2001) = &input.certificate {
-        object.key("Certificate").string(var_2001.as_str());
+    if let Some(var_2005) = &input.certificate {
+        object.key("Certificate").string(var_2005.as_str());
     }
-    if let Some(var_2002) = &input.certificate_source {
-        object.key("CertificateSource").string(var_2002.as_str());
+    if let Some(var_2006) = &input.certificate_source {
+        object.key("CertificateSource").string(var_2006.as_str());
     }
     if input.cloud_front_default_certificate {
         object
             .key("CloudFrontDefaultCertificate")
             .boolean(input.cloud_front_default_certificate);
     }
-    if let Some(var_2003) = &input.iam_certificate_id {
-        object.key("IamCertificateId").string(var_2003.as_str());
+    if let Some(var_2007) = &input.iam_certificate_id {
+        object.key("IamCertificateId").string(var_2007.as_str());
     }
-    if let Some(var_2004) = &input.minimum_protocol_version {
+    if let Some(var_2008) = &input.minimum_protocol_version {
         object
             .key("MinimumProtocolVersion")
-            .string(var_2004.as_str());
+            .string(var_2008.as_str());
     }
-    if let Some(var_2005) = &input.ssl_support_method {
-        object.key("SslSupportMethod").string(var_2005.as_str());
+    if let Some(var_2009) = &input.ssl_support_method {
+        object.key("SslSupportMethod").string(var_2009.as_str());
     }
     Ok(())
 }
@@ -8437,8 +8464,8 @@ pub fn serialize_structure_crate_model_aws_ec2_instance_network_interfaces_detai
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2InstanceNetworkInterfacesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2006) = &input.network_interface_id {
-        object.key("NetworkInterfaceId").string(var_2006.as_str());
+    if let Some(var_2010) = &input.network_interface_id {
+        object.key("NetworkInterfaceId").string(var_2010.as_str());
     }
     Ok(())
 }
@@ -8447,11 +8474,11 @@ pub fn serialize_structure_crate_model_aws_ec2_network_interface_attachment(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2NetworkInterfaceAttachment,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2007) = &input.attach_time {
-        object.key("AttachTime").string(var_2007.as_str());
+    if let Some(var_2011) = &input.attach_time {
+        object.key("AttachTime").string(var_2011.as_str());
     }
-    if let Some(var_2008) = &input.attachment_id {
-        object.key("AttachmentId").string(var_2008.as_str());
+    if let Some(var_2012) = &input.attachment_id {
+        object.key("AttachmentId").string(var_2012.as_str());
     }
     if input.delete_on_termination {
         object
@@ -8464,14 +8491,14 @@ pub fn serialize_structure_crate_model_aws_ec2_network_interface_attachment(
             aws_smithy_types::Number::NegInt((input.device_index).into()),
         );
     }
-    if let Some(var_2009) = &input.instance_id {
-        object.key("InstanceId").string(var_2009.as_str());
+    if let Some(var_2013) = &input.instance_id {
+        object.key("InstanceId").string(var_2013.as_str());
     }
-    if let Some(var_2010) = &input.instance_owner_id {
-        object.key("InstanceOwnerId").string(var_2010.as_str());
+    if let Some(var_2014) = &input.instance_owner_id {
+        object.key("InstanceOwnerId").string(var_2014.as_str());
     }
-    if let Some(var_2011) = &input.status {
-        object.key("Status").string(var_2011.as_str());
+    if let Some(var_2015) = &input.status {
+        object.key("Status").string(var_2015.as_str());
     }
     Ok(())
 }
@@ -8480,11 +8507,11 @@ pub fn serialize_structure_crate_model_aws_ec2_network_interface_security_group(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2NetworkInterfaceSecurityGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2012) = &input.group_name {
-        object.key("GroupName").string(var_2012.as_str());
+    if let Some(var_2016) = &input.group_name {
+        object.key("GroupName").string(var_2016.as_str());
     }
-    if let Some(var_2013) = &input.group_id {
-        object.key("GroupId").string(var_2013.as_str());
+    if let Some(var_2017) = &input.group_id {
+        object.key("GroupId").string(var_2017.as_str());
     }
     Ok(())
 }
@@ -8493,8 +8520,8 @@ pub fn serialize_structure_crate_model_aws_ec2_network_interface_ip_v6_address_d
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2014) = &input.ip_v6_address {
-        object.key("IpV6Address").string(var_2014.as_str());
+    if let Some(var_2018) = &input.ip_v6_address {
+        object.key("IpV6Address").string(var_2018.as_str());
     }
     Ok(())
 }
@@ -8503,11 +8530,11 @@ pub fn serialize_structure_crate_model_aws_ec2_network_interface_private_ip_addr
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2015) = &input.private_ip_address {
-        object.key("PrivateIpAddress").string(var_2015.as_str());
+    if let Some(var_2019) = &input.private_ip_address {
+        object.key("PrivateIpAddress").string(var_2019.as_str());
     }
-    if let Some(var_2016) = &input.private_dns_name {
-        object.key("PrivateDnsName").string(var_2016.as_str());
+    if let Some(var_2020) = &input.private_dns_name {
+        object.key("PrivateDnsName").string(var_2020.as_str());
     }
     Ok(())
 }
@@ -8516,8 +8543,8 @@ pub fn serialize_structure_crate_model_aws_ec2_security_group_ip_permission(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2SecurityGroupIpPermission,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2017) = &input.ip_protocol {
-        object.key("IpProtocol").string(var_2017.as_str());
+    if let Some(var_2021) = &input.ip_protocol {
+        object.key("IpProtocol").string(var_2021.as_str());
     }
     if input.from_port != 0 {
         object.key("FromPort").number(
@@ -8531,37 +8558,23 @@ pub fn serialize_structure_crate_model_aws_ec2_security_group_ip_permission(
             aws_smithy_types::Number::NegInt((input.to_port).into()),
         );
     }
-    if let Some(var_2018) = &input.user_id_group_pairs {
-        let mut array_2019 = object.key("UserIdGroupPairs").start_array();
-        for item_2020 in var_2018 {
-            {
-                let mut object_2021 = array_2019.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_user_id_group_pair(&mut object_2021, item_2020)?;
-                object_2021.finish();
-            }
-        }
-        array_2019.finish();
-    }
-    if let Some(var_2022) = &input.ip_ranges {
-        let mut array_2023 = object.key("IpRanges").start_array();
+    if let Some(var_2022) = &input.user_id_group_pairs {
+        let mut array_2023 = object.key("UserIdGroupPairs").start_array();
         for item_2024 in var_2022 {
             {
                 let mut object_2025 = array_2023.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_ip_range(
-                    &mut object_2025,
-                    item_2024,
-                )?;
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_user_id_group_pair(&mut object_2025, item_2024)?;
                 object_2025.finish();
             }
         }
         array_2023.finish();
     }
-    if let Some(var_2026) = &input.ipv6_ranges {
-        let mut array_2027 = object.key("Ipv6Ranges").start_array();
+    if let Some(var_2026) = &input.ip_ranges {
+        let mut array_2027 = object.key("IpRanges").start_array();
         for item_2028 in var_2026 {
             {
                 let mut object_2029 = array_2027.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_ipv6_range(
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_ip_range(
                     &mut object_2029,
                     item_2028,
                 )?;
@@ -8570,16 +8583,30 @@ pub fn serialize_structure_crate_model_aws_ec2_security_group_ip_permission(
         }
         array_2027.finish();
     }
-    if let Some(var_2030) = &input.prefix_list_ids {
-        let mut array_2031 = object.key("PrefixListIds").start_array();
+    if let Some(var_2030) = &input.ipv6_ranges {
+        let mut array_2031 = object.key("Ipv6Ranges").start_array();
         for item_2032 in var_2030 {
             {
                 let mut object_2033 = array_2031.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_prefix_list_id(&mut object_2033, item_2032)?;
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_ipv6_range(
+                    &mut object_2033,
+                    item_2032,
+                )?;
                 object_2033.finish();
             }
         }
         array_2031.finish();
+    }
+    if let Some(var_2034) = &input.prefix_list_ids {
+        let mut array_2035 = object.key("PrefixListIds").start_array();
+        for item_2036 in var_2034 {
+            {
+                let mut object_2037 = array_2035.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_security_group_prefix_list_id(&mut object_2037, item_2036)?;
+                object_2037.finish();
+            }
+        }
+        array_2035.finish();
     }
     Ok(())
 }
@@ -8588,19 +8615,19 @@ pub fn serialize_structure_crate_model_aws_ec2_volume_attachment(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2VolumeAttachment,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2034) = &input.attach_time {
-        object.key("AttachTime").string(var_2034.as_str());
+    if let Some(var_2038) = &input.attach_time {
+        object.key("AttachTime").string(var_2038.as_str());
     }
     if input.delete_on_termination {
         object
             .key("DeleteOnTermination")
             .boolean(input.delete_on_termination);
     }
-    if let Some(var_2035) = &input.instance_id {
-        object.key("InstanceId").string(var_2035.as_str());
+    if let Some(var_2039) = &input.instance_id {
+        object.key("InstanceId").string(var_2039.as_str());
     }
-    if let Some(var_2036) = &input.status {
-        object.key("Status").string(var_2036.as_str());
+    if let Some(var_2040) = &input.status {
+        object.key("Status").string(var_2040.as_str());
     }
     Ok(())
 }
@@ -8609,14 +8636,14 @@ pub fn serialize_structure_crate_model_cidr_block_association(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CidrBlockAssociation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2037) = &input.association_id {
-        object.key("AssociationId").string(var_2037.as_str());
+    if let Some(var_2041) = &input.association_id {
+        object.key("AssociationId").string(var_2041.as_str());
     }
-    if let Some(var_2038) = &input.cidr_block {
-        object.key("CidrBlock").string(var_2038.as_str());
+    if let Some(var_2042) = &input.cidr_block {
+        object.key("CidrBlock").string(var_2042.as_str());
     }
-    if let Some(var_2039) = &input.cidr_block_state {
-        object.key("CidrBlockState").string(var_2039.as_str());
+    if let Some(var_2043) = &input.cidr_block_state {
+        object.key("CidrBlockState").string(var_2043.as_str());
     }
     Ok(())
 }
@@ -8625,14 +8652,14 @@ pub fn serialize_structure_crate_model_ipv6_cidr_block_association(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Ipv6CidrBlockAssociation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2040) = &input.association_id {
-        object.key("AssociationId").string(var_2040.as_str());
+    if let Some(var_2044) = &input.association_id {
+        object.key("AssociationId").string(var_2044.as_str());
     }
-    if let Some(var_2041) = &input.ipv6_cidr_block {
-        object.key("Ipv6CidrBlock").string(var_2041.as_str());
+    if let Some(var_2045) = &input.ipv6_cidr_block {
+        object.key("Ipv6CidrBlock").string(var_2045.as_str());
     }
-    if let Some(var_2042) = &input.cidr_block_state {
-        object.key("CidrBlockState").string(var_2042.as_str());
+    if let Some(var_2046) = &input.cidr_block_state {
+        object.key("CidrBlockState").string(var_2046.as_str());
     }
     Ok(())
 }
@@ -8641,16 +8668,16 @@ pub fn serialize_structure_crate_model_aws_ec2_network_acl_association(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2NetworkAclAssociation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2043) = &input.network_acl_association_id {
+    if let Some(var_2047) = &input.network_acl_association_id {
         object
             .key("NetworkAclAssociationId")
-            .string(var_2043.as_str());
+            .string(var_2047.as_str());
     }
-    if let Some(var_2044) = &input.network_acl_id {
-        object.key("NetworkAclId").string(var_2044.as_str());
+    if let Some(var_2048) = &input.network_acl_id {
+        object.key("NetworkAclId").string(var_2048.as_str());
     }
-    if let Some(var_2045) = &input.subnet_id {
-        object.key("SubnetId").string(var_2045.as_str());
+    if let Some(var_2049) = &input.subnet_id {
+        object.key("SubnetId").string(var_2049.as_str());
     }
     Ok(())
 }
@@ -8659,36 +8686,36 @@ pub fn serialize_structure_crate_model_aws_ec2_network_acl_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2NetworkAclEntry,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2046) = &input.cidr_block {
-        object.key("CidrBlock").string(var_2046.as_str());
+    if let Some(var_2050) = &input.cidr_block {
+        object.key("CidrBlock").string(var_2050.as_str());
     }
     if input.egress {
         object.key("Egress").boolean(input.egress);
     }
-    if let Some(var_2047) = &input.icmp_type_code {
-        let mut object_2048 = object.key("IcmpTypeCode").start_object();
+    if let Some(var_2051) = &input.icmp_type_code {
+        let mut object_2052 = object.key("IcmpTypeCode").start_object();
         crate::json_ser::serialize_structure_crate_model_icmp_type_code(
-            &mut object_2048,
-            var_2047,
+            &mut object_2052,
+            var_2051,
         )?;
-        object_2048.finish();
+        object_2052.finish();
     }
-    if let Some(var_2049) = &input.ipv6_cidr_block {
-        object.key("Ipv6CidrBlock").string(var_2049.as_str());
+    if let Some(var_2053) = &input.ipv6_cidr_block {
+        object.key("Ipv6CidrBlock").string(var_2053.as_str());
     }
-    if let Some(var_2050) = &input.port_range {
-        let mut object_2051 = object.key("PortRange").start_object();
+    if let Some(var_2054) = &input.port_range {
+        let mut object_2055 = object.key("PortRange").start_object();
         crate::json_ser::serialize_structure_crate_model_port_range_from_to(
-            &mut object_2051,
-            var_2050,
+            &mut object_2055,
+            var_2054,
         )?;
-        object_2051.finish();
+        object_2055.finish();
     }
-    if let Some(var_2052) = &input.protocol {
-        object.key("Protocol").string(var_2052.as_str());
+    if let Some(var_2056) = &input.protocol {
+        object.key("Protocol").string(var_2056.as_str());
     }
-    if let Some(var_2053) = &input.rule_action {
-        object.key("RuleAction").string(var_2053.as_str());
+    if let Some(var_2057) = &input.rule_action {
+        object.key("RuleAction").string(var_2057.as_str());
     }
     if input.rule_number != 0 {
         object.key("RuleNumber").number(
@@ -8703,11 +8730,11 @@ pub fn serialize_structure_crate_model_availability_zone(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AvailabilityZone,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2054) = &input.zone_name {
-        object.key("ZoneName").string(var_2054.as_str());
+    if let Some(var_2058) = &input.zone_name {
+        object.key("ZoneName").string(var_2058.as_str());
     }
-    if let Some(var_2055) = &input.subnet_id {
-        object.key("SubnetId").string(var_2055.as_str());
+    if let Some(var_2059) = &input.subnet_id {
+        object.key("SubnetId").string(var_2059.as_str());
     }
     Ok(())
 }
@@ -8716,11 +8743,11 @@ pub fn serialize_structure_crate_model_load_balancer_state(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LoadBalancerState,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2056) = &input.code {
-        object.key("Code").string(var_2056.as_str());
+    if let Some(var_2060) = &input.code {
+        object.key("Code").string(var_2060.as_str());
     }
-    if let Some(var_2057) = &input.reason {
-        object.key("Reason").string(var_2057.as_str());
+    if let Some(var_2061) = &input.reason {
+        object.key("Reason").string(var_2061.as_str());
     }
     Ok(())
 }
@@ -8729,11 +8756,11 @@ pub fn serialize_structure_crate_model_aws_elbv2_load_balancer_attribute(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElbv2LoadBalancerAttribute,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2058) = &input.key {
-        object.key("Key").string(var_2058.as_str());
+    if let Some(var_2062) = &input.key {
+        object.key("Key").string(var_2062.as_str());
     }
-    if let Some(var_2059) = &input.value {
-        object.key("Value").string(var_2059.as_str());
+    if let Some(var_2063) = &input.value {
+        object.key("Value").string(var_2063.as_str());
     }
     Ok(())
 }
@@ -8742,11 +8769,11 @@ pub fn serialize_structure_crate_model_aws_elastic_beanstalk_environment_environ
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2060) = &input.environment_name {
-        object.key("EnvironmentName").string(var_2060.as_str());
+    if let Some(var_2064) = &input.environment_name {
+        object.key("EnvironmentName").string(var_2064.as_str());
     }
-    if let Some(var_2061) = &input.link_name {
-        object.key("LinkName").string(var_2061.as_str());
+    if let Some(var_2065) = &input.link_name {
+        object.key("LinkName").string(var_2065.as_str());
     }
     Ok(())
 }
@@ -8755,17 +8782,17 @@ pub fn serialize_structure_crate_model_aws_elastic_beanstalk_environment_option_
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElasticBeanstalkEnvironmentOptionSetting,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2062) = &input.namespace {
-        object.key("Namespace").string(var_2062.as_str());
+    if let Some(var_2066) = &input.namespace {
+        object.key("Namespace").string(var_2066.as_str());
     }
-    if let Some(var_2063) = &input.option_name {
-        object.key("OptionName").string(var_2063.as_str());
+    if let Some(var_2067) = &input.option_name {
+        object.key("OptionName").string(var_2067.as_str());
     }
-    if let Some(var_2064) = &input.resource_name {
-        object.key("ResourceName").string(var_2064.as_str());
+    if let Some(var_2068) = &input.resource_name {
+        object.key("ResourceName").string(var_2068.as_str());
     }
-    if let Some(var_2065) = &input.value {
-        object.key("Value").string(var_2065.as_str());
+    if let Some(var_2069) = &input.value {
+        object.key("Value").string(var_2069.as_str());
     }
     Ok(())
 }
@@ -8774,14 +8801,14 @@ pub fn serialize_structure_crate_model_aws_elastic_beanstalk_environment_tier(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElasticBeanstalkEnvironmentTier,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2066) = &input.name {
-        object.key("Name").string(var_2066.as_str());
+    if let Some(var_2070) = &input.name {
+        object.key("Name").string(var_2070.as_str());
     }
-    if let Some(var_2067) = &input.r#type {
-        object.key("Type").string(var_2067.as_str());
+    if let Some(var_2071) = &input.r#type {
+        object.key("Type").string(var_2071.as_str());
     }
-    if let Some(var_2068) = &input.version {
-        object.key("Version").string(var_2068.as_str());
+    if let Some(var_2072) = &input.version {
+        object.key("Version").string(var_2072.as_str());
     }
     Ok(())
 }
@@ -8793,8 +8820,8 @@ pub fn serialize_structure_crate_model_aws_elasticsearch_domain_domain_endpoint_
     if input.enforce_https {
         object.key("EnforceHTTPS").boolean(input.enforce_https);
     }
-    if let Some(var_2069) = &input.tls_security_policy {
-        object.key("TLSSecurityPolicy").string(var_2069.as_str());
+    if let Some(var_2073) = &input.tls_security_policy {
+        object.key("TLSSecurityPolicy").string(var_2073.as_str());
     }
     Ok(())
 }
@@ -8814,8 +8841,8 @@ pub fn serialize_structure_crate_model_aws_elasticsearch_domain_elasticsearch_cl
             .key("DedicatedMasterEnabled")
             .boolean(input.dedicated_master_enabled);
     }
-    if let Some(var_2070) = &input.dedicated_master_type {
-        object.key("DedicatedMasterType").string(var_2070.as_str());
+    if let Some(var_2074) = &input.dedicated_master_type {
+        object.key("DedicatedMasterType").string(var_2074.as_str());
     }
     if input.instance_count != 0 {
         object.key("InstanceCount").number(
@@ -8823,13 +8850,13 @@ pub fn serialize_structure_crate_model_aws_elasticsearch_domain_elasticsearch_cl
             aws_smithy_types::Number::NegInt((input.instance_count).into()),
         );
     }
-    if let Some(var_2071) = &input.instance_type {
-        object.key("InstanceType").string(var_2071.as_str());
+    if let Some(var_2075) = &input.instance_type {
+        object.key("InstanceType").string(var_2075.as_str());
     }
-    if let Some(var_2072) = &input.zone_awareness_config {
-        let mut object_2073 = object.key("ZoneAwarenessConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details(&mut object_2073, var_2072)?;
-        object_2073.finish();
+    if let Some(var_2076) = &input.zone_awareness_config {
+        let mut object_2077 = object.key("ZoneAwarenessConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details(&mut object_2077, var_2076)?;
+        object_2077.finish();
     }
     if input.zone_awareness_enabled {
         object
@@ -8846,8 +8873,8 @@ pub fn serialize_structure_crate_model_aws_elasticsearch_domain_encryption_at_re
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
     }
-    if let Some(var_2074) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_2074.as_str());
+    if let Some(var_2078) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_2078.as_str());
     }
     Ok(())
 }
@@ -8856,20 +8883,20 @@ pub fn serialize_structure_crate_model_aws_elasticsearch_domain_log_publishing_o
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElasticsearchDomainLogPublishingOptions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2075) = &input.index_slow_logs {
-        let mut object_2076 = object.key("IndexSlowLogs").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_log_publishing_options_log_config(&mut object_2076, var_2075)?;
-        object_2076.finish();
-    }
-    if let Some(var_2077) = &input.search_slow_logs {
-        let mut object_2078 = object.key("SearchSlowLogs").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_log_publishing_options_log_config(&mut object_2078, var_2077)?;
-        object_2078.finish();
-    }
-    if let Some(var_2079) = &input.audit_logs {
-        let mut object_2080 = object.key("AuditLogs").start_object();
+    if let Some(var_2079) = &input.index_slow_logs {
+        let mut object_2080 = object.key("IndexSlowLogs").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_log_publishing_options_log_config(&mut object_2080, var_2079)?;
         object_2080.finish();
+    }
+    if let Some(var_2081) = &input.search_slow_logs {
+        let mut object_2082 = object.key("SearchSlowLogs").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_log_publishing_options_log_config(&mut object_2082, var_2081)?;
+        object_2082.finish();
+    }
+    if let Some(var_2083) = &input.audit_logs {
+        let mut object_2084 = object.key("AuditLogs").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elasticsearch_domain_log_publishing_options_log_config(&mut object_2084, var_2083)?;
+        object_2084.finish();
     }
     Ok(())
 }
@@ -8888,28 +8915,28 @@ pub fn serialize_structure_crate_model_aws_elasticsearch_domain_service_software
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElasticsearchDomainServiceSoftwareOptions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2081) = &input.automated_update_date {
-        object.key("AutomatedUpdateDate").string(var_2081.as_str());
+    if let Some(var_2085) = &input.automated_update_date {
+        object.key("AutomatedUpdateDate").string(var_2085.as_str());
     }
     if input.cancellable {
         object.key("Cancellable").boolean(input.cancellable);
     }
-    if let Some(var_2082) = &input.current_version {
-        object.key("CurrentVersion").string(var_2082.as_str());
+    if let Some(var_2086) = &input.current_version {
+        object.key("CurrentVersion").string(var_2086.as_str());
     }
-    if let Some(var_2083) = &input.description {
-        object.key("Description").string(var_2083.as_str());
+    if let Some(var_2087) = &input.description {
+        object.key("Description").string(var_2087.as_str());
     }
-    if let Some(var_2084) = &input.new_version {
-        object.key("NewVersion").string(var_2084.as_str());
+    if let Some(var_2088) = &input.new_version {
+        object.key("NewVersion").string(var_2088.as_str());
     }
     if input.update_available {
         object
             .key("UpdateAvailable")
             .boolean(input.update_available);
     }
-    if let Some(var_2085) = &input.update_status {
-        object.key("UpdateStatus").string(var_2085.as_str());
+    if let Some(var_2089) = &input.update_status {
+        object.key("UpdateStatus").string(var_2089.as_str());
     }
     Ok(())
 }
@@ -8918,35 +8945,35 @@ pub fn serialize_structure_crate_model_aws_elasticsearch_domain_vpc_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElasticsearchDomainVpcOptions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2086) = &input.availability_zones {
-        let mut array_2087 = object.key("AvailabilityZones").start_array();
-        for item_2088 in var_2086 {
+    if let Some(var_2090) = &input.availability_zones {
+        let mut array_2091 = object.key("AvailabilityZones").start_array();
+        for item_2092 in var_2090 {
             {
-                array_2087.value().string(item_2088.as_str());
+                array_2091.value().string(item_2092.as_str());
             }
         }
-        array_2087.finish();
+        array_2091.finish();
     }
-    if let Some(var_2089) = &input.security_group_ids {
-        let mut array_2090 = object.key("SecurityGroupIds").start_array();
-        for item_2091 in var_2089 {
+    if let Some(var_2093) = &input.security_group_ids {
+        let mut array_2094 = object.key("SecurityGroupIds").start_array();
+        for item_2095 in var_2093 {
             {
-                array_2090.value().string(item_2091.as_str());
+                array_2094.value().string(item_2095.as_str());
             }
         }
-        array_2090.finish();
+        array_2094.finish();
     }
-    if let Some(var_2092) = &input.subnet_ids {
-        let mut array_2093 = object.key("SubnetIds").start_array();
-        for item_2094 in var_2092 {
+    if let Some(var_2096) = &input.subnet_ids {
+        let mut array_2097 = object.key("SubnetIds").start_array();
+        for item_2098 in var_2096 {
             {
-                array_2093.value().string(item_2094.as_str());
+                array_2097.value().string(item_2098.as_str());
             }
         }
-        array_2093.finish();
+        array_2097.finish();
     }
-    if let Some(var_2095) = &input.vpc_id {
-        object.key("VPCId").string(var_2095.as_str());
+    if let Some(var_2099) = &input.vpc_id {
+        object.key("VPCId").string(var_2099.as_str());
     }
     Ok(())
 }
@@ -8955,30 +8982,12 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_server_side_encryption_conf
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketServerSideEncryptionConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2096) = &input.rules {
-        let mut array_2097 = object.key("Rules").start_array();
-        for item_2098 in var_2096 {
-            {
-                let mut object_2099 = array_2097.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_server_side_encryption_rule(&mut object_2099, item_2098)?;
-                object_2099.finish();
-            }
-        }
-        array_2097.finish();
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_details(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AwsS3BucketBucketLifecycleConfigurationDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2100) = &input.rules {
         let mut array_2101 = object.key("Rules").start_array();
         for item_2102 in var_2100 {
             {
                 let mut object_2103 = array_2101.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_details(&mut object_2103, item_2102)?;
+                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_server_side_encryption_rule(&mut object_2103, item_2102)?;
                 object_2103.finish();
             }
         }
@@ -8987,17 +8996,35 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
     Ok(())
 }
 
+pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_details(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::AwsS3BucketBucketLifecycleConfigurationDetails,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_2104) = &input.rules {
+        let mut array_2105 = object.key("Rules").start_array();
+        for item_2106 in var_2104 {
+            {
+                let mut object_2107 = array_2105.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_details(&mut object_2107, item_2106)?;
+                object_2107.finish();
+            }
+        }
+        array_2105.finish();
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_model_aws_s3_bucket_logging_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketLoggingConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2104) = &input.destination_bucket_name {
+    if let Some(var_2108) = &input.destination_bucket_name {
         object
             .key("DestinationBucketName")
-            .string(var_2104.as_str());
+            .string(var_2108.as_str());
     }
-    if let Some(var_2105) = &input.log_file_prefix {
-        object.key("LogFilePrefix").string(var_2105.as_str());
+    if let Some(var_2109) = &input.log_file_prefix {
+        object.key("LogFilePrefix").string(var_2109.as_str());
     }
     Ok(())
 }
@@ -9006,27 +9033,27 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_website_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketWebsiteConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2106) = &input.error_document {
-        object.key("ErrorDocument").string(var_2106.as_str());
+    if let Some(var_2110) = &input.error_document {
+        object.key("ErrorDocument").string(var_2110.as_str());
     }
-    if let Some(var_2107) = &input.index_document_suffix {
-        object.key("IndexDocumentSuffix").string(var_2107.as_str());
+    if let Some(var_2111) = &input.index_document_suffix {
+        object.key("IndexDocumentSuffix").string(var_2111.as_str());
     }
-    if let Some(var_2108) = &input.redirect_all_requests_to {
-        let mut object_2109 = object.key("RedirectAllRequestsTo").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_website_configuration_redirect_to(&mut object_2109, var_2108)?;
-        object_2109.finish();
+    if let Some(var_2112) = &input.redirect_all_requests_to {
+        let mut object_2113 = object.key("RedirectAllRequestsTo").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_website_configuration_redirect_to(&mut object_2113, var_2112)?;
+        object_2113.finish();
     }
-    if let Some(var_2110) = &input.routing_rules {
-        let mut array_2111 = object.key("RoutingRules").start_array();
-        for item_2112 in var_2110 {
+    if let Some(var_2114) = &input.routing_rules {
+        let mut array_2115 = object.key("RoutingRules").start_array();
+        for item_2116 in var_2114 {
             {
-                let mut object_2113 = array_2111.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_website_configuration_routing_rule(&mut object_2113, item_2112)?;
-                object_2113.finish();
+                let mut object_2117 = array_2115.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_website_configuration_routing_rule(&mut object_2117, item_2116)?;
+                object_2117.finish();
             }
         }
-        array_2111.finish();
+        array_2115.finish();
     }
     Ok(())
 }
@@ -9035,16 +9062,16 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_notification_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketNotificationConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2114) = &input.configurations {
-        let mut array_2115 = object.key("Configurations").start_array();
-        for item_2116 in var_2114 {
+    if let Some(var_2118) = &input.configurations {
+        let mut array_2119 = object.key("Configurations").start_array();
+        for item_2120 in var_2118 {
             {
-                let mut object_2117 = array_2115.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_notification_configuration_detail(&mut object_2117, item_2116)?;
-                object_2117.finish();
+                let mut object_2121 = array_2119.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_notification_configuration_detail(&mut object_2121, item_2120)?;
+                object_2121.finish();
             }
         }
-        array_2115.finish();
+        array_2119.finish();
     }
     Ok(())
 }
@@ -9058,8 +9085,8 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_versioning_configura
             .key("IsMfaDeleteEnabled")
             .boolean(input.is_mfa_delete_enabled);
     }
-    if let Some(var_2118) = &input.status {
-        object.key("Status").string(var_2118.as_str());
+    if let Some(var_2122) = &input.status {
+        object.key("Status").string(var_2122.as_str());
     }
     Ok(())
 }
@@ -9081,15 +9108,15 @@ pub fn serialize_structure_crate_model_aws_iam_access_key_session_context(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamAccessKeySessionContext,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2119) = &input.attributes {
-        let mut object_2120 = object.key("Attributes").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_iam_access_key_session_context_attributes(&mut object_2120, var_2119)?;
-        object_2120.finish();
+    if let Some(var_2123) = &input.attributes {
+        let mut object_2124 = object.key("Attributes").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_iam_access_key_session_context_attributes(&mut object_2124, var_2123)?;
+        object_2124.finish();
     }
-    if let Some(var_2121) = &input.session_issuer {
-        let mut object_2122 = object.key("SessionIssuer").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_iam_access_key_session_context_session_issuer(&mut object_2122, var_2121)?;
-        object_2122.finish();
+    if let Some(var_2125) = &input.session_issuer {
+        let mut object_2126 = object.key("SessionIssuer").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_iam_access_key_session_context_session_issuer(&mut object_2126, var_2125)?;
+        object_2126.finish();
     }
     Ok(())
 }
@@ -9098,11 +9125,11 @@ pub fn serialize_structure_crate_model_aws_iam_attached_managed_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamAttachedManagedPolicy,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2123) = &input.policy_name {
-        object.key("PolicyName").string(var_2123.as_str());
+    if let Some(var_2127) = &input.policy_name {
+        object.key("PolicyName").string(var_2127.as_str());
     }
-    if let Some(var_2124) = &input.policy_arn {
-        object.key("PolicyArn").string(var_2124.as_str());
+    if let Some(var_2128) = &input.policy_arn {
+        object.key("PolicyArn").string(var_2128.as_str());
     }
     Ok(())
 }
@@ -9111,15 +9138,15 @@ pub fn serialize_structure_crate_model_aws_iam_permissions_boundary(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamPermissionsBoundary,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2125) = &input.permissions_boundary_arn {
+    if let Some(var_2129) = &input.permissions_boundary_arn {
         object
             .key("PermissionsBoundaryArn")
-            .string(var_2125.as_str());
+            .string(var_2129.as_str());
     }
-    if let Some(var_2126) = &input.permissions_boundary_type {
+    if let Some(var_2130) = &input.permissions_boundary_type {
         object
             .key("PermissionsBoundaryType")
-            .string(var_2126.as_str());
+            .string(var_2130.as_str());
     }
     Ok(())
 }
@@ -9128,8 +9155,8 @@ pub fn serialize_structure_crate_model_aws_iam_user_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamUserPolicy,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2127) = &input.policy_name {
-        object.key("PolicyName").string(var_2127.as_str());
+    if let Some(var_2131) = &input.policy_name {
+        object.key("PolicyName").string(var_2131.as_str());
     }
     Ok(())
 }
@@ -9138,16 +9165,16 @@ pub fn serialize_structure_crate_model_aws_iam_policy_version(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamPolicyVersion,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2128) = &input.version_id {
-        object.key("VersionId").string(var_2128.as_str());
+    if let Some(var_2132) = &input.version_id {
+        object.key("VersionId").string(var_2132.as_str());
     }
     if input.is_default_version {
         object
             .key("IsDefaultVersion")
             .boolean(input.is_default_version);
     }
-    if let Some(var_2129) = &input.create_date {
-        object.key("CreateDate").string(var_2129.as_str());
+    if let Some(var_2133) = &input.create_date {
+        object.key("CreateDate").string(var_2133.as_str());
     }
     Ok(())
 }
@@ -9161,8 +9188,8 @@ pub fn serialize_structure_crate_model_aws_api_gateway_v2_route_settings(
             .key("DetailedMetricsEnabled")
             .boolean(input.detailed_metrics_enabled);
     }
-    if let Some(var_2130) = &input.logging_level {
-        object.key("LoggingLevel").string(var_2130.as_str());
+    if let Some(var_2134) = &input.logging_level {
+        object.key("LoggingLevel").string(var_2134.as_str());
     }
     if input.data_trace_enabled {
         object
@@ -9188,11 +9215,11 @@ pub fn serialize_structure_crate_model_aws_api_gateway_access_log_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsApiGatewayAccessLogSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2131) = &input.format {
-        object.key("Format").string(var_2131.as_str());
+    if let Some(var_2135) = &input.format {
+        object.key("Format").string(var_2135.as_str());
     }
-    if let Some(var_2132) = &input.destination_arn {
-        object.key("DestinationArn").string(var_2132.as_str());
+    if let Some(var_2136) = &input.destination_arn {
+        object.key("DestinationArn").string(var_2136.as_str());
     }
     Ok(())
 }
@@ -9201,28 +9228,28 @@ pub fn serialize_structure_crate_model_aws_cors_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCorsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2133) = &input.allow_origins {
-        let mut array_2134 = object.key("AllowOrigins").start_array();
-        for item_2135 in var_2133 {
+    if let Some(var_2137) = &input.allow_origins {
+        let mut array_2138 = object.key("AllowOrigins").start_array();
+        for item_2139 in var_2137 {
             {
-                array_2134.value().string(item_2135.as_str());
+                array_2138.value().string(item_2139.as_str());
             }
         }
-        array_2134.finish();
+        array_2138.finish();
     }
     if input.allow_credentials {
         object
             .key("AllowCredentials")
             .boolean(input.allow_credentials);
     }
-    if let Some(var_2136) = &input.expose_headers {
-        let mut array_2137 = object.key("ExposeHeaders").start_array();
-        for item_2138 in var_2136 {
+    if let Some(var_2140) = &input.expose_headers {
+        let mut array_2141 = object.key("ExposeHeaders").start_array();
+        for item_2142 in var_2140 {
             {
-                array_2137.value().string(item_2138.as_str());
+                array_2141.value().string(item_2142.as_str());
             }
         }
-        array_2137.finish();
+        array_2141.finish();
     }
     if input.max_age != 0 {
         object.key("MaxAge").number(
@@ -9230,23 +9257,23 @@ pub fn serialize_structure_crate_model_aws_cors_configuration(
             aws_smithy_types::Number::NegInt((input.max_age).into()),
         );
     }
-    if let Some(var_2139) = &input.allow_methods {
-        let mut array_2140 = object.key("AllowMethods").start_array();
-        for item_2141 in var_2139 {
+    if let Some(var_2143) = &input.allow_methods {
+        let mut array_2144 = object.key("AllowMethods").start_array();
+        for item_2145 in var_2143 {
             {
-                array_2140.value().string(item_2141.as_str());
+                array_2144.value().string(item_2145.as_str());
             }
         }
-        array_2140.finish();
+        array_2144.finish();
     }
-    if let Some(var_2142) = &input.allow_headers {
-        let mut array_2143 = object.key("AllowHeaders").start_array();
-        for item_2144 in var_2142 {
+    if let Some(var_2146) = &input.allow_headers {
+        let mut array_2147 = object.key("AllowHeaders").start_array();
+        for item_2148 in var_2146 {
             {
-                array_2143.value().string(item_2144.as_str());
+                array_2147.value().string(item_2148.as_str());
             }
         }
-        array_2143.finish();
+        array_2147.finish();
     }
     Ok(())
 }
@@ -9255,11 +9282,11 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_attribute_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableAttributeDefinition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2145) = &input.attribute_name {
-        object.key("AttributeName").string(var_2145.as_str());
+    if let Some(var_2149) = &input.attribute_name {
+        object.key("AttributeName").string(var_2149.as_str());
     }
-    if let Some(var_2146) = &input.attribute_type {
-        object.key("AttributeType").string(var_2146.as_str());
+    if let Some(var_2150) = &input.attribute_type {
+        object.key("AttributeType").string(var_2150.as_str());
     }
     Ok(())
 }
@@ -9268,13 +9295,13 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_billing_mode_summary(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableBillingModeSummary,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2147) = &input.billing_mode {
-        object.key("BillingMode").string(var_2147.as_str());
+    if let Some(var_2151) = &input.billing_mode {
+        object.key("BillingMode").string(var_2151.as_str());
     }
-    if let Some(var_2148) = &input.last_update_to_pay_per_request_date_time {
+    if let Some(var_2152) = &input.last_update_to_pay_per_request_date_time {
         object
             .key("LastUpdateToPayPerRequestDateTime")
-            .string(var_2148.as_str());
+            .string(var_2152.as_str());
     }
     Ok(())
 }
@@ -9286,11 +9313,11 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_global_secondary_inde
     if input.backfilling {
         object.key("Backfilling").boolean(input.backfilling);
     }
-    if let Some(var_2149) = &input.index_arn {
-        object.key("IndexArn").string(var_2149.as_str());
+    if let Some(var_2153) = &input.index_arn {
+        object.key("IndexArn").string(var_2153.as_str());
     }
-    if let Some(var_2150) = &input.index_name {
-        object.key("IndexName").string(var_2150.as_str());
+    if let Some(var_2154) = &input.index_name {
+        object.key("IndexName").string(var_2154.as_str());
     }
     if input.index_size_bytes != 0 {
         object.key("IndexSizeBytes").number(
@@ -9298,8 +9325,8 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_global_secondary_inde
             aws_smithy_types::Number::NegInt((input.index_size_bytes).into()),
         );
     }
-    if let Some(var_2151) = &input.index_status {
-        object.key("IndexStatus").string(var_2151.as_str());
+    if let Some(var_2155) = &input.index_status {
+        object.key("IndexStatus").string(var_2155.as_str());
     }
     if input.item_count != 0 {
         object.key("ItemCount").number(
@@ -9307,32 +9334,32 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_global_secondary_inde
             aws_smithy_types::Number::NegInt((input.item_count).into()),
         );
     }
-    if let Some(var_2152) = &input.key_schema {
-        let mut array_2153 = object.key("KeySchema").start_array();
-        for item_2154 in var_2152 {
+    if let Some(var_2156) = &input.key_schema {
+        let mut array_2157 = object.key("KeySchema").start_array();
+        for item_2158 in var_2156 {
             {
-                let mut object_2155 = array_2153.value().start_object();
+                let mut object_2159 = array_2157.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_key_schema(
-                    &mut object_2155,
-                    item_2154,
+                    &mut object_2159,
+                    item_2158,
                 )?;
-                object_2155.finish();
+                object_2159.finish();
             }
         }
-        array_2153.finish();
+        array_2157.finish();
     }
-    if let Some(var_2156) = &input.projection {
-        let mut object_2157 = object.key("Projection").start_object();
+    if let Some(var_2160) = &input.projection {
+        let mut object_2161 = object.key("Projection").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_projection(
-            &mut object_2157,
-            var_2156,
+            &mut object_2161,
+            var_2160,
         )?;
-        object_2157.finish();
+        object_2161.finish();
     }
-    if let Some(var_2158) = &input.provisioned_throughput {
-        let mut object_2159 = object.key("ProvisionedThroughput").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_provisioned_throughput(&mut object_2159, var_2158)?;
-        object_2159.finish();
+    if let Some(var_2162) = &input.provisioned_throughput {
+        let mut object_2163 = object.key("ProvisionedThroughput").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_provisioned_throughput(&mut object_2163, var_2162)?;
+        object_2163.finish();
     }
     Ok(())
 }
@@ -9341,11 +9368,11 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_key_schema(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableKeySchema,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2160) = &input.attribute_name {
-        object.key("AttributeName").string(var_2160.as_str());
+    if let Some(var_2164) = &input.attribute_name {
+        object.key("AttributeName").string(var_2164.as_str());
     }
-    if let Some(var_2161) = &input.key_type {
-        object.key("KeyType").string(var_2161.as_str());
+    if let Some(var_2165) = &input.key_type {
+        object.key("KeyType").string(var_2165.as_str());
     }
     Ok(())
 }
@@ -9354,33 +9381,33 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_local_secondary_index
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableLocalSecondaryIndex,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2162) = &input.index_arn {
-        object.key("IndexArn").string(var_2162.as_str());
+    if let Some(var_2166) = &input.index_arn {
+        object.key("IndexArn").string(var_2166.as_str());
     }
-    if let Some(var_2163) = &input.index_name {
-        object.key("IndexName").string(var_2163.as_str());
+    if let Some(var_2167) = &input.index_name {
+        object.key("IndexName").string(var_2167.as_str());
     }
-    if let Some(var_2164) = &input.key_schema {
-        let mut array_2165 = object.key("KeySchema").start_array();
-        for item_2166 in var_2164 {
+    if let Some(var_2168) = &input.key_schema {
+        let mut array_2169 = object.key("KeySchema").start_array();
+        for item_2170 in var_2168 {
             {
-                let mut object_2167 = array_2165.value().start_object();
+                let mut object_2171 = array_2169.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_key_schema(
-                    &mut object_2167,
-                    item_2166,
+                    &mut object_2171,
+                    item_2170,
                 )?;
-                object_2167.finish();
+                object_2171.finish();
             }
         }
-        array_2165.finish();
+        array_2169.finish();
     }
-    if let Some(var_2168) = &input.projection {
-        let mut object_2169 = object.key("Projection").start_object();
+    if let Some(var_2172) = &input.projection {
+        let mut object_2173 = object.key("Projection").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_projection(
-            &mut object_2169,
-            var_2168,
+            &mut object_2173,
+            var_2172,
         )?;
-        object_2169.finish();
+        object_2173.finish();
     }
     Ok(())
 }
@@ -9389,11 +9416,11 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_provisioned_throughpu
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableProvisionedThroughput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2170) = &input.last_decrease_date_time {
-        object.key("LastDecreaseDateTime").string(var_2170.as_str());
+    if let Some(var_2174) = &input.last_decrease_date_time {
+        object.key("LastDecreaseDateTime").string(var_2174.as_str());
     }
-    if let Some(var_2171) = &input.last_increase_date_time {
-        object.key("LastIncreaseDateTime").string(var_2171.as_str());
+    if let Some(var_2175) = &input.last_increase_date_time {
+        object.key("LastIncreaseDateTime").string(var_2175.as_str());
     }
     if input.number_of_decreases_today != 0 {
         object.key("NumberOfDecreasesToday").number(
@@ -9420,35 +9447,35 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_replica(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableReplica,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2172) = &input.global_secondary_indexes {
-        let mut array_2173 = object.key("GlobalSecondaryIndexes").start_array();
-        for item_2174 in var_2172 {
+    if let Some(var_2176) = &input.global_secondary_indexes {
+        let mut array_2177 = object.key("GlobalSecondaryIndexes").start_array();
+        for item_2178 in var_2176 {
             {
-                let mut object_2175 = array_2173.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_replica_global_secondary_index(&mut object_2175, item_2174)?;
-                object_2175.finish();
+                let mut object_2179 = array_2177.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_replica_global_secondary_index(&mut object_2179, item_2178)?;
+                object_2179.finish();
             }
         }
-        array_2173.finish();
+        array_2177.finish();
     }
-    if let Some(var_2176) = &input.kms_master_key_id {
-        object.key("KmsMasterKeyId").string(var_2176.as_str());
+    if let Some(var_2180) = &input.kms_master_key_id {
+        object.key("KmsMasterKeyId").string(var_2180.as_str());
     }
-    if let Some(var_2177) = &input.provisioned_throughput_override {
-        let mut object_2178 = object.key("ProvisionedThroughputOverride").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_provisioned_throughput_override(&mut object_2178, var_2177)?;
-        object_2178.finish();
+    if let Some(var_2181) = &input.provisioned_throughput_override {
+        let mut object_2182 = object.key("ProvisionedThroughputOverride").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_provisioned_throughput_override(&mut object_2182, var_2181)?;
+        object_2182.finish();
     }
-    if let Some(var_2179) = &input.region_name {
-        object.key("RegionName").string(var_2179.as_str());
+    if let Some(var_2183) = &input.region_name {
+        object.key("RegionName").string(var_2183.as_str());
     }
-    if let Some(var_2180) = &input.replica_status {
-        object.key("ReplicaStatus").string(var_2180.as_str());
+    if let Some(var_2184) = &input.replica_status {
+        object.key("ReplicaStatus").string(var_2184.as_str());
     }
-    if let Some(var_2181) = &input.replica_status_description {
+    if let Some(var_2185) = &input.replica_status_description {
         object
             .key("ReplicaStatusDescription")
-            .string(var_2181.as_str());
+            .string(var_2185.as_str());
     }
     Ok(())
 }
@@ -9457,14 +9484,14 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_restore_summary(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableRestoreSummary,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2182) = &input.source_backup_arn {
-        object.key("SourceBackupArn").string(var_2182.as_str());
+    if let Some(var_2186) = &input.source_backup_arn {
+        object.key("SourceBackupArn").string(var_2186.as_str());
     }
-    if let Some(var_2183) = &input.source_table_arn {
-        object.key("SourceTableArn").string(var_2183.as_str());
+    if let Some(var_2187) = &input.source_table_arn {
+        object.key("SourceTableArn").string(var_2187.as_str());
     }
-    if let Some(var_2184) = &input.restore_date_time {
-        object.key("RestoreDateTime").string(var_2184.as_str());
+    if let Some(var_2188) = &input.restore_date_time {
+        object.key("RestoreDateTime").string(var_2188.as_str());
     }
     if input.restore_in_progress {
         object
@@ -9478,19 +9505,19 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_sse_description(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableSseDescription,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2185) = &input.inaccessible_encryption_date_time {
+    if let Some(var_2189) = &input.inaccessible_encryption_date_time {
         object
             .key("InaccessibleEncryptionDateTime")
-            .string(var_2185.as_str());
+            .string(var_2189.as_str());
     }
-    if let Some(var_2186) = &input.status {
-        object.key("Status").string(var_2186.as_str());
+    if let Some(var_2190) = &input.status {
+        object.key("Status").string(var_2190.as_str());
     }
-    if let Some(var_2187) = &input.sse_type {
-        object.key("SseType").string(var_2187.as_str());
+    if let Some(var_2191) = &input.sse_type {
+        object.key("SseType").string(var_2191.as_str());
     }
-    if let Some(var_2188) = &input.kms_master_key_arn {
-        object.key("KmsMasterKeyArn").string(var_2188.as_str());
+    if let Some(var_2192) = &input.kms_master_key_arn {
+        object.key("KmsMasterKeyArn").string(var_2192.as_str());
     }
     Ok(())
 }
@@ -9502,8 +9529,8 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_stream_specification(
     if input.stream_enabled {
         object.key("StreamEnabled").boolean(input.stream_enabled);
     }
-    if let Some(var_2189) = &input.stream_view_type {
-        object.key("StreamViewType").string(var_2189.as_str());
+    if let Some(var_2193) = &input.stream_view_type {
+        object.key("StreamViewType").string(var_2193.as_str());
     }
     Ok(())
 }
@@ -9515,8 +9542,8 @@ pub fn serialize_structure_crate_model_aws_api_gateway_method_settings(
     if input.metrics_enabled {
         object.key("MetricsEnabled").boolean(input.metrics_enabled);
     }
-    if let Some(var_2190) = &input.logging_level {
-        object.key("LoggingLevel").string(var_2190.as_str());
+    if let Some(var_2194) = &input.logging_level {
+        object.key("LoggingLevel").string(var_2194.as_str());
     }
     if input.data_trace_enabled {
         object
@@ -9554,16 +9581,16 @@ pub fn serialize_structure_crate_model_aws_api_gateway_method_settings(
             .key("RequireAuthorizationForCacheControl")
             .boolean(input.require_authorization_for_cache_control);
     }
-    if let Some(var_2191) = &input.unauthorized_cache_control_header_strategy {
+    if let Some(var_2195) = &input.unauthorized_cache_control_header_strategy {
         object
             .key("UnauthorizedCacheControlHeaderStrategy")
-            .string(var_2191.as_str());
+            .string(var_2195.as_str());
     }
-    if let Some(var_2192) = &input.http_method {
-        object.key("HttpMethod").string(var_2192.as_str());
+    if let Some(var_2196) = &input.http_method {
+        object.key("HttpMethod").string(var_2196.as_str());
     }
-    if let Some(var_2193) = &input.resource_path {
-        object.key("ResourcePath").string(var_2193.as_str());
+    if let Some(var_2197) = &input.resource_path {
+        object.key("ResourcePath").string(var_2197.as_str());
     }
     Ok(())
 }
@@ -9578,17 +9605,17 @@ pub fn serialize_structure_crate_model_aws_api_gateway_canary_settings(
             aws_smithy_types::Number::Float((input.percent_traffic).into()),
         );
     }
-    if let Some(var_2194) = &input.deployment_id {
-        object.key("DeploymentId").string(var_2194.as_str());
+    if let Some(var_2198) = &input.deployment_id {
+        object.key("DeploymentId").string(var_2198.as_str());
     }
-    if let Some(var_2195) = &input.stage_variable_overrides {
-        let mut object_2196 = object.key("StageVariableOverrides").start_object();
-        for (key_2197, value_2198) in var_2195 {
+    if let Some(var_2199) = &input.stage_variable_overrides {
+        let mut object_2200 = object.key("StageVariableOverrides").start_object();
+        for (key_2201, value_2202) in var_2199 {
             {
-                object_2196.key(key_2197).string(value_2198.as_str());
+                object_2200.key(key_2201).string(value_2202.as_str());
             }
         }
-        object_2196.finish();
+        object_2200.finish();
     }
     if input.use_stage_cache {
         object.key("UseStageCache").boolean(input.use_stage_cache);
@@ -9600,14 +9627,14 @@ pub fn serialize_structure_crate_model_aws_api_gateway_endpoint_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsApiGatewayEndpointConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2199) = &input.types {
-        let mut array_2200 = object.key("Types").start_array();
-        for item_2201 in var_2199 {
+    if let Some(var_2203) = &input.types {
+        let mut array_2204 = object.key("Types").start_array();
+        for item_2205 in var_2203 {
             {
-                array_2200.value().string(item_2201.as_str());
+                array_2204.value().string(item_2205.as_str());
             }
         }
-        array_2200.finish();
+        array_2204.finish();
     }
     Ok(())
 }
@@ -9616,13 +9643,13 @@ pub fn serialize_structure_crate_model_aws_ssm_patch(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsSsmPatch,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2202) = &input.compliance_summary {
-        let mut object_2203 = object.key("ComplianceSummary").start_object();
+    if let Some(var_2206) = &input.compliance_summary {
+        let mut object_2207 = object.key("ComplianceSummary").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_ssm_compliance_summary(
-            &mut object_2203,
-            var_2202,
+            &mut object_2207,
+            var_2206,
         )?;
-        object_2203.finish();
+        object_2207.finish();
     }
     Ok(())
 }
@@ -9631,31 +9658,31 @@ pub fn serialize_structure_crate_model_aws_certificate_manager_certificate_domai
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCertificateManagerCertificateDomainValidationOption,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2204) = &input.domain_name {
-        object.key("DomainName").string(var_2204.as_str());
+    if let Some(var_2208) = &input.domain_name {
+        object.key("DomainName").string(var_2208.as_str());
     }
-    if let Some(var_2205) = &input.resource_record {
-        let mut object_2206 = object.key("ResourceRecord").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_resource_record(&mut object_2206, var_2205)?;
-        object_2206.finish();
+    if let Some(var_2209) = &input.resource_record {
+        let mut object_2210 = object.key("ResourceRecord").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_resource_record(&mut object_2210, var_2209)?;
+        object_2210.finish();
     }
-    if let Some(var_2207) = &input.validation_domain {
-        object.key("ValidationDomain").string(var_2207.as_str());
+    if let Some(var_2211) = &input.validation_domain {
+        object.key("ValidationDomain").string(var_2211.as_str());
     }
-    if let Some(var_2208) = &input.validation_emails {
-        let mut array_2209 = object.key("ValidationEmails").start_array();
-        for item_2210 in var_2208 {
+    if let Some(var_2212) = &input.validation_emails {
+        let mut array_2213 = object.key("ValidationEmails").start_array();
+        for item_2214 in var_2212 {
             {
-                array_2209.value().string(item_2210.as_str());
+                array_2213.value().string(item_2214.as_str());
             }
         }
-        array_2209.finish();
+        array_2213.finish();
     }
-    if let Some(var_2211) = &input.validation_method {
-        object.key("ValidationMethod").string(var_2211.as_str());
+    if let Some(var_2215) = &input.validation_method {
+        object.key("ValidationMethod").string(var_2215.as_str());
     }
-    if let Some(var_2212) = &input.validation_status {
-        object.key("ValidationStatus").string(var_2212.as_str());
+    if let Some(var_2216) = &input.validation_status {
+        object.key("ValidationStatus").string(var_2216.as_str());
     }
     Ok(())
 }
@@ -9664,11 +9691,11 @@ pub fn serialize_structure_crate_model_aws_certificate_manager_certificate_exten
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCertificateManagerCertificateExtendedKeyUsage,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2213) = &input.name {
-        object.key("Name").string(var_2213.as_str());
+    if let Some(var_2217) = &input.name {
+        object.key("Name").string(var_2217.as_str());
     }
-    if let Some(var_2214) = &input.o_id {
-        object.key("OId").string(var_2214.as_str());
+    if let Some(var_2218) = &input.o_id {
+        object.key("OId").string(var_2218.as_str());
     }
     Ok(())
 }
@@ -9677,8 +9704,8 @@ pub fn serialize_structure_crate_model_aws_certificate_manager_certificate_key_u
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCertificateManagerCertificateKeyUsage,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2215) = &input.name {
-        object.key("Name").string(var_2215.as_str());
+    if let Some(var_2219) = &input.name {
+        object.key("Name").string(var_2219.as_str());
     }
     Ok(())
 }
@@ -9687,10 +9714,10 @@ pub fn serialize_structure_crate_model_aws_certificate_manager_certificate_optio
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCertificateManagerCertificateOptions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2216) = &input.certificate_transparency_logging_preference {
+    if let Some(var_2220) = &input.certificate_transparency_logging_preference {
         object
             .key("CertificateTransparencyLoggingPreference")
-            .string(var_2216.as_str());
+            .string(var_2220.as_str());
     }
     Ok(())
 }
@@ -9699,25 +9726,25 @@ pub fn serialize_structure_crate_model_aws_certificate_manager_certificate_renew
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCertificateManagerCertificateRenewalSummary,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2217) = &input.domain_validation_options {
-        let mut array_2218 = object.key("DomainValidationOptions").start_array();
-        for item_2219 in var_2217 {
+    if let Some(var_2221) = &input.domain_validation_options {
+        let mut array_2222 = object.key("DomainValidationOptions").start_array();
+        for item_2223 in var_2221 {
             {
-                let mut object_2220 = array_2218.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_domain_validation_option(&mut object_2220, item_2219)?;
-                object_2220.finish();
+                let mut object_2224 = array_2222.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_certificate_manager_certificate_domain_validation_option(&mut object_2224, item_2223)?;
+                object_2224.finish();
             }
         }
-        array_2218.finish();
+        array_2222.finish();
     }
-    if let Some(var_2221) = &input.renewal_status {
-        object.key("RenewalStatus").string(var_2221.as_str());
+    if let Some(var_2225) = &input.renewal_status {
+        object.key("RenewalStatus").string(var_2225.as_str());
     }
-    if let Some(var_2222) = &input.renewal_status_reason {
-        object.key("RenewalStatusReason").string(var_2222.as_str());
+    if let Some(var_2226) = &input.renewal_status_reason {
+        object.key("RenewalStatusReason").string(var_2226.as_str());
     }
-    if let Some(var_2223) = &input.updated_at {
-        object.key("UpdatedAt").string(var_2223.as_str());
+    if let Some(var_2227) = &input.updated_at {
+        object.key("UpdatedAt").string(var_2227.as_str());
     }
     Ok(())
 }
@@ -9726,14 +9753,14 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_cluster_node(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterClusterNode,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2224) = &input.node_role {
-        object.key("NodeRole").string(var_2224.as_str());
+    if let Some(var_2228) = &input.node_role {
+        object.key("NodeRole").string(var_2228.as_str());
     }
-    if let Some(var_2225) = &input.private_ip_address {
-        object.key("PrivateIpAddress").string(var_2225.as_str());
+    if let Some(var_2229) = &input.private_ip_address {
+        object.key("PrivateIpAddress").string(var_2229.as_str());
     }
-    if let Some(var_2226) = &input.public_ip_address {
-        object.key("PublicIpAddress").string(var_2226.as_str());
+    if let Some(var_2230) = &input.public_ip_address {
+        object.key("PublicIpAddress").string(var_2230.as_str());
     }
     Ok(())
 }
@@ -9742,22 +9769,22 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_cluster_parameter_gr
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterClusterParameterGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2227) = &input.cluster_parameter_status_list {
-        let mut array_2228 = object.key("ClusterParameterStatusList").start_array();
-        for item_2229 in var_2227 {
+    if let Some(var_2231) = &input.cluster_parameter_status_list {
+        let mut array_2232 = object.key("ClusterParameterStatusList").start_array();
+        for item_2233 in var_2231 {
             {
-                let mut object_2230 = array_2228.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_cluster_parameter_status(&mut object_2230, item_2229)?;
-                object_2230.finish();
+                let mut object_2234 = array_2232.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_redshift_cluster_cluster_parameter_status(&mut object_2234, item_2233)?;
+                object_2234.finish();
             }
         }
-        array_2228.finish();
+        array_2232.finish();
     }
-    if let Some(var_2231) = &input.parameter_apply_status {
-        object.key("ParameterApplyStatus").string(var_2231.as_str());
+    if let Some(var_2235) = &input.parameter_apply_status {
+        object.key("ParameterApplyStatus").string(var_2235.as_str());
     }
-    if let Some(var_2232) = &input.parameter_group_name {
-        object.key("ParameterGroupName").string(var_2232.as_str());
+    if let Some(var_2236) = &input.parameter_group_name {
+        object.key("ParameterGroupName").string(var_2236.as_str());
     }
     Ok(())
 }
@@ -9766,13 +9793,13 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_cluster_security_gro
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterClusterSecurityGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2233) = &input.cluster_security_group_name {
+    if let Some(var_2237) = &input.cluster_security_group_name {
         object
             .key("ClusterSecurityGroupName")
-            .string(var_2233.as_str());
+            .string(var_2237.as_str());
     }
-    if let Some(var_2234) = &input.status {
-        object.key("Status").string(var_2234.as_str());
+    if let Some(var_2238) = &input.status {
+        object.key("Status").string(var_2238.as_str());
     }
     Ok(())
 }
@@ -9781,8 +9808,8 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_cluster_snapshot_cop
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2235) = &input.destination_region {
-        object.key("DestinationRegion").string(var_2235.as_str());
+    if let Some(var_2239) = &input.destination_region {
+        object.key("DestinationRegion").string(var_2239.as_str());
     }
     if input.manual_snapshot_retention_period != 0 {
         object.key("ManualSnapshotRetentionPeriod").number(
@@ -9796,10 +9823,10 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_cluster_snapshot_cop
             aws_smithy_types::Number::NegInt((input.retention_period).into()),
         );
     }
-    if let Some(var_2236) = &input.snapshot_copy_grant_name {
+    if let Some(var_2240) = &input.snapshot_copy_grant_name {
         object
             .key("SnapshotCopyGrantName")
-            .string(var_2236.as_str());
+            .string(var_2240.as_str());
     }
     Ok(())
 }
@@ -9808,20 +9835,20 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_deferred_maintenance
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterDeferredMaintenanceWindow,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2237) = &input.defer_maintenance_end_time {
+    if let Some(var_2241) = &input.defer_maintenance_end_time {
         object
             .key("DeferMaintenanceEndTime")
-            .string(var_2237.as_str());
+            .string(var_2241.as_str());
     }
-    if let Some(var_2238) = &input.defer_maintenance_identifier {
+    if let Some(var_2242) = &input.defer_maintenance_identifier {
         object
             .key("DeferMaintenanceIdentifier")
-            .string(var_2238.as_str());
+            .string(var_2242.as_str());
     }
-    if let Some(var_2239) = &input.defer_maintenance_start_time {
+    if let Some(var_2243) = &input.defer_maintenance_start_time {
         object
             .key("DeferMaintenanceStartTime")
-            .string(var_2239.as_str());
+            .string(var_2243.as_str());
     }
     Ok(())
 }
@@ -9830,11 +9857,11 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_elastic_ip_status(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterElasticIpStatus,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2240) = &input.elastic_ip {
-        object.key("ElasticIp").string(var_2240.as_str());
+    if let Some(var_2244) = &input.elastic_ip {
+        object.key("ElasticIp").string(var_2244.as_str());
     }
-    if let Some(var_2241) = &input.status {
-        object.key("Status").string(var_2241.as_str());
+    if let Some(var_2245) = &input.status {
+        object.key("Status").string(var_2245.as_str());
     }
     Ok(())
 }
@@ -9843,8 +9870,8 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_endpoint(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterEndpoint,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2242) = &input.address {
-        object.key("Address").string(var_2242.as_str());
+    if let Some(var_2246) = &input.address {
+        object.key("Address").string(var_2246.as_str());
     }
     if input.port != 0 {
         object.key("Port").number(
@@ -9859,18 +9886,18 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_hsm_status(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterHsmStatus,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2243) = &input.hsm_client_certificate_identifier {
+    if let Some(var_2247) = &input.hsm_client_certificate_identifier {
         object
             .key("HsmClientCertificateIdentifier")
-            .string(var_2243.as_str());
+            .string(var_2247.as_str());
     }
-    if let Some(var_2244) = &input.hsm_configuration_identifier {
+    if let Some(var_2248) = &input.hsm_configuration_identifier {
         object
             .key("HsmConfigurationIdentifier")
-            .string(var_2244.as_str());
+            .string(var_2248.as_str());
     }
-    if let Some(var_2245) = &input.status {
-        object.key("Status").string(var_2245.as_str());
+    if let Some(var_2249) = &input.status {
+        object.key("Status").string(var_2249.as_str());
     }
     Ok(())
 }
@@ -9879,11 +9906,11 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_iam_role(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterIamRole,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2246) = &input.apply_status {
-        object.key("ApplyStatus").string(var_2246.as_str());
+    if let Some(var_2250) = &input.apply_status {
+        object.key("ApplyStatus").string(var_2250.as_str());
     }
-    if let Some(var_2247) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_2247.as_str());
+    if let Some(var_2251) = &input.iam_role_arn {
+        object.key("IamRoleArn").string(var_2251.as_str());
     }
     Ok(())
 }
@@ -9898,31 +9925,31 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_pending_modified_val
             aws_smithy_types::Number::NegInt((input.automated_snapshot_retention_period).into()),
         );
     }
-    if let Some(var_2248) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_2248.as_str());
+    if let Some(var_2252) = &input.cluster_identifier {
+        object.key("ClusterIdentifier").string(var_2252.as_str());
     }
-    if let Some(var_2249) = &input.cluster_type {
-        object.key("ClusterType").string(var_2249.as_str());
+    if let Some(var_2253) = &input.cluster_type {
+        object.key("ClusterType").string(var_2253.as_str());
     }
-    if let Some(var_2250) = &input.cluster_version {
-        object.key("ClusterVersion").string(var_2250.as_str());
+    if let Some(var_2254) = &input.cluster_version {
+        object.key("ClusterVersion").string(var_2254.as_str());
     }
-    if let Some(var_2251) = &input.encryption_type {
-        object.key("EncryptionType").string(var_2251.as_str());
+    if let Some(var_2255) = &input.encryption_type {
+        object.key("EncryptionType").string(var_2255.as_str());
     }
     if input.enhanced_vpc_routing {
         object
             .key("EnhancedVpcRouting")
             .boolean(input.enhanced_vpc_routing);
     }
-    if let Some(var_2252) = &input.maintenance_track_name {
-        object.key("MaintenanceTrackName").string(var_2252.as_str());
+    if let Some(var_2256) = &input.maintenance_track_name {
+        object.key("MaintenanceTrackName").string(var_2256.as_str());
     }
-    if let Some(var_2253) = &input.master_user_password {
-        object.key("MasterUserPassword").string(var_2253.as_str());
+    if let Some(var_2257) = &input.master_user_password {
+        object.key("MasterUserPassword").string(var_2257.as_str());
     }
-    if let Some(var_2254) = &input.node_type {
-        object.key("NodeType").string(var_2254.as_str());
+    if let Some(var_2258) = &input.node_type {
+        object.key("NodeType").string(var_2258.as_str());
     }
     if input.number_of_nodes != 0 {
         object.key("NumberOfNodes").number(
@@ -9947,8 +9974,8 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_resize_info(
             .key("AllowCancelResize")
             .boolean(input.allow_cancel_resize);
     }
-    if let Some(var_2255) = &input.resize_type {
-        object.key("ResizeType").string(var_2255.as_str());
+    if let Some(var_2259) = &input.resize_type {
+        object.key("ResizeType").string(var_2259.as_str());
     }
     Ok(())
 }
@@ -9991,8 +10018,8 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_restore_status(
             aws_smithy_types::Number::NegInt((input.snapshot_size_in_mega_bytes).into()),
         );
     }
-    if let Some(var_2256) = &input.status {
-        object.key("Status").string(var_2256.as_str());
+    if let Some(var_2260) = &input.status {
+        object.key("Status").string(var_2260.as_str());
     }
     Ok(())
 }
@@ -10001,11 +10028,11 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_vpc_security_group(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterVpcSecurityGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2257) = &input.status {
-        object.key("Status").string(var_2257.as_str());
+    if let Some(var_2261) = &input.status {
+        object.key("Status").string(var_2261.as_str());
     }
-    if let Some(var_2258) = &input.vpc_security_group_id {
-        object.key("VpcSecurityGroupId").string(var_2258.as_str());
+    if let Some(var_2262) = &input.vpc_security_group_id {
+        object.key("VpcSecurityGroupId").string(var_2262.as_str());
     }
     Ok(())
 }
@@ -10020,14 +10047,14 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_backend_server_desc
             aws_smithy_types::Number::NegInt((input.instance_port).into()),
         );
     }
-    if let Some(var_2259) = &input.policy_names {
-        let mut array_2260 = object.key("PolicyNames").start_array();
-        for item_2261 in var_2259 {
+    if let Some(var_2263) = &input.policy_names {
+        let mut array_2264 = object.key("PolicyNames").start_array();
+        for item_2265 in var_2263 {
             {
-                array_2260.value().string(item_2261.as_str());
+                array_2264.value().string(item_2265.as_str());
             }
         }
-        array_2260.finish();
+        array_2264.finish();
     }
     Ok(())
 }
@@ -10048,8 +10075,8 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_health_check(
             aws_smithy_types::Number::NegInt((input.interval).into()),
         );
     }
-    if let Some(var_2262) = &input.target {
-        object.key("Target").string(var_2262.as_str());
+    if let Some(var_2266) = &input.target {
+        object.key("Target").string(var_2266.as_str());
     }
     if input.timeout != 0 {
         object.key("Timeout").number(
@@ -10070,8 +10097,8 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_instance(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElbLoadBalancerInstance,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2263) = &input.instance_id {
-        object.key("InstanceId").string(var_2263.as_str());
+    if let Some(var_2267) = &input.instance_id {
+        object.key("InstanceId").string(var_2267.as_str());
     }
     Ok(())
 }
@@ -10080,22 +10107,22 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_listener_descriptio
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElbLoadBalancerListenerDescription,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2264) = &input.listener {
-        let mut object_2265 = object.key("Listener").start_object();
+    if let Some(var_2268) = &input.listener {
+        let mut object_2269 = object.key("Listener").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_listener(
-            &mut object_2265,
-            var_2264,
+            &mut object_2269,
+            var_2268,
         )?;
-        object_2265.finish();
+        object_2269.finish();
     }
-    if let Some(var_2266) = &input.policy_names {
-        let mut array_2267 = object.key("PolicyNames").start_array();
-        for item_2268 in var_2266 {
+    if let Some(var_2270) = &input.policy_names {
+        let mut array_2271 = object.key("PolicyNames").start_array();
+        for item_2272 in var_2270 {
             {
-                array_2267.value().string(item_2268.as_str());
+                array_2271.value().string(item_2272.as_str());
             }
         }
-        array_2267.finish();
+        array_2271.finish();
     }
     Ok(())
 }
@@ -10104,34 +10131,34 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElbLoadBalancerAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2269) = &input.access_log {
-        let mut object_2270 = object.key("AccessLog").start_object();
+    if let Some(var_2273) = &input.access_log {
+        let mut object_2274 = object.key("AccessLog").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_access_log(
-            &mut object_2270,
-            var_2269,
-        )?;
-        object_2270.finish();
-    }
-    if let Some(var_2271) = &input.connection_draining {
-        let mut object_2272 = object.key("ConnectionDraining").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_connection_draining(
-            &mut object_2272,
-            var_2271,
-        )?;
-        object_2272.finish();
-    }
-    if let Some(var_2273) = &input.connection_settings {
-        let mut object_2274 = object.key("ConnectionSettings").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_connection_settings(
             &mut object_2274,
             var_2273,
         )?;
         object_2274.finish();
     }
-    if let Some(var_2275) = &input.cross_zone_load_balancing {
-        let mut object_2276 = object.key("CrossZoneLoadBalancing").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_cross_zone_load_balancing(&mut object_2276, var_2275)?;
+    if let Some(var_2275) = &input.connection_draining {
+        let mut object_2276 = object.key("ConnectionDraining").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_connection_draining(
+            &mut object_2276,
+            var_2275,
+        )?;
         object_2276.finish();
+    }
+    if let Some(var_2277) = &input.connection_settings {
+        let mut object_2278 = object.key("ConnectionSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_connection_settings(
+            &mut object_2278,
+            var_2277,
+        )?;
+        object_2278.finish();
+    }
+    if let Some(var_2279) = &input.cross_zone_load_balancing {
+        let mut object_2280 = object.key("CrossZoneLoadBalancing").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_elb_load_balancer_cross_zone_load_balancing(&mut object_2280, var_2279)?;
+        object_2280.finish();
     }
     Ok(())
 }
@@ -10140,36 +10167,36 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_policies(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElbLoadBalancerPolicies,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2277) = &input.app_cookie_stickiness_policies {
-        let mut array_2278 = object.key("AppCookieStickinessPolicies").start_array();
-        for item_2279 in var_2277 {
-            {
-                let mut object_2280 = array_2278.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_elb_app_cookie_stickiness_policy(&mut object_2280, item_2279)?;
-                object_2280.finish();
-            }
-        }
-        array_2278.finish();
-    }
-    if let Some(var_2281) = &input.lb_cookie_stickiness_policies {
-        let mut array_2282 = object.key("LbCookieStickinessPolicies").start_array();
+    if let Some(var_2281) = &input.app_cookie_stickiness_policies {
+        let mut array_2282 = object.key("AppCookieStickinessPolicies").start_array();
         for item_2283 in var_2281 {
             {
                 let mut object_2284 = array_2282.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_elb_lb_cookie_stickiness_policy(&mut object_2284, item_2283)?;
+                crate::json_ser::serialize_structure_crate_model_aws_elb_app_cookie_stickiness_policy(&mut object_2284, item_2283)?;
                 object_2284.finish();
             }
         }
         array_2282.finish();
     }
-    if let Some(var_2285) = &input.other_policies {
-        let mut array_2286 = object.key("OtherPolicies").start_array();
+    if let Some(var_2285) = &input.lb_cookie_stickiness_policies {
+        let mut array_2286 = object.key("LbCookieStickinessPolicies").start_array();
         for item_2287 in var_2285 {
             {
-                array_2286.value().string(item_2287.as_str());
+                let mut object_2288 = array_2286.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_elb_lb_cookie_stickiness_policy(&mut object_2288, item_2287)?;
+                object_2288.finish();
             }
         }
         array_2286.finish();
+    }
+    if let Some(var_2289) = &input.other_policies {
+        let mut array_2290 = object.key("OtherPolicies").start_array();
+        for item_2291 in var_2289 {
+            {
+                array_2290.value().string(item_2291.as_str());
+            }
+        }
+        array_2290.finish();
     }
     Ok(())
 }
@@ -10178,11 +10205,11 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_source_security_gro
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElbLoadBalancerSourceSecurityGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2288) = &input.group_name {
-        object.key("GroupName").string(var_2288.as_str());
+    if let Some(var_2292) = &input.group_name {
+        object.key("GroupName").string(var_2292.as_str());
     }
-    if let Some(var_2289) = &input.owner_alias {
-        object.key("OwnerAlias").string(var_2289.as_str());
+    if let Some(var_2293) = &input.owner_alias {
+        object.key("OwnerAlias").string(var_2293.as_str());
     }
     Ok(())
 }
@@ -10191,8 +10218,8 @@ pub fn serialize_structure_crate_model_aws_iam_group_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamGroupPolicy,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2290) = &input.policy_name {
-        object.key("PolicyName").string(var_2290.as_str());
+    if let Some(var_2294) = &input.policy_name {
+        object.key("PolicyName").string(var_2294.as_str());
     }
     Ok(())
 }
@@ -10201,34 +10228,34 @@ pub fn serialize_structure_crate_model_aws_iam_instance_profile(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamInstanceProfile,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2291) = &input.arn {
-        object.key("Arn").string(var_2291.as_str());
+    if let Some(var_2295) = &input.arn {
+        object.key("Arn").string(var_2295.as_str());
     }
-    if let Some(var_2292) = &input.create_date {
-        object.key("CreateDate").string(var_2292.as_str());
+    if let Some(var_2296) = &input.create_date {
+        object.key("CreateDate").string(var_2296.as_str());
     }
-    if let Some(var_2293) = &input.instance_profile_id {
-        object.key("InstanceProfileId").string(var_2293.as_str());
+    if let Some(var_2297) = &input.instance_profile_id {
+        object.key("InstanceProfileId").string(var_2297.as_str());
     }
-    if let Some(var_2294) = &input.instance_profile_name {
-        object.key("InstanceProfileName").string(var_2294.as_str());
+    if let Some(var_2298) = &input.instance_profile_name {
+        object.key("InstanceProfileName").string(var_2298.as_str());
     }
-    if let Some(var_2295) = &input.path {
-        object.key("Path").string(var_2295.as_str());
+    if let Some(var_2299) = &input.path {
+        object.key("Path").string(var_2299.as_str());
     }
-    if let Some(var_2296) = &input.roles {
-        let mut array_2297 = object.key("Roles").start_array();
-        for item_2298 in var_2296 {
+    if let Some(var_2300) = &input.roles {
+        let mut array_2301 = object.key("Roles").start_array();
+        for item_2302 in var_2300 {
             {
-                let mut object_2299 = array_2297.value().start_object();
+                let mut object_2303 = array_2301.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_iam_instance_profile_role(
-                    &mut object_2299,
-                    item_2298,
+                    &mut object_2303,
+                    item_2302,
                 )?;
-                object_2299.finish();
+                object_2303.finish();
             }
         }
-        array_2297.finish();
+        array_2301.finish();
     }
     Ok(())
 }
@@ -10237,8 +10264,8 @@ pub fn serialize_structure_crate_model_aws_iam_role_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamRolePolicy,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2300) = &input.policy_name {
-        object.key("PolicyName").string(var_2300.as_str());
+    if let Some(var_2304) = &input.policy_name {
+        object.key("PolicyName").string(var_2304.as_str());
     }
     Ok(())
 }
@@ -10247,17 +10274,17 @@ pub fn serialize_structure_crate_model_aws_lambda_function_code(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsLambdaFunctionCode,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2301) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_2301.as_str());
+    if let Some(var_2305) = &input.s3_bucket {
+        object.key("S3Bucket").string(var_2305.as_str());
     }
-    if let Some(var_2302) = &input.s3_key {
-        object.key("S3Key").string(var_2302.as_str());
+    if let Some(var_2306) = &input.s3_key {
+        object.key("S3Key").string(var_2306.as_str());
     }
-    if let Some(var_2303) = &input.s3_object_version {
-        object.key("S3ObjectVersion").string(var_2303.as_str());
+    if let Some(var_2307) = &input.s3_object_version {
+        object.key("S3ObjectVersion").string(var_2307.as_str());
     }
-    if let Some(var_2304) = &input.zip_file {
-        object.key("ZipFile").string(var_2304.as_str());
+    if let Some(var_2308) = &input.zip_file {
+        object.key("ZipFile").string(var_2308.as_str());
     }
     Ok(())
 }
@@ -10266,8 +10293,8 @@ pub fn serialize_structure_crate_model_aws_lambda_function_dead_letter_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsLambdaFunctionDeadLetterConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2305) = &input.target_arn {
-        object.key("TargetArn").string(var_2305.as_str());
+    if let Some(var_2309) = &input.target_arn {
+        object.key("TargetArn").string(var_2309.as_str());
     }
     Ok(())
 }
@@ -10276,22 +10303,22 @@ pub fn serialize_structure_crate_model_aws_lambda_function_environment(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsLambdaFunctionEnvironment,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2306) = &input.variables {
-        let mut object_2307 = object.key("Variables").start_object();
-        for (key_2308, value_2309) in var_2306 {
+    if let Some(var_2310) = &input.variables {
+        let mut object_2311 = object.key("Variables").start_object();
+        for (key_2312, value_2313) in var_2310 {
             {
-                object_2307.key(key_2308).string(value_2309.as_str());
+                object_2311.key(key_2312).string(value_2313.as_str());
             }
         }
-        object_2307.finish();
-    }
-    if let Some(var_2310) = &input.error {
-        let mut object_2311 = object.key("Error").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_lambda_function_environment_error(
-            &mut object_2311,
-            var_2310,
-        )?;
         object_2311.finish();
+    }
+    if let Some(var_2314) = &input.error {
+        let mut object_2315 = object.key("Error").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_lambda_function_environment_error(
+            &mut object_2315,
+            var_2314,
+        )?;
+        object_2315.finish();
     }
     Ok(())
 }
@@ -10300,8 +10327,8 @@ pub fn serialize_structure_crate_model_aws_lambda_function_layer(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsLambdaFunctionLayer,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2312) = &input.arn {
-        object.key("Arn").string(var_2312.as_str());
+    if let Some(var_2316) = &input.arn {
+        object.key("Arn").string(var_2316.as_str());
     }
     if input.code_size != 0 {
         object.key("CodeSize").number(
@@ -10316,8 +10343,8 @@ pub fn serialize_structure_crate_model_aws_lambda_function_tracing_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsLambdaFunctionTracingConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2313) = &input.mode {
-        object.key("Mode").string(var_2313.as_str());
+    if let Some(var_2317) = &input.mode {
+        object.key("Mode").string(var_2317.as_str());
     }
     Ok(())
 }
@@ -10326,26 +10353,26 @@ pub fn serialize_structure_crate_model_aws_lambda_function_vpc_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsLambdaFunctionVpcConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2314) = &input.security_group_ids {
-        let mut array_2315 = object.key("SecurityGroupIds").start_array();
-        for item_2316 in var_2314 {
+    if let Some(var_2318) = &input.security_group_ids {
+        let mut array_2319 = object.key("SecurityGroupIds").start_array();
+        for item_2320 in var_2318 {
             {
-                array_2315.value().string(item_2316.as_str());
+                array_2319.value().string(item_2320.as_str());
             }
         }
-        array_2315.finish();
+        array_2319.finish();
     }
-    if let Some(var_2317) = &input.subnet_ids {
-        let mut array_2318 = object.key("SubnetIds").start_array();
-        for item_2319 in var_2317 {
+    if let Some(var_2321) = &input.subnet_ids {
+        let mut array_2322 = object.key("SubnetIds").start_array();
+        for item_2323 in var_2321 {
             {
-                array_2318.value().string(item_2319.as_str());
+                array_2322.value().string(item_2323.as_str());
             }
         }
-        array_2318.finish();
+        array_2322.finish();
     }
-    if let Some(var_2320) = &input.vpc_id {
-        object.key("VpcId").string(var_2320.as_str());
+    if let Some(var_2324) = &input.vpc_id {
+        object.key("VpcId").string(var_2324.as_str());
     }
     Ok(())
 }
@@ -10354,14 +10381,14 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_associated_role(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbInstanceAssociatedRole,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2321) = &input.role_arn {
-        object.key("RoleArn").string(var_2321.as_str());
+    if let Some(var_2325) = &input.role_arn {
+        object.key("RoleArn").string(var_2325.as_str());
     }
-    if let Some(var_2322) = &input.feature_name {
-        object.key("FeatureName").string(var_2322.as_str());
+    if let Some(var_2326) = &input.feature_name {
+        object.key("FeatureName").string(var_2326.as_str());
     }
-    if let Some(var_2323) = &input.status {
-        object.key("Status").string(var_2323.as_str());
+    if let Some(var_2327) = &input.status {
+        object.key("Status").string(var_2327.as_str());
     }
     Ok(())
 }
@@ -10370,8 +10397,8 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_endpoint(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbInstanceEndpoint,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2324) = &input.address {
-        object.key("Address").string(var_2324.as_str());
+    if let Some(var_2328) = &input.address {
+        object.key("Address").string(var_2328.as_str());
     }
     if input.port != 0 {
         object.key("Port").number(
@@ -10379,8 +10406,8 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_endpoint(
             aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_2325) = &input.hosted_zone_id {
-        object.key("HostedZoneId").string(var_2325.as_str());
+    if let Some(var_2329) = &input.hosted_zone_id {
+        object.key("HostedZoneId").string(var_2329.as_str());
     }
     Ok(())
 }
@@ -10389,11 +10416,11 @@ pub fn serialize_structure_crate_model_aws_rds_db_instance_vpc_security_group(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbInstanceVpcSecurityGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2326) = &input.vpc_security_group_id {
-        object.key("VpcSecurityGroupId").string(var_2326.as_str());
+    if let Some(var_2330) = &input.vpc_security_group_id {
+        object.key("VpcSecurityGroupId").string(var_2330.as_str());
     }
-    if let Some(var_2327) = &input.status {
-        object.key("Status").string(var_2327.as_str());
+    if let Some(var_2331) = &input.status {
+        object.key("Status").string(var_2331.as_str());
     }
     Ok(())
 }
@@ -10402,11 +10429,11 @@ pub fn serialize_structure_crate_model_aws_rds_db_parameter_group(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbParameterGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2328) = &input.db_parameter_group_name {
-        object.key("DbParameterGroupName").string(var_2328.as_str());
+    if let Some(var_2332) = &input.db_parameter_group_name {
+        object.key("DbParameterGroupName").string(var_2332.as_str());
     }
-    if let Some(var_2329) = &input.parameter_apply_status {
-        object.key("ParameterApplyStatus").string(var_2329.as_str());
+    if let Some(var_2333) = &input.parameter_apply_status {
+        object.key("ParameterApplyStatus").string(var_2333.as_str());
     }
     Ok(())
 }
@@ -10415,36 +10442,36 @@ pub fn serialize_structure_crate_model_aws_rds_db_subnet_group(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbSubnetGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2330) = &input.db_subnet_group_name {
-        object.key("DbSubnetGroupName").string(var_2330.as_str());
+    if let Some(var_2334) = &input.db_subnet_group_name {
+        object.key("DbSubnetGroupName").string(var_2334.as_str());
     }
-    if let Some(var_2331) = &input.db_subnet_group_description {
+    if let Some(var_2335) = &input.db_subnet_group_description {
         object
             .key("DbSubnetGroupDescription")
-            .string(var_2331.as_str());
+            .string(var_2335.as_str());
     }
-    if let Some(var_2332) = &input.vpc_id {
-        object.key("VpcId").string(var_2332.as_str());
+    if let Some(var_2336) = &input.vpc_id {
+        object.key("VpcId").string(var_2336.as_str());
     }
-    if let Some(var_2333) = &input.subnet_group_status {
-        object.key("SubnetGroupStatus").string(var_2333.as_str());
+    if let Some(var_2337) = &input.subnet_group_status {
+        object.key("SubnetGroupStatus").string(var_2337.as_str());
     }
-    if let Some(var_2334) = &input.subnets {
-        let mut array_2335 = object.key("Subnets").start_array();
-        for item_2336 in var_2334 {
+    if let Some(var_2338) = &input.subnets {
+        let mut array_2339 = object.key("Subnets").start_array();
+        for item_2340 in var_2338 {
             {
-                let mut object_2337 = array_2335.value().start_object();
+                let mut object_2341 = array_2339.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_rds_db_subnet_group_subnet(
-                    &mut object_2337,
-                    item_2336,
+                    &mut object_2341,
+                    item_2340,
                 )?;
-                object_2337.finish();
+                object_2341.finish();
             }
         }
-        array_2335.finish();
+        array_2339.finish();
     }
-    if let Some(var_2338) = &input.db_subnet_group_arn {
-        object.key("DbSubnetGroupArn").string(var_2338.as_str());
+    if let Some(var_2342) = &input.db_subnet_group_arn {
+        object.key("DbSubnetGroupArn").string(var_2342.as_str());
     }
     Ok(())
 }
@@ -10453,8 +10480,8 @@ pub fn serialize_structure_crate_model_aws_rds_db_pending_modified_values(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbPendingModifiedValues,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2339) = &input.db_instance_class {
-        object.key("DbInstanceClass").string(var_2339.as_str());
+    if let Some(var_2343) = &input.db_instance_class {
+        object.key("DbInstanceClass").string(var_2343.as_str());
     }
     if input.allocated_storage != 0 {
         object.key("AllocatedStorage").number(
@@ -10462,8 +10489,8 @@ pub fn serialize_structure_crate_model_aws_rds_db_pending_modified_values(
             aws_smithy_types::Number::NegInt((input.allocated_storage).into()),
         );
     }
-    if let Some(var_2340) = &input.master_user_password {
-        object.key("MasterUserPassword").string(var_2340.as_str());
+    if let Some(var_2344) = &input.master_user_password {
+        object.key("MasterUserPassword").string(var_2344.as_str());
     }
     if input.port != 0 {
         object.key("Port").number(
@@ -10480,11 +10507,11 @@ pub fn serialize_structure_crate_model_aws_rds_db_pending_modified_values(
     if input.multi_az {
         object.key("MultiAZ").boolean(input.multi_az);
     }
-    if let Some(var_2341) = &input.engine_version {
-        object.key("EngineVersion").string(var_2341.as_str());
+    if let Some(var_2345) = &input.engine_version {
+        object.key("EngineVersion").string(var_2345.as_str());
     }
-    if let Some(var_2342) = &input.license_model {
-        object.key("LicenseModel").string(var_2342.as_str());
+    if let Some(var_2346) = &input.license_model {
+        object.key("LicenseModel").string(var_2346.as_str());
     }
     if input.iops != 0 {
         object.key("Iops").number(
@@ -10492,41 +10519,41 @@ pub fn serialize_structure_crate_model_aws_rds_db_pending_modified_values(
             aws_smithy_types::Number::NegInt((input.iops).into()),
         );
     }
-    if let Some(var_2343) = &input.db_instance_identifier {
-        object.key("DbInstanceIdentifier").string(var_2343.as_str());
+    if let Some(var_2347) = &input.db_instance_identifier {
+        object.key("DbInstanceIdentifier").string(var_2347.as_str());
     }
-    if let Some(var_2344) = &input.storage_type {
-        object.key("StorageType").string(var_2344.as_str());
+    if let Some(var_2348) = &input.storage_type {
+        object.key("StorageType").string(var_2348.as_str());
     }
-    if let Some(var_2345) = &input.ca_certificate_identifier {
+    if let Some(var_2349) = &input.ca_certificate_identifier {
         object
             .key("CaCertificateIdentifier")
-            .string(var_2345.as_str());
+            .string(var_2349.as_str());
     }
-    if let Some(var_2346) = &input.db_subnet_group_name {
-        object.key("DbSubnetGroupName").string(var_2346.as_str());
+    if let Some(var_2350) = &input.db_subnet_group_name {
+        object.key("DbSubnetGroupName").string(var_2350.as_str());
     }
-    if let Some(var_2347) = &input.pending_cloud_watch_logs_exports {
-        let mut object_2348 = object.key("PendingCloudWatchLogsExports").start_object();
+    if let Some(var_2351) = &input.pending_cloud_watch_logs_exports {
+        let mut object_2352 = object.key("PendingCloudWatchLogsExports").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_rds_pending_cloud_watch_logs_exports(
-            &mut object_2348,
-            var_2347,
+            &mut object_2352,
+            var_2351,
         )?;
-        object_2348.finish();
+        object_2352.finish();
     }
-    if let Some(var_2349) = &input.processor_features {
-        let mut array_2350 = object.key("ProcessorFeatures").start_array();
-        for item_2351 in var_2349 {
+    if let Some(var_2353) = &input.processor_features {
+        let mut array_2354 = object.key("ProcessorFeatures").start_array();
+        for item_2355 in var_2353 {
             {
-                let mut object_2352 = array_2350.value().start_object();
+                let mut object_2356 = array_2354.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_rds_db_processor_feature(
-                    &mut object_2352,
-                    item_2351,
+                    &mut object_2356,
+                    item_2355,
                 )?;
-                object_2352.finish();
+                object_2356.finish();
             }
         }
-        array_2350.finish();
+        array_2354.finish();
     }
     Ok(())
 }
@@ -10535,11 +10562,11 @@ pub fn serialize_structure_crate_model_aws_rds_db_option_group_membership(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbOptionGroupMembership,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2353) = &input.option_group_name {
-        object.key("OptionGroupName").string(var_2353.as_str());
+    if let Some(var_2357) = &input.option_group_name {
+        object.key("OptionGroupName").string(var_2357.as_str());
     }
-    if let Some(var_2354) = &input.status {
-        object.key("Status").string(var_2354.as_str());
+    if let Some(var_2358) = &input.status {
+        object.key("Status").string(var_2358.as_str());
     }
     Ok(())
 }
@@ -10548,17 +10575,17 @@ pub fn serialize_structure_crate_model_aws_rds_db_status_info(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbStatusInfo,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2355) = &input.status_type {
-        object.key("StatusType").string(var_2355.as_str());
+    if let Some(var_2359) = &input.status_type {
+        object.key("StatusType").string(var_2359.as_str());
     }
     if input.normal {
         object.key("Normal").boolean(input.normal);
     }
-    if let Some(var_2356) = &input.status {
-        object.key("Status").string(var_2356.as_str());
+    if let Some(var_2360) = &input.status {
+        object.key("Status").string(var_2360.as_str());
     }
-    if let Some(var_2357) = &input.message {
-        object.key("Message").string(var_2357.as_str());
+    if let Some(var_2361) = &input.message {
+        object.key("Message").string(var_2361.as_str());
     }
     Ok(())
 }
@@ -10567,17 +10594,17 @@ pub fn serialize_structure_crate_model_aws_rds_db_domain_membership(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbDomainMembership,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2358) = &input.domain {
-        object.key("Domain").string(var_2358.as_str());
+    if let Some(var_2362) = &input.domain {
+        object.key("Domain").string(var_2362.as_str());
     }
-    if let Some(var_2359) = &input.status {
-        object.key("Status").string(var_2359.as_str());
+    if let Some(var_2363) = &input.status {
+        object.key("Status").string(var_2363.as_str());
     }
-    if let Some(var_2360) = &input.fqdn {
-        object.key("Fqdn").string(var_2360.as_str());
+    if let Some(var_2364) = &input.fqdn {
+        object.key("Fqdn").string(var_2364.as_str());
     }
-    if let Some(var_2361) = &input.iam_role_name {
-        object.key("IamRoleName").string(var_2361.as_str());
+    if let Some(var_2365) = &input.iam_role_name {
+        object.key("IamRoleName").string(var_2365.as_str());
     }
     Ok(())
 }
@@ -10586,11 +10613,11 @@ pub fn serialize_structure_crate_model_aws_rds_db_processor_feature(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbProcessorFeature,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2362) = &input.name {
-        object.key("Name").string(var_2362.as_str());
+    if let Some(var_2366) = &input.name {
+        object.key("Name").string(var_2366.as_str());
     }
-    if let Some(var_2363) = &input.value {
-        object.key("Value").string(var_2363.as_str());
+    if let Some(var_2367) = &input.value {
+        object.key("Value").string(var_2367.as_str());
     }
     Ok(())
 }
@@ -10599,11 +10626,11 @@ pub fn serialize_structure_crate_model_aws_sns_topic_subscription(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsSnsTopicSubscription,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2364) = &input.endpoint {
-        object.key("Endpoint").string(var_2364.as_str());
+    if let Some(var_2368) = &input.endpoint {
+        object.key("Endpoint").string(var_2368.as_str());
     }
-    if let Some(var_2365) = &input.protocol {
-        object.key("Protocol").string(var_2365.as_str());
+    if let Some(var_2369) = &input.protocol {
+        object.key("Protocol").string(var_2369.as_str());
     }
     Ok(())
 }
@@ -10612,32 +10639,32 @@ pub fn serialize_structure_crate_model_aws_waf_web_acl_rule(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsWafWebAclRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2366) = &input.action {
-        let mut object_2367 = object.key("Action").start_object();
-        crate::json_ser::serialize_structure_crate_model_waf_action(&mut object_2367, var_2366)?;
-        object_2367.finish();
+    if let Some(var_2370) = &input.action {
+        let mut object_2371 = object.key("Action").start_object();
+        crate::json_ser::serialize_structure_crate_model_waf_action(&mut object_2371, var_2370)?;
+        object_2371.finish();
     }
-    if let Some(var_2368) = &input.excluded_rules {
-        let mut array_2369 = object.key("ExcludedRules").start_array();
-        for item_2370 in var_2368 {
+    if let Some(var_2372) = &input.excluded_rules {
+        let mut array_2373 = object.key("ExcludedRules").start_array();
+        for item_2374 in var_2372 {
             {
-                let mut object_2371 = array_2369.value().start_object();
+                let mut object_2375 = array_2373.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_waf_excluded_rule(
-                    &mut object_2371,
-                    item_2370,
+                    &mut object_2375,
+                    item_2374,
                 )?;
-                object_2371.finish();
+                object_2375.finish();
             }
         }
-        array_2369.finish();
+        array_2373.finish();
     }
-    if let Some(var_2372) = &input.override_action {
-        let mut object_2373 = object.key("OverrideAction").start_object();
+    if let Some(var_2376) = &input.override_action {
+        let mut object_2377 = object.key("OverrideAction").start_object();
         crate::json_ser::serialize_structure_crate_model_waf_override_action(
-            &mut object_2373,
-            var_2372,
+            &mut object_2377,
+            var_2376,
         )?;
-        object_2373.finish();
+        object_2377.finish();
     }
     if input.priority != 0 {
         object.key("Priority").number(
@@ -10645,11 +10672,11 @@ pub fn serialize_structure_crate_model_aws_waf_web_acl_rule(
             aws_smithy_types::Number::NegInt((input.priority).into()),
         );
     }
-    if let Some(var_2374) = &input.rule_id {
-        object.key("RuleId").string(var_2374.as_str());
+    if let Some(var_2378) = &input.rule_id {
+        object.key("RuleId").string(var_2378.as_str());
     }
-    if let Some(var_2375) = &input.r#type {
-        object.key("Type").string(var_2375.as_str());
+    if let Some(var_2379) = &input.r#type {
+        object.key("Type").string(var_2379.as_str());
     }
     Ok(())
 }
@@ -10658,11 +10685,11 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_associated_role(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbClusterAssociatedRole,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2376) = &input.role_arn {
-        object.key("RoleArn").string(var_2376.as_str());
+    if let Some(var_2380) = &input.role_arn {
+        object.key("RoleArn").string(var_2380.as_str());
     }
-    if let Some(var_2377) = &input.status {
-        object.key("Status").string(var_2377.as_str());
+    if let Some(var_2381) = &input.status {
+        object.key("Status").string(var_2381.as_str());
     }
     Ok(())
 }
@@ -10671,13 +10698,13 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_option_group_membershi
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbClusterOptionGroupMembership,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2378) = &input.db_cluster_option_group_name {
+    if let Some(var_2382) = &input.db_cluster_option_group_name {
         object
             .key("DbClusterOptionGroupName")
-            .string(var_2378.as_str());
+            .string(var_2382.as_str());
     }
-    if let Some(var_2379) = &input.status {
-        object.key("Status").string(var_2379.as_str());
+    if let Some(var_2383) = &input.status {
+        object.key("Status").string(var_2383.as_str());
     }
     Ok(())
 }
@@ -10697,13 +10724,13 @@ pub fn serialize_structure_crate_model_aws_rds_db_cluster_member(
             aws_smithy_types::Number::NegInt((input.promotion_tier).into()),
         );
     }
-    if let Some(var_2380) = &input.db_instance_identifier {
-        object.key("DbInstanceIdentifier").string(var_2380.as_str());
+    if let Some(var_2384) = &input.db_instance_identifier {
+        object.key("DbInstanceIdentifier").string(var_2384.as_str());
     }
-    if let Some(var_2381) = &input.db_cluster_parameter_group_status {
+    if let Some(var_2385) = &input.db_cluster_parameter_group_status {
         object
             .key("DbClusterParameterGroupStatus")
-            .string(var_2381.as_str());
+            .string(var_2385.as_str());
     }
     Ok(())
 }
@@ -10712,11 +10739,11 @@ pub fn serialize_structure_crate_model_aws_ecs_cluster_cluster_settings_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsClusterClusterSettingsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2382) = &input.name {
-        object.key("Name").string(var_2382.as_str());
+    if let Some(var_2386) = &input.name {
+        object.key("Name").string(var_2386.as_str());
     }
-    if let Some(var_2383) = &input.value {
-        object.key("Value").string(var_2383.as_str());
+    if let Some(var_2387) = &input.value {
+        object.key("Value").string(var_2387.as_str());
     }
     Ok(())
 }
@@ -10725,10 +10752,10 @@ pub fn serialize_structure_crate_model_aws_ecs_cluster_configuration_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsClusterConfigurationDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2384) = &input.execute_command_configuration {
-        let mut object_2385 = object.key("ExecuteCommandConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_configuration_execute_command_configuration_details(&mut object_2385, var_2384)?;
-        object_2385.finish();
+    if let Some(var_2388) = &input.execute_command_configuration {
+        let mut object_2389 = object.key("ExecuteCommandConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_configuration_execute_command_configuration_details(&mut object_2389, var_2388)?;
+        object_2389.finish();
     }
     Ok(())
 }
@@ -10743,8 +10770,8 @@ pub fn serialize_structure_crate_model_aws_ecs_cluster_default_capacity_provider
             aws_smithy_types::Number::NegInt((input.base).into()),
         );
     }
-    if let Some(var_2386) = &input.capacity_provider {
-        object.key("CapacityProvider").string(var_2386.as_str());
+    if let Some(var_2390) = &input.capacity_provider {
+        object.key("CapacityProvider").string(var_2390.as_str());
     }
     if input.weight != 0 {
         object.key("Weight").number(
@@ -10759,14 +10786,14 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2387) = &input.command {
-        let mut array_2388 = object.key("Command").start_array();
-        for item_2389 in var_2387 {
+    if let Some(var_2391) = &input.command {
+        let mut array_2392 = object.key("Command").start_array();
+        for item_2393 in var_2391 {
             {
-                array_2388.value().string(item_2389.as_str());
+                array_2392.value().string(item_2393.as_str());
             }
         }
-        array_2388.finish();
+        array_2392.finish();
     }
     if input.cpu != 0 {
         object.key("Cpu").number(
@@ -10774,140 +10801,140 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
             aws_smithy_types::Number::NegInt((input.cpu).into()),
         );
     }
-    if let Some(var_2390) = &input.depends_on {
-        let mut array_2391 = object.key("DependsOn").start_array();
-        for item_2392 in var_2390 {
+    if let Some(var_2394) = &input.depends_on {
+        let mut array_2395 = object.key("DependsOn").start_array();
+        for item_2396 in var_2394 {
             {
-                let mut object_2393 = array_2391.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_depends_on_details(&mut object_2393, item_2392)?;
-                object_2393.finish();
+                let mut object_2397 = array_2395.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_depends_on_details(&mut object_2397, item_2396)?;
+                object_2397.finish();
             }
         }
-        array_2391.finish();
+        array_2395.finish();
     }
     if input.disable_networking {
         object
             .key("DisableNetworking")
             .boolean(input.disable_networking);
     }
-    if let Some(var_2394) = &input.dns_search_domains {
-        let mut array_2395 = object.key("DnsSearchDomains").start_array();
-        for item_2396 in var_2394 {
+    if let Some(var_2398) = &input.dns_search_domains {
+        let mut array_2399 = object.key("DnsSearchDomains").start_array();
+        for item_2400 in var_2398 {
             {
-                array_2395.value().string(item_2396.as_str());
+                array_2399.value().string(item_2400.as_str());
             }
         }
-        array_2395.finish();
+        array_2399.finish();
     }
-    if let Some(var_2397) = &input.dns_servers {
-        let mut array_2398 = object.key("DnsServers").start_array();
-        for item_2399 in var_2397 {
+    if let Some(var_2401) = &input.dns_servers {
+        let mut array_2402 = object.key("DnsServers").start_array();
+        for item_2403 in var_2401 {
             {
-                array_2398.value().string(item_2399.as_str());
+                array_2402.value().string(item_2403.as_str());
             }
         }
-        array_2398.finish();
+        array_2402.finish();
     }
-    if let Some(var_2400) = &input.docker_labels {
-        let mut object_2401 = object.key("DockerLabels").start_object();
-        for (key_2402, value_2403) in var_2400 {
+    if let Some(var_2404) = &input.docker_labels {
+        let mut object_2405 = object.key("DockerLabels").start_object();
+        for (key_2406, value_2407) in var_2404 {
             {
-                object_2401.key(key_2402).string(value_2403.as_str());
+                object_2405.key(key_2406).string(value_2407.as_str());
             }
         }
-        object_2401.finish();
+        object_2405.finish();
     }
-    if let Some(var_2404) = &input.docker_security_options {
-        let mut array_2405 = object.key("DockerSecurityOptions").start_array();
-        for item_2406 in var_2404 {
+    if let Some(var_2408) = &input.docker_security_options {
+        let mut array_2409 = object.key("DockerSecurityOptions").start_array();
+        for item_2410 in var_2408 {
             {
-                array_2405.value().string(item_2406.as_str());
+                array_2409.value().string(item_2410.as_str());
             }
         }
-        array_2405.finish();
+        array_2409.finish();
     }
-    if let Some(var_2407) = &input.entry_point {
-        let mut array_2408 = object.key("EntryPoint").start_array();
-        for item_2409 in var_2407 {
+    if let Some(var_2411) = &input.entry_point {
+        let mut array_2412 = object.key("EntryPoint").start_array();
+        for item_2413 in var_2411 {
             {
-                array_2408.value().string(item_2409.as_str());
+                array_2412.value().string(item_2413.as_str());
             }
         }
-        array_2408.finish();
+        array_2412.finish();
     }
-    if let Some(var_2410) = &input.environment {
-        let mut array_2411 = object.key("Environment").start_array();
-        for item_2412 in var_2410 {
-            {
-                let mut object_2413 = array_2411.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_environment_details(&mut object_2413, item_2412)?;
-                object_2413.finish();
-            }
-        }
-        array_2411.finish();
-    }
-    if let Some(var_2414) = &input.environment_files {
-        let mut array_2415 = object.key("EnvironmentFiles").start_array();
+    if let Some(var_2414) = &input.environment {
+        let mut array_2415 = object.key("Environment").start_array();
         for item_2416 in var_2414 {
             {
                 let mut object_2417 = array_2415.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_environment_files_details(&mut object_2417, item_2416)?;
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_environment_details(&mut object_2417, item_2416)?;
                 object_2417.finish();
             }
         }
         array_2415.finish();
     }
-    if input.essential {
-        object.key("Essential").boolean(input.essential);
-    }
-    if let Some(var_2418) = &input.extra_hosts {
-        let mut array_2419 = object.key("ExtraHosts").start_array();
+    if let Some(var_2418) = &input.environment_files {
+        let mut array_2419 = object.key("EnvironmentFiles").start_array();
         for item_2420 in var_2418 {
             {
                 let mut object_2421 = array_2419.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_extra_hosts_details(&mut object_2421, item_2420)?;
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_environment_files_details(&mut object_2421, item_2420)?;
                 object_2421.finish();
             }
         }
         array_2419.finish();
     }
-    if let Some(var_2422) = &input.firelens_configuration {
-        let mut object_2423 = object.key("FirelensConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_firelens_configuration_details(&mut object_2423, var_2422)?;
-        object_2423.finish();
+    if input.essential {
+        object.key("Essential").boolean(input.essential);
     }
-    if let Some(var_2424) = &input.health_check {
-        let mut object_2425 = object.key("HealthCheck").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_health_check_details(&mut object_2425, var_2424)?;
-        object_2425.finish();
+    if let Some(var_2422) = &input.extra_hosts {
+        let mut array_2423 = object.key("ExtraHosts").start_array();
+        for item_2424 in var_2422 {
+            {
+                let mut object_2425 = array_2423.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_extra_hosts_details(&mut object_2425, item_2424)?;
+                object_2425.finish();
+            }
+        }
+        array_2423.finish();
     }
-    if let Some(var_2426) = &input.hostname {
-        object.key("Hostname").string(var_2426.as_str());
+    if let Some(var_2426) = &input.firelens_configuration {
+        let mut object_2427 = object.key("FirelensConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_firelens_configuration_details(&mut object_2427, var_2426)?;
+        object_2427.finish();
     }
-    if let Some(var_2427) = &input.image {
-        object.key("Image").string(var_2427.as_str());
+    if let Some(var_2428) = &input.health_check {
+        let mut object_2429 = object.key("HealthCheck").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_health_check_details(&mut object_2429, var_2428)?;
+        object_2429.finish();
+    }
+    if let Some(var_2430) = &input.hostname {
+        object.key("Hostname").string(var_2430.as_str());
+    }
+    if let Some(var_2431) = &input.image {
+        object.key("Image").string(var_2431.as_str());
     }
     if input.interactive {
         object.key("Interactive").boolean(input.interactive);
     }
-    if let Some(var_2428) = &input.links {
-        let mut array_2429 = object.key("Links").start_array();
-        for item_2430 in var_2428 {
+    if let Some(var_2432) = &input.links {
+        let mut array_2433 = object.key("Links").start_array();
+        for item_2434 in var_2432 {
             {
-                array_2429.value().string(item_2430.as_str());
+                array_2433.value().string(item_2434.as_str());
             }
         }
-        array_2429.finish();
+        array_2433.finish();
     }
-    if let Some(var_2431) = &input.linux_parameters {
-        let mut object_2432 = object.key("LinuxParameters").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_linux_parameters_details(&mut object_2432, var_2431)?;
-        object_2432.finish();
+    if let Some(var_2435) = &input.linux_parameters {
+        let mut object_2436 = object.key("LinuxParameters").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_linux_parameters_details(&mut object_2436, var_2435)?;
+        object_2436.finish();
     }
-    if let Some(var_2433) = &input.log_configuration {
-        let mut object_2434 = object.key("LogConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_log_configuration_details(&mut object_2434, var_2433)?;
-        object_2434.finish();
+    if let Some(var_2437) = &input.log_configuration {
+        let mut object_2438 = object.key("LogConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_log_configuration_details(&mut object_2438, var_2437)?;
+        object_2438.finish();
     }
     if input.memory != 0 {
         object.key("Memory").number(
@@ -10921,30 +10948,30 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
             aws_smithy_types::Number::NegInt((input.memory_reservation).into()),
         );
     }
-    if let Some(var_2435) = &input.mount_points {
-        let mut array_2436 = object.key("MountPoints").start_array();
-        for item_2437 in var_2435 {
+    if let Some(var_2439) = &input.mount_points {
+        let mut array_2440 = object.key("MountPoints").start_array();
+        for item_2441 in var_2439 {
             {
-                let mut object_2438 = array_2436.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_mount_points_details(&mut object_2438, item_2437)?;
-                object_2438.finish();
+                let mut object_2442 = array_2440.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_mount_points_details(&mut object_2442, item_2441)?;
+                object_2442.finish();
             }
         }
-        array_2436.finish();
+        array_2440.finish();
     }
-    if let Some(var_2439) = &input.name {
-        object.key("Name").string(var_2439.as_str());
+    if let Some(var_2443) = &input.name {
+        object.key("Name").string(var_2443.as_str());
     }
-    if let Some(var_2440) = &input.port_mappings {
-        let mut array_2441 = object.key("PortMappings").start_array();
-        for item_2442 in var_2440 {
+    if let Some(var_2444) = &input.port_mappings {
+        let mut array_2445 = object.key("PortMappings").start_array();
+        for item_2446 in var_2444 {
             {
-                let mut object_2443 = array_2441.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_port_mappings_details(&mut object_2443, item_2442)?;
-                object_2443.finish();
+                let mut object_2447 = array_2445.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_port_mappings_details(&mut object_2447, item_2446)?;
+                object_2447.finish();
             }
         }
-        array_2441.finish();
+        array_2445.finish();
     }
     if input.privileged {
         object.key("Privileged").boolean(input.privileged);
@@ -10957,32 +10984,32 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
             .key("ReadonlyRootFilesystem")
             .boolean(input.readonly_root_filesystem);
     }
-    if let Some(var_2444) = &input.repository_credentials {
-        let mut object_2445 = object.key("RepositoryCredentials").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_repository_credentials_details(&mut object_2445, var_2444)?;
-        object_2445.finish();
+    if let Some(var_2448) = &input.repository_credentials {
+        let mut object_2449 = object.key("RepositoryCredentials").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_repository_credentials_details(&mut object_2449, var_2448)?;
+        object_2449.finish();
     }
-    if let Some(var_2446) = &input.resource_requirements {
-        let mut array_2447 = object.key("ResourceRequirements").start_array();
-        for item_2448 in var_2446 {
-            {
-                let mut object_2449 = array_2447.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_resource_requirements_details(&mut object_2449, item_2448)?;
-                object_2449.finish();
-            }
-        }
-        array_2447.finish();
-    }
-    if let Some(var_2450) = &input.secrets {
-        let mut array_2451 = object.key("Secrets").start_array();
+    if let Some(var_2450) = &input.resource_requirements {
+        let mut array_2451 = object.key("ResourceRequirements").start_array();
         for item_2452 in var_2450 {
             {
                 let mut object_2453 = array_2451.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_secrets_details(&mut object_2453, item_2452)?;
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_resource_requirements_details(&mut object_2453, item_2452)?;
                 object_2453.finish();
             }
         }
         array_2451.finish();
+    }
+    if let Some(var_2454) = &input.secrets {
+        let mut array_2455 = object.key("Secrets").start_array();
+        for item_2456 in var_2454 {
+            {
+                let mut object_2457 = array_2455.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_secrets_details(&mut object_2457, item_2456)?;
+                object_2457.finish();
+            }
+        }
+        array_2455.finish();
     }
     if input.start_timeout != 0 {
         object.key("StartTimeout").number(
@@ -10996,44 +11023,44 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
             aws_smithy_types::Number::NegInt((input.stop_timeout).into()),
         );
     }
-    if let Some(var_2454) = &input.system_controls {
-        let mut array_2455 = object.key("SystemControls").start_array();
-        for item_2456 in var_2454 {
-            {
-                let mut object_2457 = array_2455.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_system_controls_details(&mut object_2457, item_2456)?;
-                object_2457.finish();
-            }
-        }
-        array_2455.finish();
-    }
-    if let Some(var_2458) = &input.ulimits {
-        let mut array_2459 = object.key("Ulimits").start_array();
+    if let Some(var_2458) = &input.system_controls {
+        let mut array_2459 = object.key("SystemControls").start_array();
         for item_2460 in var_2458 {
             {
                 let mut object_2461 = array_2459.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_ulimits_details(&mut object_2461, item_2460)?;
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_system_controls_details(&mut object_2461, item_2460)?;
                 object_2461.finish();
             }
         }
         array_2459.finish();
     }
-    if let Some(var_2462) = &input.user {
-        object.key("User").string(var_2462.as_str());
-    }
-    if let Some(var_2463) = &input.volumes_from {
-        let mut array_2464 = object.key("VolumesFrom").start_array();
-        for item_2465 in var_2463 {
+    if let Some(var_2462) = &input.ulimits {
+        let mut array_2463 = object.key("Ulimits").start_array();
+        for item_2464 in var_2462 {
             {
-                let mut object_2466 = array_2464.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_volumes_from_details(&mut object_2466, item_2465)?;
-                object_2466.finish();
+                let mut object_2465 = array_2463.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_ulimits_details(&mut object_2465, item_2464)?;
+                object_2465.finish();
             }
         }
-        array_2464.finish();
+        array_2463.finish();
     }
-    if let Some(var_2467) = &input.working_directory {
-        object.key("WorkingDirectory").string(var_2467.as_str());
+    if let Some(var_2466) = &input.user {
+        object.key("User").string(var_2466.as_str());
+    }
+    if let Some(var_2467) = &input.volumes_from {
+        let mut array_2468 = object.key("VolumesFrom").start_array();
+        for item_2469 in var_2467 {
+            {
+                let mut object_2470 = array_2468.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_volumes_from_details(&mut object_2470, item_2469)?;
+                object_2470.finish();
+            }
+        }
+        array_2468.finish();
+    }
+    if let Some(var_2471) = &input.working_directory {
+        object.key("WorkingDirectory").string(var_2471.as_str());
     }
     Ok(())
 }
@@ -11042,11 +11069,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_inference_acceler
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2468) = &input.device_name {
-        object.key("DeviceName").string(var_2468.as_str());
+    if let Some(var_2472) = &input.device_name {
+        object.key("DeviceName").string(var_2472.as_str());
     }
-    if let Some(var_2469) = &input.device_type {
-        object.key("DeviceType").string(var_2469.as_str());
+    if let Some(var_2473) = &input.device_type {
+        object.key("DeviceType").string(var_2473.as_str());
     }
     Ok(())
 }
@@ -11055,11 +11082,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_placement_constra
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2470) = &input.expression {
-        object.key("Expression").string(var_2470.as_str());
+    if let Some(var_2474) = &input.expression {
+        object.key("Expression").string(var_2474.as_str());
     }
-    if let Some(var_2471) = &input.r#type {
-        object.key("Type").string(var_2471.as_str());
+    if let Some(var_2475) = &input.r#type {
+        object.key("Type").string(var_2475.as_str());
     }
     Ok(())
 }
@@ -11068,22 +11095,22 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_proxy_configurati
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2472) = &input.container_name {
-        object.key("ContainerName").string(var_2472.as_str());
+    if let Some(var_2476) = &input.container_name {
+        object.key("ContainerName").string(var_2476.as_str());
     }
-    if let Some(var_2473) = &input.proxy_configuration_properties {
-        let mut array_2474 = object.key("ProxyConfigurationProperties").start_array();
-        for item_2475 in var_2473 {
+    if let Some(var_2477) = &input.proxy_configuration_properties {
+        let mut array_2478 = object.key("ProxyConfigurationProperties").start_array();
+        for item_2479 in var_2477 {
             {
-                let mut object_2476 = array_2474.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details(&mut object_2476, item_2475)?;
-                object_2476.finish();
+                let mut object_2480 = array_2478.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details(&mut object_2480, item_2479)?;
+                object_2480.finish();
             }
         }
-        array_2474.finish();
+        array_2478.finish();
     }
-    if let Some(var_2477) = &input.r#type {
-        object.key("Type").string(var_2477.as_str());
+    if let Some(var_2481) = &input.r#type {
+        object.key("Type").string(var_2481.as_str());
     }
     Ok(())
 }
@@ -11092,23 +11119,23 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_volumes_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionVolumesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2478) = &input.docker_volume_configuration {
-        let mut object_2479 = object.key("DockerVolumeConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_volumes_docker_volume_configuration_details(&mut object_2479, var_2478)?;
-        object_2479.finish();
-    }
-    if let Some(var_2480) = &input.efs_volume_configuration {
-        let mut object_2481 = object.key("EfsVolumeConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_volumes_efs_volume_configuration_details(&mut object_2481, var_2480)?;
-        object_2481.finish();
-    }
-    if let Some(var_2482) = &input.host {
-        let mut object_2483 = object.key("Host").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_volumes_host_details(&mut object_2483, var_2482)?;
+    if let Some(var_2482) = &input.docker_volume_configuration {
+        let mut object_2483 = object.key("DockerVolumeConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_volumes_docker_volume_configuration_details(&mut object_2483, var_2482)?;
         object_2483.finish();
     }
-    if let Some(var_2484) = &input.name {
-        object.key("Name").string(var_2484.as_str());
+    if let Some(var_2484) = &input.efs_volume_configuration {
+        let mut object_2485 = object.key("EfsVolumeConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_volumes_efs_volume_configuration_details(&mut object_2485, var_2484)?;
+        object_2485.finish();
+    }
+    if let Some(var_2486) = &input.host {
+        let mut object_2487 = object.key("Host").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_volumes_host_details(&mut object_2487, var_2486)?;
+        object_2487.finish();
+    }
+    if let Some(var_2488) = &input.name {
+        object.key("Name").string(var_2488.as_str());
     }
     Ok(())
 }
@@ -11123,8 +11150,8 @@ pub fn serialize_structure_crate_model_aws_ecs_service_capacity_provider_strateg
             aws_smithy_types::Number::NegInt((input.base).into()),
         );
     }
-    if let Some(var_2485) = &input.capacity_provider {
-        object.key("CapacityProvider").string(var_2485.as_str());
+    if let Some(var_2489) = &input.capacity_provider {
+        object.key("CapacityProvider").string(var_2489.as_str());
     }
     if input.weight != 0 {
         object.key("Weight").number(
@@ -11139,10 +11166,10 @@ pub fn serialize_structure_crate_model_aws_ecs_service_deployment_configuration_
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsServiceDeploymentConfigurationDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2486) = &input.deployment_circuit_breaker {
-        let mut object_2487 = object.key("DeploymentCircuitBreaker").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details(&mut object_2487, var_2486)?;
-        object_2487.finish();
+    if let Some(var_2490) = &input.deployment_circuit_breaker {
+        let mut object_2491 = object.key("DeploymentCircuitBreaker").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details(&mut object_2491, var_2490)?;
+        object_2491.finish();
     }
     if input.maximum_percent != 0 {
         object.key("MaximumPercent").number(
@@ -11163,8 +11190,8 @@ pub fn serialize_structure_crate_model_aws_ecs_service_deployment_controller_det
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsServiceDeploymentControllerDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2488) = &input.r#type {
-        object.key("Type").string(var_2488.as_str());
+    if let Some(var_2492) = &input.r#type {
+        object.key("Type").string(var_2492.as_str());
     }
     Ok(())
 }
@@ -11173,8 +11200,8 @@ pub fn serialize_structure_crate_model_aws_ecs_service_load_balancers_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsServiceLoadBalancersDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2489) = &input.container_name {
-        object.key("ContainerName").string(var_2489.as_str());
+    if let Some(var_2493) = &input.container_name {
+        object.key("ContainerName").string(var_2493.as_str());
     }
     if input.container_port != 0 {
         object.key("ContainerPort").number(
@@ -11182,11 +11209,11 @@ pub fn serialize_structure_crate_model_aws_ecs_service_load_balancers_details(
             aws_smithy_types::Number::NegInt((input.container_port).into()),
         );
     }
-    if let Some(var_2490) = &input.load_balancer_name {
-        object.key("LoadBalancerName").string(var_2490.as_str());
+    if let Some(var_2494) = &input.load_balancer_name {
+        object.key("LoadBalancerName").string(var_2494.as_str());
     }
-    if let Some(var_2491) = &input.target_group_arn {
-        object.key("TargetGroupArn").string(var_2491.as_str());
+    if let Some(var_2495) = &input.target_group_arn {
+        object.key("TargetGroupArn").string(var_2495.as_str());
     }
     Ok(())
 }
@@ -11195,10 +11222,10 @@ pub fn serialize_structure_crate_model_aws_ecs_service_network_configuration_det
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsServiceNetworkConfigurationDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2492) = &input.aws_vpc_configuration {
-        let mut object_2493 = object.key("AwsVpcConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_network_configuration_aws_vpc_configuration_details(&mut object_2493, var_2492)?;
-        object_2493.finish();
+    if let Some(var_2496) = &input.aws_vpc_configuration {
+        let mut object_2497 = object.key("AwsVpcConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_service_network_configuration_aws_vpc_configuration_details(&mut object_2497, var_2496)?;
+        object_2497.finish();
     }
     Ok(())
 }
@@ -11207,11 +11234,11 @@ pub fn serialize_structure_crate_model_aws_ecs_service_placement_constraints_det
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsServicePlacementConstraintsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2494) = &input.expression {
-        object.key("Expression").string(var_2494.as_str());
+    if let Some(var_2498) = &input.expression {
+        object.key("Expression").string(var_2498.as_str());
     }
-    if let Some(var_2495) = &input.r#type {
-        object.key("Type").string(var_2495.as_str());
+    if let Some(var_2499) = &input.r#type {
+        object.key("Type").string(var_2499.as_str());
     }
     Ok(())
 }
@@ -11220,11 +11247,11 @@ pub fn serialize_structure_crate_model_aws_ecs_service_placement_strategies_deta
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsServicePlacementStrategiesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2496) = &input.field {
-        object.key("Field").string(var_2496.as_str());
+    if let Some(var_2500) = &input.field {
+        object.key("Field").string(var_2500.as_str());
     }
-    if let Some(var_2497) = &input.r#type {
-        object.key("Type").string(var_2497.as_str());
+    if let Some(var_2501) = &input.r#type {
+        object.key("Type").string(var_2501.as_str());
     }
     Ok(())
 }
@@ -11233,8 +11260,8 @@ pub fn serialize_structure_crate_model_aws_ecs_service_service_registries_detail
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsServiceServiceRegistriesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2498) = &input.container_name {
-        object.key("ContainerName").string(var_2498.as_str());
+    if let Some(var_2502) = &input.container_name {
+        object.key("ContainerName").string(var_2502.as_str());
     }
     if input.container_port != 0 {
         object.key("ContainerPort").number(
@@ -11248,8 +11275,8 @@ pub fn serialize_structure_crate_model_aws_ecs_service_service_registries_detail
             aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
-    if let Some(var_2499) = &input.registry_arn {
-        object.key("RegistryArn").string(var_2499.as_str());
+    if let Some(var_2503) = &input.registry_arn {
+        object.key("RegistryArn").string(var_2503.as_str());
     }
     Ok(())
 }
@@ -11258,19 +11285,19 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_launch_configuration_blo
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2500) = &input.device_name {
-        object.key("DeviceName").string(var_2500.as_str());
+    if let Some(var_2504) = &input.device_name {
+        object.key("DeviceName").string(var_2504.as_str());
     }
-    if let Some(var_2501) = &input.ebs {
-        let mut object_2502 = object.key("Ebs").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details(&mut object_2502, var_2501)?;
-        object_2502.finish();
+    if let Some(var_2505) = &input.ebs {
+        let mut object_2506 = object.key("Ebs").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details(&mut object_2506, var_2505)?;
+        object_2506.finish();
     }
     if input.no_device {
         object.key("NoDevice").boolean(input.no_device);
     }
-    if let Some(var_2503) = &input.virtual_name {
-        object.key("VirtualName").string(var_2503.as_str());
+    if let Some(var_2507) = &input.virtual_name {
+        object.key("VirtualName").string(var_2507.as_str());
     }
     Ok(())
 }
@@ -11289,8 +11316,8 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_launch_configuration_met
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2504) = &input.http_endpoint {
-        object.key("HttpEndpoint").string(var_2504.as_str());
+    if let Some(var_2508) = &input.http_endpoint {
+        object.key("HttpEndpoint").string(var_2508.as_str());
     }
     if input.http_put_response_hop_limit != 0 {
         object.key("HttpPutResponseHopLimit").number(
@@ -11298,8 +11325,8 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_launch_configuration_met
             aws_smithy_types::Number::NegInt((input.http_put_response_hop_limit).into()),
         );
     }
-    if let Some(var_2505) = &input.http_tokens {
-        object.key("HttpTokens").string(var_2505.as_str());
+    if let Some(var_2509) = &input.http_tokens {
+        object.key("HttpTokens").string(var_2509.as_str());
     }
     Ok(())
 }
@@ -11314,20 +11341,20 @@ pub fn serialize_structure_crate_model_aws_ec2_vpn_connection_vgw_telemetry_deta
             aws_smithy_types::Number::NegInt((input.accepted_route_count).into()),
         );
     }
-    if let Some(var_2506) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_2506.as_str());
+    if let Some(var_2510) = &input.certificate_arn {
+        object.key("CertificateArn").string(var_2510.as_str());
     }
-    if let Some(var_2507) = &input.last_status_change {
-        object.key("LastStatusChange").string(var_2507.as_str());
+    if let Some(var_2511) = &input.last_status_change {
+        object.key("LastStatusChange").string(var_2511.as_str());
     }
-    if let Some(var_2508) = &input.outside_ip_address {
-        object.key("OutsideIpAddress").string(var_2508.as_str());
+    if let Some(var_2512) = &input.outside_ip_address {
+        object.key("OutsideIpAddress").string(var_2512.as_str());
     }
-    if let Some(var_2509) = &input.status {
-        object.key("Status").string(var_2509.as_str());
+    if let Some(var_2513) = &input.status {
+        object.key("Status").string(var_2513.as_str());
     }
-    if let Some(var_2510) = &input.status_message {
-        object.key("StatusMessage").string(var_2510.as_str());
+    if let Some(var_2514) = &input.status_message {
+        object.key("StatusMessage").string(var_2514.as_str());
     }
     Ok(())
 }
@@ -11341,16 +11368,16 @@ pub fn serialize_structure_crate_model_aws_ec2_vpn_connection_options_details(
             .key("StaticRoutesOnly")
             .boolean(input.static_routes_only);
     }
-    if let Some(var_2511) = &input.tunnel_options {
-        let mut array_2512 = object.key("TunnelOptions").start_array();
-        for item_2513 in var_2511 {
+    if let Some(var_2515) = &input.tunnel_options {
+        let mut array_2516 = object.key("TunnelOptions").start_array();
+        for item_2517 in var_2515 {
             {
-                let mut object_2514 = array_2512.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ec2_vpn_connection_options_tunnel_options_details(&mut object_2514, item_2513)?;
-                object_2514.finish();
+                let mut object_2518 = array_2516.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ec2_vpn_connection_options_tunnel_options_details(&mut object_2518, item_2517)?;
+                object_2518.finish();
             }
         }
-        array_2512.finish();
+        array_2516.finish();
     }
     Ok(())
 }
@@ -11359,11 +11386,11 @@ pub fn serialize_structure_crate_model_aws_ec2_vpn_connection_routes_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2VpnConnectionRoutesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2515) = &input.destination_cidr_block {
-        object.key("DestinationCidrBlock").string(var_2515.as_str());
+    if let Some(var_2519) = &input.destination_cidr_block {
+        object.key("DestinationCidrBlock").string(var_2519.as_str());
     }
-    if let Some(var_2516) = &input.state {
-        object.key("State").string(var_2516.as_str());
+    if let Some(var_2520) = &input.state {
+        object.key("State").string(var_2520.as_str());
     }
     Ok(())
 }
@@ -11375,8 +11402,8 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_encryption
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
     }
-    if let Some(var_2517) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_2517.as_str());
+    if let Some(var_2521) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_2521.as_str());
     }
     Ok(())
 }
@@ -11395,28 +11422,28 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_service_so
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2518) = &input.automated_update_date {
-        object.key("AutomatedUpdateDate").string(var_2518.as_str());
+    if let Some(var_2522) = &input.automated_update_date {
+        object.key("AutomatedUpdateDate").string(var_2522.as_str());
     }
     if input.cancellable {
         object.key("Cancellable").boolean(input.cancellable);
     }
-    if let Some(var_2519) = &input.current_version {
-        object.key("CurrentVersion").string(var_2519.as_str());
+    if let Some(var_2523) = &input.current_version {
+        object.key("CurrentVersion").string(var_2523.as_str());
     }
-    if let Some(var_2520) = &input.description {
-        object.key("Description").string(var_2520.as_str());
+    if let Some(var_2524) = &input.description {
+        object.key("Description").string(var_2524.as_str());
     }
-    if let Some(var_2521) = &input.new_version {
-        object.key("NewVersion").string(var_2521.as_str());
+    if let Some(var_2525) = &input.new_version {
+        object.key("NewVersion").string(var_2525.as_str());
     }
     if input.update_available {
         object
             .key("UpdateAvailable")
             .boolean(input.update_available);
     }
-    if let Some(var_2522) = &input.update_status {
-        object.key("UpdateStatus").string(var_2522.as_str());
+    if let Some(var_2526) = &input.update_status {
+        object.key("UpdateStatus").string(var_2526.as_str());
     }
     if input.optional_deployment {
         object
@@ -11450,10 +11477,10 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_cluster_co
             .key("DedicatedMasterEnabled")
             .boolean(input.dedicated_master_enabled);
     }
-    if let Some(var_2523) = &input.zone_awareness_config {
-        let mut object_2524 = object.key("ZoneAwarenessConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_cluster_config_zone_awareness_config_details(&mut object_2524, var_2523)?;
-        object_2524.finish();
+    if let Some(var_2527) = &input.zone_awareness_config {
+        let mut object_2528 = object.key("ZoneAwarenessConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_cluster_config_zone_awareness_config_details(&mut object_2528, var_2527)?;
+        object_2528.finish();
     }
     if input.dedicated_master_count != 0 {
         object.key("DedicatedMasterCount").number(
@@ -11461,19 +11488,19 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_cluster_co
             aws_smithy_types::Number::NegInt((input.dedicated_master_count).into()),
         );
     }
-    if let Some(var_2525) = &input.instance_type {
-        object.key("InstanceType").string(var_2525.as_str());
+    if let Some(var_2529) = &input.instance_type {
+        object.key("InstanceType").string(var_2529.as_str());
     }
-    if let Some(var_2526) = &input.warm_type {
-        object.key("WarmType").string(var_2526.as_str());
+    if let Some(var_2530) = &input.warm_type {
+        object.key("WarmType").string(var_2530.as_str());
     }
     if input.zone_awareness_enabled {
         object
             .key("ZoneAwarenessEnabled")
             .boolean(input.zone_awareness_enabled);
     }
-    if let Some(var_2527) = &input.dedicated_master_type {
-        object.key("DedicatedMasterType").string(var_2527.as_str());
+    if let Some(var_2531) = &input.dedicated_master_type {
+        object.key("DedicatedMasterType").string(var_2531.as_str());
     }
     Ok(())
 }
@@ -11482,10 +11509,10 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_domain_end
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2528) = &input.custom_endpoint_certificate_arn {
+    if let Some(var_2532) = &input.custom_endpoint_certificate_arn {
         object
             .key("CustomEndpointCertificateArn")
-            .string(var_2528.as_str());
+            .string(var_2532.as_str());
     }
     if input.custom_endpoint_enabled {
         object
@@ -11495,11 +11522,11 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_domain_end
     if input.enforce_https {
         object.key("EnforceHTTPS").boolean(input.enforce_https);
     }
-    if let Some(var_2529) = &input.custom_endpoint {
-        object.key("CustomEndpoint").string(var_2529.as_str());
+    if let Some(var_2533) = &input.custom_endpoint {
+        object.key("CustomEndpoint").string(var_2533.as_str());
     }
-    if let Some(var_2530) = &input.tls_security_policy {
-        object.key("TLSSecurityPolicy").string(var_2530.as_str());
+    if let Some(var_2534) = &input.tls_security_policy {
+        object.key("TLSSecurityPolicy").string(var_2534.as_str());
     }
     Ok(())
 }
@@ -11508,23 +11535,23 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_vpc_option
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2531) = &input.security_group_ids {
-        let mut array_2532 = object.key("SecurityGroupIds").start_array();
-        for item_2533 in var_2531 {
+    if let Some(var_2535) = &input.security_group_ids {
+        let mut array_2536 = object.key("SecurityGroupIds").start_array();
+        for item_2537 in var_2535 {
             {
-                array_2532.value().string(item_2533.as_str());
+                array_2536.value().string(item_2537.as_str());
             }
         }
-        array_2532.finish();
+        array_2536.finish();
     }
-    if let Some(var_2534) = &input.subnet_ids {
-        let mut array_2535 = object.key("SubnetIds").start_array();
-        for item_2536 in var_2534 {
+    if let Some(var_2538) = &input.subnet_ids {
+        let mut array_2539 = object.key("SubnetIds").start_array();
+        for item_2540 in var_2538 {
             {
-                array_2535.value().string(item_2536.as_str());
+                array_2539.value().string(item_2540.as_str());
             }
         }
-        array_2535.finish();
+        array_2539.finish();
     }
     Ok(())
 }
@@ -11533,20 +11560,20 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_log_publis
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2537) = &input.index_slow_logs {
-        let mut object_2538 = object.key("IndexSlowLogs").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_log_publishing_option(&mut object_2538, var_2537)?;
-        object_2538.finish();
-    }
-    if let Some(var_2539) = &input.search_slow_logs {
-        let mut object_2540 = object.key("SearchSlowLogs").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_log_publishing_option(&mut object_2540, var_2539)?;
-        object_2540.finish();
-    }
-    if let Some(var_2541) = &input.audit_logs {
-        let mut object_2542 = object.key("AuditLogs").start_object();
+    if let Some(var_2541) = &input.index_slow_logs {
+        let mut object_2542 = object.key("IndexSlowLogs").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_log_publishing_option(&mut object_2542, var_2541)?;
         object_2542.finish();
+    }
+    if let Some(var_2543) = &input.search_slow_logs {
+        let mut object_2544 = object.key("SearchSlowLogs").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_log_publishing_option(&mut object_2544, var_2543)?;
+        object_2544.finish();
+    }
+    if let Some(var_2545) = &input.audit_logs {
+        let mut object_2546 = object.key("AuditLogs").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_open_search_service_domain_log_publishing_option(&mut object_2546, var_2545)?;
+        object_2546.finish();
     }
     Ok(())
 }
@@ -11555,8 +11582,8 @@ pub fn serialize_structure_crate_model_aws_ec2_vpc_endpoint_service_service_type
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2543) = &input.service_type {
-        object.key("ServiceType").string(var_2543.as_str());
+    if let Some(var_2547) = &input.service_type {
+        object.key("ServiceType").string(var_2547.as_str());
     }
     Ok(())
 }
@@ -11565,14 +11592,14 @@ pub fn serialize_structure_crate_model_aws_waf_rate_based_rule_match_predicate(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsWafRateBasedRuleMatchPredicate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2544) = &input.data_id {
-        object.key("DataId").string(var_2544.as_str());
+    if let Some(var_2548) = &input.data_id {
+        object.key("DataId").string(var_2548.as_str());
     }
     if input.negated {
         object.key("Negated").boolean(input.negated);
     }
-    if let Some(var_2545) = &input.r#type {
-        object.key("Type").string(var_2545.as_str());
+    if let Some(var_2549) = &input.r#type {
+        object.key("Type").string(var_2549.as_str());
     }
     Ok(())
 }
@@ -11581,14 +11608,14 @@ pub fn serialize_structure_crate_model_aws_waf_regional_rate_based_rule_match_pr
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsWafRegionalRateBasedRuleMatchPredicate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2546) = &input.data_id {
-        object.key("DataId").string(var_2546.as_str());
+    if let Some(var_2550) = &input.data_id {
+        object.key("DataId").string(var_2550.as_str());
     }
     if input.negated {
         object.key("Negated").boolean(input.negated);
     }
-    if let Some(var_2547) = &input.r#type {
-        object.key("Type").string(var_2547.as_str());
+    if let Some(var_2551) = &input.r#type {
+        object.key("Type").string(var_2551.as_str());
     }
     Ok(())
 }
@@ -11607,11 +11634,11 @@ pub fn serialize_structure_crate_model_aws_ecr_repository_lifecycle_policy_detai
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcrRepositoryLifecyclePolicyDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2548) = &input.lifecycle_policy_text {
-        object.key("LifecyclePolicyText").string(var_2548.as_str());
+    if let Some(var_2552) = &input.lifecycle_policy_text {
+        object.key("LifecyclePolicyText").string(var_2552.as_str());
     }
-    if let Some(var_2549) = &input.registry_id {
-        object.key("RegistryId").string(var_2549.as_str());
+    if let Some(var_2553) = &input.registry_id {
+        object.key("RegistryId").string(var_2553.as_str());
     }
     Ok(())
 }
@@ -11620,23 +11647,23 @@ pub fn serialize_structure_crate_model_aws_eks_cluster_resources_vpc_config_deta
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEksClusterResourcesVpcConfigDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2550) = &input.security_group_ids {
-        let mut array_2551 = object.key("SecurityGroupIds").start_array();
-        for item_2552 in var_2550 {
+    if let Some(var_2554) = &input.security_group_ids {
+        let mut array_2555 = object.key("SecurityGroupIds").start_array();
+        for item_2556 in var_2554 {
             {
-                array_2551.value().string(item_2552.as_str());
+                array_2555.value().string(item_2556.as_str());
             }
         }
-        array_2551.finish();
+        array_2555.finish();
     }
-    if let Some(var_2553) = &input.subnet_ids {
-        let mut array_2554 = object.key("SubnetIds").start_array();
-        for item_2555 in var_2553 {
+    if let Some(var_2557) = &input.subnet_ids {
+        let mut array_2558 = object.key("SubnetIds").start_array();
+        for item_2559 in var_2557 {
             {
-                array_2554.value().string(item_2555.as_str());
+                array_2558.value().string(item_2559.as_str());
             }
         }
-        array_2554.finish();
+        array_2558.finish();
     }
     Ok(())
 }
@@ -11645,16 +11672,16 @@ pub fn serialize_structure_crate_model_aws_eks_cluster_logging_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEksClusterLoggingDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2556) = &input.cluster_logging {
-        let mut array_2557 = object.key("ClusterLogging").start_array();
-        for item_2558 in var_2556 {
+    if let Some(var_2560) = &input.cluster_logging {
+        let mut array_2561 = object.key("ClusterLogging").start_array();
+        for item_2562 in var_2560 {
             {
-                let mut object_2559 = array_2557.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_eks_cluster_logging_cluster_logging_details(&mut object_2559, item_2558)?;
-                object_2559.finish();
+                let mut object_2563 = array_2561.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_eks_cluster_logging_cluster_logging_details(&mut object_2563, item_2562)?;
+                object_2563.finish();
             }
         }
-        array_2557.finish();
+        array_2561.finish();
     }
     Ok(())
 }
@@ -11663,56 +11690,56 @@ pub fn serialize_structure_crate_model_firewall_policy_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FirewallPolicyDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2560) = &input.stateful_rule_group_references {
-        let mut array_2561 = object.key("StatefulRuleGroupReferences").start_array();
-        for item_2562 in var_2560 {
-            {
-                let mut object_2563 = array_2561.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_firewall_policy_stateful_rule_group_references_details(&mut object_2563, item_2562)?;
-                object_2563.finish();
-            }
-        }
-        array_2561.finish();
-    }
-    if let Some(var_2564) = &input.stateless_custom_actions {
-        let mut array_2565 = object.key("StatelessCustomActions").start_array();
+    if let Some(var_2564) = &input.stateful_rule_group_references {
+        let mut array_2565 = object.key("StatefulRuleGroupReferences").start_array();
         for item_2566 in var_2564 {
             {
                 let mut object_2567 = array_2565.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_firewall_policy_stateless_custom_actions_details(&mut object_2567, item_2566)?;
+                crate::json_ser::serialize_structure_crate_model_firewall_policy_stateful_rule_group_references_details(&mut object_2567, item_2566)?;
                 object_2567.finish();
             }
         }
         array_2565.finish();
     }
-    if let Some(var_2568) = &input.stateless_default_actions {
-        let mut array_2569 = object.key("StatelessDefaultActions").start_array();
+    if let Some(var_2568) = &input.stateless_custom_actions {
+        let mut array_2569 = object.key("StatelessCustomActions").start_array();
         for item_2570 in var_2568 {
             {
-                array_2569.value().string(item_2570.as_str());
+                let mut object_2571 = array_2569.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_firewall_policy_stateless_custom_actions_details(&mut object_2571, item_2570)?;
+                object_2571.finish();
             }
         }
         array_2569.finish();
     }
-    if let Some(var_2571) = &input.stateless_fragment_default_actions {
-        let mut array_2572 = object.key("StatelessFragmentDefaultActions").start_array();
-        for item_2573 in var_2571 {
+    if let Some(var_2572) = &input.stateless_default_actions {
+        let mut array_2573 = object.key("StatelessDefaultActions").start_array();
+        for item_2574 in var_2572 {
             {
-                array_2572.value().string(item_2573.as_str());
+                array_2573.value().string(item_2574.as_str());
             }
         }
-        array_2572.finish();
+        array_2573.finish();
     }
-    if let Some(var_2574) = &input.stateless_rule_group_references {
-        let mut array_2575 = object.key("StatelessRuleGroupReferences").start_array();
-        for item_2576 in var_2574 {
+    if let Some(var_2575) = &input.stateless_fragment_default_actions {
+        let mut array_2576 = object.key("StatelessFragmentDefaultActions").start_array();
+        for item_2577 in var_2575 {
             {
-                let mut object_2577 = array_2575.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_firewall_policy_stateless_rule_group_references_details(&mut object_2577, item_2576)?;
-                object_2577.finish();
+                array_2576.value().string(item_2577.as_str());
             }
         }
-        array_2575.finish();
+        array_2576.finish();
+    }
+    if let Some(var_2578) = &input.stateless_rule_group_references {
+        let mut array_2579 = object.key("StatelessRuleGroupReferences").start_array();
+        for item_2580 in var_2578 {
+            {
+                let mut object_2581 = array_2579.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_firewall_policy_stateless_rule_group_references_details(&mut object_2581, item_2580)?;
+                object_2581.finish();
+            }
+        }
+        array_2579.finish();
     }
     Ok(())
 }
@@ -11721,8 +11748,8 @@ pub fn serialize_structure_crate_model_aws_network_firewall_firewall_subnet_mapp
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2578) = &input.subnet_id {
-        object.key("SubnetId").string(var_2578.as_str());
+    if let Some(var_2582) = &input.subnet_id {
+        object.key("SubnetId").string(var_2582.as_str());
     }
     Ok(())
 }
@@ -11731,21 +11758,21 @@ pub fn serialize_structure_crate_model_rule_group_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2579) = &input.rule_variables {
-        let mut object_2580 = object.key("RuleVariables").start_object();
+    if let Some(var_2583) = &input.rule_variables {
+        let mut object_2584 = object.key("RuleVariables").start_object();
         crate::json_ser::serialize_structure_crate_model_rule_group_variables(
-            &mut object_2580,
-            var_2579,
+            &mut object_2584,
+            var_2583,
         )?;
-        object_2580.finish();
+        object_2584.finish();
     }
-    if let Some(var_2581) = &input.rules_source {
-        let mut object_2582 = object.key("RulesSource").start_object();
+    if let Some(var_2585) = &input.rules_source {
+        let mut object_2586 = object.key("RulesSource").start_object();
         crate::json_ser::serialize_structure_crate_model_rule_group_source(
-            &mut object_2582,
-            var_2581,
+            &mut object_2586,
+            var_2585,
         )?;
-        object_2582.finish();
+        object_2586.finish();
     }
     Ok(())
 }
@@ -11760,14 +11787,14 @@ pub fn serialize_structure_crate_model_ip_organization_details(
             aws_smithy_types::Number::NegInt((input.asn).into()),
         );
     }
-    if let Some(var_2583) = &input.asn_org {
-        object.key("AsnOrg").string(var_2583.as_str());
+    if let Some(var_2587) = &input.asn_org {
+        object.key("AsnOrg").string(var_2587.as_str());
     }
-    if let Some(var_2584) = &input.isp {
-        object.key("Isp").string(var_2584.as_str());
+    if let Some(var_2588) = &input.isp {
+        object.key("Isp").string(var_2588.as_str());
     }
-    if let Some(var_2585) = &input.org {
-        object.key("Org").string(var_2585.as_str());
+    if let Some(var_2589) = &input.org {
+        object.key("Org").string(var_2589.as_str());
     }
     Ok(())
 }
@@ -11776,11 +11803,11 @@ pub fn serialize_structure_crate_model_country(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Country,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2586) = &input.country_code {
-        object.key("CountryCode").string(var_2586.as_str());
+    if let Some(var_2590) = &input.country_code {
+        object.key("CountryCode").string(var_2590.as_str());
     }
-    if let Some(var_2587) = &input.country_name {
-        object.key("CountryName").string(var_2587.as_str());
+    if let Some(var_2591) = &input.country_name {
+        object.key("CountryName").string(var_2591.as_str());
     }
     Ok(())
 }
@@ -11789,8 +11816,8 @@ pub fn serialize_structure_crate_model_city(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::City,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2588) = &input.city_name {
-        object.key("CityName").string(var_2588.as_str());
+    if let Some(var_2592) = &input.city_name {
+        object.key("CityName").string(var_2592.as_str());
     }
     Ok(())
 }
@@ -11818,8 +11845,8 @@ pub fn serialize_structure_crate_model_action_local_ip_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ActionLocalIpDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2589) = &input.ip_address_v4 {
-        object.key("IpAddressV4").string(var_2589.as_str());
+    if let Some(var_2593) = &input.ip_address_v4 {
+        object.key("IpAddressV4").string(var_2593.as_str());
     }
     Ok(())
 }
@@ -11834,13 +11861,13 @@ pub fn serialize_structure_crate_model_sensitive_data_detections(
             aws_smithy_types::Number::NegInt((input.count).into()),
         );
     }
-    if let Some(var_2590) = &input.r#type {
-        object.key("Type").string(var_2590.as_str());
+    if let Some(var_2594) = &input.r#type {
+        object.key("Type").string(var_2594.as_str());
     }
-    if let Some(var_2591) = &input.occurrences {
-        let mut object_2592 = object.key("Occurrences").start_object();
-        crate::json_ser::serialize_structure_crate_model_occurrences(&mut object_2592, var_2591)?;
-        object_2592.finish();
+    if let Some(var_2595) = &input.occurrences {
+        let mut object_2596 = object.key("Occurrences").start_object();
+        crate::json_ser::serialize_structure_crate_model_occurrences(&mut object_2596, var_2595)?;
+        object_2596.finish();
     }
     Ok(())
 }
@@ -11855,16 +11882,16 @@ pub fn serialize_structure_crate_model_custom_data_identifiers_detections(
             aws_smithy_types::Number::NegInt((input.count).into()),
         );
     }
-    if let Some(var_2593) = &input.arn {
-        object.key("Arn").string(var_2593.as_str());
+    if let Some(var_2597) = &input.arn {
+        object.key("Arn").string(var_2597.as_str());
     }
-    if let Some(var_2594) = &input.name {
-        object.key("Name").string(var_2594.as_str());
+    if let Some(var_2598) = &input.name {
+        object.key("Name").string(var_2598.as_str());
     }
-    if let Some(var_2595) = &input.occurrences {
-        let mut object_2596 = object.key("Occurrences").start_object();
-        crate::json_ser::serialize_structure_crate_model_occurrences(&mut object_2596, var_2595)?;
-        object_2596.finish();
+    if let Some(var_2599) = &input.occurrences {
+        let mut object_2600 = object.key("Occurrences").start_object();
+        crate::json_ser::serialize_structure_crate_model_occurrences(&mut object_2600, var_2599)?;
+        object_2600.finish();
     }
     Ok(())
 }
@@ -11873,10 +11900,10 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2597) = &input.on_demand_allocation_strategy {
+    if let Some(var_2601) = &input.on_demand_allocation_strategy {
         object
             .key("OnDemandAllocationStrategy")
-            .string(var_2597.as_str());
+            .string(var_2601.as_str());
     }
     if input.on_demand_base_capacity != 0 {
         object.key("OnDemandBaseCapacity").number(
@@ -11892,10 +11919,10 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed
             ),
         );
     }
-    if let Some(var_2598) = &input.spot_allocation_strategy {
+    if let Some(var_2602) = &input.spot_allocation_strategy {
         object
             .key("SpotAllocationStrategy")
-            .string(var_2598.as_str());
+            .string(var_2602.as_str());
     }
     if input.spot_instance_pools != 0 {
         object.key("SpotInstancePools").number(
@@ -11903,8 +11930,8 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed
             aws_smithy_types::Number::NegInt((input.spot_instance_pools).into()),
         );
     }
-    if let Some(var_2599) = &input.spot_max_price {
-        object.key("SpotMaxPrice").string(var_2599.as_str());
+    if let Some(var_2603) = &input.spot_max_price {
+        object.key("SpotMaxPrice").string(var_2603.as_str());
     }
     Ok(())
 }
@@ -11913,21 +11940,21 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2600) = &input.launch_template_specification {
-        let mut object_2601 = object.key("LaunchTemplateSpecification").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification(&mut object_2601, var_2600)?;
-        object_2601.finish();
+    if let Some(var_2604) = &input.launch_template_specification {
+        let mut object_2605 = object.key("LaunchTemplateSpecification").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification(&mut object_2605, var_2604)?;
+        object_2605.finish();
     }
-    if let Some(var_2602) = &input.overrides {
-        let mut array_2603 = object.key("Overrides").start_array();
-        for item_2604 in var_2602 {
+    if let Some(var_2606) = &input.overrides {
+        let mut array_2607 = object.key("Overrides").start_array();
+        for item_2608 in var_2606 {
             {
-                let mut object_2605 = array_2603.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details(&mut object_2605, item_2604)?;
-                object_2605.finish();
+                let mut object_2609 = array_2607.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details(&mut object_2609, item_2608)?;
+                object_2609.finish();
             }
         }
-        array_2603.finish();
+        array_2607.finish();
     }
     Ok(())
 }
@@ -11936,14 +11963,14 @@ pub fn serialize_structure_crate_model_aws_code_build_project_environment_enviro
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2606) = &input.name {
-        object.key("Name").string(var_2606.as_str());
+    if let Some(var_2610) = &input.name {
+        object.key("Name").string(var_2610.as_str());
     }
-    if let Some(var_2607) = &input.r#type {
-        object.key("Type").string(var_2607.as_str());
+    if let Some(var_2611) = &input.r#type {
+        object.key("Type").string(var_2611.as_str());
     }
-    if let Some(var_2608) = &input.value {
-        object.key("Value").string(var_2608.as_str());
+    if let Some(var_2612) = &input.value {
+        object.key("Value").string(var_2612.as_str());
     }
     Ok(())
 }
@@ -11952,11 +11979,11 @@ pub fn serialize_structure_crate_model_aws_code_build_project_environment_regist
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2609) = &input.credential {
-        object.key("Credential").string(var_2609.as_str());
+    if let Some(var_2613) = &input.credential {
+        object.key("Credential").string(var_2613.as_str());
     }
-    if let Some(var_2610) = &input.credential_provider {
-        object.key("CredentialProvider").string(var_2610.as_str());
+    if let Some(var_2614) = &input.credential_provider {
+        object.key("CredentialProvider").string(var_2614.as_str());
     }
     Ok(())
 }
@@ -11965,14 +11992,14 @@ pub fn serialize_structure_crate_model_aws_code_build_project_logs_config_cloud_
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2611) = &input.group_name {
-        object.key("GroupName").string(var_2611.as_str());
+    if let Some(var_2615) = &input.group_name {
+        object.key("GroupName").string(var_2615.as_str());
     }
-    if let Some(var_2612) = &input.status {
-        object.key("Status").string(var_2612.as_str());
+    if let Some(var_2616) = &input.status {
+        object.key("Status").string(var_2616.as_str());
     }
-    if let Some(var_2613) = &input.stream_name {
-        object.key("StreamName").string(var_2613.as_str());
+    if let Some(var_2617) = &input.stream_name {
+        object.key("StreamName").string(var_2617.as_str());
     }
     Ok(())
 }
@@ -11986,11 +12013,11 @@ pub fn serialize_structure_crate_model_aws_code_build_project_logs_config_s3_log
             .key("EncryptionDisabled")
             .boolean(input.encryption_disabled);
     }
-    if let Some(var_2614) = &input.location {
-        object.key("Location").string(var_2614.as_str());
+    if let Some(var_2618) = &input.location {
+        object.key("Location").string(var_2618.as_str());
     }
-    if let Some(var_2615) = &input.status {
-        object.key("Status").string(var_2615.as_str());
+    if let Some(var_2619) = &input.status {
+        object.key("Status").string(var_2619.as_str());
     }
     Ok(())
 }
@@ -11999,8 +12026,8 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_cache_behavi
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionCacheBehavior,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2616) = &input.viewer_protocol_policy {
-        object.key("ViewerProtocolPolicy").string(var_2616.as_str());
+    if let Some(var_2620) = &input.viewer_protocol_policy {
+        object.key("ViewerProtocolPolicy").string(var_2620.as_str());
     }
     Ok(())
 }
@@ -12009,19 +12036,19 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_origin_item(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionOriginItem,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2617) = &input.domain_name {
-        object.key("DomainName").string(var_2617.as_str());
+    if let Some(var_2621) = &input.domain_name {
+        object.key("DomainName").string(var_2621.as_str());
     }
-    if let Some(var_2618) = &input.id {
-        object.key("Id").string(var_2618.as_str());
+    if let Some(var_2622) = &input.id {
+        object.key("Id").string(var_2622.as_str());
     }
-    if let Some(var_2619) = &input.origin_path {
-        object.key("OriginPath").string(var_2619.as_str());
+    if let Some(var_2623) = &input.origin_path {
+        object.key("OriginPath").string(var_2623.as_str());
     }
-    if let Some(var_2620) = &input.s3_origin_config {
-        let mut object_2621 = object.key("S3OriginConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_s3_origin_config(&mut object_2621, var_2620)?;
-        object_2621.finish();
+    if let Some(var_2624) = &input.s3_origin_config {
+        let mut object_2625 = object.key("S3OriginConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_s3_origin_config(&mut object_2625, var_2624)?;
+        object_2625.finish();
     }
     Ok(())
 }
@@ -12030,10 +12057,10 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_origin_group
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionOriginGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2622) = &input.failover_criteria {
-        let mut object_2623 = object.key("FailoverCriteria").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_group_failover(&mut object_2623, var_2622)?;
-        object_2623.finish();
+    if let Some(var_2626) = &input.failover_criteria {
+        let mut object_2627 = object.key("FailoverCriteria").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_group_failover(&mut object_2627, var_2626)?;
+        object_2627.finish();
     }
     Ok(())
 }
@@ -12042,25 +12069,25 @@ pub fn serialize_structure_crate_model_aws_ec2_security_group_user_id_group_pair
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2SecurityGroupUserIdGroupPair,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2624) = &input.group_id {
-        object.key("GroupId").string(var_2624.as_str());
+    if let Some(var_2628) = &input.group_id {
+        object.key("GroupId").string(var_2628.as_str());
     }
-    if let Some(var_2625) = &input.group_name {
-        object.key("GroupName").string(var_2625.as_str());
+    if let Some(var_2629) = &input.group_name {
+        object.key("GroupName").string(var_2629.as_str());
     }
-    if let Some(var_2626) = &input.peering_status {
-        object.key("PeeringStatus").string(var_2626.as_str());
+    if let Some(var_2630) = &input.peering_status {
+        object.key("PeeringStatus").string(var_2630.as_str());
     }
-    if let Some(var_2627) = &input.user_id {
-        object.key("UserId").string(var_2627.as_str());
+    if let Some(var_2631) = &input.user_id {
+        object.key("UserId").string(var_2631.as_str());
     }
-    if let Some(var_2628) = &input.vpc_id {
-        object.key("VpcId").string(var_2628.as_str());
+    if let Some(var_2632) = &input.vpc_id {
+        object.key("VpcId").string(var_2632.as_str());
     }
-    if let Some(var_2629) = &input.vpc_peering_connection_id {
+    if let Some(var_2633) = &input.vpc_peering_connection_id {
         object
             .key("VpcPeeringConnectionId")
-            .string(var_2629.as_str());
+            .string(var_2633.as_str());
     }
     Ok(())
 }
@@ -12069,8 +12096,8 @@ pub fn serialize_structure_crate_model_aws_ec2_security_group_ip_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2SecurityGroupIpRange,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2630) = &input.cidr_ip {
-        object.key("CidrIp").string(var_2630.as_str());
+    if let Some(var_2634) = &input.cidr_ip {
+        object.key("CidrIp").string(var_2634.as_str());
     }
     Ok(())
 }
@@ -12079,8 +12106,8 @@ pub fn serialize_structure_crate_model_aws_ec2_security_group_ipv6_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2SecurityGroupIpv6Range,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2631) = &input.cidr_ipv6 {
-        object.key("CidrIpv6").string(var_2631.as_str());
+    if let Some(var_2635) = &input.cidr_ipv6 {
+        object.key("CidrIpv6").string(var_2635.as_str());
     }
     Ok(())
 }
@@ -12089,8 +12116,8 @@ pub fn serialize_structure_crate_model_aws_ec2_security_group_prefix_list_id(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEc2SecurityGroupPrefixListId,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2632) = &input.prefix_list_id {
-        object.key("PrefixListId").string(var_2632.as_str());
+    if let Some(var_2636) = &input.prefix_list_id {
+        object.key("PrefixListId").string(var_2636.as_str());
     }
     Ok(())
 }
@@ -12150,10 +12177,10 @@ pub fn serialize_structure_crate_model_aws_elasticsearch_domain_log_publishing_o
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2633) = &input.cloud_watch_logs_log_group_arn {
+    if let Some(var_2637) = &input.cloud_watch_logs_log_group_arn {
         object
             .key("CloudWatchLogsLogGroupArn")
-            .string(var_2633.as_str());
+            .string(var_2637.as_str());
     }
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
@@ -12165,12 +12192,12 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_server_side_encryption_rule
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketServerSideEncryptionRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2634) = &input.apply_server_side_encryption_by_default {
-        let mut object_2635 = object
+    if let Some(var_2638) = &input.apply_server_side_encryption_by_default {
+        let mut object_2639 = object
             .key("ApplyServerSideEncryptionByDefault")
             .start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_server_side_encryption_by_default(&mut object_2635, var_2634)?;
-        object_2635.finish();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_server_side_encryption_by_default(&mut object_2639, var_2638)?;
+        object_2639.finish();
     }
     Ok(())
 }
@@ -12179,13 +12206,13 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2636) = &input.abort_incomplete_multipart_upload {
-        let mut object_2637 = object.key("AbortIncompleteMultipartUpload").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details(&mut object_2637, var_2636)?;
-        object_2637.finish();
+    if let Some(var_2640) = &input.abort_incomplete_multipart_upload {
+        let mut object_2641 = object.key("AbortIncompleteMultipartUpload").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details(&mut object_2641, var_2640)?;
+        object_2641.finish();
     }
-    if let Some(var_2638) = &input.expiration_date {
-        object.key("ExpirationDate").string(var_2638.as_str());
+    if let Some(var_2642) = &input.expiration_date {
+        object.key("ExpirationDate").string(var_2642.as_str());
     }
     if input.expiration_in_days != 0 {
         object.key("ExpirationInDays").number(
@@ -12198,13 +12225,13 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
             .key("ExpiredObjectDeleteMarker")
             .boolean(input.expired_object_delete_marker);
     }
-    if let Some(var_2639) = &input.filter {
-        let mut object_2640 = object.key("Filter").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details(&mut object_2640, var_2639)?;
-        object_2640.finish();
+    if let Some(var_2643) = &input.filter {
+        let mut object_2644 = object.key("Filter").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details(&mut object_2644, var_2643)?;
+        object_2644.finish();
     }
-    if let Some(var_2641) = &input.id {
-        object.key("ID").string(var_2641.as_str());
+    if let Some(var_2645) = &input.id {
+        object.key("ID").string(var_2645.as_str());
     }
     if input.noncurrent_version_expiration_in_days != 0 {
         object.key("NoncurrentVersionExpirationInDays").number(
@@ -12212,33 +12239,33 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
             aws_smithy_types::Number::NegInt((input.noncurrent_version_expiration_in_days).into()),
         );
     }
-    if let Some(var_2642) = &input.noncurrent_version_transitions {
-        let mut array_2643 = object.key("NoncurrentVersionTransitions").start_array();
-        for item_2644 in var_2642 {
+    if let Some(var_2646) = &input.noncurrent_version_transitions {
+        let mut array_2647 = object.key("NoncurrentVersionTransitions").start_array();
+        for item_2648 in var_2646 {
             {
-                let mut object_2645 = array_2643.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details(&mut object_2645, item_2644)?;
-                object_2645.finish();
+                let mut object_2649 = array_2647.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details(&mut object_2649, item_2648)?;
+                object_2649.finish();
             }
         }
-        array_2643.finish();
+        array_2647.finish();
     }
-    if let Some(var_2646) = &input.prefix {
-        object.key("Prefix").string(var_2646.as_str());
+    if let Some(var_2650) = &input.prefix {
+        object.key("Prefix").string(var_2650.as_str());
     }
-    if let Some(var_2647) = &input.status {
-        object.key("Status").string(var_2647.as_str());
+    if let Some(var_2651) = &input.status {
+        object.key("Status").string(var_2651.as_str());
     }
-    if let Some(var_2648) = &input.transitions {
-        let mut array_2649 = object.key("Transitions").start_array();
-        for item_2650 in var_2648 {
+    if let Some(var_2652) = &input.transitions {
+        let mut array_2653 = object.key("Transitions").start_array();
+        for item_2654 in var_2652 {
             {
-                let mut object_2651 = array_2649.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details(&mut object_2651, item_2650)?;
-                object_2651.finish();
+                let mut object_2655 = array_2653.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details(&mut object_2655, item_2654)?;
+                object_2655.finish();
             }
         }
-        array_2649.finish();
+        array_2653.finish();
     }
     Ok(())
 }
@@ -12247,11 +12274,11 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_website_configuration_redir
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketWebsiteConfigurationRedirectTo,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2652) = &input.hostname {
-        object.key("Hostname").string(var_2652.as_str());
+    if let Some(var_2656) = &input.hostname {
+        object.key("Hostname").string(var_2656.as_str());
     }
-    if let Some(var_2653) = &input.protocol {
-        object.key("Protocol").string(var_2653.as_str());
+    if let Some(var_2657) = &input.protocol {
+        object.key("Protocol").string(var_2657.as_str());
     }
     Ok(())
 }
@@ -12260,15 +12287,15 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_website_configuration_routi
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketWebsiteConfigurationRoutingRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2654) = &input.condition {
-        let mut object_2655 = object.key("Condition").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_website_configuration_routing_rule_condition(&mut object_2655, var_2654)?;
-        object_2655.finish();
+    if let Some(var_2658) = &input.condition {
+        let mut object_2659 = object.key("Condition").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_website_configuration_routing_rule_condition(&mut object_2659, var_2658)?;
+        object_2659.finish();
     }
-    if let Some(var_2656) = &input.redirect {
-        let mut object_2657 = object.key("Redirect").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_website_configuration_routing_rule_redirect(&mut object_2657, var_2656)?;
-        object_2657.finish();
+    if let Some(var_2660) = &input.redirect {
+        let mut object_2661 = object.key("Redirect").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_website_configuration_routing_rule_redirect(&mut object_2661, var_2660)?;
+        object_2661.finish();
     }
     Ok(())
 }
@@ -12277,25 +12304,25 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_notification_configuration_
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketNotificationConfigurationDetail,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2658) = &input.events {
-        let mut array_2659 = object.key("Events").start_array();
-        for item_2660 in var_2658 {
+    if let Some(var_2662) = &input.events {
+        let mut array_2663 = object.key("Events").start_array();
+        for item_2664 in var_2662 {
             {
-                array_2659.value().string(item_2660.as_str());
+                array_2663.value().string(item_2664.as_str());
             }
         }
-        array_2659.finish();
+        array_2663.finish();
     }
-    if let Some(var_2661) = &input.filter {
-        let mut object_2662 = object.key("Filter").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_notification_configuration_filter(&mut object_2662, var_2661)?;
-        object_2662.finish();
+    if let Some(var_2665) = &input.filter {
+        let mut object_2666 = object.key("Filter").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_notification_configuration_filter(&mut object_2666, var_2665)?;
+        object_2666.finish();
     }
-    if let Some(var_2663) = &input.destination {
-        object.key("Destination").string(var_2663.as_str());
+    if let Some(var_2667) = &input.destination {
+        object.key("Destination").string(var_2667.as_str());
     }
-    if let Some(var_2664) = &input.r#type {
-        object.key("Type").string(var_2664.as_str());
+    if let Some(var_2668) = &input.r#type {
+        object.key("Type").string(var_2668.as_str());
     }
     Ok(())
 }
@@ -12309,8 +12336,8 @@ pub fn serialize_structure_crate_model_aws_iam_access_key_session_context_attrib
             .key("MfaAuthenticated")
             .boolean(input.mfa_authenticated);
     }
-    if let Some(var_2665) = &input.creation_date {
-        object.key("CreationDate").string(var_2665.as_str());
+    if let Some(var_2669) = &input.creation_date {
+        object.key("CreationDate").string(var_2669.as_str());
     }
     Ok(())
 }
@@ -12319,20 +12346,20 @@ pub fn serialize_structure_crate_model_aws_iam_access_key_session_context_sessio
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamAccessKeySessionContextSessionIssuer,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2666) = &input.r#type {
-        object.key("Type").string(var_2666.as_str());
+    if let Some(var_2670) = &input.r#type {
+        object.key("Type").string(var_2670.as_str());
     }
-    if let Some(var_2667) = &input.principal_id {
-        object.key("PrincipalId").string(var_2667.as_str());
+    if let Some(var_2671) = &input.principal_id {
+        object.key("PrincipalId").string(var_2671.as_str());
     }
-    if let Some(var_2668) = &input.arn {
-        object.key("Arn").string(var_2668.as_str());
+    if let Some(var_2672) = &input.arn {
+        object.key("Arn").string(var_2672.as_str());
     }
-    if let Some(var_2669) = &input.account_id {
-        object.key("AccountId").string(var_2669.as_str());
+    if let Some(var_2673) = &input.account_id {
+        object.key("AccountId").string(var_2673.as_str());
     }
-    if let Some(var_2670) = &input.user_name {
-        object.key("UserName").string(var_2670.as_str());
+    if let Some(var_2674) = &input.user_name {
+        object.key("UserName").string(var_2674.as_str());
     }
     Ok(())
 }
@@ -12341,17 +12368,17 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_projection(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableProjection,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2671) = &input.non_key_attributes {
-        let mut array_2672 = object.key("NonKeyAttributes").start_array();
-        for item_2673 in var_2671 {
+    if let Some(var_2675) = &input.non_key_attributes {
+        let mut array_2676 = object.key("NonKeyAttributes").start_array();
+        for item_2677 in var_2675 {
             {
-                array_2672.value().string(item_2673.as_str());
+                array_2676.value().string(item_2677.as_str());
             }
         }
-        array_2672.finish();
+        array_2676.finish();
     }
-    if let Some(var_2674) = &input.projection_type {
-        object.key("ProjectionType").string(var_2674.as_str());
+    if let Some(var_2678) = &input.projection_type {
+        object.key("ProjectionType").string(var_2678.as_str());
     }
     Ok(())
 }
@@ -12360,13 +12387,13 @@ pub fn serialize_structure_crate_model_aws_dynamo_db_table_replica_global_second
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2675) = &input.index_name {
-        object.key("IndexName").string(var_2675.as_str());
+    if let Some(var_2679) = &input.index_name {
+        object.key("IndexName").string(var_2679.as_str());
     }
-    if let Some(var_2676) = &input.provisioned_throughput_override {
-        let mut object_2677 = object.key("ProvisionedThroughputOverride").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_provisioned_throughput_override(&mut object_2677, var_2676)?;
-        object_2677.finish();
+    if let Some(var_2680) = &input.provisioned_throughput_override {
+        let mut object_2681 = object.key("ProvisionedThroughputOverride").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_dynamo_db_table_provisioned_throughput_override(&mut object_2681, var_2680)?;
+        object_2681.finish();
     }
     Ok(())
 }
@@ -12388,8 +12415,8 @@ pub fn serialize_structure_crate_model_aws_ssm_compliance_summary(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsSsmComplianceSummary,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2678) = &input.status {
-        object.key("Status").string(var_2678.as_str());
+    if let Some(var_2682) = &input.status {
+        object.key("Status").string(var_2682.as_str());
     }
     if input.compliant_critical_count != 0 {
         object.key("CompliantCriticalCount").number(
@@ -12409,8 +12436,8 @@ pub fn serialize_structure_crate_model_aws_ssm_compliance_summary(
             aws_smithy_types::Number::NegInt((input.compliant_medium_count).into()),
         );
     }
-    if let Some(var_2679) = &input.execution_type {
-        object.key("ExecutionType").string(var_2679.as_str());
+    if let Some(var_2683) = &input.execution_type {
+        object.key("ExecutionType").string(var_2683.as_str());
     }
     if input.non_compliant_critical_count != 0 {
         object.key("NonCompliantCriticalCount").number(
@@ -12454,14 +12481,14 @@ pub fn serialize_structure_crate_model_aws_ssm_compliance_summary(
             aws_smithy_types::Number::NegInt((input.compliant_low_count).into()),
         );
     }
-    if let Some(var_2680) = &input.compliance_type {
-        object.key("ComplianceType").string(var_2680.as_str());
+    if let Some(var_2684) = &input.compliance_type {
+        object.key("ComplianceType").string(var_2684.as_str());
     }
-    if let Some(var_2681) = &input.patch_baseline_id {
-        object.key("PatchBaselineId").string(var_2681.as_str());
+    if let Some(var_2685) = &input.patch_baseline_id {
+        object.key("PatchBaselineId").string(var_2685.as_str());
     }
-    if let Some(var_2682) = &input.overall_severity {
-        object.key("OverallSeverity").string(var_2682.as_str());
+    if let Some(var_2686) = &input.overall_severity {
+        object.key("OverallSeverity").string(var_2686.as_str());
     }
     if input.non_compliant_medium_count != 0 {
         object.key("NonCompliantMediumCount").number(
@@ -12475,8 +12502,8 @@ pub fn serialize_structure_crate_model_aws_ssm_compliance_summary(
             aws_smithy_types::Number::NegInt((input.non_compliant_unspecified_count).into()),
         );
     }
-    if let Some(var_2683) = &input.patch_group {
-        object.key("PatchGroup").string(var_2683.as_str());
+    if let Some(var_2687) = &input.patch_group {
+        object.key("PatchGroup").string(var_2687.as_str());
     }
     Ok(())
 }
@@ -12485,14 +12512,14 @@ pub fn serialize_structure_crate_model_aws_certificate_manager_certificate_resou
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCertificateManagerCertificateResourceRecord,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2684) = &input.name {
-        object.key("Name").string(var_2684.as_str());
+    if let Some(var_2688) = &input.name {
+        object.key("Name").string(var_2688.as_str());
     }
-    if let Some(var_2685) = &input.r#type {
-        object.key("Type").string(var_2685.as_str());
+    if let Some(var_2689) = &input.r#type {
+        object.key("Type").string(var_2689.as_str());
     }
-    if let Some(var_2686) = &input.value {
-        object.key("Value").string(var_2686.as_str());
+    if let Some(var_2690) = &input.value {
+        object.key("Value").string(var_2690.as_str());
     }
     Ok(())
 }
@@ -12501,16 +12528,16 @@ pub fn serialize_structure_crate_model_aws_redshift_cluster_cluster_parameter_st
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRedshiftClusterClusterParameterStatus,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2687) = &input.parameter_name {
-        object.key("ParameterName").string(var_2687.as_str());
+    if let Some(var_2691) = &input.parameter_name {
+        object.key("ParameterName").string(var_2691.as_str());
     }
-    if let Some(var_2688) = &input.parameter_apply_status {
-        object.key("ParameterApplyStatus").string(var_2688.as_str());
+    if let Some(var_2692) = &input.parameter_apply_status {
+        object.key("ParameterApplyStatus").string(var_2692.as_str());
     }
-    if let Some(var_2689) = &input.parameter_apply_error_description {
+    if let Some(var_2693) = &input.parameter_apply_error_description {
         object
             .key("ParameterApplyErrorDescription")
-            .string(var_2689.as_str());
+            .string(var_2693.as_str());
     }
     Ok(())
 }
@@ -12525,8 +12552,8 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_listener(
             aws_smithy_types::Number::NegInt((input.instance_port).into()),
         );
     }
-    if let Some(var_2690) = &input.instance_protocol {
-        object.key("InstanceProtocol").string(var_2690.as_str());
+    if let Some(var_2694) = &input.instance_protocol {
+        object.key("InstanceProtocol").string(var_2694.as_str());
     }
     if input.load_balancer_port != 0 {
         object.key("LoadBalancerPort").number(
@@ -12534,11 +12561,11 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_listener(
             aws_smithy_types::Number::NegInt((input.load_balancer_port).into()),
         );
     }
-    if let Some(var_2691) = &input.protocol {
-        object.key("Protocol").string(var_2691.as_str());
+    if let Some(var_2695) = &input.protocol {
+        object.key("Protocol").string(var_2695.as_str());
     }
-    if let Some(var_2692) = &input.ssl_certificate_id {
-        object.key("SslCertificateId").string(var_2692.as_str());
+    if let Some(var_2696) = &input.ssl_certificate_id {
+        object.key("SslCertificateId").string(var_2696.as_str());
     }
     Ok(())
 }
@@ -12556,11 +12583,11 @@ pub fn serialize_structure_crate_model_aws_elb_load_balancer_access_log(
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
     }
-    if let Some(var_2693) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_2693.as_str());
+    if let Some(var_2697) = &input.s3_bucket_name {
+        object.key("S3BucketName").string(var_2697.as_str());
     }
-    if let Some(var_2694) = &input.s3_bucket_prefix {
-        object.key("S3BucketPrefix").string(var_2694.as_str());
+    if let Some(var_2698) = &input.s3_bucket_prefix {
+        object.key("S3BucketPrefix").string(var_2698.as_str());
     }
     Ok(())
 }
@@ -12608,11 +12635,11 @@ pub fn serialize_structure_crate_model_aws_elb_app_cookie_stickiness_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsElbAppCookieStickinessPolicy,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2695) = &input.cookie_name {
-        object.key("CookieName").string(var_2695.as_str());
+    if let Some(var_2699) = &input.cookie_name {
+        object.key("CookieName").string(var_2699.as_str());
     }
-    if let Some(var_2696) = &input.policy_name {
-        object.key("PolicyName").string(var_2696.as_str());
+    if let Some(var_2700) = &input.policy_name {
+        object.key("PolicyName").string(var_2700.as_str());
     }
     Ok(())
 }
@@ -12627,8 +12654,8 @@ pub fn serialize_structure_crate_model_aws_elb_lb_cookie_stickiness_policy(
             aws_smithy_types::Number::NegInt((input.cookie_expiration_period).into()),
         );
     }
-    if let Some(var_2697) = &input.policy_name {
-        object.key("PolicyName").string(var_2697.as_str());
+    if let Some(var_2701) = &input.policy_name {
+        object.key("PolicyName").string(var_2701.as_str());
     }
     Ok(())
 }
@@ -12637,25 +12664,25 @@ pub fn serialize_structure_crate_model_aws_iam_instance_profile_role(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsIamInstanceProfileRole,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2698) = &input.arn {
-        object.key("Arn").string(var_2698.as_str());
+    if let Some(var_2702) = &input.arn {
+        object.key("Arn").string(var_2702.as_str());
     }
-    if let Some(var_2699) = &input.assume_role_policy_document {
+    if let Some(var_2703) = &input.assume_role_policy_document {
         object
             .key("AssumeRolePolicyDocument")
-            .string(var_2699.as_str());
+            .string(var_2703.as_str());
     }
-    if let Some(var_2700) = &input.create_date {
-        object.key("CreateDate").string(var_2700.as_str());
+    if let Some(var_2704) = &input.create_date {
+        object.key("CreateDate").string(var_2704.as_str());
     }
-    if let Some(var_2701) = &input.path {
-        object.key("Path").string(var_2701.as_str());
+    if let Some(var_2705) = &input.path {
+        object.key("Path").string(var_2705.as_str());
     }
-    if let Some(var_2702) = &input.role_id {
-        object.key("RoleId").string(var_2702.as_str());
+    if let Some(var_2706) = &input.role_id {
+        object.key("RoleId").string(var_2706.as_str());
     }
-    if let Some(var_2703) = &input.role_name {
-        object.key("RoleName").string(var_2703.as_str());
+    if let Some(var_2707) = &input.role_name {
+        object.key("RoleName").string(var_2707.as_str());
     }
     Ok(())
 }
@@ -12664,11 +12691,11 @@ pub fn serialize_structure_crate_model_aws_lambda_function_environment_error(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsLambdaFunctionEnvironmentError,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2704) = &input.error_code {
-        object.key("ErrorCode").string(var_2704.as_str());
+    if let Some(var_2708) = &input.error_code {
+        object.key("ErrorCode").string(var_2708.as_str());
     }
-    if let Some(var_2705) = &input.message {
-        object.key("Message").string(var_2705.as_str());
+    if let Some(var_2709) = &input.message {
+        object.key("Message").string(var_2709.as_str());
     }
     Ok(())
 }
@@ -12677,16 +12704,16 @@ pub fn serialize_structure_crate_model_aws_rds_db_subnet_group_subnet(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbSubnetGroupSubnet,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2706) = &input.subnet_identifier {
-        object.key("SubnetIdentifier").string(var_2706.as_str());
+    if let Some(var_2710) = &input.subnet_identifier {
+        object.key("SubnetIdentifier").string(var_2710.as_str());
     }
-    if let Some(var_2707) = &input.subnet_availability_zone {
-        let mut object_2708 = object.key("SubnetAvailabilityZone").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_rds_db_subnet_group_subnet_availability_zone(&mut object_2708, var_2707)?;
-        object_2708.finish();
+    if let Some(var_2711) = &input.subnet_availability_zone {
+        let mut object_2712 = object.key("SubnetAvailabilityZone").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_rds_db_subnet_group_subnet_availability_zone(&mut object_2712, var_2711)?;
+        object_2712.finish();
     }
-    if let Some(var_2709) = &input.subnet_status {
-        object.key("SubnetStatus").string(var_2709.as_str());
+    if let Some(var_2713) = &input.subnet_status {
+        object.key("SubnetStatus").string(var_2713.as_str());
     }
     Ok(())
 }
@@ -12695,23 +12722,23 @@ pub fn serialize_structure_crate_model_aws_rds_pending_cloud_watch_logs_exports(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsPendingCloudWatchLogsExports,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2710) = &input.log_types_to_enable {
-        let mut array_2711 = object.key("LogTypesToEnable").start_array();
-        for item_2712 in var_2710 {
+    if let Some(var_2714) = &input.log_types_to_enable {
+        let mut array_2715 = object.key("LogTypesToEnable").start_array();
+        for item_2716 in var_2714 {
             {
-                array_2711.value().string(item_2712.as_str());
+                array_2715.value().string(item_2716.as_str());
             }
         }
-        array_2711.finish();
+        array_2715.finish();
     }
-    if let Some(var_2713) = &input.log_types_to_disable {
-        let mut array_2714 = object.key("LogTypesToDisable").start_array();
-        for item_2715 in var_2713 {
+    if let Some(var_2717) = &input.log_types_to_disable {
+        let mut array_2718 = object.key("LogTypesToDisable").start_array();
+        for item_2719 in var_2717 {
             {
-                array_2714.value().string(item_2715.as_str());
+                array_2718.value().string(item_2719.as_str());
             }
         }
-        array_2714.finish();
+        array_2718.finish();
     }
     Ok(())
 }
@@ -12720,8 +12747,8 @@ pub fn serialize_structure_crate_model_waf_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WafAction,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2716) = &input.r#type {
-        object.key("Type").string(var_2716.as_str());
+    if let Some(var_2720) = &input.r#type {
+        object.key("Type").string(var_2720.as_str());
     }
     Ok(())
 }
@@ -12730,8 +12757,8 @@ pub fn serialize_structure_crate_model_waf_excluded_rule(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WafExcludedRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2717) = &input.rule_id {
-        object.key("RuleId").string(var_2717.as_str());
+    if let Some(var_2721) = &input.rule_id {
+        object.key("RuleId").string(var_2721.as_str());
     }
     Ok(())
 }
@@ -12740,8 +12767,8 @@ pub fn serialize_structure_crate_model_waf_override_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WafOverrideAction,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2718) = &input.r#type {
-        object.key("Type").string(var_2718.as_str());
+    if let Some(var_2722) = &input.r#type {
+        object.key("Type").string(var_2722.as_str());
     }
     Ok(())
 }
@@ -12750,16 +12777,16 @@ pub fn serialize_structure_crate_model_aws_ecs_cluster_configuration_execute_com
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2719) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_2719.as_str());
+    if let Some(var_2723) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_2723.as_str());
     }
-    if let Some(var_2720) = &input.log_configuration {
-        let mut object_2721 = object.key("LogConfiguration").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details(&mut object_2721, var_2720)?;
-        object_2721.finish();
+    if let Some(var_2724) = &input.log_configuration {
+        let mut object_2725 = object.key("LogConfiguration").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details(&mut object_2725, var_2724)?;
+        object_2725.finish();
     }
-    if let Some(var_2722) = &input.logging {
-        object.key("Logging").string(var_2722.as_str());
+    if let Some(var_2726) = &input.logging {
+        object.key("Logging").string(var_2726.as_str());
     }
     Ok(())
 }
@@ -12768,11 +12795,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2723) = &input.condition {
-        object.key("Condition").string(var_2723.as_str());
+    if let Some(var_2727) = &input.condition {
+        object.key("Condition").string(var_2727.as_str());
     }
-    if let Some(var_2724) = &input.container_name {
-        object.key("ContainerName").string(var_2724.as_str());
+    if let Some(var_2728) = &input.container_name {
+        object.key("ContainerName").string(var_2728.as_str());
     }
     Ok(())
 }
@@ -12781,11 +12808,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2725) = &input.name {
-        object.key("Name").string(var_2725.as_str());
+    if let Some(var_2729) = &input.name {
+        object.key("Name").string(var_2729.as_str());
     }
-    if let Some(var_2726) = &input.value {
-        object.key("Value").string(var_2726.as_str());
+    if let Some(var_2730) = &input.value {
+        object.key("Value").string(var_2730.as_str());
     }
     Ok(())
 }
@@ -12794,11 +12821,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2727) = &input.r#type {
-        object.key("Type").string(var_2727.as_str());
+    if let Some(var_2731) = &input.r#type {
+        object.key("Type").string(var_2731.as_str());
     }
-    if let Some(var_2728) = &input.value {
-        object.key("Value").string(var_2728.as_str());
+    if let Some(var_2732) = &input.value {
+        object.key("Value").string(var_2732.as_str());
     }
     Ok(())
 }
@@ -12807,11 +12834,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2729) = &input.hostname {
-        object.key("Hostname").string(var_2729.as_str());
+    if let Some(var_2733) = &input.hostname {
+        object.key("Hostname").string(var_2733.as_str());
     }
-    if let Some(var_2730) = &input.ip_address {
-        object.key("IpAddress").string(var_2730.as_str());
+    if let Some(var_2734) = &input.ip_address {
+        object.key("IpAddress").string(var_2734.as_str());
     }
     Ok(())
 }
@@ -12820,17 +12847,17 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2731) = &input.options {
-        let mut object_2732 = object.key("Options").start_object();
-        for (key_2733, value_2734) in var_2731 {
+    if let Some(var_2735) = &input.options {
+        let mut object_2736 = object.key("Options").start_object();
+        for (key_2737, value_2738) in var_2735 {
             {
-                object_2732.key(key_2733).string(value_2734.as_str());
+                object_2736.key(key_2737).string(value_2738.as_str());
             }
         }
-        object_2732.finish();
+        object_2736.finish();
     }
-    if let Some(var_2735) = &input.r#type {
-        object.key("Type").string(var_2735.as_str());
+    if let Some(var_2739) = &input.r#type {
+        object.key("Type").string(var_2739.as_str());
     }
     Ok(())
 }
@@ -12839,14 +12866,14 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2736) = &input.command {
-        let mut array_2737 = object.key("Command").start_array();
-        for item_2738 in var_2736 {
+    if let Some(var_2740) = &input.command {
+        let mut array_2741 = object.key("Command").start_array();
+        for item_2742 in var_2740 {
             {
-                array_2737.value().string(item_2738.as_str());
+                array_2741.value().string(item_2742.as_str());
             }
         }
-        array_2737.finish();
+        array_2741.finish();
     }
     if input.interval != 0 {
         object.key("Interval").number(
@@ -12879,21 +12906,21 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2739) = &input.capabilities {
-        let mut object_2740 = object.key("Capabilities").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details(&mut object_2740, var_2739)?;
-        object_2740.finish();
+    if let Some(var_2743) = &input.capabilities {
+        let mut object_2744 = object.key("Capabilities").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details(&mut object_2744, var_2743)?;
+        object_2744.finish();
     }
-    if let Some(var_2741) = &input.devices {
-        let mut array_2742 = object.key("Devices").start_array();
-        for item_2743 in var_2741 {
+    if let Some(var_2745) = &input.devices {
+        let mut array_2746 = object.key("Devices").start_array();
+        for item_2747 in var_2745 {
             {
-                let mut object_2744 = array_2742.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_linux_parameters_devices_details(&mut object_2744, item_2743)?;
-                object_2744.finish();
+                let mut object_2748 = array_2746.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_linux_parameters_devices_details(&mut object_2748, item_2747)?;
+                object_2748.finish();
             }
         }
-        array_2742.finish();
+        array_2746.finish();
     }
     if input.init_process_enabled {
         object
@@ -12918,16 +12945,16 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
             aws_smithy_types::Number::NegInt((input.swappiness).into()),
         );
     }
-    if let Some(var_2745) = &input.tmpfs {
-        let mut array_2746 = object.key("Tmpfs").start_array();
-        for item_2747 in var_2745 {
+    if let Some(var_2749) = &input.tmpfs {
+        let mut array_2750 = object.key("Tmpfs").start_array();
+        for item_2751 in var_2749 {
             {
-                let mut object_2748 = array_2746.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details(&mut object_2748, item_2747)?;
-                object_2748.finish();
+                let mut object_2752 = array_2750.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details(&mut object_2752, item_2751)?;
+                object_2752.finish();
             }
         }
-        array_2746.finish();
+        array_2750.finish();
     }
     Ok(())
 }
@@ -12936,28 +12963,28 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2749) = &input.log_driver {
-        object.key("LogDriver").string(var_2749.as_str());
+    if let Some(var_2753) = &input.log_driver {
+        object.key("LogDriver").string(var_2753.as_str());
     }
-    if let Some(var_2750) = &input.options {
-        let mut object_2751 = object.key("Options").start_object();
-        for (key_2752, value_2753) in var_2750 {
+    if let Some(var_2754) = &input.options {
+        let mut object_2755 = object.key("Options").start_object();
+        for (key_2756, value_2757) in var_2754 {
             {
-                object_2751.key(key_2752).string(value_2753.as_str());
+                object_2755.key(key_2756).string(value_2757.as_str());
             }
         }
-        object_2751.finish();
+        object_2755.finish();
     }
-    if let Some(var_2754) = &input.secret_options {
-        let mut array_2755 = object.key("SecretOptions").start_array();
-        for item_2756 in var_2754 {
+    if let Some(var_2758) = &input.secret_options {
+        let mut array_2759 = object.key("SecretOptions").start_array();
+        for item_2760 in var_2758 {
             {
-                let mut object_2757 = array_2755.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details(&mut object_2757, item_2756)?;
-                object_2757.finish();
+                let mut object_2761 = array_2759.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details(&mut object_2761, item_2760)?;
+                object_2761.finish();
             }
         }
-        array_2755.finish();
+        array_2759.finish();
     }
     Ok(())
 }
@@ -12966,14 +12993,14 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2758) = &input.container_path {
-        object.key("ContainerPath").string(var_2758.as_str());
+    if let Some(var_2762) = &input.container_path {
+        object.key("ContainerPath").string(var_2762.as_str());
     }
     if input.read_only {
         object.key("ReadOnly").boolean(input.read_only);
     }
-    if let Some(var_2759) = &input.source_volume {
-        object.key("SourceVolume").string(var_2759.as_str());
+    if let Some(var_2763) = &input.source_volume {
+        object.key("SourceVolume").string(var_2763.as_str());
     }
     Ok(())
 }
@@ -12994,8 +13021,8 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
             aws_smithy_types::Number::NegInt((input.host_port).into()),
         );
     }
-    if let Some(var_2760) = &input.protocol {
-        object.key("Protocol").string(var_2760.as_str());
+    if let Some(var_2764) = &input.protocol {
+        object.key("Protocol").string(var_2764.as_str());
     }
     Ok(())
 }
@@ -13004,8 +13031,8 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2761) = &input.credentials_parameter {
-        object.key("CredentialsParameter").string(var_2761.as_str());
+    if let Some(var_2765) = &input.credentials_parameter {
+        object.key("CredentialsParameter").string(var_2765.as_str());
     }
     Ok(())
 }
@@ -13014,11 +13041,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2762) = &input.r#type {
-        object.key("Type").string(var_2762.as_str());
+    if let Some(var_2766) = &input.r#type {
+        object.key("Type").string(var_2766.as_str());
     }
-    if let Some(var_2763) = &input.value {
-        object.key("Value").string(var_2763.as_str());
+    if let Some(var_2767) = &input.value {
+        object.key("Value").string(var_2767.as_str());
     }
     Ok(())
 }
@@ -13027,11 +13054,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2764) = &input.name {
-        object.key("Name").string(var_2764.as_str());
+    if let Some(var_2768) = &input.name {
+        object.key("Name").string(var_2768.as_str());
     }
-    if let Some(var_2765) = &input.value_from {
-        object.key("ValueFrom").string(var_2765.as_str());
+    if let Some(var_2769) = &input.value_from {
+        object.key("ValueFrom").string(var_2769.as_str());
     }
     Ok(())
 }
@@ -13040,11 +13067,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2766) = &input.namespace {
-        object.key("Namespace").string(var_2766.as_str());
+    if let Some(var_2770) = &input.namespace {
+        object.key("Namespace").string(var_2770.as_str());
     }
-    if let Some(var_2767) = &input.value {
-        object.key("Value").string(var_2767.as_str());
+    if let Some(var_2771) = &input.value {
+        object.key("Value").string(var_2771.as_str());
     }
     Ok(())
 }
@@ -13059,8 +13086,8 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
             aws_smithy_types::Number::NegInt((input.hard_limit).into()),
         );
     }
-    if let Some(var_2768) = &input.name {
-        object.key("Name").string(var_2768.as_str());
+    if let Some(var_2772) = &input.name {
+        object.key("Name").string(var_2772.as_str());
     }
     if input.soft_limit != 0 {
         object.key("SoftLimit").number(
@@ -13078,8 +13105,8 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     if input.read_only {
         object.key("ReadOnly").boolean(input.read_only);
     }
-    if let Some(var_2769) = &input.source_container {
-        object.key("SourceContainer").string(var_2769.as_str());
+    if let Some(var_2773) = &input.source_container {
+        object.key("SourceContainer").string(var_2773.as_str());
     }
     Ok(())
 }
@@ -13088,11 +13115,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_proxy_configurati
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2770) = &input.name {
-        object.key("Name").string(var_2770.as_str());
+    if let Some(var_2774) = &input.name {
+        object.key("Name").string(var_2774.as_str());
     }
-    if let Some(var_2771) = &input.value {
-        object.key("Value").string(var_2771.as_str());
+    if let Some(var_2775) = &input.value {
+        object.key("Value").string(var_2775.as_str());
     }
     Ok(())
 }
@@ -13104,20 +13131,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_volumes_docker_vo
     if input.autoprovision {
         object.key("Autoprovision").boolean(input.autoprovision);
     }
-    if let Some(var_2772) = &input.driver {
-        object.key("Driver").string(var_2772.as_str());
+    if let Some(var_2776) = &input.driver {
+        object.key("Driver").string(var_2776.as_str());
     }
-    if let Some(var_2773) = &input.driver_opts {
-        let mut object_2774 = object.key("DriverOpts").start_object();
-        for (key_2775, value_2776) in var_2773 {
-            {
-                object_2774.key(key_2775).string(value_2776.as_str());
-            }
-        }
-        object_2774.finish();
-    }
-    if let Some(var_2777) = &input.labels {
-        let mut object_2778 = object.key("Labels").start_object();
+    if let Some(var_2777) = &input.driver_opts {
+        let mut object_2778 = object.key("DriverOpts").start_object();
         for (key_2779, value_2780) in var_2777 {
             {
                 object_2778.key(key_2779).string(value_2780.as_str());
@@ -13125,8 +13143,17 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_volumes_docker_vo
         }
         object_2778.finish();
     }
-    if let Some(var_2781) = &input.scope {
-        object.key("Scope").string(var_2781.as_str());
+    if let Some(var_2781) = &input.labels {
+        let mut object_2782 = object.key("Labels").start_object();
+        for (key_2783, value_2784) in var_2781 {
+            {
+                object_2782.key(key_2783).string(value_2784.as_str());
+            }
+        }
+        object_2782.finish();
+    }
+    if let Some(var_2785) = &input.scope {
+        object.key("Scope").string(var_2785.as_str());
     }
     Ok(())
 }
@@ -13135,19 +13162,19 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_volumes_efs_volum
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2782) = &input.authorization_config {
-        let mut object_2783 = object.key("AuthorizationConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details(&mut object_2783, var_2782)?;
-        object_2783.finish();
+    if let Some(var_2786) = &input.authorization_config {
+        let mut object_2787 = object.key("AuthorizationConfig").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details(&mut object_2787, var_2786)?;
+        object_2787.finish();
     }
-    if let Some(var_2784) = &input.filesystem_id {
-        object.key("FilesystemId").string(var_2784.as_str());
+    if let Some(var_2788) = &input.filesystem_id {
+        object.key("FilesystemId").string(var_2788.as_str());
     }
-    if let Some(var_2785) = &input.root_directory {
-        object.key("RootDirectory").string(var_2785.as_str());
+    if let Some(var_2789) = &input.root_directory {
+        object.key("RootDirectory").string(var_2789.as_str());
     }
-    if let Some(var_2786) = &input.transit_encryption {
-        object.key("TransitEncryption").string(var_2786.as_str());
+    if let Some(var_2790) = &input.transit_encryption {
+        object.key("TransitEncryption").string(var_2790.as_str());
     }
     if input.transit_encryption_port != 0 {
         object.key("TransitEncryptionPort").number(
@@ -13162,8 +13189,8 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_volumes_host_deta
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionVolumesHostDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2787) = &input.source_path {
-        object.key("SourcePath").string(var_2787.as_str());
+    if let Some(var_2791) = &input.source_path {
+        object.key("SourcePath").string(var_2791.as_str());
     }
     Ok(())
 }
@@ -13185,26 +13212,26 @@ pub fn serialize_structure_crate_model_aws_ecs_service_network_configuration_aws
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2788) = &input.assign_public_ip {
-        object.key("AssignPublicIp").string(var_2788.as_str());
+    if let Some(var_2792) = &input.assign_public_ip {
+        object.key("AssignPublicIp").string(var_2792.as_str());
     }
-    if let Some(var_2789) = &input.security_groups {
-        let mut array_2790 = object.key("SecurityGroups").start_array();
-        for item_2791 in var_2789 {
+    if let Some(var_2793) = &input.security_groups {
+        let mut array_2794 = object.key("SecurityGroups").start_array();
+        for item_2795 in var_2793 {
             {
-                array_2790.value().string(item_2791.as_str());
+                array_2794.value().string(item_2795.as_str());
             }
         }
-        array_2790.finish();
+        array_2794.finish();
     }
-    if let Some(var_2792) = &input.subnets {
-        let mut array_2793 = object.key("Subnets").start_array();
-        for item_2794 in var_2792 {
+    if let Some(var_2796) = &input.subnets {
+        let mut array_2797 = object.key("Subnets").start_array();
+        for item_2798 in var_2796 {
             {
-                array_2793.value().string(item_2794.as_str());
+                array_2797.value().string(item_2798.as_str());
             }
         }
-        array_2793.finish();
+        array_2797.finish();
     }
     Ok(())
 }
@@ -13227,8 +13254,8 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_launch_configuration_blo
             aws_smithy_types::Number::NegInt((input.iops).into()),
         );
     }
-    if let Some(var_2795) = &input.snapshot_id {
-        object.key("SnapshotId").string(var_2795.as_str());
+    if let Some(var_2799) = &input.snapshot_id {
+        object.key("SnapshotId").string(var_2799.as_str());
     }
     if input.volume_size != 0 {
         object.key("VolumeSize").number(
@@ -13236,8 +13263,8 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_launch_configuration_blo
             aws_smithy_types::Number::NegInt((input.volume_size).into()),
         );
     }
-    if let Some(var_2796) = &input.volume_type {
-        object.key("VolumeType").string(var_2796.as_str());
+    if let Some(var_2800) = &input.volume_type {
+        object.key("VolumeType").string(var_2800.as_str());
     }
     Ok(())
 }
@@ -13252,47 +13279,47 @@ pub fn serialize_structure_crate_model_aws_ec2_vpn_connection_options_tunnel_opt
             aws_smithy_types::Number::NegInt((input.dpd_timeout_seconds).into()),
         );
     }
-    if let Some(var_2797) = &input.ike_versions {
-        let mut array_2798 = object.key("IkeVersions").start_array();
-        for item_2799 in var_2797 {
-            {
-                array_2798.value().string(item_2799.as_str());
-            }
-        }
-        array_2798.finish();
-    }
-    if let Some(var_2800) = &input.outside_ip_address {
-        object.key("OutsideIpAddress").string(var_2800.as_str());
-    }
-    if let Some(var_2801) = &input.phase1_dh_group_numbers {
-        let mut array_2802 = object.key("Phase1DhGroupNumbers").start_array();
+    if let Some(var_2801) = &input.ike_versions {
+        let mut array_2802 = object.key("IkeVersions").start_array();
         for item_2803 in var_2801 {
             {
-                array_2802.value().number(
-                    #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::NegInt((*item_2803).into()),
-                );
+                array_2802.value().string(item_2803.as_str());
             }
         }
         array_2802.finish();
     }
-    if let Some(var_2804) = &input.phase1_encryption_algorithms {
-        let mut array_2805 = object.key("Phase1EncryptionAlgorithms").start_array();
-        for item_2806 in var_2804 {
-            {
-                array_2805.value().string(item_2806.as_str());
-            }
-        }
-        array_2805.finish();
+    if let Some(var_2804) = &input.outside_ip_address {
+        object.key("OutsideIpAddress").string(var_2804.as_str());
     }
-    if let Some(var_2807) = &input.phase1_integrity_algorithms {
-        let mut array_2808 = object.key("Phase1IntegrityAlgorithms").start_array();
-        for item_2809 in var_2807 {
+    if let Some(var_2805) = &input.phase1_dh_group_numbers {
+        let mut array_2806 = object.key("Phase1DhGroupNumbers").start_array();
+        for item_2807 in var_2805 {
             {
-                array_2808.value().string(item_2809.as_str());
+                array_2806.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    aws_smithy_types::Number::NegInt((*item_2807).into()),
+                );
             }
         }
-        array_2808.finish();
+        array_2806.finish();
+    }
+    if let Some(var_2808) = &input.phase1_encryption_algorithms {
+        let mut array_2809 = object.key("Phase1EncryptionAlgorithms").start_array();
+        for item_2810 in var_2808 {
+            {
+                array_2809.value().string(item_2810.as_str());
+            }
+        }
+        array_2809.finish();
+    }
+    if let Some(var_2811) = &input.phase1_integrity_algorithms {
+        let mut array_2812 = object.key("Phase1IntegrityAlgorithms").start_array();
+        for item_2813 in var_2811 {
+            {
+                array_2812.value().string(item_2813.as_str());
+            }
+        }
+        array_2812.finish();
     }
     if input.phase1_lifetime_seconds != 0 {
         object.key("Phase1LifetimeSeconds").number(
@@ -13300,35 +13327,35 @@ pub fn serialize_structure_crate_model_aws_ec2_vpn_connection_options_tunnel_opt
             aws_smithy_types::Number::NegInt((input.phase1_lifetime_seconds).into()),
         );
     }
-    if let Some(var_2810) = &input.phase2_dh_group_numbers {
-        let mut array_2811 = object.key("Phase2DhGroupNumbers").start_array();
-        for item_2812 in var_2810 {
+    if let Some(var_2814) = &input.phase2_dh_group_numbers {
+        let mut array_2815 = object.key("Phase2DhGroupNumbers").start_array();
+        for item_2816 in var_2814 {
             {
-                array_2811.value().number(
+                array_2815.value().number(
                     #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::NegInt((*item_2812).into()),
+                    aws_smithy_types::Number::NegInt((*item_2816).into()),
                 );
             }
         }
-        array_2811.finish();
+        array_2815.finish();
     }
-    if let Some(var_2813) = &input.phase2_encryption_algorithms {
-        let mut array_2814 = object.key("Phase2EncryptionAlgorithms").start_array();
-        for item_2815 in var_2813 {
+    if let Some(var_2817) = &input.phase2_encryption_algorithms {
+        let mut array_2818 = object.key("Phase2EncryptionAlgorithms").start_array();
+        for item_2819 in var_2817 {
             {
-                array_2814.value().string(item_2815.as_str());
+                array_2818.value().string(item_2819.as_str());
             }
         }
-        array_2814.finish();
+        array_2818.finish();
     }
-    if let Some(var_2816) = &input.phase2_integrity_algorithms {
-        let mut array_2817 = object.key("Phase2IntegrityAlgorithms").start_array();
-        for item_2818 in var_2816 {
+    if let Some(var_2820) = &input.phase2_integrity_algorithms {
+        let mut array_2821 = object.key("Phase2IntegrityAlgorithms").start_array();
+        for item_2822 in var_2820 {
             {
-                array_2817.value().string(item_2818.as_str());
+                array_2821.value().string(item_2822.as_str());
             }
         }
-        array_2817.finish();
+        array_2821.finish();
     }
     if input.phase2_lifetime_seconds != 0 {
         object.key("Phase2LifetimeSeconds").number(
@@ -13336,8 +13363,8 @@ pub fn serialize_structure_crate_model_aws_ec2_vpn_connection_options_tunnel_opt
             aws_smithy_types::Number::NegInt((input.phase2_lifetime_seconds).into()),
         );
     }
-    if let Some(var_2819) = &input.pre_shared_key {
-        object.key("PreSharedKey").string(var_2819.as_str());
+    if let Some(var_2823) = &input.pre_shared_key {
+        object.key("PreSharedKey").string(var_2823.as_str());
     }
     if input.rekey_fuzz_percentage != 0 {
         object.key("RekeyFuzzPercentage").number(
@@ -13357,8 +13384,8 @@ pub fn serialize_structure_crate_model_aws_ec2_vpn_connection_options_tunnel_opt
             aws_smithy_types::Number::NegInt((input.replay_window_size).into()),
         );
     }
-    if let Some(var_2820) = &input.tunnel_inside_cidr {
-        object.key("TunnelInsideCidr").string(var_2820.as_str());
+    if let Some(var_2824) = &input.tunnel_inside_cidr {
+        object.key("TunnelInsideCidr").string(var_2824.as_str());
     }
     Ok(())
 }
@@ -13380,10 +13407,10 @@ pub fn serialize_structure_crate_model_aws_open_search_service_domain_log_publis
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsOpenSearchServiceDomainLogPublishingOption,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2821) = &input.cloud_watch_logs_log_group_arn {
+    if let Some(var_2825) = &input.cloud_watch_logs_log_group_arn {
         object
             .key("CloudWatchLogsLogGroupArn")
-            .string(var_2821.as_str());
+            .string(var_2825.as_str());
     }
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
@@ -13398,14 +13425,14 @@ pub fn serialize_structure_crate_model_aws_eks_cluster_logging_cluster_logging_d
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
     }
-    if let Some(var_2822) = &input.types {
-        let mut array_2823 = object.key("Types").start_array();
-        for item_2824 in var_2822 {
+    if let Some(var_2826) = &input.types {
+        let mut array_2827 = object.key("Types").start_array();
+        for item_2828 in var_2826 {
             {
-                array_2823.value().string(item_2824.as_str());
+                array_2827.value().string(item_2828.as_str());
             }
         }
-        array_2823.finish();
+        array_2827.finish();
     }
     Ok(())
 }
@@ -13414,8 +13441,8 @@ pub fn serialize_structure_crate_model_firewall_policy_stateful_rule_group_refer
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2825) = &input.resource_arn {
-        object.key("ResourceArn").string(var_2825.as_str());
+    if let Some(var_2829) = &input.resource_arn {
+        object.key("ResourceArn").string(var_2829.as_str());
     }
     Ok(())
 }
@@ -13424,16 +13451,16 @@ pub fn serialize_structure_crate_model_firewall_policy_stateless_custom_actions_
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FirewallPolicyStatelessCustomActionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2826) = &input.action_definition {
-        let mut object_2827 = object.key("ActionDefinition").start_object();
+    if let Some(var_2830) = &input.action_definition {
+        let mut object_2831 = object.key("ActionDefinition").start_object();
         crate::json_ser::serialize_structure_crate_model_stateless_custom_action_definition(
-            &mut object_2827,
-            var_2826,
+            &mut object_2831,
+            var_2830,
         )?;
-        object_2827.finish();
+        object_2831.finish();
     }
-    if let Some(var_2828) = &input.action_name {
-        object.key("ActionName").string(var_2828.as_str());
+    if let Some(var_2832) = &input.action_name {
+        object.key("ActionName").string(var_2832.as_str());
     }
     Ok(())
 }
@@ -13448,8 +13475,8 @@ pub fn serialize_structure_crate_model_firewall_policy_stateless_rule_group_refe
             aws_smithy_types::Number::NegInt((input.priority).into()),
         );
     }
-    if let Some(var_2829) = &input.resource_arn {
-        object.key("ResourceArn").string(var_2829.as_str());
+    if let Some(var_2833) = &input.resource_arn {
+        object.key("ResourceArn").string(var_2833.as_str());
     }
     Ok(())
 }
@@ -13458,21 +13485,21 @@ pub fn serialize_structure_crate_model_rule_group_variables(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupVariables,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2830) = &input.ip_sets {
-        let mut object_2831 = object.key("IpSets").start_object();
+    if let Some(var_2834) = &input.ip_sets {
+        let mut object_2835 = object.key("IpSets").start_object();
         crate::json_ser::serialize_structure_crate_model_rule_group_variables_ip_sets_details(
-            &mut object_2831,
-            var_2830,
+            &mut object_2835,
+            var_2834,
         )?;
-        object_2831.finish();
+        object_2835.finish();
     }
-    if let Some(var_2832) = &input.port_sets {
-        let mut object_2833 = object.key("PortSets").start_object();
+    if let Some(var_2836) = &input.port_sets {
+        let mut object_2837 = object.key("PortSets").start_object();
         crate::json_ser::serialize_structure_crate_model_rule_group_variables_port_sets_details(
-            &mut object_2833,
-            var_2832,
+            &mut object_2837,
+            var_2836,
         )?;
-        object_2833.finish();
+        object_2837.finish();
     }
     Ok(())
 }
@@ -13481,32 +13508,32 @@ pub fn serialize_structure_crate_model_rule_group_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSource,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2834) = &input.rules_source_list {
-        let mut object_2835 = object.key("RulesSourceList").start_object();
+    if let Some(var_2838) = &input.rules_source_list {
+        let mut object_2839 = object.key("RulesSourceList").start_object();
         crate::json_ser::serialize_structure_crate_model_rule_group_source_list_details(
-            &mut object_2835,
-            var_2834,
+            &mut object_2839,
+            var_2838,
         )?;
-        object_2835.finish();
+        object_2839.finish();
     }
-    if let Some(var_2836) = &input.rules_string {
-        object.key("RulesString").string(var_2836.as_str());
+    if let Some(var_2840) = &input.rules_string {
+        object.key("RulesString").string(var_2840.as_str());
     }
-    if let Some(var_2837) = &input.stateful_rules {
-        let mut array_2838 = object.key("StatefulRules").start_array();
-        for item_2839 in var_2837 {
+    if let Some(var_2841) = &input.stateful_rules {
+        let mut array_2842 = object.key("StatefulRules").start_array();
+        for item_2843 in var_2841 {
             {
-                let mut object_2840 = array_2838.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateful_rules_details(&mut object_2840, item_2839)?;
-                object_2840.finish();
+                let mut object_2844 = array_2842.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateful_rules_details(&mut object_2844, item_2843)?;
+                object_2844.finish();
             }
         }
-        array_2838.finish();
+        array_2842.finish();
     }
-    if let Some(var_2841) = &input.stateless_rules_and_custom_actions {
-        let mut object_2842 = object.key("StatelessRulesAndCustomActions").start_object();
-        crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rules_and_custom_actions_details(&mut object_2842, var_2841)?;
-        object_2842.finish();
+    if let Some(var_2845) = &input.stateless_rules_and_custom_actions {
+        let mut object_2846 = object.key("StatelessRulesAndCustomActions").start_object();
+        crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rules_and_custom_actions_details(&mut object_2846, var_2845)?;
+        object_2846.finish();
     }
     Ok(())
 }
@@ -13515,22 +13542,8 @@ pub fn serialize_structure_crate_model_occurrences(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Occurrences,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2843) = &input.line_ranges {
-        let mut array_2844 = object.key("LineRanges").start_array();
-        for item_2845 in var_2843 {
-            {
-                let mut object_2846 = array_2844.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_range(
-                    &mut object_2846,
-                    item_2845,
-                )?;
-                object_2846.finish();
-            }
-        }
-        array_2844.finish();
-    }
-    if let Some(var_2847) = &input.offset_ranges {
-        let mut array_2848 = object.key("OffsetRanges").start_array();
+    if let Some(var_2847) = &input.line_ranges {
+        let mut array_2848 = object.key("LineRanges").start_array();
         for item_2849 in var_2847 {
             {
                 let mut object_2850 = array_2848.value().start_object();
@@ -13543,41 +13556,55 @@ pub fn serialize_structure_crate_model_occurrences(
         }
         array_2848.finish();
     }
-    if let Some(var_2851) = &input.pages {
-        let mut array_2852 = object.key("Pages").start_array();
+    if let Some(var_2851) = &input.offset_ranges {
+        let mut array_2852 = object.key("OffsetRanges").start_array();
         for item_2853 in var_2851 {
             {
                 let mut object_2854 = array_2852.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_page(&mut object_2854, item_2853)?;
+                crate::json_ser::serialize_structure_crate_model_range(
+                    &mut object_2854,
+                    item_2853,
+                )?;
                 object_2854.finish();
             }
         }
         array_2852.finish();
     }
-    if let Some(var_2855) = &input.records {
-        let mut array_2856 = object.key("Records").start_array();
+    if let Some(var_2855) = &input.pages {
+        let mut array_2856 = object.key("Pages").start_array();
         for item_2857 in var_2855 {
             {
                 let mut object_2858 = array_2856.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_record(
-                    &mut object_2858,
-                    item_2857,
-                )?;
+                crate::json_ser::serialize_structure_crate_model_page(&mut object_2858, item_2857)?;
                 object_2858.finish();
             }
         }
         array_2856.finish();
     }
-    if let Some(var_2859) = &input.cells {
-        let mut array_2860 = object.key("Cells").start_array();
+    if let Some(var_2859) = &input.records {
+        let mut array_2860 = object.key("Records").start_array();
         for item_2861 in var_2859 {
             {
                 let mut object_2862 = array_2860.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_cell(&mut object_2862, item_2861)?;
+                crate::json_ser::serialize_structure_crate_model_record(
+                    &mut object_2862,
+                    item_2861,
+                )?;
                 object_2862.finish();
             }
         }
         array_2860.finish();
+    }
+    if let Some(var_2863) = &input.cells {
+        let mut array_2864 = object.key("Cells").start_array();
+        for item_2865 in var_2863 {
+            {
+                let mut object_2866 = array_2864.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_cell(&mut object_2866, item_2865)?;
+                object_2866.finish();
+            }
+        }
+        array_2864.finish();
     }
     Ok(())
 }
@@ -13586,14 +13613,14 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2863) = &input.launch_template_id {
-        object.key("LaunchTemplateId").string(var_2863.as_str());
+    if let Some(var_2867) = &input.launch_template_id {
+        object.key("LaunchTemplateId").string(var_2867.as_str());
     }
-    if let Some(var_2864) = &input.launch_template_name {
-        object.key("LaunchTemplateName").string(var_2864.as_str());
+    if let Some(var_2868) = &input.launch_template_name {
+        object.key("LaunchTemplateName").string(var_2868.as_str());
     }
-    if let Some(var_2865) = &input.version {
-        object.key("Version").string(var_2865.as_str());
+    if let Some(var_2869) = &input.version {
+        object.key("Version").string(var_2869.as_str());
     }
     Ok(())
 }
@@ -13602,11 +13629,11 @@ pub fn serialize_structure_crate_model_aws_auto_scaling_auto_scaling_group_mixed
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2866) = &input.instance_type {
-        object.key("InstanceType").string(var_2866.as_str());
+    if let Some(var_2870) = &input.instance_type {
+        object.key("InstanceType").string(var_2870.as_str());
     }
-    if let Some(var_2867) = &input.weighted_capacity {
-        object.key("WeightedCapacity").string(var_2867.as_str());
+    if let Some(var_2871) = &input.weighted_capacity {
+        object.key("WeightedCapacity").string(var_2871.as_str());
     }
     Ok(())
 }
@@ -13615,8 +13642,8 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_origin_s3_or
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionOriginS3OriginConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2868) = &input.origin_access_identity {
-        object.key("OriginAccessIdentity").string(var_2868.as_str());
+    if let Some(var_2872) = &input.origin_access_identity {
+        object.key("OriginAccessIdentity").string(var_2872.as_str());
     }
     Ok(())
 }
@@ -13625,10 +13652,10 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_origin_group
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionOriginGroupFailover,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2869) = &input.status_codes {
-        let mut object_2870 = object.key("StatusCodes").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_group_failover_status_codes(&mut object_2870, var_2869)?;
-        object_2870.finish();
+    if let Some(var_2873) = &input.status_codes {
+        let mut object_2874 = object.key("StatusCodes").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_cloud_front_distribution_origin_group_failover_status_codes(&mut object_2874, var_2873)?;
+        object_2874.finish();
     }
     Ok(())
 }
@@ -13637,11 +13664,11 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_server_side_encryption_by_d
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketServerSideEncryptionByDefault,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2871) = &input.sse_algorithm {
-        object.key("SSEAlgorithm").string(var_2871.as_str());
+    if let Some(var_2875) = &input.sse_algorithm {
+        object.key("SSEAlgorithm").string(var_2875.as_str());
     }
-    if let Some(var_2872) = &input.kms_master_key_id {
-        object.key("KMSMasterKeyID").string(var_2872.as_str());
+    if let Some(var_2876) = &input.kms_master_key_id {
+        object.key("KMSMasterKeyID").string(var_2876.as_str());
     }
     Ok(())
 }
@@ -13663,10 +13690,10 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2873) = &input.predicate {
-        let mut object_2874 = object.key("Predicate").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details(&mut object_2874, var_2873)?;
-        object_2874.finish();
+    if let Some(var_2877) = &input.predicate {
+        let mut object_2878 = object.key("Predicate").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details(&mut object_2878, var_2877)?;
+        object_2878.finish();
     }
     Ok(())
 }
@@ -13681,8 +13708,8 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
             aws_smithy_types::Number::NegInt((input.days).into()),
         );
     }
-    if let Some(var_2875) = &input.storage_class {
-        object.key("StorageClass").string(var_2875.as_str());
+    if let Some(var_2879) = &input.storage_class {
+        object.key("StorageClass").string(var_2879.as_str());
     }
     Ok(())
 }
@@ -13691,8 +13718,8 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2876) = &input.date {
-        object.key("Date").string(var_2876.as_str());
+    if let Some(var_2880) = &input.date {
+        object.key("Date").string(var_2880.as_str());
     }
     if input.days != 0 {
         object.key("Days").number(
@@ -13700,8 +13727,8 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
             aws_smithy_types::Number::NegInt((input.days).into()),
         );
     }
-    if let Some(var_2877) = &input.storage_class {
-        object.key("StorageClass").string(var_2877.as_str());
+    if let Some(var_2881) = &input.storage_class {
+        object.key("StorageClass").string(var_2881.as_str());
     }
     Ok(())
 }
@@ -13710,13 +13737,13 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_website_configuration_routi
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2878) = &input.http_error_code_returned_equals {
+    if let Some(var_2882) = &input.http_error_code_returned_equals {
         object
             .key("HttpErrorCodeReturnedEquals")
-            .string(var_2878.as_str());
+            .string(var_2882.as_str());
     }
-    if let Some(var_2879) = &input.key_prefix_equals {
-        object.key("KeyPrefixEquals").string(var_2879.as_str());
+    if let Some(var_2883) = &input.key_prefix_equals {
+        object.key("KeyPrefixEquals").string(var_2883.as_str());
     }
     Ok(())
 }
@@ -13725,20 +13752,20 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_website_configuration_routi
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2880) = &input.hostname {
-        object.key("Hostname").string(var_2880.as_str());
+    if let Some(var_2884) = &input.hostname {
+        object.key("Hostname").string(var_2884.as_str());
     }
-    if let Some(var_2881) = &input.http_redirect_code {
-        object.key("HttpRedirectCode").string(var_2881.as_str());
+    if let Some(var_2885) = &input.http_redirect_code {
+        object.key("HttpRedirectCode").string(var_2885.as_str());
     }
-    if let Some(var_2882) = &input.protocol {
-        object.key("Protocol").string(var_2882.as_str());
+    if let Some(var_2886) = &input.protocol {
+        object.key("Protocol").string(var_2886.as_str());
     }
-    if let Some(var_2883) = &input.replace_key_prefix_with {
-        object.key("ReplaceKeyPrefixWith").string(var_2883.as_str());
+    if let Some(var_2887) = &input.replace_key_prefix_with {
+        object.key("ReplaceKeyPrefixWith").string(var_2887.as_str());
     }
-    if let Some(var_2884) = &input.replace_key_with {
-        object.key("ReplaceKeyWith").string(var_2884.as_str());
+    if let Some(var_2888) = &input.replace_key_with {
+        object.key("ReplaceKeyWith").string(var_2888.as_str());
     }
     Ok(())
 }
@@ -13747,10 +13774,10 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_notification_configuration_
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketNotificationConfigurationFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2885) = &input.s3_key_filter {
-        let mut object_2886 = object.key("S3KeyFilter").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_notification_configuration_s3_key_filter(&mut object_2886, var_2885)?;
-        object_2886.finish();
+    if let Some(var_2889) = &input.s3_key_filter {
+        let mut object_2890 = object.key("S3KeyFilter").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_notification_configuration_s3_key_filter(&mut object_2890, var_2889)?;
+        object_2890.finish();
     }
     Ok(())
 }
@@ -13759,8 +13786,8 @@ pub fn serialize_structure_crate_model_aws_rds_db_subnet_group_subnet_availabili
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2887) = &input.name {
-        object.key("Name").string(var_2887.as_str());
+    if let Some(var_2891) = &input.name {
+        object.key("Name").string(var_2891.as_str());
     }
     Ok(())
 }
@@ -13774,21 +13801,21 @@ pub fn serialize_structure_crate_model_aws_ecs_cluster_configuration_execute_com
             .key("CloudWatchEncryptionEnabled")
             .boolean(input.cloud_watch_encryption_enabled);
     }
-    if let Some(var_2888) = &input.cloud_watch_log_group_name {
+    if let Some(var_2892) = &input.cloud_watch_log_group_name {
         object
             .key("CloudWatchLogGroupName")
-            .string(var_2888.as_str());
+            .string(var_2892.as_str());
     }
-    if let Some(var_2889) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_2889.as_str());
+    if let Some(var_2893) = &input.s3_bucket_name {
+        object.key("S3BucketName").string(var_2893.as_str());
     }
     if input.s3_encryption_enabled {
         object
             .key("S3EncryptionEnabled")
             .boolean(input.s3_encryption_enabled);
     }
-    if let Some(var_2890) = &input.s3_key_prefix {
-        object.key("S3KeyPrefix").string(var_2890.as_str());
+    if let Some(var_2894) = &input.s3_key_prefix {
+        object.key("S3KeyPrefix").string(var_2894.as_str());
     }
     Ok(())
 }
@@ -13797,23 +13824,23 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2891) = &input.add {
-        let mut array_2892 = object.key("Add").start_array();
-        for item_2893 in var_2891 {
+    if let Some(var_2895) = &input.add {
+        let mut array_2896 = object.key("Add").start_array();
+        for item_2897 in var_2895 {
             {
-                array_2892.value().string(item_2893.as_str());
+                array_2896.value().string(item_2897.as_str());
             }
         }
-        array_2892.finish();
+        array_2896.finish();
     }
-    if let Some(var_2894) = &input.drop {
-        let mut array_2895 = object.key("Drop").start_array();
-        for item_2896 in var_2894 {
+    if let Some(var_2898) = &input.drop {
+        let mut array_2899 = object.key("Drop").start_array();
+        for item_2900 in var_2898 {
             {
-                array_2895.value().string(item_2896.as_str());
+                array_2899.value().string(item_2900.as_str());
             }
         }
-        array_2895.finish();
+        array_2899.finish();
     }
     Ok(())
 }
@@ -13822,20 +13849,20 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2897) = &input.container_path {
-        object.key("ContainerPath").string(var_2897.as_str());
+    if let Some(var_2901) = &input.container_path {
+        object.key("ContainerPath").string(var_2901.as_str());
     }
-    if let Some(var_2898) = &input.host_path {
-        object.key("HostPath").string(var_2898.as_str());
+    if let Some(var_2902) = &input.host_path {
+        object.key("HostPath").string(var_2902.as_str());
     }
-    if let Some(var_2899) = &input.permissions {
-        let mut array_2900 = object.key("Permissions").start_array();
-        for item_2901 in var_2899 {
+    if let Some(var_2903) = &input.permissions {
+        let mut array_2904 = object.key("Permissions").start_array();
+        for item_2905 in var_2903 {
             {
-                array_2900.value().string(item_2901.as_str());
+                array_2904.value().string(item_2905.as_str());
             }
         }
-        array_2900.finish();
+        array_2904.finish();
     }
     Ok(())
 }
@@ -13844,17 +13871,17 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2902) = &input.container_path {
-        object.key("ContainerPath").string(var_2902.as_str());
+    if let Some(var_2906) = &input.container_path {
+        object.key("ContainerPath").string(var_2906.as_str());
     }
-    if let Some(var_2903) = &input.mount_options {
-        let mut array_2904 = object.key("MountOptions").start_array();
-        for item_2905 in var_2903 {
+    if let Some(var_2907) = &input.mount_options {
+        let mut array_2908 = object.key("MountOptions").start_array();
+        for item_2909 in var_2907 {
             {
-                array_2904.value().string(item_2905.as_str());
+                array_2908.value().string(item_2909.as_str());
             }
         }
-        array_2904.finish();
+        array_2908.finish();
     }
     if input.size != 0 {
         object.key("Size").number(
@@ -13869,11 +13896,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_container_definit
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2906) = &input.name {
-        object.key("Name").string(var_2906.as_str());
+    if let Some(var_2910) = &input.name {
+        object.key("Name").string(var_2910.as_str());
     }
-    if let Some(var_2907) = &input.value_from {
-        object.key("ValueFrom").string(var_2907.as_str());
+    if let Some(var_2911) = &input.value_from {
+        object.key("ValueFrom").string(var_2911.as_str());
     }
     Ok(())
 }
@@ -13882,11 +13909,11 @@ pub fn serialize_structure_crate_model_aws_ecs_task_definition_volumes_efs_volum
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2908) = &input.access_point_id {
-        object.key("AccessPointId").string(var_2908.as_str());
+    if let Some(var_2912) = &input.access_point_id {
+        object.key("AccessPointId").string(var_2912.as_str());
     }
-    if let Some(var_2909) = &input.iam {
-        object.key("Iam").string(var_2909.as_str());
+    if let Some(var_2913) = &input.iam {
+        object.key("Iam").string(var_2913.as_str());
     }
     Ok(())
 }
@@ -13895,13 +13922,13 @@ pub fn serialize_structure_crate_model_stateless_custom_action_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StatelessCustomActionDefinition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2910) = &input.publish_metric_action {
-        let mut object_2911 = object.key("PublishMetricAction").start_object();
+    if let Some(var_2914) = &input.publish_metric_action {
+        let mut object_2915 = object.key("PublishMetricAction").start_object();
         crate::json_ser::serialize_structure_crate_model_stateless_custom_publish_metric_action(
-            &mut object_2911,
-            var_2910,
+            &mut object_2915,
+            var_2914,
         )?;
-        object_2911.finish();
+        object_2915.finish();
     }
     Ok(())
 }
@@ -13910,14 +13937,14 @@ pub fn serialize_structure_crate_model_rule_group_variables_ip_sets_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupVariablesIpSetsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2912) = &input.definition {
-        let mut array_2913 = object.key("Definition").start_array();
-        for item_2914 in var_2912 {
+    if let Some(var_2916) = &input.definition {
+        let mut array_2917 = object.key("Definition").start_array();
+        for item_2918 in var_2916 {
             {
-                array_2913.value().string(item_2914.as_str());
+                array_2917.value().string(item_2918.as_str());
             }
         }
-        array_2913.finish();
+        array_2917.finish();
     }
     Ok(())
 }
@@ -13926,14 +13953,14 @@ pub fn serialize_structure_crate_model_rule_group_variables_port_sets_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupVariablesPortSetsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2915) = &input.definition {
-        let mut array_2916 = object.key("Definition").start_array();
-        for item_2917 in var_2915 {
+    if let Some(var_2919) = &input.definition {
+        let mut array_2920 = object.key("Definition").start_array();
+        for item_2921 in var_2919 {
             {
-                array_2916.value().string(item_2917.as_str());
+                array_2920.value().string(item_2921.as_str());
             }
         }
-        array_2916.finish();
+        array_2920.finish();
     }
     Ok(())
 }
@@ -13942,26 +13969,26 @@ pub fn serialize_structure_crate_model_rule_group_source_list_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceListDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2918) = &input.generated_rules_type {
-        object.key("GeneratedRulesType").string(var_2918.as_str());
+    if let Some(var_2922) = &input.generated_rules_type {
+        object.key("GeneratedRulesType").string(var_2922.as_str());
     }
-    if let Some(var_2919) = &input.target_types {
-        let mut array_2920 = object.key("TargetTypes").start_array();
-        for item_2921 in var_2919 {
+    if let Some(var_2923) = &input.target_types {
+        let mut array_2924 = object.key("TargetTypes").start_array();
+        for item_2925 in var_2923 {
             {
-                array_2920.value().string(item_2921.as_str());
+                array_2924.value().string(item_2925.as_str());
             }
         }
-        array_2920.finish();
+        array_2924.finish();
     }
-    if let Some(var_2922) = &input.targets {
-        let mut array_2923 = object.key("Targets").start_array();
-        for item_2924 in var_2922 {
+    if let Some(var_2926) = &input.targets {
+        let mut array_2927 = object.key("Targets").start_array();
+        for item_2928 in var_2926 {
             {
-                array_2923.value().string(item_2924.as_str());
+                array_2927.value().string(item_2928.as_str());
             }
         }
-        array_2923.finish();
+        array_2927.finish();
     }
     Ok(())
 }
@@ -13970,24 +13997,24 @@ pub fn serialize_structure_crate_model_rule_group_source_stateful_rules_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceStatefulRulesDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2925) = &input.action {
-        object.key("Action").string(var_2925.as_str());
+    if let Some(var_2929) = &input.action {
+        object.key("Action").string(var_2929.as_str());
     }
-    if let Some(var_2926) = &input.header {
-        let mut object_2927 = object.key("Header").start_object();
-        crate::json_ser::serialize_structure_crate_model_rule_group_source_stateful_rules_header_details(&mut object_2927, var_2926)?;
-        object_2927.finish();
+    if let Some(var_2930) = &input.header {
+        let mut object_2931 = object.key("Header").start_object();
+        crate::json_ser::serialize_structure_crate_model_rule_group_source_stateful_rules_header_details(&mut object_2931, var_2930)?;
+        object_2931.finish();
     }
-    if let Some(var_2928) = &input.rule_options {
-        let mut array_2929 = object.key("RuleOptions").start_array();
-        for item_2930 in var_2928 {
+    if let Some(var_2932) = &input.rule_options {
+        let mut array_2933 = object.key("RuleOptions").start_array();
+        for item_2934 in var_2932 {
             {
-                let mut object_2931 = array_2929.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateful_rules_options_details(&mut object_2931, item_2930)?;
-                object_2931.finish();
+                let mut object_2935 = array_2933.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateful_rules_options_details(&mut object_2935, item_2934)?;
+                object_2935.finish();
             }
         }
-        array_2929.finish();
+        array_2933.finish();
     }
     Ok(())
 }
@@ -13996,27 +14023,27 @@ pub fn serialize_structure_crate_model_rule_group_source_stateless_rules_and_cus
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2932) = &input.custom_actions {
-        let mut array_2933 = object.key("CustomActions").start_array();
-        for item_2934 in var_2932 {
-            {
-                let mut object_2935 = array_2933.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_rule_group_source_custom_actions_details(&mut object_2935, item_2934)?;
-                object_2935.finish();
-            }
-        }
-        array_2933.finish();
-    }
-    if let Some(var_2936) = &input.stateless_rules {
-        let mut array_2937 = object.key("StatelessRules").start_array();
+    if let Some(var_2936) = &input.custom_actions {
+        let mut array_2937 = object.key("CustomActions").start_array();
         for item_2938 in var_2936 {
             {
                 let mut object_2939 = array_2937.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rules_details(&mut object_2939, item_2938)?;
+                crate::json_ser::serialize_structure_crate_model_rule_group_source_custom_actions_details(&mut object_2939, item_2938)?;
                 object_2939.finish();
             }
         }
         array_2937.finish();
+    }
+    if let Some(var_2940) = &input.stateless_rules {
+        let mut array_2941 = object.key("StatelessRules").start_array();
+        for item_2942 in var_2940 {
+            {
+                let mut object_2943 = array_2941.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rules_details(&mut object_2943, item_2942)?;
+                object_2943.finish();
+            }
+        }
+        array_2941.finish();
     }
     Ok(())
 }
@@ -14056,15 +14083,15 @@ pub fn serialize_structure_crate_model_page(
             aws_smithy_types::Number::NegInt((input.page_number).into()),
         );
     }
-    if let Some(var_2940) = &input.line_range {
-        let mut object_2941 = object.key("LineRange").start_object();
-        crate::json_ser::serialize_structure_crate_model_range(&mut object_2941, var_2940)?;
-        object_2941.finish();
+    if let Some(var_2944) = &input.line_range {
+        let mut object_2945 = object.key("LineRange").start_object();
+        crate::json_ser::serialize_structure_crate_model_range(&mut object_2945, var_2944)?;
+        object_2945.finish();
     }
-    if let Some(var_2942) = &input.offset_range {
-        let mut object_2943 = object.key("OffsetRange").start_object();
-        crate::json_ser::serialize_structure_crate_model_range(&mut object_2943, var_2942)?;
-        object_2943.finish();
+    if let Some(var_2946) = &input.offset_range {
+        let mut object_2947 = object.key("OffsetRange").start_object();
+        crate::json_ser::serialize_structure_crate_model_range(&mut object_2947, var_2946)?;
+        object_2947.finish();
     }
     Ok(())
 }
@@ -14073,8 +14100,8 @@ pub fn serialize_structure_crate_model_record(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Record,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2944) = &input.json_path {
-        object.key("JsonPath").string(var_2944.as_str());
+    if let Some(var_2948) = &input.json_path {
+        object.key("JsonPath").string(var_2948.as_str());
     }
     if input.record_index != 0 {
         object.key("RecordIndex").number(
@@ -14101,11 +14128,11 @@ pub fn serialize_structure_crate_model_cell(
             aws_smithy_types::Number::NegInt((input.row).into()),
         );
     }
-    if let Some(var_2945) = &input.column_name {
-        object.key("ColumnName").string(var_2945.as_str());
+    if let Some(var_2949) = &input.column_name {
+        object.key("ColumnName").string(var_2949.as_str());
     }
-    if let Some(var_2946) = &input.cell_reference {
-        object.key("CellReference").string(var_2946.as_str());
+    if let Some(var_2950) = &input.cell_reference {
+        object.key("CellReference").string(var_2950.as_str());
     }
     Ok(())
 }
@@ -14114,17 +14141,17 @@ pub fn serialize_structure_crate_model_aws_cloud_front_distribution_origin_group
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2947) = &input.items {
-        let mut array_2948 = object.key("Items").start_array();
-        for item_2949 in var_2947 {
+    if let Some(var_2951) = &input.items {
+        let mut array_2952 = object.key("Items").start_array();
+        for item_2953 in var_2951 {
             {
-                array_2948.value().number(
+                array_2952.value().number(
                     #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::NegInt((*item_2949).into()),
+                    aws_smithy_types::Number::NegInt((*item_2953).into()),
                 );
             }
         }
-        array_2948.finish();
+        array_2952.finish();
     }
     if input.quantity != 0 {
         object.key("Quantity").number(
@@ -14139,27 +14166,27 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2950) = &input.operands {
-        let mut array_2951 = object.key("Operands").start_array();
-        for item_2952 in var_2950 {
+    if let Some(var_2954) = &input.operands {
+        let mut array_2955 = object.key("Operands").start_array();
+        for item_2956 in var_2954 {
             {
-                let mut object_2953 = array_2951.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details(&mut object_2953, item_2952)?;
-                object_2953.finish();
+                let mut object_2957 = array_2955.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details(&mut object_2957, item_2956)?;
+                object_2957.finish();
             }
         }
-        array_2951.finish();
+        array_2955.finish();
     }
-    if let Some(var_2954) = &input.prefix {
-        object.key("Prefix").string(var_2954.as_str());
+    if let Some(var_2958) = &input.prefix {
+        object.key("Prefix").string(var_2958.as_str());
     }
-    if let Some(var_2955) = &input.tag {
-        let mut object_2956 = object.key("Tag").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details(&mut object_2956, var_2955)?;
-        object_2956.finish();
+    if let Some(var_2959) = &input.tag {
+        let mut object_2960 = object.key("Tag").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details(&mut object_2960, var_2959)?;
+        object_2960.finish();
     }
-    if let Some(var_2957) = &input.r#type {
-        object.key("Type").string(var_2957.as_str());
+    if let Some(var_2961) = &input.r#type {
+        object.key("Type").string(var_2961.as_str());
     }
     Ok(())
 }
@@ -14168,30 +14195,12 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_notification_configuration_
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2958) = &input.filter_rules {
-        let mut array_2959 = object.key("FilterRules").start_array();
-        for item_2960 in var_2958 {
-            {
-                let mut object_2961 = array_2959.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_notification_configuration_s3_key_filter_rule(&mut object_2961, item_2960)?;
-                object_2961.finish();
-            }
-        }
-        array_2959.finish();
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_stateless_custom_publish_metric_action(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::StatelessCustomPublishMetricAction,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2962) = &input.dimensions {
-        let mut array_2963 = object.key("Dimensions").start_array();
+    if let Some(var_2962) = &input.filter_rules {
+        let mut array_2963 = object.key("FilterRules").start_array();
         for item_2964 in var_2962 {
             {
                 let mut object_2965 = array_2963.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_stateless_custom_publish_metric_action_dimension(&mut object_2965, item_2964)?;
+                crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_notification_configuration_s3_key_filter_rule(&mut object_2965, item_2964)?;
                 object_2965.finish();
             }
         }
@@ -14200,27 +14209,45 @@ pub fn serialize_structure_crate_model_stateless_custom_publish_metric_action(
     Ok(())
 }
 
+pub fn serialize_structure_crate_model_stateless_custom_publish_metric_action(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::StatelessCustomPublishMetricAction,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_2966) = &input.dimensions {
+        let mut array_2967 = object.key("Dimensions").start_array();
+        for item_2968 in var_2966 {
+            {
+                let mut object_2969 = array_2967.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_stateless_custom_publish_metric_action_dimension(&mut object_2969, item_2968)?;
+                object_2969.finish();
+            }
+        }
+        array_2967.finish();
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_model_rule_group_source_stateful_rules_header_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceStatefulRulesHeaderDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2966) = &input.destination {
-        object.key("Destination").string(var_2966.as_str());
+    if let Some(var_2970) = &input.destination {
+        object.key("Destination").string(var_2970.as_str());
     }
-    if let Some(var_2967) = &input.destination_port {
-        object.key("DestinationPort").string(var_2967.as_str());
+    if let Some(var_2971) = &input.destination_port {
+        object.key("DestinationPort").string(var_2971.as_str());
     }
-    if let Some(var_2968) = &input.direction {
-        object.key("Direction").string(var_2968.as_str());
+    if let Some(var_2972) = &input.direction {
+        object.key("Direction").string(var_2972.as_str());
     }
-    if let Some(var_2969) = &input.protocol {
-        object.key("Protocol").string(var_2969.as_str());
+    if let Some(var_2973) = &input.protocol {
+        object.key("Protocol").string(var_2973.as_str());
     }
-    if let Some(var_2970) = &input.source {
-        object.key("Source").string(var_2970.as_str());
+    if let Some(var_2974) = &input.source {
+        object.key("Source").string(var_2974.as_str());
     }
-    if let Some(var_2971) = &input.source_port {
-        object.key("SourcePort").string(var_2971.as_str());
+    if let Some(var_2975) = &input.source_port {
+        object.key("SourcePort").string(var_2975.as_str());
     }
     Ok(())
 }
@@ -14229,17 +14256,17 @@ pub fn serialize_structure_crate_model_rule_group_source_stateful_rules_options_
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceStatefulRulesOptionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2972) = &input.keyword {
-        object.key("Keyword").string(var_2972.as_str());
+    if let Some(var_2976) = &input.keyword {
+        object.key("Keyword").string(var_2976.as_str());
     }
-    if let Some(var_2973) = &input.settings {
-        let mut array_2974 = object.key("Settings").start_array();
-        for item_2975 in var_2973 {
+    if let Some(var_2977) = &input.settings {
+        let mut array_2978 = object.key("Settings").start_array();
+        for item_2979 in var_2977 {
             {
-                array_2974.value().string(item_2975.as_str());
+                array_2978.value().string(item_2979.as_str());
             }
         }
-        array_2974.finish();
+        array_2978.finish();
     }
     Ok(())
 }
@@ -14248,16 +14275,16 @@ pub fn serialize_structure_crate_model_rule_group_source_custom_actions_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceCustomActionsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2976) = &input.action_definition {
-        let mut object_2977 = object.key("ActionDefinition").start_object();
+    if let Some(var_2980) = &input.action_definition {
+        let mut object_2981 = object.key("ActionDefinition").start_object();
         crate::json_ser::serialize_structure_crate_model_stateless_custom_action_definition(
-            &mut object_2977,
-            var_2976,
+            &mut object_2981,
+            var_2980,
         )?;
-        object_2977.finish();
+        object_2981.finish();
     }
-    if let Some(var_2978) = &input.action_name {
-        object.key("ActionName").string(var_2978.as_str());
+    if let Some(var_2982) = &input.action_name {
+        object.key("ActionName").string(var_2982.as_str());
     }
     Ok(())
 }
@@ -14272,10 +14299,10 @@ pub fn serialize_structure_crate_model_rule_group_source_stateless_rules_details
             aws_smithy_types::Number::NegInt((input.priority).into()),
         );
     }
-    if let Some(var_2979) = &input.rule_definition {
-        let mut object_2980 = object.key("RuleDefinition").start_object();
-        crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_definition(&mut object_2980, var_2979)?;
-        object_2980.finish();
+    if let Some(var_2983) = &input.rule_definition {
+        let mut object_2984 = object.key("RuleDefinition").start_object();
+        crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_definition(&mut object_2984, var_2983)?;
+        object_2984.finish();
     }
     Ok(())
 }
@@ -14284,16 +14311,16 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2981) = &input.prefix {
-        object.key("Prefix").string(var_2981.as_str());
+    if let Some(var_2985) = &input.prefix {
+        object.key("Prefix").string(var_2985.as_str());
     }
-    if let Some(var_2982) = &input.tag {
-        let mut object_2983 = object.key("Tag").start_object();
-        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details(&mut object_2983, var_2982)?;
-        object_2983.finish();
+    if let Some(var_2986) = &input.tag {
+        let mut object_2987 = object.key("Tag").start_object();
+        crate::json_ser::serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details(&mut object_2987, var_2986)?;
+        object_2987.finish();
     }
-    if let Some(var_2984) = &input.r#type {
-        object.key("Type").string(var_2984.as_str());
+    if let Some(var_2988) = &input.r#type {
+        object.key("Type").string(var_2988.as_str());
     }
     Ok(())
 }
@@ -14302,11 +14329,11 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2985) = &input.key {
-        object.key("Key").string(var_2985.as_str());
+    if let Some(var_2989) = &input.key {
+        object.key("Key").string(var_2989.as_str());
     }
-    if let Some(var_2986) = &input.value {
-        object.key("Value").string(var_2986.as_str());
+    if let Some(var_2990) = &input.value {
+        object.key("Value").string(var_2990.as_str());
     }
     Ok(())
 }
@@ -14315,11 +14342,11 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_notification_configuration_
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2987) = &input.name {
-        object.key("Name").string(var_2987.as_str());
+    if let Some(var_2991) = &input.name {
+        object.key("Name").string(var_2991.as_str());
     }
-    if let Some(var_2988) = &input.value {
-        object.key("Value").string(var_2988.as_str());
+    if let Some(var_2992) = &input.value {
+        object.key("Value").string(var_2992.as_str());
     }
     Ok(())
 }
@@ -14328,8 +14355,8 @@ pub fn serialize_structure_crate_model_stateless_custom_publish_metric_action_di
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StatelessCustomPublishMetricActionDimension,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2989) = &input.value {
-        object.key("Value").string(var_2989.as_str());
+    if let Some(var_2993) = &input.value {
+        object.key("Value").string(var_2993.as_str());
     }
     Ok(())
 }
@@ -14338,19 +14365,19 @@ pub fn serialize_structure_crate_model_rule_group_source_stateless_rule_definiti
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceStatelessRuleDefinition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2990) = &input.actions {
-        let mut array_2991 = object.key("Actions").start_array();
-        for item_2992 in var_2990 {
+    if let Some(var_2994) = &input.actions {
+        let mut array_2995 = object.key("Actions").start_array();
+        for item_2996 in var_2994 {
             {
-                array_2991.value().string(item_2992.as_str());
+                array_2995.value().string(item_2996.as_str());
             }
         }
-        array_2991.finish();
+        array_2995.finish();
     }
-    if let Some(var_2993) = &input.match_attributes {
-        let mut object_2994 = object.key("MatchAttributes").start_object();
-        crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes(&mut object_2994, var_2993)?;
-        object_2994.finish();
+    if let Some(var_2997) = &input.match_attributes {
+        let mut object_2998 = object.key("MatchAttributes").start_object();
+        crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes(&mut object_2998, var_2997)?;
+        object_2998.finish();
     }
     Ok(())
 }
@@ -14359,11 +14386,11 @@ pub fn serialize_structure_crate_model_aws_s3_bucket_bucket_lifecycle_configurat
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2995) = &input.key {
-        object.key("Key").string(var_2995.as_str());
+    if let Some(var_2999) = &input.key {
+        object.key("Key").string(var_2999.as_str());
     }
-    if let Some(var_2996) = &input.value {
-        object.key("Value").string(var_2996.as_str());
+    if let Some(var_3000) = &input.value {
+        object.key("Value").string(var_3000.as_str());
     }
     Ok(())
 }
@@ -14372,72 +14399,72 @@ pub fn serialize_structure_crate_model_rule_group_source_stateless_rule_match_at
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceStatelessRuleMatchAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_2997) = &input.destination_ports {
-        let mut array_2998 = object.key("DestinationPorts").start_array();
-        for item_2999 in var_2997 {
-            {
-                let mut object_3000 = array_2998.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes_destination_ports(&mut object_3000, item_2999)?;
-                object_3000.finish();
-            }
-        }
-        array_2998.finish();
-    }
-    if let Some(var_3001) = &input.destinations {
-        let mut array_3002 = object.key("Destinations").start_array();
+    if let Some(var_3001) = &input.destination_ports {
+        let mut array_3002 = object.key("DestinationPorts").start_array();
         for item_3003 in var_3001 {
             {
                 let mut object_3004 = array_3002.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes_destinations(&mut object_3004, item_3003)?;
+                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes_destination_ports(&mut object_3004, item_3003)?;
                 object_3004.finish();
             }
         }
         array_3002.finish();
     }
-    if let Some(var_3005) = &input.protocols {
-        let mut array_3006 = object.key("Protocols").start_array();
+    if let Some(var_3005) = &input.destinations {
+        let mut array_3006 = object.key("Destinations").start_array();
         for item_3007 in var_3005 {
             {
-                array_3006.value().number(
-                    #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::NegInt((*item_3007).into()),
-                );
+                let mut object_3008 = array_3006.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes_destinations(&mut object_3008, item_3007)?;
+                object_3008.finish();
             }
         }
         array_3006.finish();
     }
-    if let Some(var_3008) = &input.source_ports {
-        let mut array_3009 = object.key("SourcePorts").start_array();
-        for item_3010 in var_3008 {
+    if let Some(var_3009) = &input.protocols {
+        let mut array_3010 = object.key("Protocols").start_array();
+        for item_3011 in var_3009 {
             {
-                let mut object_3011 = array_3009.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes_source_ports(&mut object_3011, item_3010)?;
-                object_3011.finish();
+                array_3010.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    aws_smithy_types::Number::NegInt((*item_3011).into()),
+                );
             }
         }
-        array_3009.finish();
+        array_3010.finish();
     }
-    if let Some(var_3012) = &input.sources {
-        let mut array_3013 = object.key("Sources").start_array();
+    if let Some(var_3012) = &input.source_ports {
+        let mut array_3013 = object.key("SourcePorts").start_array();
         for item_3014 in var_3012 {
             {
                 let mut object_3015 = array_3013.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes_sources(&mut object_3015, item_3014)?;
+                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes_source_ports(&mut object_3015, item_3014)?;
                 object_3015.finish();
             }
         }
         array_3013.finish();
     }
-    if let Some(var_3016) = &input.tcp_flags {
-        let mut array_3017 = object.key("TcpFlags").start_array();
+    if let Some(var_3016) = &input.sources {
+        let mut array_3017 = object.key("Sources").start_array();
         for item_3018 in var_3016 {
             {
                 let mut object_3019 = array_3017.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes_tcp_flags(&mut object_3019, item_3018)?;
+                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes_sources(&mut object_3019, item_3018)?;
                 object_3019.finish();
             }
         }
         array_3017.finish();
+    }
+    if let Some(var_3020) = &input.tcp_flags {
+        let mut array_3021 = object.key("TcpFlags").start_array();
+        for item_3022 in var_3020 {
+            {
+                let mut object_3023 = array_3021.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_rule_group_source_stateless_rule_match_attributes_tcp_flags(&mut object_3023, item_3022)?;
+                object_3023.finish();
+            }
+        }
+        array_3021.finish();
     }
     Ok(())
 }
@@ -14465,8 +14492,8 @@ pub fn serialize_structure_crate_model_rule_group_source_stateless_rule_match_at
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_3020) = &input.address_definition {
-        object.key("AddressDefinition").string(var_3020.as_str());
+    if let Some(var_3024) = &input.address_definition {
+        object.key("AddressDefinition").string(var_3024.as_str());
     }
     Ok(())
 }
@@ -14494,8 +14521,8 @@ pub fn serialize_structure_crate_model_rule_group_source_stateless_rule_match_at
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_3021) = &input.address_definition {
-        object.key("AddressDefinition").string(var_3021.as_str());
+    if let Some(var_3025) = &input.address_definition {
+        object.key("AddressDefinition").string(var_3025.as_str());
     }
     Ok(())
 }
@@ -14504,23 +14531,23 @@ pub fn serialize_structure_crate_model_rule_group_source_stateless_rule_match_at
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_3022) = &input.flags {
-        let mut array_3023 = object.key("Flags").start_array();
-        for item_3024 in var_3022 {
+    if let Some(var_3026) = &input.flags {
+        let mut array_3027 = object.key("Flags").start_array();
+        for item_3028 in var_3026 {
             {
-                array_3023.value().string(item_3024.as_str());
+                array_3027.value().string(item_3028.as_str());
             }
         }
-        array_3023.finish();
+        array_3027.finish();
     }
-    if let Some(var_3025) = &input.masks {
-        let mut array_3026 = object.key("Masks").start_array();
-        for item_3027 in var_3025 {
+    if let Some(var_3029) = &input.masks {
+        let mut array_3030 = object.key("Masks").start_array();
+        for item_3031 in var_3029 {
             {
-                array_3026.value().string(item_3027.as_str());
+                array_3030.value().string(item_3031.as_str());
             }
         }
-        array_3026.finish();
+        array_3030.finish();
     }
     Ok(())
 }

@@ -153,6 +153,7 @@ impl Client {
     ///   - [`priority(i32)`](crate::client::fluent_builders::CreateJob::priority) / [`set_priority(Option<i32>)`](crate::client::fluent_builders::CreateJob::set_priority): <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateJob::set_role_arn): <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
     ///   - [`tags(Vec<S3Tag>)`](crate::client::fluent_builders::CreateJob::tags) / [`set_tags(Option<Vec<S3Tag>>)`](crate::client::fluent_builders::CreateJob::set_tags): <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
+    ///   - [`manifest_generator(JobManifestGenerator)`](crate::client::fluent_builders::CreateJob::manifest_generator) / [`set_manifest_generator(Option<JobManifestGenerator>)`](crate::client::fluent_builders::CreateJob::set_manifest_generator): <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
     /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::CreateJobOutput::job_id): <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a successful <code>Create Job</code> request.</p>
     /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
@@ -598,7 +599,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::set_account_id): <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::set_next_token): <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::set_max_results): <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::set_max_results): <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     /// - On success, responds with [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput) with field(s):
     ///   - [`object_lambda_access_point_list(Option<Vec<ObjectLambdaAccessPoint>>)`](crate::output::ListAccessPointsForObjectLambdaOutput::object_lambda_access_point_list): <p>Returns list of Object Lambda Access Points.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccessPointsForObjectLambdaOutput::next_token): <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
@@ -1292,7 +1293,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateJob`.
     ///
-    /// <p>You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3 objects. Batch Operations can run a single action on lists of Amazon S3 objects that you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3 objects. Batch Operations can run a single action on lists of Amazon S3 objects that you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This action creates a S3 Batch Operations job.</p>
     /// <p></p>
     /// <p>Related actions include:</p>
@@ -1456,6 +1457,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
+        pub fn manifest_generator(mut self, input: crate::model::JobManifestGenerator) -> Self {
+            self.inner = self.inner.manifest_generator(input);
+            self
+        }
+        /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
+        pub fn set_manifest_generator(
+            mut self,
+            input: std::option::Option<crate::model::JobManifestGenerator>,
+        ) -> Self {
+            self.inner = self.inner.set_manifest_generator(input);
             self
         }
     }
@@ -2612,7 +2626,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeJob`.
     ///
-    /// <p>Retrieves the configuration parameters and status for a Batch Operations job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Retrieves the configuration parameters and status for a Batch Operations job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p></p>
     /// <p>Related actions include:</p>
     /// <ul>
@@ -4281,7 +4295,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccessPointsForObjectLambda`.
     ///
-    /// <p>Returns a list of the access points associated with the Object Lambda Access Point. You can retrieve up to 1000 access points per call. If there are more than 1,000 access points (or the number specified in <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to list the additional access points.</p>
+    /// <p>Returns some or all (up to 1,000) access points associated with the Object Lambda Access Point per call. If there are more access points than what can be returned in one call, the response will include a continuation token that you can use to list the additional access points.</p>
     /// <p>The following actions are related to <code>ListAccessPointsForObjectLambda</code>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a> </p> </li>
@@ -4353,12 +4367,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+        /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+        /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4366,7 +4380,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListJobs`.
     ///
-    /// <p>Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the Amazon Web Services account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the Amazon Web Services account making the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Related actions include:</p>
     /// <p></p>
     /// <ul>
@@ -5522,7 +5536,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutPublicAccessBlock`.
     ///
-    /// <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3 block public access</a>.</p>
+    /// <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For this operation, users must have the <code>s3:PutBucketPublicAccessBlock</code> permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3 block public access</a>.</p>
     /// <p>Related actions include:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html">GetPublicAccessBlock</a> </p> </li>
@@ -5786,7 +5800,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateJobPriority`.
     ///
-    /// <p>Updates an existing S3 Batch Operations job's priority. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Updates an existing S3 Batch Operations job's priority. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p></p>
     /// <p>Related actions include:</p>
     /// <ul>
@@ -5867,7 +5881,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateJobStatus`.
     ///
-    /// <p>Updates the status for the specified job. Use this action to confirm that you want to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Updates the status for the specified job. Use this action to confirm that you want to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p></p>
     /// <p>Related actions include:</p>
     /// <ul>

@@ -160,7 +160,7 @@ impl AsRef<str> for RuleStatus {
     }
 }
 
-/// <p>Information about a resource tag used to identify resources that are to be retained by a Recycle Bin retention rule.</p>
+/// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTag {
@@ -253,6 +253,8 @@ impl ResourceTag {
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     EbsSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2Image,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -260,6 +262,7 @@ impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "EBS_SNAPSHOT" => ResourceType::EbsSnapshot,
+            "EC2_IMAGE" => ResourceType::Ec2Image,
             other => ResourceType::Unknown(other.to_owned()),
         }
     }
@@ -276,12 +279,13 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::EbsSnapshot => "EBS_SNAPSHOT",
+            ResourceType::Ec2Image => "EC2_IMAGE",
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["EBS_SNAPSHOT"]
+        &["EBS_SNAPSHOT", "EC2_IMAGE"]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -290,7 +294,7 @@ impl AsRef<str> for ResourceType {
     }
 }
 
-/// <p>Information about the retention period for which a retention rule is to retain resources.</p>
+/// <p>Information about the retention period for which the retention rule is to retain resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetentionPeriod {
@@ -468,7 +472,7 @@ impl AsRef<str> for ServiceQuotaExceededExceptionReason {
     }
 }
 
-/// <p>Information about the tags assigned to a Recycle Bin retention rule.</p>
+/// <p>Information about the tags to assign to the retention rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -547,9 +551,9 @@ impl Tag {
 pub struct RuleSummary {
     /// <p>The unique ID of the retention rule.</p>
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>The description for the retention rule.</p>
+    /// <p>The retention rule description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Information about the retention period for which the retention rule retains resources</p>
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
 }
 impl RuleSummary {
@@ -557,11 +561,11 @@ impl RuleSummary {
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>The description for the retention rule.</p>
+    /// <p>The retention rule description.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Information about the retention period for which the retention rule retains resources</p>
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
@@ -596,22 +600,22 @@ pub mod rule_summary {
             self.identifier = input;
             self
         }
-        /// <p>The description for the retention rule.</p>
+        /// <p>The retention rule description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description for the retention rule.</p>
+        /// <p>The retention rule description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>Information about the retention period for which the retention rule retains resources</p>
+        /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>Information about the retention period for which the retention rule retains resources</p>
+        /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,

@@ -1,4 +1,104 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
+0.7.0 (February 18th, 2022)
+===========================
+**Breaking Changes:**
+- ⚠ ([smithy-rs#1144](https://github.com/awslabs/smithy-rs/issues/1144)) The `aws_config::http_provider` module has been renamed to `aws_config::http_credential_provider` to better reflect its purpose.
+- ⚠ ([smithy-rs#1144](https://github.com/awslabs/smithy-rs/issues/1144)) Some APIs required that timeout configuration be specified with an `aws_smithy_client::timeout::Settings` struct while
+    others required an `aws_smithy_types::timeout::TimeoutConfig` struct. Both were equivalent. Now `aws_smithy_types::timeout::TimeoutConfig`
+    is used everywhere and `aws_smithy_client::timeout::Settings` has been removed. Here's how to migrate code your code that
+    depended on `timeout::Settings`:
+
+    The old way:
+    ```rust
+    let timeout = timeout::Settings::new()
+        .with_connect_timeout(Duration::from_secs(1))
+        .with_read_timeout(Duration::from_secs(2));
+    ```
+
+    The new way:
+    ```rust
+    // This example is passing values, so they're wrapped in `Option::Some`. You can disable a timeout by passing `None`.
+    let timeout = TimeoutConfig::new()
+        .with_connect_timeout(Some(Duration::from_secs(1)))
+        .with_read_timeout(Some(Duration::from_secs(2)));
+    ```
+- ⚠ ([smithy-rs#1144](https://github.com/awslabs/smithy-rs/issues/1144)) `MakeConnectorFn`, `HttpConnector`, and `HttpSettings` have been moved from `aws_config::provider_config` to
+    `aws_smithy_client::http_connector`. This is in preparation for a later update that will change how connectors are
+    created and configured.
+
+    If you were using these structs/enums, you can migrate your old code by importing them from their new location.
+- ⚠ ([smithy-rs#1144](https://github.com/awslabs/smithy-rs/issues/1144)) Along with moving `HttpConnector` to `aws_smithy_client`, the `HttpConnector::make_connector` method has been renamed to
+    `HttpConnector::connector`.
+
+    If you were using this method, you can migrate your old code by calling `connector` instead of `make_connector`.
+- ⚠ ([smithy-rs#1085](https://github.com/awslabs/smithy-rs/issues/1085)) Moved the following re-exports into a `types` module for all services:
+    - `aws_sdk_<service>::AggregatedBytes` -> `aws_sdk_<service>::types::AggregatedBytes`
+    - `aws_sdk_<service>::Blob` -> `aws_sdk_<service>::types::Blob`
+    - `aws_sdk_<service>::ByteStream` -> `aws_sdk_<service>::types::ByteStream`
+    - `aws_sdk_<service>::DateTime` -> `aws_sdk_<service>::types::DateTime`
+    - `aws_sdk_<service>::SdkError` -> `aws_sdk_<service>::types::SdkError`
+- ⚠ ([smithy-rs#1085](https://github.com/awslabs/smithy-rs/issues/1085)) `AggregatedBytes` and `ByteStream` are now only re-exported if the service has streaming operations,
+    and `Blob`/`DateTime` are only re-exported if the service uses them.
+- ⚠ ([smithy-rs#1130](https://github.com/awslabs/smithy-rs/issues/1130)) MSRV increased from `1.54` to `1.56.1` per our 2-behind MSRV policy.
+- ⚠ ([smithy-rs#1132](https://github.com/awslabs/smithy-rs/issues/1132)) Fluent clients for all services no longer have generics, and now use `DynConnector` and `DynMiddleware` to allow
+    for connector/middleware customization. This should only break references to the client that specified generic types for it.
+
+    If you customized the AWS client's connector or middleware with something like the following:
+    ```rust
+    let client = aws_sdk_s3::Client::with_config(
+        aws_sdk_s3::client::Builder::new()
+            .connector(my_custom_connector) // Connector customization
+            .middleware(my_custom_middleware) // Middleware customization
+            .default_async_sleep()
+            .build(),
+        config
+    );
+    ```
+    Then you will need to wrap the custom connector or middleware in
+    [`DynConnector`](https://docs.rs/aws-smithy-client/0.36.0/aws_smithy_client/erase/struct.DynConnector.html)
+    and
+    [`DynMiddleware`](https://docs.rs/aws-smithy-client/0.36.0/aws_smithy_client/erase/struct.DynMiddleware.html)
+    respectively:
+    ```rust
+    let client = aws_sdk_s3::Client::with_config(
+        aws_sdk_s3::client::Builder::new()
+            .connector(DynConnector::new(my_custom_connector)) // Now with `DynConnector`
+            .middleware(DynMiddleware::new(my_custom_middleware)) // Now with `DynMiddleware`
+            .default_async_sleep()
+            .build(),
+        config
+    );
+    ```
+
+    If you had functions that took a generic connector, such as the following:
+    ```rust
+    fn some_function<C, E>(conn: C) -> Result<()>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector<Error = E> + Send + 'static,
+        E: Into<aws_smithy_http::result::ConnectorError>
+    {
+        // ...
+    }
+    ```
+
+    Then the generics and trait bounds will no longer be necessary:
+    ```rust
+    fn some_function(conn: DynConnector) -> Result<()> {
+        // ...
+    }
+    ```
+
+    Similarly, functions that took a generic middleware can replace the generic with `DynMiddleware` and
+    remove their trait bounds.
+
+**New this release:**
+- 🐛 ([aws-sdk-rust#443](https://github.com/awslabs/aws-sdk-rust/issues/443)) The `ProfileFileRegionProvider` will now respect regions set in chained profiles
+- ([smithy-rs#1144](https://github.com/awslabs/smithy-rs/issues/1144)) Several modules defined in the `aws_config` crate that used to be declared within another module's file have been moved to their own files. The moved modules are `sts`, `connector`, and `default_providers`. They still have the exact same import paths.
+- 🐛 ([smithy-rs#1129](https://github.com/awslabs/smithy-rs/issues/1129)) Fix some docs links not working because they were escaped when they shouldn't have been
+- ([smithy-rs#1085](https://github.com/awslabs/smithy-rs/issues/1085)) The `Client` and `Config` re-exports now have their documentation inlined in the service docs
+- 🐛 ([smithy-rs#1180](https://github.com/awslabs/smithy-rs/issues/1180)) Fixed example showing how to use hardcoded credentials in `aws-types`
+
+
 0.6.0 (January 26, 2022)
 ========================
 **New this release:**

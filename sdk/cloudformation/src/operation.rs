@@ -529,6 +529,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChangeSet {
     }
 }
 
+/// Operation shape for `DescribeChangeSetHooks`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_change_set_hooks`](crate::client::Client::describe_change_set_hooks).
+///
+/// See [`crate::client::fluent_builders::DescribeChangeSetHooks`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeChangeSetHooks {
+    _private: (),
+}
+impl DescribeChangeSetHooks {
+    /// Creates a new builder-style object to manufacture [`DescribeChangeSetHooksInput`](crate::input::DescribeChangeSetHooksInput)
+    pub fn builder() -> crate::input::describe_change_set_hooks_input::Builder {
+        crate::input::describe_change_set_hooks_input::Builder::default()
+    }
+    /// Creates a new `DescribeChangeSetHooks` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeChangeSetHooks {
+    type Output = std::result::Result<
+        crate::output::DescribeChangeSetHooksOutput,
+        crate::error::DescribeChangeSetHooksError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_change_set_hooks_error(response)
+        } else {
+            crate::operation_deser::parse_describe_change_set_hooks_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribePublisher`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

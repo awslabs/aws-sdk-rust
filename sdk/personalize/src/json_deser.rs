@@ -5525,6 +5525,14 @@ where
                                     crate::json_deser::deser_map_com_amazonaws_personalize_hyper_parameters(tokens)?
                                 );
                             }
+                            "minRecommendationRequestsPerSecond" => {
+                                builder = builder.set_min_recommendation_requests_per_second(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

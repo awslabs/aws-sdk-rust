@@ -72,11 +72,11 @@ impl AsRef<str> for ResourceType {
     }
 }
 
-/// <p>Details describing why the request was invalid</p>
+/// <p>Detailed information about the input that failed to satisfy the constraints specified by a call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum BadRequestDetails {
-    /// <p>Present if the Reason for the bad request was 'InvalidParameters'</p>
+    /// <p>One or more specified parameters are not valid for the call.</p>
     InvalidParameters(
         std::collections::HashMap<std::string::String, crate::model::InvalidParameterDetail>,
     ),
@@ -116,15 +116,15 @@ impl BadRequestDetails {
     }
 }
 
-/// <p>Contains details about an invalid parameter.</p>
+/// <p>Information about an invalid parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterDetail {
-    /// <p>Detail describing why an individual parameter did not satisfy the constraints specified by the service</p>
+    /// <p>The reason the parameter is invalid.</p>
     pub problem: std::option::Option<crate::model::InvalidParameterProblem>,
 }
 impl InvalidParameterDetail {
-    /// <p>Detail describing why an individual parameter did not satisfy the constraints specified by the service</p>
+    /// <p>The reason the parameter is invalid.</p>
     pub fn problem(&self) -> std::option::Option<&crate::model::InvalidParameterProblem> {
         self.problem.as_ref()
     }
@@ -145,12 +145,12 @@ pub mod invalid_parameter_detail {
         pub(crate) problem: std::option::Option<crate::model::InvalidParameterProblem>,
     }
     impl Builder {
-        /// <p>Detail describing why an individual parameter did not satisfy the constraints specified by the service</p>
+        /// <p>The reason the parameter is invalid.</p>
         pub fn problem(mut self, input: crate::model::InvalidParameterProblem) -> Self {
             self.problem = Some(input);
             self
         }
-        /// <p>Detail describing why an individual parameter did not satisfy the constraints specified by the service</p>
+        /// <p>The reason the parameter is invalid.</p>
         pub fn set_problem(
             mut self,
             input: std::option::Option<crate::model::InvalidParameterProblem>,

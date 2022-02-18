@@ -5992,13 +5992,18 @@ pub mod list_backup_jobs_input {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn by_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_resource_type = Some(input.into());
@@ -6006,13 +6011,18 @@ pub mod list_backup_jobs_input {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn set_by_resource_type(
             mut self,
@@ -7207,13 +7217,18 @@ pub mod list_copy_jobs_input {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn by_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_resource_type = Some(input.into());
@@ -7221,13 +7236,18 @@ pub mod list_copy_jobs_input {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn set_by_resource_type(
             mut self,
@@ -9332,28 +9352,28 @@ pub mod put_backup_vault_lock_configuration_input {
         }
         /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
         /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn min_retention_days(mut self, input: i64) -> Self {
             self.min_retention_days = Some(input);
             self
         }
         /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
         /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn set_min_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.min_retention_days = input;
             self
         }
         /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
         /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn max_retention_days(mut self, input: i64) -> Self {
             self.max_retention_days = Some(input);
             self
         }
         /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
         /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn set_max_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.max_retention_days = input;
             self
@@ -9576,6 +9596,7 @@ pub mod put_backup_vault_notifications_input {
         /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
         /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
         /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+        /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>
         /// </ul> <note>
         /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
         /// </note>
@@ -9592,6 +9613,7 @@ pub mod put_backup_vault_notifications_input {
         /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
         /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
         /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+        /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>
         /// </ul> <note>
         /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
         /// </note>
@@ -9830,26 +9852,26 @@ pub mod start_backup_job_input {
             self.start_window_minutes = input;
             self
         }
-        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+        /// <p>A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
         pub fn complete_window_minutes(mut self, input: i64) -> Self {
             self.complete_window_minutes = Some(input);
             self
         }
-        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+        /// <p>A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
         pub fn set_complete_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.complete_window_minutes = input;
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -10126,15 +10148,15 @@ pub mod start_copy_job_input {
             self
         }
         /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
+        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
         /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
+        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -10565,13 +10587,18 @@ pub mod start_restore_job_input {
         }
         /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -10579,13 +10606,18 @@ pub mod start_restore_job_input {
         }
         /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -11878,13 +11910,13 @@ pub mod update_recovery_point_lifecycle_input {
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -12099,7 +12131,7 @@ pub mod update_region_settings_input {
         ///
         /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).
         ///
-        /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
+        /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
         pub fn resource_type_management_preference(
             mut self,
             k: impl Into<std::string::String>,
@@ -12110,7 +12142,7 @@ pub mod update_region_settings_input {
             self.resource_type_management_preference = Some(hash_map);
             self
         }
-        /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
+        /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
         pub fn set_resource_type_management_preference(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -12554,7 +12586,7 @@ pub struct UpdateRegionSettingsInput {
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
     pub resource_type_opt_in_preference:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-    /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
+    /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
     pub resource_type_management_preference:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
 }
@@ -12565,7 +12597,7 @@ impl UpdateRegionSettingsInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
         self.resource_type_opt_in_preference.as_ref()
     }
-    /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
+    /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
     pub fn resource_type_management_preference(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
@@ -12596,7 +12628,7 @@ pub struct UpdateRecoveryPointLifecycleInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub recovery_point_arn: std::option::Option<std::string::String>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
 }
 impl UpdateRecoveryPointLifecycleInput {
@@ -12609,7 +12641,7 @@ impl UpdateRecoveryPointLifecycleInput {
         self.recovery_point_arn.as_deref()
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
     }
@@ -12826,13 +12858,18 @@ pub struct StartRestoreJobInput {
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
     /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
     /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub resource_type: std::option::Option<std::string::String>,
 }
@@ -12869,13 +12906,18 @@ impl StartRestoreJobInput {
     }
     /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
     /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
     /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -12936,8 +12978,8 @@ pub struct StartCopyJobInput {
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-    /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
+    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
 }
 impl StartCopyJobInput {
@@ -12962,8 +13004,8 @@ impl StartCopyJobInput {
         self.idempotency_token.as_deref()
     }
     /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-    /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
+    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
     }
@@ -12998,11 +13040,11 @@ pub struct StartBackupJobInput {
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
     pub start_window_minutes: std::option::Option<i64>,
-    /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+    /// <p>A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
     pub complete_window_minutes: std::option::Option<i64>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-    /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
     pub recovery_point_tags:
@@ -13033,13 +13075,13 @@ impl StartBackupJobInput {
     pub fn start_window_minutes(&self) -> std::option::Option<i64> {
         self.start_window_minutes
     }
-    /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+    /// <p>A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
     pub fn complete_window_minutes(&self) -> std::option::Option<i64> {
         self.complete_window_minutes
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-    /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
     }
@@ -13090,6 +13132,7 @@ pub struct PutBackupVaultNotificationsInput {
     /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
     /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
     /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul> <note>
     /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
     /// </note>
@@ -13111,6 +13154,7 @@ impl PutBackupVaultNotificationsInput {
     /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
     /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
     /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul> <note>
     /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
     /// </note>
@@ -13136,11 +13180,11 @@ pub struct PutBackupVaultLockConfigurationInput {
     pub backup_vault_name: std::option::Option<std::string::String>,
     /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
     /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
-    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
     pub min_retention_days: std::option::Option<i64>,
     /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
     /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
-    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
     pub max_retention_days: std::option::Option<i64>,
     /// <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
     /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p>
@@ -13155,13 +13199,13 @@ impl PutBackupVaultLockConfigurationInput {
     }
     /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
     /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
-    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
     pub fn min_retention_days(&self) -> std::option::Option<i64> {
         self.min_retention_days
     }
     /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
     /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
-    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
     pub fn max_retention_days(&self) -> std::option::Option<i64> {
         self.max_retention_days
     }
@@ -13576,13 +13620,18 @@ pub struct ListCopyJobsInput {
     pub by_created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
     /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub by_resource_type: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
@@ -13617,13 +13666,18 @@ impl ListCopyJobsInput {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
     /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub fn by_resource_type(&self) -> std::option::Option<&str> {
         self.by_resource_type.as_deref()
@@ -13834,13 +13888,18 @@ pub struct ListBackupJobsInput {
     pub by_created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
     /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub by_resource_type: std::option::Option<std::string::String>,
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
@@ -13878,13 +13937,18 @@ impl ListBackupJobsInput {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
     /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub fn by_resource_type(&self) -> std::option::Option<&str> {
         self.by_resource_type.as_deref()

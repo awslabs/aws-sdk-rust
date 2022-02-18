@@ -1165,6 +1165,68 @@ pub fn parse_describe_change_set_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_change_set_hooks_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeChangeSetHooksOutput,
+    crate::error::DescribeChangeSetHooksError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeChangeSetHooksError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeChangeSetHooksError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ChangeSetNotFound" => crate::error::DescribeChangeSetHooksError {
+            meta: generic,
+            kind: crate::error::DescribeChangeSetHooksErrorKind::ChangeSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::change_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_change_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeChangeSetHooksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeChangeSetHooksError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_change_set_hooks_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeChangeSetHooksOutput,
+    crate::error::DescribeChangeSetHooksError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_change_set_hooks_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_change_set_hooks(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeChangeSetHooksError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_publisher_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribePublisherOutput, crate::error::DescribePublisherError>

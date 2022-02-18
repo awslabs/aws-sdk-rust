@@ -335,6 +335,88 @@ impl PauseServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListVpcConnectorsOutput {
+    /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    pub vpc_connectors: std::option::Option<std::vec::Vec<crate::model::VpcConnector>>,
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpcConnectorsOutput {
+    /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    pub fn vpc_connectors(&self) -> std::option::Option<&[crate::model::VpcConnector]> {
+        self.vpc_connectors.as_deref()
+    }
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListVpcConnectorsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListVpcConnectorsOutput");
+        formatter.field("vpc_connectors", &self.vpc_connectors);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListVpcConnectorsOutput`](crate::output::ListVpcConnectorsOutput)
+pub mod list_vpc_connectors_output {
+    /// A builder for [`ListVpcConnectorsOutput`](crate::output::ListVpcConnectorsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_connectors: std::option::Option<std::vec::Vec<crate::model::VpcConnector>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `vpc_connectors`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_connectors`](Self::set_vpc_connectors).
+        ///
+        /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+        pub fn vpc_connectors(mut self, input: crate::model::VpcConnector) -> Self {
+            let mut v = self.vpc_connectors.unwrap_or_default();
+            v.push(input);
+            self.vpc_connectors = Some(v);
+            self
+        }
+        /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+        pub fn set_vpc_connectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcConnector>>,
+        ) -> Self {
+            self.vpc_connectors = input;
+            self
+        }
+        /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListVpcConnectorsOutput`](crate::output::ListVpcConnectorsOutput)
+        pub fn build(self) -> crate::output::ListVpcConnectorsOutput {
+            crate::output::ListVpcConnectorsOutput {
+                vpc_connectors: self.vpc_connectors,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListVpcConnectorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListVpcConnectorsOutput`](crate::output::ListVpcConnectorsOutput)
+    pub fn builder() -> crate::output::list_vpc_connectors_output::Builder {
+        crate::output::list_vpc_connectors_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>A list of the tag key-value pairs that are associated with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -840,6 +922,63 @@ impl DisassociateCustomDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeVpcConnectorOutput {
+    /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
+    pub vpc_connector: std::option::Option<crate::model::VpcConnector>,
+}
+impl DescribeVpcConnectorOutput {
+    /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
+    pub fn vpc_connector(&self) -> std::option::Option<&crate::model::VpcConnector> {
+        self.vpc_connector.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeVpcConnectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeVpcConnectorOutput");
+        formatter.field("vpc_connector", &self.vpc_connector);
+        formatter.finish()
+    }
+}
+/// See [`DescribeVpcConnectorOutput`](crate::output::DescribeVpcConnectorOutput)
+pub mod describe_vpc_connector_output {
+    /// A builder for [`DescribeVpcConnectorOutput`](crate::output::DescribeVpcConnectorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_connector: std::option::Option<crate::model::VpcConnector>,
+    }
+    impl Builder {
+        /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
+        pub fn vpc_connector(mut self, input: crate::model::VpcConnector) -> Self {
+            self.vpc_connector = Some(input);
+            self
+        }
+        /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
+        pub fn set_vpc_connector(
+            mut self,
+            input: std::option::Option<crate::model::VpcConnector>,
+        ) -> Self {
+            self.vpc_connector = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVpcConnectorOutput`](crate::output::DescribeVpcConnectorOutput)
+        pub fn build(self) -> crate::output::DescribeVpcConnectorOutput {
+            crate::output::DescribeVpcConnectorOutput {
+                vpc_connector: self.vpc_connector,
+            }
+        }
+    }
+}
+impl DescribeVpcConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVpcConnectorOutput`](crate::output::DescribeVpcConnectorOutput)
+    pub fn builder() -> crate::output::describe_vpc_connector_output::Builder {
+        crate::output::describe_vpc_connector_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceOutput {
     /// <p>A full description of the App Runner service that you specified in this request.</p>
     pub service: std::option::Option<crate::model::Service>,
@@ -1080,6 +1219,63 @@ impl DescribeAutoScalingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteVpcConnectorOutput {
+    /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
+    pub vpc_connector: std::option::Option<crate::model::VpcConnector>,
+}
+impl DeleteVpcConnectorOutput {
+    /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
+    pub fn vpc_connector(&self) -> std::option::Option<&crate::model::VpcConnector> {
+        self.vpc_connector.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteVpcConnectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteVpcConnectorOutput");
+        formatter.field("vpc_connector", &self.vpc_connector);
+        formatter.finish()
+    }
+}
+/// See [`DeleteVpcConnectorOutput`](crate::output::DeleteVpcConnectorOutput)
+pub mod delete_vpc_connector_output {
+    /// A builder for [`DeleteVpcConnectorOutput`](crate::output::DeleteVpcConnectorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_connector: std::option::Option<crate::model::VpcConnector>,
+    }
+    impl Builder {
+        /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
+        pub fn vpc_connector(mut self, input: crate::model::VpcConnector) -> Self {
+            self.vpc_connector = Some(input);
+            self
+        }
+        /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
+        pub fn set_vpc_connector(
+            mut self,
+            input: std::option::Option<crate::model::VpcConnector>,
+        ) -> Self {
+            self.vpc_connector = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVpcConnectorOutput`](crate::output::DeleteVpcConnectorOutput)
+        pub fn build(self) -> crate::output::DeleteVpcConnectorOutput {
+            crate::output::DeleteVpcConnectorOutput {
+                vpc_connector: self.vpc_connector,
+            }
+        }
+    }
+}
+impl DeleteVpcConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcConnectorOutput`](crate::output::DeleteVpcConnectorOutput)
+    pub fn builder() -> crate::output::delete_vpc_connector_output::Builder {
+        crate::output::delete_vpc_connector_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceOutput {
     /// <p>A description of the App Runner service that this request just deleted.</p>
     pub service: std::option::Option<crate::model::Service>,
@@ -1270,6 +1466,63 @@ impl DeleteAutoScalingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAutoScalingConfigurationOutput`](crate::output::DeleteAutoScalingConfigurationOutput)
     pub fn builder() -> crate::output::delete_auto_scaling_configuration_output::Builder {
         crate::output::delete_auto_scaling_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateVpcConnectorOutput {
+    /// <p>A description of the App Runner VPC connector that's created by this request.</p>
+    pub vpc_connector: std::option::Option<crate::model::VpcConnector>,
+}
+impl CreateVpcConnectorOutput {
+    /// <p>A description of the App Runner VPC connector that's created by this request.</p>
+    pub fn vpc_connector(&self) -> std::option::Option<&crate::model::VpcConnector> {
+        self.vpc_connector.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateVpcConnectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateVpcConnectorOutput");
+        formatter.field("vpc_connector", &self.vpc_connector);
+        formatter.finish()
+    }
+}
+/// See [`CreateVpcConnectorOutput`](crate::output::CreateVpcConnectorOutput)
+pub mod create_vpc_connector_output {
+    /// A builder for [`CreateVpcConnectorOutput`](crate::output::CreateVpcConnectorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_connector: std::option::Option<crate::model::VpcConnector>,
+    }
+    impl Builder {
+        /// <p>A description of the App Runner VPC connector that's created by this request.</p>
+        pub fn vpc_connector(mut self, input: crate::model::VpcConnector) -> Self {
+            self.vpc_connector = Some(input);
+            self
+        }
+        /// <p>A description of the App Runner VPC connector that's created by this request.</p>
+        pub fn set_vpc_connector(
+            mut self,
+            input: std::option::Option<crate::model::VpcConnector>,
+        ) -> Self {
+            self.vpc_connector = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVpcConnectorOutput`](crate::output::CreateVpcConnectorOutput)
+        pub fn build(self) -> crate::output::CreateVpcConnectorOutput {
+            crate::output::CreateVpcConnectorOutput {
+                vpc_connector: self.vpc_connector,
+            }
+        }
+    }
+}
+impl CreateVpcConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVpcConnectorOutput`](crate::output::CreateVpcConnectorOutput)
+    pub fn builder() -> crate::output::create_vpc_connector_output::Builder {
+        crate::output::create_vpc_connector_output::Builder::default()
     }
 }
 

@@ -477,6 +477,122 @@ impl std::error::Error for CreateServiceError {
     }
 }
 
+/// Error type for the `CreateVpcConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateVpcConnectorError {
+    /// Kind of error that occurred.
+    pub kind: CreateVpcConnectorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateVpcConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateVpcConnectorErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>App Runner can't create this resource. You've reached your account quota for this resource type.</p>
+    /// <p>For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateVpcConnectorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateVpcConnectorErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
+            CreateVpcConnectorErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateVpcConnectorErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateVpcConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateVpcConnectorError {
+    fn code(&self) -> Option<&str> {
+        CreateVpcConnectorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateVpcConnectorError {
+    /// Creates a new `CreateVpcConnectorError`.
+    pub fn new(kind: CreateVpcConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateVpcConnectorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateVpcConnectorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateVpcConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateVpcConnectorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateVpcConnectorErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcConnectorErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVpcConnectorErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcConnectorErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVpcConnectorErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcConnectorErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+}
+impl std::error::Error for CreateVpcConnectorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateVpcConnectorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
+            CreateVpcConnectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateVpcConnectorErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateVpcConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteAutoScalingConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -845,6 +961,121 @@ impl std::error::Error for DeleteServiceError {
     }
 }
 
+/// Error type for the `DeleteVpcConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteVpcConnectorError {
+    /// Kind of error that occurred.
+    pub kind: DeleteVpcConnectorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteVpcConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteVpcConnectorErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteVpcConnectorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteVpcConnectorErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
+            DeleteVpcConnectorErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteVpcConnectorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteVpcConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteVpcConnectorError {
+    fn code(&self) -> Option<&str> {
+        DeleteVpcConnectorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteVpcConnectorError {
+    /// Creates a new `DeleteVpcConnectorError`.
+    pub fn new(kind: DeleteVpcConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteVpcConnectorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteVpcConnectorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteVpcConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteVpcConnectorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteVpcConnectorErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVpcConnectorErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVpcConnectorErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVpcConnectorErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVpcConnectorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVpcConnectorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteVpcConnectorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteVpcConnectorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
+            DeleteVpcConnectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteVpcConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteVpcConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeAutoScalingConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1201,6 +1432,121 @@ impl std::error::Error for DescribeServiceError {
             DescribeServiceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeServiceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeVpcConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeVpcConnectorError {
+    /// Kind of error that occurred.
+    pub kind: DescribeVpcConnectorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeVpcConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeVpcConnectorErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeVpcConnectorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeVpcConnectorErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
+            DescribeVpcConnectorErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeVpcConnectorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeVpcConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeVpcConnectorError {
+    fn code(&self) -> Option<&str> {
+        DescribeVpcConnectorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeVpcConnectorError {
+    /// Creates a new `DescribeVpcConnectorError`.
+    pub fn new(kind: DescribeVpcConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeVpcConnectorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeVpcConnectorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeVpcConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeVpcConnectorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeVpcConnectorErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVpcConnectorErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVpcConnectorErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVpcConnectorErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVpcConnectorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVpcConnectorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeVpcConnectorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeVpcConnectorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
+            DescribeVpcConnectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeVpcConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeVpcConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1893,6 +2239,110 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidStateException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListVpcConnectors` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListVpcConnectorsError {
+    /// Kind of error that occurred.
+    pub kind: ListVpcConnectorsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListVpcConnectors` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListVpcConnectorsErrorKind {
+    /// <p>An unexpected service exception occurred.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListVpcConnectorsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListVpcConnectorsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
+            ListVpcConnectorsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListVpcConnectorsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListVpcConnectorsError {
+    fn code(&self) -> Option<&str> {
+        ListVpcConnectorsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListVpcConnectorsError {
+    /// Creates a new `ListVpcConnectorsError`.
+    pub fn new(kind: ListVpcConnectorsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListVpcConnectorsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListVpcConnectorsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListVpcConnectorsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListVpcConnectorsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListVpcConnectorsErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcConnectorsErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListVpcConnectorsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVpcConnectorsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for ListVpcConnectorsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListVpcConnectorsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
+            ListVpcConnectorsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListVpcConnectorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

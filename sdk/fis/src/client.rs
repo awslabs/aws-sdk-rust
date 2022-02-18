@@ -147,6 +147,16 @@ impl Client {
     pub fn get_experiment_template(&self) -> fluent_builders::GetExperimentTemplate {
         fluent_builders::GetExperimentTemplate::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetTargetResourceType`](crate::client::fluent_builders::GetTargetResourceType) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::GetTargetResourceType::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::GetTargetResourceType::set_resource_type): <p>The resource type.</p>
+    /// - On success, responds with [`GetTargetResourceTypeOutput`](crate::output::GetTargetResourceTypeOutput) with field(s):
+    ///   - [`target_resource_type(Option<TargetResourceType>)`](crate::output::GetTargetResourceTypeOutput::target_resource_type): <p>Information about the resource type.</p>
+    /// - On failure, responds with [`SdkError<GetTargetResourceTypeError>`](crate::error::GetTargetResourceTypeError)
+    pub fn get_target_resource_type(&self) -> fluent_builders::GetTargetResourceType {
+        fluent_builders::GetTargetResourceType::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListActions`](crate::client::fluent_builders::ListActions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListActions::into_paginator).
     ///
@@ -195,6 +205,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListTargetResourceTypes`](crate::client::fluent_builders::ListTargetResourceTypes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTargetResourceTypes::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTargetResourceTypes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTargetResourceTypes::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTargetResourceTypes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTargetResourceTypes::set_next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListTargetResourceTypesOutput`](crate::output::ListTargetResourceTypesOutput) with field(s):
+    ///   - [`target_resource_types(Option<Vec<TargetResourceTypeSummary>>)`](crate::output::ListTargetResourceTypesOutput::target_resource_types): <p>The target resource types.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTargetResourceTypesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListTargetResourceTypesError>`](crate::error::ListTargetResourceTypesError)
+    pub fn list_target_resource_types(&self) -> fluent_builders::ListTargetResourceTypes {
+        fluent_builders::ListTargetResourceTypes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StartExperiment`](crate::client::fluent_builders::StartExperiment) operation.
     ///
@@ -653,6 +676,62 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetTargetResourceType`.
+    ///
+    /// <p>Gets information about the specified resource type.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetTargetResourceType {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_target_resource_type_input::Builder,
+    }
+    impl GetTargetResourceType {
+        /// Creates a new `GetTargetResourceType`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetTargetResourceTypeOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetTargetResourceTypeError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The resource type.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListActions`.
     ///
     /// <p>Lists the available FIS actions.</p>
@@ -910,6 +989,75 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListTargetResourceTypes`.
+    ///
+    /// <p>Lists the target resource types.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTargetResourceTypes {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_target_resource_types_input::Builder,
+    }
+    impl ListTargetResourceTypes {
+        /// Creates a new `ListTargetResourceTypes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTargetResourceTypesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTargetResourceTypesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTargetResourceTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTargetResourceTypesPaginator {
+            crate::paginator::ListTargetResourceTypesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }

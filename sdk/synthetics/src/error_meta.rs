@@ -7,6 +7,8 @@ pub enum Error {
     ConflictException(crate::error::ConflictException),
     /// <p>An unknown internal error occurred.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>One of the input resources is larger than is allowed.</p>
+    RequestEntityTooLargeException(crate::error::RequestEntityTooLargeException),
     /// <p>One of the specified resources was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A parameter could not be validated.</p>
@@ -19,6 +21,7 @@ impl std::fmt::Display for Error {
         match self {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::RequestEntityTooLargeException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -34,6 +37,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateCanaryErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
+                }
+                crate::error::CreateCanaryErrorKind::RequestEntityTooLargeException(inner) => {
+                    Error::RequestEntityTooLargeException(inner)
                 }
                 crate::error::CreateCanaryErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
@@ -313,6 +319,9 @@ where
                 }
                 crate::error::UpdateCanaryErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
+                }
+                crate::error::UpdateCanaryErrorKind::RequestEntityTooLargeException(inner) => {
+                    Error::RequestEntityTooLargeException(inner)
                 }
                 crate::error::UpdateCanaryErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)

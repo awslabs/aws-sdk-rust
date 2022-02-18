@@ -97,6 +97,7 @@ impl Client {
     ///   - [`connector_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateConnectorProfile::connector_profile_name) / [`set_connector_profile_name(Option<String>)`](crate::client::fluent_builders::CreateConnectorProfile::set_connector_profile_name): <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
     ///   - [`kms_arn(impl Into<String>)`](crate::client::fluent_builders::CreateConnectorProfile::kms_arn) / [`set_kms_arn(Option<String>)`](crate::client::fluent_builders::CreateConnectorProfile::set_kms_arn): <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     ///   - [`connector_type(ConnectorType)`](crate::client::fluent_builders::CreateConnectorProfile::connector_type) / [`set_connector_type(Option<ConnectorType>)`](crate::client::fluent_builders::CreateConnectorProfile::set_connector_type): <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    ///   - [`connector_label(impl Into<String>)`](crate::client::fluent_builders::CreateConnectorProfile::connector_label) / [`set_connector_label(Option<String>)`](crate::client::fluent_builders::CreateConnectorProfile::set_connector_label): <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     ///   - [`connection_mode(ConnectionMode)`](crate::client::fluent_builders::CreateConnectorProfile::connection_mode) / [`set_connection_mode(Option<ConnectionMode>)`](crate::client::fluent_builders::CreateConnectorProfile::set_connection_mode): <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
     ///   - [`connector_profile_config(ConnectorProfileConfig)`](crate::client::fluent_builders::CreateConnectorProfile::connector_profile_config) / [`set_connector_profile_config(Option<ConnectorProfileConfig>)`](crate::client::fluent_builders::CreateConnectorProfile::set_connector_profile_config): <p> Defines the connector-specific configuration and credentials. </p>
     /// - On success, responds with [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput) with field(s):
@@ -145,12 +146,24 @@ impl Client {
     pub fn delete_flow(&self) -> fluent_builders::DeleteFlow {
         fluent_builders::DeleteFlow::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeConnector`](crate::client::fluent_builders::DescribeConnector) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`connector_type(ConnectorType)`](crate::client::fluent_builders::DescribeConnector::connector_type) / [`set_connector_type(Option<ConnectorType>)`](crate::client::fluent_builders::DescribeConnector::set_connector_type): <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
+    ///   - [`connector_label(impl Into<String>)`](crate::client::fluent_builders::DescribeConnector::connector_label) / [`set_connector_label(Option<String>)`](crate::client::fluent_builders::DescribeConnector::set_connector_label): <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+    /// - On success, responds with [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput) with field(s):
+    ///   - [`connector_configuration(Option<ConnectorConfiguration>)`](crate::output::DescribeConnectorOutput::connector_configuration): <p>Configuration info of all the connectors that the user requested.</p>
+    /// - On failure, responds with [`SdkError<DescribeConnectorError>`](crate::error::DescribeConnectorError)
+    pub fn describe_connector(&self) -> fluent_builders::DescribeConnector {
+        fluent_builders::DescribeConnector::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeConnectorEntity`](crate::client::fluent_builders::DescribeConnectorEntity) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`connector_entity_name(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectorEntity::connector_entity_name) / [`set_connector_entity_name(Option<String>)`](crate::client::fluent_builders::DescribeConnectorEntity::set_connector_entity_name): <p> The entity name for that connector. </p>
     ///   - [`connector_type(ConnectorType)`](crate::client::fluent_builders::DescribeConnectorEntity::connector_type) / [`set_connector_type(Option<ConnectorType>)`](crate::client::fluent_builders::DescribeConnectorEntity::set_connector_type): <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     ///   - [`connector_profile_name(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectorEntity::connector_profile_name) / [`set_connector_profile_name(Option<String>)`](crate::client::fluent_builders::DescribeConnectorEntity::set_connector_profile_name): <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    ///   - [`api_version(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectorEntity::api_version) / [`set_api_version(Option<String>)`](crate::client::fluent_builders::DescribeConnectorEntity::set_api_version): <p>The version of the API that's used by the connector.</p>
     /// - On success, responds with [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput) with field(s):
     ///   - [`connector_entity_fields(Option<Vec<ConnectorEntityField>>)`](crate::output::DescribeConnectorEntityOutput::connector_entity_fields): <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     /// - On failure, responds with [`SdkError<DescribeConnectorEntityError>`](crate::error::DescribeConnectorEntityError)
@@ -163,6 +176,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`connector_profile_names(Vec<String>)`](crate::client::fluent_builders::DescribeConnectorProfiles::connector_profile_names) / [`set_connector_profile_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConnectorProfiles::set_connector_profile_names): <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     ///   - [`connector_type(ConnectorType)`](crate::client::fluent_builders::DescribeConnectorProfiles::connector_type) / [`set_connector_type(Option<ConnectorType>)`](crate::client::fluent_builders::DescribeConnectorProfiles::set_connector_type): <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    ///   - [`connector_label(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectorProfiles::connector_label) / [`set_connector_label(Option<String>)`](crate::client::fluent_builders::DescribeConnectorProfiles::set_connector_label): <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeConnectorProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeConnectorProfiles::set_max_results): <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectorProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConnectorProfiles::set_next_token): <p> The pagination token for the next page of data. </p>
     /// - On success, responds with [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput) with field(s):
@@ -177,9 +191,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`connector_types(Vec<ConnectorType>)`](crate::client::fluent_builders::DescribeConnectors::connector_types) / [`set_connector_types(Option<Vec<ConnectorType>>)`](crate::client::fluent_builders::DescribeConnectors::set_connector_types): <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeConnectors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeConnectors::set_max_results): <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConnectors::set_next_token): <p> The pagination token for the next page of data. </p>
     /// - On success, responds with [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput) with field(s):
     ///   - [`connector_configurations(Option<HashMap<ConnectorType, ConnectorConfiguration>>)`](crate::output::DescribeConnectorsOutput::connector_configurations): <p> The configuration that is applied to the connectors used in the flow. </p>
+    ///   - [`connectors(Option<Vec<ConnectorDetail>>)`](crate::output::DescribeConnectorsOutput::connectors): <p>Information about the connectors supported in Amazon AppFlow.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeConnectorsOutput::next_token): <p> The pagination token for the next page of data. </p>
     /// - On failure, responds with [`SdkError<DescribeConnectorsError>`](crate::error::DescribeConnectorsError)
     pub fn describe_connectors(&self) -> fluent_builders::DescribeConnectors {
@@ -230,11 +246,25 @@ impl Client {
     ///   - [`connector_profile_name(impl Into<String>)`](crate::client::fluent_builders::ListConnectorEntities::connector_profile_name) / [`set_connector_profile_name(Option<String>)`](crate::client::fluent_builders::ListConnectorEntities::set_connector_profile_name): <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
     ///   - [`connector_type(ConnectorType)`](crate::client::fluent_builders::ListConnectorEntities::connector_type) / [`set_connector_type(Option<ConnectorType>)`](crate::client::fluent_builders::ListConnectorEntities::set_connector_type): <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     ///   - [`entities_path(impl Into<String>)`](crate::client::fluent_builders::ListConnectorEntities::entities_path) / [`set_entities_path(Option<String>)`](crate::client::fluent_builders::ListConnectorEntities::set_entities_path): <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
+    ///   - [`api_version(impl Into<String>)`](crate::client::fluent_builders::ListConnectorEntities::api_version) / [`set_api_version(Option<String>)`](crate::client::fluent_builders::ListConnectorEntities::set_api_version): <p>The version of the API that's used by the connector.</p>
     /// - On success, responds with [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput) with field(s):
     ///   - [`connector_entity_map(Option<HashMap<String, Vec<ConnectorEntity>>>)`](crate::output::ListConnectorEntitiesOutput::connector_entity_map): <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
     /// - On failure, responds with [`SdkError<ListConnectorEntitiesError>`](crate::error::ListConnectorEntitiesError)
     pub fn list_connector_entities(&self) -> fluent_builders::ListConnectorEntities {
         fluent_builders::ListConnectorEntities::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListConnectors`](crate::client::fluent_builders::ListConnectors) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConnectors::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConnectors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListConnectors::set_max_results): <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConnectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConnectors::set_next_token): <p>The pagination token for the next page of data.</p>
+    /// - On success, responds with [`ListConnectorsOutput`](crate::output::ListConnectorsOutput) with field(s):
+    ///   - [`connectors(Option<Vec<ConnectorDetail>>)`](crate::output::ListConnectorsOutput::connectors): <p>Contains information about the connectors supported by Amazon AppFlow.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListConnectorsOutput::next_token): <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
+    /// - On failure, responds with [`SdkError<ListConnectorsError>`](crate::error::ListConnectorsError)
+    pub fn list_connectors(&self) -> fluent_builders::ListConnectors {
+        fluent_builders::ListConnectors::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFlows`](crate::client::fluent_builders::ListFlows) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFlows::into_paginator).
@@ -258,6 +288,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`RegisterConnector`](crate::client::fluent_builders::RegisterConnector) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`connector_label(impl Into<String>)`](crate::client::fluent_builders::RegisterConnector::connector_label) / [`set_connector_label(Option<String>)`](crate::client::fluent_builders::RegisterConnector::set_connector_label): <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::RegisterConnector::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::RegisterConnector::set_description): <p>A description about the connector that's being registered.</p>
+    ///   - [`connector_provisioning_type(ConnectorProvisioningType)`](crate::client::fluent_builders::RegisterConnector::connector_provisioning_type) / [`set_connector_provisioning_type(Option<ConnectorProvisioningType>)`](crate::client::fluent_builders::RegisterConnector::set_connector_provisioning_type): <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
+    ///   - [`connector_provisioning_config(ConnectorProvisioningConfig)`](crate::client::fluent_builders::RegisterConnector::connector_provisioning_config) / [`set_connector_provisioning_config(Option<ConnectorProvisioningConfig>)`](crate::client::fluent_builders::RegisterConnector::set_connector_provisioning_config): <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
+    /// - On success, responds with [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput) with field(s):
+    ///   - [`connector_arn(Option<String>)`](crate::output::RegisterConnectorOutput::connector_arn): <p>The ARN of the connector being registered.</p>
+    /// - On failure, responds with [`SdkError<RegisterConnectorError>`](crate::error::RegisterConnectorError)
+    pub fn register_connector(&self) -> fluent_builders::RegisterConnector {
+        fluent_builders::RegisterConnector::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StartFlow`](crate::client::fluent_builders::StartFlow) operation.
     ///
@@ -292,6 +335,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource {
         fluent_builders::TagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UnregisterConnector`](crate::client::fluent_builders::UnregisterConnector) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`connector_label(impl Into<String>)`](crate::client::fluent_builders::UnregisterConnector::connector_label) / [`set_connector_label(Option<String>)`](crate::client::fluent_builders::UnregisterConnector::set_connector_label): <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    ///   - [`force_delete(bool)`](crate::client::fluent_builders::UnregisterConnector::force_delete) / [`set_force_delete(bool)`](crate::client::fluent_builders::UnregisterConnector::set_force_delete): <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
+    /// - On success, responds with [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
+
+    /// - On failure, responds with [`SdkError<UnregisterConnectorError>`](crate::error::UnregisterConnectorError)
+    pub fn unregister_connector(&self) -> fluent_builders::UnregisterConnector {
+        fluent_builders::UnregisterConnector::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
@@ -416,6 +470,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ConnectorType>,
         ) -> Self {
             self.inner = self.inner.set_connector_type(input);
+            self
+        }
+        /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+        pub fn connector_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_label(input.into());
+            self
+        }
+        /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_label(input);
             self
         }
         /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
@@ -736,6 +803,75 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeConnector`.
+    ///
+    /// <p>Describes the given custom connector registered in your Amazon Web Services account. This API can be used for custom connectors that are registered in your account and also for Amazon authored connectors.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeConnector {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_connector_input::Builder,
+    }
+    impl DescribeConnector {
+        /// Creates a new `DescribeConnector`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeConnectorOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeConnectorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
+        pub fn connector_type(mut self, input: crate::model::ConnectorType) -> Self {
+            self.inner = self.inner.connector_type(input);
+            self
+        }
+        /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
+        pub fn set_connector_type(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorType>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_type(input);
+            self
+        }
+        /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+        pub fn connector_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_label(input.into());
+            self
+        }
+        /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_label(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeConnectorEntity`.
     ///
     /// <p> Provides details regarding the entity used with the connector, with a description of the data model for each entity. </p>
@@ -817,6 +953,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connector_profile_name(input);
             self
         }
+        /// <p>The version of the API that's used by the connector.</p>
+        pub fn api_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_version(input.into());
+            self
+        }
+        /// <p>The version of the API that's used by the connector.</p>
+        pub fn set_api_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_api_version(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DescribeConnectorProfiles`.
     ///
@@ -895,6 +1041,19 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ConnectorType>,
         ) -> Self {
             self.inner = self.inner.set_connector_type(input);
+            self
+        }
+        /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+        pub fn connector_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_label(input.into());
+            self
+        }
+        /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_label(input);
             self
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
@@ -981,6 +1140,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::ConnectorType>>,
         ) -> Self {
             self.inner = self.inner.set_connector_types(input);
+            self
+        }
+        /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p> The pagination token for the next page of data. </p>
@@ -1207,6 +1376,85 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entities_path(input);
             self
         }
+        /// <p>The version of the API that's used by the connector.</p>
+        pub fn api_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_version(input.into());
+            self
+        }
+        /// <p>The version of the API that's used by the connector.</p>
+        pub fn set_api_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_api_version(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListConnectors`.
+    ///
+    /// <p>Returns the list of all registered custom connectors in your Amazon Web Services account. This API lists only custom connectors registered in this account, not the Amazon Web Services authored connectors. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListConnectors {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_connectors_input::Builder,
+    }
+    impl ListConnectors {
+        /// Creates a new `ListConnectors`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListConnectorsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListConnectorsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListConnectorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListConnectorsPaginator {
+            crate::paginator::ListConnectorsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The pagination token for the next page of data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The pagination token for the next page of data.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListFlows`.
     ///
@@ -1327,6 +1575,104 @@ pub mod fluent_builders {
         /// <p> The Amazon Resource Name (ARN) of the specified flow. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RegisterConnector`.
+    ///
+    /// <p>Registers a new connector with your Amazon Web Services account. Before you can register the connector, you must deploy lambda in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RegisterConnector {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::register_connector_input::Builder,
+    }
+    impl RegisterConnector {
+        /// Creates a new `RegisterConnector`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RegisterConnectorOutput,
+            aws_smithy_http::result::SdkError<crate::error::RegisterConnectorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+        pub fn connector_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_label(input.into());
+            self
+        }
+        /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_label(input);
+            self
+        }
+        /// <p>A description about the connector that's being registered.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description about the connector that's being registered.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
+        pub fn connector_provisioning_type(
+            mut self,
+            input: crate::model::ConnectorProvisioningType,
+        ) -> Self {
+            self.inner = self.inner.connector_provisioning_type(input);
+            self
+        }
+        /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
+        pub fn set_connector_provisioning_type(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorProvisioningType>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_provisioning_type(input);
+            self
+        }
+        /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
+        pub fn connector_provisioning_config(
+            mut self,
+            input: crate::model::ConnectorProvisioningConfig,
+        ) -> Self {
+            self.inner = self.inner.connector_provisioning_config(input);
+            self
+        }
+        /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
+        pub fn set_connector_provisioning_config(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorProvisioningConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_provisioning_config(input);
             self
         }
     }
@@ -1509,6 +1855,72 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UnregisterConnector`.
+    ///
+    /// <p>Unregisters the custom connector registered in your account that matches the connectorLabel provided in the request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UnregisterConnector {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::unregister_connector_input::Builder,
+    }
+    impl UnregisterConnector {
+        /// Creates a new `UnregisterConnector`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UnregisterConnectorOutput,
+            aws_smithy_http::result::SdkError<crate::error::UnregisterConnectorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+        pub fn connector_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_label(input.into());
+            self
+        }
+        /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connector_label(input);
+            self
+        }
+        /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
+        pub fn force_delete(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_delete(input);
+            self
+        }
+        /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
+        pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_force_delete(input);
             self
         }
     }

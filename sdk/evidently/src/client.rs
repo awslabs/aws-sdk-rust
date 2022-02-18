@@ -297,6 +297,7 @@ impl Client {
     ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::ListExperiments::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::ListExperiments::set_project): <p>The name or ARN of the project to return the experiment list from.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExperiments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExperiments::set_max_results): <p>The maximum number of results to include in the response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExperiments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExperiments::set_next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
+    ///   - [`status(ExperimentStatus)`](crate::client::fluent_builders::ListExperiments::status) / [`set_status(Option<ExperimentStatus>)`](crate::client::fluent_builders::ListExperiments::set_status): <p>Use this optional parameter to limit the returned results to only the experiments with the status that you specify here.</p>
     /// - On success, responds with [`ListExperimentsOutput`](crate::output::ListExperimentsOutput) with field(s):
     ///   - [`experiments(Option<Vec<Experiment>>)`](crate::output::ListExperimentsOutput::experiments): <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListExperimentsOutput::next_token): <p>The token to use in a subsequent <code>ListExperiments</code> operation to return the next set of results.</p>
@@ -325,6 +326,7 @@ impl Client {
     ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::ListLaunches::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::ListLaunches::set_project): <p>The name or ARN of the project to return the launch list from.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunches::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLaunches::set_max_results): <p>The maximum number of results to include in the response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunches::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunches::set_next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
+    ///   - [`status(LaunchStatus)`](crate::client::fluent_builders::ListLaunches::status) / [`set_status(Option<LaunchStatus>)`](crate::client::fluent_builders::ListLaunches::set_status): <p>Use this optional parameter to limit the returned results to only the launches with the status that you specify here.</p>
     /// - On success, responds with [`ListLaunchesOutput`](crate::output::ListLaunchesOutput) with field(s):
     ///   - [`launches(Option<Vec<Launch>>)`](crate::output::ListLaunchesOutput::launches): <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLaunchesOutput::next_token): <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
@@ -2073,6 +2075,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
+        /// <p>Use this optional parameter to limit the returned results to only the experiments with the status that you specify here.</p>
+        pub fn status(mut self, input: crate::model::ExperimentStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>Use this optional parameter to limit the returned results to only the experiments with the status that you specify here.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ExperimentStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListFeatures`.
     ///
@@ -2229,6 +2244,19 @@ pub mod fluent_builders {
         /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Use this optional parameter to limit the returned results to only the launches with the status that you specify here.</p>
+        pub fn status(mut self, input: crate::model::LaunchStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>Use this optional parameter to limit the returned results to only the launches with the status that you specify here.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::LaunchStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }

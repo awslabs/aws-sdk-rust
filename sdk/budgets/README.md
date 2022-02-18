@@ -3,15 +3,15 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-The AWS Budgets API enables you to use AWS Budgets to plan your service usage, service costs, and instance reservations. The API reference provides descriptions, syntax, and usage examples for each of the actions and data types for AWS Budgets.
+The Amazon Web Services Budgets API enables you to use Amazon Web Services Budgets to plan your service usage, service costs, and instance reservations. The API reference provides descriptions, syntax, and usage examples for each of the actions and data types for Amazon Web Services Budgets.
 
 Budgets provide you with a way to see the following information:
   - How close your plan is to your budgeted amount or to the free tier limits
   - Your usage-to-date, including how much you've used of your Reserved Instances (RIs)
-  - Your current estimated charges from AWS, and how much your predicted usage will accrue in charges by the end of the month
+  - Your current estimated charges from Amazon Web Services, and how much your predicted usage will accrue in charges by the end of the month
   - How much of your budget has been used
 
-AWS updates your budget status several times a day. Budgets track your unblended costs, subscriptions, refunds, and RIs. You can create the following types of budgets:
+Amazon Web Services updates your budget status several times a day. Budgets track your unblended costs, subscriptions, refunds, and RIs. You can create the following types of budgets:
   - __Cost budgets__ - Plan how much you want to spend on a service.
   - __Usage budgets__ - Plan how much you want to use one or more services.
   - __RI utilization budgets__ - Define a utilization threshold, and receive alerts when your RI usage falls below that threshold. This lets you see if your RIs are unused or under-utilized.
@@ -19,10 +19,10 @@ AWS updates your budget status several times a day. Budgets track your unblended
 
 Service Endpoint
 
-The AWS Budgets API provides the following endpoint:
+The Amazon Web Services Budgets API provides the following endpoint:
   - https://budgets.amazonaws.com
 
-For information about costs that are associated with the AWS Budgets API, see [AWS Cost Management Pricing](https://aws.amazon.com/aws-cost-management/pricing/).
+For information about costs that are associated with the Amazon Web Services Budgets API, see [Amazon Web Services Cost Management Pricing](https://aws.amazon.com/aws-cost-management/pricing/).
 
 ## Getting Started
 
@@ -35,8 +35,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.6.0"
-aws-sdk-budgets = "0.6.0"
+aws-config = "0.7.0"
+aws-sdk-budgets = "0.7.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

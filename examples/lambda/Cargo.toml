@@ -14,19 +14,19 @@ time = "0.3"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-ec2]
 path = "../../sdk/ec2"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-lambda]
 path = "../../sdk/lambda"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.serde]
 version = "1"

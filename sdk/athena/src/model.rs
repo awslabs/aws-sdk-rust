@@ -352,6 +352,11 @@ pub struct ResultConfigurationUpdates {
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>If set to "true", indicates that the previously-specified encryption configuration (also known as the client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub remove_encryption_configuration: std::option::Option<bool>,
+    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+    /// <p>If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>If set to "true", removes the Amazon Web Services account ID previously specified for <code>ResultConfiguration$ExpectedBucketOwner</code>. If set to "false" or not set, and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub remove_expected_bucket_owner: std::option::Option<bool>,
 }
 impl ResultConfigurationUpdates {
     /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
@@ -372,6 +377,15 @@ impl ResultConfigurationUpdates {
     pub fn remove_encryption_configuration(&self) -> std::option::Option<bool> {
         self.remove_encryption_configuration
     }
+    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+    /// <p>If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
+    /// <p>If set to "true", removes the Amazon Web Services account ID previously specified for <code>ResultConfiguration$ExpectedBucketOwner</code>. If set to "false" or not set, and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn remove_expected_bucket_owner(&self) -> std::option::Option<bool> {
+        self.remove_expected_bucket_owner
+    }
 }
 impl std::fmt::Debug for ResultConfigurationUpdates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -382,6 +396,11 @@ impl std::fmt::Debug for ResultConfigurationUpdates {
         formatter.field(
             "remove_encryption_configuration",
             &self.remove_encryption_configuration,
+        );
+        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field(
+            "remove_expected_bucket_owner",
+            &self.remove_expected_bucket_owner,
         );
         formatter.finish()
     }
@@ -397,6 +416,8 @@ pub mod result_configuration_updates {
         pub(crate) encryption_configuration:
             std::option::Option<crate::model::EncryptionConfiguration>,
         pub(crate) remove_encryption_configuration: std::option::Option<bool>,
+        pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) remove_expected_bucket_owner: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
@@ -451,6 +472,34 @@ pub mod result_configuration_updates {
             self.remove_encryption_configuration = input;
             self
         }
+        /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+        /// <p>If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+        /// <p>If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expected_bucket_owner = input;
+            self
+        }
+        /// <p>If set to "true", removes the Amazon Web Services account ID previously specified for <code>ResultConfiguration$ExpectedBucketOwner</code>. If set to "false" or not set, and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        pub fn remove_expected_bucket_owner(mut self, input: bool) -> Self {
+            self.remove_expected_bucket_owner = Some(input);
+            self
+        }
+        /// <p>If set to "true", removes the Amazon Web Services account ID previously specified for <code>ResultConfiguration$ExpectedBucketOwner</code>. If set to "false" or not set, and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        pub fn set_remove_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.remove_expected_bucket_owner = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResultConfigurationUpdates`](crate::model::ResultConfigurationUpdates)
         pub fn build(self) -> crate::model::ResultConfigurationUpdates {
             crate::model::ResultConfigurationUpdates {
@@ -458,6 +507,8 @@ pub mod result_configuration_updates {
                 remove_output_location: self.remove_output_location,
                 encryption_configuration: self.encryption_configuration,
                 remove_encryption_configuration: self.remove_encryption_configuration,
+                expected_bucket_owner: self.expected_bucket_owner,
+                remove_expected_bucket_owner: self.remove_expected_bucket_owner,
             }
         }
     }
@@ -800,6 +851,9 @@ pub struct ResultConfiguration {
     pub output_location: std::option::Option<std::string::String>,
     /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the encryption configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+    /// <p>This is a client-side setting. If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl ResultConfiguration {
     /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the query results location using one of the ways: either for individual queries using either this setting (client-side), or in the workgroup, using <code>WorkGroupConfiguration</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If workgroup settings override client-side settings, then the query uses the settings specified for the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
@@ -812,12 +866,18 @@ impl ResultConfiguration {
     ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+    /// <p>This is a client-side setting. If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for ResultConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResultConfiguration");
         formatter.field("output_location", &self.output_location);
         formatter.field("encryption_configuration", &self.encryption_configuration);
+        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
     }
 }
@@ -830,6 +890,7 @@ pub mod result_configuration {
         pub(crate) output_location: std::option::Option<std::string::String>,
         pub(crate) encryption_configuration:
             std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the query results location using one of the ways: either for individual queries using either this setting (client-side), or in the workgroup, using <code>WorkGroupConfiguration</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If workgroup settings override client-side settings, then the query uses the settings specified for the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
@@ -861,11 +922,27 @@ pub mod result_configuration {
             self.encryption_configuration = input;
             self
         }
+        /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+        /// <p>This is a client-side setting. If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+        /// <p>This is a client-side setting. If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expected_bucket_owner = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResultConfiguration`](crate::model::ResultConfiguration)
         pub fn build(self) -> crate::model::ResultConfiguration {
             crate::model::ResultConfiguration {
                 output_location: self.output_location,
                 encryption_configuration: self.encryption_configuration,
+                expected_bucket_owner: self.expected_bucket_owner,
             }
         }
     }
@@ -1477,13 +1554,13 @@ impl PreparedStatementSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCatalogSummary {
-    /// <p>The name of the data catalog.</p>
+    /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The data catalog type.</p>
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
 }
 impl DataCatalogSummary {
-    /// <p>The name of the data catalog.</p>
+    /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     pub fn catalog_name(&self) -> std::option::Option<&str> {
         self.catalog_name.as_deref()
     }
@@ -1510,12 +1587,12 @@ pub mod data_catalog_summary {
         pub(crate) r#type: std::option::Option<crate::model::DataCatalogType>,
     }
     impl Builder {
-        /// <p>The name of the data catalog.</p>
+        /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
         pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_name = Some(input.into());
             self
         }
-        /// <p>The name of the data catalog.</p>
+        /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
         pub fn set_catalog_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_name = input;
             self
@@ -2972,6 +3049,8 @@ pub struct QueryExecutionStatus {
     pub submission_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the query completed.</p>
     pub completion_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Provides information about an Athena query error.</p>
+    pub athena_error: std::option::Option<crate::model::AthenaError>,
 }
 impl QueryExecutionStatus {
     /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.</p> <note>
@@ -2992,6 +3071,10 @@ impl QueryExecutionStatus {
     pub fn completion_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_date_time.as_ref()
     }
+    /// <p>Provides information about an Athena query error.</p>
+    pub fn athena_error(&self) -> std::option::Option<&crate::model::AthenaError> {
+        self.athena_error.as_ref()
+    }
 }
 impl std::fmt::Debug for QueryExecutionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3000,6 +3083,7 @@ impl std::fmt::Debug for QueryExecutionStatus {
         formatter.field("state_change_reason", &self.state_change_reason);
         formatter.field("submission_date_time", &self.submission_date_time);
         formatter.field("completion_date_time", &self.completion_date_time);
+        formatter.field("athena_error", &self.athena_error);
         formatter.finish()
     }
 }
@@ -3013,6 +3097,7 @@ pub mod query_execution_status {
         pub(crate) state_change_reason: std::option::Option<std::string::String>,
         pub(crate) submission_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completion_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) athena_error: std::option::Option<crate::model::AthenaError>,
     }
     impl Builder {
         /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.</p> <note>
@@ -3071,6 +3156,19 @@ pub mod query_execution_status {
             self.completion_date_time = input;
             self
         }
+        /// <p>Provides information about an Athena query error.</p>
+        pub fn athena_error(mut self, input: crate::model::AthenaError) -> Self {
+            self.athena_error = Some(input);
+            self
+        }
+        /// <p>Provides information about an Athena query error.</p>
+        pub fn set_athena_error(
+            mut self,
+            input: std::option::Option<crate::model::AthenaError>,
+        ) -> Self {
+            self.athena_error = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryExecutionStatus`](crate::model::QueryExecutionStatus)
         pub fn build(self) -> crate::model::QueryExecutionStatus {
             crate::model::QueryExecutionStatus {
@@ -3078,6 +3176,7 @@ pub mod query_execution_status {
                 state_change_reason: self.state_change_reason,
                 submission_date_time: self.submission_date_time,
                 completion_date_time: self.completion_date_time,
+                athena_error: self.athena_error,
             }
         }
     }
@@ -3086,6 +3185,91 @@ impl QueryExecutionStatus {
     /// Creates a new builder-style object to manufacture [`QueryExecutionStatus`](crate::model::QueryExecutionStatus)
     pub fn builder() -> crate::model::query_execution_status::Builder {
         crate::model::query_execution_status::Builder::default()
+    }
+}
+
+/// <p>Provides information about an Athena query error. The <code>AthenaError</code> feature provides standardized error information to help you understand failed queries and take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code> field that specifies whether the cause of the failed query is due to system error, user error, or unknown error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AthenaError {
+    /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
+    /// <p> <b>1</b> - System</p>
+    /// <p> <b>2</b> - User</p>
+    /// <p> <b>3</b> - Unknown</p>
+    pub error_category: std::option::Option<i32>,
+    /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
+    pub error_type: std::option::Option<i32>,
+}
+impl AthenaError {
+    /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
+    /// <p> <b>1</b> - System</p>
+    /// <p> <b>2</b> - User</p>
+    /// <p> <b>3</b> - Unknown</p>
+    pub fn error_category(&self) -> std::option::Option<i32> {
+        self.error_category
+    }
+    /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
+    pub fn error_type(&self) -> std::option::Option<i32> {
+        self.error_type
+    }
+}
+impl std::fmt::Debug for AthenaError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AthenaError");
+        formatter.field("error_category", &self.error_category);
+        formatter.field("error_type", &self.error_type);
+        formatter.finish()
+    }
+}
+/// See [`AthenaError`](crate::model::AthenaError)
+pub mod athena_error {
+    /// A builder for [`AthenaError`](crate::model::AthenaError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_category: std::option::Option<i32>,
+        pub(crate) error_type: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
+        /// <p> <b>1</b> - System</p>
+        /// <p> <b>2</b> - User</p>
+        /// <p> <b>3</b> - Unknown</p>
+        pub fn error_category(mut self, input: i32) -> Self {
+            self.error_category = Some(input);
+            self
+        }
+        /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
+        /// <p> <b>1</b> - System</p>
+        /// <p> <b>2</b> - User</p>
+        /// <p> <b>3</b> - Unknown</p>
+        pub fn set_error_category(mut self, input: std::option::Option<i32>) -> Self {
+            self.error_category = input;
+            self
+        }
+        /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
+        pub fn error_type(mut self, input: i32) -> Self {
+            self.error_type = Some(input);
+            self
+        }
+        /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
+        pub fn set_error_type(mut self, input: std::option::Option<i32>) -> Self {
+            self.error_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AthenaError`](crate::model::AthenaError)
+        pub fn build(self) -> crate::model::AthenaError {
+            crate::model::AthenaError {
+                error_category: self.error_category,
+                error_type: self.error_type,
+            }
+        }
+    }
+}
+impl AthenaError {
+    /// Creates a new builder-style object to manufacture [`AthenaError`](crate::model::AthenaError)
+    pub fn builder() -> crate::model::athena_error::Builder {
+        crate::model::athena_error::Builder::default()
     }
 }
 
@@ -3513,7 +3697,7 @@ impl NamedQuery {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCatalog {
-    /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the data catalog.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3537,7 +3721,7 @@ pub struct DataCatalog {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DataCatalog {
-    /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3594,12 +3778,12 @@ pub mod data_catalog {
         >,
     }
     impl Builder {
-        /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self

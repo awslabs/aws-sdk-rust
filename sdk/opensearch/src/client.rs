@@ -251,6 +251,17 @@ impl Client {
     pub fn describe_domain_auto_tunes(&self) -> fluent_builders::DescribeDomainAutoTunes {
         fluent_builders::DescribeDomainAutoTunes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeDomainChangeProgress`](crate::client::fluent_builders::DescribeDomainChangeProgress) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::set_domain_name): <p>The domain you want to get the progress information about.</p>
+    ///   - [`change_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::change_id) / [`set_change_id(Option<String>)`](crate::client::fluent_builders::DescribeDomainChangeProgress::set_change_id): <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+    /// - On success, responds with [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput) with field(s):
+    ///   - [`change_progress_status(Option<ChangeProgressStatusDetails>)`](crate::output::DescribeDomainChangeProgressOutput::change_progress_status): <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
+    /// - On failure, responds with [`SdkError<DescribeDomainChangeProgressError>`](crate::error::DescribeDomainChangeProgressError)
+    pub fn describe_domain_change_progress(&self) -> fluent_builders::DescribeDomainChangeProgress {
+        fluent_builders::DescribeDomainChangeProgress::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeDomainConfig`](crate::client::fluent_builders::DescribeDomainConfig) operation.
     ///
     /// - The fluent builder is configurable:
@@ -590,6 +601,7 @@ impl Client {
     ///   - [`target_version(Option<String>)`](crate::output::UpgradeDomainOutput::target_version): <p>The version of OpenSearch that you intend to upgrade the domain to.</p>
     ///   - [`perform_check_only(Option<bool>)`](crate::output::UpgradeDomainOutput::perform_check_only): <p> When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade. </p>
     ///   - [`advanced_options(Option<HashMap<String, String>>)`](crate::output::UpgradeDomainOutput::advanced_options): <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the following advanced options are available: </p>  <ul>   <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </li>   <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. </li>  </ul>  <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
+    ///   - [`change_progress_details(Option<ChangeProgressDetails>)`](crate::output::UpgradeDomainOutput::change_progress_details): <p>Specifies change details of the domain configuration change.</p>
     /// - On failure, responds with [`SdkError<UpgradeDomainError>`](crate::error::UpgradeDomainError)
     pub fn upgrade_domain(&self) -> fluent_builders::UpgradeDomain {
         fluent_builders::UpgradeDomain::new(self.handle.clone())
@@ -1656,6 +1668,69 @@ pub mod fluent_builders {
         /// <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeDomainChangeProgress`.
+    ///
+    /// <p>Returns information about the current blue/green deployment happening on a domain, including a change ID, status, and progress stages.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeDomainChangeProgress {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_domain_change_progress_input::Builder,
+    }
+    impl DescribeDomainChangeProgress {
+        /// Creates a new `DescribeDomainChangeProgress`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeDomainChangeProgressOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeDomainChangeProgressError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The domain you want to get the progress information about.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The domain you want to get the progress information about.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+        pub fn change_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_id(input.into());
+            self
+        }
+        /// <p>The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </p>
+        pub fn set_change_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_change_id(input);
             self
         }
     }

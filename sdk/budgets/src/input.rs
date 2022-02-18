@@ -36,7 +36,7 @@ pub mod create_budget_input {
         ///
         /// To override the contents of this collection use [`set_notifications_with_subscribers`](Self::set_notifications_with_subscribers).
         ///
-        /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
+        /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
         pub fn notifications_with_subscribers(
             mut self,
             input: crate::model::NotificationWithSubscribers,
@@ -46,7 +46,7 @@ pub mod create_budget_input {
             self.notifications_with_subscribers = Some(v);
             self
         }
-        /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
+        /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
         pub fn set_notifications_with_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
@@ -207,12 +207,12 @@ pub mod create_budget_action_input {
         pub(crate) subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -253,12 +253,12 @@ pub mod create_budget_action_input {
             self.action_type = input;
             self
         }
-        /// <p> The trigger threshold of the action. </p>
+        /// <p>The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.action_threshold = Some(input);
             self
         }
-        /// <p> The trigger threshold of the action. </p>
+        /// <p>The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -266,12 +266,12 @@ pub mod create_budget_action_input {
             self.action_threshold = input;
             self
         }
-        /// <p> Specifies all of the type-specific parameters. </p>
+        /// <p>Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.definition = Some(input);
             self
         }
-        /// <p> Specifies all of the type-specific parameters. </p>
+        /// <p>Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -488,12 +488,12 @@ pub mod create_notification_input {
             self.account_id = input;
             self
         }
-        /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
+        /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.budget_name = Some(input.into());
             self
         }
-        /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
+        /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -1038,12 +1038,12 @@ pub mod delete_budget_action_input {
         pub(crate) action_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1755,12 +1755,12 @@ pub mod describe_budget_action_input {
         pub(crate) action_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1937,12 +1937,12 @@ pub mod describe_budget_action_histories_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1967,12 +1967,12 @@ pub mod describe_budget_action_histories_input {
             self.action_id = input;
             self
         }
-        /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+        /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
         pub fn time_period(mut self, input: crate::model::TimePeriod) -> Self {
             self.time_period = Some(input);
             self
         }
-        /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+        /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::TimePeriod>,
@@ -2151,12 +2151,12 @@ pub mod describe_budget_actions_for_account_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2330,12 +2330,12 @@ pub mod describe_budget_actions_for_budget_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2521,12 +2521,12 @@ pub mod describe_budget_performance_history_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3297,12 +3297,12 @@ pub mod execute_budget_action_input {
         pub(crate) execution_type: std::option::Option<crate::model::ExecutionType>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3659,12 +3659,12 @@ pub mod update_budget_action_input {
         pub(crate) subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
     }
     impl Builder {
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3702,12 +3702,12 @@ pub mod update_budget_action_input {
             self.notification_type = input;
             self
         }
-        /// <p> The trigger threshold of the action. </p>
+        /// <p>The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.action_threshold = Some(input);
             self
         }
-        /// <p> The trigger threshold of the action. </p>
+        /// <p>The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -3715,12 +3715,12 @@ pub mod update_budget_action_input {
             self.action_threshold = input;
             self
         }
-        /// <p> Specifies all of the type-specific parameters. </p>
+        /// <p>Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.definition = Some(input);
             self
         }
-        /// <p> Specifies all of the type-specific parameters. </p>
+        /// <p>Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -4415,7 +4415,7 @@ impl std::fmt::Debug for UpdateNotificationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBudgetActionInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -4423,9 +4423,9 @@ pub struct UpdateBudgetActionInput {
     pub action_id: std::option::Option<std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub notification_type: std::option::Option<crate::model::NotificationType>,
-    /// <p> The trigger threshold of the action. </p>
+    /// <p>The trigger threshold of the action. </p>
     pub action_threshold: std::option::Option<crate::model::ActionThreshold>,
-    /// <p> Specifies all of the type-specific parameters. </p>
+    /// <p>Specifies all of the type-specific parameters. </p>
     pub definition: std::option::Option<crate::model::Definition>,
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub execution_role_arn: std::option::Option<std::string::String>,
@@ -4435,7 +4435,7 @@ pub struct UpdateBudgetActionInput {
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
 }
 impl UpdateBudgetActionInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -4451,11 +4451,11 @@ impl UpdateBudgetActionInput {
     pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
         self.notification_type.as_ref()
     }
-    /// <p> The trigger threshold of the action. </p>
+    /// <p>The trigger threshold of the action. </p>
     pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
         self.action_threshold.as_ref()
     }
-    /// <p> Specifies all of the type-specific parameters. </p>
+    /// <p>Specifies all of the type-specific parameters. </p>
     pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
         self.definition.as_ref()
     }
@@ -4520,7 +4520,7 @@ impl std::fmt::Debug for UpdateBudgetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteBudgetActionInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -4530,7 +4530,7 @@ pub struct ExecuteBudgetActionInput {
     pub execution_type: std::option::Option<crate::model::ExecutionType>,
 }
 impl ExecuteBudgetActionInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -4688,7 +4688,7 @@ impl std::fmt::Debug for DescribeBudgetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetPerformanceHistoryInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -4700,7 +4700,7 @@ pub struct DescribeBudgetPerformanceHistoryInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetPerformanceHistoryInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -4737,7 +4737,7 @@ impl std::fmt::Debug for DescribeBudgetPerformanceHistoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForBudgetInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -4747,7 +4747,7 @@ pub struct DescribeBudgetActionsForBudgetInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionsForBudgetInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -4779,7 +4779,7 @@ impl std::fmt::Debug for DescribeBudgetActionsForBudgetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForAccountInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub max_results: std::option::Option<i32>,
@@ -4787,7 +4787,7 @@ pub struct DescribeBudgetActionsForAccountInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionsForAccountInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -4814,13 +4814,13 @@ impl std::fmt::Debug for DescribeBudgetActionsForAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionHistoriesInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
-    /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+    /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
     pub time_period: std::option::Option<crate::model::TimePeriod>,
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub max_results: std::option::Option<i32>,
@@ -4828,7 +4828,7 @@ pub struct DescribeBudgetActionHistoriesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionHistoriesInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -4840,7 +4840,7 @@ impl DescribeBudgetActionHistoriesInput {
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
-    /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+    /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
     pub fn time_period(&self) -> std::option::Option<&crate::model::TimePeriod> {
         self.time_period.as_ref()
     }
@@ -4870,7 +4870,7 @@ impl std::fmt::Debug for DescribeBudgetActionHistoriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -4878,7 +4878,7 @@ pub struct DescribeBudgetActionInput {
     pub action_id: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -5010,7 +5010,7 @@ impl std::fmt::Debug for DeleteNotificationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBudgetActionInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -5018,7 +5018,7 @@ pub struct DeleteBudgetActionInput {
     pub action_id: std::option::Option<std::string::String>,
 }
 impl DeleteBudgetActionInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -5117,7 +5117,7 @@ impl std::fmt::Debug for CreateSubscriberInput {
 pub struct CreateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
+    /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The notification that you want to create.</p>
     pub notification: std::option::Option<crate::model::Notification>,
@@ -5129,7 +5129,7 @@ impl CreateNotificationInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
+    /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
@@ -5157,7 +5157,7 @@ impl std::fmt::Debug for CreateNotificationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBudgetActionInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
@@ -5165,9 +5165,9 @@ pub struct CreateBudgetActionInput {
     pub notification_type: std::option::Option<crate::model::NotificationType>,
     /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub action_type: std::option::Option<crate::model::ActionType>,
-    /// <p> The trigger threshold of the action. </p>
+    /// <p>The trigger threshold of the action. </p>
     pub action_threshold: std::option::Option<crate::model::ActionThreshold>,
-    /// <p> Specifies all of the type-specific parameters. </p>
+    /// <p>Specifies all of the type-specific parameters. </p>
     pub definition: std::option::Option<crate::model::Definition>,
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub execution_role_arn: std::option::Option<std::string::String>,
@@ -5177,7 +5177,7 @@ pub struct CreateBudgetActionInput {
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
 }
 impl CreateBudgetActionInput {
-    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -5193,11 +5193,11 @@ impl CreateBudgetActionInput {
     pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
         self.action_type.as_ref()
     }
-    /// <p> The trigger threshold of the action. </p>
+    /// <p>The trigger threshold of the action. </p>
     pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
         self.action_threshold.as_ref()
     }
-    /// <p> Specifies all of the type-specific parameters. </p>
+    /// <p>Specifies all of the type-specific parameters. </p>
     pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
         self.definition.as_ref()
     }
@@ -5238,7 +5238,7 @@ pub struct CreateBudgetInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The budget object that you want to create.</p>
     pub budget: std::option::Option<crate::model::Budget>,
-    /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
+    /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
     pub notifications_with_subscribers:
         std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
 }
@@ -5251,7 +5251,7 @@ impl CreateBudgetInput {
     pub fn budget(&self) -> std::option::Option<&crate::model::Budget> {
         self.budget.as_ref()
     }
-    /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
+    /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
     pub fn notifications_with_subscribers(
         &self,
     ) -> std::option::Option<&[crate::model::NotificationWithSubscribers]> {
