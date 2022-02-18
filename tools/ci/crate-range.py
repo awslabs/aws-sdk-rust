@@ -110,10 +110,9 @@ def organize_crate_list(batch_count, crates):
 
 
 # Lists all SDK crates including examples
-def list_crates(repository_root):
+def list_crates(repository_root, path):
     to_examine = []
-    for path in ["sdk", "examples"]:
-        to_examine.extend(list(map(lambda p: f"{repository_root}/{path}/{p}", os.listdir(f"{repository_root}/{path}"))))
+    to_examine.extend(list(map(lambda p: f"{repository_root}/{path}/{p}", os.listdir(f"{repository_root}/{path}"))))
 
     crates = []
     for path in to_examine:
@@ -124,8 +123,8 @@ def list_crates(repository_root):
 
 
 # Entry point for the `generate-matrix` sub-command
-def subcommand_generate_matrix(repository_root, batch_count, rust_versions):
-    crates = list_crates(repository_root)
+def subcommand_generate_matrix(repository_root, batch_count, folder, rust_versions):
+    crates = list_crates(repository_root, folder)
     batches = calculate_batches(len(crates), batch_count)
 
     output = {
@@ -137,9 +136,9 @@ def subcommand_generate_matrix(repository_root, batch_count, rust_versions):
 
 
 # Entry point for the `run` sub-command
-def subcommand_run(repository_root, batch_count, start_inclusive, end_exclusive, command):
+def subcommand_run(repository_root, batch_count, start_inclusive, end_exclusive, folder, command):
     print(f"{COLOR_YELLOW}Determining crate list...{COLOR_RESET}")
-    crates = list_crates(repository_root)
+    crates = list_crates(repository_root, folder)
 
     if end_exclusive <= start_inclusive or end_exclusive < 0 or start_inclusive < 0:
         print("Invalid range")
@@ -178,13 +177,18 @@ def main():
     subparsers.add_parser("self-test", help="Run unit tests for this script")
 
     subparser_generate_matrix = subparsers.add_parser("generate-matrix", help="Generate a test matrix")
-    subparser_generate_matrix.add_argument("-b", type=int, dest="batches", required=True, help="Number of batches")
     subparser_generate_matrix.add_argument("rust_versions", type=str, nargs=argparse.ONE_OR_MORE)
+    subparser_generate_matrix.add_argument("-b", type=int, dest="batches", required=True, help="Number of batches")
+    subparser_generate_matrix.add_argument("--folder", required=True, type=str, choices=["sdk", "examples"],
+                                           help="Name of the folder containing the crates you want to generate a "
+                                                "matrix for") 
 
     subparser_run = subparsers.add_parser("run", help="Run command on crate range")
     subparser_run.add_argument("-b", required=True, type=int, dest="batches", help="Number of batches")
     subparser_run.add_argument("-s", required=True, type=int, dest="start_inclusive", help="Range start inclusive")
     subparser_run.add_argument("-e", required=True, type=int, dest="end_exclusive", help="Range end exclusive")
+    subparser_run.add_argument("--folder", required=True, type=str, choices=["sdk", "examples"],
+                               help="Name of the folder containing the crates you want to run a command on")
     subparser_run.add_argument("cmd", type=str, nargs=argparse.ONE_OR_MORE)
 
     args = parser.parse_args()
@@ -195,9 +199,9 @@ def main():
         unittest.main()
         return 0
     elif args.subcommand == "generate-matrix":
-        return subcommand_generate_matrix(repository_root, args.batches, args.rust_versions)
+        return subcommand_generate_matrix(repository_root, args.batches, args.folder, args.rust_versions)
     elif args.subcommand == "run":
-        return subcommand_run(repository_root, args.batches, args.start_inclusive, args.end_exclusive, args.cmd)
+        return subcommand_run(repository_root, args.batches, args.start_inclusive, args.end_exclusive, args.folder, args.cmd)
 
 
 def get_cmd_output(command, shell=False):
