@@ -47,21 +47,14 @@ jobs:
       - uses: Swatinem/rust-cache@842ef286fff290e445b90b4002cc9807c3669641
         with:
           sharedKey: test
-      # The telephone-game example depends on ALSA, so we need this library to compile it
-      - name: Install libasound2-dev
-        run: sudo apt-get install -y libasound2-dev
-      - name: Remove root manifest
-        run: |
-          # HACK: The workspace smithy-rs generates is invalid.
-          # This can be removed once https://github.com/awslabs/smithy-rs/pull/957
-          # is merged into aws-sdk-rust.
-          rm Cargo.toml
       - name: Cargo Test
-        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} -- cargo test --all-features
+        run: |
+          ./tools/ci/crate-range.py run ${{ matrix.crate_range }} -- \
+          cargo test --all-features -- --exlude s3_code_examples 
       - name: Cargo Doc
         run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} -- cargo doc --all-features --no-deps
 
-  # Psuedo-job that depends on the test job so that we don't have to enter
+  # Pseudo-job that depends on the test job so that we don't have to enter
   # the myriad of test range combinations into GitHub's protected branch rules
   require-tests:
     needs: test
