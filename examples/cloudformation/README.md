@@ -59,7 +59,7 @@ This example deletes a CloudFormation stack in the region.
 
 This example retrieves the status of a CloudFormation stack in the region.
 
-`cargo run --bin describe-stacks -- -s STACK-NAME [-d DEFAULT-REGION] [-v]`
+`cargo run --bin describe-stack -- -s STACK-NAME [-d DEFAULT-REGION] [-v]`
 
 - _STACK-NAME_ is name of the stack.
   If the stack does not exist, the code panics.
