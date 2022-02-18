@@ -50,7 +50,7 @@ jobs:
       - name: Cargo Test
         run: |
           ./tools/ci/crate-range.py run ${{ matrix.crate_range }} -- \
-          cargo test --all-features -- --exlude s3_code_examples 
+          cargo test --all-features -- --exclude s3_code_examples 
       - name: Cargo Doc
         run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} -- cargo doc --all-features --no-deps
 
