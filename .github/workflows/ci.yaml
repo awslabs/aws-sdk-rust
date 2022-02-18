@@ -24,7 +24,7 @@ jobs:
         # Run the `crate-range.py` script to calculate a test matrix for the `test` job.
         # This script outputs JSON that GitHub Actions can consume as a matrix definition.
         # Rust versions to test against are arguments to this script.
-        run: echo "::set-output name=matrix::$(./tools/ci/crate-range.py generate-matrix -b ${BATCH_COUNT} -f sdk 1.54.0 1.56.1)"
+        run: echo "::set-output name=matrix::$(./tools/ci/crate-range.py generate-matrix -b ${BATCH_COUNT} --folder sdk 1.54.0 1.56.1)"
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
 
@@ -48,9 +48,9 @@ jobs:
         with:
           sharedKey: test
       - name: Cargo Test
-        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} -f sdk -- cargo test --all-features
+        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} --folder sdk -- cargo test --all-features
       - name: Cargo Doc
-        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} -f sdk -- cargo doc --all-features --no-deps
+        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} --folder sdk -- cargo doc --all-features --no-deps
 
   # Psuedo-job that depends on the test job so that we don't have to enter
   # the myriad of test range combinations into GitHub's protected branch rules
@@ -76,7 +76,7 @@ jobs:
         # Run the `crate-range.py` script to calculate a test matrix for the `test` job.
         # This script outputs JSON that GitHub Actions can consume as a matrix definition.
         # Rust versions to test against are arguments to this script.
-        run: echo "::set-output name=matrix::$(./tools/ci/crate-range.py generate-matrix -b ${BATCH_COUNT} -f examples 1.54.0 1.56.1)"
+        run: echo "::set-output name=matrix::$(./tools/ci/crate-range.py generate-matrix -b ${BATCH_COUNT} --folder examples 1.54.0 1.56.1)"
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
 
@@ -100,9 +100,9 @@ jobs:
         with:
           sharedKey: test
       - name: Cargo Test
-        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} -f examples -- cargo test --all-features
+        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} --folder examples -- cargo test --all-features
       - name: Cargo Doc
-        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} -f examples -- cargo doc --all-features --no-deps
+        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} --folder examples -- cargo doc --all-features --no-deps
 
   # Psuedo-job that depends on the test job so that we don't have to enter
   # the myriad of test range combinations into GitHub's protected branch rules
