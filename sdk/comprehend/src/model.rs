@@ -607,8 +607,8 @@ impl DocumentReaderConfig {
     }
 }
 
-/// <p>A list of the types of analyses to perform. This field specifies what feature types need to be extracted from the document where entity recognition is
-/// expected.</p>
+/// <p>A list of the types of analyses to perform. This field specifies what feature types
+/// need to be extracted from the document where entity recognition is expected.</p>
 ///
 /// <ul>
 /// <li>
@@ -4100,6 +4100,8 @@ pub struct EntityRecognizerProperties {
     pub model_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The version name you assigned to the entity recognizer.</p>
     pub version_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the entity recognizer model in your AWS account.</p>
+    pub source_model_arn: std::option::Option<std::string::String>,
 }
 impl EntityRecognizerProperties {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
@@ -4174,6 +4176,10 @@ impl EntityRecognizerProperties {
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the entity recognizer model in your AWS account.</p>
+    pub fn source_model_arn(&self) -> std::option::Option<&str> {
+        self.source_model_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EntityRecognizerProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4193,6 +4199,7 @@ impl std::fmt::Debug for EntityRecognizerProperties {
         formatter.field("vpc_config", &self.vpc_config);
         formatter.field("model_kms_key_id", &self.model_kms_key_id);
         formatter.field("version_name", &self.version_name);
+        formatter.field("source_model_arn", &self.source_model_arn);
         formatter.finish()
     }
 }
@@ -4218,6 +4225,7 @@ pub mod entity_recognizer_properties {
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) model_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) version_name: std::option::Option<std::string::String>,
+        pub(crate) source_model_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
@@ -4428,6 +4436,19 @@ pub mod entity_recognizer_properties {
             self.version_name = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the entity recognizer model in your AWS account.</p>
+        pub fn source_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_model_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the entity recognizer model in your AWS account.</p>
+        pub fn set_source_model_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_model_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties)
         pub fn build(self) -> crate::model::EntityRecognizerProperties {
             crate::model::EntityRecognizerProperties {
@@ -4446,6 +4467,7 @@ pub mod entity_recognizer_properties {
                 vpc_config: self.vpc_config,
                 model_kms_key_id: self.model_kms_key_id,
                 version_name: self.version_name,
+                source_model_arn: self.source_model_arn,
             }
         }
     }
@@ -7515,6 +7537,8 @@ pub struct DocumentClassifierProperties {
     pub model_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The version name that you assigned to the document classifier.</p>
     pub version_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the document classifier model in your AWS account.</p>
+    pub source_model_arn: std::option::Option<std::string::String>,
 }
 impl DocumentClassifierProperties {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
@@ -7597,6 +7621,10 @@ impl DocumentClassifierProperties {
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the document classifier model in your AWS account.</p>
+    pub fn source_model_arn(&self) -> std::option::Option<&str> {
+        self.source_model_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DocumentClassifierProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7618,6 +7646,7 @@ impl std::fmt::Debug for DocumentClassifierProperties {
         formatter.field("mode", &self.mode);
         formatter.field("model_kms_key_id", &self.model_kms_key_id);
         formatter.field("version_name", &self.version_name);
+        formatter.field("source_model_arn", &self.source_model_arn);
         formatter.finish()
     }
 }
@@ -7646,6 +7675,7 @@ pub mod document_classifier_properties {
         pub(crate) mode: std::option::Option<crate::model::DocumentClassifierMode>,
         pub(crate) model_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) version_name: std::option::Option<std::string::String>,
+        pub(crate) source_model_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
@@ -7882,6 +7912,19 @@ pub mod document_classifier_properties {
             self.version_name = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the document classifier model in your AWS account.</p>
+        pub fn source_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_model_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to create the document classifier model in your AWS account.</p>
+        pub fn set_source_model_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_model_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties)
         pub fn build(self) -> crate::model::DocumentClassifierProperties {
             crate::model::DocumentClassifierProperties {
@@ -7902,6 +7945,7 @@ pub mod document_classifier_properties {
                 mode: self.mode,
                 model_kms_key_id: self.model_kms_key_id,
                 version_name: self.version_name,
+                source_model_arn: self.source_model_arn,
             }
         }
     }

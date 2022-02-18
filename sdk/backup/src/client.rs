@@ -387,7 +387,7 @@ impl Client {
     ///   - [`completion_date(Option<DateTime>)`](crate::output::DescribeRecoveryPointOutput::completion_date): <p>The date and time that a job to create a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     ///   - [`backup_size_in_bytes(Option<i64>)`](crate::output::DescribeRecoveryPointOutput::backup_size_in_bytes): <p>The size, in bytes, of a backup.</p>
     ///   - [`calculated_lifecycle(Option<CalculatedLifecycle>)`](crate::output::DescribeRecoveryPointOutput::calculated_lifecycle): <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
-    ///   - [`lifecycle(Option<Lifecycle>)`](crate::output::DescribeRecoveryPointOutput::lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>  <p>Backups that are transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>  <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    ///   - [`lifecycle(Option<Lifecycle>)`](crate::output::DescribeRecoveryPointOutput::lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p>  <p>Backups that are transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>  <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     ///   - [`encryption_key_arn(Option<String>)`](crate::output::DescribeRecoveryPointOutput::encryption_key_arn): <p>The server-side encryption key used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     ///   - [`is_encrypted(bool)`](crate::output::DescribeRecoveryPointOutput::is_encrypted): <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted.</p>
     ///   - [`storage_class(Option<StorageClass>)`](crate::output::DescribeRecoveryPointOutput::storage_class): <p>Specifies the storage class of the recovery point. Valid values are <code>WARM</code> or <code>COLD</code>.</p>
@@ -402,7 +402,7 @@ impl Client {
 
     /// - On success, responds with [`DescribeRegionSettingsOutput`](crate::output::DescribeRegionSettingsOutput) with field(s):
     ///   - [`resource_type_opt_in_preference(Option<HashMap<String, bool>>)`](crate::output::DescribeRegionSettingsOutput::resource_type_opt_in_preference): <p>Returns a list of all services along with the opt-in preferences in the Region.</p>
-    ///   - [`resource_type_management_preference(Option<HashMap<String, bool>>)`](crate::output::DescribeRegionSettingsOutput::resource_type_management_preference): <p>Returns whether a DynamoDB recovery point was taken using <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>. </p>
+    ///   - [`resource_type_management_preference(Option<HashMap<String, bool>>)`](crate::output::DescribeRegionSettingsOutput::resource_type_management_preference): <p>Returns whether Backup fully manages the backups for a resource type.</p>  <p>For the benefits of full Backup management, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management"> Full Backup management</a>.</p>  <p>For a list of resource types and whether each supports full Backup management, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table.</p>  <p>If <code>"DynamoDB":false</code>, you can enable full Backup management for DynamoDB backup by enabling <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> Backup's advanced DynamoDB backup features</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeRegionSettingsError>`](crate::error::DescribeRegionSettingsError)
     pub fn describe_region_settings(&self) -> fluent_builders::DescribeRegionSettings {
         fluent_builders::DescribeRegionSettings::new(self.handle.clone())
@@ -569,7 +569,7 @@ impl Client {
     /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetSupportedResourceTypes::send) it.
 
     /// - On success, responds with [`GetSupportedResourceTypesOutput`](crate::output::GetSupportedResourceTypesOutput) with field(s):
-    ///   - [`resource_types(Option<Vec<String>>)`](crate::output::GetSupportedResourceTypesOutput::resource_types): <p>Contains a string with the supported Amazon Web Services resource types:</p>  <ul>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>FSX</code> for Amazon FSx</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>  </ul>
+    ///   - [`resource_types(Option<Vec<String>>)`](crate::output::GetSupportedResourceTypesOutput::resource_types): <p>Contains a string with the supported Amazon Web Services resource types:</p>  <ul>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>FSX</code> for Amazon FSx</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>   <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>   <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetSupportedResourceTypesError>`](crate::error::GetSupportedResourceTypesError)
     pub fn get_supported_resource_types(&self) -> fluent_builders::GetSupportedResourceTypes {
         fluent_builders::GetSupportedResourceTypes::new(self.handle.clone())
@@ -585,7 +585,7 @@ impl Client {
     ///   - [`by_backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_backup_vault_name) / [`set_by_backup_vault_name(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_backup_vault_name): <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     ///   - [`by_created_before(DateTime)`](crate::client::fluent_builders::ListBackupJobs::by_created_before) / [`set_by_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListBackupJobs::set_by_created_before): <p>Returns only backup jobs that were created before the specified date.</p>
     ///   - [`by_created_after(DateTime)`](crate::client::fluent_builders::ListBackupJobs::by_created_after) / [`set_by_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListBackupJobs::set_by_created_after): <p>Returns only backup jobs that were created after the specified date.</p>
-    ///   - [`by_resource_type(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_resource_type) / [`set_by_resource_type(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_resource_type): <p>Returns only backup jobs for the specified resources:</p>  <ul>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>  </ul>
+    ///   - [`by_resource_type(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_resource_type) / [`set_by_resource_type(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_resource_type): <p>Returns only backup jobs for the specified resources:</p>  <ul>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>FSx</code> for Amazon FSx</p> </li>   <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>   <li> <p> <code>S3</code> for Amazon S3</p> </li>   <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>  </ul>
     ///   - [`by_account_id(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_account_id) / [`set_by_account_id(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_account_id): <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>  <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
     /// - On success, responds with [`ListBackupJobsOutput`](crate::output::ListBackupJobsOutput) with field(s):
     ///   - [`backup_jobs(Option<Vec<BackupJob>>)`](crate::output::ListBackupJobsOutput::backup_jobs): <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
@@ -672,7 +672,7 @@ impl Client {
     ///   - [`by_state(CopyJobState)`](crate::client::fluent_builders::ListCopyJobs::by_state) / [`set_by_state(Option<CopyJobState>)`](crate::client::fluent_builders::ListCopyJobs::set_by_state): <p>Returns only copy jobs that are in the specified state.</p>
     ///   - [`by_created_before(DateTime)`](crate::client::fluent_builders::ListCopyJobs::by_created_before) / [`set_by_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListCopyJobs::set_by_created_before): <p>Returns only copy jobs that were created before the specified date.</p>
     ///   - [`by_created_after(DateTime)`](crate::client::fluent_builders::ListCopyJobs::by_created_after) / [`set_by_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListCopyJobs::set_by_created_after): <p>Returns only copy jobs that were created after the specified date.</p>
-    ///   - [`by_resource_type(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_resource_type) / [`set_by_resource_type(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_resource_type): <p>Returns only backup jobs for the specified resources:</p>  <ul>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>  </ul>
+    ///   - [`by_resource_type(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_resource_type) / [`set_by_resource_type(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_resource_type): <p>Returns only backup jobs for the specified resources:</p>  <ul>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>FSx</code> for Amazon FSx</p> </li>   <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>   <li> <p> <code>S3</code> for Amazon S3</p> </li>   <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>  </ul>
     ///   - [`by_destination_vault_arn(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_destination_vault_arn) / [`set_by_destination_vault_arn(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_destination_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
     ///   - [`by_account_id(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_account_id) / [`set_by_account_id(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_account_id): <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
     /// - On success, responds with [`ListCopyJobsOutput`](crate::output::ListCopyJobsOutput) with field(s):
@@ -821,8 +821,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::set_backup_vault_name): <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
-    ///   - [`min_retention_days(i64)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::min_retention_days) / [`set_min_retention_days(Option<i64>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::set_min_retention_days): <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>  <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>  <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
-    ///   - [`max_retention_days(i64)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::max_retention_days) / [`set_max_retention_days(Option<i64>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::set_max_retention_days): <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>  <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>  <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+    ///   - [`min_retention_days(i64)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::min_retention_days) / [`set_min_retention_days(Option<i64>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::set_min_retention_days): <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>  <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>  <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+    ///   - [`max_retention_days(i64)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::max_retention_days) / [`set_max_retention_days(Option<i64>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::set_max_retention_days): <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>  <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>  <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
     ///   - [`changeable_for_days(i64)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::changeable_for_days) / [`set_changeable_for_days(Option<i64>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::set_changeable_for_days): <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>  <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p>  <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p>  <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
     /// - On success, responds with [`PutBackupVaultLockConfigurationOutput`](crate::output::PutBackupVaultLockConfigurationOutput)
 
@@ -837,7 +837,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     ///   - [`sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::sns_topic_arn) / [`set_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_sns_topic_arn): <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
-    ///   - [`backup_vault_events(Vec<BackupVaultEvent>)`](crate::client::fluent_builders::PutBackupVaultNotifications::backup_vault_events) / [`set_backup_vault_events(Option<Vec<BackupVaultEvent>>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_backup_vault_events): <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>  <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>  <p>The following events are supported:</p>  <ul>   <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>   <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>   <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>  </ul> <note>   <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>  </note>
+    ///   - [`backup_vault_events(Vec<BackupVaultEvent>)`](crate::client::fluent_builders::PutBackupVaultNotifications::backup_vault_events) / [`set_backup_vault_events(Option<Vec<BackupVaultEvent>>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_backup_vault_events): <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>  <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>  <p>The following events are supported:</p>  <ul>   <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>   <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>   <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>   <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>  </ul> <note>   <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>  </note>
     /// - On success, responds with [`PutBackupVaultNotificationsOutput`](crate::output::PutBackupVaultNotificationsOutput)
 
     /// - On failure, responds with [`SdkError<PutBackupVaultNotificationsError>`](crate::error::PutBackupVaultNotificationsError)
@@ -852,8 +852,8 @@ impl Client {
     ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartBackupJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::StartBackupJob::set_iam_role_arn): <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::StartBackupJob::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::StartBackupJob::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     ///   - [`start_window_minutes(i64)`](crate::client::fluent_builders::StartBackupJob::start_window_minutes) / [`set_start_window_minutes(Option<i64>)`](crate::client::fluent_builders::StartBackupJob::set_start_window_minutes): <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
-    ///   - [`complete_window_minutes(i64)`](crate::client::fluent_builders::StartBackupJob::complete_window_minutes) / [`set_complete_window_minutes(Option<i64>)`](crate::client::fluent_builders::StartBackupJob::set_complete_window_minutes): <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
-    ///   - [`lifecycle(Lifecycle)`](crate::client::fluent_builders::StartBackupJob::lifecycle) / [`set_lifecycle(Option<Lifecycle>)`](crate::client::fluent_builders::StartBackupJob::set_lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>  <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    ///   - [`complete_window_minutes(i64)`](crate::client::fluent_builders::StartBackupJob::complete_window_minutes) / [`set_complete_window_minutes(Option<i64>)`](crate::client::fluent_builders::StartBackupJob::set_complete_window_minutes): <p>A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+    ///   - [`lifecycle(Lifecycle)`](crate::client::fluent_builders::StartBackupJob::lifecycle) / [`set_lifecycle(Option<Lifecycle>)`](crate::client::fluent_builders::StartBackupJob::set_lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>  <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     ///   - [`recovery_point_tags(HashMap<String, String>)`](crate::client::fluent_builders::StartBackupJob::recovery_point_tags) / [`set_recovery_point_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartBackupJob::set_recovery_point_tags): <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
     ///   - [`backup_options(HashMap<String, String>)`](crate::client::fluent_builders::StartBackupJob::backup_options) / [`set_backup_options(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartBackupJob::set_backup_options): <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>  <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     /// - On success, responds with [`StartBackupJobOutput`](crate::output::StartBackupJobOutput) with field(s):
@@ -872,7 +872,7 @@ impl Client {
     ///   - [`destination_backup_vault_arn(impl Into<String>)`](crate::client::fluent_builders::StartCopyJob::destination_backup_vault_arn) / [`set_destination_backup_vault_arn(Option<String>)`](crate::client::fluent_builders::StartCopyJob::set_destination_backup_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartCopyJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::StartCopyJob::set_iam_role_arn): <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::StartCopyJob::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::StartCopyJob::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    ///   - [`lifecycle(Lifecycle)`](crate::client::fluent_builders::StartCopyJob::lifecycle) / [`set_lifecycle(Option<Lifecycle>)`](crate::client::fluent_builders::StartCopyJob::set_lifecycle): <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>  <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    ///   - [`lifecycle(Lifecycle)`](crate::client::fluent_builders::StartCopyJob::lifecycle) / [`set_lifecycle(Option<Lifecycle>)`](crate::client::fluent_builders::StartCopyJob::set_lifecycle): <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>  <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     /// - On success, responds with [`StartCopyJobOutput`](crate::output::StartCopyJobOutput) with field(s):
     ///   - [`copy_job_id(Option<String>)`](crate::output::StartCopyJobOutput::copy_job_id): <p>Uniquely identifies a copy job.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::StartCopyJobOutput::creation_date): <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -898,7 +898,7 @@ impl Client {
     ///   - [`metadata(HashMap<String, String>)`](crate::client::fluent_builders::StartRestoreJob::metadata) / [`set_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartRestoreJob::set_metadata): <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>  <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>  <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>  <ul>   <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>   <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>   <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>   <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>   <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>   <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>   <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>  </ul>
     ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_resource_type): <p>Starts a job to restore a recovery point for one of the following resources:</p>  <ul>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>  </ul>
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_resource_type): <p>Starts a job to restore a recovery point for one of the following resources:</p>  <ul>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>FSx</code> for Amazon FSx</p> </li>   <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>   <li> <p> <code>S3</code> for Amazon S3</p> </li>   <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>  </ul>
     /// - On success, responds with [`StartRestoreJobOutput`](crate::output::StartRestoreJobOutput) with field(s):
     ///   - [`restore_job_id(Option<String>)`](crate::output::StartRestoreJobOutput::restore_job_id): <p>Uniquely identifies the job that restores a recovery point.</p>
     /// - On failure, responds with [`SdkError<StartRestoreJobError>`](crate::error::StartRestoreJobError)
@@ -982,11 +982,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     ///   - [`recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::set_recovery_point_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    ///   - [`lifecycle(Lifecycle)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::lifecycle) / [`set_lifecycle(Option<Lifecycle>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::set_lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+    ///   - [`lifecycle(Lifecycle)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::lifecycle) / [`set_lifecycle(Option<Lifecycle>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::set_lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     /// - On success, responds with [`UpdateRecoveryPointLifecycleOutput`](crate::output::UpdateRecoveryPointLifecycleOutput) with field(s):
     ///   - [`backup_vault_arn(Option<String>)`](crate::output::UpdateRecoveryPointLifecycleOutput::backup_vault_arn): <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     ///   - [`recovery_point_arn(Option<String>)`](crate::output::UpdateRecoveryPointLifecycleOutput::recovery_point_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    ///   - [`lifecycle(Option<Lifecycle>)`](crate::output::UpdateRecoveryPointLifecycleOutput::lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>  <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    ///   - [`lifecycle(Option<Lifecycle>)`](crate::output::UpdateRecoveryPointLifecycleOutput::lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>  <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
     ///   - [`calculated_lifecycle(Option<CalculatedLifecycle>)`](crate::output::UpdateRecoveryPointLifecycleOutput::calculated_lifecycle): <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
     /// - On failure, responds with [`SdkError<UpdateRecoveryPointLifecycleError>`](crate::error::UpdateRecoveryPointLifecycleError)
     pub fn update_recovery_point_lifecycle(&self) -> fluent_builders::UpdateRecoveryPointLifecycle {
@@ -996,7 +996,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_type_opt_in_preference(HashMap<String, bool>)`](crate::client::fluent_builders::UpdateRegionSettings::resource_type_opt_in_preference) / [`set_resource_type_opt_in_preference(Option<HashMap<String, bool>>)`](crate::client::fluent_builders::UpdateRegionSettings::set_resource_type_opt_in_preference): <p>Updates the list of services along with the opt-in preferences for the Region.</p>
-    ///   - [`resource_type_management_preference(HashMap<String, bool>)`](crate::client::fluent_builders::UpdateRegionSettings::resource_type_management_preference) / [`set_resource_type_management_preference(Option<HashMap<String, bool>>)`](crate::client::fluent_builders::UpdateRegionSettings::set_resource_type_management_preference): <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
+    ///   - [`resource_type_management_preference(HashMap<String, bool>)`](crate::client::fluent_builders::UpdateRegionSettings::resource_type_management_preference) / [`set_resource_type_management_preference(Option<HashMap<String, bool>>)`](crate::client::fluent_builders::UpdateRegionSettings::set_resource_type_management_preference): <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
     /// - On success, responds with [`UpdateRegionSettingsOutput`](crate::output::UpdateRegionSettingsOutput)
 
     /// - On failure, responds with [`SdkError<UpdateRegionSettingsError>`](crate::error::UpdateRegionSettingsError)
@@ -1125,7 +1125,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBackupSelection`.
     ///
-    /// <p>Creates a JSON document that specifies a set of resources to assign to a backup plan. For examples, see <a href="https://docs.aws.amazon.com/assigning-resources.html#assigning-resources-json">Assigning resources programmatically</a>. </p>
+    /// <p>Creates a JSON document that specifies a set of resources to assign to a backup plan. For examples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/assigning-resources.html#assigning-resources-json">Assigning resources programmatically</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackupSelection {
         handle: std::sync::Arc<super::Handle>,
@@ -3434,13 +3434,18 @@ pub mod fluent_builders {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn by_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_resource_type(input.into());
@@ -3448,13 +3453,18 @@ pub mod fluent_builders {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn set_by_resource_type(
             mut self,
@@ -3982,13 +3992,18 @@ pub mod fluent_builders {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn by_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_resource_type(input.into());
@@ -3996,13 +4011,18 @@ pub mod fluent_builders {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn set_by_resource_type(
             mut self,
@@ -4724,9 +4744,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTags`.
     ///
-    /// <p>Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup vault.</p> <note>
-    /// <p> <code>ListTags</code> are currently only supported with Amazon EFS backups.</p>
-    /// </note>
+    /// <p>Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup vault.</p>
+    /// <p> <code>ListTags</code> only works for resource types that support full Backup management of their backups. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags {
         handle: std::sync::Arc<super::Handle>,
@@ -4928,28 +4947,28 @@ pub mod fluent_builders {
         }
         /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
         /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn min_retention_days(mut self, input: i64) -> Self {
             self.inner = self.inner.min_retention_days(input);
             self
         }
         /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
         /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. The shortest minimum retention period you can specify is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn set_min_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_min_retention_days(input);
             self
         }
         /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
         /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn max_retention_days(mut self, input: i64) -> Self {
             self.inner = self.inner.max_retention_days(input);
             self
         }
         /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
         /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. The longest maximum retention period you can specify is 36500 days (approximately 100 years). Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn set_max_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_max_retention_days(input);
             self
@@ -5050,6 +5069,7 @@ pub mod fluent_builders {
         /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
         /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
         /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+        /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>
         /// </ul> <note>
         /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
         /// </note>
@@ -5064,6 +5084,7 @@ pub mod fluent_builders {
         /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
         /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
         /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+        /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> </p> </li>
         /// </ul> <note>
         /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
         /// </note>
@@ -5173,26 +5194,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_window_minutes(input);
             self
         }
-        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+        /// <p>A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
         pub fn complete_window_minutes(mut self, input: i64) -> Self {
             self.inner = self.inner.complete_window_minutes(input);
             self
         }
-        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+        /// <p>A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
         pub fn set_complete_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_complete_window_minutes(input);
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.inner = self.inner.lifecycle(input);
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -5358,15 +5379,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
+        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.inner = self.inner.lifecycle(input);
             self
         }
         /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
+        /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -5569,13 +5590,18 @@ pub mod fluent_builders {
         }
         /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
@@ -5583,13 +5609,18 @@ pub mod fluent_builders {
         }
         /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
         /// <ul>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
         /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
         /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
         /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
         /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+        /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
         /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
         /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+        /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+        /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -6039,9 +6070,9 @@ pub mod fluent_builders {
     ///
     /// <p>Sets the transition lifecycle of a recovery point.</p>
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
-    /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
-    /// <p>Does not support continuous backups.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
+    /// <p>Only resource types that support full Backup management can transition their backups to cold storage. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>This operation does not support continuous backups.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecoveryPointLifecycle {
         handle: std::sync::Arc<super::Handle>,
@@ -6108,13 +6139,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.inner = self.inner.lifecycle(input);
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -6190,7 +6221,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).
         ///
-        /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
+        /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
         pub fn resource_type_management_preference(
             mut self,
             k: impl Into<std::string::String>,
@@ -6199,7 +6230,7 @@ pub mod fluent_builders {
             self.inner = self.inner.resource_type_management_preference(k.into(), v);
             self
         }
-        /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
+        /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
         pub fn set_resource_type_management_preference(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,

@@ -7,11 +7,11 @@ version = "0.1.0"
 publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-rds]
 path = "../../sdk/rds"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.tokio]
 version = "1"

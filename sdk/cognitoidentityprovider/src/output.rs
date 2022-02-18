@@ -35,7 +35,7 @@ impl VerifyUserAttributeOutput {
 pub struct VerifySoftwareTokenOutput {
     /// <p>The status of the verify software token.</p>
     pub status: std::option::Option<crate::model::VerifySoftwareTokenResponseType>,
-    /// <p>The session which should be passed both ways in challenge-response calls to the service.</p>
+    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     pub session: std::option::Option<std::string::String>,
 }
 impl VerifySoftwareTokenOutput {
@@ -43,7 +43,7 @@ impl VerifySoftwareTokenOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::VerifySoftwareTokenResponseType> {
         self.status.as_ref()
     }
-    /// <p>The session which should be passed both ways in challenge-response calls to the service.</p>
+    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -79,12 +79,12 @@ pub mod verify_software_token_output {
             self.status = input;
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service.</p>
+        /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
         pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
             self.session = Some(input.into());
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service.</p>
+        /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -166,11 +166,11 @@ impl UpdateUserPoolDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserPoolClientOutput {
-    /// <p>The user pool client value from the response from the server when an update user pool client request is made.</p>
+    /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
     pub user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
 }
 impl UpdateUserPoolClientOutput {
-    /// <p>The user pool client value from the response from the server when an update user pool client request is made.</p>
+    /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
     pub fn user_pool_client(&self) -> std::option::Option<&crate::model::UserPoolClientType> {
         self.user_pool_client.as_ref()
     }
@@ -191,12 +191,12 @@ pub mod update_user_pool_client_output {
         pub(crate) user_pool_client: std::option::Option<crate::model::UserPoolClientType>,
     }
     impl Builder {
-        /// <p>The user pool client value from the response from the server when an update user pool client request is made.</p>
+        /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
         pub fn user_pool_client(mut self, input: crate::model::UserPoolClientType) -> Self {
             self.user_pool_client = Some(input);
             self
         }
-        /// <p>The user pool client value from the response from the server when an update user pool client request is made.</p>
+        /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
         pub fn set_user_pool_client(
             mut self,
             input: std::option::Option<crate::model::UserPoolClientType>,
@@ -730,7 +730,7 @@ pub struct SignUpOutput {
     pub user_confirmed: bool,
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     pub code_delivery_details: std::option::Option<crate::model::CodeDeliveryDetailsType>,
-    /// <p>The UUID of the authenticated user. This is not the same as <code>username</code>.</p>
+    /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub user_sub: std::option::Option<std::string::String>,
 }
 impl SignUpOutput {
@@ -744,7 +744,7 @@ impl SignUpOutput {
     ) -> std::option::Option<&crate::model::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
-    /// <p>The UUID of the authenticated user. This is not the same as <code>username</code>.</p>
+    /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub fn user_sub(&self) -> std::option::Option<&str> {
         self.user_sub.as_deref()
     }
@@ -796,12 +796,12 @@ pub mod sign_up_output {
             self.code_delivery_details = input;
             self
         }
-        /// <p>The UUID of the authenticated user. This is not the same as <code>username</code>.</p>
+        /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
         pub fn user_sub(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_sub = Some(input.into());
             self
         }
-        /// <p>The UUID of the authenticated user. This is not the same as <code>username</code>.</p>
+        /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
         pub fn set_user_sub(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_sub = input;
             self
@@ -864,7 +864,7 @@ pub struct SetUserPoolMfaConfigOutput {
         std::option::Option<crate::model::SoftwareTokenMfaConfigType>,
     /// <p>The MFA configuration. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
     /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
     /// </ul>
@@ -883,7 +883,7 @@ impl SetUserPoolMfaConfigOutput {
     }
     /// <p>The MFA configuration. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
     /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
     /// </ul>
@@ -946,7 +946,7 @@ pub mod set_user_pool_mfa_config_output {
         }
         /// <p>The MFA configuration. Valid values include:</p>
         /// <ul>
-        /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+        /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
         /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
         /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
         /// </ul>
@@ -956,7 +956,7 @@ pub mod set_user_pool_mfa_config_output {
         }
         /// <p>The MFA configuration. Valid values include:</p>
         /// <ul>
-        /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+        /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
         /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
         /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
         /// </ul>
@@ -1164,7 +1164,7 @@ impl RevokeTokenOutput {
 pub struct RespondToAuthChallengeOutput {
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
-    /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub session: std::option::Option<std::string::String>,
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     pub challenge_parameters:
@@ -1177,7 +1177,7 @@ impl RespondToAuthChallengeOutput {
     pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
-    /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -1233,12 +1233,12 @@ pub mod respond_to_auth_challenge_output {
             self.challenge_name = input;
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+        /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
         pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
             self.session = Some(input.into());
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+        /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -1302,7 +1302,7 @@ impl RespondToAuthChallengeOutput {
     }
 }
 
-/// <p>The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a confirmation code.</p>
+/// <p>The response from the server when Amazon Cognito makes the request to resend a confirmation code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResendConfirmationCodeOutput {
@@ -2196,47 +2196,47 @@ impl ListDevicesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateAuthOutput {
-    /// <p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <p>Valid values include the following. Note that all of these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
     /// <ul>
     /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
     /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
     /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
-    /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
+    /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
     /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
-    /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
+    /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
-    /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub session: std::option::Option<std::string::String>,
-    /// <p>The challenge parameters. These are returned to you in the <code>InitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
+    /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     pub challenge_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub authentication_result: std::option::Option<crate::model::AuthenticationResultType>,
 }
 impl InitiateAuthOutput {
-    /// <p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <p>Valid values include the following. Note that all of these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
     /// <ul>
     /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
     /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
     /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
-    /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
+    /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
     /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
-    /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
+    /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
     pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
-    /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
-    /// <p>The challenge parameters. These are returned to you in the <code>InitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
+    /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     pub fn challenge_parameters(
         &self,
@@ -2244,7 +2244,7 @@ impl InitiateAuthOutput {
     {
         self.challenge_parameters.as_ref()
     }
-    /// <p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub fn authentication_result(
         &self,
     ) -> std::option::Option<&crate::model::AuthenticationResultType> {
@@ -2276,31 +2276,31 @@ pub mod initiate_auth_output {
             std::option::Option<crate::model::AuthenticationResultType>,
     }
     impl Builder {
-        /// <p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+        /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
         /// <p>Valid values include the following. Note that all of these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
         /// <ul>
         /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
         /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
         /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
-        /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
+        /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
         /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
         /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
-        /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
+        /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
         /// </ul>
         pub fn challenge_name(mut self, input: crate::model::ChallengeNameType) -> Self {
             self.challenge_name = Some(input);
             self
         }
-        /// <p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+        /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
         /// <p>Valid values include the following. Note that all of these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
         /// <ul>
         /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
         /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
         /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
-        /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
+        /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
         /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
         /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
-        /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
+        /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
         /// </ul>
         pub fn set_challenge_name(
             mut self,
@@ -2309,12 +2309,12 @@ pub mod initiate_auth_output {
             self.challenge_name = input;
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+        /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
         pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
             self.session = Some(input.into());
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+        /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -2323,7 +2323,7 @@ pub mod initiate_auth_output {
         ///
         /// To override the contents of this collection use [`set_challenge_parameters`](Self::set_challenge_parameters).
         ///
-        /// <p>The challenge parameters. These are returned to you in the <code>InitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
+        /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
         /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
         pub fn challenge_parameters(
             mut self,
@@ -2335,7 +2335,7 @@ pub mod initiate_auth_output {
             self.challenge_parameters = Some(hash_map);
             self
         }
-        /// <p>The challenge parameters. These are returned to you in the <code>InitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
+        /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
         /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
         pub fn set_challenge_parameters(
             mut self,
@@ -2346,7 +2346,7 @@ pub mod initiate_auth_output {
             self.challenge_parameters = input;
             self
         }
-        /// <p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+        /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
         pub fn authentication_result(
             mut self,
             input: crate::model::AuthenticationResultType,
@@ -2354,7 +2354,7 @@ pub mod initiate_auth_output {
             self.authentication_result = Some(input);
             self
         }
-        /// <p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+        /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
         pub fn set_authentication_result(
             mut self,
             input: std::option::Option<crate::model::AuthenticationResultType>,
@@ -2421,9 +2421,9 @@ pub struct GetUserPoolMfaConfigOutput {
         std::option::Option<crate::model::SoftwareTokenMfaConfigType>,
     /// <p>The multi-factor (MFA) configuration. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
-    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
+    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
 }
@@ -2440,9 +2440,9 @@ impl GetUserPoolMfaConfigOutput {
     }
     /// <p>The multi-factor (MFA) configuration. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+    /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
-    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
+    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
     pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
@@ -2503,9 +2503,9 @@ pub mod get_user_pool_mfa_config_output {
         }
         /// <p>The multi-factor (MFA) configuration. Valid values include:</p>
         /// <ul>
-        /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+        /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
         /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
-        /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
+        /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
         /// </ul>
         pub fn mfa_configuration(mut self, input: crate::model::UserPoolMfaType) -> Self {
             self.mfa_configuration = Some(input);
@@ -2513,9 +2513,9 @@ pub mod get_user_pool_mfa_config_output {
         }
         /// <p>The multi-factor (MFA) configuration. Valid values include:</p>
         /// <ul>
-        /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+        /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
         /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
-        /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
+        /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
         /// </ul>
         pub fn set_mfa_configuration(
             mut self,
@@ -2608,20 +2608,20 @@ impl GetUserAttributeVerificationCodeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserOutput {
-    /// <p>The user name of the user you wish to retrieve from the get user request.</p>
+    /// <p>The user name of the user you want to retrieve from the get user request.</p>
     pub username: std::option::Option<std::string::String>,
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about TOTP software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
     /// <p>The user's preferred MFA setting.</p>
     pub preferred_mfa_setting: std::option::Option<std::string::String>,
-    /// <p>The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     pub user_mfa_setting_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetUserOutput {
-    /// <p>The user name of the user you wish to retrieve from the get user request.</p>
+    /// <p>The user name of the user you want to retrieve from the get user request.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -2630,7 +2630,7 @@ impl GetUserOutput {
     pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
         self.user_attributes.as_deref()
     }
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about TOTP software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub fn mfa_options(&self) -> std::option::Option<&[crate::model::MfaOptionType]> {
         self.mfa_options.as_deref()
     }
@@ -2638,7 +2638,7 @@ impl GetUserOutput {
     pub fn preferred_mfa_setting(&self) -> std::option::Option<&str> {
         self.preferred_mfa_setting.as_deref()
     }
-    /// <p>The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     pub fn user_mfa_setting_list(&self) -> std::option::Option<&[std::string::String]> {
         self.user_mfa_setting_list.as_deref()
     }
@@ -2667,12 +2667,12 @@ pub mod get_user_output {
         pub(crate) user_mfa_setting_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The user name of the user you wish to retrieve from the get user request.</p>
+        /// <p>The user name of the user you want to retrieve from the get user request.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
         }
-        /// <p>The user name of the user you wish to retrieve from the get user request.</p>
+        /// <p>The user name of the user you want to retrieve from the get user request.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -2702,14 +2702,14 @@ pub mod get_user_output {
         ///
         /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
         ///
-        /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about TOTP software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+        /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
         pub fn mfa_options(mut self, input: crate::model::MfaOptionType) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
             v.push(input);
             self.mfa_options = Some(v);
             self
         }
-        /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about TOTP software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+        /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
         pub fn set_mfa_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -2734,14 +2734,14 @@ pub mod get_user_output {
         ///
         /// To override the contents of this collection use [`set_user_mfa_setting_list`](Self::set_user_mfa_setting_list).
         ///
-        /// <p>The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+        /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
         pub fn user_mfa_setting_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_mfa_setting_list.unwrap_or_default();
             v.push(input.into());
             self.user_mfa_setting_list = Some(v);
             self
         }
-        /// <p>The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+        /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
         pub fn set_user_mfa_setting_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2825,7 +2825,7 @@ impl GetUiCustomizationOutput {
     }
 }
 
-/// <p>Response from Cognito for a signing certificate request.</p>
+/// <p>Response from Amazon Cognito for a signing certificate request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSigningCertificateOutput {
@@ -3042,13 +3042,13 @@ impl GetDeviceOutput {
     }
 }
 
-/// <p>Represents the response from the server to the request to get the header information for the .csv file for the user import job.</p>
+/// <p>Represents the response from the server to the request to get the header information of the CSV file for the user import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCsvHeaderOutput {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The header information for the .csv file for the user import job.</p>
+    /// <p>The header information of the CSV file for the user import job.</p>
     pub csv_header: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetCsvHeaderOutput {
@@ -3056,7 +3056,7 @@ impl GetCsvHeaderOutput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The header information for the .csv file for the user import job.</p>
+    /// <p>The header information of the CSV file for the user import job.</p>
     pub fn csv_header(&self) -> std::option::Option<&[std::string::String]> {
         self.csv_header.as_deref()
     }
@@ -3093,14 +3093,14 @@ pub mod get_csv_header_output {
         ///
         /// To override the contents of this collection use [`set_csv_header`](Self::set_csv_header).
         ///
-        /// <p>The header information for the .csv file for the user import job.</p>
+        /// <p>The header information of the CSV file for the user import job.</p>
         pub fn csv_header(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.csv_header.unwrap_or_default();
             v.push(input.into());
             self.csv_header = Some(v);
             self
         }
-        /// <p>The header information for the .csv file for the user import job.</p>
+        /// <p>The header information of the CSV file for the user import job.</p>
         pub fn set_csv_header(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4314,11 +4314,11 @@ impl ConfirmForgotPasswordOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmDeviceOutput {
-    /// <p>Indicates whether the user confirmation is necessary to confirm the device response.</p>
+    /// <p>Indicates whether the user confirmation must confirm the device response.</p>
     pub user_confirmation_necessary: bool,
 }
 impl ConfirmDeviceOutput {
-    /// <p>Indicates whether the user confirmation is necessary to confirm the device response.</p>
+    /// <p>Indicates whether the user confirmation must confirm the device response.</p>
     pub fn user_confirmation_necessary(&self) -> bool {
         self.user_confirmation_necessary
     }
@@ -4342,12 +4342,12 @@ pub mod confirm_device_output {
         pub(crate) user_confirmation_necessary: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether the user confirmation is necessary to confirm the device response.</p>
+        /// <p>Indicates whether the user confirmation must confirm the device response.</p>
         pub fn user_confirmation_necessary(mut self, input: bool) -> Self {
             self.user_confirmation_necessary = Some(input);
             self
         }
-        /// <p>Indicates whether the user confirmation is necessary to confirm the device response.</p>
+        /// <p>Indicates whether the user confirmation must confirm the device response.</p>
         pub fn set_user_confirmation_necessary(mut self, input: std::option::Option<bool>) -> Self {
             self.user_confirmation_necessary = input;
             self
@@ -4401,17 +4401,17 @@ impl ChangePasswordOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSoftwareTokenOutput {
-    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.</p>
+    /// <p>A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to generate a one-time code.</p>
     pub secret_code: std::option::Option<std::string::String>,
-    /// <p>The session which should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub session: std::option::Option<std::string::String>,
 }
 impl AssociateSoftwareTokenOutput {
-    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.</p>
+    /// <p>A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to generate a one-time code.</p>
     pub fn secret_code(&self) -> std::option::Option<&str> {
         self.secret_code.as_deref()
     }
-    /// <p>The session which should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -4434,22 +4434,22 @@ pub mod associate_software_token_output {
         pub(crate) session: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.</p>
+        /// <p>A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to generate a one-time code.</p>
         pub fn secret_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_code = Some(input.into());
             self
         }
-        /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.</p>
+        /// <p>A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to generate a one-time code.</p>
         pub fn set_secret_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_code = input;
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+        /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
         pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
             self.session = Some(input.into());
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+        /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -4530,7 +4530,7 @@ impl AdminUpdateUserAttributesOutput {
     }
 }
 
-/// <p>The status response from the request to update the device, as an administrator.</p>
+/// <p>The status response to the request to update the device, as an administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminUpdateDeviceStatusOutput {}
@@ -4686,7 +4686,7 @@ impl AdminSetUserMfaPreferenceOutput {
 pub struct AdminRespondToAuthChallengeOutput {
     /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
-    /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub session: std::option::Option<std::string::String>,
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     pub challenge_parameters:
@@ -4699,7 +4699,7 @@ impl AdminRespondToAuthChallengeOutput {
     pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
-    /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -4755,12 +4755,12 @@ pub mod admin_respond_to_auth_challenge_output {
             self.challenge_name = input;
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+        /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
         pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
             self.session = Some(input.into());
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+        /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -5167,61 +5167,61 @@ impl AdminLinkProviderForUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminInitiateAuthOutput {
-    /// <p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+    /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <ul>
-    /// <li> <p> <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p> </li>
-    /// <li> <p> <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.</p> </li>
+    /// <li> <p> <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p> </li>
+    /// <li> <p> <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.</p> </li>
     /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
     /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
     /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
-    /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
+    /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
-    /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
+    /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
     /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
-    /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
+    /// <li> <p> <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
-    /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
     pub session: std::option::Option<std::string::String>,
-    /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
+    /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
-    /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.</p>
+    /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
     pub challenge_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub authentication_result: std::option::Option<crate::model::AuthenticationResultType>,
 }
 impl AdminInitiateAuthOutput {
-    /// <p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+    /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <ul>
-    /// <li> <p> <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p> </li>
-    /// <li> <p> <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.</p> </li>
+    /// <li> <p> <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p> </li>
+    /// <li> <p> <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.</p> </li>
     /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
     /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
     /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
-    /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
+    /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
-    /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
+    /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
     /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
-    /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
+    /// <li> <p> <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
     pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
-    /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
     pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
-    /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
+    /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
-    /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.</p>
+    /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
     pub fn challenge_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.challenge_parameters.as_ref()
     }
-    /// <p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub fn authentication_result(
         &self,
     ) -> std::option::Option<&crate::model::AuthenticationResultType> {
@@ -5253,35 +5253,35 @@ pub mod admin_initiate_auth_output {
             std::option::Option<crate::model::AuthenticationResultType>,
     }
     impl Builder {
-        /// <p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+        /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
         /// <ul>
-        /// <li> <p> <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p> </li>
-        /// <li> <p> <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.</p> </li>
+        /// <li> <p> <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p> </li>
+        /// <li> <p> <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.</p> </li>
         /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
         /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
         /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
-        /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
+        /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
         /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
-        /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
+        /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
         /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
-        /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
+        /// <li> <p> <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
         /// </ul>
         pub fn challenge_name(mut self, input: crate::model::ChallengeNameType) -> Self {
             self.challenge_name = Some(input);
             self
         }
-        /// <p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
+        /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
         /// <ul>
-        /// <li> <p> <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p> </li>
-        /// <li> <p> <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.</p> </li>
+        /// <li> <p> <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p> </li>
+        /// <li> <p> <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.</p> </li>
         /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
         /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
         /// <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>
-        /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
+        /// <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>
         /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>
-        /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
+        /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>
         /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>
-        /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
+        /// <li> <p> <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
         /// </ul>
         pub fn set_challenge_name(
             mut self,
@@ -5290,12 +5290,12 @@ pub mod admin_initiate_auth_output {
             self.challenge_name = input;
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+        /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
         pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
             self.session = Some(input.into());
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+        /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -5304,9 +5304,9 @@ pub mod admin_initiate_auth_output {
         ///
         /// To override the contents of this collection use [`set_challenge_parameters`](Self::set_challenge_parameters).
         ///
-        /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
+        /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
         /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
-        /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.</p>
+        /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
         pub fn challenge_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -5317,9 +5317,9 @@ pub mod admin_initiate_auth_output {
             self.challenge_parameters = Some(hash_map);
             self
         }
-        /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
+        /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
         /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
-        /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.</p>
+        /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
         pub fn set_challenge_parameters(
             mut self,
             input: std::option::Option<
@@ -5329,7 +5329,7 @@ pub mod admin_initiate_auth_output {
             self.challenge_parameters = input;
             self
         }
-        /// <p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+        /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
         pub fn authentication_result(
             mut self,
             input: crate::model::AuthenticationResultType,
@@ -5337,7 +5337,7 @@ pub mod admin_initiate_auth_output {
             self.authentication_result = Some(input);
             self
         }
-        /// <p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+        /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
         pub fn set_authentication_result(
             mut self,
             input: std::option::Option<crate::model::AuthenticationResultType>,
@@ -5367,7 +5367,7 @@ impl AdminInitiateAuthOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminGetUserOutput {
-    /// <p>The user name of the user about whom you are receiving information.</p>
+    /// <p>The user name of the user about whom you're receiving information.</p>
     pub username: std::option::Option<std::string::String>,
     /// <p>An array of name-value pairs representing user attributes.</p>
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -5375,7 +5375,7 @@ pub struct AdminGetUserOutput {
     pub user_create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the user was last modified.</p>
     pub user_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates that the status is enabled.</p>
+    /// <p>Indicates that the status is <code>enabled</code>.</p>
     pub enabled: bool,
     /// <p>The user status. Can be one of the following:</p>
     /// <ul>
@@ -5383,20 +5383,20 @@ pub struct AdminGetUserOutput {
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
     /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
-    /// <li> <p>UNKNOWN - User status is not known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or she can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change his or her password to a new value before doing anything else. </p> </li>
+    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
+    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
+    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
     /// </ul>
     pub user_status: std::option::Option<crate::model::UserStatusType>,
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about TOTP software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
     /// <p>The user's preferred MFA setting.</p>
     pub preferred_mfa_setting: std::option::Option<std::string::String>,
-    /// <p>The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     pub user_mfa_setting_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AdminGetUserOutput {
-    /// <p>The user name of the user about whom you are receiving information.</p>
+    /// <p>The user name of the user about whom you're receiving information.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -5412,7 +5412,7 @@ impl AdminGetUserOutput {
     pub fn user_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.user_last_modified_date.as_ref()
     }
-    /// <p>Indicates that the status is enabled.</p>
+    /// <p>Indicates that the status is <code>enabled</code>.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -5422,14 +5422,14 @@ impl AdminGetUserOutput {
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
     /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
-    /// <li> <p>UNKNOWN - User status is not known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or she can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change his or her password to a new value before doing anything else. </p> </li>
+    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
+    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
+    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
     /// </ul>
     pub fn user_status(&self) -> std::option::Option<&crate::model::UserStatusType> {
         self.user_status.as_ref()
     }
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about TOTP software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub fn mfa_options(&self) -> std::option::Option<&[crate::model::MfaOptionType]> {
         self.mfa_options.as_deref()
     }
@@ -5437,7 +5437,7 @@ impl AdminGetUserOutput {
     pub fn preferred_mfa_setting(&self) -> std::option::Option<&str> {
         self.preferred_mfa_setting.as_deref()
     }
-    /// <p>The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     pub fn user_mfa_setting_list(&self) -> std::option::Option<&[std::string::String]> {
         self.user_mfa_setting_list.as_deref()
     }
@@ -5474,12 +5474,12 @@ pub mod admin_get_user_output {
         pub(crate) user_mfa_setting_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The user name of the user about whom you are receiving information.</p>
+        /// <p>The user name of the user about whom you're receiving information.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
         }
-        /// <p>The user name of the user about whom you are receiving information.</p>
+        /// <p>The user name of the user about whom you're receiving information.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -5529,12 +5529,12 @@ pub mod admin_get_user_output {
             self.user_last_modified_date = input;
             self
         }
-        /// <p>Indicates that the status is enabled.</p>
+        /// <p>Indicates that the status is <code>enabled</code>.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Indicates that the status is enabled.</p>
+        /// <p>Indicates that the status is <code>enabled</code>.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -5545,9 +5545,9 @@ pub mod admin_get_user_output {
         /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
         /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
         /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
-        /// <li> <p>UNKNOWN - User status is not known.</p> </li>
-        /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or she can sign in.</p> </li>
-        /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change his or her password to a new value before doing anything else. </p> </li>
+        /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
+        /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
+        /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
         /// </ul>
         pub fn user_status(mut self, input: crate::model::UserStatusType) -> Self {
             self.user_status = Some(input);
@@ -5559,9 +5559,9 @@ pub mod admin_get_user_output {
         /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
         /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
         /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
-        /// <li> <p>UNKNOWN - User status is not known.</p> </li>
-        /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or she can sign in.</p> </li>
-        /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change his or her password to a new value before doing anything else. </p> </li>
+        /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
+        /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
+        /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
         /// </ul>
         pub fn set_user_status(
             mut self,
@@ -5574,14 +5574,14 @@ pub mod admin_get_user_output {
         ///
         /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
         ///
-        /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about TOTP software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+        /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
         pub fn mfa_options(mut self, input: crate::model::MfaOptionType) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
             v.push(input);
             self.mfa_options = Some(v);
             self
         }
-        /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about TOTP software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+        /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
         pub fn set_mfa_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -5606,14 +5606,14 @@ pub mod admin_get_user_output {
         ///
         /// To override the contents of this collection use [`set_user_mfa_setting_list`](Self::set_user_mfa_setting_list).
         ///
-        /// <p>The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+        /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
         pub fn user_mfa_setting_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_mfa_setting_list.unwrap_or_default();
             v.push(input.into());
             self.user_mfa_setting_list = Some(v);
             self
         }
-        /// <p>The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+        /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
         pub fn set_user_mfa_setting_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

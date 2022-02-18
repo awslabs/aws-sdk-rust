@@ -19,6 +19,8 @@ pub struct UpgradeDomainOutput {
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Specifies change details of the domain configuration change.</p>
+    pub change_progress_details: std::option::Option<crate::model::ChangeProgressDetails>,
 }
 impl UpgradeDomainOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -49,6 +51,12 @@ impl UpgradeDomainOutput {
     {
         self.advanced_options.as_ref()
     }
+    /// <p>Specifies change details of the domain configuration change.</p>
+    pub fn change_progress_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ChangeProgressDetails> {
+        self.change_progress_details.as_ref()
+    }
 }
 impl std::fmt::Debug for UpgradeDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58,6 +66,7 @@ impl std::fmt::Debug for UpgradeDomainOutput {
         formatter.field("target_version", &self.target_version);
         formatter.field("perform_check_only", &self.perform_check_only);
         formatter.field("advanced_options", &self.advanced_options);
+        formatter.field("change_progress_details", &self.change_progress_details);
         formatter.finish()
     }
 }
@@ -74,6 +83,8 @@ pub mod upgrade_domain_output {
         pub(crate) advanced_options: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) change_progress_details:
+            std::option::Option<crate::model::ChangeProgressDetails>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -154,6 +165,22 @@ pub mod upgrade_domain_output {
             self.advanced_options = input;
             self
         }
+        /// <p>Specifies change details of the domain configuration change.</p>
+        pub fn change_progress_details(
+            mut self,
+            input: crate::model::ChangeProgressDetails,
+        ) -> Self {
+            self.change_progress_details = Some(input);
+            self
+        }
+        /// <p>Specifies change details of the domain configuration change.</p>
+        pub fn set_change_progress_details(
+            mut self,
+            input: std::option::Option<crate::model::ChangeProgressDetails>,
+        ) -> Self {
+            self.change_progress_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpgradeDomainOutput`](crate::output::UpgradeDomainOutput)
         pub fn build(self) -> crate::output::UpgradeDomainOutput {
             crate::output::UpgradeDomainOutput {
@@ -162,6 +189,7 @@ pub mod upgrade_domain_output {
                 target_version: self.target_version,
                 perform_check_only: self.perform_check_only,
                 advanced_options: self.advanced_options,
+                change_progress_details: self.change_progress_details,
             }
         }
     }
@@ -2125,6 +2153,69 @@ impl DescribeDomainConfigOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainConfigOutput`](crate::output::DescribeDomainConfigOutput)
     pub fn builder() -> crate::output::describe_domain_config_output::Builder {
         crate::output::describe_domain_config_output::Builder::default()
+    }
+}
+
+/// <p>The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress information of the requested domain change. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDomainChangeProgressOutput {
+    /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
+    pub change_progress_status: std::option::Option<crate::model::ChangeProgressStatusDetails>,
+}
+impl DescribeDomainChangeProgressOutput {
+    /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
+    pub fn change_progress_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ChangeProgressStatusDetails> {
+        self.change_progress_status.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeDomainChangeProgressOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDomainChangeProgressOutput");
+        formatter.field("change_progress_status", &self.change_progress_status);
+        formatter.finish()
+    }
+}
+/// See [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput)
+pub mod describe_domain_change_progress_output {
+    /// A builder for [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) change_progress_status:
+            std::option::Option<crate::model::ChangeProgressStatusDetails>,
+    }
+    impl Builder {
+        /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
+        pub fn change_progress_status(
+            mut self,
+            input: crate::model::ChangeProgressStatusDetails,
+        ) -> Self {
+            self.change_progress_status = Some(input);
+            self
+        }
+        /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
+        pub fn set_change_progress_status(
+            mut self,
+            input: std::option::Option<crate::model::ChangeProgressStatusDetails>,
+        ) -> Self {
+            self.change_progress_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput)
+        pub fn build(self) -> crate::output::DescribeDomainChangeProgressOutput {
+            crate::output::DescribeDomainChangeProgressOutput {
+                change_progress_status: self.change_progress_status,
+            }
+        }
+    }
+}
+impl DescribeDomainChangeProgressOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput)
+    pub fn builder() -> crate::output::describe_domain_change_progress_output::Builder {
+        crate::output::describe_domain_change_progress_output::Builder::default()
     }
 }
 

@@ -471,33 +471,41 @@ pub mod list_changed_blocks_input {
             self
         }
         /// <p>The token to request the next page of results.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of results to return.</p>
+        /// <p>The maximum number of blocks to be returned by the request.</p>
+        /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+        /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The number of results to return.</p>
+        /// <p>The maximum number of blocks to be returned by the request.</p>
+        /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+        /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
         /// <p>The block index from which the comparison should start.</p>
         /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn starting_block_index(mut self, input: i32) -> Self {
             self.starting_block_index = Some(input);
             self
         }
         /// <p>The block index from which the comparison should start.</p>
         /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn set_starting_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.starting_block_index = input;
             self
@@ -692,31 +700,39 @@ pub mod list_snapshot_blocks_input {
             self
         }
         /// <p>The token to request the next page of results.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of results to return.</p>
+        /// <p>The maximum number of blocks to be returned by the request.</p>
+        /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+        /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The number of results to return.</p>
+        /// <p>The maximum number of blocks to be returned by the request.</p>
+        /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+        /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
         /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn starting_block_index(mut self, input: i32) -> Self {
             self.starting_block_index = Some(input);
             self
         }
         /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
+        /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
         pub fn set_starting_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.starting_block_index = input;
             self
@@ -1600,10 +1616,14 @@ pub struct ListSnapshotBlocksInput {
     /// <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
+    /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to return.</p>
+    /// <p>The maximum number of blocks to be returned by the request.</p>
+    /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+    /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
+    /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub starting_block_index: std::option::Option<i32>,
 }
 impl ListSnapshotBlocksInput {
@@ -1612,14 +1632,18 @@ impl ListSnapshotBlocksInput {
         self.snapshot_id.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
+    /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to return.</p>
+    /// <p>The maximum number of blocks to be returned by the request.</p>
+    /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+    /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
+    /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub fn starting_block_index(&self) -> std::option::Option<i32> {
         self.starting_block_index
     }
@@ -1648,11 +1672,15 @@ pub struct ListChangedBlocksInput {
     /// </important>
     pub second_snapshot_id: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
+    /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to return.</p>
+    /// <p>The maximum number of blocks to be returned by the request.</p>
+    /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+    /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The block index from which the comparison should start.</p>
     /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
+    /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub starting_block_index: std::option::Option<i32>,
 }
 impl ListChangedBlocksInput {
@@ -1669,15 +1697,19 @@ impl ListChangedBlocksInput {
         self.second_snapshot_id.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
+    /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to return.</p>
+    /// <p>The maximum number of blocks to be returned by the request.</p>
+    /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
+    /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The block index from which the comparison should start.</p>
     /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
+    /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub fn starting_block_index(&self) -> std::option::Option<i32> {
         self.starting_block_index
     }

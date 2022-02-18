@@ -6,6 +6,8 @@ pub struct RecommenderConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your recommenders generate personalized recommendations for a user (not popular items or similar items).</p>
     pub item_exploration_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support.</p>
+    pub min_recommendation_requests_per_second: std::option::Option<i32>,
 }
 impl RecommenderConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your recommenders generate personalized recommendations for a user (not popular items or similar items).</p>
@@ -15,11 +17,19 @@ impl RecommenderConfig {
     {
         self.item_exploration_config.as_ref()
     }
+    /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support.</p>
+    pub fn min_recommendation_requests_per_second(&self) -> std::option::Option<i32> {
+        self.min_recommendation_requests_per_second
+    }
 }
 impl std::fmt::Debug for RecommenderConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecommenderConfig");
         formatter.field("item_exploration_config", &self.item_exploration_config);
+        formatter.field(
+            "min_recommendation_requests_per_second",
+            &self.min_recommendation_requests_per_second,
+        );
         formatter.finish()
     }
 }
@@ -32,6 +42,7 @@ pub mod recommender_config {
         pub(crate) item_exploration_config: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) min_recommendation_requests_per_second: std::option::Option<i32>,
     }
     impl Builder {
         /// Adds a key-value pair to `item_exploration_config`.
@@ -59,10 +70,24 @@ pub mod recommender_config {
             self.item_exploration_config = input;
             self
         }
+        /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support.</p>
+        pub fn min_recommendation_requests_per_second(mut self, input: i32) -> Self {
+            self.min_recommendation_requests_per_second = Some(input);
+            self
+        }
+        /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support.</p>
+        pub fn set_min_recommendation_requests_per_second(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.min_recommendation_requests_per_second = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecommenderConfig`](crate::model::RecommenderConfig)
         pub fn build(self) -> crate::model::RecommenderConfig {
             crate::model::RecommenderConfig {
                 item_exploration_config: self.item_exploration_config,
+                min_recommendation_requests_per_second: self.min_recommendation_requests_per_second,
             }
         }
     }
@@ -5248,7 +5273,7 @@ impl Recommender {
     }
 }
 
-/// <p>Provides a summary of the properties of a recommender update. For a complete listing, call the <code>DescribeRecommender</code> API.</p>
+/// <p>Provides a summary of the properties of a recommender update. For a complete listing, call the DescribeRecommender API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommenderUpdateSummary {
@@ -7141,7 +7166,7 @@ impl DatasetExportJobOutput {
 pub struct S3DataConfig {
     /// <p>The file path of the Amazon S3 bucket.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files of a batch inference job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3DataConfig {
@@ -7149,7 +7174,7 @@ impl S3DataConfig {
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files of a batch inference job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -7182,12 +7207,12 @@ pub mod s3_data_config {
             self.path = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files of a batch inference job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files of a batch inference job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self

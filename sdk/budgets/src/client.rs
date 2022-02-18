@@ -96,7 +96,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateBudget::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateBudget::set_account_id): <p>The <code>accountId</code> that is associated with the budget.</p>
     ///   - [`budget(Budget)`](crate::client::fluent_builders::CreateBudget::budget) / [`set_budget(Option<Budget>)`](crate::client::fluent_builders::CreateBudget::set_budget): <p>The budget object that you want to create.</p>
-    ///   - [`notifications_with_subscribers(Vec<NotificationWithSubscribers>)`](crate::client::fluent_builders::CreateBudget::notifications_with_subscribers) / [`set_notifications_with_subscribers(Option<Vec<NotificationWithSubscribers>>)`](crate::client::fluent_builders::CreateBudget::set_notifications_with_subscribers): <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
+    ///   - [`notifications_with_subscribers(Vec<NotificationWithSubscribers>)`](crate::client::fluent_builders::CreateBudget::notifications_with_subscribers) / [`set_notifications_with_subscribers(Option<Vec<NotificationWithSubscribers>>)`](crate::client::fluent_builders::CreateBudget::set_notifications_with_subscribers): <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
     /// - On success, responds with [`CreateBudgetOutput`](crate::output::CreateBudgetOutput)
 
     /// - On failure, responds with [`SdkError<CreateBudgetError>`](crate::error::CreateBudgetError)
@@ -106,17 +106,17 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateBudgetAction`](crate::client::fluent_builders::CreateBudgetAction) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateBudgetAction::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateBudgetAction::set_account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::CreateBudgetAction::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::CreateBudgetAction::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`notification_type(NotificationType)`](crate::client::fluent_builders::CreateBudgetAction::notification_type) / [`set_notification_type(Option<NotificationType>)`](crate::client::fluent_builders::CreateBudgetAction::set_notification_type): <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     ///   - [`action_type(ActionType)`](crate::client::fluent_builders::CreateBudgetAction::action_type) / [`set_action_type(Option<ActionType>)`](crate::client::fluent_builders::CreateBudgetAction::set_action_type): <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
-    ///   - [`action_threshold(ActionThreshold)`](crate::client::fluent_builders::CreateBudgetAction::action_threshold) / [`set_action_threshold(Option<ActionThreshold>)`](crate::client::fluent_builders::CreateBudgetAction::set_action_threshold): <p> The trigger threshold of the action. </p>
-    ///   - [`definition(Definition)`](crate::client::fluent_builders::CreateBudgetAction::definition) / [`set_definition(Option<Definition>)`](crate::client::fluent_builders::CreateBudgetAction::set_definition): <p> Specifies all of the type-specific parameters. </p>
+    ///   - [`action_threshold(ActionThreshold)`](crate::client::fluent_builders::CreateBudgetAction::action_threshold) / [`set_action_threshold(Option<ActionThreshold>)`](crate::client::fluent_builders::CreateBudgetAction::set_action_threshold): <p>The trigger threshold of the action. </p>
+    ///   - [`definition(Definition)`](crate::client::fluent_builders::CreateBudgetAction::definition) / [`set_definition(Option<Definition>)`](crate::client::fluent_builders::CreateBudgetAction::set_definition): <p>Specifies all of the type-specific parameters. </p>
     ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBudgetAction::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBudgetAction::set_execution_role_arn): <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     ///   - [`approval_model(ApprovalModel)`](crate::client::fluent_builders::CreateBudgetAction::approval_model) / [`set_approval_model(Option<ApprovalModel>)`](crate::client::fluent_builders::CreateBudgetAction::set_approval_model): <p> This specifies if the action needs manual or automatic approval. </p>
     ///   - [`subscribers(Vec<Subscriber>)`](crate::client::fluent_builders::CreateBudgetAction::subscribers) / [`set_subscribers(Option<Vec<Subscriber>>)`](crate::client::fluent_builders::CreateBudgetAction::set_subscribers): <p> A list of subscribers.</p>
     /// - On success, responds with [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::output::CreateBudgetActionOutput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(Option<String>)`](crate::output::CreateBudgetActionOutput::account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(Option<String>)`](crate::output::CreateBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action_id(Option<String>)`](crate::output::CreateBudgetActionOutput::action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
     /// - On failure, responds with [`SdkError<CreateBudgetActionError>`](crate::error::CreateBudgetActionError)
@@ -127,7 +127,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateNotification::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateNotification::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
-    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::CreateNotification::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::CreateNotification::set_budget_name): <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::CreateNotification::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::CreateNotification::set_budget_name): <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
     ///   - [`notification(Notification)`](crate::client::fluent_builders::CreateNotification::notification) / [`set_notification(Option<Notification>)`](crate::client::fluent_builders::CreateNotification::set_notification): <p>The notification that you want to create.</p>
     ///   - [`subscribers(Vec<Subscriber>)`](crate::client::fluent_builders::CreateNotification::subscribers) / [`set_subscribers(Option<Vec<Subscriber>>)`](crate::client::fluent_builders::CreateNotification::set_subscribers): <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
     /// - On success, responds with [`CreateNotificationOutput`](crate::output::CreateNotificationOutput)
@@ -163,13 +163,13 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteBudgetAction`](crate::client::fluent_builders::DeleteBudgetAction) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteBudgetAction::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteBudgetAction::set_account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBudgetAction::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DeleteBudgetAction::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBudgetAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::DeleteBudgetAction::set_action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
     /// - On success, responds with [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::output::DeleteBudgetActionOutput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(Option<String>)`](crate::output::DeleteBudgetActionOutput::account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(Option<String>)`](crate::output::DeleteBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    ///   - [`action(Option<Action>)`](crate::output::DeleteBudgetActionOutput::action): <p> A budget action resource. </p>
+    ///   - [`action(Option<Action>)`](crate::output::DeleteBudgetActionOutput::action): <p>A budget action resource. </p>
     /// - On failure, responds with [`SdkError<DeleteBudgetActionError>`](crate::error::DeleteBudgetActionError)
     pub fn delete_budget_action(&self) -> fluent_builders::DeleteBudgetAction {
         fluent_builders::DeleteBudgetAction::new(self.handle.clone())
@@ -213,11 +213,11 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeBudgetAction`](crate::client::fluent_builders::DescribeBudgetAction) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetAction::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetAction::set_account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetAction::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeBudgetAction::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetAction::set_action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
     /// - On success, responds with [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::output::DescribeBudgetActionOutput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(Option<String>)`](crate::output::DescribeBudgetActionOutput::account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(Option<String>)`](crate::output::DescribeBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action(Option<Action>)`](crate::output::DescribeBudgetActionOutput::action): <p> A budget action resource. </p>
     /// - On failure, responds with [`SdkError<DescribeBudgetActionError>`](crate::error::DescribeBudgetActionError)
@@ -228,10 +228,10 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionHistories::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    ///   - [`time_period(TimePeriod)`](crate::client::fluent_builders::DescribeBudgetActionHistories::time_period) / [`set_time_period(Option<TimePeriod>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_time_period): <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+    ///   - [`time_period(TimePeriod)`](crate::client::fluent_builders::DescribeBudgetActionHistories::time_period) / [`set_time_period(Option<TimePeriod>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_time_period): <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBudgetActionHistories::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_next_token): <p> A generic string.</p>
     /// - On success, responds with [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput) with field(s):
@@ -247,7 +247,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::set_account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::set_max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::set_next_token): <p> A generic string.</p>
     /// - On success, responds with [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput) with field(s):
@@ -263,7 +263,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::set_account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::set_max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::set_next_token): <p> A generic string.</p>
@@ -280,7 +280,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::set_account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`time_period(TimePeriod)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::time_period) / [`set_time_period(Option<TimePeriod>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::set_time_period): <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::set_max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -346,12 +346,12 @@ impl Client {
     /// Constructs a fluent builder for the [`ExecuteBudgetAction`](crate::client::fluent_builders::ExecuteBudgetAction) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::set_account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::set_action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
     ///   - [`execution_type(ExecutionType)`](crate::client::fluent_builders::ExecuteBudgetAction::execution_type) / [`set_execution_type(Option<ExecutionType>)`](crate::client::fluent_builders::ExecuteBudgetAction::set_execution_type): <p> The type of execution. </p>
     /// - On success, responds with [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::output::ExecuteBudgetActionOutput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(Option<String>)`](crate::output::ExecuteBudgetActionOutput::account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(Option<String>)`](crate::output::ExecuteBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action_id(Option<String>)`](crate::output::ExecuteBudgetActionOutput::action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
     ///   - [`execution_type(Option<ExecutionType>)`](crate::output::ExecuteBudgetActionOutput::execution_type): <p> The type of execution. </p>
@@ -373,17 +373,17 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateBudgetAction`](crate::client::fluent_builders::UpdateBudgetAction) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateBudgetAction::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateBudgetAction::set_account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBudgetAction::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::UpdateBudgetAction::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBudgetAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::UpdateBudgetAction::set_action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
     ///   - [`notification_type(NotificationType)`](crate::client::fluent_builders::UpdateBudgetAction::notification_type) / [`set_notification_type(Option<NotificationType>)`](crate::client::fluent_builders::UpdateBudgetAction::set_notification_type): <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    ///   - [`action_threshold(ActionThreshold)`](crate::client::fluent_builders::UpdateBudgetAction::action_threshold) / [`set_action_threshold(Option<ActionThreshold>)`](crate::client::fluent_builders::UpdateBudgetAction::set_action_threshold): <p> The trigger threshold of the action. </p>
-    ///   - [`definition(Definition)`](crate::client::fluent_builders::UpdateBudgetAction::definition) / [`set_definition(Option<Definition>)`](crate::client::fluent_builders::UpdateBudgetAction::set_definition): <p> Specifies all of the type-specific parameters. </p>
+    ///   - [`action_threshold(ActionThreshold)`](crate::client::fluent_builders::UpdateBudgetAction::action_threshold) / [`set_action_threshold(Option<ActionThreshold>)`](crate::client::fluent_builders::UpdateBudgetAction::set_action_threshold): <p>The trigger threshold of the action. </p>
+    ///   - [`definition(Definition)`](crate::client::fluent_builders::UpdateBudgetAction::definition) / [`set_definition(Option<Definition>)`](crate::client::fluent_builders::UpdateBudgetAction::set_definition): <p>Specifies all of the type-specific parameters. </p>
     ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateBudgetAction::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateBudgetAction::set_execution_role_arn): <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     ///   - [`approval_model(ApprovalModel)`](crate::client::fluent_builders::UpdateBudgetAction::approval_model) / [`set_approval_model(Option<ApprovalModel>)`](crate::client::fluent_builders::UpdateBudgetAction::set_approval_model): <p> This specifies if the action needs manual or automatic approval. </p>
     ///   - [`subscribers(Vec<Subscriber>)`](crate::client::fluent_builders::UpdateBudgetAction::subscribers) / [`set_subscribers(Option<Vec<Subscriber>>)`](crate::client::fluent_builders::UpdateBudgetAction::set_subscribers): <p> A list of subscribers.</p>
     /// - On success, responds with [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::output::UpdateBudgetActionOutput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`account_id(Option<String>)`](crate::output::UpdateBudgetActionOutput::account_id): <p>The account ID of the user. It's a 12-digit number.</p>
     ///   - [`budget_name(Option<String>)`](crate::output::UpdateBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`old_action(Option<Action>)`](crate::output::UpdateBudgetActionOutput::old_action): <p> The previous action resource information. </p>
     ///   - [`new_action(Option<Action>)`](crate::output::UpdateBudgetActionOutput::new_action): <p> The updated action resource information. </p>
@@ -495,7 +495,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notifications_with_subscribers`](Self::set_notifications_with_subscribers).
         ///
-        /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
+        /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
         pub fn notifications_with_subscribers(
             mut self,
             input: crate::model::NotificationWithSubscribers,
@@ -503,7 +503,7 @@ pub mod fluent_builders {
             self.inner = self.inner.notifications_with_subscribers(input);
             self
         }
-        /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
+        /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
         pub fn set_notifications_with_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
@@ -554,12 +554,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -600,12 +600,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_type(input);
             self
         }
-        /// <p> The trigger threshold of the action. </p>
+        /// <p>The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.inner = self.inner.action_threshold(input);
             self
         }
-        /// <p> The trigger threshold of the action. </p>
+        /// <p>The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -613,12 +613,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_threshold(input);
             self
         }
-        /// <p> Specifies all of the type-specific parameters. </p>
+        /// <p>Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.inner = self.inner.definition(input);
             self
         }
-        /// <p> Specifies all of the type-specific parameters. </p>
+        /// <p>Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -722,12 +722,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_id(input);
             self
         }
-        /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
+        /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
         pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.budget_name(input.into());
             self
         }
-        /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
+        /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_budget_name(input);
             self
@@ -959,12 +959,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -1266,12 +1266,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -1345,12 +1345,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeBudgetActionHistoriesPaginator {
             crate::paginator::DescribeBudgetActionHistoriesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -1375,12 +1375,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_id(input);
             self
         }
-        /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+        /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
         pub fn time_period(mut self, input: crate::model::TimePeriod) -> Self {
             self.inner = self.inner.time_period(input);
             self
         }
-        /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+        /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::TimePeriod>,
@@ -1457,12 +1457,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeBudgetActionsForAccountPaginator {
             crate::paginator::DescribeBudgetActionsForAccountPaginator::new(self.handle, self.inner)
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -1536,12 +1536,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeBudgetActionsForBudgetPaginator {
             crate::paginator::DescribeBudgetActionsForBudgetPaginator::new(self.handle, self.inner)
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -1628,12 +1628,12 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -2003,12 +2003,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -2049,7 +2049,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateBudget`.
     ///
-    /// <p>Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage data to use for forecasting.</p> <important>
+    /// <p>Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until Amazon Web Services has new usage data to use for forecasting.</p> <important>
     /// <p>Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a> section. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2154,12 +2154,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The account ID of the user. It should be a 12-digit number.</p>
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -2197,12 +2197,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_type(input);
             self
         }
-        /// <p> The trigger threshold of the action. </p>
+        /// <p>The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.inner = self.inner.action_threshold(input);
             self
         }
-        /// <p> The trigger threshold of the action. </p>
+        /// <p>The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -2210,12 +2210,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_threshold(input);
             self
         }
-        /// <p> Specifies all of the type-specific parameters. </p>
+        /// <p>Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.inner = self.inner.definition(input);
             self
         }
-        /// <p> Specifies all of the type-specific parameters. </p>
+        /// <p>Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,

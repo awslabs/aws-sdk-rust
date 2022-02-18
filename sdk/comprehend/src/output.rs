@@ -1944,6 +1944,63 @@ impl StartDocumentClassificationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutResourcePolicyOutput {
+    /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+    pub policy_revision_id: std::option::Option<std::string::String>,
+}
+impl PutResourcePolicyOutput {
+    /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+        self.policy_revision_id.as_deref()
+    }
+}
+impl std::fmt::Debug for PutResourcePolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutResourcePolicyOutput");
+        formatter.field("policy_revision_id", &self.policy_revision_id);
+        formatter.finish()
+    }
+}
+/// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+pub mod put_resource_policy_output {
+    /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_revision_id = Some(input.into());
+            self
+        }
+        /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+        pub fn build(self) -> crate::output::PutResourcePolicyOutput {
+            crate::output::PutResourcePolicyOutput {
+                policy_revision_id: self.policy_revision_id,
+            }
+        }
+    }
+}
+impl PutResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+    pub fn builder() -> crate::output::put_resource_policy_output::Builder {
+        crate::output::put_resource_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTopicsDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
     pub topics_detection_job_properties_list:
@@ -3249,6 +3306,60 @@ impl ListDocumentClassificationJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportModelOutput {
+    /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
+    pub model_arn: std::option::Option<std::string::String>,
+}
+impl ImportModelOutput {
+    /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportModelOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportModelOutput");
+        formatter.field("model_arn", &self.model_arn);
+        formatter.finish()
+    }
+}
+/// See [`ImportModelOutput`](crate::output::ImportModelOutput)
+pub mod import_model_output {
+    /// A builder for [`ImportModelOutput`](crate::output::ImportModelOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
+        pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
+        pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportModelOutput`](crate::output::ImportModelOutput)
+        pub fn build(self) -> crate::output::ImportModelOutput {
+            crate::output::ImportModelOutput {
+                model_arn: self.model_arn,
+            }
+        }
+    }
+}
+impl ImportModelOutput {
+    /// Creates a new builder-style object to manufacture [`ImportModelOutput`](crate::output::ImportModelOutput)
+    pub fn builder() -> crate::output::import_model_output::Builder {
+        crate::output::import_model_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectSyntaxOutput {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <code>how-syntax</code>.</p>
     pub syntax_tokens: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
@@ -3775,6 +3886,129 @@ impl DescribeSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput)
     pub fn builder() -> crate::output::describe_sentiment_detection_job_output::Builder {
         crate::output::describe_sentiment_detection_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeResourcePolicyOutput {
+    /// <p>The JSON body of the resource-based policy.</p>
+    pub resource_policy: std::option::Option<std::string::String>,
+    /// <p>The time at which the policy was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time at which the policy was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+    pub policy_revision_id: std::option::Option<std::string::String>,
+}
+impl DescribeResourcePolicyOutput {
+    /// <p>The JSON body of the resource-based policy.</p>
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
+        self.resource_policy.as_deref()
+    }
+    /// <p>The time at which the policy was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time at which the policy was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+        self.policy_revision_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeResourcePolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeResourcePolicyOutput");
+        formatter.field("resource_policy", &self.resource_policy);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("policy_revision_id", &self.policy_revision_id);
+        formatter.finish()
+    }
+}
+/// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput)
+pub mod describe_resource_policy_output {
+    /// A builder for [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_policy: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The JSON body of the resource-based policy.</p>
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_policy = Some(input.into());
+            self
+        }
+        /// <p>The JSON body of the resource-based policy.</p>
+        pub fn set_resource_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_policy = input;
+            self
+        }
+        /// <p>The time at which the policy was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time at which the policy was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The time at which the policy was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The time at which the policy was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_revision_id = Some(input.into());
+            self
+        }
+        /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput)
+        pub fn build(self) -> crate::output::DescribeResourcePolicyOutput {
+            crate::output::DescribeResourcePolicyOutput {
+                resource_policy: self.resource_policy,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+                policy_revision_id: self.policy_revision_id,
+            }
+        }
+    }
+}
+impl DescribeResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput)
+    pub fn builder() -> crate::output::describe_resource_policy_output::Builder {
+        crate::output::describe_resource_policy_output::Builder::default()
     }
 }
 
@@ -4368,6 +4602,36 @@ impl DescribeDocumentClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput)
     pub fn builder() -> crate::output::describe_document_classification_job_output::Builder {
         crate::output::describe_document_classification_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteResourcePolicyOutput {}
+impl std::fmt::Debug for DeleteResourcePolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteResourcePolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+pub mod delete_resource_policy_output {
+    /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+        pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
+            crate::output::DeleteResourcePolicyOutput {}
+        }
+    }
+}
+impl DeleteResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+    pub fn builder() -> crate::output::delete_resource_policy_output::Builder {
+        crate::output::delete_resource_policy_output::Builder::default()
     }
 }
 

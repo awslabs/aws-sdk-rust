@@ -4735,6 +4735,143 @@ impl std::error::Error for GetEventPredictionError {
     }
 }
 
+/// Error type for the `GetEventPredictionMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetEventPredictionMetadataError {
+    /// Kind of error that occurred.
+    pub kind: GetEventPredictionMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetEventPredictionMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetEventPredictionMetadataErrorKind {
+    /// <p>An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your account.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An exception indicating an internal server error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>An exception indicating the specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>An exception indicating a throttling error.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>An exception indicating a specified value is not allowed.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetEventPredictionMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetEventPredictionMetadataErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetEventPredictionMetadataErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetEventPredictionMetadataErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetEventPredictionMetadataErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetEventPredictionMetadataErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetEventPredictionMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetEventPredictionMetadataError {
+    fn code(&self) -> Option<&str> {
+        GetEventPredictionMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetEventPredictionMetadataError {
+    /// Creates a new `GetEventPredictionMetadataError`.
+    pub fn new(kind: GetEventPredictionMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetEventPredictionMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetEventPredictionMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetEventPredictionMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetEventPredictionMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetEventPredictionMetadataErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventPredictionMetadataErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventPredictionMetadataErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventPredictionMetadataErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventPredictionMetadataErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventPredictionMetadataErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventPredictionMetadataErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventPredictionMetadataErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventPredictionMetadataErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventPredictionMetadataErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetEventPredictionMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetEventPredictionMetadataErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetEventPredictionMetadataErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetEventPredictionMetadataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetEventPredictionMetadataErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetEventPredictionMetadataErrorKind::ValidationException(_inner) => Some(_inner),
+            GetEventPredictionMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetEventTypes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5872,6 +6009,132 @@ impl std::error::Error for GetVariablesError {
             GetVariablesErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetVariablesErrorKind::ValidationException(_inner) => Some(_inner),
             GetVariablesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListEventPredictions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListEventPredictionsError {
+    /// Kind of error that occurred.
+    pub kind: ListEventPredictionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListEventPredictions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListEventPredictionsErrorKind {
+    /// <p>An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your account.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An exception indicating an internal server error.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>An exception indicating a throttling error.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>An exception indicating a specified value is not allowed.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListEventPredictionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListEventPredictionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListEventPredictionsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListEventPredictionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListEventPredictionsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListEventPredictionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListEventPredictionsError {
+    fn code(&self) -> Option<&str> {
+        ListEventPredictionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListEventPredictionsError {
+    /// Creates a new `ListEventPredictionsError`.
+    pub fn new(kind: ListEventPredictionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListEventPredictionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListEventPredictionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListEventPredictionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListEventPredictionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListEventPredictionsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventPredictionsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEventPredictionsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventPredictionsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEventPredictionsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventPredictionsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEventPredictionsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventPredictionsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListEventPredictionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListEventPredictionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListEventPredictionsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListEventPredictionsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListEventPredictionsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListEventPredictionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

@@ -131,6 +131,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFlow {
     }
 }
 
+/// Operation shape for `DescribeConnector`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_connector`](crate::client::Client::describe_connector).
+///
+/// See [`crate::client::fluent_builders::DescribeConnector`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeConnector {
+    _private: (),
+}
+impl DescribeConnector {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorInput`](crate::input::DescribeConnectorInput)
+    pub fn builder() -> crate::input::describe_connector_input::Builder {
+        crate::input::describe_connector_input::Builder::default()
+    }
+    /// Creates a new `DescribeConnector` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeConnector {
+    type Output = std::result::Result<
+        crate::output::DescribeConnectorOutput,
+        crate::error::DescribeConnectorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_connector_error(response)
+        } else {
+            crate::operation_deser::parse_describe_connector_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeConnectorEntity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -333,6 +367,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnectorEntities {
     }
 }
 
+/// Operation shape for `ListConnectors`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_connectors`](crate::client::Client::list_connectors).
+///
+/// See [`crate::client::fluent_builders::ListConnectors`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListConnectors {
+    _private: (),
+}
+impl ListConnectors {
+    /// Creates a new builder-style object to manufacture [`ListConnectorsInput`](crate::input::ListConnectorsInput)
+    pub fn builder() -> crate::input::list_connectors_input::Builder {
+        crate::input::list_connectors_input::Builder::default()
+    }
+    /// Creates a new `ListConnectors` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListConnectors {
+    type Output =
+        std::result::Result<crate::output::ListConnectorsOutput, crate::error::ListConnectorsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_connectors_error(response)
+        } else {
+            crate::operation_deser::parse_list_connectors_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListFlows`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -394,6 +460,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RegisterConnector`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`register_connector`](crate::client::Client::register_connector).
+///
+/// See [`crate::client::fluent_builders::RegisterConnector`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RegisterConnector {
+    _private: (),
+}
+impl RegisterConnector {
+    /// Creates a new builder-style object to manufacture [`RegisterConnectorInput`](crate::input::RegisterConnectorInput)
+    pub fn builder() -> crate::input::register_connector_input::Builder {
+        crate::input::register_connector_input::Builder::default()
+    }
+    /// Creates a new `RegisterConnector` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RegisterConnector {
+    type Output = std::result::Result<
+        crate::output::RegisterConnectorOutput,
+        crate::error::RegisterConnectorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_register_connector_error(response)
+        } else {
+            crate::operation_deser::parse_register_connector_response(response)
         }
     }
 }
@@ -488,6 +588,40 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
             crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UnregisterConnector`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`unregister_connector`](crate::client::Client::unregister_connector).
+///
+/// See [`crate::client::fluent_builders::UnregisterConnector`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UnregisterConnector {
+    _private: (),
+}
+impl UnregisterConnector {
+    /// Creates a new builder-style object to manufacture [`UnregisterConnectorInput`](crate::input::UnregisterConnectorInput)
+    pub fn builder() -> crate::input::unregister_connector_input::Builder {
+        crate::input::unregister_connector_input::Builder::default()
+    }
+    /// Creates a new `UnregisterConnector` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UnregisterConnector {
+    type Output = std::result::Result<
+        crate::output::UnregisterConnectorOutput,
+        crate::error::UnregisterConnectorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_unregister_connector_error(response)
+        } else {
+            crate::operation_deser::parse_unregister_connector_response(response)
         }
     }
 }

@@ -9493,7 +9493,6 @@ impl ContinuousBackupsDescription {
 pub struct PointInTimeRecoveryDescription {
     /// <p>The current state of point in time recovery:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li>
     /// <li> <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li>
     /// <li> <p> <code>DISABLED</code> - Point in time recovery is disabled.</p> </li>
     /// </ul>
@@ -9506,7 +9505,6 @@ pub struct PointInTimeRecoveryDescription {
 impl PointInTimeRecoveryDescription {
     /// <p>The current state of point in time recovery:</p>
     /// <ul>
-    /// <li> <p> <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li>
     /// <li> <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li>
     /// <li> <p> <code>DISABLED</code> - Point in time recovery is disabled.</p> </li>
     /// </ul>
@@ -9558,7 +9556,6 @@ pub mod point_in_time_recovery_description {
     impl Builder {
         /// <p>The current state of point in time recovery:</p>
         /// <ul>
-        /// <li> <p> <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li>
         /// <li> <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li>
         /// <li> <p> <code>DISABLED</code> - Point in time recovery is disabled.</p> </li>
         /// </ul>
@@ -9571,7 +9568,6 @@ pub mod point_in_time_recovery_description {
         }
         /// <p>The current state of point in time recovery:</p>
         /// <ul>
-        /// <li> <p> <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li>
         /// <li> <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li>
         /// <li> <p> <code>DISABLED</code> - Point in time recovery is disabled.</p> </li>
         /// </ul>

@@ -128,6 +128,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeCanaries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeCanaries::set_next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeCanaries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeCanaries::set_max_results): <p>Specify this parameter to limit how many canaries are returned each time you use the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::DescribeCanaries::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeCanaries::set_names): <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>  <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>  <p>You are required to use this parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
     /// - On success, responds with [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput) with field(s):
     ///   - [`canaries(Option<Vec<Canary>>)`](crate::output::DescribeCanariesOutput::canaries): <p>Returns an array. Each item in the array contains the full information about one canary.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeCanariesOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
@@ -141,6 +142,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeCanariesLastRun::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeCanariesLastRun::set_next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeCanariesLastRun::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeCanariesLastRun::set_max_results): <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::DescribeCanariesLastRun::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeCanariesLastRun::set_names): <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>  <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>  <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
     /// - On success, responds with [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput) with field(s):
     ///   - [`canaries_last_run(Option<Vec<CanaryLastRun>>)`](crate::output::DescribeCanariesLastRunOutput::canaries_last_run): <p>An array that contains the information from the most recent run of each canary.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeCanariesLastRunOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
@@ -563,7 +565,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCanaries`.
     ///
     /// <p>This operation returns a list of the canaries in your account, along with full details about each canary.</p>
-    /// <p>This operation does not have resource-level authorization, so if a user is able to use <code>DescribeCanaries</code>, the user can see all of the canaries in the account. A deny policy can only be used to restrict access to all canaries. It cannot be used on specific resources. </p>
+    /// <p>This operation supports resource-level authorization using an IAM policy and the <code>Names</code> parameter. If you specify the <code>Names</code> parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+    /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCanaries {
         handle: std::sync::Arc<super::Handle>,
@@ -629,10 +632,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// Appends an item to `Names`.
+        ///
+        /// To override the contents of this collection use [`set_names`](Self::set_names).
+        ///
+        /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+        /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+        /// <p>You are required to use this parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
+            self
+        }
+        /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+        /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+        /// <p>You are required to use this parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+        pub fn set_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_names(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DescribeCanariesLastRun`.
     ///
     /// <p>Use this operation to see information from the most recent run of each canary that you have created.</p>
+    /// <p>This operation supports resource-level authorization using an IAM policy and the <code>Names</code> parameter. If you specify the <code>Names</code> parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+    /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCanariesLastRun {
         handle: std::sync::Arc<super::Handle>,
@@ -696,6 +722,27 @@ pub mod fluent_builders {
         /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `Names`.
+        ///
+        /// To override the contents of this collection use [`set_names`](Self::set_names).
+        ///
+        /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+        /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+        /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
+            self
+        }
+        /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+        /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+        /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+        pub fn set_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_names(input);
             self
         }
     }

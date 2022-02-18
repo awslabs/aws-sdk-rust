@@ -5,7 +5,7 @@
 pub struct UpdateRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>Information about the retention period for which a retention rule is to retain resources.</p>
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>The retention rule description.</p>
     pub description: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct UpdateRuleOutput {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
-    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     pub status: std::option::Option<crate::model::RuleStatus>,
 }
 impl UpdateRuleOutput {
@@ -21,7 +21,7 @@ impl UpdateRuleOutput {
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>Information about the retention period for which a retention rule is to retain resources.</p>
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
@@ -37,7 +37,7 @@ impl UpdateRuleOutput {
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
     }
-    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::RuleStatus> {
         self.status.as_ref()
     }
@@ -78,12 +78,12 @@ pub mod update_rule_output {
             self.identifier = input;
             self
         }
-        /// <p>Information about the retention period for which a retention rule is to retain resources.</p>
+        /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>Information about the retention period for which a retention rule is to retain resources.</p>
+        /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -133,12 +133,12 @@ pub mod update_rule_output {
             self.resource_tags = input;
             self
         }
-        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
         pub fn status(mut self, input: crate::model::RuleStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::RuleStatus>) -> Self {
             self.status = input;
             self
@@ -227,11 +227,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>Information about the tags assigned to the resource.</p>
+    /// <p>Information about the tags assigned to the retention rule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>Information about the tags assigned to the resource.</p>
+    /// <p>Information about the tags assigned to the retention rule.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -256,14 +256,14 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Information about the tags assigned to the resource.</p>
+        /// <p>Information about the tags assigned to the retention rule.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Information about the tags assigned to the resource.</p>
+        /// <p>Information about the tags assigned to the retention rule.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -372,15 +372,15 @@ impl ListRulesOutput {
 pub struct GetRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>The description assigned to the retention rule.</p>
+    /// <p>The retention rule description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The resource type retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
+    /// <p>The resource type retained by the retention rule.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>Information about the period for which the retention rule retains resources.</p>
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
-    /// <p>The resource tags used to identify resources that are to be retained by the retention rule.</p>
+    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
-    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     pub status: std::option::Option<crate::model::RuleStatus>,
 }
 impl GetRuleOutput {
@@ -388,23 +388,23 @@ impl GetRuleOutput {
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>The description assigned to the retention rule.</p>
+    /// <p>The retention rule description.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The resource type retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
+    /// <p>The resource type retained by the retention rule.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Information about the period for which the retention rule retains resources.</p>
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
-    /// <p>The resource tags used to identify resources that are to be retained by the retention rule.</p>
+    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
     }
-    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::RuleStatus> {
         self.status.as_ref()
     }
@@ -445,22 +445,22 @@ pub mod get_rule_output {
             self.identifier = input;
             self
         }
-        /// <p>The description assigned to the retention rule.</p>
+        /// <p>The retention rule description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description assigned to the retention rule.</p>
+        /// <p>The retention rule description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The resource type retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
+        /// <p>The resource type retained by the retention rule.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The resource type retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
+        /// <p>The resource type retained by the retention rule.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -468,12 +468,12 @@ pub mod get_rule_output {
             self.resource_type = input;
             self
         }
-        /// <p>Information about the period for which the retention rule retains resources.</p>
+        /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>Information about the period for which the retention rule retains resources.</p>
+        /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -485,14 +485,14 @@ pub mod get_rule_output {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>The resource tags used to identify resources that are to be retained by the retention rule.</p>
+        /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
             v.push(input);
             self.resource_tags = Some(v);
             self
         }
-        /// <p>The resource tags used to identify resources that are to be retained by the retention rule.</p>
+        /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -500,12 +500,12 @@ pub mod get_rule_output {
             self.resource_tags = input;
             self
         }
-        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
         pub fn status(mut self, input: crate::model::RuleStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::RuleStatus>) -> Self {
             self.status = input;
             self
@@ -564,27 +564,27 @@ impl DeleteRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleOutput {
-    /// <p>The unique identifier of the retention rule.</p>
+    /// <p>The unique ID of the retention rule.</p>
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>Information about the retention period for which a retention rule is to retain resources.</p>
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>The retention rule description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The tags assigned to the retention rule.</p>
+    /// <p>Information about the tags assigned to the retention rule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The resource type retained by the retention rule.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
-    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     pub status: std::option::Option<crate::model::RuleStatus>,
 }
 impl CreateRuleOutput {
-    /// <p>The unique identifier of the retention rule.</p>
+    /// <p>The unique ID of the retention rule.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>Information about the retention period for which a retention rule is to retain resources.</p>
+    /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
@@ -592,7 +592,7 @@ impl CreateRuleOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The tags assigned to the retention rule.</p>
+    /// <p>Information about the tags assigned to the retention rule.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -604,7 +604,7 @@ impl CreateRuleOutput {
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
     }
-    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+    /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::RuleStatus> {
         self.status.as_ref()
     }
@@ -637,22 +637,22 @@ pub mod create_rule_output {
         pub(crate) status: std::option::Option<crate::model::RuleStatus>,
     }
     impl Builder {
-        /// <p>The unique identifier of the retention rule.</p>
+        /// <p>The unique ID of the retention rule.</p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.identifier = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the retention rule.</p>
+        /// <p>The unique ID of the retention rule.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
         }
-        /// <p>Information about the retention period for which a retention rule is to retain resources.</p>
+        /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>Information about the retention period for which a retention rule is to retain resources.</p>
+        /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -674,14 +674,14 @@ pub mod create_rule_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the retention rule.</p>
+        /// <p>Information about the tags assigned to the retention rule.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags assigned to the retention rule.</p>
+        /// <p>Information about the tags assigned to the retention rule.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -721,12 +721,12 @@ pub mod create_rule_output {
             self.resource_tags = input;
             self
         }
-        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
         pub fn status(mut self, input: crate::model::RuleStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+        /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::RuleStatus>) -> Self {
             self.status = input;
             self

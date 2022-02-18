@@ -120,6 +120,25 @@ pub fn parse_create_secret_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DecryptionFailure" => {
+            crate::error::CreateSecretError {
+                meta: generic,
+                kind: crate::error::CreateSecretErrorKind::DecryptionFailure({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::decryption_failure::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_decryption_failure_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSecretError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "EncryptionFailure" => {
             crate::error::CreateSecretError {
                 meta: generic,
@@ -1250,6 +1269,25 @@ pub fn parse_put_secret_value_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DecryptionFailure" => {
+            crate::error::PutSecretValueError {
+                meta: generic,
+                kind: crate::error::PutSecretValueErrorKind::DecryptionFailure({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::decryption_failure::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_decryption_failure_json_err(response.body().as_ref(), output).map_err(crate::error::PutSecretValueError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "EncryptionFailure" => {
             crate::error::PutSecretValueError {
                 meta: generic,
@@ -2140,6 +2178,25 @@ pub fn parse_update_secret_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DecryptionFailure" => {
+            crate::error::UpdateSecretError {
+                meta: generic,
+                kind: crate::error::UpdateSecretErrorKind::DecryptionFailure({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::decryption_failure::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_decryption_failure_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSecretError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "EncryptionFailure" => {
             crate::error::UpdateSecretError {
                 meta: generic,

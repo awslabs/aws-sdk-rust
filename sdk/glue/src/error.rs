@@ -3498,6 +3498,8 @@ pub enum CreateRegistryErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A resource to be created or added already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
+    /// <p>Two processes are trying to modify a resource simultaneously.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
@@ -3512,6 +3514,7 @@ impl std::fmt::Display for CreateRegistryError {
         match &self.kind {
             CreateRegistryErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateRegistryErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateRegistryErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             CreateRegistryErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             CreateRegistryErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             CreateRegistryErrorKind::ResourceNumberLimitExceededException(_inner) => _inner.fmt(f),
@@ -3583,6 +3586,13 @@ impl CreateRegistryError {
             CreateRegistryErrorKind::AlreadyExistsException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRegistryErrorKind::ConcurrentModificationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateRegistryErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
@@ -3610,6 +3620,7 @@ impl std::error::Error for CreateRegistryError {
         match &self.kind {
             CreateRegistryErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateRegistryErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateRegistryErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             CreateRegistryErrorKind::InternalServiceException(_inner) => Some(_inner),
             CreateRegistryErrorKind::InvalidInputException(_inner) => Some(_inner),
             CreateRegistryErrorKind::ResourceNumberLimitExceededException(_inner) => Some(_inner),
@@ -3635,6 +3646,8 @@ pub enum CreateSchemaErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A resource to be created or added already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
+    /// <p>Two processes are trying to modify a resource simultaneously.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>An internal service error occurred.</p>
@@ -3651,6 +3664,7 @@ impl std::fmt::Display for CreateSchemaError {
         match &self.kind {
             CreateSchemaErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateSchemaErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateSchemaErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             CreateSchemaErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
             CreateSchemaErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             CreateSchemaErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
@@ -3717,6 +3731,13 @@ impl CreateSchemaError {
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateSchemaErrorKind::AlreadyExistsException(_))
     }
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSchemaErrorKind::ConcurrentModificationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateSchemaErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
@@ -3748,6 +3769,7 @@ impl std::error::Error for CreateSchemaError {
         match &self.kind {
             CreateSchemaErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateSchemaErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateSchemaErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             CreateSchemaErrorKind::EntityNotFoundException(_inner) => Some(_inner),
             CreateSchemaErrorKind::InternalServiceException(_inner) => Some(_inner),
             CreateSchemaErrorKind::InvalidInputException(_inner) => Some(_inner),

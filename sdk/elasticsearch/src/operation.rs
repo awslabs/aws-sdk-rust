@@ -458,6 +458,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainAutoTunes 
     }
 }
 
+/// Operation shape for `DescribeDomainChangeProgress`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_domain_change_progress`](crate::client::Client::describe_domain_change_progress).
+///
+/// See [`crate::client::fluent_builders::DescribeDomainChangeProgress`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeDomainChangeProgress {
+    _private: (),
+}
+impl DescribeDomainChangeProgress {
+    /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressInput`](crate::input::DescribeDomainChangeProgressInput)
+    pub fn builder() -> crate::input::describe_domain_change_progress_input::Builder {
+        crate::input::describe_domain_change_progress_input::Builder::default()
+    }
+    /// Creates a new `DescribeDomainChangeProgress` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainChangeProgress {
+    type Output = std::result::Result<
+        crate::output::DescribeDomainChangeProgressOutput,
+        crate::error::DescribeDomainChangeProgressError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_domain_change_progress_error(response)
+        } else {
+            crate::operation_deser::parse_describe_domain_change_progress_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeElasticsearchDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

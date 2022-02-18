@@ -2425,6 +2425,128 @@ pub fn parse_disassociate_web_acl_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_generate_mobile_sdk_release_url_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GenerateMobileSdkReleaseUrlOutput,
+    crate::error::GenerateMobileSdkReleaseUrlError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GenerateMobileSdkReleaseUrlError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GenerateMobileSdkReleaseUrlError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "WAFInternalErrorException" => crate::error::GenerateMobileSdkReleaseUrlError {
+            meta: generic,
+            kind: crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMobileSdkReleaseUrlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "WAFInvalidOperationException" => crate::error::GenerateMobileSdkReleaseUrlError {
+            meta: generic,
+            kind: crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_invalid_operation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMobileSdkReleaseUrlError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "WAFInvalidParameterException" => crate::error::GenerateMobileSdkReleaseUrlError {
+            meta: generic,
+            kind: crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_invalid_parameter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMobileSdkReleaseUrlError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "WAFNonexistentItemException" => crate::error::GenerateMobileSdkReleaseUrlError {
+            meta: generic,
+            kind: crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_nonexistent_item_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMobileSdkReleaseUrlError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::GenerateMobileSdkReleaseUrlError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_generate_mobile_sdk_release_url_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GenerateMobileSdkReleaseUrlOutput,
+    crate::error::GenerateMobileSdkReleaseUrlError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::generate_mobile_sdk_release_url_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_generate_mobile_sdk_release_url(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GenerateMobileSdkReleaseUrlError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_ip_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetIpSetOutput, crate::error::GetIPSetError> {
@@ -2747,6 +2869,117 @@ pub fn parse_get_managed_rule_set_response(
             output,
         )
         .map_err(crate::error::GetManagedRuleSetError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_mobile_sdk_release_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMobileSdkReleaseOutput,
+    crate::error::GetMobileSdkReleaseError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetMobileSdkReleaseError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetMobileSdkReleaseError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "WAFInternalErrorException" => crate::error::GetMobileSdkReleaseError {
+            meta: generic,
+            kind: crate::error::GetMobileSdkReleaseErrorKind::WafInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMobileSdkReleaseError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "WAFInvalidOperationException" => crate::error::GetMobileSdkReleaseError {
+            meta: generic,
+            kind: crate::error::GetMobileSdkReleaseErrorKind::WafInvalidOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMobileSdkReleaseError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "WAFInvalidParameterException" => crate::error::GetMobileSdkReleaseError {
+            meta: generic,
+            kind: crate::error::GetMobileSdkReleaseErrorKind::WafInvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMobileSdkReleaseError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "WAFNonexistentItemException" => crate::error::GetMobileSdkReleaseError {
+            meta: generic,
+            kind: crate::error::GetMobileSdkReleaseErrorKind::WafNonexistentItemException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_nonexistent_item_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMobileSdkReleaseError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetMobileSdkReleaseError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_mobile_sdk_release_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMobileSdkReleaseOutput,
+    crate::error::GetMobileSdkReleaseError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_mobile_sdk_release_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_mobile_sdk_release(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetMobileSdkReleaseError::unhandled)?;
         output.build()
     })
 }
@@ -3942,6 +4175,99 @@ pub fn parse_list_managed_rule_sets_response(
             output,
         )
         .map_err(crate::error::ListManagedRuleSetsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_mobile_sdk_releases_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMobileSdkReleasesOutput,
+    crate::error::ListMobileSdkReleasesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListMobileSdkReleasesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListMobileSdkReleasesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "WAFInternalErrorException" => crate::error::ListMobileSdkReleasesError {
+            meta: generic,
+            kind: crate::error::ListMobileSdkReleasesErrorKind::WafInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMobileSdkReleasesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "WAFInvalidOperationException" => crate::error::ListMobileSdkReleasesError {
+            meta: generic,
+            kind: crate::error::ListMobileSdkReleasesErrorKind::WafInvalidOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMobileSdkReleasesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "WAFInvalidParameterException" => crate::error::ListMobileSdkReleasesError {
+            meta: generic,
+            kind: crate::error::ListMobileSdkReleasesErrorKind::WafInvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMobileSdkReleasesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListMobileSdkReleasesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_mobile_sdk_releases_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMobileSdkReleasesOutput,
+    crate::error::ListMobileSdkReleasesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_mobile_sdk_releases_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_mobile_sdk_releases(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListMobileSdkReleasesError::unhandled)?;
         output.build()
     })
 }

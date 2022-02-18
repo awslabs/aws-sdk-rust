@@ -2954,6 +2954,7 @@ pub mod rotate_secret_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) rotation_lambda_arn: std::option::Option<std::string::String>,
         pub(crate) rotation_rules: std::option::Option<crate::model::RotationRulesType>,
+        pub(crate) rotate_immediately: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ARN or name of the secret to rotate.</p>
@@ -3011,6 +3012,20 @@ pub mod rotate_secret_input {
             self.rotation_rules = input;
             self
         }
+        /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
+        /// <p>If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+        /// <p>If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.</p>
+        pub fn rotate_immediately(mut self, input: bool) -> Self {
+            self.rotate_immediately = Some(input);
+            self
+        }
+        /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
+        /// <p>If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+        /// <p>If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.</p>
+        pub fn set_rotate_immediately(mut self, input: std::option::Option<bool>) -> Self {
+            self.rotate_immediately = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RotateSecretInput`](crate::input::RotateSecretInput)
         pub fn build(
             self,
@@ -3023,6 +3038,7 @@ pub mod rotate_secret_input {
                 client_request_token: self.client_request_token,
                 rotation_lambda_arn: self.rotation_lambda_arn,
                 rotation_rules: self.rotation_rules,
+                rotate_immediately: self.rotate_immediately,
             })
         }
     }
@@ -4533,6 +4549,10 @@ pub struct RotateSecretInput {
     pub rotation_lambda_arn: std::option::Option<std::string::String>,
     /// <p>A structure that defines the rotation configuration for this secret.</p>
     pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
+    /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
+    /// <p>If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+    /// <p>If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.</p>
+    pub rotate_immediately: std::option::Option<bool>,
 }
 impl RotateSecretInput {
     /// <p>The ARN or name of the secret to rotate.</p>
@@ -4554,6 +4574,12 @@ impl RotateSecretInput {
     pub fn rotation_rules(&self) -> std::option::Option<&crate::model::RotationRulesType> {
         self.rotation_rules.as_ref()
     }
+    /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
+    /// <p>If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+    /// <p>If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.</p>
+    pub fn rotate_immediately(&self) -> std::option::Option<bool> {
+        self.rotate_immediately
+    }
 }
 impl std::fmt::Debug for RotateSecretInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4562,6 +4588,7 @@ impl std::fmt::Debug for RotateSecretInput {
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("rotation_lambda_arn", &self.rotation_lambda_arn);
         formatter.field("rotation_rules", &self.rotation_rules);
+        formatter.field("rotate_immediately", &self.rotate_immediately);
         formatter.finish()
     }
 }

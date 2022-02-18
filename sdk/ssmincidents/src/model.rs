@@ -855,6 +855,8 @@ pub enum ItemType {
     #[allow(missing_docs)] // documentation missing in model
     Attachment,
     #[allow(missing_docs)] // documentation missing in model
+    Automation,
+    #[allow(missing_docs)] // documentation missing in model
     Incident,
     #[allow(missing_docs)] // documentation missing in model
     Metric,
@@ -870,6 +872,7 @@ impl std::convert::From<&str> for ItemType {
         match s {
             "ANALYSIS" => ItemType::Analysis,
             "ATTACHMENT" => ItemType::Attachment,
+            "AUTOMATION" => ItemType::Automation,
             "INCIDENT" => ItemType::Incident,
             "METRIC" => ItemType::Metric,
             "OTHER" => ItemType::Other,
@@ -891,6 +894,7 @@ impl ItemType {
         match self {
             ItemType::Analysis => "ANALYSIS",
             ItemType::Attachment => "ATTACHMENT",
+            ItemType::Automation => "AUTOMATION",
             ItemType::Incident => "INCIDENT",
             ItemType::Metric => "METRIC",
             ItemType::Other => "OTHER",
@@ -903,6 +907,7 @@ impl ItemType {
         &[
             "ANALYSIS",
             "ATTACHMENT",
+            "AUTOMATION",
             "INCIDENT",
             "METRIC",
             "OTHER",

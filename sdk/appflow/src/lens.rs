@@ -29,6 +29,16 @@ pub(crate) fn reflens_structure_crate_output_describe_flow_execution_records_out
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_connectors_output_next_token(
+    input: &crate::output::ListConnectorsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_flows_output_next_token(
     input: &crate::output::ListFlowsOutput,
 ) -> std::option::Option<&std::string::String> {

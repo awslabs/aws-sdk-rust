@@ -9,12 +9,12 @@ pub mod get_latest_configuration_input {
         pub(crate) configuration_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Token describing the current state of the configuration session. To obtain a token, first call the StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent GetLatestConfiguration API calls.</p>
+        /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p>
         pub fn configuration_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_token = Some(input.into());
             self
         }
-        /// <p>Token describing the current state of the configuration session. To obtain a token, first call the StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent GetLatestConfiguration API calls.</p>
+        /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p>
         pub fn set_configuration_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -204,12 +204,12 @@ pub mod start_configuration_session_input {
             self.configuration_profile_identifier = input;
             self
         }
-        /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
+        /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently then every 60 seconds.</p>
         pub fn required_minimum_poll_interval_in_seconds(mut self, input: i32) -> Self {
             self.required_minimum_poll_interval_in_seconds = Some(input);
             self
         }
-        /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
+        /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently then every 60 seconds.</p>
         pub fn set_required_minimum_poll_interval_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -353,7 +353,7 @@ impl StartConfigurationSessionInput {
     }
 }
 
-/// <p>Request parameters for the StartConfigurationSession API.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConfigurationSessionInput {
@@ -363,7 +363,7 @@ pub struct StartConfigurationSessionInput {
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The configuration profile ID or the configuration profile name.</p>
     pub configuration_profile_identifier: std::option::Option<std::string::String>,
-    /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
+    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently then every 60 seconds.</p>
     pub required_minimum_poll_interval_in_seconds: std::option::Option<i32>,
 }
 impl StartConfigurationSessionInput {
@@ -379,7 +379,7 @@ impl StartConfigurationSessionInput {
     pub fn configuration_profile_identifier(&self) -> std::option::Option<&str> {
         self.configuration_profile_identifier.as_deref()
     }
-    /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
+    /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently then every 60 seconds.</p>
     pub fn required_minimum_poll_interval_in_seconds(&self) -> std::option::Option<i32> {
         self.required_minimum_poll_interval_in_seconds
     }
@@ -401,15 +401,15 @@ impl std::fmt::Debug for StartConfigurationSessionInput {
     }
 }
 
-/// <p>Request parameters for the GetLatestConfiguration API</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLatestConfigurationInput {
-    /// <p>Token describing the current state of the configuration session. To obtain a token, first call the StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent GetLatestConfiguration API calls.</p>
+    /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p>
     pub configuration_token: std::option::Option<std::string::String>,
 }
 impl GetLatestConfigurationInput {
-    /// <p>Token describing the current state of the configuration session. To obtain a token, first call the StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent GetLatestConfiguration API calls.</p>
+    /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and MUST be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p>
     pub fn configuration_token(&self) -> std::option::Option<&str> {
         self.configuration_token.as_deref()
     }

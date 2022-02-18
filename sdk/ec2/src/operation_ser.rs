@@ -16320,6 +16320,46 @@ pub fn serialize_operation_crate_operation_import_volume(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_list_images_in_recycle_bin(
+    input: &crate::input::ListImagesInRecycleBinInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer =
+        aws_smithy_query::QueryWriter::new(&mut out, "ListImagesInRecycleBin", "2016-11-15");
+    #[allow(unused_mut)]
+    let mut scope_4591 = writer.prefix("ImageId");
+    if let Some(var_4592) = &input.image_ids {
+        let mut list_4594 = scope_4591.start_list(true, Some("ImageId"));
+        for item_4593 in var_4592 {
+            #[allow(unused_mut)]
+            let mut entry_4595 = list_4594.entry();
+            entry_4595.string(item_4593);
+        }
+        list_4594.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_4596 = writer.prefix("NextToken");
+    if let Some(var_4597) = &input.next_token {
+        scope_4596.string(var_4597);
+    }
+    #[allow(unused_mut)]
+    let mut scope_4598 = writer.prefix("MaxResults");
+    if let Some(var_4599) = &input.max_results {
+        scope_4598.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_4599).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_4600 = writer.prefix("DryRun");
+    if let Some(var_4601) = &input.dry_run {
+        scope_4600.boolean(*var_4601);
+    }
+    writer.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_list_snapshots_in_recycle_bin(
     input: &crate::input::ListSnapshotsInRecycleBinInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
@@ -16328,33 +16368,33 @@ pub fn serialize_operation_crate_operation_list_snapshots_in_recycle_bin(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ListSnapshotsInRecycleBin", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4591 = writer.prefix("MaxResults");
-    if let Some(var_4592) = &input.max_results {
-        scope_4591.number(
+    let mut scope_4602 = writer.prefix("MaxResults");
+    if let Some(var_4603) = &input.max_results {
+        scope_4602.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4592).into()),
+            aws_smithy_types::Number::NegInt((*var_4603).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4593 = writer.prefix("NextToken");
-    if let Some(var_4594) = &input.next_token {
-        scope_4593.string(var_4594);
+    let mut scope_4604 = writer.prefix("NextToken");
+    if let Some(var_4605) = &input.next_token {
+        scope_4604.string(var_4605);
     }
     #[allow(unused_mut)]
-    let mut scope_4595 = writer.prefix("SnapshotId");
-    if let Some(var_4596) = &input.snapshot_ids {
-        let mut list_4598 = scope_4595.start_list(true, Some("SnapshotId"));
-        for item_4597 in var_4596 {
+    let mut scope_4606 = writer.prefix("SnapshotId");
+    if let Some(var_4607) = &input.snapshot_ids {
+        let mut list_4609 = scope_4606.start_list(true, Some("SnapshotId"));
+        for item_4608 in var_4607 {
             #[allow(unused_mut)]
-            let mut entry_4599 = list_4598.entry();
-            entry_4599.string(item_4597);
+            let mut entry_4610 = list_4609.entry();
+            entry_4610.string(item_4608);
         }
-        list_4598.finish();
+        list_4609.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4600 = writer.prefix("DryRun");
-    if let Some(var_4601) = &input.dry_run {
-        scope_4600.boolean(*var_4601);
+    let mut scope_4611 = writer.prefix("DryRun");
+    if let Some(var_4612) = &input.dry_run {
+        scope_4611.boolean(*var_4612);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16368,19 +16408,19 @@ pub fn serialize_operation_crate_operation_modify_address_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyAddressAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4602 = writer.prefix("AllocationId");
-    if let Some(var_4603) = &input.allocation_id {
-        scope_4602.string(var_4603);
+    let mut scope_4613 = writer.prefix("AllocationId");
+    if let Some(var_4614) = &input.allocation_id {
+        scope_4613.string(var_4614);
     }
     #[allow(unused_mut)]
-    let mut scope_4604 = writer.prefix("DomainName");
-    if let Some(var_4605) = &input.domain_name {
-        scope_4604.string(var_4605);
+    let mut scope_4615 = writer.prefix("DomainName");
+    if let Some(var_4616) = &input.domain_name {
+        scope_4615.string(var_4616);
     }
     #[allow(unused_mut)]
-    let mut scope_4606 = writer.prefix("DryRun");
-    if let Some(var_4607) = &input.dry_run {
-        scope_4606.boolean(*var_4607);
+    let mut scope_4617 = writer.prefix("DryRun");
+    if let Some(var_4618) = &input.dry_run {
+        scope_4617.boolean(*var_4618);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16394,19 +16434,19 @@ pub fn serialize_operation_crate_operation_modify_availability_zone_group(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyAvailabilityZoneGroup", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4608 = writer.prefix("GroupName");
-    if let Some(var_4609) = &input.group_name {
-        scope_4608.string(var_4609);
+    let mut scope_4619 = writer.prefix("GroupName");
+    if let Some(var_4620) = &input.group_name {
+        scope_4619.string(var_4620);
     }
     #[allow(unused_mut)]
-    let mut scope_4610 = writer.prefix("OptInStatus");
-    if let Some(var_4611) = &input.opt_in_status {
-        scope_4610.string(var_4611.as_str());
+    let mut scope_4621 = writer.prefix("OptInStatus");
+    if let Some(var_4622) = &input.opt_in_status {
+        scope_4621.string(var_4622.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4612 = writer.prefix("DryRun");
-    if let Some(var_4613) = &input.dry_run {
-        scope_4612.boolean(*var_4613);
+    let mut scope_4623 = writer.prefix("DryRun");
+    if let Some(var_4624) = &input.dry_run {
+        scope_4623.boolean(*var_4624);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16420,42 +16460,42 @@ pub fn serialize_operation_crate_operation_modify_capacity_reservation(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyCapacityReservation", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4614 = writer.prefix("CapacityReservationId");
-    if let Some(var_4615) = &input.capacity_reservation_id {
-        scope_4614.string(var_4615);
+    let mut scope_4625 = writer.prefix("CapacityReservationId");
+    if let Some(var_4626) = &input.capacity_reservation_id {
+        scope_4625.string(var_4626);
     }
     #[allow(unused_mut)]
-    let mut scope_4616 = writer.prefix("InstanceCount");
-    if let Some(var_4617) = &input.instance_count {
-        scope_4616.number(
+    let mut scope_4627 = writer.prefix("InstanceCount");
+    if let Some(var_4628) = &input.instance_count {
+        scope_4627.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4617).into()),
+            aws_smithy_types::Number::NegInt((*var_4628).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4618 = writer.prefix("EndDate");
-    if let Some(var_4619) = &input.end_date {
-        scope_4618.date_time(var_4619, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_4629 = writer.prefix("EndDate");
+    if let Some(var_4630) = &input.end_date {
+        scope_4629.date_time(var_4630, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_4620 = writer.prefix("EndDateType");
-    if let Some(var_4621) = &input.end_date_type {
-        scope_4620.string(var_4621.as_str());
+    let mut scope_4631 = writer.prefix("EndDateType");
+    if let Some(var_4632) = &input.end_date_type {
+        scope_4631.string(var_4632.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4622 = writer.prefix("Accept");
-    if let Some(var_4623) = &input.accept {
-        scope_4622.boolean(*var_4623);
+    let mut scope_4633 = writer.prefix("Accept");
+    if let Some(var_4634) = &input.accept {
+        scope_4633.boolean(*var_4634);
     }
     #[allow(unused_mut)]
-    let mut scope_4624 = writer.prefix("DryRun");
-    if let Some(var_4625) = &input.dry_run {
-        scope_4624.boolean(*var_4625);
+    let mut scope_4635 = writer.prefix("DryRun");
+    if let Some(var_4636) = &input.dry_run {
+        scope_4635.boolean(*var_4636);
     }
     #[allow(unused_mut)]
-    let mut scope_4626 = writer.prefix("AdditionalInfo");
-    if let Some(var_4627) = &input.additional_info {
-        scope_4626.string(var_4627);
+    let mut scope_4637 = writer.prefix("AdditionalInfo");
+    if let Some(var_4638) = &input.additional_info {
+        scope_4637.string(var_4638);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16472,32 +16512,32 @@ pub fn serialize_operation_crate_operation_modify_capacity_reservation_fleet(
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_4628 = writer.prefix("CapacityReservationFleetId");
-    if let Some(var_4629) = &input.capacity_reservation_fleet_id {
-        scope_4628.string(var_4629);
+    let mut scope_4639 = writer.prefix("CapacityReservationFleetId");
+    if let Some(var_4640) = &input.capacity_reservation_fleet_id {
+        scope_4639.string(var_4640);
     }
     #[allow(unused_mut)]
-    let mut scope_4630 = writer.prefix("TotalTargetCapacity");
-    if let Some(var_4631) = &input.total_target_capacity {
-        scope_4630.number(
+    let mut scope_4641 = writer.prefix("TotalTargetCapacity");
+    if let Some(var_4642) = &input.total_target_capacity {
+        scope_4641.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4631).into()),
+            aws_smithy_types::Number::NegInt((*var_4642).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4632 = writer.prefix("EndDate");
-    if let Some(var_4633) = &input.end_date {
-        scope_4632.date_time(var_4633, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_4643 = writer.prefix("EndDate");
+    if let Some(var_4644) = &input.end_date {
+        scope_4643.date_time(var_4644, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_4634 = writer.prefix("DryRun");
-    if let Some(var_4635) = &input.dry_run {
-        scope_4634.boolean(*var_4635);
+    let mut scope_4645 = writer.prefix("DryRun");
+    if let Some(var_4646) = &input.dry_run {
+        scope_4645.boolean(*var_4646);
     }
     #[allow(unused_mut)]
-    let mut scope_4636 = writer.prefix("RemoveEndDate");
-    if let Some(var_4637) = &input.remove_end_date {
-        scope_4636.boolean(*var_4637);
+    let mut scope_4647 = writer.prefix("RemoveEndDate");
+    if let Some(var_4648) = &input.remove_end_date {
+        scope_4647.boolean(*var_4648);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16511,93 +16551,93 @@ pub fn serialize_operation_crate_operation_modify_client_vpn_endpoint(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyClientVpnEndpoint", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4638 = writer.prefix("ClientVpnEndpointId");
-    if let Some(var_4639) = &input.client_vpn_endpoint_id {
-        scope_4638.string(var_4639);
+    let mut scope_4649 = writer.prefix("ClientVpnEndpointId");
+    if let Some(var_4650) = &input.client_vpn_endpoint_id {
+        scope_4649.string(var_4650);
     }
     #[allow(unused_mut)]
-    let mut scope_4640 = writer.prefix("ServerCertificateArn");
-    if let Some(var_4641) = &input.server_certificate_arn {
-        scope_4640.string(var_4641);
+    let mut scope_4651 = writer.prefix("ServerCertificateArn");
+    if let Some(var_4652) = &input.server_certificate_arn {
+        scope_4651.string(var_4652);
     }
     #[allow(unused_mut)]
-    let mut scope_4642 = writer.prefix("ConnectionLogOptions");
-    if let Some(var_4643) = &input.connection_log_options {
+    let mut scope_4653 = writer.prefix("ConnectionLogOptions");
+    if let Some(var_4654) = &input.connection_log_options {
         crate::query_ser::serialize_structure_crate_model_connection_log_options(
-            scope_4642, var_4643,
+            scope_4653, var_4654,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4644 = writer.prefix("DnsServers");
-    if let Some(var_4645) = &input.dns_servers {
+    let mut scope_4655 = writer.prefix("DnsServers");
+    if let Some(var_4656) = &input.dns_servers {
         crate::query_ser::serialize_structure_crate_model_dns_servers_options_modify_structure(
-            scope_4644, var_4645,
+            scope_4655, var_4656,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4646 = writer.prefix("VpnPort");
-    if let Some(var_4647) = &input.vpn_port {
-        scope_4646.number(
+    let mut scope_4657 = writer.prefix("VpnPort");
+    if let Some(var_4658) = &input.vpn_port {
+        scope_4657.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4647).into()),
+            aws_smithy_types::Number::NegInt((*var_4658).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4648 = writer.prefix("Description");
-    if let Some(var_4649) = &input.description {
-        scope_4648.string(var_4649);
-    }
-    #[allow(unused_mut)]
-    let mut scope_4650 = writer.prefix("SplitTunnel");
-    if let Some(var_4651) = &input.split_tunnel {
-        scope_4650.boolean(*var_4651);
-    }
-    #[allow(unused_mut)]
-    let mut scope_4652 = writer.prefix("DryRun");
-    if let Some(var_4653) = &input.dry_run {
-        scope_4652.boolean(*var_4653);
-    }
-    #[allow(unused_mut)]
-    let mut scope_4654 = writer.prefix("SecurityGroupId");
-    if let Some(var_4655) = &input.security_group_ids {
-        let mut list_4657 = scope_4654.start_list(true, Some("item"));
-        for item_4656 in var_4655 {
-            #[allow(unused_mut)]
-            let mut entry_4658 = list_4657.entry();
-            entry_4658.string(item_4656);
-        }
-        list_4657.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_4659 = writer.prefix("VpcId");
-    if let Some(var_4660) = &input.vpc_id {
+    let mut scope_4659 = writer.prefix("Description");
+    if let Some(var_4660) = &input.description {
         scope_4659.string(var_4660);
     }
     #[allow(unused_mut)]
-    let mut scope_4661 = writer.prefix("SelfServicePortal");
-    if let Some(var_4662) = &input.self_service_portal {
-        scope_4661.string(var_4662.as_str());
+    let mut scope_4661 = writer.prefix("SplitTunnel");
+    if let Some(var_4662) = &input.split_tunnel {
+        scope_4661.boolean(*var_4662);
     }
     #[allow(unused_mut)]
-    let mut scope_4663 = writer.prefix("ClientConnectOptions");
-    if let Some(var_4664) = &input.client_connect_options {
+    let mut scope_4663 = writer.prefix("DryRun");
+    if let Some(var_4664) = &input.dry_run {
+        scope_4663.boolean(*var_4664);
+    }
+    #[allow(unused_mut)]
+    let mut scope_4665 = writer.prefix("SecurityGroupId");
+    if let Some(var_4666) = &input.security_group_ids {
+        let mut list_4668 = scope_4665.start_list(true, Some("item"));
+        for item_4667 in var_4666 {
+            #[allow(unused_mut)]
+            let mut entry_4669 = list_4668.entry();
+            entry_4669.string(item_4667);
+        }
+        list_4668.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_4670 = writer.prefix("VpcId");
+    if let Some(var_4671) = &input.vpc_id {
+        scope_4670.string(var_4671);
+    }
+    #[allow(unused_mut)]
+    let mut scope_4672 = writer.prefix("SelfServicePortal");
+    if let Some(var_4673) = &input.self_service_portal {
+        scope_4672.string(var_4673.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_4674 = writer.prefix("ClientConnectOptions");
+    if let Some(var_4675) = &input.client_connect_options {
         crate::query_ser::serialize_structure_crate_model_client_connect_options(
-            scope_4663, var_4664,
+            scope_4674, var_4675,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4665 = writer.prefix("SessionTimeoutHours");
-    if let Some(var_4666) = &input.session_timeout_hours {
-        scope_4665.number(
+    let mut scope_4676 = writer.prefix("SessionTimeoutHours");
+    if let Some(var_4677) = &input.session_timeout_hours {
+        scope_4676.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4666).into()),
+            aws_smithy_types::Number::NegInt((*var_4677).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4667 = writer.prefix("ClientLoginBannerOptions");
-    if let Some(var_4668) = &input.client_login_banner_options {
+    let mut scope_4678 = writer.prefix("ClientLoginBannerOptions");
+    if let Some(var_4679) = &input.client_login_banner_options {
         crate::query_ser::serialize_structure_crate_model_client_login_banner_options(
-            scope_4667, var_4668,
+            scope_4678, var_4679,
         )?;
     }
     writer.finish();
@@ -16615,19 +16655,19 @@ pub fn serialize_operation_crate_operation_modify_default_credit_specification(
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_4669 = writer.prefix("DryRun");
-    if let Some(var_4670) = &input.dry_run {
-        scope_4669.boolean(*var_4670);
+    let mut scope_4680 = writer.prefix("DryRun");
+    if let Some(var_4681) = &input.dry_run {
+        scope_4680.boolean(*var_4681);
     }
     #[allow(unused_mut)]
-    let mut scope_4671 = writer.prefix("InstanceFamily");
-    if let Some(var_4672) = &input.instance_family {
-        scope_4671.string(var_4672.as_str());
+    let mut scope_4682 = writer.prefix("InstanceFamily");
+    if let Some(var_4683) = &input.instance_family {
+        scope_4682.string(var_4683.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4673 = writer.prefix("CpuCredits");
-    if let Some(var_4674) = &input.cpu_credits {
-        scope_4673.string(var_4674);
+    let mut scope_4684 = writer.prefix("CpuCredits");
+    if let Some(var_4685) = &input.cpu_credits {
+        scope_4684.string(var_4685);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16641,14 +16681,14 @@ pub fn serialize_operation_crate_operation_modify_ebs_default_kms_key_id(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyEbsDefaultKmsKeyId", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4675 = writer.prefix("KmsKeyId");
-    if let Some(var_4676) = &input.kms_key_id {
-        scope_4675.string(var_4676);
+    let mut scope_4686 = writer.prefix("KmsKeyId");
+    if let Some(var_4687) = &input.kms_key_id {
+        scope_4686.string(var_4687);
     }
     #[allow(unused_mut)]
-    let mut scope_4677 = writer.prefix("DryRun");
-    if let Some(var_4678) = &input.dry_run {
-        scope_4677.boolean(*var_4678);
+    let mut scope_4688 = writer.prefix("DryRun");
+    if let Some(var_4689) = &input.dry_run {
+        scope_4688.boolean(*var_4689);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16661,44 +16701,44 @@ pub fn serialize_operation_crate_operation_modify_fleet(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ModifyFleet", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4679 = writer.prefix("DryRun");
-    if let Some(var_4680) = &input.dry_run {
-        scope_4679.boolean(*var_4680);
+    let mut scope_4690 = writer.prefix("DryRun");
+    if let Some(var_4691) = &input.dry_run {
+        scope_4690.boolean(*var_4691);
     }
     #[allow(unused_mut)]
-    let mut scope_4681 = writer.prefix("ExcessCapacityTerminationPolicy");
-    if let Some(var_4682) = &input.excess_capacity_termination_policy {
-        scope_4681.string(var_4682.as_str());
+    let mut scope_4692 = writer.prefix("ExcessCapacityTerminationPolicy");
+    if let Some(var_4693) = &input.excess_capacity_termination_policy {
+        scope_4692.string(var_4693.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4683 = writer.prefix("LaunchTemplateConfig");
-    if let Some(var_4684) = &input.launch_template_configs {
-        let mut list_4686 = scope_4683.start_list(true, Some("item"));
-        for item_4685 in var_4684 {
+    let mut scope_4694 = writer.prefix("LaunchTemplateConfig");
+    if let Some(var_4695) = &input.launch_template_configs {
+        let mut list_4697 = scope_4694.start_list(true, Some("item"));
+        for item_4696 in var_4695 {
             #[allow(unused_mut)]
-            let mut entry_4687 = list_4686.entry();
+            let mut entry_4698 = list_4697.entry();
             crate::query_ser::serialize_structure_crate_model_fleet_launch_template_config_request(
-                entry_4687, item_4685,
+                entry_4698, item_4696,
             )?;
         }
-        list_4686.finish();
+        list_4697.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4688 = writer.prefix("FleetId");
-    if let Some(var_4689) = &input.fleet_id {
-        scope_4688.string(var_4689);
+    let mut scope_4699 = writer.prefix("FleetId");
+    if let Some(var_4700) = &input.fleet_id {
+        scope_4699.string(var_4700);
     }
     #[allow(unused_mut)]
-    let mut scope_4690 = writer.prefix("TargetCapacitySpecification");
-    if let Some(var_4691) = &input.target_capacity_specification {
+    let mut scope_4701 = writer.prefix("TargetCapacitySpecification");
+    if let Some(var_4702) = &input.target_capacity_specification {
         crate::query_ser::serialize_structure_crate_model_target_capacity_specification_request(
-            scope_4690, var_4691,
+            scope_4701, var_4702,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4692 = writer.prefix("Context");
-    if let Some(var_4693) = &input.context {
-        scope_4692.string(var_4693);
+    let mut scope_4703 = writer.prefix("Context");
+    if let Some(var_4704) = &input.context {
+        scope_4703.string(var_4704);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16712,74 +16752,74 @@ pub fn serialize_operation_crate_operation_modify_fpga_image_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyFpgaImageAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4694 = writer.prefix("DryRun");
-    if let Some(var_4695) = &input.dry_run {
-        scope_4694.boolean(*var_4695);
+    let mut scope_4705 = writer.prefix("DryRun");
+    if let Some(var_4706) = &input.dry_run {
+        scope_4705.boolean(*var_4706);
     }
     #[allow(unused_mut)]
-    let mut scope_4696 = writer.prefix("FpgaImageId");
-    if let Some(var_4697) = &input.fpga_image_id {
-        scope_4696.string(var_4697);
+    let mut scope_4707 = writer.prefix("FpgaImageId");
+    if let Some(var_4708) = &input.fpga_image_id {
+        scope_4707.string(var_4708);
     }
     #[allow(unused_mut)]
-    let mut scope_4698 = writer.prefix("Attribute");
-    if let Some(var_4699) = &input.attribute {
-        scope_4698.string(var_4699.as_str());
+    let mut scope_4709 = writer.prefix("Attribute");
+    if let Some(var_4710) = &input.attribute {
+        scope_4709.string(var_4710.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4700 = writer.prefix("OperationType");
-    if let Some(var_4701) = &input.operation_type {
-        scope_4700.string(var_4701.as_str());
+    let mut scope_4711 = writer.prefix("OperationType");
+    if let Some(var_4712) = &input.operation_type {
+        scope_4711.string(var_4712.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4702 = writer.prefix("UserId");
-    if let Some(var_4703) = &input.user_ids {
-        let mut list_4705 = scope_4702.start_list(true, Some("UserId"));
-        for item_4704 in var_4703 {
+    let mut scope_4713 = writer.prefix("UserId");
+    if let Some(var_4714) = &input.user_ids {
+        let mut list_4716 = scope_4713.start_list(true, Some("UserId"));
+        for item_4715 in var_4714 {
             #[allow(unused_mut)]
-            let mut entry_4706 = list_4705.entry();
-            entry_4706.string(item_4704);
+            let mut entry_4717 = list_4716.entry();
+            entry_4717.string(item_4715);
         }
-        list_4705.finish();
+        list_4716.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4707 = writer.prefix("UserGroup");
-    if let Some(var_4708) = &input.user_groups {
-        let mut list_4710 = scope_4707.start_list(true, Some("UserGroup"));
-        for item_4709 in var_4708 {
+    let mut scope_4718 = writer.prefix("UserGroup");
+    if let Some(var_4719) = &input.user_groups {
+        let mut list_4721 = scope_4718.start_list(true, Some("UserGroup"));
+        for item_4720 in var_4719 {
             #[allow(unused_mut)]
-            let mut entry_4711 = list_4710.entry();
-            entry_4711.string(item_4709);
+            let mut entry_4722 = list_4721.entry();
+            entry_4722.string(item_4720);
         }
-        list_4710.finish();
+        list_4721.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4712 = writer.prefix("ProductCode");
-    if let Some(var_4713) = &input.product_codes {
-        let mut list_4715 = scope_4712.start_list(true, Some("ProductCode"));
-        for item_4714 in var_4713 {
+    let mut scope_4723 = writer.prefix("ProductCode");
+    if let Some(var_4724) = &input.product_codes {
+        let mut list_4726 = scope_4723.start_list(true, Some("ProductCode"));
+        for item_4725 in var_4724 {
             #[allow(unused_mut)]
-            let mut entry_4716 = list_4715.entry();
-            entry_4716.string(item_4714);
+            let mut entry_4727 = list_4726.entry();
+            entry_4727.string(item_4725);
         }
-        list_4715.finish();
+        list_4726.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4717 = writer.prefix("LoadPermission");
-    if let Some(var_4718) = &input.load_permission {
+    let mut scope_4728 = writer.prefix("LoadPermission");
+    if let Some(var_4729) = &input.load_permission {
         crate::query_ser::serialize_structure_crate_model_load_permission_modifications(
-            scope_4717, var_4718,
+            scope_4728, var_4729,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4719 = writer.prefix("Description");
-    if let Some(var_4720) = &input.description {
-        scope_4719.string(var_4720);
+    let mut scope_4730 = writer.prefix("Description");
+    if let Some(var_4731) = &input.description {
+        scope_4730.string(var_4731);
     }
     #[allow(unused_mut)]
-    let mut scope_4721 = writer.prefix("Name");
-    if let Some(var_4722) = &input.name {
-        scope_4721.string(var_4722);
+    let mut scope_4732 = writer.prefix("Name");
+    if let Some(var_4733) = &input.name {
+        scope_4732.string(var_4733);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16792,35 +16832,35 @@ pub fn serialize_operation_crate_operation_modify_hosts(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ModifyHosts", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4723 = writer.prefix("AutoPlacement");
-    if let Some(var_4724) = &input.auto_placement {
-        scope_4723.string(var_4724.as_str());
+    let mut scope_4734 = writer.prefix("AutoPlacement");
+    if let Some(var_4735) = &input.auto_placement {
+        scope_4734.string(var_4735.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4725 = writer.prefix("HostId");
-    if let Some(var_4726) = &input.host_ids {
-        let mut list_4728 = scope_4725.start_list(true, Some("item"));
-        for item_4727 in var_4726 {
+    let mut scope_4736 = writer.prefix("HostId");
+    if let Some(var_4737) = &input.host_ids {
+        let mut list_4739 = scope_4736.start_list(true, Some("item"));
+        for item_4738 in var_4737 {
             #[allow(unused_mut)]
-            let mut entry_4729 = list_4728.entry();
-            entry_4729.string(item_4727);
+            let mut entry_4740 = list_4739.entry();
+            entry_4740.string(item_4738);
         }
-        list_4728.finish();
+        list_4739.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4730 = writer.prefix("HostRecovery");
-    if let Some(var_4731) = &input.host_recovery {
-        scope_4730.string(var_4731.as_str());
+    let mut scope_4741 = writer.prefix("HostRecovery");
+    if let Some(var_4742) = &input.host_recovery {
+        scope_4741.string(var_4742.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4732 = writer.prefix("InstanceType");
-    if let Some(var_4733) = &input.instance_type {
-        scope_4732.string(var_4733);
+    let mut scope_4743 = writer.prefix("InstanceType");
+    if let Some(var_4744) = &input.instance_type {
+        scope_4743.string(var_4744);
     }
     #[allow(unused_mut)]
-    let mut scope_4734 = writer.prefix("InstanceFamily");
-    if let Some(var_4735) = &input.instance_family {
-        scope_4734.string(var_4735);
+    let mut scope_4745 = writer.prefix("InstanceFamily");
+    if let Some(var_4746) = &input.instance_family {
+        scope_4745.string(var_4746);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16834,19 +16874,19 @@ pub fn serialize_operation_crate_operation_modify_identity_id_format(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyIdentityIdFormat", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4736 = writer.prefix("PrincipalArn");
-    if let Some(var_4737) = &input.principal_arn {
-        scope_4736.string(var_4737);
+    let mut scope_4747 = writer.prefix("PrincipalArn");
+    if let Some(var_4748) = &input.principal_arn {
+        scope_4747.string(var_4748);
     }
     #[allow(unused_mut)]
-    let mut scope_4738 = writer.prefix("Resource");
-    if let Some(var_4739) = &input.resource {
-        scope_4738.string(var_4739);
+    let mut scope_4749 = writer.prefix("Resource");
+    if let Some(var_4750) = &input.resource {
+        scope_4749.string(var_4750);
     }
     #[allow(unused_mut)]
-    let mut scope_4740 = writer.prefix("UseLongIds");
-    if let Some(var_4741) = &input.use_long_ids {
-        scope_4740.boolean(*var_4741);
+    let mut scope_4751 = writer.prefix("UseLongIds");
+    if let Some(var_4752) = &input.use_long_ids {
+        scope_4751.boolean(*var_4752);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16859,14 +16899,14 @@ pub fn serialize_operation_crate_operation_modify_id_format(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ModifyIdFormat", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4742 = writer.prefix("Resource");
-    if let Some(var_4743) = &input.resource {
-        scope_4742.string(var_4743);
+    let mut scope_4753 = writer.prefix("Resource");
+    if let Some(var_4754) = &input.resource {
+        scope_4753.string(var_4754);
     }
     #[allow(unused_mut)]
-    let mut scope_4744 = writer.prefix("UseLongIds");
-    if let Some(var_4745) = &input.use_long_ids {
-        scope_4744.boolean(*var_4745);
+    let mut scope_4755 = writer.prefix("UseLongIds");
+    if let Some(var_4756) = &input.use_long_ids {
+        scope_4755.boolean(*var_4756);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16880,96 +16920,96 @@ pub fn serialize_operation_crate_operation_modify_image_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyImageAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4746 = writer.prefix("Attribute");
-    if let Some(var_4747) = &input.attribute {
-        scope_4746.string(var_4747);
+    let mut scope_4757 = writer.prefix("Attribute");
+    if let Some(var_4758) = &input.attribute {
+        scope_4757.string(var_4758);
     }
     #[allow(unused_mut)]
-    let mut scope_4748 = writer.prefix("Description");
-    if let Some(var_4749) = &input.description {
-        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4748, var_4749)?;
+    let mut scope_4759 = writer.prefix("Description");
+    if let Some(var_4760) = &input.description {
+        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4759, var_4760)?;
     }
     #[allow(unused_mut)]
-    let mut scope_4750 = writer.prefix("ImageId");
-    if let Some(var_4751) = &input.image_id {
-        scope_4750.string(var_4751);
+    let mut scope_4761 = writer.prefix("ImageId");
+    if let Some(var_4762) = &input.image_id {
+        scope_4761.string(var_4762);
     }
     #[allow(unused_mut)]
-    let mut scope_4752 = writer.prefix("LaunchPermission");
-    if let Some(var_4753) = &input.launch_permission {
+    let mut scope_4763 = writer.prefix("LaunchPermission");
+    if let Some(var_4764) = &input.launch_permission {
         crate::query_ser::serialize_structure_crate_model_launch_permission_modifications(
-            scope_4752, var_4753,
+            scope_4763, var_4764,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4754 = writer.prefix("OperationType");
-    if let Some(var_4755) = &input.operation_type {
-        scope_4754.string(var_4755.as_str());
+    let mut scope_4765 = writer.prefix("OperationType");
+    if let Some(var_4766) = &input.operation_type {
+        scope_4765.string(var_4766.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4756 = writer.prefix("ProductCode");
-    if let Some(var_4757) = &input.product_codes {
-        let mut list_4759 = scope_4756.start_list(true, Some("ProductCode"));
-        for item_4758 in var_4757 {
+    let mut scope_4767 = writer.prefix("ProductCode");
+    if let Some(var_4768) = &input.product_codes {
+        let mut list_4770 = scope_4767.start_list(true, Some("ProductCode"));
+        for item_4769 in var_4768 {
             #[allow(unused_mut)]
-            let mut entry_4760 = list_4759.entry();
-            entry_4760.string(item_4758);
+            let mut entry_4771 = list_4770.entry();
+            entry_4771.string(item_4769);
         }
-        list_4759.finish();
+        list_4770.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4761 = writer.prefix("UserGroup");
-    if let Some(var_4762) = &input.user_groups {
-        let mut list_4764 = scope_4761.start_list(true, Some("UserGroup"));
-        for item_4763 in var_4762 {
+    let mut scope_4772 = writer.prefix("UserGroup");
+    if let Some(var_4773) = &input.user_groups {
+        let mut list_4775 = scope_4772.start_list(true, Some("UserGroup"));
+        for item_4774 in var_4773 {
             #[allow(unused_mut)]
-            let mut entry_4765 = list_4764.entry();
-            entry_4765.string(item_4763);
+            let mut entry_4776 = list_4775.entry();
+            entry_4776.string(item_4774);
         }
-        list_4764.finish();
+        list_4775.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4766 = writer.prefix("UserId");
-    if let Some(var_4767) = &input.user_ids {
-        let mut list_4769 = scope_4766.start_list(true, Some("UserId"));
-        for item_4768 in var_4767 {
+    let mut scope_4777 = writer.prefix("UserId");
+    if let Some(var_4778) = &input.user_ids {
+        let mut list_4780 = scope_4777.start_list(true, Some("UserId"));
+        for item_4779 in var_4778 {
             #[allow(unused_mut)]
-            let mut entry_4770 = list_4769.entry();
-            entry_4770.string(item_4768);
+            let mut entry_4781 = list_4780.entry();
+            entry_4781.string(item_4779);
         }
-        list_4769.finish();
+        list_4780.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4771 = writer.prefix("Value");
-    if let Some(var_4772) = &input.value {
-        scope_4771.string(var_4772);
+    let mut scope_4782 = writer.prefix("Value");
+    if let Some(var_4783) = &input.value {
+        scope_4782.string(var_4783);
     }
     #[allow(unused_mut)]
-    let mut scope_4773 = writer.prefix("DryRun");
-    if let Some(var_4774) = &input.dry_run {
-        scope_4773.boolean(*var_4774);
+    let mut scope_4784 = writer.prefix("DryRun");
+    if let Some(var_4785) = &input.dry_run {
+        scope_4784.boolean(*var_4785);
     }
     #[allow(unused_mut)]
-    let mut scope_4775 = writer.prefix("OrganizationArn");
-    if let Some(var_4776) = &input.organization_arns {
-        let mut list_4778 = scope_4775.start_list(true, Some("OrganizationArn"));
-        for item_4777 in var_4776 {
+    let mut scope_4786 = writer.prefix("OrganizationArn");
+    if let Some(var_4787) = &input.organization_arns {
+        let mut list_4789 = scope_4786.start_list(true, Some("OrganizationArn"));
+        for item_4788 in var_4787 {
             #[allow(unused_mut)]
-            let mut entry_4779 = list_4778.entry();
-            entry_4779.string(item_4777);
+            let mut entry_4790 = list_4789.entry();
+            entry_4790.string(item_4788);
         }
-        list_4778.finish();
+        list_4789.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4780 = writer.prefix("OrganizationalUnitArn");
-    if let Some(var_4781) = &input.organizational_unit_arns {
-        let mut list_4783 = scope_4780.start_list(true, Some("OrganizationalUnitArn"));
-        for item_4782 in var_4781 {
+    let mut scope_4791 = writer.prefix("OrganizationalUnitArn");
+    if let Some(var_4792) = &input.organizational_unit_arns {
+        let mut list_4794 = scope_4791.start_list(true, Some("OrganizationalUnitArn"));
+        for item_4793 in var_4792 {
             #[allow(unused_mut)]
-            let mut entry_4784 = list_4783.entry();
-            entry_4784.string(item_4782);
+            let mut entry_4795 = list_4794.entry();
+            entry_4795.string(item_4793);
         }
-        list_4783.finish();
+        list_4794.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -16983,106 +17023,106 @@ pub fn serialize_operation_crate_operation_modify_instance_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyInstanceAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4785 = writer.prefix("SourceDestCheck");
-    if let Some(var_4786) = &input.source_dest_check {
+    let mut scope_4796 = writer.prefix("SourceDestCheck");
+    if let Some(var_4797) = &input.source_dest_check {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_4785, var_4786,
+            scope_4796, var_4797,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4787 = writer.prefix("Attribute");
-    if let Some(var_4788) = &input.attribute {
-        scope_4787.string(var_4788.as_str());
+    let mut scope_4798 = writer.prefix("Attribute");
+    if let Some(var_4799) = &input.attribute {
+        scope_4798.string(var_4799.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4789 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_4790) = &input.block_device_mappings {
-        let mut list_4792 = scope_4789.start_list(true, Some("item"));
-        for item_4791 in var_4790 {
+    let mut scope_4800 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_4801) = &input.block_device_mappings {
+        let mut list_4803 = scope_4800.start_list(true, Some("item"));
+        for item_4802 in var_4801 {
             #[allow(unused_mut)]
-            let mut entry_4793 = list_4792.entry();
-            crate::query_ser::serialize_structure_crate_model_instance_block_device_mapping_specification(entry_4793, item_4791)?;
+            let mut entry_4804 = list_4803.entry();
+            crate::query_ser::serialize_structure_crate_model_instance_block_device_mapping_specification(entry_4804, item_4802)?;
         }
-        list_4792.finish();
+        list_4803.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4794 = writer.prefix("DisableApiTermination");
-    if let Some(var_4795) = &input.disable_api_termination {
+    let mut scope_4805 = writer.prefix("DisableApiTermination");
+    if let Some(var_4806) = &input.disable_api_termination {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_4794, var_4795,
+            scope_4805, var_4806,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4796 = writer.prefix("DryRun");
-    if let Some(var_4797) = &input.dry_run {
-        scope_4796.boolean(*var_4797);
+    let mut scope_4807 = writer.prefix("DryRun");
+    if let Some(var_4808) = &input.dry_run {
+        scope_4807.boolean(*var_4808);
     }
     #[allow(unused_mut)]
-    let mut scope_4798 = writer.prefix("EbsOptimized");
-    if let Some(var_4799) = &input.ebs_optimized {
+    let mut scope_4809 = writer.prefix("EbsOptimized");
+    if let Some(var_4810) = &input.ebs_optimized {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_4798, var_4799,
+            scope_4809, var_4810,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4800 = writer.prefix("EnaSupport");
-    if let Some(var_4801) = &input.ena_support {
+    let mut scope_4811 = writer.prefix("EnaSupport");
+    if let Some(var_4812) = &input.ena_support {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_4800, var_4801,
+            scope_4811, var_4812,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4802 = writer.prefix("GroupId");
-    if let Some(var_4803) = &input.groups {
-        let mut list_4805 = scope_4802.start_list(true, Some("groupId"));
-        for item_4804 in var_4803 {
+    let mut scope_4813 = writer.prefix("GroupId");
+    if let Some(var_4814) = &input.groups {
+        let mut list_4816 = scope_4813.start_list(true, Some("groupId"));
+        for item_4815 in var_4814 {
             #[allow(unused_mut)]
-            let mut entry_4806 = list_4805.entry();
-            entry_4806.string(item_4804);
+            let mut entry_4817 = list_4816.entry();
+            entry_4817.string(item_4815);
         }
-        list_4805.finish();
+        list_4816.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4807 = writer.prefix("InstanceId");
-    if let Some(var_4808) = &input.instance_id {
-        scope_4807.string(var_4808);
+    let mut scope_4818 = writer.prefix("InstanceId");
+    if let Some(var_4819) = &input.instance_id {
+        scope_4818.string(var_4819);
     }
     #[allow(unused_mut)]
-    let mut scope_4809 = writer.prefix("InstanceInitiatedShutdownBehavior");
-    if let Some(var_4810) = &input.instance_initiated_shutdown_behavior {
-        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4809, var_4810)?;
+    let mut scope_4820 = writer.prefix("InstanceInitiatedShutdownBehavior");
+    if let Some(var_4821) = &input.instance_initiated_shutdown_behavior {
+        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4820, var_4821)?;
     }
     #[allow(unused_mut)]
-    let mut scope_4811 = writer.prefix("InstanceType");
-    if let Some(var_4812) = &input.instance_type {
-        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4811, var_4812)?;
+    let mut scope_4822 = writer.prefix("InstanceType");
+    if let Some(var_4823) = &input.instance_type {
+        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4822, var_4823)?;
     }
     #[allow(unused_mut)]
-    let mut scope_4813 = writer.prefix("Kernel");
-    if let Some(var_4814) = &input.kernel {
-        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4813, var_4814)?;
+    let mut scope_4824 = writer.prefix("Kernel");
+    if let Some(var_4825) = &input.kernel {
+        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4824, var_4825)?;
     }
     #[allow(unused_mut)]
-    let mut scope_4815 = writer.prefix("Ramdisk");
-    if let Some(var_4816) = &input.ramdisk {
-        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4815, var_4816)?;
+    let mut scope_4826 = writer.prefix("Ramdisk");
+    if let Some(var_4827) = &input.ramdisk {
+        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4826, var_4827)?;
     }
     #[allow(unused_mut)]
-    let mut scope_4817 = writer.prefix("SriovNetSupport");
-    if let Some(var_4818) = &input.sriov_net_support {
-        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4817, var_4818)?;
+    let mut scope_4828 = writer.prefix("SriovNetSupport");
+    if let Some(var_4829) = &input.sriov_net_support {
+        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4828, var_4829)?;
     }
     #[allow(unused_mut)]
-    let mut scope_4819 = writer.prefix("UserData");
-    if let Some(var_4820) = &input.user_data {
+    let mut scope_4830 = writer.prefix("UserData");
+    if let Some(var_4831) = &input.user_data {
         crate::query_ser::serialize_structure_crate_model_blob_attribute_value(
-            scope_4819, var_4820,
+            scope_4830, var_4831,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4821 = writer.prefix("Value");
-    if let Some(var_4822) = &input.value {
-        scope_4821.string(var_4822);
+    let mut scope_4832 = writer.prefix("Value");
+    if let Some(var_4833) = &input.value {
+        scope_4832.string(var_4833);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17099,21 +17139,21 @@ pub fn serialize_operation_crate_operation_modify_instance_capacity_reservation_
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_4823 = writer.prefix("InstanceId");
-    if let Some(var_4824) = &input.instance_id {
-        scope_4823.string(var_4824);
+    let mut scope_4834 = writer.prefix("InstanceId");
+    if let Some(var_4835) = &input.instance_id {
+        scope_4834.string(var_4835);
     }
     #[allow(unused_mut)]
-    let mut scope_4825 = writer.prefix("CapacityReservationSpecification");
-    if let Some(var_4826) = &input.capacity_reservation_specification {
+    let mut scope_4836 = writer.prefix("CapacityReservationSpecification");
+    if let Some(var_4837) = &input.capacity_reservation_specification {
         crate::query_ser::serialize_structure_crate_model_capacity_reservation_specification(
-            scope_4825, var_4826,
+            scope_4836, var_4837,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4827 = writer.prefix("DryRun");
-    if let Some(var_4828) = &input.dry_run {
-        scope_4827.boolean(*var_4828);
+    let mut scope_4838 = writer.prefix("DryRun");
+    if let Some(var_4839) = &input.dry_run {
+        scope_4838.boolean(*var_4839);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17130,25 +17170,25 @@ pub fn serialize_operation_crate_operation_modify_instance_credit_specification(
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_4829 = writer.prefix("DryRun");
-    if let Some(var_4830) = &input.dry_run {
-        scope_4829.boolean(*var_4830);
+    let mut scope_4840 = writer.prefix("DryRun");
+    if let Some(var_4841) = &input.dry_run {
+        scope_4840.boolean(*var_4841);
     }
     #[allow(unused_mut)]
-    let mut scope_4831 = writer.prefix("ClientToken");
-    if let Some(var_4832) = &input.client_token {
-        scope_4831.string(var_4832);
+    let mut scope_4842 = writer.prefix("ClientToken");
+    if let Some(var_4843) = &input.client_token {
+        scope_4842.string(var_4843);
     }
     #[allow(unused_mut)]
-    let mut scope_4833 = writer.prefix("InstanceCreditSpecification");
-    if let Some(var_4834) = &input.instance_credit_specifications {
-        let mut list_4836 = scope_4833.start_list(true, Some("item"));
-        for item_4835 in var_4834 {
+    let mut scope_4844 = writer.prefix("InstanceCreditSpecification");
+    if let Some(var_4845) = &input.instance_credit_specifications {
+        let mut list_4847 = scope_4844.start_list(true, Some("item"));
+        for item_4846 in var_4845 {
             #[allow(unused_mut)]
-            let mut entry_4837 = list_4836.entry();
-            crate::query_ser::serialize_structure_crate_model_instance_credit_specification_request(entry_4837, item_4835)?;
+            let mut entry_4848 = list_4847.entry();
+            crate::query_ser::serialize_structure_crate_model_instance_credit_specification_request(entry_4848, item_4846)?;
         }
-        list_4836.finish();
+        list_4847.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17162,24 +17202,24 @@ pub fn serialize_operation_crate_operation_modify_instance_event_start_time(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyInstanceEventStartTime", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4838 = writer.prefix("DryRun");
-    if let Some(var_4839) = &input.dry_run {
-        scope_4838.boolean(*var_4839);
+    let mut scope_4849 = writer.prefix("DryRun");
+    if let Some(var_4850) = &input.dry_run {
+        scope_4849.boolean(*var_4850);
     }
     #[allow(unused_mut)]
-    let mut scope_4840 = writer.prefix("InstanceId");
-    if let Some(var_4841) = &input.instance_id {
-        scope_4840.string(var_4841);
+    let mut scope_4851 = writer.prefix("InstanceId");
+    if let Some(var_4852) = &input.instance_id {
+        scope_4851.string(var_4852);
     }
     #[allow(unused_mut)]
-    let mut scope_4842 = writer.prefix("InstanceEventId");
-    if let Some(var_4843) = &input.instance_event_id {
-        scope_4842.string(var_4843);
+    let mut scope_4853 = writer.prefix("InstanceEventId");
+    if let Some(var_4854) = &input.instance_event_id {
+        scope_4853.string(var_4854);
     }
     #[allow(unused_mut)]
-    let mut scope_4844 = writer.prefix("NotBefore");
-    if let Some(var_4845) = &input.not_before {
-        scope_4844.date_time(var_4845, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_4855 = writer.prefix("NotBefore");
+    if let Some(var_4856) = &input.not_before {
+        scope_4855.date_time(var_4856, aws_smithy_types::date_time::Format::DateTime)?;
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17193,35 +17233,35 @@ pub fn serialize_operation_crate_operation_modify_instance_event_window(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyInstanceEventWindow", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4846 = writer.prefix("DryRun");
-    if let Some(var_4847) = &input.dry_run {
-        scope_4846.boolean(*var_4847);
+    let mut scope_4857 = writer.prefix("DryRun");
+    if let Some(var_4858) = &input.dry_run {
+        scope_4857.boolean(*var_4858);
     }
     #[allow(unused_mut)]
-    let mut scope_4848 = writer.prefix("Name");
-    if let Some(var_4849) = &input.name {
-        scope_4848.string(var_4849);
+    let mut scope_4859 = writer.prefix("Name");
+    if let Some(var_4860) = &input.name {
+        scope_4859.string(var_4860);
     }
     #[allow(unused_mut)]
-    let mut scope_4850 = writer.prefix("InstanceEventWindowId");
-    if let Some(var_4851) = &input.instance_event_window_id {
-        scope_4850.string(var_4851);
+    let mut scope_4861 = writer.prefix("InstanceEventWindowId");
+    if let Some(var_4862) = &input.instance_event_window_id {
+        scope_4861.string(var_4862);
     }
     #[allow(unused_mut)]
-    let mut scope_4852 = writer.prefix("TimeRange");
-    if let Some(var_4853) = &input.time_ranges {
-        let mut list_4855 = scope_4852.start_list(true, None);
-        for item_4854 in var_4853 {
+    let mut scope_4863 = writer.prefix("TimeRange");
+    if let Some(var_4864) = &input.time_ranges {
+        let mut list_4866 = scope_4863.start_list(true, None);
+        for item_4865 in var_4864 {
             #[allow(unused_mut)]
-            let mut entry_4856 = list_4855.entry();
-            crate::query_ser::serialize_structure_crate_model_instance_event_window_time_range_request(entry_4856, item_4854)?;
+            let mut entry_4867 = list_4866.entry();
+            crate::query_ser::serialize_structure_crate_model_instance_event_window_time_range_request(entry_4867, item_4865)?;
         }
-        list_4855.finish();
+        list_4866.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4857 = writer.prefix("CronExpression");
-    if let Some(var_4858) = &input.cron_expression {
-        scope_4857.string(var_4858);
+    let mut scope_4868 = writer.prefix("CronExpression");
+    if let Some(var_4869) = &input.cron_expression {
+        scope_4868.string(var_4869);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17235,42 +17275,42 @@ pub fn serialize_operation_crate_operation_modify_instance_metadata_options(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyInstanceMetadataOptions", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4859 = writer.prefix("InstanceId");
-    if let Some(var_4860) = &input.instance_id {
-        scope_4859.string(var_4860);
+    let mut scope_4870 = writer.prefix("InstanceId");
+    if let Some(var_4871) = &input.instance_id {
+        scope_4870.string(var_4871);
     }
     #[allow(unused_mut)]
-    let mut scope_4861 = writer.prefix("HttpTokens");
-    if let Some(var_4862) = &input.http_tokens {
-        scope_4861.string(var_4862.as_str());
+    let mut scope_4872 = writer.prefix("HttpTokens");
+    if let Some(var_4873) = &input.http_tokens {
+        scope_4872.string(var_4873.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4863 = writer.prefix("HttpPutResponseHopLimit");
-    if let Some(var_4864) = &input.http_put_response_hop_limit {
-        scope_4863.number(
+    let mut scope_4874 = writer.prefix("HttpPutResponseHopLimit");
+    if let Some(var_4875) = &input.http_put_response_hop_limit {
+        scope_4874.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4864).into()),
+            aws_smithy_types::Number::NegInt((*var_4875).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4865 = writer.prefix("HttpEndpoint");
-    if let Some(var_4866) = &input.http_endpoint {
-        scope_4865.string(var_4866.as_str());
+    let mut scope_4876 = writer.prefix("HttpEndpoint");
+    if let Some(var_4877) = &input.http_endpoint {
+        scope_4876.string(var_4877.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4867 = writer.prefix("DryRun");
-    if let Some(var_4868) = &input.dry_run {
-        scope_4867.boolean(*var_4868);
+    let mut scope_4878 = writer.prefix("DryRun");
+    if let Some(var_4879) = &input.dry_run {
+        scope_4878.boolean(*var_4879);
     }
     #[allow(unused_mut)]
-    let mut scope_4869 = writer.prefix("HttpProtocolIpv6");
-    if let Some(var_4870) = &input.http_protocol_ipv6 {
-        scope_4869.string(var_4870.as_str());
+    let mut scope_4880 = writer.prefix("HttpProtocolIpv6");
+    if let Some(var_4881) = &input.http_protocol_ipv6 {
+        scope_4880.string(var_4881.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4871 = writer.prefix("InstanceMetadataTags");
-    if let Some(var_4872) = &input.instance_metadata_tags {
-        scope_4871.string(var_4872.as_str());
+    let mut scope_4882 = writer.prefix("InstanceMetadataTags");
+    if let Some(var_4883) = &input.instance_metadata_tags {
+        scope_4882.string(var_4883.as_str());
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17284,42 +17324,42 @@ pub fn serialize_operation_crate_operation_modify_instance_placement(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyInstancePlacement", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4873 = writer.prefix("Affinity");
-    if let Some(var_4874) = &input.affinity {
-        scope_4873.string(var_4874.as_str());
+    let mut scope_4884 = writer.prefix("Affinity");
+    if let Some(var_4885) = &input.affinity {
+        scope_4884.string(var_4885.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4875 = writer.prefix("GroupName");
-    if let Some(var_4876) = &input.group_name {
-        scope_4875.string(var_4876);
+    let mut scope_4886 = writer.prefix("GroupName");
+    if let Some(var_4887) = &input.group_name {
+        scope_4886.string(var_4887);
     }
     #[allow(unused_mut)]
-    let mut scope_4877 = writer.prefix("HostId");
-    if let Some(var_4878) = &input.host_id {
-        scope_4877.string(var_4878);
+    let mut scope_4888 = writer.prefix("HostId");
+    if let Some(var_4889) = &input.host_id {
+        scope_4888.string(var_4889);
     }
     #[allow(unused_mut)]
-    let mut scope_4879 = writer.prefix("InstanceId");
-    if let Some(var_4880) = &input.instance_id {
-        scope_4879.string(var_4880);
+    let mut scope_4890 = writer.prefix("InstanceId");
+    if let Some(var_4891) = &input.instance_id {
+        scope_4890.string(var_4891);
     }
     #[allow(unused_mut)]
-    let mut scope_4881 = writer.prefix("Tenancy");
-    if let Some(var_4882) = &input.tenancy {
-        scope_4881.string(var_4882.as_str());
+    let mut scope_4892 = writer.prefix("Tenancy");
+    if let Some(var_4893) = &input.tenancy {
+        scope_4892.string(var_4893.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_4883 = writer.prefix("PartitionNumber");
-    if let Some(var_4884) = &input.partition_number {
-        scope_4883.number(
+    let mut scope_4894 = writer.prefix("PartitionNumber");
+    if let Some(var_4895) = &input.partition_number {
+        scope_4894.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4884).into()),
+            aws_smithy_types::Number::NegInt((*var_4895).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4885 = writer.prefix("HostResourceGroupArn");
-    if let Some(var_4886) = &input.host_resource_group_arn {
-        scope_4885.string(var_4886);
+    let mut scope_4896 = writer.prefix("HostResourceGroupArn");
+    if let Some(var_4897) = &input.host_resource_group_arn {
+        scope_4896.string(var_4897);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17332,45 +17372,45 @@ pub fn serialize_operation_crate_operation_modify_ipam(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ModifyIpam", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4887 = writer.prefix("DryRun");
-    if let Some(var_4888) = &input.dry_run {
-        scope_4887.boolean(*var_4888);
+    let mut scope_4898 = writer.prefix("DryRun");
+    if let Some(var_4899) = &input.dry_run {
+        scope_4898.boolean(*var_4899);
     }
     #[allow(unused_mut)]
-    let mut scope_4889 = writer.prefix("IpamId");
-    if let Some(var_4890) = &input.ipam_id {
-        scope_4889.string(var_4890);
+    let mut scope_4900 = writer.prefix("IpamId");
+    if let Some(var_4901) = &input.ipam_id {
+        scope_4900.string(var_4901);
     }
     #[allow(unused_mut)]
-    let mut scope_4891 = writer.prefix("Description");
-    if let Some(var_4892) = &input.description {
-        scope_4891.string(var_4892);
+    let mut scope_4902 = writer.prefix("Description");
+    if let Some(var_4903) = &input.description {
+        scope_4902.string(var_4903);
     }
     #[allow(unused_mut)]
-    let mut scope_4893 = writer.prefix("AddOperatingRegion");
-    if let Some(var_4894) = &input.add_operating_regions {
-        let mut list_4896 = scope_4893.start_list(true, None);
-        for item_4895 in var_4894 {
+    let mut scope_4904 = writer.prefix("AddOperatingRegion");
+    if let Some(var_4905) = &input.add_operating_regions {
+        let mut list_4907 = scope_4904.start_list(true, None);
+        for item_4906 in var_4905 {
             #[allow(unused_mut)]
-            let mut entry_4897 = list_4896.entry();
+            let mut entry_4908 = list_4907.entry();
             crate::query_ser::serialize_structure_crate_model_add_ipam_operating_region(
-                entry_4897, item_4895,
+                entry_4908, item_4906,
             )?;
         }
-        list_4896.finish();
+        list_4907.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4898 = writer.prefix("RemoveOperatingRegion");
-    if let Some(var_4899) = &input.remove_operating_regions {
-        let mut list_4901 = scope_4898.start_list(true, None);
-        for item_4900 in var_4899 {
+    let mut scope_4909 = writer.prefix("RemoveOperatingRegion");
+    if let Some(var_4910) = &input.remove_operating_regions {
+        let mut list_4912 = scope_4909.start_list(true, None);
+        for item_4911 in var_4910 {
             #[allow(unused_mut)]
-            let mut entry_4902 = list_4901.entry();
+            let mut entry_4913 = list_4912.entry();
             crate::query_ser::serialize_structure_crate_model_remove_ipam_operating_region(
-                entry_4902, item_4900,
+                entry_4913, item_4911,
             )?;
         }
-        list_4901.finish();
+        list_4912.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17383,79 +17423,79 @@ pub fn serialize_operation_crate_operation_modify_ipam_pool(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ModifyIpamPool", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4903 = writer.prefix("DryRun");
-    if let Some(var_4904) = &input.dry_run {
-        scope_4903.boolean(*var_4904);
+    let mut scope_4914 = writer.prefix("DryRun");
+    if let Some(var_4915) = &input.dry_run {
+        scope_4914.boolean(*var_4915);
     }
     #[allow(unused_mut)]
-    let mut scope_4905 = writer.prefix("IpamPoolId");
-    if let Some(var_4906) = &input.ipam_pool_id {
-        scope_4905.string(var_4906);
+    let mut scope_4916 = writer.prefix("IpamPoolId");
+    if let Some(var_4917) = &input.ipam_pool_id {
+        scope_4916.string(var_4917);
     }
     #[allow(unused_mut)]
-    let mut scope_4907 = writer.prefix("Description");
-    if let Some(var_4908) = &input.description {
-        scope_4907.string(var_4908);
+    let mut scope_4918 = writer.prefix("Description");
+    if let Some(var_4919) = &input.description {
+        scope_4918.string(var_4919);
     }
     #[allow(unused_mut)]
-    let mut scope_4909 = writer.prefix("AutoImport");
-    if let Some(var_4910) = &input.auto_import {
-        scope_4909.boolean(*var_4910);
+    let mut scope_4920 = writer.prefix("AutoImport");
+    if let Some(var_4921) = &input.auto_import {
+        scope_4920.boolean(*var_4921);
     }
     #[allow(unused_mut)]
-    let mut scope_4911 = writer.prefix("AllocationMinNetmaskLength");
-    if let Some(var_4912) = &input.allocation_min_netmask_length {
-        scope_4911.number(
+    let mut scope_4922 = writer.prefix("AllocationMinNetmaskLength");
+    if let Some(var_4923) = &input.allocation_min_netmask_length {
+        scope_4922.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4912).into()),
+            aws_smithy_types::Number::NegInt((*var_4923).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4913 = writer.prefix("AllocationMaxNetmaskLength");
-    if let Some(var_4914) = &input.allocation_max_netmask_length {
-        scope_4913.number(
+    let mut scope_4924 = writer.prefix("AllocationMaxNetmaskLength");
+    if let Some(var_4925) = &input.allocation_max_netmask_length {
+        scope_4924.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4914).into()),
+            aws_smithy_types::Number::NegInt((*var_4925).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4915 = writer.prefix("AllocationDefaultNetmaskLength");
-    if let Some(var_4916) = &input.allocation_default_netmask_length {
-        scope_4915.number(
+    let mut scope_4926 = writer.prefix("AllocationDefaultNetmaskLength");
+    if let Some(var_4927) = &input.allocation_default_netmask_length {
+        scope_4926.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4916).into()),
+            aws_smithy_types::Number::NegInt((*var_4927).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4917 = writer.prefix("ClearAllocationDefaultNetmaskLength");
-    if let Some(var_4918) = &input.clear_allocation_default_netmask_length {
-        scope_4917.boolean(*var_4918);
+    let mut scope_4928 = writer.prefix("ClearAllocationDefaultNetmaskLength");
+    if let Some(var_4929) = &input.clear_allocation_default_netmask_length {
+        scope_4928.boolean(*var_4929);
     }
     #[allow(unused_mut)]
-    let mut scope_4919 = writer.prefix("AddAllocationResourceTag");
-    if let Some(var_4920) = &input.add_allocation_resource_tags {
-        let mut list_4922 = scope_4919.start_list(true, Some("item"));
-        for item_4921 in var_4920 {
+    let mut scope_4930 = writer.prefix("AddAllocationResourceTag");
+    if let Some(var_4931) = &input.add_allocation_resource_tags {
+        let mut list_4933 = scope_4930.start_list(true, Some("item"));
+        for item_4932 in var_4931 {
             #[allow(unused_mut)]
-            let mut entry_4923 = list_4922.entry();
+            let mut entry_4934 = list_4933.entry();
             crate::query_ser::serialize_structure_crate_model_request_ipam_resource_tag(
-                entry_4923, item_4921,
+                entry_4934, item_4932,
             )?;
         }
-        list_4922.finish();
+        list_4933.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4924 = writer.prefix("RemoveAllocationResourceTag");
-    if let Some(var_4925) = &input.remove_allocation_resource_tags {
-        let mut list_4927 = scope_4924.start_list(true, Some("item"));
-        for item_4926 in var_4925 {
+    let mut scope_4935 = writer.prefix("RemoveAllocationResourceTag");
+    if let Some(var_4936) = &input.remove_allocation_resource_tags {
+        let mut list_4938 = scope_4935.start_list(true, Some("item"));
+        for item_4937 in var_4936 {
             #[allow(unused_mut)]
-            let mut entry_4928 = list_4927.entry();
+            let mut entry_4939 = list_4938.entry();
             crate::query_ser::serialize_structure_crate_model_request_ipam_resource_tag(
-                entry_4928, item_4926,
+                entry_4939, item_4937,
             )?;
         }
-        list_4927.finish();
+        list_4938.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17469,39 +17509,39 @@ pub fn serialize_operation_crate_operation_modify_ipam_resource_cidr(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyIpamResourceCidr", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4929 = writer.prefix("DryRun");
-    if let Some(var_4930) = &input.dry_run {
-        scope_4929.boolean(*var_4930);
+    let mut scope_4940 = writer.prefix("DryRun");
+    if let Some(var_4941) = &input.dry_run {
+        scope_4940.boolean(*var_4941);
     }
     #[allow(unused_mut)]
-    let mut scope_4931 = writer.prefix("ResourceId");
-    if let Some(var_4932) = &input.resource_id {
-        scope_4931.string(var_4932);
+    let mut scope_4942 = writer.prefix("ResourceId");
+    if let Some(var_4943) = &input.resource_id {
+        scope_4942.string(var_4943);
     }
     #[allow(unused_mut)]
-    let mut scope_4933 = writer.prefix("ResourceCidr");
-    if let Some(var_4934) = &input.resource_cidr {
-        scope_4933.string(var_4934);
+    let mut scope_4944 = writer.prefix("ResourceCidr");
+    if let Some(var_4945) = &input.resource_cidr {
+        scope_4944.string(var_4945);
     }
     #[allow(unused_mut)]
-    let mut scope_4935 = writer.prefix("ResourceRegion");
-    if let Some(var_4936) = &input.resource_region {
-        scope_4935.string(var_4936);
+    let mut scope_4946 = writer.prefix("ResourceRegion");
+    if let Some(var_4947) = &input.resource_region {
+        scope_4946.string(var_4947);
     }
     #[allow(unused_mut)]
-    let mut scope_4937 = writer.prefix("CurrentIpamScopeId");
-    if let Some(var_4938) = &input.current_ipam_scope_id {
-        scope_4937.string(var_4938);
+    let mut scope_4948 = writer.prefix("CurrentIpamScopeId");
+    if let Some(var_4949) = &input.current_ipam_scope_id {
+        scope_4948.string(var_4949);
     }
     #[allow(unused_mut)]
-    let mut scope_4939 = writer.prefix("DestinationIpamScopeId");
-    if let Some(var_4940) = &input.destination_ipam_scope_id {
-        scope_4939.string(var_4940);
+    let mut scope_4950 = writer.prefix("DestinationIpamScopeId");
+    if let Some(var_4951) = &input.destination_ipam_scope_id {
+        scope_4950.string(var_4951);
     }
     #[allow(unused_mut)]
-    let mut scope_4941 = writer.prefix("Monitored");
-    if let Some(var_4942) = &input.monitored {
-        scope_4941.boolean(*var_4942);
+    let mut scope_4952 = writer.prefix("Monitored");
+    if let Some(var_4953) = &input.monitored {
+        scope_4952.boolean(*var_4953);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17514,19 +17554,19 @@ pub fn serialize_operation_crate_operation_modify_ipam_scope(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ModifyIpamScope", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4943 = writer.prefix("DryRun");
-    if let Some(var_4944) = &input.dry_run {
-        scope_4943.boolean(*var_4944);
+    let mut scope_4954 = writer.prefix("DryRun");
+    if let Some(var_4955) = &input.dry_run {
+        scope_4954.boolean(*var_4955);
     }
     #[allow(unused_mut)]
-    let mut scope_4945 = writer.prefix("IpamScopeId");
-    if let Some(var_4946) = &input.ipam_scope_id {
-        scope_4945.string(var_4946);
+    let mut scope_4956 = writer.prefix("IpamScopeId");
+    if let Some(var_4957) = &input.ipam_scope_id {
+        scope_4956.string(var_4957);
     }
     #[allow(unused_mut)]
-    let mut scope_4947 = writer.prefix("Description");
-    if let Some(var_4948) = &input.description {
-        scope_4947.string(var_4948);
+    let mut scope_4958 = writer.prefix("Description");
+    if let Some(var_4959) = &input.description {
+        scope_4958.string(var_4959);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17540,29 +17580,29 @@ pub fn serialize_operation_crate_operation_modify_launch_template(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyLaunchTemplate", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4949 = writer.prefix("DryRun");
-    if let Some(var_4950) = &input.dry_run {
-        scope_4949.boolean(*var_4950);
+    let mut scope_4960 = writer.prefix("DryRun");
+    if let Some(var_4961) = &input.dry_run {
+        scope_4960.boolean(*var_4961);
     }
     #[allow(unused_mut)]
-    let mut scope_4951 = writer.prefix("ClientToken");
-    if let Some(var_4952) = &input.client_token {
-        scope_4951.string(var_4952);
+    let mut scope_4962 = writer.prefix("ClientToken");
+    if let Some(var_4963) = &input.client_token {
+        scope_4962.string(var_4963);
     }
     #[allow(unused_mut)]
-    let mut scope_4953 = writer.prefix("LaunchTemplateId");
-    if let Some(var_4954) = &input.launch_template_id {
-        scope_4953.string(var_4954);
+    let mut scope_4964 = writer.prefix("LaunchTemplateId");
+    if let Some(var_4965) = &input.launch_template_id {
+        scope_4964.string(var_4965);
     }
     #[allow(unused_mut)]
-    let mut scope_4955 = writer.prefix("LaunchTemplateName");
-    if let Some(var_4956) = &input.launch_template_name {
-        scope_4955.string(var_4956);
+    let mut scope_4966 = writer.prefix("LaunchTemplateName");
+    if let Some(var_4967) = &input.launch_template_name {
+        scope_4966.string(var_4967);
     }
     #[allow(unused_mut)]
-    let mut scope_4957 = writer.prefix("SetDefaultVersion");
-    if let Some(var_4958) = &input.default_version {
-        scope_4957.string(var_4958);
+    let mut scope_4968 = writer.prefix("SetDefaultVersion");
+    if let Some(var_4969) = &input.default_version {
+        scope_4968.string(var_4969);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17576,60 +17616,60 @@ pub fn serialize_operation_crate_operation_modify_managed_prefix_list(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyManagedPrefixList", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4959 = writer.prefix("DryRun");
-    if let Some(var_4960) = &input.dry_run {
-        scope_4959.boolean(*var_4960);
+    let mut scope_4970 = writer.prefix("DryRun");
+    if let Some(var_4971) = &input.dry_run {
+        scope_4970.boolean(*var_4971);
     }
     #[allow(unused_mut)]
-    let mut scope_4961 = writer.prefix("PrefixListId");
-    if let Some(var_4962) = &input.prefix_list_id {
-        scope_4961.string(var_4962);
+    let mut scope_4972 = writer.prefix("PrefixListId");
+    if let Some(var_4973) = &input.prefix_list_id {
+        scope_4972.string(var_4973);
     }
     #[allow(unused_mut)]
-    let mut scope_4963 = writer.prefix("CurrentVersion");
-    if let Some(var_4964) = &input.current_version {
-        scope_4963.number(
+    let mut scope_4974 = writer.prefix("CurrentVersion");
+    if let Some(var_4975) = &input.current_version {
+        scope_4974.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4964).into()),
+            aws_smithy_types::Number::NegInt((*var_4975).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4965 = writer.prefix("PrefixListName");
-    if let Some(var_4966) = &input.prefix_list_name {
-        scope_4965.string(var_4966);
+    let mut scope_4976 = writer.prefix("PrefixListName");
+    if let Some(var_4977) = &input.prefix_list_name {
+        scope_4976.string(var_4977);
     }
     #[allow(unused_mut)]
-    let mut scope_4967 = writer.prefix("AddEntry");
-    if let Some(var_4968) = &input.add_entries {
-        let mut list_4970 = scope_4967.start_list(true, None);
-        for item_4969 in var_4968 {
+    let mut scope_4978 = writer.prefix("AddEntry");
+    if let Some(var_4979) = &input.add_entries {
+        let mut list_4981 = scope_4978.start_list(true, None);
+        for item_4980 in var_4979 {
             #[allow(unused_mut)]
-            let mut entry_4971 = list_4970.entry();
+            let mut entry_4982 = list_4981.entry();
             crate::query_ser::serialize_structure_crate_model_add_prefix_list_entry(
-                entry_4971, item_4969,
+                entry_4982, item_4980,
             )?;
         }
-        list_4970.finish();
+        list_4981.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4972 = writer.prefix("RemoveEntry");
-    if let Some(var_4973) = &input.remove_entries {
-        let mut list_4975 = scope_4972.start_list(true, None);
-        for item_4974 in var_4973 {
+    let mut scope_4983 = writer.prefix("RemoveEntry");
+    if let Some(var_4984) = &input.remove_entries {
+        let mut list_4986 = scope_4983.start_list(true, None);
+        for item_4985 in var_4984 {
             #[allow(unused_mut)]
-            let mut entry_4976 = list_4975.entry();
+            let mut entry_4987 = list_4986.entry();
             crate::query_ser::serialize_structure_crate_model_remove_prefix_list_entry(
-                entry_4976, item_4974,
+                entry_4987, item_4985,
             )?;
         }
-        list_4975.finish();
+        list_4986.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4977 = writer.prefix("MaxEntries");
-    if let Some(var_4978) = &input.max_entries {
-        scope_4977.number(
+    let mut scope_4988 = writer.prefix("MaxEntries");
+    if let Some(var_4989) = &input.max_entries {
+        scope_4988.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_4978).into()),
+            aws_smithy_types::Number::NegInt((*var_4989).into()),
         );
     }
     writer.finish();
@@ -17647,43 +17687,43 @@ pub fn serialize_operation_crate_operation_modify_network_interface_attribute(
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_4979 = writer.prefix("Attachment");
-    if let Some(var_4980) = &input.attachment {
+    let mut scope_4990 = writer.prefix("Attachment");
+    if let Some(var_4991) = &input.attachment {
         crate::query_ser::serialize_structure_crate_model_network_interface_attachment_changes(
-            scope_4979, var_4980,
+            scope_4990, var_4991,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_4981 = writer.prefix("Description");
-    if let Some(var_4982) = &input.description {
-        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4981, var_4982)?;
+    let mut scope_4992 = writer.prefix("Description");
+    if let Some(var_4993) = &input.description {
+        crate::query_ser::serialize_structure_crate_model_attribute_value(scope_4992, var_4993)?;
     }
     #[allow(unused_mut)]
-    let mut scope_4983 = writer.prefix("DryRun");
-    if let Some(var_4984) = &input.dry_run {
-        scope_4983.boolean(*var_4984);
+    let mut scope_4994 = writer.prefix("DryRun");
+    if let Some(var_4995) = &input.dry_run {
+        scope_4994.boolean(*var_4995);
     }
     #[allow(unused_mut)]
-    let mut scope_4985 = writer.prefix("SecurityGroupId");
-    if let Some(var_4986) = &input.groups {
-        let mut list_4988 = scope_4985.start_list(true, Some("SecurityGroupId"));
-        for item_4987 in var_4986 {
+    let mut scope_4996 = writer.prefix("SecurityGroupId");
+    if let Some(var_4997) = &input.groups {
+        let mut list_4999 = scope_4996.start_list(true, Some("SecurityGroupId"));
+        for item_4998 in var_4997 {
             #[allow(unused_mut)]
-            let mut entry_4989 = list_4988.entry();
-            entry_4989.string(item_4987);
+            let mut entry_5000 = list_4999.entry();
+            entry_5000.string(item_4998);
         }
-        list_4988.finish();
+        list_4999.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_4990 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_4991) = &input.network_interface_id {
-        scope_4990.string(var_4991);
+    let mut scope_5001 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_5002) = &input.network_interface_id {
+        scope_5001.string(var_5002);
     }
     #[allow(unused_mut)]
-    let mut scope_4992 = writer.prefix("SourceDestCheck");
-    if let Some(var_4993) = &input.source_dest_check {
+    let mut scope_5003 = writer.prefix("SourceDestCheck");
+    if let Some(var_5004) = &input.source_dest_check {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_4992, var_4993,
+            scope_5003, var_5004,
         )?;
     }
     writer.finish();
@@ -17698,29 +17738,29 @@ pub fn serialize_operation_crate_operation_modify_private_dns_name_options(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyPrivateDnsNameOptions", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_4994 = writer.prefix("DryRun");
-    if let Some(var_4995) = &input.dry_run {
-        scope_4994.boolean(*var_4995);
+    let mut scope_5005 = writer.prefix("DryRun");
+    if let Some(var_5006) = &input.dry_run {
+        scope_5005.boolean(*var_5006);
     }
     #[allow(unused_mut)]
-    let mut scope_4996 = writer.prefix("InstanceId");
-    if let Some(var_4997) = &input.instance_id {
-        scope_4996.string(var_4997);
+    let mut scope_5007 = writer.prefix("InstanceId");
+    if let Some(var_5008) = &input.instance_id {
+        scope_5007.string(var_5008);
     }
     #[allow(unused_mut)]
-    let mut scope_4998 = writer.prefix("PrivateDnsHostnameType");
-    if let Some(var_4999) = &input.private_dns_hostname_type {
-        scope_4998.string(var_4999.as_str());
+    let mut scope_5009 = writer.prefix("PrivateDnsHostnameType");
+    if let Some(var_5010) = &input.private_dns_hostname_type {
+        scope_5009.string(var_5010.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5000 = writer.prefix("EnableResourceNameDnsARecord");
-    if let Some(var_5001) = &input.enable_resource_name_dns_a_record {
-        scope_5000.boolean(*var_5001);
+    let mut scope_5011 = writer.prefix("EnableResourceNameDnsARecord");
+    if let Some(var_5012) = &input.enable_resource_name_dns_a_record {
+        scope_5011.boolean(*var_5012);
     }
     #[allow(unused_mut)]
-    let mut scope_5002 = writer.prefix("EnableResourceNameDnsAAAARecord");
-    if let Some(var_5003) = &input.enable_resource_name_dns_aaaa_record {
-        scope_5002.boolean(*var_5003);
+    let mut scope_5013 = writer.prefix("EnableResourceNameDnsAAAARecord");
+    if let Some(var_5014) = &input.enable_resource_name_dns_aaaa_record {
+        scope_5013.boolean(*var_5014);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17734,33 +17774,33 @@ pub fn serialize_operation_crate_operation_modify_reserved_instances(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyReservedInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5004 = writer.prefix("ReservedInstancesId");
-    if let Some(var_5005) = &input.reserved_instances_ids {
-        let mut list_5007 = scope_5004.start_list(true, Some("ReservedInstancesId"));
-        for item_5006 in var_5005 {
+    let mut scope_5015 = writer.prefix("ReservedInstancesId");
+    if let Some(var_5016) = &input.reserved_instances_ids {
+        let mut list_5018 = scope_5015.start_list(true, Some("ReservedInstancesId"));
+        for item_5017 in var_5016 {
             #[allow(unused_mut)]
-            let mut entry_5008 = list_5007.entry();
-            entry_5008.string(item_5006);
+            let mut entry_5019 = list_5018.entry();
+            entry_5019.string(item_5017);
         }
-        list_5007.finish();
+        list_5018.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5009 = writer.prefix("ClientToken");
-    if let Some(var_5010) = &input.client_token {
-        scope_5009.string(var_5010);
+    let mut scope_5020 = writer.prefix("ClientToken");
+    if let Some(var_5021) = &input.client_token {
+        scope_5020.string(var_5021);
     }
     #[allow(unused_mut)]
-    let mut scope_5011 = writer.prefix("ReservedInstancesConfigurationSetItemType");
-    if let Some(var_5012) = &input.target_configurations {
-        let mut list_5014 = scope_5011.start_list(true, Some("item"));
-        for item_5013 in var_5012 {
+    let mut scope_5022 = writer.prefix("ReservedInstancesConfigurationSetItemType");
+    if let Some(var_5023) = &input.target_configurations {
+        let mut list_5025 = scope_5022.start_list(true, Some("item"));
+        for item_5024 in var_5023 {
             #[allow(unused_mut)]
-            let mut entry_5015 = list_5014.entry();
+            let mut entry_5026 = list_5025.entry();
             crate::query_ser::serialize_structure_crate_model_reserved_instances_configuration(
-                entry_5015, item_5013,
+                entry_5026, item_5024,
             )?;
         }
-        list_5014.finish();
+        list_5025.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17774,27 +17814,27 @@ pub fn serialize_operation_crate_operation_modify_security_group_rules(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifySecurityGroupRules", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5016 = writer.prefix("GroupId");
-    if let Some(var_5017) = &input.group_id {
-        scope_5016.string(var_5017);
+    let mut scope_5027 = writer.prefix("GroupId");
+    if let Some(var_5028) = &input.group_id {
+        scope_5027.string(var_5028);
     }
     #[allow(unused_mut)]
-    let mut scope_5018 = writer.prefix("SecurityGroupRule");
-    if let Some(var_5019) = &input.security_group_rules {
-        let mut list_5021 = scope_5018.start_list(true, Some("item"));
-        for item_5020 in var_5019 {
+    let mut scope_5029 = writer.prefix("SecurityGroupRule");
+    if let Some(var_5030) = &input.security_group_rules {
+        let mut list_5032 = scope_5029.start_list(true, Some("item"));
+        for item_5031 in var_5030 {
             #[allow(unused_mut)]
-            let mut entry_5022 = list_5021.entry();
+            let mut entry_5033 = list_5032.entry();
             crate::query_ser::serialize_structure_crate_model_security_group_rule_update(
-                entry_5022, item_5020,
+                entry_5033, item_5031,
             )?;
         }
-        list_5021.finish();
+        list_5032.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5023 = writer.prefix("DryRun");
-    if let Some(var_5024) = &input.dry_run {
-        scope_5023.boolean(*var_5024);
+    let mut scope_5034 = writer.prefix("DryRun");
+    if let Some(var_5035) = &input.dry_run {
+        scope_5034.boolean(*var_5035);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17808,53 +17848,53 @@ pub fn serialize_operation_crate_operation_modify_snapshot_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifySnapshotAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5025 = writer.prefix("Attribute");
-    if let Some(var_5026) = &input.attribute {
-        scope_5025.string(var_5026.as_str());
+    let mut scope_5036 = writer.prefix("Attribute");
+    if let Some(var_5037) = &input.attribute {
+        scope_5036.string(var_5037.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5027 = writer.prefix("CreateVolumePermission");
-    if let Some(var_5028) = &input.create_volume_permission {
+    let mut scope_5038 = writer.prefix("CreateVolumePermission");
+    if let Some(var_5039) = &input.create_volume_permission {
         crate::query_ser::serialize_structure_crate_model_create_volume_permission_modifications(
-            scope_5027, var_5028,
+            scope_5038, var_5039,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5029 = writer.prefix("UserGroup");
-    if let Some(var_5030) = &input.group_names {
-        let mut list_5032 = scope_5029.start_list(true, Some("GroupName"));
-        for item_5031 in var_5030 {
+    let mut scope_5040 = writer.prefix("UserGroup");
+    if let Some(var_5041) = &input.group_names {
+        let mut list_5043 = scope_5040.start_list(true, Some("GroupName"));
+        for item_5042 in var_5041 {
             #[allow(unused_mut)]
-            let mut entry_5033 = list_5032.entry();
-            entry_5033.string(item_5031);
+            let mut entry_5044 = list_5043.entry();
+            entry_5044.string(item_5042);
         }
-        list_5032.finish();
+        list_5043.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5034 = writer.prefix("OperationType");
-    if let Some(var_5035) = &input.operation_type {
-        scope_5034.string(var_5035.as_str());
+    let mut scope_5045 = writer.prefix("OperationType");
+    if let Some(var_5046) = &input.operation_type {
+        scope_5045.string(var_5046.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5036 = writer.prefix("SnapshotId");
-    if let Some(var_5037) = &input.snapshot_id {
-        scope_5036.string(var_5037);
+    let mut scope_5047 = writer.prefix("SnapshotId");
+    if let Some(var_5048) = &input.snapshot_id {
+        scope_5047.string(var_5048);
     }
     #[allow(unused_mut)]
-    let mut scope_5038 = writer.prefix("UserId");
-    if let Some(var_5039) = &input.user_ids {
-        let mut list_5041 = scope_5038.start_list(true, Some("UserId"));
-        for item_5040 in var_5039 {
+    let mut scope_5049 = writer.prefix("UserId");
+    if let Some(var_5050) = &input.user_ids {
+        let mut list_5052 = scope_5049.start_list(true, Some("UserId"));
+        for item_5051 in var_5050 {
             #[allow(unused_mut)]
-            let mut entry_5042 = list_5041.entry();
-            entry_5042.string(item_5040);
+            let mut entry_5053 = list_5052.entry();
+            entry_5053.string(item_5051);
         }
-        list_5041.finish();
+        list_5052.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5043 = writer.prefix("DryRun");
-    if let Some(var_5044) = &input.dry_run {
-        scope_5043.boolean(*var_5044);
+    let mut scope_5054 = writer.prefix("DryRun");
+    if let Some(var_5055) = &input.dry_run {
+        scope_5054.boolean(*var_5055);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17868,19 +17908,19 @@ pub fn serialize_operation_crate_operation_modify_snapshot_tier(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifySnapshotTier", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5045 = writer.prefix("SnapshotId");
-    if let Some(var_5046) = &input.snapshot_id {
-        scope_5045.string(var_5046);
+    let mut scope_5056 = writer.prefix("SnapshotId");
+    if let Some(var_5057) = &input.snapshot_id {
+        scope_5056.string(var_5057);
     }
     #[allow(unused_mut)]
-    let mut scope_5047 = writer.prefix("StorageTier");
-    if let Some(var_5048) = &input.storage_tier {
-        scope_5047.string(var_5048.as_str());
+    let mut scope_5058 = writer.prefix("StorageTier");
+    if let Some(var_5059) = &input.storage_tier {
+        scope_5058.string(var_5059.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5049 = writer.prefix("DryRun");
-    if let Some(var_5050) = &input.dry_run {
-        scope_5049.boolean(*var_5050);
+    let mut scope_5060 = writer.prefix("DryRun");
+    if let Some(var_5061) = &input.dry_run {
+        scope_5060.boolean(*var_5061);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17894,48 +17934,48 @@ pub fn serialize_operation_crate_operation_modify_spot_fleet_request(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifySpotFleetRequest", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5051 = writer.prefix("ExcessCapacityTerminationPolicy");
-    if let Some(var_5052) = &input.excess_capacity_termination_policy {
-        scope_5051.string(var_5052.as_str());
+    let mut scope_5062 = writer.prefix("ExcessCapacityTerminationPolicy");
+    if let Some(var_5063) = &input.excess_capacity_termination_policy {
+        scope_5062.string(var_5063.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5053 = writer.prefix("LaunchTemplateConfig");
-    if let Some(var_5054) = &input.launch_template_configs {
-        let mut list_5056 = scope_5053.start_list(true, Some("item"));
-        for item_5055 in var_5054 {
+    let mut scope_5064 = writer.prefix("LaunchTemplateConfig");
+    if let Some(var_5065) = &input.launch_template_configs {
+        let mut list_5067 = scope_5064.start_list(true, Some("item"));
+        for item_5066 in var_5065 {
             #[allow(unused_mut)]
-            let mut entry_5057 = list_5056.entry();
+            let mut entry_5068 = list_5067.entry();
             crate::query_ser::serialize_structure_crate_model_launch_template_config(
-                entry_5057, item_5055,
+                entry_5068, item_5066,
             )?;
         }
-        list_5056.finish();
+        list_5067.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5058 = writer.prefix("SpotFleetRequestId");
-    if let Some(var_5059) = &input.spot_fleet_request_id {
-        scope_5058.string(var_5059);
+    let mut scope_5069 = writer.prefix("SpotFleetRequestId");
+    if let Some(var_5070) = &input.spot_fleet_request_id {
+        scope_5069.string(var_5070);
     }
     #[allow(unused_mut)]
-    let mut scope_5060 = writer.prefix("TargetCapacity");
-    if let Some(var_5061) = &input.target_capacity {
-        scope_5060.number(
+    let mut scope_5071 = writer.prefix("TargetCapacity");
+    if let Some(var_5072) = &input.target_capacity {
+        scope_5071.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5061).into()),
+            aws_smithy_types::Number::NegInt((*var_5072).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5062 = writer.prefix("OnDemandTargetCapacity");
-    if let Some(var_5063) = &input.on_demand_target_capacity {
-        scope_5062.number(
+    let mut scope_5073 = writer.prefix("OnDemandTargetCapacity");
+    if let Some(var_5074) = &input.on_demand_target_capacity {
+        scope_5073.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5063).into()),
+            aws_smithy_types::Number::NegInt((*var_5074).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5064 = writer.prefix("Context");
-    if let Some(var_5065) = &input.context {
-        scope_5064.string(var_5065);
+    let mut scope_5075 = writer.prefix("Context");
+    if let Some(var_5076) = &input.context {
+        scope_5075.string(var_5076);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -17949,75 +17989,75 @@ pub fn serialize_operation_crate_operation_modify_subnet_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifySubnetAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5066 = writer.prefix("AssignIpv6AddressOnCreation");
-    if let Some(var_5067) = &input.assign_ipv6_address_on_creation {
+    let mut scope_5077 = writer.prefix("AssignIpv6AddressOnCreation");
+    if let Some(var_5078) = &input.assign_ipv6_address_on_creation {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_5066, var_5067,
+            scope_5077, var_5078,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5068 = writer.prefix("MapPublicIpOnLaunch");
-    if let Some(var_5069) = &input.map_public_ip_on_launch {
+    let mut scope_5079 = writer.prefix("MapPublicIpOnLaunch");
+    if let Some(var_5080) = &input.map_public_ip_on_launch {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_5068, var_5069,
+            scope_5079, var_5080,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5070 = writer.prefix("SubnetId");
-    if let Some(var_5071) = &input.subnet_id {
-        scope_5070.string(var_5071);
+    let mut scope_5081 = writer.prefix("SubnetId");
+    if let Some(var_5082) = &input.subnet_id {
+        scope_5081.string(var_5082);
     }
     #[allow(unused_mut)]
-    let mut scope_5072 = writer.prefix("MapCustomerOwnedIpOnLaunch");
-    if let Some(var_5073) = &input.map_customer_owned_ip_on_launch {
+    let mut scope_5083 = writer.prefix("MapCustomerOwnedIpOnLaunch");
+    if let Some(var_5084) = &input.map_customer_owned_ip_on_launch {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_5072, var_5073,
+            scope_5083, var_5084,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5074 = writer.prefix("CustomerOwnedIpv4Pool");
-    if let Some(var_5075) = &input.customer_owned_ipv4_pool {
-        scope_5074.string(var_5075);
+    let mut scope_5085 = writer.prefix("CustomerOwnedIpv4Pool");
+    if let Some(var_5086) = &input.customer_owned_ipv4_pool {
+        scope_5085.string(var_5086);
     }
     #[allow(unused_mut)]
-    let mut scope_5076 = writer.prefix("EnableDns64");
-    if let Some(var_5077) = &input.enable_dns64 {
+    let mut scope_5087 = writer.prefix("EnableDns64");
+    if let Some(var_5088) = &input.enable_dns64 {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_5076, var_5077,
+            scope_5087, var_5088,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5078 = writer.prefix("PrivateDnsHostnameTypeOnLaunch");
-    if let Some(var_5079) = &input.private_dns_hostname_type_on_launch {
-        scope_5078.string(var_5079.as_str());
+    let mut scope_5089 = writer.prefix("PrivateDnsHostnameTypeOnLaunch");
+    if let Some(var_5090) = &input.private_dns_hostname_type_on_launch {
+        scope_5089.string(var_5090.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5080 = writer.prefix("EnableResourceNameDnsARecordOnLaunch");
-    if let Some(var_5081) = &input.enable_resource_name_dns_a_record_on_launch {
+    let mut scope_5091 = writer.prefix("EnableResourceNameDnsARecordOnLaunch");
+    if let Some(var_5092) = &input.enable_resource_name_dns_a_record_on_launch {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_5080, var_5081,
+            scope_5091, var_5092,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5082 = writer.prefix("EnableResourceNameDnsAAAARecordOnLaunch");
-    if let Some(var_5083) = &input.enable_resource_name_dns_aaaa_record_on_launch {
+    let mut scope_5093 = writer.prefix("EnableResourceNameDnsAAAARecordOnLaunch");
+    if let Some(var_5094) = &input.enable_resource_name_dns_aaaa_record_on_launch {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_5082, var_5083,
+            scope_5093, var_5094,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5084 = writer.prefix("EnableLniAtDeviceIndex");
-    if let Some(var_5085) = &input.enable_lni_at_device_index {
-        scope_5084.number(
+    let mut scope_5095 = writer.prefix("EnableLniAtDeviceIndex");
+    if let Some(var_5096) = &input.enable_lni_at_device_index {
+        scope_5095.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5085).into()),
+            aws_smithy_types::Number::NegInt((*var_5096).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5086 = writer.prefix("DisableLniAtDeviceIndex");
-    if let Some(var_5087) = &input.disable_lni_at_device_index {
+    let mut scope_5097 = writer.prefix("DisableLniAtDeviceIndex");
+    if let Some(var_5098) = &input.disable_lni_at_device_index {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_5086, var_5087,
+            scope_5097, var_5098,
         )?;
     }
     writer.finish();
@@ -18035,36 +18075,36 @@ pub fn serialize_operation_crate_operation_modify_traffic_mirror_filter_network_
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5088 = writer.prefix("TrafficMirrorFilterId");
-    if let Some(var_5089) = &input.traffic_mirror_filter_id {
-        scope_5088.string(var_5089);
+    let mut scope_5099 = writer.prefix("TrafficMirrorFilterId");
+    if let Some(var_5100) = &input.traffic_mirror_filter_id {
+        scope_5099.string(var_5100);
     }
     #[allow(unused_mut)]
-    let mut scope_5090 = writer.prefix("AddNetworkService");
-    if let Some(var_5091) = &input.add_network_services {
-        let mut list_5093 = scope_5090.start_list(true, Some("item"));
-        for item_5092 in var_5091 {
+    let mut scope_5101 = writer.prefix("AddNetworkService");
+    if let Some(var_5102) = &input.add_network_services {
+        let mut list_5104 = scope_5101.start_list(true, Some("item"));
+        for item_5103 in var_5102 {
             #[allow(unused_mut)]
-            let mut entry_5094 = list_5093.entry();
-            entry_5094.string(item_5092.as_str());
+            let mut entry_5105 = list_5104.entry();
+            entry_5105.string(item_5103.as_str());
         }
-        list_5093.finish();
+        list_5104.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5095 = writer.prefix("RemoveNetworkService");
-    if let Some(var_5096) = &input.remove_network_services {
-        let mut list_5098 = scope_5095.start_list(true, Some("item"));
-        for item_5097 in var_5096 {
+    let mut scope_5106 = writer.prefix("RemoveNetworkService");
+    if let Some(var_5107) = &input.remove_network_services {
+        let mut list_5109 = scope_5106.start_list(true, Some("item"));
+        for item_5108 in var_5107 {
             #[allow(unused_mut)]
-            let mut entry_5099 = list_5098.entry();
-            entry_5099.string(item_5097.as_str());
+            let mut entry_5110 = list_5109.entry();
+            entry_5110.string(item_5108.as_str());
         }
-        list_5098.finish();
+        list_5109.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5100 = writer.prefix("DryRun");
-    if let Some(var_5101) = &input.dry_run {
-        scope_5100.boolean(*var_5101);
+    let mut scope_5111 = writer.prefix("DryRun");
+    if let Some(var_5112) = &input.dry_run {
+        scope_5111.boolean(*var_5112);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18078,80 +18118,80 @@ pub fn serialize_operation_crate_operation_modify_traffic_mirror_filter_rule(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyTrafficMirrorFilterRule", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5102 = writer.prefix("TrafficMirrorFilterRuleId");
-    if let Some(var_5103) = &input.traffic_mirror_filter_rule_id {
-        scope_5102.string(var_5103);
+    let mut scope_5113 = writer.prefix("TrafficMirrorFilterRuleId");
+    if let Some(var_5114) = &input.traffic_mirror_filter_rule_id {
+        scope_5113.string(var_5114);
     }
     #[allow(unused_mut)]
-    let mut scope_5104 = writer.prefix("TrafficDirection");
-    if let Some(var_5105) = &input.traffic_direction {
-        scope_5104.string(var_5105.as_str());
+    let mut scope_5115 = writer.prefix("TrafficDirection");
+    if let Some(var_5116) = &input.traffic_direction {
+        scope_5115.string(var_5116.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5106 = writer.prefix("RuleNumber");
-    if let Some(var_5107) = &input.rule_number {
-        scope_5106.number(
+    let mut scope_5117 = writer.prefix("RuleNumber");
+    if let Some(var_5118) = &input.rule_number {
+        scope_5117.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5107).into()),
+            aws_smithy_types::Number::NegInt((*var_5118).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5108 = writer.prefix("RuleAction");
-    if let Some(var_5109) = &input.rule_action {
-        scope_5108.string(var_5109.as_str());
+    let mut scope_5119 = writer.prefix("RuleAction");
+    if let Some(var_5120) = &input.rule_action {
+        scope_5119.string(var_5120.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5110 = writer.prefix("DestinationPortRange");
-    if let Some(var_5111) = &input.destination_port_range {
+    let mut scope_5121 = writer.prefix("DestinationPortRange");
+    if let Some(var_5122) = &input.destination_port_range {
         crate::query_ser::serialize_structure_crate_model_traffic_mirror_port_range_request(
-            scope_5110, var_5111,
+            scope_5121, var_5122,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5112 = writer.prefix("SourcePortRange");
-    if let Some(var_5113) = &input.source_port_range {
+    let mut scope_5123 = writer.prefix("SourcePortRange");
+    if let Some(var_5124) = &input.source_port_range {
         crate::query_ser::serialize_structure_crate_model_traffic_mirror_port_range_request(
-            scope_5112, var_5113,
+            scope_5123, var_5124,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5114 = writer.prefix("Protocol");
-    if let Some(var_5115) = &input.protocol {
-        scope_5114.number(
+    let mut scope_5125 = writer.prefix("Protocol");
+    if let Some(var_5126) = &input.protocol {
+        scope_5125.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5115).into()),
+            aws_smithy_types::Number::NegInt((*var_5126).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5116 = writer.prefix("DestinationCidrBlock");
-    if let Some(var_5117) = &input.destination_cidr_block {
-        scope_5116.string(var_5117);
+    let mut scope_5127 = writer.prefix("DestinationCidrBlock");
+    if let Some(var_5128) = &input.destination_cidr_block {
+        scope_5127.string(var_5128);
     }
     #[allow(unused_mut)]
-    let mut scope_5118 = writer.prefix("SourceCidrBlock");
-    if let Some(var_5119) = &input.source_cidr_block {
-        scope_5118.string(var_5119);
+    let mut scope_5129 = writer.prefix("SourceCidrBlock");
+    if let Some(var_5130) = &input.source_cidr_block {
+        scope_5129.string(var_5130);
     }
     #[allow(unused_mut)]
-    let mut scope_5120 = writer.prefix("Description");
-    if let Some(var_5121) = &input.description {
-        scope_5120.string(var_5121);
+    let mut scope_5131 = writer.prefix("Description");
+    if let Some(var_5132) = &input.description {
+        scope_5131.string(var_5132);
     }
     #[allow(unused_mut)]
-    let mut scope_5122 = writer.prefix("RemoveField");
-    if let Some(var_5123) = &input.remove_fields {
-        let mut list_5125 = scope_5122.start_list(true, None);
-        for item_5124 in var_5123 {
+    let mut scope_5133 = writer.prefix("RemoveField");
+    if let Some(var_5134) = &input.remove_fields {
+        let mut list_5136 = scope_5133.start_list(true, None);
+        for item_5135 in var_5134 {
             #[allow(unused_mut)]
-            let mut entry_5126 = list_5125.entry();
-            entry_5126.string(item_5124.as_str());
+            let mut entry_5137 = list_5136.entry();
+            entry_5137.string(item_5135.as_str());
         }
-        list_5125.finish();
+        list_5136.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5127 = writer.prefix("DryRun");
-    if let Some(var_5128) = &input.dry_run {
-        scope_5127.boolean(*var_5128);
+    let mut scope_5138 = writer.prefix("DryRun");
+    if let Some(var_5139) = &input.dry_run {
+        scope_5138.boolean(*var_5139);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18165,64 +18205,64 @@ pub fn serialize_operation_crate_operation_modify_traffic_mirror_session(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyTrafficMirrorSession", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5129 = writer.prefix("TrafficMirrorSessionId");
-    if let Some(var_5130) = &input.traffic_mirror_session_id {
-        scope_5129.string(var_5130);
+    let mut scope_5140 = writer.prefix("TrafficMirrorSessionId");
+    if let Some(var_5141) = &input.traffic_mirror_session_id {
+        scope_5140.string(var_5141);
     }
     #[allow(unused_mut)]
-    let mut scope_5131 = writer.prefix("TrafficMirrorTargetId");
-    if let Some(var_5132) = &input.traffic_mirror_target_id {
-        scope_5131.string(var_5132);
+    let mut scope_5142 = writer.prefix("TrafficMirrorTargetId");
+    if let Some(var_5143) = &input.traffic_mirror_target_id {
+        scope_5142.string(var_5143);
     }
     #[allow(unused_mut)]
-    let mut scope_5133 = writer.prefix("TrafficMirrorFilterId");
-    if let Some(var_5134) = &input.traffic_mirror_filter_id {
-        scope_5133.string(var_5134);
+    let mut scope_5144 = writer.prefix("TrafficMirrorFilterId");
+    if let Some(var_5145) = &input.traffic_mirror_filter_id {
+        scope_5144.string(var_5145);
     }
     #[allow(unused_mut)]
-    let mut scope_5135 = writer.prefix("PacketLength");
-    if let Some(var_5136) = &input.packet_length {
-        scope_5135.number(
+    let mut scope_5146 = writer.prefix("PacketLength");
+    if let Some(var_5147) = &input.packet_length {
+        scope_5146.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5136).into()),
+            aws_smithy_types::Number::NegInt((*var_5147).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5137 = writer.prefix("SessionNumber");
-    if let Some(var_5138) = &input.session_number {
-        scope_5137.number(
+    let mut scope_5148 = writer.prefix("SessionNumber");
+    if let Some(var_5149) = &input.session_number {
+        scope_5148.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5138).into()),
+            aws_smithy_types::Number::NegInt((*var_5149).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5139 = writer.prefix("VirtualNetworkId");
-    if let Some(var_5140) = &input.virtual_network_id {
-        scope_5139.number(
+    let mut scope_5150 = writer.prefix("VirtualNetworkId");
+    if let Some(var_5151) = &input.virtual_network_id {
+        scope_5150.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5140).into()),
+            aws_smithy_types::Number::NegInt((*var_5151).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5141 = writer.prefix("Description");
-    if let Some(var_5142) = &input.description {
-        scope_5141.string(var_5142);
+    let mut scope_5152 = writer.prefix("Description");
+    if let Some(var_5153) = &input.description {
+        scope_5152.string(var_5153);
     }
     #[allow(unused_mut)]
-    let mut scope_5143 = writer.prefix("RemoveField");
-    if let Some(var_5144) = &input.remove_fields {
-        let mut list_5146 = scope_5143.start_list(true, None);
-        for item_5145 in var_5144 {
+    let mut scope_5154 = writer.prefix("RemoveField");
+    if let Some(var_5155) = &input.remove_fields {
+        let mut list_5157 = scope_5154.start_list(true, None);
+        for item_5156 in var_5155 {
             #[allow(unused_mut)]
-            let mut entry_5147 = list_5146.entry();
-            entry_5147.string(item_5145.as_str());
+            let mut entry_5158 = list_5157.entry();
+            entry_5158.string(item_5156.as_str());
         }
-        list_5146.finish();
+        list_5157.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5148 = writer.prefix("DryRun");
-    if let Some(var_5149) = &input.dry_run {
-        scope_5148.boolean(*var_5149);
+    let mut scope_5159 = writer.prefix("DryRun");
+    if let Some(var_5160) = &input.dry_run {
+        scope_5159.boolean(*var_5160);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18236,26 +18276,26 @@ pub fn serialize_operation_crate_operation_modify_transit_gateway(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyTransitGateway", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5150 = writer.prefix("TransitGatewayId");
-    if let Some(var_5151) = &input.transit_gateway_id {
-        scope_5150.string(var_5151);
+    let mut scope_5161 = writer.prefix("TransitGatewayId");
+    if let Some(var_5162) = &input.transit_gateway_id {
+        scope_5161.string(var_5162);
     }
     #[allow(unused_mut)]
-    let mut scope_5152 = writer.prefix("Description");
-    if let Some(var_5153) = &input.description {
-        scope_5152.string(var_5153);
+    let mut scope_5163 = writer.prefix("Description");
+    if let Some(var_5164) = &input.description {
+        scope_5163.string(var_5164);
     }
     #[allow(unused_mut)]
-    let mut scope_5154 = writer.prefix("Options");
-    if let Some(var_5155) = &input.options {
+    let mut scope_5165 = writer.prefix("Options");
+    if let Some(var_5166) = &input.options {
         crate::query_ser::serialize_structure_crate_model_modify_transit_gateway_options(
-            scope_5154, var_5155,
+            scope_5165, var_5166,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5156 = writer.prefix("DryRun");
-    if let Some(var_5157) = &input.dry_run {
-        scope_5156.boolean(*var_5157);
+    let mut scope_5167 = writer.prefix("DryRun");
+    if let Some(var_5168) = &input.dry_run {
+        scope_5167.boolean(*var_5168);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18272,29 +18312,29 @@ pub fn serialize_operation_crate_operation_modify_transit_gateway_prefix_list_re
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5158 = writer.prefix("TransitGatewayRouteTableId");
-    if let Some(var_5159) = &input.transit_gateway_route_table_id {
-        scope_5158.string(var_5159);
+    let mut scope_5169 = writer.prefix("TransitGatewayRouteTableId");
+    if let Some(var_5170) = &input.transit_gateway_route_table_id {
+        scope_5169.string(var_5170);
     }
     #[allow(unused_mut)]
-    let mut scope_5160 = writer.prefix("PrefixListId");
-    if let Some(var_5161) = &input.prefix_list_id {
-        scope_5160.string(var_5161);
+    let mut scope_5171 = writer.prefix("PrefixListId");
+    if let Some(var_5172) = &input.prefix_list_id {
+        scope_5171.string(var_5172);
     }
     #[allow(unused_mut)]
-    let mut scope_5162 = writer.prefix("TransitGatewayAttachmentId");
-    if let Some(var_5163) = &input.transit_gateway_attachment_id {
-        scope_5162.string(var_5163);
+    let mut scope_5173 = writer.prefix("TransitGatewayAttachmentId");
+    if let Some(var_5174) = &input.transit_gateway_attachment_id {
+        scope_5173.string(var_5174);
     }
     #[allow(unused_mut)]
-    let mut scope_5164 = writer.prefix("Blackhole");
-    if let Some(var_5165) = &input.blackhole {
-        scope_5164.boolean(*var_5165);
+    let mut scope_5175 = writer.prefix("Blackhole");
+    if let Some(var_5176) = &input.blackhole {
+        scope_5175.boolean(*var_5176);
     }
     #[allow(unused_mut)]
-    let mut scope_5166 = writer.prefix("DryRun");
-    if let Some(var_5167) = &input.dry_run {
-        scope_5166.boolean(*var_5167);
+    let mut scope_5177 = writer.prefix("DryRun");
+    if let Some(var_5178) = &input.dry_run {
+        scope_5177.boolean(*var_5178);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18311,41 +18351,41 @@ pub fn serialize_operation_crate_operation_modify_transit_gateway_vpc_attachment
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5168 = writer.prefix("TransitGatewayAttachmentId");
-    if let Some(var_5169) = &input.transit_gateway_attachment_id {
-        scope_5168.string(var_5169);
+    let mut scope_5179 = writer.prefix("TransitGatewayAttachmentId");
+    if let Some(var_5180) = &input.transit_gateway_attachment_id {
+        scope_5179.string(var_5180);
     }
     #[allow(unused_mut)]
-    let mut scope_5170 = writer.prefix("AddSubnetIds");
-    if let Some(var_5171) = &input.add_subnet_ids {
-        let mut list_5173 = scope_5170.start_list(true, Some("item"));
-        for item_5172 in var_5171 {
+    let mut scope_5181 = writer.prefix("AddSubnetIds");
+    if let Some(var_5182) = &input.add_subnet_ids {
+        let mut list_5184 = scope_5181.start_list(true, Some("item"));
+        for item_5183 in var_5182 {
             #[allow(unused_mut)]
-            let mut entry_5174 = list_5173.entry();
-            entry_5174.string(item_5172);
+            let mut entry_5185 = list_5184.entry();
+            entry_5185.string(item_5183);
         }
-        list_5173.finish();
+        list_5184.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5175 = writer.prefix("RemoveSubnetIds");
-    if let Some(var_5176) = &input.remove_subnet_ids {
-        let mut list_5178 = scope_5175.start_list(true, Some("item"));
-        for item_5177 in var_5176 {
+    let mut scope_5186 = writer.prefix("RemoveSubnetIds");
+    if let Some(var_5187) = &input.remove_subnet_ids {
+        let mut list_5189 = scope_5186.start_list(true, Some("item"));
+        for item_5188 in var_5187 {
             #[allow(unused_mut)]
-            let mut entry_5179 = list_5178.entry();
-            entry_5179.string(item_5177);
+            let mut entry_5190 = list_5189.entry();
+            entry_5190.string(item_5188);
         }
-        list_5178.finish();
+        list_5189.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5180 = writer.prefix("Options");
-    if let Some(var_5181) = &input.options {
-        crate::query_ser::serialize_structure_crate_model_modify_transit_gateway_vpc_attachment_request_options(scope_5180, var_5181)?;
+    let mut scope_5191 = writer.prefix("Options");
+    if let Some(var_5192) = &input.options {
+        crate::query_ser::serialize_structure_crate_model_modify_transit_gateway_vpc_attachment_request_options(scope_5191, var_5192)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5182 = writer.prefix("DryRun");
-    if let Some(var_5183) = &input.dry_run {
-        scope_5182.boolean(*var_5183);
+    let mut scope_5193 = writer.prefix("DryRun");
+    if let Some(var_5194) = &input.dry_run {
+        scope_5193.boolean(*var_5194);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18358,48 +18398,48 @@ pub fn serialize_operation_crate_operation_modify_volume(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ModifyVolume", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5184 = writer.prefix("DryRun");
-    if let Some(var_5185) = &input.dry_run {
-        scope_5184.boolean(*var_5185);
+    let mut scope_5195 = writer.prefix("DryRun");
+    if let Some(var_5196) = &input.dry_run {
+        scope_5195.boolean(*var_5196);
     }
     #[allow(unused_mut)]
-    let mut scope_5186 = writer.prefix("VolumeId");
-    if let Some(var_5187) = &input.volume_id {
-        scope_5186.string(var_5187);
+    let mut scope_5197 = writer.prefix("VolumeId");
+    if let Some(var_5198) = &input.volume_id {
+        scope_5197.string(var_5198);
     }
     #[allow(unused_mut)]
-    let mut scope_5188 = writer.prefix("Size");
-    if let Some(var_5189) = &input.size {
-        scope_5188.number(
+    let mut scope_5199 = writer.prefix("Size");
+    if let Some(var_5200) = &input.size {
+        scope_5199.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5189).into()),
+            aws_smithy_types::Number::NegInt((*var_5200).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5190 = writer.prefix("VolumeType");
-    if let Some(var_5191) = &input.volume_type {
-        scope_5190.string(var_5191.as_str());
+    let mut scope_5201 = writer.prefix("VolumeType");
+    if let Some(var_5202) = &input.volume_type {
+        scope_5201.string(var_5202.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5192 = writer.prefix("Iops");
-    if let Some(var_5193) = &input.iops {
-        scope_5192.number(
+    let mut scope_5203 = writer.prefix("Iops");
+    if let Some(var_5204) = &input.iops {
+        scope_5203.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5193).into()),
+            aws_smithy_types::Number::NegInt((*var_5204).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5194 = writer.prefix("Throughput");
-    if let Some(var_5195) = &input.throughput {
-        scope_5194.number(
+    let mut scope_5205 = writer.prefix("Throughput");
+    if let Some(var_5206) = &input.throughput {
+        scope_5205.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5195).into()),
+            aws_smithy_types::Number::NegInt((*var_5206).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5196 = writer.prefix("MultiAttachEnabled");
-    if let Some(var_5197) = &input.multi_attach_enabled {
-        scope_5196.boolean(*var_5197);
+    let mut scope_5207 = writer.prefix("MultiAttachEnabled");
+    if let Some(var_5208) = &input.multi_attach_enabled {
+        scope_5207.boolean(*var_5208);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18413,21 +18453,21 @@ pub fn serialize_operation_crate_operation_modify_volume_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyVolumeAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5198 = writer.prefix("AutoEnableIO");
-    if let Some(var_5199) = &input.auto_enable_io {
+    let mut scope_5209 = writer.prefix("AutoEnableIO");
+    if let Some(var_5210) = &input.auto_enable_io {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_5198, var_5199,
+            scope_5209, var_5210,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5200 = writer.prefix("VolumeId");
-    if let Some(var_5201) = &input.volume_id {
-        scope_5200.string(var_5201);
+    let mut scope_5211 = writer.prefix("VolumeId");
+    if let Some(var_5212) = &input.volume_id {
+        scope_5211.string(var_5212);
     }
     #[allow(unused_mut)]
-    let mut scope_5202 = writer.prefix("DryRun");
-    if let Some(var_5203) = &input.dry_run {
-        scope_5202.boolean(*var_5203);
+    let mut scope_5213 = writer.prefix("DryRun");
+    if let Some(var_5214) = &input.dry_run {
+        scope_5213.boolean(*var_5214);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18441,23 +18481,23 @@ pub fn serialize_operation_crate_operation_modify_vpc_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyVpcAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5204 = writer.prefix("EnableDnsHostnames");
-    if let Some(var_5205) = &input.enable_dns_hostnames {
+    let mut scope_5215 = writer.prefix("EnableDnsHostnames");
+    if let Some(var_5216) = &input.enable_dns_hostnames {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_5204, var_5205,
+            scope_5215, var_5216,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5206 = writer.prefix("EnableDnsSupport");
-    if let Some(var_5207) = &input.enable_dns_support {
+    let mut scope_5217 = writer.prefix("EnableDnsSupport");
+    if let Some(var_5218) = &input.enable_dns_support {
         crate::query_ser::serialize_structure_crate_model_attribute_boolean_value(
-            scope_5206, var_5207,
+            scope_5217, var_5218,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5208 = writer.prefix("VpcId");
-    if let Some(var_5209) = &input.vpc_id {
-        scope_5208.string(var_5209);
+    let mut scope_5219 = writer.prefix("VpcId");
+    if let Some(var_5220) = &input.vpc_id {
+        scope_5219.string(var_5220);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18471,95 +18511,95 @@ pub fn serialize_operation_crate_operation_modify_vpc_endpoint(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyVpcEndpoint", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5210 = writer.prefix("DryRun");
-    if let Some(var_5211) = &input.dry_run {
-        scope_5210.boolean(*var_5211);
+    let mut scope_5221 = writer.prefix("DryRun");
+    if let Some(var_5222) = &input.dry_run {
+        scope_5221.boolean(*var_5222);
     }
     #[allow(unused_mut)]
-    let mut scope_5212 = writer.prefix("VpcEndpointId");
-    if let Some(var_5213) = &input.vpc_endpoint_id {
-        scope_5212.string(var_5213);
+    let mut scope_5223 = writer.prefix("VpcEndpointId");
+    if let Some(var_5224) = &input.vpc_endpoint_id {
+        scope_5223.string(var_5224);
     }
     #[allow(unused_mut)]
-    let mut scope_5214 = writer.prefix("ResetPolicy");
-    if let Some(var_5215) = &input.reset_policy {
-        scope_5214.boolean(*var_5215);
+    let mut scope_5225 = writer.prefix("ResetPolicy");
+    if let Some(var_5226) = &input.reset_policy {
+        scope_5225.boolean(*var_5226);
     }
     #[allow(unused_mut)]
-    let mut scope_5216 = writer.prefix("PolicyDocument");
-    if let Some(var_5217) = &input.policy_document {
-        scope_5216.string(var_5217);
+    let mut scope_5227 = writer.prefix("PolicyDocument");
+    if let Some(var_5228) = &input.policy_document {
+        scope_5227.string(var_5228);
     }
     #[allow(unused_mut)]
-    let mut scope_5218 = writer.prefix("AddRouteTableId");
-    if let Some(var_5219) = &input.add_route_table_ids {
-        let mut list_5221 = scope_5218.start_list(true, Some("item"));
-        for item_5220 in var_5219 {
+    let mut scope_5229 = writer.prefix("AddRouteTableId");
+    if let Some(var_5230) = &input.add_route_table_ids {
+        let mut list_5232 = scope_5229.start_list(true, Some("item"));
+        for item_5231 in var_5230 {
             #[allow(unused_mut)]
-            let mut entry_5222 = list_5221.entry();
-            entry_5222.string(item_5220);
+            let mut entry_5233 = list_5232.entry();
+            entry_5233.string(item_5231);
         }
-        list_5221.finish();
+        list_5232.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5223 = writer.prefix("RemoveRouteTableId");
-    if let Some(var_5224) = &input.remove_route_table_ids {
-        let mut list_5226 = scope_5223.start_list(true, Some("item"));
-        for item_5225 in var_5224 {
+    let mut scope_5234 = writer.prefix("RemoveRouteTableId");
+    if let Some(var_5235) = &input.remove_route_table_ids {
+        let mut list_5237 = scope_5234.start_list(true, Some("item"));
+        for item_5236 in var_5235 {
             #[allow(unused_mut)]
-            let mut entry_5227 = list_5226.entry();
-            entry_5227.string(item_5225);
+            let mut entry_5238 = list_5237.entry();
+            entry_5238.string(item_5236);
         }
-        list_5226.finish();
+        list_5237.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5228 = writer.prefix("AddSubnetId");
-    if let Some(var_5229) = &input.add_subnet_ids {
-        let mut list_5231 = scope_5228.start_list(true, Some("item"));
-        for item_5230 in var_5229 {
+    let mut scope_5239 = writer.prefix("AddSubnetId");
+    if let Some(var_5240) = &input.add_subnet_ids {
+        let mut list_5242 = scope_5239.start_list(true, Some("item"));
+        for item_5241 in var_5240 {
             #[allow(unused_mut)]
-            let mut entry_5232 = list_5231.entry();
-            entry_5232.string(item_5230);
+            let mut entry_5243 = list_5242.entry();
+            entry_5243.string(item_5241);
         }
-        list_5231.finish();
+        list_5242.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5233 = writer.prefix("RemoveSubnetId");
-    if let Some(var_5234) = &input.remove_subnet_ids {
-        let mut list_5236 = scope_5233.start_list(true, Some("item"));
-        for item_5235 in var_5234 {
+    let mut scope_5244 = writer.prefix("RemoveSubnetId");
+    if let Some(var_5245) = &input.remove_subnet_ids {
+        let mut list_5247 = scope_5244.start_list(true, Some("item"));
+        for item_5246 in var_5245 {
             #[allow(unused_mut)]
-            let mut entry_5237 = list_5236.entry();
-            entry_5237.string(item_5235);
+            let mut entry_5248 = list_5247.entry();
+            entry_5248.string(item_5246);
         }
-        list_5236.finish();
+        list_5247.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5238 = writer.prefix("AddSecurityGroupId");
-    if let Some(var_5239) = &input.add_security_group_ids {
-        let mut list_5241 = scope_5238.start_list(true, Some("item"));
-        for item_5240 in var_5239 {
+    let mut scope_5249 = writer.prefix("AddSecurityGroupId");
+    if let Some(var_5250) = &input.add_security_group_ids {
+        let mut list_5252 = scope_5249.start_list(true, Some("item"));
+        for item_5251 in var_5250 {
             #[allow(unused_mut)]
-            let mut entry_5242 = list_5241.entry();
-            entry_5242.string(item_5240);
+            let mut entry_5253 = list_5252.entry();
+            entry_5253.string(item_5251);
         }
-        list_5241.finish();
+        list_5252.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5243 = writer.prefix("RemoveSecurityGroupId");
-    if let Some(var_5244) = &input.remove_security_group_ids {
-        let mut list_5246 = scope_5243.start_list(true, Some("item"));
-        for item_5245 in var_5244 {
+    let mut scope_5254 = writer.prefix("RemoveSecurityGroupId");
+    if let Some(var_5255) = &input.remove_security_group_ids {
+        let mut list_5257 = scope_5254.start_list(true, Some("item"));
+        for item_5256 in var_5255 {
             #[allow(unused_mut)]
-            let mut entry_5247 = list_5246.entry();
-            entry_5247.string(item_5245);
+            let mut entry_5258 = list_5257.entry();
+            entry_5258.string(item_5256);
         }
-        list_5246.finish();
+        list_5257.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5248 = writer.prefix("PrivateDnsEnabled");
-    if let Some(var_5249) = &input.private_dns_enabled {
-        scope_5248.boolean(*var_5249);
+    let mut scope_5259 = writer.prefix("PrivateDnsEnabled");
+    if let Some(var_5260) = &input.private_dns_enabled {
+        scope_5259.boolean(*var_5260);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18576,30 +18616,30 @@ pub fn serialize_operation_crate_operation_modify_vpc_endpoint_connection_notifi
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5250 = writer.prefix("DryRun");
-    if let Some(var_5251) = &input.dry_run {
-        scope_5250.boolean(*var_5251);
+    let mut scope_5261 = writer.prefix("DryRun");
+    if let Some(var_5262) = &input.dry_run {
+        scope_5261.boolean(*var_5262);
     }
     #[allow(unused_mut)]
-    let mut scope_5252 = writer.prefix("ConnectionNotificationId");
-    if let Some(var_5253) = &input.connection_notification_id {
-        scope_5252.string(var_5253);
+    let mut scope_5263 = writer.prefix("ConnectionNotificationId");
+    if let Some(var_5264) = &input.connection_notification_id {
+        scope_5263.string(var_5264);
     }
     #[allow(unused_mut)]
-    let mut scope_5254 = writer.prefix("ConnectionNotificationArn");
-    if let Some(var_5255) = &input.connection_notification_arn {
-        scope_5254.string(var_5255);
+    let mut scope_5265 = writer.prefix("ConnectionNotificationArn");
+    if let Some(var_5266) = &input.connection_notification_arn {
+        scope_5265.string(var_5266);
     }
     #[allow(unused_mut)]
-    let mut scope_5256 = writer.prefix("ConnectionEvents");
-    if let Some(var_5257) = &input.connection_events {
-        let mut list_5259 = scope_5256.start_list(true, Some("item"));
-        for item_5258 in var_5257 {
+    let mut scope_5267 = writer.prefix("ConnectionEvents");
+    if let Some(var_5268) = &input.connection_events {
+        let mut list_5270 = scope_5267.start_list(true, Some("item"));
+        for item_5269 in var_5268 {
             #[allow(unused_mut)]
-            let mut entry_5260 = list_5259.entry();
-            entry_5260.string(item_5258);
+            let mut entry_5271 = list_5270.entry();
+            entry_5271.string(item_5269);
         }
-        list_5259.finish();
+        list_5270.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18616,73 +18656,73 @@ pub fn serialize_operation_crate_operation_modify_vpc_endpoint_service_configura
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5261 = writer.prefix("DryRun");
-    if let Some(var_5262) = &input.dry_run {
-        scope_5261.boolean(*var_5262);
+    let mut scope_5272 = writer.prefix("DryRun");
+    if let Some(var_5273) = &input.dry_run {
+        scope_5272.boolean(*var_5273);
     }
     #[allow(unused_mut)]
-    let mut scope_5263 = writer.prefix("ServiceId");
-    if let Some(var_5264) = &input.service_id {
-        scope_5263.string(var_5264);
+    let mut scope_5274 = writer.prefix("ServiceId");
+    if let Some(var_5275) = &input.service_id {
+        scope_5274.string(var_5275);
     }
     #[allow(unused_mut)]
-    let mut scope_5265 = writer.prefix("PrivateDnsName");
-    if let Some(var_5266) = &input.private_dns_name {
-        scope_5265.string(var_5266);
+    let mut scope_5276 = writer.prefix("PrivateDnsName");
+    if let Some(var_5277) = &input.private_dns_name {
+        scope_5276.string(var_5277);
     }
     #[allow(unused_mut)]
-    let mut scope_5267 = writer.prefix("RemovePrivateDnsName");
-    if let Some(var_5268) = &input.remove_private_dns_name {
-        scope_5267.boolean(*var_5268);
+    let mut scope_5278 = writer.prefix("RemovePrivateDnsName");
+    if let Some(var_5279) = &input.remove_private_dns_name {
+        scope_5278.boolean(*var_5279);
     }
     #[allow(unused_mut)]
-    let mut scope_5269 = writer.prefix("AcceptanceRequired");
-    if let Some(var_5270) = &input.acceptance_required {
-        scope_5269.boolean(*var_5270);
+    let mut scope_5280 = writer.prefix("AcceptanceRequired");
+    if let Some(var_5281) = &input.acceptance_required {
+        scope_5280.boolean(*var_5281);
     }
     #[allow(unused_mut)]
-    let mut scope_5271 = writer.prefix("AddNetworkLoadBalancerArn");
-    if let Some(var_5272) = &input.add_network_load_balancer_arns {
-        let mut list_5274 = scope_5271.start_list(true, Some("item"));
-        for item_5273 in var_5272 {
+    let mut scope_5282 = writer.prefix("AddNetworkLoadBalancerArn");
+    if let Some(var_5283) = &input.add_network_load_balancer_arns {
+        let mut list_5285 = scope_5282.start_list(true, Some("item"));
+        for item_5284 in var_5283 {
             #[allow(unused_mut)]
-            let mut entry_5275 = list_5274.entry();
-            entry_5275.string(item_5273);
+            let mut entry_5286 = list_5285.entry();
+            entry_5286.string(item_5284);
         }
-        list_5274.finish();
+        list_5285.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5276 = writer.prefix("RemoveNetworkLoadBalancerArn");
-    if let Some(var_5277) = &input.remove_network_load_balancer_arns {
-        let mut list_5279 = scope_5276.start_list(true, Some("item"));
-        for item_5278 in var_5277 {
+    let mut scope_5287 = writer.prefix("RemoveNetworkLoadBalancerArn");
+    if let Some(var_5288) = &input.remove_network_load_balancer_arns {
+        let mut list_5290 = scope_5287.start_list(true, Some("item"));
+        for item_5289 in var_5288 {
             #[allow(unused_mut)]
-            let mut entry_5280 = list_5279.entry();
-            entry_5280.string(item_5278);
+            let mut entry_5291 = list_5290.entry();
+            entry_5291.string(item_5289);
         }
-        list_5279.finish();
+        list_5290.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5281 = writer.prefix("AddGatewayLoadBalancerArn");
-    if let Some(var_5282) = &input.add_gateway_load_balancer_arns {
-        let mut list_5284 = scope_5281.start_list(true, Some("item"));
-        for item_5283 in var_5282 {
+    let mut scope_5292 = writer.prefix("AddGatewayLoadBalancerArn");
+    if let Some(var_5293) = &input.add_gateway_load_balancer_arns {
+        let mut list_5295 = scope_5292.start_list(true, Some("item"));
+        for item_5294 in var_5293 {
             #[allow(unused_mut)]
-            let mut entry_5285 = list_5284.entry();
-            entry_5285.string(item_5283);
+            let mut entry_5296 = list_5295.entry();
+            entry_5296.string(item_5294);
         }
-        list_5284.finish();
+        list_5295.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5286 = writer.prefix("RemoveGatewayLoadBalancerArn");
-    if let Some(var_5287) = &input.remove_gateway_load_balancer_arns {
-        let mut list_5289 = scope_5286.start_list(true, Some("item"));
-        for item_5288 in var_5287 {
+    let mut scope_5297 = writer.prefix("RemoveGatewayLoadBalancerArn");
+    if let Some(var_5298) = &input.remove_gateway_load_balancer_arns {
+        let mut list_5300 = scope_5297.start_list(true, Some("item"));
+        for item_5299 in var_5298 {
             #[allow(unused_mut)]
-            let mut entry_5290 = list_5289.entry();
-            entry_5290.string(item_5288);
+            let mut entry_5301 = list_5300.entry();
+            entry_5301.string(item_5299);
         }
-        list_5289.finish();
+        list_5300.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18699,19 +18739,19 @@ pub fn serialize_operation_crate_operation_modify_vpc_endpoint_service_payer_res
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5291 = writer.prefix("DryRun");
-    if let Some(var_5292) = &input.dry_run {
-        scope_5291.boolean(*var_5292);
+    let mut scope_5302 = writer.prefix("DryRun");
+    if let Some(var_5303) = &input.dry_run {
+        scope_5302.boolean(*var_5303);
     }
     #[allow(unused_mut)]
-    let mut scope_5293 = writer.prefix("ServiceId");
-    if let Some(var_5294) = &input.service_id {
-        scope_5293.string(var_5294);
+    let mut scope_5304 = writer.prefix("ServiceId");
+    if let Some(var_5305) = &input.service_id {
+        scope_5304.string(var_5305);
     }
     #[allow(unused_mut)]
-    let mut scope_5295 = writer.prefix("PayerResponsibility");
-    if let Some(var_5296) = &input.payer_responsibility {
-        scope_5295.string(var_5296.as_str());
+    let mut scope_5306 = writer.prefix("PayerResponsibility");
+    if let Some(var_5307) = &input.payer_responsibility {
+        scope_5306.string(var_5307.as_str());
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18728,36 +18768,36 @@ pub fn serialize_operation_crate_operation_modify_vpc_endpoint_service_permissio
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5297 = writer.prefix("DryRun");
-    if let Some(var_5298) = &input.dry_run {
-        scope_5297.boolean(*var_5298);
+    let mut scope_5308 = writer.prefix("DryRun");
+    if let Some(var_5309) = &input.dry_run {
+        scope_5308.boolean(*var_5309);
     }
     #[allow(unused_mut)]
-    let mut scope_5299 = writer.prefix("ServiceId");
-    if let Some(var_5300) = &input.service_id {
-        scope_5299.string(var_5300);
+    let mut scope_5310 = writer.prefix("ServiceId");
+    if let Some(var_5311) = &input.service_id {
+        scope_5310.string(var_5311);
     }
     #[allow(unused_mut)]
-    let mut scope_5301 = writer.prefix("AddAllowedPrincipals");
-    if let Some(var_5302) = &input.add_allowed_principals {
-        let mut list_5304 = scope_5301.start_list(true, Some("item"));
-        for item_5303 in var_5302 {
+    let mut scope_5312 = writer.prefix("AddAllowedPrincipals");
+    if let Some(var_5313) = &input.add_allowed_principals {
+        let mut list_5315 = scope_5312.start_list(true, Some("item"));
+        for item_5314 in var_5313 {
             #[allow(unused_mut)]
-            let mut entry_5305 = list_5304.entry();
-            entry_5305.string(item_5303);
+            let mut entry_5316 = list_5315.entry();
+            entry_5316.string(item_5314);
         }
-        list_5304.finish();
+        list_5315.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5306 = writer.prefix("RemoveAllowedPrincipals");
-    if let Some(var_5307) = &input.remove_allowed_principals {
-        let mut list_5309 = scope_5306.start_list(true, Some("item"));
-        for item_5308 in var_5307 {
+    let mut scope_5317 = writer.prefix("RemoveAllowedPrincipals");
+    if let Some(var_5318) = &input.remove_allowed_principals {
+        let mut list_5320 = scope_5317.start_list(true, Some("item"));
+        for item_5319 in var_5318 {
             #[allow(unused_mut)]
-            let mut entry_5310 = list_5309.entry();
-            entry_5310.string(item_5308);
+            let mut entry_5321 = list_5320.entry();
+            entry_5321.string(item_5319);
         }
-        list_5309.finish();
+        list_5320.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18774,28 +18814,28 @@ pub fn serialize_operation_crate_operation_modify_vpc_peering_connection_options
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5311 = writer.prefix("AccepterPeeringConnectionOptions");
-    if let Some(var_5312) = &input.accepter_peering_connection_options {
+    let mut scope_5322 = writer.prefix("AccepterPeeringConnectionOptions");
+    if let Some(var_5323) = &input.accepter_peering_connection_options {
         crate::query_ser::serialize_structure_crate_model_peering_connection_options_request(
-            scope_5311, var_5312,
+            scope_5322, var_5323,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5313 = writer.prefix("DryRun");
-    if let Some(var_5314) = &input.dry_run {
-        scope_5313.boolean(*var_5314);
+    let mut scope_5324 = writer.prefix("DryRun");
+    if let Some(var_5325) = &input.dry_run {
+        scope_5324.boolean(*var_5325);
     }
     #[allow(unused_mut)]
-    let mut scope_5315 = writer.prefix("RequesterPeeringConnectionOptions");
-    if let Some(var_5316) = &input.requester_peering_connection_options {
+    let mut scope_5326 = writer.prefix("RequesterPeeringConnectionOptions");
+    if let Some(var_5327) = &input.requester_peering_connection_options {
         crate::query_ser::serialize_structure_crate_model_peering_connection_options_request(
-            scope_5315, var_5316,
+            scope_5326, var_5327,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5317 = writer.prefix("VpcPeeringConnectionId");
-    if let Some(var_5318) = &input.vpc_peering_connection_id {
-        scope_5317.string(var_5318);
+    let mut scope_5328 = writer.prefix("VpcPeeringConnectionId");
+    if let Some(var_5329) = &input.vpc_peering_connection_id {
+        scope_5328.string(var_5329);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18808,19 +18848,19 @@ pub fn serialize_operation_crate_operation_modify_vpc_tenancy(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ModifyVpcTenancy", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5319 = writer.prefix("VpcId");
-    if let Some(var_5320) = &input.vpc_id {
-        scope_5319.string(var_5320);
+    let mut scope_5330 = writer.prefix("VpcId");
+    if let Some(var_5331) = &input.vpc_id {
+        scope_5330.string(var_5331);
     }
     #[allow(unused_mut)]
-    let mut scope_5321 = writer.prefix("InstanceTenancy");
-    if let Some(var_5322) = &input.instance_tenancy {
-        scope_5321.string(var_5322.as_str());
+    let mut scope_5332 = writer.prefix("InstanceTenancy");
+    if let Some(var_5333) = &input.instance_tenancy {
+        scope_5332.string(var_5333.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5323 = writer.prefix("DryRun");
-    if let Some(var_5324) = &input.dry_run {
-        scope_5323.boolean(*var_5324);
+    let mut scope_5334 = writer.prefix("DryRun");
+    if let Some(var_5335) = &input.dry_run {
+        scope_5334.boolean(*var_5335);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18834,29 +18874,29 @@ pub fn serialize_operation_crate_operation_modify_vpn_connection(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyVpnConnection", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5325 = writer.prefix("VpnConnectionId");
-    if let Some(var_5326) = &input.vpn_connection_id {
-        scope_5325.string(var_5326);
+    let mut scope_5336 = writer.prefix("VpnConnectionId");
+    if let Some(var_5337) = &input.vpn_connection_id {
+        scope_5336.string(var_5337);
     }
     #[allow(unused_mut)]
-    let mut scope_5327 = writer.prefix("TransitGatewayId");
-    if let Some(var_5328) = &input.transit_gateway_id {
-        scope_5327.string(var_5328);
+    let mut scope_5338 = writer.prefix("TransitGatewayId");
+    if let Some(var_5339) = &input.transit_gateway_id {
+        scope_5338.string(var_5339);
     }
     #[allow(unused_mut)]
-    let mut scope_5329 = writer.prefix("CustomerGatewayId");
-    if let Some(var_5330) = &input.customer_gateway_id {
-        scope_5329.string(var_5330);
+    let mut scope_5340 = writer.prefix("CustomerGatewayId");
+    if let Some(var_5341) = &input.customer_gateway_id {
+        scope_5340.string(var_5341);
     }
     #[allow(unused_mut)]
-    let mut scope_5331 = writer.prefix("VpnGatewayId");
-    if let Some(var_5332) = &input.vpn_gateway_id {
-        scope_5331.string(var_5332);
+    let mut scope_5342 = writer.prefix("VpnGatewayId");
+    if let Some(var_5343) = &input.vpn_gateway_id {
+        scope_5342.string(var_5343);
     }
     #[allow(unused_mut)]
-    let mut scope_5333 = writer.prefix("DryRun");
-    if let Some(var_5334) = &input.dry_run {
-        scope_5333.boolean(*var_5334);
+    let mut scope_5344 = writer.prefix("DryRun");
+    if let Some(var_5345) = &input.dry_run {
+        scope_5344.boolean(*var_5345);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18870,34 +18910,34 @@ pub fn serialize_operation_crate_operation_modify_vpn_connection_options(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyVpnConnectionOptions", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5335 = writer.prefix("VpnConnectionId");
-    if let Some(var_5336) = &input.vpn_connection_id {
-        scope_5335.string(var_5336);
+    let mut scope_5346 = writer.prefix("VpnConnectionId");
+    if let Some(var_5347) = &input.vpn_connection_id {
+        scope_5346.string(var_5347);
     }
     #[allow(unused_mut)]
-    let mut scope_5337 = writer.prefix("LocalIpv4NetworkCidr");
-    if let Some(var_5338) = &input.local_ipv4_network_cidr {
-        scope_5337.string(var_5338);
+    let mut scope_5348 = writer.prefix("LocalIpv4NetworkCidr");
+    if let Some(var_5349) = &input.local_ipv4_network_cidr {
+        scope_5348.string(var_5349);
     }
     #[allow(unused_mut)]
-    let mut scope_5339 = writer.prefix("RemoteIpv4NetworkCidr");
-    if let Some(var_5340) = &input.remote_ipv4_network_cidr {
-        scope_5339.string(var_5340);
+    let mut scope_5350 = writer.prefix("RemoteIpv4NetworkCidr");
+    if let Some(var_5351) = &input.remote_ipv4_network_cidr {
+        scope_5350.string(var_5351);
     }
     #[allow(unused_mut)]
-    let mut scope_5341 = writer.prefix("LocalIpv6NetworkCidr");
-    if let Some(var_5342) = &input.local_ipv6_network_cidr {
-        scope_5341.string(var_5342);
+    let mut scope_5352 = writer.prefix("LocalIpv6NetworkCidr");
+    if let Some(var_5353) = &input.local_ipv6_network_cidr {
+        scope_5352.string(var_5353);
     }
     #[allow(unused_mut)]
-    let mut scope_5343 = writer.prefix("RemoteIpv6NetworkCidr");
-    if let Some(var_5344) = &input.remote_ipv6_network_cidr {
-        scope_5343.string(var_5344);
+    let mut scope_5354 = writer.prefix("RemoteIpv6NetworkCidr");
+    if let Some(var_5355) = &input.remote_ipv6_network_cidr {
+        scope_5354.string(var_5355);
     }
     #[allow(unused_mut)]
-    let mut scope_5345 = writer.prefix("DryRun");
-    if let Some(var_5346) = &input.dry_run {
-        scope_5345.boolean(*var_5346);
+    let mut scope_5356 = writer.prefix("DryRun");
+    if let Some(var_5357) = &input.dry_run {
+        scope_5356.boolean(*var_5357);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18911,19 +18951,19 @@ pub fn serialize_operation_crate_operation_modify_vpn_tunnel_certificate(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyVpnTunnelCertificate", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5347 = writer.prefix("VpnConnectionId");
-    if let Some(var_5348) = &input.vpn_connection_id {
-        scope_5347.string(var_5348);
+    let mut scope_5358 = writer.prefix("VpnConnectionId");
+    if let Some(var_5359) = &input.vpn_connection_id {
+        scope_5358.string(var_5359);
     }
     #[allow(unused_mut)]
-    let mut scope_5349 = writer.prefix("VpnTunnelOutsideIpAddress");
-    if let Some(var_5350) = &input.vpn_tunnel_outside_ip_address {
-        scope_5349.string(var_5350);
+    let mut scope_5360 = writer.prefix("VpnTunnelOutsideIpAddress");
+    if let Some(var_5361) = &input.vpn_tunnel_outside_ip_address {
+        scope_5360.string(var_5361);
     }
     #[allow(unused_mut)]
-    let mut scope_5351 = writer.prefix("DryRun");
-    if let Some(var_5352) = &input.dry_run {
-        scope_5351.boolean(*var_5352);
+    let mut scope_5362 = writer.prefix("DryRun");
+    if let Some(var_5363) = &input.dry_run {
+        scope_5362.boolean(*var_5363);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18937,26 +18977,26 @@ pub fn serialize_operation_crate_operation_modify_vpn_tunnel_options(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyVpnTunnelOptions", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5353 = writer.prefix("VpnConnectionId");
-    if let Some(var_5354) = &input.vpn_connection_id {
-        scope_5353.string(var_5354);
+    let mut scope_5364 = writer.prefix("VpnConnectionId");
+    if let Some(var_5365) = &input.vpn_connection_id {
+        scope_5364.string(var_5365);
     }
     #[allow(unused_mut)]
-    let mut scope_5355 = writer.prefix("VpnTunnelOutsideIpAddress");
-    if let Some(var_5356) = &input.vpn_tunnel_outside_ip_address {
-        scope_5355.string(var_5356);
+    let mut scope_5366 = writer.prefix("VpnTunnelOutsideIpAddress");
+    if let Some(var_5367) = &input.vpn_tunnel_outside_ip_address {
+        scope_5366.string(var_5367);
     }
     #[allow(unused_mut)]
-    let mut scope_5357 = writer.prefix("TunnelOptions");
-    if let Some(var_5358) = &input.tunnel_options {
+    let mut scope_5368 = writer.prefix("TunnelOptions");
+    if let Some(var_5369) = &input.tunnel_options {
         crate::query_ser::serialize_structure_crate_model_modify_vpn_tunnel_options_specification(
-            scope_5357, var_5358,
+            scope_5368, var_5369,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5359 = writer.prefix("DryRun");
-    if let Some(var_5360) = &input.dry_run {
-        scope_5359.boolean(*var_5360);
+    let mut scope_5370 = writer.prefix("DryRun");
+    if let Some(var_5371) = &input.dry_run {
+        scope_5370.boolean(*var_5371);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18969,20 +19009,20 @@ pub fn serialize_operation_crate_operation_monitor_instances(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "MonitorInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5361 = writer.prefix("InstanceId");
-    if let Some(var_5362) = &input.instance_ids {
-        let mut list_5364 = scope_5361.start_list(true, Some("InstanceId"));
-        for item_5363 in var_5362 {
+    let mut scope_5372 = writer.prefix("InstanceId");
+    if let Some(var_5373) = &input.instance_ids {
+        let mut list_5375 = scope_5372.start_list(true, Some("InstanceId"));
+        for item_5374 in var_5373 {
             #[allow(unused_mut)]
-            let mut entry_5365 = list_5364.entry();
-            entry_5365.string(item_5363);
+            let mut entry_5376 = list_5375.entry();
+            entry_5376.string(item_5374);
         }
-        list_5364.finish();
+        list_5375.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5366 = writer.prefix("DryRun");
-    if let Some(var_5367) = &input.dry_run {
-        scope_5366.boolean(*var_5367);
+    let mut scope_5377 = writer.prefix("DryRun");
+    if let Some(var_5378) = &input.dry_run {
+        scope_5377.boolean(*var_5378);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -18995,14 +19035,14 @@ pub fn serialize_operation_crate_operation_move_address_to_vpc(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "MoveAddressToVpc", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5368 = writer.prefix("DryRun");
-    if let Some(var_5369) = &input.dry_run {
-        scope_5368.boolean(*var_5369);
+    let mut scope_5379 = writer.prefix("DryRun");
+    if let Some(var_5380) = &input.dry_run {
+        scope_5379.boolean(*var_5380);
     }
     #[allow(unused_mut)]
-    let mut scope_5370 = writer.prefix("PublicIp");
-    if let Some(var_5371) = &input.public_ip {
-        scope_5370.string(var_5371);
+    let mut scope_5381 = writer.prefix("PublicIp");
+    if let Some(var_5382) = &input.public_ip {
+        scope_5381.string(var_5382);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19016,24 +19056,24 @@ pub fn serialize_operation_crate_operation_move_byoip_cidr_to_ipam(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "MoveByoipCidrToIpam", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5372 = writer.prefix("DryRun");
-    if let Some(var_5373) = &input.dry_run {
-        scope_5372.boolean(*var_5373);
+    let mut scope_5383 = writer.prefix("DryRun");
+    if let Some(var_5384) = &input.dry_run {
+        scope_5383.boolean(*var_5384);
     }
     #[allow(unused_mut)]
-    let mut scope_5374 = writer.prefix("Cidr");
-    if let Some(var_5375) = &input.cidr {
-        scope_5374.string(var_5375);
+    let mut scope_5385 = writer.prefix("Cidr");
+    if let Some(var_5386) = &input.cidr {
+        scope_5385.string(var_5386);
     }
     #[allow(unused_mut)]
-    let mut scope_5376 = writer.prefix("IpamPoolId");
-    if let Some(var_5377) = &input.ipam_pool_id {
-        scope_5376.string(var_5377);
+    let mut scope_5387 = writer.prefix("IpamPoolId");
+    if let Some(var_5388) = &input.ipam_pool_id {
+        scope_5387.string(var_5388);
     }
     #[allow(unused_mut)]
-    let mut scope_5378 = writer.prefix("IpamPoolOwner");
-    if let Some(var_5379) = &input.ipam_pool_owner {
-        scope_5378.string(var_5379);
+    let mut scope_5389 = writer.prefix("IpamPoolOwner");
+    if let Some(var_5390) = &input.ipam_pool_owner {
+        scope_5389.string(var_5390);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19047,49 +19087,49 @@ pub fn serialize_operation_crate_operation_provision_byoip_cidr(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ProvisionByoipCidr", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5380 = writer.prefix("Cidr");
-    if let Some(var_5381) = &input.cidr {
-        scope_5380.string(var_5381);
+    let mut scope_5391 = writer.prefix("Cidr");
+    if let Some(var_5392) = &input.cidr {
+        scope_5391.string(var_5392);
     }
     #[allow(unused_mut)]
-    let mut scope_5382 = writer.prefix("CidrAuthorizationContext");
-    if let Some(var_5383) = &input.cidr_authorization_context {
+    let mut scope_5393 = writer.prefix("CidrAuthorizationContext");
+    if let Some(var_5394) = &input.cidr_authorization_context {
         crate::query_ser::serialize_structure_crate_model_cidr_authorization_context(
-            scope_5382, var_5383,
+            scope_5393, var_5394,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5384 = writer.prefix("PubliclyAdvertisable");
-    if let Some(var_5385) = &input.publicly_advertisable {
-        scope_5384.boolean(*var_5385);
+    let mut scope_5395 = writer.prefix("PubliclyAdvertisable");
+    if let Some(var_5396) = &input.publicly_advertisable {
+        scope_5395.boolean(*var_5396);
     }
     #[allow(unused_mut)]
-    let mut scope_5386 = writer.prefix("Description");
-    if let Some(var_5387) = &input.description {
-        scope_5386.string(var_5387);
+    let mut scope_5397 = writer.prefix("Description");
+    if let Some(var_5398) = &input.description {
+        scope_5397.string(var_5398);
     }
     #[allow(unused_mut)]
-    let mut scope_5388 = writer.prefix("DryRun");
-    if let Some(var_5389) = &input.dry_run {
-        scope_5388.boolean(*var_5389);
+    let mut scope_5399 = writer.prefix("DryRun");
+    if let Some(var_5400) = &input.dry_run {
+        scope_5399.boolean(*var_5400);
     }
     #[allow(unused_mut)]
-    let mut scope_5390 = writer.prefix("PoolTagSpecification");
-    if let Some(var_5391) = &input.pool_tag_specifications {
-        let mut list_5393 = scope_5390.start_list(true, Some("item"));
-        for item_5392 in var_5391 {
+    let mut scope_5401 = writer.prefix("PoolTagSpecification");
+    if let Some(var_5402) = &input.pool_tag_specifications {
+        let mut list_5404 = scope_5401.start_list(true, Some("item"));
+        for item_5403 in var_5402 {
             #[allow(unused_mut)]
-            let mut entry_5394 = list_5393.entry();
+            let mut entry_5405 = list_5404.entry();
             crate::query_ser::serialize_structure_crate_model_tag_specification(
-                entry_5394, item_5392,
+                entry_5405, item_5403,
             )?;
         }
-        list_5393.finish();
+        list_5404.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5395 = writer.prefix("MultiRegion");
-    if let Some(var_5396) = &input.multi_region {
-        scope_5395.boolean(*var_5396);
+    let mut scope_5406 = writer.prefix("MultiRegion");
+    if let Some(var_5407) = &input.multi_region {
+        scope_5406.boolean(*var_5407);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19103,25 +19143,25 @@ pub fn serialize_operation_crate_operation_provision_ipam_pool_cidr(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ProvisionIpamPoolCidr", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5397 = writer.prefix("DryRun");
-    if let Some(var_5398) = &input.dry_run {
-        scope_5397.boolean(*var_5398);
+    let mut scope_5408 = writer.prefix("DryRun");
+    if let Some(var_5409) = &input.dry_run {
+        scope_5408.boolean(*var_5409);
     }
     #[allow(unused_mut)]
-    let mut scope_5399 = writer.prefix("IpamPoolId");
-    if let Some(var_5400) = &input.ipam_pool_id {
-        scope_5399.string(var_5400);
+    let mut scope_5410 = writer.prefix("IpamPoolId");
+    if let Some(var_5411) = &input.ipam_pool_id {
+        scope_5410.string(var_5411);
     }
     #[allow(unused_mut)]
-    let mut scope_5401 = writer.prefix("Cidr");
-    if let Some(var_5402) = &input.cidr {
-        scope_5401.string(var_5402);
+    let mut scope_5412 = writer.prefix("Cidr");
+    if let Some(var_5413) = &input.cidr {
+        scope_5412.string(var_5413);
     }
     #[allow(unused_mut)]
-    let mut scope_5403 = writer.prefix("CidrAuthorizationContext");
-    if let Some(var_5404) = &input.cidr_authorization_context {
+    let mut scope_5414 = writer.prefix("CidrAuthorizationContext");
+    if let Some(var_5415) = &input.cidr_authorization_context {
         crate::query_ser::serialize_structure_crate_model_ipam_cidr_authorization_context(
-            scope_5403, var_5404,
+            scope_5414, var_5415,
         )?;
     }
     writer.finish();
@@ -19136,26 +19176,26 @@ pub fn serialize_operation_crate_operation_provision_public_ipv4_pool_cidr(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ProvisionPublicIpv4PoolCidr", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5405 = writer.prefix("DryRun");
-    if let Some(var_5406) = &input.dry_run {
-        scope_5405.boolean(*var_5406);
+    let mut scope_5416 = writer.prefix("DryRun");
+    if let Some(var_5417) = &input.dry_run {
+        scope_5416.boolean(*var_5417);
     }
     #[allow(unused_mut)]
-    let mut scope_5407 = writer.prefix("IpamPoolId");
-    if let Some(var_5408) = &input.ipam_pool_id {
-        scope_5407.string(var_5408);
+    let mut scope_5418 = writer.prefix("IpamPoolId");
+    if let Some(var_5419) = &input.ipam_pool_id {
+        scope_5418.string(var_5419);
     }
     #[allow(unused_mut)]
-    let mut scope_5409 = writer.prefix("PoolId");
-    if let Some(var_5410) = &input.pool_id {
-        scope_5409.string(var_5410);
+    let mut scope_5420 = writer.prefix("PoolId");
+    if let Some(var_5421) = &input.pool_id {
+        scope_5420.string(var_5421);
     }
     #[allow(unused_mut)]
-    let mut scope_5411 = writer.prefix("NetmaskLength");
-    if let Some(var_5412) = &input.netmask_length {
-        scope_5411.number(
+    let mut scope_5422 = writer.prefix("NetmaskLength");
+    if let Some(var_5423) = &input.netmask_length {
+        scope_5422.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5412).into()),
+            aws_smithy_types::Number::NegInt((*var_5423).into()),
         );
     }
     writer.finish();
@@ -19170,48 +19210,48 @@ pub fn serialize_operation_crate_operation_purchase_host_reservation(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "PurchaseHostReservation", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5413 = writer.prefix("ClientToken");
-    if let Some(var_5414) = &input.client_token {
-        scope_5413.string(var_5414);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5415 = writer.prefix("CurrencyCode");
-    if let Some(var_5416) = &input.currency_code {
-        scope_5415.string(var_5416.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_5417 = writer.prefix("HostIdSet");
-    if let Some(var_5418) = &input.host_id_set {
-        let mut list_5420 = scope_5417.start_list(true, Some("item"));
-        for item_5419 in var_5418 {
-            #[allow(unused_mut)]
-            let mut entry_5421 = list_5420.entry();
-            entry_5421.string(item_5419);
-        }
-        list_5420.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_5422 = writer.prefix("LimitPrice");
-    if let Some(var_5423) = &input.limit_price {
-        scope_5422.string(var_5423);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5424 = writer.prefix("OfferingId");
-    if let Some(var_5425) = &input.offering_id {
+    let mut scope_5424 = writer.prefix("ClientToken");
+    if let Some(var_5425) = &input.client_token {
         scope_5424.string(var_5425);
     }
     #[allow(unused_mut)]
-    let mut scope_5426 = writer.prefix("TagSpecification");
-    if let Some(var_5427) = &input.tag_specifications {
-        let mut list_5429 = scope_5426.start_list(true, Some("item"));
-        for item_5428 in var_5427 {
+    let mut scope_5426 = writer.prefix("CurrencyCode");
+    if let Some(var_5427) = &input.currency_code {
+        scope_5426.string(var_5427.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_5428 = writer.prefix("HostIdSet");
+    if let Some(var_5429) = &input.host_id_set {
+        let mut list_5431 = scope_5428.start_list(true, Some("item"));
+        for item_5430 in var_5429 {
             #[allow(unused_mut)]
-            let mut entry_5430 = list_5429.entry();
+            let mut entry_5432 = list_5431.entry();
+            entry_5432.string(item_5430);
+        }
+        list_5431.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_5433 = writer.prefix("LimitPrice");
+    if let Some(var_5434) = &input.limit_price {
+        scope_5433.string(var_5434);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5435 = writer.prefix("OfferingId");
+    if let Some(var_5436) = &input.offering_id {
+        scope_5435.string(var_5436);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5437 = writer.prefix("TagSpecification");
+    if let Some(var_5438) = &input.tag_specifications {
+        let mut list_5440 = scope_5437.start_list(true, Some("item"));
+        for item_5439 in var_5438 {
+            #[allow(unused_mut)]
+            let mut entry_5441 = list_5440.entry();
             crate::query_ser::serialize_structure_crate_model_tag_specification(
-                entry_5430, item_5428,
+                entry_5441, item_5439,
             )?;
         }
-        list_5429.finish();
+        list_5440.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19228,34 +19268,34 @@ pub fn serialize_operation_crate_operation_purchase_reserved_instances_offering(
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5431 = writer.prefix("InstanceCount");
-    if let Some(var_5432) = &input.instance_count {
-        scope_5431.number(
+    let mut scope_5442 = writer.prefix("InstanceCount");
+    if let Some(var_5443) = &input.instance_count {
+        scope_5442.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5432).into()),
+            aws_smithy_types::Number::NegInt((*var_5443).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5433 = writer.prefix("ReservedInstancesOfferingId");
-    if let Some(var_5434) = &input.reserved_instances_offering_id {
-        scope_5433.string(var_5434);
+    let mut scope_5444 = writer.prefix("ReservedInstancesOfferingId");
+    if let Some(var_5445) = &input.reserved_instances_offering_id {
+        scope_5444.string(var_5445);
     }
     #[allow(unused_mut)]
-    let mut scope_5435 = writer.prefix("DryRun");
-    if let Some(var_5436) = &input.dry_run {
-        scope_5435.boolean(*var_5436);
+    let mut scope_5446 = writer.prefix("DryRun");
+    if let Some(var_5447) = &input.dry_run {
+        scope_5446.boolean(*var_5447);
     }
     #[allow(unused_mut)]
-    let mut scope_5437 = writer.prefix("LimitPrice");
-    if let Some(var_5438) = &input.limit_price {
+    let mut scope_5448 = writer.prefix("LimitPrice");
+    if let Some(var_5449) = &input.limit_price {
         crate::query_ser::serialize_structure_crate_model_reserved_instance_limit_price(
-            scope_5437, var_5438,
+            scope_5448, var_5449,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5439 = writer.prefix("PurchaseTime");
-    if let Some(var_5440) = &input.purchase_time {
-        scope_5439.date_time(var_5440, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_5450 = writer.prefix("PurchaseTime");
+    if let Some(var_5451) = &input.purchase_time {
+        scope_5450.date_time(var_5451, aws_smithy_types::date_time::Format::DateTime)?;
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19269,27 +19309,27 @@ pub fn serialize_operation_crate_operation_purchase_scheduled_instances(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "PurchaseScheduledInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5441 = writer.prefix("ClientToken");
-    if let Some(var_5442) = &input.client_token {
-        scope_5441.string(var_5442);
+    let mut scope_5452 = writer.prefix("ClientToken");
+    if let Some(var_5453) = &input.client_token {
+        scope_5452.string(var_5453);
     }
     #[allow(unused_mut)]
-    let mut scope_5443 = writer.prefix("DryRun");
-    if let Some(var_5444) = &input.dry_run {
-        scope_5443.boolean(*var_5444);
+    let mut scope_5454 = writer.prefix("DryRun");
+    if let Some(var_5455) = &input.dry_run {
+        scope_5454.boolean(*var_5455);
     }
     #[allow(unused_mut)]
-    let mut scope_5445 = writer.prefix("PurchaseRequest");
-    if let Some(var_5446) = &input.purchase_requests {
-        let mut list_5448 = scope_5445.start_list(true, Some("PurchaseRequest"));
-        for item_5447 in var_5446 {
+    let mut scope_5456 = writer.prefix("PurchaseRequest");
+    if let Some(var_5457) = &input.purchase_requests {
+        let mut list_5459 = scope_5456.start_list(true, Some("PurchaseRequest"));
+        for item_5458 in var_5457 {
             #[allow(unused_mut)]
-            let mut entry_5449 = list_5448.entry();
+            let mut entry_5460 = list_5459.entry();
             crate::query_ser::serialize_structure_crate_model_purchase_request(
-                entry_5449, item_5447,
+                entry_5460, item_5458,
             )?;
         }
-        list_5448.finish();
+        list_5459.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19302,20 +19342,20 @@ pub fn serialize_operation_crate_operation_reboot_instances(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "RebootInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5450 = writer.prefix("InstanceId");
-    if let Some(var_5451) = &input.instance_ids {
-        let mut list_5453 = scope_5450.start_list(true, Some("InstanceId"));
-        for item_5452 in var_5451 {
+    let mut scope_5461 = writer.prefix("InstanceId");
+    if let Some(var_5462) = &input.instance_ids {
+        let mut list_5464 = scope_5461.start_list(true, Some("InstanceId"));
+        for item_5463 in var_5462 {
             #[allow(unused_mut)]
-            let mut entry_5454 = list_5453.entry();
-            entry_5454.string(item_5452);
+            let mut entry_5465 = list_5464.entry();
+            entry_5465.string(item_5463);
         }
-        list_5453.finish();
+        list_5464.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5455 = writer.prefix("DryRun");
-    if let Some(var_5456) = &input.dry_run {
-        scope_5455.boolean(*var_5456);
+    let mut scope_5466 = writer.prefix("DryRun");
+    if let Some(var_5467) = &input.dry_run {
+        scope_5466.boolean(*var_5467);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19328,88 +19368,88 @@ pub fn serialize_operation_crate_operation_register_image(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "RegisterImage", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5457 = writer.prefix("ImageLocation");
-    if let Some(var_5458) = &input.image_location {
-        scope_5457.string(var_5458);
+    let mut scope_5468 = writer.prefix("ImageLocation");
+    if let Some(var_5469) = &input.image_location {
+        scope_5468.string(var_5469);
     }
     #[allow(unused_mut)]
-    let mut scope_5459 = writer.prefix("Architecture");
-    if let Some(var_5460) = &input.architecture {
-        scope_5459.string(var_5460.as_str());
+    let mut scope_5470 = writer.prefix("Architecture");
+    if let Some(var_5471) = &input.architecture {
+        scope_5470.string(var_5471.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5461 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_5462) = &input.block_device_mappings {
-        let mut list_5464 = scope_5461.start_list(true, Some("BlockDeviceMapping"));
-        for item_5463 in var_5462 {
+    let mut scope_5472 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_5473) = &input.block_device_mappings {
+        let mut list_5475 = scope_5472.start_list(true, Some("BlockDeviceMapping"));
+        for item_5474 in var_5473 {
             #[allow(unused_mut)]
-            let mut entry_5465 = list_5464.entry();
+            let mut entry_5476 = list_5475.entry();
             crate::query_ser::serialize_structure_crate_model_block_device_mapping(
-                entry_5465, item_5463,
+                entry_5476, item_5474,
             )?;
         }
-        list_5464.finish();
+        list_5475.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5466 = writer.prefix("Description");
-    if let Some(var_5467) = &input.description {
-        scope_5466.string(var_5467);
+    let mut scope_5477 = writer.prefix("Description");
+    if let Some(var_5478) = &input.description {
+        scope_5477.string(var_5478);
     }
     #[allow(unused_mut)]
-    let mut scope_5468 = writer.prefix("DryRun");
-    if let Some(var_5469) = &input.dry_run {
-        scope_5468.boolean(*var_5469);
+    let mut scope_5479 = writer.prefix("DryRun");
+    if let Some(var_5480) = &input.dry_run {
+        scope_5479.boolean(*var_5480);
     }
     #[allow(unused_mut)]
-    let mut scope_5470 = writer.prefix("EnaSupport");
-    if let Some(var_5471) = &input.ena_support {
-        scope_5470.boolean(*var_5471);
+    let mut scope_5481 = writer.prefix("EnaSupport");
+    if let Some(var_5482) = &input.ena_support {
+        scope_5481.boolean(*var_5482);
     }
     #[allow(unused_mut)]
-    let mut scope_5472 = writer.prefix("KernelId");
-    if let Some(var_5473) = &input.kernel_id {
-        scope_5472.string(var_5473);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5474 = writer.prefix("Name");
-    if let Some(var_5475) = &input.name {
-        scope_5474.string(var_5475);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5476 = writer.prefix("BillingProduct");
-    if let Some(var_5477) = &input.billing_products {
-        let mut list_5479 = scope_5476.start_list(true, Some("item"));
-        for item_5478 in var_5477 {
-            #[allow(unused_mut)]
-            let mut entry_5480 = list_5479.entry();
-            entry_5480.string(item_5478);
-        }
-        list_5479.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_5481 = writer.prefix("RamdiskId");
-    if let Some(var_5482) = &input.ramdisk_id {
-        scope_5481.string(var_5482);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5483 = writer.prefix("RootDeviceName");
-    if let Some(var_5484) = &input.root_device_name {
+    let mut scope_5483 = writer.prefix("KernelId");
+    if let Some(var_5484) = &input.kernel_id {
         scope_5483.string(var_5484);
     }
     #[allow(unused_mut)]
-    let mut scope_5485 = writer.prefix("SriovNetSupport");
-    if let Some(var_5486) = &input.sriov_net_support {
+    let mut scope_5485 = writer.prefix("Name");
+    if let Some(var_5486) = &input.name {
         scope_5485.string(var_5486);
     }
     #[allow(unused_mut)]
-    let mut scope_5487 = writer.prefix("VirtualizationType");
-    if let Some(var_5488) = &input.virtualization_type {
-        scope_5487.string(var_5488);
+    let mut scope_5487 = writer.prefix("BillingProduct");
+    if let Some(var_5488) = &input.billing_products {
+        let mut list_5490 = scope_5487.start_list(true, Some("item"));
+        for item_5489 in var_5488 {
+            #[allow(unused_mut)]
+            let mut entry_5491 = list_5490.entry();
+            entry_5491.string(item_5489);
+        }
+        list_5490.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5489 = writer.prefix("BootMode");
-    if let Some(var_5490) = &input.boot_mode {
-        scope_5489.string(var_5490.as_str());
+    let mut scope_5492 = writer.prefix("RamdiskId");
+    if let Some(var_5493) = &input.ramdisk_id {
+        scope_5492.string(var_5493);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5494 = writer.prefix("RootDeviceName");
+    if let Some(var_5495) = &input.root_device_name {
+        scope_5494.string(var_5495);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5496 = writer.prefix("SriovNetSupport");
+    if let Some(var_5497) = &input.sriov_net_support {
+        scope_5496.string(var_5497);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5498 = writer.prefix("VirtualizationType");
+    if let Some(var_5499) = &input.virtualization_type {
+        scope_5498.string(var_5499);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5500 = writer.prefix("BootMode");
+    if let Some(var_5501) = &input.boot_mode {
+        scope_5500.string(var_5501.as_str());
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19426,15 +19466,15 @@ pub fn serialize_operation_crate_operation_register_instance_event_notification_
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5491 = writer.prefix("DryRun");
-    if let Some(var_5492) = &input.dry_run {
-        scope_5491.boolean(*var_5492);
+    let mut scope_5502 = writer.prefix("DryRun");
+    if let Some(var_5503) = &input.dry_run {
+        scope_5502.boolean(*var_5503);
     }
     #[allow(unused_mut)]
-    let mut scope_5493 = writer.prefix("InstanceTagAttribute");
-    if let Some(var_5494) = &input.instance_tag_attribute {
+    let mut scope_5504 = writer.prefix("InstanceTagAttribute");
+    if let Some(var_5505) = &input.instance_tag_attribute {
         crate::query_ser::serialize_structure_crate_model_register_instance_tag_attribute_request(
-            scope_5493, var_5494,
+            scope_5504, var_5505,
         )?;
     }
     writer.finish();
@@ -19449,46 +19489,6 @@ pub fn serialize_operation_crate_operation_register_transit_gateway_multicast_gr
     let mut writer = aws_smithy_query::QueryWriter::new(
         &mut out,
         "RegisterTransitGatewayMulticastGroupMembers",
-        "2016-11-15",
-    );
-    #[allow(unused_mut)]
-    let mut scope_5495 = writer.prefix("TransitGatewayMulticastDomainId");
-    if let Some(var_5496) = &input.transit_gateway_multicast_domain_id {
-        scope_5495.string(var_5496);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5497 = writer.prefix("GroupIpAddress");
-    if let Some(var_5498) = &input.group_ip_address {
-        scope_5497.string(var_5498);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5499 = writer.prefix("NetworkInterfaceIds");
-    if let Some(var_5500) = &input.network_interface_ids {
-        let mut list_5502 = scope_5499.start_list(true, Some("item"));
-        for item_5501 in var_5500 {
-            #[allow(unused_mut)]
-            let mut entry_5503 = list_5502.entry();
-            entry_5503.string(item_5501);
-        }
-        list_5502.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_5504 = writer.prefix("DryRun");
-    if let Some(var_5505) = &input.dry_run {
-        scope_5504.boolean(*var_5505);
-    }
-    writer.finish();
-    Ok(aws_smithy_http::body::SdkBody::from(out))
-}
-
-pub fn serialize_operation_crate_operation_register_transit_gateway_multicast_group_sources(
-    input: &crate::input::RegisterTransitGatewayMulticastGroupSourcesInput,
-) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
-    let mut out = String::new();
-    #[allow(unused_mut)]
-    let mut writer = aws_smithy_query::QueryWriter::new(
-        &mut out,
-        "RegisterTransitGatewayMulticastGroupSources",
         "2016-11-15",
     );
     #[allow(unused_mut)]
@@ -19521,14 +19521,14 @@ pub fn serialize_operation_crate_operation_register_transit_gateway_multicast_gr
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
-pub fn serialize_operation_crate_operation_reject_transit_gateway_multicast_domain_associations(
-    input: &crate::input::RejectTransitGatewayMulticastDomainAssociationsInput,
+pub fn serialize_operation_crate_operation_register_transit_gateway_multicast_group_sources(
+    input: &crate::input::RegisterTransitGatewayMulticastGroupSourcesInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
     let mut out = String::new();
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(
         &mut out,
-        "RejectTransitGatewayMulticastDomainAssociations",
+        "RegisterTransitGatewayMulticastGroupSources",
         "2016-11-15",
     );
     #[allow(unused_mut)]
@@ -19537,13 +19537,13 @@ pub fn serialize_operation_crate_operation_reject_transit_gateway_multicast_doma
         scope_5517.string(var_5518);
     }
     #[allow(unused_mut)]
-    let mut scope_5519 = writer.prefix("TransitGatewayAttachmentId");
-    if let Some(var_5520) = &input.transit_gateway_attachment_id {
+    let mut scope_5519 = writer.prefix("GroupIpAddress");
+    if let Some(var_5520) = &input.group_ip_address {
         scope_5519.string(var_5520);
     }
     #[allow(unused_mut)]
-    let mut scope_5521 = writer.prefix("SubnetIds");
-    if let Some(var_5522) = &input.subnet_ids {
+    let mut scope_5521 = writer.prefix("NetworkInterfaceIds");
+    if let Some(var_5522) = &input.network_interface_ids {
         let mut list_5524 = scope_5521.start_list(true, Some("item"));
         for item_5523 in var_5522 {
             #[allow(unused_mut)]
@@ -19561,6 +19561,46 @@ pub fn serialize_operation_crate_operation_reject_transit_gateway_multicast_doma
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_reject_transit_gateway_multicast_domain_associations(
+    input: &crate::input::RejectTransitGatewayMulticastDomainAssociationsInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer = aws_smithy_query::QueryWriter::new(
+        &mut out,
+        "RejectTransitGatewayMulticastDomainAssociations",
+        "2016-11-15",
+    );
+    #[allow(unused_mut)]
+    let mut scope_5528 = writer.prefix("TransitGatewayMulticastDomainId");
+    if let Some(var_5529) = &input.transit_gateway_multicast_domain_id {
+        scope_5528.string(var_5529);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5530 = writer.prefix("TransitGatewayAttachmentId");
+    if let Some(var_5531) = &input.transit_gateway_attachment_id {
+        scope_5530.string(var_5531);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5532 = writer.prefix("SubnetIds");
+    if let Some(var_5533) = &input.subnet_ids {
+        let mut list_5535 = scope_5532.start_list(true, Some("item"));
+        for item_5534 in var_5533 {
+            #[allow(unused_mut)]
+            let mut entry_5536 = list_5535.entry();
+            entry_5536.string(item_5534);
+        }
+        list_5535.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_5537 = writer.prefix("DryRun");
+    if let Some(var_5538) = &input.dry_run {
+        scope_5537.boolean(*var_5538);
+    }
+    writer.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_reject_transit_gateway_peering_attachment(
     input: &crate::input::RejectTransitGatewayPeeringAttachmentInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
@@ -19572,14 +19612,14 @@ pub fn serialize_operation_crate_operation_reject_transit_gateway_peering_attach
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5528 = writer.prefix("TransitGatewayAttachmentId");
-    if let Some(var_5529) = &input.transit_gateway_attachment_id {
-        scope_5528.string(var_5529);
+    let mut scope_5539 = writer.prefix("TransitGatewayAttachmentId");
+    if let Some(var_5540) = &input.transit_gateway_attachment_id {
+        scope_5539.string(var_5540);
     }
     #[allow(unused_mut)]
-    let mut scope_5530 = writer.prefix("DryRun");
-    if let Some(var_5531) = &input.dry_run {
-        scope_5530.boolean(*var_5531);
+    let mut scope_5541 = writer.prefix("DryRun");
+    if let Some(var_5542) = &input.dry_run {
+        scope_5541.boolean(*var_5542);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19596,14 +19636,14 @@ pub fn serialize_operation_crate_operation_reject_transit_gateway_vpc_attachment
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5532 = writer.prefix("TransitGatewayAttachmentId");
-    if let Some(var_5533) = &input.transit_gateway_attachment_id {
-        scope_5532.string(var_5533);
+    let mut scope_5543 = writer.prefix("TransitGatewayAttachmentId");
+    if let Some(var_5544) = &input.transit_gateway_attachment_id {
+        scope_5543.string(var_5544);
     }
     #[allow(unused_mut)]
-    let mut scope_5534 = writer.prefix("DryRun");
-    if let Some(var_5535) = &input.dry_run {
-        scope_5534.boolean(*var_5535);
+    let mut scope_5545 = writer.prefix("DryRun");
+    if let Some(var_5546) = &input.dry_run {
+        scope_5545.boolean(*var_5546);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19617,25 +19657,25 @@ pub fn serialize_operation_crate_operation_reject_vpc_endpoint_connections(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RejectVpcEndpointConnections", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5536 = writer.prefix("DryRun");
-    if let Some(var_5537) = &input.dry_run {
-        scope_5536.boolean(*var_5537);
+    let mut scope_5547 = writer.prefix("DryRun");
+    if let Some(var_5548) = &input.dry_run {
+        scope_5547.boolean(*var_5548);
     }
     #[allow(unused_mut)]
-    let mut scope_5538 = writer.prefix("ServiceId");
-    if let Some(var_5539) = &input.service_id {
-        scope_5538.string(var_5539);
+    let mut scope_5549 = writer.prefix("ServiceId");
+    if let Some(var_5550) = &input.service_id {
+        scope_5549.string(var_5550);
     }
     #[allow(unused_mut)]
-    let mut scope_5540 = writer.prefix("VpcEndpointId");
-    if let Some(var_5541) = &input.vpc_endpoint_ids {
-        let mut list_5543 = scope_5540.start_list(true, Some("item"));
-        for item_5542 in var_5541 {
+    let mut scope_5551 = writer.prefix("VpcEndpointId");
+    if let Some(var_5552) = &input.vpc_endpoint_ids {
+        let mut list_5554 = scope_5551.start_list(true, Some("item"));
+        for item_5553 in var_5552 {
             #[allow(unused_mut)]
-            let mut entry_5544 = list_5543.entry();
-            entry_5544.string(item_5542);
+            let mut entry_5555 = list_5554.entry();
+            entry_5555.string(item_5553);
         }
-        list_5543.finish();
+        list_5554.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19649,14 +19689,14 @@ pub fn serialize_operation_crate_operation_reject_vpc_peering_connection(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RejectVpcPeeringConnection", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5545 = writer.prefix("DryRun");
-    if let Some(var_5546) = &input.dry_run {
-        scope_5545.boolean(*var_5546);
+    let mut scope_5556 = writer.prefix("DryRun");
+    if let Some(var_5557) = &input.dry_run {
+        scope_5556.boolean(*var_5557);
     }
     #[allow(unused_mut)]
-    let mut scope_5547 = writer.prefix("VpcPeeringConnectionId");
-    if let Some(var_5548) = &input.vpc_peering_connection_id {
-        scope_5547.string(var_5548);
+    let mut scope_5558 = writer.prefix("VpcPeeringConnectionId");
+    if let Some(var_5559) = &input.vpc_peering_connection_id {
+        scope_5558.string(var_5559);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19669,24 +19709,24 @@ pub fn serialize_operation_crate_operation_release_address(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ReleaseAddress", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5549 = writer.prefix("AllocationId");
-    if let Some(var_5550) = &input.allocation_id {
-        scope_5549.string(var_5550);
+    let mut scope_5560 = writer.prefix("AllocationId");
+    if let Some(var_5561) = &input.allocation_id {
+        scope_5560.string(var_5561);
     }
     #[allow(unused_mut)]
-    let mut scope_5551 = writer.prefix("PublicIp");
-    if let Some(var_5552) = &input.public_ip {
-        scope_5551.string(var_5552);
+    let mut scope_5562 = writer.prefix("PublicIp");
+    if let Some(var_5563) = &input.public_ip {
+        scope_5562.string(var_5563);
     }
     #[allow(unused_mut)]
-    let mut scope_5553 = writer.prefix("NetworkBorderGroup");
-    if let Some(var_5554) = &input.network_border_group {
-        scope_5553.string(var_5554);
+    let mut scope_5564 = writer.prefix("NetworkBorderGroup");
+    if let Some(var_5565) = &input.network_border_group {
+        scope_5564.string(var_5565);
     }
     #[allow(unused_mut)]
-    let mut scope_5555 = writer.prefix("DryRun");
-    if let Some(var_5556) = &input.dry_run {
-        scope_5555.boolean(*var_5556);
+    let mut scope_5566 = writer.prefix("DryRun");
+    if let Some(var_5567) = &input.dry_run {
+        scope_5566.boolean(*var_5567);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19699,15 +19739,15 @@ pub fn serialize_operation_crate_operation_release_hosts(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ReleaseHosts", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5557 = writer.prefix("HostId");
-    if let Some(var_5558) = &input.host_ids {
-        let mut list_5560 = scope_5557.start_list(true, Some("item"));
-        for item_5559 in var_5558 {
+    let mut scope_5568 = writer.prefix("HostId");
+    if let Some(var_5569) = &input.host_ids {
+        let mut list_5571 = scope_5568.start_list(true, Some("item"));
+        for item_5570 in var_5569 {
             #[allow(unused_mut)]
-            let mut entry_5561 = list_5560.entry();
-            entry_5561.string(item_5559);
+            let mut entry_5572 = list_5571.entry();
+            entry_5572.string(item_5570);
         }
-        list_5560.finish();
+        list_5571.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19721,24 +19761,24 @@ pub fn serialize_operation_crate_operation_release_ipam_pool_allocation(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ReleaseIpamPoolAllocation", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5562 = writer.prefix("DryRun");
-    if let Some(var_5563) = &input.dry_run {
-        scope_5562.boolean(*var_5563);
+    let mut scope_5573 = writer.prefix("DryRun");
+    if let Some(var_5574) = &input.dry_run {
+        scope_5573.boolean(*var_5574);
     }
     #[allow(unused_mut)]
-    let mut scope_5564 = writer.prefix("IpamPoolId");
-    if let Some(var_5565) = &input.ipam_pool_id {
-        scope_5564.string(var_5565);
+    let mut scope_5575 = writer.prefix("IpamPoolId");
+    if let Some(var_5576) = &input.ipam_pool_id {
+        scope_5575.string(var_5576);
     }
     #[allow(unused_mut)]
-    let mut scope_5566 = writer.prefix("Cidr");
-    if let Some(var_5567) = &input.cidr {
-        scope_5566.string(var_5567);
+    let mut scope_5577 = writer.prefix("Cidr");
+    if let Some(var_5578) = &input.cidr {
+        scope_5577.string(var_5578);
     }
     #[allow(unused_mut)]
-    let mut scope_5568 = writer.prefix("IpamPoolAllocationId");
-    if let Some(var_5569) = &input.ipam_pool_allocation_id {
-        scope_5568.string(var_5569);
+    let mut scope_5579 = writer.prefix("IpamPoolAllocationId");
+    if let Some(var_5580) = &input.ipam_pool_allocation_id {
+        scope_5579.string(var_5580);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19755,16 +19795,16 @@ pub fn serialize_operation_crate_operation_replace_iam_instance_profile_associat
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5570 = writer.prefix("IamInstanceProfile");
-    if let Some(var_5571) = &input.iam_instance_profile {
+    let mut scope_5581 = writer.prefix("IamInstanceProfile");
+    if let Some(var_5582) = &input.iam_instance_profile {
         crate::query_ser::serialize_structure_crate_model_iam_instance_profile_specification(
-            scope_5570, var_5571,
+            scope_5581, var_5582,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5572 = writer.prefix("AssociationId");
-    if let Some(var_5573) = &input.association_id {
-        scope_5572.string(var_5573);
+    let mut scope_5583 = writer.prefix("AssociationId");
+    if let Some(var_5584) = &input.association_id {
+        scope_5583.string(var_5584);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19778,19 +19818,19 @@ pub fn serialize_operation_crate_operation_replace_network_acl_association(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ReplaceNetworkAclAssociation", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5574 = writer.prefix("AssociationId");
-    if let Some(var_5575) = &input.association_id {
-        scope_5574.string(var_5575);
+    let mut scope_5585 = writer.prefix("AssociationId");
+    if let Some(var_5586) = &input.association_id {
+        scope_5585.string(var_5586);
     }
     #[allow(unused_mut)]
-    let mut scope_5576 = writer.prefix("DryRun");
-    if let Some(var_5577) = &input.dry_run {
-        scope_5576.boolean(*var_5577);
+    let mut scope_5587 = writer.prefix("DryRun");
+    if let Some(var_5588) = &input.dry_run {
+        scope_5587.boolean(*var_5588);
     }
     #[allow(unused_mut)]
-    let mut scope_5578 = writer.prefix("NetworkAclId");
-    if let Some(var_5579) = &input.network_acl_id {
-        scope_5578.string(var_5579);
+    let mut scope_5589 = writer.prefix("NetworkAclId");
+    if let Some(var_5590) = &input.network_acl_id {
+        scope_5589.string(var_5590);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19804,56 +19844,56 @@ pub fn serialize_operation_crate_operation_replace_network_acl_entry(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ReplaceNetworkAclEntry", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5580 = writer.prefix("CidrBlock");
-    if let Some(var_5581) = &input.cidr_block {
-        scope_5580.string(var_5581);
+    let mut scope_5591 = writer.prefix("CidrBlock");
+    if let Some(var_5592) = &input.cidr_block {
+        scope_5591.string(var_5592);
     }
     #[allow(unused_mut)]
-    let mut scope_5582 = writer.prefix("DryRun");
-    if let Some(var_5583) = &input.dry_run {
-        scope_5582.boolean(*var_5583);
+    let mut scope_5593 = writer.prefix("DryRun");
+    if let Some(var_5594) = &input.dry_run {
+        scope_5593.boolean(*var_5594);
     }
     #[allow(unused_mut)]
-    let mut scope_5584 = writer.prefix("Egress");
-    if let Some(var_5585) = &input.egress {
-        scope_5584.boolean(*var_5585);
+    let mut scope_5595 = writer.prefix("Egress");
+    if let Some(var_5596) = &input.egress {
+        scope_5595.boolean(*var_5596);
     }
     #[allow(unused_mut)]
-    let mut scope_5586 = writer.prefix("Icmp");
-    if let Some(var_5587) = &input.icmp_type_code {
-        crate::query_ser::serialize_structure_crate_model_icmp_type_code(scope_5586, var_5587)?;
+    let mut scope_5597 = writer.prefix("Icmp");
+    if let Some(var_5598) = &input.icmp_type_code {
+        crate::query_ser::serialize_structure_crate_model_icmp_type_code(scope_5597, var_5598)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5588 = writer.prefix("Ipv6CidrBlock");
-    if let Some(var_5589) = &input.ipv6_cidr_block {
-        scope_5588.string(var_5589);
+    let mut scope_5599 = writer.prefix("Ipv6CidrBlock");
+    if let Some(var_5600) = &input.ipv6_cidr_block {
+        scope_5599.string(var_5600);
     }
     #[allow(unused_mut)]
-    let mut scope_5590 = writer.prefix("NetworkAclId");
-    if let Some(var_5591) = &input.network_acl_id {
-        scope_5590.string(var_5591);
+    let mut scope_5601 = writer.prefix("NetworkAclId");
+    if let Some(var_5602) = &input.network_acl_id {
+        scope_5601.string(var_5602);
     }
     #[allow(unused_mut)]
-    let mut scope_5592 = writer.prefix("PortRange");
-    if let Some(var_5593) = &input.port_range {
-        crate::query_ser::serialize_structure_crate_model_port_range(scope_5592, var_5593)?;
+    let mut scope_5603 = writer.prefix("PortRange");
+    if let Some(var_5604) = &input.port_range {
+        crate::query_ser::serialize_structure_crate_model_port_range(scope_5603, var_5604)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5594 = writer.prefix("Protocol");
-    if let Some(var_5595) = &input.protocol {
-        scope_5594.string(var_5595);
+    let mut scope_5605 = writer.prefix("Protocol");
+    if let Some(var_5606) = &input.protocol {
+        scope_5605.string(var_5606);
     }
     #[allow(unused_mut)]
-    let mut scope_5596 = writer.prefix("RuleAction");
-    if let Some(var_5597) = &input.rule_action {
-        scope_5596.string(var_5597.as_str());
+    let mut scope_5607 = writer.prefix("RuleAction");
+    if let Some(var_5608) = &input.rule_action {
+        scope_5607.string(var_5608.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5598 = writer.prefix("RuleNumber");
-    if let Some(var_5599) = &input.rule_number {
-        scope_5598.number(
+    let mut scope_5609 = writer.prefix("RuleNumber");
+    if let Some(var_5610) = &input.rule_number {
+        scope_5609.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5599).into()),
+            aws_smithy_types::Number::NegInt((*var_5610).into()),
         );
     }
     writer.finish();
@@ -19867,89 +19907,89 @@ pub fn serialize_operation_crate_operation_replace_route(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ReplaceRoute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5600 = writer.prefix("DestinationCidrBlock");
-    if let Some(var_5601) = &input.destination_cidr_block {
-        scope_5600.string(var_5601);
+    let mut scope_5611 = writer.prefix("DestinationCidrBlock");
+    if let Some(var_5612) = &input.destination_cidr_block {
+        scope_5611.string(var_5612);
     }
     #[allow(unused_mut)]
-    let mut scope_5602 = writer.prefix("DestinationIpv6CidrBlock");
-    if let Some(var_5603) = &input.destination_ipv6_cidr_block {
-        scope_5602.string(var_5603);
+    let mut scope_5613 = writer.prefix("DestinationIpv6CidrBlock");
+    if let Some(var_5614) = &input.destination_ipv6_cidr_block {
+        scope_5613.string(var_5614);
     }
     #[allow(unused_mut)]
-    let mut scope_5604 = writer.prefix("DestinationPrefixListId");
-    if let Some(var_5605) = &input.destination_prefix_list_id {
-        scope_5604.string(var_5605);
+    let mut scope_5615 = writer.prefix("DestinationPrefixListId");
+    if let Some(var_5616) = &input.destination_prefix_list_id {
+        scope_5615.string(var_5616);
     }
     #[allow(unused_mut)]
-    let mut scope_5606 = writer.prefix("DryRun");
-    if let Some(var_5607) = &input.dry_run {
-        scope_5606.boolean(*var_5607);
+    let mut scope_5617 = writer.prefix("DryRun");
+    if let Some(var_5618) = &input.dry_run {
+        scope_5617.boolean(*var_5618);
     }
     #[allow(unused_mut)]
-    let mut scope_5608 = writer.prefix("VpcEndpointId");
-    if let Some(var_5609) = &input.vpc_endpoint_id {
-        scope_5608.string(var_5609);
+    let mut scope_5619 = writer.prefix("VpcEndpointId");
+    if let Some(var_5620) = &input.vpc_endpoint_id {
+        scope_5619.string(var_5620);
     }
     #[allow(unused_mut)]
-    let mut scope_5610 = writer.prefix("EgressOnlyInternetGatewayId");
-    if let Some(var_5611) = &input.egress_only_internet_gateway_id {
-        scope_5610.string(var_5611);
+    let mut scope_5621 = writer.prefix("EgressOnlyInternetGatewayId");
+    if let Some(var_5622) = &input.egress_only_internet_gateway_id {
+        scope_5621.string(var_5622);
     }
     #[allow(unused_mut)]
-    let mut scope_5612 = writer.prefix("GatewayId");
-    if let Some(var_5613) = &input.gateway_id {
-        scope_5612.string(var_5613);
+    let mut scope_5623 = writer.prefix("GatewayId");
+    if let Some(var_5624) = &input.gateway_id {
+        scope_5623.string(var_5624);
     }
     #[allow(unused_mut)]
-    let mut scope_5614 = writer.prefix("InstanceId");
-    if let Some(var_5615) = &input.instance_id {
-        scope_5614.string(var_5615);
+    let mut scope_5625 = writer.prefix("InstanceId");
+    if let Some(var_5626) = &input.instance_id {
+        scope_5625.string(var_5626);
     }
     #[allow(unused_mut)]
-    let mut scope_5616 = writer.prefix("LocalTarget");
-    if let Some(var_5617) = &input.local_target {
-        scope_5616.boolean(*var_5617);
+    let mut scope_5627 = writer.prefix("LocalTarget");
+    if let Some(var_5628) = &input.local_target {
+        scope_5627.boolean(*var_5628);
     }
     #[allow(unused_mut)]
-    let mut scope_5618 = writer.prefix("NatGatewayId");
-    if let Some(var_5619) = &input.nat_gateway_id {
-        scope_5618.string(var_5619);
+    let mut scope_5629 = writer.prefix("NatGatewayId");
+    if let Some(var_5630) = &input.nat_gateway_id {
+        scope_5629.string(var_5630);
     }
     #[allow(unused_mut)]
-    let mut scope_5620 = writer.prefix("TransitGatewayId");
-    if let Some(var_5621) = &input.transit_gateway_id {
-        scope_5620.string(var_5621);
+    let mut scope_5631 = writer.prefix("TransitGatewayId");
+    if let Some(var_5632) = &input.transit_gateway_id {
+        scope_5631.string(var_5632);
     }
     #[allow(unused_mut)]
-    let mut scope_5622 = writer.prefix("LocalGatewayId");
-    if let Some(var_5623) = &input.local_gateway_id {
-        scope_5622.string(var_5623);
+    let mut scope_5633 = writer.prefix("LocalGatewayId");
+    if let Some(var_5634) = &input.local_gateway_id {
+        scope_5633.string(var_5634);
     }
     #[allow(unused_mut)]
-    let mut scope_5624 = writer.prefix("CarrierGatewayId");
-    if let Some(var_5625) = &input.carrier_gateway_id {
-        scope_5624.string(var_5625);
+    let mut scope_5635 = writer.prefix("CarrierGatewayId");
+    if let Some(var_5636) = &input.carrier_gateway_id {
+        scope_5635.string(var_5636);
     }
     #[allow(unused_mut)]
-    let mut scope_5626 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_5627) = &input.network_interface_id {
-        scope_5626.string(var_5627);
+    let mut scope_5637 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_5638) = &input.network_interface_id {
+        scope_5637.string(var_5638);
     }
     #[allow(unused_mut)]
-    let mut scope_5628 = writer.prefix("RouteTableId");
-    if let Some(var_5629) = &input.route_table_id {
-        scope_5628.string(var_5629);
+    let mut scope_5639 = writer.prefix("RouteTableId");
+    if let Some(var_5640) = &input.route_table_id {
+        scope_5639.string(var_5640);
     }
     #[allow(unused_mut)]
-    let mut scope_5630 = writer.prefix("VpcPeeringConnectionId");
-    if let Some(var_5631) = &input.vpc_peering_connection_id {
-        scope_5630.string(var_5631);
+    let mut scope_5641 = writer.prefix("VpcPeeringConnectionId");
+    if let Some(var_5642) = &input.vpc_peering_connection_id {
+        scope_5641.string(var_5642);
     }
     #[allow(unused_mut)]
-    let mut scope_5632 = writer.prefix("CoreNetworkArn");
-    if let Some(var_5633) = &input.core_network_arn {
-        scope_5632.string(var_5633);
+    let mut scope_5643 = writer.prefix("CoreNetworkArn");
+    if let Some(var_5644) = &input.core_network_arn {
+        scope_5643.string(var_5644);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19963,19 +20003,19 @@ pub fn serialize_operation_crate_operation_replace_route_table_association(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ReplaceRouteTableAssociation", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5634 = writer.prefix("AssociationId");
-    if let Some(var_5635) = &input.association_id {
-        scope_5634.string(var_5635);
+    let mut scope_5645 = writer.prefix("AssociationId");
+    if let Some(var_5646) = &input.association_id {
+        scope_5645.string(var_5646);
     }
     #[allow(unused_mut)]
-    let mut scope_5636 = writer.prefix("DryRun");
-    if let Some(var_5637) = &input.dry_run {
-        scope_5636.boolean(*var_5637);
+    let mut scope_5647 = writer.prefix("DryRun");
+    if let Some(var_5648) = &input.dry_run {
+        scope_5647.boolean(*var_5648);
     }
     #[allow(unused_mut)]
-    let mut scope_5638 = writer.prefix("RouteTableId");
-    if let Some(var_5639) = &input.route_table_id {
-        scope_5638.string(var_5639);
+    let mut scope_5649 = writer.prefix("RouteTableId");
+    if let Some(var_5650) = &input.route_table_id {
+        scope_5649.string(var_5650);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -19989,29 +20029,29 @@ pub fn serialize_operation_crate_operation_replace_transit_gateway_route(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ReplaceTransitGatewayRoute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5640 = writer.prefix("DestinationCidrBlock");
-    if let Some(var_5641) = &input.destination_cidr_block {
-        scope_5640.string(var_5641);
+    let mut scope_5651 = writer.prefix("DestinationCidrBlock");
+    if let Some(var_5652) = &input.destination_cidr_block {
+        scope_5651.string(var_5652);
     }
     #[allow(unused_mut)]
-    let mut scope_5642 = writer.prefix("TransitGatewayRouteTableId");
-    if let Some(var_5643) = &input.transit_gateway_route_table_id {
-        scope_5642.string(var_5643);
+    let mut scope_5653 = writer.prefix("TransitGatewayRouteTableId");
+    if let Some(var_5654) = &input.transit_gateway_route_table_id {
+        scope_5653.string(var_5654);
     }
     #[allow(unused_mut)]
-    let mut scope_5644 = writer.prefix("TransitGatewayAttachmentId");
-    if let Some(var_5645) = &input.transit_gateway_attachment_id {
-        scope_5644.string(var_5645);
+    let mut scope_5655 = writer.prefix("TransitGatewayAttachmentId");
+    if let Some(var_5656) = &input.transit_gateway_attachment_id {
+        scope_5655.string(var_5656);
     }
     #[allow(unused_mut)]
-    let mut scope_5646 = writer.prefix("Blackhole");
-    if let Some(var_5647) = &input.blackhole {
-        scope_5646.boolean(*var_5647);
+    let mut scope_5657 = writer.prefix("Blackhole");
+    if let Some(var_5658) = &input.blackhole {
+        scope_5657.boolean(*var_5658);
     }
     #[allow(unused_mut)]
-    let mut scope_5648 = writer.prefix("DryRun");
-    if let Some(var_5649) = &input.dry_run {
-        scope_5648.boolean(*var_5649);
+    let mut scope_5659 = writer.prefix("DryRun");
+    if let Some(var_5660) = &input.dry_run {
+        scope_5659.boolean(*var_5660);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20025,51 +20065,51 @@ pub fn serialize_operation_crate_operation_report_instance_status(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ReportInstanceStatus", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5650 = writer.prefix("Description");
-    if let Some(var_5651) = &input.description {
-        scope_5650.string(var_5651);
+    let mut scope_5661 = writer.prefix("Description");
+    if let Some(var_5662) = &input.description {
+        scope_5661.string(var_5662);
     }
     #[allow(unused_mut)]
-    let mut scope_5652 = writer.prefix("DryRun");
-    if let Some(var_5653) = &input.dry_run {
-        scope_5652.boolean(*var_5653);
+    let mut scope_5663 = writer.prefix("DryRun");
+    if let Some(var_5664) = &input.dry_run {
+        scope_5663.boolean(*var_5664);
     }
     #[allow(unused_mut)]
-    let mut scope_5654 = writer.prefix("EndTime");
-    if let Some(var_5655) = &input.end_time {
-        scope_5654.date_time(var_5655, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_5665 = writer.prefix("EndTime");
+    if let Some(var_5666) = &input.end_time {
+        scope_5665.date_time(var_5666, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5656 = writer.prefix("InstanceId");
-    if let Some(var_5657) = &input.instances {
-        let mut list_5659 = scope_5656.start_list(true, Some("InstanceId"));
-        for item_5658 in var_5657 {
+    let mut scope_5667 = writer.prefix("InstanceId");
+    if let Some(var_5668) = &input.instances {
+        let mut list_5670 = scope_5667.start_list(true, Some("InstanceId"));
+        for item_5669 in var_5668 {
             #[allow(unused_mut)]
-            let mut entry_5660 = list_5659.entry();
-            entry_5660.string(item_5658);
+            let mut entry_5671 = list_5670.entry();
+            entry_5671.string(item_5669);
         }
-        list_5659.finish();
+        list_5670.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5661 = writer.prefix("ReasonCode");
-    if let Some(var_5662) = &input.reason_codes {
-        let mut list_5664 = scope_5661.start_list(true, Some("item"));
-        for item_5663 in var_5662 {
+    let mut scope_5672 = writer.prefix("ReasonCode");
+    if let Some(var_5673) = &input.reason_codes {
+        let mut list_5675 = scope_5672.start_list(true, Some("item"));
+        for item_5674 in var_5673 {
             #[allow(unused_mut)]
-            let mut entry_5665 = list_5664.entry();
-            entry_5665.string(item_5663.as_str());
+            let mut entry_5676 = list_5675.entry();
+            entry_5676.string(item_5674.as_str());
         }
-        list_5664.finish();
+        list_5675.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5666 = writer.prefix("StartTime");
-    if let Some(var_5667) = &input.start_time {
-        scope_5666.date_time(var_5667, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_5677 = writer.prefix("StartTime");
+    if let Some(var_5678) = &input.start_time {
+        scope_5677.date_time(var_5678, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5668 = writer.prefix("Status");
-    if let Some(var_5669) = &input.status {
-        scope_5668.string(var_5669.as_str());
+    let mut scope_5679 = writer.prefix("Status");
+    if let Some(var_5680) = &input.status {
+        scope_5679.string(var_5680.as_str());
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20082,15 +20122,15 @@ pub fn serialize_operation_crate_operation_request_spot_fleet(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "RequestSpotFleet", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5670 = writer.prefix("DryRun");
-    if let Some(var_5671) = &input.dry_run {
-        scope_5670.boolean(*var_5671);
+    let mut scope_5681 = writer.prefix("DryRun");
+    if let Some(var_5682) = &input.dry_run {
+        scope_5681.boolean(*var_5682);
     }
     #[allow(unused_mut)]
-    let mut scope_5672 = writer.prefix("SpotFleetRequestConfig");
-    if let Some(var_5673) = &input.spot_fleet_request_config {
+    let mut scope_5683 = writer.prefix("SpotFleetRequestConfig");
+    if let Some(var_5684) = &input.spot_fleet_request_config {
         crate::query_ser::serialize_structure_crate_model_spot_fleet_request_config_data(
-            scope_5672, var_5673,
+            scope_5683, var_5684,
         )?;
     }
     writer.finish();
@@ -20105,85 +20145,85 @@ pub fn serialize_operation_crate_operation_request_spot_instances(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RequestSpotInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5674 = writer.prefix("AvailabilityZoneGroup");
-    if let Some(var_5675) = &input.availability_zone_group {
-        scope_5674.string(var_5675);
+    let mut scope_5685 = writer.prefix("AvailabilityZoneGroup");
+    if let Some(var_5686) = &input.availability_zone_group {
+        scope_5685.string(var_5686);
     }
     #[allow(unused_mut)]
-    let mut scope_5676 = writer.prefix("BlockDurationMinutes");
-    if let Some(var_5677) = &input.block_duration_minutes {
-        scope_5676.number(
+    let mut scope_5687 = writer.prefix("BlockDurationMinutes");
+    if let Some(var_5688) = &input.block_duration_minutes {
+        scope_5687.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5677).into()),
+            aws_smithy_types::Number::NegInt((*var_5688).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5678 = writer.prefix("ClientToken");
-    if let Some(var_5679) = &input.client_token {
-        scope_5678.string(var_5679);
+    let mut scope_5689 = writer.prefix("ClientToken");
+    if let Some(var_5690) = &input.client_token {
+        scope_5689.string(var_5690);
     }
     #[allow(unused_mut)]
-    let mut scope_5680 = writer.prefix("DryRun");
-    if let Some(var_5681) = &input.dry_run {
-        scope_5680.boolean(*var_5681);
+    let mut scope_5691 = writer.prefix("DryRun");
+    if let Some(var_5692) = &input.dry_run {
+        scope_5691.boolean(*var_5692);
     }
     #[allow(unused_mut)]
-    let mut scope_5682 = writer.prefix("InstanceCount");
-    if let Some(var_5683) = &input.instance_count {
-        scope_5682.number(
+    let mut scope_5693 = writer.prefix("InstanceCount");
+    if let Some(var_5694) = &input.instance_count {
+        scope_5693.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5683).into()),
+            aws_smithy_types::Number::NegInt((*var_5694).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5684 = writer.prefix("LaunchGroup");
-    if let Some(var_5685) = &input.launch_group {
-        scope_5684.string(var_5685);
+    let mut scope_5695 = writer.prefix("LaunchGroup");
+    if let Some(var_5696) = &input.launch_group {
+        scope_5695.string(var_5696);
     }
     #[allow(unused_mut)]
-    let mut scope_5686 = writer.prefix("LaunchSpecification");
-    if let Some(var_5687) = &input.launch_specification {
+    let mut scope_5697 = writer.prefix("LaunchSpecification");
+    if let Some(var_5698) = &input.launch_specification {
         crate::query_ser::serialize_structure_crate_model_request_spot_launch_specification(
-            scope_5686, var_5687,
+            scope_5697, var_5698,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5688 = writer.prefix("SpotPrice");
-    if let Some(var_5689) = &input.spot_price {
-        scope_5688.string(var_5689);
+    let mut scope_5699 = writer.prefix("SpotPrice");
+    if let Some(var_5700) = &input.spot_price {
+        scope_5699.string(var_5700);
     }
     #[allow(unused_mut)]
-    let mut scope_5690 = writer.prefix("Type");
-    if let Some(var_5691) = &input.r#type {
-        scope_5690.string(var_5691.as_str());
+    let mut scope_5701 = writer.prefix("Type");
+    if let Some(var_5702) = &input.r#type {
+        scope_5701.string(var_5702.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5692 = writer.prefix("ValidFrom");
-    if let Some(var_5693) = &input.valid_from {
-        scope_5692.date_time(var_5693, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_5703 = writer.prefix("ValidFrom");
+    if let Some(var_5704) = &input.valid_from {
+        scope_5703.date_time(var_5704, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5694 = writer.prefix("ValidUntil");
-    if let Some(var_5695) = &input.valid_until {
-        scope_5694.date_time(var_5695, aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_5705 = writer.prefix("ValidUntil");
+    if let Some(var_5706) = &input.valid_until {
+        scope_5705.date_time(var_5706, aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5696 = writer.prefix("TagSpecification");
-    if let Some(var_5697) = &input.tag_specifications {
-        let mut list_5699 = scope_5696.start_list(true, Some("item"));
-        for item_5698 in var_5697 {
+    let mut scope_5707 = writer.prefix("TagSpecification");
+    if let Some(var_5708) = &input.tag_specifications {
+        let mut list_5710 = scope_5707.start_list(true, Some("item"));
+        for item_5709 in var_5708 {
             #[allow(unused_mut)]
-            let mut entry_5700 = list_5699.entry();
+            let mut entry_5711 = list_5710.entry();
             crate::query_ser::serialize_structure_crate_model_tag_specification(
-                entry_5700, item_5698,
+                entry_5711, item_5709,
             )?;
         }
-        list_5699.finish();
+        list_5710.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5701 = writer.prefix("InstanceInterruptionBehavior");
-    if let Some(var_5702) = &input.instance_interruption_behavior {
-        scope_5701.string(var_5702.as_str());
+    let mut scope_5712 = writer.prefix("InstanceInterruptionBehavior");
+    if let Some(var_5713) = &input.instance_interruption_behavior {
+        scope_5712.string(var_5713.as_str());
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20197,19 +20237,19 @@ pub fn serialize_operation_crate_operation_reset_address_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ResetAddressAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5703 = writer.prefix("AllocationId");
-    if let Some(var_5704) = &input.allocation_id {
-        scope_5703.string(var_5704);
+    let mut scope_5714 = writer.prefix("AllocationId");
+    if let Some(var_5715) = &input.allocation_id {
+        scope_5714.string(var_5715);
     }
     #[allow(unused_mut)]
-    let mut scope_5705 = writer.prefix("Attribute");
-    if let Some(var_5706) = &input.attribute {
-        scope_5705.string(var_5706.as_str());
+    let mut scope_5716 = writer.prefix("Attribute");
+    if let Some(var_5717) = &input.attribute {
+        scope_5716.string(var_5717.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5707 = writer.prefix("DryRun");
-    if let Some(var_5708) = &input.dry_run {
-        scope_5707.boolean(*var_5708);
+    let mut scope_5718 = writer.prefix("DryRun");
+    if let Some(var_5719) = &input.dry_run {
+        scope_5718.boolean(*var_5719);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20223,9 +20263,9 @@ pub fn serialize_operation_crate_operation_reset_ebs_default_kms_key_id(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ResetEbsDefaultKmsKeyId", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5709 = writer.prefix("DryRun");
-    if let Some(var_5710) = &input.dry_run {
-        scope_5709.boolean(*var_5710);
+    let mut scope_5720 = writer.prefix("DryRun");
+    if let Some(var_5721) = &input.dry_run {
+        scope_5720.boolean(*var_5721);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20239,19 +20279,19 @@ pub fn serialize_operation_crate_operation_reset_fpga_image_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ResetFpgaImageAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5711 = writer.prefix("DryRun");
-    if let Some(var_5712) = &input.dry_run {
-        scope_5711.boolean(*var_5712);
+    let mut scope_5722 = writer.prefix("DryRun");
+    if let Some(var_5723) = &input.dry_run {
+        scope_5722.boolean(*var_5723);
     }
     #[allow(unused_mut)]
-    let mut scope_5713 = writer.prefix("FpgaImageId");
-    if let Some(var_5714) = &input.fpga_image_id {
-        scope_5713.string(var_5714);
+    let mut scope_5724 = writer.prefix("FpgaImageId");
+    if let Some(var_5725) = &input.fpga_image_id {
+        scope_5724.string(var_5725);
     }
     #[allow(unused_mut)]
-    let mut scope_5715 = writer.prefix("Attribute");
-    if let Some(var_5716) = &input.attribute {
-        scope_5715.string(var_5716.as_str());
+    let mut scope_5726 = writer.prefix("Attribute");
+    if let Some(var_5727) = &input.attribute {
+        scope_5726.string(var_5727.as_str());
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20265,19 +20305,19 @@ pub fn serialize_operation_crate_operation_reset_image_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ResetImageAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5717 = writer.prefix("Attribute");
-    if let Some(var_5718) = &input.attribute {
-        scope_5717.string(var_5718.as_str());
+    let mut scope_5728 = writer.prefix("Attribute");
+    if let Some(var_5729) = &input.attribute {
+        scope_5728.string(var_5729.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5719 = writer.prefix("ImageId");
-    if let Some(var_5720) = &input.image_id {
-        scope_5719.string(var_5720);
+    let mut scope_5730 = writer.prefix("ImageId");
+    if let Some(var_5731) = &input.image_id {
+        scope_5730.string(var_5731);
     }
     #[allow(unused_mut)]
-    let mut scope_5721 = writer.prefix("DryRun");
-    if let Some(var_5722) = &input.dry_run {
-        scope_5721.boolean(*var_5722);
+    let mut scope_5732 = writer.prefix("DryRun");
+    if let Some(var_5733) = &input.dry_run {
+        scope_5732.boolean(*var_5733);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20291,19 +20331,19 @@ pub fn serialize_operation_crate_operation_reset_instance_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ResetInstanceAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5723 = writer.prefix("Attribute");
-    if let Some(var_5724) = &input.attribute {
-        scope_5723.string(var_5724.as_str());
+    let mut scope_5734 = writer.prefix("Attribute");
+    if let Some(var_5735) = &input.attribute {
+        scope_5734.string(var_5735.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5725 = writer.prefix("DryRun");
-    if let Some(var_5726) = &input.dry_run {
-        scope_5725.boolean(*var_5726);
+    let mut scope_5736 = writer.prefix("DryRun");
+    if let Some(var_5737) = &input.dry_run {
+        scope_5736.boolean(*var_5737);
     }
     #[allow(unused_mut)]
-    let mut scope_5727 = writer.prefix("InstanceId");
-    if let Some(var_5728) = &input.instance_id {
-        scope_5727.string(var_5728);
+    let mut scope_5738 = writer.prefix("InstanceId");
+    if let Some(var_5739) = &input.instance_id {
+        scope_5738.string(var_5739);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20320,19 +20360,19 @@ pub fn serialize_operation_crate_operation_reset_network_interface_attribute(
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5729 = writer.prefix("DryRun");
-    if let Some(var_5730) = &input.dry_run {
-        scope_5729.boolean(*var_5730);
+    let mut scope_5740 = writer.prefix("DryRun");
+    if let Some(var_5741) = &input.dry_run {
+        scope_5740.boolean(*var_5741);
     }
     #[allow(unused_mut)]
-    let mut scope_5731 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_5732) = &input.network_interface_id {
-        scope_5731.string(var_5732);
+    let mut scope_5742 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_5743) = &input.network_interface_id {
+        scope_5742.string(var_5743);
     }
     #[allow(unused_mut)]
-    let mut scope_5733 = writer.prefix("SourceDestCheck");
-    if let Some(var_5734) = &input.source_dest_check {
-        scope_5733.string(var_5734);
+    let mut scope_5744 = writer.prefix("SourceDestCheck");
+    if let Some(var_5745) = &input.source_dest_check {
+        scope_5744.string(var_5745);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20346,19 +20386,19 @@ pub fn serialize_operation_crate_operation_reset_snapshot_attribute(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ResetSnapshotAttribute", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5735 = writer.prefix("Attribute");
-    if let Some(var_5736) = &input.attribute {
-        scope_5735.string(var_5736.as_str());
+    let mut scope_5746 = writer.prefix("Attribute");
+    if let Some(var_5747) = &input.attribute {
+        scope_5746.string(var_5747.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5737 = writer.prefix("SnapshotId");
-    if let Some(var_5738) = &input.snapshot_id {
-        scope_5737.string(var_5738);
+    let mut scope_5748 = writer.prefix("SnapshotId");
+    if let Some(var_5749) = &input.snapshot_id {
+        scope_5748.string(var_5749);
     }
     #[allow(unused_mut)]
-    let mut scope_5739 = writer.prefix("DryRun");
-    if let Some(var_5740) = &input.dry_run {
-        scope_5739.boolean(*var_5740);
+    let mut scope_5750 = writer.prefix("DryRun");
+    if let Some(var_5751) = &input.dry_run {
+        scope_5750.boolean(*var_5751);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20372,14 +20412,35 @@ pub fn serialize_operation_crate_operation_restore_address_to_classic(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RestoreAddressToClassic", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5741 = writer.prefix("DryRun");
-    if let Some(var_5742) = &input.dry_run {
-        scope_5741.boolean(*var_5742);
+    let mut scope_5752 = writer.prefix("DryRun");
+    if let Some(var_5753) = &input.dry_run {
+        scope_5752.boolean(*var_5753);
     }
     #[allow(unused_mut)]
-    let mut scope_5743 = writer.prefix("PublicIp");
-    if let Some(var_5744) = &input.public_ip {
-        scope_5743.string(var_5744);
+    let mut scope_5754 = writer.prefix("PublicIp");
+    if let Some(var_5755) = &input.public_ip {
+        scope_5754.string(var_5755);
+    }
+    writer.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_restore_image_from_recycle_bin(
+    input: &crate::input::RestoreImageFromRecycleBinInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer =
+        aws_smithy_query::QueryWriter::new(&mut out, "RestoreImageFromRecycleBin", "2016-11-15");
+    #[allow(unused_mut)]
+    let mut scope_5756 = writer.prefix("ImageId");
+    if let Some(var_5757) = &input.image_id {
+        scope_5756.string(var_5757);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5758 = writer.prefix("DryRun");
+    if let Some(var_5759) = &input.dry_run {
+        scope_5758.boolean(*var_5759);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20396,29 +20457,29 @@ pub fn serialize_operation_crate_operation_restore_managed_prefix_list_version(
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5745 = writer.prefix("DryRun");
-    if let Some(var_5746) = &input.dry_run {
-        scope_5745.boolean(*var_5746);
+    let mut scope_5760 = writer.prefix("DryRun");
+    if let Some(var_5761) = &input.dry_run {
+        scope_5760.boolean(*var_5761);
     }
     #[allow(unused_mut)]
-    let mut scope_5747 = writer.prefix("PrefixListId");
-    if let Some(var_5748) = &input.prefix_list_id {
-        scope_5747.string(var_5748);
+    let mut scope_5762 = writer.prefix("PrefixListId");
+    if let Some(var_5763) = &input.prefix_list_id {
+        scope_5762.string(var_5763);
     }
     #[allow(unused_mut)]
-    let mut scope_5749 = writer.prefix("PreviousVersion");
-    if let Some(var_5750) = &input.previous_version {
-        scope_5749.number(
+    let mut scope_5764 = writer.prefix("PreviousVersion");
+    if let Some(var_5765) = &input.previous_version {
+        scope_5764.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5750).into()),
+            aws_smithy_types::Number::NegInt((*var_5765).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5751 = writer.prefix("CurrentVersion");
-    if let Some(var_5752) = &input.current_version {
-        scope_5751.number(
+    let mut scope_5766 = writer.prefix("CurrentVersion");
+    if let Some(var_5767) = &input.current_version {
+        scope_5766.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5752).into()),
+            aws_smithy_types::Number::NegInt((*var_5767).into()),
         );
     }
     writer.finish();
@@ -20433,14 +20494,14 @@ pub fn serialize_operation_crate_operation_restore_snapshot_from_recycle_bin(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RestoreSnapshotFromRecycleBin", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5753 = writer.prefix("SnapshotId");
-    if let Some(var_5754) = &input.snapshot_id {
-        scope_5753.string(var_5754);
+    let mut scope_5768 = writer.prefix("SnapshotId");
+    if let Some(var_5769) = &input.snapshot_id {
+        scope_5768.string(var_5769);
     }
     #[allow(unused_mut)]
-    let mut scope_5755 = writer.prefix("DryRun");
-    if let Some(var_5756) = &input.dry_run {
-        scope_5755.boolean(*var_5756);
+    let mut scope_5770 = writer.prefix("DryRun");
+    if let Some(var_5771) = &input.dry_run {
+        scope_5770.boolean(*var_5771);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20454,27 +20515,27 @@ pub fn serialize_operation_crate_operation_restore_snapshot_tier(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RestoreSnapshotTier", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5757 = writer.prefix("SnapshotId");
-    if let Some(var_5758) = &input.snapshot_id {
-        scope_5757.string(var_5758);
+    let mut scope_5772 = writer.prefix("SnapshotId");
+    if let Some(var_5773) = &input.snapshot_id {
+        scope_5772.string(var_5773);
     }
     #[allow(unused_mut)]
-    let mut scope_5759 = writer.prefix("TemporaryRestoreDays");
-    if let Some(var_5760) = &input.temporary_restore_days {
-        scope_5759.number(
+    let mut scope_5774 = writer.prefix("TemporaryRestoreDays");
+    if let Some(var_5775) = &input.temporary_restore_days {
+        scope_5774.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5760).into()),
+            aws_smithy_types::Number::NegInt((*var_5775).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5761 = writer.prefix("PermanentRestore");
-    if let Some(var_5762) = &input.permanent_restore {
-        scope_5761.boolean(*var_5762);
+    let mut scope_5776 = writer.prefix("PermanentRestore");
+    if let Some(var_5777) = &input.permanent_restore {
+        scope_5776.boolean(*var_5777);
     }
     #[allow(unused_mut)]
-    let mut scope_5763 = writer.prefix("DryRun");
-    if let Some(var_5764) = &input.dry_run {
-        scope_5763.boolean(*var_5764);
+    let mut scope_5778 = writer.prefix("DryRun");
+    if let Some(var_5779) = &input.dry_run {
+        scope_5778.boolean(*var_5779);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20488,29 +20549,29 @@ pub fn serialize_operation_crate_operation_revoke_client_vpn_ingress(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RevokeClientVpnIngress", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5765 = writer.prefix("ClientVpnEndpointId");
-    if let Some(var_5766) = &input.client_vpn_endpoint_id {
-        scope_5765.string(var_5766);
+    let mut scope_5780 = writer.prefix("ClientVpnEndpointId");
+    if let Some(var_5781) = &input.client_vpn_endpoint_id {
+        scope_5780.string(var_5781);
     }
     #[allow(unused_mut)]
-    let mut scope_5767 = writer.prefix("TargetNetworkCidr");
-    if let Some(var_5768) = &input.target_network_cidr {
-        scope_5767.string(var_5768);
+    let mut scope_5782 = writer.prefix("TargetNetworkCidr");
+    if let Some(var_5783) = &input.target_network_cidr {
+        scope_5782.string(var_5783);
     }
     #[allow(unused_mut)]
-    let mut scope_5769 = writer.prefix("AccessGroupId");
-    if let Some(var_5770) = &input.access_group_id {
-        scope_5769.string(var_5770);
+    let mut scope_5784 = writer.prefix("AccessGroupId");
+    if let Some(var_5785) = &input.access_group_id {
+        scope_5784.string(var_5785);
     }
     #[allow(unused_mut)]
-    let mut scope_5771 = writer.prefix("RevokeAllGroups");
-    if let Some(var_5772) = &input.revoke_all_groups {
-        scope_5771.boolean(*var_5772);
+    let mut scope_5786 = writer.prefix("RevokeAllGroups");
+    if let Some(var_5787) = &input.revoke_all_groups {
+        scope_5786.boolean(*var_5787);
     }
     #[allow(unused_mut)]
-    let mut scope_5773 = writer.prefix("DryRun");
-    if let Some(var_5774) = &input.dry_run {
-        scope_5773.boolean(*var_5774);
+    let mut scope_5788 = writer.prefix("DryRun");
+    if let Some(var_5789) = &input.dry_run {
+        scope_5788.boolean(*var_5789);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20524,72 +20585,72 @@ pub fn serialize_operation_crate_operation_revoke_security_group_egress(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RevokeSecurityGroupEgress", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5775 = writer.prefix("DryRun");
-    if let Some(var_5776) = &input.dry_run {
-        scope_5775.boolean(*var_5776);
+    let mut scope_5790 = writer.prefix("DryRun");
+    if let Some(var_5791) = &input.dry_run {
+        scope_5790.boolean(*var_5791);
     }
     #[allow(unused_mut)]
-    let mut scope_5777 = writer.prefix("GroupId");
-    if let Some(var_5778) = &input.group_id {
-        scope_5777.string(var_5778);
+    let mut scope_5792 = writer.prefix("GroupId");
+    if let Some(var_5793) = &input.group_id {
+        scope_5792.string(var_5793);
     }
     #[allow(unused_mut)]
-    let mut scope_5779 = writer.prefix("IpPermissions");
-    if let Some(var_5780) = &input.ip_permissions {
-        let mut list_5782 = scope_5779.start_list(true, Some("item"));
-        for item_5781 in var_5780 {
+    let mut scope_5794 = writer.prefix("IpPermissions");
+    if let Some(var_5795) = &input.ip_permissions {
+        let mut list_5797 = scope_5794.start_list(true, Some("item"));
+        for item_5796 in var_5795 {
             #[allow(unused_mut)]
-            let mut entry_5783 = list_5782.entry();
-            crate::query_ser::serialize_structure_crate_model_ip_permission(entry_5783, item_5781)?;
+            let mut entry_5798 = list_5797.entry();
+            crate::query_ser::serialize_structure_crate_model_ip_permission(entry_5798, item_5796)?;
         }
-        list_5782.finish();
+        list_5797.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5784 = writer.prefix("SecurityGroupRuleId");
-    if let Some(var_5785) = &input.security_group_rule_ids {
-        let mut list_5787 = scope_5784.start_list(true, Some("item"));
-        for item_5786 in var_5785 {
+    let mut scope_5799 = writer.prefix("SecurityGroupRuleId");
+    if let Some(var_5800) = &input.security_group_rule_ids {
+        let mut list_5802 = scope_5799.start_list(true, Some("item"));
+        for item_5801 in var_5800 {
             #[allow(unused_mut)]
-            let mut entry_5788 = list_5787.entry();
-            entry_5788.string(item_5786);
+            let mut entry_5803 = list_5802.entry();
+            entry_5803.string(item_5801);
         }
-        list_5787.finish();
+        list_5802.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5789 = writer.prefix("CidrIp");
-    if let Some(var_5790) = &input.cidr_ip {
-        scope_5789.string(var_5790);
+    let mut scope_5804 = writer.prefix("CidrIp");
+    if let Some(var_5805) = &input.cidr_ip {
+        scope_5804.string(var_5805);
     }
     #[allow(unused_mut)]
-    let mut scope_5791 = writer.prefix("FromPort");
-    if let Some(var_5792) = &input.from_port {
-        scope_5791.number(
+    let mut scope_5806 = writer.prefix("FromPort");
+    if let Some(var_5807) = &input.from_port {
+        scope_5806.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5792).into()),
+            aws_smithy_types::Number::NegInt((*var_5807).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5793 = writer.prefix("IpProtocol");
-    if let Some(var_5794) = &input.ip_protocol {
-        scope_5793.string(var_5794);
+    let mut scope_5808 = writer.prefix("IpProtocol");
+    if let Some(var_5809) = &input.ip_protocol {
+        scope_5808.string(var_5809);
     }
     #[allow(unused_mut)]
-    let mut scope_5795 = writer.prefix("ToPort");
-    if let Some(var_5796) = &input.to_port {
-        scope_5795.number(
+    let mut scope_5810 = writer.prefix("ToPort");
+    if let Some(var_5811) = &input.to_port {
+        scope_5810.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5796).into()),
+            aws_smithy_types::Number::NegInt((*var_5811).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5797 = writer.prefix("SourceSecurityGroupName");
-    if let Some(var_5798) = &input.source_security_group_name {
-        scope_5797.string(var_5798);
+    let mut scope_5812 = writer.prefix("SourceSecurityGroupName");
+    if let Some(var_5813) = &input.source_security_group_name {
+        scope_5812.string(var_5813);
     }
     #[allow(unused_mut)]
-    let mut scope_5799 = writer.prefix("SourceSecurityGroupOwnerId");
-    if let Some(var_5800) = &input.source_security_group_owner_id {
-        scope_5799.string(var_5800);
+    let mut scope_5814 = writer.prefix("SourceSecurityGroupOwnerId");
+    if let Some(var_5815) = &input.source_security_group_owner_id {
+        scope_5814.string(var_5815);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20603,77 +20664,77 @@ pub fn serialize_operation_crate_operation_revoke_security_group_ingress(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RevokeSecurityGroupIngress", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5801 = writer.prefix("CidrIp");
-    if let Some(var_5802) = &input.cidr_ip {
-        scope_5801.string(var_5802);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5803 = writer.prefix("FromPort");
-    if let Some(var_5804) = &input.from_port {
-        scope_5803.number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5804).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_5805 = writer.prefix("GroupId");
-    if let Some(var_5806) = &input.group_id {
-        scope_5805.string(var_5806);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5807 = writer.prefix("GroupName");
-    if let Some(var_5808) = &input.group_name {
-        scope_5807.string(var_5808);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5809 = writer.prefix("IpPermissions");
-    if let Some(var_5810) = &input.ip_permissions {
-        let mut list_5812 = scope_5809.start_list(true, Some("item"));
-        for item_5811 in var_5810 {
-            #[allow(unused_mut)]
-            let mut entry_5813 = list_5812.entry();
-            crate::query_ser::serialize_structure_crate_model_ip_permission(entry_5813, item_5811)?;
-        }
-        list_5812.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_5814 = writer.prefix("IpProtocol");
-    if let Some(var_5815) = &input.ip_protocol {
-        scope_5814.string(var_5815);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5816 = writer.prefix("SourceSecurityGroupName");
-    if let Some(var_5817) = &input.source_security_group_name {
+    let mut scope_5816 = writer.prefix("CidrIp");
+    if let Some(var_5817) = &input.cidr_ip {
         scope_5816.string(var_5817);
     }
     #[allow(unused_mut)]
-    let mut scope_5818 = writer.prefix("SourceSecurityGroupOwnerId");
-    if let Some(var_5819) = &input.source_security_group_owner_id {
-        scope_5818.string(var_5819);
-    }
-    #[allow(unused_mut)]
-    let mut scope_5820 = writer.prefix("ToPort");
-    if let Some(var_5821) = &input.to_port {
-        scope_5820.number(
+    let mut scope_5818 = writer.prefix("FromPort");
+    if let Some(var_5819) = &input.from_port {
+        scope_5818.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5821).into()),
+            aws_smithy_types::Number::NegInt((*var_5819).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5822 = writer.prefix("DryRun");
-    if let Some(var_5823) = &input.dry_run {
-        scope_5822.boolean(*var_5823);
+    let mut scope_5820 = writer.prefix("GroupId");
+    if let Some(var_5821) = &input.group_id {
+        scope_5820.string(var_5821);
     }
     #[allow(unused_mut)]
-    let mut scope_5824 = writer.prefix("SecurityGroupRuleId");
-    if let Some(var_5825) = &input.security_group_rule_ids {
+    let mut scope_5822 = writer.prefix("GroupName");
+    if let Some(var_5823) = &input.group_name {
+        scope_5822.string(var_5823);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5824 = writer.prefix("IpPermissions");
+    if let Some(var_5825) = &input.ip_permissions {
         let mut list_5827 = scope_5824.start_list(true, Some("item"));
         for item_5826 in var_5825 {
             #[allow(unused_mut)]
             let mut entry_5828 = list_5827.entry();
-            entry_5828.string(item_5826);
+            crate::query_ser::serialize_structure_crate_model_ip_permission(entry_5828, item_5826)?;
         }
         list_5827.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_5829 = writer.prefix("IpProtocol");
+    if let Some(var_5830) = &input.ip_protocol {
+        scope_5829.string(var_5830);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5831 = writer.prefix("SourceSecurityGroupName");
+    if let Some(var_5832) = &input.source_security_group_name {
+        scope_5831.string(var_5832);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5833 = writer.prefix("SourceSecurityGroupOwnerId");
+    if let Some(var_5834) = &input.source_security_group_owner_id {
+        scope_5833.string(var_5834);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5835 = writer.prefix("ToPort");
+    if let Some(var_5836) = &input.to_port {
+        scope_5835.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_5836).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_5837 = writer.prefix("DryRun");
+    if let Some(var_5838) = &input.dry_run {
+        scope_5837.boolean(*var_5838);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5839 = writer.prefix("SecurityGroupRuleId");
+    if let Some(var_5840) = &input.security_group_rule_ids {
+        let mut list_5842 = scope_5839.start_list(true, Some("item"));
+        for item_5841 in var_5840 {
+            #[allow(unused_mut)]
+            let mut entry_5843 = list_5842.entry();
+            entry_5843.string(item_5841);
+        }
+        list_5842.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -20686,290 +20747,290 @@ pub fn serialize_operation_crate_operation_run_instances(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "RunInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5829 = writer.prefix("BlockDeviceMapping");
-    if let Some(var_5830) = &input.block_device_mappings {
-        let mut list_5832 = scope_5829.start_list(true, Some("BlockDeviceMapping"));
-        for item_5831 in var_5830 {
+    let mut scope_5844 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_5845) = &input.block_device_mappings {
+        let mut list_5847 = scope_5844.start_list(true, Some("BlockDeviceMapping"));
+        for item_5846 in var_5845 {
             #[allow(unused_mut)]
-            let mut entry_5833 = list_5832.entry();
+            let mut entry_5848 = list_5847.entry();
             crate::query_ser::serialize_structure_crate_model_block_device_mapping(
-                entry_5833, item_5831,
+                entry_5848, item_5846,
             )?;
         }
-        list_5832.finish();
+        list_5847.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5834 = writer.prefix("ImageId");
-    if let Some(var_5835) = &input.image_id {
-        scope_5834.string(var_5835);
+    let mut scope_5849 = writer.prefix("ImageId");
+    if let Some(var_5850) = &input.image_id {
+        scope_5849.string(var_5850);
     }
     #[allow(unused_mut)]
-    let mut scope_5836 = writer.prefix("InstanceType");
-    if let Some(var_5837) = &input.instance_type {
-        scope_5836.string(var_5837.as_str());
+    let mut scope_5851 = writer.prefix("InstanceType");
+    if let Some(var_5852) = &input.instance_type {
+        scope_5851.string(var_5852.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5838 = writer.prefix("Ipv6AddressCount");
-    if let Some(var_5839) = &input.ipv6_address_count {
-        scope_5838.number(
+    let mut scope_5853 = writer.prefix("Ipv6AddressCount");
+    if let Some(var_5854) = &input.ipv6_address_count {
+        scope_5853.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5839).into()),
+            aws_smithy_types::Number::NegInt((*var_5854).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5840 = writer.prefix("Ipv6Address");
-    if let Some(var_5841) = &input.ipv6_addresses {
-        let mut list_5843 = scope_5840.start_list(true, Some("item"));
-        for item_5842 in var_5841 {
+    let mut scope_5855 = writer.prefix("Ipv6Address");
+    if let Some(var_5856) = &input.ipv6_addresses {
+        let mut list_5858 = scope_5855.start_list(true, Some("item"));
+        for item_5857 in var_5856 {
             #[allow(unused_mut)]
-            let mut entry_5844 = list_5843.entry();
+            let mut entry_5859 = list_5858.entry();
             crate::query_ser::serialize_structure_crate_model_instance_ipv6_address(
-                entry_5844, item_5842,
+                entry_5859, item_5857,
             )?;
         }
-        list_5843.finish();
+        list_5858.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5845 = writer.prefix("KernelId");
-    if let Some(var_5846) = &input.kernel_id {
-        scope_5845.string(var_5846);
+    let mut scope_5860 = writer.prefix("KernelId");
+    if let Some(var_5861) = &input.kernel_id {
+        scope_5860.string(var_5861);
     }
     #[allow(unused_mut)]
-    let mut scope_5847 = writer.prefix("KeyName");
-    if let Some(var_5848) = &input.key_name {
-        scope_5847.string(var_5848);
+    let mut scope_5862 = writer.prefix("KeyName");
+    if let Some(var_5863) = &input.key_name {
+        scope_5862.string(var_5863);
     }
     #[allow(unused_mut)]
-    let mut scope_5849 = writer.prefix("MaxCount");
-    if let Some(var_5850) = &input.max_count {
-        scope_5849.number(
+    let mut scope_5864 = writer.prefix("MaxCount");
+    if let Some(var_5865) = &input.max_count {
+        scope_5864.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5850).into()),
+            aws_smithy_types::Number::NegInt((*var_5865).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5851 = writer.prefix("MinCount");
-    if let Some(var_5852) = &input.min_count {
-        scope_5851.number(
+    let mut scope_5866 = writer.prefix("MinCount");
+    if let Some(var_5867) = &input.min_count {
+        scope_5866.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5852).into()),
+            aws_smithy_types::Number::NegInt((*var_5867).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5853 = writer.prefix("Monitoring");
-    if let Some(var_5854) = &input.monitoring {
+    let mut scope_5868 = writer.prefix("Monitoring");
+    if let Some(var_5869) = &input.monitoring {
         crate::query_ser::serialize_structure_crate_model_run_instances_monitoring_enabled(
-            scope_5853, var_5854,
+            scope_5868, var_5869,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5855 = writer.prefix("Placement");
-    if let Some(var_5856) = &input.placement {
-        crate::query_ser::serialize_structure_crate_model_placement(scope_5855, var_5856)?;
+    let mut scope_5870 = writer.prefix("Placement");
+    if let Some(var_5871) = &input.placement {
+        crate::query_ser::serialize_structure_crate_model_placement(scope_5870, var_5871)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5857 = writer.prefix("RamdiskId");
-    if let Some(var_5858) = &input.ramdisk_id {
-        scope_5857.string(var_5858);
+    let mut scope_5872 = writer.prefix("RamdiskId");
+    if let Some(var_5873) = &input.ramdisk_id {
+        scope_5872.string(var_5873);
     }
     #[allow(unused_mut)]
-    let mut scope_5859 = writer.prefix("SecurityGroupId");
-    if let Some(var_5860) = &input.security_group_ids {
-        let mut list_5862 = scope_5859.start_list(true, Some("SecurityGroupId"));
-        for item_5861 in var_5860 {
+    let mut scope_5874 = writer.prefix("SecurityGroupId");
+    if let Some(var_5875) = &input.security_group_ids {
+        let mut list_5877 = scope_5874.start_list(true, Some("SecurityGroupId"));
+        for item_5876 in var_5875 {
             #[allow(unused_mut)]
-            let mut entry_5863 = list_5862.entry();
-            entry_5863.string(item_5861);
+            let mut entry_5878 = list_5877.entry();
+            entry_5878.string(item_5876);
         }
-        list_5862.finish();
+        list_5877.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5864 = writer.prefix("SecurityGroup");
-    if let Some(var_5865) = &input.security_groups {
-        let mut list_5867 = scope_5864.start_list(true, Some("SecurityGroup"));
-        for item_5866 in var_5865 {
+    let mut scope_5879 = writer.prefix("SecurityGroup");
+    if let Some(var_5880) = &input.security_groups {
+        let mut list_5882 = scope_5879.start_list(true, Some("SecurityGroup"));
+        for item_5881 in var_5880 {
             #[allow(unused_mut)]
-            let mut entry_5868 = list_5867.entry();
-            entry_5868.string(item_5866);
+            let mut entry_5883 = list_5882.entry();
+            entry_5883.string(item_5881);
         }
-        list_5867.finish();
+        list_5882.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5869 = writer.prefix("SubnetId");
-    if let Some(var_5870) = &input.subnet_id {
-        scope_5869.string(var_5870);
+    let mut scope_5884 = writer.prefix("SubnetId");
+    if let Some(var_5885) = &input.subnet_id {
+        scope_5884.string(var_5885);
     }
     #[allow(unused_mut)]
-    let mut scope_5871 = writer.prefix("UserData");
-    if let Some(var_5872) = &input.user_data {
-        scope_5871.string(var_5872);
+    let mut scope_5886 = writer.prefix("UserData");
+    if let Some(var_5887) = &input.user_data {
+        scope_5886.string(var_5887);
     }
     #[allow(unused_mut)]
-    let mut scope_5873 = writer.prefix("AdditionalInfo");
-    if let Some(var_5874) = &input.additional_info {
-        scope_5873.string(var_5874);
+    let mut scope_5888 = writer.prefix("AdditionalInfo");
+    if let Some(var_5889) = &input.additional_info {
+        scope_5888.string(var_5889);
     }
     #[allow(unused_mut)]
-    let mut scope_5875 = writer.prefix("ClientToken");
-    if let Some(var_5876) = &input.client_token {
-        scope_5875.string(var_5876);
+    let mut scope_5890 = writer.prefix("ClientToken");
+    if let Some(var_5891) = &input.client_token {
+        scope_5890.string(var_5891);
     }
     #[allow(unused_mut)]
-    let mut scope_5877 = writer.prefix("DisableApiTermination");
-    if let Some(var_5878) = &input.disable_api_termination {
-        scope_5877.boolean(*var_5878);
+    let mut scope_5892 = writer.prefix("DisableApiTermination");
+    if let Some(var_5893) = &input.disable_api_termination {
+        scope_5892.boolean(*var_5893);
     }
     #[allow(unused_mut)]
-    let mut scope_5879 = writer.prefix("DryRun");
-    if let Some(var_5880) = &input.dry_run {
-        scope_5879.boolean(*var_5880);
+    let mut scope_5894 = writer.prefix("DryRun");
+    if let Some(var_5895) = &input.dry_run {
+        scope_5894.boolean(*var_5895);
     }
     #[allow(unused_mut)]
-    let mut scope_5881 = writer.prefix("EbsOptimized");
-    if let Some(var_5882) = &input.ebs_optimized {
-        scope_5881.boolean(*var_5882);
+    let mut scope_5896 = writer.prefix("EbsOptimized");
+    if let Some(var_5897) = &input.ebs_optimized {
+        scope_5896.boolean(*var_5897);
     }
     #[allow(unused_mut)]
-    let mut scope_5883 = writer.prefix("IamInstanceProfile");
-    if let Some(var_5884) = &input.iam_instance_profile {
+    let mut scope_5898 = writer.prefix("IamInstanceProfile");
+    if let Some(var_5899) = &input.iam_instance_profile {
         crate::query_ser::serialize_structure_crate_model_iam_instance_profile_specification(
-            scope_5883, var_5884,
+            scope_5898, var_5899,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5885 = writer.prefix("InstanceInitiatedShutdownBehavior");
-    if let Some(var_5886) = &input.instance_initiated_shutdown_behavior {
-        scope_5885.string(var_5886.as_str());
+    let mut scope_5900 = writer.prefix("InstanceInitiatedShutdownBehavior");
+    if let Some(var_5901) = &input.instance_initiated_shutdown_behavior {
+        scope_5900.string(var_5901.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5887 = writer.prefix("NetworkInterface");
-    if let Some(var_5888) = &input.network_interfaces {
-        let mut list_5890 = scope_5887.start_list(true, Some("item"));
-        for item_5889 in var_5888 {
+    let mut scope_5902 = writer.prefix("NetworkInterface");
+    if let Some(var_5903) = &input.network_interfaces {
+        let mut list_5905 = scope_5902.start_list(true, Some("item"));
+        for item_5904 in var_5903 {
             #[allow(unused_mut)]
-            let mut entry_5891 = list_5890.entry();
-            crate::query_ser::serialize_structure_crate_model_instance_network_interface_specification(entry_5891, item_5889)?;
+            let mut entry_5906 = list_5905.entry();
+            crate::query_ser::serialize_structure_crate_model_instance_network_interface_specification(entry_5906, item_5904)?;
         }
-        list_5890.finish();
+        list_5905.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5892 = writer.prefix("PrivateIpAddress");
-    if let Some(var_5893) = &input.private_ip_address {
-        scope_5892.string(var_5893);
+    let mut scope_5907 = writer.prefix("PrivateIpAddress");
+    if let Some(var_5908) = &input.private_ip_address {
+        scope_5907.string(var_5908);
     }
     #[allow(unused_mut)]
-    let mut scope_5894 = writer.prefix("ElasticGpuSpecification");
-    if let Some(var_5895) = &input.elastic_gpu_specification {
-        let mut list_5897 = scope_5894.start_list(true, Some("item"));
-        for item_5896 in var_5895 {
+    let mut scope_5909 = writer.prefix("ElasticGpuSpecification");
+    if let Some(var_5910) = &input.elastic_gpu_specification {
+        let mut list_5912 = scope_5909.start_list(true, Some("item"));
+        for item_5911 in var_5910 {
             #[allow(unused_mut)]
-            let mut entry_5898 = list_5897.entry();
+            let mut entry_5913 = list_5912.entry();
             crate::query_ser::serialize_structure_crate_model_elastic_gpu_specification(
-                entry_5898, item_5896,
+                entry_5913, item_5911,
             )?;
         }
-        list_5897.finish();
+        list_5912.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5899 = writer.prefix("ElasticInferenceAccelerator");
-    if let Some(var_5900) = &input.elastic_inference_accelerators {
-        let mut list_5902 = scope_5899.start_list(true, Some("item"));
-        for item_5901 in var_5900 {
+    let mut scope_5914 = writer.prefix("ElasticInferenceAccelerator");
+    if let Some(var_5915) = &input.elastic_inference_accelerators {
+        let mut list_5917 = scope_5914.start_list(true, Some("item"));
+        for item_5916 in var_5915 {
             #[allow(unused_mut)]
-            let mut entry_5903 = list_5902.entry();
+            let mut entry_5918 = list_5917.entry();
             crate::query_ser::serialize_structure_crate_model_elastic_inference_accelerator(
-                entry_5903, item_5901,
+                entry_5918, item_5916,
             )?;
         }
-        list_5902.finish();
+        list_5917.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5904 = writer.prefix("TagSpecification");
-    if let Some(var_5905) = &input.tag_specifications {
-        let mut list_5907 = scope_5904.start_list(true, Some("item"));
-        for item_5906 in var_5905 {
+    let mut scope_5919 = writer.prefix("TagSpecification");
+    if let Some(var_5920) = &input.tag_specifications {
+        let mut list_5922 = scope_5919.start_list(true, Some("item"));
+        for item_5921 in var_5920 {
             #[allow(unused_mut)]
-            let mut entry_5908 = list_5907.entry();
+            let mut entry_5923 = list_5922.entry();
             crate::query_ser::serialize_structure_crate_model_tag_specification(
-                entry_5908, item_5906,
+                entry_5923, item_5921,
             )?;
         }
-        list_5907.finish();
+        list_5922.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5909 = writer.prefix("LaunchTemplate");
-    if let Some(var_5910) = &input.launch_template {
+    let mut scope_5924 = writer.prefix("LaunchTemplate");
+    if let Some(var_5925) = &input.launch_template {
         crate::query_ser::serialize_structure_crate_model_launch_template_specification(
-            scope_5909, var_5910,
+            scope_5924, var_5925,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5911 = writer.prefix("InstanceMarketOptions");
-    if let Some(var_5912) = &input.instance_market_options {
+    let mut scope_5926 = writer.prefix("InstanceMarketOptions");
+    if let Some(var_5927) = &input.instance_market_options {
         crate::query_ser::serialize_structure_crate_model_instance_market_options_request(
-            scope_5911, var_5912,
-        )?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_5913 = writer.prefix("CreditSpecification");
-    if let Some(var_5914) = &input.credit_specification {
-        crate::query_ser::serialize_structure_crate_model_credit_specification_request(
-            scope_5913, var_5914,
-        )?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_5915 = writer.prefix("CpuOptions");
-    if let Some(var_5916) = &input.cpu_options {
-        crate::query_ser::serialize_structure_crate_model_cpu_options_request(
-            scope_5915, var_5916,
-        )?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_5917 = writer.prefix("CapacityReservationSpecification");
-    if let Some(var_5918) = &input.capacity_reservation_specification {
-        crate::query_ser::serialize_structure_crate_model_capacity_reservation_specification(
-            scope_5917, var_5918,
-        )?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_5919 = writer.prefix("HibernationOptions");
-    if let Some(var_5920) = &input.hibernation_options {
-        crate::query_ser::serialize_structure_crate_model_hibernation_options_request(
-            scope_5919, var_5920,
-        )?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_5921 = writer.prefix("LicenseSpecification");
-    if let Some(var_5922) = &input.license_specifications {
-        let mut list_5924 = scope_5921.start_list(true, Some("item"));
-        for item_5923 in var_5922 {
-            #[allow(unused_mut)]
-            let mut entry_5925 = list_5924.entry();
-            crate::query_ser::serialize_structure_crate_model_license_configuration_request(
-                entry_5925, item_5923,
-            )?;
-        }
-        list_5924.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_5926 = writer.prefix("MetadataOptions");
-    if let Some(var_5927) = &input.metadata_options {
-        crate::query_ser::serialize_structure_crate_model_instance_metadata_options_request(
             scope_5926, var_5927,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5928 = writer.prefix("EnclaveOptions");
-    if let Some(var_5929) = &input.enclave_options {
-        crate::query_ser::serialize_structure_crate_model_enclave_options_request(
+    let mut scope_5928 = writer.prefix("CreditSpecification");
+    if let Some(var_5929) = &input.credit_specification {
+        crate::query_ser::serialize_structure_crate_model_credit_specification_request(
             scope_5928, var_5929,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5930 = writer.prefix("PrivateDnsNameOptions");
-    if let Some(var_5931) = &input.private_dns_name_options {
-        crate::query_ser::serialize_structure_crate_model_private_dns_name_options_request(
+    let mut scope_5930 = writer.prefix("CpuOptions");
+    if let Some(var_5931) = &input.cpu_options {
+        crate::query_ser::serialize_structure_crate_model_cpu_options_request(
             scope_5930, var_5931,
+        )?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_5932 = writer.prefix("CapacityReservationSpecification");
+    if let Some(var_5933) = &input.capacity_reservation_specification {
+        crate::query_ser::serialize_structure_crate_model_capacity_reservation_specification(
+            scope_5932, var_5933,
+        )?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_5934 = writer.prefix("HibernationOptions");
+    if let Some(var_5935) = &input.hibernation_options {
+        crate::query_ser::serialize_structure_crate_model_hibernation_options_request(
+            scope_5934, var_5935,
+        )?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_5936 = writer.prefix("LicenseSpecification");
+    if let Some(var_5937) = &input.license_specifications {
+        let mut list_5939 = scope_5936.start_list(true, Some("item"));
+        for item_5938 in var_5937 {
+            #[allow(unused_mut)]
+            let mut entry_5940 = list_5939.entry();
+            crate::query_ser::serialize_structure_crate_model_license_configuration_request(
+                entry_5940, item_5938,
+            )?;
+        }
+        list_5939.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_5941 = writer.prefix("MetadataOptions");
+    if let Some(var_5942) = &input.metadata_options {
+        crate::query_ser::serialize_structure_crate_model_instance_metadata_options_request(
+            scope_5941, var_5942,
+        )?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_5943 = writer.prefix("EnclaveOptions");
+    if let Some(var_5944) = &input.enclave_options {
+        crate::query_ser::serialize_structure_crate_model_enclave_options_request(
+            scope_5943, var_5944,
+        )?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_5945 = writer.prefix("PrivateDnsNameOptions");
+    if let Some(var_5946) = &input.private_dns_name_options {
+        crate::query_ser::serialize_structure_crate_model_private_dns_name_options_request(
+            scope_5945, var_5946,
         )?;
     }
     writer.finish();
@@ -20984,34 +21045,34 @@ pub fn serialize_operation_crate_operation_run_scheduled_instances(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RunScheduledInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5932 = writer.prefix("ClientToken");
-    if let Some(var_5933) = &input.client_token {
-        scope_5932.string(var_5933);
+    let mut scope_5947 = writer.prefix("ClientToken");
+    if let Some(var_5948) = &input.client_token {
+        scope_5947.string(var_5948);
     }
     #[allow(unused_mut)]
-    let mut scope_5934 = writer.prefix("DryRun");
-    if let Some(var_5935) = &input.dry_run {
-        scope_5934.boolean(*var_5935);
+    let mut scope_5949 = writer.prefix("DryRun");
+    if let Some(var_5950) = &input.dry_run {
+        scope_5949.boolean(*var_5950);
     }
     #[allow(unused_mut)]
-    let mut scope_5936 = writer.prefix("InstanceCount");
-    if let Some(var_5937) = &input.instance_count {
-        scope_5936.number(
+    let mut scope_5951 = writer.prefix("InstanceCount");
+    if let Some(var_5952) = &input.instance_count {
+        scope_5951.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5937).into()),
+            aws_smithy_types::Number::NegInt((*var_5952).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5938 = writer.prefix("LaunchSpecification");
-    if let Some(var_5939) = &input.launch_specification {
+    let mut scope_5953 = writer.prefix("LaunchSpecification");
+    if let Some(var_5954) = &input.launch_specification {
         crate::query_ser::serialize_structure_crate_model_scheduled_instances_launch_specification(
-            scope_5938, var_5939,
+            scope_5953, var_5954,
         )?;
     }
     #[allow(unused_mut)]
-    let mut scope_5940 = writer.prefix("ScheduledInstanceId");
-    if let Some(var_5941) = &input.scheduled_instance_id {
-        scope_5940.string(var_5941);
+    let mut scope_5955 = writer.prefix("ScheduledInstanceId");
+    if let Some(var_5956) = &input.scheduled_instance_id {
+        scope_5955.string(var_5956);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21025,38 +21086,38 @@ pub fn serialize_operation_crate_operation_search_local_gateway_routes(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "SearchLocalGatewayRoutes", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5942 = writer.prefix("LocalGatewayRouteTableId");
-    if let Some(var_5943) = &input.local_gateway_route_table_id {
-        scope_5942.string(var_5943);
+    let mut scope_5957 = writer.prefix("LocalGatewayRouteTableId");
+    if let Some(var_5958) = &input.local_gateway_route_table_id {
+        scope_5957.string(var_5958);
     }
     #[allow(unused_mut)]
-    let mut scope_5944 = writer.prefix("Filter");
-    if let Some(var_5945) = &input.filters {
-        let mut list_5947 = scope_5944.start_list(true, Some("Filter"));
-        for item_5946 in var_5945 {
+    let mut scope_5959 = writer.prefix("Filter");
+    if let Some(var_5960) = &input.filters {
+        let mut list_5962 = scope_5959.start_list(true, Some("Filter"));
+        for item_5961 in var_5960 {
             #[allow(unused_mut)]
-            let mut entry_5948 = list_5947.entry();
-            crate::query_ser::serialize_structure_crate_model_filter(entry_5948, item_5946)?;
+            let mut entry_5963 = list_5962.entry();
+            crate::query_ser::serialize_structure_crate_model_filter(entry_5963, item_5961)?;
         }
-        list_5947.finish();
+        list_5962.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5949 = writer.prefix("MaxResults");
-    if let Some(var_5950) = &input.max_results {
-        scope_5949.number(
+    let mut scope_5964 = writer.prefix("MaxResults");
+    if let Some(var_5965) = &input.max_results {
+        scope_5964.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5950).into()),
+            aws_smithy_types::Number::NegInt((*var_5965).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5951 = writer.prefix("NextToken");
-    if let Some(var_5952) = &input.next_token {
-        scope_5951.string(var_5952);
+    let mut scope_5966 = writer.prefix("NextToken");
+    if let Some(var_5967) = &input.next_token {
+        scope_5966.string(var_5967);
     }
     #[allow(unused_mut)]
-    let mut scope_5953 = writer.prefix("DryRun");
-    if let Some(var_5954) = &input.dry_run {
-        scope_5953.boolean(*var_5954);
+    let mut scope_5968 = writer.prefix("DryRun");
+    if let Some(var_5969) = &input.dry_run {
+        scope_5968.boolean(*var_5969);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21073,38 +21134,38 @@ pub fn serialize_operation_crate_operation_search_transit_gateway_multicast_grou
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5955 = writer.prefix("TransitGatewayMulticastDomainId");
-    if let Some(var_5956) = &input.transit_gateway_multicast_domain_id {
-        scope_5955.string(var_5956);
+    let mut scope_5970 = writer.prefix("TransitGatewayMulticastDomainId");
+    if let Some(var_5971) = &input.transit_gateway_multicast_domain_id {
+        scope_5970.string(var_5971);
     }
     #[allow(unused_mut)]
-    let mut scope_5957 = writer.prefix("Filter");
-    if let Some(var_5958) = &input.filters {
-        let mut list_5960 = scope_5957.start_list(true, Some("Filter"));
-        for item_5959 in var_5958 {
+    let mut scope_5972 = writer.prefix("Filter");
+    if let Some(var_5973) = &input.filters {
+        let mut list_5975 = scope_5972.start_list(true, Some("Filter"));
+        for item_5974 in var_5973 {
             #[allow(unused_mut)]
-            let mut entry_5961 = list_5960.entry();
-            crate::query_ser::serialize_structure_crate_model_filter(entry_5961, item_5959)?;
+            let mut entry_5976 = list_5975.entry();
+            crate::query_ser::serialize_structure_crate_model_filter(entry_5976, item_5974)?;
         }
-        list_5960.finish();
+        list_5975.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5962 = writer.prefix("MaxResults");
-    if let Some(var_5963) = &input.max_results {
-        scope_5962.number(
+    let mut scope_5977 = writer.prefix("MaxResults");
+    if let Some(var_5978) = &input.max_results {
+        scope_5977.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5963).into()),
+            aws_smithy_types::Number::NegInt((*var_5978).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5964 = writer.prefix("NextToken");
-    if let Some(var_5965) = &input.next_token {
-        scope_5964.string(var_5965);
+    let mut scope_5979 = writer.prefix("NextToken");
+    if let Some(var_5980) = &input.next_token {
+        scope_5979.string(var_5980);
     }
     #[allow(unused_mut)]
-    let mut scope_5966 = writer.prefix("DryRun");
-    if let Some(var_5967) = &input.dry_run {
-        scope_5966.boolean(*var_5967);
+    let mut scope_5981 = writer.prefix("DryRun");
+    if let Some(var_5982) = &input.dry_run {
+        scope_5981.boolean(*var_5982);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21118,33 +21179,33 @@ pub fn serialize_operation_crate_operation_search_transit_gateway_routes(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "SearchTransitGatewayRoutes", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5968 = writer.prefix("TransitGatewayRouteTableId");
-    if let Some(var_5969) = &input.transit_gateway_route_table_id {
-        scope_5968.string(var_5969);
+    let mut scope_5983 = writer.prefix("TransitGatewayRouteTableId");
+    if let Some(var_5984) = &input.transit_gateway_route_table_id {
+        scope_5983.string(var_5984);
     }
     #[allow(unused_mut)]
-    let mut scope_5970 = writer.prefix("Filter");
-    if let Some(var_5971) = &input.filters {
-        let mut list_5973 = scope_5970.start_list(true, Some("Filter"));
-        for item_5972 in var_5971 {
+    let mut scope_5985 = writer.prefix("Filter");
+    if let Some(var_5986) = &input.filters {
+        let mut list_5988 = scope_5985.start_list(true, Some("Filter"));
+        for item_5987 in var_5986 {
             #[allow(unused_mut)]
-            let mut entry_5974 = list_5973.entry();
-            crate::query_ser::serialize_structure_crate_model_filter(entry_5974, item_5972)?;
+            let mut entry_5989 = list_5988.entry();
+            crate::query_ser::serialize_structure_crate_model_filter(entry_5989, item_5987)?;
         }
-        list_5973.finish();
+        list_5988.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5975 = writer.prefix("MaxResults");
-    if let Some(var_5976) = &input.max_results {
-        scope_5975.number(
+    let mut scope_5990 = writer.prefix("MaxResults");
+    if let Some(var_5991) = &input.max_results {
+        scope_5990.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_5976).into()),
+            aws_smithy_types::Number::NegInt((*var_5991).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5977 = writer.prefix("DryRun");
-    if let Some(var_5978) = &input.dry_run {
-        scope_5977.boolean(*var_5978);
+    let mut scope_5992 = writer.prefix("DryRun");
+    if let Some(var_5993) = &input.dry_run {
+        scope_5992.boolean(*var_5993);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21158,14 +21219,14 @@ pub fn serialize_operation_crate_operation_send_diagnostic_interrupt(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "SendDiagnosticInterrupt", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5979 = writer.prefix("InstanceId");
-    if let Some(var_5980) = &input.instance_id {
-        scope_5979.string(var_5980);
+    let mut scope_5994 = writer.prefix("InstanceId");
+    if let Some(var_5995) = &input.instance_id {
+        scope_5994.string(var_5995);
     }
     #[allow(unused_mut)]
-    let mut scope_5981 = writer.prefix("DryRun");
-    if let Some(var_5982) = &input.dry_run {
-        scope_5981.boolean(*var_5982);
+    let mut scope_5996 = writer.prefix("DryRun");
+    if let Some(var_5997) = &input.dry_run {
+        scope_5996.boolean(*var_5997);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21178,25 +21239,25 @@ pub fn serialize_operation_crate_operation_start_instances(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "StartInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_5983 = writer.prefix("InstanceId");
-    if let Some(var_5984) = &input.instance_ids {
-        let mut list_5986 = scope_5983.start_list(true, Some("InstanceId"));
-        for item_5985 in var_5984 {
+    let mut scope_5998 = writer.prefix("InstanceId");
+    if let Some(var_5999) = &input.instance_ids {
+        let mut list_6001 = scope_5998.start_list(true, Some("InstanceId"));
+        for item_6000 in var_5999 {
             #[allow(unused_mut)]
-            let mut entry_5987 = list_5986.entry();
-            entry_5987.string(item_5985);
+            let mut entry_6002 = list_6001.entry();
+            entry_6002.string(item_6000);
         }
-        list_5986.finish();
+        list_6001.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_5988 = writer.prefix("AdditionalInfo");
-    if let Some(var_5989) = &input.additional_info {
-        scope_5988.string(var_5989);
+    let mut scope_6003 = writer.prefix("AdditionalInfo");
+    if let Some(var_6004) = &input.additional_info {
+        scope_6003.string(var_6004);
     }
     #[allow(unused_mut)]
-    let mut scope_5990 = writer.prefix("DryRun");
-    if let Some(var_5991) = &input.dry_run {
-        scope_5990.boolean(*var_5991);
+    let mut scope_6005 = writer.prefix("DryRun");
+    if let Some(var_6006) = &input.dry_run {
+        scope_6005.boolean(*var_6006);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21213,32 +21274,32 @@ pub fn serialize_operation_crate_operation_start_network_insights_access_scope_a
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_5992 = writer.prefix("NetworkInsightsAccessScopeId");
-    if let Some(var_5993) = &input.network_insights_access_scope_id {
-        scope_5992.string(var_5993);
+    let mut scope_6007 = writer.prefix("NetworkInsightsAccessScopeId");
+    if let Some(var_6008) = &input.network_insights_access_scope_id {
+        scope_6007.string(var_6008);
     }
     #[allow(unused_mut)]
-    let mut scope_5994 = writer.prefix("DryRun");
-    if let Some(var_5995) = &input.dry_run {
-        scope_5994.boolean(*var_5995);
+    let mut scope_6009 = writer.prefix("DryRun");
+    if let Some(var_6010) = &input.dry_run {
+        scope_6009.boolean(*var_6010);
     }
     #[allow(unused_mut)]
-    let mut scope_5996 = writer.prefix("TagSpecification");
-    if let Some(var_5997) = &input.tag_specifications {
-        let mut list_5999 = scope_5996.start_list(true, Some("item"));
-        for item_5998 in var_5997 {
+    let mut scope_6011 = writer.prefix("TagSpecification");
+    if let Some(var_6012) = &input.tag_specifications {
+        let mut list_6014 = scope_6011.start_list(true, Some("item"));
+        for item_6013 in var_6012 {
             #[allow(unused_mut)]
-            let mut entry_6000 = list_5999.entry();
+            let mut entry_6015 = list_6014.entry();
             crate::query_ser::serialize_structure_crate_model_tag_specification(
-                entry_6000, item_5998,
+                entry_6015, item_6013,
             )?;
         }
-        list_5999.finish();
+        list_6014.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6001 = writer.prefix("ClientToken");
-    if let Some(var_6002) = &input.client_token {
-        scope_6001.string(var_6002);
+    let mut scope_6016 = writer.prefix("ClientToken");
+    if let Some(var_6017) = &input.client_token {
+        scope_6016.string(var_6017);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21252,43 +21313,43 @@ pub fn serialize_operation_crate_operation_start_network_insights_analysis(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "StartNetworkInsightsAnalysis", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_6003 = writer.prefix("NetworkInsightsPathId");
-    if let Some(var_6004) = &input.network_insights_path_id {
-        scope_6003.string(var_6004);
+    let mut scope_6018 = writer.prefix("NetworkInsightsPathId");
+    if let Some(var_6019) = &input.network_insights_path_id {
+        scope_6018.string(var_6019);
     }
     #[allow(unused_mut)]
-    let mut scope_6005 = writer.prefix("FilterInArn");
-    if let Some(var_6006) = &input.filter_in_arns {
-        let mut list_6008 = scope_6005.start_list(true, Some("item"));
-        for item_6007 in var_6006 {
+    let mut scope_6020 = writer.prefix("FilterInArn");
+    if let Some(var_6021) = &input.filter_in_arns {
+        let mut list_6023 = scope_6020.start_list(true, Some("item"));
+        for item_6022 in var_6021 {
             #[allow(unused_mut)]
-            let mut entry_6009 = list_6008.entry();
-            entry_6009.string(item_6007);
+            let mut entry_6024 = list_6023.entry();
+            entry_6024.string(item_6022);
         }
-        list_6008.finish();
+        list_6023.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6010 = writer.prefix("DryRun");
-    if let Some(var_6011) = &input.dry_run {
-        scope_6010.boolean(*var_6011);
+    let mut scope_6025 = writer.prefix("DryRun");
+    if let Some(var_6026) = &input.dry_run {
+        scope_6025.boolean(*var_6026);
     }
     #[allow(unused_mut)]
-    let mut scope_6012 = writer.prefix("TagSpecification");
-    if let Some(var_6013) = &input.tag_specifications {
-        let mut list_6015 = scope_6012.start_list(true, Some("item"));
-        for item_6014 in var_6013 {
+    let mut scope_6027 = writer.prefix("TagSpecification");
+    if let Some(var_6028) = &input.tag_specifications {
+        let mut list_6030 = scope_6027.start_list(true, Some("item"));
+        for item_6029 in var_6028 {
             #[allow(unused_mut)]
-            let mut entry_6016 = list_6015.entry();
+            let mut entry_6031 = list_6030.entry();
             crate::query_ser::serialize_structure_crate_model_tag_specification(
-                entry_6016, item_6014,
+                entry_6031, item_6029,
             )?;
         }
-        list_6015.finish();
+        list_6030.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6017 = writer.prefix("ClientToken");
-    if let Some(var_6018) = &input.client_token {
-        scope_6017.string(var_6018);
+    let mut scope_6032 = writer.prefix("ClientToken");
+    if let Some(var_6033) = &input.client_token {
+        scope_6032.string(var_6033);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21305,14 +21366,14 @@ pub fn serialize_operation_crate_operation_start_vpc_endpoint_service_private_dn
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_6019 = writer.prefix("DryRun");
-    if let Some(var_6020) = &input.dry_run {
-        scope_6019.boolean(*var_6020);
+    let mut scope_6034 = writer.prefix("DryRun");
+    if let Some(var_6035) = &input.dry_run {
+        scope_6034.boolean(*var_6035);
     }
     #[allow(unused_mut)]
-    let mut scope_6021 = writer.prefix("ServiceId");
-    if let Some(var_6022) = &input.service_id {
-        scope_6021.string(var_6022);
+    let mut scope_6036 = writer.prefix("ServiceId");
+    if let Some(var_6037) = &input.service_id {
+        scope_6036.string(var_6037);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21325,30 +21386,30 @@ pub fn serialize_operation_crate_operation_stop_instances(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "StopInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_6023 = writer.prefix("InstanceId");
-    if let Some(var_6024) = &input.instance_ids {
-        let mut list_6026 = scope_6023.start_list(true, Some("InstanceId"));
-        for item_6025 in var_6024 {
+    let mut scope_6038 = writer.prefix("InstanceId");
+    if let Some(var_6039) = &input.instance_ids {
+        let mut list_6041 = scope_6038.start_list(true, Some("InstanceId"));
+        for item_6040 in var_6039 {
             #[allow(unused_mut)]
-            let mut entry_6027 = list_6026.entry();
-            entry_6027.string(item_6025);
+            let mut entry_6042 = list_6041.entry();
+            entry_6042.string(item_6040);
         }
-        list_6026.finish();
+        list_6041.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6028 = writer.prefix("Hibernate");
-    if let Some(var_6029) = &input.hibernate {
-        scope_6028.boolean(*var_6029);
+    let mut scope_6043 = writer.prefix("Hibernate");
+    if let Some(var_6044) = &input.hibernate {
+        scope_6043.boolean(*var_6044);
     }
     #[allow(unused_mut)]
-    let mut scope_6030 = writer.prefix("DryRun");
-    if let Some(var_6031) = &input.dry_run {
-        scope_6030.boolean(*var_6031);
+    let mut scope_6045 = writer.prefix("DryRun");
+    if let Some(var_6046) = &input.dry_run {
+        scope_6045.boolean(*var_6046);
     }
     #[allow(unused_mut)]
-    let mut scope_6032 = writer.prefix("Force");
-    if let Some(var_6033) = &input.force {
-        scope_6032.boolean(*var_6033);
+    let mut scope_6047 = writer.prefix("Force");
+    if let Some(var_6048) = &input.force {
+        scope_6047.boolean(*var_6048);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21362,24 +21423,24 @@ pub fn serialize_operation_crate_operation_terminate_client_vpn_connections(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "TerminateClientVpnConnections", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_6034 = writer.prefix("ClientVpnEndpointId");
-    if let Some(var_6035) = &input.client_vpn_endpoint_id {
-        scope_6034.string(var_6035);
+    let mut scope_6049 = writer.prefix("ClientVpnEndpointId");
+    if let Some(var_6050) = &input.client_vpn_endpoint_id {
+        scope_6049.string(var_6050);
     }
     #[allow(unused_mut)]
-    let mut scope_6036 = writer.prefix("ConnectionId");
-    if let Some(var_6037) = &input.connection_id {
-        scope_6036.string(var_6037);
+    let mut scope_6051 = writer.prefix("ConnectionId");
+    if let Some(var_6052) = &input.connection_id {
+        scope_6051.string(var_6052);
     }
     #[allow(unused_mut)]
-    let mut scope_6038 = writer.prefix("Username");
-    if let Some(var_6039) = &input.username {
-        scope_6038.string(var_6039);
+    let mut scope_6053 = writer.prefix("Username");
+    if let Some(var_6054) = &input.username {
+        scope_6053.string(var_6054);
     }
     #[allow(unused_mut)]
-    let mut scope_6040 = writer.prefix("DryRun");
-    if let Some(var_6041) = &input.dry_run {
-        scope_6040.boolean(*var_6041);
+    let mut scope_6055 = writer.prefix("DryRun");
+    if let Some(var_6056) = &input.dry_run {
+        scope_6055.boolean(*var_6056);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21393,20 +21454,20 @@ pub fn serialize_operation_crate_operation_terminate_instances(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "TerminateInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_6042 = writer.prefix("InstanceId");
-    if let Some(var_6043) = &input.instance_ids {
-        let mut list_6045 = scope_6042.start_list(true, Some("InstanceId"));
-        for item_6044 in var_6043 {
+    let mut scope_6057 = writer.prefix("InstanceId");
+    if let Some(var_6058) = &input.instance_ids {
+        let mut list_6060 = scope_6057.start_list(true, Some("InstanceId"));
+        for item_6059 in var_6058 {
             #[allow(unused_mut)]
-            let mut entry_6046 = list_6045.entry();
-            entry_6046.string(item_6044);
+            let mut entry_6061 = list_6060.entry();
+            entry_6061.string(item_6059);
         }
-        list_6045.finish();
+        list_6060.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6047 = writer.prefix("DryRun");
-    if let Some(var_6048) = &input.dry_run {
-        scope_6047.boolean(*var_6048);
+    let mut scope_6062 = writer.prefix("DryRun");
+    if let Some(var_6063) = &input.dry_run {
+        scope_6062.boolean(*var_6063);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21420,31 +21481,31 @@ pub fn serialize_operation_crate_operation_unassign_ipv6_addresses(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "UnassignIpv6Addresses", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_6049 = writer.prefix("Ipv6Addresses");
-    if let Some(var_6050) = &input.ipv6_addresses {
-        let mut list_6052 = scope_6049.start_list(true, Some("item"));
-        for item_6051 in var_6050 {
+    let mut scope_6064 = writer.prefix("Ipv6Addresses");
+    if let Some(var_6065) = &input.ipv6_addresses {
+        let mut list_6067 = scope_6064.start_list(true, Some("item"));
+        for item_6066 in var_6065 {
             #[allow(unused_mut)]
-            let mut entry_6053 = list_6052.entry();
-            entry_6053.string(item_6051);
+            let mut entry_6068 = list_6067.entry();
+            entry_6068.string(item_6066);
         }
-        list_6052.finish();
+        list_6067.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6054 = writer.prefix("Ipv6Prefix");
-    if let Some(var_6055) = &input.ipv6_prefixes {
-        let mut list_6057 = scope_6054.start_list(true, Some("item"));
-        for item_6056 in var_6055 {
+    let mut scope_6069 = writer.prefix("Ipv6Prefix");
+    if let Some(var_6070) = &input.ipv6_prefixes {
+        let mut list_6072 = scope_6069.start_list(true, Some("item"));
+        for item_6071 in var_6070 {
             #[allow(unused_mut)]
-            let mut entry_6058 = list_6057.entry();
-            entry_6058.string(item_6056);
+            let mut entry_6073 = list_6072.entry();
+            entry_6073.string(item_6071);
         }
-        list_6057.finish();
+        list_6072.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6059 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_6060) = &input.network_interface_id {
-        scope_6059.string(var_6060);
+    let mut scope_6074 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_6075) = &input.network_interface_id {
+        scope_6074.string(var_6075);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21458,31 +21519,31 @@ pub fn serialize_operation_crate_operation_unassign_private_ip_addresses(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "UnassignPrivateIpAddresses", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_6061 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_6062) = &input.network_interface_id {
-        scope_6061.string(var_6062);
+    let mut scope_6076 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_6077) = &input.network_interface_id {
+        scope_6076.string(var_6077);
     }
     #[allow(unused_mut)]
-    let mut scope_6063 = writer.prefix("PrivateIpAddress");
-    if let Some(var_6064) = &input.private_ip_addresses {
-        let mut list_6066 = scope_6063.start_list(true, Some("PrivateIpAddress"));
-        for item_6065 in var_6064 {
+    let mut scope_6078 = writer.prefix("PrivateIpAddress");
+    if let Some(var_6079) = &input.private_ip_addresses {
+        let mut list_6081 = scope_6078.start_list(true, Some("PrivateIpAddress"));
+        for item_6080 in var_6079 {
             #[allow(unused_mut)]
-            let mut entry_6067 = list_6066.entry();
-            entry_6067.string(item_6065);
+            let mut entry_6082 = list_6081.entry();
+            entry_6082.string(item_6080);
         }
-        list_6066.finish();
+        list_6081.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6068 = writer.prefix("Ipv4Prefix");
-    if let Some(var_6069) = &input.ipv4_prefixes {
-        let mut list_6071 = scope_6068.start_list(true, Some("item"));
-        for item_6070 in var_6069 {
+    let mut scope_6083 = writer.prefix("Ipv4Prefix");
+    if let Some(var_6084) = &input.ipv4_prefixes {
+        let mut list_6086 = scope_6083.start_list(true, Some("item"));
+        for item_6085 in var_6084 {
             #[allow(unused_mut)]
-            let mut entry_6072 = list_6071.entry();
-            entry_6072.string(item_6070);
+            let mut entry_6087 = list_6086.entry();
+            entry_6087.string(item_6085);
         }
-        list_6071.finish();
+        list_6086.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21496,20 +21557,20 @@ pub fn serialize_operation_crate_operation_unmonitor_instances(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "UnmonitorInstances", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_6073 = writer.prefix("InstanceId");
-    if let Some(var_6074) = &input.instance_ids {
-        let mut list_6076 = scope_6073.start_list(true, Some("InstanceId"));
-        for item_6075 in var_6074 {
+    let mut scope_6088 = writer.prefix("InstanceId");
+    if let Some(var_6089) = &input.instance_ids {
+        let mut list_6091 = scope_6088.start_list(true, Some("InstanceId"));
+        for item_6090 in var_6089 {
             #[allow(unused_mut)]
-            let mut entry_6077 = list_6076.entry();
-            entry_6077.string(item_6075);
+            let mut entry_6092 = list_6091.entry();
+            entry_6092.string(item_6090);
         }
-        list_6076.finish();
+        list_6091.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6078 = writer.prefix("DryRun");
-    if let Some(var_6079) = &input.dry_run {
-        scope_6078.boolean(*var_6079);
+    let mut scope_6093 = writer.prefix("DryRun");
+    if let Some(var_6094) = &input.dry_run {
+        scope_6093.boolean(*var_6094);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21526,43 +21587,43 @@ pub fn serialize_operation_crate_operation_update_security_group_rule_descriptio
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_6080 = writer.prefix("DryRun");
-    if let Some(var_6081) = &input.dry_run {
-        scope_6080.boolean(*var_6081);
+    let mut scope_6095 = writer.prefix("DryRun");
+    if let Some(var_6096) = &input.dry_run {
+        scope_6095.boolean(*var_6096);
     }
     #[allow(unused_mut)]
-    let mut scope_6082 = writer.prefix("GroupId");
-    if let Some(var_6083) = &input.group_id {
-        scope_6082.string(var_6083);
+    let mut scope_6097 = writer.prefix("GroupId");
+    if let Some(var_6098) = &input.group_id {
+        scope_6097.string(var_6098);
     }
     #[allow(unused_mut)]
-    let mut scope_6084 = writer.prefix("GroupName");
-    if let Some(var_6085) = &input.group_name {
-        scope_6084.string(var_6085);
+    let mut scope_6099 = writer.prefix("GroupName");
+    if let Some(var_6100) = &input.group_name {
+        scope_6099.string(var_6100);
     }
     #[allow(unused_mut)]
-    let mut scope_6086 = writer.prefix("IpPermissions");
-    if let Some(var_6087) = &input.ip_permissions {
-        let mut list_6089 = scope_6086.start_list(true, Some("item"));
-        for item_6088 in var_6087 {
+    let mut scope_6101 = writer.prefix("IpPermissions");
+    if let Some(var_6102) = &input.ip_permissions {
+        let mut list_6104 = scope_6101.start_list(true, Some("item"));
+        for item_6103 in var_6102 {
             #[allow(unused_mut)]
-            let mut entry_6090 = list_6089.entry();
-            crate::query_ser::serialize_structure_crate_model_ip_permission(entry_6090, item_6088)?;
+            let mut entry_6105 = list_6104.entry();
+            crate::query_ser::serialize_structure_crate_model_ip_permission(entry_6105, item_6103)?;
         }
-        list_6089.finish();
+        list_6104.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6091 = writer.prefix("SecurityGroupRuleDescription");
-    if let Some(var_6092) = &input.security_group_rule_descriptions {
-        let mut list_6094 = scope_6091.start_list(true, Some("item"));
-        for item_6093 in var_6092 {
+    let mut scope_6106 = writer.prefix("SecurityGroupRuleDescription");
+    if let Some(var_6107) = &input.security_group_rule_descriptions {
+        let mut list_6109 = scope_6106.start_list(true, Some("item"));
+        for item_6108 in var_6107 {
             #[allow(unused_mut)]
-            let mut entry_6095 = list_6094.entry();
+            let mut entry_6110 = list_6109.entry();
             crate::query_ser::serialize_structure_crate_model_security_group_rule_description(
-                entry_6095, item_6093,
+                entry_6110, item_6108,
             )?;
         }
-        list_6094.finish();
+        list_6109.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21579,43 +21640,43 @@ pub fn serialize_operation_crate_operation_update_security_group_rule_descriptio
         "2016-11-15",
     );
     #[allow(unused_mut)]
-    let mut scope_6096 = writer.prefix("DryRun");
-    if let Some(var_6097) = &input.dry_run {
-        scope_6096.boolean(*var_6097);
+    let mut scope_6111 = writer.prefix("DryRun");
+    if let Some(var_6112) = &input.dry_run {
+        scope_6111.boolean(*var_6112);
     }
     #[allow(unused_mut)]
-    let mut scope_6098 = writer.prefix("GroupId");
-    if let Some(var_6099) = &input.group_id {
-        scope_6098.string(var_6099);
+    let mut scope_6113 = writer.prefix("GroupId");
+    if let Some(var_6114) = &input.group_id {
+        scope_6113.string(var_6114);
     }
     #[allow(unused_mut)]
-    let mut scope_6100 = writer.prefix("GroupName");
-    if let Some(var_6101) = &input.group_name {
-        scope_6100.string(var_6101);
+    let mut scope_6115 = writer.prefix("GroupName");
+    if let Some(var_6116) = &input.group_name {
+        scope_6115.string(var_6116);
     }
     #[allow(unused_mut)]
-    let mut scope_6102 = writer.prefix("IpPermissions");
-    if let Some(var_6103) = &input.ip_permissions {
-        let mut list_6105 = scope_6102.start_list(true, Some("item"));
-        for item_6104 in var_6103 {
+    let mut scope_6117 = writer.prefix("IpPermissions");
+    if let Some(var_6118) = &input.ip_permissions {
+        let mut list_6120 = scope_6117.start_list(true, Some("item"));
+        for item_6119 in var_6118 {
             #[allow(unused_mut)]
-            let mut entry_6106 = list_6105.entry();
-            crate::query_ser::serialize_structure_crate_model_ip_permission(entry_6106, item_6104)?;
+            let mut entry_6121 = list_6120.entry();
+            crate::query_ser::serialize_structure_crate_model_ip_permission(entry_6121, item_6119)?;
         }
-        list_6105.finish();
+        list_6120.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6107 = writer.prefix("SecurityGroupRuleDescription");
-    if let Some(var_6108) = &input.security_group_rule_descriptions {
-        let mut list_6110 = scope_6107.start_list(true, Some("item"));
-        for item_6109 in var_6108 {
+    let mut scope_6122 = writer.prefix("SecurityGroupRuleDescription");
+    if let Some(var_6123) = &input.security_group_rule_descriptions {
+        let mut list_6125 = scope_6122.start_list(true, Some("item"));
+        for item_6124 in var_6123 {
             #[allow(unused_mut)]
-            let mut entry_6111 = list_6110.entry();
+            let mut entry_6126 = list_6125.entry();
             crate::query_ser::serialize_structure_crate_model_security_group_rule_description(
-                entry_6111, item_6109,
+                entry_6126, item_6124,
             )?;
         }
-        list_6110.finish();
+        list_6125.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -21629,14 +21690,14 @@ pub fn serialize_operation_crate_operation_withdraw_byoip_cidr(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "WithdrawByoipCidr", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_6112 = writer.prefix("Cidr");
-    if let Some(var_6113) = &input.cidr {
-        scope_6112.string(var_6113);
+    let mut scope_6127 = writer.prefix("Cidr");
+    if let Some(var_6128) = &input.cidr {
+        scope_6127.string(var_6128);
     }
     #[allow(unused_mut)]
-    let mut scope_6114 = writer.prefix("DryRun");
-    if let Some(var_6115) = &input.dry_run {
-        scope_6114.boolean(*var_6115);
+    let mut scope_6129 = writer.prefix("DryRun");
+    if let Some(var_6130) = &input.dry_run {
+        scope_6129.boolean(*var_6130);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

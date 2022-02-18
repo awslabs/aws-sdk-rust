@@ -917,6 +917,15 @@ pub fn deser_operation_crate_operation_resolve_customer(
                             .transpose()?,
                         );
                     }
+                    "CustomerAWSAccountId" => {
+                        builder = builder.set_customer_aws_account_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

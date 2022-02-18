@@ -3582,9 +3582,6 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TerminateSessionErrorKind::DoesNotExistException(inner) => {
-                    Error::DoesNotExistException(inner)
-                }
                 crate::error::TerminateSessionErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }

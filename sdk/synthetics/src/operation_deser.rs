@@ -29,6 +29,24 @@ pub fn parse_create_canary_error(
                 tmp
             }),
         },
+        "RequestEntityTooLargeException" => crate::error::CreateCanaryError {
+            meta: generic,
+            kind: crate::error::CreateCanaryErrorKind::RequestEntityTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::request_entity_too_large_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_request_entity_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCanaryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::CreateCanaryError {
             meta: generic,
             kind: crate::error::CreateCanaryErrorKind::ValidationException({
@@ -1035,6 +1053,24 @@ pub fn parse_update_canary_error(
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCanaryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "RequestEntityTooLargeException" => crate::error::UpdateCanaryError {
+            meta: generic,
+            kind: crate::error::UpdateCanaryErrorKind::RequestEntityTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::request_entity_too_large_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_request_entity_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCanaryError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

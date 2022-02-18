@@ -12,16 +12,16 @@ base64 = "0.13.0"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-kms]
 path = "../../sdk/kms"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-smithy-client]
 features = ["client-hyper", "rustls", "rt-tokio"]
 path = "../../sdk/aws-smithy-client"
-version = "0.36.0"
+version = "0.37.0"
 
 [dependencies.tokio]
 version = "1"

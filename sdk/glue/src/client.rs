@@ -279,7 +279,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CheckSchemaVersionValidity`](crate::client::fluent_builders::CheckSchemaVersionValidity) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_format(DataFormat)`](crate::client::fluent_builders::CheckSchemaVersionValidity::data_format) / [`set_data_format(Option<DataFormat>)`](crate::client::fluent_builders::CheckSchemaVersionValidity::set_data_format): <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`data_format(DataFormat)`](crate::client::fluent_builders::CheckSchemaVersionValidity::data_format) / [`set_data_format(Option<DataFormat>)`](crate::client::fluent_builders::CheckSchemaVersionValidity::set_data_format): <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     ///   - [`schema_definition(impl Into<String>)`](crate::client::fluent_builders::CheckSchemaVersionValidity::schema_definition) / [`set_schema_definition(Option<String>)`](crate::client::fluent_builders::CheckSchemaVersionValidity::set_schema_definition): <p>The definition of the schema that has to be validated.</p>
     /// - On success, responds with [`CheckSchemaVersionValidityOutput`](crate::output::CheckSchemaVersionValidityOutput) with field(s):
     ///   - [`valid(bool)`](crate::output::CheckSchemaVersionValidityOutput::valid): <p>Return true, if the schema is valid and false otherwise.</p>
@@ -499,7 +499,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`registry_id(RegistryId)`](crate::client::fluent_builders::CreateSchema::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::client::fluent_builders::CreateSchema::set_registry_id): <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:   <customer id>    :registry/default-registry:random-5-letter-id   </customer></code>.</p>
     ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_schema_name): <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
-    ///   - [`data_format(DataFormat)`](crate::client::fluent_builders::CreateSchema::data_format) / [`set_data_format(Option<DataFormat>)`](crate::client::fluent_builders::CreateSchema::set_data_format): <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`data_format(DataFormat)`](crate::client::fluent_builders::CreateSchema::data_format) / [`set_data_format(Option<DataFormat>)`](crate::client::fluent_builders::CreateSchema::set_data_format): <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     ///   - [`compatibility(Compatibility)`](crate::client::fluent_builders::CreateSchema::compatibility) / [`set_compatibility(Option<Compatibility>)`](crate::client::fluent_builders::CreateSchema::set_compatibility): <p>The compatibility mode of the schema. The possible values are:</p>  <ul>   <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li>   <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li>   <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li>   <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li>   <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li>   <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li>   <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>   <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>  </ul>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_description): <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSchema::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSchema::set_tags): <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
@@ -510,7 +510,7 @@ impl Client {
     ///   - [`schema_name(Option<String>)`](crate::output::CreateSchemaOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`schema_arn(Option<String>)`](crate::output::CreateSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
     ///   - [`description(Option<String>)`](crate::output::CreateSchemaOutput::description): <p>A description of the schema if specified when created.</p>
-    ///   - [`data_format(Option<DataFormat>)`](crate::output::CreateSchemaOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`data_format(Option<DataFormat>)`](crate::output::CreateSchemaOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     ///   - [`compatibility(Option<Compatibility>)`](crate::output::CreateSchemaOutput::compatibility): <p>The schema compatibility mode.</p>
     ///   - [`schema_checkpoint(i64)`](crate::output::CreateSchemaOutput::schema_checkpoint): <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
     ///   - [`latest_schema_version(i64)`](crate::output::CreateSchemaOutput::latest_schema_version): <p>The latest version of the schema associated with the returned schema definition.</p>
@@ -1365,7 +1365,7 @@ impl Client {
     ///   - [`schema_name(Option<String>)`](crate::output::GetSchemaOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`schema_arn(Option<String>)`](crate::output::GetSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
     ///   - [`description(Option<String>)`](crate::output::GetSchemaOutput::description): <p>A description of schema if specified when created</p>
-    ///   - [`data_format(Option<DataFormat>)`](crate::output::GetSchemaOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`data_format(Option<DataFormat>)`](crate::output::GetSchemaOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     ///   - [`compatibility(Option<Compatibility>)`](crate::output::GetSchemaOutput::compatibility): <p>The compatibility mode of the schema.</p>
     ///   - [`schema_checkpoint(i64)`](crate::output::GetSchemaOutput::schema_checkpoint): <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
     ///   - [`latest_schema_version(i64)`](crate::output::GetSchemaOutput::latest_schema_version): <p>The latest version of the schema associated with the returned schema definition.</p>
@@ -1385,7 +1385,7 @@ impl Client {
     /// - On success, responds with [`GetSchemaByDefinitionOutput`](crate::output::GetSchemaByDefinitionOutput) with field(s):
     ///   - [`schema_version_id(Option<String>)`](crate::output::GetSchemaByDefinitionOutput::schema_version_id): <p>The schema ID of the schema version.</p>
     ///   - [`schema_arn(Option<String>)`](crate::output::GetSchemaByDefinitionOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
-    ///   - [`data_format(Option<DataFormat>)`](crate::output::GetSchemaByDefinitionOutput::data_format): <p>The data format of the schema definition. Currently only <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`data_format(Option<DataFormat>)`](crate::output::GetSchemaByDefinitionOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     ///   - [`status(Option<SchemaVersionStatus>)`](crate::output::GetSchemaByDefinitionOutput::status): <p>The status of the schema version.</p>
     ///   - [`created_time(Option<String>)`](crate::output::GetSchemaByDefinitionOutput::created_time): <p>The date and time the schema was created.</p>
     /// - On failure, responds with [`SdkError<GetSchemaByDefinitionError>`](crate::error::GetSchemaByDefinitionError)
@@ -1401,7 +1401,7 @@ impl Client {
     /// - On success, responds with [`GetSchemaVersionOutput`](crate::output::GetSchemaVersionOutput) with field(s):
     ///   - [`schema_version_id(Option<String>)`](crate::output::GetSchemaVersionOutput::schema_version_id): <p>The <code>SchemaVersionId</code> of the schema version.</p>
     ///   - [`schema_definition(Option<String>)`](crate::output::GetSchemaVersionOutput::schema_definition): <p>The schema definition for the schema ID.</p>
-    ///   - [`data_format(Option<DataFormat>)`](crate::output::GetSchemaVersionOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`data_format(Option<DataFormat>)`](crate::output::GetSchemaVersionOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     ///   - [`schema_arn(Option<String>)`](crate::output::GetSchemaVersionOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
     ///   - [`version_number(i64)`](crate::output::GetSchemaVersionOutput::version_number): <p>The version number of the schema.</p>
     ///   - [`status(Option<SchemaVersionStatus>)`](crate::output::GetSchemaVersionOutput::status): <p>The status of the schema version. </p>
@@ -2370,6 +2370,7 @@ impl Client {
     ///   - [`table_input(TableInput)`](crate::client::fluent_builders::UpdateTable::table_input) / [`set_table_input(Option<TableInput>)`](crate::client::fluent_builders::UpdateTable::set_table_input): <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     ///   - [`skip_archive(bool)`](crate::client::fluent_builders::UpdateTable::skip_archive) / [`set_skip_archive(Option<bool>)`](crate::client::fluent_builders::UpdateTable::set_skip_archive): <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
     ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTable::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::UpdateTable::set_transaction_id): <p>The transaction ID at which to update the table contents. </p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTable::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::UpdateTable::set_version_id): (undocumented)
     /// - On success, responds with [`UpdateTableOutput`](crate::output::UpdateTableOutput)
 
     /// - On failure, responds with [`SdkError<UpdateTableError>`](crate::error::UpdateTableError)
@@ -3623,12 +3624,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
             self.inner = self.inner.data_format(input);
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DataFormat>,
@@ -5439,12 +5440,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schema_name(input);
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
             self.inner = self.inner.data_format(input);
             self
         }
-        /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+        /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DataFormat>,
@@ -17127,6 +17128,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_transaction_id(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_id(input);
             self
         }
     }

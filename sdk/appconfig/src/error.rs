@@ -3993,7 +3993,7 @@ pub struct BadRequestException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub reason: std::option::Option<crate::model::BadRequestReason>,
-    /// <p>Detailed information about the input that failed to satisfy the constraints specified by an AWS service.</p>
+    /// <p>Detailed information about the input that failed to satisfy the constraints specified by a call.</p>
     pub details: std::option::Option<crate::model::BadRequestDetails>,
 }
 impl BadRequestException {
@@ -4001,7 +4001,7 @@ impl BadRequestException {
     pub fn reason(&self) -> std::option::Option<&crate::model::BadRequestReason> {
         self.reason.as_ref()
     }
-    /// <p>Detailed information about the input that failed to satisfy the constraints specified by an AWS service.</p>
+    /// <p>Detailed information about the input that failed to satisfy the constraints specified by a call.</p>
     pub fn details(&self) -> std::option::Option<&crate::model::BadRequestDetails> {
         self.details.as_ref()
     }
@@ -4065,12 +4065,12 @@ pub mod bad_request_exception {
             self.reason = input;
             self
         }
-        /// <p>Detailed information about the input that failed to satisfy the constraints specified by an AWS service.</p>
+        /// <p>Detailed information about the input that failed to satisfy the constraints specified by a call.</p>
         pub fn details(mut self, input: crate::model::BadRequestDetails) -> Self {
             self.details = Some(input);
             self
         }
-        /// <p>Detailed information about the input that failed to satisfy the constraints specified by an AWS service.</p>
+        /// <p>Detailed information about the input that failed to satisfy the constraints specified by a call.</p>
         pub fn set_details(
             mut self,
             input: std::option::Option<crate::model::BadRequestDetails>,

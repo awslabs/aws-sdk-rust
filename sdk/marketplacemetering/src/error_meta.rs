@@ -7,13 +7,13 @@ pub enum Error {
     CustomerNotEntitledException(crate::error::CustomerNotEntitledException),
     /// <p>The API is disabled in the Region.</p>
     DisabledApiException(crate::error::DisabledApiException),
-    /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {usageDimension, timestamp} with a different usageQuantity.</p>
+    /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a different <code>usageQuantity</code>.</p>
     DuplicateRequestException(crate::error::DuplicateRequestException),
     /// <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
     ExpiredTokenException(crate::error::ExpiredTokenException),
     /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
-    /// <p>You have metered usage for a CustomerIdentifier that does not exist.</p>
+    /// <p>You have metered usage for a <code>CustomerIdentifier</code> that does not exist.</p>
     InvalidCustomerIdentifierException(crate::error::InvalidCustomerIdentifierException),
     /// <p>The endpoint being called is in a AWS Region different from your EC2 instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of the resource must match.</p>
     InvalidEndpointRegionException(crate::error::InvalidEndpointRegionException),
@@ -21,7 +21,7 @@ pub enum Error {
     InvalidProductCodeException(crate::error::InvalidProductCodeException),
     /// <p>Public Key version is invalid.</p>
     InvalidPublicKeyVersionException(crate::error::InvalidPublicKeyVersionException),
-    /// <p>RegisterUsage must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling RegisterUsage.</p>
+    /// <p> <code>RegisterUsage</code> must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling <code>RegisterUsage</code>.</p>
     InvalidRegionException(crate::error::InvalidRegionException),
     /// <p>The tag is invalid, or the number of tags is greater than 5.</p>
     InvalidTagException(crate::error::InvalidTagException),
@@ -29,13 +29,14 @@ pub enum Error {
     InvalidTokenException(crate::error::InvalidTokenException),
     /// <p>The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single usage record.</p>
     InvalidUsageAllocationsException(crate::error::InvalidUsageAllocationsException),
-    /// <p>The usage dimension does not match one of the UsageDimensions associated with products.</p>
+    /// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
     InvalidUsageDimensionException(crate::error::InvalidUsageDimensionException),
     /// <p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>
     PlatformNotSupportedException(crate::error::PlatformNotSupportedException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The timestamp value passed in the meterUsage() is out of allowed range.</p>
+    /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p>
+    /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

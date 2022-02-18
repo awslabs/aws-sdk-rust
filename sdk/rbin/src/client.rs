@@ -95,18 +95,18 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`retention_period(RetentionPeriod)`](crate::client::fluent_builders::CreateRule::retention_period) / [`set_retention_period(Option<RetentionPeriod>)`](crate::client::fluent_builders::CreateRule::set_retention_period): <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRule::set_description): <p>A brief description for the retention rule.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRule::set_description): <p>The retention rule description.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRule::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRule::set_tags): <p>Information about the tags to assign to the retention rule.</p>
-    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::CreateRule::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::CreateRule::set_resource_type): <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
-    ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::CreateRule::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::CreateRule::set_resource_tags): <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>  <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::CreateRule::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::CreateRule::set_resource_type): <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::CreateRule::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::CreateRule::set_resource_tags): <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>  <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>  <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
     /// - On success, responds with [`CreateRuleOutput`](crate::output::CreateRuleOutput) with field(s):
-    ///   - [`identifier(Option<String>)`](crate::output::CreateRuleOutput::identifier): <p>The unique identifier of the retention rule.</p>
-    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::CreateRuleOutput::retention_period): <p>Information about the retention period for which a retention rule is to retain resources.</p>
+    ///   - [`identifier(Option<String>)`](crate::output::CreateRuleOutput::identifier): <p>The unique ID of the retention rule.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::CreateRuleOutput::retention_period): <p>Information about the retention period for which the retention rule is to retain resources.</p>
     ///   - [`description(Option<String>)`](crate::output::CreateRuleOutput::description): <p>The retention rule description.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateRuleOutput::tags): <p>The tags assigned to the retention rule.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateRuleOutput::tags): <p>Information about the tags assigned to the retention rule.</p>
     ///   - [`resource_type(Option<ResourceType>)`](crate::output::CreateRuleOutput::resource_type): <p>The resource type retained by the retention rule.</p>
     ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::CreateRuleOutput::resource_tags): <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    ///   - [`status(Option<RuleStatus>)`](crate::output::CreateRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+    ///   - [`status(Option<RuleStatus>)`](crate::output::CreateRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     /// - On failure, responds with [`SdkError<CreateRuleError>`](crate::error::CreateRuleError)
     pub fn create_rule(&self) -> fluent_builders::CreateRule {
         fluent_builders::CreateRule::new(self.handle.clone())
@@ -114,7 +114,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteRule`](crate::client::fluent_builders::DeleteRule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteRule::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DeleteRule::set_identifier): <p>The unique ID of the retention rule to delete.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteRule::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DeleteRule::set_identifier): <p>The unique ID of the retention rule.</p>
     /// - On success, responds with [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRuleError>`](crate::error::DeleteRuleError)
@@ -127,11 +127,11 @@ impl Client {
     ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetRule::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetRule::set_identifier): <p>The unique ID of the retention rule.</p>
     /// - On success, responds with [`GetRuleOutput`](crate::output::GetRuleOutput) with field(s):
     ///   - [`identifier(Option<String>)`](crate::output::GetRuleOutput::identifier): <p>The unique ID of the retention rule.</p>
-    ///   - [`description(Option<String>)`](crate::output::GetRuleOutput::description): <p>The description assigned to the retention rule.</p>
-    ///   - [`resource_type(Option<ResourceType>)`](crate::output::GetRuleOutput::resource_type): <p>The resource type retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
-    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::GetRuleOutput::retention_period): <p>Information about the period for which the retention rule retains resources.</p>
-    ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::GetRuleOutput::resource_tags): <p>The resource tags used to identify resources that are to be retained by the retention rule.</p>
-    ///   - [`status(Option<RuleStatus>)`](crate::output::GetRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetRuleOutput::description): <p>The retention rule description.</p>
+    ///   - [`resource_type(Option<ResourceType>)`](crate::output::GetRuleOutput::resource_type): <p>The resource type retained by the retention rule.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::GetRuleOutput::retention_period): <p>Information about the retention period for which the retention rule is to retain resources.</p>
+    ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::GetRuleOutput::resource_tags): <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    ///   - [`status(Option<RuleStatus>)`](crate::output::GetRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     /// - On failure, responds with [`SdkError<GetRuleError>`](crate::error::GetRuleError)
     pub fn get_rule(&self) -> fluent_builders::GetRule {
         fluent_builders::GetRule::new(self.handle.clone())
@@ -140,10 +140,10 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRules::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRules::set_max_results): <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRules::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListRules::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListRules::set_resource_type): <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
-    ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::ListRules::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::ListRules::set_resource_tags): <p>The tags used to identify resources that are to be retained by the retention rule.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRules::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRules::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListRules::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListRules::set_resource_type): <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::ListRules::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::ListRules::set_resource_tags): <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     /// - On success, responds with [`ListRulesOutput`](crate::output::ListRulesOutput) with field(s):
     ///   - [`rules(Option<Vec<RuleSummary>>)`](crate::output::ListRulesOutput::rules): <p>Information about the retention rules.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRulesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -154,9 +154,9 @@ impl Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which to list the tags.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the retention rule.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Information about the tags assigned to the resource.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Information about the tags assigned to the retention rule.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
@@ -164,8 +164,8 @@ impl Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which to assign the tags.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Information about the tags to assign to the resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Information about the tags to assign to the retention rule.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -175,8 +175,8 @@ impl Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource from which to unassign the tags.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Information about the tags to unassign from the resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys of the tags to unassign. All tags that have the specified tag key are unassigned.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -186,18 +186,18 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateRule`](crate::client::fluent_builders::UpdateRule) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_identifier): <p>The unique ID of the retention rule to update.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_identifier): <p>The unique ID of the retention rule.</p>
     ///   - [`retention_period(RetentionPeriod)`](crate::client::fluent_builders::UpdateRule::retention_period) / [`set_retention_period(Option<RetentionPeriod>)`](crate::client::fluent_builders::UpdateRule::set_retention_period): <p>Information about the retention period for which the retention rule is to retain resources.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_description): <p>The retention rule description.</p>
-    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::UpdateRule::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::UpdateRule::set_resource_type): <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
-    ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::UpdateRule::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::UpdateRule::set_resource_tags): <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>  <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::UpdateRule::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::UpdateRule::set_resource_type): <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    ///   - [`resource_tags(Vec<ResourceTag>)`](crate::client::fluent_builders::UpdateRule::resource_tags) / [`set_resource_tags(Option<Vec<ResourceTag>>)`](crate::client::fluent_builders::UpdateRule::set_resource_tags): <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>  <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>  <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
     /// - On success, responds with [`UpdateRuleOutput`](crate::output::UpdateRuleOutput) with field(s):
     ///   - [`identifier(Option<String>)`](crate::output::UpdateRuleOutput::identifier): <p>The unique ID of the retention rule.</p>
-    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::UpdateRuleOutput::retention_period): <p>Information about the retention period for which a retention rule is to retain resources.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::UpdateRuleOutput::retention_period): <p>Information about the retention period for which the retention rule is to retain resources.</p>
     ///   - [`description(Option<String>)`](crate::output::UpdateRuleOutput::description): <p>The retention rule description.</p>
     ///   - [`resource_type(Option<ResourceType>)`](crate::output::UpdateRuleOutput::resource_type): <p>The resource type retained by the retention rule.</p>
     ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::UpdateRuleOutput::resource_tags): <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    ///   - [`status(Option<RuleStatus>)`](crate::output::UpdateRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain snapshots.</p>
+    ///   - [`status(Option<RuleStatus>)`](crate::output::UpdateRuleOutput::status): <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     /// - On failure, responds with [`SdkError<UpdateRuleError>`](crate::error::UpdateRuleError)
     pub fn update_rule(&self) -> fluent_builders::UpdateRule {
         fluent_builders::UpdateRule::new(self.handle.clone())
@@ -213,7 +213,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateRule`.
     ///
-    /// <p>Creates a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule"> Create Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Creates a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule"> Create Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRule {
         handle: std::sync::Arc<super::Handle>,
@@ -266,12 +266,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retention_period(input);
             self
         }
-        /// <p>A brief description for the retention rule.</p>
+        /// <p>The retention rule description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A brief description for the retention rule.</p>
+        /// <p>The retention rule description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -293,12 +293,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -310,14 +310,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
+        /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
+        /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             self.inner = self.inner.resource_tags(input);
             self
         }
-        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
+        /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
+        /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -328,7 +330,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRule`.
     ///
-    /// <p>Deletes a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-delete-rule"> Delete Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Deletes a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-delete-rule"> Delete Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRule {
         handle: std::sync::Arc<super::Handle>,
@@ -368,12 +370,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the retention rule to delete.</p>
+        /// <p>The unique ID of the retention rule.</p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identifier(input.into());
             self
         }
-        /// <p>The unique ID of the retention rule to delete.</p>
+        /// <p>The unique ID of the retention rule.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identifier(input);
             self
@@ -480,32 +482,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListRulesPaginator {
             crate::paginator::ListRulesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results.</p>
+        /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results.</p>
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
+        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
+        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -517,12 +519,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>The tags used to identify resources that are to be retained by the retention rule.</p>
+        /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             self.inner = self.inner.resource_tags(input);
             self
         }
-        /// <p>The tags used to identify resources that are to be retained by the retention rule.</p>
+        /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -533,7 +535,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags assigned a specific resource.</p>
+    /// <p>Lists the tags assigned to a retention rule.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -573,12 +575,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource for which to list the tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource for which to list the tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -586,7 +588,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns tags to the specified resource.</p>
+    /// <p>Assigns tags to the specified retention rule.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -626,12 +628,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which to assign the tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which to assign the tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -640,12 +642,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Information about the tags to assign to the resource.</p>
+        /// <p>Information about the tags to assign to the retention rule.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Information about the tags to assign to the resource.</p>
+        /// <p>Information about the tags to assign to the retention rule.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -656,7 +658,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Unassigns a tag from a resource.</p>
+    /// <p>Unassigns a tag from a retention rule.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -696,12 +698,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to unassign the tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to unassign the tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -710,12 +712,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>Information about the tags to unassign from the resource.</p>
+        /// <p>The tag keys of the tags to unassign. All tags that have the specified tag key are unassigned.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>Information about the tags to unassign from the resource.</p>
+        /// <p>The tag keys of the tags to unassign. All tags that have the specified tag key are unassigned.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -726,7 +728,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRule`.
     ///
-    /// <p>Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"> Update Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"> Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRule {
         handle: std::sync::Arc<super::Handle>,
@@ -766,12 +768,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the retention rule to update.</p>
+        /// <p>The unique ID of the retention rule.</p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identifier(input.into());
             self
         }
-        /// <p>The unique ID of the retention rule to update.</p>
+        /// <p>The unique ID of the retention rule.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identifier(input);
             self
@@ -799,12 +801,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -816,14 +818,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
+        /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
+        /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             self.inner = self.inner.resource_tags(input);
             self
         }
-        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
+        /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
+        /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,

@@ -840,6 +840,7 @@ pub mod create_job_input {
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+        pub(crate) manifest_generator: std::option::Option<crate::model::JobManifestGenerator>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account ID that creates the job.</p>
@@ -960,6 +961,19 @@ pub mod create_job_input {
             self.tags = input;
             self
         }
+        /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
+        pub fn manifest_generator(mut self, input: crate::model::JobManifestGenerator) -> Self {
+            self.manifest_generator = Some(input);
+            self
+        }
+        /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
+        pub fn set_manifest_generator(
+            mut self,
+            input: std::option::Option<crate::model::JobManifestGenerator>,
+        ) -> Self {
+            self.manifest_generator = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateJobInput`](crate::input::CreateJobInput)
         pub fn build(
             self,
@@ -976,6 +990,7 @@ pub mod create_job_input {
                 priority: self.priority,
                 role_arn: self.role_arn,
                 tags: self.tags,
+                manifest_generator: self.manifest_generator,
             })
         }
     }
@@ -7786,12 +7801,12 @@ pub mod list_access_points_for_object_lambda_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+        /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+        /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -12339,7 +12354,7 @@ pub struct ListAccessPointsForObjectLambdaInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+    /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     pub max_results: i32,
 }
 impl ListAccessPointsForObjectLambdaInput {
@@ -12351,7 +12366,7 @@ impl ListAccessPointsForObjectLambdaInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+    /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -13696,6 +13711,8 @@ pub struct CreateJobInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+    /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
+    pub manifest_generator: std::option::Option<crate::model::JobManifestGenerator>,
 }
 impl CreateJobInput {
     /// <p>The Amazon Web Services account ID that creates the job.</p>
@@ -13738,6 +13755,10 @@ impl CreateJobInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::S3Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
+    pub fn manifest_generator(&self) -> std::option::Option<&crate::model::JobManifestGenerator> {
+        self.manifest_generator.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13752,6 +13773,7 @@ impl std::fmt::Debug for CreateJobInput {
         formatter.field("priority", &self.priority);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("tags", &self.tags);
+        formatter.field("manifest_generator", &self.manifest_generator);
         formatter.finish()
     }
 }

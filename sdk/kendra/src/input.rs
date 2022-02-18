@@ -579,12 +579,12 @@ pub mod batch_get_document_status_input {
             std::option::Option<std::vec::Vec<crate::model::DocumentInfo>>,
     }
     impl Builder {
-        /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
+        /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
+        /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -758,22 +758,22 @@ pub mod batch_put_document_input {
             std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
     }
     impl Builder {
-        /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
+        /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
+        /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -783,7 +783,6 @@ pub mod batch_put_document_input {
         /// To override the contents of this collection use [`set_documents`](Self::set_documents).
         ///
         /// <p>One or more documents to add to the index.</p>
-        /// <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
         /// <p>Documents have the following file size limits.</p>
         /// <ul>
         /// <li> <p>5 MB total size for inline documents</p> </li>
@@ -798,7 +797,6 @@ pub mod batch_put_document_input {
             self
         }
         /// <p>One or more documents to add to the index.</p>
-        /// <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
         /// <p>Documents have the following file size limits.</p>
         /// <ul>
         /// <li> <p>5 MB total size for inline documents</p> </li>
@@ -813,7 +811,7 @@ pub mod batch_put_document_input {
             self.documents = input;
             self
         }
-        /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>
+        /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
@@ -822,7 +820,7 @@ pub mod batch_put_document_input {
             self.custom_document_enrichment_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>
+        /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn set_custom_document_enrichment_configuration(
             mut self,
@@ -1204,13 +1202,13 @@ pub mod create_data_source_input {
             self.description = input;
             self
         }
-        /// <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+        /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
         /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+        /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
         /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
@@ -1249,12 +1247,12 @@ pub mod create_data_source_input {
             self.tags = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
+        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
+        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1472,12 +1470,12 @@ pub mod create_experience_input {
             self.index_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1505,12 +1503,12 @@ pub mod create_experience_input {
             self.description = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
+        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
+        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1760,12 +1758,12 @@ pub mod create_faq_input {
             self.file_format = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
+        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
+        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1972,12 +1970,12 @@ pub mod create_index_input {
             self.edition = input;
             self
         }
-        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
+        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
+        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2008,12 +2006,12 @@ pub mod create_index_input {
             self.description = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
+        /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
+        /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2339,13 +2337,13 @@ pub mod create_query_suggestions_block_list_input {
             self
         }
         /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
-        /// <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+        /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
-        /// <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+        /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2600,12 +2598,12 @@ pub mod create_thesaurus_input {
             self.source_s3_path = input;
             self
         }
-        /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
+        /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
+        /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8268,12 +8266,12 @@ pub mod query_input {
         pub(crate) visitor_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
+        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
+        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_id = input;
             self
@@ -8942,12 +8940,12 @@ pub mod submit_feedback_input {
             self.index_id = input;
             self
         }
-        /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
+        /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
         pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
+        /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
         pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_id = input;
             self
@@ -9784,12 +9782,12 @@ pub mod update_experience_input {
             self.index_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -11239,7 +11237,7 @@ pub struct UpdateExperienceInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
     pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
@@ -11259,7 +11257,7 @@ impl UpdateExperienceInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11432,7 +11430,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct SubmitFeedbackInput {
     /// <p>The identifier of the index that was queried.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
+    /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
     pub query_id: std::option::Option<std::string::String>,
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
     pub click_feedback_items: std::option::Option<std::vec::Vec<crate::model::ClickFeedback>>,
@@ -11445,7 +11443,7 @@ impl SubmitFeedbackInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
+    /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
     pub fn query_id(&self) -> std::option::Option<&str> {
         self.query_id.as_deref()
     }
@@ -11531,7 +11529,7 @@ impl std::fmt::Debug for StartDataSourceSyncJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryInput {
-    /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
+    /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The text to search for.</p>
     pub query_text: std::option::Option<std::string::String>,
@@ -11563,7 +11561,7 @@ pub struct QueryInput {
     pub visitor_id: std::option::Option<std::string::String>,
 }
 impl QueryInput {
-    /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
+    /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -12740,7 +12738,7 @@ pub struct CreateThesaurusInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The thesaurus file Amazon S3 source path. </p>
     pub source_s3_path: std::option::Option<crate::model::S3Path>,
-    /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
+    /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateThesaurusInput {
@@ -12768,7 +12766,7 @@ impl CreateThesaurusInput {
     pub fn source_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.source_s3_path.as_ref()
     }
-    /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
+    /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12806,7 +12804,7 @@ pub struct CreateQuerySuggestionsBlockListInput {
     /// <p>A token that you provide to identify the request to create a query suggestions block list.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
-    /// <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+    /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A tag that you can assign to a block list that categorizes the block list.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12837,7 +12835,7 @@ impl CreateQuerySuggestionsBlockListInput {
         self.client_token.as_deref()
     }
     /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
-    /// <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+    /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -12870,14 +12868,14 @@ pub struct CreateIndexInput {
     /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
     /// <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub edition: std::option::Option<crate::model::IndexEdition>,
-    /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
+    /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>A description for the index.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
+    /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12915,7 +12913,7 @@ impl CreateIndexInput {
     pub fn edition(&self) -> std::option::Option<&crate::model::IndexEdition> {
         self.edition.as_ref()
     }
-    /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
+    /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -12929,7 +12927,7 @@ impl CreateIndexInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
+    /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -13011,7 +13009,7 @@ pub struct CreateFaqInput {
     /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
     pub file_format: std::option::Option<crate::model::FaqFileFormat>,
-    /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
+    /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
@@ -13047,7 +13045,7 @@ impl CreateFaqInput {
     pub fn file_format(&self) -> std::option::Option<&crate::model::FaqFileFormat> {
         self.file_format.as_ref()
     }
-    /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
+    /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -13080,13 +13078,13 @@ pub struct CreateExperienceInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
     /// <p>A description for your Amazon Kendra experience.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateExperienceInput {
@@ -13098,7 +13096,7 @@ impl CreateExperienceInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -13110,7 +13108,7 @@ impl CreateExperienceInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -13144,7 +13142,7 @@ pub struct CreateDataSourceInput {
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>A description for the data source.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+    /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
     /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
@@ -13153,7 +13151,7 @@ pub struct CreateDataSourceInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
+    /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub language_code: std::option::Option<std::string::String>,
@@ -13185,7 +13183,7 @@ impl CreateDataSourceInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+    /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
     /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
@@ -13200,7 +13198,7 @@ impl CreateDataSourceInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
+    /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -13262,12 +13260,11 @@ impl std::fmt::Debug for ClearQuerySuggestionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutDocumentInput {
-    /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
+    /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>One or more documents to add to the index.</p>
-    /// <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
     /// <li> <p>5 MB total size for inline documents</p> </li>
@@ -13276,22 +13273,21 @@ pub struct BatchPutDocumentInput {
     /// </ul>
     /// <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub documents: std::option::Option<std::vec::Vec<crate::model::Document>>,
-    /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>
+    /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub custom_document_enrichment_configuration:
         std::option::Option<crate::model::CustomDocumentEnrichmentConfiguration>,
 }
 impl BatchPutDocumentInput {
-    /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
+    /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>One or more documents to add to the index.</p>
-    /// <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
     /// <li> <p>5 MB total size for inline documents</p> </li>
@@ -13302,7 +13298,7 @@ impl BatchPutDocumentInput {
     pub fn documents(&self) -> std::option::Option<&[crate::model::Document]> {
         self.documents.as_deref()
     }
-    /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>
+    /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     pub fn custom_document_enrichment_configuration(
         &self,
@@ -13328,13 +13324,13 @@ impl std::fmt::Debug for BatchPutDocumentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDocumentStatusInput {
-    /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
+    /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
     pub index_id: std::option::Option<std::string::String>,
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
     pub document_info_list: std::option::Option<std::vec::Vec<crate::model::DocumentInfo>>,
 }
 impl BatchGetDocumentStatusInput {
-    /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
+    /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }

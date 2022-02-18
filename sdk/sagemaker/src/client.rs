@@ -371,7 +371,7 @@ impl Client {
     ///   - [`data_capture_config(DataCaptureConfig)`](crate::client::fluent_builders::CreateEndpointConfig::data_capture_config) / [`set_data_capture_config(Option<DataCaptureConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_data_capture_config): <p></p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEndpointConfig::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointConfig::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEndpointConfig::set_kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>  <p>The KmsKeyId can be any of the following formats: </p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>   <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>  </ul>  <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>   <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>   <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>   <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>  </note>
-    ///   - [`async_inference_config(AsyncInferenceConfig)`](crate::client::fluent_builders::CreateEndpointConfig::async_inference_config) / [`set_async_inference_config(Option<AsyncInferenceConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_async_inference_config): <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
+    ///   - [`async_inference_config(AsyncInferenceConfig)`](crate::client::fluent_builders::CreateEndpointConfig::async_inference_config) / [`set_async_inference_config(Option<AsyncInferenceConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_async_inference_config): <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
     /// - On success, responds with [`CreateEndpointConfigOutput`](crate::output::CreateEndpointConfigOutput) with field(s):
     ///   - [`endpoint_config_arn(Option<String>)`](crate::output::CreateEndpointConfigOutput::endpoint_config_arn): <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
     /// - On failure, responds with [`SdkError<CreateEndpointConfigError>`](crate::error::CreateEndpointConfigError)
@@ -3098,7 +3098,7 @@ impl Client {
     ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListModelPackages::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListModelPackages::set_name_contains): <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
     ///   - [`model_approval_status(ModelApprovalStatus)`](crate::client::fluent_builders::ListModelPackages::model_approval_status) / [`set_model_approval_status(Option<ModelApprovalStatus>)`](crate::client::fluent_builders::ListModelPackages::set_model_approval_status): <p>A filter that returns only the model packages with the specified approval status.</p>
     ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::ListModelPackages::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::ListModelPackages::set_model_package_group_name): <p>A filter that returns only model versions that belong to the specified model group.</p>
-    ///   - [`model_package_type(ModelPackageType)`](crate::client::fluent_builders::ListModelPackages::model_package_type) / [`set_model_package_type(Option<ModelPackageType>)`](crate::client::fluent_builders::ListModelPackages::set_model_package_type): <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>  <ul>   <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>   <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>   <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>  </ul>
+    ///   - [`model_package_type(ModelPackageType)`](crate::client::fluent_builders::ListModelPackages::model_package_type) / [`set_model_package_type(Option<ModelPackageType>)`](crate::client::fluent_builders::ListModelPackages::set_model_package_type): <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>  <ul>   <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>   <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>   <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>  </ul>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModelPackages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModelPackages::set_next_token): <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
     ///   - [`sort_by(ModelPackageSortBy)`](crate::client::fluent_builders::ListModelPackages::sort_by) / [`set_sort_by(Option<ModelPackageSortBy>)`](crate::client::fluent_builders::ListModelPackages::set_sort_by): <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
     ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListModelPackages::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListModelPackages::set_sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
@@ -6606,12 +6606,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
+        /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
         pub fn async_inference_config(mut self, input: crate::model::AsyncInferenceConfig) -> Self {
             self.inner = self.inner.async_inference_config(input);
             self
         }
-        /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
+        /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
         pub fn set_async_inference_config(
             mut self,
             input: std::option::Option<crate::model::AsyncInferenceConfig>,
@@ -22115,20 +22115,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_package_group_name(input);
             self
         }
-        /// <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>
+        /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
         /// <ul>
+        /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
         /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-        /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>
         /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
         /// </ul>
         pub fn model_package_type(mut self, input: crate::model::ModelPackageType) -> Self {
             self.inner = self.inner.model_package_type(input);
             self
         }
-        /// <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>
+        /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
         /// <ul>
+        /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
         /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-        /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>
         /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
         /// </ul>
         pub fn set_model_package_type(
@@ -27005,9 +27005,9 @@ pub mod fluent_builders {
     ///
     /// <p>Stops a pipeline execution.</p>
     /// <p> <b>Callback Step</b> </p>
-    /// <p>A pipeline execution won't stop while a callback step is running. When you call <code>StopPipelineExecution</code> on a pipeline execution with a running callback step, Amazon SageMaker Pipelines sends an additional Amazon SQS message to the specified SQS queue. The body of the SQS message contains a "Status" field which is set to "Stopping".</p>
+    /// <p>A pipeline execution won't stop while a callback step is running. When you call <code>StopPipelineExecution</code> on a pipeline execution with a running callback step, SageMaker Pipelines sends an additional Amazon SQS message to the specified SQS queue. The body of the SQS message contains a "Status" field which is set to "Stopping".</p>
     /// <p>You should add logic to your Amazon SQS message consumer to take any needed action (for example, resource cleanup) upon receipt of the message followed by a call to <code>SendPipelineExecutionStepSuccess</code> or <code>SendPipelineExecutionStepFailure</code>.</p>
-    /// <p>Only when Amazon SageMaker Pipelines receives one of these calls will it stop the pipeline execution.</p>
+    /// <p>Only when SageMaker Pipelines receives one of these calls will it stop the pipeline execution.</p>
     /// <p> <b>Lambda Step</b> </p>
     /// <p>A pipeline execution can't be stopped while a lambda step is running because the Lambda function invoked by the lambda step can't be stopped. If you attempt to stop the execution while the Lambda function is running, the pipeline waits for the Lambda function to finish or until the timeout is hit, whichever occurs first, and then stops. If the Lambda function finishes, the pipeline execution status is <code>Stopped</code>. If the timeout is hit the pipeline execution status is <code>Failed</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]

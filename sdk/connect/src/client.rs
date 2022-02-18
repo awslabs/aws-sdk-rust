@@ -1328,6 +1328,7 @@ impl Client {
     ///   - [`participant_details(ParticipantDetails)`](crate::client::fluent_builders::StartChatContact::participant_details) / [`set_participant_details(Option<ParticipantDetails>)`](crate::client::fluent_builders::StartChatContact::set_participant_details): <p>Information identifying the participant.</p>
     ///   - [`initial_message(ChatMessage)`](crate::client::fluent_builders::StartChatContact::initial_message) / [`set_initial_message(Option<ChatMessage>)`](crate::client::fluent_builders::StartChatContact::set_initial_message): <p>The initial message to be sent to the newly created chat.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`chat_duration_in_minutes(i32)`](crate::client::fluent_builders::StartChatContact::chat_duration_in_minutes) / [`set_chat_duration_in_minutes(Option<i32>)`](crate::client::fluent_builders::StartChatContact::set_chat_duration_in_minutes): <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
     /// - On success, responds with [`StartChatContactOutput`](crate::output::StartChatContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::output::StartChatContactOutput::contact_id): <p>The identifier of this contact within the Amazon Connect instance. </p>
     ///   - [`participant_id(Option<String>)`](crate::output::StartChatContactOutput::participant_id): <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
@@ -1527,7 +1528,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_id): <p>The identifier of the contact flow.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_name): <p>The name of the contact flow.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_name): <p>TThe name of the contact flow.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_description): <p>The description of the contact flow.</p>
     ///   - [`contact_flow_state(ContactFlowState)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_state) / [`set_contact_flow_state(Option<ContactFlowState>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_state): <p>The state of contact flow.</p>
     /// - On success, responds with [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
@@ -10261,11 +10262,12 @@ pub mod fluent_builders {
     ///
     /// <p>Initiates a contact flow to start a new chat for the customer. Response of this API provides a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API in the Amazon Connect Participant Service.</p>
     /// <p>When a new chat contact is successfully created, clients must subscribe to the participant’s connection for the created chat within 5 minutes. This is achieved by invoking <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS. </p>
-    /// <p>A 429 error occurs in two situations:</p>
+    /// <p>A 429 error occurs in the following situations:</p>
     /// <ul>
     /// <li> <p>API rate limit is exceeded. API TPS throttling returns a <code>TooManyRequests</code> exception.</p> </li>
     /// <li> <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota for concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.</p> </li>
     /// </ul>
+    /// <p>If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your account may not support the ability to configure custom chat durations. For more information, contact Amazon Web Services Support. </p>
     /// <p>For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChatContact {
@@ -10390,6 +10392,16 @@ pub mod fluent_builders {
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+        pub fn chat_duration_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.chat_duration_in_minutes(input);
+            self
+        }
+        /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+        pub fn set_chat_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_chat_duration_in_minutes(input);
             self
         }
     }
@@ -11837,12 +11849,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_id(input);
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>TThe name of the contact flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the contact flow.</p>
+        /// <p>TThe name of the contact flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self

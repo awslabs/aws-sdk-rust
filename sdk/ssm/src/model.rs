@@ -12295,7 +12295,6 @@ impl DocumentIdentifier {
 /// <li> <p> <code>Automation</code> </p> </li>
 /// <li> <p> <code>ChangeCalendar</code> </p> </li>
 /// <li> <p> <code>Command</code> </p> </li>
-/// <li> <p> <code>DeploymentStrategy</code> </p> </li>
 /// <li> <p> <code>Package</code> </p> </li>
 /// <li> <p> <code>Policy</code> </p> </li>
 /// <li> <p> <code>Session</code> </p> </li>
@@ -15375,9 +15374,13 @@ impl AsRef<str> for AssociationFilterKey {
 pub struct Parameter {
     /// <p>The name of the parameter.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
+    /// </note>
     pub r#type: std::option::Option<crate::model::ParameterType>,
-    /// <p>The parameter value.</p>
+    /// <p>The parameter value.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
+    /// </note>
     pub value: std::option::Option<std::string::String>,
     /// <p>The parameter version.</p>
     pub version: i64,
@@ -15399,11 +15402,15 @@ impl Parameter {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
+    /// </note>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ParameterType> {
         self.r#type.as_ref()
     }
-    /// <p>The parameter value.</p>
+    /// <p>The parameter value.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
+    /// </note>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -15476,22 +15483,30 @@ pub mod parameter {
             self.name = input;
             self
         }
-        /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+        /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
+        /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
+        /// </note>
         pub fn r#type(mut self, input: crate::model::ParameterType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+        /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
+        /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
+        /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ParameterType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The parameter value.</p>
+        /// <p>The parameter value.</p> <note>
+        /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
+        /// </note>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The parameter value.</p>
+        /// <p>The parameter value.</p> <note>
+        /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
+        /// </note>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -16034,7 +16049,7 @@ impl ParameterHistory {
 pub struct ParameterInlinePolicy {
     /// <p>The JSON text of the policy.</p>
     pub policy_text: std::option::Option<std::string::String>,
-    /// <p>The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
+    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
     pub policy_type: std::option::Option<std::string::String>,
     /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
     pub policy_status: std::option::Option<std::string::String>,
@@ -16044,7 +16059,7 @@ impl ParameterInlinePolicy {
     pub fn policy_text(&self) -> std::option::Option<&str> {
         self.policy_text.as_deref()
     }
-    /// <p>The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
+    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
     pub fn policy_type(&self) -> std::option::Option<&str> {
         self.policy_type.as_deref()
     }
@@ -16083,12 +16098,12 @@ pub mod parameter_inline_policy {
             self.policy_text = input;
             self
         }
-        /// <p>The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
+        /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
         pub fn policy_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_type = Some(input.into());
             self
         }
-        /// <p>The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
+        /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
         pub fn set_policy_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_type = input;
             self
@@ -22922,9 +22937,15 @@ pub struct MaintenanceWindowTask {
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The maximum number of targets this task can be run for, in parallel.</p>
+    /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
+    /// </note>
     pub max_concurrency: std::option::Option<std::string::String>,
-    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
+    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
+    /// </note>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The task name.</p>
     pub name: std::option::Option<std::string::String>,
@@ -22989,11 +23010,17 @@ impl MaintenanceWindowTask {
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The maximum number of targets this task can be run for, in parallel.</p>
+    /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
+    /// </note>
     pub fn max_concurrency(&self) -> std::option::Option<&str> {
         self.max_concurrency.as_deref()
     }
-    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
+    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
+    /// </note>
     pub fn max_errors(&self) -> std::option::Option<&str> {
         self.max_errors.as_deref()
     }
@@ -23213,12 +23240,18 @@ pub mod maintenance_window_task {
             self.service_role_arn = input;
             self
         }
-        /// <p>The maximum number of targets this task can be run for, in parallel.</p>
+        /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
+        /// </note>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
         }
-        /// <p>The maximum number of targets this task can be run for, in parallel.</p>
+        /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
+        /// </note>
         pub fn set_max_concurrency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23226,12 +23259,18 @@ pub mod maintenance_window_task {
             self.max_concurrency = input;
             self
         }
-        /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
+        /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
+        /// </note>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
         }
-        /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
+        /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
+        /// </note>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_errors = input;
             self
@@ -26050,7 +26089,7 @@ pub struct PatchComplianceData {
     pub kb_id: std::option::Option<std::string::String>,
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
     pub classification: std::option::Option<std::string::String>,
-    /// <p>The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
+    /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
     pub severity: std::option::Option<std::string::String>,
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -26073,7 +26112,7 @@ impl PatchComplianceData {
     pub fn classification(&self) -> std::option::Option<&str> {
         self.classification.as_deref()
     }
-    /// <p>The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
+    /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
     pub fn severity(&self) -> std::option::Option<&str> {
         self.severity.as_deref()
     }
@@ -26152,12 +26191,12 @@ pub mod patch_compliance_data {
             self.classification = input;
             self
         }
-        /// <p>The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
+        /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
         pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
             self.severity = Some(input.into());
             self
         }
-        /// <p>The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
+        /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
         pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.severity = input;
             self

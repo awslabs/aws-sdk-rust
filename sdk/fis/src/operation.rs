@@ -164,6 +164,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExperimentTemplate {
     }
 }
 
+/// Operation shape for `GetTargetResourceType`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_target_resource_type`](crate::client::Client::get_target_resource_type).
+///
+/// See [`crate::client::fluent_builders::GetTargetResourceType`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTargetResourceType {
+    _private: (),
+}
+impl GetTargetResourceType {
+    /// Creates a new builder-style object to manufacture [`GetTargetResourceTypeInput`](crate::input::GetTargetResourceTypeInput)
+    pub fn builder() -> crate::input::get_target_resource_type_input::Builder {
+        crate::input::get_target_resource_type_input::Builder::default()
+    }
+    /// Creates a new `GetTargetResourceType` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTargetResourceType {
+    type Output = std::result::Result<
+        crate::output::GetTargetResourceTypeOutput,
+        crate::error::GetTargetResourceTypeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_target_resource_type_error(response)
+        } else {
+            crate::operation_deser::parse_get_target_resource_type_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListActions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -294,6 +328,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListTargetResourceTypes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_target_resource_types`](crate::client::Client::list_target_resource_types).
+///
+/// See [`crate::client::fluent_builders::ListTargetResourceTypes`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTargetResourceTypes {
+    _private: (),
+}
+impl ListTargetResourceTypes {
+    /// Creates a new builder-style object to manufacture [`ListTargetResourceTypesInput`](crate::input::ListTargetResourceTypesInput)
+    pub fn builder() -> crate::input::list_target_resource_types_input::Builder {
+        crate::input::list_target_resource_types_input::Builder::default()
+    }
+    /// Creates a new `ListTargetResourceTypes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTargetResourceTypes {
+    type Output = std::result::Result<
+        crate::output::ListTargetResourceTypesOutput,
+        crate::error::ListTargetResourceTypesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_target_resource_types_error(response)
+        } else {
+            crate::operation_deser::parse_list_target_resource_types_response(response)
         }
     }
 }

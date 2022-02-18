@@ -325,12 +325,16 @@ pub mod create_configuration_profile_input {
             self.tags = input;
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p> <code>AWS.Freeform</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p> <code>AWS.Freeform</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3722,12 +3726,12 @@ pub mod list_configuration_profiles_input {
             self.next_token = input;
             self
         }
-        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a freeform configuration.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a freeform configuration.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3928,22 +3932,22 @@ pub mod list_deployments_input {
             self.environment_id = input;
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        /// <p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to start the list. Use this token to get the next set of results.</p>
+        /// <p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7439,9 +7443,9 @@ pub struct ListDeploymentsInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The environment ID.</p>
     pub environment_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsInput {
@@ -7453,11 +7457,11 @@ impl ListDeploymentsInput {
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// <p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7483,7 +7487,7 @@ pub struct ListConfigurationProfilesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
+    /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a freeform configuration.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ListConfigurationProfilesInput {
@@ -7499,7 +7503,7 @@ impl ListConfigurationProfilesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
+    /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a freeform configuration.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -8133,7 +8137,9 @@ pub struct CreateConfigurationProfileInput {
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationProfileInput {
@@ -8177,7 +8183,9 @@ impl CreateConfigurationProfileInput {
     {
         self.tags.as_ref()
     }
-    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }

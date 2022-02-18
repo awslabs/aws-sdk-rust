@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-types"
-version = "0.36.0"
+version = "0.37.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "Types for smithy-rs codegen."
 edition = "2018"

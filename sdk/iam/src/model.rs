@@ -7089,7 +7089,7 @@ pub struct PasswordPolicy {
     pub require_uppercase_characters: bool,
     /// <p>Specifies whether IAM user passwords must contain at least one lowercase character (a to z).</p>
     pub require_lowercase_characters: bool,
-    /// <p>Specifies whether IAM users are allowed to change their own password.</p>
+    /// <p>Specifies whether IAM users are allowed to change their own password. Gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM.</p>
     pub allow_users_to_change_password: bool,
     /// <p>Indicates whether passwords in the account expire. Returns true if <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if MaxPasswordAge is 0 or not present.</p>
     pub expire_passwords: bool,
@@ -7097,7 +7097,7 @@ pub struct PasswordPolicy {
     pub max_password_age: std::option::Option<i32>,
     /// <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
     pub password_reuse_prevention: std::option::Option<i32>,
-    /// <p>Specifies whether IAM users are prevented from setting a new password after their password has expired.</p>
+    /// <p>Specifies whether IAM users are prevented from setting a new password via the Amazon Web Services Management Console after their password has expired. The IAM user cannot access the console until an administrator resets the password. IAM users with <code>iam:ChangePassword</code> permission and active access keys can reset their own expired console password using the CLI or API.</p>
     pub hard_expiry: std::option::Option<bool>,
 }
 impl PasswordPolicy {
@@ -7122,7 +7122,7 @@ impl PasswordPolicy {
     pub fn require_lowercase_characters(&self) -> bool {
         self.require_lowercase_characters
     }
-    /// <p>Specifies whether IAM users are allowed to change their own password.</p>
+    /// <p>Specifies whether IAM users are allowed to change their own password. Gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM.</p>
     pub fn allow_users_to_change_password(&self) -> bool {
         self.allow_users_to_change_password
     }
@@ -7138,7 +7138,7 @@ impl PasswordPolicy {
     pub fn password_reuse_prevention(&self) -> std::option::Option<i32> {
         self.password_reuse_prevention
     }
-    /// <p>Specifies whether IAM users are prevented from setting a new password after their password has expired.</p>
+    /// <p>Specifies whether IAM users are prevented from setting a new password via the Amazon Web Services Management Console after their password has expired. The IAM user cannot access the console until an administrator resets the password. IAM users with <code>iam:ChangePassword</code> permission and active access keys can reset their own expired console password using the CLI or API.</p>
     pub fn hard_expiry(&self) -> std::option::Option<bool> {
         self.hard_expiry
     }
@@ -7244,12 +7244,12 @@ pub mod password_policy {
             self.require_lowercase_characters = input;
             self
         }
-        /// <p>Specifies whether IAM users are allowed to change their own password.</p>
+        /// <p>Specifies whether IAM users are allowed to change their own password. Gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM.</p>
         pub fn allow_users_to_change_password(mut self, input: bool) -> Self {
             self.allow_users_to_change_password = Some(input);
             self
         }
-        /// <p>Specifies whether IAM users are allowed to change their own password.</p>
+        /// <p>Specifies whether IAM users are allowed to change their own password. Gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM.</p>
         pub fn set_allow_users_to_change_password(
             mut self,
             input: std::option::Option<bool>,
@@ -7287,12 +7287,12 @@ pub mod password_policy {
             self.password_reuse_prevention = input;
             self
         }
-        /// <p>Specifies whether IAM users are prevented from setting a new password after their password has expired.</p>
+        /// <p>Specifies whether IAM users are prevented from setting a new password via the Amazon Web Services Management Console after their password has expired. The IAM user cannot access the console until an administrator resets the password. IAM users with <code>iam:ChangePassword</code> permission and active access keys can reset their own expired console password using the CLI or API.</p>
         pub fn hard_expiry(mut self, input: bool) -> Self {
             self.hard_expiry = Some(input);
             self
         }
-        /// <p>Specifies whether IAM users are prevented from setting a new password after their password has expired.</p>
+        /// <p>Specifies whether IAM users are prevented from setting a new password via the Amazon Web Services Management Console after their password has expired. The IAM user cannot access the console until an administrator resets the password. IAM users with <code>iam:ChangePassword</code> permission and active access keys can reset their own expired console password using the CLI or API.</p>
         pub fn set_hard_expiry(mut self, input: std::option::Option<bool>) -> Self {
             self.hard_expiry = input;
             self

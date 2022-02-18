@@ -7,15 +7,15 @@ edition = "2018"
 publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-qldb]
 path = "../../sdk/qldb"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-qldbsession]
 path = "../../sdk/qldbsession"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.tokio]
 version = "1"

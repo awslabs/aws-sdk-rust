@@ -70,6 +70,8 @@ pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     LogDestination,
     #[allow(missing_docs)] // documentation missing in model
+    ManagedRuleGroupConfig,
+    #[allow(missing_docs)] // documentation missing in model
     ManagedRuleSet,
     #[allow(missing_docs)] // documentation missing in model
     ManagedRuleSetStatement,
@@ -81,6 +83,8 @@ pub enum ParameterExceptionField {
     OrStatement,
     #[allow(missing_docs)] // documentation missing in model
     OverrideAction,
+    #[allow(missing_docs)] // documentation missing in model
+    PayloadType,
     #[allow(missing_docs)] // documentation missing in model
     Position,
     #[allow(missing_docs)] // documentation missing in model
@@ -162,12 +166,14 @@ impl std::convert::From<&str> for ParameterExceptionField {
             "LABEL_MATCH_STATEMENT" => ParameterExceptionField::LabelMatchStatement,
             "LOGGING_FILTER" => ParameterExceptionField::LoggingFilter,
             "LOG_DESTINATION" => ParameterExceptionField::LogDestination,
+            "MANAGED_RULE_GROUP_CONFIG" => ParameterExceptionField::ManagedRuleGroupConfig,
             "MANAGED_RULE_SET" => ParameterExceptionField::ManagedRuleSet,
             "MANAGED_RULE_SET_STATEMENT" => ParameterExceptionField::ManagedRuleSetStatement,
             "METRIC_NAME" => ParameterExceptionField::MetricName,
             "NOT_STATEMENT" => ParameterExceptionField::NotStatement,
             "OR_STATEMENT" => ParameterExceptionField::OrStatement,
             "OVERRIDE_ACTION" => ParameterExceptionField::OverrideAction,
+            "PAYLOAD_TYPE" => ParameterExceptionField::PayloadType,
             "POSITION" => ParameterExceptionField::Position,
             "RATE_BASED_STATEMENT" => ParameterExceptionField::RateBasedStatement,
             "REGEX_PATTERN_REFERENCE_STATEMENT" => {
@@ -240,12 +246,14 @@ impl ParameterExceptionField {
             ParameterExceptionField::LabelMatchStatement => "LABEL_MATCH_STATEMENT",
             ParameterExceptionField::LoggingFilter => "LOGGING_FILTER",
             ParameterExceptionField::LogDestination => "LOG_DESTINATION",
+            ParameterExceptionField::ManagedRuleGroupConfig => "MANAGED_RULE_GROUP_CONFIG",
             ParameterExceptionField::ManagedRuleSet => "MANAGED_RULE_SET",
             ParameterExceptionField::ManagedRuleSetStatement => "MANAGED_RULE_SET_STATEMENT",
             ParameterExceptionField::MetricName => "METRIC_NAME",
             ParameterExceptionField::NotStatement => "NOT_STATEMENT",
             ParameterExceptionField::OrStatement => "OR_STATEMENT",
             ParameterExceptionField::OverrideAction => "OVERRIDE_ACTION",
+            ParameterExceptionField::PayloadType => "PAYLOAD_TYPE",
             ParameterExceptionField::Position => "POSITION",
             ParameterExceptionField::RateBasedStatement => "RATE_BASED_STATEMENT",
             ParameterExceptionField::RegexPatternReferenceStatement => {
@@ -307,12 +315,14 @@ impl ParameterExceptionField {
             "LABEL_MATCH_STATEMENT",
             "LOGGING_FILTER",
             "LOG_DESTINATION",
+            "MANAGED_RULE_GROUP_CONFIG",
             "MANAGED_RULE_SET",
             "MANAGED_RULE_SET_STATEMENT",
             "METRIC_NAME",
             "NOT_STATEMENT",
             "OR_STATEMENT",
             "OVERRIDE_ACTION",
+            "PAYLOAD_TYPE",
             "POSITION",
             "RATE_BASED_STATEMENT",
             "REGEX_PATTERN_REFERENCE_STATEMENT",
@@ -3851,6 +3861,10 @@ pub struct ManagedRuleGroupStatement {
     pub excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub scope_down_statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
+    /// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
+    /// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
+    pub managed_rule_group_configs:
+        std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupConfig>>,
 }
 impl ManagedRuleGroupStatement {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
@@ -3873,6 +3887,13 @@ impl ManagedRuleGroupStatement {
     pub fn scope_down_statement(&self) -> std::option::Option<&crate::model::Statement> {
         self.scope_down_statement.as_deref()
     }
+    /// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
+    /// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
+    pub fn managed_rule_group_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ManagedRuleGroupConfig]> {
+        self.managed_rule_group_configs.as_deref()
+    }
 }
 impl std::fmt::Debug for ManagedRuleGroupStatement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3882,6 +3903,10 @@ impl std::fmt::Debug for ManagedRuleGroupStatement {
         formatter.field("version", &self.version);
         formatter.field("excluded_rules", &self.excluded_rules);
         formatter.field("scope_down_statement", &self.scope_down_statement);
+        formatter.field(
+            "managed_rule_group_configs",
+            &self.managed_rule_group_configs,
+        );
         formatter.finish()
     }
 }
@@ -3897,6 +3922,8 @@ pub mod managed_rule_group_statement {
         pub(crate) excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
         pub(crate) scope_down_statement:
             std::option::Option<std::boxed::Box<crate::model::Statement>>,
+        pub(crate) managed_rule_group_configs:
+            std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupConfig>>,
     }
     impl Builder {
         /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
@@ -3964,6 +3991,30 @@ pub mod managed_rule_group_statement {
             self.scope_down_statement = input;
             self
         }
+        /// Appends an item to `managed_rule_group_configs`.
+        ///
+        /// To override the contents of this collection use [`set_managed_rule_group_configs`](Self::set_managed_rule_group_configs).
+        ///
+        /// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
+        /// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
+        pub fn managed_rule_group_configs(
+            mut self,
+            input: crate::model::ManagedRuleGroupConfig,
+        ) -> Self {
+            let mut v = self.managed_rule_group_configs.unwrap_or_default();
+            v.push(input);
+            self.managed_rule_group_configs = Some(v);
+            self
+        }
+        /// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
+        /// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
+        pub fn set_managed_rule_group_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupConfig>>,
+        ) -> Self {
+            self.managed_rule_group_configs = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement)
         pub fn build(self) -> crate::model::ManagedRuleGroupStatement {
             crate::model::ManagedRuleGroupStatement {
@@ -3972,6 +4023,7 @@ pub mod managed_rule_group_statement {
                 version: self.version,
                 excluded_rules: self.excluded_rules,
                 scope_down_statement: self.scope_down_statement,
+                managed_rule_group_configs: self.managed_rule_group_configs,
             }
         }
     }
@@ -3980,6 +4032,290 @@ impl ManagedRuleGroupStatement {
     /// Creates a new builder-style object to manufacture [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement)
     pub fn builder() -> crate::model::managed_rule_group_statement::Builder {
         crate::model::managed_rule_group_statement::Builder::default()
+    }
+}
+
+/// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
+/// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ManagedRuleGroupConfig {
+    /// <p>The login endpoint for your application. For example <code>https://example.com/web/login</code>.</p>
+    pub login_path: std::option::Option<std::string::String>,
+    /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
+    pub payload_type: std::option::Option<crate::model::PayloadType>,
+    /// <p>Details about your login page username field. </p>
+    pub username_field: std::option::Option<crate::model::UsernameField>,
+    /// <p>Details about your login page password field. </p>
+    pub password_field: std::option::Option<crate::model::PasswordField>,
+}
+impl ManagedRuleGroupConfig {
+    /// <p>The login endpoint for your application. For example <code>https://example.com/web/login</code>.</p>
+    pub fn login_path(&self) -> std::option::Option<&str> {
+        self.login_path.as_deref()
+    }
+    /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
+    pub fn payload_type(&self) -> std::option::Option<&crate::model::PayloadType> {
+        self.payload_type.as_ref()
+    }
+    /// <p>Details about your login page username field. </p>
+    pub fn username_field(&self) -> std::option::Option<&crate::model::UsernameField> {
+        self.username_field.as_ref()
+    }
+    /// <p>Details about your login page password field. </p>
+    pub fn password_field(&self) -> std::option::Option<&crate::model::PasswordField> {
+        self.password_field.as_ref()
+    }
+}
+impl std::fmt::Debug for ManagedRuleGroupConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ManagedRuleGroupConfig");
+        formatter.field("login_path", &self.login_path);
+        formatter.field("payload_type", &self.payload_type);
+        formatter.field("username_field", &self.username_field);
+        formatter.field("password_field", &self.password_field);
+        formatter.finish()
+    }
+}
+/// See [`ManagedRuleGroupConfig`](crate::model::ManagedRuleGroupConfig)
+pub mod managed_rule_group_config {
+    /// A builder for [`ManagedRuleGroupConfig`](crate::model::ManagedRuleGroupConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) login_path: std::option::Option<std::string::String>,
+        pub(crate) payload_type: std::option::Option<crate::model::PayloadType>,
+        pub(crate) username_field: std::option::Option<crate::model::UsernameField>,
+        pub(crate) password_field: std::option::Option<crate::model::PasswordField>,
+    }
+    impl Builder {
+        /// <p>The login endpoint for your application. For example <code>https://example.com/web/login</code>.</p>
+        pub fn login_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.login_path = Some(input.into());
+            self
+        }
+        /// <p>The login endpoint for your application. For example <code>https://example.com/web/login</code>.</p>
+        pub fn set_login_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.login_path = input;
+            self
+        }
+        /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
+        pub fn payload_type(mut self, input: crate::model::PayloadType) -> Self {
+            self.payload_type = Some(input);
+            self
+        }
+        /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
+        pub fn set_payload_type(
+            mut self,
+            input: std::option::Option<crate::model::PayloadType>,
+        ) -> Self {
+            self.payload_type = input;
+            self
+        }
+        /// <p>Details about your login page username field. </p>
+        pub fn username_field(mut self, input: crate::model::UsernameField) -> Self {
+            self.username_field = Some(input);
+            self
+        }
+        /// <p>Details about your login page username field. </p>
+        pub fn set_username_field(
+            mut self,
+            input: std::option::Option<crate::model::UsernameField>,
+        ) -> Self {
+            self.username_field = input;
+            self
+        }
+        /// <p>Details about your login page password field. </p>
+        pub fn password_field(mut self, input: crate::model::PasswordField) -> Self {
+            self.password_field = Some(input);
+            self
+        }
+        /// <p>Details about your login page password field. </p>
+        pub fn set_password_field(
+            mut self,
+            input: std::option::Option<crate::model::PasswordField>,
+        ) -> Self {
+            self.password_field = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ManagedRuleGroupConfig`](crate::model::ManagedRuleGroupConfig)
+        pub fn build(self) -> crate::model::ManagedRuleGroupConfig {
+            crate::model::ManagedRuleGroupConfig {
+                login_path: self.login_path,
+                payload_type: self.payload_type,
+                username_field: self.username_field,
+                password_field: self.password_field,
+            }
+        }
+    }
+}
+impl ManagedRuleGroupConfig {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupConfig`](crate::model::ManagedRuleGroupConfig)
+    pub fn builder() -> crate::model::managed_rule_group_config::Builder {
+        crate::model::managed_rule_group_config::Builder::default()
+    }
+}
+
+/// <p>Details about your login page password field, used in a <code>ManagedRuleGroupConfig</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PasswordField {
+    /// <p>The name of the password field. For example <code>/form/password</code>.</p>
+    pub identifier: std::option::Option<std::string::String>,
+}
+impl PasswordField {
+    /// <p>The name of the password field. For example <code>/form/password</code>.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+}
+impl std::fmt::Debug for PasswordField {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PasswordField");
+        formatter.field("identifier", &self.identifier);
+        formatter.finish()
+    }
+}
+/// See [`PasswordField`](crate::model::PasswordField)
+pub mod password_field {
+    /// A builder for [`PasswordField`](crate::model::PasswordField)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the password field. For example <code>/form/password</code>.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>The name of the password field. For example <code>/form/password</code>.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PasswordField`](crate::model::PasswordField)
+        pub fn build(self) -> crate::model::PasswordField {
+            crate::model::PasswordField {
+                identifier: self.identifier,
+            }
+        }
+    }
+}
+impl PasswordField {
+    /// Creates a new builder-style object to manufacture [`PasswordField`](crate::model::PasswordField)
+    pub fn builder() -> crate::model::password_field::Builder {
+        crate::model::password_field::Builder::default()
+    }
+}
+
+/// <p>Details about your login page username field, used in a <code>ManagedRuleGroupConfig</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UsernameField {
+    /// <p>The name of the username field. For example <code>/form/username</code>.</p>
+    pub identifier: std::option::Option<std::string::String>,
+}
+impl UsernameField {
+    /// <p>The name of the username field. For example <code>/form/username</code>.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+}
+impl std::fmt::Debug for UsernameField {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UsernameField");
+        formatter.field("identifier", &self.identifier);
+        formatter.finish()
+    }
+}
+/// See [`UsernameField`](crate::model::UsernameField)
+pub mod username_field {
+    /// A builder for [`UsernameField`](crate::model::UsernameField)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the username field. For example <code>/form/username</code>.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>The name of the username field. For example <code>/form/username</code>.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UsernameField`](crate::model::UsernameField)
+        pub fn build(self) -> crate::model::UsernameField {
+            crate::model::UsernameField {
+                identifier: self.identifier,
+            }
+        }
+    }
+}
+impl UsernameField {
+    /// Creates a new builder-style object to manufacture [`UsernameField`](crate::model::UsernameField)
+    pub fn builder() -> crate::model::username_field::Builder {
+        crate::model::username_field::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PayloadType {
+    #[allow(missing_docs)] // documentation missing in model
+    FormEncoded,
+    #[allow(missing_docs)] // documentation missing in model
+    Json,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PayloadType {
+    fn from(s: &str) -> Self {
+        match s {
+            "FORM_ENCODED" => PayloadType::FormEncoded,
+            "JSON" => PayloadType::Json,
+            other => PayloadType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PayloadType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PayloadType::from(s))
+    }
+}
+impl PayloadType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PayloadType::FormEncoded => "FORM_ENCODED",
+            PayloadType::Json => "JSON",
+            PayloadType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FORM_ENCODED", "JSON"]
+    }
+}
+impl AsRef<str> for PayloadType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -8536,6 +8872,140 @@ impl RegexPatternSetSummary {
     }
 }
 
+/// <p>High level information for an SDK release. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReleaseSummary {
+    /// <p>The release version. </p>
+    pub release_version: std::option::Option<std::string::String>,
+    /// <p>The timestamp of the release. </p>
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ReleaseSummary {
+    /// <p>The release version. </p>
+    pub fn release_version(&self) -> std::option::Option<&str> {
+        self.release_version.as_deref()
+    }
+    /// <p>The timestamp of the release. </p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for ReleaseSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReleaseSummary");
+        formatter.field("release_version", &self.release_version);
+        formatter.field("timestamp", &self.timestamp);
+        formatter.finish()
+    }
+}
+/// See [`ReleaseSummary`](crate::model::ReleaseSummary)
+pub mod release_summary {
+    /// A builder for [`ReleaseSummary`](crate::model::ReleaseSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) release_version: std::option::Option<std::string::String>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The release version. </p>
+        pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release_version = Some(input.into());
+            self
+        }
+        /// <p>The release version. </p>
+        pub fn set_release_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.release_version = input;
+            self
+        }
+        /// <p>The timestamp of the release. </p>
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.timestamp = Some(input);
+            self
+        }
+        /// <p>The timestamp of the release. </p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReleaseSummary`](crate::model::ReleaseSummary)
+        pub fn build(self) -> crate::model::ReleaseSummary {
+            crate::model::ReleaseSummary {
+                release_version: self.release_version,
+                timestamp: self.timestamp,
+            }
+        }
+    }
+}
+impl ReleaseSummary {
+    /// Creates a new builder-style object to manufacture [`ReleaseSummary`](crate::model::ReleaseSummary)
+    pub fn builder() -> crate::model::release_summary::Builder {
+        crate::model::release_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Platform {
+    #[allow(missing_docs)] // documentation missing in model
+    Android,
+    #[allow(missing_docs)] // documentation missing in model
+    Ios,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Platform {
+    fn from(s: &str) -> Self {
+        match s {
+            "ANDROID" => Platform::Android,
+            "IOS" => Platform::Ios,
+            other => Platform::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Platform {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Platform::from(s))
+    }
+}
+impl Platform {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Platform::Android => "ANDROID",
+            Platform::Ios => "IOS",
+            Platform::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ANDROID", "IOS"]
+    }
+}
+impl AsRef<str> for Platform {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>High-level information for a managed rule set. </p> <note>
 /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
@@ -11201,6 +11671,136 @@ impl IpAddressVersion {
 impl AsRef<str> for IpAddressVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Information for a release of the mobile SDK, including release notes and tags.</p>
+/// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MobileSdkRelease {
+    /// <p>The release version. </p>
+    pub release_version: std::option::Option<std::string::String>,
+    /// <p>The timestamp of the release. </p>
+    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Notes describing the release.</p>
+    pub release_notes: std::option::Option<std::string::String>,
+    /// <p>Tags that are associated with the release. </p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl MobileSdkRelease {
+    /// <p>The release version. </p>
+    pub fn release_version(&self) -> std::option::Option<&str> {
+        self.release_version.as_deref()
+    }
+    /// <p>The timestamp of the release. </p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.timestamp.as_ref()
+    }
+    /// <p>Notes describing the release.</p>
+    pub fn release_notes(&self) -> std::option::Option<&str> {
+        self.release_notes.as_deref()
+    }
+    /// <p>Tags that are associated with the release. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for MobileSdkRelease {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MobileSdkRelease");
+        formatter.field("release_version", &self.release_version);
+        formatter.field("timestamp", &self.timestamp);
+        formatter.field("release_notes", &self.release_notes);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`MobileSdkRelease`](crate::model::MobileSdkRelease)
+pub mod mobile_sdk_release {
+    /// A builder for [`MobileSdkRelease`](crate::model::MobileSdkRelease)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) release_version: std::option::Option<std::string::String>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) release_notes: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The release version. </p>
+        pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release_version = Some(input.into());
+            self
+        }
+        /// <p>The release version. </p>
+        pub fn set_release_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.release_version = input;
+            self
+        }
+        /// <p>The timestamp of the release. </p>
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.timestamp = Some(input);
+            self
+        }
+        /// <p>The timestamp of the release. </p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.timestamp = input;
+            self
+        }
+        /// <p>Notes describing the release.</p>
+        pub fn release_notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release_notes = Some(input.into());
+            self
+        }
+        /// <p>Notes describing the release.</p>
+        pub fn set_release_notes(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.release_notes = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags that are associated with the release. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Tags that are associated with the release. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MobileSdkRelease`](crate::model::MobileSdkRelease)
+        pub fn build(self) -> crate::model::MobileSdkRelease {
+            crate::model::MobileSdkRelease {
+                release_version: self.release_version,
+                timestamp: self.timestamp,
+                release_notes: self.release_notes,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl MobileSdkRelease {
+    /// Creates a new builder-style object to manufacture [`MobileSdkRelease`](crate::model::MobileSdkRelease)
+    pub fn builder() -> crate::model::mobile_sdk_release::Builder {
+        crate::model::mobile_sdk_release::Builder::default()
     }
 }
 

@@ -888,6 +888,162 @@ impl GetExperimentTemplateInput {
     }
 }
 
+/// See [`GetTargetResourceTypeInput`](crate::input::GetTargetResourceTypeInput)
+pub mod get_target_resource_type_input {
+    /// A builder for [`GetTargetResourceTypeInput`](crate::input::GetTargetResourceTypeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The resource type.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTargetResourceTypeInput`](crate::input::GetTargetResourceTypeInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetTargetResourceTypeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetTargetResourceTypeInput {
+                resource_type: self.resource_type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetTargetResourceTypeInputOperationOutputAlias = crate::operation::GetTargetResourceType;
+#[doc(hidden)]
+pub type GetTargetResourceTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetTargetResourceTypeInput {
+    /// Consumes the builder and constructs an Operation<[`GetTargetResourceType`](crate::operation::GetTargetResourceType)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetTargetResourceType,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetTargetResourceTypeInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_5 = &_input.resource_type;
+            let input_5 =
+                input_5
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_type",
+                        details: "cannot be empty or unset",
+                    })?;
+            let resource_type = aws_smithy_http::label::fmt_string(input_5, false);
+            if resource_type.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "resource_type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/targetResourceTypes/{resourceType}",
+                resourceType = resource_type
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetTargetResourceTypeInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetTargetResourceTypeInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTargetResourceType::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTargetResourceType",
+            "fis",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetTargetResourceTypeInput`](crate::input::GetTargetResourceTypeInput)
+    pub fn builder() -> crate::input::get_target_resource_type_input::Builder {
+        crate::input::get_target_resource_type_input::Builder::default()
+    }
+}
+
 /// See [`ListActionsInput`](crate::input::ListActionsInput)
 pub mod list_actions_input {
     /// A builder for [`ListActionsInput`](crate::input::ListActionsInput)
@@ -962,14 +1118,14 @@ impl ListActionsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_5) = &_input.max_results {
+            if let Some(inner_6) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_5).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
                 );
             }
-            if let Some(inner_6) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_6));
+            if let Some(inner_7) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
             }
             Ok(())
         }
@@ -1124,14 +1280,14 @@ impl ListExperimentsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_7) = &_input.max_results {
+            if let Some(inner_8) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_7).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
                 );
             }
-            if let Some(inner_8) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+            if let Some(inner_9) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
             }
             Ok(())
         }
@@ -1287,14 +1443,14 @@ impl ListExperimentTemplatesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_9) = &_input.max_results {
+            if let Some(inner_10) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_10).encode(),
                 );
             }
-            if let Some(inner_10) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+            if let Some(inner_11) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
             }
             Ok(())
         }
@@ -1429,15 +1585,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_11 = &_input.resource_arn;
-            let input_11 =
-                input_11
+            let input_12 = &_input.resource_arn;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_11, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_12, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -1521,6 +1677,169 @@ impl ListTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
+    }
+}
+
+/// See [`ListTargetResourceTypesInput`](crate::input::ListTargetResourceTypesInput)
+pub mod list_target_resource_types_input {
+    /// A builder for [`ListTargetResourceTypesInput`](crate::input::ListTargetResourceTypesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTargetResourceTypesInput`](crate::input::ListTargetResourceTypesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListTargetResourceTypesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListTargetResourceTypesInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTargetResourceTypesInputOperationOutputAlias =
+    crate::operation::ListTargetResourceTypes;
+#[doc(hidden)]
+pub type ListTargetResourceTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListTargetResourceTypesInput {
+    /// Consumes the builder and constructs an Operation<[`ListTargetResourceTypes`](crate::operation::ListTargetResourceTypes)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTargetResourceTypes,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListTargetResourceTypesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/targetResourceTypes").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListTargetResourceTypesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_13) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
+                );
+            }
+            if let Some(inner_14) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_14));
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListTargetResourceTypesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListTargetResourceTypesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTargetResourceTypes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTargetResourceTypes",
+            "fis",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListTargetResourceTypesInput`](crate::input::ListTargetResourceTypesInput)
+    pub fn builder() -> crate::input::list_target_resource_types_input::Builder {
+        crate::input::list_target_resource_types_input::Builder::default()
     }
 }
 
@@ -1771,15 +2090,15 @@ impl StopExperimentInput {
             _input: &crate::input::StopExperimentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_12 = &_input.id;
-            let input_12 =
-                input_12
+            let input_15 = &_input.id;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_12, false);
+            let id = aws_smithy_http::label::fmt_string(input_15, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -1948,15 +2267,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.resource_arn;
-            let input_13 =
-                input_13
+            let input_16 = &_input.resource_arn;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_13, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_16, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -2133,15 +2452,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_14 = &_input.resource_arn;
-            let input_14 =
-                input_14
+            let input_17 = &_input.resource_arn;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_14, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_17, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -2157,9 +2476,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_15) = &_input.tag_keys {
-                for inner_16 in inner_15 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_16));
+            if let Some(inner_18) = &_input.tag_keys {
+                for inner_19 in inner_18 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_19));
                 }
             }
             Ok(())
@@ -2418,15 +2737,15 @@ impl UpdateExperimentTemplateInput {
             _input: &crate::input::UpdateExperimentTemplateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.id;
-            let input_17 =
-                input_17
+            let input_20 = &_input.id;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_17, false);
+            let id = aws_smithy_http::label::fmt_string(input_20, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -2737,6 +3056,34 @@ impl std::fmt::Debug for StartExperimentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTargetResourceTypesInput {
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTargetResourceTypesInput {
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTargetResourceTypesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTargetResourceTypesInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
@@ -2835,6 +3182,27 @@ impl std::fmt::Debug for ListActionsInput {
         let mut formatter = f.debug_struct("ListActionsInput");
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTargetResourceTypeInput {
+    /// <p>The resource type.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+}
+impl GetTargetResourceTypeInput {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
+impl std::fmt::Debug for GetTargetResourceTypeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTargetResourceTypeInput");
+        formatter.field("resource_type", &self.resource_type);
         formatter.finish()
     }
 }

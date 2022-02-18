@@ -7,15 +7,15 @@ edition = "2018"
 publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-eks]
 path = "../../sdk/eks"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.tokio]
 version = "1"

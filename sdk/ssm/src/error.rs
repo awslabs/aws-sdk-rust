@@ -14850,9 +14850,6 @@ pub struct TerminateSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateSessionErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -14861,7 +14858,6 @@ pub enum TerminateSessionErrorKind {
 impl std::fmt::Display for TerminateSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TerminateSessionErrorKind::DoesNotExistException(_inner) => _inner.fmt(f),
             TerminateSessionErrorKind::InternalServerError(_inner) => _inner.fmt(f),
             TerminateSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -14917,13 +14913,6 @@ impl TerminateSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns `true` if the error kind is `TerminateSessionErrorKind::DoesNotExistException`.
-    pub fn is_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TerminateSessionErrorKind::DoesNotExistException(_)
-        )
-    }
     /// Returns `true` if the error kind is `TerminateSessionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
@@ -14935,7 +14924,6 @@ impl TerminateSessionError {
 impl std::error::Error for TerminateSessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TerminateSessionErrorKind::DoesNotExistException(_inner) => Some(_inner),
             TerminateSessionErrorKind::InternalServerError(_inner) => Some(_inner),
             TerminateSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }

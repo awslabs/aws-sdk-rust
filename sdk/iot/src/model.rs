@@ -7367,7 +7367,13 @@ impl LogTarget {
 )]
 pub enum LogTargetType {
     #[allow(missing_docs)] // documentation missing in model
+    ClientId,
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
+    PrincipalId,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceIp,
     #[allow(missing_docs)] // documentation missing in model
     ThingGroup,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -7376,7 +7382,10 @@ pub enum LogTargetType {
 impl std::convert::From<&str> for LogTargetType {
     fn from(s: &str) -> Self {
         match s {
+            "CLIENT_ID" => LogTargetType::ClientId,
             "DEFAULT" => LogTargetType::Default,
+            "PRINCIPAL_ID" => LogTargetType::PrincipalId,
+            "SOURCE_IP" => LogTargetType::SourceIp,
             "THING_GROUP" => LogTargetType::ThingGroup,
             other => LogTargetType::Unknown(other.to_owned()),
         }
@@ -7393,14 +7402,23 @@ impl LogTargetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LogTargetType::ClientId => "CLIENT_ID",
             LogTargetType::Default => "DEFAULT",
+            LogTargetType::PrincipalId => "PRINCIPAL_ID",
+            LogTargetType::SourceIp => "SOURCE_IP",
             LogTargetType::ThingGroup => "THING_GROUP",
             LogTargetType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["DEFAULT", "THING_GROUP"]
+        &[
+            "CLIENT_ID",
+            "DEFAULT",
+            "PRINCIPAL_ID",
+            "SOURCE_IP",
+            "THING_GROUP",
+        ]
     }
 }
 impl AsRef<str> for LogTargetType {

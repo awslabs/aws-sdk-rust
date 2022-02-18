@@ -682,6 +682,23 @@ pub fn parse_delete_experiment_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::DeleteExperimentError {
+            meta: generic,
+            kind: crate::error::DeleteExperimentErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteExperimentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteExperimentError::generic(generic),
     })
 }
@@ -1213,6 +1230,23 @@ pub fn parse_get_experiment_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::GetExperimentError {
+            meta: generic,
+            kind: crate::error::GetExperimentErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetExperimentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetExperimentError::generic(generic),
     })
 }
@@ -1527,6 +1561,23 @@ pub fn parse_get_launch_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::GetLaunchError {
+            meta: generic,
+            kind: crate::error::GetLaunchErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLaunchError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetLaunchError::generic(generic),
     })
 }
@@ -1663,6 +1714,23 @@ pub fn parse_list_experiments_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::ListExperimentsError {
+            meta: generic,
+            kind: crate::error::ListExperimentsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListExperimentsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::ListExperimentsError {
             meta: generic,
             kind: crate::error::ListExperimentsErrorKind::ResourceNotFoundException({
@@ -2356,6 +2424,25 @@ pub fn parse_start_launch_error(
                 tmp
             }),
         },
+        "ConflictException" => {
+            crate::error::StartLaunchError {
+                meta: generic,
+                kind: crate::error::StartLaunchErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLaunchError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceNotFoundException" => crate::error::StartLaunchError {
             meta: generic,
             kind: crate::error::StartLaunchErrorKind::ResourceNotFoundException({

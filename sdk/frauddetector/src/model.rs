@@ -1401,6 +1401,292 @@ impl AsRef<str> for EventIngestion {
     }
 }
 
+/// <p> Information about the summary of an event prediction. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventPredictionSummary {
+    /// <p> The event ID. </p>
+    pub event_id: std::option::Option<std::string::String>,
+    /// <p> The event type. </p>
+    pub event_type_name: std::option::Option<std::string::String>,
+    /// <p> The timestamp of the event. </p>
+    pub event_timestamp: std::option::Option<std::string::String>,
+    /// <p> The timestamp when the prediction was generated. </p>
+    pub prediction_timestamp: std::option::Option<std::string::String>,
+    /// <p> The detector ID. </p>
+    pub detector_id: std::option::Option<std::string::String>,
+    /// <p> The detector version ID. </p>
+    pub detector_version_id: std::option::Option<std::string::String>,
+}
+impl EventPredictionSummary {
+    /// <p> The event ID. </p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p> The event type. </p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p> The timestamp of the event. </p>
+    pub fn event_timestamp(&self) -> std::option::Option<&str> {
+        self.event_timestamp.as_deref()
+    }
+    /// <p> The timestamp when the prediction was generated. </p>
+    pub fn prediction_timestamp(&self) -> std::option::Option<&str> {
+        self.prediction_timestamp.as_deref()
+    }
+    /// <p> The detector ID. </p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p> The detector version ID. </p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+}
+impl std::fmt::Debug for EventPredictionSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventPredictionSummary");
+        formatter.field("event_id", &self.event_id);
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("event_timestamp", &self.event_timestamp);
+        formatter.field("prediction_timestamp", &self.prediction_timestamp);
+        formatter.field("detector_id", &self.detector_id);
+        formatter.field("detector_version_id", &self.detector_version_id);
+        formatter.finish()
+    }
+}
+/// See [`EventPredictionSummary`](crate::model::EventPredictionSummary)
+pub mod event_prediction_summary {
+    /// A builder for [`EventPredictionSummary`](crate::model::EventPredictionSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_id: std::option::Option<std::string::String>,
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) event_timestamp: std::option::Option<std::string::String>,
+        pub(crate) prediction_timestamp: std::option::Option<std::string::String>,
+        pub(crate) detector_id: std::option::Option<std::string::String>,
+        pub(crate) detector_version_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The event ID. </p>
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_id = Some(input.into());
+            self
+        }
+        /// <p> The event ID. </p>
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_id = input;
+            self
+        }
+        /// <p> The event type. </p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        /// <p> The event type. </p>
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// <p> The timestamp of the event. </p>
+        pub fn event_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_timestamp = Some(input.into());
+            self
+        }
+        /// <p> The timestamp of the event. </p>
+        pub fn set_event_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_timestamp = input;
+            self
+        }
+        /// <p> The timestamp when the prediction was generated. </p>
+        pub fn prediction_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prediction_timestamp = Some(input.into());
+            self
+        }
+        /// <p> The timestamp when the prediction was generated. </p>
+        pub fn set_prediction_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.prediction_timestamp = input;
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_id = Some(input.into());
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_id = input;
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_version_id = Some(input.into());
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn set_detector_version_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.detector_version_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventPredictionSummary`](crate::model::EventPredictionSummary)
+        pub fn build(self) -> crate::model::EventPredictionSummary {
+            crate::model::EventPredictionSummary {
+                event_id: self.event_id,
+                event_type_name: self.event_type_name,
+                event_timestamp: self.event_timestamp,
+                prediction_timestamp: self.prediction_timestamp,
+                detector_id: self.detector_id,
+                detector_version_id: self.detector_version_id,
+            }
+        }
+    }
+}
+impl EventPredictionSummary {
+    /// Creates a new builder-style object to manufacture [`EventPredictionSummary`](crate::model::EventPredictionSummary)
+    pub fn builder() -> crate::model::event_prediction_summary::Builder {
+        crate::model::event_prediction_summary::Builder::default()
+    }
+}
+
+/// <p> The time period for when the predictions were generated. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PredictionTimeRange {
+    /// <p> The start time of the time period for when the predictions were generated. </p>
+    pub start_time: std::option::Option<std::string::String>,
+    /// <p> The end time of the time period for when the predictions were generated. </p>
+    pub end_time: std::option::Option<std::string::String>,
+}
+impl PredictionTimeRange {
+    /// <p> The start time of the time period for when the predictions were generated. </p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p> The end time of the time period for when the predictions were generated. </p>
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+}
+impl std::fmt::Debug for PredictionTimeRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PredictionTimeRange");
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.finish()
+    }
+}
+/// See [`PredictionTimeRange`](crate::model::PredictionTimeRange)
+pub mod prediction_time_range {
+    /// A builder for [`PredictionTimeRange`](crate::model::PredictionTimeRange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_time: std::option::Option<std::string::String>,
+        pub(crate) end_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The start time of the time period for when the predictions were generated. </p>
+        pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_time = Some(input.into());
+            self
+        }
+        /// <p> The start time of the time period for when the predictions were generated. </p>
+        pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p> The end time of the time period for when the predictions were generated. </p>
+        pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_time = Some(input.into());
+            self
+        }
+        /// <p> The end time of the time period for when the predictions were generated. </p>
+        pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PredictionTimeRange`](crate::model::PredictionTimeRange)
+        pub fn build(self) -> crate::model::PredictionTimeRange {
+            crate::model::PredictionTimeRange {
+                start_time: self.start_time,
+                end_time: self.end_time,
+            }
+        }
+    }
+}
+impl PredictionTimeRange {
+    /// Creates a new builder-style object to manufacture [`PredictionTimeRange`](crate::model::PredictionTimeRange)
+    pub fn builder() -> crate::model::prediction_time_range::Builder {
+        crate::model::prediction_time_range::Builder::default()
+    }
+}
+
+/// <p> A conditional statement for filtering a list of past predictions. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FilterCondition {
+    /// <p> A statement containing a resource property and a value to specify filter condition. </p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl FilterCondition {
+    /// <p> A statement containing a resource property and a value to specify filter condition. </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for FilterCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FilterCondition");
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`FilterCondition`](crate::model::FilterCondition)
+pub mod filter_condition {
+    /// A builder for [`FilterCondition`](crate::model::FilterCondition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> A statement containing a resource property and a value to specify filter condition. </p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p> A statement containing a resource property and a value to specify filter condition. </p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FilterCondition`](crate::model::FilterCondition)
+        pub fn build(self) -> crate::model::FilterCondition {
+            crate::model::FilterCondition { value: self.value }
+        }
+    }
+}
+impl FilterCondition {
+    /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition)
+    pub fn builder() -> crate::model::filter_condition::Builder {
+        crate::model::filter_condition::Builder::default()
+    }
+}
+
 /// <p>The variable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3433,6 +3719,856 @@ impl IngestedEventStatistics {
     /// Creates a new builder-style object to manufacture [`IngestedEventStatistics`](crate::model::IngestedEventStatistics)
     pub fn builder() -> crate::model::ingested_event_statistics::Builder {
         crate::model::ingested_event_statistics::Builder::default()
+    }
+}
+
+/// <p> The details of the external (Amazon Sagemaker) model evaluated for generating predictions. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EvaluatedExternalModel {
+    /// <p> The endpoint of the external (Amazon Sagemaker) model. </p>
+    pub model_endpoint: std::option::Option<std::string::String>,
+    /// <p> Indicates whether event variables were used to generate predictions. </p>
+    pub use_event_variables: std::option::Option<bool>,
+    /// <p> Input variables use for generating predictions. </p>
+    pub input_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p> Output variables. </p>
+    pub output_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl EvaluatedExternalModel {
+    /// <p> The endpoint of the external (Amazon Sagemaker) model. </p>
+    pub fn model_endpoint(&self) -> std::option::Option<&str> {
+        self.model_endpoint.as_deref()
+    }
+    /// <p> Indicates whether event variables were used to generate predictions. </p>
+    pub fn use_event_variables(&self) -> std::option::Option<bool> {
+        self.use_event_variables
+    }
+    /// <p> Input variables use for generating predictions. </p>
+    pub fn input_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.input_variables.as_ref()
+    }
+    /// <p> Output variables. </p>
+    pub fn output_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.output_variables.as_ref()
+    }
+}
+impl std::fmt::Debug for EvaluatedExternalModel {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EvaluatedExternalModel");
+        formatter.field("model_endpoint", &self.model_endpoint);
+        formatter.field("use_event_variables", &self.use_event_variables);
+        formatter.field("input_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_variables", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`EvaluatedExternalModel`](crate::model::EvaluatedExternalModel)
+pub mod evaluated_external_model {
+    /// A builder for [`EvaluatedExternalModel`](crate::model::EvaluatedExternalModel)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_endpoint: std::option::Option<std::string::String>,
+        pub(crate) use_event_variables: std::option::Option<bool>,
+        pub(crate) input_variables: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) output_variables: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p> The endpoint of the external (Amazon Sagemaker) model. </p>
+        pub fn model_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_endpoint = Some(input.into());
+            self
+        }
+        /// <p> The endpoint of the external (Amazon Sagemaker) model. </p>
+        pub fn set_model_endpoint(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_endpoint = input;
+            self
+        }
+        /// <p> Indicates whether event variables were used to generate predictions. </p>
+        pub fn use_event_variables(mut self, input: bool) -> Self {
+            self.use_event_variables = Some(input);
+            self
+        }
+        /// <p> Indicates whether event variables were used to generate predictions. </p>
+        pub fn set_use_event_variables(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_event_variables = input;
+            self
+        }
+        /// Adds a key-value pair to `input_variables`.
+        ///
+        /// To override the contents of this collection use [`set_input_variables`](Self::set_input_variables).
+        ///
+        /// <p> Input variables use for generating predictions. </p>
+        pub fn input_variables(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.input_variables.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.input_variables = Some(hash_map);
+            self
+        }
+        /// <p> Input variables use for generating predictions. </p>
+        pub fn set_input_variables(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.input_variables = input;
+            self
+        }
+        /// Adds a key-value pair to `output_variables`.
+        ///
+        /// To override the contents of this collection use [`set_output_variables`](Self::set_output_variables).
+        ///
+        /// <p> Output variables. </p>
+        pub fn output_variables(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.output_variables.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.output_variables = Some(hash_map);
+            self
+        }
+        /// <p> Output variables. </p>
+        pub fn set_output_variables(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.output_variables = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvaluatedExternalModel`](crate::model::EvaluatedExternalModel)
+        pub fn build(self) -> crate::model::EvaluatedExternalModel {
+            crate::model::EvaluatedExternalModel {
+                model_endpoint: self.model_endpoint,
+                use_event_variables: self.use_event_variables,
+                input_variables: self.input_variables,
+                output_variables: self.output_variables,
+            }
+        }
+    }
+}
+impl EvaluatedExternalModel {
+    /// Creates a new builder-style object to manufacture [`EvaluatedExternalModel`](crate::model::EvaluatedExternalModel)
+    pub fn builder() -> crate::model::evaluated_external_model::Builder {
+        crate::model::evaluated_external_model::Builder::default()
+    }
+}
+
+/// <p> The model version evaluated for generating prediction. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EvaluatedModelVersion {
+    /// <p> The model ID. </p>
+    pub model_id: std::option::Option<std::string::String>,
+    /// <p> The model version. </p>
+    pub model_version: std::option::Option<std::string::String>,
+    /// <p>The model type. </p>
+    /// <p>Valid values: <code>ONLINE_FRAUD_INSIGHTS</code> | <code>TRANSACTION_FRAUD_INSIGHTS</code> </p>
+    pub model_type: std::option::Option<std::string::String>,
+    /// <p> Evaluations generated for the model version. </p>
+    pub evaluations: std::option::Option<std::vec::Vec<crate::model::ModelVersionEvaluation>>,
+}
+impl EvaluatedModelVersion {
+    /// <p> The model ID. </p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p> The model version. </p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>The model type. </p>
+    /// <p>Valid values: <code>ONLINE_FRAUD_INSIGHTS</code> | <code>TRANSACTION_FRAUD_INSIGHTS</code> </p>
+    pub fn model_type(&self) -> std::option::Option<&str> {
+        self.model_type.as_deref()
+    }
+    /// <p> Evaluations generated for the model version. </p>
+    pub fn evaluations(&self) -> std::option::Option<&[crate::model::ModelVersionEvaluation]> {
+        self.evaluations.as_deref()
+    }
+}
+impl std::fmt::Debug for EvaluatedModelVersion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EvaluatedModelVersion");
+        formatter.field("model_id", &self.model_id);
+        formatter.field("model_version", &self.model_version);
+        formatter.field("model_type", &self.model_type);
+        formatter.field("evaluations", &self.evaluations);
+        formatter.finish()
+    }
+}
+/// See [`EvaluatedModelVersion`](crate::model::EvaluatedModelVersion)
+pub mod evaluated_model_version {
+    /// A builder for [`EvaluatedModelVersion`](crate::model::EvaluatedModelVersion)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_id: std::option::Option<std::string::String>,
+        pub(crate) model_version: std::option::Option<std::string::String>,
+        pub(crate) model_type: std::option::Option<std::string::String>,
+        pub(crate) evaluations:
+            std::option::Option<std::vec::Vec<crate::model::ModelVersionEvaluation>>,
+    }
+    impl Builder {
+        /// <p> The model ID. </p>
+        pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_id = Some(input.into());
+            self
+        }
+        /// <p> The model ID. </p>
+        pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_id = input;
+            self
+        }
+        /// <p> The model version. </p>
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_version = Some(input.into());
+            self
+        }
+        /// <p> The model version. </p>
+        pub fn set_model_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_version = input;
+            self
+        }
+        /// <p>The model type. </p>
+        /// <p>Valid values: <code>ONLINE_FRAUD_INSIGHTS</code> | <code>TRANSACTION_FRAUD_INSIGHTS</code> </p>
+        pub fn model_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_type = Some(input.into());
+            self
+        }
+        /// <p>The model type. </p>
+        /// <p>Valid values: <code>ONLINE_FRAUD_INSIGHTS</code> | <code>TRANSACTION_FRAUD_INSIGHTS</code> </p>
+        pub fn set_model_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_type = input;
+            self
+        }
+        /// Appends an item to `evaluations`.
+        ///
+        /// To override the contents of this collection use [`set_evaluations`](Self::set_evaluations).
+        ///
+        /// <p> Evaluations generated for the model version. </p>
+        pub fn evaluations(mut self, input: crate::model::ModelVersionEvaluation) -> Self {
+            let mut v = self.evaluations.unwrap_or_default();
+            v.push(input);
+            self.evaluations = Some(v);
+            self
+        }
+        /// <p> Evaluations generated for the model version. </p>
+        pub fn set_evaluations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelVersionEvaluation>>,
+        ) -> Self {
+            self.evaluations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvaluatedModelVersion`](crate::model::EvaluatedModelVersion)
+        pub fn build(self) -> crate::model::EvaluatedModelVersion {
+            crate::model::EvaluatedModelVersion {
+                model_id: self.model_id,
+                model_version: self.model_version,
+                model_type: self.model_type,
+                evaluations: self.evaluations,
+            }
+        }
+    }
+}
+impl EvaluatedModelVersion {
+    /// Creates a new builder-style object to manufacture [`EvaluatedModelVersion`](crate::model::EvaluatedModelVersion)
+    pub fn builder() -> crate::model::evaluated_model_version::Builder {
+        crate::model::evaluated_model_version::Builder::default()
+    }
+}
+
+/// <p> The model version evalutions. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelVersionEvaluation {
+    /// <p> The output variable name. </p>
+    pub output_variable_name: std::option::Option<std::string::String>,
+    /// <p> The evaluation score generated for the model version. </p>
+    pub evaluation_score: std::option::Option<std::string::String>,
+    /// <p> The prediction explanations generated for the model version. </p>
+    pub prediction_explanations: std::option::Option<crate::model::PredictionExplanations>,
+}
+impl ModelVersionEvaluation {
+    /// <p> The output variable name. </p>
+    pub fn output_variable_name(&self) -> std::option::Option<&str> {
+        self.output_variable_name.as_deref()
+    }
+    /// <p> The evaluation score generated for the model version. </p>
+    pub fn evaluation_score(&self) -> std::option::Option<&str> {
+        self.evaluation_score.as_deref()
+    }
+    /// <p> The prediction explanations generated for the model version. </p>
+    pub fn prediction_explanations(
+        &self,
+    ) -> std::option::Option<&crate::model::PredictionExplanations> {
+        self.prediction_explanations.as_ref()
+    }
+}
+impl std::fmt::Debug for ModelVersionEvaluation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelVersionEvaluation");
+        formatter.field("output_variable_name", &self.output_variable_name);
+        formatter.field("evaluation_score", &self.evaluation_score);
+        formatter.field("prediction_explanations", &self.prediction_explanations);
+        formatter.finish()
+    }
+}
+/// See [`ModelVersionEvaluation`](crate::model::ModelVersionEvaluation)
+pub mod model_version_evaluation {
+    /// A builder for [`ModelVersionEvaluation`](crate::model::ModelVersionEvaluation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) output_variable_name: std::option::Option<std::string::String>,
+        pub(crate) evaluation_score: std::option::Option<std::string::String>,
+        pub(crate) prediction_explanations:
+            std::option::Option<crate::model::PredictionExplanations>,
+    }
+    impl Builder {
+        /// <p> The output variable name. </p>
+        pub fn output_variable_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_variable_name = Some(input.into());
+            self
+        }
+        /// <p> The output variable name. </p>
+        pub fn set_output_variable_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.output_variable_name = input;
+            self
+        }
+        /// <p> The evaluation score generated for the model version. </p>
+        pub fn evaluation_score(mut self, input: impl Into<std::string::String>) -> Self {
+            self.evaluation_score = Some(input.into());
+            self
+        }
+        /// <p> The evaluation score generated for the model version. </p>
+        pub fn set_evaluation_score(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.evaluation_score = input;
+            self
+        }
+        /// <p> The prediction explanations generated for the model version. </p>
+        pub fn prediction_explanations(
+            mut self,
+            input: crate::model::PredictionExplanations,
+        ) -> Self {
+            self.prediction_explanations = Some(input);
+            self
+        }
+        /// <p> The prediction explanations generated for the model version. </p>
+        pub fn set_prediction_explanations(
+            mut self,
+            input: std::option::Option<crate::model::PredictionExplanations>,
+        ) -> Self {
+            self.prediction_explanations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelVersionEvaluation`](crate::model::ModelVersionEvaluation)
+        pub fn build(self) -> crate::model::ModelVersionEvaluation {
+            crate::model::ModelVersionEvaluation {
+                output_variable_name: self.output_variable_name,
+                evaluation_score: self.evaluation_score,
+                prediction_explanations: self.prediction_explanations,
+            }
+        }
+    }
+}
+impl ModelVersionEvaluation {
+    /// Creates a new builder-style object to manufacture [`ModelVersionEvaluation`](crate::model::ModelVersionEvaluation)
+    pub fn builder() -> crate::model::model_version_evaluation::Builder {
+        crate::model::model_version_evaluation::Builder::default()
+    }
+}
+
+/// <p> The prediction explanations that provide insight into how each event variable impacted the model version's fraud prediction score. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PredictionExplanations {
+    /// <p> The details of the event variable's impact on the prediction score. </p>
+    pub variable_impact_explanations:
+        std::option::Option<std::vec::Vec<crate::model::VariableImpactExplanation>>,
+}
+impl PredictionExplanations {
+    /// <p> The details of the event variable's impact on the prediction score. </p>
+    pub fn variable_impact_explanations(
+        &self,
+    ) -> std::option::Option<&[crate::model::VariableImpactExplanation]> {
+        self.variable_impact_explanations.as_deref()
+    }
+}
+impl std::fmt::Debug for PredictionExplanations {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PredictionExplanations");
+        formatter.field(
+            "variable_impact_explanations",
+            &self.variable_impact_explanations,
+        );
+        formatter.finish()
+    }
+}
+/// See [`PredictionExplanations`](crate::model::PredictionExplanations)
+pub mod prediction_explanations {
+    /// A builder for [`PredictionExplanations`](crate::model::PredictionExplanations)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) variable_impact_explanations:
+            std::option::Option<std::vec::Vec<crate::model::VariableImpactExplanation>>,
+    }
+    impl Builder {
+        /// Appends an item to `variable_impact_explanations`.
+        ///
+        /// To override the contents of this collection use [`set_variable_impact_explanations`](Self::set_variable_impact_explanations).
+        ///
+        /// <p> The details of the event variable's impact on the prediction score. </p>
+        pub fn variable_impact_explanations(
+            mut self,
+            input: crate::model::VariableImpactExplanation,
+        ) -> Self {
+            let mut v = self.variable_impact_explanations.unwrap_or_default();
+            v.push(input);
+            self.variable_impact_explanations = Some(v);
+            self
+        }
+        /// <p> The details of the event variable's impact on the prediction score. </p>
+        pub fn set_variable_impact_explanations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VariableImpactExplanation>>,
+        ) -> Self {
+            self.variable_impact_explanations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PredictionExplanations`](crate::model::PredictionExplanations)
+        pub fn build(self) -> crate::model::PredictionExplanations {
+            crate::model::PredictionExplanations {
+                variable_impact_explanations: self.variable_impact_explanations,
+            }
+        }
+    }
+}
+impl PredictionExplanations {
+    /// Creates a new builder-style object to manufacture [`PredictionExplanations`](crate::model::PredictionExplanations)
+    pub fn builder() -> crate::model::prediction_explanations::Builder {
+        crate::model::prediction_explanations::Builder::default()
+    }
+}
+
+/// <p> The details of the event variable's impact on the prediction score. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VariableImpactExplanation {
+    /// <p> The event variable name. </p>
+    pub event_variable_name: std::option::Option<std::string::String>,
+    /// <p> The event variable's relative impact in terms of magnitude on the prediction scores. The relative impact values consist of a numerical rating (0-5, 5 being the highest) and direction (increased/decreased) impact of the fraud risk. </p>
+    pub relative_impact: std::option::Option<std::string::String>,
+    /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from - infinity to + infinity.</p>
+    /// <ul>
+    /// <li> <p>A positive value indicates that the variable drove the risk score up.</p> </li>
+    /// <li> <p>A negative value indicates that the variable drove the risk score down.</p> </li>
+    /// </ul>
+    pub log_odds_impact: std::option::Option<f32>,
+}
+impl VariableImpactExplanation {
+    /// <p> The event variable name. </p>
+    pub fn event_variable_name(&self) -> std::option::Option<&str> {
+        self.event_variable_name.as_deref()
+    }
+    /// <p> The event variable's relative impact in terms of magnitude on the prediction scores. The relative impact values consist of a numerical rating (0-5, 5 being the highest) and direction (increased/decreased) impact of the fraud risk. </p>
+    pub fn relative_impact(&self) -> std::option::Option<&str> {
+        self.relative_impact.as_deref()
+    }
+    /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from - infinity to + infinity.</p>
+    /// <ul>
+    /// <li> <p>A positive value indicates that the variable drove the risk score up.</p> </li>
+    /// <li> <p>A negative value indicates that the variable drove the risk score down.</p> </li>
+    /// </ul>
+    pub fn log_odds_impact(&self) -> std::option::Option<f32> {
+        self.log_odds_impact
+    }
+}
+impl std::fmt::Debug for VariableImpactExplanation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VariableImpactExplanation");
+        formatter.field("event_variable_name", &self.event_variable_name);
+        formatter.field("relative_impact", &self.relative_impact);
+        formatter.field("log_odds_impact", &self.log_odds_impact);
+        formatter.finish()
+    }
+}
+/// See [`VariableImpactExplanation`](crate::model::VariableImpactExplanation)
+pub mod variable_impact_explanation {
+    /// A builder for [`VariableImpactExplanation`](crate::model::VariableImpactExplanation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_variable_name: std::option::Option<std::string::String>,
+        pub(crate) relative_impact: std::option::Option<std::string::String>,
+        pub(crate) log_odds_impact: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p> The event variable name. </p>
+        pub fn event_variable_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_variable_name = Some(input.into());
+            self
+        }
+        /// <p> The event variable name. </p>
+        pub fn set_event_variable_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_variable_name = input;
+            self
+        }
+        /// <p> The event variable's relative impact in terms of magnitude on the prediction scores. The relative impact values consist of a numerical rating (0-5, 5 being the highest) and direction (increased/decreased) impact of the fraud risk. </p>
+        pub fn relative_impact(mut self, input: impl Into<std::string::String>) -> Self {
+            self.relative_impact = Some(input.into());
+            self
+        }
+        /// <p> The event variable's relative impact in terms of magnitude on the prediction scores. The relative impact values consist of a numerical rating (0-5, 5 being the highest) and direction (increased/decreased) impact of the fraud risk. </p>
+        pub fn set_relative_impact(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.relative_impact = input;
+            self
+        }
+        /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from - infinity to + infinity.</p>
+        /// <ul>
+        /// <li> <p>A positive value indicates that the variable drove the risk score up.</p> </li>
+        /// <li> <p>A negative value indicates that the variable drove the risk score down.</p> </li>
+        /// </ul>
+        pub fn log_odds_impact(mut self, input: f32) -> Self {
+            self.log_odds_impact = Some(input);
+            self
+        }
+        /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from - infinity to + infinity.</p>
+        /// <ul>
+        /// <li> <p>A positive value indicates that the variable drove the risk score up.</p> </li>
+        /// <li> <p>A negative value indicates that the variable drove the risk score down.</p> </li>
+        /// </ul>
+        pub fn set_log_odds_impact(mut self, input: std::option::Option<f32>) -> Self {
+            self.log_odds_impact = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VariableImpactExplanation`](crate::model::VariableImpactExplanation)
+        pub fn build(self) -> crate::model::VariableImpactExplanation {
+            crate::model::VariableImpactExplanation {
+                event_variable_name: self.event_variable_name,
+                relative_impact: self.relative_impact,
+                log_odds_impact: self.log_odds_impact,
+            }
+        }
+    }
+}
+impl VariableImpactExplanation {
+    /// Creates a new builder-style object to manufacture [`VariableImpactExplanation`](crate::model::VariableImpactExplanation)
+    pub fn builder() -> crate::model::variable_impact_explanation::Builder {
+        crate::model::variable_impact_explanation::Builder::default()
+    }
+}
+
+/// <p> The details of the rule used for evaluating variable values. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EvaluatedRule {
+    /// <p> The rule ID. </p>
+    pub rule_id: std::option::Option<std::string::String>,
+    /// <p> The rule version. </p>
+    pub rule_version: std::option::Option<std::string::String>,
+    /// <p> The rule expression. </p>
+    pub expression: std::option::Option<std::string::String>,
+    /// <p> The rule expression value. </p>
+    pub expression_with_values: std::option::Option<std::string::String>,
+    /// <p> The rule outcome. </p>
+    pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> Indicates whether the rule was evaluated. </p>
+    pub evaluated: std::option::Option<bool>,
+    /// <p> Indicates whether the rule matched. </p>
+    pub matched: std::option::Option<bool>,
+}
+impl EvaluatedRule {
+    /// <p> The rule ID. </p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p> The rule version. </p>
+    pub fn rule_version(&self) -> std::option::Option<&str> {
+        self.rule_version.as_deref()
+    }
+    /// <p> The rule expression. </p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p> The rule expression value. </p>
+    pub fn expression_with_values(&self) -> std::option::Option<&str> {
+        self.expression_with_values.as_deref()
+    }
+    /// <p> The rule outcome. </p>
+    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
+        self.outcomes.as_deref()
+    }
+    /// <p> Indicates whether the rule was evaluated. </p>
+    pub fn evaluated(&self) -> std::option::Option<bool> {
+        self.evaluated
+    }
+    /// <p> Indicates whether the rule matched. </p>
+    pub fn matched(&self) -> std::option::Option<bool> {
+        self.matched
+    }
+}
+impl std::fmt::Debug for EvaluatedRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EvaluatedRule");
+        formatter.field("rule_id", &self.rule_id);
+        formatter.field("rule_version", &self.rule_version);
+        formatter.field("expression", &"*** Sensitive Data Redacted ***");
+        formatter.field("expression_with_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("outcomes", &self.outcomes);
+        formatter.field("evaluated", &self.evaluated);
+        formatter.field("matched", &self.matched);
+        formatter.finish()
+    }
+}
+/// See [`EvaluatedRule`](crate::model::EvaluatedRule)
+pub mod evaluated_rule {
+    /// A builder for [`EvaluatedRule`](crate::model::EvaluatedRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rule_id: std::option::Option<std::string::String>,
+        pub(crate) rule_version: std::option::Option<std::string::String>,
+        pub(crate) expression: std::option::Option<std::string::String>,
+        pub(crate) expression_with_values: std::option::Option<std::string::String>,
+        pub(crate) outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) evaluated: std::option::Option<bool>,
+        pub(crate) matched: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p> The rule ID. </p>
+        pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_id = Some(input.into());
+            self
+        }
+        /// <p> The rule ID. </p>
+        pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_id = input;
+            self
+        }
+        /// <p> The rule version. </p>
+        pub fn rule_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_version = Some(input.into());
+            self
+        }
+        /// <p> The rule version. </p>
+        pub fn set_rule_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_version = input;
+            self
+        }
+        /// <p> The rule expression. </p>
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression = Some(input.into());
+            self
+        }
+        /// <p> The rule expression. </p>
+        pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression = input;
+            self
+        }
+        /// <p> The rule expression value. </p>
+        pub fn expression_with_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression_with_values = Some(input.into());
+            self
+        }
+        /// <p> The rule expression value. </p>
+        pub fn set_expression_with_values(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expression_with_values = input;
+            self
+        }
+        /// Appends an item to `outcomes`.
+        ///
+        /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
+        ///
+        /// <p> The rule outcome. </p>
+        pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.outcomes.unwrap_or_default();
+            v.push(input.into());
+            self.outcomes = Some(v);
+            self
+        }
+        /// <p> The rule outcome. </p>
+        pub fn set_outcomes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.outcomes = input;
+            self
+        }
+        /// <p> Indicates whether the rule was evaluated. </p>
+        pub fn evaluated(mut self, input: bool) -> Self {
+            self.evaluated = Some(input);
+            self
+        }
+        /// <p> Indicates whether the rule was evaluated. </p>
+        pub fn set_evaluated(mut self, input: std::option::Option<bool>) -> Self {
+            self.evaluated = input;
+            self
+        }
+        /// <p> Indicates whether the rule matched. </p>
+        pub fn matched(mut self, input: bool) -> Self {
+            self.matched = Some(input);
+            self
+        }
+        /// <p> Indicates whether the rule matched. </p>
+        pub fn set_matched(mut self, input: std::option::Option<bool>) -> Self {
+            self.matched = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvaluatedRule`](crate::model::EvaluatedRule)
+        pub fn build(self) -> crate::model::EvaluatedRule {
+            crate::model::EvaluatedRule {
+                rule_id: self.rule_id,
+                rule_version: self.rule_version,
+                expression: self.expression,
+                expression_with_values: self.expression_with_values,
+                outcomes: self.outcomes,
+                evaluated: self.evaluated,
+                matched: self.matched,
+            }
+        }
+    }
+}
+impl EvaluatedRule {
+    /// Creates a new builder-style object to manufacture [`EvaluatedRule`](crate::model::EvaluatedRule)
+    pub fn builder() -> crate::model::evaluated_rule::Builder {
+        crate::model::evaluated_rule::Builder::default()
+    }
+}
+
+/// <p> Information about the summary of an event variable that was evaluated for generating prediction. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventVariableSummary {
+    /// <p> The event variable name. </p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p> The value of the event variable. </p>
+    pub value: std::option::Option<std::string::String>,
+    /// <p> The event variable source. </p>
+    pub source: std::option::Option<std::string::String>,
+}
+impl EventVariableSummary {
+    /// <p> The event variable name. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The value of the event variable. </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p> The event variable source. </p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+}
+impl std::fmt::Debug for EventVariableSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventVariableSummary");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("source", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`EventVariableSummary`](crate::model::EventVariableSummary)
+pub mod event_variable_summary {
+    /// A builder for [`EventVariableSummary`](crate::model::EventVariableSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) source: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The event variable name. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p> The event variable name. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p> The value of the event variable. </p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p> The value of the event variable. </p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p> The event variable source. </p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
+            self
+        }
+        /// <p> The event variable source. </p>
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventVariableSummary`](crate::model::EventVariableSummary)
+        pub fn build(self) -> crate::model::EventVariableSummary {
+            crate::model::EventVariableSummary {
+                name: self.name,
+                value: self.value,
+                source: self.source,
+            }
+        }
+    }
+}
+impl EventVariableSummary {
+    /// Creates a new builder-style object to manufacture [`EventVariableSummary`](crate::model::EventVariableSummary)
+    pub fn builder() -> crate::model::event_variable_summary::Builder {
+        crate::model::event_variable_summary::Builder::default()
     }
 }
 

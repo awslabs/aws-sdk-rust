@@ -437,6 +437,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEntityRecognizer {
     }
 }
 
+/// Operation shape for `DeleteResourcePolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
+///
+/// See [`crate::client::fluent_builders::DeleteResourcePolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteResourcePolicy {
+    _private: (),
+}
+impl DeleteResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
+        crate::input::delete_resource_policy_input::Builder::default()
+    }
+    /// Creates a new `DeleteResourcePolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
+    type Output = std::result::Result<
+        crate::output::DeleteResourcePolicyOutput,
+        crate::error::DeleteResourcePolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_resource_policy_error(response)
+        } else {
+            crate::operation_deser::parse_delete_resource_policy_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeDocumentClassificationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -745,6 +779,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePiiEntitiesDetec
     }
 }
 
+/// Operation shape for `DescribeResourcePolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_resource_policy`](crate::client::Client::describe_resource_policy).
+///
+/// See [`crate::client::fluent_builders::DescribeResourcePolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeResourcePolicy {
+    _private: (),
+}
+impl DescribeResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput)
+    pub fn builder() -> crate::input::describe_resource_policy_input::Builder {
+        crate::input::describe_resource_policy_input::Builder::default()
+    }
+    /// Creates a new `DescribeResourcePolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeResourcePolicy {
+    type Output = std::result::Result<
+        crate::output::DescribeResourcePolicyOutput,
+        crate::error::DescribeResourcePolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_resource_policy_error(response)
+        } else {
+            crate::operation_deser::parse_describe_resource_policy_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeSentimentDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1009,6 +1077,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectSyntax {
             crate::operation_deser::parse_detect_syntax_error(response)
         } else {
             crate::operation_deser::parse_detect_syntax_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ImportModel`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`import_model`](crate::client::Client::import_model).
+///
+/// See [`crate::client::fluent_builders::ImportModel`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ImportModel {
+    _private: (),
+}
+impl ImportModel {
+    /// Creates a new builder-style object to manufacture [`ImportModelInput`](crate::input::ImportModelInput)
+    pub fn builder() -> crate::input::import_model_input::Builder {
+        crate::input::import_model_input::Builder::default()
+    }
+    /// Creates a new `ImportModel` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ImportModel {
+    type Output =
+        std::result::Result<crate::output::ImportModelOutput, crate::error::ImportModelError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_import_model_error(response)
+        } else {
+            crate::operation_deser::parse_import_model_response(response)
         }
     }
 }
@@ -1483,6 +1583,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTopicsDetectionJobs 
             crate::operation_deser::parse_list_topics_detection_jobs_error(response)
         } else {
             crate::operation_deser::parse_list_topics_detection_jobs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutResourcePolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_resource_policy`](crate::client::Client::put_resource_policy).
+///
+/// See [`crate::client::fluent_builders::PutResourcePolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutResourcePolicy {
+    _private: (),
+}
+impl PutResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    pub fn builder() -> crate::input::put_resource_policy_input::Builder {
+        crate::input::put_resource_policy_input::Builder::default()
+    }
+    /// Creates a new `PutResourcePolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
+    type Output = std::result::Result<
+        crate::output::PutResourcePolicyOutput,
+        crate::error::PutResourcePolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_resource_policy_error(response)
+        } else {
+            crate::operation_deser::parse_put_resource_policy_response(response)
         }
     }
 }

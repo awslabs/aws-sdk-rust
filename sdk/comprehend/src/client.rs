@@ -188,6 +188,7 @@ impl Client {
     ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateDocumentClassifier::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateDocumentClassifier::set_vpc_config): <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     ///   - [`mode(DocumentClassifierMode)`](crate::client::fluent_builders::CreateDocumentClassifier::mode) / [`set_mode(Option<DocumentClassifierMode>)`](crate::client::fluent_builders::CreateDocumentClassifier::set_mode): <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
     ///   - [`model_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateDocumentClassifier::model_kms_key_id) / [`set_model_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateDocumentClassifier::set_model_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`model_policy(impl Into<String>)`](crate::client::fluent_builders::CreateDocumentClassifier::model_policy) / [`set_model_policy(Option<String>)`](crate::client::fluent_builders::CreateDocumentClassifier::set_model_policy): <p>The resource-based policy to attach to your custom document classifier model. You can use this policy to allow another AWS account to import your custom model.</p>  <p>Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>  <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>  <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>  <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
     /// - On success, responds with [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput) with field(s):
     ///   - [`document_classifier_arn(Option<String>)`](crate::output::CreateDocumentClassifierOutput::document_classifier_arn): <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
     /// - On failure, responds with [`SdkError<CreateDocumentClassifierError>`](crate::error::CreateDocumentClassifierError)
@@ -222,6 +223,7 @@ impl Client {
     ///   - [`volume_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::volume_kms_key_id) / [`set_volume_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_volume_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
     ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateEntityRecognizer::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_vpc_config): <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     ///   - [`model_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::model_kms_key_id) / [`set_model_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_model_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`model_policy(impl Into<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::model_policy) / [`set_model_policy(Option<String>)`](crate::client::fluent_builders::CreateEntityRecognizer::set_model_policy): <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another AWS account to import your custom model.</p>  <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>  <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>  <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>  <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
     /// - On success, responds with [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput) with field(s):
     ///   - [`entity_recognizer_arn(Option<String>)`](crate::output::CreateEntityRecognizerOutput::entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     /// - On failure, responds with [`SdkError<CreateEntityRecognizerError>`](crate::error::CreateEntityRecognizerError)
@@ -257,6 +259,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteEntityRecognizerError>`](crate::error::DeleteEntityRecognizerError)
     pub fn delete_entity_recognizer(&self) -> fluent_builders::DeleteEntityRecognizer {
         fluent_builders::DeleteEntityRecognizer::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the custom model version that has the policy to delete.</p>
+    ///   - [`policy_revision_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::policy_revision_id) / [`set_policy_revision_id(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_policy_revision_id): <p>The revision ID of the policy to delete.</p>
+    /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
+    pub fn delete_resource_policy(&self) -> fluent_builders::DeleteResourcePolicy {
+        fluent_builders::DeleteResourcePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeDocumentClassificationJob`](crate::client::fluent_builders::DescribeDocumentClassificationJob) operation.
     ///
@@ -356,6 +369,19 @@ impl Client {
     ) -> fluent_builders::DescribePiiEntitiesDetectionJob {
         fluent_builders::DescribePiiEntitiesDetectionJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeResourcePolicy`](crate::client::fluent_builders::DescribeResourcePolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DescribeResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+    /// - On success, responds with [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput) with field(s):
+    ///   - [`resource_policy(Option<String>)`](crate::output::DescribeResourcePolicyOutput::resource_policy): <p>The JSON body of the resource-based policy.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeResourcePolicyOutput::creation_time): <p>The time at which the policy was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeResourcePolicyOutput::last_modified_time): <p>The time at which the policy was last modified.</p>
+    ///   - [`policy_revision_id(Option<String>)`](crate::output::DescribeResourcePolicyOutput::policy_revision_id): <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+    /// - On failure, responds with [`SdkError<DescribeResourcePolicyError>`](crate::error::DescribeResourcePolicyError)
+    pub fn describe_resource_policy(&self) -> fluent_builders::DescribeResourcePolicy {
+        fluent_builders::DescribeResourcePolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeSentimentDetectionJob`](crate::client::fluent_builders::DescribeSentimentDetectionJob) operation.
     ///
     /// - The fluent builder is configurable:
@@ -444,6 +470,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<DetectSyntaxError>`](crate::error::DetectSyntaxError)
     pub fn detect_syntax(&self) -> fluent_builders::DetectSyntax {
         fluent_builders::DetectSyntax::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ImportModel`](crate::client::fluent_builders::ImportModel) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`source_model_arn(impl Into<String>)`](crate::client::fluent_builders::ImportModel::source_model_arn) / [`set_source_model_arn(Option<String>)`](crate::client::fluent_builders::ImportModel::set_source_model_arn): <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
+    ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::ImportModel::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::ImportModel::set_model_name): <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
+    ///   - [`version_name(impl Into<String>)`](crate::client::fluent_builders::ImportModel::version_name) / [`set_version_name(Option<String>)`](crate::client::fluent_builders::ImportModel::set_version_name): <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+    ///   - [`model_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::ImportModel::model_kms_key_id) / [`set_model_kms_key_id(Option<String>)`](crate::client::fluent_builders::ImportModel::set_model_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::ImportModel::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::ImportModel::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportModel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportModel::set_tags): <p>Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// - On success, responds with [`ImportModelOutput`](crate::output::ImportModelOutput) with field(s):
+    ///   - [`model_arn(Option<String>)`](crate::output::ImportModelOutput::model_arn): <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
+    /// - On failure, responds with [`SdkError<ImportModelError>`](crate::error::ImportModelError)
+    pub fn import_model(&self) -> fluent_builders::ImportModel {
+        fluent_builders::ImportModel::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDocumentClassificationJobs`](crate::client::fluent_builders::ListDocumentClassificationJobs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDocumentClassificationJobs::into_paginator).
@@ -643,6 +684,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTopicsDetectionJobsError>`](crate::error::ListTopicsDetectionJobsError)
     pub fn list_topics_detection_jobs(&self) -> fluent_builders::ListTopicsDetectionJobs {
         fluent_builders::ListTopicsDetectionJobs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
+    ///   - [`resource_policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_policy) / [`set_resource_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_policy): <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>  <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>  <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>  <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    ///   - [`policy_revision_id(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_revision_id) / [`set_policy_revision_id(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_revision_id): <p>The revision ID that Amazon Comprehend assigned to the policy that you are updating. If you are creating a new policy that has no prior version, don't use this parameter. Amazon Comprehend creates the revision ID for you.</p>
+    /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
+    ///   - [`policy_revision_id(Option<String>)`](crate::output::PutResourcePolicyOutput::policy_revision_id): <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
+    /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
+    pub fn put_resource_policy(&self) -> fluent_builders::PutResourcePolicy {
+        fluent_builders::PutResourcePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StartDocumentClassificationJob`](crate::client::fluent_builders::StartDocumentClassificationJob) operation.
     ///
@@ -1645,6 +1698,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_kms_key_id(input);
             self
         }
+        /// <p>The resource-based policy to attach to your custom document classifier model. You can use this policy to allow another AWS account to import your custom model.</p>
+        /// <p>Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn model_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_policy(input.into());
+            self
+        }
+        /// <p>The resource-based policy to attach to your custom document classifier model. You can use this policy to allow another AWS account to import your custom model.</p>
+        /// <p>Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn set_model_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_policy(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateEndpoint`.
     ///
@@ -1957,6 +2028,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_kms_key_id(input);
             self
         }
+        /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another AWS account to import your custom model.</p>
+        /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn model_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_policy(input.into());
+            self
+        }
+        /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another AWS account to import your custom model.</p>
+        /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn set_model_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_policy(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteDocumentClassifier`.
     ///
@@ -2124,6 +2213,72 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_entity_recognizer_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteResourcePolicy`.
+    ///
+    /// <p>Deletes a resource-based policy that is attached to a custom model.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteResourcePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_resource_policy_input::Builder,
+    }
+    impl DeleteResourcePolicy {
+        /// Creates a new `DeleteResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom model version that has the policy to delete.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom model version that has the policy to delete.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The revision ID of the policy to delete.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision_id(input.into());
+            self
+        }
+        /// <p>The revision ID of the policy to delete.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_revision_id(input);
             self
         }
     }
@@ -2609,6 +2764,59 @@ pub mod fluent_builders {
         /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeResourcePolicy`.
+    ///
+    /// <p>Gets the details of a resource-based policy that is attached to a custom model, including the JSON body of the policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeResourcePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_resource_policy_input::Builder,
+    }
+    impl DescribeResourcePolicy {
+        /// Creates a new `DescribeResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeResourcePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -3112,6 +3320,135 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::SyntaxLanguageCode>,
         ) -> Self {
             self.inner = self.inner.set_language_code(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ImportModel`.
+    ///
+    /// <p>Creates a new custom model that replicates a source custom model that you import. The source model can be in your AWS account or another one.</p>
+    /// <p>If the source model is in another AWS account, then it must have a resource-based policy that authorizes you to import it.</p>
+    /// <p>The source model must be in the same AWS region that you're using when you import. You can't import a model that's in a different region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ImportModel {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::import_model_input::Builder,
+    }
+    impl ImportModel {
+        /// Creates a new `ImportModel`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ImportModelOutput,
+            aws_smithy_http::result::SdkError<crate::error::ImportModelError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
+        pub fn source_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_model_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
+        pub fn set_source_model_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_model_arn(input);
+            self
+        }
+        /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
+            self
+        }
+        /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_model_name(input);
+            self
+        }
+        /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(input.into());
+            self
+        }
+        /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_name(input);
+            self
+        }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn model_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_kms_key_id(input.into());
+            self
+        }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn set_model_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_kms_key_id(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
+        pub fn set_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_access_role_arn(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -4199,6 +4536,91 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return in each page. The default is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutResourcePolicy`.
+    ///
+    /// <p>Attaches a resource-based policy to a custom model. You can use this policy to authorize an entity in another AWS account to import the custom model, which replicates it in Amazon Comprehend in their account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutResourcePolicy {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::put_resource_policy_input::Builder,
+    }
+    impl PutResourcePolicy {
+        /// Creates a new `PutResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_policy(input.into());
+            self
+        }
+        /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn set_resource_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_policy(input);
+            self
+        }
+        /// <p>The revision ID that Amazon Comprehend assigned to the policy that you are updating. If you are creating a new policy that has no prior version, don't use this parameter. Amazon Comprehend creates the revision ID for you.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision_id(input.into());
+            self
+        }
+        /// <p>The revision ID that Amazon Comprehend assigned to the policy that you are updating. If you are creating a new policy that has no prior version, don't use this parameter. Amazon Comprehend creates the revision ID for you.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_revision_id(input);
             self
         }
     }

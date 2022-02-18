@@ -688,6 +688,9 @@ pub fn serialize_structure_crate_model_result_configuration(
         )?;
         object_129.finish();
     }
+    if let Some(var_130) = &input.expected_bucket_owner {
+        object.key("ExpectedBucketOwner").string(var_130.as_str());
+    }
     Ok(())
 }
 
@@ -695,42 +698,42 @@ pub fn serialize_structure_crate_model_work_group_configuration_updates(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkGroupConfigurationUpdates,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_130) = &input.enforce_work_group_configuration {
+    if let Some(var_131) = &input.enforce_work_group_configuration {
         object
             .key("EnforceWorkGroupConfiguration")
-            .boolean(*var_130);
+            .boolean(*var_131);
     }
-    if let Some(var_131) = &input.result_configuration_updates {
-        let mut object_132 = object.key("ResultConfigurationUpdates").start_object();
+    if let Some(var_132) = &input.result_configuration_updates {
+        let mut object_133 = object.key("ResultConfigurationUpdates").start_object();
         crate::json_ser::serialize_structure_crate_model_result_configuration_updates(
-            &mut object_132,
-            var_131,
+            &mut object_133,
+            var_132,
         )?;
-        object_132.finish();
+        object_133.finish();
     }
-    if let Some(var_133) = &input.publish_cloud_watch_metrics_enabled {
+    if let Some(var_134) = &input.publish_cloud_watch_metrics_enabled {
         object
             .key("PublishCloudWatchMetricsEnabled")
-            .boolean(*var_133);
+            .boolean(*var_134);
     }
-    if let Some(var_134) = &input.bytes_scanned_cutoff_per_query {
+    if let Some(var_135) = &input.bytes_scanned_cutoff_per_query {
         object.key("BytesScannedCutoffPerQuery").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_134).into()),
+            aws_smithy_types::Number::NegInt((*var_135).into()),
         );
     }
-    if let Some(var_135) = &input.remove_bytes_scanned_cutoff_per_query {
+    if let Some(var_136) = &input.remove_bytes_scanned_cutoff_per_query {
         object
             .key("RemoveBytesScannedCutoffPerQuery")
-            .boolean(*var_135);
+            .boolean(*var_136);
     }
-    if let Some(var_136) = &input.requester_pays_enabled {
-        object.key("RequesterPaysEnabled").boolean(*var_136);
+    if let Some(var_137) = &input.requester_pays_enabled {
+        object.key("RequesterPaysEnabled").boolean(*var_137);
     }
-    if let Some(var_137) = &input.engine_version {
-        let mut object_138 = object.key("EngineVersion").start_object();
-        crate::json_ser::serialize_structure_crate_model_engine_version(&mut object_138, var_137)?;
-        object_138.finish();
+    if let Some(var_138) = &input.engine_version {
+        let mut object_139 = object.key("EngineVersion").start_object();
+        crate::json_ser::serialize_structure_crate_model_engine_version(&mut object_139, var_138)?;
+        object_139.finish();
     }
     Ok(())
 }
@@ -739,13 +742,13 @@ pub fn serialize_structure_crate_model_engine_version(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EngineVersion,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_139) = &input.selected_engine_version {
-        object.key("SelectedEngineVersion").string(var_139.as_str());
+    if let Some(var_140) = &input.selected_engine_version {
+        object.key("SelectedEngineVersion").string(var_140.as_str());
     }
-    if let Some(var_140) = &input.effective_engine_version {
+    if let Some(var_141) = &input.effective_engine_version {
         object
             .key("EffectiveEngineVersion")
-            .string(var_140.as_str());
+            .string(var_141.as_str());
     }
     Ok(())
 }
@@ -754,11 +757,11 @@ pub fn serialize_structure_crate_model_encryption_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EncryptionConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_141) = &input.encryption_option {
-        object.key("EncryptionOption").string(var_141.as_str());
+    if let Some(var_142) = &input.encryption_option {
+        object.key("EncryptionOption").string(var_142.as_str());
     }
-    if let Some(var_142) = &input.kms_key {
-        object.key("KmsKey").string(var_142.as_str());
+    if let Some(var_143) = &input.kms_key {
+        object.key("KmsKey").string(var_143.as_str());
     }
     Ok(())
 }
@@ -767,24 +770,30 @@ pub fn serialize_structure_crate_model_result_configuration_updates(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResultConfigurationUpdates,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_143) = &input.output_location {
-        object.key("OutputLocation").string(var_143.as_str());
+    if let Some(var_144) = &input.output_location {
+        object.key("OutputLocation").string(var_144.as_str());
     }
-    if let Some(var_144) = &input.remove_output_location {
-        object.key("RemoveOutputLocation").boolean(*var_144);
+    if let Some(var_145) = &input.remove_output_location {
+        object.key("RemoveOutputLocation").boolean(*var_145);
     }
-    if let Some(var_145) = &input.encryption_configuration {
-        let mut object_146 = object.key("EncryptionConfiguration").start_object();
+    if let Some(var_146) = &input.encryption_configuration {
+        let mut object_147 = object.key("EncryptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_configuration(
-            &mut object_146,
-            var_145,
+            &mut object_147,
+            var_146,
         )?;
-        object_146.finish();
+        object_147.finish();
     }
-    if let Some(var_147) = &input.remove_encryption_configuration {
+    if let Some(var_148) = &input.remove_encryption_configuration {
         object
             .key("RemoveEncryptionConfiguration")
-            .boolean(*var_147);
+            .boolean(*var_148);
+    }
+    if let Some(var_149) = &input.expected_bucket_owner {
+        object.key("ExpectedBucketOwner").string(var_149.as_str());
+    }
+    if let Some(var_150) = &input.remove_expected_bucket_owner {
+        object.key("RemoveExpectedBucketOwner").boolean(*var_150);
     }
     Ok(())
 }

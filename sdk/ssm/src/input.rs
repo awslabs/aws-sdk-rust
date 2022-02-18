@@ -1748,12 +1748,16 @@ pub mod create_document_input {
             self.version_name = input;
             self
         }
-        /// <p>The type of document to create.</p>
+        /// <p>The type of document to create.</p> <note>
+        /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
+        /// </note>
         pub fn document_type(mut self, input: crate::model::DocumentType) -> Self {
             self.document_type = Some(input);
             self
         }
-        /// <p>The type of document to create.</p>
+        /// <p>The type of document to create.</p> <note>
+        /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
+        /// </note>
         pub fn set_document_type(
             mut self,
             input: std::option::Option<crate::model::DocumentType>,
@@ -16030,12 +16034,12 @@ pub mod get_parameters_by_path_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is the parameter name except the last part of the parameter. For the API call to succeeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
+        /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is the parameter name except the last part of the parameter. For the API call to succeeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
+        /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -20994,6 +20998,7 @@ pub mod put_parameter_input {
         /// <ul>
         /// <li> <p> <code>text</code> </p> </li>
         /// <li> <p> <code>aws:ec2:image</code> </p> </li>
+        /// <li> <p> <code>aws:ssm:integration</code> </p> </li>
         /// </ul>
         /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -21005,6 +21010,7 @@ pub mod put_parameter_input {
         /// <ul>
         /// <li> <p> <code>text</code> </p> </li>
         /// <li> <p> <code>aws:ec2:image</code> </p> </li>
+        /// <li> <p> <code>aws:ssm:integration</code> </p> </li>
         /// </ul>
         /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -21990,14 +21996,16 @@ pub mod register_task_with_maintenance_window_input {
             self.priority = input;
             self
         }
-        /// <p>The maximum number of targets this task can be run for in parallel.</p> <note>
+        /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
         /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
         }
-        /// <p>The maximum number of targets this task can be run for in parallel.</p> <note>
+        /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
         /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn set_max_concurrency(
@@ -22008,6 +22016,7 @@ pub mod register_task_with_maintenance_window_input {
             self
         }
         /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
         /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
@@ -22015,6 +22024,7 @@ pub mod register_task_with_maintenance_window_input {
             self
         }
         /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
         /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -26356,12 +26366,12 @@ pub mod update_maintenance_window_input {
             self.description = input;
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_date = Some(input.into());
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_date = input;
             self
@@ -27032,15 +27042,17 @@ pub mod update_maintenance_window_task_input {
             self.priority = input;
             self
         }
-        /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task in parallel.</p> <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+        /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task, in parallel.</p> <note>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
         }
-        /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task in parallel.</p> <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+        /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task, in parallel.</p> <note>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn set_max_concurrency(
             mut self,
@@ -27050,14 +27062,16 @@ pub mod update_maintenance_window_task_input {
             self
         }
         /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are allowed before the task stops being scheduled.</p> <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
         }
         /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are allowed before the task stops being scheduled.</p> <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+        /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_errors = input;
@@ -27864,12 +27878,12 @@ pub mod update_ops_metadata_input {
         pub(crate) keys_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
         pub fn ops_metadata_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.ops_metadata_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
         pub fn set_ops_metadata_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29005,7 +29019,7 @@ impl std::fmt::Debug for UpdatePatchBaselineInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOpsMetadataInput {
-    /// <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
     pub ops_metadata_arn: std::option::Option<std::string::String>,
     /// <p>Metadata to add to an OpsMetadata object.</p>
     pub metadata_to_update: std::option::Option<
@@ -29015,7 +29029,7 @@ pub struct UpdateOpsMetadataInput {
     pub keys_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateOpsMetadataInput {
-    /// <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
     pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
         self.ops_metadata_arn.as_deref()
     }
@@ -29248,12 +29262,14 @@ pub struct UpdateMaintenanceWindowTaskInput {
         std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
     pub priority: std::option::Option<i32>,
-    /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task in parallel.</p> <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+    /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task, in parallel.</p> <note>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are allowed before the task stops being scheduled.</p> <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The new logging location in Amazon S3 to specify.</p> <note>
@@ -29333,14 +29349,16 @@ impl UpdateMaintenanceWindowTaskInput {
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
-    /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task in parallel.</p> <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+    /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task, in parallel.</p> <note>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub fn max_concurrency(&self) -> std::option::Option<&str> {
         self.max_concurrency.as_deref()
     }
     /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are allowed before the task stops being scheduled.</p> <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub fn max_errors(&self) -> std::option::Option<&str> {
         self.max_errors.as_deref()
@@ -29476,7 +29494,7 @@ pub struct UpdateMaintenanceWindowInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the update request.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
     pub start_date: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
     pub end_date: std::option::Option<std::string::String>,
@@ -29513,7 +29531,7 @@ impl UpdateMaintenanceWindowInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
     pub fn start_date(&self) -> std::option::Option<&str> {
         self.start_date.as_deref()
     }
@@ -30699,11 +30717,13 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
         std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</p>
     pub priority: std::option::Option<i32>,
-    /// <p>The maximum number of targets this task can be run for in parallel.</p> <note>
+    /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub max_errors: std::option::Option<std::string::String>,
@@ -30791,13 +30811,15 @@ impl RegisterTaskWithMaintenanceWindowInput {
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
-    /// <p>The maximum number of targets this task can be run for in parallel.</p> <note>
+    /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub fn max_concurrency(&self) -> std::option::Option<&str> {
         self.max_concurrency.as_deref()
     }
     /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+    /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub fn max_errors(&self) -> std::option::Option<&str> {
@@ -31140,6 +31162,7 @@ pub struct PutParameterInput {
     /// <ul>
     /// <li> <p> <code>text</code> </p> </li>
     /// <li> <p> <code>aws:ec2:image</code> </p> </li>
+    /// <li> <p> <code>aws:ssm:integration</code> </p> </li>
     /// </ul>
     /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub data_type: std::option::Option<std::string::String>,
@@ -31246,6 +31269,7 @@ impl PutParameterInput {
     /// <ul>
     /// <li> <p> <code>text</code> </p> </li>
     /// <li> <p> <code>aws:ec2:image</code> </p> </li>
+    /// <li> <p> <code>aws:ssm:integration</code> </p> </li>
     /// </ul>
     /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn data_type(&self) -> std::option::Option<&str> {
@@ -32206,7 +32230,7 @@ impl std::fmt::Debug for GetPatchBaselineInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersByPathInput {
-    /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is the parameter name except the last part of the parameter. For the API call to succeeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
+    /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
     pub path: std::option::Option<std::string::String>,
     /// <p>Retrieve all parameters within a hierarchy.</p> <important>
     /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
@@ -32225,7 +32249,7 @@ pub struct GetParametersByPathInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetParametersByPathInput {
-    /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is the parameter name except the last part of the parameter. For the API call to succeeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
+    /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
@@ -35322,7 +35346,9 @@ pub struct CreateDocumentInput {
     pub display_name: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub version_name: std::option::Option<std::string::String>,
-    /// <p>The type of document to create.</p>
+    /// <p>The type of document to create.</p> <note>
+    /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
+    /// </note>
     pub document_type: std::option::Option<crate::model::DocumentType>,
     /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
@@ -35375,7 +35401,9 @@ impl CreateDocumentInput {
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The type of document to create.</p>
+    /// <p>The type of document to create.</p> <note>
+    /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
+    /// </note>
     pub fn document_type(&self) -> std::option::Option<&crate::model::DocumentType> {
         self.document_type.as_ref()
     }

@@ -94,11 +94,11 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchMeterUsage`](crate::client::fluent_builders::BatchMeterUsage) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`usage_records(Vec<UsageRecord>)`](crate::client::fluent_builders::BatchMeterUsage::usage_records) / [`set_usage_records(Option<Vec<UsageRecord>>)`](crate::client::fluent_builders::BatchMeterUsage::set_usage_records): <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>
+    ///   - [`usage_records(Vec<UsageRecord>)`](crate::client::fluent_builders::BatchMeterUsage::usage_records) / [`set_usage_records(Option<Vec<UsageRecord>>)`](crate::client::fluent_builders::BatchMeterUsage::set_usage_records): <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
     ///   - [`product_code(impl Into<String>)`](crate::client::fluent_builders::BatchMeterUsage::product_code) / [`set_product_code(Option<String>)`](crate::client::fluent_builders::BatchMeterUsage::set_product_code): <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     /// - On success, responds with [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput) with field(s):
-    ///   - [`results(Option<Vec<UsageRecordResult>>)`](crate::output::BatchMeterUsageOutput::results): <p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>
-    ///   - [`unprocessed_records(Option<Vec<UsageRecord>>)`](crate::output::BatchMeterUsageOutput::unprocessed_records): <p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>
+    ///   - [`results(Option<Vec<UsageRecordResult>>)`](crate::output::BatchMeterUsageOutput::results): <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
+    ///   - [`unprocessed_records(Option<Vec<UsageRecord>>)`](crate::output::BatchMeterUsageOutput::unprocessed_records): <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
     /// - On failure, responds with [`SdkError<BatchMeterUsageError>`](crate::error::BatchMeterUsageError)
     pub fn batch_meter_usage(&self) -> fluent_builders::BatchMeterUsage {
         fluent_builders::BatchMeterUsage::new(self.handle.clone())
@@ -107,11 +107,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`product_code(impl Into<String>)`](crate::client::fluent_builders::MeterUsage::product_code) / [`set_product_code(Option<String>)`](crate::client::fluent_builders::MeterUsage::set_product_code): <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
-    ///   - [`timestamp(DateTime)`](crate::client::fluent_builders::MeterUsage::timestamp) / [`set_timestamp(Option<DateTime>)`](crate::client::fluent_builders::MeterUsage::set_timestamp): <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
+    ///   - [`timestamp(DateTime)`](crate::client::fluent_builders::MeterUsage::timestamp) / [`set_timestamp(Option<DateTime>)`](crate::client::fluent_builders::MeterUsage::set_timestamp): <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
     ///   - [`usage_dimension(impl Into<String>)`](crate::client::fluent_builders::MeterUsage::usage_dimension) / [`set_usage_dimension(Option<String>)`](crate::client::fluent_builders::MeterUsage::set_usage_dimension): <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
     ///   - [`usage_quantity(i32)`](crate::client::fluent_builders::MeterUsage::usage_quantity) / [`set_usage_quantity(Option<i32>)`](crate::client::fluent_builders::MeterUsage::set_usage_quantity): <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
-    ///   - [`dry_run(bool)`](crate::client::fluent_builders::MeterUsage::dry_run) / [`set_dry_run(Option<bool>)`](crate::client::fluent_builders::MeterUsage::set_dry_run): <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not specified.</p>
-    ///   - [`usage_allocations(Vec<UsageAllocation>)`](crate::client::fluent_builders::MeterUsage::usage_allocations) / [`set_usage_allocations(Option<Vec<UsageAllocation>>)`](crate::client::fluent_builders::MeterUsage::set_usage_allocations): <p>The set of UsageAllocations to submit.</p>  <p>The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each UsageAllocation must have a unique set of tags (include no tags).</p>
+    ///   - [`dry_run(bool)`](crate::client::fluent_builders::MeterUsage::dry_run) / [`set_dry_run(Option<bool>)`](crate::client::fluent_builders::MeterUsage::set_dry_run): <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
+    ///   - [`usage_allocations(Vec<UsageAllocation>)`](crate::client::fluent_builders::MeterUsage::usage_allocations) / [`set_usage_allocations(Option<Vec<UsageAllocation>>)`](crate::client::fluent_builders::MeterUsage::set_usage_allocations): <p>The set of <code>UsageAllocations</code> to submit.</p>  <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
     /// - On success, responds with [`MeterUsageOutput`](crate::output::MeterUsageOutput) with field(s):
     ///   - [`metering_record_id(Option<String>)`](crate::output::MeterUsageOutput::metering_record_id): <p>Metering record id.</p>
     /// - On failure, responds with [`SdkError<MeterUsageError>`](crate::error::MeterUsageError)
@@ -134,10 +134,11 @@ impl Client {
     /// Constructs a fluent builder for the [`ResolveCustomer`](crate::client::fluent_builders::ResolveCustomer) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`registration_token(impl Into<String>)`](crate::client::fluent_builders::ResolveCustomer::registration_token) / [`set_registration_token(Option<String>)`](crate::client::fluent_builders::ResolveCustomer::set_registration_token): <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>
+    ///   - [`registration_token(impl Into<String>)`](crate::client::fluent_builders::ResolveCustomer::registration_token) / [`set_registration_token(Option<String>)`](crate::client::fluent_builders::ResolveCustomer::set_registration_token): <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
     /// - On success, responds with [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput) with field(s):
-    ///   - [`customer_identifier(Option<String>)`](crate::output::ResolveCustomerOutput::customer_identifier): <p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>
-    ///   - [`product_code(Option<String>)`](crate::output::ResolveCustomerOutput::product_code): <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>
+    ///   - [`customer_identifier(Option<String>)`](crate::output::ResolveCustomerOutput::customer_identifier): <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
+    ///   - [`product_code(Option<String>)`](crate::output::ResolveCustomerOutput::product_code): <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
+    ///   - [`customer_aws_account_id(Option<String>)`](crate::output::ResolveCustomerOutput::customer_aws_account_id): <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     /// - On failure, responds with [`SdkError<ResolveCustomerError>`](crate::error::ResolveCustomerError)
     pub fn resolve_customer(&self) -> fluent_builders::ResolveCustomer {
         fluent_builders::ResolveCustomer::new(self.handle.clone())
@@ -153,12 +154,16 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchMeterUsage`.
     ///
-    /// <p>BatchMeterUsage is called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers.</p>
+    /// <p> <code>BatchMeterUsage</code> is called from a SaaS application listed on AWS Marketplace to post metering records for a set of customers.</p>
     /// <p>For identical requests, the API is idempotent; requests can be retried with the same records or a subset of the input records.</p>
-    /// <p>Every request to BatchMeterUsage is for one product. If you need to meter usage for multiple products, you must make multiple calls to BatchMeterUsage.</p>
-    /// <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p>
-    /// <p>A UsageRecord can optionally include multiple usage allocations, to provide customers with usagedata split into buckets by tags that you define (or allow the customer to define).</p>
-    /// <p>BatchMeterUsage requests must be less than 1MB in size.</p>
+    /// <p>Every request to <code>BatchMeterUsage</code> is for one product. If you need to meter usage for multiple products, you must make multiple calls to <code>BatchMeterUsage</code>.</p>
+    /// <p>Usage records are expected to be submitted as quickly as possible after the event that is being recorded, and are not accepted more than 6 hours after the event.</p>
+    /// <p> <code>BatchMeterUsage</code> can process up to 25 <code>UsageRecords</code> at a time.</p>
+    /// <p>A <code>UsageRecord</code> can optionally include multiple usage allocations, to provide customers with usage data split into buckets by tags that you define (or allow the customer to define).</p>
+    /// <p> <code>BatchMeterUsage</code> returns a list of <code>UsageRecordResult</code> objects, showing the result for each <code>UsageRecord</code>, as well as a list of <code>UnprocessedRecords</code>, indicating errors in the service side that you should retry.</p>
+    /// <p> <code>BatchMeterUsage</code> requests must be less than 1MB in size.</p> <note>
+    /// <p>For an example of using <code>BatchMeterUsage</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-example"> BatchMeterUsage code example</a> in the <i>AWS Marketplace Seller Guide</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchMeterUsage {
         handle: std::sync::Arc<super::Handle>,
@@ -202,12 +207,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_usage_records`](Self::set_usage_records).
         ///
-        /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>
+        /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
         pub fn usage_records(mut self, input: crate::model::UsageRecord) -> Self {
             self.inner = self.inner.usage_records(input);
             self
         }
-        /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>
+        /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
         pub fn set_usage_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
@@ -229,8 +234,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `MeterUsage`.
     ///
     /// <p>API to emit metering records. For identical requests, the API is idempotent. It simply returns the metering record ID.</p>
-    /// <p>MeterUsage is authenticated on the buyer's AWS account using credentials from the EC2 instance, ECS task, or EKS pod.</p>
-    /// <p>MeterUsage can optionally include multiple usage allocations, to provide customers with usage data split into buckets by tags that you define (or allow the customer to define).</p>
+    /// <p> <code>MeterUsage</code> is authenticated on the buyer's AWS account using credentials from the EC2 instance, ECS task, or EKS pod.</p>
+    /// <p> <code>MeterUsage</code> can optionally include multiple usage allocations, to provide customers with usage data split into buckets by tags that you define (or allow the customer to define).</p>
+    /// <p>Usage records are expected to be submitted as quickly as possible after the event that is being recorded, and are not accepted more than 6 hours after the event.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MeterUsage {
         handle: std::sync::Arc<super::Handle>,
@@ -280,12 +286,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_product_code(input);
             self
         }
-        /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
+        /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.timestamp(input);
             self
         }
-        /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
+        /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
         pub fn set_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -316,12 +322,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_usage_quantity(input);
             self
         }
-        /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not specified.</p>
+        /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not specified.</p>
+        /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -330,14 +336,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_usage_allocations`](Self::set_usage_allocations).
         ///
-        /// <p>The set of UsageAllocations to submit.</p>
-        /// <p>The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each UsageAllocation must have a unique set of tags (include no tags).</p>
+        /// <p>The set of <code>UsageAllocations</code> to submit.</p>
+        /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
         pub fn usage_allocations(mut self, input: crate::model::UsageAllocation) -> Self {
             self.inner = self.inner.usage_allocations(input);
             self
         }
-        /// <p>The set of UsageAllocations to submit.</p>
-        /// <p>The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each UsageAllocation must have a unique set of tags (include no tags).</p>
+        /// <p>The set of <code>UsageAllocations</code> to submit.</p>
+        /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
         pub fn set_usage_allocations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageAllocation>>,
@@ -348,10 +354,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterUsage`.
     ///
-    /// <p>Paid container software products sold through AWS Marketplace must integrate with the AWS Marketplace Metering Service and call the RegisterUsage operation for software entitlement and metering. Free and BYOL products for Amazon ECS or Amazon EKS aren't required to call RegisterUsage, but you may choose to do so if you would like to receive usage data in your seller reports. The sections below explain the behavior of RegisterUsage. RegisterUsage performs two primary functions: metering and entitlement.</p>
+    /// <p>Paid container software products sold through AWS Marketplace must integrate with the AWS Marketplace Metering Service and call the <code>RegisterUsage</code> operation for software entitlement and metering. Free and BYOL products for Amazon ECS or Amazon EKS aren't required to call <code>RegisterUsage</code>, but you may choose to do so if you would like to receive usage data in your seller reports. The sections below explain the behavior of <code>RegisterUsage</code>. <code>RegisterUsage</code> performs two primary functions: metering and entitlement.</p>
     /// <ul>
-    /// <li> <p> <i>Entitlement</i>: RegisterUsage allows you to verify that the customer running your paid software is subscribed to your product on AWS Marketplace, enabling you to guard against unauthorized use. Your container image that integrates with RegisterUsage is only required to guard against unauthorized use at container startup, as such a CustomerNotSubscribedException/PlatformNotSupportedException will only be thrown on the initial call to RegisterUsage. Subsequent calls from the same Amazon ECS task instance (e.g. task-id) or Amazon EKS pod will not throw a CustomerNotSubscribedException, even if the customer unsubscribes while the Amazon ECS task or Amazon EKS pod is still running.</p> </li>
-    /// <li> <p> <i>Metering</i>: RegisterUsage meters software use per ECS task, per hour, or per pod for Amazon EKS with usage prorated to the second. A minimum of 1 minute of usage applies to tasks that are short lived. For example, if a customer has a 10 node Amazon ECS or Amazon EKS cluster and a service configured as a Daemon Set, then Amazon ECS or Amazon EKS will launch a task on all 10 cluster nodes and the customer will be charged: (10 * hourly_rate). Metering for software use is automatically handled by the AWS Marketplace Metering Control Plane -- your software is not required to perform any metering specific actions, other than call RegisterUsage once for metering of software use to commence. The AWS Marketplace Metering Control Plane will also continue to bill customers for running ECS tasks and Amazon EKS pods, regardless of the customers subscription state, removing the need for your software to perform entitlement checks at runtime.</p> </li>
+    /// <li> <p> <i>Entitlement</i>: <code>RegisterUsage</code> allows you to verify that the customer running your paid software is subscribed to your product on AWS Marketplace, enabling you to guard against unauthorized use. Your container image that integrates with <code>RegisterUsage</code> is only required to guard against unauthorized use at container startup, as such a <code>CustomerNotSubscribedException</code> or <code>PlatformNotSupportedException</code> will only be thrown on the initial call to <code>RegisterUsage</code>. Subsequent calls from the same Amazon ECS task instance (e.g. task-id) or Amazon EKS pod will not throw a <code>CustomerNotSubscribedException</code>, even if the customer unsubscribes while the Amazon ECS task or Amazon EKS pod is still running.</p> </li>
+    /// <li> <p> <i>Metering</i>: <code>RegisterUsage</code> meters software use per ECS task, per hour, or per pod for Amazon EKS with usage prorated to the second. A minimum of 1 minute of usage applies to tasks that are short lived. For example, if a customer has a 10 node Amazon ECS or Amazon EKS cluster and a service configured as a Daemon Set, then Amazon ECS or Amazon EKS will launch a task on all 10 cluster nodes and the customer will be charged: (10 * hourly_rate). Metering for software use is automatically handled by the AWS Marketplace Metering Control Plane -- your software is not required to perform any metering specific actions, other than call <code>RegisterUsage</code> once for metering of software use to commence. The AWS Marketplace Metering Control Plane will also continue to bill customers for running ECS tasks and Amazon EKS pods, regardless of the customers subscription state, removing the need for your software to perform entitlement checks at runtime.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterUsage {
@@ -425,7 +431,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResolveCustomer`.
     ///
-    /// <p>ResolveCustomer is called by a SaaS application during the registration process. When a buyer visits your website during the registration process, the buyer submits a registration token through their browser. The registration token is resolved through this API to obtain a CustomerIdentifier and product code.</p>
+    /// <p> <code>ResolveCustomer</code> is called by a SaaS application during the registration process. When a buyer visits your website during the registration process, the buyer submits a registration token through their browser. The registration token is resolved through this API to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p> <note>
+    /// <p>The API needs to called from the seller account id used to publish the SaaS application to successfully resolve the token.</p>
+    /// <p>For an example of using <code>ResolveCustomer</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example"> ResolveCustomer code example</a> in the <i>AWS Marketplace Seller Guide</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResolveCustomer {
         handle: std::sync::Arc<super::Handle>,
@@ -465,12 +474,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>
+        /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
         pub fn registration_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registration_token(input.into());
             self
         }
-        /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>
+        /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
         pub fn set_registration_token(
             mut self,
             input: std::option::Option<std::string::String>,

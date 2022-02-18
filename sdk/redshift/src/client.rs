@@ -122,6 +122,7 @@ impl Client {
     ///   - [`data_share_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateDataShareConsumer::data_share_arn) / [`set_data_share_arn(Option<String>)`](crate::client::fluent_builders::AssociateDataShareConsumer::set_data_share_arn): <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
     ///   - [`associate_entire_account(bool)`](crate::client::fluent_builders::AssociateDataShareConsumer::associate_entire_account) / [`set_associate_entire_account(Option<bool>)`](crate::client::fluent_builders::AssociateDataShareConsumer::set_associate_entire_account): <p>A value that specifies whether the datashare is associated with the entire account.</p>
     ///   - [`consumer_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateDataShareConsumer::consumer_arn) / [`set_consumer_arn(Option<String>)`](crate::client::fluent_builders::AssociateDataShareConsumer::set_consumer_arn): <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
+    ///   - [`consumer_region(impl Into<String>)`](crate::client::fluent_builders::AssociateDataShareConsumer::consumer_region) / [`set_consumer_region(Option<String>)`](crate::client::fluent_builders::AssociateDataShareConsumer::set_consumer_region): <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
     /// - On success, responds with [`AssociateDataShareConsumerOutput`](crate::output::AssociateDataShareConsumerOutput) with field(s):
     ///   - [`data_share_arn(Option<String>)`](crate::output::AssociateDataShareConsumerOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
     ///   - [`producer_arn(Option<String>)`](crate::output::AssociateDataShareConsumerOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
@@ -276,7 +277,7 @@ impl Client {
     ///   - [`cluster_type(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::cluster_type) / [`set_cluster_type(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_cluster_type): <p>The type of the cluster. When cluster type is specified as</p>  <ul>   <li> <p> <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p> </li>   <li> <p> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p> </li>  </ul>  <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>  <p>Default: <code>multi-node</code> </p>
     ///   - [`node_type(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::node_type) / [`set_node_type(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_node_type): <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>  <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
     ///   - [`master_username(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::master_username) / [`set_master_username(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_master_username): <p>The user name associated with the admin user account for the cluster that is being created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>  </ul>
-    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_master_user_password): <p>The password associated with the admin user account for the cluster that is being created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be between 8 and 64 characters in length.</p> </li>   <li> <p>Must contain at least one uppercase letter.</p> </li>   <li> <p>Must contain at least one lowercase letter.</p> </li>   <li> <p>Must contain one number.</p> </li>   <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>  </ul>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_master_user_password): <p>The password associated with the admin user account for the cluster that is being created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be between 8 and 64 characters in length.</p> </li>   <li> <p>Must contain at least one uppercase letter.</p> </li>   <li> <p>Must contain at least one lowercase letter.</p> </li>   <li> <p>Must contain one number.</p> </li>   <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>  </ul>
     ///   - [`cluster_security_groups(Vec<String>)`](crate::client::fluent_builders::CreateCluster::cluster_security_groups) / [`set_cluster_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_cluster_security_groups): <p>A list of security groups to be associated with this cluster.</p>  <p>Default: The default cluster security group for Amazon Redshift.</p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateCluster::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_vpc_security_group_ids): <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>  <p>Default: The default VPC security group is associated with the cluster.</p>
     ///   - [`cluster_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::cluster_subnet_group_name) / [`set_cluster_subnet_group_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_cluster_subnet_group_name): <p>The name of a cluster subnet group to be associated with this cluster.</p>  <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
@@ -298,7 +299,7 @@ impl Client {
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_kms_key_id): <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
     ///   - [`enhanced_vpc_routing(bool)`](crate::client::fluent_builders::CreateCluster::enhanced_vpc_routing) / [`set_enhanced_vpc_routing(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_enhanced_vpc_routing): <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>  <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>  <p>Default: false</p>
     ///   - [`additional_info(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::additional_info) / [`set_additional_info(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_additional_info): <p>Reserved.</p>
-    ///   - [`iam_roles(Vec<String>)`](crate::client::fluent_builders::CreateCluster::iam_roles) / [`set_iam_roles(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_iam_roles): <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>  <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
+    ///   - [`iam_roles(Vec<String>)`](crate::client::fluent_builders::CreateCluster::iam_roles) / [`set_iam_roles(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_iam_roles): <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>  <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     ///   - [`maintenance_track_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::maintenance_track_name) / [`set_maintenance_track_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_maintenance_track_name): <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
     ///   - [`snapshot_schedule_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::snapshot_schedule_identifier) / [`set_snapshot_schedule_identifier(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_snapshot_schedule_identifier): <p>A unique identifier for the snapshot schedule.</p>
     ///   - [`availability_zone_relocation(bool)`](crate::client::fluent_builders::CreateCluster::availability_zone_relocation) / [`set_availability_zone_relocation(Option<bool>)`](crate::client::fluent_builders::CreateCluster::set_availability_zone_relocation): <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
@@ -457,10 +458,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`snapshot_copy_grant_name(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshotCopyGrant::snapshot_copy_grant_name) / [`set_snapshot_copy_grant_name(Option<String>)`](crate::client::fluent_builders::CreateSnapshotCopyGrant::set_snapshot_copy_grant_name): <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>   <li> <p>Alphabetic characters must be lowercase.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>   <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>  </ul>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshotCopyGrant::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateSnapshotCopyGrant::set_kms_key_id): <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshotCopyGrant::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateSnapshotCopyGrant::set_kms_key_id): <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSnapshotCopyGrant::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSnapshotCopyGrant::set_tags): <p>A list of tag instances.</p>
     /// - On success, responds with [`CreateSnapshotCopyGrantOutput`](crate::output::CreateSnapshotCopyGrantOutput) with field(s):
-    ///   - [`snapshot_copy_grant(Option<SnapshotCopyGrant>)`](crate::output::CreateSnapshotCopyGrantOutput::snapshot_copy_grant): <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination region.</p>  <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    ///   - [`snapshot_copy_grant(Option<SnapshotCopyGrant>)`](crate::output::CreateSnapshotCopyGrantOutput::snapshot_copy_grant): <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>  <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     /// - On failure, responds with [`SdkError<CreateSnapshotCopyGrantError>`](crate::error::CreateSnapshotCopyGrantError)
     pub fn create_snapshot_copy_grant(&self) -> fluent_builders::CreateSnapshotCopyGrant {
         fluent_builders::CreateSnapshotCopyGrant::new(self.handle.clone())
@@ -502,7 +503,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateUsageLimit::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateUsageLimit::set_cluster_identifier): <p>The identifier of the cluster that you want to limit usage.</p>
     ///   - [`feature_type(UsageLimitFeatureType)`](crate::client::fluent_builders::CreateUsageLimit::feature_type) / [`set_feature_type(Option<UsageLimitFeatureType>)`](crate::client::fluent_builders::CreateUsageLimit::set_feature_type): <p>The Amazon Redshift feature that you want to limit.</p>
-    ///   - [`limit_type(UsageLimitLimitType)`](crate::client::fluent_builders::CreateUsageLimit::limit_type) / [`set_limit_type(Option<UsageLimitLimitType>)`](crate::client::fluent_builders::CreateUsageLimit::set_limit_type): <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. </p>
+    ///   - [`limit_type(UsageLimitLimitType)`](crate::client::fluent_builders::CreateUsageLimit::limit_type) / [`set_limit_type(Option<UsageLimitLimitType>)`](crate::client::fluent_builders::CreateUsageLimit::set_limit_type): <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
     ///   - [`amount(i64)`](crate::client::fluent_builders::CreateUsageLimit::amount) / [`set_amount(i64)`](crate::client::fluent_builders::CreateUsageLimit::set_amount): <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
     ///   - [`period(UsageLimitPeriod)`](crate::client::fluent_builders::CreateUsageLimit::period) / [`set_period(Option<UsageLimitPeriod>)`](crate::client::fluent_builders::CreateUsageLimit::set_period): <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
     ///   - [`breach_action(UsageLimitBreachAction)`](crate::client::fluent_builders::CreateUsageLimit::breach_action) / [`set_breach_action(Option<UsageLimitBreachAction>)`](crate::client::fluent_builders::CreateUsageLimit::set_breach_action): <p>The action that Amazon Redshift takes when the limit is reached. The default is log. For more information about this parameter, see <code>UsageLimit</code>.</p>
@@ -1341,6 +1342,7 @@ impl Client {
     ///   - [`data_share_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateDataShareConsumer::data_share_arn) / [`set_data_share_arn(Option<String>)`](crate::client::fluent_builders::DisassociateDataShareConsumer::set_data_share_arn): <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
     ///   - [`disassociate_entire_account(bool)`](crate::client::fluent_builders::DisassociateDataShareConsumer::disassociate_entire_account) / [`set_disassociate_entire_account(Option<bool>)`](crate::client::fluent_builders::DisassociateDataShareConsumer::set_disassociate_entire_account): <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
     ///   - [`consumer_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateDataShareConsumer::consumer_arn) / [`set_consumer_arn(Option<String>)`](crate::client::fluent_builders::DisassociateDataShareConsumer::set_consumer_arn): <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
+    ///   - [`consumer_region(impl Into<String>)`](crate::client::fluent_builders::DisassociateDataShareConsumer::consumer_region) / [`set_consumer_region(Option<String>)`](crate::client::fluent_builders::DisassociateDataShareConsumer::set_consumer_region): <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
     /// - On success, responds with [`DisassociateDataShareConsumerOutput`](crate::output::DisassociateDataShareConsumerOutput) with field(s):
     ///   - [`data_share_arn(Option<String>)`](crate::output::DisassociateDataShareConsumerOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
     ///   - [`producer_arn(Option<String>)`](crate::output::DisassociateDataShareConsumerOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
@@ -1467,7 +1469,7 @@ impl Client {
     ///   - [`number_of_nodes(i32)`](crate::client::fluent_builders::ModifyCluster::number_of_nodes) / [`set_number_of_nodes(Option<i32>)`](crate::client::fluent_builders::ModifyCluster::set_number_of_nodes): <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>  <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>  <p>Valid Values: Integer greater than <code>0</code>.</p>
     ///   - [`cluster_security_groups(Vec<String>)`](crate::client::fluent_builders::ModifyCluster::cluster_security_groups) / [`set_cluster_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyCluster::set_cluster_security_groups): <p>A list of cluster security groups to be authorized on this cluster. This change is asynchronously applied as soon as possible.</p>  <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::ModifyCluster::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyCluster::set_vpc_security_group_ids): <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
-    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::ModifyCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::ModifyCluster::set_master_user_password): <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>   <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>  </note>  <p>Default: Uses existing setting.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be between 8 and 64 characters in length.</p> </li>   <li> <p>Must contain at least one uppercase letter.</p> </li>   <li> <p>Must contain at least one lowercase letter.</p> </li>   <li> <p>Must contain one number.</p> </li>   <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>  </ul>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::ModifyCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::ModifyCluster::set_master_user_password): <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>   <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>  </note>  <p>Default: Uses existing setting.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be between 8 and 64 characters in length.</p> </li>   <li> <p>Must contain at least one uppercase letter.</p> </li>   <li> <p>Must contain at least one lowercase letter.</p> </li>   <li> <p>Must contain one number.</p> </li>   <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>  </ul>
     ///   - [`cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyCluster::cluster_parameter_group_name) / [`set_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::ModifyCluster::set_cluster_parameter_group_name): <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>  <p>Default: Uses existing setting.</p>  <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
     ///   - [`automated_snapshot_retention_period(i32)`](crate::client::fluent_builders::ModifyCluster::automated_snapshot_retention_period) / [`set_automated_snapshot_retention_period(Option<i32>)`](crate::client::fluent_builders::ModifyCluster::set_automated_snapshot_retention_period): <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>  <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p>  <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>  <p>Default: Uses existing setting.</p>  <p>Constraints: Must be a value from 0 to 35.</p>
     ///   - [`manual_snapshot_retention_period(i32)`](crate::client::fluent_builders::ModifyCluster::manual_snapshot_retention_period) / [`set_manual_snapshot_retention_period(Option<i32>)`](crate::client::fluent_builders::ModifyCluster::set_manual_snapshot_retention_period): <p>The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing manual snapshots.</p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>  <p>The default value is -1.</p>
@@ -1507,8 +1509,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyClusterIamRoles::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyClusterIamRoles::set_cluster_identifier): <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
-    ///   - [`add_iam_roles(Vec<String>)`](crate::client::fluent_builders::ModifyClusterIamRoles::add_iam_roles) / [`set_add_iam_roles(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyClusterIamRoles::set_add_iam_roles): <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles with a single cluster in a single request.</p>
-    ///   - [`remove_iam_roles(Vec<String>)`](crate::client::fluent_builders::ModifyClusterIamRoles::remove_iam_roles) / [`set_remove_iam_roles(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyClusterIamRoles::set_remove_iam_roles): <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate up to 10 IAM roles from a single cluster in a single request.</p>
+    ///   - [`add_iam_roles(Vec<String>)`](crate::client::fluent_builders::ModifyClusterIamRoles::add_iam_roles) / [`set_add_iam_roles(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyClusterIamRoles::set_add_iam_roles): <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
+    ///   - [`remove_iam_roles(Vec<String>)`](crate::client::fluent_builders::ModifyClusterIamRoles::remove_iam_roles) / [`set_remove_iam_roles(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyClusterIamRoles::set_remove_iam_roles): <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
     ///   - [`default_iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyClusterIamRoles::default_iam_role_arn) / [`set_default_iam_role_arn(Option<String>)`](crate::client::fluent_builders::ModifyClusterIamRoles::set_default_iam_role_arn): <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
     /// - On success, responds with [`ModifyClusterIamRolesOutput`](crate::output::ModifyClusterIamRolesOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::ModifyClusterIamRolesOutput::cluster): <p>Describes a cluster.</p>
@@ -1791,7 +1793,7 @@ impl Client {
     ///   - [`node_type(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::node_type) / [`set_node_type(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_node_type): <p>The node type that the restored cluster will be provisioned with.</p>  <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ///   - [`enhanced_vpc_routing(bool)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::enhanced_vpc_routing) / [`set_enhanced_vpc_routing(Option<bool>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_enhanced_vpc_routing): <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>  <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>  <p>Default: false</p>
     ///   - [`additional_info(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::additional_info) / [`set_additional_info(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_additional_info): <p>Reserved.</p>
-    ///   - [`iam_roles(Vec<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::iam_roles) / [`set_iam_roles(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_iam_roles): <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>  <p>A cluster can have up to 10 IAM roles associated at any time.</p>
+    ///   - [`iam_roles(Vec<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::iam_roles) / [`set_iam_roles(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_iam_roles): <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>  <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     ///   - [`maintenance_track_name(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::maintenance_track_name) / [`set_maintenance_track_name(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_maintenance_track_name): <p>The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.</p>
     ///   - [`snapshot_schedule_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::snapshot_schedule_identifier) / [`set_snapshot_schedule_identifier(Option<String>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_snapshot_schedule_identifier): <p>A unique identifier for the snapshot schedule.</p>
     ///   - [`number_of_nodes(i32)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::number_of_nodes) / [`set_number_of_nodes(Option<i32>)`](crate::client::fluent_builders::RestoreFromClusterSnapshot::set_number_of_nodes): <p>The number of nodes specified when provisioning the restored cluster.</p>
@@ -2153,6 +2155,19 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
         pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_consumer_arn(input);
+            self
+        }
+        /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
+        pub fn consumer_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_region(input.into());
+            self
+        }
+        /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
+        pub fn set_consumer_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_consumer_region(input);
             self
         }
     }
@@ -3084,7 +3099,7 @@ pub mod fluent_builders {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
         /// </ul>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_user_password(input.into());
@@ -3097,7 +3112,7 @@ pub mod fluent_builders {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
         /// </ul>
         pub fn set_master_user_password(
             mut self,
@@ -3457,14 +3472,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
         ///
-        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-        /// <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
+        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+        /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         pub fn iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_roles(input.into());
             self
         }
-        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-        /// <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
+        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+        /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         pub fn set_iam_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4660,7 +4675,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSnapshotCopyGrant`.
     ///
-    /// <p>Creates a snapshot copy grant that permits Amazon Redshift to use a customer master key (CMK) from Key Management Service (KMS) to encrypt copied snapshots in a destination region.</p>
+    /// <p>Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric key from Key Management Service (KMS) to encrypt copied snapshots in a destination region.</p>
     /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshotCopyGrant {
@@ -4730,12 +4745,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_copy_grant_name(input);
             self
         }
-        /// <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+        /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+        /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -5024,12 +5039,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feature_type(input);
             self
         }
-        /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. </p>
+        /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
         pub fn limit_type(mut self, input: crate::model::UsageLimitLimitType) -> Self {
             self.inner = self.inner.limit_type(input);
             self
         }
-        /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. </p>
+        /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
         pub fn set_limit_type(
             mut self,
             input: std::option::Option<crate::model::UsageLimitLimitType>,
@@ -10299,7 +10314,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableSnapshotCopy`.
     ///
     /// <p>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</p>
-    /// <p>If your cluster and its snapshots are encrypted using a customer master key (CMK) from Key Management Service, use <code>DeleteSnapshotCopyGrant</code> to delete the grant that grants Amazon Redshift permission to the CMK in the destination region. </p>
+    /// <p>If your cluster and its snapshots are encrypted using an encrypted symmetric key from Key Management Service, use <code>DeleteSnapshotCopyGrant</code> to delete the grant that grants Amazon Redshift permission to the key in the destination region. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableSnapshotCopy {
         handle: std::sync::Arc<super::Handle>,
@@ -10428,6 +10443,19 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
         pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_consumer_arn(input);
+            self
+        }
+        /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
+        pub fn consumer_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_region(input.into());
+            self
+        }
+        /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
+        pub fn set_consumer_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_consumer_region(input);
             self
         }
     }
@@ -11348,7 +11376,7 @@ pub mod fluent_builders {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
         /// </ul>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_user_password(input.into());
@@ -11364,7 +11392,7 @@ pub mod fluent_builders {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
         /// </ul>
         pub fn set_master_user_password(
             mut self,
@@ -11731,7 +11759,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyClusterIamRoles`.
     ///
     /// <p>Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>
-    /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
+    /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClusterIamRoles {
         handle: std::sync::Arc<super::Handle>,
@@ -11788,12 +11816,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_add_iam_roles`](Self::set_add_iam_roles).
         ///
-        /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles with a single cluster in a single request.</p>
+        /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
         pub fn add_iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.add_iam_roles(input.into());
             self
         }
-        /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles with a single cluster in a single request.</p>
+        /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
         pub fn set_add_iam_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11805,12 +11833,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_remove_iam_roles`](Self::set_remove_iam_roles).
         ///
-        /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate up to 10 IAM roles from a single cluster in a single request.</p>
+        /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
         pub fn remove_iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.remove_iam_roles(input.into());
             self
         }
-        /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate up to 10 IAM roles from a single cluster in a single request.</p>
+        /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
         pub fn set_remove_iam_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13748,14 +13776,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
         ///
-        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-        /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
+        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+        /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         pub fn iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_roles(input.into());
             self
         }
-        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>
-        /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
+        /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
+        /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         pub fn set_iam_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

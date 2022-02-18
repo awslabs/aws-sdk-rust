@@ -571,6 +571,9 @@ pub struct ExperimentTemplateTarget {
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub selection_mode: std::option::Option<std::string::String>,
+    /// <p>The resource type parameters.</p>
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ExperimentTemplateTarget {
     /// <p>The resource type.</p>
@@ -596,6 +599,13 @@ impl ExperimentTemplateTarget {
     pub fn selection_mode(&self) -> std::option::Option<&str> {
         self.selection_mode.as_deref()
     }
+    /// <p>The resource type parameters.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for ExperimentTemplateTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -605,6 +615,7 @@ impl std::fmt::Debug for ExperimentTemplateTarget {
         formatter.field("resource_tags", &self.resource_tags);
         formatter.field("filters", &self.filters);
         formatter.field("selection_mode", &self.selection_mode);
+        formatter.field("parameters", &self.parameters);
         formatter.finish()
     }
 }
@@ -622,6 +633,9 @@ pub mod experiment_template_target {
         pub(crate) filters:
             std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetFilter>>,
         pub(crate) selection_mode: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The resource type.</p>
@@ -713,6 +727,31 @@ pub mod experiment_template_target {
             self.selection_mode = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The resource type parameters.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The resource type parameters.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget)
         pub fn build(self) -> crate::model::ExperimentTemplateTarget {
             crate::model::ExperimentTemplateTarget {
@@ -721,6 +760,7 @@ pub mod experiment_template_target {
                 resource_tags: self.resource_tags,
                 filters: self.filters,
                 selection_mode: self.selection_mode,
+                parameters: self.parameters,
             }
         }
     }
@@ -999,7 +1039,7 @@ impl UpdateExperimentTemplateActionInputItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentTemplateTargetInput {
-    /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
+    /// <p>The resource type. The resource type must be supported for the specified action.</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1011,9 +1051,12 @@ pub struct UpdateExperimentTemplateTargetInput {
         std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub selection_mode: std::option::Option<std::string::String>,
+    /// <p>The resource type parameters.</p>
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateExperimentTemplateTargetInput {
-    /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
+    /// <p>The resource type. The resource type must be supported for the specified action.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -1038,6 +1081,13 @@ impl UpdateExperimentTemplateTargetInput {
     pub fn selection_mode(&self) -> std::option::Option<&str> {
         self.selection_mode.as_deref()
     }
+    /// <p>The resource type parameters.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateExperimentTemplateTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1047,6 +1097,7 @@ impl std::fmt::Debug for UpdateExperimentTemplateTargetInput {
         formatter.field("resource_tags", &self.resource_tags);
         formatter.field("filters", &self.filters);
         formatter.field("selection_mode", &self.selection_mode);
+        formatter.field("parameters", &self.parameters);
         formatter.finish()
     }
 }
@@ -1064,14 +1115,17 @@ pub mod update_experiment_template_target_input {
         pub(crate) filters:
             std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
         pub(crate) selection_mode: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
-        /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
+        /// <p>The resource type. The resource type must be supported for the specified action.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
+        /// <p>The resource type. The resource type must be supported for the specified action.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1157,6 +1211,31 @@ pub mod update_experiment_template_target_input {
             self.selection_mode = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The resource type parameters.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The resource type parameters.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput)
         pub fn build(self) -> crate::model::UpdateExperimentTemplateTargetInput {
             crate::model::UpdateExperimentTemplateTargetInput {
@@ -1165,6 +1244,7 @@ pub mod update_experiment_template_target_input {
                 resource_tags: self.resource_tags,
                 filters: self.filters,
                 selection_mode: self.selection_mode,
+                parameters: self.parameters,
             }
         }
     }
@@ -2167,6 +2247,9 @@ pub struct ExperimentTarget {
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTargetFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub selection_mode: std::option::Option<std::string::String>,
+    /// <p>The resource type parameters.</p>
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ExperimentTarget {
     /// <p>The resource type.</p>
@@ -2192,6 +2275,13 @@ impl ExperimentTarget {
     pub fn selection_mode(&self) -> std::option::Option<&str> {
         self.selection_mode.as_deref()
     }
+    /// <p>The resource type parameters.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for ExperimentTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2201,6 +2291,7 @@ impl std::fmt::Debug for ExperimentTarget {
         formatter.field("resource_tags", &self.resource_tags);
         formatter.field("filters", &self.filters);
         formatter.field("selection_mode", &self.selection_mode);
+        formatter.field("parameters", &self.parameters);
         formatter.finish()
     }
 }
@@ -2218,6 +2309,9 @@ pub mod experiment_target {
         pub(crate) filters:
             std::option::Option<std::vec::Vec<crate::model::ExperimentTargetFilter>>,
         pub(crate) selection_mode: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The resource type.</p>
@@ -2309,6 +2403,31 @@ pub mod experiment_target {
             self.selection_mode = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The resource type parameters.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The resource type parameters.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExperimentTarget`](crate::model::ExperimentTarget)
         pub fn build(self) -> crate::model::ExperimentTarget {
             crate::model::ExperimentTarget {
@@ -2317,6 +2436,7 @@ pub mod experiment_target {
                 resource_tags: self.resource_tags,
                 filters: self.filters,
                 selection_mode: self.selection_mode,
+                parameters: self.parameters,
             }
         }
     }
@@ -2566,6 +2686,82 @@ impl ExperimentStatus {
 impl AsRef<str> for ExperimentStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Describes a resource type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TargetResourceTypeSummary {
+    /// <p>The resource type.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>A description of the resource type.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl TargetResourceTypeSummary {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>A description of the resource type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
+impl std::fmt::Debug for TargetResourceTypeSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TargetResourceTypeSummary");
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+/// See [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary)
+pub mod target_resource_type_summary {
+    /// A builder for [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The resource type.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>A description of the resource type.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the resource type.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary)
+        pub fn build(self) -> crate::model::TargetResourceTypeSummary {
+            crate::model::TargetResourceTypeSummary {
+                resource_type: self.resource_type,
+                description: self.description,
+            }
+        }
+    }
+}
+impl TargetResourceTypeSummary {
+    /// Creates a new builder-style object to manufacture [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary)
+    pub fn builder() -> crate::model::target_resource_type_summary::Builder {
+        crate::model::target_resource_type_summary::Builder::default()
     }
 }
 
@@ -3098,6 +3294,203 @@ impl ActionTarget {
     }
 }
 
+/// <p>Describes a resource type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TargetResourceType {
+    /// <p>The resource type.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>A description of the resource type.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The parameters for the resource type.</p>
+    pub parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::TargetResourceTypeParameter>,
+    >,
+}
+impl TargetResourceType {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>A description of the resource type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The parameters for the resource type.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::TargetResourceTypeParameter>,
+    > {
+        self.parameters.as_ref()
+    }
+}
+impl std::fmt::Debug for TargetResourceType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TargetResourceType");
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("description", &self.description);
+        formatter.field("parameters", &self.parameters);
+        formatter.finish()
+    }
+}
+/// See [`TargetResourceType`](crate::model::TargetResourceType)
+pub mod target_resource_type {
+    /// A builder for [`TargetResourceType`](crate::model::TargetResourceType)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::model::TargetResourceTypeParameter,
+            >,
+        >,
+    }
+    impl Builder {
+        /// <p>The resource type.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>A description of the resource type.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the resource type.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters for the resource type.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::TargetResourceTypeParameter,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The parameters for the resource type.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::TargetResourceTypeParameter,
+                >,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TargetResourceType`](crate::model::TargetResourceType)
+        pub fn build(self) -> crate::model::TargetResourceType {
+            crate::model::TargetResourceType {
+                resource_type: self.resource_type,
+                description: self.description,
+                parameters: self.parameters,
+            }
+        }
+    }
+}
+impl TargetResourceType {
+    /// Creates a new builder-style object to manufacture [`TargetResourceType`](crate::model::TargetResourceType)
+    pub fn builder() -> crate::model::target_resource_type::Builder {
+        crate::model::target_resource_type::Builder::default()
+    }
+}
+
+/// <p>Describes the parameters for a resource type. Use parameters to determine which tasks are identified during target resolution.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TargetResourceTypeParameter {
+    /// <p>A description of the parameter.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the parameter is required.</p>
+    pub required: std::option::Option<bool>,
+}
+impl TargetResourceTypeParameter {
+    /// <p>A description of the parameter.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether the parameter is required.</p>
+    pub fn required(&self) -> std::option::Option<bool> {
+        self.required
+    }
+}
+impl std::fmt::Debug for TargetResourceTypeParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TargetResourceTypeParameter");
+        formatter.field("description", &self.description);
+        formatter.field("required", &self.required);
+        formatter.finish()
+    }
+}
+/// See [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter)
+pub mod target_resource_type_parameter {
+    /// A builder for [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) required: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>A description of the parameter.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the parameter.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Indicates whether the parameter is required.</p>
+        pub fn required(mut self, input: bool) -> Self {
+            self.required = Some(input);
+            self
+        }
+        /// <p>Indicates whether the parameter is required.</p>
+        pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.required = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter)
+        pub fn build(self) -> crate::model::TargetResourceTypeParameter {
+            crate::model::TargetResourceTypeParameter {
+                description: self.description,
+                required: self.required,
+            }
+        }
+    }
+}
+impl TargetResourceTypeParameter {
+    /// Creates a new builder-style object to manufacture [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter)
+    pub fn builder() -> crate::model::target_resource_type_parameter::Builder {
+        crate::model::target_resource_type_parameter::Builder::default()
+    }
+}
+
 /// <p>Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">FIS actions</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3555,7 +3948,7 @@ impl CreateExperimentTemplateActionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateTargetInput {
-    /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
+    /// <p>The resource type. The resource type must be supported for the specified action.</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3572,9 +3965,12 @@ pub struct CreateExperimentTemplateTargetInput {
     /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
     /// </ul>
     pub selection_mode: std::option::Option<std::string::String>,
+    /// <p>The resource type parameters.</p>
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateExperimentTemplateTargetInput {
-    /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
+    /// <p>The resource type. The resource type must be supported for the specified action.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -3604,6 +4000,13 @@ impl CreateExperimentTemplateTargetInput {
     pub fn selection_mode(&self) -> std::option::Option<&str> {
         self.selection_mode.as_deref()
     }
+    /// <p>The resource type parameters.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateExperimentTemplateTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3613,6 +4016,7 @@ impl std::fmt::Debug for CreateExperimentTemplateTargetInput {
         formatter.field("resource_tags", &self.resource_tags);
         formatter.field("filters", &self.filters);
         formatter.field("selection_mode", &self.selection_mode);
+        formatter.field("parameters", &self.parameters);
         formatter.finish()
     }
 }
@@ -3630,14 +4034,17 @@ pub mod create_experiment_template_target_input {
         pub(crate) filters:
             std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
         pub(crate) selection_mode: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
-        /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
+        /// <p>The resource type. The resource type must be supported for the specified action.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
+        /// <p>The resource type. The resource type must be supported for the specified action.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3733,6 +4140,31 @@ pub mod create_experiment_template_target_input {
             self.selection_mode = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The resource type parameters.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>The resource type parameters.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput)
         pub fn build(self) -> crate::model::CreateExperimentTemplateTargetInput {
             crate::model::CreateExperimentTemplateTargetInput {
@@ -3741,6 +4173,7 @@ pub mod create_experiment_template_target_input {
                 resource_tags: self.resource_tags,
                 filters: self.filters,
                 selection_mode: self.selection_mode,
+                parameters: self.parameters,
             }
         }
     }

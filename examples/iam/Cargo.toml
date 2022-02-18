@@ -12,15 +12,15 @@ serde_json = "1"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-iam]
 path = "../../sdk/iam"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-hyper]
 path = "../../sdk/aws-hyper"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.tokio]
 version = "1"

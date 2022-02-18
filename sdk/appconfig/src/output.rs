@@ -415,7 +415,9 @@ pub struct UpdateConfigurationProfileOutput {
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl UpdateConfigurationProfileOutput {
@@ -447,7 +449,9 @@ impl UpdateConfigurationProfileOutput {
     pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -567,12 +571,16 @@ pub mod update_configuration_profile_output {
             self.validators = input;
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p> <code>AWS.Freeform</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p> <code>AWS.Freeform</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3160,7 +3168,9 @@ pub struct GetConfigurationProfileOutput {
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl GetConfigurationProfileOutput {
@@ -3192,7 +3202,9 @@ impl GetConfigurationProfileOutput {
     pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -3312,12 +3324,16 @@ pub mod get_configuration_profile_output {
             self.validators = input;
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p> <code>AWS.Freeform</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p> <code>AWS.Freeform</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3349,7 +3365,7 @@ impl GetConfigurationProfileOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationOutput {
     /// <p>The content of the configuration or the configuration data.</p> <important>
-    /// <p>Compare the configuration version numbers of the configuration cached locally on your machine and the configuration number in the the header. If the configuration numbers are the same, the content can be ignored. The <code>Content</code> section only appears if the system finds new or updated configuration data. If the system doesn't find new or updated configuration data, then the <code>Content</code> section is not returned.</p>
+    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
     pub content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The configuration version.</p>
@@ -3359,7 +3375,7 @@ pub struct GetConfigurationOutput {
 }
 impl GetConfigurationOutput {
     /// <p>The content of the configuration or the configuration data.</p> <important>
-    /// <p>Compare the configuration version numbers of the configuration cached locally on your machine and the configuration number in the the header. If the configuration numbers are the same, the content can be ignored. The <code>Content</code> section only appears if the system finds new or updated configuration data. If the system doesn't find new or updated configuration data, then the <code>Content</code> section is not returned.</p>
+    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
     pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.content.as_ref()
@@ -3394,14 +3410,14 @@ pub mod get_configuration_output {
     }
     impl Builder {
         /// <p>The content of the configuration or the configuration data.</p> <important>
-        /// <p>Compare the configuration version numbers of the configuration cached locally on your machine and the configuration number in the the header. If the configuration numbers are the same, the content can be ignored. The <code>Content</code> section only appears if the system finds new or updated configuration data. If the system doesn't find new or updated configuration data, then the <code>Content</code> section is not returned.</p>
+        /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
         /// </important>
         pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
             self.content = Some(input);
             self
         }
         /// <p>The content of the configuration or the configuration data.</p> <important>
-        /// <p>Compare the configuration version numbers of the configuration cached locally on your machine and the configuration number in the the header. If the configuration numbers are the same, the content can be ignored. The <code>Content</code> section only appears if the system finds new or updated configuration data. If the system doesn't find new or updated configuration data, then the <code>Content</code> section is not returned.</p>
+        /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
         /// </important>
         pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.content = input;
@@ -4230,7 +4246,9 @@ pub struct CreateConfigurationProfileOutput {
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationProfileOutput {
@@ -4262,7 +4280,9 @@ impl CreateConfigurationProfileOutput {
     pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p> <code>AWS.Freeform</code> </p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -4382,12 +4402,16 @@ pub mod create_configuration_profile_output {
             self.validators = input;
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p> <code>AWS.Freeform</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p> <code>AWS.Freeform</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self

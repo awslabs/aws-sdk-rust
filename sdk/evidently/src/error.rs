@@ -655,6 +655,8 @@ pub enum DeleteExperimentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service was unavailable. Retry the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -666,6 +668,7 @@ impl std::fmt::Display for DeleteExperimentError {
             DeleteExperimentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DeleteExperimentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteExperimentErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteExperimentErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteExperimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -752,6 +755,13 @@ impl DeleteExperimentError {
             DeleteExperimentErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteExperimentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteExperimentErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteExperimentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -761,6 +771,7 @@ impl std::error::Error for DeleteExperimentError {
             DeleteExperimentErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteExperimentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteExperimentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteExperimentErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteExperimentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1280,6 +1291,8 @@ pub enum GetExperimentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied because of request throttling. Retry the request.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1289,6 +1302,7 @@ impl std::fmt::Display for GetExperimentError {
             GetExperimentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetExperimentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetExperimentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetExperimentErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetExperimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1358,6 +1372,10 @@ impl GetExperimentError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetExperimentErrorKind::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `GetExperimentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetExperimentErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for GetExperimentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1365,6 +1383,7 @@ impl std::error::Error for GetExperimentError {
             GetExperimentErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetExperimentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetExperimentErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetExperimentErrorKind::ValidationException(_inner) => Some(_inner),
             GetExperimentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1643,6 +1662,8 @@ pub enum GetLaunchErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied because of request throttling. Retry the request.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The value of a parameter in the request caused an error.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1652,6 +1673,7 @@ impl std::fmt::Display for GetLaunchError {
             GetLaunchErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             GetLaunchErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetLaunchErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetLaunchErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetLaunchErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1718,6 +1740,10 @@ impl GetLaunchError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetLaunchErrorKind::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `GetLaunchErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetLaunchErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for GetLaunchError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1725,6 +1751,7 @@ impl std::error::Error for GetLaunchError {
             GetLaunchErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetLaunchErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLaunchErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetLaunchErrorKind::ValidationException(_inner) => Some(_inner),
             GetLaunchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1860,6 +1887,8 @@ pub struct ListExperimentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListExperimentsErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request references a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The value of a parameter in the request caused an error.</p>
@@ -1870,6 +1899,7 @@ pub enum ListExperimentsErrorKind {
 impl std::fmt::Display for ListExperimentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListExperimentsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListExperimentsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListExperimentsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListExperimentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1926,6 +1956,13 @@ impl ListExperimentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListExperimentsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListExperimentsErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListExperimentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -1941,6 +1978,7 @@ impl ListExperimentsError {
 impl std::error::Error for ListExperimentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListExperimentsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListExperimentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListExperimentsErrorKind::ValidationException(_inner) => Some(_inner),
             ListExperimentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -2672,6 +2710,8 @@ pub struct StartLaunchError {
 pub enum StartLaunchErrorKind {
     /// <p>You do not have sufficient permissions to perform this action. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource was in an inconsistent state during an update or a deletion.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The request references a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request would cause a service quota to be exceeded.</p>
@@ -2687,6 +2727,7 @@ impl std::fmt::Display for StartLaunchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             StartLaunchErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StartLaunchErrorKind::ConflictException(_inner) => _inner.fmt(f),
             StartLaunchErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             StartLaunchErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             StartLaunchErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -2749,6 +2790,10 @@ impl StartLaunchError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, StartLaunchErrorKind::AccessDeniedException(_))
     }
+    /// Returns `true` if the error kind is `StartLaunchErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, StartLaunchErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `StartLaunchErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -2776,6 +2821,7 @@ impl std::error::Error for StartLaunchError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             StartLaunchErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StartLaunchErrorKind::ConflictException(_inner) => Some(_inner),
             StartLaunchErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartLaunchErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             StartLaunchErrorKind::ThrottlingException(_inner) => Some(_inner),

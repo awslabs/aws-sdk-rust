@@ -1139,6 +1139,16 @@ pub(crate) fn reflens_structure_crate_output_get_vpn_connection_device_types_out
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_images_in_recycle_bin_output_next_token(
+    input: &crate::output::ListImagesInRecycleBinOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_snapshots_in_recycle_bin_output_next_token(
     input: &crate::output::ListSnapshotsInRecycleBinOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -2305,6 +2315,16 @@ pub(crate) fn lens_structure_crate_output_get_vpn_connection_device_types_output
     input: crate::output::GetVpnConnectionDeviceTypesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::VpnConnectionDeviceType>> {
     let input = match input.vpn_connection_device_types {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_images_in_recycle_bin_output_images(
+    input: crate::output::ListImagesInRecycleBinOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ImageRecycleBinInfo>> {
+    let input = match input.images {
         None => return None,
         Some(t) => t,
     };

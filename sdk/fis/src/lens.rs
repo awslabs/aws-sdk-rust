@@ -28,3 +28,13 @@ pub(crate) fn reflens_structure_crate_output_list_experiment_templates_output_ne
     };
     Some(input)
 }
+
+pub(crate) fn reflens_structure_crate_output_list_target_resource_types_output_next_token(
+    input: &crate::output::ListTargetResourceTypesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

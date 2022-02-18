@@ -556,6 +556,34 @@ impl Client {
     pub fn get_event_prediction(&self) -> fluent_builders::GetEventPrediction {
         fluent_builders::GetEventPrediction::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetEventPredictionMetadata`](crate::client::fluent_builders::GetEventPredictionMetadata) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`event_id(impl Into<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::event_id) / [`set_event_id(Option<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::set_event_id): <p> The event ID. </p>
+    ///   - [`event_type_name(impl Into<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::event_type_name) / [`set_event_type_name(Option<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::set_event_type_name): <p> The event type associated with the detector specified for the prediction. </p>
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::set_detector_id): <p> The detector ID. </p>
+    ///   - [`detector_version_id(impl Into<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::detector_version_id) / [`set_detector_version_id(Option<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::set_detector_version_id): <p> The detector version ID. </p>
+    ///   - [`prediction_timestamp(impl Into<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::prediction_timestamp) / [`set_prediction_timestamp(Option<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::set_prediction_timestamp): <p> The timestamp that defines when the prediction was generated. </p>
+    /// - On success, responds with [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput) with field(s):
+    ///   - [`event_id(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::event_id): <p> The event ID. </p>
+    ///   - [`event_type_name(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::event_type_name): <p> The event type associated with the detector specified for this prediction. </p>
+    ///   - [`entity_id(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::entity_id): <p> The entity ID. </p>
+    ///   - [`entity_type(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::entity_type): <p> The entity type. </p>
+    ///   - [`event_timestamp(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::event_timestamp): <p> The timestamp for when the prediction was generated for the associated event ID. </p>
+    ///   - [`detector_id(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::detector_id): <p> The detector ID. </p>
+    ///   - [`detector_version_id(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::detector_version_id): <p> The detector version ID. </p>
+    ///   - [`detector_version_status(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::detector_version_status): <p> The status of the detector version. </p>
+    ///   - [`event_variables(Option<Vec<EventVariableSummary>>)`](crate::output::GetEventPredictionMetadataOutput::event_variables): <p> A list of event variables that influenced the prediction scores. </p>
+    ///   - [`rules(Option<Vec<EvaluatedRule>>)`](crate::output::GetEventPredictionMetadataOutput::rules): <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
+    ///   - [`rule_execution_mode(Option<RuleExecutionMode>)`](crate::output::GetEventPredictionMetadataOutput::rule_execution_mode): <p> The execution mode of the rule used for evaluating variable values. </p>
+    ///   - [`outcomes(Option<Vec<String>>)`](crate::output::GetEventPredictionMetadataOutput::outcomes): <p> The outcomes of the matched rule, based on the rule execution mode. </p>
+    ///   - [`evaluated_model_versions(Option<Vec<EvaluatedModelVersion>>)`](crate::output::GetEventPredictionMetadataOutput::evaluated_model_versions): <p> Model versions that were evaluated for generating predictions. </p>
+    ///   - [`evaluated_external_models(Option<Vec<EvaluatedExternalModel>>)`](crate::output::GetEventPredictionMetadataOutput::evaluated_external_models): <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
+    ///   - [`prediction_timestamp(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::prediction_timestamp): <p>The timestamp that defines when the prediction was generated. </p>
+    /// - On failure, responds with [`SdkError<GetEventPredictionMetadataError>`](crate::error::GetEventPredictionMetadataError)
+    pub fn get_event_prediction_metadata(&self) -> fluent_builders::GetEventPredictionMetadata {
+        fluent_builders::GetEventPredictionMetadata::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetEventTypes`](crate::client::fluent_builders::GetEventTypes) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetEventTypes::into_paginator).
     ///
@@ -686,6 +714,24 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetVariablesError>`](crate::error::GetVariablesError)
     pub fn get_variables(&self) -> fluent_builders::GetVariables {
         fluent_builders::GetVariables::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListEventPredictions`](crate::client::fluent_builders::ListEventPredictions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEventPredictions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`event_id(FilterCondition)`](crate::client::fluent_builders::ListEventPredictions::event_id) / [`set_event_id(Option<FilterCondition>)`](crate::client::fluent_builders::ListEventPredictions::set_event_id): <p> The event ID. </p>
+    ///   - [`event_type(FilterCondition)`](crate::client::fluent_builders::ListEventPredictions::event_type) / [`set_event_type(Option<FilterCondition>)`](crate::client::fluent_builders::ListEventPredictions::set_event_type): <p> The event type associated with the detector. </p>
+    ///   - [`detector_id(FilterCondition)`](crate::client::fluent_builders::ListEventPredictions::detector_id) / [`set_detector_id(Option<FilterCondition>)`](crate::client::fluent_builders::ListEventPredictions::set_detector_id): <p> The detector ID. </p>
+    ///   - [`detector_version_id(FilterCondition)`](crate::client::fluent_builders::ListEventPredictions::detector_version_id) / [`set_detector_version_id(Option<FilterCondition>)`](crate::client::fluent_builders::ListEventPredictions::set_detector_version_id): <p> The detector version ID. </p>
+    ///   - [`prediction_time_range(PredictionTimeRange)`](crate::client::fluent_builders::ListEventPredictions::prediction_time_range) / [`set_prediction_time_range(Option<PredictionTimeRange>)`](crate::client::fluent_builders::ListEventPredictions::set_prediction_time_range): <p> The time period for when the predictions were generated. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEventPredictions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEventPredictions::set_next_token): <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEventPredictions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEventPredictions::set_max_results): <p> The maximum number of predictions to return for the request. </p>
+    /// - On success, responds with [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput) with field(s):
+    ///   - [`event_prediction_summaries(Option<Vec<EventPredictionSummary>>)`](crate::output::ListEventPredictionsOutput::event_prediction_summaries): <p> The summary of the past predictions. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEventPredictionsOutput::next_token): <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// - On failure, responds with [`SdkError<ListEventPredictionsError>`](crate::error::ListEventPredictionsError)
+    pub fn list_event_predictions(&self) -> fluent_builders::ListEventPredictions {
+        fluent_builders::ListEventPredictions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
@@ -3882,6 +3928,108 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetEventPredictionMetadata`.
+    ///
+    /// <p> Gets details of the past fraud predictions for the specified event ID, event type, detector ID, and detector version ID that was generated in the specified time period. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetEventPredictionMetadata {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_event_prediction_metadata_input::Builder,
+    }
+    impl GetEventPredictionMetadata {
+        /// Creates a new `GetEventPredictionMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetEventPredictionMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetEventPredictionMetadataError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The event ID. </p>
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(input.into());
+            self
+        }
+        /// <p> The event ID. </p>
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_event_id(input);
+            self
+        }
+        /// <p> The event type associated with the detector specified for the prediction. </p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(input.into());
+            self
+        }
+        /// <p> The event type associated with the detector specified for the prediction. </p>
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_type_name(input);
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_detector_id(input);
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_version_id(input.into());
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn set_detector_version_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_detector_version_id(input);
+            self
+        }
+        /// <p> The timestamp that defines when the prediction was generated. </p>
+        pub fn prediction_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prediction_timestamp(input.into());
+            self
+        }
+        /// <p> The timestamp that defines when the prediction was generated. </p>
+        pub fn set_prediction_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_prediction_timestamp(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetEventTypes`.
     ///
     /// <p>Gets all event types or a specific event type if name is provided. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetEventTypesResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
@@ -4590,6 +4738,142 @@ pub mod fluent_builders {
             self
         }
         /// <p>The max size per page determined for the get variable request. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListEventPredictions`.
+    ///
+    /// <p>Gets a list of past predictions. The list can be filtered by detector ID, detector version ID, event ID, event type, or by specifying a time period. If filter is not specified, the most recent prediction is returned.</p>
+    /// <p>For example, the following filter lists all past predictions for <code>xyz</code> event type - <code>{ "eventType":{ "value": "xyz" }” } </code> </p>
+    /// <p>This is a paginated API. If you provide a null <code>maxResults</code>, this action will retrieve a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 50 and 100. To get the next page results, provide the <code>nextToken</code> from the response as part of your request. A null <code>nextToken</code> fetches the records from the beginning. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListEventPredictions {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_event_predictions_input::Builder,
+    }
+    impl ListEventPredictions {
+        /// Creates a new `ListEventPredictions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListEventPredictionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListEventPredictionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEventPredictionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEventPredictionsPaginator {
+            crate::paginator::ListEventPredictionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The event ID. </p>
+        pub fn event_id(mut self, input: crate::model::FilterCondition) -> Self {
+            self.inner = self.inner.event_id(input);
+            self
+        }
+        /// <p> The event ID. </p>
+        pub fn set_event_id(
+            mut self,
+            input: std::option::Option<crate::model::FilterCondition>,
+        ) -> Self {
+            self.inner = self.inner.set_event_id(input);
+            self
+        }
+        /// <p> The event type associated with the detector. </p>
+        pub fn event_type(mut self, input: crate::model::FilterCondition) -> Self {
+            self.inner = self.inner.event_type(input);
+            self
+        }
+        /// <p> The event type associated with the detector. </p>
+        pub fn set_event_type(
+            mut self,
+            input: std::option::Option<crate::model::FilterCondition>,
+        ) -> Self {
+            self.inner = self.inner.set_event_type(input);
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn detector_id(mut self, input: crate::model::FilterCondition) -> Self {
+            self.inner = self.inner.detector_id(input);
+            self
+        }
+        /// <p> The detector ID. </p>
+        pub fn set_detector_id(
+            mut self,
+            input: std::option::Option<crate::model::FilterCondition>,
+        ) -> Self {
+            self.inner = self.inner.set_detector_id(input);
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn detector_version_id(mut self, input: crate::model::FilterCondition) -> Self {
+            self.inner = self.inner.detector_version_id(input);
+            self
+        }
+        /// <p> The detector version ID. </p>
+        pub fn set_detector_version_id(
+            mut self,
+            input: std::option::Option<crate::model::FilterCondition>,
+        ) -> Self {
+            self.inner = self.inner.set_detector_version_id(input);
+            self
+        }
+        /// <p> The time period for when the predictions were generated. </p>
+        pub fn prediction_time_range(mut self, input: crate::model::PredictionTimeRange) -> Self {
+            self.inner = self.inner.prediction_time_range(input);
+            self
+        }
+        /// <p> The time period for when the predictions were generated. </p>
+        pub fn set_prediction_time_range(
+            mut self,
+            input: std::option::Option<crate::model::PredictionTimeRange>,
+        ) -> Self {
+            self.inner = self.inner.set_prediction_time_range(input);
+            self
+        }
+        /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p> The maximum number of predictions to return for the request. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p> The maximum number of predictions to return for the request. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self

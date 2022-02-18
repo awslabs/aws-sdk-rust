@@ -14,6 +14,8 @@ pub struct CreateCanaryError {
 pub enum CreateCanaryErrorKind {
     /// <p>An unknown internal error occurred.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>One of the input resources is larger than is allowed.</p>
+    RequestEntityTooLargeException(crate::error::RequestEntityTooLargeException),
     /// <p>A parameter could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -23,6 +25,7 @@ impl std::fmt::Display for CreateCanaryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateCanaryErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateCanaryErrorKind::RequestEntityTooLargeException(_inner) => _inner.fmt(f),
             CreateCanaryErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateCanaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -85,6 +88,13 @@ impl CreateCanaryError {
             CreateCanaryErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateCanaryErrorKind::RequestEntityTooLargeException`.
+    pub fn is_request_entity_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCanaryErrorKind::RequestEntityTooLargeException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateCanaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateCanaryErrorKind::ValidationException(_))
@@ -94,6 +104,7 @@ impl std::error::Error for CreateCanaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateCanaryErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateCanaryErrorKind::RequestEntityTooLargeException(_inner) => Some(_inner),
             CreateCanaryErrorKind::ValidationException(_inner) => Some(_inner),
             CreateCanaryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1329,6 +1340,8 @@ pub enum UpdateCanaryErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>An unknown internal error occurred.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>One of the input resources is larger than is allowed.</p>
+    RequestEntityTooLargeException(crate::error::RequestEntityTooLargeException),
     /// <p>One of the specified resources was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A parameter could not be validated.</p>
@@ -1341,6 +1354,7 @@ impl std::fmt::Display for UpdateCanaryError {
         match &self.kind {
             UpdateCanaryErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateCanaryErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateCanaryErrorKind::RequestEntityTooLargeException(_inner) => _inner.fmt(f),
             UpdateCanaryErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateCanaryErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateCanaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1408,6 +1422,13 @@ impl UpdateCanaryError {
             UpdateCanaryErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateCanaryErrorKind::RequestEntityTooLargeException`.
+    pub fn is_request_entity_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCanaryErrorKind::RequestEntityTooLargeException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateCanaryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -1425,6 +1446,7 @@ impl std::error::Error for UpdateCanaryError {
         match &self.kind {
             UpdateCanaryErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateCanaryErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateCanaryErrorKind::RequestEntityTooLargeException(_inner) => Some(_inner),
             UpdateCanaryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateCanaryErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateCanaryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1560,6 +1582,70 @@ impl ResourceNotFoundException {
     }
 }
 
+/// <p>One of the input resources is larger than is allowed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RequestEntityTooLargeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RequestEntityTooLargeException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RequestEntityTooLargeException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl RequestEntityTooLargeException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for RequestEntityTooLargeException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "RequestEntityTooLargeException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for RequestEntityTooLargeException {}
+/// See [`RequestEntityTooLargeException`](crate::error::RequestEntityTooLargeException)
+pub mod request_entity_too_large_exception {
+    /// A builder for [`RequestEntityTooLargeException`](crate::error::RequestEntityTooLargeException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RequestEntityTooLargeException`](crate::error::RequestEntityTooLargeException)
+        pub fn build(self) -> crate::error::RequestEntityTooLargeException {
+            crate::error::RequestEntityTooLargeException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl RequestEntityTooLargeException {
+    /// Creates a new builder-style object to manufacture [`RequestEntityTooLargeException`](crate::error::RequestEntityTooLargeException)
+    pub fn builder() -> crate::error::request_entity_too_large_exception::Builder {
+        crate::error::request_entity_too_large_exception::Builder::default()
+    }
+}
+
 /// <p>An unknown internal error occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1583,8 +1669,8 @@ impl InternalServerException {
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -1647,8 +1733,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }

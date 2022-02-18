@@ -15,15 +15,15 @@ name = "s3_service"
 path = "src/s3-service-lib.rs"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-endpoint]
 path = "../../sdk/aws-endpoint"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
-version = "0.6.0"
+version = "0.7.0"
 
 [dependencies.tokio]
 version = "1"

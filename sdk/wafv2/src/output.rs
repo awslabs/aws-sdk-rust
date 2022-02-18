@@ -930,6 +930,89 @@ impl ListRegexPatternSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMobileSdkReleasesOutput {
+    /// <p>High level information for the available SDK releases. </p>
+    pub release_summaries: std::option::Option<std::vec::Vec<crate::model::ReleaseSummary>>,
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub next_marker: std::option::Option<std::string::String>,
+}
+impl ListMobileSdkReleasesOutput {
+    /// <p>High level information for the available SDK releases. </p>
+    pub fn release_summaries(&self) -> std::option::Option<&[crate::model::ReleaseSummary]> {
+        self.release_summaries.as_deref()
+    }
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+}
+impl std::fmt::Debug for ListMobileSdkReleasesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMobileSdkReleasesOutput");
+        formatter.field("release_summaries", &self.release_summaries);
+        formatter.field("next_marker", &self.next_marker);
+        formatter.finish()
+    }
+}
+/// See [`ListMobileSdkReleasesOutput`](crate::output::ListMobileSdkReleasesOutput)
+pub mod list_mobile_sdk_releases_output {
+    /// A builder for [`ListMobileSdkReleasesOutput`](crate::output::ListMobileSdkReleasesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) release_summaries:
+            std::option::Option<std::vec::Vec<crate::model::ReleaseSummary>>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `release_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_release_summaries`](Self::set_release_summaries).
+        ///
+        /// <p>High level information for the available SDK releases. </p>
+        pub fn release_summaries(mut self, input: crate::model::ReleaseSummary) -> Self {
+            let mut v = self.release_summaries.unwrap_or_default();
+            v.push(input);
+            self.release_summaries = Some(v);
+            self
+        }
+        /// <p>High level information for the available SDK releases. </p>
+        pub fn set_release_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReleaseSummary>>,
+        ) -> Self {
+            self.release_summaries = input;
+            self
+        }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
+            self
+        }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMobileSdkReleasesOutput`](crate::output::ListMobileSdkReleasesOutput)
+        pub fn build(self) -> crate::output::ListMobileSdkReleasesOutput {
+            crate::output::ListMobileSdkReleasesOutput {
+                release_summaries: self.release_summaries,
+                next_marker: self.next_marker,
+            }
+        }
+    }
+}
+impl ListMobileSdkReleasesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMobileSdkReleasesOutput`](crate::output::ListMobileSdkReleasesOutput)
+    pub fn builder() -> crate::output::list_mobile_sdk_releases_output::Builder {
+        crate::output::list_mobile_sdk_releases_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedRuleSetsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
@@ -1409,6 +1492,8 @@ pub struct GetWebAclOutput {
     pub web_acl: std::option::Option<crate::model::WebAcl>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
+    /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF application integration</a> in the <i>WAF Developer Guide</i>.</p>
+    pub application_integration_url: std::option::Option<std::string::String>,
 }
 impl GetWebAclOutput {
     /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
@@ -1419,12 +1504,20 @@ impl GetWebAclOutput {
     pub fn lock_token(&self) -> std::option::Option<&str> {
         self.lock_token.as_deref()
     }
+    /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF application integration</a> in the <i>WAF Developer Guide</i>.</p>
+    pub fn application_integration_url(&self) -> std::option::Option<&str> {
+        self.application_integration_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GetWebAclOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWebAclOutput");
         formatter.field("web_acl", &self.web_acl);
         formatter.field("lock_token", &self.lock_token);
+        formatter.field(
+            "application_integration_url",
+            &self.application_integration_url,
+        );
         formatter.finish()
     }
 }
@@ -1436,6 +1529,7 @@ pub mod get_web_acl_output {
     pub struct Builder {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
         pub(crate) lock_token: std::option::Option<std::string::String>,
+        pub(crate) application_integration_url: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
@@ -1458,11 +1552,28 @@ pub mod get_web_acl_output {
             self.lock_token = input;
             self
         }
+        /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF application integration</a> in the <i>WAF Developer Guide</i>.</p>
+        pub fn application_integration_url(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.application_integration_url = Some(input.into());
+            self
+        }
+        /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF application integration</a> in the <i>WAF Developer Guide</i>.</p>
+        pub fn set_application_integration_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_integration_url = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetWebAclOutput`](crate::output::GetWebAclOutput)
         pub fn build(self) -> crate::output::GetWebAclOutput {
             crate::output::GetWebAclOutput {
                 web_acl: self.web_acl,
                 lock_token: self.lock_token,
+                application_integration_url: self.application_integration_url,
             }
         }
     }
@@ -1879,6 +1990,63 @@ impl GetPermissionPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMobileSdkReleaseOutput {
+    /// <p>Information for a specified SDK release, including release notes and tags.</p>
+    pub mobile_sdk_release: std::option::Option<crate::model::MobileSdkRelease>,
+}
+impl GetMobileSdkReleaseOutput {
+    /// <p>Information for a specified SDK release, including release notes and tags.</p>
+    pub fn mobile_sdk_release(&self) -> std::option::Option<&crate::model::MobileSdkRelease> {
+        self.mobile_sdk_release.as_ref()
+    }
+}
+impl std::fmt::Debug for GetMobileSdkReleaseOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMobileSdkReleaseOutput");
+        formatter.field("mobile_sdk_release", &self.mobile_sdk_release);
+        formatter.finish()
+    }
+}
+/// See [`GetMobileSdkReleaseOutput`](crate::output::GetMobileSdkReleaseOutput)
+pub mod get_mobile_sdk_release_output {
+    /// A builder for [`GetMobileSdkReleaseOutput`](crate::output::GetMobileSdkReleaseOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) mobile_sdk_release: std::option::Option<crate::model::MobileSdkRelease>,
+    }
+    impl Builder {
+        /// <p>Information for a specified SDK release, including release notes and tags.</p>
+        pub fn mobile_sdk_release(mut self, input: crate::model::MobileSdkRelease) -> Self {
+            self.mobile_sdk_release = Some(input);
+            self
+        }
+        /// <p>Information for a specified SDK release, including release notes and tags.</p>
+        pub fn set_mobile_sdk_release(
+            mut self,
+            input: std::option::Option<crate::model::MobileSdkRelease>,
+        ) -> Self {
+            self.mobile_sdk_release = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMobileSdkReleaseOutput`](crate::output::GetMobileSdkReleaseOutput)
+        pub fn build(self) -> crate::output::GetMobileSdkReleaseOutput {
+            crate::output::GetMobileSdkReleaseOutput {
+                mobile_sdk_release: self.mobile_sdk_release,
+            }
+        }
+    }
+}
+impl GetMobileSdkReleaseOutput {
+    /// Creates a new builder-style object to manufacture [`GetMobileSdkReleaseOutput`](crate::output::GetMobileSdkReleaseOutput)
+    pub fn builder() -> crate::output::get_mobile_sdk_release_output::Builder {
+        crate::output::get_mobile_sdk_release_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedRuleSetOutput {
     /// <p>The managed rule set that you requested. </p>
     pub managed_rule_set: std::option::Option<crate::model::ManagedRuleSet>,
@@ -2081,6 +2249,58 @@ impl GetIpSetOutput {
     /// Creates a new builder-style object to manufacture [`GetIpSetOutput`](crate::output::GetIpSetOutput)
     pub fn builder() -> crate::output::get_ip_set_output::Builder {
         crate::output::get_ip_set_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GenerateMobileSdkReleaseUrlOutput {
+    /// <p>The presigned download URL for the specified SDK release.</p>
+    pub url: std::option::Option<std::string::String>,
+}
+impl GenerateMobileSdkReleaseUrlOutput {
+    /// <p>The presigned download URL for the specified SDK release.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
+impl std::fmt::Debug for GenerateMobileSdkReleaseUrlOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GenerateMobileSdkReleaseUrlOutput");
+        formatter.field("url", &self.url);
+        formatter.finish()
+    }
+}
+/// See [`GenerateMobileSdkReleaseUrlOutput`](crate::output::GenerateMobileSdkReleaseUrlOutput)
+pub mod generate_mobile_sdk_release_url_output {
+    /// A builder for [`GenerateMobileSdkReleaseUrlOutput`](crate::output::GenerateMobileSdkReleaseUrlOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) url: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The presigned download URL for the specified SDK release.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The presigned download URL for the specified SDK release.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GenerateMobileSdkReleaseUrlOutput`](crate::output::GenerateMobileSdkReleaseUrlOutput)
+        pub fn build(self) -> crate::output::GenerateMobileSdkReleaseUrlOutput {
+            crate::output::GenerateMobileSdkReleaseUrlOutput { url: self.url }
+        }
+    }
+}
+impl GenerateMobileSdkReleaseUrlOutput {
+    /// Creates a new builder-style object to manufacture [`GenerateMobileSdkReleaseUrlOutput`](crate::output::GenerateMobileSdkReleaseUrlOutput)
+    pub fn builder() -> crate::output::generate_mobile_sdk_release_url_output::Builder {
+        crate::output::generate_mobile_sdk_release_url_output::Builder::default()
     }
 }
 

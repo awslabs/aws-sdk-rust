@@ -403,6 +403,80 @@ pub fn parse_get_experiment_template_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_target_resource_type_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetTargetResourceTypeOutput,
+    crate::error::GetTargetResourceTypeError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetTargetResourceTypeError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetTargetResourceTypeError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFoundException" => crate::error::GetTargetResourceTypeError {
+            meta: generic,
+            kind: crate::error::GetTargetResourceTypeErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTargetResourceTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::GetTargetResourceTypeError {
+            meta: generic,
+            kind: crate::error::GetTargetResourceTypeErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTargetResourceTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetTargetResourceTypeError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_target_resource_type_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetTargetResourceTypeOutput,
+    crate::error::GetTargetResourceTypeError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_target_resource_type_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_target_resource_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetTargetResourceTypeError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_actions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListActionsOutput, crate::error::ListActionsError> {
@@ -593,6 +667,67 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_target_resource_types_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListTargetResourceTypesOutput,
+    crate::error::ListTargetResourceTypesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListTargetResourceTypesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListTargetResourceTypesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ValidationException" => crate::error::ListTargetResourceTypesError {
+            meta: generic,
+            kind: crate::error::ListTargetResourceTypesErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTargetResourceTypesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListTargetResourceTypesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_target_resource_types_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListTargetResourceTypesOutput,
+    crate::error::ListTargetResourceTypesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_target_resource_types_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_target_resource_types(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListTargetResourceTypesError::unhandled)?;
         output.build()
     })
 }

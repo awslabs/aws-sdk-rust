@@ -536,6 +536,110 @@ impl std::error::Error for GetExperimentTemplateError {
     }
 }
 
+/// Error type for the `GetTargetResourceType` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetTargetResourceTypeError {
+    /// Kind of error that occurred.
+    pub kind: GetTargetResourceTypeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetTargetResourceType` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetTargetResourceTypeErrorKind {
+    /// <p>The specified resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetTargetResourceTypeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetTargetResourceTypeErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetTargetResourceTypeErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetTargetResourceTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetTargetResourceTypeError {
+    fn code(&self) -> Option<&str> {
+        GetTargetResourceTypeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetTargetResourceTypeError {
+    /// Creates a new `GetTargetResourceTypeError`.
+    pub fn new(kind: GetTargetResourceTypeErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetTargetResourceTypeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetTargetResourceTypeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetTargetResourceTypeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetTargetResourceTypeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetTargetResourceTypeErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTargetResourceTypeErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTargetResourceTypeErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTargetResourceTypeErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetTargetResourceTypeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetTargetResourceTypeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetTargetResourceTypeErrorKind::ValidationException(_inner) => Some(_inner),
+            GetTargetResourceTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListActions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -887,6 +991,99 @@ impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListTargetResourceTypes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTargetResourceTypesError {
+    /// Kind of error that occurred.
+    pub kind: ListTargetResourceTypesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTargetResourceTypes` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTargetResourceTypesErrorKind {
+    /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTargetResourceTypesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTargetResourceTypesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListTargetResourceTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTargetResourceTypesError {
+    fn code(&self) -> Option<&str> {
+        ListTargetResourceTypesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTargetResourceTypesError {
+    /// Creates a new `ListTargetResourceTypesError`.
+    pub fn new(kind: ListTargetResourceTypesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTargetResourceTypesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTargetResourceTypesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTargetResourceTypesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTargetResourceTypesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTargetResourceTypesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTargetResourceTypesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListTargetResourceTypesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTargetResourceTypesErrorKind::ValidationException(_inner) => Some(_inner),
+            ListTargetResourceTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

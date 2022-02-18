@@ -33341,6 +33341,88 @@ impl std::error::Error for ImportVolumeError {
     }
 }
 
+/// Error type for the `ListImagesInRecycleBin` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListImagesInRecycleBinError {
+    /// Kind of error that occurred.
+    pub kind: ListImagesInRecycleBinErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListImagesInRecycleBin` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListImagesInRecycleBinErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListImagesInRecycleBinError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListImagesInRecycleBinErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListImagesInRecycleBinError {
+    fn code(&self) -> Option<&str> {
+        ListImagesInRecycleBinError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListImagesInRecycleBinError {
+    /// Creates a new `ListImagesInRecycleBinError`.
+    pub fn new(kind: ListImagesInRecycleBinErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListImagesInRecycleBinError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListImagesInRecycleBinErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListImagesInRecycleBinError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListImagesInRecycleBinErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListImagesInRecycleBinError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListImagesInRecycleBinErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListSnapshotsInRecycleBin` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -41167,6 +41249,88 @@ impl std::error::Error for RestoreAddressToClassicError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             RestoreAddressToClassicErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `RestoreImageFromRecycleBin` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RestoreImageFromRecycleBinError {
+    /// Kind of error that occurred.
+    pub kind: RestoreImageFromRecycleBinErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `RestoreImageFromRecycleBin` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RestoreImageFromRecycleBinErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RestoreImageFromRecycleBinError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RestoreImageFromRecycleBinErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RestoreImageFromRecycleBinError {
+    fn code(&self) -> Option<&str> {
+        RestoreImageFromRecycleBinError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RestoreImageFromRecycleBinError {
+    /// Creates a new `RestoreImageFromRecycleBinError`.
+    pub fn new(kind: RestoreImageFromRecycleBinErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RestoreImageFromRecycleBinError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RestoreImageFromRecycleBinErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RestoreImageFromRecycleBinError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RestoreImageFromRecycleBinErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for RestoreImageFromRecycleBinError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RestoreImageFromRecycleBinErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

@@ -3069,6 +3069,24 @@ pub fn parse_create_registry_error(
                 tmp
             }),
         },
+        "ConcurrentModificationException" => crate::error::CreateRegistryError {
+            meta: generic,
+            kind: crate::error::CreateRegistryErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRegistryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::CreateRegistryError {
             meta: generic,
             kind: crate::error::CreateRegistryErrorKind::InternalServiceException({
@@ -3181,6 +3199,24 @@ pub fn parse_create_schema_error(
                     let mut output = crate::error::already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSchemaError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConcurrentModificationException" => crate::error::CreateSchemaError {
+            meta: generic,
+            kind: crate::error::CreateSchemaErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSchemaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

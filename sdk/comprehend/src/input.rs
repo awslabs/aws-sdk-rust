@@ -1227,6 +1227,7 @@ pub mod create_document_classifier_input {
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) mode: std::option::Option<crate::model::DocumentClassifierMode>,
         pub(crate) model_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) model_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the document classifier.</p>
@@ -1410,6 +1411,24 @@ pub mod create_document_classifier_input {
             self.model_kms_key_id = input;
             self
         }
+        /// <p>The resource-based policy to attach to your custom document classifier model. You can use this policy to allow another AWS account to import your custom model.</p>
+        /// <p>Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn model_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_policy = Some(input.into());
+            self
+        }
+        /// <p>The resource-based policy to attach to your custom document classifier model. You can use this policy to allow another AWS account to import your custom model.</p>
+        /// <p>Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn set_model_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDocumentClassifierInput`](crate::input::CreateDocumentClassifierInput)
         pub fn build(
             self,
@@ -1430,6 +1449,7 @@ pub mod create_document_classifier_input {
                 vpc_config: self.vpc_config,
                 mode: self.mode,
                 model_kms_key_id: self.model_kms_key_id,
+                model_policy: self.model_policy,
             })
         }
     }
@@ -1812,6 +1832,7 @@ pub mod create_entity_recognizer_input {
         pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) model_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) model_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>
@@ -1966,6 +1987,24 @@ pub mod create_entity_recognizer_input {
             self.model_kms_key_id = input;
             self
         }
+        /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another AWS account to import your custom model.</p>
+        /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn model_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_policy = Some(input.into());
+            self
+        }
+        /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another AWS account to import your custom model.</p>
+        /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn set_model_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEntityRecognizerInput`](crate::input::CreateEntityRecognizerInput)
         pub fn build(
             self,
@@ -1984,6 +2023,7 @@ pub mod create_entity_recognizer_input {
                 volume_kms_key_id: self.volume_kms_key_id,
                 vpc_config: self.vpc_config,
                 model_kms_key_id: self.model_kms_key_id,
+                model_policy: self.model_policy,
             })
         }
     }
@@ -2581,6 +2621,176 @@ impl DeleteEntityRecognizerInput {
     /// Creates a new builder-style object to manufacture [`DeleteEntityRecognizerInput`](crate::input::DeleteEntityRecognizerInput)
     pub fn builder() -> crate::input::delete_entity_recognizer_input::Builder {
         crate::input::delete_entity_recognizer_input::Builder::default()
+    }
+}
+
+/// See [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+pub mod delete_resource_policy_input {
+    /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the custom model version that has the policy to delete.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom model version that has the policy to delete.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The revision ID of the policy to delete.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_revision_id = Some(input.into());
+            self
+        }
+        /// <p>The revision ID of the policy to delete.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteResourcePolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteResourcePolicyInput {
+                resource_arn: self.resource_arn,
+                policy_revision_id: self.policy_revision_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
+#[doc(hidden)]
+pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteResourcePolicyInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteResourcePolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteResourcePolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteResourcePolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteResourcePolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Comprehend_20171127.DeleteResourcePolicy",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
+                &self,
+            )?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteResourcePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteResourcePolicy",
+            "comprehend",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
+        crate::input::delete_resource_policy_input::Builder::default()
     }
 }
 
@@ -3978,6 +4188,161 @@ impl DescribePiiEntitiesDetectionJobInput {
     }
 }
 
+/// See [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput)
+pub mod describe_resource_policy_input {
+    /// A builder for [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeResourcePolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeResourcePolicyInput {
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeResourcePolicyInputOperationOutputAlias = crate::operation::DescribeResourcePolicy;
+#[doc(hidden)]
+pub type DescribeResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeResourcePolicyInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeResourcePolicy`](crate::operation::DescribeResourcePolicy)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeResourcePolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeResourcePolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeResourcePolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeResourcePolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Comprehend_20171127.DescribeResourcePolicy",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_resource_policy(
+                &self,
+            )?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeResourcePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeResourcePolicy",
+            "comprehend",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput)
+    pub fn builder() -> crate::input::describe_resource_policy_input::Builder {
+        crate::input::describe_resource_policy_input::Builder::default()
+    }
+}
+
 /// See [`DescribeSentimentDetectionJobInput`](crate::input::DescribeSentimentDetectionJobInput)
 pub mod describe_sentiment_detection_job_input {
     /// A builder for [`DescribeSentimentDetectionJobInput`](crate::input::DescribeSentimentDetectionJobInput)
@@ -5291,6 +5656,245 @@ impl DetectSyntaxInput {
     /// Creates a new builder-style object to manufacture [`DetectSyntaxInput`](crate::input::DetectSyntaxInput)
     pub fn builder() -> crate::input::detect_syntax_input::Builder {
         crate::input::detect_syntax_input::Builder::default()
+    }
+}
+
+/// See [`ImportModelInput`](crate::input::ImportModelInput)
+pub mod import_model_input {
+    /// A builder for [`ImportModelInput`](crate::input::ImportModelInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_model_arn: std::option::Option<std::string::String>,
+        pub(crate) model_name: std::option::Option<std::string::String>,
+        pub(crate) version_name: std::option::Option<std::string::String>,
+        pub(crate) model_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
+        pub fn source_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_model_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
+        pub fn set_source_model_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_model_arn = input;
+            self
+        }
+        /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_name = Some(input.into());
+            self
+        }
+        /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_name = input;
+            self
+        }
+        /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_name = Some(input.into());
+            self
+        }
+        /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_name = input;
+            self
+        }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn model_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn set_model_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_kms_key_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_access_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
+        pub fn set_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_access_role_arn = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportModelInput`](crate::input::ImportModelInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ImportModelInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ImportModelInput {
+                source_model_arn: self.source_model_arn,
+                model_name: self.model_name,
+                version_name: self.version_name,
+                model_kms_key_id: self.model_kms_key_id,
+                data_access_role_arn: self.data_access_role_arn,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ImportModelInputOperationOutputAlias = crate::operation::ImportModel;
+#[doc(hidden)]
+pub type ImportModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ImportModelInput {
+    /// Consumes the builder and constructs an Operation<[`ImportModel`](crate::operation::ImportModel)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ImportModel,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ImportModelInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ImportModelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ImportModelInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Comprehend_20171127.ImportModel",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_import_model(&self)?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ImportModel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ImportModel",
+            "comprehend",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ImportModelInput`](crate::input::ImportModelInput)
+    pub fn builder() -> crate::input::import_model_input::Builder {
+        crate::input::import_model_input::Builder::default()
     }
 }
 
@@ -7775,6 +8379,195 @@ impl ListTopicsDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListTopicsDetectionJobsInput`](crate::input::ListTopicsDetectionJobsInput)
     pub fn builder() -> crate::input::list_topics_detection_jobs_input::Builder {
         crate::input::list_topics_detection_jobs_input::Builder::default()
+    }
+}
+
+/// See [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+pub mod put_resource_policy_input {
+    /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) resource_policy: std::option::Option<std::string::String>,
+        pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_policy = Some(input.into());
+            self
+        }
+        /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+        /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+        /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+        /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+        pub fn set_resource_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_policy = input;
+            self
+        }
+        /// <p>The revision ID that Amazon Comprehend assigned to the policy that you are updating. If you are creating a new policy that has no prior version, don't use this parameter. Amazon Comprehend creates the revision ID for you.</p>
+        pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_revision_id = Some(input.into());
+            self
+        }
+        /// <p>The revision ID that Amazon Comprehend assigned to the policy that you are updating. If you are creating a new policy that has no prior version, don't use this parameter. Amazon Comprehend creates the revision ID for you.</p>
+        pub fn set_policy_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::PutResourcePolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutResourcePolicyInput {
+                resource_arn: self.resource_arn,
+                resource_policy: self.resource_policy,
+                policy_revision_id: self.policy_revision_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutResourcePolicyInputOperationOutputAlias = crate::operation::PutResourcePolicy;
+#[doc(hidden)]
+pub type PutResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl PutResourcePolicyInput {
+    /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutResourcePolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::PutResourcePolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutResourcePolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutResourcePolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Comprehend_20171127.PutResourcePolicy",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutResourcePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutResourcePolicy",
+            "comprehend",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    pub fn builder() -> crate::input::put_resource_policy_input::Builder {
+        crate::input::put_resource_policy_input::Builder::default()
     }
 }
 
@@ -12802,6 +13595,47 @@ impl std::fmt::Debug for StartDocumentClassificationJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    pub resource_policy: std::option::Option<std::string::String>,
+    /// <p>The revision ID that Amazon Comprehend assigned to the policy that you are updating. If you are creating a new policy that has no prior version, don't use this parameter. Amazon Comprehend creates the revision ID for you.</p>
+    pub policy_revision_id: std::option::Option<std::string::String>,
+}
+impl PutResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
+        self.resource_policy.as_deref()
+    }
+    /// <p>The revision ID that Amazon Comprehend assigned to the policy that you are updating. If you are creating a new policy that has no prior version, don't use this parameter. Amazon Comprehend creates the revision ID for you.</p>
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+        self.policy_revision_id.as_deref()
+    }
+}
+impl std::fmt::Debug for PutResourcePolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutResourcePolicyInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("resource_policy", &self.resource_policy);
+        formatter.field("policy_revision_id", &self.policy_revision_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTopicsDetectionJobsInput {
     /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
     pub filter: std::option::Option<crate::model::TopicsDetectionJobFilter>,
@@ -13264,6 +14098,70 @@ impl std::fmt::Debug for ListDocumentClassificationJobsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportModelInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
+    pub source_model_arn: std::option::Option<std::string::String>,
+    /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
+    pub model_name: std::option::Option<std::string::String>,
+    /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+    pub version_name: std::option::Option<std::string::String>,
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub model_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
+    pub data_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ImportModelInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
+    pub fn source_model_arn(&self) -> std::option::Option<&str> {
+        self.source_model_arn.as_deref()
+    }
+    /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub fn model_kms_key_id(&self) -> std::option::Option<&str> {
+        self.model_kms_key_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportModelInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportModelInput");
+        formatter.field("source_model_arn", &self.source_model_arn);
+        formatter.field("model_name", &self.model_name);
+        formatter.field("version_name", &self.version_name);
+        formatter.field("model_kms_key_id", &self.model_kms_key_id);
+        formatter.field("data_access_role_arn", &self.data_access_role_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectSyntaxInput {
     /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
     pub text: std::option::Option<std::string::String>,
@@ -13478,6 +14376,27 @@ impl std::fmt::Debug for DescribeSentimentDetectionJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl DescribeResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the policy to describe.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeResourcePolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeResourcePolicyInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePiiEntitiesDetectionJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -13667,6 +14586,34 @@ impl std::fmt::Debug for DescribeDocumentClassificationJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom model version that has the policy to delete.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The revision ID of the policy to delete.</p>
+    pub policy_revision_id: std::option::Option<std::string::String>,
+}
+impl DeleteResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom model version that has the policy to delete.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The revision ID of the policy to delete.</p>
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+        self.policy_revision_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteResourcePolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("policy_revision_id", &self.policy_revision_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEntityRecognizerInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
@@ -13759,6 +14706,12 @@ pub struct CreateEntityRecognizerInput {
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub model_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another AWS account to import your custom model.</p>
+    /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    pub model_policy: std::option::Option<std::string::String>,
 }
 impl CreateEntityRecognizerInput {
     /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>
@@ -13811,6 +14764,14 @@ impl CreateEntityRecognizerInput {
     pub fn model_kms_key_id(&self) -> std::option::Option<&str> {
         self.model_kms_key_id.as_deref()
     }
+    /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another AWS account to import your custom model.</p>
+    /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    pub fn model_policy(&self) -> std::option::Option<&str> {
+        self.model_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEntityRecognizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13825,6 +14786,7 @@ impl std::fmt::Debug for CreateEntityRecognizerInput {
         formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
         formatter.field("vpc_config", &self.vpc_config);
         formatter.field("model_kms_key_id", &self.model_kms_key_id);
+        formatter.field("model_policy", &self.model_policy);
         formatter.finish()
     }
 }
@@ -13921,6 +14883,12 @@ pub struct CreateDocumentClassifierInput {
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub model_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The resource-based policy to attach to your custom document classifier model. You can use this policy to allow another AWS account to import your custom model.</p>
+    /// <p>Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    pub model_policy: std::option::Option<std::string::String>,
 }
 impl CreateDocumentClassifierInput {
     /// <p>The name of the document classifier.</p>
@@ -13983,6 +14951,14 @@ impl CreateDocumentClassifierInput {
     pub fn model_kms_key_id(&self) -> std::option::Option<&str> {
         self.model_kms_key_id.as_deref()
     }
+    /// <p>The resource-based policy to attach to your custom document classifier model. You can use this policy to allow another AWS account to import your custom model.</p>
+    /// <p>Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
+    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
+    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    pub fn model_policy(&self) -> std::option::Option<&str> {
+        self.model_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDocumentClassifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13999,6 +14975,7 @@ impl std::fmt::Debug for CreateDocumentClassifierInput {
         formatter.field("vpc_config", &self.vpc_config);
         formatter.field("mode", &self.mode);
         formatter.field("model_kms_key_id", &self.model_kms_key_id);
+        formatter.field("model_policy", &self.model_policy);
         formatter.finish()
     }
 }

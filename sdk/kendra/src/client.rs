@@ -132,7 +132,7 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchGetDocumentStatus`](crate::client::fluent_builders::BatchGetDocumentStatus) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::BatchGetDocumentStatus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::BatchGetDocumentStatus::set_index_id): <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::BatchGetDocumentStatus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::BatchGetDocumentStatus::set_index_id): <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
     ///   - [`document_info_list(Vec<DocumentInfo>)`](crate::client::fluent_builders::BatchGetDocumentStatus::document_info_list) / [`set_document_info_list(Option<Vec<DocumentInfo>>)`](crate::client::fluent_builders::BatchGetDocumentStatus::set_document_info_list): <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
     /// - On success, responds with [`BatchGetDocumentStatusOutput`](crate::output::BatchGetDocumentStatusOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchGetDocumentStatusResponseError>>)`](crate::output::BatchGetDocumentStatusOutput::errors): <p>A list of documents that Amazon Kendra couldn't get the status for. The list includes the ID of the document and the reason that the status couldn't be found.</p>
@@ -144,10 +144,10 @@ impl Client {
     /// Constructs a fluent builder for the [`BatchPutDocument`](crate::client::fluent_builders::BatchPutDocument) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::BatchPutDocument::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::BatchPutDocument::set_index_id): <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::BatchPutDocument::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::BatchPutDocument::set_role_arn): <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
-    ///   - [`documents(Vec<Document>)`](crate::client::fluent_builders::BatchPutDocument::documents) / [`set_documents(Option<Vec<Document>>)`](crate::client::fluent_builders::BatchPutDocument::set_documents): <p>One or more documents to add to the index.</p>  <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>  <p>Documents have the following file size limits.</p>  <ul>   <li> <p>5 MB total size for inline documents</p> </li>   <li> <p>50 MB total size for files from an S3 bucket</p> </li>   <li> <p>5 MB extracted text for any file</p> </li>  </ul>  <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::BatchPutDocument::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::BatchPutDocument::set_custom_document_enrichment_configuration): <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::BatchPutDocument::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::BatchPutDocument::set_index_id): <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::BatchPutDocument::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::BatchPutDocument::set_role_arn): <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+    ///   - [`documents(Vec<Document>)`](crate::client::fluent_builders::BatchPutDocument::documents) / [`set_documents(Option<Vec<Document>>)`](crate::client::fluent_builders::BatchPutDocument::set_documents): <p>One or more documents to add to the index.</p>  <p>Documents have the following file size limits.</p>  <ul>   <li> <p>5 MB total size for inline documents</p> </li>   <li> <p>50 MB total size for files from an S3 bucket</p> </li>   <li> <p>5 MB extracted text for any file</p> </li>  </ul>  <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+    ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::BatchPutDocument::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::BatchPutDocument::set_custom_document_enrichment_configuration): <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     /// - On success, responds with [`BatchPutDocumentOutput`](crate::output::BatchPutDocumentOutput) with field(s):
     ///   - [`failed_documents(Option<Vec<BatchPutDocumentResponseFailedDocument>>)`](crate::output::BatchPutDocumentOutput::failed_documents): <p>A list of documents that were not added to the index because the document failed a validation check. Each document contains an error message that indicates why the document couldn't be added to the index.</p>  <p>If there was an error adding a document to an index the error is reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with Amazon CloudWatch Logs</a> </p>
     /// - On failure, responds with [`SdkError<BatchPutDocumentError>`](crate::error::BatchPutDocumentError)
@@ -172,10 +172,10 @@ impl Client {
     ///   - [`r#type(DataSourceType)`](crate::client::fluent_builders::CreateDataSource::type) / [`set_type(Option<DataSourceType>)`](crate::client::fluent_builders::CreateDataSource::set_type): <p>The type of repository that contains the data source.</p>
     ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::CreateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_configuration): <p>The connector configuration information that is required to access the repository.</p>  <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_description): <p>A description for the data source.</p>
-    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_schedule): <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>  <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_schedule): <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>  <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>  <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataSource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataSource::set_tags): <p>A list of key-value pairs that identify the data source. You can use the tags to identify and organize your resources and to control access to resources.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_client_token): <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_client_token): <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
     ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_language_code): <p>The code for a language. This allows you to support a language for all documents when creating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::CreateDataSource::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_custom_document_enrichment_configuration): <p>Configuration information for altering document metadata and content during the document ingestion process when you create a data source.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     /// - On success, responds with [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput) with field(s):
@@ -189,10 +189,10 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_name): <p>A name for your Amazon Kendra experience.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::CreateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::CreateExperience::set_configuration): <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_description): <p>A description for your Amazon Kendra experience.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_client_token): <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_client_token): <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
     /// - On success, responds with [`CreateExperienceOutput`](crate::output::CreateExperienceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateExperienceOutput::id): <p>The identifier for your created Amazon Kendra experience.</p>
     /// - On failure, responds with [`SdkError<CreateExperienceError>`](crate::error::CreateExperienceError)
@@ -209,7 +209,7 @@ impl Client {
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFaq::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFaq::set_tags): <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
     ///   - [`file_format(FaqFileFormat)`](crate::client::fluent_builders::CreateFaq::file_format) / [`set_file_format(Option<FaqFileFormat>)`](crate::client::fluent_builders::CreateFaq::set_file_format): <p>The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>  <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_client_token): <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_client_token): <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
     ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_language_code): <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     /// - On success, responds with [`CreateFaqOutput`](crate::output::CreateFaqOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateFaqOutput::id): <p>The unique identifier of the FAQ.</p>
@@ -222,10 +222,10 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_name): <p>The name for the new index.</p>
     ///   - [`edition(IndexEdition)`](crate::client::fluent_builders::CreateIndex::edition) / [`set_edition(Option<IndexEdition>)`](crate::client::fluent_builders::CreateIndex::set_edition): <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases. Once you set the edition for an index, it can't be changed.</p>  <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>  <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_role_arn): <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_role_arn): <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
     ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::CreateIndex::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::CreateIndex::set_server_side_encryption_configuration): <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_description): <p>A description for the index.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_client_token): <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_client_token): <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateIndex::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateIndex::set_tags): <p>A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources and to control access to resources.</p>
     ///   - [`user_token_configurations(Vec<UserTokenConfiguration>)`](crate::client::fluent_builders::CreateIndex::user_token_configurations) / [`set_user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::client::fluent_builders::CreateIndex::set_user_token_configurations): <p>The user token configuration.</p>
     ///   - [`user_context_policy(UserContextPolicy)`](crate::client::fluent_builders::CreateIndex::user_context_policy) / [`set_user_context_policy(Option<UserContextPolicy>)`](crate::client::fluent_builders::CreateIndex::set_user_context_policy): <p>The user context policy.</p>  <dl>   <dt>   ATTRIBUTE_FILTER  </dt>   <dd>    <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>   </dd>   <dt>   USER_TOKEN  </dt>   <dd>    <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>   </dd>  </dl>
@@ -244,7 +244,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_description): <p>A user-friendly description for the block list.</p>  <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
     ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_source_s3_path): <p>The S3 path to your block list text file in your S3 bucket.</p>  <p>Each block word or phrase should be on a separate line in a text file.</p>  <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_client_token): <p>A token that you provide to identify the request to create a query suggestions block list.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_role_arn): <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>  <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_role_arn): <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>  <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_tags): <p>A tag that you can assign to a block list that categorizes the block list.</p>
     /// - On success, responds with [`CreateQuerySuggestionsBlockListOutput`](crate::output::CreateQuerySuggestionsBlockListOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateQuerySuggestionsBlockListOutput::id): <p>The unique identifier of the created block list.</p>
@@ -263,7 +263,7 @@ impl Client {
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_role_arn): <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateThesaurus::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateThesaurus::set_tags): <p>A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your resources and to control access to resources. </p>
     ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::CreateThesaurus::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::CreateThesaurus::set_source_s3_path): <p>The thesaurus file Amazon S3 source path. </p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_client_token): <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_client_token): <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
     /// - On success, responds with [`CreateThesaurusOutput`](crate::output::CreateThesaurusOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateThesaurusOutput::id): <p>The unique identifier of the thesaurus. </p>
     /// - On failure, responds with [`SdkError<CreateThesaurusError>`](crate::error::CreateThesaurusError)
@@ -365,7 +365,7 @@ impl Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::updated_at): <p>The Unix timestamp of when the data source was last updated.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeDataSourceOutput::description): <p>The description of the data source.</p>
     ///   - [`status(Option<DataSourceStatus>)`](crate::output::DescribeDataSourceOutput::status): <p>The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
-    ///   - [`schedule(Option<String>)`](crate::output::DescribeDataSourceOutput::schedule): <p>The schedule that Amazon Kendra will update the data source.</p>
+    ///   - [`schedule(Option<String>)`](crate::output::DescribeDataSourceOutput::schedule): <p>The schedule for Amazon Kendra to update the index.</p>
     ///   - [`role_arn(Option<String>)`](crate::output::DescribeDataSourceOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.</p>
     ///   - [`error_message(Option<String>)`](crate::output::DescribeDataSourceOutput::error_message): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
     ///   - [`language_code(Option<String>)`](crate::output::DescribeDataSourceOutput::language_code): <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
@@ -389,7 +389,7 @@ impl Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeExperienceOutput::updated_at): <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeExperienceOutput::description): <p>Shows the description for your Amazon Kendra experience.</p>
     ///   - [`status(Option<ExperienceStatus>)`](crate::output::DescribeExperienceOutput::status): <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeExperienceOutput::role_arn): <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeExperienceOutput::role_arn): <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
     ///   - [`error_message(Option<String>)`](crate::output::DescribeExperienceOutput::error_message): <p>The reason your Amazon Kendra experience could not properly process.</p>
     /// - On failure, responds with [`SdkError<DescribeExperienceError>`](crate::error::DescribeExperienceError)
     pub fn describe_experience(&self) -> fluent_builders::DescribeExperience {
@@ -486,7 +486,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsConfig::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsConfig::set_index_id): <p>The identifier of the index you want to describe query suggestions settings for.</p>
     /// - On success, responds with [`DescribeQuerySuggestionsConfigOutput`](crate::output::DescribeQuerySuggestionsConfigOutput) with field(s):
-    ///   - [`mode(Option<Mode>)`](crate::output::DescribeQuerySuggestionsConfigOutput::mode): <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>  <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> operation.</p>
+    ///   - [`mode(Option<Mode>)`](crate::output::DescribeQuerySuggestionsConfigOutput::mode): <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>  <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
     ///   - [`status(Option<QuerySuggestionsStatus>)`](crate::output::DescribeQuerySuggestionsConfigOutput::status): <p>Shows whether the status of query suggestions settings is currently Active or Updating.</p>  <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
     ///   - [`query_log_look_back_window_in_days(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::query_log_look_back_window_in_days): <p>Shows how recent your queries are in your query log time window (in days).</p>
     ///   - [`include_queries_without_user_information(Option<bool>)`](crate::output::DescribeQuerySuggestionsConfigOutput::include_queries_without_user_information): <p>Shows whether Amazon Kendra uses all queries or only uses queries that include user information to generate query suggestions.</p>
@@ -756,7 +756,7 @@ impl Client {
     /// Constructs a fluent builder for the [`Query`](crate::client::fluent_builders::Query) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::Query::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::Query::set_index_id): <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::Query::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::Query::set_index_id): <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
     ///   - [`query_text(impl Into<String>)`](crate::client::fluent_builders::Query::query_text) / [`set_query_text(Option<String>)`](crate::client::fluent_builders::Query::set_query_text): <p>The text to search for.</p>
     ///   - [`attribute_filter(AttributeFilter)`](crate::client::fluent_builders::Query::attribute_filter) / [`set_attribute_filter(Option<AttributeFilter>)`](crate::client::fluent_builders::Query::set_attribute_filter): <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>  <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     ///   - [`facets(Vec<Facet>)`](crate::client::fluent_builders::Query::facets) / [`set_facets(Option<Vec<Facet>>)`](crate::client::fluent_builders::Query::set_facets): <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. You can use this information to help narrow the search for your user.</p>
@@ -804,7 +804,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::SubmitFeedback::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::SubmitFeedback::set_index_id): <p>The identifier of the index that was queried.</p>
-    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::SubmitFeedback::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::SubmitFeedback::set_query_id): <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::SubmitFeedback::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::SubmitFeedback::set_query_id): <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
     ///   - [`click_feedback_items(Vec<ClickFeedback>)`](crate::client::fluent_builders::SubmitFeedback::click_feedback_items) / [`set_click_feedback_items(Option<Vec<ClickFeedback>>)`](crate::client::fluent_builders::SubmitFeedback::set_click_feedback_items): <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
     ///   - [`relevance_feedback_items(Vec<RelevanceFeedback>)`](crate::client::fluent_builders::SubmitFeedback::relevance_feedback_items) / [`set_relevance_feedback_items(Option<Vec<RelevanceFeedback>>)`](crate::client::fluent_builders::SubmitFeedback::set_relevance_feedback_items): <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
     /// - On success, responds with [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput)
@@ -859,7 +859,7 @@ impl Client {
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_id): <p>The identifier of your Amazon Kendra experience you want to update.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_name): <p>The name of your Amazon Kendra experience you want to update.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::UpdateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::UpdateExperience::set_configuration): <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_description): <p>The description of your Amazon Kendra experience you want to update.</p>
     /// - On success, responds with [`UpdateExperienceOutput`](crate::output::UpdateExperienceOutput)
@@ -1104,7 +1104,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDeleteDocument`.
     ///
-    /// <p>Removes one or more documents from an index. The documents must have been added with the <code>BatchPutDocument</code> operation.</p>
+    /// <p>Removes one or more documents from an index. The documents must have been added with the <code>BatchPutDocument</code> API.</p>
     /// <p>The documents are deleted asynchronously. You can see the progress of the deletion by using Amazon Web Services CloudWatch. Any error messages related to the processing of the batch are sent to you CloudWatch log.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteDocument {
@@ -1191,9 +1191,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetDocumentStatus`.
     ///
-    /// <p>Returns the indexing status for one or more documents submitted with the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html"> BatchPutDocument</a> operation.</p>
-    /// <p>When you use the <code>BatchPutDocument</code> operation, documents are indexed asynchronously. You can use the <code>BatchGetDocumentStatus</code> operation to get the current status of a list of documents so that you can determine if they have been successfully indexed.</p>
-    /// <p>You can also use the <code>BatchGetDocumentStatus</code> operation to check the status of the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html"> BatchDeleteDocument</a> operation. When a document is deleted from the index, Amazon Kendra returns <code>NOT_FOUND</code> as the status.</p>
+    /// <p>Returns the indexing status for one or more documents submitted with the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html"> BatchPutDocument</a> API.</p>
+    /// <p>When you use the <code>BatchPutDocument</code> API, documents are indexed asynchronously. You can use the <code>BatchGetDocumentStatus</code> API to get the current status of a list of documents so that you can determine if they have been successfully indexed.</p>
+    /// <p>You can also use the <code>BatchGetDocumentStatus</code> API to check the status of the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html"> BatchDeleteDocument</a> API. When a document is deleted from the index, Amazon Kendra returns <code>NOT_FOUND</code> as the status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDocumentStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -1233,12 +1233,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
+        /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex </a> operation.</p>
+        /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -1264,7 +1264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchPutDocument`.
     ///
     /// <p>Adds one or more documents to an index.</p>
-    /// <p>The <code>BatchPutDocument</code> operation enables you to ingest inline documents or a set of documents stored in an Amazon S3 bucket. Use this operation to ingest your text and unstructured text into an index, add custom attributes to the documents, and to attach an access control list to the documents added to the index.</p>
+    /// <p>The <code>BatchPutDocument</code> API enables you to ingest inline documents or a set of documents stored in an Amazon S3 bucket. Use this API to ingest your text and unstructured text into an index, add custom attributes to the documents, and to attach an access control list to the documents added to the index.</p>
     /// <p>The documents are indexed asynchronously. You can see the progress of the batch using Amazon Web Services CloudWatch. Any error messages related to processing the batch are sent to your Amazon Web Services CloudWatch log.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutDocument {
@@ -1305,22 +1305,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
+        /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> operation.</p>
+        /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> operation. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1330,7 +1330,6 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_documents`](Self::set_documents).
         ///
         /// <p>One or more documents to add to the index.</p>
-        /// <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
         /// <p>Documents have the following file size limits.</p>
         /// <ul>
         /// <li> <p>5 MB total size for inline documents</p> </li>
@@ -1343,7 +1342,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>One or more documents to add to the index.</p>
-        /// <p>Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
         /// <p>Documents have the following file size limits.</p>
         /// <ul>
         /// <li> <p>5 MB total size for inline documents</p> </li>
@@ -1358,7 +1356,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_documents(input);
             self
         }
-        /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>
+        /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
@@ -1367,7 +1365,7 @@ pub mod fluent_builders {
             self.inner = self.inner.custom_document_enrichment_configuration(input);
             self
         }
-        /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> operation.</p>
+        /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
         /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
         pub fn set_custom_document_enrichment_configuration(
             mut self,
@@ -1539,13 +1537,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+        /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
         /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+        /// <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
         /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
@@ -1582,12 +1580,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
+        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> operation with the same client token will create only one data source.</p>
+        /// <p>A token that you provide to identify the request to create a data source. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1688,12 +1686,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1721,12 +1719,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
+        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> operation with the same client token creates only one Amazon Kendra experience.</p>
+        /// <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1859,12 +1857,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_format(input);
             self
         }
-        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
+        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ. </p>
+        /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1885,8 +1883,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateIndex`.
     ///
-    /// <p>Creates a new Amazon Kendra index. Index creation is an asynchronous operation. To determine if index creation has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.</p>
-    /// <p>Once the index is active you can index your documents using the <code>BatchPutDocument</code> operation or using one of the supported data sources. </p>
+    /// <p>Creates a new Amazon Kendra index. Index creation is an asynchronous API. To determine if index creation has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.</p>
+    /// <p>Once the index is active you can index your documents using the <code>BatchPutDocument</code> API or using one of the supported data sources. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIndex {
         handle: std::sync::Arc<super::Handle>,
@@ -1953,12 +1951,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_edition(input);
             self
         }
-        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
+        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.</p>
+        /// <p>An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1989,12 +1987,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
+        /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> operation with the same client token will create only one index.</p>
+        /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2202,13 +2200,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
-        /// <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+        /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>
-        /// <p>You need permissions to the role ARN (Amazon Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
+        /// <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -2343,12 +2341,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_s3_path(input);
             self
         }
-        /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
+        /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation with the same client token will create only one thesaurus. </p>
+        /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2356,7 +2354,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDataSource`.
     ///
-    /// <p>Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> operation is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.</p>
+    /// <p>Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataSource {
         handle: std::sync::Arc<super::Handle>,
@@ -2545,7 +2543,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIndex`.
     ///
-    /// <p>Deletes an existing Amazon Kendra index. An exception is not thrown if the index is already being deleted. While the index is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeIndex</code> operation is set to <code>DELETING</code>.</p>
+    /// <p>Deletes an existing Amazon Kendra index. An exception is not thrown if the index is already being deleted. While the index is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeIndex</code> API is set to <code>DELETING</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIndex {
         handle: std::sync::Arc<super::Handle>,
@@ -2821,7 +2819,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataSource`.
     ///
-    /// <p>Gets information about a Amazon Kendra data source.</p>
+    /// <p>Gets information about an Amazon Kendra data source.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSource {
         handle: std::sync::Arc<super::Handle>,
@@ -4691,8 +4689,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Query`.
     ///
-    /// <p>Searches an active index. Use this API to search your documents using query. The <code>Query</code> operation enables to do faceted search and to filter results based on document attributes.</p>
-    /// <p>It also enables you to provide user context that Amazon Kendra uses to enforce document access control in the search results. </p>
+    /// <p>Searches an active index. Use this API to search your documents using query. The <code>Query</code> API enables to do faceted search and to filter results based on document attributes.</p>
+    /// <p>It also enables you to provide user context that Amazon Kendra uses to enforce document access control in the search results.</p>
     /// <p>Amazon Kendra searches your index for text content and question and answer (FAQ) content. By default the response contains three types of results.</p>
     /// <ul>
     /// <li> <p>Relevant passages</p> </li>
@@ -4740,12 +4738,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
+        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.index_id(input.into());
             self
         }
-        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> operation.</p>
+        /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
         pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_index_id(input);
             self
@@ -4977,7 +4975,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopDataSourceSyncJob`.
     ///
-    /// <p>Stops a running synchronization job. You can't stop a scheduled synchronization job.</p>
+    /// <p>Stops a synchronization job that is currently running. You can't stop a scheduled synchronization job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDataSourceSyncJob {
         handle: std::sync::Arc<super::Handle>,
@@ -5091,12 +5089,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
+        /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
         pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.query_id(input.into());
             self
         }
-        /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> operation.</p>
+        /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
         pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_query_id(input);
             self
@@ -5497,12 +5495,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self

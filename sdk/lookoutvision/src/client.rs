@@ -1783,7 +1783,7 @@ pub mod fluent_builders {
     /// <p>To deploy the component to the target device, use the component name and component version with the AWS IoT Greengrass <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CreateDeployment.html">CreateDeployment</a> API.</p>
     /// <p>This operation requires the following permissions:</p>
     /// <ul>
-    /// <li> <p> <code>lookoutvision:StartModelPackagingJobs</code> </p> </li>
+    /// <li> <p> <code>lookoutvision:StartModelPackagingJob</code> </p> </li>
     /// <li> <p> <code>s3:PutObject</code> </p> </li>
     /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
     /// <li> <p> <code>greengrass:CreateComponentVersion</code> </p> </li>

@@ -3099,6 +3099,174 @@ impl DisassociateWebAclInput {
     }
 }
 
+/// See [`GenerateMobileSdkReleaseUrlInput`](crate::input::GenerateMobileSdkReleaseUrlInput)
+pub mod generate_mobile_sdk_release_url_input {
+    /// A builder for [`GenerateMobileSdkReleaseUrlInput`](crate::input::GenerateMobileSdkReleaseUrlInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) platform: std::option::Option<crate::model::Platform>,
+        pub(crate) release_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The device platform.</p>
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.platform = Some(input);
+            self
+        }
+        /// <p>The device platform.</p>
+        pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
+            self.platform = input;
+            self
+        }
+        /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+        pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release_version = Some(input.into());
+            self
+        }
+        /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+        pub fn set_release_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.release_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GenerateMobileSdkReleaseUrlInput`](crate::input::GenerateMobileSdkReleaseUrlInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GenerateMobileSdkReleaseUrlInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GenerateMobileSdkReleaseUrlInput {
+                platform: self.platform,
+                release_version: self.release_version,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GenerateMobileSdkReleaseUrlInputOperationOutputAlias =
+    crate::operation::GenerateMobileSdkReleaseUrl;
+#[doc(hidden)]
+pub type GenerateMobileSdkReleaseUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GenerateMobileSdkReleaseUrlInput {
+    /// Consumes the builder and constructs an Operation<[`GenerateMobileSdkReleaseUrl`](crate::operation::GenerateMobileSdkReleaseUrl)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GenerateMobileSdkReleaseUrl,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GenerateMobileSdkReleaseUrlInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GenerateMobileSdkReleaseUrlInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GenerateMobileSdkReleaseUrlInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSWAF_20190729.GenerateMobileSdkReleaseUrl",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_generate_mobile_sdk_release_url(&self)?
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GenerateMobileSdkReleaseUrl::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GenerateMobileSdkReleaseUrl",
+            "wafv2",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GenerateMobileSdkReleaseUrlInput`](crate::input::GenerateMobileSdkReleaseUrlInput)
+    pub fn builder() -> crate::input::generate_mobile_sdk_release_url_input::Builder {
+        crate::input::generate_mobile_sdk_release_url_input::Builder::default()
+    }
+}
+
 /// See [`GetIpSetInput`](crate::input::GetIpSetInput)
 pub mod get_ip_set_input {
     /// A builder for [`GetIpSetInput`](crate::input::GetIpSetInput)
@@ -3623,6 +3791,176 @@ impl GetManagedRuleSetInput {
     /// Creates a new builder-style object to manufacture [`GetManagedRuleSetInput`](crate::input::GetManagedRuleSetInput)
     pub fn builder() -> crate::input::get_managed_rule_set_input::Builder {
         crate::input::get_managed_rule_set_input::Builder::default()
+    }
+}
+
+/// See [`GetMobileSdkReleaseInput`](crate::input::GetMobileSdkReleaseInput)
+pub mod get_mobile_sdk_release_input {
+    /// A builder for [`GetMobileSdkReleaseInput`](crate::input::GetMobileSdkReleaseInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) platform: std::option::Option<crate::model::Platform>,
+        pub(crate) release_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The device platform.</p>
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.platform = Some(input);
+            self
+        }
+        /// <p>The device platform.</p>
+        pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
+            self.platform = input;
+            self
+        }
+        /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+        pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release_version = Some(input.into());
+            self
+        }
+        /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+        pub fn set_release_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.release_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMobileSdkReleaseInput`](crate::input::GetMobileSdkReleaseInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetMobileSdkReleaseInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetMobileSdkReleaseInput {
+                platform: self.platform,
+                release_version: self.release_version,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetMobileSdkReleaseInputOperationOutputAlias = crate::operation::GetMobileSdkRelease;
+#[doc(hidden)]
+pub type GetMobileSdkReleaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetMobileSdkReleaseInput {
+    /// Consumes the builder and constructs an Operation<[`GetMobileSdkRelease`](crate::operation::GetMobileSdkRelease)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetMobileSdkRelease,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetMobileSdkReleaseInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetMobileSdkReleaseInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetMobileSdkReleaseInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSWAF_20190729.GetMobileSdkRelease",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_mobile_sdk_release(
+                &self,
+            )?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMobileSdkRelease::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMobileSdkRelease",
+            "wafv2",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetMobileSdkReleaseInput`](crate::input::GetMobileSdkReleaseInput)
+    pub fn builder() -> crate::input::get_mobile_sdk_release_input::Builder {
+        crate::input::get_mobile_sdk_release_input::Builder::default()
     }
 }
 
@@ -5898,6 +6236,185 @@ impl ListManagedRuleSetsInput {
     /// Creates a new builder-style object to manufacture [`ListManagedRuleSetsInput`](crate::input::ListManagedRuleSetsInput)
     pub fn builder() -> crate::input::list_managed_rule_sets_input::Builder {
         crate::input::list_managed_rule_sets_input::Builder::default()
+    }
+}
+
+/// See [`ListMobileSdkReleasesInput`](crate::input::ListMobileSdkReleasesInput)
+pub mod list_mobile_sdk_releases_input {
+    /// A builder for [`ListMobileSdkReleasesInput`](crate::input::ListMobileSdkReleasesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) platform: std::option::Option<crate::model::Platform>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The device platform to retrieve the list for.</p>
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.platform = Some(input);
+            self
+        }
+        /// <p>The device platform to retrieve the list for.</p>
+        pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
+            self.platform = input;
+            self
+        }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
+            self
+        }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
+            self
+        }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
+            self
+        }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMobileSdkReleasesInput`](crate::input::ListMobileSdkReleasesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListMobileSdkReleasesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListMobileSdkReleasesInput {
+                platform: self.platform,
+                next_marker: self.next_marker,
+                limit: self.limit,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListMobileSdkReleasesInputOperationOutputAlias = crate::operation::ListMobileSdkReleases;
+#[doc(hidden)]
+pub type ListMobileSdkReleasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListMobileSdkReleasesInput {
+    /// Consumes the builder and constructs an Operation<[`ListMobileSdkReleases`](crate::operation::ListMobileSdkReleases)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListMobileSdkReleases,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListMobileSdkReleasesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListMobileSdkReleasesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListMobileSdkReleasesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSWAF_20190729.ListMobileSdkReleases",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_mobile_sdk_releases(
+                &self,
+            )?,
+        );
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMobileSdkReleases::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMobileSdkReleases",
+            "wafv2",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListMobileSdkReleasesInput`](crate::input::ListMobileSdkReleasesInput)
+    pub fn builder() -> crate::input::list_mobile_sdk_releases_input::Builder {
+        crate::input::list_mobile_sdk_releases_input::Builder::default()
     }
 }
 
@@ -9866,6 +10383,41 @@ impl std::fmt::Debug for ListRegexPatternSetsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMobileSdkReleasesInput {
+    /// <p>The device platform to retrieve the list for.</p>
+    pub platform: std::option::Option<crate::model::Platform>,
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub next_marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub limit: std::option::Option<i32>,
+}
+impl ListMobileSdkReleasesInput {
+    /// <p>The device platform to retrieve the list for.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+    /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
+impl std::fmt::Debug for ListMobileSdkReleasesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMobileSdkReleasesInput");
+        formatter.field("platform", &self.platform);
+        formatter.field("next_marker", &self.next_marker);
+        formatter.field("limit", &self.limit);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedRuleSetsInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -10407,6 +10959,34 @@ impl std::fmt::Debug for GetPermissionPolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMobileSdkReleaseInput {
+    /// <p>The device platform.</p>
+    pub platform: std::option::Option<crate::model::Platform>,
+    /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+    pub release_version: std::option::Option<std::string::String>,
+}
+impl GetMobileSdkReleaseInput {
+    /// <p>The device platform.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+    pub fn release_version(&self) -> std::option::Option<&str> {
+        self.release_version.as_deref()
+    }
+}
+impl std::fmt::Debug for GetMobileSdkReleaseInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMobileSdkReleaseInput");
+        formatter.field("platform", &self.platform);
+        formatter.field("release_version", &self.release_version);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedRuleSetInput {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
@@ -10513,6 +11093,34 @@ impl std::fmt::Debug for GetIpSetInput {
         formatter.field("name", &self.name);
         formatter.field("scope", &self.scope);
         formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GenerateMobileSdkReleaseUrlInput {
+    /// <p>The device platform.</p>
+    pub platform: std::option::Option<crate::model::Platform>,
+    /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+    pub release_version: std::option::Option<std::string::String>,
+}
+impl GenerateMobileSdkReleaseUrlInput {
+    /// <p>The device platform.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+    pub fn release_version(&self) -> std::option::Option<&str> {
+        self.release_version.as_deref()
+    }
+}
+impl std::fmt::Debug for GenerateMobileSdkReleaseUrlInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GenerateMobileSdkReleaseUrlInput");
+        formatter.field("platform", &self.platform);
+        formatter.field("release_version", &self.release_version);
         formatter.finish()
     }
 }

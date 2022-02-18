@@ -503,6 +503,7 @@ pub mod describe_canaries_input {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
@@ -525,6 +526,29 @@ pub mod describe_canaries_input {
             self.max_results = input;
             self
         }
+        /// Appends an item to `names`.
+        ///
+        /// To override the contents of this collection use [`set_names`](Self::set_names).
+        ///
+        /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+        /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+        /// <p>You are required to use this parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.names.unwrap_or_default();
+            v.push(input.into());
+            self.names = Some(v);
+            self
+        }
+        /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+        /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+        /// <p>You are required to use this parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+        pub fn set_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.names = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeCanariesInput`](crate::input::DescribeCanariesInput)
         pub fn build(
             self,
@@ -535,6 +559,7 @@ pub mod describe_canaries_input {
             Ok(crate::input::DescribeCanariesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
+                names: self.names,
             })
         }
     }
@@ -663,6 +688,7 @@ pub mod describe_canaries_last_run_input {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
@@ -685,6 +711,29 @@ pub mod describe_canaries_last_run_input {
             self.max_results = input;
             self
         }
+        /// Appends an item to `names`.
+        ///
+        /// To override the contents of this collection use [`set_names`](Self::set_names).
+        ///
+        /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+        /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+        /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.names.unwrap_or_default();
+            v.push(input.into());
+            self.names = Some(v);
+            self
+        }
+        /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+        /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+        /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+        pub fn set_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.names = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeCanariesLastRunInput`](crate::input::DescribeCanariesLastRunInput)
         pub fn build(
             self,
@@ -695,6 +744,7 @@ pub mod describe_canaries_last_run_input {
             Ok(crate::input::DescribeCanariesLastRunInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
+                names: self.names,
             })
         }
     }
@@ -2830,6 +2880,10 @@ pub struct DescribeCanariesLastRunInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+    /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+    /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+    pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeCanariesLastRunInput {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
@@ -2840,12 +2894,19 @@ impl DescribeCanariesLastRunInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+    /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+    /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCanariesLastRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCanariesLastRunInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("names", &self.names);
         formatter.finish()
     }
 }
@@ -2858,6 +2919,10 @@ pub struct DescribeCanariesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specify this parameter to limit how many canaries are returned each time you use the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+    /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+    /// <p>You are required to use this parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+    pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeCanariesInput {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
@@ -2868,12 +2933,19 @@ impl DescribeCanariesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.</p>
+    /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
+    /// <p>You are required to use this parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCanariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCanariesInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("names", &self.names);
         formatter.finish()
     }
 }

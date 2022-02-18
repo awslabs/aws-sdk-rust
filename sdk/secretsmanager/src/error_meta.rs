@@ -11,7 +11,7 @@ pub enum Error {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>The <code>NextToken</code> value is invalid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The parameter name is invalid value.</p>
+    /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
@@ -90,6 +90,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSecretError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateSecretErrorKind::DecryptionFailure(inner) => {
+                    Error::DecryptionFailure(inner)
+                }
                 crate::error::CreateSecretErrorKind::EncryptionFailure(inner) => {
                     Error::EncryptionFailure(inner)
                 }
@@ -377,6 +380,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutSecretValueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutSecretValueErrorKind::DecryptionFailure(inner) => {
+                    Error::DecryptionFailure(inner)
+                }
                 crate::error::PutSecretValueErrorKind::EncryptionFailure(inner) => {
                     Error::EncryptionFailure(inner)
                 }
@@ -601,6 +607,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSecretError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateSecretErrorKind::DecryptionFailure(inner) => {
+                    Error::DecryptionFailure(inner)
+                }
                 crate::error::UpdateSecretErrorKind::EncryptionFailure(inner) => {
                     Error::EncryptionFailure(inner)
                 }

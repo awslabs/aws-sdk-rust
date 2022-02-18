@@ -152,21 +152,39 @@ impl Tag {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotationRulesType {
-    /// <p>Specifies the number of days between automatic scheduled rotations of the secret.</p>
-    /// <p>Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour and influenced by a variety of factors that help distribute load.</p>
+    /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
+    /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both.</p>
     pub automatically_after_days: std::option::Option<i64>,
+    /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not go into the next UTC day. If you don't specify this value, the window automatically ends at the end of the UTC day. The window begins according to the <code>ScheduleExpression</code>. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>.</p>
+    pub duration: std::option::Option<std::string::String>,
+    /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. </p>
+    /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in days that you want to rotate your secret, for example <code>rate(10 days)</code>. If you use a <code>rate()</code> expression, the rotation window opens at midnight, and Secrets Manager rotates your secret any time that day after midnight. You can set a <code>Duration</code> to shorten the rotation window.</p>
+    /// <p>You can use a <code>cron()</code> expression to create rotation schedules that are more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>. If you use a <code>cron()</code> expression, Secrets Manager rotates your secret any time during that day after the window opens. For example, <code>cron(0 8 1 * ? *)</code> represents a rotation window that occurs on the first day of every month beginning at 8:00 AM UTC. Secrets Manager rotates the secret any time that day after 8:00 AM. You can set a <code>Duration</code> to shorten the rotation window.</p>
+    pub schedule_expression: std::option::Option<std::string::String>,
 }
 impl RotationRulesType {
-    /// <p>Specifies the number of days between automatic scheduled rotations of the secret.</p>
-    /// <p>Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour and influenced by a variety of factors that help distribute load.</p>
+    /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
+    /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both.</p>
     pub fn automatically_after_days(&self) -> std::option::Option<i64> {
         self.automatically_after_days
+    }
+    /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not go into the next UTC day. If you don't specify this value, the window automatically ends at the end of the UTC day. The window begins according to the <code>ScheduleExpression</code>. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>.</p>
+    pub fn duration(&self) -> std::option::Option<&str> {
+        self.duration.as_deref()
+    }
+    /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. </p>
+    /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in days that you want to rotate your secret, for example <code>rate(10 days)</code>. If you use a <code>rate()</code> expression, the rotation window opens at midnight, and Secrets Manager rotates your secret any time that day after midnight. You can set a <code>Duration</code> to shorten the rotation window.</p>
+    /// <p>You can use a <code>cron()</code> expression to create rotation schedules that are more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>. If you use a <code>cron()</code> expression, Secrets Manager rotates your secret any time during that day after the window opens. For example, <code>cron(0 8 1 * ? *)</code> represents a rotation window that occurs on the first day of every month beginning at 8:00 AM UTC. Secrets Manager rotates the secret any time that day after 8:00 AM. You can set a <code>Duration</code> to shorten the rotation window.</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
     }
 }
 impl std::fmt::Debug for RotationRulesType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RotationRulesType");
         formatter.field("automatically_after_days", &self.automatically_after_days);
+        formatter.field("duration", &self.duration);
+        formatter.field("schedule_expression", &self.schedule_expression);
         formatter.finish()
     }
 }
@@ -177,24 +195,55 @@ pub mod rotation_rules_type {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatically_after_days: std::option::Option<i64>,
+        pub(crate) duration: std::option::Option<std::string::String>,
+        pub(crate) schedule_expression: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the number of days between automatic scheduled rotations of the secret.</p>
-        /// <p>Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour and influenced by a variety of factors that help distribute load.</p>
+        /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
+        /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both.</p>
         pub fn automatically_after_days(mut self, input: i64) -> Self {
             self.automatically_after_days = Some(input);
             self
         }
-        /// <p>Specifies the number of days between automatic scheduled rotations of the secret.</p>
-        /// <p>Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour and influenced by a variety of factors that help distribute load.</p>
+        /// <p>The number of days between automatic scheduled rotations of the secret. You can use this value to check that your secret meets your compliance guidelines for how often secrets must be rotated.</p>
+        /// <p>In <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is calculated from the rotation schedule after every successful rotation. In <code>RotateSecret</code>, you can set the rotation schedule in <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not both.</p>
         pub fn set_automatically_after_days(mut self, input: std::option::Option<i64>) -> Self {
             self.automatically_after_days = input;
+            self
+        }
+        /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not go into the next UTC day. If you don't specify this value, the window automatically ends at the end of the UTC day. The window begins according to the <code>ScheduleExpression</code>. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>.</p>
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.duration = Some(input.into());
+            self
+        }
+        /// <p>The length of the rotation window in hours, for example <code>3h</code> for a three hour window. Secrets Manager rotates your secret at any time during this window. The window must not go into the next UTC day. If you don't specify this value, the window automatically ends at the end of the UTC day. The window begins according to the <code>ScheduleExpression</code>. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>.</p>
+        pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.duration = input;
+            self
+        }
+        /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. </p>
+        /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in days that you want to rotate your secret, for example <code>rate(10 days)</code>. If you use a <code>rate()</code> expression, the rotation window opens at midnight, and Secrets Manager rotates your secret any time that day after midnight. You can set a <code>Duration</code> to shorten the rotation window.</p>
+        /// <p>You can use a <code>cron()</code> expression to create rotation schedules that are more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>. If you use a <code>cron()</code> expression, Secrets Manager rotates your secret any time during that day after the window opens. For example, <code>cron(0 8 1 * ? *)</code> represents a rotation window that occurs on the first day of every month beginning at 8:00 AM UTC. Secrets Manager rotates the secret any time that day after 8:00 AM. You can set a <code>Duration</code> to shorten the rotation window.</p>
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule_expression = Some(input.into());
+            self
+        }
+        /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. </p>
+        /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in days that you want to rotate your secret, for example <code>rate(10 days)</code>. If you use a <code>rate()</code> expression, the rotation window opens at midnight, and Secrets Manager rotates your secret any time that day after midnight. You can set a <code>Duration</code> to shorten the rotation window.</p>
+        /// <p>You can use a <code>cron()</code> expression to create rotation schedules that are more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a>. If you use a <code>cron()</code> expression, Secrets Manager rotates your secret any time during that day after the window opens. For example, <code>cron(0 8 1 * ? *)</code> represents a rotation window that occurs on the first day of every month beginning at 8:00 AM UTC. Secrets Manager rotates the secret any time that day after 8:00 AM. You can set a <code>Duration</code> to shorten the rotation window.</p>
+        pub fn set_schedule_expression(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schedule_expression = input;
             self
         }
         /// Consumes the builder and constructs a [`RotationRulesType`](crate::model::RotationRulesType)
         pub fn build(self) -> crate::model::RotationRulesType {
             crate::model::RotationRulesType {
                 automatically_after_days: self.automatically_after_days,
+                duration: self.duration,
+                schedule_expression: self.schedule_expression,
             }
         }
     }
@@ -628,7 +677,7 @@ impl SecretVersionsListEntry {
     }
 }
 
-/// <p>A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <code>GetSecretValue</code> operation.</p>
+/// <p>A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html">GetSecretValue</a> .</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecretListEntry {
@@ -642,7 +691,7 @@ pub struct SecretListEntry {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
     pub rotation_enabled: std::option::Option<bool>,
-    /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
+    /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html"> <code>RotateSecret</code> </a>.</p>
     pub rotation_lambda_arn: std::option::Option<std::string::String>,
     /// <p>A structure that defines the rotation configuration for the secret.</p>
     pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
@@ -652,9 +701,9 @@ pub struct SecretListEntry {
     pub last_changed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
     pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <code>DeleteSecret</code> operation.</p>
+    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
     pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
+    /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different versions during the rotation process.</p> <note>
     /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
@@ -690,7 +739,7 @@ impl SecretListEntry {
     pub fn rotation_enabled(&self) -> std::option::Option<bool> {
         self.rotation_enabled
     }
-    /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
+    /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html"> <code>RotateSecret</code> </a>.</p>
     pub fn rotation_lambda_arn(&self) -> std::option::Option<&str> {
         self.rotation_lambda_arn.as_deref()
     }
@@ -710,11 +759,11 @@ impl SecretListEntry {
     pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
-    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <code>DeleteSecret</code> operation.</p>
+    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
     pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
-    /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
+    /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -839,12 +888,12 @@ pub mod secret_list_entry {
             self.rotation_enabled = input;
             self
         }
-        /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
+        /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html"> <code>RotateSecret</code> </a>.</p>
         pub fn rotation_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.rotation_lambda_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
+        /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html"> <code>RotateSecret</code> </a>.</p>
         pub fn set_rotation_lambda_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -904,12 +953,12 @@ pub mod secret_list_entry {
             self.last_accessed_date = input;
             self
         }
-        /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <code>DeleteSecret</code> operation.</p>
+        /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
         pub fn deleted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deleted_date = Some(input);
             self
         }
-        /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <code>DeleteSecret</code> operation.</p>
+        /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
         pub fn set_deleted_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -921,14 +970,14 @@ pub mod secret_list_entry {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
+        /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
+        /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,

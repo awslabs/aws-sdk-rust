@@ -7,10 +7,7 @@
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>
-//! Amazon Web Services S3 Control provides access to Amazon S3 control plane actions.
-//!
-//! </p>
+//! <p> Amazon Web Services S3 Control provides access to Amazon S3 control plane actions. </p>
 //!
 //! # Crate Organization
 //!

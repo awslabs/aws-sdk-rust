@@ -418,6 +418,36 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDomainChangeProgressError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeDomainChangeProgressError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeDomainChangeProgressErrorKind::BaseException(inner) => {
+                    Error::BaseException(inner)
+                }
+                crate::error::DescribeDomainChangeProgressErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::DescribeDomainChangeProgressErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeDomainChangeProgressErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DescribeDomainChangeProgressErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeElasticsearchDomainError, R>>
     for Error
 where

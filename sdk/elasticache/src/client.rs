@@ -186,7 +186,7 @@ impl Client {
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCacheCluster::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCacheCluster::set_tags): <p>A list of tags to be added to this resource.</p>
     ///   - [`snapshot_arns(Vec<String>)`](crate::client::fluent_builders::CreateCacheCluster::snapshot_arns) / [`set_snapshot_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCacheCluster::set_snapshot_arns): <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p> <note>   <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>  </note>  <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
     ///   - [`snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CreateCacheCluster::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::client::fluent_builders::CreateCacheCluster::set_snapshot_name): <p>The name of a Redis snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p> <note>   <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>  </note>
-    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateCacheCluster::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateCacheCluster::set_preferred_maintenance_window): <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateCacheCluster::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateCacheCluster::set_preferred_maintenance_window): <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
     ///   - [`port(i32)`](crate::client::fluent_builders::CreateCacheCluster::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::CreateCacheCluster::set_port): <p>The port number on which each of the cache nodes accepts connections.</p>
     ///   - [`notification_topic_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCacheCluster::notification_topic_arn) / [`set_notification_topic_arn(Option<String>)`](crate::client::fluent_builders::CreateCacheCluster::set_notification_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p> <note>   <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>  </note>
     ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::CreateCacheCluster::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::CreateCacheCluster::set_auto_minor_version_upgrade): <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
@@ -207,7 +207,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cache_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateCacheParameterGroup::cache_parameter_group_name) / [`set_cache_parameter_group_name(Option<String>)`](crate::client::fluent_builders::CreateCacheParameterGroup::set_cache_parameter_group_name): <p>A user-specified name for the cache parameter group.</p>
-    ///   - [`cache_parameter_group_family(impl Into<String>)`](crate::client::fluent_builders::CreateCacheParameterGroup::cache_parameter_group_family) / [`set_cache_parameter_group_family(Option<String>)`](crate::client::fluent_builders::CreateCacheParameterGroup::set_cache_parameter_group_family): <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>  <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+    ///   - [`cache_parameter_group_family(impl Into<String>)`](crate::client::fluent_builders::CreateCacheParameterGroup::cache_parameter_group_family) / [`set_cache_parameter_group_family(Option<String>)`](crate::client::fluent_builders::CreateCacheParameterGroup::set_cache_parameter_group_family): <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>  <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateCacheParameterGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateCacheParameterGroup::set_description): <p>A user-specified description for the cache parameter group.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCacheParameterGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCacheParameterGroup::set_tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     /// - On success, responds with [`CreateCacheParameterGroupOutput`](crate::output::CreateCacheParameterGroupOutput) with field(s):
@@ -2057,7 +2057,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_name(input);
             self
         }
-        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -2065,7 +2065,7 @@ pub mod fluent_builders {
             self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
-        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2298,7 +2298,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
-        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> </p>
         pub fn cache_parameter_group_family(
             mut self,
             input: impl Into<std::string::String>,
@@ -2307,7 +2307,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
-        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> </p>
         pub fn set_cache_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,

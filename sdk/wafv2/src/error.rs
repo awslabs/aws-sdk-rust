@@ -2561,6 +2561,152 @@ impl std::error::Error for DisassociateWebACLError {
     }
 }
 
+/// Error type for the `GenerateMobileSdkReleaseUrl` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GenerateMobileSdkReleaseUrlError {
+    /// Kind of error that occurred.
+    pub kind: GenerateMobileSdkReleaseUrlErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GenerateMobileSdkReleaseUrl` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GenerateMobileSdkReleaseUrlErrorKind {
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
+    WafInternalErrorException(crate::error::WafInternalErrorException),
+    /// <p>The operation isn't valid. </p>
+    WafInvalidOperationException(crate::error::WafInvalidOperationException),
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
+    /// <ul>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// </ul>
+    WafInvalidParameterException(crate::error::WafInvalidParameterException),
+    /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
+    WafNonexistentItemException(crate::error::WafNonexistentItemException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GenerateMobileSdkReleaseUrlError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(_inner) => {
+                _inner.fmt(f)
+            }
+            GenerateMobileSdkReleaseUrlErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GenerateMobileSdkReleaseUrlError {
+    fn code(&self) -> Option<&str> {
+        GenerateMobileSdkReleaseUrlError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GenerateMobileSdkReleaseUrlError {
+    /// Creates a new `GenerateMobileSdkReleaseUrlError`.
+    pub fn new(kind: GenerateMobileSdkReleaseUrlErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GenerateMobileSdkReleaseUrlError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GenerateMobileSdkReleaseUrlError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException`.
+    pub fn is_waf_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException`.
+    pub fn is_waf_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException`.
+    pub fn is_waf_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException`.
+    pub fn is_waf_nonexistent_item_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(_)
+        )
+    }
+}
+impl std::error::Error for GenerateMobileSdkReleaseUrlError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(_inner) => Some(_inner),
+            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(_inner) => {
+                Some(_inner)
+            }
+            GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(_inner) => {
+                Some(_inner)
+            }
+            GenerateMobileSdkReleaseUrlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetIPSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2950,6 +3096,138 @@ impl std::error::Error for GetManagedRuleSetError {
             GetManagedRuleSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetManagedRuleSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             GetManagedRuleSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetMobileSdkRelease` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetMobileSdkReleaseError {
+    /// Kind of error that occurred.
+    pub kind: GetMobileSdkReleaseErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetMobileSdkRelease` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMobileSdkReleaseErrorKind {
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
+    WafInternalErrorException(crate::error::WafInternalErrorException),
+    /// <p>The operation isn't valid. </p>
+    WafInvalidOperationException(crate::error::WafInvalidOperationException),
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
+    /// <ul>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// </ul>
+    WafInvalidParameterException(crate::error::WafInvalidParameterException),
+    /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
+    WafNonexistentItemException(crate::error::WafNonexistentItemException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMobileSdkReleaseError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMobileSdkReleaseErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
+            GetMobileSdkReleaseErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
+            GetMobileSdkReleaseErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
+            GetMobileSdkReleaseErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
+            GetMobileSdkReleaseErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetMobileSdkReleaseError {
+    fn code(&self) -> Option<&str> {
+        GetMobileSdkReleaseError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMobileSdkReleaseError {
+    /// Creates a new `GetMobileSdkReleaseError`.
+    pub fn new(kind: GetMobileSdkReleaseErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetMobileSdkReleaseError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMobileSdkReleaseErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetMobileSdkReleaseError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMobileSdkReleaseErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetMobileSdkReleaseErrorKind::WafInternalErrorException`.
+    pub fn is_waf_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMobileSdkReleaseErrorKind::WafInternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMobileSdkReleaseErrorKind::WafInvalidOperationException`.
+    pub fn is_waf_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMobileSdkReleaseErrorKind::WafInvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMobileSdkReleaseErrorKind::WafInvalidParameterException`.
+    pub fn is_waf_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMobileSdkReleaseErrorKind::WafInvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMobileSdkReleaseErrorKind::WafNonexistentItemException`.
+    pub fn is_waf_nonexistent_item_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMobileSdkReleaseErrorKind::WafNonexistentItemException(_)
+        )
+    }
+}
+impl std::error::Error for GetMobileSdkReleaseError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMobileSdkReleaseErrorKind::WafInternalErrorException(_inner) => Some(_inner),
+            GetMobileSdkReleaseErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
+            GetMobileSdkReleaseErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
+            GetMobileSdkReleaseErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
+            GetMobileSdkReleaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4524,6 +4802,127 @@ impl std::error::Error for ListManagedRuleSetsError {
             ListManagedRuleSetsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             ListManagedRuleSetsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             ListManagedRuleSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListMobileSdkReleases` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMobileSdkReleasesError {
+    /// Kind of error that occurred.
+    pub kind: ListMobileSdkReleasesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListMobileSdkReleases` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMobileSdkReleasesErrorKind {
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
+    WafInternalErrorException(crate::error::WafInternalErrorException),
+    /// <p>The operation isn't valid. </p>
+    WafInvalidOperationException(crate::error::WafInvalidOperationException),
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
+    /// <ul>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
+    /// </ul>
+    WafInvalidParameterException(crate::error::WafInvalidParameterException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMobileSdkReleasesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMobileSdkReleasesErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
+            ListMobileSdkReleasesErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
+            ListMobileSdkReleasesErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
+            ListMobileSdkReleasesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListMobileSdkReleasesError {
+    fn code(&self) -> Option<&str> {
+        ListMobileSdkReleasesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMobileSdkReleasesError {
+    /// Creates a new `ListMobileSdkReleasesError`.
+    pub fn new(kind: ListMobileSdkReleasesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListMobileSdkReleasesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMobileSdkReleasesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListMobileSdkReleasesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMobileSdkReleasesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListMobileSdkReleasesErrorKind::WafInternalErrorException`.
+    pub fn is_waf_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMobileSdkReleasesErrorKind::WafInternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMobileSdkReleasesErrorKind::WafInvalidOperationException`.
+    pub fn is_waf_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMobileSdkReleasesErrorKind::WafInvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListMobileSdkReleasesErrorKind::WafInvalidParameterException`.
+    pub fn is_waf_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMobileSdkReleasesErrorKind::WafInvalidParameterException(_)
+        )
+    }
+}
+impl std::error::Error for ListMobileSdkReleasesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMobileSdkReleasesErrorKind::WafInternalErrorException(_inner) => Some(_inner),
+            ListMobileSdkReleasesErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
+            ListMobileSdkReleasesErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
+            ListMobileSdkReleasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

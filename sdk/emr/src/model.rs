@@ -58,13 +58,13 @@ impl AsRef<str> for IdentityType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag </a>. </p>
+    /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>. </p>
     pub key: std::option::Option<std::string::String>,
     /// <p>A user-defined value, which is optional in a tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag </a>. </p>
+    /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>. </p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -91,12 +91,12 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag </a>. </p>
+        /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>. </p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag </a>. </p>
+        /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -3264,6 +3264,8 @@ impl AsRef<str> for OnDemandProvisioningAllocationStrategy {
 
 /// <p>The launch specification for Spot Instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p> <note>
 /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
+/// </note> <note>
+/// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3272,7 +3274,9 @@ pub struct SpotProvisioningSpecification {
     pub timeout_duration_minutes: std::option::Option<i32>,
     /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
     pub timeout_action: std::option::Option<crate::model::SpotProvisioningTimeoutAction>,
-    /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p>
+    /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note>
+    /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
+    /// </note>
     pub block_duration_minutes: std::option::Option<i32>,
     /// <p> Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching. </p>
     pub allocation_strategy: std::option::Option<crate::model::SpotProvisioningAllocationStrategy>,
@@ -3288,7 +3292,9 @@ impl SpotProvisioningSpecification {
     ) -> std::option::Option<&crate::model::SpotProvisioningTimeoutAction> {
         self.timeout_action.as_ref()
     }
-    /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p>
+    /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note>
+    /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
+    /// </note>
     pub fn block_duration_minutes(&self) -> std::option::Option<i32> {
         self.block_duration_minutes
     }
@@ -3348,12 +3354,16 @@ pub mod spot_provisioning_specification {
             self.timeout_action = input;
             self
         }
-        /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p>
+        /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note>
+        /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
+        /// </note>
         pub fn block_duration_minutes(mut self, input: i32) -> Self {
             self.block_duration_minutes = Some(input);
             self
         }
-        /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p>
+        /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note>
+        /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
+        /// </note>
         pub fn set_block_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.block_duration_minutes = input;
             self
@@ -3862,7 +3872,7 @@ impl EbsBlockDeviceConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeSpecification {
-    /// <p>The volume type. Volume types supported are gp2, io1, standard.</p>
+    /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
     pub iops: std::option::Option<i32>,
@@ -3870,7 +3880,7 @@ pub struct VolumeSpecification {
     pub size_in_gb: std::option::Option<i32>,
 }
 impl VolumeSpecification {
-    /// <p>The volume type. Volume types supported are gp2, io1, standard.</p>
+    /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
     pub fn volume_type(&self) -> std::option::Option<&str> {
         self.volume_type.as_deref()
     }
@@ -3903,12 +3913,12 @@ pub mod volume_specification {
         pub(crate) size_in_gb: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The volume type. Volume types supported are gp2, io1, standard.</p>
+        /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_type = Some(input.into());
             self
         }
-        /// <p>The volume type. Volume types supported are gp2, io1, standard.</p>
+        /// <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_type = input;
             self
@@ -13116,7 +13126,7 @@ pub struct JobFlowDetail {
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
     pub supported_products: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-    /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are authorized to perform actions on the cluster can use the <code>SetVisibleToAllUsers</code> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+    /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
     pub visible_to_all_users: bool,
     /// <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
     pub job_flow_role: std::option::Option<std::string::String>,
@@ -13171,7 +13181,7 @@ impl JobFlowDetail {
         self.supported_products.as_deref()
     }
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-    /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are authorized to perform actions on the cluster can use the <code>SetVisibleToAllUsers</code> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+    /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
     pub fn visible_to_all_users(&self) -> bool {
         self.visible_to_all_users
     }
@@ -13378,13 +13388,13 @@ pub mod job_flow_detail {
             self
         }
         /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-        /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are authorized to perform actions on the cluster can use the <code>SetVisibleToAllUsers</code> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+        /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self
         }
         /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-        /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are authorized to perform actions on the cluster can use the <code>SetVisibleToAllUsers</code> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+        /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
         pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
             self.visible_to_all_users = input;
             self
@@ -14184,7 +14194,7 @@ pub struct InstanceGroupDetail {
     pub instance_request_count: std::option::Option<i32>,
     /// <p>Actual count of running instances.</p>
     pub instance_running_count: std::option::Option<i32>,
-    /// <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
+    /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
     pub state: std::option::Option<crate::model::InstanceGroupState>,
     /// <p>Details regarding the state of the instance group.</p>
     pub last_state_change_reason: std::option::Option<std::string::String>,
@@ -14232,7 +14242,7 @@ impl InstanceGroupDetail {
     pub fn instance_running_count(&self) -> std::option::Option<i32> {
         self.instance_running_count
     }
-    /// <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
+    /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::InstanceGroupState> {
         self.state.as_ref()
     }
@@ -14394,12 +14404,12 @@ pub mod instance_group_detail {
             self.instance_running_count = input;
             self
         }
-        /// <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
+        /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
         pub fn state(mut self, input: crate::model::InstanceGroupState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</p>
+        /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::InstanceGroupState>,
@@ -14801,7 +14811,7 @@ pub struct Cluster {
     /// <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
     pub termination_protected: bool,
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-    /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are allowed to perform actions on the cluster can use the <code>SetVisibleToAllUsers</code> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+    /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
     pub visible_to_all_users: bool,
     /// <p>The applications installed on this cluster.</p>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -14895,7 +14905,7 @@ impl Cluster {
         self.termination_protected
     }
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-    /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are allowed to perform actions on the cluster can use the <code>SetVisibleToAllUsers</code> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+    /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
     pub fn visible_to_all_users(&self) -> bool {
         self.visible_to_all_users
     }
@@ -15199,13 +15209,13 @@ pub mod cluster {
             self
         }
         /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-        /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are allowed to perform actions on the cluster can use the <code>SetVisibleToAllUsers</code> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+        /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self
         }
         /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-        /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console. IAM principals that are allowed to perform actions on the cluster can use the <code>SetVisibleToAllUsers</code> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+        /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
         pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
             self.visible_to_all_users = input;
             self

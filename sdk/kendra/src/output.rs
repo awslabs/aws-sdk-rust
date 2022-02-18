@@ -2110,7 +2110,7 @@ impl DescribeThesaurusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeQuerySuggestionsConfigOutput {
     /// <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
-    /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> operation.</p>
+    /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
     pub mode: std::option::Option<crate::model::Mode>,
     /// <p>Shows whether the status of query suggestions settings is currently Active or Updating.</p>
     /// <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
@@ -2134,7 +2134,7 @@ pub struct DescribeQuerySuggestionsConfigOutput {
 }
 impl DescribeQuerySuggestionsConfigOutput {
     /// <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
-    /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> operation.</p>
+    /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::Mode> {
         self.mode.as_ref()
     }
@@ -2219,13 +2219,13 @@ pub mod describe_query_suggestions_config_output {
     }
     impl Builder {
         /// <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
-        /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> operation.</p>
+        /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
         pub fn mode(mut self, input: crate::model::Mode) -> Self {
             self.mode = Some(input);
             self
         }
         /// <p>Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
-        /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> operation.</p>
+        /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::Mode>) -> Self {
             self.mode = input;
             self
@@ -3530,7 +3530,7 @@ pub struct DescribeExperienceOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
     pub status: std::option::Option<crate::model::ExperienceStatus>,
-    /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information.</p>
+    /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The reason your Amazon Kendra experience could not properly process.</p>
     pub error_message: std::option::Option<std::string::String>,
@@ -3572,7 +3572,7 @@ impl DescribeExperienceOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::ExperienceStatus> {
         self.status.as_ref()
     }
-    /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information.</p>
+    /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -3728,12 +3728,12 @@ pub mod describe_experience_output {
             self.status = input;
             self
         }
-        /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information.</p>
+        /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code> operations, and Amazon Web Services SSO that stores your user and group information.</p>
+        /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3798,7 +3798,7 @@ pub struct DescribeDataSourceOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
     pub status: std::option::Option<crate::model::DataSourceStatus>,
-    /// <p>The schedule that Amazon Kendra will update the data source.</p>
+    /// <p>The schedule for Amazon Kendra to update the index.</p>
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role that enables the data source to access its resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -3848,7 +3848,7 @@ impl DescribeDataSourceOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::DataSourceStatus> {
         self.status.as_ref()
     }
-    /// <p>The schedule that Amazon Kendra will update the data source.</p>
+    /// <p>The schedule for Amazon Kendra to update the index.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
@@ -4023,12 +4023,12 @@ pub mod describe_data_source_output {
             self.status = input;
             self
         }
-        /// <p>The schedule that Amazon Kendra will update the data source.</p>
+        /// <p>The schedule for Amazon Kendra to update the index.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>The schedule that Amazon Kendra will update the data source.</p>
+        /// <p>The schedule for Amazon Kendra to update the index.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self

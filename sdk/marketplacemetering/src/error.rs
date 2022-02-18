@@ -16,7 +16,7 @@ pub enum BatchMeterUsageErrorKind {
     DisabledApiException(crate::error::DisabledApiException),
     /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
-    /// <p>You have metered usage for a CustomerIdentifier that does not exist.</p>
+    /// <p>You have metered usage for a <code>CustomerIdentifier</code> that does not exist.</p>
     InvalidCustomerIdentifierException(crate::error::InvalidCustomerIdentifierException),
     /// <p>The product code passed does not match the product code used for publishing the product.</p>
     InvalidProductCodeException(crate::error::InvalidProductCodeException),
@@ -24,11 +24,12 @@ pub enum BatchMeterUsageErrorKind {
     InvalidTagException(crate::error::InvalidTagException),
     /// <p>The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single usage record.</p>
     InvalidUsageAllocationsException(crate::error::InvalidUsageAllocationsException),
-    /// <p>The usage dimension does not match one of the UsageDimensions associated with products.</p>
+    /// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
     InvalidUsageDimensionException(crate::error::InvalidUsageDimensionException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The timestamp value passed in the meterUsage() is out of allowed range.</p>
+    /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p>
+    /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -189,7 +190,7 @@ pub struct MeterUsageError {
 pub enum MeterUsageErrorKind {
     /// <p>Exception thrown when the customer does not have a valid subscription for the product.</p>
     CustomerNotEntitledException(crate::error::CustomerNotEntitledException),
-    /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {usageDimension, timestamp} with a different usageQuantity.</p>
+    /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a different <code>usageQuantity</code>.</p>
     DuplicateRequestException(crate::error::DuplicateRequestException),
     /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -201,11 +202,12 @@ pub enum MeterUsageErrorKind {
     InvalidTagException(crate::error::InvalidTagException),
     /// <p>The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single usage record.</p>
     InvalidUsageAllocationsException(crate::error::InvalidUsageAllocationsException),
-    /// <p>The usage dimension does not match one of the UsageDimensions associated with products.</p>
+    /// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
     InvalidUsageDimensionException(crate::error::InvalidUsageDimensionException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The timestamp value passed in the meterUsage() is out of allowed range.</p>
+    /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p>
+    /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -383,7 +385,7 @@ pub enum RegisterUsageErrorKind {
     InvalidProductCodeException(crate::error::InvalidProductCodeException),
     /// <p>Public Key version is invalid.</p>
     InvalidPublicKeyVersionException(crate::error::InvalidPublicKeyVersionException),
-    /// <p>RegisterUsage must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling RegisterUsage.</p>
+    /// <p> <code>RegisterUsage</code> must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling <code>RegisterUsage</code>.</p>
     InvalidRegionException(crate::error::InvalidRegionException),
     /// <p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>
     PlatformNotSupportedException(crate::error::PlatformNotSupportedException),
@@ -1042,7 +1044,7 @@ impl PlatformNotSupportedException {
     }
 }
 
-/// <p>RegisterUsage must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling RegisterUsage.</p>
+/// <p> <code>RegisterUsage</code> must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling <code>RegisterUsage</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRegionException {
@@ -1298,7 +1300,8 @@ impl CustomerNotEntitledException {
     }
 }
 
-/// <p>The timestamp value passed in the meterUsage() is out of allowed range.</p>
+/// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p>
+/// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestampOutOfBoundsException {
@@ -1362,7 +1365,7 @@ impl TimestampOutOfBoundsException {
     }
 }
 
-/// <p>The usage dimension does not match one of the UsageDimensions associated with products.</p>
+/// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUsageDimensionException {
@@ -1618,7 +1621,7 @@ impl InvalidEndpointRegionException {
     }
 }
 
-/// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {usageDimension, timestamp} with a different usageQuantity.</p>
+/// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a different <code>usageQuantity</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateRequestException {
@@ -1682,7 +1685,7 @@ impl DuplicateRequestException {
     }
 }
 
-/// <p>You have metered usage for a CustomerIdentifier that does not exist.</p>
+/// <p>You have metered usage for a <code>CustomerIdentifier</code> that does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCustomerIdentifierException {

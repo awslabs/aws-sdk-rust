@@ -108,7 +108,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateAutoScalingConfiguration`](crate::client::fluent_builders::CreateAutoScalingConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::auto_scaling_configuration_name) / [`set_auto_scaling_configuration_name(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::set_auto_scaling_configuration_name): <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+    ///   - [`auto_scaling_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::auto_scaling_configuration_name) / [`set_auto_scaling_configuration_name(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::set_auto_scaling_configuration_name): <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>   <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>   <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>  </note>
     ///   - [`max_concurrency(i32)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::max_concurrency) / [`set_max_concurrency(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::set_max_concurrency): <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>  <p>Default: <code>100</code> </p>
     ///   - [`min_size(i32)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::set_min_size): <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>  <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>  <p>Default: <code>1</code> </p>
     ///   - [`max_size(i32)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::max_size) / [`set_max_size(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::set_max_size): <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>  <p>Default: <code>25</code> </p>
@@ -136,19 +136,33 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateService`](crate::client::fluent_builders::CreateService) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateService::set_service_name): <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateService::set_service_name): <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
     ///   - [`source_configuration(SourceConfiguration)`](crate::client::fluent_builders::CreateService::source_configuration) / [`set_source_configuration(Option<SourceConfiguration>)`](crate::client::fluent_builders::CreateService::set_source_configuration): <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
     ///   - [`instance_configuration(InstanceConfiguration)`](crate::client::fluent_builders::CreateService::instance_configuration) / [`set_instance_configuration(Option<InstanceConfiguration>)`](crate::client::fluent_builders::CreateService::set_instance_configuration): <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateService::set_tags): <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
-    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::CreateService::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::CreateService::set_encryption_configuration): <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
-    ///   - [`health_check_configuration(HealthCheckConfiguration)`](crate::client::fluent_builders::CreateService::health_check_configuration) / [`set_health_check_configuration(Option<HealthCheckConfiguration>)`](crate::client::fluent_builders::CreateService::set_health_check_configuration): <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
-    ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::CreateService::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::CreateService::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateService::set_tags): <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
+    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::CreateService::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::CreateService::set_encryption_configuration): <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
+    ///   - [`health_check_configuration(HealthCheckConfiguration)`](crate::client::fluent_builders::CreateService::health_check_configuration) / [`set_health_check_configuration(Option<HealthCheckConfiguration>)`](crate::client::fluent_builders::CreateService::set_health_check_configuration): <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
+    ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::CreateService::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::CreateService::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    ///   - [`network_configuration(NetworkConfiguration)`](crate::client::fluent_builders::CreateService::network_configuration) / [`set_network_configuration(Option<NetworkConfiguration>)`](crate::client::fluent_builders::CreateService::set_network_configuration): <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
     /// - On success, responds with [`CreateServiceOutput`](crate::output::CreateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::output::CreateServiceOutput::service): <p>A description of the App Runner service that's created by this request.</p>
     ///   - [`operation_id(Option<String>)`](crate::output::CreateServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a> call to track the operation's progress.</p>
     /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::error::CreateServiceError)
     pub fn create_service(&self) -> fluent_builders::CreateService {
         fluent_builders::CreateService::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateVpcConnector`](crate::client::fluent_builders::CreateVpcConnector) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_connector_name(impl Into<String>)`](crate::client::fluent_builders::CreateVpcConnector::vpc_connector_name) / [`set_vpc_connector_name(Option<String>)`](crate::client::fluent_builders::CreateVpcConnector::set_vpc_connector_name): <p>A name for the VPC connector.</p>
+    ///   - [`subnets(Vec<String>)`](crate::client::fluent_builders::CreateVpcConnector::subnets) / [`set_subnets(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVpcConnector::set_subnets): <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+    ///   - [`security_groups(Vec<String>)`](crate::client::fluent_builders::CreateVpcConnector::security_groups) / [`set_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVpcConnector::set_security_groups): <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateVpcConnector::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateVpcConnector::set_tags): <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+    /// - On success, responds with [`CreateVpcConnectorOutput`](crate::output::CreateVpcConnectorOutput) with field(s):
+    ///   - [`vpc_connector(Option<VpcConnector>)`](crate::output::CreateVpcConnectorOutput::vpc_connector): <p>A description of the App Runner VPC connector that's created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateVpcConnectorError>`](crate::error::CreateVpcConnectorError)
+    pub fn create_vpc_connector(&self) -> fluent_builders::CreateVpcConnector {
+        fluent_builders::CreateVpcConnector::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteAutoScalingConfiguration`](crate::client::fluent_builders::DeleteAutoScalingConfiguration) operation.
     ///
@@ -182,6 +196,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::error::DeleteServiceError)
     pub fn delete_service(&self) -> fluent_builders::DeleteService {
         fluent_builders::DeleteService::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteVpcConnector`](crate::client::fluent_builders::DeleteVpcConnector) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_connector_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcConnector::vpc_connector_arn) / [`set_vpc_connector_arn(Option<String>)`](crate::client::fluent_builders::DeleteVpcConnector::set_vpc_connector_arn): <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>  <p>The ARN must be a full VPC connector ARN.</p>
+    /// - On success, responds with [`DeleteVpcConnectorOutput`](crate::output::DeleteVpcConnectorOutput) with field(s):
+    ///   - [`vpc_connector(Option<VpcConnector>)`](crate::output::DeleteVpcConnectorOutput::vpc_connector): <p>A description of the App Runner VPC connector that this request just deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteVpcConnectorError>`](crate::error::DeleteVpcConnectorError)
+    pub fn delete_vpc_connector(&self) -> fluent_builders::DeleteVpcConnector {
+        fluent_builders::DeleteVpcConnector::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeAutoScalingConfiguration`](crate::client::fluent_builders::DescribeAutoScalingConfiguration) operation.
     ///
@@ -220,6 +244,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeServiceError>`](crate::error::DescribeServiceError)
     pub fn describe_service(&self) -> fluent_builders::DescribeService {
         fluent_builders::DescribeService::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeVpcConnector`](crate::client::fluent_builders::DescribeVpcConnector) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_connector_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeVpcConnector::vpc_connector_arn) / [`set_vpc_connector_arn(Option<String>)`](crate::client::fluent_builders::DescribeVpcConnector::set_vpc_connector_arn): <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>  <p>The ARN must be a full VPC connector ARN.</p>
+    /// - On success, responds with [`DescribeVpcConnectorOutput`](crate::output::DescribeVpcConnectorOutput) with field(s):
+    ///   - [`vpc_connector(Option<VpcConnector>)`](crate::output::DescribeVpcConnectorOutput::vpc_connector): <p>A description of the App Runner VPC connector that you specified in this request.</p>
+    /// - On failure, responds with [`SdkError<DescribeVpcConnectorError>`](crate::error::DescribeVpcConnectorError)
+    pub fn describe_vpc_connector(&self) -> fluent_builders::DescribeVpcConnector {
+        fluent_builders::DescribeVpcConnector::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DisassociateCustomDomain`](crate::client::fluent_builders::DisassociateCustomDomain) operation.
     ///
@@ -302,6 +336,19 @@ impl Client {
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListVpcConnectors`](crate::client::fluent_builders::ListVpcConnectors) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVpcConnectors::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVpcConnectors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVpcConnectors::set_max_results): <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>  <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVpcConnectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVpcConnectors::set_next_token): <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>  <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    /// - On success, responds with [`ListVpcConnectorsOutput`](crate::output::ListVpcConnectorsOutput) with field(s):
+    ///   - [`vpc_connectors(Option<Vec<VpcConnector>>)`](crate::output::ListVpcConnectorsOutput::vpc_connectors): <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVpcConnectorsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    /// - On failure, responds with [`SdkError<ListVpcConnectorsError>`](crate::error::ListVpcConnectorsError)
+    pub fn list_vpc_connectors(&self) -> fluent_builders::ListVpcConnectors {
+        fluent_builders::ListVpcConnectors::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`PauseService`](crate::client::fluent_builders::PauseService) operation.
     ///
     /// - The fluent builder is configurable:
@@ -362,8 +409,9 @@ impl Client {
     ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateService::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::UpdateService::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
     ///   - [`source_configuration(SourceConfiguration)`](crate::client::fluent_builders::UpdateService::source_configuration) / [`set_source_configuration(Option<SourceConfiguration>)`](crate::client::fluent_builders::UpdateService::set_source_configuration): <p>The source configuration to apply to the App Runner service.</p>  <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
     ///   - [`instance_configuration(InstanceConfiguration)`](crate::client::fluent_builders::UpdateService::instance_configuration) / [`set_instance_configuration(Option<InstanceConfiguration>)`](crate::client::fluent_builders::UpdateService::set_instance_configuration): <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
-    ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateService::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::UpdateService::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
-    ///   - [`health_check_configuration(HealthCheckConfiguration)`](crate::client::fluent_builders::UpdateService::health_check_configuration) / [`set_health_check_configuration(Option<HealthCheckConfiguration>)`](crate::client::fluent_builders::UpdateService::set_health_check_configuration): <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+    ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateService::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::UpdateService::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
+    ///   - [`health_check_configuration(HealthCheckConfiguration)`](crate::client::fluent_builders::UpdateService::health_check_configuration) / [`set_health_check_configuration(Option<HealthCheckConfiguration>)`](crate::client::fluent_builders::UpdateService::set_health_check_configuration): <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
+    ///   - [`network_configuration(NetworkConfiguration)`](crate::client::fluent_builders::UpdateService::network_configuration) / [`set_network_configuration(Option<NetworkConfiguration>)`](crate::client::fluent_builders::UpdateService::set_network_configuration): <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
     /// - On success, responds with [`UpdateServiceOutput`](crate::output::UpdateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::output::UpdateServiceOutput::service): <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
     ///   - [`operation_id(Option<String>)`](crate::output::UpdateServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
@@ -459,7 +507,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAutoScalingConfiguration`.
     ///
     /// <p>Create an App Runner automatic scaling configuration resource. App Runner requires this resource when you create App Runner services that require non-default auto scaling settings. You can share an auto scaling configuration across multiple services.</p>
-    /// <p>Create multiple revisions of a configuration by using the same <code>AutoScalingConfigurationName</code> and different <code>AutoScalingConfigurationRevision</code> values. When you create a service, you can set it to use the latest active revision of an auto scaling configuration or a specific revision.</p>
+    /// <p>Create multiple revisions of a configuration by calling this action multiple times using the same <code>AutoScalingConfigurationName</code>. The call returns incremental <code>AutoScalingConfigurationRevision</code> values. When you create a service, you can set it to use the latest active revision of an auto scaling configuration or a specific revision.</p>
     /// <p>Configure a higher <code>MinSize</code> to increase the spread of your App Runner service over more Availability Zones in the Amazon Web Services Region. The tradeoff is a higher minimal cost.</p>
     /// <p>Configure a lower <code>MaxSize</code> to control your cost. The tradeoff is lower responsiveness during peak demand.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -501,7 +549,10 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+        /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
+        /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+        /// </note>
         pub fn auto_scaling_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -509,7 +560,10 @@ pub mod fluent_builders {
             self.inner = self.inner.auto_scaling_configuration_name(input.into());
             self
         }
-        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+        /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
+        /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+        /// </note>
         pub fn set_auto_scaling_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -703,12 +757,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+        /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_name(input.into());
             self
         }
-        /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+        /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_name(input);
             self
@@ -746,12 +800,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
+        /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
+        /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -759,7 +813,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
+        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
         pub fn encryption_configuration(
             mut self,
             input: crate::model::EncryptionConfiguration,
@@ -767,7 +821,7 @@ pub mod fluent_builders {
             self.inner = self.inner.encryption_configuration(input);
             self
         }
-        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
+        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -775,7 +829,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_configuration(input);
             self
         }
-        /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+        /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
         pub fn health_check_configuration(
             mut self,
             input: crate::model::HealthCheckConfiguration,
@@ -783,7 +837,7 @@ pub mod fluent_builders {
             self.inner = self.inner.health_check_configuration(input);
             self
         }
-        /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+        /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
         pub fn set_health_check_configuration(
             mut self,
             input: std::option::Option<crate::model::HealthCheckConfiguration>,
@@ -791,7 +845,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_configuration(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -799,12 +853,132 @@ pub mod fluent_builders {
             self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_auto_scaling_configuration_arn(input);
+            self
+        }
+        /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.inner = self.inner.network_configuration(input);
+            self
+        }
+        /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+        pub fn set_network_configuration(
+            mut self,
+            input: std::option::Option<crate::model::NetworkConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_network_configuration(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateVpcConnector`.
+    ///
+    /// <p>Create an App Runner VPC connector resource. App Runner requires this resource when you want to associate your App Runner service to a custom Amazon Virtual Private Cloud (Amazon VPC).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateVpcConnector {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_vpc_connector_input::Builder,
+    }
+    impl CreateVpcConnector {
+        /// Creates a new `CreateVpcConnector`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateVpcConnectorOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateVpcConnectorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A name for the VPC connector.</p>
+        pub fn vpc_connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_connector_name(input.into());
+            self
+        }
+        /// <p>A name for the VPC connector.</p>
+        pub fn set_vpc_connector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_connector_name(input);
+            self
+        }
+        /// Appends an item to `Subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
+            self
+        }
+        /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p>
+        pub fn set_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_subnets(input);
+            self
+        }
+        /// Appends an item to `SecurityGroups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
+            self
+        }
+        /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
+        pub fn set_security_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_security_groups(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -976,6 +1150,64 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
         pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteVpcConnector`.
+    ///
+    /// <p>Delete an App Runner VPC connector resource. You can't delete a connector that's used by one or more App Runner services.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteVpcConnector {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_vpc_connector_input::Builder,
+    }
+    impl DeleteVpcConnector {
+        /// Creates a new `DeleteVpcConnector`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteVpcConnectorOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteVpcConnectorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
+        /// <p>The ARN must be a full VPC connector ARN.</p>
+        pub fn vpc_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_connector_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
+        /// <p>The ARN must be a full VPC connector ARN.</p>
+        pub fn set_vpc_connector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_connector_arn(input);
             self
         }
     }
@@ -1173,6 +1405,64 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
         pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeVpcConnector`.
+    ///
+    /// <p>Return a description of an App Runner VPC connector resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeVpcConnector {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_vpc_connector_input::Builder,
+    }
+    impl DescribeVpcConnector {
+        /// Creates a new `DescribeVpcConnector`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeVpcConnectorOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeVpcConnectorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+        /// <p>The ARN must be a full VPC connector ARN.</p>
+        pub fn vpc_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_connector_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+        /// <p>The ARN must be a full VPC connector ARN.</p>
+        pub fn set_vpc_connector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_connector_arn(input);
             self
         }
     }
@@ -1641,6 +1931,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListVpcConnectors`.
+    ///
+    /// <p>Returns a list of App Runner VPC connectors in your Amazon Web Services account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListVpcConnectors {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_vpc_connectors_input::Builder,
+    }
+    impl ListVpcConnectors {
+        /// Creates a new `ListVpcConnectors`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListVpcConnectorsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListVpcConnectorsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListVpcConnectorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListVpcConnectorsPaginator {
+            crate::paginator::ListVpcConnectorsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+        /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+        /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+        /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+        /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PauseService`.
     ///
     /// <p>Pause an active App Runner service. App Runner reduces compute capacity for the service to zero and loses state (for example, ephemeral storage is removed).</p>
@@ -2033,7 +2396,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_configuration(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -2041,7 +2404,7 @@ pub mod fluent_builders {
             self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2049,7 +2412,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_configuration_arn(input);
             self
         }
-        /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+        /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
         pub fn health_check_configuration(
             mut self,
             input: crate::model::HealthCheckConfiguration,
@@ -2057,12 +2420,25 @@ pub mod fluent_builders {
             self.inner = self.inner.health_check_configuration(input);
             self
         }
-        /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+        /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
         pub fn set_health_check_configuration(
             mut self,
             input: std::option::Option<crate::model::HealthCheckConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_health_check_configuration(input);
+            self
+        }
+        /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.inner = self.inner.network_configuration(input);
+            self
+        }
+        /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+        pub fn set_network_configuration(
+            mut self,
+            input: std::option::Option<crate::model::NetworkConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_network_configuration(input);
             self
         }
     }

@@ -724,7 +724,7 @@ pub struct Branch {
     pub enable_performance_mode: std::option::Option<bool>,
     /// <p> The thumbnail URL for the branch of an Amplify app. </p>
     pub thumbnail_url: std::option::Option<std::string::String>,
-    /// <p> The basic authorization credentials for a branch of an Amplify app. </p>
+    /// <p> The basic authorization credentials for a branch of an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub basic_auth_credentials: std::option::Option<std::string::String>,
     /// <p> The build specification (build spec) content for the branch of an Amplify app. </p>
     pub build_spec: std::option::Option<std::string::String>,
@@ -823,7 +823,7 @@ impl Branch {
     pub fn thumbnail_url(&self) -> std::option::Option<&str> {
         self.thumbnail_url.as_deref()
     }
-    /// <p> The basic authorization credentials for a branch of an Amplify app. </p>
+    /// <p> The basic authorization credentials for a branch of an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
         self.basic_auth_credentials.as_deref()
     }
@@ -1174,12 +1174,12 @@ pub mod branch {
             self.thumbnail_url = input;
             self
         }
-        /// <p> The basic authorization credentials for a branch of an Amplify app. </p>
+        /// <p> The basic authorization credentials for a branch of an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
             self.basic_auth_credentials = Some(input.into());
             self
         }
-        /// <p> The basic authorization credentials for a branch of an Amplify app. </p>
+        /// <p> The basic authorization credentials for a branch of an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn set_basic_auth_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1441,7 +1441,7 @@ pub struct App {
     pub enable_branch_auto_deletion: std::option::Option<bool>,
     /// <p> Enables basic authorization for the Amplify app's branches. </p>
     pub enable_basic_auth: std::option::Option<bool>,
-    /// <p> The basic authorization credentials for branches for the Amplify app. </p>
+    /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub basic_auth_credentials: std::option::Option<std::string::String>,
     /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
     pub custom_rules: std::option::Option<std::vec::Vec<crate::model::CustomRule>>,
@@ -1525,7 +1525,7 @@ impl App {
     pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
         self.enable_basic_auth
     }
-    /// <p> The basic authorization credentials for branches for the Amplify app. </p>
+    /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
         self.basic_auth_credentials.as_deref()
     }
@@ -1830,12 +1830,12 @@ pub mod app {
             self.enable_basic_auth = input;
             self
         }
-        /// <p> The basic authorization credentials for branches for the Amplify app. </p>
+        /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
             self.basic_auth_credentials = Some(input.into());
             self
         }
-        /// <p> The basic authorization credentials for branches for the Amplify app. </p>
+        /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn set_basic_auth_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1996,7 +1996,7 @@ pub struct AutoBranchCreationConfig {
     /// <p> The environment variables for the autocreated branch. </p>
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p> The basic authorization credentials for the autocreated branch. </p>
+    /// <p> The basic authorization credentials for the autocreated branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub basic_auth_credentials: std::option::Option<std::string::String>,
     /// <p> Enables basic authorization for the autocreated branch. </p>
     pub enable_basic_auth: std::option::Option<bool>,
@@ -2030,7 +2030,7 @@ impl AutoBranchCreationConfig {
     {
         self.environment_variables.as_ref()
     }
-    /// <p> The basic authorization credentials for the autocreated branch. </p>
+    /// <p> The basic authorization credentials for the autocreated branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
         self.basic_auth_credentials.as_deref()
     }
@@ -2153,12 +2153,12 @@ pub mod auto_branch_creation_config {
             self.environment_variables = input;
             self
         }
-        /// <p> The basic authorization credentials for the autocreated branch. </p>
+        /// <p> The basic authorization credentials for the autocreated branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
             self.basic_auth_credentials = Some(input.into());
             self
         }
-        /// <p> The basic authorization credentials for the autocreated branch. </p>
+        /// <p> The basic authorization credentials for the autocreated branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn set_basic_auth_credentials(
             mut self,
             input: std::option::Option<std::string::String>,

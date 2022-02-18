@@ -3550,6 +3550,8 @@ pub struct ModifyCustomDbEngineVersionOutput {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    pub supports_babelfish: bool,
 }
 impl ModifyCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
@@ -3664,6 +3666,10 @@ impl ModifyCustomDbEngineVersionOutput {
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
     }
+    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    pub fn supports_babelfish(&self) -> bool {
+        self.supports_babelfish
+    }
 }
 impl std::fmt::Debug for ModifyCustomDbEngineVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3708,6 +3714,7 @@ impl std::fmt::Debug for ModifyCustomDbEngineVersionOutput {
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("create_time", &self.create_time);
         formatter.field("tag_list", &self.tag_list);
+        formatter.field("supports_babelfish", &self.supports_babelfish);
         formatter.finish()
     }
 }
@@ -3746,6 +3753,7 @@ pub mod modify_custom_db_engine_version_output {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) supports_babelfish: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -4132,6 +4140,16 @@ pub mod modify_custom_db_engine_version_output {
             self.tag_list = input;
             self
         }
+        /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+        pub fn supports_babelfish(mut self, input: bool) -> Self {
+            self.supports_babelfish = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+        pub fn set_supports_babelfish(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_babelfish = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyCustomDbEngineVersionOutput`](crate::output::ModifyCustomDbEngineVersionOutput)
         pub fn build(self) -> crate::output::ModifyCustomDbEngineVersionOutput {
             crate::output::ModifyCustomDbEngineVersionOutput {
@@ -4163,6 +4181,7 @@ pub mod modify_custom_db_engine_version_output {
                 kms_key_id: self.kms_key_id,
                 create_time: self.create_time,
                 tag_list: self.tag_list,
+                supports_babelfish: self.supports_babelfish.unwrap_or_default(),
             }
         }
     }
@@ -9439,6 +9458,8 @@ pub struct DeleteCustomDbEngineVersionOutput {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    pub supports_babelfish: bool,
 }
 impl DeleteCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
@@ -9553,6 +9574,10 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
     }
+    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    pub fn supports_babelfish(&self) -> bool {
+        self.supports_babelfish
+    }
 }
 impl std::fmt::Debug for DeleteCustomDbEngineVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9597,6 +9622,7 @@ impl std::fmt::Debug for DeleteCustomDbEngineVersionOutput {
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("create_time", &self.create_time);
         formatter.field("tag_list", &self.tag_list);
+        formatter.field("supports_babelfish", &self.supports_babelfish);
         formatter.finish()
     }
 }
@@ -9635,6 +9661,7 @@ pub mod delete_custom_db_engine_version_output {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) supports_babelfish: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -10021,6 +10048,16 @@ pub mod delete_custom_db_engine_version_output {
             self.tag_list = input;
             self
         }
+        /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+        pub fn supports_babelfish(mut self, input: bool) -> Self {
+            self.supports_babelfish = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+        pub fn set_supports_babelfish(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_babelfish = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteCustomDbEngineVersionOutput`](crate::output::DeleteCustomDbEngineVersionOutput)
         pub fn build(self) -> crate::output::DeleteCustomDbEngineVersionOutput {
             crate::output::DeleteCustomDbEngineVersionOutput {
@@ -10052,6 +10089,7 @@ pub mod delete_custom_db_engine_version_output {
                 kms_key_id: self.kms_key_id,
                 create_time: self.create_time,
                 tag_list: self.tag_list,
+                supports_babelfish: self.supports_babelfish.unwrap_or_default(),
             }
         }
     }
@@ -11337,6 +11375,8 @@ pub struct CreateCustomDbEngineVersionOutput {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    pub supports_babelfish: bool,
 }
 impl CreateCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
@@ -11451,6 +11491,10 @@ impl CreateCustomDbEngineVersionOutput {
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
     }
+    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    pub fn supports_babelfish(&self) -> bool {
+        self.supports_babelfish
+    }
 }
 impl std::fmt::Debug for CreateCustomDbEngineVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11495,6 +11539,7 @@ impl std::fmt::Debug for CreateCustomDbEngineVersionOutput {
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("create_time", &self.create_time);
         formatter.field("tag_list", &self.tag_list);
+        formatter.field("supports_babelfish", &self.supports_babelfish);
         formatter.finish()
     }
 }
@@ -11533,6 +11578,7 @@ pub mod create_custom_db_engine_version_output {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) supports_babelfish: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -11919,6 +11965,16 @@ pub mod create_custom_db_engine_version_output {
             self.tag_list = input;
             self
         }
+        /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+        pub fn supports_babelfish(mut self, input: bool) -> Self {
+            self.supports_babelfish = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+        pub fn set_supports_babelfish(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_babelfish = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateCustomDbEngineVersionOutput`](crate::output::CreateCustomDbEngineVersionOutput)
         pub fn build(self) -> crate::output::CreateCustomDbEngineVersionOutput {
             crate::output::CreateCustomDbEngineVersionOutput {
@@ -11950,6 +12006,7 @@ pub mod create_custom_db_engine_version_output {
                 kms_key_id: self.kms_key_id,
                 create_time: self.create_time,
                 tag_list: self.tag_list,
+                supports_babelfish: self.supports_babelfish.unwrap_or_default(),
             }
         }
     }

@@ -3,9 +3,9 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Using the Amazon Cognito User Pools API, you can create a user pool to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies.
+Using the Amazon Cognito user pools API, you can create a user pool to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies.
 
-This API reference provides information about user pools in Amazon Cognito User Pools.
+This API reference provides information about user pools in Amazon Cognito user pools.
 
 For more information, see the [Amazon Cognito Documentation](https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html).
 
@@ -20,8 +20,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.6.0"
-aws-sdk-cognitoidentityprovider = "0.6.0"
+aws-config = "0.7.0"
+aws-sdk-cognitoidentityprovider = "0.7.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -630,7 +630,7 @@ impl Client {
     ///   - [`event_bus_name(impl Into<String>)`](crate::client::fluent_builders::PutPermission::event_bus_name) / [`set_event_bus_name(Option<String>)`](crate::client::fluent_builders::PutPermission::set_event_bus_name): <p>The name of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     ///   - [`action(impl Into<String>)`](crate::client::fluent_builders::PutPermission::action) / [`set_action(Option<String>)`](crate::client::fluent_builders::PutPermission::set_action): <p>The action that you are enabling the other account to perform.</p>
     ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::PutPermission::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::PutPermission::set_principal): <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.</p>  <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>
-    ///   - [`statement_id(impl Into<String>)`](crate::client::fluent_builders::PutPermission::statement_id) / [`set_statement_id(Option<String>)`](crate::client::fluent_builders::PutPermission::set_statement_id): <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+    ///   - [`statement_id(impl Into<String>)`](crate::client::fluent_builders::PutPermission::statement_id) / [`set_statement_id(Option<String>)`](crate::client::fluent_builders::PutPermission::set_statement_id): <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p> <note>   <p>Each <code>StatementId</code> must be unique.</p>  </note>
     ///   - [`condition(Condition)`](crate::client::fluent_builders::PutPermission::condition) / [`set_condition(Option<Condition>)`](crate::client::fluent_builders::PutPermission::set_condition): <p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain Amazon Web Services organization. For more information about Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>  <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p>  <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>
     ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutPermission::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutPermission::set_policy): <p>A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
     /// - On success, responds with [`PutPermissionOutput`](crate::output::PutPermissionOutput)
@@ -3588,12 +3588,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal(input);
             self
         }
-        /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+        /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p> <note>
+        /// <p>Each <code>StatementId</code> must be unique.</p>
+        /// </note>
         pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.statement_id(input.into());
             self
         }
-        /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+        /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p> <note>
+        /// <p>Each <code>StatementId</code> must be unique.</p>
+        /// </note>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_statement_id(input);
             self
@@ -3780,7 +3784,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutTargets`.
     ///
     /// <p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p>
-    /// <p>Targets are the resources that are invoked when a rule is triggered.</p>
+    /// <p>Targets are the resources that are invoked when a rule is triggered.</p> <note>
+    /// <p>Each rule can have up to five (5) targets associated with it at one time.</p>
+    /// </note>
     /// <p>You can configure the following as targets for Events:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API destination</a> </p> </li>
@@ -3791,6 +3797,7 @@ pub mod fluent_builders {
     /// <li> <p>CodeBuild project</p> </li>
     /// <li> <p>CodePipeline</p> </li>
     /// <li> <p>Amazon EC2 <code>CreateSnapshot</code> API call</p> </li>
+    /// <li> <p>EC2 Image Builder</p> </li>
     /// <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p> </li>
     /// <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li>
     /// <li> <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li>
@@ -3802,7 +3809,7 @@ pub mod fluent_builders {
     /// <li> <p>Lambda function</p> </li>
     /// <li> <p>Redshift clusters (Data API statement execution)</p> </li>
     /// <li> <p>Amazon SNS topic</p> </li>
-    /// <li> <p>Amazon SQS queues (includes FIFO queues</p> </li>
+    /// <li> <p>Amazon SQS queues (includes FIFO queues)</p> </li>
     /// <li> <p>SSM Automation</p> </li>
     /// <li> <p>SSM OpsItem</p> </li>
     /// <li> <p>SSM Run Command</p> </li>
@@ -3984,7 +3991,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveTargets`.
     ///
-    /// <p>Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be invoked.</p>
+    /// <p>Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be invoked.</p> <note>
+    /// <p>A successful execution of <code>RemoveTargets</code> doesn't guarantee all targets are removed from the rule, it means that the target(s) listed in the request are removed.</p>
+    /// </note>
     /// <p>When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Allow a short period of time for changes to take effect.</p>
     /// <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]

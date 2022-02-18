@@ -127,9 +127,9 @@ impl AsRef<str> for Mode {
     }
 }
 
-/// <p>Provides the configuration information to fetch access levels of groups and users from an Amazon Web Services Single Sign On identity source. This is useful for setting up user context filtering, where Amazon Kendra filters search results for different users based on their group's access to documents. You can also map your users to their groups for user context filtering using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping operation</a>.</p>
+/// <p>Provides the configuration information to fetch access levels of groups and users from an Amazon Web Services Single Sign On identity source. This is useful for setting up user context filtering, where Amazon Kendra filters search results for different users based on their group's access to documents. You can also map your users to their groups for user context filtering using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping API</a>.</p>
 /// <p>To set up an Amazon Web Services SSO identity source in the console to use with Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon Web Services SSO identity source</a>. You must also grant the required permissions to use Amazon Web Services SSO with Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM roles for Amazon Web Services SSO</a>.</p>
-/// <p>Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your Amazon Web Services SSO identify source. You must create your index in the parent account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.</p>
+/// <p>Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your Amazon Web Services SSO identify source. You must create your index in the management account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupResolutionConfiguration {
@@ -1316,13 +1316,13 @@ impl AsRef<str> for DocumentAttributeValueType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperienceConfiguration {
-    /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> operation. This is the content you want to use for your Amazon Kendra experience.</p>
+    /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
     pub content_source_configuration: std::option::Option<crate::model::ContentSourceConfiguration>,
     /// <p>The Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
     pub user_identity_configuration: std::option::Option<crate::model::UserIdentityConfiguration>,
 }
 impl ExperienceConfiguration {
-    /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> operation. This is the content you want to use for your Amazon Kendra experience.</p>
+    /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
     pub fn content_source_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ContentSourceConfiguration> {
@@ -1361,7 +1361,7 @@ pub mod experience_configuration {
             std::option::Option<crate::model::UserIdentityConfiguration>,
     }
     impl Builder {
-        /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> operation. This is the content you want to use for your Amazon Kendra experience.</p>
+        /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
         pub fn content_source_configuration(
             mut self,
             input: crate::model::ContentSourceConfiguration,
@@ -1369,7 +1369,7 @@ pub mod experience_configuration {
             self.content_source_configuration = Some(input);
             self
         }
-        /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> operation. This is the content you want to use for your Amazon Kendra experience.</p>
+        /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
         pub fn set_content_source_configuration(
             mut self,
             input: std::option::Option<crate::model::ContentSourceConfiguration>,
@@ -1474,7 +1474,7 @@ pub struct ContentSourceConfiguration {
     pub data_source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
     pub faq_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> operation.</p>
+    /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub direct_put_content: bool,
 }
 impl ContentSourceConfiguration {
@@ -1486,7 +1486,7 @@ impl ContentSourceConfiguration {
     pub fn faq_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.faq_ids.as_deref()
     }
-    /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> operation.</p>
+    /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub fn direct_put_content(&self) -> bool {
         self.direct_put_content
     }
@@ -1549,12 +1549,12 @@ pub mod content_source_configuration {
             self.faq_ids = input;
             self
         }
-        /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> operation.</p>
+        /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
         pub fn direct_put_content(mut self, input: bool) -> Self {
             self.direct_put_content = Some(input);
             self
         }
-        /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> operation.</p>
+        /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
         pub fn set_direct_put_content(mut self, input: std::option::Option<bool>) -> Self {
             self.direct_put_content = input;
             self
@@ -2446,8 +2446,10 @@ pub struct DataSourceConfiguration {
     pub google_drive_configuration: std::option::Option<crate::model::GoogleDriveConfiguration>,
     /// <p>Provides the configuration information required for Amazon Kendra Web Crawler.</p>
     pub web_crawler_configuration: std::option::Option<crate::model::WebCrawlerConfiguration>,
-    /// <p>Provides the configuration information to connect to WorkDocs as your data source.</p>
+    /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
     pub work_docs_configuration: std::option::Option<crate::model::WorkDocsConfiguration>,
+    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+    pub fsx_configuration: std::option::Option<crate::model::FsxConfiguration>,
 }
 impl DataSourceConfiguration {
     /// <p>Provides information to create a data source connector for a document repository in an Amazon S3 bucket.</p>
@@ -2504,11 +2506,15 @@ impl DataSourceConfiguration {
     ) -> std::option::Option<&crate::model::WebCrawlerConfiguration> {
         self.web_crawler_configuration.as_ref()
     }
-    /// <p>Provides the configuration information to connect to WorkDocs as your data source.</p>
+    /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
     pub fn work_docs_configuration(
         &self,
     ) -> std::option::Option<&crate::model::WorkDocsConfiguration> {
         self.work_docs_configuration.as_ref()
+    }
+    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+    pub fn fsx_configuration(&self) -> std::option::Option<&crate::model::FsxConfiguration> {
+        self.fsx_configuration.as_ref()
     }
 }
 impl std::fmt::Debug for DataSourceConfiguration {
@@ -2527,6 +2533,7 @@ impl std::fmt::Debug for DataSourceConfiguration {
         );
         formatter.field("web_crawler_configuration", &self.web_crawler_configuration);
         formatter.field("work_docs_configuration", &self.work_docs_configuration);
+        formatter.field("fsx_configuration", &self.fsx_configuration);
         formatter.finish()
     }
 }
@@ -2554,6 +2561,7 @@ pub mod data_source_configuration {
             std::option::Option<crate::model::WebCrawlerConfiguration>,
         pub(crate) work_docs_configuration:
             std::option::Option<crate::model::WorkDocsConfiguration>,
+        pub(crate) fsx_configuration: std::option::Option<crate::model::FsxConfiguration>,
     }
     impl Builder {
         /// <p>Provides information to create a data source connector for a document repository in an Amazon S3 bucket.</p>
@@ -2697,7 +2705,7 @@ pub mod data_source_configuration {
             self.web_crawler_configuration = input;
             self
         }
-        /// <p>Provides the configuration information to connect to WorkDocs as your data source.</p>
+        /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
         pub fn work_docs_configuration(
             mut self,
             input: crate::model::WorkDocsConfiguration,
@@ -2705,12 +2713,25 @@ pub mod data_source_configuration {
             self.work_docs_configuration = Some(input);
             self
         }
-        /// <p>Provides the configuration information to connect to WorkDocs as your data source.</p>
+        /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
         pub fn set_work_docs_configuration(
             mut self,
             input: std::option::Option<crate::model::WorkDocsConfiguration>,
         ) -> Self {
             self.work_docs_configuration = input;
+            self
+        }
+        /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+        pub fn fsx_configuration(mut self, input: crate::model::FsxConfiguration) -> Self {
+            self.fsx_configuration = Some(input);
+            self
+        }
+        /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+        pub fn set_fsx_configuration(
+            mut self,
+            input: std::option::Option<crate::model::FsxConfiguration>,
+        ) -> Self {
+            self.fsx_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
@@ -2726,6 +2747,7 @@ pub mod data_source_configuration {
                 google_drive_configuration: self.google_drive_configuration,
                 web_crawler_configuration: self.web_crawler_configuration,
                 work_docs_configuration: self.work_docs_configuration,
+                fsx_configuration: self.fsx_configuration,
             }
         }
     }
@@ -2734,6 +2756,485 @@ impl DataSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
     pub fn builder() -> crate::model::data_source_configuration::Builder {
         crate::model::data_source_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FsxConfiguration {
+    /// <p>The identifier of the Amazon FSx file system.</p>
+    /// <p>You can find your file system ID on the file system dashboard in the Amazon FSx console. For information on how to create a file system in Amazon FSx console, using Windows File Server as an example, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started-step1.html">Amazon FSx Getting started guide</a>.</p>
+    pub file_system_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon FSx file system type. Windows is currently the only supported type.</p>
+    pub file_system_type: std::option::Option<crate::model::FsxFileSystemType>,
+    /// <p>Provides the configuration information for connecting to an Amazon Virtual Private Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+    pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
+    /// <li> <p>password—The password of the active directory user with read and mounting access Amazon FSx Windows file system.</p> </li>
+    /// </ul>
+    pub secret_arn: std::option::Option<std::string::String>,
+    /// <p>A list of regular expression patterns to include certain files in your Amazon FSx file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to exclude certain files in your Amazon FSx file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon FSx data source attributes or field names to Amazon Kendra index field names in Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon FSx fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon FSx data source field names must exist in your Amazon FSx custom metadata.</p>
+    pub field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+}
+impl FsxConfiguration {
+    /// <p>The identifier of the Amazon FSx file system.</p>
+    /// <p>You can find your file system ID on the file system dashboard in the Amazon FSx console. For information on how to create a file system in Amazon FSx console, using Windows File Server as an example, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started-step1.html">Amazon FSx Getting started guide</a>.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The Amazon FSx file system type. Windows is currently the only supported type.</p>
+    pub fn file_system_type(&self) -> std::option::Option<&crate::model::FsxFileSystemType> {
+        self.file_system_type.as_ref()
+    }
+    /// <p>Provides the configuration information for connecting to an Amazon Virtual Private Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+    pub fn vpc_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
+    /// <li> <p>password—The password of the active directory user with read and mounting access Amazon FSx Windows file system.</p> </li>
+    /// </ul>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>A list of regular expression patterns to include certain files in your Amazon FSx file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn inclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.inclusion_patterns.as_deref()
+    }
+    /// <p>A list of regular expression patterns to exclude certain files in your Amazon FSx file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusion_patterns.as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon FSx data source attributes or field names to Amazon Kendra index field names in Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon FSx fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon FSx data source field names must exist in your Amazon FSx custom metadata.</p>
+    pub fn field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.field_mappings.as_deref()
+    }
+}
+impl std::fmt::Debug for FsxConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FsxConfiguration");
+        formatter.field("file_system_id", &self.file_system_id);
+        formatter.field("file_system_type", &self.file_system_type);
+        formatter.field("vpc_configuration", &self.vpc_configuration);
+        formatter.field("secret_arn", &self.secret_arn);
+        formatter.field("inclusion_patterns", &self.inclusion_patterns);
+        formatter.field("exclusion_patterns", &self.exclusion_patterns);
+        formatter.field("field_mappings", &self.field_mappings);
+        formatter.finish()
+    }
+}
+/// See [`FsxConfiguration`](crate::model::FsxConfiguration)
+pub mod fsx_configuration {
+    /// A builder for [`FsxConfiguration`](crate::model::FsxConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_system_id: std::option::Option<std::string::String>,
+        pub(crate) file_system_type: std::option::Option<crate::model::FsxFileSystemType>,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        pub(crate) secret_arn: std::option::Option<std::string::String>,
+        pub(crate) inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon FSx file system.</p>
+        /// <p>You can find your file system ID on the file system dashboard in the Amazon FSx console. For information on how to create a file system in Amazon FSx console, using Windows File Server as an example, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started-step1.html">Amazon FSx Getting started guide</a>.</p>
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_system_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon FSx file system.</p>
+        /// <p>You can find your file system ID on the file system dashboard in the Amazon FSx console. For information on how to create a file system in Amazon FSx console, using Windows File Server as an example, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started-step1.html">Amazon FSx Getting started guide</a>.</p>
+        pub fn set_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_system_id = input;
+            self
+        }
+        /// <p>The Amazon FSx file system type. Windows is currently the only supported type.</p>
+        pub fn file_system_type(mut self, input: crate::model::FsxFileSystemType) -> Self {
+            self.file_system_type = Some(input);
+            self
+        }
+        /// <p>The Amazon FSx file system type. Windows is currently the only supported type.</p>
+        pub fn set_file_system_type(
+            mut self,
+            input: std::option::Option<crate::model::FsxFileSystemType>,
+        ) -> Self {
+            self.file_system_type = input;
+            self
+        }
+        /// <p>Provides the configuration information for connecting to an Amazon Virtual Private Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+        pub fn vpc_configuration(
+            mut self,
+            input: crate::model::DataSourceVpcConfiguration,
+        ) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>Provides the configuration information for connecting to an Amazon Virtual Private Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+        /// <ul>
+        /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
+        /// <li> <p>password—The password of the active directory user with read and mounting access Amazon FSx Windows file system.</p> </li>
+        /// </ul>
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
+        /// <ul>
+        /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
+        /// <li> <p>password—The password of the active directory user with read and mounting access Amazon FSx Windows file system.</p> </li>
+        /// </ul>
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
+            self
+        }
+        /// Appends an item to `inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns to include certain files in your Amazon FSx file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inclusion_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.inclusion_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to include certain files in your Amazon FSx file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn set_inclusion_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inclusion_patterns = input;
+            self
+        }
+        /// Appends an item to `exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns to exclude certain files in your Amazon FSx file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.exclusion_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.exclusion_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to exclude certain files in your Amazon FSx file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn set_exclusion_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusion_patterns = input;
+            self
+        }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon FSx data source attributes or field names to Amazon Kendra index field names in Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon FSx fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon FSx data source field names must exist in your Amazon FSx custom metadata.</p>
+        pub fn field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self.field_mappings.unwrap_or_default();
+            v.push(input);
+            self.field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon FSx data source attributes or field names to Amazon Kendra index field names in Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon FSx fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon FSx data source field names must exist in your Amazon FSx custom metadata.</p>
+        pub fn set_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.field_mappings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FsxConfiguration`](crate::model::FsxConfiguration)
+        pub fn build(self) -> crate::model::FsxConfiguration {
+            crate::model::FsxConfiguration {
+                file_system_id: self.file_system_id,
+                file_system_type: self.file_system_type,
+                vpc_configuration: self.vpc_configuration,
+                secret_arn: self.secret_arn,
+                inclusion_patterns: self.inclusion_patterns,
+                exclusion_patterns: self.exclusion_patterns,
+                field_mappings: self.field_mappings,
+            }
+        }
+    }
+}
+impl FsxConfiguration {
+    /// Creates a new builder-style object to manufacture [`FsxConfiguration`](crate::model::FsxConfiguration)
+    pub fn builder() -> crate::model::fsx_configuration::Builder {
+        crate::model::fsx_configuration::Builder::default()
+    }
+}
+
+/// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub data_source_field_name: std::option::Option<std::string::String>,
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub date_field_format: std::option::Option<std::string::String>,
+    /// <p>The name of the field in the index.</p>
+    pub index_field_name: std::option::Option<std::string::String>,
+}
+impl DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
+        self.data_source_field_name.as_deref()
+    }
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub fn date_field_format(&self) -> std::option::Option<&str> {
+        self.date_field_format.as_deref()
+    }
+    /// <p>The name of the field in the index.</p>
+    pub fn index_field_name(&self) -> std::option::Option<&str> {
+        self.index_field_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceToIndexFieldMapping {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
+        formatter.field("data_source_field_name", &self.data_source_field_name);
+        formatter.field("date_field_format", &self.date_field_format);
+        formatter.field("index_field_name", &self.index_field_name);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+pub mod data_source_to_index_field_mapping {
+    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
+        pub(crate) date_field_format: std::option::Option<std::string::String>,
+        pub(crate) index_field_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn set_data_source_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_field_name = input;
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.date_field_format = Some(input.into());
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn set_date_field_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.date_field_format = input;
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn set_index_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.index_field_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
+            crate::model::DataSourceToIndexFieldMapping {
+                data_source_field_name: self.data_source_field_name,
+                date_field_format: self.date_field_format,
+                index_field_name: self.index_field_name,
+            }
+        }
+    }
+}
+impl DataSourceToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
+        crate::model::data_source_to_index_field_mapping::Builder::default()
+    }
+}
+
+/// <p>Provides information for connecting to an Amazon VPC.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceVpcConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+pub mod data_source_vpc_configuration {
+    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
+            crate::model::DataSourceVpcConfiguration {
+                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids,
+            }
+        }
+    }
+}
+impl DataSourceVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
+        crate::model::data_source_vpc_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FsxFileSystemType {
+    #[allow(missing_docs)] // documentation missing in model
+    Windows,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FsxFileSystemType {
+    fn from(s: &str) -> Self {
+        match s {
+            "WINDOWS" => FsxFileSystemType::Windows,
+            other => FsxFileSystemType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FsxFileSystemType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FsxFileSystemType::from(s))
+    }
+}
+impl FsxFileSystemType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FsxFileSystemType::Windows => "WINDOWS",
+            FsxFileSystemType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["WINDOWS"]
+    }
+}
+impl AsRef<str> for FsxFileSystemType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2756,7 +3257,7 @@ pub struct WorkDocsConfiguration {
     pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files in your Amazon WorkDocs site repository. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn’t included in the index.</p>
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first create the custom index fields using the <code>UpdateIndex</code> operation before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>. The Amazon WorkDocs data source field names need to exist in your Amazon WorkDocs custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first create the custom index fields using the <code>UpdateIndex</code> API before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>. The Amazon WorkDocs data source field names need to exist in your Amazon WorkDocs custom metadata.</p>
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
 }
@@ -2785,7 +3286,7 @@ impl WorkDocsConfiguration {
     pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusion_patterns.as_deref()
     }
-    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first create the custom index fields using the <code>UpdateIndex</code> operation before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>. The Amazon WorkDocs data source field names need to exist in your Amazon WorkDocs custom metadata.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first create the custom index fields using the <code>UpdateIndex</code> API before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>. The Amazon WorkDocs data source field names need to exist in your Amazon WorkDocs custom metadata.</p>
     pub fn field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
@@ -2902,7 +3403,7 @@ pub mod work_docs_configuration {
         ///
         /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
         ///
-        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first create the custom index fields using the <code>UpdateIndex</code> operation before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>. The Amazon WorkDocs data source field names need to exist in your Amazon WorkDocs custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first create the custom index fields using the <code>UpdateIndex</code> API before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>. The Amazon WorkDocs data source field names need to exist in your Amazon WorkDocs custom metadata.</p>
         pub fn field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -2912,7 +3413,7 @@ pub mod work_docs_configuration {
             self.field_mappings = Some(v);
             self
         }
-        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first create the custom index fields using the <code>UpdateIndex</code> operation before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>. The Amazon WorkDocs data source field names need to exist in your Amazon WorkDocs custom metadata.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first create the custom index fields using the <code>UpdateIndex</code> API before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>. The Amazon WorkDocs data source field names need to exist in your Amazon WorkDocs custom metadata.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -2937,107 +3438,6 @@ impl WorkDocsConfiguration {
     /// Creates a new builder-style object to manufacture [`WorkDocsConfiguration`](crate::model::WorkDocsConfiguration)
     pub fn builder() -> crate::model::work_docs_configuration::Builder {
         crate::model::work_docs_configuration::Builder::default()
-    }
-}
-
-/// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub data_source_field_name: std::option::Option<std::string::String>,
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub date_field_format: std::option::Option<std::string::String>,
-    /// <p>The name of the field in the index.</p>
-    pub index_field_name: std::option::Option<std::string::String>,
-}
-impl DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
-        self.data_source_field_name.as_deref()
-    }
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub fn date_field_format(&self) -> std::option::Option<&str> {
-        self.date_field_format.as_deref()
-    }
-    /// <p>The name of the field in the index.</p>
-    pub fn index_field_name(&self) -> std::option::Option<&str> {
-        self.index_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-pub mod data_source_to_index_field_mapping {
-    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
-        pub(crate) date_field_format: std::option::Option<std::string::String>,
-        pub(crate) index_field_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.data_source_field_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn set_data_source_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_field_name = input;
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
-            self.date_field_format = Some(input.into());
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn set_date_field_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.date_field_format = input;
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.index_field_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn set_index_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.index_field_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
-            crate::model::DataSourceToIndexFieldMapping {
-                data_source_field_name: self.data_source_field_name,
-                date_field_format: self.date_field_format,
-                index_field_name: self.index_field_name,
-            }
-        }
-    }
-}
-impl DataSourceToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
-        crate::model::data_source_to_index_field_mapping::Builder::default()
     }
 }
 
@@ -3999,7 +4399,7 @@ pub struct GoogleDriveConfiguration {
     /// <p>A list of regular expression patterns that apply to the path on Google Drive. Items that match the pattern are excluded from the index from both shared drives and users' My Drives. Items that don't match the pattern are included in the index. If an item matches both an exclusion pattern and an inclusion pattern, it is excluded from the index.</p>
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index field.</p>
-    /// <p>If you are using the console, you can define index fields when creating the mapping. If you are using the API, you must first create the field using the <code>UpdateIndex</code> operation.</p>
+    /// <p>If you are using the console, you can define index fields when creating the mapping. If you are using the API, you must first create the field using the <code>UpdateIndex</code> API.</p>
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>A list of MIME types to exclude from the index. All documents matching the specified MIME type are excluded. </p>
@@ -4024,7 +4424,7 @@ impl GoogleDriveConfiguration {
         self.exclusion_patterns.as_deref()
     }
     /// <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index field.</p>
-    /// <p>If you are using the console, you can define index fields when creating the mapping. If you are using the API, you must first create the field using the <code>UpdateIndex</code> operation.</p>
+    /// <p>If you are using the console, you can define index fields when creating the mapping. If you are using the API, you must first create the field using the <code>UpdateIndex</code> API.</p>
     pub fn field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
@@ -4126,7 +4526,7 @@ pub mod google_drive_configuration {
         /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
         ///
         /// <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index field.</p>
-        /// <p>If you are using the console, you can define index fields when creating the mapping. If you are using the API, you must first create the field using the <code>UpdateIndex</code> operation.</p>
+        /// <p>If you are using the console, you can define index fields when creating the mapping. If you are using the API, you must first create the field using the <code>UpdateIndex</code> API.</p>
         pub fn field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -4137,7 +4537,7 @@ pub mod google_drive_configuration {
             self
         }
         /// <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index field.</p>
-        /// <p>If you are using the console, you can define index fields when creating the mapping. If you are using the API, you must first create the field using the <code>UpdateIndex</code> operation.</p>
+        /// <p>If you are using the console, you can define index fields when creating the mapping. If you are using the API, you must first create the field using the <code>UpdateIndex</code> API.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -4532,104 +4932,13 @@ impl ConfluenceConfiguration {
     }
 }
 
-/// <p>Provides information for connecting to an Amazon VPC.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.subnet_ids.as_deref()
-    }
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceVpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-pub mod data_source_vpc_configuration {
-    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// Appends an item to `subnet_ids`.
-        ///
-        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
-        ///
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        /// Appends an item to `security_group_ids`.
-        ///
-        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
-        ///
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
-            crate::model::DataSourceVpcConfiguration {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-            }
-        }
-    }
-}
-impl DataSourceVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
-        crate::model::data_source_vpc_configuration::Builder::default()
-    }
-}
-
 /// <p>Specifies the attachment settings for the Confluence data source. Attachment settings are optional, if you don't specify settings attachments, Amazon Kendra won't index them.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceAttachmentConfiguration {
     /// <p>Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the Confluence data source. </p>
     pub crawl_attachments: bool,
-    /// <p>Defines how attachment metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+    /// <p>Defines how attachment metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub attachment_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::ConfluenceAttachmentToIndexFieldMapping>>,
@@ -4639,7 +4948,7 @@ impl ConfluenceAttachmentConfiguration {
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
-    /// <p>Defines how attachment metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+    /// <p>Defines how attachment metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub fn attachment_field_mappings(
         &self,
@@ -4681,7 +4990,7 @@ pub mod confluence_attachment_configuration {
         ///
         /// To override the contents of this collection use [`set_attachment_field_mappings`](Self::set_attachment_field_mappings).
         ///
-        /// <p>Defines how attachment metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+        /// <p>Defines how attachment metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
         /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
         pub fn attachment_field_mappings(
             mut self,
@@ -4692,7 +5001,7 @@ pub mod confluence_attachment_configuration {
             self.attachment_field_mappings = Some(v);
             self
         }
-        /// <p>Defines how attachment metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+        /// <p>Defines how attachment metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
         /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
         pub fn set_attachment_field_mappings(
             mut self,
@@ -4720,12 +5029,12 @@ impl ConfluenceAttachmentConfiguration {
 }
 
 /// <p>Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field.</p>
-/// <p>You must first create the index field using the <code>UpdateIndex</code> operation. </p>
+/// <p>You must first create the index field using the <code>UpdateIndex</code> API. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceAttachmentToIndexFieldMapping {
     /// <p>The name of the field in the data source. </p>
-    /// <p>You must first create the index field using the <code>UpdateIndex</code> operation. </p>
+    /// <p>You must first create the index field using the <code>UpdateIndex</code> API. </p>
     pub data_source_field_name: std::option::Option<crate::model::ConfluenceAttachmentFieldName>,
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
     pub date_field_format: std::option::Option<std::string::String>,
@@ -4734,7 +5043,7 @@ pub struct ConfluenceAttachmentToIndexFieldMapping {
 }
 impl ConfluenceAttachmentToIndexFieldMapping {
     /// <p>The name of the field in the data source. </p>
-    /// <p>You must first create the index field using the <code>UpdateIndex</code> operation. </p>
+    /// <p>You must first create the index field using the <code>UpdateIndex</code> API. </p>
     pub fn data_source_field_name(
         &self,
     ) -> std::option::Option<&crate::model::ConfluenceAttachmentFieldName> {
@@ -4771,7 +5080,7 @@ pub mod confluence_attachment_to_index_field_mapping {
     }
     impl Builder {
         /// <p>The name of the field in the data source. </p>
-        /// <p>You must first create the index field using the <code>UpdateIndex</code> operation. </p>
+        /// <p>You must first create the index field using the <code>UpdateIndex</code> API. </p>
         pub fn data_source_field_name(
             mut self,
             input: crate::model::ConfluenceAttachmentFieldName,
@@ -4780,7 +5089,7 @@ pub mod confluence_attachment_to_index_field_mapping {
             self
         }
         /// <p>The name of the field in the data source. </p>
-        /// <p>You must first create the index field using the <code>UpdateIndex</code> operation. </p>
+        /// <p>You must first create the index field using the <code>UpdateIndex</code> API. </p>
         pub fn set_data_source_field_name(
             mut self,
             input: std::option::Option<crate::model::ConfluenceAttachmentFieldName>,
@@ -4934,17 +5243,17 @@ impl AsRef<str> for ConfluenceAttachmentFieldName {
     }
 }
 
-/// <p>Specifies the blog settings for the Confluence data source. Blogs are always indexed unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code> fields in the <code>ConfluenceConfiguration</code> type.</p>
+/// <p>Specifies the blog settings for the Confluence data source. Blogs are always indexed unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code> fields in the <code>ConfluenceConfiguration</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceBlogConfiguration {
-    /// <p>Defines how blog metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+    /// <p>Defines how blog metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
     /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub blog_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::ConfluenceBlogToIndexFieldMapping>>,
 }
 impl ConfluenceBlogConfiguration {
-    /// <p>Defines how blog metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+    /// <p>Defines how blog metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
     /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub fn blog_field_mappings(
         &self,
@@ -4973,7 +5282,7 @@ pub mod confluence_blog_configuration {
         ///
         /// To override the contents of this collection use [`set_blog_field_mappings`](Self::set_blog_field_mappings).
         ///
-        /// <p>Defines how blog metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+        /// <p>Defines how blog metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
         /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
         pub fn blog_field_mappings(
             mut self,
@@ -4984,7 +5293,7 @@ pub mod confluence_blog_configuration {
             self.blog_field_mappings = Some(v);
             self
         }
-        /// <p>Defines how blog metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+        /// <p>Defines how blog metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
         /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
         pub fn set_blog_field_mappings(
             mut self,
@@ -5011,7 +5320,7 @@ impl ConfluenceBlogConfiguration {
 }
 
 /// <p>Defines the mapping between a blog field in the Confluence data source to a Amazon Kendra index field.</p>
-/// <p>You must first create the index field using the <code>UpdateIndex</code> operation. </p>
+/// <p>You must first create the index field using the <code>UpdateIndex</code> API. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceBlogToIndexFieldMapping {
@@ -5215,13 +5524,13 @@ impl AsRef<str> for ConfluenceBlogFieldName {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluencePageConfiguration {
-    /// <p>Defines how page metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+    /// <p>Defines how page metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub page_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::ConfluencePageToIndexFieldMapping>>,
 }
 impl ConfluencePageConfiguration {
-    /// <p>Defines how page metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+    /// <p>Defines how page metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub fn page_field_mappings(
         &self,
@@ -5250,7 +5559,7 @@ pub mod confluence_page_configuration {
         ///
         /// To override the contents of this collection use [`set_page_field_mappings`](Self::set_page_field_mappings).
         ///
-        /// <p>Defines how page metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+        /// <p>Defines how page metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
         /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
         pub fn page_field_mappings(
             mut self,
@@ -5261,7 +5570,7 @@ pub mod confluence_page_configuration {
             self.page_field_mappings = Some(v);
             self
         }
-        /// <p>Defines how page metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+        /// <p>Defines how page metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
         /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
         pub fn set_page_field_mappings(
             mut self,
@@ -5288,7 +5597,7 @@ impl ConfluencePageConfiguration {
 }
 
 /// <p>Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field.</p>
-/// <p>You must first create the index field using the <code>UpdateIndex</code> operation. </p>
+/// <p>You must first create the index field using the <code>UpdateIndex</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluencePageToIndexFieldMapping {
@@ -5515,7 +5824,7 @@ pub struct ConfluenceSpaceConfiguration {
     pub include_spaces: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of space keys of Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are not indexed. If a space is in both the <code>ExcludeSpaces</code> and the <code>IncludeSpaces</code> list, the space is excluded.</p>
     pub exclude_spaces: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Defines how space metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+    /// <p>Defines how space metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
     /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub space_field_mappings:
         std::option::Option<std::vec::Vec<crate::model::ConfluenceSpaceToIndexFieldMapping>>,
@@ -5537,7 +5846,7 @@ impl ConfluenceSpaceConfiguration {
     pub fn exclude_spaces(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_spaces.as_deref()
     }
-    /// <p>Defines how space metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+    /// <p>Defines how space metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
     /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub fn space_field_mappings(
         &self,
@@ -5632,7 +5941,7 @@ pub mod confluence_space_configuration {
         ///
         /// To override the contents of this collection use [`set_space_field_mappings`](Self::set_space_field_mappings).
         ///
-        /// <p>Defines how space metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+        /// <p>Defines how space metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
         /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you must specify at least one field mapping.</p>
         pub fn space_field_mappings(
             mut self,
@@ -5643,7 +5952,7 @@ pub mod confluence_space_configuration {
             self.space_field_mappings = Some(v);
             self
         }
-        /// <p>Defines how space metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> operation.</p>
+        /// <p>Defines how space metadata fields should be mapped to index fields. Before you can map a field, you must first create an index field with a matching type using the console or the <code>UpdateIndex</code> API.</p>
         /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you must specify at least one field mapping.</p>
         pub fn set_space_field_mappings(
             mut self,
@@ -5673,8 +5982,8 @@ impl ConfluenceSpaceConfiguration {
     }
 }
 
-/// <p>Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field.</p>
-/// <p>You must first create the index field using the <code>UpdateIndex</code> operation. </p>
+/// <p>Defines the mapping between a field in the Confluence data source to an Amazon Kendra index field.</p>
+/// <p>You must first create the index field using the <code>UpdateIndex</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfluenceSpaceToIndexFieldMapping {
@@ -8631,11 +8940,11 @@ impl AsRef<str> for QueryIdentifiersEnclosingOption {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AclConfiguration {
-    /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> operation.</p>
+    /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
     pub allowed_groups_column_name: std::option::Option<std::string::String>,
 }
 impl AclConfiguration {
-    /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> operation.</p>
+    /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
     pub fn allowed_groups_column_name(&self) -> std::option::Option<&str> {
         self.allowed_groups_column_name.as_deref()
     }
@@ -8659,12 +8968,12 @@ pub mod acl_configuration {
         pub(crate) allowed_groups_column_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> operation.</p>
+        /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
         pub fn allowed_groups_column_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.allowed_groups_column_name = Some(input.into());
             self
         }
-        /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> operation.</p>
+        /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
         pub fn set_allowed_groups_column_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8697,7 +9006,7 @@ pub struct ColumnConfiguration {
     pub document_data_column_name: std::option::Option<std::string::String>,
     /// <p>The column that contains the title of the document.</p>
     pub document_title_column_name: std::option::Option<std::string::String>,
-    /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> operation.</p>
+    /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>One to five columns that indicate when a document in the database has changed.</p>
@@ -8716,7 +9025,7 @@ impl ColumnConfiguration {
     pub fn document_title_column_name(&self) -> std::option::Option<&str> {
         self.document_title_column_name.as_deref()
     }
-    /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> operation.</p>
+    /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
     pub fn field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
@@ -8799,7 +9108,7 @@ pub mod column_configuration {
         ///
         /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
         ///
-        /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> operation.</p>
+        /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
         pub fn field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -8809,7 +9118,7 @@ pub mod column_configuration {
             self.field_mappings = Some(v);
             self
         }
-        /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> operation.</p>
+        /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -9081,7 +9390,7 @@ pub struct SharePointConfiguration {
     pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Provides information for connecting to an Amazon VPC.</p>
     pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
-    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code> operation before you map SharePoint attributes. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code> API before you map SharePoint attributes. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.</p>
     pub field_mappings:
         std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
     /// <p>The Microsoft SharePoint attribute field that contains the title of the document.</p>
@@ -9128,7 +9437,7 @@ impl SharePointConfiguration {
     ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
-    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code> operation before you map SharePoint attributes. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.</p>
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code> API before you map SharePoint attributes. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.</p>
     pub fn field_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
@@ -9310,7 +9619,7 @@ pub mod share_point_configuration {
         ///
         /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
         ///
-        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code> operation before you map SharePoint attributes. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code> API before you map SharePoint attributes. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.</p>
         pub fn field_mappings(
             mut self,
             input: crate::model::DataSourceToIndexFieldMapping,
@@ -9320,7 +9629,7 @@ pub mod share_point_configuration {
             self.field_mappings = Some(v);
             self
         }
-        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code> operation before you map SharePoint attributes. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.</p>
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code> API before you map SharePoint attributes. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -9880,7 +10189,7 @@ impl Tag {
     }
 }
 
-/// <p>Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code> operation to provide relevance information.</p>
+/// <p>Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code> API to provide relevance information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RelevanceFeedback {
@@ -10011,7 +10320,7 @@ impl AsRef<str> for RelevanceType {
     }
 }
 
-/// <p>Gathers information about when a particular result was clicked by a user. Your application uses the <code>SubmitFeedback</code> operation to provide click information.</p>
+/// <p>Gathers information about when a particular result was clicked by a user. Your application uses the <code>SubmitFeedback</code> API to provide click information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClickFeedback {
@@ -12941,13 +13250,13 @@ impl AsRef<str> for QuerySuggestionsBlockListStatus {
 pub struct IndexConfigurationSummary {
     /// <p>The name of the index.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the index. Use this to identify the index when you are using operations such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
+    /// <p>A unique identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the index is a enterprise edition index or a developer edition index. </p>
     pub edition: std::option::Option<crate::model::IndexEdition>,
     /// <p>The Unix timestamp when the index was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> operation.</p>
+    /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
     pub status: std::option::Option<crate::model::IndexStatus>,
@@ -12957,7 +13266,7 @@ impl IndexConfigurationSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A unique identifier for the index. Use this to identify the index when you are using operations such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
+    /// <p>A unique identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -12969,7 +13278,7 @@ impl IndexConfigurationSummary {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> operation.</p>
+    /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -13014,12 +13323,12 @@ pub mod index_configuration_summary {
             self.name = input;
             self
         }
-        /// <p>A unique identifier for the index. Use this to identify the index when you are using operations such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
+        /// <p>A unique identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the index. Use this to identify the index when you are using operations such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
+        /// <p>A unique identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -13050,12 +13359,12 @@ pub mod index_configuration_summary {
             self.created_at = input;
             self
         }
-        /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> operation.</p>
+        /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> operation.</p>
+        /// <p>The Unix timestamp when the index was last updated by the <code>UpdateIndex</code> API.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -14398,21 +14707,21 @@ impl AsRef<str> for Persona {
     }
 }
 
-/// <p>Provides information about a synchronization job.</p>
+/// <p>Provides information about a data source synchronization job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceSyncJob {
     /// <p>A unique identifier for the synchronization job.</p>
     pub execution_id: std::option::Option<std::string::String>,
-    /// <p>The UNIX datetime that the synchronization job was started.</p>
+    /// <p>The UNIX datetime that the synchronization job started.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The UNIX datetime that the synchronization job was completed.</p>
+    /// <p>The UNIX datetime that the synchronization job completed.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The execution status of the synchronization job. When the <code>Status</code> field is set to <code>SUCCEEDED</code>, the synchronization job is done. If the status code is set to <code>FAILED</code>, the <code>ErrorCode</code> and <code>ErrorMessage</code> fields give you the reason for the failure.</p>
     pub status: std::option::Option<crate::model::DataSourceSyncJobStatus>,
     /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field contains a the reason that the synchronization failed.</p>
+    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>If the reason that the synchronization failed is due to an error with the underlying data source, this field contains a code that identifies the error.</p>
     pub data_source_error_code: std::option::Option<std::string::String>,
@@ -14424,11 +14733,11 @@ impl DataSourceSyncJob {
     pub fn execution_id(&self) -> std::option::Option<&str> {
         self.execution_id.as_deref()
     }
-    /// <p>The UNIX datetime that the synchronization job was started.</p>
+    /// <p>The UNIX datetime that the synchronization job started.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The UNIX datetime that the synchronization job was completed.</p>
+    /// <p>The UNIX datetime that the synchronization job completed.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -14440,7 +14749,7 @@ impl DataSourceSyncJob {
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field contains a the reason that the synchronization failed.</p>
+    /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
     pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
         self.error_code.as_ref()
     }
@@ -14493,12 +14802,12 @@ pub mod data_source_sync_job {
             self.execution_id = input;
             self
         }
-        /// <p>The UNIX datetime that the synchronization job was started.</p>
+        /// <p>The UNIX datetime that the synchronization job started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The UNIX datetime that the synchronization job was started.</p>
+        /// <p>The UNIX datetime that the synchronization job started.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -14506,12 +14815,12 @@ pub mod data_source_sync_job {
             self.start_time = input;
             self
         }
-        /// <p>The UNIX datetime that the synchronization job was completed.</p>
+        /// <p>The UNIX datetime that the synchronization job completed.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The UNIX datetime that the synchronization job was completed.</p>
+        /// <p>The UNIX datetime that the synchronization job completed.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -14545,12 +14854,12 @@ pub mod data_source_sync_job {
             self.error_message = input;
             self
         }
-        /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field contains a the reason that the synchronization failed.</p>
+        /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
             self.error_code = Some(input);
             self
         }
-        /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field contains a the reason that the synchronization failed.</p>
+        /// <p>If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the reason the synchronization failed.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::ErrorCode>,
@@ -14968,7 +15277,7 @@ impl TimeRange {
     }
 }
 
-/// <p>Summary information for a Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code> operation.</p>
+/// <p>Summary information for an Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceSummary {
@@ -15237,6 +15546,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Database,
     #[allow(missing_docs)] // documentation missing in model
+    Fsx,
+    #[allow(missing_docs)] // documentation missing in model
     Googledrive,
     #[allow(missing_docs)] // documentation missing in model
     Onedrive,
@@ -15261,6 +15572,7 @@ impl std::convert::From<&str> for DataSourceType {
             "CONFLUENCE" => DataSourceType::Confluence,
             "CUSTOM" => DataSourceType::Custom,
             "DATABASE" => DataSourceType::Database,
+            "FSX" => DataSourceType::Fsx,
             "GOOGLEDRIVE" => DataSourceType::Googledrive,
             "ONEDRIVE" => DataSourceType::Onedrive,
             "S3" => DataSourceType::S3,
@@ -15287,6 +15599,7 @@ impl DataSourceType {
             DataSourceType::Confluence => "CONFLUENCE",
             DataSourceType::Custom => "CUSTOM",
             DataSourceType::Database => "DATABASE",
+            DataSourceType::Fsx => "FSX",
             DataSourceType::Googledrive => "GOOGLEDRIVE",
             DataSourceType::Onedrive => "ONEDRIVE",
             DataSourceType::S3 => "S3",
@@ -15304,6 +15617,7 @@ impl DataSourceType {
             "CONFLUENCE",
             "CUSTOM",
             "DATABASE",
+            "FSX",
             "GOOGLEDRIVE",
             "ONEDRIVE",
             "S3",
@@ -16568,11 +16882,12 @@ pub struct Document {
     /// <p>The title of the document.</p>
     pub title: std::option::Option<std::string::String>,
     /// <p>The contents of the document. </p>
-    /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
+    /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub s3_path: std::option::Option<crate::model::S3Path>,
     /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
+    /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
     /// <p>Information on user and group access rights, which is used for user context filtering.</p>
     pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -16592,7 +16907,7 @@ impl Document {
         self.title.as_deref()
     }
     /// <p>The contents of the document. </p>
-    /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
+    /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
@@ -16601,6 +16916,7 @@ impl Document {
         self.s3_path.as_ref()
     }
     /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
+    /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::DocumentAttribute]> {
         self.attributes.as_deref()
     }
@@ -16674,13 +16990,13 @@ pub mod document {
             self
         }
         /// <p>The contents of the document. </p>
-        /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
+        /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
         pub fn blob(mut self, input: aws_smithy_types::Blob) -> Self {
             self.blob = Some(input);
             self
         }
         /// <p>The contents of the document. </p>
-        /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
+        /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
         pub fn set_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.blob = input;
             self
@@ -16700,6 +17016,7 @@ pub mod document {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
+        /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
         pub fn attributes(mut self, input: crate::model::DocumentAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input);
@@ -16707,6 +17024,7 @@ pub mod document {
             self
         }
         /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
+        /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
@@ -17574,7 +17892,7 @@ impl DocumentInfo {
     }
 }
 
-/// <p>Provides information about documents that could not be removed from an index by the <code>BatchDeleteDocument</code> operation.</p>
+/// <p>Provides information about documents that could not be removed from an index by the <code>BatchDeleteDocument</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDocumentResponseFailedDocument {
