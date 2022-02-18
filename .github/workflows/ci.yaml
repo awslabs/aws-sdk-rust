@@ -107,7 +107,7 @@ jobs:
   # Psuedo-job that depends on the test job so that we don't have to enter
   # the myriad of test range combinations into GitHub's protected branch rules
   require-test-examples:
-    needs: test
+    needs: test-examples
     # Run this job even if its dependency jobs fail
     if: always()
     runs-on: ubuntu-latest
