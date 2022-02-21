@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::escape::Error as EscapeError;
+use crate::escape::EscapeError;
 use std::borrow::Cow;
 use std::fmt;
 use std::str::Utf8Error;

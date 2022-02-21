@@ -10,7 +10,7 @@ use aws_smithy_types::{base64, Blob, DateTime, Document, Number};
 use std::borrow::Cow;
 
 use crate::deserialize::must_not_be_finite;
-pub use crate::escape::Error as EscapeError;
+pub use crate::escape::EscapeError;
 use aws_smithy_types::primitive::Parse;
 use std::collections::HashMap;
 use std::iter::Peekable;
