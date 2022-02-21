@@ -48,7 +48,8 @@ impl Offset {
     }
 }
 
-/// Enum representing the different JSON tokens that can be returned by json_token_iter.
+/// Enum representing the different JSON tokens that can be returned by
+/// [`crate::deserialize::json_token_iter`].
 #[derive(Debug, PartialEq)]
 pub enum Token<'a> {
     StartArray {
