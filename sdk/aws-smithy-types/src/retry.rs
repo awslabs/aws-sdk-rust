@@ -71,8 +71,11 @@ pub enum RetryKind {
     /// Note: The specified `Duration` is considered a suggestion and may be replaced or ignored.
     Explicit(Duration),
 
-    /// The response associated with this variant should not be retried.
-    NotRetryable,
+    /// The response was a failure that should _not_ be retried.
+    UnretryableFailure,
+
+    /// The response was successful, so no retry is necessary.
+    Unnecessary,
 }
 
 /// Specifies how failed requests should be retried.

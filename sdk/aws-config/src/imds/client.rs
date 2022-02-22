@@ -693,7 +693,8 @@ impl ImdsErrorPolicy {
             _ if status.is_server_error() => RetryKind::Error(ErrorKind::ServerError),
             // 401 indicates that the token has expired, this is retryable
             _ if status.as_u16() == 401 => RetryKind::Error(ErrorKind::ServerError),
-            _ => RetryKind::NotRetryable,
+            // This catch-all includes successful responses that fail to parse. These should not be retried.
+            _ => RetryKind::UnretryableFailure,
         }
     }
 }
@@ -710,11 +711,11 @@ impl ImdsErrorPolicy {
 impl<T, E> ClassifyResponse<SdkSuccess<T>, SdkError<E>> for ImdsErrorPolicy {
     fn classify(&self, response: Result<&SdkSuccess<T>, &SdkError<E>>) -> RetryKind {
         match response {
-            Ok(_) => RetryKind::NotRetryable,
+            Ok(_) => RetryKind::Unnecessary,
             Err(SdkError::ResponseError { raw, .. }) | Err(SdkError::ServiceError { raw, .. }) => {
                 ImdsErrorPolicy::classify(raw)
             }
-            _ => RetryKind::NotRetryable,
+            _ => RetryKind::UnretryableFailure,
         }
     }
 }
@@ -723,20 +724,24 @@ impl<T, E> ClassifyResponse<SdkSuccess<T>, SdkError<E>> for ImdsErrorPolicy {
 pub(crate) mod test {
     use std::collections::HashMap;
     use std::error::Error;
+    use std::io;
     use std::time::{Duration, UNIX_EPOCH};
 
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_client::erase::DynConnector;
     use aws_smithy_client::test_connection::{capture_request, TestConnection};
+    use aws_smithy_client::{SdkError, SdkSuccess};
     use aws_smithy_http::body::SdkBody;
+    use aws_smithy_http::operation;
+    use aws_smithy_types::retry::RetryKind;
     use aws_types::os_shim_internal::{Env, Fs, ManualTimeSource, TimeSource};
+    use http::header::USER_AGENT;
     use http::Uri;
     use serde::Deserialize;
     use tracing_test::traced_test;
 
-    use crate::imds::client::{Client, EndpointMode};
+    use crate::imds::client::{Client, EndpointMode, ImdsErrorPolicy};
     use crate::provider_config::ProviderConfig;
-    use http::header::USER_AGENT;
 
     const TOKEN_A: &str = "AQAEAFTNrA4eEGx0AQgJ1arIq_Cc-t4tWt3fB0Hd8RKhXlKc5ccvhg==";
     const TOKEN_B: &str = "alternatetoken==";
@@ -975,6 +980,35 @@ pub(crate) mod test {
         let err = client.get("/latest/metadata").await.expect_err("no token");
         assert!(format!("{}", err).contains("forbidden"), "{}", err);
         connection.assert_requests_match(&[]);
+    }
+
+    /// Successful responses should classify as `RetryKind::Unnecessary`
+    #[test]
+    fn successful_response_properly_classified() {
+        use aws_smithy_http::retry::ClassifyResponse;
+
+        let policy = ImdsErrorPolicy;
+        fn response_200() -> operation::Response {
+            operation::Response::new(imds_response("").map(|_| SdkBody::empty()))
+        }
+        let success = SdkSuccess {
+            raw: response_200(),
+            parsed: (),
+        };
+        assert_eq!(
+            RetryKind::Unnecessary,
+            policy.classify(Ok::<_, &SdkError<()>>(&success))
+        );
+
+        // Emulate a failure to parse the response body (using an io error since it's easy to construct in a test)
+        let failure = SdkError::<()>::ResponseError {
+            err: Box::new(io::Error::new(io::ErrorKind::BrokenPipe, "fail to parse")),
+            raw: response_200(),
+        };
+        assert_eq!(
+            RetryKind::UnretryableFailure,
+            policy.classify(Err::<&SdkSuccess<()>, _>(&failure))
+        );
     }
 
     // since tokens are sent as headers, the tokens need to be valid header values
