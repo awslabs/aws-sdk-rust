@@ -3,11 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-import * as cdk from '@aws-cdk/core';
-import * as eks from '@aws-cdk/aws-eks';
-import * as dynamodb from '@aws-cdk/aws-dynamodb';
-export class EksCredentialsStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+import { Stack, StackProps } from "aws-cdk-lib";
+import * as eks from "aws-cdk-lib/aws-eks";
+import * as dynamodb from "aws-cdk-lib/aws-dynamodb";
+import { Construct } from "constructs";
+
+export class EksCredentialsStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
 
