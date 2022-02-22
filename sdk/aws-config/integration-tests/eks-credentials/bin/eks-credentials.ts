@@ -1,14 +1,14 @@
+#!/usr/bin/env node
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#!/usr/bin/env node
 import 'source-map-support/register';
-import * as cdk from '@aws-cdk/core';
+import { App } from "aws-cdk-lib";
 import { EksCredentialsStack } from '../lib/eks-credentials-stack';
 
-const app = new cdk.App();
+const app = new App();
 new EksCredentialsStack(app, 'EksCredentialsStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
