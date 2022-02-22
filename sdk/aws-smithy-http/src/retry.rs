@@ -15,6 +15,6 @@ pub trait ClassifyResponse<T, E>: Clone {
 
 impl<T, E> ClassifyResponse<T, E> for () {
     fn classify(&self, _: Result<&T, &E>) -> RetryKind {
-        RetryKind::NotRetryable
+        RetryKind::Unnecessary
     }
 }

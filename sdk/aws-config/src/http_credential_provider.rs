@@ -174,7 +174,7 @@ impl ClassifyResponse<SdkSuccess<Credentials>, SdkError<CredentialsError>>
          *   - Non-parseable 200 responses.
          *  */
         match response {
-            Ok(_) => RetryKind::NotRetryable,
+            Ok(_) => RetryKind::Unnecessary,
             // socket errors, networking timeouts
             Err(SdkError::DispatchFailure(client_err))
                 if client_err.is_timeout() || client_err.is_io() =>
@@ -192,7 +192,7 @@ impl ClassifyResponse<SdkSuccess<Credentials>, SdkError<CredentialsError>>
             {
                 RetryKind::Error(ErrorKind::ServerError)
             }
-            Err(_) => RetryKind::NotRetryable,
+            Err(_) => RetryKind::UnretryableFailure,
         }
     }
 }
@@ -260,7 +260,7 @@ mod test {
 
         assert_eq!(
             HttpCredentialRetryPolicy.classify(sdk_result.as_ref()),
-            RetryKind::NotRetryable
+            RetryKind::Unnecessary
         );
 
         assert!(sdk_result.is_ok(), "should be ok: {:?}", sdk_result)
@@ -275,7 +275,7 @@ mod test {
         let sdk_result = sdk_resp(error_response);
         assert_eq!(
             HttpCredentialRetryPolicy.classify(sdk_result.as_ref()),
-            RetryKind::NotRetryable
+            RetryKind::UnretryableFailure
         );
         let sdk_error = sdk_result.expect_err("should be error");
 

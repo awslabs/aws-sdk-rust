@@ -78,12 +78,12 @@ mod test_operation {
         fn classify(&self, err: Result<&T, &SdkError<E>>) -> RetryKind {
             let kind = match err {
                 Err(SdkError::ServiceError { err, .. }) => err.retryable_error_kind(),
-                Ok(_) => return RetryKind::NotRetryable,
+                Ok(_) => return RetryKind::Unnecessary,
                 _ => panic!("test handler only handles modeled errors got: {:?}", err),
             };
             match kind {
                 Some(kind) => RetryKind::Error(kind),
-                None => RetryKind::NotRetryable,
+                None => RetryKind::UnretryableFailure,
             }
         }
     }
