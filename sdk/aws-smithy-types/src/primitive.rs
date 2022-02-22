@@ -94,41 +94,26 @@ impl Parse for f64 {
     }
 }
 
-/// Primitive Type Encoder
-///
-/// Encodes primitive types in Smithy's specified format. For floating-point numbers,
-/// Smithy requires that NaN and Infinity values be specially encoded.
-///
-/// This type implements `From<T>` for all Smithy primitive types.
-#[non_exhaustive]
-pub enum Encoder {
+enum Inner {
     /// Boolean
-    #[non_exhaustive]
     Bool(bool),
     /// 8-bit signed integer
-    #[non_exhaustive]
     I8(i8, itoa::Buffer),
     /// 16-bit signed integer
-    #[non_exhaustive]
     I16(i16, itoa::Buffer),
     /// 32-bit signed integer
-    #[non_exhaustive]
     I32(i32, itoa::Buffer),
     /// 64-bit signed integer
-    #[non_exhaustive]
     I64(i64, itoa::Buffer),
     /// 64-bit unsigned integer
-    #[non_exhaustive]
     U64(u64, itoa::Buffer),
-    #[non_exhaustive]
     /// 32-bit IEEE 754 single-precision floating-point number
     F32(f32, ryu::Buffer),
     /// 64-bit IEEE 754 double-precision floating-point number
-    #[non_exhaustive]
     F64(f64, ryu::Buffer),
 }
 
-impl Debug for Encoder {
+impl Debug for Inner {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         match self {
             Self::Bool(v) => write!(f, "Bool({})", v),
@@ -143,18 +128,28 @@ impl Debug for Encoder {
     }
 }
 
+/// Primitive Type Encoder
+///
+/// Encodes primitive types in Smithy's specified format. For floating-point numbers,
+/// Smithy requires that NaN and Infinity values be specially encoded.
+///
+/// This type implements `From<T>` for all Smithy primitive types.
+#[non_exhaustive]
+#[derive(Debug)]
+pub struct Encoder(Inner);
+
 impl Encoder {
     /// Encodes a Smithy primitive as a string.
     pub fn encode(&mut self) -> &str {
-        match self {
-            Encoder::Bool(true) => "true",
-            Encoder::Bool(false) => "false",
-            Encoder::I8(v, buf) => buf.format(*v),
-            Encoder::I16(v, buf) => buf.format(*v),
-            Encoder::I32(v, buf) => buf.format(*v),
-            Encoder::I64(v, buf) => buf.format(*v),
-            Encoder::U64(v, buf) => buf.format(*v),
-            Encoder::F32(v, buf) => {
+        match &mut self.0 {
+            Inner::Bool(true) => "true",
+            Inner::Bool(false) => "false",
+            Inner::I8(v, buf) => buf.format(*v),
+            Inner::I16(v, buf) => buf.format(*v),
+            Inner::I32(v, buf) => buf.format(*v),
+            Inner::I64(v, buf) => buf.format(*v),
+            Inner::U64(v, buf) => buf.format(*v),
+            Inner::F32(v, buf) => {
                 if v.is_nan() {
                     float::NAN
                 } else if *v == f32::INFINITY {
@@ -165,7 +160,7 @@ impl Encoder {
                     buf.format_finite(*v)
                 }
             }
-            Encoder::F64(v, buf) => {
+            Inner::F64(v, buf) => {
                 if v.is_nan() {
                     float::NAN
                 } else if *v == f64::INFINITY {
@@ -182,49 +177,49 @@ impl Encoder {
 
 impl From<bool> for Encoder {
     fn from(input: bool) -> Self {
-        Self::Bool(input)
+        Self(Inner::Bool(input))
     }
 }
 
 impl From<i8> for Encoder {
     fn from(input: i8) -> Self {
-        Self::I8(input, itoa::Buffer::new())
+        Self(Inner::I8(input, itoa::Buffer::new()))
     }
 }
 
 impl From<i16> for Encoder {
     fn from(input: i16) -> Self {
-        Self::I16(input, itoa::Buffer::new())
+        Self(Inner::I16(input, itoa::Buffer::new()))
     }
 }
 
 impl From<i32> for Encoder {
     fn from(input: i32) -> Self {
-        Self::I32(input, itoa::Buffer::new())
+        Self(Inner::I32(input, itoa::Buffer::new()))
     }
 }
 
 impl From<i64> for Encoder {
     fn from(input: i64) -> Self {
-        Self::I64(input, itoa::Buffer::new())
+        Self(Inner::I64(input, itoa::Buffer::new()))
     }
 }
 
 impl From<u64> for Encoder {
     fn from(input: u64) -> Self {
-        Self::U64(input, itoa::Buffer::new())
+        Self(Inner::U64(input, itoa::Buffer::new()))
     }
 }
 
 impl From<f32> for Encoder {
     fn from(input: f32) -> Self {
-        Self::F32(input, ryu::Buffer::new())
+        Self(Inner::F32(input, ryu::Buffer::new()))
     }
 }
 
 impl From<f64> for Encoder {
     fn from(input: f64) -> Self {
-        Self::F64(input, ryu::Buffer::new())
+        Self(Inner::F64(input, ryu::Buffer::new()))
     }
 }
 
