@@ -304,19 +304,22 @@ where
 
 #[cfg(feature = "rustls")]
 impl<M, R> ClientBuilder<(), M, R> {
-    /// Connect to the service over HTTPS using Rustls.
-    pub fn rustls(self) -> ClientBuilder<Adapter<crate::conns::Https>, M, R> {
-        self.connector(Adapter::builder().build(crate::conns::https()))
+    /// Connect to the service over HTTPS using Rustls using dynamic dispatch.
+    pub fn rustls(self) -> ClientBuilder<DynConnector, M, R> {
+        self.connector(DynConnector::new(
+            Adapter::builder().build(crate::conns::https()),
+        ))
     }
 }
 
 #[cfg(feature = "native-tls")]
 impl<M, R> ClientBuilder<(), M, R> {
-    /// Connect to the service over HTTPS using the native TLS library on your platform.
-    pub fn native_tls(
-        self,
-    ) -> ClientBuilder<Adapter<hyper_tls::HttpsConnector<hyper::client::HttpConnector>>, M, R> {
-        self.connector(Adapter::builder().build(crate::conns::native_tls()))
+    /// Connect to the service over HTTPS using the native TLS library on your
+    /// platform using dynamic dispatch.
+    pub fn native_tls(self) -> ClientBuilder<DynConnector, M, R> {
+        self.connector(DynConnector::new(
+            Adapter::builder().build(crate::conns::native_tls()),
+        ))
     }
 }
 
@@ -632,7 +635,17 @@ mod test {
 
     use aws_smithy_http::body::SdkBody;
 
+    use super::ClientBuilder;
+    use crate::erase::DynConnector;
     use crate::hyper_ext::Adapter;
+
+    #[test]
+    fn builder_connection_helpers_are_dyn() {
+        #[cfg(feature = "rustls")]
+        let _builder: ClientBuilder<DynConnector, (), _> = ClientBuilder::new().rustls();
+        #[cfg(feature = "native-tls")]
+        let _builder: ClientBuilder<DynConnector, (), _> = ClientBuilder::new().native_tls();
+    }
 
     #[tokio::test]
     async fn hyper_io_error() {
