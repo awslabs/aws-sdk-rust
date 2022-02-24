@@ -38,6 +38,7 @@ pub type GetRawMessageContentInputOperationOutputAlias = crate::operation::GetRa
 pub type GetRawMessageContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRawMessageContentInput {
     /// Consumes the builder and constructs an Operation<[`GetRawMessageContent`](crate::operation::GetRawMessageContent)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -50,54 +51,46 @@ impl GetRawMessageContentInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::GetRawMessageContentInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_1 = &_input.message_id;
-            let input_1 =
-                input_1
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetRawMessageContentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_1 = &_input.message_id;
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "message_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let message_id = aws_smithy_http::label::fmt_string(input_1, false);
-            if message_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "message_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let message_id = aws_smithy_http::label::fmt_string(input_1, false);
+                if message_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "message_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/messages/{messageId}", messageId = message_id)
+                    .expect("formatting should succeed");
+                Ok(())
             }
-            write!(output, "/messages/{messageId}", messageId = message_id)
-                .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::GetRawMessageContentInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("GET").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::GetRawMessageContentInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetRawMessageContentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -107,7 +100,6 @@ impl GetRawMessageContentInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -136,12 +128,6 @@ impl GetRawMessageContentInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetRawMessageContentInput`](crate::input::GetRawMessageContentInput)
     pub fn builder() -> crate::input::get_raw_message_content_input::Builder {
@@ -202,6 +188,7 @@ pub type PutRawMessageContentInputOperationOutputAlias = crate::operation::PutRa
 pub type PutRawMessageContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRawMessageContentInput {
     /// Consumes the builder and constructs an Operation<[`PutRawMessageContent`](crate::operation::PutRawMessageContent)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -214,63 +201,62 @@ impl PutRawMessageContentInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::PutRawMessageContentInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_2 = &_input.message_id;
-            let input_2 =
-                input_2
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PutRawMessageContentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_2 = &_input.message_id;
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "message_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let message_id = aws_smithy_http::label::fmt_string(input_2, false);
-            if message_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "message_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let message_id = aws_smithy_http::label::fmt_string(input_2, false);
+                if message_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "message_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/messages/{messageId}", messageId = message_id)
+                    .expect("formatting should succeed");
+                Ok(())
             }
-            write!(output, "/messages/{messageId}", messageId = message_id)
-                .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::PutRawMessageContentInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("POST").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::PutRawMessageContentInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutRawMessageContentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
-                http::header::HeaderName::from_static("content-type"),
+                http::header::CONTENT_TYPE,
                 "application/json",
             );
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_raw_message_content(
                 &self,
             )?,
         );
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -280,7 +266,6 @@ impl PutRawMessageContentInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -309,20 +294,6 @@ impl PutRawMessageContentInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        let mut builder = builder;
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutRawMessageContentInput`](crate::input::PutRawMessageContentInput)
     pub fn builder() -> crate::input::put_raw_message_content_input::Builder {

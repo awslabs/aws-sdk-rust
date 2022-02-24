@@ -41,6 +41,7 @@ pub type DeleteConnectionInputOperationOutputAlias = crate::operation::DeleteCon
 pub type DeleteConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnection`](crate::operation::DeleteConnection)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -53,58 +54,50 @@ impl DeleteConnectionInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::DeleteConnectionInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_1 = &_input.connection_id;
-            let input_1 =
-                input_1
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteConnectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_1 = &_input.connection_id;
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "connection_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let connection_id = aws_smithy_http::label::fmt_string(input_1, false);
-            if connection_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let connection_id = aws_smithy_http::label::fmt_string(input_1, false);
+                if connection_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "connection_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/@connections/{ConnectionId}",
+                    ConnectionId = connection_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/@connections/{ConnectionId}",
-                ConnectionId = connection_id
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::DeleteConnectionInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("DELETE").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::DeleteConnectionInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteConnectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -114,7 +107,6 @@ impl DeleteConnectionInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -143,12 +135,6 @@ impl DeleteConnectionInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput)
     pub fn builder() -> crate::input::delete_connection_input::Builder {
@@ -197,6 +183,7 @@ pub type GetConnectionInputOperationOutputAlias = crate::operation::GetConnectio
 pub type GetConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectionInput {
     /// Consumes the builder and constructs an Operation<[`GetConnection`](crate::operation::GetConnection)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -209,58 +196,50 @@ impl GetConnectionInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::GetConnectionInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_2 = &_input.connection_id;
-            let input_2 =
-                input_2
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetConnectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_2 = &_input.connection_id;
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "connection_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let connection_id = aws_smithy_http::label::fmt_string(input_2, false);
-            if connection_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let connection_id = aws_smithy_http::label::fmt_string(input_2, false);
+                if connection_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "connection_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/@connections/{ConnectionId}",
+                    ConnectionId = connection_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/@connections/{ConnectionId}",
-                ConnectionId = connection_id
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::GetConnectionInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("GET").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::GetConnectionInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetConnectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -270,7 +249,6 @@ impl GetConnectionInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -299,12 +277,6 @@ impl GetConnectionInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetConnectionInput`](crate::input::GetConnectionInput)
     pub fn builder() -> crate::input::get_connection_input::Builder {
@@ -365,6 +337,7 @@ pub type PostToConnectionInputOperationOutputAlias = crate::operation::PostToCon
 pub type PostToConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PostToConnectionInput {
     /// Consumes the builder and constructs an Operation<[`PostToConnection`](crate::operation::PostToConnection)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -377,65 +350,64 @@ impl PostToConnectionInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::PostToConnectionInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_3 = &_input.connection_id;
-            let input_3 =
-                input_3
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::PostToConnectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_3 = &_input.connection_id;
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "connection_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let connection_id = aws_smithy_http::label::fmt_string(input_3, false);
-            if connection_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "connection_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let connection_id = aws_smithy_http::label::fmt_string(input_3, false);
+                if connection_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "connection_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/@connections/{ConnectionId}",
+                    ConnectionId = connection_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/@connections/{ConnectionId}",
-                ConnectionId = connection_id
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::PostToConnectionInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("POST").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::PostToConnectionInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PostToConnectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
-                http::header::HeaderName::from_static("content-type"),
+                http::header::CONTENT_TYPE,
                 "application/octet-stream",
             );
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_payload_post_to_connection_input(self.data)?,
         );
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -445,7 +417,6 @@ impl PostToConnectionInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -474,20 +445,6 @@ impl PostToConnectionInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        let mut builder = builder;
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PostToConnectionInput`](crate::input::PostToConnectionInput)
     pub fn builder() -> crate::input::post_to_connection_input::Builder {

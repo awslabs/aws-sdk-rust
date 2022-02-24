@@ -53,6 +53,7 @@ pub type AssociateLicenseInputOperationOutputAlias = crate::operation::Associate
 pub type AssociateLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateLicenseInput {
     /// Consumes the builder and constructs an Operation<[`AssociateLicense`](crate::operation::AssociateLicense)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -65,74 +66,65 @@ impl AssociateLicenseInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::AssociateLicenseInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_1 = &_input.workspace_id;
-            let input_1 =
-                input_1
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::AssociateLicenseInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_1 = &_input.workspace_id;
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let workspace_id = aws_smithy_http::label::fmt_string(input_1, false);
-            if workspace_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            let input_2 = &_input.license_type;
-            let input_2 =
-                input_2
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_1, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_2 = &_input.license_type;
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "license_type",
                         details: "cannot be empty or unset",
-                    })?;
-            let license_type = aws_smithy_http::label::fmt_string(input_2, false);
-            if license_type.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "license_type",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let license_type = aws_smithy_http::label::fmt_string(input_2, false);
+                if license_type.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "license_type",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}/licenses/{licenseType}",
+                    workspaceId = workspace_id,
+                    licenseType = license_type
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/workspaces/{workspaceId}/licenses/{licenseType}",
-                workspaceId = workspace_id,
-                licenseType = license_type
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::AssociateLicenseInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("POST").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::AssociateLicenseInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AssociateLicenseInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -142,7 +134,6 @@ impl AssociateLicenseInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -171,12 +162,6 @@ impl AssociateLicenseInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`AssociateLicenseInput`](crate::input::AssociateLicenseInput)
     pub fn builder() -> crate::input::associate_license_input::Builder {
@@ -430,6 +415,7 @@ pub type CreateWorkspaceInputOperationOutputAlias = crate::operation::CreateWork
 pub type CreateWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspace`](crate::operation::CreateWorkspace)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -442,48 +428,48 @@ impl CreateWorkspaceInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::CreateWorkspaceInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/workspaces").expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::CreateWorkspaceInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("POST").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::CreateWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
-            Ok(builder)
-        }
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateWorkspaceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/workspaces").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateWorkspaceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_workspace(&self)?,
         );
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -493,7 +479,6 @@ impl CreateWorkspaceInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -522,20 +507,6 @@ impl CreateWorkspaceInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        let mut builder = builder;
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput)
     pub fn builder() -> crate::input::create_workspace_input::Builder {
@@ -581,6 +552,7 @@ pub type DeleteWorkspaceInputOperationOutputAlias = crate::operation::DeleteWork
 pub type DeleteWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspace`](crate::operation::DeleteWorkspace)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -593,58 +565,50 @@ impl DeleteWorkspaceInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::DeleteWorkspaceInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_3 = &_input.workspace_id;
-            let input_3 =
-                input_3
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteWorkspaceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_3 = &_input.workspace_id;
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let workspace_id = aws_smithy_http::label::fmt_string(input_3, false);
-            if workspace_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_3, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}",
+                    workspaceId = workspace_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/workspaces/{workspaceId}",
-                workspaceId = workspace_id
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::DeleteWorkspaceInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("DELETE").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::DeleteWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteWorkspaceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -654,7 +618,6 @@ impl DeleteWorkspaceInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -683,12 +646,6 @@ impl DeleteWorkspaceInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput)
     pub fn builder() -> crate::input::delete_workspace_input::Builder {
@@ -734,6 +691,7 @@ pub type DescribeWorkspaceInputOperationOutputAlias = crate::operation::Describe
 pub type DescribeWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspace`](crate::operation::DescribeWorkspace)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -746,58 +704,50 @@ impl DescribeWorkspaceInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::DescribeWorkspaceInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_4 = &_input.workspace_id;
-            let input_4 =
-                input_4
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeWorkspaceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_4 = &_input.workspace_id;
+                let input_4 = input_4.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let workspace_id = aws_smithy_http::label::fmt_string(input_4, false);
-            if workspace_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_4, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}",
+                    workspaceId = workspace_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/workspaces/{workspaceId}",
-                workspaceId = workspace_id
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::DescribeWorkspaceInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("GET").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::DescribeWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeWorkspaceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -807,7 +757,6 @@ impl DescribeWorkspaceInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -836,12 +785,6 @@ impl DescribeWorkspaceInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceInput`](crate::input::DescribeWorkspaceInput)
     pub fn builder() -> crate::input::describe_workspace_input::Builder {
@@ -889,6 +832,7 @@ pub type DescribeWorkspaceAuthenticationInputOperationRetryAlias =
     aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceAuthenticationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceAuthentication`](crate::operation::DescribeWorkspaceAuthentication)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -901,58 +845,50 @@ impl DescribeWorkspaceAuthenticationInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::DescribeWorkspaceAuthenticationInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_5 = &_input.workspace_id;
-            let input_5 =
-                input_5
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeWorkspaceAuthenticationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_5 = &_input.workspace_id;
+                let input_5 = input_5.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let workspace_id = aws_smithy_http::label::fmt_string(input_5, false);
-            if workspace_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_5, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}/authentication",
+                    workspaceId = workspace_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/workspaces/{workspaceId}/authentication",
-                workspaceId = workspace_id
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::DescribeWorkspaceAuthenticationInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("GET").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::DescribeWorkspaceAuthenticationInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeWorkspaceAuthenticationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -962,7 +898,6 @@ impl DescribeWorkspaceAuthenticationInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -991,12 +926,6 @@ impl DescribeWorkspaceAuthenticationInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceAuthenticationInput`](crate::input::DescribeWorkspaceAuthenticationInput)
     pub fn builder() -> crate::input::describe_workspace_authentication_input::Builder {
@@ -1057,6 +986,7 @@ pub type DisassociateLicenseInputOperationOutputAlias = crate::operation::Disass
 pub type DisassociateLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateLicenseInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateLicense`](crate::operation::DisassociateLicense)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -1069,74 +999,65 @@ impl DisassociateLicenseInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::DisassociateLicenseInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_6 = &_input.workspace_id;
-            let input_6 =
-                input_6
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DisassociateLicenseInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_6 = &_input.workspace_id;
+                let input_6 = input_6.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let workspace_id = aws_smithy_http::label::fmt_string(input_6, false);
-            if workspace_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            let input_7 = &_input.license_type;
-            let input_7 =
-                input_7
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_6, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_7 = &_input.license_type;
+                let input_7 = input_7.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "license_type",
                         details: "cannot be empty or unset",
-                    })?;
-            let license_type = aws_smithy_http::label::fmt_string(input_7, false);
-            if license_type.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "license_type",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let license_type = aws_smithy_http::label::fmt_string(input_7, false);
+                if license_type.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "license_type",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}/licenses/{licenseType}",
+                    workspaceId = workspace_id,
+                    licenseType = license_type
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/workspaces/{workspaceId}/licenses/{licenseType}",
-                workspaceId = workspace_id,
-                licenseType = license_type
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::DisassociateLicenseInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("DELETE").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::DisassociateLicenseInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DisassociateLicenseInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -1146,7 +1067,6 @@ impl DisassociateLicenseInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -1175,12 +1095,6 @@ impl DisassociateLicenseInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DisassociateLicenseInput`](crate::input::DisassociateLicenseInput)
     pub fn builder() -> crate::input::disassociate_license_input::Builder {
@@ -1286,6 +1200,7 @@ pub type ListPermissionsInputOperationOutputAlias = crate::operation::ListPermis
 pub type ListPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissions`](crate::operation::ListPermissions)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -1298,84 +1213,76 @@ impl ListPermissionsInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::ListPermissionsInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_8 = &_input.workspace_id;
-            let input_8 =
-                input_8
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListPermissionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_8 = &_input.workspace_id;
+                let input_8 = input_8.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let workspace_id = aws_smithy_http::label::fmt_string(input_8, false);
-            if workspace_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_8, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}/permissions",
+                    workspaceId = workspace_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/workspaces/{workspaceId}/permissions",
-                workspaceId = workspace_id
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        fn uri_query(
-            _input: &crate::input::ListPermissionsInput,
-            mut output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_9) = &_input.max_results {
-                query.push_kv(
-                    "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
-                );
+            fn uri_query(
+                _input: &crate::input::ListPermissionsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_9) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
+                    );
+                }
+                if let Some(inner_10) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                }
+                if let Some(inner_11) = &_input.user_type {
+                    query.push_kv("userType", &aws_smithy_http::query::fmt_string(&inner_11));
+                }
+                if let Some(inner_12) = &_input.user_id {
+                    query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_12));
+                }
+                if let Some(inner_13) = &_input.group_id {
+                    query.push_kv("groupId", &aws_smithy_http::query::fmt_string(&inner_13));
+                }
+                Ok(())
             }
-            if let Some(inner_10) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListPermissionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
             }
-            if let Some(inner_11) = &_input.user_type {
-                query.push_kv("userType", &aws_smithy_http::query::fmt_string(&inner_11));
-            }
-            if let Some(inner_12) = &_input.user_id {
-                query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_12));
-            }
-            if let Some(inner_13) = &_input.group_id {
-                query.push_kv("groupId", &aws_smithy_http::query::fmt_string(&inner_13));
-            }
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::ListPermissionsInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri)?;
-            Ok(builder.method("GET").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::ListPermissionsInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -1385,7 +1292,6 @@ impl ListPermissionsInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -1414,12 +1320,6 @@ impl ListPermissionsInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListPermissionsInput`](crate::input::ListPermissionsInput)
     pub fn builder() -> crate::input::list_permissions_input::Builder {
@@ -1477,6 +1377,7 @@ pub type ListWorkspacesInputOperationOutputAlias = crate::operation::ListWorkspa
 pub type ListWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkspaces`](crate::operation::ListWorkspaces)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -1489,55 +1390,48 @@ impl ListWorkspacesInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::ListWorkspacesInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/workspaces").expect("formatting should succeed");
-            Ok(())
-        }
-        fn uri_query(
-            _input: &crate::input::ListWorkspacesInput,
-            mut output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_14) = &_input.max_results {
-                query.push_kv(
-                    "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
-                );
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListWorkspacesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/workspaces").expect("formatting should succeed");
+                Ok(())
             }
-            if let Some(inner_15) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+            fn uri_query(
+                _input: &crate::input::ListWorkspacesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_14) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                    );
+                }
+                if let Some(inner_15) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                }
+                Ok(())
             }
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::ListWorkspacesInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri)?;
-            Ok(builder.method("GET").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::ListWorkspacesInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListWorkspacesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -1547,7 +1441,6 @@ impl ListWorkspacesInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -1576,12 +1469,6 @@ impl ListWorkspacesInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListWorkspacesInput`](crate::input::ListWorkspacesInput)
     pub fn builder() -> crate::input::list_workspaces_input::Builder {
@@ -1649,6 +1536,7 @@ pub type UpdatePermissionsInputOperationOutputAlias = crate::operation::UpdatePe
 pub type UpdatePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePermissions`](crate::operation::UpdatePermissions)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -1661,65 +1549,64 @@ impl UpdatePermissionsInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::UpdatePermissionsInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_16 = &_input.workspace_id;
-            let input_16 =
-                input_16
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdatePermissionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_16 = &_input.workspace_id;
+                let input_16 = input_16.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let workspace_id = aws_smithy_http::label::fmt_string(input_16, false);
-            if workspace_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_16, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}/permissions",
+                    workspaceId = workspace_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/workspaces/{workspaceId}/permissions",
-                workspaceId = workspace_id
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::UpdatePermissionsInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("PATCH").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::UpdatePermissionsInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdatePermissionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PATCH").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
-                http::header::HeaderName::from_static("content-type"),
+                http::header::CONTENT_TYPE,
                 "application/json",
             );
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_permissions(&self)?,
         );
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -1729,7 +1616,6 @@ impl UpdatePermissionsInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -1758,20 +1644,6 @@ impl UpdatePermissionsInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        let mut builder = builder;
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdatePermissionsInput`](crate::input::UpdatePermissionsInput)
     pub fn builder() -> crate::input::update_permissions_input::Builder {
@@ -2000,6 +1872,7 @@ pub type UpdateWorkspaceInputOperationOutputAlias = crate::operation::UpdateWork
 pub type UpdateWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspace`](crate::operation::UpdateWorkspace)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -2012,65 +1885,64 @@ impl UpdateWorkspaceInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::UpdateWorkspaceInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.workspace_id;
-            let input_17 =
-                input_17
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateWorkspaceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_17 = &_input.workspace_id;
+                let input_17 = input_17.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let workspace_id = aws_smithy_http::label::fmt_string(input_17, false);
-            if workspace_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_17, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}",
+                    workspaceId = workspace_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/workspaces/{workspaceId}",
-                workspaceId = workspace_id
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::UpdateWorkspaceInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("PUT").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::UpdateWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateWorkspaceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
-                http::header::HeaderName::from_static("content-type"),
+                http::header::CONTENT_TYPE,
                 "application/json",
             );
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_workspace(&self)?,
         );
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -2080,7 +1952,6 @@ impl UpdateWorkspaceInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -2109,20 +1980,6 @@ impl UpdateWorkspaceInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        let mut builder = builder;
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceInput`](crate::input::UpdateWorkspaceInput)
     pub fn builder() -> crate::input::update_workspace_input::Builder {
@@ -2210,6 +2067,7 @@ pub type UpdateWorkspaceAuthenticationInputOperationRetryAlias =
     aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkspaceAuthenticationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceAuthentication`](crate::operation::UpdateWorkspaceAuthentication)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -2222,64 +2080,63 @@ impl UpdateWorkspaceAuthenticationInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::UpdateWorkspaceAuthenticationInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.workspace_id;
-            let input_18 =
-                input_18
-                    .as_ref()
-                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateWorkspaceAuthenticationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_18 = &_input.workspace_id;
+                let input_18 = input_18.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
-                    })?;
-            let workspace_id = aws_smithy_http::label::fmt_string(input_18, false);
-            if workspace_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::MissingField {
-                    field: "workspace_id",
-                    details: "cannot be empty or unset",
-                });
+                    },
+                )?;
+                let workspace_id = aws_smithy_http::label::fmt_string(input_18, false);
+                if workspace_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workspace_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workspaces/{workspaceId}/authentication",
+                    workspaceId = workspace_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
             }
-            write!(
-                output,
-                "/workspaces/{workspaceId}/authentication",
-                workspaceId = workspace_id
-            )
-            .expect("formatting should succeed");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::UpdateWorkspaceAuthenticationInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            Ok(builder.method("POST").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::UpdateWorkspaceAuthenticationInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateWorkspaceAuthenticationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
-                http::header::HeaderName::from_static("content-type"),
+                http::header::CONTENT_TYPE,
                 "application/json",
             );
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_workspace_authentication(&self)?
         );
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -2289,7 +2146,6 @@ impl UpdateWorkspaceAuthenticationInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -2318,20 +2174,6 @@ impl UpdateWorkspaceAuthenticationInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        let mut builder = builder;
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceAuthenticationInput`](crate::input::UpdateWorkspaceAuthenticationInput)
     pub fn builder() -> crate::input::update_workspace_authentication_input::Builder {

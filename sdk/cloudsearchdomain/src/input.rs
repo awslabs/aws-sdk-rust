@@ -298,6 +298,7 @@ pub type SearchInputOperationOutputAlias = crate::operation::Search;
 pub type SearchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchInput {
     /// Consumes the builder and constructs an Operation<[`Search`](crate::operation::Search)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -310,99 +311,92 @@ impl SearchInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::SearchInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/2013-01-01/search").expect("formatting should succeed");
-            Ok(())
-        }
-        fn uri_query(
-            _input: &crate::input::SearchInput,
-            mut output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            query.push_kv("format", "sdk");
-            query.push_kv("pretty", "true");
-            if let Some(inner_1) = &_input.cursor {
-                query.push_kv("cursor", &aws_smithy_http::query::fmt_string(&inner_1));
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SearchInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/2013-01-01/search").expect("formatting should succeed");
+                Ok(())
             }
-            if let Some(inner_2) = &_input.expr {
-                query.push_kv("expr", &aws_smithy_http::query::fmt_string(&inner_2));
+            fn uri_query(
+                _input: &crate::input::SearchInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                query.push_kv("format", "sdk");
+                query.push_kv("pretty", "true");
+                if let Some(inner_1) = &_input.cursor {
+                    query.push_kv("cursor", &aws_smithy_http::query::fmt_string(&inner_1));
+                }
+                if let Some(inner_2) = &_input.expr {
+                    query.push_kv("expr", &aws_smithy_http::query::fmt_string(&inner_2));
+                }
+                if let Some(inner_3) = &_input.facet {
+                    query.push_kv("facet", &aws_smithy_http::query::fmt_string(&inner_3));
+                }
+                if let Some(inner_4) = &_input.filter_query {
+                    query.push_kv("fq", &aws_smithy_http::query::fmt_string(&inner_4));
+                }
+                if let Some(inner_5) = &_input.highlight {
+                    query.push_kv("highlight", &aws_smithy_http::query::fmt_string(&inner_5));
+                }
+                if _input.partial {
+                    query.push_kv(
+                        "partial",
+                        aws_smithy_types::primitive::Encoder::from(_input.partial).encode(),
+                    );
+                }
+                if let Some(inner_6) = &_input.query {
+                    query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_6));
+                }
+                if let Some(inner_7) = &_input.query_options {
+                    query.push_kv("q.options", &aws_smithy_http::query::fmt_string(&inner_7));
+                }
+                if let Some(inner_8) = &_input.query_parser {
+                    query.push_kv("q.parser", &aws_smithy_http::query::fmt_string(&inner_8));
+                }
+                if let Some(inner_9) = &_input.r#return {
+                    query.push_kv("return", &aws_smithy_http::query::fmt_string(&inner_9));
+                }
+                if _input.size != 0 {
+                    query.push_kv(
+                        "size",
+                        aws_smithy_types::primitive::Encoder::from(_input.size).encode(),
+                    );
+                }
+                if let Some(inner_10) = &_input.sort {
+                    query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_10));
+                }
+                if _input.start != 0 {
+                    query.push_kv(
+                        "start",
+                        aws_smithy_types::primitive::Encoder::from(_input.start).encode(),
+                    );
+                }
+                if let Some(inner_11) = &_input.stats {
+                    query.push_kv("stats", &aws_smithy_http::query::fmt_string(&inner_11));
+                }
+                Ok(())
             }
-            if let Some(inner_3) = &_input.facet {
-                query.push_kv("facet", &aws_smithy_http::query::fmt_string(&inner_3));
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SearchInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
             }
-            if let Some(inner_4) = &_input.filter_query {
-                query.push_kv("fq", &aws_smithy_http::query::fmt_string(&inner_4));
-            }
-            if let Some(inner_5) = &_input.highlight {
-                query.push_kv("highlight", &aws_smithy_http::query::fmt_string(&inner_5));
-            }
-            if _input.partial {
-                query.push_kv(
-                    "partial",
-                    aws_smithy_types::primitive::Encoder::from(_input.partial).encode(),
-                );
-            }
-            if let Some(inner_6) = &_input.query {
-                query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_6));
-            }
-            if let Some(inner_7) = &_input.query_options {
-                query.push_kv("q.options", &aws_smithy_http::query::fmt_string(&inner_7));
-            }
-            if let Some(inner_8) = &_input.query_parser {
-                query.push_kv("q.parser", &aws_smithy_http::query::fmt_string(&inner_8));
-            }
-            if let Some(inner_9) = &_input.r#return {
-                query.push_kv("return", &aws_smithy_http::query::fmt_string(&inner_9));
-            }
-            if _input.size != 0 {
-                query.push_kv(
-                    "size",
-                    aws_smithy_types::primitive::Encoder::from(_input.size).encode(),
-                );
-            }
-            if let Some(inner_10) = &_input.sort {
-                query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_10));
-            }
-            if _input.start != 0 {
-                query.push_kv(
-                    "start",
-                    aws_smithy_types::primitive::Encoder::from(_input.start).encode(),
-                );
-            }
-            if let Some(inner_11) = &_input.stats {
-                query.push_kv("stats", &aws_smithy_http::query::fmt_string(&inner_11));
-            }
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::SearchInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri)?;
-            Ok(builder.method("GET").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::SearchInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -412,7 +406,6 @@ impl SearchInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -439,12 +432,6 @@ impl SearchInput {
                 ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`SearchInput`](crate::input::SearchInput)
     pub fn builder() -> crate::input::search_input::Builder {
@@ -512,6 +499,7 @@ pub type SuggestInputOperationOutputAlias = crate::operation::Suggest;
 pub type SuggestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SuggestInput {
     /// Consumes the builder and constructs an Operation<[`Suggest`](crate::operation::Suggest)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -524,60 +512,53 @@ impl SuggestInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::SuggestInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/2013-01-01/suggest").expect("formatting should succeed");
-            Ok(())
-        }
-        fn uri_query(
-            _input: &crate::input::SuggestInput,
-            mut output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            query.push_kv("format", "sdk");
-            query.push_kv("pretty", "true");
-            if let Some(inner_12) = &_input.query {
-                query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_12));
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::SuggestInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/2013-01-01/suggest").expect("formatting should succeed");
+                Ok(())
             }
-            if let Some(inner_13) = &_input.suggester {
-                query.push_kv("suggester", &aws_smithy_http::query::fmt_string(&inner_13));
+            fn uri_query(
+                _input: &crate::input::SuggestInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                query.push_kv("format", "sdk");
+                query.push_kv("pretty", "true");
+                if let Some(inner_12) = &_input.query {
+                    query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_12));
+                }
+                if let Some(inner_13) = &_input.suggester {
+                    query.push_kv("suggester", &aws_smithy_http::query::fmt_string(&inner_13));
+                }
+                if _input.size != 0 {
+                    query.push_kv(
+                        "size",
+                        aws_smithy_types::primitive::Encoder::from(_input.size).encode(),
+                    );
+                }
+                Ok(())
             }
-            if _input.size != 0 {
-                query.push_kv(
-                    "size",
-                    aws_smithy_types::primitive::Encoder::from(_input.size).encode(),
-                );
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SuggestInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
             }
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::SuggestInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri)?;
-            Ok(builder.method("GET").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::SuggestInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from("");
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -587,7 +568,6 @@ impl SuggestInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -614,12 +594,6 @@ impl SuggestInput {
                 ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`SuggestInput`](crate::input::SuggestInput)
     pub fn builder() -> crate::input::suggest_input::Builder {
@@ -691,6 +665,7 @@ pub type UploadDocumentsInputOperationOutputAlias = crate::operation::UploadDocu
 pub type UploadDocumentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UploadDocumentsInput {
     /// Consumes the builder and constructs an Operation<[`UploadDocuments`](crate::operation::UploadDocuments)>
+    #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
@@ -703,56 +678,56 @@ impl UploadDocumentsInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
-        fn uri_base(
-            _input: &crate::input::UploadDocumentsInput,
-            output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/2013-01-01/documents/batch").expect("formatting should succeed");
-            Ok(())
-        }
-        fn uri_query(
-            _input: &crate::input::UploadDocumentsInput,
-            mut output: &mut String,
-        ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            query.push_kv("format", "sdk");
-            Ok(())
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn update_http_builder(
-            input: &crate::input::UploadDocumentsInput,
-            builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            let mut uri = String::new();
-            uri_base(input, &mut uri)?;
-            uri_query(input, &mut uri)?;
-            let builder = crate::http_serde::add_headers_upload_documents(input, builder)?;
-            Ok(builder.method("POST").uri(uri))
-        }
-        #[allow(clippy::unnecessary_wraps)]
-        fn request_builder_base(
-            input: &crate::input::UploadDocumentsInput,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            #[allow(unused_mut)]
-            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UploadDocumentsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/2013-01-01/documents/batch").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::UploadDocumentsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                query.push_kv("format", "sdk");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UploadDocumentsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                let builder = crate::http_serde::add_headers_upload_documents(input, builder)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
-                http::header::HeaderName::from_static("content-type"),
+                http::header::CONTENT_TYPE,
                 "application/octet-stream",
             );
-            Ok(builder)
-        }
-        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        let request = request_builder_base(&self)?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_payload_upload_documents_input(self.documents)?
                 .into_inner(),
         );
-        let request = Self::assemble(request, body);
-        #[allow(unused_mut)]
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
@@ -762,7 +737,6 @@ impl UploadDocumentsInput {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        #[allow(unused_mut)]
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -791,20 +765,6 @@ impl UploadDocumentsInput {
         ));
         let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
-    }
-    fn assemble(
-        builder: http::request::Builder,
-        body: aws_smithy_http::body::SdkBody,
-    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        let mut builder = builder;
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
-        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UploadDocumentsInput`](crate::input::UploadDocumentsInput)
     pub fn builder() -> crate::input::upload_documents_input::Builder {
