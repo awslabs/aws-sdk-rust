@@ -4744,6 +4744,14 @@ where
                                     crate::json_deser::deser_structure_crate_model_output_format_options(tokens)?
                                 );
                             }
+                            "MaxOutputFiles" => {
+                                builder = builder.set_max_output_files(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -255,6 +255,143 @@ impl std::error::Error for CreateDomainError {
     }
 }
 
+/// Error type for the `CreateIntegrationWorkflow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateIntegrationWorkflowError {
+    /// Kind of error that occurred.
+    pub kind: CreateIntegrationWorkflowErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateIntegrationWorkflow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateIntegrationWorkflowErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal service error occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource does not exist, or access was denied.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You exceeded the maximum number of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateIntegrationWorkflowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateIntegrationWorkflowErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateIntegrationWorkflowErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateIntegrationWorkflowErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateIntegrationWorkflowErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateIntegrationWorkflowErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateIntegrationWorkflowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateIntegrationWorkflowError {
+    fn code(&self) -> Option<&str> {
+        CreateIntegrationWorkflowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateIntegrationWorkflowError {
+    /// Creates a new `CreateIntegrationWorkflowError`.
+    pub fn new(kind: CreateIntegrationWorkflowErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateIntegrationWorkflowError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateIntegrationWorkflowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateIntegrationWorkflowError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateIntegrationWorkflowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateIntegrationWorkflowErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateIntegrationWorkflowErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateIntegrationWorkflowErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateIntegrationWorkflowErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateIntegrationWorkflowErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateIntegrationWorkflowErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateIntegrationWorkflowErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateIntegrationWorkflowErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateIntegrationWorkflowErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateIntegrationWorkflowErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for CreateIntegrationWorkflowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateIntegrationWorkflowErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateIntegrationWorkflowErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateIntegrationWorkflowErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateIntegrationWorkflowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateIntegrationWorkflowErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateIntegrationWorkflowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateProfile` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1187,6 +1324,137 @@ impl std::error::Error for DeleteProfileObjectTypeError {
     }
 }
 
+/// Error type for the `DeleteWorkflow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteWorkflowError {
+    /// Kind of error that occurred.
+    pub kind: DeleteWorkflowErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteWorkflow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteWorkflowErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal service error occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource does not exist, or access was denied.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You exceeded the maximum number of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteWorkflowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteWorkflowErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteWorkflowErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteWorkflowErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteWorkflowErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteWorkflowErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteWorkflowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteWorkflowError {
+    fn code(&self) -> Option<&str> {
+        DeleteWorkflowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteWorkflowError {
+    /// Creates a new `DeleteWorkflowError`.
+    pub fn new(kind: DeleteWorkflowErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteWorkflowError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteWorkflowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteWorkflowError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteWorkflowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWorkflowErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteWorkflowErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWorkflowErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteWorkflowErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteWorkflowErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for DeleteWorkflowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteWorkflowErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteWorkflowErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteWorkflowErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteWorkflowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteWorkflowErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteWorkflowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetAutoMergingPreview` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2113,6 +2381,268 @@ impl std::error::Error for GetProfileObjectTypeTemplateError {
             }
             GetProfileObjectTypeTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetProfileObjectTypeTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetWorkflow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetWorkflowError {
+    /// Kind of error that occurred.
+    pub kind: GetWorkflowErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetWorkflow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetWorkflowErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal service error occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource does not exist, or access was denied.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You exceeded the maximum number of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetWorkflowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetWorkflowErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetWorkflowErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetWorkflowErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetWorkflowErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetWorkflowErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetWorkflowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetWorkflowError {
+    fn code(&self) -> Option<&str> {
+        GetWorkflowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetWorkflowError {
+    /// Creates a new `GetWorkflowError`.
+    pub fn new(kind: GetWorkflowErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetWorkflowError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetWorkflowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetWorkflowError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetWorkflowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetWorkflowErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetWorkflowErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetWorkflowErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetWorkflowErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `GetWorkflowErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetWorkflowErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `GetWorkflowErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkflowErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetWorkflowErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetWorkflowErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for GetWorkflowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetWorkflowErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetWorkflowErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetWorkflowErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetWorkflowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetWorkflowErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetWorkflowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetWorkflowSteps` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetWorkflowStepsError {
+    /// Kind of error that occurred.
+    pub kind: GetWorkflowStepsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetWorkflowSteps` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetWorkflowStepsErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal service error occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource does not exist, or access was denied.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You exceeded the maximum number of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetWorkflowStepsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetWorkflowStepsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetWorkflowStepsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetWorkflowStepsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetWorkflowStepsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetWorkflowStepsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetWorkflowStepsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetWorkflowStepsError {
+    fn code(&self) -> Option<&str> {
+        GetWorkflowStepsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetWorkflowStepsError {
+    /// Creates a new `GetWorkflowStepsError`.
+    pub fn new(kind: GetWorkflowStepsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetWorkflowStepsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetWorkflowStepsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetWorkflowStepsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetWorkflowStepsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetWorkflowStepsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkflowStepsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetWorkflowStepsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkflowStepsErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetWorkflowStepsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkflowStepsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetWorkflowStepsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkflowStepsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetWorkflowStepsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkflowStepsErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetWorkflowStepsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetWorkflowStepsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetWorkflowStepsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetWorkflowStepsErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetWorkflowStepsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetWorkflowStepsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetWorkflowStepsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3186,6 +3716,134 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListWorkflows` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListWorkflowsError {
+    /// Kind of error that occurred.
+    pub kind: ListWorkflowsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListWorkflows` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListWorkflowsErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal service error occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource does not exist, or access was denied.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You exceeded the maximum number of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListWorkflowsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListWorkflowsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListWorkflowsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListWorkflowsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListWorkflowsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListWorkflowsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListWorkflowsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListWorkflowsError {
+    fn code(&self) -> Option<&str> {
+        ListWorkflowsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListWorkflowsError {
+    /// Creates a new `ListWorkflowsError`.
+    pub fn new(kind: ListWorkflowsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListWorkflowsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListWorkflowsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListWorkflowsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListWorkflowsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ListWorkflowsErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListWorkflowsErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWorkflowsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListWorkflowsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListWorkflowsErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for ListWorkflowsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListWorkflowsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListWorkflowsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListWorkflowsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListWorkflowsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListWorkflowsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListWorkflowsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

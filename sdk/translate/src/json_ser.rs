@@ -396,8 +396,11 @@ pub fn serialize_structure_crate_model_translation_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TranslationSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_78) = &input.profanity {
-        object.key("Profanity").string(var_78.as_str());
+    if let Some(var_78) = &input.formality {
+        object.key("Formality").string(var_78.as_str());
+    }
+    if let Some(var_79) = &input.profanity {
+        object.key("Profanity").string(var_79.as_str());
     }
     Ok(())
 }

@@ -127,6 +127,22 @@ impl Client {
     pub fn create_domain(&self) -> fluent_builders::CreateDomain {
         fluent_builders::CreateDomain::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateIntegrationWorkflow`](crate::client::fluent_builders::CreateIntegrationWorkflow) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationWorkflow::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateIntegrationWorkflow::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`workflow_type(WorkflowType)`](crate::client::fluent_builders::CreateIntegrationWorkflow::workflow_type) / [`set_workflow_type(Option<WorkflowType>)`](crate::client::fluent_builders::CreateIntegrationWorkflow::set_workflow_type): <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    ///   - [`integration_config(IntegrationConfig)`](crate::client::fluent_builders::CreateIntegrationWorkflow::integration_config) / [`set_integration_config(Option<IntegrationConfig>)`](crate::client::fluent_builders::CreateIntegrationWorkflow::set_integration_config): <p>Configuration data for integration workflow.</p>
+    ///   - [`object_type_name(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationWorkflow::object_type_name) / [`set_object_type_name(Option<String>)`](crate::client::fluent_builders::CreateIntegrationWorkflow::set_object_type_name): <p>The name of the profile object type.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationWorkflow::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateIntegrationWorkflow::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateIntegrationWorkflow::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIntegrationWorkflow::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput) with field(s):
+    ///   - [`workflow_id(Option<String>)`](crate::output::CreateIntegrationWorkflowOutput::workflow_id): <p>Unique identifier for the workflow.</p>
+    ///   - [`message(Option<String>)`](crate::output::CreateIntegrationWorkflowOutput::message): <p>A message indicating create request was received.</p>
+    /// - On failure, responds with [`SdkError<CreateIntegrationWorkflowError>`](crate::error::CreateIntegrationWorkflowError)
+    pub fn create_integration_workflow(&self) -> fluent_builders::CreateIntegrationWorkflow {
+        fluent_builders::CreateIntegrationWorkflow::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateProfile`](crate::client::fluent_builders::CreateProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -227,6 +243,17 @@ impl Client {
     pub fn delete_profile_object_type(&self) -> fluent_builders::DeleteProfileObjectType {
         fluent_builders::DeleteProfileObjectType::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteWorkflow`](crate::client::fluent_builders::DeleteWorkflow) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkflow::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteWorkflow::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`workflow_id(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkflow::workflow_id) / [`set_workflow_id(Option<String>)`](crate::client::fluent_builders::DeleteWorkflow::set_workflow_id): <p>Unique identifier for the workflow.</p>
+    /// - On success, responds with [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorkflowError>`](crate::error::DeleteWorkflowError)
+    pub fn delete_workflow(&self) -> fluent_builders::DeleteWorkflow {
+        fluent_builders::DeleteWorkflow::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetAutoMergingPreview`](crate::client::fluent_builders::GetAutoMergingPreview) operation.
     ///
     /// - The fluent builder is configurable:
@@ -294,6 +321,7 @@ impl Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::output::GetIntegrationOutput::last_updated_at): <p>The timestamp of when the domain was most recently edited.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetIntegrationOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     ///   - [`object_type_names(Option<HashMap<String, String>>)`](crate::output::GetIntegrationOutput::object_type_names): <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    ///   - [`workflow_id(Option<String>)`](crate::output::GetIntegrationOutput::workflow_id): <p>Unique identifier for the workflow.</p>
     /// - On failure, responds with [`SdkError<GetIntegrationError>`](crate::error::GetIntegrationError)
     pub fn get_integration(&self) -> fluent_builders::GetIntegration {
         fluent_builders::GetIntegration::new(self.handle.clone())
@@ -353,12 +381,47 @@ impl Client {
     ) -> fluent_builders::GetProfileObjectTypeTemplate {
         fluent_builders::GetProfileObjectTypeTemplate::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetWorkflow`](crate::client::fluent_builders::GetWorkflow) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetWorkflow::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetWorkflow::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`workflow_id(impl Into<String>)`](crate::client::fluent_builders::GetWorkflow::workflow_id) / [`set_workflow_id(Option<String>)`](crate::client::fluent_builders::GetWorkflow::set_workflow_id): <p>Unique identifier for the workflow.</p>
+    /// - On success, responds with [`GetWorkflowOutput`](crate::output::GetWorkflowOutput) with field(s):
+    ///   - [`workflow_id(Option<String>)`](crate::output::GetWorkflowOutput::workflow_id): <p>Unique identifier for the workflow.</p>
+    ///   - [`workflow_type(Option<WorkflowType>)`](crate::output::GetWorkflowOutput::workflow_type): <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    ///   - [`status(Option<Status>)`](crate::output::GetWorkflowOutput::status): <p>Status of workflow execution.</p>
+    ///   - [`error_description(Option<String>)`](crate::output::GetWorkflowOutput::error_description): <p>Workflow error messages during execution (if any).</p>
+    ///   - [`start_date(Option<DateTime>)`](crate::output::GetWorkflowOutput::start_date): <p>The timestamp that represents when workflow execution started.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::GetWorkflowOutput::last_updated_at): <p>The timestamp that represents when workflow execution last updated.</p>
+    ///   - [`attributes(Option<WorkflowAttributes>)`](crate::output::GetWorkflowOutput::attributes): <p>Attributes provided for workflow execution.</p>
+    ///   - [`metrics(Option<WorkflowMetrics>)`](crate::output::GetWorkflowOutput::metrics): <p>Workflow specific execution metrics.</p>
+    /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::error::GetWorkflowError)
+    pub fn get_workflow(&self) -> fluent_builders::GetWorkflow {
+        fluent_builders::GetWorkflow::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetWorkflowSteps`](crate::client::fluent_builders::GetWorkflowSteps) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetWorkflowSteps::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetWorkflowSteps::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`workflow_id(impl Into<String>)`](crate::client::fluent_builders::GetWorkflowSteps::workflow_id) / [`set_workflow_id(Option<String>)`](crate::client::fluent_builders::GetWorkflowSteps::set_workflow_id): <p>Unique identifier for the workflow.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetWorkflowSteps::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetWorkflowSteps::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetWorkflowSteps::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetWorkflowSteps::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput) with field(s):
+    ///   - [`workflow_id(Option<String>)`](crate::output::GetWorkflowStepsOutput::workflow_id): <p>Unique identifier for the workflow.</p>
+    ///   - [`workflow_type(Option<WorkflowType>)`](crate::output::GetWorkflowStepsOutput::workflow_type): <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    ///   - [`items(Option<Vec<WorkflowStepItem>>)`](crate::output::GetWorkflowStepsOutput::items): <p>List containing workflow step details.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetWorkflowStepsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<GetWorkflowStepsError>`](crate::error::GetWorkflowStepsError)
+    pub fn get_workflow_steps(&self) -> fluent_builders::GetWorkflowSteps {
+        fluent_builders::GetWorkflowSteps::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListAccountIntegrations`](crate::client::fluent_builders::ListAccountIntegrations) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`uri(impl Into<String>)`](crate::client::fluent_builders::ListAccountIntegrations::uri) / [`set_uri(Option<String>)`](crate::client::fluent_builders::ListAccountIntegrations::set_uri): <p>The URI of the S3 bucket or any other type of data source.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountIntegrations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountIntegrations::set_next_token): <p>The pagination token from the previous ListAccountIntegrations API call.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountIntegrations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountIntegrations::set_max_results): <p>The maximum number of objects returned per page.</p>
+    ///   - [`include_hidden(bool)`](crate::client::fluent_builders::ListAccountIntegrations::include_hidden) / [`set_include_hidden(Option<bool>)`](crate::client::fluent_builders::ListAccountIntegrations::set_include_hidden): <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
     /// - On success, responds with [`ListAccountIntegrationsOutput`](crate::output::ListAccountIntegrationsOutput) with field(s):
     ///   - [`items(Option<Vec<ListIntegrationItem>>)`](crate::output::ListAccountIntegrationsOutput::items): <p>The list of ListAccountIntegration instances.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountIntegrationsOutput::next_token): <p>The pagination token from the previous ListAccountIntegrations API call.</p>
@@ -397,6 +460,7 @@ impl Client {
     ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListIntegrations::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListIntegrations::set_domain_name): <p>The unique name of the domain.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIntegrations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIntegrations::set_next_token): <p>The pagination token from the previous ListIntegrations API call.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIntegrations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIntegrations::set_max_results): <p>The maximum number of objects returned per page.</p>
+    ///   - [`include_hidden(bool)`](crate::client::fluent_builders::ListIntegrations::include_hidden) / [`set_include_hidden(Option<bool>)`](crate::client::fluent_builders::ListIntegrations::set_include_hidden): <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
     /// - On success, responds with [`ListIntegrationsOutput`](crate::output::ListIntegrationsOutput) with field(s):
     ///   - [`items(Option<Vec<ListIntegrationItem>>)`](crate::output::ListIntegrationsOutput::items): <p>The list of ListIntegrations instances.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIntegrationsOutput::next_token): <p>The pagination token from the previous ListIntegrations API call.</p>
@@ -457,6 +521,23 @@ impl Client {
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListWorkflows`](crate::client::fluent_builders::ListWorkflows) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListWorkflows::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListWorkflows::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`workflow_type(WorkflowType)`](crate::client::fluent_builders::ListWorkflows::workflow_type) / [`set_workflow_type(Option<WorkflowType>)`](crate::client::fluent_builders::ListWorkflows::set_workflow_type): <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    ///   - [`status(Status)`](crate::client::fluent_builders::ListWorkflows::status) / [`set_status(Option<Status>)`](crate::client::fluent_builders::ListWorkflows::set_status): <p>Status of workflow execution.</p>
+    ///   - [`query_start_date(DateTime)`](crate::client::fluent_builders::ListWorkflows::query_start_date) / [`set_query_start_date(Option<DateTime>)`](crate::client::fluent_builders::ListWorkflows::set_query_start_date): <p>Retrieve workflows started after timestamp.</p>
+    ///   - [`query_end_date(DateTime)`](crate::client::fluent_builders::ListWorkflows::query_end_date) / [`set_query_end_date(Option<DateTime>)`](crate::client::fluent_builders::ListWorkflows::set_query_end_date): <p>Retrieve workflows ended after timestamp.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkflows::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkflows::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkflows::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkflows::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput) with field(s):
+    ///   - [`items(Option<Vec<ListWorkflowsItem>>)`](crate::output::ListWorkflowsOutput::items): <p>List containing workflow details.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorkflowsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::error::ListWorkflowsError)
+    pub fn list_workflows(&self) -> fluent_builders::ListWorkflows {
+        fluent_builders::ListWorkflows::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`MergeProfiles`](crate::client::fluent_builders::MergeProfiles) operation.
     ///
     /// - The fluent builder is configurable:
@@ -487,6 +568,7 @@ impl Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::output::PutIntegrationOutput::last_updated_at): <p>The timestamp of when the domain was most recently edited.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::PutIntegrationOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     ///   - [`object_type_names(Option<HashMap<String, String>>)`](crate::output::PutIntegrationOutput::object_type_names): <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    ///   - [`workflow_id(Option<String>)`](crate::output::PutIntegrationOutput::workflow_id): <p>Unique identifier for the workflow.</p>
     /// - On failure, responds with [`SdkError<PutIntegrationError>`](crate::error::PutIntegrationError)
     pub fn put_integration(&self) -> fluent_builders::PutIntegration {
         fluent_builders::PutIntegration::new(self.handle.clone())
@@ -829,6 +911,131 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::MatchingRequest>,
         ) -> Self {
             self.inner = self.inner.set_matching(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateIntegrationWorkflow`.
+    ///
+    /// <p> Creates an integration workflow. An integration workflow is an async process which ingests historic data and sets up an integration for ongoing updates. The supported Amazon AppFlow sources are Salesforce, ServiceNow, and Marketo. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateIntegrationWorkflow {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_integration_workflow_input::Builder,
+    }
+    impl CreateIntegrationWorkflow {
+        /// Creates a new `CreateIntegrationWorkflow`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateIntegrationWorkflowOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateIntegrationWorkflowError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.inner = self.inner.workflow_type(input);
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn set_workflow_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowType>,
+        ) -> Self {
+            self.inner = self.inner.set_workflow_type(input);
+            self
+        }
+        /// <p>Configuration data for integration workflow.</p>
+        pub fn integration_config(mut self, input: crate::model::IntegrationConfig) -> Self {
+            self.inner = self.inner.integration_config(input);
+            self
+        }
+        /// <p>Configuration data for integration workflow.</p>
+        pub fn set_integration_config(
+            mut self,
+            input: std::option::Option<crate::model::IntegrationConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_integration_config(input);
+            self
+        }
+        /// <p>The name of the profile object type.</p>
+        pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(input.into());
+            self
+        }
+        /// <p>The name of the profile object type.</p>
+        pub fn set_object_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_object_type_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// Adds a key-value pair to `Tags`.
@@ -1595,6 +1802,69 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteWorkflow`.
+    ///
+    /// <p>Deletes the specified workflow and all its corresponding resources. This is an async process.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteWorkflow {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_workflow_input::Builder,
+    }
+    impl DeleteWorkflow {
+        /// Creates a new `DeleteWorkflow`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteWorkflowOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteWorkflowError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workflow_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetAutoMergingPreview`.
     ///
     /// <p>Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a sample of matching groups from the existing matching results, and applies the automerging settings that you provided. You can then view the number of profiles in the sample, the number of matches, and the number of profiles identified to be merged. This enables you to evaluate the accuracy of the attributes in your matching list. </p>
@@ -1874,7 +2144,6 @@ pub mod fluent_builders {
     /// <li> <p>PersonalEmailAddress</p> </li>
     /// <li> <p>BusinessEmailAddress</p> </li>
     /// <li> <p>FullName</p> </li>
-    /// <li> <p>BusinessName</p> </li>
     /// </ul>
     /// <p>For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different casing email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and <b>johndoe@anycompany.com</b>, or different phone number formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2067,6 +2336,152 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetWorkflow`.
+    ///
+    /// <p>Get details of specified workflow.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetWorkflow {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_workflow_input::Builder,
+    }
+    impl GetWorkflow {
+        /// Creates a new `GetWorkflow`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetWorkflowOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetWorkflowError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workflow_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetWorkflowSteps`.
+    ///
+    /// <p>Get granular list of steps in workflow.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetWorkflowSteps {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_workflow_steps_input::Builder,
+    }
+    impl GetWorkflowSteps {
+        /// Creates a new `GetWorkflowSteps`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetWorkflowStepsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetWorkflowStepsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workflow_id(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListAccountIntegrations`.
     ///
     /// <p>Lists all of the integrations associated to a specific URI in the AWS account.</p>
@@ -2137,6 +2552,16 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects returned per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+        pub fn include_hidden(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_hidden(input);
+            self
+        }
+        /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+        pub fn set_include_hidden(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_hidden(input);
             self
         }
     }
@@ -2346,6 +2771,16 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects returned per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+        pub fn include_hidden(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_hidden(input);
+            self
+        }
+        /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+        pub fn set_include_hidden(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_hidden(input);
             self
         }
     }
@@ -2644,6 +3079,128 @@ pub mod fluent_builders {
         /// <p>The ARN of the resource for which you want to view tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListWorkflows`.
+    ///
+    /// <p>Query to list all workflows.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListWorkflows {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_workflows_input::Builder,
+    }
+    impl ListWorkflows {
+        /// Creates a new `ListWorkflows`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListWorkflowsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListWorkflowsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.inner = self.inner.workflow_type(input);
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn set_workflow_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowType>,
+        ) -> Self {
+            self.inner = self.inner.set_workflow_type(input);
+            self
+        }
+        /// <p>Status of workflow execution.</p>
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>Status of workflow execution.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
+        /// <p>Retrieve workflows started after timestamp.</p>
+        pub fn query_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.query_start_date(input);
+            self
+        }
+        /// <p>Retrieve workflows started after timestamp.</p>
+        pub fn set_query_start_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_query_start_date(input);
+            self
+        }
+        /// <p>Retrieve workflows ended after timestamp.</p>
+        pub fn query_end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.query_end_date(input);
+            self
+        }
+        /// <p>Retrieve workflows ended after timestamp.</p>
+        pub fn set_query_end_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_query_end_date(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }

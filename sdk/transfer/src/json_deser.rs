@@ -1923,6 +1923,24 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "PostAuthenticationLoginBanner" => {
+                                builder = builder.set_post_authentication_login_banner(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "PreAuthenticationLoginBanner" => {
+                                builder = builder.set_pre_authentication_login_banner(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "Protocols" => {
                                 builder = builder.set_protocols(
                                     crate::json_deser::deser_list_com_amazonaws_transfer_protocols(
@@ -4403,6 +4421,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "SourceFileLocation" => {
+                                builder = builder.set_source_file_location(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4466,6 +4493,15 @@ where
                                     .map(|v| v.to_i32()),
                                 );
                             }
+                            "SourceFileLocation" => {
+                                builder = builder.set_source_file_location(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4505,6 +4541,15 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Name" => {
                                 builder = builder.set_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SourceFileLocation" => {
+                                builder = builder.set_source_file_location(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -4563,6 +4608,15 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_transfer_s3_tags(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "SourceFileLocation" => {
+                                builder = builder.set_source_file_location(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

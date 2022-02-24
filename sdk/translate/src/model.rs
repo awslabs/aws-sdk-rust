@@ -205,12 +205,18 @@ impl AsRef<str> for ParallelDataFormat {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranslationSettings {
+    #[allow(missing_docs)] // documentation missing in model
+    pub formality: std::option::Option<crate::model::Formality>,
     /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
     /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
     /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
     pub profanity: std::option::Option<crate::model::Profanity>,
 }
 impl TranslationSettings {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn formality(&self) -> std::option::Option<&crate::model::Formality> {
+        self.formality.as_ref()
+    }
     /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
     /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
     /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
@@ -221,6 +227,7 @@ impl TranslationSettings {
 impl std::fmt::Debug for TranslationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TranslationSettings");
+        formatter.field("formality", &self.formality);
         formatter.field("profanity", &self.profanity);
         formatter.finish()
     }
@@ -231,9 +238,23 @@ pub mod translation_settings {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) formality: std::option::Option<crate::model::Formality>,
         pub(crate) profanity: std::option::Option<crate::model::Profanity>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn formality(mut self, input: crate::model::Formality) -> Self {
+            self.formality = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_formality(
+            mut self,
+            input: std::option::Option<crate::model::Formality>,
+        ) -> Self {
+            self.formality = input;
+            self
+        }
         /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
         /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
         /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
@@ -254,6 +275,7 @@ pub mod translation_settings {
         /// Consumes the builder and constructs a [`TranslationSettings`](crate::model::TranslationSettings)
         pub fn build(self) -> crate::model::TranslationSettings {
             crate::model::TranslationSettings {
+                formality: self.formality,
                 profanity: self.profanity,
             }
         }
@@ -312,6 +334,61 @@ impl Profanity {
     }
 }
 impl AsRef<str> for Profanity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Formality {
+    #[allow(missing_docs)] // documentation missing in model
+    Formal,
+    #[allow(missing_docs)] // documentation missing in model
+    Informal,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Formality {
+    fn from(s: &str) -> Self {
+        match s {
+            "FORMAL" => Formality::Formal,
+            "INFORMAL" => Formality::Informal,
+            other => Formality::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Formality {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Formality::from(s))
+    }
+}
+impl Formality {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Formality::Formal => "FORMAL",
+            Formality::Informal => "INFORMAL",
+            Formality::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FORMAL", "INFORMAL"]
+    }
+}
+impl AsRef<str> for Formality {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

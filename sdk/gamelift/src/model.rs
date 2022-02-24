@@ -17,7 +17,7 @@ pub struct Script {
     pub size_on_disk: std::option::Option<i64>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon Web Services. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
 }
 impl Script {
@@ -45,7 +45,7 @@ impl Script {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+    /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon Web Services. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
     pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.storage_location.as_ref()
     }
@@ -141,12 +141,12 @@ pub mod script {
             self.creation_time = input;
             self
         }
-        /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+        /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon Web Services. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.storage_location = Some(input);
             self
         }
-        /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+        /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon Web Services. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -175,7 +175,7 @@ impl Script {
     }
 }
 
-/// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
+/// <p>The location in Amazon S3 where build or script files are stored for access by Amazon Web Services. This location is specified in <code>CreateBuild</code>, <code>CreateScript</code>, and <code>UpdateScript</code> requests. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
@@ -185,9 +185,9 @@ pub struct S3Location {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name of the zip file that contains the build files or script files. </p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access the S3 bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon Web Services uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
     pub object_version: std::option::Option<std::string::String>,
 }
 impl S3Location {
@@ -201,11 +201,11 @@ impl S3Location {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access the S3 bucket.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+    /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon Web Services uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
     pub fn object_version(&self) -> std::option::Option<&str> {
         self.object_version.as_deref()
     }
@@ -256,22 +256,22 @@ pub mod s3_location {
             self.key = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access the S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access the S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+        /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon Web Services uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
         pub fn object_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.object_version = Some(input.into());
             self
         }
-        /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
+        /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon Web Services uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
         pub fn set_object_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1160,7 +1160,7 @@ impl GameProperty {
 
 /// <p>Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be used on its own or as part of a matchmaking solution.</p>
 /// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateGameSessionQueue</code> | <code>DescribeGameSessionQueues</code> | <code>UpdateGameSessionQueue</code> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GameSessionQueue {
@@ -1179,7 +1179,7 @@ pub struct GameSessionQueue {
         std::option::Option<std::vec::Vec<crate::model::PlayerLatencyPolicy>>,
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
     pub destinations: std::option::Option<std::vec::Vec<crate::model::GameSessionQueueDestination>>,
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
     pub filter_configuration: std::option::Option<crate::model::FilterConfiguration>,
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
     pub priority_configuration: std::option::Option<crate::model::PriorityConfiguration>,
@@ -1217,7 +1217,7 @@ impl GameSessionQueue {
     ) -> std::option::Option<&[crate::model::GameSessionQueueDestination]> {
         self.destinations.as_deref()
     }
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
     pub fn filter_configuration(&self) -> std::option::Option<&crate::model::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
@@ -1349,12 +1349,12 @@ pub mod game_session_queue {
             self.destinations = input;
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
         pub fn filter_configuration(mut self, input: crate::model::FilterConfiguration) -> Self {
             self.filter_configuration = Some(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
         pub fn set_filter_configuration(
             mut self,
             input: std::option::Option<crate::model::FilterConfiguration>,
@@ -1445,7 +1445,7 @@ pub struct PriorityConfiguration {
     /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
     /// </ul>
     pub priority_order: std::option::Option<std::vec::Vec<crate::model::PriorityType>>,
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by AWS Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
     pub location_order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PriorityConfiguration {
@@ -1459,7 +1459,7 @@ impl PriorityConfiguration {
     pub fn priority_order(&self) -> std::option::Option<&[crate::model::PriorityType]> {
         self.priority_order.as_deref()
     }
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by AWS Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
     pub fn location_order(&self) -> std::option::Option<&[std::string::String]> {
         self.location_order.as_deref()
     }
@@ -1517,14 +1517,14 @@ pub mod priority_configuration {
         ///
         /// To override the contents of this collection use [`set_location_order`](Self::set_location_order).
         ///
-        /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by AWS Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
+        /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
         pub fn location_order(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.location_order.unwrap_or_default();
             v.push(input.into());
             self.location_order = Some(v);
             self
         }
-        /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by AWS Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
+        /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
         pub fn set_location_order(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1616,11 +1616,11 @@ impl AsRef<str> for PriorityType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterConfiguration {
-    /// <p> A list of locations to allow game session placement in, in the form of AWS Region codes such as <code>us-west-2</code>. </p>
+    /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
     pub allowed_locations: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FilterConfiguration {
-    /// <p> A list of locations to allow game session placement in, in the form of AWS Region codes such as <code>us-west-2</code>. </p>
+    /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
     pub fn allowed_locations(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_locations.as_deref()
     }
@@ -1645,14 +1645,14 @@ pub mod filter_configuration {
         ///
         /// To override the contents of this collection use [`set_allowed_locations`](Self::set_allowed_locations).
         ///
-        /// <p> A list of locations to allow game session placement in, in the form of AWS Region codes such as <code>us-west-2</code>. </p>
+        /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
         pub fn allowed_locations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_locations.unwrap_or_default();
             v.push(input.into());
             self.allowed_locations = Some(v);
             self
         }
-        /// <p> A list of locations to allow game session placement in, in the form of AWS Region codes such as <code>us-west-2</code>. </p>
+        /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
         pub fn set_allowed_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1849,7 +1849,7 @@ pub struct GameSession {
     pub status: std::option::Option<crate::model::GameSessionStatus>,
     /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
     pub status_reason: std::option::Option<crate::model::GameSessionStatusReason>,
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session. You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
     pub game_properties: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
     /// <p>The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and port number.</p>
     pub ip_address: std::option::Option<std::string::String>,
@@ -1876,11 +1876,11 @@ pub struct GameSession {
         std::option::Option<crate::model::PlayerSessionCreationPolicy>,
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
     pub creator_id: std::option::Option<std::string::String>,
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub game_session_data: std::option::Option<std::string::String>,
-    /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <code>StartMatchBackfill</code>). </p>
+    /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
     pub matchmaker_data: std::option::Option<std::string::String>,
-    /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>. </p>
+    /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl GameSession {
@@ -1931,7 +1931,7 @@ impl GameSession {
     pub fn status_reason(&self) -> std::option::Option<&crate::model::GameSessionStatusReason> {
         self.status_reason.as_ref()
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session. You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
     pub fn game_properties(&self) -> std::option::Option<&[crate::model::GameProperty]> {
         self.game_properties.as_deref()
     }
@@ -1971,15 +1971,15 @@ impl GameSession {
     pub fn creator_id(&self) -> std::option::Option<&str> {
         self.creator_id.as_deref()
     }
-    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_session_data(&self) -> std::option::Option<&str> {
         self.game_session_data.as_deref()
     }
-    /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <code>StartMatchBackfill</code>). </p>
+    /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
     pub fn matchmaker_data(&self) -> std::option::Option<&str> {
         self.matchmaker_data.as_deref()
     }
-    /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>. </p>
+    /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -2179,14 +2179,14 @@ pub mod game_session {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session. You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
         pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input);
             self.game_properties = Some(v);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session. You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). You can search for active game sessions based on this custom data with <code>SearchGameSessions</code>.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -2278,12 +2278,12 @@ pub mod game_session {
             self.creator_id = input;
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_session_data = Some(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2291,12 +2291,12 @@ pub mod game_session {
             self.game_session_data = input;
             self
         }
-        /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <code>StartMatchBackfill</code>). </p>
+        /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
         pub fn matchmaker_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.matchmaker_data = Some(input.into());
             self
         }
-        /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <code>StartMatchBackfill</code>). </p>
+        /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
         pub fn set_matchmaker_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2304,12 +2304,12 @@ pub mod game_session {
             self.matchmaker_data = input;
             self
         }
-        /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>. </p>
+        /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>. </p>
+        /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -2576,20 +2576,20 @@ impl AsRef<str> for ProtectionPolicy {
 }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
-/// <p>Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding EC2 Auto Scaling group. </p>
+/// <p>Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding Amazon EC2 Auto Scaling group. </p>
 /// <p>A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively. </p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GameServerGroup {
-    /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each AWS account.</p>
+    /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>A generated unique ID for the game server group.</p>
     pub game_server_group_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
+    /// <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
     pub instance_definitions: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
     /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
@@ -2598,15 +2598,15 @@ pub struct GameServerGroup {
     /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
     /// </ul>
     pub balancing_strategy: std::option::Option<crate::model::BalancingStrategy>,
-    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. </p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. </p>
     pub game_server_protection_policy:
         std::option::Option<crate::model::GameServerProtectionPolicy>,
-    /// <p>A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.</p>
+    /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
     pub auto_scaling_group_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the game server group. Possible statuses include:</p>
     /// <ul>
     /// <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request. </p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your AWS account. </p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account. </p> </li>
     /// <li> <p> <code>ACTIVE</code> - The game server group has been successfully created. </p> </li>
     /// <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received. </p> </li>
     /// <li> <p> <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group. </p> </li>
@@ -2624,7 +2624,7 @@ pub struct GameServerGroup {
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GameServerGroup {
-    /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each AWS account.</p>
+    /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
@@ -2632,11 +2632,11 @@ impl GameServerGroup {
     pub fn game_server_group_arn(&self) -> std::option::Option<&str> {
         self.game_server_group_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
+    /// <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
     pub fn instance_definitions(&self) -> std::option::Option<&[crate::model::InstanceDefinition]> {
         self.instance_definitions.as_deref()
     }
@@ -2649,20 +2649,20 @@ impl GameServerGroup {
     pub fn balancing_strategy(&self) -> std::option::Option<&crate::model::BalancingStrategy> {
         self.balancing_strategy.as_ref()
     }
-    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. </p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. </p>
     pub fn game_server_protection_policy(
         &self,
     ) -> std::option::Option<&crate::model::GameServerProtectionPolicy> {
         self.game_server_protection_policy.as_ref()
     }
-    /// <p>A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.</p>
+    /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
     pub fn auto_scaling_group_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_arn.as_deref()
     }
     /// <p>The current status of the game server group. Possible statuses include:</p>
     /// <ul>
     /// <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request. </p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your AWS account. </p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account. </p> </li>
     /// <li> <p> <code>ACTIVE</code> - The game server group has been successfully created. </p> </li>
     /// <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received. </p> </li>
     /// <li> <p> <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group. </p> </li>
@@ -2733,12 +2733,12 @@ pub mod game_server_group {
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each AWS account.</p>
+        /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each AWS account.</p>
+        /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2759,12 +2759,12 @@ pub mod game_server_group {
             self.game_server_group_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2773,14 +2773,14 @@ pub mod game_server_group {
         ///
         /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).
         ///
-        /// <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
+        /// <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
         pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
             let mut v = self.instance_definitions.unwrap_or_default();
             v.push(input);
             self.instance_definitions = Some(v);
             self
         }
-        /// <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
+        /// <p>The set of Amazon EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
         pub fn set_instance_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -2811,7 +2811,7 @@ pub mod game_server_group {
             self.balancing_strategy = input;
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. </p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. </p>
         pub fn game_server_protection_policy(
             mut self,
             input: crate::model::GameServerProtectionPolicy,
@@ -2819,7 +2819,7 @@ pub mod game_server_group {
             self.game_server_protection_policy = Some(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. </p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. </p>
         pub fn set_game_server_protection_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerProtectionPolicy>,
@@ -2827,12 +2827,12 @@ pub mod game_server_group {
             self.game_server_protection_policy = input;
             self
         }
-        /// <p>A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.</p>
+        /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
         pub fn auto_scaling_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.auto_scaling_group_arn = Some(input.into());
             self
         }
-        /// <p>A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.</p>
+        /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
         pub fn set_auto_scaling_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2843,7 +2843,7 @@ pub mod game_server_group {
         /// <p>The current status of the game server group. Possible statuses include:</p>
         /// <ul>
         /// <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request. </p> </li>
-        /// <li> <p> <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your AWS account. </p> </li>
+        /// <li> <p> <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account. </p> </li>
         /// <li> <p> <code>ACTIVE</code> - The game server group has been successfully created. </p> </li>
         /// <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received. </p> </li>
         /// <li> <p> <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group. </p> </li>
@@ -2857,7 +2857,7 @@ pub mod game_server_group {
         /// <p>The current status of the game server group. Possible statuses include:</p>
         /// <ul>
         /// <li> <p> <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request. </p> </li>
-        /// <li> <p> <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your AWS account. </p> </li>
+        /// <li> <p> <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account. </p> </li>
         /// <li> <p> <code>ACTIVE</code> - The game server group has been successfully created. </p> </li>
         /// <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received. </p> </li>
         /// <li> <p> <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group. </p> </li>
@@ -3208,17 +3208,17 @@ impl AsRef<str> for BalancingStrategy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceDefinition {
-    /// <p>An EC2 instance type designation.</p>
+    /// <p>An Amazon EC2 instance type designation.</p>
     pub instance_type: std::option::Option<crate::model::GameServerGroupInstanceType>,
-    /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Default value is "1".</p>
+    /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. Default value is "1".</p>
     pub weighted_capacity: std::option::Option<std::string::String>,
 }
 impl InstanceDefinition {
-    /// <p>An EC2 instance type designation.</p>
+    /// <p>An Amazon EC2 instance type designation.</p>
     pub fn instance_type(&self) -> std::option::Option<&crate::model::GameServerGroupInstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Default value is "1".</p>
+    /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. Default value is "1".</p>
     pub fn weighted_capacity(&self) -> std::option::Option<&str> {
         self.weighted_capacity.as_deref()
     }
@@ -3241,12 +3241,12 @@ pub mod instance_definition {
         pub(crate) weighted_capacity: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An EC2 instance type designation.</p>
+        /// <p>An Amazon EC2 instance type designation.</p>
         pub fn instance_type(mut self, input: crate::model::GameServerGroupInstanceType) -> Self {
             self.instance_type = Some(input);
             self
         }
-        /// <p>An EC2 instance type designation.</p>
+        /// <p>An Amazon EC2 instance type designation.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::GameServerGroupInstanceType>,
@@ -3254,12 +3254,12 @@ pub mod instance_definition {
             self.instance_type = input;
             self
         }
-        /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Default value is "1".</p>
+        /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. Default value is "1".</p>
         pub fn weighted_capacity(mut self, input: impl Into<std::string::String>) -> Self {
             self.weighted_capacity = Some(input.into());
             self
         }
-        /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Default value is "1".</p>
+        /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. Default value is "1".</p>
         pub fn set_weighted_capacity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3783,7 +3783,7 @@ pub struct GameServer {
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>The ARN identifier for the game server group where the game server is located.</p>
     pub game_server_group_arn: std::option::Option<std::string::String>,
-    /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an AWS account.</p>
+    /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an Amazon Web Services account.</p>
     pub game_server_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -3815,7 +3815,7 @@ impl GameServer {
     pub fn game_server_group_arn(&self) -> std::option::Option<&str> {
         self.game_server_group_arn.as_deref()
     }
-    /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an AWS account.</p>
+    /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an Amazon Web Services account.</p>
     pub fn game_server_id(&self) -> std::option::Option<&str> {
         self.game_server_id.as_deref()
     }
@@ -3921,12 +3921,12 @@ pub mod game_server {
             self.game_server_group_arn = input;
             self
         }
-        /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an AWS account.</p>
+        /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an Amazon Web Services account.</p>
         pub fn game_server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_id = Some(input.into());
             self
         }
-        /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an AWS account.</p>
+        /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an Amazon Web Services account.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4235,8 +4235,10 @@ impl AsRef<str> for GameServerHealthCheck {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpPermission {
     /// <p>A starting value for a range of allowed port numbers.</p>
+    /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
     pub from_port: std::option::Option<i32>,
     /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than <code>FromPort</code>.</p>
+    /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
     pub to_port: std::option::Option<i32>,
     /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
     pub ip_range: std::option::Option<std::string::String>,
@@ -4245,10 +4247,12 @@ pub struct IpPermission {
 }
 impl IpPermission {
     /// <p>A starting value for a range of allowed port numbers.</p>
+    /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
     pub fn from_port(&self) -> std::option::Option<i32> {
         self.from_port
     }
     /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than <code>FromPort</code>.</p>
+    /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
     pub fn to_port(&self) -> std::option::Option<i32> {
         self.to_port
     }
@@ -4284,21 +4288,25 @@ pub mod ip_permission {
     }
     impl Builder {
         /// <p>A starting value for a range of allowed port numbers.</p>
+        /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
         pub fn from_port(mut self, input: i32) -> Self {
             self.from_port = Some(input);
             self
         }
         /// <p>A starting value for a range of allowed port numbers.</p>
+        /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
         pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
             self.from_port = input;
             self
         }
         /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than <code>FromPort</code>.</p>
+        /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
         pub fn to_port(mut self, input: i32) -> Self {
             self.to_port = Some(input);
             self
         }
         /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than <code>FromPort</code>.</p>
+        /// <p>For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows builds, only port 443, 1026-60000 are valid.</p>
         pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
             self.to_port = input;
             self
@@ -4505,7 +4513,7 @@ pub struct Build {
     /// <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build. </p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::BuildStatus>,
-    /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code>, this value is 0.</p>
+    /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value is 0.</p>
     pub size_on_disk: std::option::Option<i64>,
     /// <p>Operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build.</p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
@@ -4542,7 +4550,7 @@ impl Build {
     pub fn status(&self) -> std::option::Option<&crate::model::BuildStatus> {
         self.status.as_ref()
     }
-    /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code>, this value is 0.</p>
+    /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value is 0.</p>
     pub fn size_on_disk(&self) -> std::option::Option<i64> {
         self.size_on_disk
     }
@@ -4653,12 +4661,12 @@ pub mod build {
             self.status = input;
             self
         }
-        /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code>, this value is 0.</p>
+        /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value is 0.</p>
         pub fn size_on_disk(mut self, input: i64) -> Self {
             self.size_on_disk = Some(input);
             self
         }
-        /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code>, this value is 0.</p>
+        /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value is 0.</p>
         pub fn set_size_on_disk(mut self, input: std::option::Option<i64>) -> Self {
             self.size_on_disk = input;
             self
@@ -5194,24 +5202,24 @@ impl AsRef<str> for RoutingStrategyType {
 
 /// <p> A label that can be assigned to a GameLift resource. </p>
 /// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <i>AWS General Reference</i> </p>
-/// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> AWS Tagging Strategies</a> </p>
+/// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i> </p>
+/// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> Amazon Web Services Tagging Strategies</a> </p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>TagResource</code> | <code>UntagResource</code> | <code>ListTagsForResource</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p> The key for a developer-defined key:value pair for tagging an AWS resource. </p>
+    /// <p> The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
     pub key: std::option::Option<std::string::String>,
-    /// <p> The value for a developer-defined key:value pair for tagging an AWS resource. </p>
+    /// <p> The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p> The key for a developer-defined key:value pair for tagging an AWS resource. </p>
+    /// <p> The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p> The value for a developer-defined key:value pair for tagging an AWS resource. </p>
+    /// <p> The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -5234,22 +5242,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The key for a developer-defined key:value pair for tagging an AWS resource. </p>
+        /// <p> The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p> The key for a developer-defined key:value pair for tagging an AWS resource. </p>
+        /// <p> The key for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p> The value for a developer-defined key:value pair for tagging an AWS resource. </p>
+        /// <p> The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p> The value for a developer-defined key:value pair for tagging an AWS resource. </p>
+        /// <p> The value for a developer-defined key:value pair for tagging an Amazon Web Services resource. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -5305,7 +5313,7 @@ pub struct GameSessionPlacement {
     pub game_session_arn: std::option::Option<std::string::String>,
     /// <p>Name of the Region where the game session created by this placement request is running. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).</p>
     pub game_session_region: std::option::Option<std::string::String>,
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
     pub player_latencies: std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
     /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5383,7 +5391,7 @@ impl GameSessionPlacement {
     pub fn game_session_region(&self) -> std::option::Option<&str> {
         self.game_session_region.as_deref()
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
     pub fn player_latencies(&self) -> std::option::Option<&[crate::model::PlayerLatency]> {
         self.player_latencies.as_deref()
     }
@@ -5626,14 +5634,14 @@ pub mod game_session_placement {
         ///
         /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
         ///
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions.</p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
         pub fn player_latencies(mut self, input: crate::model::PlayerLatency) -> Self {
             let mut v = self.player_latencies.unwrap_or_default();
             v.push(input);
             self.player_latencies = Some(v);
             self
         }
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions.</p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions.</p>
         pub fn set_player_latencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
@@ -6721,7 +6729,7 @@ pub struct Player {
     >,
     /// <p>Name of the team that the player is assigned to in a match. Team names are defined in a matchmaking rule set.</p>
     pub team: std::option::Option<std::string::String>,
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable. </p>
     pub latency_in_ms: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
@@ -6742,7 +6750,7 @@ impl Player {
     pub fn team(&self) -> std::option::Option<&str> {
         self.team.as_deref()
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable. </p>
     pub fn latency_in_ms(
         &self,
@@ -6824,7 +6832,7 @@ pub mod player {
         ///
         /// To override the contents of this collection use [`set_latency_in_ms`](Self::set_latency_in_ms).
         ///
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
         /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable. </p>
         pub fn latency_in_ms(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.latency_in_ms.unwrap_or_default();
@@ -6832,7 +6840,7 @@ pub mod player {
             self.latency_in_ms = Some(hash_map);
             self
         }
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
         /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable. </p>
         pub fn set_latency_in_ms(
             mut self,
@@ -6867,7 +6875,7 @@ pub struct AttributeValue {
     pub s: std::option::Option<std::string::String>,
     /// <p>For number values, expressed as double.</p>
     pub n: std::option::Option<f64>,
-    /// <p>For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
+    /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
     pub sl: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     pub sdm: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
@@ -6881,7 +6889,7 @@ impl AttributeValue {
     pub fn n(&self) -> std::option::Option<f64> {
         self.n
     }
-    /// <p>For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
+    /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
     pub fn sl(&self) -> std::option::Option<&[std::string::String]> {
         self.sl.as_deref()
     }
@@ -6936,14 +6944,14 @@ pub mod attribute_value {
         ///
         /// To override the contents of this collection use [`set_sl`](Self::set_sl).
         ///
-        /// <p>For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
+        /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
         pub fn sl(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sl.unwrap_or_default();
             v.push(input.into());
             self.sl = Some(v);
             self
         }
-        /// <p>For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
+        /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
         pub fn set_sl(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7149,23 +7157,23 @@ impl DesiredPlayerSession {
     }
 }
 
-/// <p>Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <code>RequestUploadCredentials</code>.</p>
+/// <p>Temporary access credentials used for uploading game build files to Amazon Web Services. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <code>RequestUploadCredentials</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCredentials {
-    /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+    /// <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
     pub access_key_id: std::option::Option<std::string::String>,
-    /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+    /// <p>Temporary secret key allowing access to the Amazon Web Services S3 account.</p>
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>Token used to associate a specific build ID with the files uploaded using these credentials.</p>
     pub session_token: std::option::Option<std::string::String>,
 }
 impl AwsCredentials {
-    /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+    /// <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
     pub fn access_key_id(&self) -> std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
-    /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+    /// <p>Temporary secret key allowing access to the Amazon Web Services S3 account.</p>
     pub fn secret_access_key(&self) -> std::option::Option<&str> {
         self.secret_access_key.as_deref()
     }
@@ -7194,12 +7202,12 @@ pub mod aws_credentials {
         pub(crate) session_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+        /// <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
         pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_key_id = Some(input.into());
             self
         }
-        /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+        /// <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7207,12 +7215,12 @@ pub mod aws_credentials {
             self.access_key_id = input;
             self
         }
-        /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+        /// <p>Temporary secret key allowing access to the Amazon Web Services S3 account.</p>
         pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_access_key = Some(input.into());
             self
         }
-        /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+        /// <p>Temporary secret key allowing access to the Amazon Web Services S3 account.</p>
         pub fn set_secret_access_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7250,7 +7258,7 @@ impl AwsCredentials {
     }
 }
 
-/// <p>Settings for a target-based scaling policy (see <code>ScalingPolicy</code>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. </p>
+/// <p>Settings for a target-based scaling policy (see <code>ScalingPolicy</code>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon Web Services to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. </p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeFleetCapacity</code> | <code>UpdateFleetCapacity</code> | <code>DescribeEC2InstanceLimits</code> | <code>PutScalingPolicy</code> | <code>DescribeScalingPolicies</code> | <code>DeleteScalingPolicy</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
@@ -7863,13 +7871,13 @@ impl InstanceCredentials {
     }
 }
 
-/// <p>Represents a peering connection between a VPC on one of your AWS accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p>
+/// <p>Represents a peering connection between a VPC on one of your Amazon Web Services accounts and the VPC for your Amazon Web Services fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcPeeringConnection {
-    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
+    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon Web Services VPC for your fleet.</p>
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource for this connection. </p>
     pub fleet_arn: std::option::Option<std::string::String>,
@@ -7879,13 +7887,13 @@ pub struct VpcPeeringConnection {
     pub vpc_peering_connection_id: std::option::Option<std::string::String>,
     /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
     pub status: std::option::Option<crate::model::VpcPeeringConnectionStatus>,
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub peer_vpc_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your AWS account. </p>
+    /// <p>A unique identifier for the VPC that contains the Amazon Web Services fleet for this connection. This VPC is managed by Amazon Web Services and does not appear in your Amazon Web Services account. </p>
     pub game_lift_vpc_id: std::option::Option<std::string::String>,
 }
 impl VpcPeeringConnection {
-    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
+    /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon Web Services VPC for your fleet.</p>
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -7905,11 +7913,11 @@ impl VpcPeeringConnection {
     pub fn status(&self) -> std::option::Option<&crate::model::VpcPeeringConnectionStatus> {
         self.status.as_ref()
     }
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_id.as_deref()
     }
-    /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your AWS account. </p>
+    /// <p>A unique identifier for the VPC that contains the Amazon Web Services fleet for this connection. This VPC is managed by Amazon Web Services and does not appear in your Amazon Web Services account. </p>
     pub fn game_lift_vpc_id(&self) -> std::option::Option<&str> {
         self.game_lift_vpc_id.as_deref()
     }
@@ -7942,12 +7950,12 @@ pub mod vpc_peering_connection {
         pub(crate) game_lift_vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
+        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon Web Services VPC for your fleet.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.</p>
+        /// <p>A unique identifier for the fleet. This ID determines the ID of the Amazon Web Services VPC for your fleet.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -8001,22 +8009,22 @@ pub mod vpc_peering_connection {
             self.status = input;
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.peer_vpc_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.peer_vpc_id = input;
             self
         }
-        /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your AWS account. </p>
+        /// <p>A unique identifier for the VPC that contains the Amazon Web Services fleet for this connection. This VPC is managed by Amazon Web Services and does not appear in your Amazon Web Services account. </p>
         pub fn game_lift_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_lift_vpc_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your AWS account. </p>
+        /// <p>A unique identifier for the VPC that contains the Amazon Web Services fleet for this connection. This VPC is managed by Amazon Web Services and does not appear in your Amazon Web Services account. </p>
         pub fn set_game_lift_vpc_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8118,17 +8126,17 @@ impl VpcPeeringConnectionStatus {
     }
 }
 
-/// <p>Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.</p>
+/// <p>Represents an authorization for a VPC peering connection between the VPC for an Amazon Web Services fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.</p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcPeeringAuthorization {
-    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+    /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
     pub game_lift_aws_account_id: std::option::Option<std::string::String>,
     /// <p></p>
     pub peer_vpc_aws_account_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub peer_vpc_id: std::option::Option<std::string::String>,
     /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -8136,7 +8144,7 @@ pub struct VpcPeeringAuthorization {
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl VpcPeeringAuthorization {
-    /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+    /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
     pub fn game_lift_aws_account_id(&self) -> std::option::Option<&str> {
         self.game_lift_aws_account_id.as_deref()
     }
@@ -8144,7 +8152,7 @@ impl VpcPeeringAuthorization {
     pub fn peer_vpc_aws_account_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_aws_account_id.as_deref()
     }
-    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
         self.peer_vpc_id.as_deref()
     }
@@ -8181,12 +8189,12 @@ pub mod vpc_peering_authorization {
         pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
         pub fn game_lift_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_lift_aws_account_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
         pub fn set_game_lift_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8207,12 +8215,12 @@ pub mod vpc_peering_authorization {
             self.peer_vpc_aws_account_id = input;
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.peer_vpc_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.peer_vpc_id = input;
             self
@@ -8303,7 +8311,7 @@ pub struct ScalingPolicy {
     pub threshold: f64,
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub evaluation_periods: std::option::Option<i32>,
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
     /// <ul>
     /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
     /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -8324,7 +8332,7 @@ pub struct ScalingPolicy {
     pub target_configuration: std::option::Option<crate::model::TargetConfiguration>,
     /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
     pub update_status: std::option::Option<crate::model::LocationUpdateStatus>,
-    /// <p> </p>
+    /// <p> The fleet location. </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl ScalingPolicy {
@@ -8385,7 +8393,7 @@ impl ScalingPolicy {
     pub fn evaluation_periods(&self) -> std::option::Option<i32> {
         self.evaluation_periods
     }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+    /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
     /// <ul>
     /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
     /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -8414,7 +8422,7 @@ impl ScalingPolicy {
     pub fn update_status(&self) -> std::option::Option<&crate::model::LocationUpdateStatus> {
         self.update_status.as_ref()
     }
-    /// <p> </p>
+    /// <p> The fleet location. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -8598,7 +8606,7 @@ pub mod scaling_policy {
             self.evaluation_periods = input;
             self
         }
-        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
         /// <ul>
         /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
         /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -8616,7 +8624,7 @@ pub mod scaling_policy {
             self.metric_name = Some(input);
             self
         }
-        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
         /// <ul>
         /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
         /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -8676,12 +8684,12 @@ pub mod scaling_policy {
             self.update_status = input;
             self
         }
-        /// <p> </p>
+        /// <p> The fleet location. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p> </p>
+        /// <p> The fleet location. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -8895,7 +8903,7 @@ pub struct PlayerSession {
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub dns_name: std::option::Option<std::string::String>,
-    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+    /// <p>Port number for the game session. To connect to a Amazon Web Services server process, an app needs both the IP address and port number.</p>
     pub port: std::option::Option<i32>,
     /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game. </p>
     pub player_data: std::option::Option<std::string::String>,
@@ -8962,7 +8970,7 @@ impl PlayerSession {
     pub fn dns_name(&self) -> std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+    /// <p>Port number for the game session. To connect to a Amazon Web Services server process, an app needs both the IP address and port number.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
@@ -9166,12 +9174,12 @@ pub mod player_session {
             self.dns_name = input;
             self
         }
-        /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+        /// <p>Port number for the game session. To connect to a Amazon Web Services server process, an app needs both the IP address and port number.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+        /// <p>Port number for the game session. To connect to a Amazon Web Services server process, an app needs both the IP address and port number.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -9453,7 +9461,7 @@ pub struct Instance {
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>Operating system that is running on this instance. </p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
-    /// <p>EC2 instance type that defines the computing resources of this instance. </p>
+    /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
     pub r#type: std::option::Option<crate::model::Ec2InstanceType>,
     /// <p>Current status of the instance. Possible statuses include the following:</p>
     /// <ul>
@@ -9464,7 +9472,7 @@ pub struct Instance {
     pub status: std::option::Option<crate::model::InstanceStatus>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl Instance {
@@ -9509,7 +9517,7 @@ impl Instance {
     pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
         self.operating_system.as_ref()
     }
-    /// <p>EC2 instance type that defines the computing resources of this instance. </p>
+    /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
         self.r#type.as_ref()
     }
@@ -9526,7 +9534,7 @@ impl Instance {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -9662,12 +9670,12 @@ pub mod instance {
             self.operating_system = input;
             self
         }
-        /// <p>EC2 instance type that defines the computing resources of this instance. </p>
+        /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
         pub fn r#type(mut self, input: crate::model::Ec2InstanceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>EC2 instance type that defines the computing resources of this instance. </p>
+        /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -9711,12 +9719,12 @@ pub mod instance {
             self.creation_time = input;
             self
         }
-        /// <p>The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -10365,7 +10373,7 @@ impl GameSessionDetail {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GameServerInstance {
-    /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each AWS account.</p>
+    /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
     pub game_server_group_name: std::option::Option<std::string::String>,
     /// <p>A generated unique identifier for the game server group that includes the game server instance. </p>
     pub game_server_group_arn: std::option::Option<std::string::String>,
@@ -10380,7 +10388,7 @@ pub struct GameServerInstance {
     pub instance_status: std::option::Option<crate::model::GameServerInstanceStatus>,
 }
 impl GameServerInstance {
-    /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each AWS account.</p>
+    /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
     pub fn game_server_group_name(&self) -> std::option::Option<&str> {
         self.game_server_group_name.as_deref()
     }
@@ -10424,12 +10432,12 @@ pub mod game_server_instance {
         pub(crate) instance_status: std::option::Option<crate::model::GameServerInstanceStatus>,
     }
     impl Builder {
-        /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each AWS account.</p>
+        /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_server_group_name = Some(input.into());
             self
         }
-        /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each AWS account.</p>
+        /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10581,7 +10589,7 @@ pub struct FleetUtilization {
     pub current_player_session_count: std::option::Option<i32>,
     /// <p>The maximum number of players allowed across all game sessions that are currently being hosted across all instances in the fleet location.</p>
     pub maximum_player_session_count: std::option::Option<i32>,
-    /// <p>The fleet location for the fleet utilization information, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The fleet location for the fleet utilization information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl FleetUtilization {
@@ -10612,7 +10620,7 @@ impl FleetUtilization {
     pub fn maximum_player_session_count(&self) -> std::option::Option<i32> {
         self.maximum_player_session_count
     }
-    /// <p>The fleet location for the fleet utilization information, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The fleet location for the fleet utilization information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -10720,12 +10728,12 @@ pub mod fleet_utilization {
             self.maximum_player_session_count = input;
             self
         }
-        /// <p>The fleet location for the fleet utilization information, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>The fleet location for the fleet utilization information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The fleet location for the fleet utilization information, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>The fleet location for the fleet utilization information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -10753,7 +10761,7 @@ impl FleetUtilization {
 
 /// <p>Current resource capacity settings in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region. </p>
 /// <p> <b>Related actions</b> </p>
-/// <p> <code>DescribeFleetCapacity</code> | <code>DescribeFleetLocationCapacity</code> | <code>UpdateFleetCapacity</code> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FleetCapacity {
@@ -10764,11 +10772,11 @@ pub struct FleetCapacity {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>The EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.</p>
+    /// <p>The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub instance_type: std::option::Option<crate::model::Ec2InstanceType>,
     /// <p>The current instance count and capacity settings for the fleet location. </p>
     pub instance_counts: std::option::Option<crate::model::Ec2InstanceCounts>,
-    /// <p>The fleet location for the instance count information, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl FleetCapacity {
@@ -10783,7 +10791,7 @@ impl FleetCapacity {
     pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
-    /// <p>The EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.</p>
+    /// <p>The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub fn instance_type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
         self.instance_type.as_ref()
     }
@@ -10791,7 +10799,7 @@ impl FleetCapacity {
     pub fn instance_counts(&self) -> std::option::Option<&crate::model::Ec2InstanceCounts> {
         self.instance_counts.as_ref()
     }
-    /// <p>The fleet location for the instance count information, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -10846,12 +10854,12 @@ pub mod fleet_capacity {
             self.fleet_arn = input;
             self
         }
-        /// <p>The EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.</p>
+        /// <p>The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
         pub fn instance_type(mut self, input: crate::model::Ec2InstanceType) -> Self {
             self.instance_type = Some(input);
             self
         }
-        /// <p>The EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.</p>
+        /// <p>The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -10872,12 +10880,12 @@ pub mod fleet_capacity {
             self.instance_counts = input;
             self
         }
-        /// <p>The fleet location for the instance count information, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The fleet location for the instance count information, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -10901,7 +10909,7 @@ impl FleetCapacity {
     }
 }
 
-/// <p>Resource capacity settings. Fleet capacity is measured in EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
+/// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
 /// <p>EC2 instance counts are part of <code>FleetCapacity</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11185,13 +11193,13 @@ impl LocationAttributes {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocationState {
-    /// <p>The fleet location, expressed as an AWS Region code such as <code>us-west-2</code>. </p>
+    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
     /// <p>The life-cycle status of a fleet location. </p>
     pub status: std::option::Option<crate::model::FleetStatus>,
 }
 impl LocationState {
-    /// <p>The fleet location, expressed as an AWS Region code such as <code>us-west-2</code>. </p>
+    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -11218,12 +11226,12 @@ pub mod location_state {
         pub(crate) status: std::option::Option<crate::model::FleetStatus>,
     }
     impl Builder {
-        /// <p>The fleet location, expressed as an AWS Region code such as <code>us-west-2</code>. </p>
+        /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The fleet location, expressed as an AWS Region code such as <code>us-west-2</code>. </p>
+        /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -11358,31 +11366,52 @@ pub struct Event {
     /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of event being logged. </p>
-    /// <p> <b>Fleet creation events (ordered by fleet creation activity):</b> </p>
+    /// <p> <b>Fleet state transition events:</b> </p>
     /// <ul>
     /// <li> <p>FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging includes the fleet ID.</p> </li>
     /// <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build has started downloading to a fleet instance for installation.</p> </li>
-    /// <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p> </li>
-    /// <li> <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
-    /// <li> <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li>
-    /// <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li>
-    /// <li> <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.</p> </li>
-    /// <li> <p> FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime configuration failed because the executable specified in a launch path does not exist on the instance.</p> </li>
-    /// <li> <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.</p> </li>
-    /// <li> <p>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE -- Validation of the runtime configuration failed because the executable specified in a launch path failed to run on the fleet instance.</p> </li>
-    /// <li> <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. </p> </li>
-    /// <li> <p> FLEET_ACTIVATION_FAILED - The fleet failed to successfully complete one of the steps in the fleet activation process. This event code indicates that the game build was successfully downloaded to a fleet instance, built, and validated, but was not able to start a server process. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation"> Debug Fleet Creation Issues</a> </p> </li>
+    /// <li> <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. GameLift has successfully downloaded the build and is now validating the build files.</p> </li>
+    /// <li> <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. GameLift has successfully verified the build files and is now running the installation scripts.</p> </li>
+    /// <li> <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. GameLift is trying to launch an instance and test the connectivity between the build and the GameLift Service via the Server SDK.</p> </li>
     /// <li> <p>FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is now ready to host game sessions.</p> </li>
+    /// <li> <p>FLEET_STATE_ERROR -- The Fleet's status changed to <code>ERROR</code>. Describe the fleet event message for more details.</p> </li>
+    /// </ul>
+    /// <p> <b>Fleet creation events (ordered by fleet creation activity):</b> </p>
+    /// <ul>
+    /// <li> <p>FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p> </li>
+    /// <li> <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+    /// <li> <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+    /// <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+    /// <li> <p>FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime configuration failed because the executable specified in a launch path does not exist on the instance.</p> </li>
+    /// <li> <p>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE -- Validation of the runtime configuration failed because the executable specified in a launch path failed to run on the fleet instance.</p> </li>
+    /// <li> <p>FLEET_VALIDATION_TIMED_OUT -- Validation of the fleet at the end of creation timed out. Try fleet creation again.</p> </li>
+    /// <li> <p>FLEET_ACTIVATION_FAILED -- The fleet failed to successfully complete one of the steps in the fleet activation process. This event code indicates that the game build was successfully downloaded to a fleet instance, built, and validated, but was not able to start a server process. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug Fleet Creation Issues</a>.</p> </li>
+    /// <li> <p>FLEET_ACTIVATION_FAILED_NO_INSTANCES -- Fleet creation was not able to obtain any instances based on the input fleet attributes. Try again at a different time or choose a different combination of fleet attributes such as fleet type, instance type, etc.</p> </li>
+    /// <li> <p>FLEET_INITIALIZATION_FAILED -- A generic exception occurred during fleet creation. Describe the fleet event message for more details.</p> </li>
     /// </ul>
     /// <p> <b>VPC peering events:</b> </p>
     /// <ul>
-    /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your AWS account.</p> </li>
-    /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your AWS account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
+    /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your Amazon Web Services account.</p> </li>
+    /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
     /// <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has been successfully deleted.</p> </li>
     /// </ul>
     /// <p> <b>Spot instance events:</b> </p>
     /// <ul>
     /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
+    /// </ul>
+    /// <p> <b>Spot process events:</b> </p>
+    /// <ul>
+    /// <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p> </li>
+    /// <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected. Check your game session log to see why InitSDK() was not called in time.</p> </li>
+    /// <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time expected after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in time.</p> </li>
+    /// <li> <p>SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game session log to see why ProcessEnding() was not called.</p> </li>
+    /// <li> <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a valid health check for too long and was therefore terminated by GameLift. Check your game session log to see if the thread became stuck processing a synchronous task for too long.</p> </li>
+    /// <li> <p>SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was sent within the time expected. Check your game session log to see why termination took longer than expected.</p> </li>
+    /// <li> <p>SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected after calling ProcessEnding(). Check your game session log to see why termination took longer than expected.</p> </li>
+    /// </ul>
+    /// <p> <b>Game session events:</b> </p>
+    /// <ul>
+    /// <li> <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your game session log to see why ActivateGameSession() took longer to complete than expected.</p> </li>
     /// </ul>
     /// <p> <b>Other fleet events:</b> </p>
     /// <ul>
@@ -11409,31 +11438,52 @@ impl Event {
         self.resource_id.as_deref()
     }
     /// <p>The type of event being logged. </p>
-    /// <p> <b>Fleet creation events (ordered by fleet creation activity):</b> </p>
+    /// <p> <b>Fleet state transition events:</b> </p>
     /// <ul>
     /// <li> <p>FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging includes the fleet ID.</p> </li>
     /// <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build has started downloading to a fleet instance for installation.</p> </li>
-    /// <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p> </li>
-    /// <li> <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
-    /// <li> <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li>
-    /// <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li>
-    /// <li> <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.</p> </li>
-    /// <li> <p> FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime configuration failed because the executable specified in a launch path does not exist on the instance.</p> </li>
-    /// <li> <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.</p> </li>
-    /// <li> <p>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE -- Validation of the runtime configuration failed because the executable specified in a launch path failed to run on the fleet instance.</p> </li>
-    /// <li> <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. </p> </li>
-    /// <li> <p> FLEET_ACTIVATION_FAILED - The fleet failed to successfully complete one of the steps in the fleet activation process. This event code indicates that the game build was successfully downloaded to a fleet instance, built, and validated, but was not able to start a server process. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation"> Debug Fleet Creation Issues</a> </p> </li>
+    /// <li> <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. GameLift has successfully downloaded the build and is now validating the build files.</p> </li>
+    /// <li> <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. GameLift has successfully verified the build files and is now running the installation scripts.</p> </li>
+    /// <li> <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. GameLift is trying to launch an instance and test the connectivity between the build and the GameLift Service via the Server SDK.</p> </li>
     /// <li> <p>FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is now ready to host game sessions.</p> </li>
+    /// <li> <p>FLEET_STATE_ERROR -- The Fleet's status changed to <code>ERROR</code>. Describe the fleet event message for more details.</p> </li>
+    /// </ul>
+    /// <p> <b>Fleet creation events (ordered by fleet creation activity):</b> </p>
+    /// <ul>
+    /// <li> <p>FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p> </li>
+    /// <li> <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+    /// <li> <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+    /// <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+    /// <li> <p>FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime configuration failed because the executable specified in a launch path does not exist on the instance.</p> </li>
+    /// <li> <p>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE -- Validation of the runtime configuration failed because the executable specified in a launch path failed to run on the fleet instance.</p> </li>
+    /// <li> <p>FLEET_VALIDATION_TIMED_OUT -- Validation of the fleet at the end of creation timed out. Try fleet creation again.</p> </li>
+    /// <li> <p>FLEET_ACTIVATION_FAILED -- The fleet failed to successfully complete one of the steps in the fleet activation process. This event code indicates that the game build was successfully downloaded to a fleet instance, built, and validated, but was not able to start a server process. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug Fleet Creation Issues</a>.</p> </li>
+    /// <li> <p>FLEET_ACTIVATION_FAILED_NO_INSTANCES -- Fleet creation was not able to obtain any instances based on the input fleet attributes. Try again at a different time or choose a different combination of fleet attributes such as fleet type, instance type, etc.</p> </li>
+    /// <li> <p>FLEET_INITIALIZATION_FAILED -- A generic exception occurred during fleet creation. Describe the fleet event message for more details.</p> </li>
     /// </ul>
     /// <p> <b>VPC peering events:</b> </p>
     /// <ul>
-    /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your AWS account.</p> </li>
-    /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your AWS account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
+    /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your Amazon Web Services account.</p> </li>
+    /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
     /// <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has been successfully deleted.</p> </li>
     /// </ul>
     /// <p> <b>Spot instance events:</b> </p>
     /// <ul>
     /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
+    /// </ul>
+    /// <p> <b>Spot process events:</b> </p>
+    /// <ul>
+    /// <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p> </li>
+    /// <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected. Check your game session log to see why InitSDK() was not called in time.</p> </li>
+    /// <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time expected after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in time.</p> </li>
+    /// <li> <p>SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game session log to see why ProcessEnding() was not called.</p> </li>
+    /// <li> <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a valid health check for too long and was therefore terminated by GameLift. Check your game session log to see if the thread became stuck processing a synchronous task for too long.</p> </li>
+    /// <li> <p>SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was sent within the time expected. Check your game session log to see why termination took longer than expected.</p> </li>
+    /// <li> <p>SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected after calling ProcessEnding(). Check your game session log to see why termination took longer than expected.</p> </li>
+    /// </ul>
+    /// <p> <b>Game session events:</b> </p>
+    /// <ul>
+    /// <li> <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your game session log to see why ActivateGameSession() took longer to complete than expected.</p> </li>
     /// </ul>
     /// <p> <b>Other fleet events:</b> </p>
     /// <ul>
@@ -11505,31 +11555,52 @@ pub mod event {
             self
         }
         /// <p>The type of event being logged. </p>
-        /// <p> <b>Fleet creation events (ordered by fleet creation activity):</b> </p>
+        /// <p> <b>Fleet state transition events:</b> </p>
         /// <ul>
         /// <li> <p>FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging includes the fleet ID.</p> </li>
         /// <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build has started downloading to a fleet instance for installation.</p> </li>
-        /// <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p> </li>
-        /// <li> <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
-        /// <li> <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li>
-        /// <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li>
-        /// <li> <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.</p> </li>
-        /// <li> <p> FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime configuration failed because the executable specified in a launch path does not exist on the instance.</p> </li>
-        /// <li> <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.</p> </li>
-        /// <li> <p>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE -- Validation of the runtime configuration failed because the executable specified in a launch path failed to run on the fleet instance.</p> </li>
-        /// <li> <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. </p> </li>
-        /// <li> <p> FLEET_ACTIVATION_FAILED - The fleet failed to successfully complete one of the steps in the fleet activation process. This event code indicates that the game build was successfully downloaded to a fleet instance, built, and validated, but was not able to start a server process. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation"> Debug Fleet Creation Issues</a> </p> </li>
+        /// <li> <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. GameLift has successfully downloaded the build and is now validating the build files.</p> </li>
+        /// <li> <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. GameLift has successfully verified the build files and is now running the installation scripts.</p> </li>
+        /// <li> <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. GameLift is trying to launch an instance and test the connectivity between the build and the GameLift Service via the Server SDK.</p> </li>
         /// <li> <p>FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is now ready to host game sessions.</p> </li>
+        /// <li> <p>FLEET_STATE_ERROR -- The Fleet's status changed to <code>ERROR</code>. Describe the fleet event message for more details.</p> </li>
+        /// </ul>
+        /// <p> <b>Fleet creation events (ordered by fleet creation activity):</b> </p>
+        /// <ul>
+        /// <li> <p>FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p> </li>
+        /// <li> <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+        /// <li> <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+        /// <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+        /// <li> <p>FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime configuration failed because the executable specified in a launch path does not exist on the instance.</p> </li>
+        /// <li> <p>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE -- Validation of the runtime configuration failed because the executable specified in a launch path failed to run on the fleet instance.</p> </li>
+        /// <li> <p>FLEET_VALIDATION_TIMED_OUT -- Validation of the fleet at the end of creation timed out. Try fleet creation again.</p> </li>
+        /// <li> <p>FLEET_ACTIVATION_FAILED -- The fleet failed to successfully complete one of the steps in the fleet activation process. This event code indicates that the game build was successfully downloaded to a fleet instance, built, and validated, but was not able to start a server process. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug Fleet Creation Issues</a>.</p> </li>
+        /// <li> <p>FLEET_ACTIVATION_FAILED_NO_INSTANCES -- Fleet creation was not able to obtain any instances based on the input fleet attributes. Try again at a different time or choose a different combination of fleet attributes such as fleet type, instance type, etc.</p> </li>
+        /// <li> <p>FLEET_INITIALIZATION_FAILED -- A generic exception occurred during fleet creation. Describe the fleet event message for more details.</p> </li>
         /// </ul>
         /// <p> <b>VPC peering events:</b> </p>
         /// <ul>
-        /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your AWS account.</p> </li>
-        /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your AWS account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
+        /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your Amazon Web Services account.</p> </li>
+        /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
         /// <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has been successfully deleted.</p> </li>
         /// </ul>
         /// <p> <b>Spot instance events:</b> </p>
         /// <ul>
         /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
+        /// </ul>
+        /// <p> <b>Spot process events:</b> </p>
+        /// <ul>
+        /// <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p> </li>
+        /// <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected. Check your game session log to see why InitSDK() was not called in time.</p> </li>
+        /// <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time expected after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in time.</p> </li>
+        /// <li> <p>SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game session log to see why ProcessEnding() was not called.</p> </li>
+        /// <li> <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a valid health check for too long and was therefore terminated by GameLift. Check your game session log to see if the thread became stuck processing a synchronous task for too long.</p> </li>
+        /// <li> <p>SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was sent within the time expected. Check your game session log to see why termination took longer than expected.</p> </li>
+        /// <li> <p>SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected after calling ProcessEnding(). Check your game session log to see why termination took longer than expected.</p> </li>
+        /// </ul>
+        /// <p> <b>Game session events:</b> </p>
+        /// <ul>
+        /// <li> <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your game session log to see why ActivateGameSession() took longer to complete than expected.</p> </li>
         /// </ul>
         /// <p> <b>Other fleet events:</b> </p>
         /// <ul>
@@ -11543,31 +11614,52 @@ pub mod event {
             self
         }
         /// <p>The type of event being logged. </p>
-        /// <p> <b>Fleet creation events (ordered by fleet creation activity):</b> </p>
+        /// <p> <b>Fleet state transition events:</b> </p>
         /// <ul>
         /// <li> <p>FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging includes the fleet ID.</p> </li>
         /// <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build has started downloading to a fleet instance for installation.</p> </li>
-        /// <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p> </li>
-        /// <li> <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
-        /// <li> <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li>
-        /// <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li>
-        /// <li> <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.</p> </li>
-        /// <li> <p> FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime configuration failed because the executable specified in a launch path does not exist on the instance.</p> </li>
-        /// <li> <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.</p> </li>
-        /// <li> <p>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE -- Validation of the runtime configuration failed because the executable specified in a launch path failed to run on the fleet instance.</p> </li>
-        /// <li> <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. </p> </li>
-        /// <li> <p> FLEET_ACTIVATION_FAILED - The fleet failed to successfully complete one of the steps in the fleet activation process. This event code indicates that the game build was successfully downloaded to a fleet instance, built, and validated, but was not able to start a server process. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation"> Debug Fleet Creation Issues</a> </p> </li>
+        /// <li> <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. GameLift has successfully downloaded the build and is now validating the build files.</p> </li>
+        /// <li> <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. GameLift has successfully verified the build files and is now running the installation scripts.</p> </li>
+        /// <li> <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. GameLift is trying to launch an instance and test the connectivity between the build and the GameLift Service via the Server SDK.</p> </li>
         /// <li> <p>FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is now ready to host game sessions.</p> </li>
+        /// <li> <p>FLEET_STATE_ERROR -- The Fleet's status changed to <code>ERROR</code>. Describe the fleet event message for more details.</p> </li>
+        /// </ul>
+        /// <p> <b>Fleet creation events (ordered by fleet creation activity):</b> </p>
+        /// <ul>
+        /// <li> <p>FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p> </li>
+        /// <li> <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+        /// <li> <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+        /// <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
+        /// <li> <p>FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime configuration failed because the executable specified in a launch path does not exist on the instance.</p> </li>
+        /// <li> <p>FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE -- Validation of the runtime configuration failed because the executable specified in a launch path failed to run on the fleet instance.</p> </li>
+        /// <li> <p>FLEET_VALIDATION_TIMED_OUT -- Validation of the fleet at the end of creation timed out. Try fleet creation again.</p> </li>
+        /// <li> <p>FLEET_ACTIVATION_FAILED -- The fleet failed to successfully complete one of the steps in the fleet activation process. This event code indicates that the game build was successfully downloaded to a fleet instance, built, and validated, but was not able to start a server process. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug Fleet Creation Issues</a>.</p> </li>
+        /// <li> <p>FLEET_ACTIVATION_FAILED_NO_INSTANCES -- Fleet creation was not able to obtain any instances based on the input fleet attributes. Try again at a different time or choose a different combination of fleet attributes such as fleet type, instance type, etc.</p> </li>
+        /// <li> <p>FLEET_INITIALIZATION_FAILED -- A generic exception occurred during fleet creation. Describe the fleet event message for more details.</p> </li>
         /// </ul>
         /// <p> <b>VPC peering events:</b> </p>
         /// <ul>
-        /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your AWS account.</p> </li>
-        /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your AWS account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
+        /// <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift fleet and a VPC in your Amazon Web Services account.</p> </li>
+        /// <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information (see <code>DescribeVpcPeeringConnections</code>) provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering failures, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a> </p> </li>
         /// <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has been successfully deleted.</p> </li>
         /// </ul>
         /// <p> <b>Spot instance events:</b> </p>
         /// <ul>
         /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
+        /// </ul>
+        /// <p> <b>Spot process events:</b> </p>
+        /// <ul>
+        /// <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p> </li>
+        /// <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected. Check your game session log to see why InitSDK() was not called in time.</p> </li>
+        /// <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time expected after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in time.</p> </li>
+        /// <li> <p>SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game session log to see why ProcessEnding() was not called.</p> </li>
+        /// <li> <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a valid health check for too long and was therefore terminated by GameLift. Check your game session log to see if the thread became stuck processing a synchronous task for too long.</p> </li>
+        /// <li> <p>SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was sent within the time expected. Check your game session log to see why termination took longer than expected.</p> </li>
+        /// <li> <p>SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected after calling ProcessEnding(). Check your game session log to see why termination took longer than expected.</p> </li>
+        /// </ul>
+        /// <p> <b>Game session events:</b> </p>
+        /// <ul>
+        /// <li> <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your game session log to see why ActivateGameSession() took longer to complete than expected.</p> </li>
         /// </ul>
         /// <p> <b>Other fleet events:</b> </p>
         /// <ul>
@@ -11887,7 +11979,7 @@ pub struct FleetAttributes {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The kind of instances, On-Demand or Spot, that this fleet uses.</p>
     pub fleet_type: std::option::Option<crate::model::FleetType>,
-    /// <p>The EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.</p>
+    /// <p>The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub instance_type: std::option::Option<crate::model::Ec2InstanceType>,
     /// <p>A human-readable description of the fleet.</p>
     pub description: std::option::Option<std::string::String>,
@@ -11936,7 +12028,7 @@ pub struct FleetAttributes {
     pub metric_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of fleet activity that has been suspended using <code>StopFleetActions</code>. This includes fleet auto-scaling.</p>
     pub stopped_actions: std::option::Option<std::vec::Vec<crate::model::FleetAction>>,
-    /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
+    /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
     pub instance_role_arn: std::option::Option<std::string::String>,
     /// <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
     pub certificate_configuration: std::option::Option<crate::model::CertificateConfiguration>,
@@ -11957,7 +12049,7 @@ impl FleetAttributes {
     pub fn fleet_type(&self) -> std::option::Option<&crate::model::FleetType> {
         self.fleet_type.as_ref()
     }
-    /// <p>The EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.</p>
+    /// <p>The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub fn instance_type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
         self.instance_type.as_ref()
     }
@@ -12045,7 +12137,7 @@ impl FleetAttributes {
     pub fn stopped_actions(&self) -> std::option::Option<&[crate::model::FleetAction]> {
         self.stopped_actions.as_deref()
     }
-    /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
+    /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
     pub fn instance_role_arn(&self) -> std::option::Option<&str> {
         self.instance_role_arn.as_deref()
     }
@@ -12164,12 +12256,12 @@ pub mod fleet_attributes {
             self.fleet_type = input;
             self
         }
-        /// <p>The EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.</p>
+        /// <p>The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
         pub fn instance_type(mut self, input: crate::model::Ec2InstanceType) -> Self {
             self.instance_type = Some(input);
             self
         }
-        /// <p>The EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.</p>
+        /// <p>The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -12425,12 +12517,12 @@ pub mod fleet_attributes {
             self.stopped_actions = input;
             self
         }
-        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
+        /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
         pub fn instance_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_role_arn = Some(input.into());
             self
         }
-        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
+        /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
         pub fn set_instance_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12683,27 +12775,27 @@ impl AsRef<str> for FleetType {
     }
 }
 
-/// <p>The GameLift service limits for an EC2 instance type and current utilization. GameLift allows AWS accounts a maximum number of instances, per instance type, per AWS Region or location, for use with GameLift. You can request an limit increase for your account by using the <b>Service limits</b> page in the GameLift console.</p>
+/// <p>The GameLift service limits for an Amazon EC2 instance type and current utilization. GameLift allows Amazon Web Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or location, for use with GameLift. You can request an limit increase for your account by using the <b>Service limits</b> page in the GameLift console.</p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <code>DescribeEC2InstanceLimits</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2InstanceLimit {
-    /// <p>The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. </p>
+    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
     pub ec2_instance_type: std::option::Option<crate::model::Ec2InstanceType>,
-    /// <p>The number of instances for the specified type and location that are currently being used by the AWS account. </p>
+    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
     pub current_instances: std::option::Option<i32>,
     /// <p>The number of instances that is allowed for the specified instance type and location.</p>
     pub instance_limit: std::option::Option<i32>,
-    /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl Ec2InstanceLimit {
-    /// <p>The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. </p>
+    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
     pub fn ec2_instance_type(&self) -> std::option::Option<&crate::model::Ec2InstanceType> {
         self.ec2_instance_type.as_ref()
     }
-    /// <p>The number of instances for the specified type and location that are currently being used by the AWS account. </p>
+    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
     pub fn current_instances(&self) -> std::option::Option<i32> {
         self.current_instances
     }
@@ -12711,7 +12803,7 @@ impl Ec2InstanceLimit {
     pub fn instance_limit(&self) -> std::option::Option<i32> {
         self.instance_limit
     }
-    /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -12738,12 +12830,12 @@ pub mod ec2_instance_limit {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. </p>
+        /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
         pub fn ec2_instance_type(mut self, input: crate::model::Ec2InstanceType) -> Self {
             self.ec2_instance_type = Some(input);
             self
         }
-        /// <p>The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. </p>
+        /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
         pub fn set_ec2_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -12751,12 +12843,12 @@ pub mod ec2_instance_limit {
             self.ec2_instance_type = input;
             self
         }
-        /// <p>The number of instances for the specified type and location that are currently being used by the AWS account. </p>
+        /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
         pub fn current_instances(mut self, input: i32) -> Self {
             self.current_instances = Some(input);
             self
         }
-        /// <p>The number of instances for the specified type and location that are currently being used by the AWS account. </p>
+        /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
         pub fn set_current_instances(mut self, input: std::option::Option<i32>) -> Self {
             self.current_instances = input;
             self
@@ -12771,12 +12863,12 @@ pub mod ec2_instance_limit {
             self.instance_limit = input;
             self
         }
-        /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -13001,27 +13093,27 @@ impl TargetTrackingConfiguration {
 }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p>
-/// <p>An EC2 launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group with <code>CreateGameServerGroup</code>. </p>
+/// <p>An Amazon EC2 launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group with <code>CreateGameServerGroup</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplateSpecification {
-    /// <p>A unique identifier for an existing EC2 launch template.</p>
+    /// <p>A unique identifier for an existing Amazon EC2 launch template.</p>
     pub launch_template_id: std::option::Option<std::string::String>,
-    /// <p>A readable identifier for an existing EC2 launch template. </p>
+    /// <p>A readable identifier for an existing Amazon EC2 launch template. </p>
     pub launch_template_name: std::option::Option<std::string::String>,
-    /// <p>The version of the EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
+    /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon Elastic Compute Cloud, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
     pub version: std::option::Option<std::string::String>,
 }
 impl LaunchTemplateSpecification {
-    /// <p>A unique identifier for an existing EC2 launch template.</p>
+    /// <p>A unique identifier for an existing Amazon EC2 launch template.</p>
     pub fn launch_template_id(&self) -> std::option::Option<&str> {
         self.launch_template_id.as_deref()
     }
-    /// <p>A readable identifier for an existing EC2 launch template. </p>
+    /// <p>A readable identifier for an existing Amazon EC2 launch template. </p>
     pub fn launch_template_name(&self) -> std::option::Option<&str> {
         self.launch_template_name.as_deref()
     }
-    /// <p>The version of the EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
+    /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon Elastic Compute Cloud, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -13046,12 +13138,12 @@ pub mod launch_template_specification {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for an existing EC2 launch template.</p>
+        /// <p>A unique identifier for an existing Amazon EC2 launch template.</p>
         pub fn launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_template_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for an existing EC2 launch template.</p>
+        /// <p>A unique identifier for an existing Amazon EC2 launch template.</p>
         pub fn set_launch_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13059,12 +13151,12 @@ pub mod launch_template_specification {
             self.launch_template_id = input;
             self
         }
-        /// <p>A readable identifier for an existing EC2 launch template. </p>
+        /// <p>A readable identifier for an existing Amazon EC2 launch template. </p>
         pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_template_name = Some(input.into());
             self
         }
-        /// <p>A readable identifier for an existing EC2 launch template. </p>
+        /// <p>A readable identifier for an existing Amazon EC2 launch template. </p>
         pub fn set_launch_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13072,12 +13164,12 @@ pub mod launch_template_specification {
             self.launch_template_name = input;
             self
         }
-        /// <p>The version of the EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
+        /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon Elastic Compute Cloud, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of the EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
+        /// <p>The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon Elastic Compute Cloud, you can specify a default version for a launch template. If none is set, the default is the first version created.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -13101,15 +13193,15 @@ impl LaunchTemplateSpecification {
 
 /// <p>A remote location where a multi-location fleet can deploy EC2 instances for game hosting. </p>
 /// <p> <b>Related actions</b> </p>
-/// <p> <code>CreateFleet</code> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html">CreateFleet</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LocationConfiguration {
-    /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl LocationConfiguration {
-    /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -13130,12 +13222,12 @@ pub mod location_configuration {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self

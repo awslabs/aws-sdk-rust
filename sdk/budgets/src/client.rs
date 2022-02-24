@@ -276,6 +276,22 @@ impl Client {
     ) -> fluent_builders::DescribeBudgetActionsForBudget {
         fluent_builders::DescribeBudgetActionsForBudget::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeBudgetNotificationsForAccount`](crate::client::fluent_builders::DescribeBudgetNotificationsForAccount) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetNotificationsForAccount::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetNotificationsForAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetNotificationsForAccount::set_account_id): <p>The account ID of the user. It's a 12-digit number.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBudgetNotificationsForAccount::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBudgetNotificationsForAccount::set_max_results): <p> An integer that shows how many budget name entries a paginated response contains. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetNotificationsForAccount::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBudgetNotificationsForAccount::set_next_token): <p> A generic string.</p>
+    /// - On success, responds with [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput) with field(s):
+    ///   - [`budget_notifications_for_account(Option<Vec<BudgetNotificationsForAccount>>)`](crate::output::DescribeBudgetNotificationsForAccountOutput::budget_notifications_for_account): <p> A list of budget names and associated notifications for an account. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeBudgetNotificationsForAccountOutput::next_token): <p> A generic string.</p>
+    /// - On failure, responds with [`SdkError<DescribeBudgetNotificationsForAccountError>`](crate::error::DescribeBudgetNotificationsForAccountError)
+    pub fn describe_budget_notifications_for_account(
+        &self,
+    ) -> fluent_builders::DescribeBudgetNotificationsForAccount {
+        fluent_builders::DescribeBudgetNotificationsForAccount::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeBudgetPerformanceHistory`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::into_paginator).
     ///
@@ -1562,6 +1578,92 @@ pub mod fluent_builders {
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p> A generic string.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> A generic string.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeBudgetNotificationsForAccount`.
+    ///
+    /// <p> Lists the budget names and notifications that are associated with an account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeBudgetNotificationsForAccount {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_budget_notifications_for_account_input::Builder,
+    }
+    impl DescribeBudgetNotificationsForAccount {
+        /// Creates a new `DescribeBudgetNotificationsForAccount`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeBudgetNotificationsForAccountOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeBudgetNotificationsForAccountError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBudgetNotificationsForAccountPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeBudgetNotificationsForAccountPaginator {
+            crate::paginator::DescribeBudgetNotificationsForAccountPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
+            self
+        }
+        /// <p>The account ID of the user. It's a 12-digit number.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p> An integer that shows how many budget name entries a paginated response contains. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p> An integer that shows how many budget name entries a paginated response contains. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self

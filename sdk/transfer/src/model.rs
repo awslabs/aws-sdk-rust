@@ -102,9 +102,7 @@ impl PosixProfile {
 
 /// <p>Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.</p>
 /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-/// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-/// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-/// </note>
+/// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HomeDirectoryMapEntry {
@@ -2945,6 +2943,12 @@ pub struct TagStepDetails {
     pub name: std::option::Option<std::string::String>,
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// </ul>
+    pub source_file_location: std::option::Option<std::string::String>,
 }
 impl TagStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
@@ -2955,12 +2959,21 @@ impl TagStepDetails {
     pub fn tags(&self) -> std::option::Option<&[crate::model::S3Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// </ul>
+    pub fn source_file_location(&self) -> std::option::Option<&str> {
+        self.source_file_location.as_deref()
+    }
 }
 impl std::fmt::Debug for TagStepDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagStepDetails");
         formatter.field("name", &self.name);
         formatter.field("tags", &self.tags);
+        formatter.field("source_file_location", &self.source_file_location);
         formatter.finish()
     }
 }
@@ -2972,6 +2985,7 @@ pub mod tag_step_details {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+        pub(crate) source_file_location: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the step, used as an identifier.</p>
@@ -3003,11 +3017,33 @@ pub mod tag_step_details {
             self.tags = input;
             self
         }
+        /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+        /// <ul>
+        /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+        /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+        /// </ul>
+        pub fn source_file_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_file_location = Some(input.into());
+            self
+        }
+        /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+        /// <ul>
+        /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+        /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+        /// </ul>
+        pub fn set_source_file_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_file_location = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TagStepDetails`](crate::model::TagStepDetails)
         pub fn build(self) -> crate::model::TagStepDetails {
             crate::model::TagStepDetails {
                 name: self.name,
                 tags: self.tags,
+                source_file_location: self.source_file_location,
             }
         }
     }
@@ -3098,17 +3134,32 @@ impl S3Tag {
 pub struct DeleteStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// </ul>
+    pub source_file_location: std::option::Option<std::string::String>,
 }
 impl DeleteStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// </ul>
+    pub fn source_file_location(&self) -> std::option::Option<&str> {
+        self.source_file_location.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStepDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStepDetails");
         formatter.field("name", &self.name);
+        formatter.field("source_file_location", &self.source_file_location);
         formatter.finish()
     }
 }
@@ -3119,6 +3170,7 @@ pub mod delete_step_details {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) source_file_location: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the step, used as an identifier.</p>
@@ -3131,9 +3183,33 @@ pub mod delete_step_details {
             self.name = input;
             self
         }
+        /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+        /// <ul>
+        /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+        /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+        /// </ul>
+        pub fn source_file_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_file_location = Some(input.into());
+            self
+        }
+        /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+        /// <ul>
+        /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+        /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+        /// </ul>
+        pub fn set_source_file_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_file_location = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteStepDetails`](crate::model::DeleteStepDetails)
         pub fn build(self) -> crate::model::DeleteStepDetails {
-            crate::model::DeleteStepDetails { name: self.name }
+            crate::model::DeleteStepDetails {
+                name: self.name,
+                source_file_location: self.source_file_location,
+            }
         }
     }
 }
@@ -3154,6 +3230,12 @@ pub struct CustomStepDetails {
     pub target: std::option::Option<std::string::String>,
     /// <p>Timeout, in seconds, for the step.</p>
     pub timeout_seconds: std::option::Option<i32>,
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// </ul>
+    pub source_file_location: std::option::Option<std::string::String>,
 }
 impl CustomStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
@@ -3168,6 +3250,14 @@ impl CustomStepDetails {
     pub fn timeout_seconds(&self) -> std::option::Option<i32> {
         self.timeout_seconds
     }
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// </ul>
+    pub fn source_file_location(&self) -> std::option::Option<&str> {
+        self.source_file_location.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomStepDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3175,6 +3265,7 @@ impl std::fmt::Debug for CustomStepDetails {
         formatter.field("name", &self.name);
         formatter.field("target", &self.target);
         formatter.field("timeout_seconds", &self.timeout_seconds);
+        formatter.field("source_file_location", &self.source_file_location);
         formatter.finish()
     }
 }
@@ -3187,6 +3278,7 @@ pub mod custom_step_details {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<std::string::String>,
         pub(crate) timeout_seconds: std::option::Option<i32>,
+        pub(crate) source_file_location: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the step, used as an identifier.</p>
@@ -3219,12 +3311,34 @@ pub mod custom_step_details {
             self.timeout_seconds = input;
             self
         }
+        /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+        /// <ul>
+        /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+        /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+        /// </ul>
+        pub fn source_file_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_file_location = Some(input.into());
+            self
+        }
+        /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+        /// <ul>
+        /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+        /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+        /// </ul>
+        pub fn set_source_file_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_file_location = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CustomStepDetails`](crate::model::CustomStepDetails)
         pub fn build(self) -> crate::model::CustomStepDetails {
             crate::model::CustomStepDetails {
                 name: self.name,
                 target: self.target,
                 timeout_seconds: self.timeout_seconds,
+                source_file_location: self.source_file_location,
             }
         }
     }
@@ -3242,17 +3356,23 @@ impl CustomStepDetails {
 pub struct CopyStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+    /// <p>Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.</p>
     pub destination_file_location: std::option::Option<crate::model::InputFileLocation>,
     /// <p>A flag that indicates whether or not to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
     pub overwrite_existing: std::option::Option<crate::model::OverwriteExisting>,
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// </ul>
+    pub source_file_location: std::option::Option<std::string::String>,
 }
 impl CopyStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+    /// <p>Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.</p>
     pub fn destination_file_location(
         &self,
     ) -> std::option::Option<&crate::model::InputFileLocation> {
@@ -3262,6 +3382,14 @@ impl CopyStepDetails {
     pub fn overwrite_existing(&self) -> std::option::Option<&crate::model::OverwriteExisting> {
         self.overwrite_existing.as_ref()
     }
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+    /// </ul>
+    pub fn source_file_location(&self) -> std::option::Option<&str> {
+        self.source_file_location.as_deref()
+    }
 }
 impl std::fmt::Debug for CopyStepDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3269,6 +3397,7 @@ impl std::fmt::Debug for CopyStepDetails {
         formatter.field("name", &self.name);
         formatter.field("destination_file_location", &self.destination_file_location);
         formatter.field("overwrite_existing", &self.overwrite_existing);
+        formatter.field("source_file_location", &self.source_file_location);
         formatter.finish()
     }
 }
@@ -3281,6 +3410,7 @@ pub mod copy_step_details {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) destination_file_location: std::option::Option<crate::model::InputFileLocation>,
         pub(crate) overwrite_existing: std::option::Option<crate::model::OverwriteExisting>,
+        pub(crate) source_file_location: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the step, used as an identifier.</p>
@@ -3293,12 +3423,12 @@ pub mod copy_step_details {
             self.name = input;
             self
         }
-        /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+        /// <p>Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.</p>
         pub fn destination_file_location(mut self, input: crate::model::InputFileLocation) -> Self {
             self.destination_file_location = Some(input);
             self
         }
-        /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+        /// <p>Specifies the location for the file being copied. Only applicable for Copy type workflow steps. Use <code>${Transfer:username}</code> in this field to parametrize the destination prefix by username.</p>
         pub fn set_destination_file_location(
             mut self,
             input: std::option::Option<crate::model::InputFileLocation>,
@@ -3319,12 +3449,34 @@ pub mod copy_step_details {
             self.overwrite_existing = input;
             self
         }
+        /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+        /// <ul>
+        /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+        /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+        /// </ul>
+        pub fn source_file_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_file_location = Some(input.into());
+            self
+        }
+        /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+        /// <ul>
+        /// <li> <p>Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+        /// <li> <p>Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.</p> </li>
+        /// </ul>
+        pub fn set_source_file_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_file_location = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CopyStepDetails`](crate::model::CopyStepDetails)
         pub fn build(self) -> crate::model::CopyStepDetails {
             crate::model::CopyStepDetails {
                 name: self.name,
                 destination_file_location: self.destination_file_location,
                 overwrite_existing: self.overwrite_existing,
+                source_file_location: self.source_file_location,
             }
         }
     }
@@ -4013,6 +4165,10 @@ pub struct DescribedServer {
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub post_authentication_login_banner: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
     /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
@@ -4083,6 +4239,14 @@ impl DescribedServer {
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn post_authentication_login_banner(&self) -> std::option::Option<&str> {
+        self.post_authentication_login_banner.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn pre_authentication_login_banner(&self) -> std::option::Option<&str> {
+        self.pre_authentication_login_banner.as_deref()
+    }
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
     /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
@@ -4131,6 +4295,14 @@ impl std::fmt::Debug for DescribedServer {
         formatter.field("identity_provider_details", &self.identity_provider_details);
         formatter.field("identity_provider_type", &self.identity_provider_type);
         formatter.field("logging_role", &self.logging_role);
+        formatter.field(
+            "post_authentication_login_banner",
+            &self.post_authentication_login_banner,
+        );
+        formatter.field(
+            "pre_authentication_login_banner",
+            &self.pre_authentication_login_banner,
+        );
         formatter.field("protocols", &self.protocols);
         formatter.field("security_policy_name", &self.security_policy_name);
         formatter.field("server_id", &self.server_id);
@@ -4158,6 +4330,8 @@ pub mod described_server {
             std::option::Option<crate::model::IdentityProviderDetails>,
         pub(crate) identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
         pub(crate) logging_role: std::option::Option<std::string::String>,
+        pub(crate) post_authentication_login_banner: std::option::Option<std::string::String>,
+        pub(crate) pre_authentication_login_banner: std::option::Option<std::string::String>,
         pub(crate) protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
         pub(crate) security_policy_name: std::option::Option<std::string::String>,
         pub(crate) server_id: std::option::Option<std::string::String>,
@@ -4296,6 +4470,38 @@ pub mod described_server {
             self.logging_role = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn post_authentication_login_banner(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.post_authentication_login_banner = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_post_authentication_login_banner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.post_authentication_login_banner = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn pre_authentication_login_banner(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.pre_authentication_login_banner = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_pre_authentication_login_banner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pre_authentication_login_banner = input;
+            self
+        }
         /// Appends an item to `protocols`.
         ///
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -4415,6 +4621,8 @@ pub mod described_server {
                 identity_provider_details: self.identity_provider_details,
                 identity_provider_type: self.identity_provider_type,
                 logging_role: self.logging_role,
+                post_authentication_login_banner: self.post_authentication_login_banner,
+                pre_authentication_login_banner: self.pre_authentication_login_banner,
                 protocols: self.protocols,
                 security_policy_name: self.security_policy_name,
                 server_id: self.server_id,

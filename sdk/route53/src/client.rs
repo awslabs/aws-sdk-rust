@@ -1011,6 +1011,15 @@ pub mod fluent_builders {
     /// <p>To perform the association, the VPC and the private hosted zone must already exist. You can't convert a public hosted zone into a private hosted zone.</p>
     /// </important> <note>
     /// <p>If you want to associate a VPC that was created by using one Amazon Web Services account with a private hosted zone that was created by using a different account, the Amazon Web Services account that created the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code> request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code> request.</p>
+    /// </note> <note>
+    /// <p>When granting access, the hosted zone and the Amazon VPC must belong to the same partition. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition.</p>
+    /// <p>The following are the supported partitions:</p>
+    /// <ul>
+    /// <li> <p> <code>aws</code> - Amazon Web Services Regions</p> </li>
+    /// <li> <p> <code>aws-cn</code> - China Regions</p> </li>
+    /// <li> <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateVPCWithHostedZone {
@@ -1104,7 +1113,7 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li>
     /// <li> <p> <code>DELETE</code>: Deletes an existing resource record set that has the specified values.</p> </li>
-    /// <li> <p> <code>UPSERT</code>: If a resource record set does not already exist, Amazon Web Services creates it. If a resource set does exist, Route 53 updates it with the values in the request. </p> </li>
+    /// <li> <p> <code>UPSERT</code>: If a resource set exists Route 53 updates it with the values in the request. </p> </li>
     /// </ul>
     /// <p> <b>Syntaxes for Creating, Updating, and Deleting Resource Record Sets</b> </p>
     /// <p>The syntax for a request depends on the type of resource record set that you want to create, delete, or update, such as weighted, alias, or failover. The XML elements in your request must appear in the order listed in the syntax. </p>
@@ -1395,7 +1404,16 @@ pub mod fluent_builders {
     /// <li> <p>If your domain is registered with a registrar other than Route 53, you must update the name servers with your registrar to make Route 53 the DNS service for the domain. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>. </p> </li>
     /// </ul>
     /// <p>When you submit a <code>CreateHostedZone</code> request, the initial status of the hosted zone is <code>PENDING</code>. For public hosted zones, this means that the NS and SOA records are not yet available on all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to <code>INSYNC</code>.</p>
-    /// <p>The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code> permission.</p>
+    /// <p>The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code> permission.</p> <note>
+    /// <p>When creating private hosted zones, the Amazon VPC must belong to the same partition where the hosted zone is created. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition.</p>
+    /// <p>The following are the supported partitions:</p>
+    /// <ul>
+    /// <li> <p> <code>aws</code> - Amazon Web Services Regions</p> </li>
+    /// <li> <p> <code>aws-cn</code> - China Regions</p> </li>
+    /// <li> <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHostedZone {
         handle: std::sync::Arc<super::Handle>,
@@ -1712,7 +1730,11 @@ pub mod fluent_builders {
     /// <li> <p>You must use the same Amazon Web Services account to create the log group and the hosted zone that you want to configure query logging for.</p> </li>
     /// <li> <p>When you create log groups for query logging, we recommend that you use a consistent prefix, for example:</p> <p> <code>/aws/route53/<i>hosted zone name</i> </code> </p> <p>In the next step, you'll create a resource policy, which controls access to one or more log groups and the associated Amazon Web Services resources, such as Route 53 hosted zones. There's a limit on the number of resource policies that you can create, so we recommend that you use a consistent prefix so you can use the same resource policy for all the log groups that you create for query logging.</p> </li>
     /// </ul> </li>
-    /// <li> <p>Create a CloudWatch Logs resource policy, and give it the permissions that Route 53 needs to create log streams and to send query logs to log streams. For the value of <code>Resource</code>, specify the ARN for the log group that you created in the previous step. To use the same resource policy for all the CloudWatch Logs log groups that you created for query logging configurations, replace the hosted zone name with <code>*</code>, for example:</p> <p> <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/*</code> </p> <note>
+    /// <li> <p>Create a CloudWatch Logs resource policy, and give it the permissions that Route 53 needs to create log streams and to send query logs to log streams. For the value of <code>Resource</code>, specify the ARN for the log group that you created in the previous step. To use the same resource policy for all the CloudWatch Logs log groups that you created for query logging configurations, replace the hosted zone name with <code>*</code>, for example:</p> <p> <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/*</code> </p> <p>To avoid the confused deputy problem, a security issue where an entity without a permission for an action can coerce a more-privileged entity to perform it, you can optionally limit the permissions that a service has to a resource in a resource-based policy by supplying the following values:</p>
+    /// <ul>
+    /// <li> <p>For <code>aws:SourceArn</code>, supply the hosted zone ARN used in creating the query logging configuration. For example, <code>aws:SourceArn: arn:aws:route53:::hostedzone/hosted zone ID</code>.</p> </li>
+    /// <li> <p>For <code>aws:SourceAccount</code>, supply the account ID for the account that creates the query logging configuration. For example, <code>aws:SourceAccount:111111111111</code>.</p> </li>
+    /// </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The confused deputy problem</a> in the <i>Amazon Web Services IAM User Guide</i>.</p> <note>
     /// <p>You can't use the CloudWatch console to create or edit a resource policy. You must use the CloudWatch API, one of the Amazon Web Services SDKs, or the CLI.</p>
     /// </note> </li>
     /// </ol>
@@ -2856,7 +2878,16 @@ pub mod fluent_builders {
     /// <li> <p>You can't convert a private hosted zone into a public hosted zone.</p> </li>
     /// <li> <p>You can submit a <code>DisassociateVPCFromHostedZone</code> request using either the account that created the hosted zone or the account that created the Amazon VPC.</p> </li>
     /// <li> <p>Some services, such as Cloud Map and Amazon Elastic File System (Amazon EFS) automatically create hosted zones and associate VPCs with the hosted zones. A service can create a hosted zone using your account or using its own account. You can disassociate a VPC from a hosted zone only if the service created the hosted zone using your account.</p> <p>When you run <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">DisassociateVPCFromHostedZone</a>, if the hosted zone has a value for <code>OwningAccount</code>, you can use <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for <code>OwningService</code>, you can't use <code>DisassociateVPCFromHostedZone</code>.</p> </li>
+    /// </ul> <note>
+    /// <p>When revoking access, the hosted zone and the Amazon VPC must belong to the same partition. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition.</p>
+    /// <p>The following are the supported partitions:</p>
+    /// <ul>
+    /// <li> <p> <code>aws</code> - Amazon Web Services Regions</p> </li>
+    /// <li> <p> <code>aws-cn</code> - China Regions</p> </li>
+    /// <li> <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
     /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateVPCFromHostedZone {
         handle: std::sync::Arc<super::Handle>,
@@ -4413,7 +4444,16 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p>An <code>OwningAccount</code> element, which contains the account number of either the current Amazon Web Services account or another Amazon Web Services account. Some services, such as Cloud Map, create hosted zones using the current account. </p> </li>
     /// <li> <p>An <code>OwningService</code> element, which identifies the Amazon Web Services service that created and owns the hosted zone. For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
+    /// </ul> <note>
+    /// <p>When listing private hosted zones, the hosted zone and the Amazon VPC must belong to the same partition where the hosted zones were created. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition.</p>
+    /// <p>The following are the supported partitions:</p>
+    /// <ul>
+    /// <li> <p> <code>aws</code> - Amazon Web Services Regions</p> </li>
+    /// <li> <p> <code>aws-cn</code> - China Regions</p> </li>
+    /// <li> <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
     /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHostedZonesByVPC {
         handle: std::sync::Arc<super::Handle>,

@@ -1087,11 +1087,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionCode::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::UpdateFunctionCode::set_function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    ///   - [`zip_file(Blob)`](crate::client::fluent_builders::UpdateFunctionCode::zip_file) / [`set_zip_file(Option<Blob>)`](crate::client::fluent_builders::UpdateFunctionCode::set_zip_file): <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
-    ///   - [`s3_bucket(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionCode::s3_bucket) / [`set_s3_bucket(Option<String>)`](crate::client::fluent_builders::UpdateFunctionCode::set_s3_bucket): <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
-    ///   - [`s3_key(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionCode::s3_key) / [`set_s3_key(Option<String>)`](crate::client::fluent_builders::UpdateFunctionCode::set_s3_key): <p>The Amazon S3 key of the deployment package.</p>
+    ///   - [`zip_file(Blob)`](crate::client::fluent_builders::UpdateFunctionCode::zip_file) / [`set_zip_file(Option<Blob>)`](crate::client::fluent_builders::UpdateFunctionCode::set_zip_file): <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
+    ///   - [`s3_bucket(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionCode::s3_bucket) / [`set_s3_bucket(Option<String>)`](crate::client::fluent_builders::UpdateFunctionCode::set_s3_bucket): <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
+    ///   - [`s3_key(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionCode::s3_key) / [`set_s3_key(Option<String>)`](crate::client::fluent_builders::UpdateFunctionCode::set_s3_key): <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
     ///   - [`s3_object_version(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionCode::s3_object_version) / [`set_s3_object_version(Option<String>)`](crate::client::fluent_builders::UpdateFunctionCode::set_s3_object_version): <p>For versioned objects, the version of the deployment package object to use.</p>
-    ///   - [`image_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionCode::image_uri) / [`set_image_uri(Option<String>)`](crate::client::fluent_builders::UpdateFunctionCode::set_image_uri): <p>URI of a container image in the Amazon ECR registry.</p>
+    ///   - [`image_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionCode::image_uri) / [`set_image_uri(Option<String>)`](crate::client::fluent_builders::UpdateFunctionCode::set_image_uri): <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     ///   - [`publish(bool)`](crate::client::fluent_builders::UpdateFunctionCode::publish) / [`set_publish(bool)`](crate::client::fluent_builders::UpdateFunctionCode::set_publish): <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     ///   - [`dry_run(bool)`](crate::client::fluent_builders::UpdateFunctionCode::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::UpdateFunctionCode::set_dry_run): <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
     ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFunctionCode::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::UpdateFunctionCode::set_revision_id): <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
@@ -6709,6 +6709,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFunctionCode`.
     ///
     /// <p>Updates a Lambda function's code. If code signing is enabled for the function, the code package must be signed by a trusted publisher. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring code signing</a>.</p>
+    /// <p>If the function's package type is <code>Image</code>, you must specify the code package in <code>ImageUri</code> as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry. </p>
+    /// <p>If the function's package type is <code>Zip</code>, you must specify the deployment package as a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip file archive</a>. Enter the Amazon S3 bucket and key of the code .zip file location. You can also provide the function code inline using the <code>ZipFile</code> field. </p>
+    /// <p>The code in the deployment package must be compatible with the target instruction set architecture of the function (<code>x86-64</code> or <code>arm64</code>). </p>
     /// <p>The function's code is locked when you publish a version. You can't modify the code of a published version, only the unpublished version.</p> <note>
     /// <p>For a function defined as a container image, Lambda resolves the image tag to an image digest. In Amazon ECR, if you update the image tag to a new image, Lambda does not automatically update the function.</p>
     /// </note>
@@ -6778,32 +6781,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_function_name(input);
             self
         }
-        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.zip_file(input);
             self
         }
-        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_zip_file(input);
             self
         }
-        /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
+        /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_bucket(input.into());
             self
         }
-        /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
+        /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_s3_bucket(input);
             self
         }
-        /// <p>The Amazon S3 key of the deployment package.</p>
+        /// <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_key(input.into());
             self
         }
-        /// <p>The Amazon S3 key of the deployment package.</p>
+        /// <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_s3_key(input);
             self
@@ -6821,12 +6824,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_object_version(input);
             self
         }
-        /// <p>URI of a container image in the Amazon ECR registry.</p>
+        /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
         pub fn image_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_uri(input.into());
             self
         }
-        /// <p>URI of a container image in the Amazon ECR registry.</p>
+        /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
         pub fn set_image_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_image_uri(input);
             self

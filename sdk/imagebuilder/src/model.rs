@@ -549,6 +549,9 @@ pub struct Distribution {
         std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
+    /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+    pub fast_launch_configurations:
+        std::option::Option<std::vec::Vec<crate::model::FastLaunchConfiguration>>,
 }
 impl Distribution {
     /// <p>The target Region.</p>
@@ -583,6 +586,12 @@ impl Distribution {
     ) -> std::option::Option<&crate::model::S3ExportConfiguration> {
         self.s3_export_configuration.as_ref()
     }
+    /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+    pub fn fast_launch_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::FastLaunchConfiguration]> {
+        self.fast_launch_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for Distribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -605,6 +614,10 @@ impl std::fmt::Debug for Distribution {
             &self.launch_template_configurations,
         );
         formatter.field("s3_export_configuration", &self.s3_export_configuration);
+        formatter.field(
+            "fast_launch_configurations",
+            &self.fast_launch_configurations,
+        );
         formatter.finish()
     }
 }
@@ -625,6 +638,8 @@ pub mod distribution {
             std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
         pub(crate) s3_export_configuration:
             std::option::Option<crate::model::S3ExportConfiguration>,
+        pub(crate) fast_launch_configurations:
+            std::option::Option<std::vec::Vec<crate::model::FastLaunchConfiguration>>,
     }
     impl Builder {
         /// <p>The target Region.</p>
@@ -726,6 +741,28 @@ pub mod distribution {
             self.s3_export_configuration = input;
             self
         }
+        /// Appends an item to `fast_launch_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_fast_launch_configurations`](Self::set_fast_launch_configurations).
+        ///
+        /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+        pub fn fast_launch_configurations(
+            mut self,
+            input: crate::model::FastLaunchConfiguration,
+        ) -> Self {
+            let mut v = self.fast_launch_configurations.unwrap_or_default();
+            v.push(input);
+            self.fast_launch_configurations = Some(v);
+            self
+        }
+        /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
+        pub fn set_fast_launch_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FastLaunchConfiguration>>,
+        ) -> Self {
+            self.fast_launch_configurations = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Distribution`](crate::model::Distribution)
         pub fn build(self) -> crate::model::Distribution {
             crate::model::Distribution {
@@ -735,6 +772,7 @@ pub mod distribution {
                 license_configuration_arns: self.license_configuration_arns,
                 launch_template_configurations: self.launch_template_configurations,
                 s3_export_configuration: self.s3_export_configuration,
+                fast_launch_configurations: self.fast_launch_configurations,
             }
         }
     }
@@ -743,6 +781,311 @@ impl Distribution {
     /// Creates a new builder-style object to manufacture [`Distribution`](crate::model::Distribution)
     pub fn builder() -> crate::model::distribution::Builder {
         crate::model::distribution::Builder::default()
+    }
+}
+
+/// <p>Define and configure faster launching for output Windows AMIs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FastLaunchConfiguration {
+    /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
+    pub enabled: bool,
+    /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
+    pub snapshot_configuration: std::option::Option<crate::model::FastLaunchSnapshotConfiguration>,
+    /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
+    pub max_parallel_launches: std::option::Option<i32>,
+    /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
+    pub launch_template: std::option::Option<crate::model::FastLaunchLaunchTemplateSpecification>,
+    /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
+    pub account_id: std::option::Option<std::string::String>,
+}
+impl FastLaunchConfiguration {
+    /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
+    pub fn snapshot_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FastLaunchSnapshotConfiguration> {
+        self.snapshot_configuration.as_ref()
+    }
+    /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
+    pub fn max_parallel_launches(&self) -> std::option::Option<i32> {
+        self.max_parallel_launches
+    }
+    /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
+    pub fn launch_template(
+        &self,
+    ) -> std::option::Option<&crate::model::FastLaunchLaunchTemplateSpecification> {
+        self.launch_template.as_ref()
+    }
+    /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
+impl std::fmt::Debug for FastLaunchConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FastLaunchConfiguration");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("snapshot_configuration", &self.snapshot_configuration);
+        formatter.field("max_parallel_launches", &self.max_parallel_launches);
+        formatter.field("launch_template", &self.launch_template);
+        formatter.field("account_id", &self.account_id);
+        formatter.finish()
+    }
+}
+/// See [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration)
+pub mod fast_launch_configuration {
+    /// A builder for [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) snapshot_configuration:
+            std::option::Option<crate::model::FastLaunchSnapshotConfiguration>,
+        pub(crate) max_parallel_launches: std::option::Option<i32>,
+        pub(crate) launch_template:
+            std::option::Option<crate::model::FastLaunchLaunchTemplateSpecification>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
+        pub fn snapshot_configuration(
+            mut self,
+            input: crate::model::FastLaunchSnapshotConfiguration,
+        ) -> Self {
+            self.snapshot_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration settings for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled.</p>
+        pub fn set_snapshot_configuration(
+            mut self,
+            input: std::option::Option<crate::model::FastLaunchSnapshotConfiguration>,
+        ) -> Self {
+            self.snapshot_configuration = input;
+            self
+        }
+        /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
+        pub fn max_parallel_launches(mut self, input: i32) -> Self {
+            self.max_parallel_launches = Some(input);
+            self
+        }
+        /// <p>The maximum number of parallel instances that are launched for creating resources.</p>
+        pub fn set_max_parallel_launches(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_parallel_launches = input;
+            self
+        }
+        /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
+        pub fn launch_template(
+            mut self,
+            input: crate::model::FastLaunchLaunchTemplateSpecification,
+        ) -> Self {
+            self.launch_template = Some(input);
+            self
+        }
+        /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots.</p>
+        pub fn set_launch_template(
+            mut self,
+            input: std::option::Option<crate::model::FastLaunchLaunchTemplateSpecification>,
+        ) -> Self {
+            self.launch_template = input;
+            self
+        }
+        /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The owner account ID for the fast-launch enabled Windows AMI.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration)
+        pub fn build(self) -> crate::model::FastLaunchConfiguration {
+            crate::model::FastLaunchConfiguration {
+                enabled: self.enabled.unwrap_or_default(),
+                snapshot_configuration: self.snapshot_configuration,
+                max_parallel_launches: self.max_parallel_launches,
+                launch_template: self.launch_template,
+                account_id: self.account_id,
+            }
+        }
+    }
+}
+impl FastLaunchConfiguration {
+    /// Creates a new builder-style object to manufacture [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration)
+    pub fn builder() -> crate::model::fast_launch_configuration::Builder {
+        crate::model::fast_launch_configuration::Builder::default()
+    }
+}
+
+/// <p>Identifies the launch template that the associated Windows AMI uses for launching an instance when faster launching is enabled.</p> <note>
+/// <p>You can specify either the <code>launchTemplateName</code> or the <code>launchTemplateId</code>, but not both.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FastLaunchLaunchTemplateSpecification {
+    /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
+    pub launch_template_id: std::option::Option<std::string::String>,
+    /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
+    pub launch_template_name: std::option::Option<std::string::String>,
+    /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
+    pub launch_template_version: std::option::Option<std::string::String>,
+}
+impl FastLaunchLaunchTemplateSpecification {
+    /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
+    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+        self.launch_template_id.as_deref()
+    }
+    /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
+    pub fn launch_template_name(&self) -> std::option::Option<&str> {
+        self.launch_template_name.as_deref()
+    }
+    /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
+    pub fn launch_template_version(&self) -> std::option::Option<&str> {
+        self.launch_template_version.as_deref()
+    }
+}
+impl std::fmt::Debug for FastLaunchLaunchTemplateSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FastLaunchLaunchTemplateSpecification");
+        formatter.field("launch_template_id", &self.launch_template_id);
+        formatter.field("launch_template_name", &self.launch_template_name);
+        formatter.field("launch_template_version", &self.launch_template_version);
+        formatter.finish()
+    }
+}
+/// See [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification)
+pub mod fast_launch_launch_template_specification {
+    /// A builder for [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_template_id: std::option::Option<std::string::String>,
+        pub(crate) launch_template_name: std::option::Option<std::string::String>,
+        pub(crate) launch_template_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
+        pub fn launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launch_template_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the launch template to use for faster launching for a Windows AMI.</p>
+        pub fn set_launch_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_template_id = input;
+            self
+        }
+        /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
+        pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launch_template_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the launch template to use for faster launching for a Windows AMI.</p>
+        pub fn set_launch_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_template_name = input;
+            self
+        }
+        /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
+        pub fn launch_template_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launch_template_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the launch template to use for faster launching for a Windows AMI.</p>
+        pub fn set_launch_template_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_template_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification)
+        pub fn build(self) -> crate::model::FastLaunchLaunchTemplateSpecification {
+            crate::model::FastLaunchLaunchTemplateSpecification {
+                launch_template_id: self.launch_template_id,
+                launch_template_name: self.launch_template_name,
+                launch_template_version: self.launch_template_version,
+            }
+        }
+    }
+}
+impl FastLaunchLaunchTemplateSpecification {
+    /// Creates a new builder-style object to manufacture [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification)
+    pub fn builder() -> crate::model::fast_launch_launch_template_specification::Builder {
+        crate::model::fast_launch_launch_template_specification::Builder::default()
+    }
+}
+
+/// <p>Configuration settings for creating and managing pre-provisioned snapshots for a fast-launch enabled Windows AMI.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FastLaunchSnapshotConfiguration {
+    /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
+    pub target_resource_count: std::option::Option<i32>,
+}
+impl FastLaunchSnapshotConfiguration {
+    /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
+    pub fn target_resource_count(&self) -> std::option::Option<i32> {
+        self.target_resource_count
+    }
+}
+impl std::fmt::Debug for FastLaunchSnapshotConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FastLaunchSnapshotConfiguration");
+        formatter.field("target_resource_count", &self.target_resource_count);
+        formatter.finish()
+    }
+}
+/// See [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration)
+pub mod fast_launch_snapshot_configuration {
+    /// A builder for [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) target_resource_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
+        pub fn target_resource_count(mut self, input: i32) -> Self {
+            self.target_resource_count = Some(input);
+            self
+        }
+        /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
+        pub fn set_target_resource_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.target_resource_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration)
+        pub fn build(self) -> crate::model::FastLaunchSnapshotConfiguration {
+            crate::model::FastLaunchSnapshotConfiguration {
+                target_resource_count: self.target_resource_count,
+            }
+        }
+    }
+}
+impl FastLaunchSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration)
+    pub fn builder() -> crate::model::fast_launch_snapshot_configuration::Builder {
+        crate::model::fast_launch_snapshot_configuration::Builder::default()
     }
 }
 
@@ -6142,8 +6485,12 @@ impl ImageRecipe {
 pub struct AdditionalInstanceConfiguration {
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
     pub systems_manager_agent: std::option::Option<crate::model::SystemsManagerAgent>,
-    /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p> <note>
-    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p>
+    /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
+    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
+    /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
+    /// <p> <i>#!/bin/bash</i> </p>
+    /// <p>mkdir -p /var/bb/</p>
+    /// <p>touch /var</p>
     /// </note>
     pub user_data_override: std::option::Option<std::string::String>,
 }
@@ -6152,8 +6499,12 @@ impl AdditionalInstanceConfiguration {
     pub fn systems_manager_agent(&self) -> std::option::Option<&crate::model::SystemsManagerAgent> {
         self.systems_manager_agent.as_ref()
     }
-    /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p> <note>
-    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p>
+    /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
+    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
+    /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
+    /// <p> <i>#!/bin/bash</i> </p>
+    /// <p>mkdir -p /var/bb/</p>
+    /// <p>touch /var</p>
     /// </note>
     pub fn user_data_override(&self) -> std::option::Option<&str> {
         self.user_data_override.as_deref()
@@ -6190,15 +6541,23 @@ pub mod additional_instance_configuration {
             self.systems_manager_agent = input;
             self
         }
-        /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p> <note>
-        /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p>
+        /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
+        /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
+        /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
+        /// <p> <i>#!/bin/bash</i> </p>
+        /// <p>mkdir -p /var/bb/</p>
+        /// <p>touch /var</p>
         /// </note>
         pub fn user_data_override(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_data_override = Some(input.into());
             self
         }
-        /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p> <note>
-        /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p>
+        /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
+        /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
+        /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
+        /// <p> <i>#!/bin/bash</i> </p>
+        /// <p>mkdir -p /var/bb/</p>
+        /// <p>touch /var</p>
         /// </note>
         pub fn set_user_data_override(
             mut self,
@@ -8293,7 +8652,7 @@ pub struct Component {
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
     /// <p>The owner of the component.</p>
     pub owner: std::option::Option<std::string::String>,
-    /// <p>The data of the component.</p>
+    /// <p>Component data contains the YAML document content for the component.</p>
     pub data: std::option::Option<std::string::String>,
     /// <p>The KMS key identifier used to encrypt the component.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -8350,7 +8709,7 @@ impl Component {
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
-    /// <p>The data of the component.</p>
+    /// <p>Component data contains the YAML document content for the component.</p>
     pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
     }
@@ -8557,12 +8916,12 @@ pub mod component {
             self.owner = input;
             self
         }
-        /// <p>The data of the component.</p>
+        /// <p>Component data contains the YAML document content for the component.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
             self.data = Some(input.into());
             self
         }
-        /// <p>The data of the component.</p>
+        /// <p>Component data contains the YAML document content for the component.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self

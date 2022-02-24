@@ -426,6 +426,36 @@ where
     }
 }
 impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeBudgetNotificationsForAccountError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeBudgetNotificationsForAccountError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
+                crate::error::DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
+                crate::error::DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+                crate::error::DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::DescribeBudgetNotificationsForAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::DescribeBudgetPerformanceHistoryError, R>>
     for Error
 where

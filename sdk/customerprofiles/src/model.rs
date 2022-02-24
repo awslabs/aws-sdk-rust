@@ -5322,6 +5322,301 @@ impl FieldSourceProfileIds {
     }
 }
 
+/// <p>A workflow in list of workflows.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWorkflowsItem {
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub workflow_type: std::option::Option<crate::model::WorkflowType>,
+    /// <p>Unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>Status of workflow execution.</p>
+    pub status: std::option::Option<crate::model::Status>,
+    /// <p>Description for workflow execution status.</p>
+    pub status_description: std::option::Option<std::string::String>,
+    /// <p>Creation timestamp for workflow.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Last updated timestamp for workflow.</p>
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ListWorkflowsItem {
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+        self.workflow_type.as_ref()
+    }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>Status of workflow execution.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>Description for workflow execution status.</p>
+    pub fn status_description(&self) -> std::option::Option<&str> {
+        self.status_description.as_deref()
+    }
+    /// <p>Creation timestamp for workflow.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>Last updated timestamp for workflow.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_at.as_ref()
+    }
+}
+impl std::fmt::Debug for ListWorkflowsItem {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListWorkflowsItem");
+        formatter.field("workflow_type", &self.workflow_type);
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("status", &self.status);
+        formatter.field("status_description", &self.status_description);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.finish()
+    }
+}
+/// See [`ListWorkflowsItem`](crate::model::ListWorkflowsItem)
+pub mod list_workflows_item {
+    /// A builder for [`ListWorkflowsItem`](crate::model::ListWorkflowsItem)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::Status>,
+        pub(crate) status_description: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.workflow_type = Some(input);
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn set_workflow_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowType>,
+        ) -> Self {
+            self.workflow_type = input;
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// <p>Status of workflow execution.</p>
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Status of workflow execution.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Description for workflow execution status.</p>
+        pub fn status_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_description = Some(input.into());
+            self
+        }
+        /// <p>Description for workflow execution status.</p>
+        pub fn set_status_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_description = input;
+            self
+        }
+        /// <p>Creation timestamp for workflow.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>Creation timestamp for workflow.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>Last updated timestamp for workflow.</p>
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_at = Some(input);
+            self
+        }
+        /// <p>Last updated timestamp for workflow.</p>
+        pub fn set_last_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListWorkflowsItem`](crate::model::ListWorkflowsItem)
+        pub fn build(self) -> crate::model::ListWorkflowsItem {
+            crate::model::ListWorkflowsItem {
+                workflow_type: self.workflow_type,
+                workflow_id: self.workflow_id,
+                status: self.status,
+                status_description: self.status_description,
+                created_at: self.created_at,
+                last_updated_at: self.last_updated_at,
+            }
+        }
+    }
+}
+impl ListWorkflowsItem {
+    /// Creates a new builder-style object to manufacture [`ListWorkflowsItem`](crate::model::ListWorkflowsItem)
+    pub fn builder() -> crate::model::list_workflows_item::Builder {
+        crate::model::list_workflows_item::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Status {
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
+    Complete,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    NotStarted,
+    #[allow(missing_docs)] // documentation missing in model
+    Retry,
+    #[allow(missing_docs)] // documentation missing in model
+    Split,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Status {
+    fn from(s: &str) -> Self {
+        match s {
+            "CANCELLED" => Status::Cancelled,
+            "COMPLETE" => Status::Complete,
+            "FAILED" => Status::Failed,
+            "IN_PROGRESS" => Status::InProgress,
+            "NOT_STARTED" => Status::NotStarted,
+            "RETRY" => Status::Retry,
+            "SPLIT" => Status::Split,
+            other => Status::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Status {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Status::from(s))
+    }
+}
+impl Status {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Status::Cancelled => "CANCELLED",
+            Status::Complete => "COMPLETE",
+            Status::Failed => "FAILED",
+            Status::InProgress => "IN_PROGRESS",
+            Status::NotStarted => "NOT_STARTED",
+            Status::Retry => "RETRY",
+            Status::Split => "SPLIT",
+            Status::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELLED",
+            "COMPLETE",
+            "FAILED",
+            "IN_PROGRESS",
+            "NOT_STARTED",
+            "RETRY",
+            "SPLIT",
+        ]
+    }
+}
+impl AsRef<str> for Status {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WorkflowType {
+    #[allow(missing_docs)] // documentation missing in model
+    AppflowIntegration,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for WorkflowType {
+    fn from(s: &str) -> Self {
+        match s {
+            "APPFLOW_INTEGRATION" => WorkflowType::AppflowIntegration,
+            other => WorkflowType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for WorkflowType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WorkflowType::from(s))
+    }
+}
+impl WorkflowType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WorkflowType::AppflowIntegration => "APPFLOW_INTEGRATION",
+            WorkflowType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["APPFLOW_INTEGRATION"]
+    }
+}
+impl AsRef<str> for WorkflowType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A ProfileObjectTypeTemplate in a list of ProfileObjectTypeTemplates.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5777,6 +6072,8 @@ pub struct ListIntegrationItem {
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     pub object_type_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
 }
 impl ListIntegrationItem {
     /// <p>The unique name of the domain.</p>
@@ -5813,6 +6110,10 @@ impl ListIntegrationItem {
     {
         self.object_type_names.as_ref()
     }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIntegrationItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5824,6 +6125,7 @@ impl std::fmt::Debug for ListIntegrationItem {
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("tags", &self.tags);
         formatter.field("object_type_names", &self.object_type_names);
+        formatter.field("workflow_id", &self.workflow_id);
         formatter.finish()
     }
 }
@@ -5844,6 +6146,7 @@ pub mod list_integration_item {
         pub(crate) object_type_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -5955,6 +6258,16 @@ pub mod list_integration_item {
             self.object_type_names = input;
             self
         }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListIntegrationItem`](crate::model::ListIntegrationItem)
         pub fn build(self) -> crate::model::ListIntegrationItem {
             crate::model::ListIntegrationItem {
@@ -5965,6 +6278,7 @@ pub mod list_integration_item {
                 last_updated_at: self.last_updated_at,
                 tags: self.tags,
                 object_type_names: self.object_type_names,
+                workflow_id: self.workflow_id,
             }
         }
     }
@@ -6660,6 +6974,588 @@ impl ListDomainItem {
     }
 }
 
+/// <p>List containing steps in workflow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WorkflowStepItem {
+    /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub appflow_integration: std::option::Option<crate::model::AppflowIntegrationWorkflowStep>,
+}
+impl WorkflowStepItem {
+    /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn appflow_integration(
+        &self,
+    ) -> std::option::Option<&crate::model::AppflowIntegrationWorkflowStep> {
+        self.appflow_integration.as_ref()
+    }
+}
+impl std::fmt::Debug for WorkflowStepItem {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WorkflowStepItem");
+        formatter.field("appflow_integration", &self.appflow_integration);
+        formatter.finish()
+    }
+}
+/// See [`WorkflowStepItem`](crate::model::WorkflowStepItem)
+pub mod workflow_step_item {
+    /// A builder for [`WorkflowStepItem`](crate::model::WorkflowStepItem)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) appflow_integration:
+            std::option::Option<crate::model::AppflowIntegrationWorkflowStep>,
+    }
+    impl Builder {
+        /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn appflow_integration(
+            mut self,
+            input: crate::model::AppflowIntegrationWorkflowStep,
+        ) -> Self {
+            self.appflow_integration = Some(input);
+            self
+        }
+        /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_appflow_integration(
+            mut self,
+            input: std::option::Option<crate::model::AppflowIntegrationWorkflowStep>,
+        ) -> Self {
+            self.appflow_integration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkflowStepItem`](crate::model::WorkflowStepItem)
+        pub fn build(self) -> crate::model::WorkflowStepItem {
+            crate::model::WorkflowStepItem {
+                appflow_integration: self.appflow_integration,
+            }
+        }
+    }
+}
+impl WorkflowStepItem {
+    /// Creates a new builder-style object to manufacture [`WorkflowStepItem`](crate::model::WorkflowStepItem)
+    pub fn builder() -> crate::model::workflow_step_item::Builder {
+        crate::model::workflow_step_item::Builder::default()
+    }
+}
+
+/// <p>Workflow step details for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AppflowIntegrationWorkflowStep {
+    /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
+    pub flow_name: std::option::Option<std::string::String>,
+    /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub status: std::option::Option<crate::model::Status>,
+    /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub execution_message: std::option::Option<std::string::String>,
+    /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub records_processed: i64,
+    /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub batch_records_start_time: std::option::Option<std::string::String>,
+    /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub batch_records_end_time: std::option::Option<std::string::String>,
+    /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl AppflowIntegrationWorkflowStep {
+    /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+    /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn execution_message(&self) -> std::option::Option<&str> {
+        self.execution_message.as_deref()
+    }
+    /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn records_processed(&self) -> i64 {
+        self.records_processed
+    }
+    /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn batch_records_start_time(&self) -> std::option::Option<&str> {
+        self.batch_records_start_time.as_deref()
+    }
+    /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn batch_records_end_time(&self) -> std::option::Option<&str> {
+        self.batch_records_end_time.as_deref()
+    }
+    /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_at.as_ref()
+    }
+}
+impl std::fmt::Debug for AppflowIntegrationWorkflowStep {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AppflowIntegrationWorkflowStep");
+        formatter.field("flow_name", &self.flow_name);
+        formatter.field("status", &self.status);
+        formatter.field("execution_message", &self.execution_message);
+        formatter.field("records_processed", &self.records_processed);
+        formatter.field("batch_records_start_time", &self.batch_records_start_time);
+        formatter.field("batch_records_end_time", &self.batch_records_end_time);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.finish()
+    }
+}
+/// See [`AppflowIntegrationWorkflowStep`](crate::model::AppflowIntegrationWorkflowStep)
+pub mod appflow_integration_workflow_step {
+    /// A builder for [`AppflowIntegrationWorkflowStep`](crate::model::AppflowIntegrationWorkflowStep)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) flow_name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::Status>,
+        pub(crate) execution_message: std::option::Option<std::string::String>,
+        pub(crate) records_processed: std::option::Option<i64>,
+        pub(crate) batch_records_start_time: std::option::Option<std::string::String>,
+        pub(crate) batch_records_end_time: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
+        pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.flow_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
+        pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_name = input;
+            self
+        }
+        /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn execution_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_message = Some(input.into());
+            self
+        }
+        /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_execution_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_message = input;
+            self
+        }
+        /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn records_processed(mut self, input: i64) -> Self {
+            self.records_processed = Some(input);
+            self
+        }
+        /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_records_processed(mut self, input: std::option::Option<i64>) -> Self {
+            self.records_processed = input;
+            self
+        }
+        /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn batch_records_start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.batch_records_start_time = Some(input.into());
+            self
+        }
+        /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_batch_records_start_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.batch_records_start_time = input;
+            self
+        }
+        /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn batch_records_end_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.batch_records_end_time = Some(input.into());
+            self
+        }
+        /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_batch_records_end_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.batch_records_end_time = input;
+            self
+        }
+        /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_at = Some(input);
+            self
+        }
+        /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_last_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AppflowIntegrationWorkflowStep`](crate::model::AppflowIntegrationWorkflowStep)
+        pub fn build(self) -> crate::model::AppflowIntegrationWorkflowStep {
+            crate::model::AppflowIntegrationWorkflowStep {
+                flow_name: self.flow_name,
+                status: self.status,
+                execution_message: self.execution_message,
+                records_processed: self.records_processed.unwrap_or_default(),
+                batch_records_start_time: self.batch_records_start_time,
+                batch_records_end_time: self.batch_records_end_time,
+                created_at: self.created_at,
+                last_updated_at: self.last_updated_at,
+            }
+        }
+    }
+}
+impl AppflowIntegrationWorkflowStep {
+    /// Creates a new builder-style object to manufacture [`AppflowIntegrationWorkflowStep`](crate::model::AppflowIntegrationWorkflowStep)
+    pub fn builder() -> crate::model::appflow_integration_workflow_step::Builder {
+        crate::model::appflow_integration_workflow_step::Builder::default()
+    }
+}
+
+/// <p>Generic object containing workflow execution metrics.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WorkflowMetrics {
+    /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub appflow_integration: std::option::Option<crate::model::AppflowIntegrationWorkflowMetrics>,
+}
+impl WorkflowMetrics {
+    /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn appflow_integration(
+        &self,
+    ) -> std::option::Option<&crate::model::AppflowIntegrationWorkflowMetrics> {
+        self.appflow_integration.as_ref()
+    }
+}
+impl std::fmt::Debug for WorkflowMetrics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WorkflowMetrics");
+        formatter.field("appflow_integration", &self.appflow_integration);
+        formatter.finish()
+    }
+}
+/// See [`WorkflowMetrics`](crate::model::WorkflowMetrics)
+pub mod workflow_metrics {
+    /// A builder for [`WorkflowMetrics`](crate::model::WorkflowMetrics)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) appflow_integration:
+            std::option::Option<crate::model::AppflowIntegrationWorkflowMetrics>,
+    }
+    impl Builder {
+        /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn appflow_integration(
+            mut self,
+            input: crate::model::AppflowIntegrationWorkflowMetrics,
+        ) -> Self {
+            self.appflow_integration = Some(input);
+            self
+        }
+        /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_appflow_integration(
+            mut self,
+            input: std::option::Option<crate::model::AppflowIntegrationWorkflowMetrics>,
+        ) -> Self {
+            self.appflow_integration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkflowMetrics`](crate::model::WorkflowMetrics)
+        pub fn build(self) -> crate::model::WorkflowMetrics {
+            crate::model::WorkflowMetrics {
+                appflow_integration: self.appflow_integration,
+            }
+        }
+    }
+}
+impl WorkflowMetrics {
+    /// Creates a new builder-style object to manufacture [`WorkflowMetrics`](crate::model::WorkflowMetrics)
+    pub fn builder() -> crate::model::workflow_metrics::Builder {
+        crate::model::workflow_metrics::Builder::default()
+    }
+}
+
+/// <p>Workflow specific execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AppflowIntegrationWorkflowMetrics {
+    /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub records_processed: i64,
+    /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub steps_completed: i64,
+    /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub total_steps: i64,
+}
+impl AppflowIntegrationWorkflowMetrics {
+    /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn records_processed(&self) -> i64 {
+        self.records_processed
+    }
+    /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn steps_completed(&self) -> i64 {
+        self.steps_completed
+    }
+    /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn total_steps(&self) -> i64 {
+        self.total_steps
+    }
+}
+impl std::fmt::Debug for AppflowIntegrationWorkflowMetrics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AppflowIntegrationWorkflowMetrics");
+        formatter.field("records_processed", &self.records_processed);
+        formatter.field("steps_completed", &self.steps_completed);
+        formatter.field("total_steps", &self.total_steps);
+        formatter.finish()
+    }
+}
+/// See [`AppflowIntegrationWorkflowMetrics`](crate::model::AppflowIntegrationWorkflowMetrics)
+pub mod appflow_integration_workflow_metrics {
+    /// A builder for [`AppflowIntegrationWorkflowMetrics`](crate::model::AppflowIntegrationWorkflowMetrics)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) records_processed: std::option::Option<i64>,
+        pub(crate) steps_completed: std::option::Option<i64>,
+        pub(crate) total_steps: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn records_processed(mut self, input: i64) -> Self {
+            self.records_processed = Some(input);
+            self
+        }
+        /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_records_processed(mut self, input: std::option::Option<i64>) -> Self {
+            self.records_processed = input;
+            self
+        }
+        /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn steps_completed(mut self, input: i64) -> Self {
+            self.steps_completed = Some(input);
+            self
+        }
+        /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_steps_completed(mut self, input: std::option::Option<i64>) -> Self {
+            self.steps_completed = input;
+            self
+        }
+        /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn total_steps(mut self, input: i64) -> Self {
+            self.total_steps = Some(input);
+            self
+        }
+        /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_total_steps(mut self, input: std::option::Option<i64>) -> Self {
+            self.total_steps = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AppflowIntegrationWorkflowMetrics`](crate::model::AppflowIntegrationWorkflowMetrics)
+        pub fn build(self) -> crate::model::AppflowIntegrationWorkflowMetrics {
+            crate::model::AppflowIntegrationWorkflowMetrics {
+                records_processed: self.records_processed.unwrap_or_default(),
+                steps_completed: self.steps_completed.unwrap_or_default(),
+                total_steps: self.total_steps.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AppflowIntegrationWorkflowMetrics {
+    /// Creates a new builder-style object to manufacture [`AppflowIntegrationWorkflowMetrics`](crate::model::AppflowIntegrationWorkflowMetrics)
+    pub fn builder() -> crate::model::appflow_integration_workflow_metrics::Builder {
+        crate::model::appflow_integration_workflow_metrics::Builder::default()
+    }
+}
+
+/// <p>Structure to hold workflow attributes.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WorkflowAttributes {
+    /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub appflow_integration:
+        std::option::Option<crate::model::AppflowIntegrationWorkflowAttributes>,
+}
+impl WorkflowAttributes {
+    /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    pub fn appflow_integration(
+        &self,
+    ) -> std::option::Option<&crate::model::AppflowIntegrationWorkflowAttributes> {
+        self.appflow_integration.as_ref()
+    }
+}
+impl std::fmt::Debug for WorkflowAttributes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WorkflowAttributes");
+        formatter.field("appflow_integration", &self.appflow_integration);
+        formatter.finish()
+    }
+}
+/// See [`WorkflowAttributes`](crate::model::WorkflowAttributes)
+pub mod workflow_attributes {
+    /// A builder for [`WorkflowAttributes`](crate::model::WorkflowAttributes)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) appflow_integration:
+            std::option::Option<crate::model::AppflowIntegrationWorkflowAttributes>,
+    }
+    impl Builder {
+        /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn appflow_integration(
+            mut self,
+            input: crate::model::AppflowIntegrationWorkflowAttributes,
+        ) -> Self {
+            self.appflow_integration = Some(input);
+            self
+        }
+        /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
+        pub fn set_appflow_integration(
+            mut self,
+            input: std::option::Option<crate::model::AppflowIntegrationWorkflowAttributes>,
+        ) -> Self {
+            self.appflow_integration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkflowAttributes`](crate::model::WorkflowAttributes)
+        pub fn build(self) -> crate::model::WorkflowAttributes {
+            crate::model::WorkflowAttributes {
+                appflow_integration: self.appflow_integration,
+            }
+        }
+    }
+}
+impl WorkflowAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowAttributes`](crate::model::WorkflowAttributes)
+    pub fn builder() -> crate::model::workflow_attributes::Builder {
+        crate::model::workflow_attributes::Builder::default()
+    }
+}
+
+/// <p>Structure holding all <code>APPFLOW_INTEGRATION</code> specific workflow attributes.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AppflowIntegrationWorkflowAttributes {
+    /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
+    pub source_connector_type: std::option::Option<crate::model::SourceConnectorType>,
+    /// <p>The name of the AppFlow connector profile used for ingestion.</p>
+    pub connector_profile_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+}
+impl AppflowIntegrationWorkflowAttributes {
+    /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
+    pub fn source_connector_type(&self) -> std::option::Option<&crate::model::SourceConnectorType> {
+        self.source_connector_type.as_ref()
+    }
+    /// <p>The name of the AppFlow connector profile used for ingestion.</p>
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+        self.connector_profile_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for AppflowIntegrationWorkflowAttributes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AppflowIntegrationWorkflowAttributes");
+        formatter.field("source_connector_type", &self.source_connector_type);
+        formatter.field("connector_profile_name", &self.connector_profile_name);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.finish()
+    }
+}
+/// See [`AppflowIntegrationWorkflowAttributes`](crate::model::AppflowIntegrationWorkflowAttributes)
+pub mod appflow_integration_workflow_attributes {
+    /// A builder for [`AppflowIntegrationWorkflowAttributes`](crate::model::AppflowIntegrationWorkflowAttributes)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_connector_type: std::option::Option<crate::model::SourceConnectorType>,
+        pub(crate) connector_profile_name: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
+        pub fn source_connector_type(mut self, input: crate::model::SourceConnectorType) -> Self {
+            self.source_connector_type = Some(input);
+            self
+        }
+        /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
+        pub fn set_source_connector_type(
+            mut self,
+            input: std::option::Option<crate::model::SourceConnectorType>,
+        ) -> Self {
+            self.source_connector_type = input;
+            self
+        }
+        /// <p>The name of the AppFlow connector profile used for ingestion.</p>
+        pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_profile_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the AppFlow connector profile used for ingestion.</p>
+        pub fn set_connector_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_profile_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AppflowIntegrationWorkflowAttributes`](crate::model::AppflowIntegrationWorkflowAttributes)
+        pub fn build(self) -> crate::model::AppflowIntegrationWorkflowAttributes {
+            crate::model::AppflowIntegrationWorkflowAttributes {
+                source_connector_type: self.source_connector_type,
+                connector_profile_name: self.connector_profile_name,
+                role_arn: self.role_arn,
+            }
+        }
+    }
+}
+impl AppflowIntegrationWorkflowAttributes {
+    /// Creates a new builder-style object to manufacture [`AppflowIntegrationWorkflowAttributes`](crate::model::AppflowIntegrationWorkflowAttributes)
+    pub fn builder() -> crate::model::appflow_integration_workflow_attributes::Builder {
+        crate::model::appflow_integration_workflow_attributes::Builder::default()
+    }
+}
+
 /// <p>The Match group object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6869,5 +7765,226 @@ impl DomainStats {
     /// Creates a new builder-style object to manufacture [`DomainStats`](crate::model::DomainStats)
     pub fn builder() -> crate::model::domain_stats::Builder {
         crate::model::domain_stats::Builder::default()
+    }
+}
+
+/// <p>Configuration data for integration workflow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IntegrationConfig {
+    /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
+    pub appflow_integration: std::option::Option<crate::model::AppflowIntegration>,
+}
+impl IntegrationConfig {
+    /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
+    pub fn appflow_integration(&self) -> std::option::Option<&crate::model::AppflowIntegration> {
+        self.appflow_integration.as_ref()
+    }
+}
+impl std::fmt::Debug for IntegrationConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IntegrationConfig");
+        formatter.field("appflow_integration", &self.appflow_integration);
+        formatter.finish()
+    }
+}
+/// See [`IntegrationConfig`](crate::model::IntegrationConfig)
+pub mod integration_config {
+    /// A builder for [`IntegrationConfig`](crate::model::IntegrationConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) appflow_integration: std::option::Option<crate::model::AppflowIntegration>,
+    }
+    impl Builder {
+        /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
+        pub fn appflow_integration(mut self, input: crate::model::AppflowIntegration) -> Self {
+            self.appflow_integration = Some(input);
+            self
+        }
+        /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
+        pub fn set_appflow_integration(
+            mut self,
+            input: std::option::Option<crate::model::AppflowIntegration>,
+        ) -> Self {
+            self.appflow_integration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IntegrationConfig`](crate::model::IntegrationConfig)
+        pub fn build(self) -> crate::model::IntegrationConfig {
+            crate::model::IntegrationConfig {
+                appflow_integration: self.appflow_integration,
+            }
+        }
+    }
+}
+impl IntegrationConfig {
+    /// Creates a new builder-style object to manufacture [`IntegrationConfig`](crate::model::IntegrationConfig)
+    pub fn builder() -> crate::model::integration_config::Builder {
+        crate::model::integration_config::Builder::default()
+    }
+}
+
+/// <p>Details for workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AppflowIntegration {
+    /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
+    pub flow_definition: std::option::Option<crate::model::FlowDefinition>,
+    /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
+    pub batches: std::option::Option<std::vec::Vec<crate::model::Batch>>,
+}
+impl AppflowIntegration {
+    /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
+    pub fn flow_definition(&self) -> std::option::Option<&crate::model::FlowDefinition> {
+        self.flow_definition.as_ref()
+    }
+    /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
+    pub fn batches(&self) -> std::option::Option<&[crate::model::Batch]> {
+        self.batches.as_deref()
+    }
+}
+impl std::fmt::Debug for AppflowIntegration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AppflowIntegration");
+        formatter.field("flow_definition", &self.flow_definition);
+        formatter.field("batches", &self.batches);
+        formatter.finish()
+    }
+}
+/// See [`AppflowIntegration`](crate::model::AppflowIntegration)
+pub mod appflow_integration {
+    /// A builder for [`AppflowIntegration`](crate::model::AppflowIntegration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) flow_definition: std::option::Option<crate::model::FlowDefinition>,
+        pub(crate) batches: std::option::Option<std::vec::Vec<crate::model::Batch>>,
+    }
+    impl Builder {
+        /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
+        pub fn flow_definition(mut self, input: crate::model::FlowDefinition) -> Self {
+            self.flow_definition = Some(input);
+            self
+        }
+        /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
+        pub fn set_flow_definition(
+            mut self,
+            input: std::option::Option<crate::model::FlowDefinition>,
+        ) -> Self {
+            self.flow_definition = input;
+            self
+        }
+        /// Appends an item to `batches`.
+        ///
+        /// To override the contents of this collection use [`set_batches`](Self::set_batches).
+        ///
+        /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
+        pub fn batches(mut self, input: crate::model::Batch) -> Self {
+            let mut v = self.batches.unwrap_or_default();
+            v.push(input);
+            self.batches = Some(v);
+            self
+        }
+        /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
+        pub fn set_batches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Batch>>,
+        ) -> Self {
+            self.batches = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AppflowIntegration`](crate::model::AppflowIntegration)
+        pub fn build(self) -> crate::model::AppflowIntegration {
+            crate::model::AppflowIntegration {
+                flow_definition: self.flow_definition,
+                batches: self.batches,
+            }
+        }
+    }
+}
+impl AppflowIntegration {
+    /// Creates a new builder-style object to manufacture [`AppflowIntegration`](crate::model::AppflowIntegration)
+    pub fn builder() -> crate::model::appflow_integration::Builder {
+        crate::model::appflow_integration::Builder::default()
+    }
+}
+
+/// <p>Batch defines the boundaries for ingestion for each step in <code>APPFLOW_INTEGRATION</code> workflow. <code>APPFLOW_INTEGRATION</code> workflow splits ingestion based on these boundaries.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Batch {
+    /// <p>Start time of batch to split ingestion.</p>
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>End time of batch to split ingestion.</p>
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl Batch {
+    /// <p>Start time of batch to split ingestion.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>End time of batch to split ingestion.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+}
+impl std::fmt::Debug for Batch {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Batch");
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.finish()
+    }
+}
+/// See [`Batch`](crate::model::Batch)
+pub mod batch {
+    /// A builder for [`Batch`](crate::model::Batch)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Start time of batch to split ingestion.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>Start time of batch to split ingestion.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>End time of batch to split ingestion.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p>End time of batch to split ingestion.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Batch`](crate::model::Batch)
+        pub fn build(self) -> crate::model::Batch {
+            crate::model::Batch {
+                start_time: self.start_time,
+                end_time: self.end_time,
+            }
+        }
+    }
+}
+impl Batch {
+    /// Creates a new builder-style object to manufacture [`Batch`](crate::model::Batch)
+    pub fn builder() -> crate::model::batch::Builder {
+        crate::model::batch::Builder::default()
     }
 }

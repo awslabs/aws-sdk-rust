@@ -435,6 +435,248 @@ impl CreateDomainInput {
     }
 }
 
+/// See [`CreateIntegrationWorkflowInput`](crate::input::CreateIntegrationWorkflowInput)
+pub mod create_integration_workflow_input {
+    /// A builder for [`CreateIntegrationWorkflowInput`](crate::input::CreateIntegrationWorkflowInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
+        pub(crate) integration_config: std::option::Option<crate::model::IntegrationConfig>,
+        pub(crate) object_type_name: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.workflow_type = Some(input);
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn set_workflow_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowType>,
+        ) -> Self {
+            self.workflow_type = input;
+            self
+        }
+        /// <p>Configuration data for integration workflow.</p>
+        pub fn integration_config(mut self, input: crate::model::IntegrationConfig) -> Self {
+            self.integration_config = Some(input);
+            self
+        }
+        /// <p>Configuration data for integration workflow.</p>
+        pub fn set_integration_config(
+            mut self,
+            input: std::option::Option<crate::model::IntegrationConfig>,
+        ) -> Self {
+            self.integration_config = input;
+            self
+        }
+        /// <p>The name of the profile object type.</p>
+        pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object_type_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the profile object type.</p>
+        pub fn set_object_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.object_type_name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateIntegrationWorkflowInput`](crate::input::CreateIntegrationWorkflowInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateIntegrationWorkflowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateIntegrationWorkflowInput {
+                domain_name: self.domain_name,
+                workflow_type: self.workflow_type,
+                integration_config: self.integration_config,
+                object_type_name: self.object_type_name,
+                role_arn: self.role_arn,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateIntegrationWorkflowInputOperationOutputAlias =
+    crate::operation::CreateIntegrationWorkflow;
+#[doc(hidden)]
+pub type CreateIntegrationWorkflowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateIntegrationWorkflowInput {
+    /// Consumes the builder and constructs an Operation<[`CreateIntegrationWorkflow`](crate::operation::CreateIntegrationWorkflow)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateIntegrationWorkflow,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateIntegrationWorkflowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_3 = &_input.domain_name;
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let domain_name = aws_smithy_http::label::fmt_string(input_3, false);
+                if domain_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/domains/{DomainName}/workflows/integrations",
+                    DomainName = domain_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateIntegrationWorkflowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_integration_workflow(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateIntegrationWorkflow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateIntegrationWorkflow",
+            "customerprofiles",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateIntegrationWorkflowInput`](crate::input::CreateIntegrationWorkflowInput)
+    pub fn builder() -> crate::input::create_integration_workflow_input::Builder {
+        crate::input::create_integration_workflow_input::Builder::default()
+    }
+}
+
 /// See [`CreateProfileInput`](crate::input::CreateProfileInput)
 pub mod create_profile_input {
     /// A builder for [`CreateProfileInput`](crate::input::CreateProfileInput)
@@ -799,14 +1041,14 @@ impl CreateProfileInput {
                 _input: &crate::input::CreateProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_3 = &_input.domain_name;
-                let input_3 = input_3.as_ref().ok_or(
+                let input_4 = &_input.domain_name;
+                let input_4 = input_4.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_3, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_4, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -952,14 +1194,14 @@ impl DeleteDomainInput {
                 _input: &crate::input::DeleteDomainInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_4 = &_input.domain_name;
-                let input_4 = input_4.as_ref().ok_or(
+                let input_5 = &_input.domain_name;
+                let input_5 = input_5.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_5, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -1099,14 +1341,14 @@ impl DeleteIntegrationInput {
                 _input: &crate::input::DeleteIntegrationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_5 = &_input.domain_name;
-                let input_5 = input_5.as_ref().ok_or(
+                let input_6 = &_input.domain_name;
+                let input_6 = input_6.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_6, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -1264,14 +1506,14 @@ impl DeleteProfileInput {
                 _input: &crate::input::DeleteProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_6 = &_input.domain_name;
-                let input_6 = input_6.as_ref().ok_or(
+                let input_7 = &_input.domain_name;
+                let input_7 = input_7.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_7, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -1462,14 +1704,14 @@ impl DeleteProfileKeyInput {
                 _input: &crate::input::DeleteProfileKeyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_7 = &_input.domain_name;
-                let input_7 = input_7.as_ref().ok_or(
+                let input_8 = &_input.domain_name;
+                let input_8 = input_8.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_8, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -1657,14 +1899,14 @@ impl DeleteProfileObjectInput {
                 _input: &crate::input::DeleteProfileObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_8 = &_input.domain_name;
-                let input_8 = input_8.as_ref().ok_or(
+                let input_9 = &_input.domain_name;
+                let input_9 = input_9.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_9, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -1826,28 +2068,28 @@ impl DeleteProfileObjectTypeInput {
                 _input: &crate::input::DeleteProfileObjectTypeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_9 = &_input.domain_name;
-                let input_9 = input_9.as_ref().ok_or(
+                let input_10 = &_input.domain_name;
+                let input_10 = input_10.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_10, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_10 = &_input.object_type_name;
-                let input_10 = input_10.as_ref().ok_or(
+                let input_11 = &_input.object_type_name;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "object_type_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let object_type_name = aws_smithy_http::label::fmt_string(input_10, false);
+                let object_type_name = aws_smithy_http::label::fmt_string(input_11, false);
                 if object_type_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "object_type_name",
@@ -1921,6 +2163,172 @@ impl DeleteProfileObjectTypeInput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileObjectTypeInput`](crate::input::DeleteProfileObjectTypeInput)
     pub fn builder() -> crate::input::delete_profile_object_type_input::Builder {
         crate::input::delete_profile_object_type_input::Builder::default()
+    }
+}
+
+/// See [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput)
+pub mod delete_workflow_input {
+    /// A builder for [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteWorkflowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteWorkflowInput {
+                domain_name: self.domain_name,
+                workflow_id: self.workflow_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteWorkflowInputOperationOutputAlias = crate::operation::DeleteWorkflow;
+#[doc(hidden)]
+pub type DeleteWorkflowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteWorkflowInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteWorkflow`](crate::operation::DeleteWorkflow)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteWorkflow,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteWorkflowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_12 = &_input.domain_name;
+                let input_12 = input_12.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let domain_name = aws_smithy_http::label::fmt_string(input_12, false);
+                if domain_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_13 = &_input.workflow_id;
+                let input_13 = input_13.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workflow_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workflow_id = aws_smithy_http::label::fmt_string(input_13, false);
+                if workflow_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workflow_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/domains/{DomainName}/workflows/{WorkflowId}",
+                    DomainName = domain_name,
+                    WorkflowId = workflow_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteWorkflowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteWorkflow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteWorkflow",
+            "customerprofiles",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput)
+    pub fn builder() -> crate::input::delete_workflow_input::Builder {
+        crate::input::delete_workflow_input::Builder::default()
     }
 }
 
@@ -2010,14 +2418,14 @@ impl GetAutoMergingPreviewInput {
                 _input: &crate::input::GetAutoMergingPreviewInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_11 = &_input.domain_name;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_14 = &_input.domain_name;
+                let input_14 = input_14.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_11, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_14, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -2163,14 +2571,14 @@ impl GetDomainInput {
                 _input: &crate::input::GetDomainInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_12 = &_input.domain_name;
-                let input_12 = input_12.as_ref().ok_or(
+                let input_15 = &_input.domain_name;
+                let input_15 = input_15.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_12, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_15, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -2309,28 +2717,28 @@ impl GetIdentityResolutionJobInput {
                 _input: &crate::input::GetIdentityResolutionJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_13 = &_input.domain_name;
-                let input_13 = input_13.as_ref().ok_or(
+                let input_16 = &_input.domain_name;
+                let input_16 = input_16.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_16, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_14 = &_input.job_id;
-                let input_14 = input_14.as_ref().ok_or(
+                let input_17 = &_input.job_id;
+                let input_17 = input_17.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_17, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -2475,14 +2883,14 @@ impl GetIntegrationInput {
                 _input: &crate::input::GetIntegrationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_15 = &_input.domain_name;
-                let input_15 = input_15.as_ref().ok_or(
+                let input_18 = &_input.domain_name;
+                let input_18 = input_18.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_18, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -2652,14 +3060,14 @@ impl GetMatchesInput {
                 _input: &crate::input::GetMatchesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_16 = &_input.domain_name;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_19 = &_input.domain_name;
+                let input_19 = input_19.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_16, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_19, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -2679,13 +3087,13 @@ impl GetMatchesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_17) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_17));
+                if let Some(inner_20) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_20));
                 }
-                if let Some(inner_18) = &_input.max_results {
+                if let Some(inner_21) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
                     );
                 }
                 Ok(())
@@ -2823,28 +3231,28 @@ impl GetProfileObjectTypeInput {
                 _input: &crate::input::GetProfileObjectTypeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_19 = &_input.domain_name;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_22 = &_input.domain_name;
+                let input_22 = input_22.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_19, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_22, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_20 = &_input.object_type_name;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_23 = &_input.object_type_name;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "object_type_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let object_type_name = aws_smithy_http::label::fmt_string(input_20, false);
+                let object_type_name = aws_smithy_http::label::fmt_string(input_23, false);
                 if object_type_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "object_type_name",
@@ -2979,14 +3387,14 @@ impl GetProfileObjectTypeTemplateInput {
                 _input: &crate::input::GetProfileObjectTypeTemplateInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.template_id;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_24 = &_input.template_id;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let template_id = aws_smithy_http::label::fmt_string(input_24, false);
                 if template_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_id",
@@ -3058,6 +3466,379 @@ impl GetProfileObjectTypeTemplateInput {
     }
 }
 
+/// See [`GetWorkflowInput`](crate::input::GetWorkflowInput)
+pub mod get_workflow_input {
+    /// A builder for [`GetWorkflowInput`](crate::input::GetWorkflowInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::input::GetWorkflowInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetWorkflowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetWorkflowInput {
+                domain_name: self.domain_name,
+                workflow_id: self.workflow_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetWorkflowInputOperationOutputAlias = crate::operation::GetWorkflow;
+#[doc(hidden)]
+pub type GetWorkflowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetWorkflowInput {
+    /// Consumes the builder and constructs an Operation<[`GetWorkflow`](crate::operation::GetWorkflow)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetWorkflow,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetWorkflowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_25 = &_input.domain_name;
+                let input_25 = input_25.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let domain_name = aws_smithy_http::label::fmt_string(input_25, false);
+                if domain_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_26 = &_input.workflow_id;
+                let input_26 = input_26.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workflow_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workflow_id = aws_smithy_http::label::fmt_string(input_26, false);
+                if workflow_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workflow_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/domains/{DomainName}/workflows/{WorkflowId}",
+                    DomainName = domain_name,
+                    WorkflowId = workflow_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetWorkflowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetWorkflow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetWorkflow",
+            "customerprofiles",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetWorkflowInput`](crate::input::GetWorkflowInput)
+    pub fn builder() -> crate::input::get_workflow_input::Builder {
+        crate::input::get_workflow_input::Builder::default()
+    }
+}
+
+/// See [`GetWorkflowStepsInput`](crate::input::GetWorkflowStepsInput)
+pub mod get_workflow_steps_input {
+    /// A builder for [`GetWorkflowStepsInput`](crate::input::GetWorkflowStepsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetWorkflowStepsInput`](crate::input::GetWorkflowStepsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetWorkflowStepsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetWorkflowStepsInput {
+                domain_name: self.domain_name,
+                workflow_id: self.workflow_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetWorkflowStepsInputOperationOutputAlias = crate::operation::GetWorkflowSteps;
+#[doc(hidden)]
+pub type GetWorkflowStepsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetWorkflowStepsInput {
+    /// Consumes the builder and constructs an Operation<[`GetWorkflowSteps`](crate::operation::GetWorkflowSteps)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetWorkflowSteps,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetWorkflowStepsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_27 = &_input.domain_name;
+                let input_27 = input_27.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let domain_name = aws_smithy_http::label::fmt_string(input_27, false);
+                if domain_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_28 = &_input.workflow_id;
+                let input_28 = input_28.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workflow_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workflow_id = aws_smithy_http::label::fmt_string(input_28, false);
+                if workflow_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workflow_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/domains/{DomainName}/workflows/{WorkflowId}/steps",
+                    DomainName = domain_name,
+                    WorkflowId = workflow_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::GetWorkflowStepsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_29) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_29));
+                }
+                if let Some(inner_30) = &_input.max_results {
+                    query.push_kv(
+                        "max-results",
+                        aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetWorkflowStepsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetWorkflowSteps::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetWorkflowSteps",
+            "customerprofiles",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetWorkflowStepsInput`](crate::input::GetWorkflowStepsInput)
+    pub fn builder() -> crate::input::get_workflow_steps_input::Builder {
+        crate::input::get_workflow_steps_input::Builder::default()
+    }
+}
+
 /// See [`ListAccountIntegrationsInput`](crate::input::ListAccountIntegrationsInput)
 pub mod list_account_integrations_input {
     /// A builder for [`ListAccountIntegrationsInput`](crate::input::ListAccountIntegrationsInput)
@@ -3067,6 +3848,7 @@ pub mod list_account_integrations_input {
         pub(crate) uri: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) include_hidden: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -3099,6 +3881,16 @@ pub mod list_account_integrations_input {
             self.max_results = input;
             self
         }
+        /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+        pub fn include_hidden(mut self, input: bool) -> Self {
+            self.include_hidden = Some(input);
+            self
+        }
+        /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+        pub fn set_include_hidden(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_hidden = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAccountIntegrationsInput`](crate::input::ListAccountIntegrationsInput)
         pub fn build(
             self,
@@ -3110,6 +3902,7 @@ pub mod list_account_integrations_input {
                 uri: self.uri,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                include_hidden: self.include_hidden,
             })
         }
     }
@@ -3147,13 +3940,19 @@ impl ListAccountIntegrationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_22) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_22));
+                if let Some(inner_31) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
-                if let Some(inner_23) = &_input.max_results {
+                if let Some(inner_32) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_23).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_32).encode(),
+                    );
+                }
+                if let Some(inner_33) = &_input.include_hidden {
+                    query.push_kv(
+                        "include-hidden",
+                        aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
                     );
                 }
                 Ok(())
@@ -3312,13 +4111,13 @@ impl ListDomainsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_24) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_24));
+                if let Some(inner_34) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
-                if let Some(inner_25) = &_input.max_results {
+                if let Some(inner_35) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_35).encode(),
                     );
                 }
                 Ok(())
@@ -3466,14 +4265,14 @@ impl ListIdentityResolutionJobsInput {
                 _input: &crate::input::ListIdentityResolutionJobsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_26 = &_input.domain_name;
-                let input_26 = input_26.as_ref().ok_or(
+                let input_36 = &_input.domain_name;
+                let input_36 = input_36.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_26, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_36, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -3493,13 +4292,13 @@ impl ListIdentityResolutionJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_27));
+                if let Some(inner_37) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
-                if let Some(inner_28) = &_input.max_results {
+                if let Some(inner_38) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_38).encode(),
                     );
                 }
                 Ok(())
@@ -3575,6 +4374,7 @@ pub mod list_integrations_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) include_hidden: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -3607,6 +4407,16 @@ pub mod list_integrations_input {
             self.max_results = input;
             self
         }
+        /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+        pub fn include_hidden(mut self, input: bool) -> Self {
+            self.include_hidden = Some(input);
+            self
+        }
+        /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+        pub fn set_include_hidden(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_hidden = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListIntegrationsInput`](crate::input::ListIntegrationsInput)
         pub fn build(
             self,
@@ -3618,6 +4428,7 @@ pub mod list_integrations_input {
                 domain_name: self.domain_name,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                include_hidden: self.include_hidden,
             })
         }
     }
@@ -3646,14 +4457,14 @@ impl ListIntegrationsInput {
                 _input: &crate::input::ListIntegrationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_29 = &_input.domain_name;
-                let input_29 = input_29.as_ref().ok_or(
+                let input_39 = &_input.domain_name;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_39, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -3673,13 +4484,19 @@ impl ListIntegrationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_30) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_30));
+                if let Some(inner_40) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
-                if let Some(inner_31) = &_input.max_results {
+                if let Some(inner_41) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                    );
+                }
+                if let Some(inner_42) = &_input.include_hidden {
+                    query.push_kv(
+                        "include-hidden",
+                        aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
                     );
                 }
                 Ok(())
@@ -3868,14 +4685,14 @@ impl ListProfileObjectsInput {
                 _input: &crate::input::ListProfileObjectsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_32 = &_input.domain_name;
-                let input_32 = input_32.as_ref().ok_or(
+                let input_43 = &_input.domain_name;
+                let input_43 = input_43.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_32, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_43, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -3895,13 +4712,13 @@ impl ListProfileObjectsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_33) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_33));
+                if let Some(inner_44) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_44));
                 }
-                if let Some(inner_34) = &_input.max_results {
+                if let Some(inner_45) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_45).encode(),
                     );
                 }
                 Ok(())
@@ -4062,14 +4879,14 @@ impl ListProfileObjectTypesInput {
                 _input: &crate::input::ListProfileObjectTypesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_35 = &_input.domain_name;
-                let input_35 = input_35.as_ref().ok_or(
+                let input_46 = &_input.domain_name;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_35, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_46, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -4089,13 +4906,13 @@ impl ListProfileObjectTypesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_36) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_36));
+                if let Some(inner_47) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_47));
                 }
-                if let Some(inner_37) = &_input.max_results {
+                if let Some(inner_48) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_37).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
                     );
                 }
                 Ok(())
@@ -4240,13 +5057,13 @@ impl ListProfileObjectTypeTemplatesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_38) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_38));
+                if let Some(inner_49) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_49));
                 }
-                if let Some(inner_39) = &_input.max_results {
+                if let Some(inner_50) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_50).encode(),
                     );
                 }
                 Ok(())
@@ -4369,14 +5186,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.resource_arn;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_51 = &_input.resource_arn;
+                let input_51 = input_51.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_51, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4445,6 +5262,257 @@ impl ListTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
+    }
+}
+
+/// See [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
+pub mod list_workflows_input {
+    /// A builder for [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
+        pub(crate) status: std::option::Option<crate::model::Status>,
+        pub(crate) query_start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) query_end_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.workflow_type = Some(input);
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn set_workflow_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowType>,
+        ) -> Self {
+            self.workflow_type = input;
+            self
+        }
+        /// <p>Status of workflow execution.</p>
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Status of workflow execution.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Retrieve workflows started after timestamp.</p>
+        pub fn query_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.query_start_date = Some(input);
+            self
+        }
+        /// <p>Retrieve workflows started after timestamp.</p>
+        pub fn set_query_start_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.query_start_date = input;
+            self
+        }
+        /// <p>Retrieve workflows ended after timestamp.</p>
+        pub fn query_end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.query_end_date = Some(input);
+            self
+        }
+        /// <p>Retrieve workflows ended after timestamp.</p>
+        pub fn set_query_end_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.query_end_date = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListWorkflowsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListWorkflowsInput {
+                domain_name: self.domain_name,
+                workflow_type: self.workflow_type,
+                status: self.status,
+                query_start_date: self.query_start_date,
+                query_end_date: self.query_end_date,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListWorkflowsInputOperationOutputAlias = crate::operation::ListWorkflows;
+#[doc(hidden)]
+pub type ListWorkflowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListWorkflowsInput {
+    /// Consumes the builder and constructs an Operation<[`ListWorkflows`](crate::operation::ListWorkflows)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListWorkflows,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListWorkflowsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_52 = &_input.domain_name;
+                let input_52 = input_52.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let domain_name = aws_smithy_http::label::fmt_string(input_52, false);
+                if domain_name.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/domains/{DomainName}/workflows",
+                    DomainName = domain_name
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListWorkflowsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_53) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_53));
+                }
+                if let Some(inner_54) = &_input.max_results {
+                    query.push_kv(
+                        "max-results",
+                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListWorkflowsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_workflows(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWorkflows::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWorkflows",
+            "customerprofiles",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
+    pub fn builder() -> crate::input::list_workflows_input::Builder {
+        crate::input::list_workflows_input::Builder::default()
     }
 }
 
@@ -4560,14 +5628,14 @@ impl MergeProfilesInput {
                 _input: &crate::input::MergeProfilesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.domain_name;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_55 = &_input.domain_name;
+                let input_55 = input_55.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_41, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_55, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -4813,14 +5881,14 @@ impl PutIntegrationInput {
                 _input: &crate::input::PutIntegrationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.domain_name;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_56 = &_input.domain_name;
+                let input_56 = input_56.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_42, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_56, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -4993,14 +6061,14 @@ impl PutProfileObjectInput {
                 _input: &crate::input::PutProfileObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_43 = &_input.domain_name;
-                let input_43 = input_43.as_ref().ok_or(
+                let input_57 = &_input.domain_name;
+                let input_57 = input_57.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_43, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_57, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -5335,28 +6403,28 @@ impl PutProfileObjectTypeInput {
                 _input: &crate::input::PutProfileObjectTypeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_44 = &_input.domain_name;
-                let input_44 = input_44.as_ref().ok_or(
+                let input_58 = &_input.domain_name;
+                let input_58 = input_58.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_58, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_45 = &_input.object_type_name;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_59 = &_input.object_type_name;
+                let input_59 = input_59.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "object_type_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let object_type_name = aws_smithy_http::label::fmt_string(input_45, false);
+                let object_type_name = aws_smithy_http::label::fmt_string(input_59, false);
                 if object_type_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "object_type_name",
@@ -5562,14 +6630,14 @@ impl SearchProfilesInput {
                 _input: &crate::input::SearchProfilesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_46 = &_input.domain_name;
-                let input_46 = input_46.as_ref().ok_or(
+                let input_60 = &_input.domain_name;
+                let input_60 = input_60.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_46, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_60, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -5589,13 +6657,13 @@ impl SearchProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_47) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_47));
+                if let Some(inner_61) = &_input.next_token {
+                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_61));
                 }
-                if let Some(inner_48) = &_input.max_results {
+                if let Some(inner_62) = &_input.max_results {
                     query.push_kv(
                         "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_62).encode(),
                     );
                 }
                 Ok(())
@@ -5761,14 +6829,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_49 = &_input.resource_arn;
-                let input_49 = input_49.as_ref().ok_or(
+                let input_63 = &_input.resource_arn;
+                let input_63 = input_63.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_49, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_63, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5931,14 +6999,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_50 = &_input.resource_arn;
-                let input_50 = input_50.as_ref().ok_or(
+                let input_64 = &_input.resource_arn;
+                let input_64 = input_64.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_50, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_64, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5954,9 +7022,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_51) = &_input.tag_keys {
-                    for inner_52 in inner_51 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_52));
+                if let Some(inner_65) = &_input.tag_keys {
+                    for inner_66 in inner_65 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_66));
                     }
                 }
                 Ok(())
@@ -6167,14 +7235,14 @@ impl UpdateDomainInput {
                 _input: &crate::input::UpdateDomainInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_53 = &_input.domain_name;
-                let input_53 = input_53.as_ref().ok_or(
+                let input_67 = &_input.domain_name;
+                let input_67 = input_67.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_53, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_67, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -6639,14 +7707,14 @@ impl UpdateProfileInput {
                 _input: &crate::input::UpdateProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_54 = &_input.domain_name;
-                let input_54 = input_54.as_ref().ok_or(
+                let input_68 = &_input.domain_name;
+                let input_68 = input_68.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let domain_name = aws_smithy_http::label::fmt_string(input_54, false);
+                let domain_name = aws_smithy_http::label::fmt_string(input_68, false);
                 if domain_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
@@ -7342,6 +8410,69 @@ impl std::fmt::Debug for MergeProfilesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWorkflowsInput {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub workflow_type: std::option::Option<crate::model::WorkflowType>,
+    /// <p>Status of workflow execution.</p>
+    pub status: std::option::Option<crate::model::Status>,
+    /// <p>Retrieve workflows started after timestamp.</p>
+    pub query_start_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Retrieve workflows ended after timestamp.</p>
+    pub query_end_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per page.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListWorkflowsInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+        self.workflow_type.as_ref()
+    }
+    /// <p>Status of workflow execution.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>Retrieve workflows started after timestamp.</p>
+    pub fn query_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.query_start_date.as_ref()
+    }
+    /// <p>Retrieve workflows ended after timestamp.</p>
+    pub fn query_end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.query_end_date.as_ref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListWorkflowsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListWorkflowsInput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("workflow_type", &self.workflow_type);
+        formatter.field("status", &self.status);
+        formatter.field("query_start_date", &self.query_start_date);
+        formatter.field("query_end_date", &self.query_end_date);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource for which you want to view tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
@@ -7489,6 +8620,8 @@ pub struct ListIntegrationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+    pub include_hidden: std::option::Option<bool>,
 }
 impl ListIntegrationsInput {
     /// <p>The unique name of the domain.</p>
@@ -7503,6 +8636,10 @@ impl ListIntegrationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+    pub fn include_hidden(&self) -> std::option::Option<bool> {
+        self.include_hidden
+    }
 }
 impl std::fmt::Debug for ListIntegrationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7510,6 +8647,7 @@ impl std::fmt::Debug for ListIntegrationsInput {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("include_hidden", &self.include_hidden);
         formatter.finish()
     }
 }
@@ -7587,6 +8725,8 @@ pub struct ListAccountIntegrationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+    pub include_hidden: std::option::Option<bool>,
 }
 impl ListAccountIntegrationsInput {
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -7601,6 +8741,10 @@ impl ListAccountIntegrationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+    pub fn include_hidden(&self) -> std::option::Option<bool> {
+        self.include_hidden
+    }
 }
 impl std::fmt::Debug for ListAccountIntegrationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7608,6 +8752,77 @@ impl std::fmt::Debug for ListAccountIntegrationsInput {
         formatter.field("uri", &self.uri);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("include_hidden", &self.include_hidden);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetWorkflowStepsInput {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>Unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per page.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl GetWorkflowStepsInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for GetWorkflowStepsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetWorkflowStepsInput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetWorkflowInput {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>Unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+}
+impl GetWorkflowInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetWorkflowInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetWorkflowInput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("workflow_id", &self.workflow_id);
         formatter.finish()
     }
 }
@@ -7804,6 +9019,34 @@ impl std::fmt::Debug for GetAutoMergingPreviewInput {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("consolidation", &self.consolidation);
         formatter.field("conflict_resolution", &self.conflict_resolution);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteWorkflowInput {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>Unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+}
+impl DeleteWorkflowInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteWorkflowInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteWorkflowInput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("workflow_id", &self.workflow_id);
         formatter.finish()
     }
 }
@@ -8165,6 +9408,66 @@ impl std::fmt::Debug for CreateProfileInput {
         formatter.field("mailing_address", &self.mailing_address);
         formatter.field("billing_address", &self.billing_address);
         formatter.field("attributes", &self.attributes);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateIntegrationWorkflowInput {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub workflow_type: std::option::Option<crate::model::WorkflowType>,
+    /// <p>Configuration data for integration workflow.</p>
+    pub integration_config: std::option::Option<crate::model::IntegrationConfig>,
+    /// <p>The name of the profile object type.</p>
+    pub object_type_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateIntegrationWorkflowInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+        self.workflow_type.as_ref()
+    }
+    /// <p>Configuration data for integration workflow.</p>
+    pub fn integration_config(&self) -> std::option::Option<&crate::model::IntegrationConfig> {
+        self.integration_config.as_ref()
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateIntegrationWorkflowInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateIntegrationWorkflowInput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("workflow_type", &self.workflow_type);
+        formatter.field("integration_config", &self.integration_config);
+        formatter.field("object_type_name", &self.object_type_name);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

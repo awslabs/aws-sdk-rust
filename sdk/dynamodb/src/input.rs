@@ -4083,6 +4083,7 @@ pub mod execute_statement_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) return_consumed_capacity:
             std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The PartiQL statement representing the operation to run.</p>
@@ -4160,6 +4161,16 @@ pub mod execute_statement_input {
             self.return_consumed_capacity = input;
             self
         }
+        /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. </p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
+            self
+        }
+        /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. </p>
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
         pub fn build(
             self,
@@ -4173,6 +4184,7 @@ pub mod execute_statement_input {
                 consistent_read: self.consistent_read,
                 next_token: self.next_token,
                 return_consumed_capacity: self.return_consumed_capacity,
+                limit: self.limit,
             })
         }
     }
@@ -13238,6 +13250,8 @@ pub struct ExecuteStatementInput {
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
+    /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. </p>
+    pub limit: std::option::Option<i32>,
 }
 impl ExecuteStatementInput {
     /// <p>The PartiQL statement representing the operation to run.</p>
@@ -13267,6 +13281,10 @@ impl ExecuteStatementInput {
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
+    /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. </p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13276,6 +13294,7 @@ impl std::fmt::Debug for ExecuteStatementInput {
         formatter.field("consistent_read", &self.consistent_read);
         formatter.field("next_token", &self.next_token);
         formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
+        formatter.field("limit", &self.limit);
         formatter.finish()
     }
 }
