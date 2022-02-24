@@ -12,4 +12,4 @@ echo "### Checking for duplicate dependency versions in the normal dependency gr
 cargo tree -d --edges normal --all-features
 
 echo "### Running api-linter"
-cargo +nightly api-linter --all-features
+cargo +nightly-2022-02-22 api-linter --all-features
