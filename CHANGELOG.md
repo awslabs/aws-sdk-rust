@@ -1,4 +1,16 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
+0.8.0 (Februrary 24, 2022)
+==========================
+**Breaking Changes:**
+- ⚠ ([smithy-rs#1216](https://github.com/awslabs/smithy-rs/issues/1216)) `aws-sigv4` no longer skips the `content-length` and `content-type` headers when signing with `SignatureLocation::QueryParams`
+
+**New this release:**
+- 🎉 ([smithy-rs#1220](https://github.com/awslabs/smithy-rs/issues/1220), [aws-sdk-rust#462](https://github.com/awslabs/aws-sdk-rust/issues/462)) Made it possible to change settings, such as load timeout, on the credential cache used by the `DefaultCredentialsChain`.
+- 🐛 ([smithy-rs#1197](https://github.com/awslabs/smithy-rs/issues/1197)) Fixed a bug that caused clients to eventually stop retrying. The cross-request retry allowance wasn't being reimbursed upon receiving a successful response, so once this allowance reached zero, no further retries would ever be attempted.
+- 🐛 ([smithy-rs#1217](https://github.com/awslabs/smithy-rs/issues/1217), [aws-sdk-rust#467](https://github.com/awslabs/aws-sdk-rust/issues/467)) `ClientBuilder` helpers `rustls()` and `native_tls()` now return `DynConnector` so that they once again work when constructing clients with custom middleware in the SDK.
+- 🐛 ([smithy-rs#1216](https://github.com/awslabs/smithy-rs/issues/1216), [aws-sdk-rust#466](https://github.com/awslabs/aws-sdk-rust/issues/466)) Fixed a bug in S3 that prevented the `content-length` and `content-type` inputs from being included in a presigned request signature. With this fix, customers can generate presigned URLs that enforce `content-length` and `content-type` for requests to S3.
+
+
 0.7.0 (February 18th, 2022)
 ===========================
 **Breaking Changes:**

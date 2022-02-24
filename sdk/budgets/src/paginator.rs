@@ -284,6 +284,103 @@ impl DescribeBudgetActionsForBudgetPaginator {
     }
 }
 
+/// Paginator for [`DescribeBudgetNotificationsForAccount`](crate::operation::DescribeBudgetNotificationsForAccount)
+pub struct DescribeBudgetNotificationsForAccountPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::describe_budget_notifications_for_account_input::Builder,
+}
+
+impl DescribeBudgetNotificationsForAccountPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::describe_budget_notifications_for_account_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_results`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_results = Some(limit);
+        self
+    }
+
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `budget_notifications_for_account`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::DescribeBudgetNotificationsForAccountPaginatorItems {
+        crate::paginator::DescribeBudgetNotificationsForAccountPaginatorItems(self)
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::DescribeBudgetNotificationsForAccountOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeBudgetNotificationsForAccountError,
+            >,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_describe_budget_notifications_for_account_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
 /// Paginator for [`DescribeBudgetPerformanceHistory`](crate::operation::DescribeBudgetPerformanceHistory)
 pub struct DescribeBudgetPerformanceHistoryPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -724,6 +821,33 @@ impl DescribeBudgetActionsForBudgetPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_budget_actions_for_budget_output_actions(page).unwrap_or_default().into_iter())
+    }
+}
+
+/// Flattened paginator for `DescribeBudgetNotificationsForAccountPaginator`
+///
+/// This is created with [`.items()`](DescribeBudgetNotificationsForAccountPaginator::items)
+pub struct DescribeBudgetNotificationsForAccountPaginatorItems(
+    DescribeBudgetNotificationsForAccountPaginator,
+);
+
+impl DescribeBudgetNotificationsForAccountPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::BudgetNotificationsForAccount,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeBudgetNotificationsForAccountError,
+            >,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_budget_notifications_for_account_output_budget_notifications_for_account(page).unwrap_or_default().into_iter())
     }
 }
 

@@ -1549,6 +1549,131 @@ pub fn parse_describe_budget_actions_for_budget_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_budget_notifications_for_account_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeBudgetNotificationsForAccountOutput,
+    crate::error::DescribeBudgetNotificationsForAccountError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeBudgetNotificationsForAccountError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::DescribeBudgetNotificationsForAccountError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DescribeBudgetNotificationsForAccountError { meta: generic, kind: crate::error::DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBudgetNotificationsForAccountError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ExpiredNextTokenException" => crate::error::DescribeBudgetNotificationsForAccountError { meta: generic, kind: crate::error::DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::expired_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_expired_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBudgetNotificationsForAccountError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalErrorException" => crate::error::DescribeBudgetNotificationsForAccountError { meta: generic, kind: crate::error::DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBudgetNotificationsForAccountError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidNextTokenException" => crate::error::DescribeBudgetNotificationsForAccountError { meta: generic, kind: crate::error::DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBudgetNotificationsForAccountError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::DescribeBudgetNotificationsForAccountError { meta: generic, kind: crate::error::DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBudgetNotificationsForAccountError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NotFoundException" => crate::error::DescribeBudgetNotificationsForAccountError { meta: generic, kind: crate::error::DescribeBudgetNotificationsForAccountErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBudgetNotificationsForAccountError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeBudgetNotificationsForAccountError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_budget_notifications_for_account_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeBudgetNotificationsForAccountOutput,
+    crate::error::DescribeBudgetNotificationsForAccountError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_budget_notifications_for_account_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_budget_notifications_for_account(response.body().as_ref(), output).map_err(crate::error::DescribeBudgetNotificationsForAccountError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_budget_performance_history_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

@@ -3233,6 +3233,88 @@ impl BudgetedAndActualAmounts {
     }
 }
 
+/// <p> The budget name and associated notifications for an account. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BudgetNotificationsForAccount {
+    /// <p> A list of notifications.</p>
+    pub notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub budget_name: std::option::Option<std::string::String>,
+}
+impl BudgetNotificationsForAccount {
+    /// <p> A list of notifications.</p>
+    pub fn notifications(&self) -> std::option::Option<&[crate::model::Notification]> {
+        self.notifications.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+}
+impl std::fmt::Debug for BudgetNotificationsForAccount {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BudgetNotificationsForAccount");
+        formatter.field("notifications", &self.notifications);
+        formatter.field("budget_name", &self.budget_name);
+        formatter.finish()
+    }
+}
+/// See [`BudgetNotificationsForAccount`](crate::model::BudgetNotificationsForAccount)
+pub mod budget_notifications_for_account {
+    /// A builder for [`BudgetNotificationsForAccount`](crate::model::BudgetNotificationsForAccount)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
+        pub(crate) budget_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `notifications`.
+        ///
+        /// To override the contents of this collection use [`set_notifications`](Self::set_notifications).
+        ///
+        /// <p> A list of notifications.</p>
+        pub fn notifications(mut self, input: crate::model::Notification) -> Self {
+            let mut v = self.notifications.unwrap_or_default();
+            v.push(input);
+            self.notifications = Some(v);
+            self
+        }
+        /// <p> A list of notifications.</p>
+        pub fn set_notifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Notification>>,
+        ) -> Self {
+            self.notifications = input;
+            self
+        }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.budget_name = Some(input.into());
+            self
+        }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+        pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.budget_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BudgetNotificationsForAccount`](crate::model::BudgetNotificationsForAccount)
+        pub fn build(self) -> crate::model::BudgetNotificationsForAccount {
+            crate::model::BudgetNotificationsForAccount {
+                notifications: self.notifications,
+                budget_name: self.budget_name,
+            }
+        }
+    }
+}
+impl BudgetNotificationsForAccount {
+    /// Creates a new builder-style object to manufacture [`BudgetNotificationsForAccount`](crate::model::BudgetNotificationsForAccount)
+    pub fn builder() -> crate::model::budget_notifications_for_account::Builder {
+        crate::model::budget_notifications_for_account::Builder::default()
+    }
+}
+
 /// <p>The historical records for a budget action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

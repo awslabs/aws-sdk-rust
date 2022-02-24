@@ -1851,6 +1851,8 @@ impl AsRef<str> for SelectionStatus {
 )]
 pub enum EntityType {
     #[allow(missing_docs)] // documentation missing in model
+    ColumnHeader,
+    #[allow(missing_docs)] // documentation missing in model
     Key,
     #[allow(missing_docs)] // documentation missing in model
     Value,
@@ -1860,6 +1862,7 @@ pub enum EntityType {
 impl std::convert::From<&str> for EntityType {
     fn from(s: &str) -> Self {
         match s {
+            "COLUMN_HEADER" => EntityType::ColumnHeader,
             "KEY" => EntityType::Key,
             "VALUE" => EntityType::Value,
             other => EntityType::Unknown(other.to_owned()),
@@ -1877,6 +1880,7 @@ impl EntityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EntityType::ColumnHeader => "COLUMN_HEADER",
             EntityType::Key => "KEY",
             EntityType::Value => "VALUE",
             EntityType::Unknown(s) => s.as_ref(),
@@ -1884,7 +1888,7 @@ impl EntityType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["KEY", "VALUE"]
+        &["COLUMN_HEADER", "KEY", "VALUE"]
     }
 }
 impl AsRef<str> for EntityType {
@@ -1996,6 +2000,10 @@ pub enum RelationshipType {
     #[allow(missing_docs)] // documentation missing in model
     ComplexFeatures,
     #[allow(missing_docs)] // documentation missing in model
+    MergedCell,
+    #[allow(missing_docs)] // documentation missing in model
+    Title,
+    #[allow(missing_docs)] // documentation missing in model
     Value,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2005,6 +2013,8 @@ impl std::convert::From<&str> for RelationshipType {
         match s {
             "CHILD" => RelationshipType::Child,
             "COMPLEX_FEATURES" => RelationshipType::ComplexFeatures,
+            "MERGED_CELL" => RelationshipType::MergedCell,
+            "TITLE" => RelationshipType::Title,
             "VALUE" => RelationshipType::Value,
             other => RelationshipType::Unknown(other.to_owned()),
         }
@@ -2023,13 +2033,15 @@ impl RelationshipType {
         match self {
             RelationshipType::Child => "CHILD",
             RelationshipType::ComplexFeatures => "COMPLEX_FEATURES",
+            RelationshipType::MergedCell => "MERGED_CELL",
+            RelationshipType::Title => "TITLE",
             RelationshipType::Value => "VALUE",
             RelationshipType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["CHILD", "COMPLEX_FEATURES", "VALUE"]
+        &["CHILD", "COMPLEX_FEATURES", "MERGED_CELL", "TITLE", "VALUE"]
     }
 }
 impl AsRef<str> for RelationshipType {
@@ -2112,11 +2124,15 @@ pub enum BlockType {
     #[allow(missing_docs)] // documentation missing in model
     Line,
     #[allow(missing_docs)] // documentation missing in model
+    MergedCell,
+    #[allow(missing_docs)] // documentation missing in model
     Page,
     #[allow(missing_docs)] // documentation missing in model
     SelectionElement,
     #[allow(missing_docs)] // documentation missing in model
     Table,
+    #[allow(missing_docs)] // documentation missing in model
+    Title,
     #[allow(missing_docs)] // documentation missing in model
     Word,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -2128,9 +2144,11 @@ impl std::convert::From<&str> for BlockType {
             "CELL" => BlockType::Cell,
             "KEY_VALUE_SET" => BlockType::KeyValueSet,
             "LINE" => BlockType::Line,
+            "MERGED_CELL" => BlockType::MergedCell,
             "PAGE" => BlockType::Page,
             "SELECTION_ELEMENT" => BlockType::SelectionElement,
             "TABLE" => BlockType::Table,
+            "TITLE" => BlockType::Title,
             "WORD" => BlockType::Word,
             other => BlockType::Unknown(other.to_owned()),
         }
@@ -2150,9 +2168,11 @@ impl BlockType {
             BlockType::Cell => "CELL",
             BlockType::KeyValueSet => "KEY_VALUE_SET",
             BlockType::Line => "LINE",
+            BlockType::MergedCell => "MERGED_CELL",
             BlockType::Page => "PAGE",
             BlockType::SelectionElement => "SELECTION_ELEMENT",
             BlockType::Table => "TABLE",
+            BlockType::Title => "TITLE",
             BlockType::Word => "WORD",
             BlockType::Unknown(s) => s.as_ref(),
         }
@@ -2163,9 +2183,11 @@ impl BlockType {
             "CELL",
             "KEY_VALUE_SET",
             "LINE",
+            "MERGED_CELL",
             "PAGE",
             "SELECTION_ELEMENT",
             "TABLE",
+            "TITLE",
             "WORD",
         ]
     }

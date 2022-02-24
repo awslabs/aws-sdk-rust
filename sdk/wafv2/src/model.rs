@@ -4040,7 +4040,7 @@ impl ManagedRuleGroupStatement {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedRuleGroupConfig {
-    /// <p>The login endpoint for your application. For example <code>https://example.com/web/login</code>.</p>
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
     pub login_path: std::option::Option<std::string::String>,
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
     pub payload_type: std::option::Option<crate::model::PayloadType>,
@@ -4050,7 +4050,7 @@ pub struct ManagedRuleGroupConfig {
     pub password_field: std::option::Option<crate::model::PasswordField>,
 }
 impl ManagedRuleGroupConfig {
-    /// <p>The login endpoint for your application. For example <code>https://example.com/web/login</code>.</p>
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
     pub fn login_path(&self) -> std::option::Option<&str> {
         self.login_path.as_deref()
     }
@@ -4089,12 +4089,12 @@ pub mod managed_rule_group_config {
         pub(crate) password_field: std::option::Option<crate::model::PasswordField>,
     }
     impl Builder {
-        /// <p>The login endpoint for your application. For example <code>https://example.com/web/login</code>.</p>
+        /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
         pub fn login_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.login_path = Some(input.into());
             self
         }
-        /// <p>The login endpoint for your application. For example <code>https://example.com/web/login</code>.</p>
+        /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
         pub fn set_login_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.login_path = input;
             self
@@ -7620,14 +7620,24 @@ impl VersionToPublish {
     }
 }
 
-/// <p>Defines an association between logging destinations and a web ACL resource, for logging from WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs and you can specify filters so that you log only a subset of the logging records. </p>
-/// <p>For information about configuring web ACL logging destinations, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
+/// <p>Defines an association between logging destinations and a web ACL resource, for logging from WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs and you can specify filters so that you log only a subset of the logging records. </p> <note>
+/// <p>You can define one logging destination per web ACL.</p>
+/// </note>
+/// <p>You can access information about the traffic that WAF inspects using the following steps:</p>
+/// <ol>
+/// <li> <p>Create your logging destination. You can use an Amazon CloudWatch Logs log group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose. For information about configuring logging destinations and the permissions that are required for each, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p> </li>
+/// <li> <p>Associate your logging destination to your web ACL using a <code>PutLoggingConfiguration</code> request.</p> </li>
+/// </ol>
+/// <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, WAF creates an additional role or policy that is required to write logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p>
+/// <p>For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate with the web ACL.</p>
+    /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
+    /// <p>You can associate one logging destination to a web ACL.</p>
+    /// </note>
     pub log_destination_configs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
@@ -7643,7 +7653,9 @@ impl LoggingConfiguration {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate with the web ACL.</p>
+    /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
+    /// <p>You can associate one logging destination to a web ACL.</p>
+    /// </note>
     pub fn log_destination_configs(&self) -> std::option::Option<&[std::string::String]> {
         self.log_destination_configs.as_deref()
     }
@@ -7703,14 +7715,18 @@ pub mod logging_configuration {
         ///
         /// To override the contents of this collection use [`set_log_destination_configs`](Self::set_log_destination_configs).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate with the web ACL.</p>
+        /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
+        /// <p>You can associate one logging destination to a web ACL.</p>
+        /// </note>
         pub fn log_destination_configs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_destination_configs.unwrap_or_default();
             v.push(input.into());
             self.log_destination_configs = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate with the web ACL.</p>
+        /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
+        /// <p>You can associate one logging destination to a web ACL.</p>
+        /// </note>
         pub fn set_log_destination_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11675,7 +11691,7 @@ impl AsRef<str> for IpAddressVersion {
 }
 
 /// <p>Information for a release of the mobile SDK, including release notes and tags.</p>
-/// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. </p>
+/// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MobileSdkRelease {
@@ -12220,7 +12236,7 @@ impl ManagedRuleSetVersion {
     }
 }
 
-/// <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p>
+/// <p>Contains zero or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p>
 /// <p>WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <code>Rule</code> statement <code>IPSetReferenceStatement</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -12235,8 +12251,8 @@ pub struct IpSet {
     pub description: std::option::Option<std::string::String>,
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
     pub ip_address_version: std::option::Option<crate::model::IpAddressVersion>,
-    /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
-    /// <p>Examples: </p>
+    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+    /// <p>Example address strings: </p>
     /// <ul>
     /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
     /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
@@ -12244,6 +12260,13 @@ pub struct IpSet {
     /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    /// <p>Example JSON <code>Addresses</code> specifications: </p>
+    /// <ul>
+    /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+    /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+    /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+    /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
+    /// </ul>
     pub addresses: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl IpSet {
@@ -12267,8 +12290,8 @@ impl IpSet {
     pub fn ip_address_version(&self) -> std::option::Option<&crate::model::IpAddressVersion> {
         self.ip_address_version.as_ref()
     }
-    /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
-    /// <p>Examples: </p>
+    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+    /// <p>Example address strings: </p>
     /// <ul>
     /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
     /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
@@ -12276,6 +12299,13 @@ impl IpSet {
     /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    /// <p>Example JSON <code>Addresses</code> specifications: </p>
+    /// <ul>
+    /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+    /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+    /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+    /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
+    /// </ul>
     pub fn addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.addresses.as_deref()
     }
@@ -12363,8 +12393,8 @@ pub mod ip_set {
         ///
         /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
         ///
-        /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
-        /// <p>Examples: </p>
+        /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Example address strings: </p>
         /// <ul>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
@@ -12372,14 +12402,21 @@ pub mod ip_set {
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+        /// <p>Example JSON <code>Addresses</code> specifications: </p>
+        /// <ul>
+        /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+        /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+        /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+        /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
+        /// </ul>
         pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.addresses.unwrap_or_default();
             v.push(input.into());
             self.addresses = Some(v);
             self
         }
-        /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
-        /// <p>Examples: </p>
+        /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Example address strings: </p>
         /// <ul>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
@@ -12387,6 +12424,13 @@ pub mod ip_set {
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+        /// <p>Example JSON <code>Addresses</code> specifications: </p>
+        /// <ul>
+        /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+        /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+        /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+        /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
+        /// </ul>
         pub fn set_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

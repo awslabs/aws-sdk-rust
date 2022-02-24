@@ -29,6 +29,16 @@ pub(crate) fn reflens_structure_crate_output_describe_budget_actions_for_budget_
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_describe_budget_notifications_for_account_output_next_token(
+    input: &crate::output::DescribeBudgetNotificationsForAccountOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_describe_budget_performance_history_output_next_token(
     input: &crate::output::DescribeBudgetPerformanceHistoryOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -93,6 +103,16 @@ pub(crate) fn lens_structure_crate_output_describe_budget_actions_for_budget_out
     input: crate::output::DescribeBudgetActionsForBudgetOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Action>> {
     let input = match input.actions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_budget_notifications_for_account_output_budget_notifications_for_account(
+    input: crate::output::DescribeBudgetNotificationsForAccountOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>> {
+    let input = match input.budget_notifications_for_account {
         None => return None,
         Some(t) => t,
     };

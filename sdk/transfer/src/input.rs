@@ -54,9 +54,7 @@ pub mod create_access_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-        /// </note>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn home_directory_mappings(
             mut self,
             input: crate::model::HomeDirectoryMapEntry,
@@ -71,9 +69,7 @@ pub mod create_access_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-        /// </note>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -292,6 +288,8 @@ pub mod create_server_input {
             std::option::Option<crate::model::IdentityProviderDetails>,
         pub(crate) identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
         pub(crate) logging_role: std::option::Option<std::string::String>,
+        pub(crate) post_authentication_login_banner: std::option::Option<std::string::String>,
+        pub(crate) pre_authentication_login_banner: std::option::Option<std::string::String>,
         pub(crate) protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
         pub(crate) protocol_details: std::option::Option<crate::model::ProtocolDetails>,
         pub(crate) security_policy_name: std::option::Option<std::string::String>,
@@ -444,6 +442,38 @@ pub mod create_server_input {
             self.logging_role = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn post_authentication_login_banner(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.post_authentication_login_banner = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_post_authentication_login_banner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.post_authentication_login_banner = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn pre_authentication_login_banner(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.pre_authentication_login_banner = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_pre_authentication_login_banner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pre_authentication_login_banner = input;
+            self
+        }
         /// Appends an item to `protocols`.
         ///
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -561,6 +591,8 @@ pub mod create_server_input {
                 identity_provider_details: self.identity_provider_details,
                 identity_provider_type: self.identity_provider_type,
                 logging_role: self.logging_role,
+                post_authentication_login_banner: self.post_authentication_login_banner,
+                pre_authentication_login_banner: self.pre_authentication_login_banner,
                 protocols: self.protocols,
                 protocol_details: self.protocol_details,
                 security_policy_name: self.security_policy_name,
@@ -733,9 +765,7 @@ pub mod create_user_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-        /// </note>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn home_directory_mappings(
             mut self,
             input: crate::model::HomeDirectoryMapEntry,
@@ -750,9 +780,7 @@ pub mod create_user_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-        /// </note>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -5168,9 +5196,7 @@ pub mod update_access_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-        /// </note>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn home_directory_mappings(
             mut self,
             input: crate::model::HomeDirectoryMapEntry,
@@ -5185,9 +5211,7 @@ pub mod update_access_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-        /// </note>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -5405,6 +5429,8 @@ pub mod update_server_input {
         pub(crate) identity_provider_details:
             std::option::Option<crate::model::IdentityProviderDetails>,
         pub(crate) logging_role: std::option::Option<std::string::String>,
+        pub(crate) post_authentication_login_banner: std::option::Option<std::string::String>,
+        pub(crate) pre_authentication_login_banner: std::option::Option<std::string::String>,
         pub(crate) protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
         pub(crate) security_policy_name: std::option::Option<std::string::String>,
         pub(crate) server_id: std::option::Option<std::string::String>,
@@ -5540,6 +5566,38 @@ pub mod update_server_input {
             self.logging_role = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn post_authentication_login_banner(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.post_authentication_login_banner = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_post_authentication_login_banner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.post_authentication_login_banner = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn pre_authentication_login_banner(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.pre_authentication_login_banner = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_pre_authentication_login_banner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pre_authentication_login_banner = input;
+            self
+        }
         /// Appends an item to `protocols`.
         ///
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -5630,6 +5688,8 @@ pub mod update_server_input {
                 host_key: self.host_key,
                 identity_provider_details: self.identity_provider_details,
                 logging_role: self.logging_role,
+                post_authentication_login_banner: self.post_authentication_login_banner,
+                pre_authentication_login_banner: self.pre_authentication_login_banner,
                 protocols: self.protocols,
                 security_policy_name: self.security_policy_name,
                 server_id: self.server_id,
@@ -5799,9 +5859,7 @@ pub mod update_user_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-        /// </note>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn home_directory_mappings(
             mut self,
             input: crate::model::HomeDirectoryMapEntry,
@@ -5816,9 +5874,7 @@ pub mod update_user_input {
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-        /// </note>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -6030,9 +6086,7 @@ pub struct UpdateUserInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-    /// </note>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -6066,9 +6120,7 @@ impl UpdateUserInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-    /// </note>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
@@ -6155,6 +6207,10 @@ pub struct UpdateServerInput {
     pub identity_provider_details: std::option::Option<crate::model::IdentityProviderDetails>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub post_authentication_login_banner: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
     /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>
@@ -6227,6 +6283,14 @@ impl UpdateServerInput {
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn post_authentication_login_banner(&self) -> std::option::Option<&str> {
+        self.post_authentication_login_banner.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn pre_authentication_login_banner(&self) -> std::option::Option<&str> {
+        self.pre_authentication_login_banner.as_deref()
+    }
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
     /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>
@@ -6264,6 +6328,14 @@ impl std::fmt::Debug for UpdateServerInput {
         formatter.field("host_key", &"*** Sensitive Data Redacted ***");
         formatter.field("identity_provider_details", &self.identity_provider_details);
         formatter.field("logging_role", &self.logging_role);
+        formatter.field(
+            "post_authentication_login_banner",
+            &self.post_authentication_login_banner,
+        );
+        formatter.field(
+            "pre_authentication_login_banner",
+            &self.pre_authentication_login_banner,
+        );
         formatter.field("protocols", &self.protocols);
         formatter.field("security_policy_name", &self.security_policy_name);
         formatter.field("server_id", &self.server_id);
@@ -6286,9 +6358,7 @@ pub struct UpdateAccessInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-    /// </note>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -6325,9 +6395,7 @@ impl UpdateAccessInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-    /// </note>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
@@ -7219,9 +7287,7 @@ pub struct CreateUserInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-    /// </note>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -7261,9 +7327,7 @@ impl CreateUserInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-    /// </note>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
@@ -7367,6 +7431,10 @@ pub struct CreateServerInput {
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub post_authentication_login_banner: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
     /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
@@ -7452,6 +7520,14 @@ impl CreateServerInput {
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn post_authentication_login_banner(&self) -> std::option::Option<&str> {
+        self.post_authentication_login_banner.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn pre_authentication_login_banner(&self) -> std::option::Option<&str> {
+        self.pre_authentication_login_banner.as_deref()
+    }
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
     /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
@@ -7496,6 +7572,14 @@ impl std::fmt::Debug for CreateServerInput {
         formatter.field("identity_provider_details", &self.identity_provider_details);
         formatter.field("identity_provider_type", &self.identity_provider_type);
         formatter.field("logging_role", &self.logging_role);
+        formatter.field(
+            "post_authentication_login_banner",
+            &self.post_authentication_login_banner,
+        );
+        formatter.field(
+            "pre_authentication_login_banner",
+            &self.pre_authentication_login_banner,
+        );
         formatter.field("protocols", &self.protocols);
         formatter.field("protocol_details", &self.protocol_details);
         formatter.field("security_policy_name", &self.security_policy_name);
@@ -7519,9 +7603,7 @@ pub struct CreateAccessInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-    /// </note>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -7558,9 +7640,7 @@ impl CreateAccessInput {
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
-    /// </note>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {

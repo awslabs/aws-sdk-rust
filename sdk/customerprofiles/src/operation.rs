@@ -63,6 +63,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomain {
     }
 }
 
+/// Operation shape for `CreateIntegrationWorkflow`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_integration_workflow`](crate::client::Client::create_integration_workflow).
+///
+/// See [`crate::client::fluent_builders::CreateIntegrationWorkflow`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateIntegrationWorkflow {
+    _private: (),
+}
+impl CreateIntegrationWorkflow {
+    /// Creates a new builder-style object to manufacture [`CreateIntegrationWorkflowInput`](crate::input::CreateIntegrationWorkflowInput)
+    pub fn builder() -> crate::input::create_integration_workflow_input::Builder {
+        crate::input::create_integration_workflow_input::Builder::default()
+    }
+    /// Creates a new `CreateIntegrationWorkflow` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateIntegrationWorkflow {
+    type Output = std::result::Result<
+        crate::output::CreateIntegrationWorkflowOutput,
+        crate::error::CreateIntegrationWorkflowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_integration_workflow_error(response)
+        } else {
+            crate::operation_deser::parse_create_integration_workflow_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -295,6 +329,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfileObjectType 
     }
 }
 
+/// Operation shape for `DeleteWorkflow`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_workflow`](crate::client::Client::delete_workflow).
+///
+/// See [`crate::client::fluent_builders::DeleteWorkflow`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteWorkflow {
+    _private: (),
+}
+impl DeleteWorkflow {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput)
+    pub fn builder() -> crate::input::delete_workflow_input::Builder {
+        crate::input::delete_workflow_input::Builder::default()
+    }
+    /// Creates a new `DeleteWorkflow` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflow {
+    type Output =
+        std::result::Result<crate::output::DeleteWorkflowOutput, crate::error::DeleteWorkflowError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_workflow_error(response)
+        } else {
+            crate::operation_deser::parse_delete_workflow_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetAutoMergingPreview`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -522,6 +588,72 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProfileObjectTypeTemp
             crate::operation_deser::parse_get_profile_object_type_template_error(response)
         } else {
             crate::operation_deser::parse_get_profile_object_type_template_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetWorkflow`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_workflow`](crate::client::Client::get_workflow).
+///
+/// See [`crate::client::fluent_builders::GetWorkflow`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetWorkflow {
+    _private: (),
+}
+impl GetWorkflow {
+    /// Creates a new builder-style object to manufacture [`GetWorkflowInput`](crate::input::GetWorkflowInput)
+    pub fn builder() -> crate::input::get_workflow_input::Builder {
+        crate::input::get_workflow_input::Builder::default()
+    }
+    /// Creates a new `GetWorkflow` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetWorkflow {
+    type Output =
+        std::result::Result<crate::output::GetWorkflowOutput, crate::error::GetWorkflowError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_workflow_error(response)
+        } else {
+            crate::operation_deser::parse_get_workflow_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetWorkflowSteps`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_workflow_steps`](crate::client::Client::get_workflow_steps).
+///
+/// See [`crate::client::fluent_builders::GetWorkflowSteps`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetWorkflowSteps {
+    _private: (),
+}
+impl GetWorkflowSteps {
+    /// Creates a new builder-style object to manufacture [`GetWorkflowStepsInput`](crate::input::GetWorkflowStepsInput)
+    pub fn builder() -> crate::input::get_workflow_steps_input::Builder {
+        crate::input::get_workflow_steps_input::Builder::default()
+    }
+    /// Creates a new `GetWorkflowSteps` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowSteps {
+    type Output = std::result::Result<
+        crate::output::GetWorkflowStepsOutput,
+        crate::error::GetWorkflowStepsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_workflow_steps_error(response)
+        } else {
+            crate::operation_deser::parse_get_workflow_steps_response(response)
         }
     }
 }
@@ -792,6 +924,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListWorkflows`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_workflows`](crate::client::Client::list_workflows).
+///
+/// See [`crate::client::fluent_builders::ListWorkflows`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListWorkflows {
+    _private: (),
+}
+impl ListWorkflows {
+    /// Creates a new builder-style object to manufacture [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
+    pub fn builder() -> crate::input::list_workflows_input::Builder {
+        crate::input::list_workflows_input::Builder::default()
+    }
+    /// Creates a new `ListWorkflows` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListWorkflows {
+    type Output =
+        std::result::Result<crate::output::ListWorkflowsOutput, crate::error::ListWorkflowsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_workflows_error(response)
+        } else {
+            crate::operation_deser::parse_list_workflows_response(response)
         }
     }
 }

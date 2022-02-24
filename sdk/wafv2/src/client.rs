@@ -120,7 +120,7 @@ impl Client {
     ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_description): <p>A description of the IP set that helps with identification. </p>
     ///   - [`ip_address_version(IpAddressVersion)`](crate::client::fluent_builders::CreateIPSet::ip_address_version) / [`set_ip_address_version(Option<IpAddressVersion>)`](crate::client::fluent_builders::CreateIPSet::set_ip_address_version): <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-    ///   - [`addresses(Vec<String>)`](crate::client::fluent_builders::CreateIPSet::addresses) / [`set_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::CreateIPSet::set_addresses): <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>  <p>Examples: </p>  <ul>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>  </ul>  <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    ///   - [`addresses(Vec<String>)`](crate::client::fluent_builders::CreateIPSet::addresses) / [`set_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::CreateIPSet::set_addresses): <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>  <p>Example address strings: </p>  <ul>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>  </ul>  <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>  <p>Example JSON <code>Addresses</code> specifications: </p>  <ul>   <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>   <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>   <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>   <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>  </ul>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateIPSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateIPSet::set_tags): <p>An array of key:value pairs to associate with the resource.</p>
     /// - On success, responds with [`CreateIpSetOutput`](crate::output::CreateIpSetOutput) with field(s):
     ///   - [`summary(Option<IpSetSummary>)`](crate::output::CreateIpSetOutput::summary): <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
@@ -428,7 +428,7 @@ impl Client {
     /// - On success, responds with [`GetWebAclOutput`](crate::output::GetWebAclOutput) with field(s):
     ///   - [`web_acl(Option<WebAcl>)`](crate::output::GetWebAclOutput::web_acl): <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
     ///   - [`lock_token(Option<String>)`](crate::output::GetWebAclOutput::lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    ///   - [`application_integration_url(Option<String>)`](crate::output::GetWebAclOutput::application_integration_url): <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF application integration</a> in the <i>WAF Developer Guide</i>.</p>
+    ///   - [`application_integration_url(Option<String>)`](crate::output::GetWebAclOutput::application_integration_url): <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetWebACLError>`](crate::error::GetWebACLError)
     pub fn get_web_acl(&self) -> fluent_builders::GetWebACL {
         fluent_builders::GetWebACL::new(self.handle.clone())
@@ -655,7 +655,7 @@ impl Client {
     ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_description): <p>A description of the IP set that helps with identification. </p>
-    ///   - [`addresses(Vec<String>)`](crate::client::fluent_builders::UpdateIPSet::addresses) / [`set_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateIPSet::set_addresses): <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>  <p>Examples: </p>  <ul>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>  </ul>  <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    ///   - [`addresses(Vec<String>)`](crate::client::fluent_builders::UpdateIPSet::addresses) / [`set_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateIPSet::set_addresses): <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>  <p>Example address strings: </p>  <ul>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>  </ul>  <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>  <p>Example JSON <code>Addresses</code> specifications: </p>  <ul>   <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>   <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>   <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>   <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>  </ul>
     ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     /// - On success, responds with [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput) with field(s):
     ///   - [`next_lock_token(Option<String>)`](crate::output::UpdateIpSetOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
@@ -998,8 +998,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
         ///
-        /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
-        /// <p>Examples: </p>
+        /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Example address strings: </p>
         /// <ul>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
@@ -1007,12 +1007,19 @@ pub mod fluent_builders {
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+        /// <p>Example JSON <code>Addresses</code> specifications: </p>
+        /// <ul>
+        /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+        /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+        /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+        /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
+        /// </ul>
         pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.addresses(input.into());
             self
         }
-        /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
-        /// <p>Examples: </p>
+        /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Example address strings: </p>
         /// <ul>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
@@ -1020,6 +1027,13 @@ pub mod fluent_builders {
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+        /// <p>Example JSON <code>Addresses</code> specifications: </p>
+        /// <ul>
+        /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+        /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+        /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+        /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
+        /// </ul>
         pub fn set_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2229,7 +2243,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GenerateMobileSdkReleaseUrl`.
     ///
     /// <p>Generates a presigned download URL for the specified release of the mobile SDK.</p>
-    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. </p>
+    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateMobileSdkReleaseUrl {
         handle: std::sync::Arc<super::Handle>,
@@ -2520,7 +2534,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMobileSdkRelease`.
     ///
     /// <p>Retrieves information for the specified mobile SDK release, including release notes and tags.</p>
-    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. </p>
+    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMobileSdkRelease {
         handle: std::sync::Arc<super::Handle>,
@@ -3611,7 +3625,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMobileSdkReleases`.
     ///
     /// <p>Retrieves a list of the available releases for the mobile SDK and the specified device platform. </p>
-    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. </p>
+    /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMobileSdkReleases {
         handle: std::sync::Arc<super::Handle>,
@@ -4073,13 +4087,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutLoggingConfiguration`.
     ///
-    /// <p>Enables the specified <code>LoggingConfiguration</code>, to start logging from a web ACL, according to the configuration provided.</p>
-    /// <p>You can access information about all traffic that WAF inspects using the following steps:</p>
+    /// <p>Enables the specified <code>LoggingConfiguration</code>, to start logging from a web ACL, according to the configuration provided. </p> <note>
+    /// <p>You can define one logging destination per web ACL.</p>
+    /// </note>
+    /// <p>You can access information about the traffic that WAF inspects using the following steps:</p>
     /// <ol>
     /// <li> <p>Create your logging destination. You can use an Amazon CloudWatch Logs log group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose. For information about configuring logging destinations and the permissions that are required for each, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p> </li>
     /// <li> <p>Associate your logging destination to your web ACL using a <code>PutLoggingConfiguration</code> request.</p> </li>
     /// </ol>
-    /// <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, WAF creates an additional role or policy that is required to write logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p> <note>
+    /// <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, WAF creates an additional role or policy that is required to write logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p>
+    /// <p>For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p> <note>
     /// <p>This operation completely replaces the mutable specifications that you already have for the logging configuration with the ones that you provide to this call. To modify the logging configuration, retrieve it by calling <code>GetLoggingConfiguration</code>, update the settings as needed, and then provide the complete logging configuration specification to this call.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -4598,8 +4615,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
         ///
-        /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
-        /// <p>Examples: </p>
+        /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Example address strings: </p>
         /// <ul>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
@@ -4607,12 +4624,19 @@ pub mod fluent_builders {
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+        /// <p>Example JSON <code>Addresses</code> specifications: </p>
+        /// <ul>
+        /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+        /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+        /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+        /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
+        /// </ul>
         pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.addresses(input.into());
             self
         }
-        /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
-        /// <p>Examples: </p>
+        /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Example address strings: </p>
         /// <ul>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
@@ -4620,6 +4644,13 @@ pub mod fluent_builders {
         /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+        /// <p>Example JSON <code>Addresses</code> specifications: </p>
+        /// <ul>
+        /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+        /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+        /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+        /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
+        /// </ul>
         pub fn set_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

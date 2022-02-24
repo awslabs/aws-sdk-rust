@@ -2088,6 +2088,18 @@ where
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "Formality" => {
+                                builder = builder.set_formality(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::Formality::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "Profanity" => {
                                 builder = builder.set_profanity(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(

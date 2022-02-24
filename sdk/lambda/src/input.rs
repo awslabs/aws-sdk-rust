@@ -11076,32 +11076,32 @@ pub mod update_function_code_input {
             self.function_name = input;
             self
         }
-        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.zip_file = input;
             self
         }
-        /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
+        /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket = Some(input.into());
             self
         }
-        /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
+        /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
         }
-        /// <p>The Amazon S3 key of the deployment package.</p>
+        /// <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 key of the deployment package.</p>
+        /// <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_key = input;
             self
@@ -11119,12 +11119,12 @@ pub mod update_function_code_input {
             self.s3_object_version = input;
             self
         }
-        /// <p>URI of a container image in the Amazon ECR registry.</p>
+        /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
         pub fn image_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_uri = Some(input.into());
             self
         }
-        /// <p>URI of a container image in the Amazon ECR registry.</p>
+        /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
         pub fn set_image_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_uri = input;
             self
@@ -12185,15 +12185,15 @@ pub struct UpdateFunctionCodeInput {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
-    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
     pub zip_file: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
+    /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 key of the deployment package.</p>
+    /// <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub s3_object_version: std::option::Option<std::string::String>,
-    /// <p>URI of a container image in the Amazon ECR registry.</p>
+    /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub image_uri: std::option::Option<std::string::String>,
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     pub publish: bool,
@@ -12216,15 +12216,15 @@ impl UpdateFunctionCodeInput {
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
-    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
     pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
-    /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
+    /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
     pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
-    /// <p>The Amazon S3 key of the deployment package.</p>
+    /// <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
     pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
     }
@@ -12232,7 +12232,7 @@ impl UpdateFunctionCodeInput {
     pub fn s3_object_version(&self) -> std::option::Option<&str> {
         self.s3_object_version.as_deref()
     }
-    /// <p>URI of a container image in the Amazon ECR registry.</p>
+    /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub fn image_uri(&self) -> std::option::Option<&str> {
         self.image_uri.as_deref()
     }

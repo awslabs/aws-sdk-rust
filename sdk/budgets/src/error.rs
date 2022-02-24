@@ -1764,6 +1764,183 @@ impl std::error::Error for DescribeBudgetActionsForBudgetError {
     }
 }
 
+/// Error type for the `DescribeBudgetNotificationsForAccount` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeBudgetNotificationsForAccountError {
+    /// Kind of error that occurred.
+    pub kind: DescribeBudgetNotificationsForAccountErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeBudgetNotificationsForAccount` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeBudgetNotificationsForAccountErrorKind {
+    /// <p>You are not authorized to use this operation with the given parameters.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The pagination token expired.</p>
+    ExpiredNextTokenException(crate::error::ExpiredNextTokenException),
+    /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>The pagination token is invalid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>We can’t locate the resource that you specified.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeBudgetNotificationsForAccountError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeBudgetNotificationsForAccountError {
+    fn code(&self) -> Option<&str> {
+        DescribeBudgetNotificationsForAccountError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeBudgetNotificationsForAccountError {
+    /// Creates a new `DescribeBudgetNotificationsForAccountError`.
+    pub fn new(
+        kind: DescribeBudgetNotificationsForAccountErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeBudgetNotificationsForAccountError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeBudgetNotificationsForAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException`.
+    pub fn is_expired_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeBudgetNotificationsForAccountError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException(_inner) => {
+                Some(_inner)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException(_inner) => {
+                Some(_inner)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(_inner) => {
+                Some(_inner)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `DescribeBudgetPerformanceHistory` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

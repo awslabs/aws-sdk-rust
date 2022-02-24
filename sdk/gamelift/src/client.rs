@@ -121,7 +121,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAlias::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAlias::set_name): <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAlias::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAlias::set_description): <p>A human-readable description of the alias.</p>
     ///   - [`routing_strategy(RoutingStrategy)`](crate::client::fluent_builders::CreateAlias::routing_strategy) / [`set_routing_strategy(Option<RoutingStrategy>)`](crate::client::fluent_builders::CreateAlias::set_routing_strategy): <p>The routing configuration, including routing type and fleet target, for the alias. </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAlias::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAlias::set_tags): <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAlias::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAlias::set_tags): <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
     /// - On success, responds with [`CreateAliasOutput`](crate::output::CreateAliasOutput) with field(s):
     ///   - [`alias(Option<Alias>)`](crate::output::CreateAliasOutput::alias): <p>The newly created alias resource.</p>
     /// - On failure, responds with [`SdkError<CreateAliasError>`](crate::error::CreateAliasError)
@@ -133,12 +133,12 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateBuild::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateBuild::set_name): <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
     ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::CreateBuild::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::CreateBuild::set_version): <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
-    ///   - [`storage_location(S3Location)`](crate::client::fluent_builders::CreateBuild::storage_location) / [`set_storage_location(Option<S3Location>)`](crate::client::fluent_builders::CreateBuild::set_storage_location): <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+    ///   - [`storage_location(S3Location)`](crate::client::fluent_builders::CreateBuild::storage_location) / [`set_storage_location(Option<S3Location>)`](crate::client::fluent_builders::CreateBuild::set_storage_location): <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon Web Services to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>  <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon Web Services will report a <code>SizeOnDisk</code> of 0. </p>
     ///   - [`operating_system(OperatingSystem)`](crate::client::fluent_builders::CreateBuild::operating_system) / [`set_operating_system(Option<OperatingSystem>)`](crate::client::fluent_builders::CreateBuild::set_operating_system): <p>The operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build. If your game build contains multiple executables, they all must run on the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBuild::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBuild::set_tags): <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBuild::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBuild::set_tags): <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
     /// - On success, responds with [`CreateBuildOutput`](crate::output::CreateBuildOutput) with field(s):
     ///   - [`build_value(Option<Build>)`](crate::output::CreateBuildOutput::build_value): <p>The newly created build resource, including a unique build IDs and status. </p>
-    ///   - [`upload_credentials(Option<AwsCredentials>)`](crate::output::CreateBuildOutput::upload_credentials): <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+    ///   - [`upload_credentials(Option<AwsCredentials>)`](crate::output::CreateBuildOutput::upload_credentials): <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon Web Services. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
     ///   - [`storage_location(Option<S3Location>)`](crate::output::CreateBuildOutput::storage_location): <p>Amazon S3 location for your game build file, including bucket name and key.</p>
     /// - On failure, responds with [`SdkError<CreateBuildError>`](crate::error::CreateBuildError)
     pub fn create_build(&self) -> fluent_builders::CreateBuild {
@@ -154,19 +154,19 @@ impl Client {
     ///   - [`server_launch_path(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::server_launch_path) / [`set_server_launch_path(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_server_launch_path): <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
     ///   - [`server_launch_parameters(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::server_launch_parameters) / [`set_server_launch_parameters(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_server_launch_parameters): <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
     ///   - [`log_paths(Vec<String>)`](crate::client::fluent_builders::CreateFleet::log_paths) / [`set_log_paths(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFleet::set_log_paths): <p> <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
-    ///   - [`ec2_instance_type(Ec2InstanceType)`](crate::client::fluent_builders::CreateFleet::ec2_instance_type) / [`set_ec2_instance_type(Option<Ec2InstanceType>)`](crate::client::fluent_builders::CreateFleet::set_ec2_instance_type): <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of EC2 instance types.</p>
+    ///   - [`ec2_instance_type(Ec2InstanceType)`](crate::client::fluent_builders::CreateFleet::ec2_instance_type) / [`set_ec2_instance_type(Option<Ec2InstanceType>)`](crate::client::fluent_builders::CreateFleet::set_ec2_instance_type): <p>The GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     ///   - [`ec2_inbound_permissions(Vec<IpPermission>)`](crate::client::fluent_builders::CreateFleet::ec2_inbound_permissions) / [`set_ec2_inbound_permissions(Option<Vec<IpPermission>>)`](crate::client::fluent_builders::CreateFleet::set_ec2_inbound_permissions): <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
     ///   - [`new_game_session_protection_policy(ProtectionPolicy)`](crate::client::fluent_builders::CreateFleet::new_game_session_protection_policy) / [`set_new_game_session_protection_policy(Option<ProtectionPolicy>)`](crate::client::fluent_builders::CreateFleet::set_new_game_session_protection_policy): <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <code>UpdateGameSession</code>.</p>  <ul>   <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>   <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>  </ul>
     ///   - [`runtime_configuration(RuntimeConfiguration)`](crate::client::fluent_builders::CreateFleet::runtime_configuration) / [`set_runtime_configuration(Option<RuntimeConfiguration>)`](crate::client::fluent_builders::CreateFleet::set_runtime_configuration): <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>   <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>  </note>
     ///   - [`resource_creation_limit_policy(ResourceCreationLimitPolicy)`](crate::client::fluent_builders::CreateFleet::resource_creation_limit_policy) / [`set_resource_creation_limit_policy(Option<ResourceCreationLimitPolicy>)`](crate::client::fluent_builders::CreateFleet::set_resource_creation_limit_policy): <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
-    ///   - [`metric_groups(Vec<String>)`](crate::client::fluent_builders::CreateFleet::metric_groups) / [`set_metric_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFleet::set_metric_groups): <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
-    ///   - [`peer_vpc_aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::peer_vpc_aws_account_id) / [`set_peer_vpc_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_peer_vpc_aws_account_id): <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that owns the VPC. You can find your account ID in the AWS Management Console under account settings. </p>
-    ///   - [`peer_vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::peer_vpc_id) / [`set_peer_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
+    ///   - [`metric_groups(Vec<String>)`](crate::client::fluent_builders::CreateFleet::metric_groups) / [`set_metric_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFleet::set_metric_groups): <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
+    ///   - [`peer_vpc_aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::peer_vpc_aws_account_id) / [`set_peer_vpc_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_peer_vpc_aws_account_id): <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the Amazon Web Services account that owns the VPC. You can find your account ID in the Amazon Web Services Management Console under account settings. </p>
+    ///   - [`peer_vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::peer_vpc_id) / [`set_peer_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
     ///   - [`fleet_type(FleetType)`](crate::client::fluent_builders::CreateFleet::fleet_type) / [`set_fleet_type(Option<FleetType>)`](crate::client::fluent_builders::CreateFleet::set_fleet_type): <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
-    ///   - [`instance_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::instance_role_arn) / [`set_instance_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_instance_role_arn): <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
-    ///   - [`certificate_configuration(CertificateConfiguration)`](crate::client::fluent_builders::CreateFleet::certificate_configuration) / [`set_certificate_configuration(Option<CertificateConfiguration>)`](crate::client::fluent_builders::CreateFleet::set_certificate_configuration): <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after the fleet is created. </p>  <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not available in all AWS regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
-    ///   - [`locations(Vec<LocationConfiguration>)`](crate::client::fluent_builders::CreateFleet::locations) / [`set_locations(Option<Vec<LocationConfiguration>>)`](crate::client::fluent_builders::CreateFleet::set_locations): <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in AWS Regions that support multiple locations. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFleet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFleet::set_tags): <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>AWS General Reference</i> for actual tagging limits.</p>
+    ///   - [`instance_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::instance_role_arn) / [`set_instance_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_instance_role_arn): <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
+    ///   - [`certificate_configuration(CertificateConfiguration)`](crate::client::fluent_builders::CreateFleet::certificate_configuration) / [`set_certificate_configuration(Option<CertificateConfiguration>)`](crate::client::fluent_builders::CreateFleet::set_certificate_configuration): <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This property cannot be changed after the fleet is created. </p>  <p>Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service, which is not available in all Amazon Web Services regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
+    ///   - [`locations(Vec<LocationConfiguration>)`](crate::client::fluent_builders::CreateFleet::locations) / [`set_locations(Option<Vec<LocationConfiguration>>)`](crate::client::fluent_builders::CreateFleet::set_locations): <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFleet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFleet::set_tags): <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual tagging limits.</p>
     /// - On success, responds with [`CreateFleetOutput`](crate::output::CreateFleetOutput) with field(s):
     ///   - [`fleet_attributes(Option<FleetAttributes>)`](crate::output::CreateFleetOutput::fleet_attributes): <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
     ///   - [`location_states(Option<Vec<LocationState>>)`](crate::output::CreateFleetOutput::location_states): <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
@@ -178,7 +178,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::CreateFleetLocations::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::CreateFleetLocations::set_fleet_id): <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
-    ///   - [`locations(Vec<LocationConfiguration>)`](crate::client::fluent_builders::CreateFleetLocations::locations) / [`set_locations(Option<Vec<LocationConfiguration>>)`](crate::client::fluent_builders::CreateFleetLocations::set_locations): <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
+    ///   - [`locations(Vec<LocationConfiguration>)`](crate::client::fluent_builders::CreateFleetLocations::locations) / [`set_locations(Option<Vec<LocationConfiguration>>)`](crate::client::fluent_builders::CreateFleetLocations::set_locations): <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     /// - On success, responds with [`CreateFleetLocationsOutput`](crate::output::CreateFleetLocationsOutput) with field(s):
     ///   - [`fleet_id(Option<String>)`](crate::output::CreateFleetLocationsOutput::fleet_id): <p>A unique identifier for the fleet that was updated with new locations.</p>
     ///   - [`fleet_arn(Option<String>)`](crate::output::CreateFleetLocationsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>. </p>
@@ -190,19 +190,19 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateGameServerGroup`](crate::client::fluent_builders::CreateGameServerGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_server_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateGameServerGroup::game_server_group_name) / [`set_game_server_group_name(Option<String>)`](crate::client::fluent_builders::CreateGameServerGroup::set_game_server_group_name): <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per AWS account.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateGameServerGroup::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateGameServerGroup::set_role_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
-    ///   - [`min_size(i32)`](crate::client::fluent_builders::CreateGameServerGroup::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::CreateGameServerGroup::set_min_size): <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
-    ///   - [`max_size(i32)`](crate::client::fluent_builders::CreateGameServerGroup::max_size) / [`set_max_size(Option<i32>)`](crate::client::fluent_builders::CreateGameServerGroup::set_max_size): <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
-    ///   - [`launch_template(LaunchTemplateSpecification)`](crate::client::fluent_builders::CreateGameServerGroup::launch_template) / [`set_launch_template(Option<LaunchTemplateSpecification>)`](crate::client::fluent_builders::CreateGameServerGroup::set_launch_template): <p>The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p> <note>   <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>  </note>
-    ///   - [`instance_definitions(Vec<InstanceDefinition>)`](crate::client::fluent_builders::CreateGameServerGroup::instance_definitions) / [`set_instance_definitions(Option<Vec<InstanceDefinition>>)`](crate::client::fluent_builders::CreateGameServerGroup::set_instance_definitions): <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    ///   - [`auto_scaling_policy(GameServerGroupAutoScalingPolicy)`](crate::client::fluent_builders::CreateGameServerGroup::auto_scaling_policy) / [`set_auto_scaling_policy(Option<GameServerGroupAutoScalingPolicy>)`](crate::client::fluent_builders::CreateGameServerGroup::set_auto_scaling_policy): <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+    ///   - [`game_server_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateGameServerGroup::game_server_group_name) / [`set_game_server_group_name(Option<String>)`](crate::client::fluent_builders::CreateGameServerGroup::set_game_server_group_name): <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateGameServerGroup::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateGameServerGroup::set_role_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+    ///   - [`min_size(i32)`](crate::client::fluent_builders::CreateGameServerGroup::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::CreateGameServerGroup::set_min_size): <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and Amazon EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
+    ///   - [`max_size(i32)`](crate::client::fluent_builders::CreateGameServerGroup::max_size) / [`set_max_size(Option<i32>)`](crate::client::fluent_builders::CreateGameServerGroup::set_max_size): <p>The maximum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
+    ///   - [`launch_template(LaunchTemplateSpecification)`](crate::client::fluent_builders::CreateGameServerGroup::launch_template) / [`set_launch_template(Option<LaunchTemplateSpecification>)`](crate::client::fluent_builders::CreateGameServerGroup::set_launch_template): <p>The Amazon EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p> <note>   <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>  </note>
+    ///   - [`instance_definitions(Vec<InstanceDefinition>)`](crate::client::fluent_builders::CreateGameServerGroup::instance_definitions) / [`set_instance_definitions(Option<Vec<InstanceDefinition>>)`](crate::client::fluent_builders::CreateGameServerGroup::set_instance_definitions): <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+    ///   - [`auto_scaling_policy(GameServerGroupAutoScalingPolicy)`](crate::client::fluent_builders::CreateGameServerGroup::auto_scaling_policy) / [`set_auto_scaling_policy(Option<GameServerGroupAutoScalingPolicy>)`](crate::client::fluent_builders::CreateGameServerGroup::set_auto_scaling_policy): <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
     ///   - [`balancing_strategy(BalancingStrategy)`](crate::client::fluent_builders::CreateGameServerGroup::balancing_strategy) / [`set_balancing_strategy(Option<BalancingStrategy>)`](crate::client::fluent_builders::CreateGameServerGroup::set_balancing_strategy): <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>  <ul>   <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>   <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>   <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>  </ul>
-    ///   - [`game_server_protection_policy(GameServerProtectionPolicy)`](crate::client::fluent_builders::CreateGameServerGroup::game_server_protection_policy) / [`set_game_server_protection_policy(Option<GameServerProtectionPolicy>)`](crate::client::fluent_builders::CreateGameServerGroup::set_game_server_protection_policy): <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+    ///   - [`game_server_protection_policy(GameServerProtectionPolicy)`](crate::client::fluent_builders::CreateGameServerGroup::game_server_protection_policy) / [`set_game_server_protection_policy(Option<GameServerProtectionPolicy>)`](crate::client::fluent_builders::CreateGameServerGroup::set_game_server_protection_policy): <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     ///   - [`vpc_subnets(Vec<String>)`](crate::client::fluent_builders::CreateGameServerGroup::vpc_subnets) / [`set_vpc_subnets(Option<Vec<String>>)`](crate::client::fluent_builders::CreateGameServerGroup::set_vpc_subnets): <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateGameServerGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateGameServerGroup::set_tags): <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateGameServerGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateGameServerGroup::set_tags): <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
     /// - On success, responds with [`CreateGameServerGroupOutput`](crate::output::CreateGameServerGroupOutput) with field(s):
-    ///   - [`game_server_group(Option<GameServerGroup>)`](crate::output::CreateGameServerGroupOutput::game_server_group): <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+    ///   - [`game_server_group(Option<GameServerGroup>)`](crate::output::CreateGameServerGroupOutput::game_server_group): <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
     /// - On failure, responds with [`SdkError<CreateGameServerGroupError>`](crate::error::CreateGameServerGroupError)
     pub fn create_game_server_group(&self) -> fluent_builders::CreateGameServerGroup {
         fluent_builders::CreateGameServerGroup::new(self.handle.clone())
@@ -214,12 +214,12 @@ impl Client {
     ///   - [`alias_id(impl Into<String>)`](crate::client::fluent_builders::CreateGameSession::alias_id) / [`set_alias_id(Option<String>)`](crate::client::fluent_builders::CreateGameSession::set_alias_id): <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     ///   - [`maximum_player_session_count(i32)`](crate::client::fluent_builders::CreateGameSession::maximum_player_session_count) / [`set_maximum_player_session_count(Option<i32>)`](crate::client::fluent_builders::CreateGameSession::set_maximum_player_session_count): <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateGameSession::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateGameSession::set_name): <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    ///   - [`game_properties(Vec<GameProperty>)`](crate::client::fluent_builders::CreateGameSession::game_properties) / [`set_game_properties(Option<Vec<GameProperty>>)`](crate::client::fluent_builders::CreateGameSession::set_game_properties): <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+    ///   - [`game_properties(Vec<GameProperty>)`](crate::client::fluent_builders::CreateGameSession::game_properties) / [`set_game_properties(Option<Vec<GameProperty>>)`](crate::client::fluent_builders::CreateGameSession::set_game_properties): <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     ///   - [`creator_id(impl Into<String>)`](crate::client::fluent_builders::CreateGameSession::creator_id) / [`set_creator_id(Option<String>)`](crate::client::fluent_builders::CreateGameSession::set_creator_id): <p>A unique identifier for a player or entity creating the game session. This parameter is required when requesting a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of concurrent active game sessions that one player can create within a certain time span. GameLift uses the CreatorId to evaluate the new request against the policy.</p>
     ///   - [`game_session_id(impl Into<String>)`](crate::client::fluent_builders::CreateGameSession::game_session_id) / [`set_game_session_id(Option<String>)`](crate::client::fluent_builders::CreateGameSession::set_game_session_id): <p> <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateGameSession::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateGameSession::set_idempotency_token): <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:   <region>    ::gamesession/    <fleet id>     /     <custom id string or idempotency token></custom>    </fleet>   </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
-    ///   - [`game_session_data(impl Into<String>)`](crate::client::fluent_builders::CreateGameSession::game_session_data) / [`set_game_session_data(Option<String>)`](crate::client::fluent_builders::CreateGameSession::set_game_session_data): <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::CreateGameSession::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::CreateGameSession::set_location): <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+    ///   - [`game_session_data(impl Into<String>)`](crate::client::fluent_builders::CreateGameSession::game_session_data) / [`set_game_session_data(Option<String>)`](crate::client::fluent_builders::CreateGameSession::set_game_session_data): <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::CreateGameSession::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::CreateGameSession::set_location): <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     /// - On success, responds with [`CreateGameSessionOutput`](crate::output::CreateGameSessionOutput) with field(s):
     ///   - [`game_session(Option<GameSession>)`](crate::output::CreateGameSessionOutput::game_session): <p>Object that describes the newly created game session record.</p>
     /// - On failure, responds with [`SdkError<CreateGameSessionError>`](crate::error::CreateGameSessionError)
@@ -233,11 +233,11 @@ impl Client {
     ///   - [`timeout_in_seconds(i32)`](crate::client::fluent_builders::CreateGameSessionQueue::timeout_in_seconds) / [`set_timeout_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreateGameSessionQueue::set_timeout_in_seconds): <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
     ///   - [`player_latency_policies(Vec<PlayerLatencyPolicy>)`](crate::client::fluent_builders::CreateGameSessionQueue::player_latency_policies) / [`set_player_latency_policies(Option<Vec<PlayerLatencyPolicy>>)`](crate::client::fluent_builders::CreateGameSessionQueue::set_player_latency_policies): <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
     ///   - [`destinations(Vec<GameSessionQueueDestination>)`](crate::client::fluent_builders::CreateGameSessionQueue::destinations) / [`set_destinations(Option<Vec<GameSessionQueueDestination>>)`](crate::client::fluent_builders::CreateGameSessionQueue::set_destinations): <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-    ///   - [`filter_configuration(FilterConfiguration)`](crate::client::fluent_builders::CreateGameSessionQueue::filter_configuration) / [`set_filter_configuration(Option<FilterConfiguration>)`](crate::client::fluent_builders::CreateGameSessionQueue::set_filter_configuration): <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+    ///   - [`filter_configuration(FilterConfiguration)`](crate::client::fluent_builders::CreateGameSessionQueue::filter_configuration) / [`set_filter_configuration(Option<FilterConfiguration>)`](crate::client::fluent_builders::CreateGameSessionQueue::set_filter_configuration): <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
     ///   - [`priority_configuration(PriorityConfiguration)`](crate::client::fluent_builders::CreateGameSessionQueue::priority_configuration) / [`set_priority_configuration(Option<PriorityConfiguration>)`](crate::client::fluent_builders::CreateGameSessionQueue::set_priority_configuration): <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
     ///   - [`custom_event_data(impl Into<String>)`](crate::client::fluent_builders::CreateGameSessionQueue::custom_event_data) / [`set_custom_event_data(Option<String>)`](crate::client::fluent_builders::CreateGameSessionQueue::set_custom_event_data): <p> Information to be added to all events that are related to this game session queue. </p>
     ///   - [`notification_target(impl Into<String>)`](crate::client::fluent_builders::CreateGameSessionQueue::notification_target) / [`set_notification_target(Option<String>)`](crate::client::fluent_builders::CreateGameSessionQueue::set_notification_target): <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateGameSessionQueue::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateGameSessionQueue::set_tags): <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateGameSessionQueue::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateGameSessionQueue::set_tags): <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
     /// - On success, responds with [`CreateGameSessionQueueOutput`](crate::output::CreateGameSessionQueueOutput) with field(s):
     ///   - [`game_session_queue(Option<GameSessionQueue>)`](crate::output::CreateGameSessionQueueOutput::game_session_queue): <p>An object that describes the newly created game session queue.</p>
     /// - On failure, responds with [`SdkError<CreateGameSessionQueueError>`](crate::error::CreateGameSessionQueueError)
@@ -261,7 +261,7 @@ impl Client {
     ///   - [`game_session_data(impl Into<String>)`](crate::client::fluent_builders::CreateMatchmakingConfiguration::game_session_data) / [`set_game_session_data(Option<String>)`](crate::client::fluent_builders::CreateMatchmakingConfiguration::set_game_session_data): <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     ///   - [`backfill_mode(BackfillMode)`](crate::client::fluent_builders::CreateMatchmakingConfiguration::backfill_mode) / [`set_backfill_mode(Option<BackfillMode>)`](crate::client::fluent_builders::CreateMatchmakingConfiguration::set_backfill_mode): <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     ///   - [`flex_match_mode(FlexMatchMode)`](crate::client::fluent_builders::CreateMatchmakingConfiguration::flex_match_mode) / [`set_flex_match_mode(Option<FlexMatchMode>)`](crate::client::fluent_builders::CreateMatchmakingConfiguration::set_flex_match_mode): <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>  <ul>   <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>   <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>  </ul>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMatchmakingConfiguration::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMatchmakingConfiguration::set_tags): <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMatchmakingConfiguration::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMatchmakingConfiguration::set_tags): <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
     /// - On success, responds with [`CreateMatchmakingConfigurationOutput`](crate::output::CreateMatchmakingConfigurationOutput) with field(s):
     ///   - [`configuration(Option<MatchmakingConfiguration>)`](crate::output::CreateMatchmakingConfigurationOutput::configuration): <p>Object that describes the newly created matchmaking configuration.</p>
     /// - On failure, responds with [`SdkError<CreateMatchmakingConfigurationError>`](crate::error::CreateMatchmakingConfigurationError)
@@ -275,7 +275,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateMatchmakingRuleSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateMatchmakingRuleSet::set_name): <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
     ///   - [`rule_set_body(impl Into<String>)`](crate::client::fluent_builders::CreateMatchmakingRuleSet::rule_set_body) / [`set_rule_set_body(Option<String>)`](crate::client::fluent_builders::CreateMatchmakingRuleSet::set_rule_set_body): <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMatchmakingRuleSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMatchmakingRuleSet::set_tags): <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMatchmakingRuleSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMatchmakingRuleSet::set_tags): <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
     /// - On success, responds with [`CreateMatchmakingRuleSetOutput`](crate::output::CreateMatchmakingRuleSetOutput) with field(s):
     ///   - [`rule_set(Option<MatchmakingRuleSet>)`](crate::output::CreateMatchmakingRuleSetOutput::rule_set): <p>The newly created matchmaking rule set.</p>
     /// - On failure, responds with [`SdkError<CreateMatchmakingRuleSetError>`](crate::error::CreateMatchmakingRuleSetError)
@@ -299,7 +299,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`game_session_id(impl Into<String>)`](crate::client::fluent_builders::CreatePlayerSessions::game_session_id) / [`set_game_session_id(Option<String>)`](crate::client::fluent_builders::CreatePlayerSessions::set_game_session_id): <p>A unique identifier for the game session to add players to.</p>
     ///   - [`player_ids(Vec<String>)`](crate::client::fluent_builders::CreatePlayerSessions::player_ids) / [`set_player_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreatePlayerSessions::set_player_ids): <p>List of unique identifiers for the players to be added.</p>
-    ///   - [`player_data_map(HashMap<String, String>)`](crate::client::fluent_builders::CreatePlayerSessions::player_data_map) / [`set_player_data_map(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePlayerSessions::set_player_data_map): <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+    ///   - [`player_data_map(HashMap<String, String>)`](crate::client::fluent_builders::CreatePlayerSessions::player_data_map) / [`set_player_data_map(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePlayerSessions::set_player_data_map): <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon Web Services does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
     /// - On success, responds with [`CreatePlayerSessionsOutput`](crate::output::CreatePlayerSessionsOutput) with field(s):
     ///   - [`player_sessions(Option<Vec<PlayerSession>>)`](crate::output::CreatePlayerSessionsOutput::player_sessions): <p>A collection of player session objects created for the added players.</p>
     /// - On failure, responds with [`SdkError<CreatePlayerSessionsError>`](crate::error::CreatePlayerSessionsError)
@@ -311,11 +311,11 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateScript::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateScript::set_name): <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
     ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::CreateScript::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::CreateScript::set_version): <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
-    ///   - [`storage_location(S3Location)`](crate::client::fluent_builders::CreateScript::storage_location) / [`set_storage_location(Option<S3Location>)`](crate::client::fluent_builders::CreateScript::set_storage_location): <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
-    ///   - [`zip_file(Blob)`](crate::client::fluent_builders::CreateScript::zip_file) / [`set_zip_file(Option<Blob>)`](crate::client::fluent_builders::CreateScript::set_zip_file): <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>  <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateScript::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateScript::set_tags): <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    ///   - [`storage_location(S3Location)`](crate::client::fluent_builders::CreateScript::storage_location) / [`set_storage_location(Option<S3Location>)`](crate::client::fluent_builders::CreateScript::set_storage_location): <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+    ///   - [`zip_file(Blob)`](crate::client::fluent_builders::CreateScript::zip_file) / [`set_zip_file(Option<Blob>)`](crate::client::fluent_builders::CreateScript::set_zip_file): <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>  <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateScript::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateScript::set_tags): <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
     /// - On success, responds with [`CreateScriptOutput`](crate::output::CreateScriptOutput) with field(s):
-    ///   - [`script(Option<Script>)`](crate::output::CreateScriptOutput::script): <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+    ///   - [`script(Option<Script>)`](crate::output::CreateScriptOutput::script): <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
     /// - On failure, responds with [`SdkError<CreateScriptError>`](crate::error::CreateScriptError)
     pub fn create_script(&self) -> fluent_builders::CreateScript {
         fluent_builders::CreateScript::new(self.handle.clone())
@@ -323,8 +323,8 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateVpcPeeringAuthorization`](crate::client::fluent_builders::CreateVpcPeeringAuthorization) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_lift_aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcPeeringAuthorization::game_lift_aws_account_id) / [`set_game_lift_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateVpcPeeringAuthorization::set_game_lift_aws_account_id): <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
-    ///   - [`peer_vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcPeeringAuthorization::peer_vpc_id) / [`set_peer_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateVpcPeeringAuthorization::set_peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    ///   - [`game_lift_aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcPeeringAuthorization::game_lift_aws_account_id) / [`set_game_lift_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateVpcPeeringAuthorization::set_game_lift_aws_account_id): <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+    ///   - [`peer_vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcPeeringAuthorization::peer_vpc_id) / [`set_peer_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateVpcPeeringAuthorization::set_peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     /// - On success, responds with [`CreateVpcPeeringAuthorizationOutput`](crate::output::CreateVpcPeeringAuthorizationOutput) with field(s):
     ///   - [`vpc_peering_authorization(Option<VpcPeeringAuthorization>)`](crate::output::CreateVpcPeeringAuthorizationOutput::vpc_peering_authorization): <p>Details on the requested VPC peering authorization, including expiration.</p>
     /// - On failure, responds with [`SdkError<CreateVpcPeeringAuthorizationError>`](crate::error::CreateVpcPeeringAuthorizationError)
@@ -336,9 +336,9 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateVpcPeeringConnection`](crate::client::fluent_builders::CreateVpcPeeringConnection) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::set_fleet_id): <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
-    ///   - [`peer_vpc_aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::peer_vpc_aws_account_id) / [`set_peer_vpc_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::set_peer_vpc_aws_account_id): <p>A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account settings.</p>
-    ///   - [`peer_vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::peer_vpc_id) / [`set_peer_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::set_peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::set_fleet_id): <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+    ///   - [`peer_vpc_aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::peer_vpc_aws_account_id) / [`set_peer_vpc_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::set_peer_vpc_aws_account_id): <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon Web Services fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+    ///   - [`peer_vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::peer_vpc_id) / [`set_peer_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateVpcPeeringConnection::set_peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     /// - On success, responds with [`CreateVpcPeeringConnectionOutput`](crate::output::CreateVpcPeeringConnectionOutput)
 
     /// - On failure, responds with [`SdkError<CreateVpcPeeringConnectionError>`](crate::error::CreateVpcPeeringConnectionError)
@@ -379,7 +379,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFleetLocations::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::DeleteFleetLocations::set_fleet_id): <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
-    ///   - [`locations(Vec<String>)`](crate::client::fluent_builders::DeleteFleetLocations::locations) / [`set_locations(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteFleetLocations::set_locations): <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    ///   - [`locations(Vec<String>)`](crate::client::fluent_builders::DeleteFleetLocations::locations) / [`set_locations(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteFleetLocations::set_locations): <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     /// - On success, responds with [`DeleteFleetLocationsOutput`](crate::output::DeleteFleetLocationsOutput) with field(s):
     ///   - [`fleet_id(Option<String>)`](crate::output::DeleteFleetLocationsOutput::fleet_id): <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
     ///   - [`fleet_arn(Option<String>)`](crate::output::DeleteFleetLocationsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
@@ -392,7 +392,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`game_server_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGameServerGroup::game_server_group_name) / [`set_game_server_group_name(Option<String>)`](crate::client::fluent_builders::DeleteGameServerGroup::set_game_server_group_name): <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
-    ///   - [`delete_option(GameServerGroupDeleteOption)`](crate::client::fluent_builders::DeleteGameServerGroup::delete_option) / [`set_delete_option(Option<GameServerGroupDeleteOption>)`](crate::client::fluent_builders::DeleteGameServerGroup::set_delete_option): <p>The type of delete to perform. Options include the following:</p>  <ul>   <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>   <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the EC2 Auto Scaling group. </p> </li>   <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the EC2 Auto Scaling group as is.</p> </li>  </ul>
+    ///   - [`delete_option(GameServerGroupDeleteOption)`](crate::client::fluent_builders::DeleteGameServerGroup::delete_option) / [`set_delete_option(Option<GameServerGroupDeleteOption>)`](crate::client::fluent_builders::DeleteGameServerGroup::set_delete_option): <p>The type of delete to perform. Options include the following:</p>  <ul>   <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and Amazon EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>   <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the Amazon EC2 Auto Scaling group. </p> </li>   <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the Amazon EC2 Auto Scaling group as is.</p> </li>  </ul>
     /// - On success, responds with [`DeleteGameServerGroupOutput`](crate::output::DeleteGameServerGroupOutput) with field(s):
     ///   - [`game_server_group(Option<GameServerGroup>)`](crate::output::DeleteGameServerGroupOutput::game_server_group): <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
     /// - On failure, responds with [`SdkError<DeleteGameServerGroupError>`](crate::error::DeleteGameServerGroupError)
@@ -455,8 +455,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteVpcPeeringAuthorization`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_lift_aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization::game_lift_aws_account_id) / [`set_game_lift_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization::set_game_lift_aws_account_id): <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
-    ///   - [`peer_vpc_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization::peer_vpc_id) / [`set_peer_vpc_id(Option<String>)`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization::set_peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    ///   - [`game_lift_aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization::game_lift_aws_account_id) / [`set_game_lift_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization::set_game_lift_aws_account_id): <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+    ///   - [`peer_vpc_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization::peer_vpc_id) / [`set_peer_vpc_id(Option<String>)`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization::set_peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
     /// - On success, responds with [`DeleteVpcPeeringAuthorizationOutput`](crate::output::DeleteVpcPeeringAuthorizationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteVpcPeeringAuthorizationError>`](crate::error::DeleteVpcPeeringAuthorizationError)
@@ -510,8 +510,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeEC2InstanceLimits`](crate::client::fluent_builders::DescribeEC2InstanceLimits) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ec2_instance_type(Ec2InstanceType)`](crate::client::fluent_builders::DescribeEC2InstanceLimits::ec2_instance_type) / [`set_ec2_instance_type(Option<Ec2InstanceType>)`](crate::client::fluent_builders::DescribeEC2InstanceLimits::set_ec2_instance_type): <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeEC2InstanceLimits::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeEC2InstanceLimits::set_location): <p>The name of a remote location to request instance limits for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
+    ///   - [`ec2_instance_type(Ec2InstanceType)`](crate::client::fluent_builders::DescribeEC2InstanceLimits::ec2_instance_type) / [`set_ec2_instance_type(Option<Ec2InstanceType>)`](crate::client::fluent_builders::DescribeEC2InstanceLimits::set_ec2_instance_type): <p>Name of an Amazon EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeEC2InstanceLimits::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeEC2InstanceLimits::set_location): <p>The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     /// - On success, responds with [`DescribeEc2InstanceLimitsOutput`](crate::output::DescribeEc2InstanceLimitsOutput) with field(s):
     ///   - [`ec2_instance_limits(Option<Vec<Ec2InstanceLimit>>)`](crate::output::DescribeEc2InstanceLimitsOutput::ec2_instance_limits): <p>The maximum number of instances for the specified instance type.</p>
     /// - On failure, responds with [`SdkError<DescribeEC2InstanceLimitsError>`](crate::error::DescribeEC2InstanceLimitsError)
@@ -567,7 +567,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetLocationAttributes::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::DescribeFleetLocationAttributes::set_fleet_id): <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
-    ///   - [`locations(Vec<String>)`](crate::client::fluent_builders::DescribeFleetLocationAttributes::locations) / [`set_locations(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeFleetLocationAttributes::set_locations): <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    ///   - [`locations(Vec<String>)`](crate::client::fluent_builders::DescribeFleetLocationAttributes::locations) / [`set_locations(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeFleetLocationAttributes::set_locations): <p>A list of fleet locations to retrieve information for. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeFleetLocationAttributes::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeFleetLocationAttributes::set_limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This limit is not currently enforced. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetLocationAttributes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetLocationAttributes::set_next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     /// - On success, responds with [`DescribeFleetLocationAttributesOutput`](crate::output::DescribeFleetLocationAttributesOutput) with field(s):
@@ -585,7 +585,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetLocationCapacity::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::DescribeFleetLocationCapacity::set_fleet_id): <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetLocationCapacity::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeFleetLocationCapacity::set_location): <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetLocationCapacity::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeFleetLocationCapacity::set_location): <p>The fleet location to retrieve capacity information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     /// - On success, responds with [`DescribeFleetLocationCapacityOutput`](crate::output::DescribeFleetLocationCapacityOutput) with field(s):
     ///   - [`fleet_capacity(Option<FleetCapacity>)`](crate::output::DescribeFleetLocationCapacityOutput::fleet_capacity): <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetLocationCapacityError>`](crate::error::DescribeFleetLocationCapacityError)
@@ -598,7 +598,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetLocationUtilization::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::DescribeFleetLocationUtilization::set_fleet_id): <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetLocationUtilization::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeFleetLocationUtilization::set_location): <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetLocationUtilization::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeFleetLocationUtilization::set_location): <p>The fleet location to retrieve utilization information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     /// - On success, responds with [`DescribeFleetLocationUtilizationOutput`](crate::output::DescribeFleetLocationUtilizationOutput) with field(s):
     ///   - [`fleet_utilization(Option<FleetUtilization>)`](crate::output::DescribeFleetLocationUtilizationOutput::fleet_utilization): <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetLocationUtilizationError>`](crate::error::DescribeFleetLocationUtilizationError)
@@ -611,13 +611,13 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetPortSettings::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::DescribeFleetPortSettings::set_fleet_id): <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetPortSettings::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeFleetPortSettings::set_location): <p>A remote location to check for status of port setting updates. Use the AWS Region code format, such as <code>us-west-2</code>.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetPortSettings::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeFleetPortSettings::set_location): <p>A remote location to check for status of port setting updates. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
     /// - On success, responds with [`DescribeFleetPortSettingsOutput`](crate::output::DescribeFleetPortSettingsOutput) with field(s):
     ///   - [`fleet_id(Option<String>)`](crate::output::DescribeFleetPortSettingsOutput::fleet_id): <p>A unique identifier for the fleet that was requested. </p>
     ///   - [`fleet_arn(Option<String>)`](crate::output::DescribeFleetPortSettingsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
     ///   - [`inbound_permissions(Option<Vec<IpPermission>>)`](crate::output::DescribeFleetPortSettingsOutput::inbound_permissions): <p>The port settings for the requested fleet ID.</p>
     ///   - [`update_status(Option<LocationUpdateStatus>)`](crate::output::DescribeFleetPortSettingsOutput::update_status): <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-    ///   - [`location(Option<String>)`](crate::output::DescribeFleetPortSettingsOutput::location): <p>The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+    ///   - [`location(Option<String>)`](crate::output::DescribeFleetPortSettingsOutput::location): <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeFleetPortSettingsError>`](crate::error::DescribeFleetPortSettingsError)
     pub fn describe_fleet_port_settings(&self) -> fluent_builders::DescribeFleetPortSettings {
         fluent_builders::DescribeFleetPortSettings::new(self.handle.clone())
@@ -662,7 +662,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`game_server_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGameServerInstances::game_server_group_name) / [`set_game_server_group_name(Option<String>)`](crate::client::fluent_builders::DescribeGameServerInstances::set_game_server_group_name): <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
-    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::DescribeGameServerInstances::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeGameServerInstances::set_instance_ids): <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
+    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::DescribeGameServerInstances::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeGameServerInstances::set_instance_ids): <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeGameServerInstances::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeGameServerInstances::set_limit): <p> The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeGameServerInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeGameServerInstances::set_next_token): <p> A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     /// - On success, responds with [`DescribeGameServerInstancesOutput`](crate::output::DescribeGameServerInstancesOutput) with field(s):
@@ -679,7 +679,7 @@ impl Client {
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::set_fleet_id): <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
     ///   - [`game_session_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::game_session_id) / [`set_game_session_id(Option<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::set_game_session_id): <p>A unique identifier for the game session to retrieve. </p>
     ///   - [`alias_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::alias_id) / [`set_alias_id(Option<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::set_alias_id): <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::set_location): <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::set_location): <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
     ///   - [`status_filter(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::status_filter) / [`set_status_filter(Option<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::set_status_filter): <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeGameSessionDetails::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeGameSessionDetails::set_limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeGameSessionDetails::set_next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -721,7 +721,7 @@ impl Client {
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessions::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::DescribeGameSessions::set_fleet_id): <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
     ///   - [`game_session_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessions::game_session_id) / [`set_game_session_id(Option<String>)`](crate::client::fluent_builders::DescribeGameSessions::set_game_session_id): <p>A unique identifier for the game session to retrieve. </p>
     ///   - [`alias_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessions::alias_id) / [`set_alias_id(Option<String>)`](crate::client::fluent_builders::DescribeGameSessions::set_alias_id): <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessions::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeGameSessions::set_location): <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessions::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeGameSessions::set_location): <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
     ///   - [`status_filter(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessions::status_filter) / [`set_status_filter(Option<String>)`](crate::client::fluent_builders::DescribeGameSessions::set_status_filter): <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeGameSessions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeGameSessions::set_limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeGameSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeGameSessions::set_next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -740,7 +740,7 @@ impl Client {
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInstances::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeInstances::set_instance_id): <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in the fleet.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeInstances::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeInstances::set_limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeInstances::set_next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeInstances::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeInstances::set_location): <p>The name of a location to retrieve instance information for, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeInstances::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeInstances::set_location): <p>The name of a location to retrieve instance information for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     /// - On success, responds with [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput) with field(s):
     ///   - [`instances(Option<Vec<Instance>>)`](crate::output::DescribeInstancesOutput::instances): <p>A collection of objects containing properties for each instance returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeInstancesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -820,11 +820,11 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeScalingPolicies::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPolicies::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::DescribeScalingPolicies::set_fleet_id): <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPolicies::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::DescribeScalingPolicies::set_fleet_id): <p>A unique identifier for the fleet for which to retrieve scaling policies. You can use either the fleet ID or ARN value.</p>
     ///   - [`status_filter(ScalingStatusType)`](crate::client::fluent_builders::DescribeScalingPolicies::status_filter) / [`set_status_filter(Option<ScalingStatusType>)`](crate::client::fluent_builders::DescribeScalingPolicies::set_status_filter): <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>  <ul>   <li> <p> <b>ACTIVE</b> -- The scaling policy is currently in force.</p> </li>   <li> <p> <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>   <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>   <li> <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>   <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>   <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>   <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>  </ul>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeScalingPolicies::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeScalingPolicies::set_limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeScalingPolicies::set_next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPolicies::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeScalingPolicies::set_location): <p> CONTENT TODO </p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPolicies::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::DescribeScalingPolicies::set_location): <p> The fleet location. If you don't specify this value, the response contains the scaling policies of every location in the fleet. </p>
     /// - On success, responds with [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput) with field(s):
     ///   - [`scaling_policies(Option<Vec<ScalingPolicy>>)`](crate::output::DescribeScalingPoliciesOutput::scaling_policies): <p>A collection of objects containing the scaling policies matching the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeScalingPoliciesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -847,7 +847,7 @@ impl Client {
     /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeVpcPeeringAuthorizations::send) it.
 
     /// - On success, responds with [`DescribeVpcPeeringAuthorizationsOutput`](crate::output::DescribeVpcPeeringAuthorizationsOutput) with field(s):
-    ///   - [`vpc_peering_authorizations(Option<Vec<VpcPeeringAuthorization>>)`](crate::output::DescribeVpcPeeringAuthorizationsOutput::vpc_peering_authorizations): <p>A collection of objects that describe all valid VPC peering operations for the current AWS account.</p>
+    ///   - [`vpc_peering_authorizations(Option<Vec<VpcPeeringAuthorization>>)`](crate::output::DescribeVpcPeeringAuthorizationsOutput::vpc_peering_authorizations): <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcPeeringAuthorizationsError>`](crate::error::DescribeVpcPeeringAuthorizationsError)
     pub fn describe_vpc_peering_authorizations(
         &self,
@@ -992,7 +992,7 @@ impl Client {
     ///   - [`threshold(f64)`](crate::client::fluent_builders::PutScalingPolicy::threshold) / [`set_threshold(f64)`](crate::client::fluent_builders::PutScalingPolicy::set_threshold): <p>Metric value used to trigger a scaling event.</p>
     ///   - [`comparison_operator(ComparisonOperatorType)`](crate::client::fluent_builders::PutScalingPolicy::comparison_operator) / [`set_comparison_operator(Option<ComparisonOperatorType>)`](crate::client::fluent_builders::PutScalingPolicy::set_comparison_operator): <p>Comparison operator to use when measuring the metric against the threshold value.</p>
     ///   - [`evaluation_periods(i32)`](crate::client::fluent_builders::PutScalingPolicy::evaluation_periods) / [`set_evaluation_periods(Option<i32>)`](crate::client::fluent_builders::PutScalingPolicy::set_evaluation_periods): <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
-    ///   - [`metric_name(MetricName)`](crate::client::fluent_builders::PutScalingPolicy::metric_name) / [`set_metric_name(Option<MetricName>)`](crate::client::fluent_builders::PutScalingPolicy::set_metric_name): <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>  <ul>   <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>   <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>   <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>   <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>   <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>   <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>   <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>   <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>   <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>   <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>   <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>  </ul>
+    ///   - [`metric_name(MetricName)`](crate::client::fluent_builders::PutScalingPolicy::metric_name) / [`set_metric_name(Option<MetricName>)`](crate::client::fluent_builders::PutScalingPolicy::set_metric_name): <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>  <ul>   <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>   <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>   <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>   <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>   <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>   <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>   <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>   <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>   <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>   <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>   <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>  </ul>
     ///   - [`policy_type(PolicyType)`](crate::client::fluent_builders::PutScalingPolicy::policy_type) / [`set_policy_type(Option<PolicyType>)`](crate::client::fluent_builders::PutScalingPolicy::set_policy_type): <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
     ///   - [`target_configuration(TargetConfiguration)`](crate::client::fluent_builders::PutScalingPolicy::target_configuration) / [`set_target_configuration(Option<TargetConfiguration>)`](crate::client::fluent_builders::PutScalingPolicy::set_target_configuration): <p>An object that contains settings for a target-based scaling policy.</p>
     /// - On success, responds with [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput) with field(s):
@@ -1005,7 +1005,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`game_server_group_name(impl Into<String>)`](crate::client::fluent_builders::RegisterGameServer::game_server_group_name) / [`set_game_server_group_name(Option<String>)`](crate::client::fluent_builders::RegisterGameServer::set_game_server_group_name): <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
-    ///   - [`game_server_id(impl Into<String>)`](crate::client::fluent_builders::RegisterGameServer::game_server_id) / [`set_game_server_id(Option<String>)`](crate::client::fluent_builders::RegisterGameServer::set_game_server_id): <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
+    ///   - [`game_server_id(impl Into<String>)`](crate::client::fluent_builders::RegisterGameServer::game_server_id) / [`set_game_server_id(Option<String>)`](crate::client::fluent_builders::RegisterGameServer::set_game_server_id): <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::RegisterGameServer::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::RegisterGameServer::set_instance_id): <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     ///   - [`connection_info(impl Into<String>)`](crate::client::fluent_builders::RegisterGameServer::connection_info) / [`set_connection_info(Option<String>)`](crate::client::fluent_builders::RegisterGameServer::set_connection_info): <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
     ///   - [`game_server_data(impl Into<String>)`](crate::client::fluent_builders::RegisterGameServer::game_server_data) / [`set_game_server_data(Option<String>)`](crate::client::fluent_builders::RegisterGameServer::set_game_server_data): <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
@@ -1020,7 +1020,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`build_id(impl Into<String>)`](crate::client::fluent_builders::RequestUploadCredentials::build_id) / [`set_build_id(Option<String>)`](crate::client::fluent_builders::RequestUploadCredentials::set_build_id): <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
     /// - On success, responds with [`RequestUploadCredentialsOutput`](crate::output::RequestUploadCredentialsOutput) with field(s):
-    ///   - [`upload_credentials(Option<AwsCredentials>)`](crate::output::RequestUploadCredentialsOutput::upload_credentials): <p>AWS credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
+    ///   - [`upload_credentials(Option<AwsCredentials>)`](crate::output::RequestUploadCredentialsOutput::upload_credentials): <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
     ///   - [`storage_location(Option<S3Location>)`](crate::output::RequestUploadCredentialsOutput::storage_location): <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
     /// - On failure, responds with [`SdkError<RequestUploadCredentialsError>`](crate::error::RequestUploadCredentialsError)
     pub fn request_upload_credentials(&self) -> fluent_builders::RequestUploadCredentials {
@@ -1054,7 +1054,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::SearchGameSessions::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::SearchGameSessions::set_fleet_id): <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     ///   - [`alias_id(impl Into<String>)`](crate::client::fluent_builders::SearchGameSessions::alias_id) / [`set_alias_id(Option<String>)`](crate::client::fluent_builders::SearchGameSessions::set_alias_id): <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::SearchGameSessions::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::SearchGameSessions::set_location): <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>  <p> </p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::SearchGameSessions::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::SearchGameSessions::set_location): <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>  <p> </p>
     ///   - [`filter_expression(impl Into<String>)`](crate::client::fluent_builders::SearchGameSessions::filter_expression) / [`set_filter_expression(Option<String>)`](crate::client::fluent_builders::SearchGameSessions::set_filter_expression): <p>String containing the search criteria for the session search. If no filter expression is included, the request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>  <p>A filter expression can contain one or multiple conditions. Each condition consists of the following:</p>  <ul>   <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>   <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li>   <li> <p> <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must be escaped. Boolean and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>. </p> </li>  </ul>  <p>To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed. For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>  <p>Session search evaluates conditions from left to right using the following precedence rules:</p>  <ol>   <li> <p> <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> </p> </li>   <li> <p>Parentheses</p> </li>   <li> <p>NOT</p> </li>   <li> <p>AND</p> </li>   <li> <p>OR</p> </li>  </ol>  <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
     ///   - [`sort_expression(impl Into<String>)`](crate::client::fluent_builders::SearchGameSessions::sort_expression) / [`set_sort_expression(Option<String>)`](crate::client::fluent_builders::SearchGameSessions::set_sort_expression): <p>Instructions on how to sort the search results. If no sort expression is included, the request returns results in random order. A sort expression consists of the following elements:</p>  <ul>   <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>   <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>  </ul>  <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::SearchGameSessions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::SearchGameSessions::set_limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher than 20. </p>
@@ -1071,7 +1071,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::StartFleetActions::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::StartFleetActions::set_fleet_id): <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
     ///   - [`actions(Vec<FleetAction>)`](crate::client::fluent_builders::StartFleetActions::actions) / [`set_actions(Option<Vec<FleetAction>>)`](crate::client::fluent_builders::StartFleetActions::set_actions): <p>List of actions to restart on the fleet.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::StartFleetActions::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::StartFleetActions::set_location): <p>The fleet location to restart fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::StartFleetActions::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::StartFleetActions::set_location): <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     /// - On success, responds with [`StartFleetActionsOutput`](crate::output::StartFleetActionsOutput) with field(s):
     ///   - [`fleet_id(Option<String>)`](crate::output::StartFleetActionsOutput::fleet_id): <p>A unique identifier for the fleet to restart actions on.</p>
     ///   - [`fleet_arn(Option<String>)`](crate::output::StartFleetActionsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
@@ -1087,7 +1087,7 @@ impl Client {
     ///   - [`game_properties(Vec<GameProperty>)`](crate::client::fluent_builders::StartGameSessionPlacement::game_properties) / [`set_game_properties(Option<Vec<GameProperty>>)`](crate::client::fluent_builders::StartGameSessionPlacement::set_game_properties): <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     ///   - [`maximum_player_session_count(i32)`](crate::client::fluent_builders::StartGameSessionPlacement::maximum_player_session_count) / [`set_maximum_player_session_count(Option<i32>)`](crate::client::fluent_builders::StartGameSessionPlacement::set_maximum_player_session_count): <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     ///   - [`game_session_name(impl Into<String>)`](crate::client::fluent_builders::StartGameSessionPlacement::game_session_name) / [`set_game_session_name(Option<String>)`](crate::client::fluent_builders::StartGameSessionPlacement::set_game_session_name): <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    ///   - [`player_latencies(Vec<PlayerLatency>)`](crate::client::fluent_builders::StartGameSessionPlacement::player_latencies) / [`set_player_latencies(Option<Vec<PlayerLatency>>)`](crate::client::fluent_builders::StartGameSessionPlacement::set_player_latencies): <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
+    ///   - [`player_latencies(Vec<PlayerLatency>)`](crate::client::fluent_builders::StartGameSessionPlacement::player_latencies) / [`set_player_latencies(Option<Vec<PlayerLatency>>)`](crate::client::fluent_builders::StartGameSessionPlacement::set_player_latencies): <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
     ///   - [`desired_player_sessions(Vec<DesiredPlayerSession>)`](crate::client::fluent_builders::StartGameSessionPlacement::desired_player_sessions) / [`set_desired_player_sessions(Option<Vec<DesiredPlayerSession>>)`](crate::client::fluent_builders::StartGameSessionPlacement::set_desired_player_sessions): <p>Set of information on each player to create a player session for.</p>
     ///   - [`game_session_data(impl Into<String>)`](crate::client::fluent_builders::StartGameSessionPlacement::game_session_data) / [`set_game_session_data(Option<String>)`](crate::client::fluent_builders::StartGameSessionPlacement::set_game_session_data): <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     /// - On success, responds with [`StartGameSessionPlacementOutput`](crate::output::StartGameSessionPlacementOutput) with field(s):
@@ -1099,10 +1099,10 @@ impl Client {
     /// Constructs a fluent builder for the [`StartMatchBackfill`](crate::client::fluent_builders::StartMatchBackfill) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ticket_id(impl Into<String>)`](crate::client::fluent_builders::StartMatchBackfill::ticket_id) / [`set_ticket_id(Option<String>)`](crate::client::fluent_builders::StartMatchBackfill::set_ticket_id): <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
+    ///   - [`ticket_id(impl Into<String>)`](crate::client::fluent_builders::StartMatchBackfill::ticket_id) / [`set_ticket_id(Option<String>)`](crate::client::fluent_builders::StartMatchBackfill::set_ticket_id): <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
     ///   - [`configuration_name(impl Into<String>)`](crate::client::fluent_builders::StartMatchBackfill::configuration_name) / [`set_configuration_name(Option<String>)`](crate::client::fluent_builders::StartMatchBackfill::set_configuration_name): <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
     ///   - [`game_session_arn(impl Into<String>)`](crate::client::fluent_builders::StartMatchBackfill::game_session_arn) / [`set_game_session_arn(Option<String>)`](crate::client::fluent_builders::StartMatchBackfill::set_game_session_arn): <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
-    ///   - [`players(Vec<Player>)`](crate::client::fluent_builders::StartMatchBackfill::players) / [`set_players(Option<Vec<Player>>)`](crate::client::fluent_builders::StartMatchBackfill::set_players): <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>  <ul>   <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> </li>   <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>  </ul>
+    ///   - [`players(Vec<Player>)`](crate::client::fluent_builders::StartMatchBackfill::players) / [`set_players(Option<Vec<Player>>)`](crate::client::fluent_builders::StartMatchBackfill::set_players): <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>  <ul>   <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> <p>The backfill request must specify the team membership for every player. Do not specify team if you are not using backfill.</p> </li>   <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>  </ul>
     /// - On success, responds with [`StartMatchBackfillOutput`](crate::output::StartMatchBackfillOutput) with field(s):
     ///   - [`matchmaking_ticket(Option<MatchmakingTicket>)`](crate::output::StartMatchBackfillOutput::matchmaking_ticket): <p>Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process.</p>
     /// - On failure, responds with [`SdkError<StartMatchBackfillError>`](crate::error::StartMatchBackfillError)
@@ -1112,7 +1112,7 @@ impl Client {
     /// Constructs a fluent builder for the [`StartMatchmaking`](crate::client::fluent_builders::StartMatchmaking) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ticket_id(impl Into<String>)`](crate::client::fluent_builders::StartMatchmaking::ticket_id) / [`set_ticket_id(Option<String>)`](crate::client::fluent_builders::StartMatchmaking::set_ticket_id): <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+    ///   - [`ticket_id(impl Into<String>)`](crate::client::fluent_builders::StartMatchmaking::ticket_id) / [`set_ticket_id(Option<String>)`](crate::client::fluent_builders::StartMatchmaking::set_ticket_id): <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     ///   - [`configuration_name(impl Into<String>)`](crate::client::fluent_builders::StartMatchmaking::configuration_name) / [`set_configuration_name(Option<String>)`](crate::client::fluent_builders::StartMatchmaking::set_configuration_name): <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
     ///   - [`players(Vec<Player>)`](crate::client::fluent_builders::StartMatchmaking::players) / [`set_players(Option<Vec<Player>>)`](crate::client::fluent_builders::StartMatchmaking::set_players): <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
     /// - On success, responds with [`StartMatchmakingOutput`](crate::output::StartMatchmakingOutput) with field(s):
@@ -1126,7 +1126,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::StopFleetActions::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::StopFleetActions::set_fleet_id): <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
     ///   - [`actions(Vec<FleetAction>)`](crate::client::fluent_builders::StopFleetActions::actions) / [`set_actions(Option<Vec<FleetAction>>)`](crate::client::fluent_builders::StopFleetActions::set_actions): <p>List of actions to suspend on the fleet. </p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::StopFleetActions::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::StopFleetActions::set_location): <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::StopFleetActions::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::StopFleetActions::set_location): <p>The fleet location to stop fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     /// - On success, responds with [`StopFleetActionsOutput`](crate::output::StopFleetActionsOutput) with field(s):
     ///   - [`fleet_id(Option<String>)`](crate::output::StopFleetActionsOutput::fleet_id): <p>A unique identifier for the fleet to stop actions on.</p>
     ///   - [`fleet_arn(Option<String>)`](crate::output::StopFleetActionsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
@@ -1169,7 +1169,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to assign tags to. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> for actual tagging limits.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> for actual tagging limits.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -1180,7 +1180,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -1231,14 +1231,14 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetCapacity::fleet_id) / [`set_fleet_id(Option<String>)`](crate::client::fluent_builders::UpdateFleetCapacity::set_fleet_id): <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
-    ///   - [`desired_instances(i32)`](crate::client::fluent_builders::UpdateFleetCapacity::desired_instances) / [`set_desired_instances(Option<i32>)`](crate::client::fluent_builders::UpdateFleetCapacity::set_desired_instances): <p>The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+    ///   - [`desired_instances(i32)`](crate::client::fluent_builders::UpdateFleetCapacity::desired_instances) / [`set_desired_instances(Option<i32>)`](crate::client::fluent_builders::UpdateFleetCapacity::set_desired_instances): <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
     ///   - [`min_size(i32)`](crate::client::fluent_builders::UpdateFleetCapacity::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::UpdateFleetCapacity::set_min_size): <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
     ///   - [`max_size(i32)`](crate::client::fluent_builders::UpdateFleetCapacity::max_size) / [`set_max_size(Option<i32>)`](crate::client::fluent_builders::UpdateFleetCapacity::set_max_size): <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetCapacity::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::UpdateFleetCapacity::set_location): <p>The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetCapacity::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::UpdateFleetCapacity::set_location): <p>The name of a remote location to update fleet capacity settings for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     /// - On success, responds with [`UpdateFleetCapacityOutput`](crate::output::UpdateFleetCapacityOutput) with field(s):
     ///   - [`fleet_id(Option<String>)`](crate::output::UpdateFleetCapacityOutput::fleet_id): <p>A unique identifier for the fleet that was updated.</p>
     ///   - [`fleet_arn(Option<String>)`](crate::output::UpdateFleetCapacityOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>. </p>
-    ///   - [`location(Option<String>)`](crate::output::UpdateFleetCapacityOutput::location): <p>The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.</p>
+    ///   - [`location(Option<String>)`](crate::output::UpdateFleetCapacityOutput::location): <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateFleetCapacityError>`](crate::error::UpdateFleetCapacityError)
     pub fn update_fleet_capacity(&self) -> fluent_builders::UpdateFleetCapacity {
         fluent_builders::UpdateFleetCapacity::new(self.handle.clone())
@@ -1273,9 +1273,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`game_server_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGameServerGroup::game_server_group_name) / [`set_game_server_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGameServerGroup::set_game_server_group_name): <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateGameServerGroup::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateGameServerGroup::set_role_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
-    ///   - [`instance_definitions(Vec<InstanceDefinition>)`](crate::client::fluent_builders::UpdateGameServerGroup::instance_definitions) / [`set_instance_definitions(Option<Vec<InstanceDefinition>>)`](crate::client::fluent_builders::UpdateGameServerGroup::set_instance_definitions): <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    ///   - [`game_server_protection_policy(GameServerProtectionPolicy)`](crate::client::fluent_builders::UpdateGameServerGroup::game_server_protection_policy) / [`set_game_server_protection_policy(Option<GameServerProtectionPolicy>)`](crate::client::fluent_builders::UpdateGameServerGroup::set_game_server_protection_policy): <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateGameServerGroup::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateGameServerGroup::set_role_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
+    ///   - [`instance_definitions(Vec<InstanceDefinition>)`](crate::client::fluent_builders::UpdateGameServerGroup::instance_definitions) / [`set_instance_definitions(Option<Vec<InstanceDefinition>>)`](crate::client::fluent_builders::UpdateGameServerGroup::set_instance_definitions): <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+    ///   - [`game_server_protection_policy(GameServerProtectionPolicy)`](crate::client::fluent_builders::UpdateGameServerGroup::game_server_protection_policy) / [`set_game_server_protection_policy(Option<GameServerProtectionPolicy>)`](crate::client::fluent_builders::UpdateGameServerGroup::set_game_server_protection_policy): <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     ///   - [`balancing_strategy(BalancingStrategy)`](crate::client::fluent_builders::UpdateGameServerGroup::balancing_strategy) / [`set_balancing_strategy(Option<BalancingStrategy>)`](crate::client::fluent_builders::UpdateGameServerGroup::set_balancing_strategy): <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>  <ul>   <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>   <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>   <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>  </ul>
     /// - On success, responds with [`UpdateGameServerGroupOutput`](crate::output::UpdateGameServerGroupOutput) with field(s):
     ///   - [`game_server_group(Option<GameServerGroup>)`](crate::output::UpdateGameServerGroupOutput::game_server_group): <p>An object that describes the game server group resource with updated properties. </p>
@@ -1304,7 +1304,7 @@ impl Client {
     ///   - [`timeout_in_seconds(i32)`](crate::client::fluent_builders::UpdateGameSessionQueue::timeout_in_seconds) / [`set_timeout_in_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateGameSessionQueue::set_timeout_in_seconds): <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
     ///   - [`player_latency_policies(Vec<PlayerLatencyPolicy>)`](crate::client::fluent_builders::UpdateGameSessionQueue::player_latency_policies) / [`set_player_latency_policies(Option<Vec<PlayerLatencyPolicy>>)`](crate::client::fluent_builders::UpdateGameSessionQueue::set_player_latency_policies): <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
     ///   - [`destinations(Vec<GameSessionQueueDestination>)`](crate::client::fluent_builders::UpdateGameSessionQueue::destinations) / [`set_destinations(Option<Vec<GameSessionQueueDestination>>)`](crate::client::fluent_builders::UpdateGameSessionQueue::set_destinations): <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
-    ///   - [`filter_configuration(FilterConfiguration)`](crate::client::fluent_builders::UpdateGameSessionQueue::filter_configuration) / [`set_filter_configuration(Option<FilterConfiguration>)`](crate::client::fluent_builders::UpdateGameSessionQueue::set_filter_configuration): <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
+    ///   - [`filter_configuration(FilterConfiguration)`](crate::client::fluent_builders::UpdateGameSessionQueue::filter_configuration) / [`set_filter_configuration(Option<FilterConfiguration>)`](crate::client::fluent_builders::UpdateGameSessionQueue::set_filter_configuration): <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
     ///   - [`priority_configuration(PriorityConfiguration)`](crate::client::fluent_builders::UpdateGameSessionQueue::priority_configuration) / [`set_priority_configuration(Option<PriorityConfiguration>)`](crate::client::fluent_builders::UpdateGameSessionQueue::set_priority_configuration): <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
     ///   - [`custom_event_data(impl Into<String>)`](crate::client::fluent_builders::UpdateGameSessionQueue::custom_event_data) / [`set_custom_event_data(Option<String>)`](crate::client::fluent_builders::UpdateGameSessionQueue::set_custom_event_data): <p> Information to be added to all events that are related to this game session queue. </p>
     ///   - [`notification_target(impl Into<String>)`](crate::client::fluent_builders::UpdateGameSessionQueue::notification_target) / [`set_notification_target(Option<String>)`](crate::client::fluent_builders::UpdateGameSessionQueue::set_notification_target): <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
@@ -1356,10 +1356,10 @@ impl Client {
     ///   - [`script_id(impl Into<String>)`](crate::client::fluent_builders::UpdateScript::script_id) / [`set_script_id(Option<String>)`](crate::client::fluent_builders::UpdateScript::set_script_id): <p>A unique identifier for the Realtime script to update. You can use either the script ID or ARN value.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateScript::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateScript::set_name): <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
     ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::UpdateScript::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::UpdateScript::set_version): <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
-    ///   - [`storage_location(S3Location)`](crate::client::fluent_builders::UpdateScript::storage_location) / [`set_storage_location(Option<S3Location>)`](crate::client::fluent_builders::UpdateScript::set_storage_location): <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
-    ///   - [`zip_file(Blob)`](crate::client::fluent_builders::UpdateScript::zip_file) / [`set_zip_file(Option<Blob>)`](crate::client::fluent_builders::UpdateScript::set_zip_file): <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>  <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+    ///   - [`storage_location(S3Location)`](crate::client::fluent_builders::UpdateScript::storage_location) / [`set_storage_location(Option<S3Location>)`](crate::client::fluent_builders::UpdateScript::set_storage_location): <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+    ///   - [`zip_file(Blob)`](crate::client::fluent_builders::UpdateScript::zip_file) / [`set_zip_file(Option<Blob>)`](crate::client::fluent_builders::UpdateScript::set_zip_file): <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>  <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
     /// - On success, responds with [`UpdateScriptOutput`](crate::output::UpdateScriptOutput) with field(s):
-    ///   - [`script(Option<Script>)`](crate::output::UpdateScriptOutput::script): <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+    ///   - [`script(Option<Script>)`](crate::output::UpdateScriptOutput::script): <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
     /// - On failure, responds with [`SdkError<UpdateScriptError>`](crate::error::UpdateScriptError)
     pub fn update_script(&self) -> fluent_builders::UpdateScript {
         fluent_builders::UpdateScript::new(self.handle.clone())
@@ -1573,7 +1573,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAlias`.
     ///
     /// <p>Creates an alias for a fleet. In most situations, you can use an alias ID in place of a fleet ID. An alias provides a level of abstraction for a fleet that is useful when redirecting player traffic from one fleet to another, such as when updating your game build. </p>
-    /// <p>Amazon GameLift supports two types of routing strategies for aliases: simple and terminal. A simple alias points to an active fleet. A terminal alias is used to display messaging or link to a URL instead of routing players to an active fleet. For example, you might use a terminal alias when a game version is no longer supported and you want to direct players to an upgrade site. </p>
+    /// <p>Amazon Web Services supports two types of routing strategies for aliases: simple and terminal. A simple alias points to an active fleet. A terminal alias is used to display messaging or link to a URL instead of routing players to an active fleet. For example, you might use a terminal alias when a game version is no longer supported and you want to direct players to an upgrade site. </p>
     /// <p>To create a fleet alias, specify an alias name, routing strategy, and optional description. Each simple alias can point to only one fleet, but a fleet can have multiple aliases. If successful, a new alias record is returned, including an alias ID and an ARN. You can reassign an alias to another fleet by calling <code>UpdateAlias</code>.</p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
@@ -1653,12 +1653,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1669,12 +1669,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBuild`.
     ///
-    /// <p>Creates a new Amazon GameLift build resource for your game server binary files. Game server binaries must be combined into a zip file for use with Amazon GameLift. </p> <important>
-    /// <p>When setting up a new game build for GameLift, we recommend using the AWS CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a> </b>. This helper command combines two tasks: (1) it uploads your build files from a file directory to a GameLift Amazon S3 location, and (2) it creates a new build resource. </p>
+    /// <p>Creates a new Amazon Web Services build resource for your game server binary files. Game server binaries must be combined into a zip file for use with Amazon Web Services. </p> <important>
+    /// <p>When setting up a new game build for GameLift, we recommend using the Amazon Web Services CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a> </b>. This helper command combines two tasks: (1) it uploads your build files from a file directory to a GameLift Amazon S3 location, and (2) it creates a new build resource. </p>
     /// </important>
     /// <p>The <code>CreateBuild</code> operation can used in the following scenarios:</p>
     /// <ul>
-    /// <li> <p>To create a new game build with build files that are in an Amazon S3 location under an AWS account that you control. To use this option, you must first give Amazon GameLift access to the Amazon S3 bucket. With permissions in place, call <code>CreateBuild</code> and specify a build name, operating system, and the Amazon S3 storage location of your game build.</p> </li>
+    /// <li> <p>To create a new game build with build files that are in an Amazon S3 location under an Amazon Web Services account that you control. To use this option, you must first give Amazon Web Services access to the Amazon S3 bucket. With permissions in place, call <code>CreateBuild</code> and specify a build name, operating system, and the Amazon S3 storage location of your game build.</p> </li>
     /// <li> <p>To directly upload your build files to a GameLift Amazon S3 location. To use this option, first call <code>CreateBuild</code> and specify a build name and operating system. This operation creates a new build resource and also returns an Amazon S3 location with temporary access credentials. Use the credentials to manually upload your build files to the specified Amazon S3 location. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading Objects</a> in the <i>Amazon S3 Developer Guide</i>. Build files can be uploaded to the GameLift Amazon S3 location once only; that can't be updated. </p> </li>
     /// </ul>
     /// <p>If successful, this operation creates a new build resource with a unique build ID and places it in <code>INITIALIZED</code> status. A build must be in <code>READY</code> status before you can create fleets with it.</p>
@@ -1742,12 +1742,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version(input);
             self
         }
-        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon Web Services to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+        /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon Web Services will report a <code>SizeOnDisk</code> of 0. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.inner = self.inner.storage_location(input);
             self
         }
-        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon Web Services to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+        /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon Web Services will report a <code>SizeOnDisk</code> of 0. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -1772,12 +1774,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1788,9 +1790,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
-    /// <p>Creates a fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to host your custom game server or Realtime Servers. Use this operation to configure the computing resources for your fleet and provide instructions for running game servers on each instance.</p>
-    /// <p>Most GameLift fleets can deploy instances to multiple locations, including the home Region (where the fleet is created) and an optional set of remote locations. Fleets that are created in the following AWS Regions support multiple locations: us-east-1 (N. Virginia), us-west-2 (Oregon), eu-central-1 (Frankfurt), eu-west-1 (Ireland), ap-southeast-2 (Sydney), ap-northeast-1 (Tokyo), and ap-northeast-2 (Seoul). Fleets that are created in other GameLift Regions can deploy instances in the fleet's home Region only. All fleet instances use the same configuration regardless of location; however, you can adjust capacity settings and turn auto-scaling on/off for each location.</p>
+    /// <p>Creates a fleet of Amazon Elastic Compute Cloud (Amazon Elastic Compute Cloud) instances to host your custom game server or Realtime Servers. Use this operation to configure the computing resources for your fleet and provide instructions for running game servers on each instance.</p>
+    /// <p>Most GameLift fleets can deploy instances to multiple locations, including the home Region (where the fleet is created) and an optional set of remote locations. Fleets that are created in the following Amazon Web Services Regions support multiple locations: us-east-1 (N. Virginia), us-west-2 (Oregon), eu-central-1 (Frankfurt), eu-west-1 (Ireland), ap-southeast-2 (Sydney), ap-northeast-1 (Tokyo), and ap-northeast-2 (Seoul). Fleets that are created in other GameLift Regions can deploy instances in the fleet's home Region only. All fleet instances use the same configuration regardless of location; however, you can adjust capacity settings and turn auto-scaling on/off for each location.</p>
     /// <p>To create a fleet, choose the hardware for your instances, specify a game server build or Realtime script to deploy, and provide a runtime configuration to direct GameLift how to start and run game servers on each instance in the fleet. Set permissions for inbound traffic to your game servers, and enable optional features as needed. When creating a multi-location fleet, provide a list of additional remote locations.</p>
+    /// <p>If you need to debug your fleet, fetch logs, view performance metrics or other actions on the fleet, create the development fleet with port 22/3389 open. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. </p>
     /// <p>If successful, this operation creates a new Fleet resource and places it in <code>NEW</code> status, which prompts GameLift to initiate the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creation-workflow.html">fleet creation workflow</a>. You can track fleet creation by checking fleet status using <code>DescribeFleetAttributes</code> and <code>DescribeFleetLocationAttributes</code>/, or by monitoring fleet creation events using <code>DescribeFleetEvents</code>. As soon as the fleet status changes to <code>ACTIVE</code>, you can enable automatic scaling for the fleet with <code>PutScalingPolicy</code> and set capacity for the home Region with <code>UpdateFleetCapacity</code>. When the status of each remote location reaches <code>ACTIVE</code>, you can set capacity by location using <code>UpdateFleetCapacity</code>.</p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up fleets</a> </p>
@@ -1920,12 +1923,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_paths(input);
             self
         }
-        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of EC2 instance types.</p>
+        /// <p>The GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
         pub fn ec2_instance_type(mut self, input: crate::model::Ec2InstanceType) -> Self {
             self.inner = self.inner.ec2_instance_type(input);
             self
         }
-        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of EC2 instance types.</p>
+        /// <p>The GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
         pub fn set_ec2_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -2011,12 +2014,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
         ///
-        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
+        /// <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
         pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.metric_groups(input.into());
             self
         }
-        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
+        /// <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
         pub fn set_metric_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2024,12 +2027,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metric_groups(input);
             self
         }
-        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that owns the VPC. You can find your account ID in the AWS Management Console under account settings. </p>
+        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the Amazon Web Services account that owns the VPC. You can find your account ID in the Amazon Web Services Management Console under account settings. </p>
         pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.peer_vpc_aws_account_id(input.into());
             self
         }
-        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that owns the VPC. You can find your account ID in the AWS Management Console under account settings. </p>
+        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the Amazon Web Services account that owns the VPC. You can find your account ID in the Amazon Web Services Management Console under account settings. </p>
         pub fn set_peer_vpc_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2037,12 +2040,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_peer_vpc_aws_account_id(input);
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
         pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.peer_vpc_id(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_peer_vpc_id(input);
             self
@@ -2060,12 +2063,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_type(input);
             self
         }
-        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
+        /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
         pub fn instance_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_role_arn(input.into());
             self
         }
-        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
+        /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
         pub fn set_instance_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2073,8 +2076,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_role_arn(input);
             self
         }
-        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after the fleet is created. </p>
-        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not available in all AWS regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
+        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This property cannot be changed after the fleet is created. </p>
+        /// <p>Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service, which is not available in all Amazon Web Services regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
         pub fn certificate_configuration(
             mut self,
             input: crate::model::CertificateConfiguration,
@@ -2082,8 +2085,8 @@ pub mod fluent_builders {
             self.inner = self.inner.certificate_configuration(input);
             self
         }
-        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after the fleet is created. </p>
-        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not available in all AWS regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
+        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This property cannot be changed after the fleet is created. </p>
+        /// <p>Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service, which is not available in all Amazon Web Services regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
         pub fn set_certificate_configuration(
             mut self,
             input: std::option::Option<crate::model::CertificateConfiguration>,
@@ -2095,12 +2098,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in AWS Regions that support multiple locations. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
+        /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
         pub fn locations(mut self, input: crate::model::LocationConfiguration) -> Self {
             self.inner = self.inner.locations(input);
             self
         }
-        /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in AWS Regions that support multiple locations. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
+        /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationConfiguration>>,
@@ -2112,12 +2115,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>AWS General Reference</i> for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>AWS General Reference</i> for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2129,7 +2132,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFleetLocations`.
     ///
     /// <p>Adds remote locations to a fleet and begins populating the new locations with EC2 instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings. </p> <note>
-    /// <p>This operation cannot be used with fleets that don't support remote locations. Fleets can have multiple locations only if they reside in AWS Regions that support this feature (see <code>CreateFleet</code> for the complete list) and were created after the feature was released in March 2021.</p>
+    /// <p>This operation cannot be used with fleets that don't support remote locations. Fleets can have multiple locations only if they reside in Amazon Web Services Regions that support this feature (see <code>CreateFleet</code> for the complete list) and were created after the feature was released in March 2021.</p>
     /// </note>
     /// <p>To add fleet locations, specify the fleet to be updated and provide a list of one or more locations. </p>
     /// <p>If successful, this operation returns the list of added locations with their status set to <code>NEW</code>. GameLift initiates the process of starting an instance in each added location. You can track the status of each new location by monitoring location creation events using <code>DescribeFleetEvents</code>. Alternatively, you can poll location status by calling <code>DescribeFleetLocationAttributes</code>. After a location status becomes <code>ACTIVE</code>, you can adjust the location's capacity as needed with <code>UpdateFleetCapacity</code>.</p>
@@ -2191,12 +2194,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
+        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
         pub fn locations(mut self, input: crate::model::LocationConfiguration) -> Self {
             self.inner = self.inner.locations(input);
             self
         }
-        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
+        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationConfiguration>>,
@@ -2208,13 +2211,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGameServerGroup`.
     ///
     /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
-    /// <p>Creates a GameLift FleetIQ game server group for managing game hosting on a collection of Amazon EC2 instances for game hosting. This operation creates the game server group, creates an Auto Scaling group in your AWS account, and establishes a link between the two groups. You can view the status of your game server groups in the GameLift console. Game server group metrics and events are emitted to Amazon CloudWatch.</p>
+    /// <p>Creates a GameLift FleetIQ game server group for managing game hosting on a collection of Amazon Elastic Compute Cloud instances for game hosting. This operation creates the game server group, creates an Auto Scaling group in your Amazon Web Services account, and establishes a link between the two groups. You can view the status of your game server groups in the GameLift console. Game server group metrics and events are emitted to Amazon CloudWatch.</p>
     /// <p>Before creating a new game server group, you must have the following: </p>
     /// <ul>
-    /// <li> <p>An Amazon EC2 launch template that specifies how to launch Amazon EC2 instances with your game server build. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html"> Launching an Instance from a Launch Template</a> in the <i>Amazon EC2 User Guide</i>. </p> </li>
-    /// <li> <p>An IAM role that extends limited access to your AWS account to allow GameLift FleetIQ to create and interact with the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create IAM roles for cross-service interaction</a> in the <i>GameLift FleetIQ Developer Guide</i>.</p> </li>
+    /// <li> <p>An Amazon Elastic Compute Cloud launch template that specifies how to launch Amazon Elastic Compute Cloud instances with your game server build. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html"> Launching an Instance from a Launch Template</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> </li>
+    /// <li> <p>An IAM role that extends limited access to your Amazon Web Services account to allow GameLift FleetIQ to create and interact with the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create IAM roles for cross-service interaction</a> in the <i>GameLift FleetIQ Developer Guide</i>.</p> </li>
     /// </ul>
-    /// <p>To create a new game server group, specify a unique group name, IAM role and Amazon EC2 launch template, and provide a list of instance types that can be used in the group. You must also set initial maximum and minimum limits on the group's instance count. You can optionally set an Auto Scaling policy with target tracking based on a GameLift FleetIQ metric.</p>
+    /// <p>To create a new game server group, specify a unique group name, IAM role and Amazon Elastic Compute Cloud launch template, and provide a list of instance types that can be used in the group. You must also set initial maximum and minimum limits on the group's instance count. You can optionally set an Auto Scaling policy with target tracking based on a GameLift FleetIQ metric.</p>
     /// <p>Once the game server group and corresponding Auto Scaling group are created, you have full access to change the Auto Scaling group's configuration as needed. Several properties that are set when creating a game server group, including maximum/minimum size and auto-scaling policy settings, must be updated directly in the Auto Scaling group. Keep in mind that some Auto Scaling group properties are periodically updated by GameLift FleetIQ as part of its balancing activities to optimize for availability and cost.</p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
@@ -2259,12 +2262,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per AWS account.</p>
+        /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.</p>
         pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per AWS account.</p>
+        /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2272,44 +2275,44 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_group_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+        /// <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and Amazon EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
         pub fn min_size(mut self, input: i32) -> Self {
             self.inner = self.inner.min_size(input);
             self
         }
-        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+        /// <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and Amazon EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_min_size(input);
             self
         }
-        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+        /// <p>The maximum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
         pub fn max_size(mut self, input: i32) -> Self {
             self.inner = self.inner.max_size(input);
             self
         }
-        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+        /// <p>The maximum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_size(input);
             self
         }
-        /// <p>The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p> <note>
+        /// <p>The Amazon EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p> <note>
         /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>
         /// </note>
         pub fn launch_template(mut self, input: crate::model::LaunchTemplateSpecification) -> Self {
             self.inner = self.inner.launch_template(input);
             self
         }
-        /// <p>The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p> <note>
+        /// <p>The Amazon EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p> <note>
         /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>
         /// </note>
         pub fn set_launch_template(
@@ -2323,12 +2326,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).
         ///
-        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        /// <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
             self.inner = self.inner.instance_definitions(input);
             self
         }
-        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        /// <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn set_instance_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -2336,7 +2339,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_definitions(input);
             self
         }
-        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
         pub fn auto_scaling_policy(
             mut self,
             input: crate::model::GameServerGroupAutoScalingPolicy,
@@ -2344,7 +2347,7 @@ pub mod fluent_builders {
             self.inner = self.inner.auto_scaling_policy(input);
             self
         }
-        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
         pub fn set_auto_scaling_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerGroupAutoScalingPolicy>,
@@ -2375,7 +2378,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_balancing_strategy(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn game_server_protection_policy(
             mut self,
             input: crate::model::GameServerProtectionPolicy,
@@ -2383,7 +2386,7 @@ pub mod fluent_builders {
             self.inner = self.inner.game_server_protection_policy(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn set_game_server_protection_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerProtectionPolicy>,
@@ -2412,12 +2415,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2438,7 +2441,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>If successful, a workflow is initiated to start a new game session. A <code>GameSession</code> object is returned containing the game session configuration and status. When the status is <code>ACTIVE</code>, game session connection information is provided and player sessions can be created for the game session. By default, newly created game sessions are open to new players. You can restrict new player access by using <code>UpdateGameSession</code> to change the game session's player session creation policy.</p>
     /// <p>Game session logs are retained for all active game sessions for 14 days. To access the logs, call <code>GetGameSessionLogUrl</code> to download the log files.</p>
-    /// <p> <i>Available in GameLift Local.</i> </p>
+    /// <p> <i>Available in Amazon Web Services Local.</i> </p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a> </p>
     /// <p> <b>Related actions</b> </p>
@@ -2526,12 +2529,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             self.inner = self.inner.game_properties(input);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -2589,12 +2592,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_idempotency_token(input);
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.game_session_data(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2602,12 +2605,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_session_data(input);
             self
         }
-        /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+        /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+        /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -2616,15 +2619,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGameSessionQueue`.
     ///
     /// <p>Creates a placement queue that processes requests for new game sessions. A queue uses FleetIQ algorithms to determine the best placement locations and find an available game server there, then prompts the game server process to start a new game session. </p>
-    /// <p>A game session queue is configured with a set of destinations (GameLift fleets or aliases), which determine the locations where the queue can place new game sessions. These destinations can span multiple fleet types (Spot and On-Demand), instance types, and AWS Regions. If the queue includes multi-location fleets, the queue is able to place game sessions in all of a fleet's remote locations. You can opt to filter out individual locations if needed.</p>
+    /// <p>A game session queue is configured with a set of destinations (GameLift fleets or aliases), which determine the locations where the queue can place new game sessions. These destinations can span multiple fleet types (Spot and On-Demand), instance types, and Amazon Web Services Regions. If the queue includes multi-location fleets, the queue is able to place game sessions in all of a fleet's remote locations. You can opt to filter out individual locations if needed.</p>
     /// <p>The queue configuration also determines how FleetIQ selects the best available placement for a new game session. Before searching for an available game server, FleetIQ first prioritizes the queue's destinations and locations, with the best placement locations on top. You can set up the queue to use the FleetIQ default prioritization or provide an alternate set of priorities.</p>
     /// <p>To create a new queue, provide a name, timeout value, and a list of destinations. Optionally, specify a sort configuration and/or a filter, and define a set of latency cap policies. You can also include the ARN for an Amazon Simple Notification Service (SNS) topic to receive notifications of game session placement activity. Notifications using SNS or CloudWatch events is the preferred way to track placement activity.</p>
-    /// <p>If successful, a new <code>GameSessionQueue</code> object is returned with an assigned queue ARN. New game session requests, which are submitted to the queue with <code>StartGameSessionPlacement</code> or <code>StartMatchmaking</code>, reference a queue's name or ARN. </p>
+    /// <p>If successful, a new <code>GameSessionQueue</code> object is returned with an assigned queue ARN. New game session requests, which are submitted to queue with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html">StartMatchmaking</a>, reference a queue's name or ARN. </p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-design.html"> Design a game session queue</a> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-creating.html"> Create a game session queue</a> </p>
     /// <p> <b>Related actions</b> </p>
-    /// <p> <code>CreateGameSessionQueue</code> | <code>DescribeGameSessionQueues</code> | <code>UpdateGameSessionQueue</code> | <code>DeleteGameSessionQueue</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html">DeleteGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGameSessionQueue {
         handle: std::sync::Arc<super::Handle>,
@@ -2718,12 +2721,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destinations(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
         pub fn filter_configuration(mut self, input: crate::model::FilterConfiguration) -> Self {
             self.inner = self.inner.filter_configuration(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
         pub fn set_filter_configuration(
             mut self,
             input: std::option::Option<crate::model::FilterConfiguration>,
@@ -2777,12 +2780,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2795,7 +2798,7 @@ pub mod fluent_builders {
     ///
     /// <p>Defines a new matchmaking configuration for use with FlexMatch. Whether your are using FlexMatch with GameLift hosting or as a standalone matchmaking service, the matchmaking configuration sets out rules for matching players and forming teams. If you're also using GameLift hosting, it defines how to start game sessions for each match. Your matchmaking system can use multiple configurations to handle different game scenarios. All matchmaking requests (<code>StartMatchmaking</code> or <code>StartMatchBackfill</code>) identify the matchmaking configuration to use and provide player attributes consistent with that configuration. </p>
     /// <p>To create a matchmaking configuration, you must provide the following: configuration name and FlexMatch mode (with or without GameLift hosting); a rule set that specifies how to evaluate players and find acceptable matches; whether player acceptance is required; and the maximum time allowed for a matchmaking attempt. When using FlexMatch with GameLift hosting, you also need to identify the game session queue to use when starting a game session for the match.</p>
-    /// <p>In addition, you must set up an Amazon Simple Notification Service (SNS) topic to receive matchmaking notifications. Provide the topic ARN in the matchmaking configuration. An alternative method, continuously polling ticket status with <code>DescribeMatchmaking</code>, is only suitable for games in development with low matchmaking usage.</p>
+    /// <p>In addition, you must set up an Amazon Simple Notification Service topic to receive matchmaking notifications. Provide the topic ARN in the matchmaking configuration. An alternative method, continuously polling ticket status with <code>DescribeMatchmaking</code>, is only suitable for games in development with low matchmaking usage.</p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html"> Design a FlexMatch matchmaker</a> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Set up FlexMatch event notification</a> </p>
@@ -3032,12 +3035,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3125,12 +3128,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3144,7 +3147,8 @@ pub mod fluent_builders {
     /// <p>Reserves an open player slot in a game session for a player. New player sessions can be created in any game session with an open slot that is in <code>ACTIVE</code> status and has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of players to a game session with <code>CreatePlayerSessions</code>. </p>
     /// <p>To create a player session, specify a game session ID, player ID, and optionally a set of player data. </p>
     /// <p>If successful, a slot is reserved in the game session for the player and a new <code>PlayerSession</code> object is returned with a player session ID. The player references the player session ID when sending a connection request to the game session, and the game server can use it to validate the player reservation with the GameLift service. Player sessions cannot be updated. </p>
-    /// <p> <i>Available in Amazon GameLift Local.</i> </p>
+    /// <p>The maximum number of players per game session is 200. It is not adjustable. </p>
+    /// <p> <i>Available in Amazon Web Services Local.</i> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreatePlayerSession</code> | <code>CreatePlayerSessions</code> | <code>DescribePlayerSessions</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3225,7 +3229,8 @@ pub mod fluent_builders {
     /// <p>Reserves open slots in a game session for a group of players. New player sessions can be created in any game session with an open slot that is in <code>ACTIVE</code> status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single player to a game session, use <code>CreatePlayerSession</code>. </p>
     /// <p>To create player sessions, specify a game session ID and a list of player IDs. Optionally, provide a set of player data for each player ID. </p>
     /// <p>If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code> objects are returned with player session IDs. Each player references their player session ID when sending a connection request to the game session, and the game server can use it to validate the player reservation with the GameLift service. Player sessions cannot be updated.</p>
-    /// <p> <i>Available in Amazon GameLift Local.</i> </p>
+    /// <p>The maximum number of players per game session is 200. It is not adjustable. </p>
+    /// <p> <i>Available in Amazon Web Services Local.</i> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreatePlayerSession</code> | <code>CreatePlayerSessions</code> | <code>DescribePlayerSessions</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3301,7 +3306,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_player_data_map`](Self::set_player_data_map).
         ///
-        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon Web Services does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
         pub fn player_data_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -3310,7 +3315,7 @@ pub mod fluent_builders {
             self.inner = self.inner.player_data_map(k.into(), v.into());
             self
         }
-        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon Web Services does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
         pub fn set_player_data_map(
             mut self,
             input: std::option::Option<
@@ -3327,12 +3332,12 @@ pub mod fluent_builders {
     /// <p>To create a new script record, specify a script name and provide the script file(s). The script files and all dependencies must be zipped into a single file. You can pull the zip file from either of these locations: </p>
     /// <ul>
     /// <li> <p>A locally available directory. Use the <i>ZipFile</i> parameter for this option.</p> </li>
-    /// <li> <p>An Amazon Simple Storage Service (Amazon S3) bucket under your AWS account. Use the <i>StorageLocation</i> parameter for this option. You'll need to have an Identity Access Management (IAM) role that allows the Amazon GameLift service to access your S3 bucket. </p> </li>
+    /// <li> <p>An Amazon Simple Storage Service (Amazon S3) bucket under your Amazon Web Services account. Use the <i>StorageLocation</i> parameter for this option. You'll need to have an Identity Access Management (IAM) role that allows the Amazon Web Services service to access your S3 bucket. </p> </li>
     /// </ul>
-    /// <p>If the call is successful, a new script record is created with a unique script ID. If the script file is provided as a local file, the file is uploaded to an Amazon GameLift-owned S3 bucket and the script record's storage location reflects this location. If the script file is provided as an S3 bucket, Amazon GameLift accesses the file at this storage location as needed for deployment.</p>
+    /// <p>If the call is successful, a new script record is created with a unique script ID. If the script file is provided as a local file, the file is uploaded to an Amazon Web Services-owned S3 bucket and the script record's storage location reflects this location. If the script file is provided as an S3 bucket, Amazon Web Services accesses the file at this storage location as needed for deployment.</p>
     /// <p> <b>Learn more</b> </p>
-    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
-    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set Up a Role for Amazon GameLift Access</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon Web Services Realtime Servers</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set Up a Role for Amazon Web Services Access</a> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3394,12 +3399,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.inner = self.inner.storage_location(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -3408,13 +3413,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+        /// <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.zip_file(input);
             self
         }
         /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+        /// <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_zip_file(input);
             self
@@ -3423,12 +3428,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3439,10 +3444,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVpcPeeringAuthorization`.
     ///
-    /// <p>Requests authorization to create or delete a peer connection between the VPC for your Amazon GameLift fleet and a virtual private cloud (VPC) in your AWS account. VPC peering enables the game servers on your fleet to communicate directly with other AWS resources. Once you've received authorization, call <code>CreateVpcPeeringConnection</code> to establish the peering connection. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
-    /// <p>You can peer with VPCs that are owned by any AWS account you have access to, including the account that you use to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in different Regions.</p>
-    /// <p>To request authorization to create a connection, call this operation from the AWS account with the VPC that you want to peer to your Amazon GameLift fleet. For example, to enable your game servers to retrieve data from a DynamoDB table, use the account that manages that DynamoDB resource. Identify the following values: (1) The ID of the VPC that you want to peer with, and (2) the ID of the AWS account that you use to manage Amazon GameLift. If successful, VPC peering is authorized for the specified VPC. </p>
-    /// <p>To request authorization to delete a connection, call this operation from the AWS account with the VPC that is peered with your Amazon GameLift fleet. Identify the following values: (1) VPC ID that you want to delete the peering connection for, and (2) ID of the AWS account that you use to manage Amazon GameLift. </p>
+    /// <p>Requests authorization to create or delete a peer connection between the VPC for your Amazon Web Services fleet and a virtual private cloud (VPC) in your Amazon Web Services account. VPC peering enables the game servers on your fleet to communicate directly with other Amazon Web Services resources. Once you've received authorization, call <code>CreateVpcPeeringConnection</code> to establish the peering connection. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon Web Services Fleets</a>.</p>
+    /// <p>You can peer with VPCs that are owned by any Amazon Web Services account you have access to, including the account that you use to manage your Amazon Web Services fleets. You cannot peer with VPCs that are in different Regions.</p>
+    /// <p>To request authorization to create a connection, call this operation from the Amazon Web Services account with the VPC that you want to peer to your Amazon Web Services fleet. For example, to enable your game servers to retrieve data from a DynamoDB table, use the account that manages that DynamoDB resource. Identify the following values: (1) The ID of the VPC that you want to peer with, and (2) the ID of the Amazon Web Services account that you use to manage Amazon Web Services. If successful, VPC peering is authorized for the specified VPC. </p>
+    /// <p>To request authorization to delete a connection, call this operation from the Amazon Web Services account with the VPC that is peered with your Amazon Web Services fleet. Identify the following values: (1) VPC ID that you want to delete the peering connection for, and (2) ID of the Amazon Web Services account that you use to manage Amazon Web Services. </p>
     /// <p>The authorization remains valid for 24 hours unless it is canceled by a call to <code>DeleteVpcPeeringAuthorization</code>. You must create or delete the peering connection while the authorization is valid. </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
@@ -3485,12 +3490,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
         pub fn game_lift_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.game_lift_aws_account_id(input.into());
             self
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
         pub fn set_game_lift_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3498,12 +3503,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_lift_aws_account_id(input);
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.peer_vpc_id(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_peer_vpc_id(input);
             self
@@ -3511,9 +3516,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVpcPeeringConnection`.
     ///
-    /// <p>Establishes a VPC peering connection between a virtual private cloud (VPC) in an AWS account with the VPC for your Amazon GameLift fleet. VPC peering enables the game servers on your fleet to communicate directly with other AWS resources. You can peer with VPCs in any AWS account that you have access to, including the account that you use to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in different Regions. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
+    /// <p>Establishes a VPC peering connection between a virtual private cloud (VPC) in an Amazon Web Services account with the VPC for your Amazon Web Services fleet. VPC peering enables the game servers on your fleet to communicate directly with other Amazon Web Services resources. You can peer with VPCs in any Amazon Web Services account that you have access to, including the account that you use to manage your Amazon Web Services fleets. You cannot peer with VPCs that are in different Regions. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon Web Services Fleets</a>.</p>
     /// <p>Before calling this operation to establish the peering connection, you first need to call <code>CreateVpcPeeringAuthorization</code> and identify the VPC you want to peer with. Once the authorization for the specified VPC is issued, you have 24 hours to establish the connection. These two operations handle all tasks necessary to peer the two VPCs, including acceptance, updating routing tables, etc. </p>
-    /// <p>To establish the connection, call this operation from the AWS account that is used to manage the Amazon GameLift fleets. Identify the following values: (1) The ID of the fleet you want to be enable a VPC peering connection for; (2) The AWS account with the VPC that you want to peer with; and (3) The ID of the VPC you want to peer with. This operation is asynchronous. If successful, a <code>VpcPeeringConnection</code> request is created. You can use continuous polling to track the request's status using <code>DescribeVpcPeeringConnections</code>, or by monitoring fleet events for success or failure using <code>DescribeFleetEvents</code>. </p>
+    /// <p>To establish the connection, call this operation from the Amazon Web Services account that is used to manage the Amazon Web Services fleets. Identify the following values: (1) The ID of the fleet you want to be enable a VPC peering connection for; (2) The Amazon Web Services account with the VPC that you want to peer with; and (3) The ID of the VPC you want to peer with. This operation is asynchronous. If successful, a <code>VpcPeeringConnection</code> request is created. You can use continuous polling to track the request's status using <code>DescribeVpcPeeringConnections</code>, or by monitoring fleet events for success or failure using <code>DescribeFleetEvents</code>. </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3555,22 +3560,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
+        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
+        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon Web Services fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
         pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.peer_vpc_aws_account_id(input.into());
             self
         }
-        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon Web Services fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
         pub fn set_peer_vpc_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3578,12 +3583,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_peer_vpc_aws_account_id(input);
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.peer_vpc_id(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_peer_vpc_id(input);
             self
@@ -3824,12 +3829,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.locations(input.into());
             self
         }
-        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3908,9 +3913,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of delete to perform. Options include the following:</p>
         /// <ul>
-        /// <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>
-        /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the EC2 Auto Scaling group. </p> </li>
-        /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the EC2 Auto Scaling group as is.</p> </li>
+        /// <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and Amazon EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>
+        /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the Amazon EC2 Auto Scaling group. </p> </li>
+        /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the Amazon EC2 Auto Scaling group as is.</p> </li>
         /// </ul>
         pub fn delete_option(mut self, input: crate::model::GameServerGroupDeleteOption) -> Self {
             self.inner = self.inner.delete_option(input);
@@ -3918,9 +3923,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of delete to perform. Options include the following:</p>
         /// <ul>
-        /// <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>
-        /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the EC2 Auto Scaling group. </p> </li>
-        /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the EC2 Auto Scaling group as is.</p> </li>
+        /// <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and Amazon EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>
+        /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the Amazon EC2 Auto Scaling group. </p> </li>
+        /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the Amazon EC2 Auto Scaling group as is.</p> </li>
         /// </ul>
         pub fn set_delete_option(
             mut self,
@@ -3932,11 +3937,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGameSessionQueue`.
     ///
-    /// <p>Deletes a game session queue. Once a queue is successfully deleted, unfulfilled <code>StartGameSessionPlacement</code> requests that reference the queue will fail. To delete a queue, specify the queue name.</p>
+    /// <p>Deletes a game session queue. Once a queue is successfully deleted, unfulfilled <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> requests that reference the queue will fail. To delete a queue, specify the queue name.</p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html"> Using Multi-Region Queues</a> </p>
     /// <p> <b>Related actions</b> </p>
-    /// <p> <code>CreateGameSessionQueue</code> | <code>DescribeGameSessionQueues</code> | <code>UpdateGameSessionQueue</code> | <code>DeleteGameSessionQueue</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html">DeleteGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGameSessionQueue {
         handle: std::sync::Arc<super::Handle>,
@@ -4172,7 +4177,7 @@ pub mod fluent_builders {
     /// <p>Deletes a Realtime script. This operation permanently deletes the script record. If script files were uploaded, they are also deleted (files stored in an S3 bucket are not deleted). </p>
     /// <p>To delete a script, specify the script ID. Before deleting a script, be sure to terminate all fleets that are deployed with the script being deleted. Fleet instances periodically check for script updates, and if the script record no longer exists, the instance will go into an error state and be unable to host game sessions.</p>
     /// <p> <b>Learn more</b> </p>
-    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon Web Services Realtime Servers</a> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -4269,12 +4274,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
         pub fn game_lift_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.game_lift_aws_account_id(input.into());
             self
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the Amazon Web Services account that you use to manage your GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
         pub fn set_game_lift_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4282,12 +4287,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_lift_aws_account_id(input);
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.peer_vpc_id(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_peer_vpc_id(input);
             self
@@ -4296,7 +4301,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVpcPeeringConnection`.
     ///
     /// <p>Removes a VPC peering connection. To delete the connection, you must have a valid authorization for the VPC peering connection that you want to delete. You can check for an authorization by calling <code>DescribeVpcPeeringAuthorizations</code> or request a new one using <code>CreateVpcPeeringAuthorization</code>. </p>
-    /// <p>Once a valid authorization exists, call this operation from the AWS account that is used to manage the Amazon GameLift fleets. Identify the connection to delete by the connection ID and fleet ID. If successful, the connection is removed. </p>
+    /// <p>Once a valid authorization exists, call this operation from the Amazon Web Services account that is used to manage the Amazon Web Services fleets. Identify the connection to delete by the connection ID and fleet ID. If successful, the connection is removed. </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -4552,8 +4557,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEC2InstanceLimits`.
     ///
-    /// <p>The GameLift service limits and current utilization for an AWS Region or location. Instance limits control the number of instances, per instance type, per location, that your AWS account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>. The information returned includes the maximum number of instances allowed and your account's current usage across all fleets. This information can affect your ability to scale your GameLift fleets. You can request a limit increase for your account by using the <b>Service limits</b> page in the GameLift console.</p>
-    /// <p>Instance limits differ based on whether the instances are deployed in a fleet's home Region or in a remote location. For remote locations, limits also differ based on the combination of home Region and remote location. All requests must specify an AWS Region (either explicitly or as your default settings). To get the limit for a remote location, you must also specify the location. For example, the following requests all return different results: </p>
+    /// <p>The GameLift service limits and current utilization for an Amazon Web Services Region or location. Instance limits control the number of instances, per instance type, per location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>. The information returned includes the maximum number of instances allowed and your account's current usage across all fleets. This information can affect your ability to scale your GameLift fleets. You can request a limit increase for your account by using the <b>Service limits</b> page in the GameLift console.</p>
+    /// <p>Instance limits differ based on whether the instances are deployed in a fleet's home Region or in a remote location. For remote locations, limits also differ based on the combination of home Region and remote location. All requests must specify an Amazon Web Services Region (either explicitly or as your default settings). To get the limit for a remote location, you must also specify the location. For example, the following requests all return different results: </p>
     /// <ul>
     /// <li> <p>Request specifies the Region <code>ap-northeast-1</code> with no location. The result is limits and usage data on all instance types that are deployed in <code>us-east-2</code>, by all of the fleets that reside in <code>ap-northeast-1</code>. </p> </li>
     /// <li> <p>Request specifies the Region <code>us-east-1</code> with location <code>ca-central-1</code>. The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>, by all of the fleets that reside in <code>us-east-2</code>. These limits do not affect fleets in any other Regions that deploy instances to <code>ca-central-1</code>.</p> </li>
@@ -4561,8 +4566,8 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>This operation can be used in the following ways:</p>
     /// <ul>
-    /// <li> <p>To get limit and usage data for all instance types that are deployed in an AWS Region by fleets that reside in the same Region: Specify the Region only. Optionally, specify a single instance type to retrieve information for.</p> </li>
-    /// <li> <p>To get limit and usage data for all instance types that are deployed to a remote location by fleets that reside in different AWS Region: Provide both the AWS Region and the remote location. Optionally, specify a single instance type to retrieve information for.</p> </li>
+    /// <li> <p>To get limit and usage data for all instance types that are deployed in an Amazon Web Services Region by fleets that reside in the same Region: Specify the Region only. Optionally, specify a single instance type to retrieve information for.</p> </li>
+    /// <li> <p>To get limit and usage data for all instance types that are deployed to a remote location by fleets that reside in different Amazon Web Services Region: Provide both the Amazon Web Services Region and the remote location. Optionally, specify a single instance type to retrieve information for.</p> </li>
     /// </ul>
     /// <p>If successful, an <code>EC2InstanceLimits</code> object is returned with limits and usage data for each requested instance type.</p>
     /// <p> <b>Learn more</b> </p>
@@ -4608,12 +4613,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
+        /// <p>Name of an Amazon EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
         pub fn ec2_instance_type(mut self, input: crate::model::Ec2InstanceType) -> Self {
             self.inner = self.inner.ec2_instance_type(input);
             self
         }
-        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
+        /// <p>Name of an Amazon EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
         pub fn set_ec2_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -4621,12 +4626,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ec2_instance_type(input);
             self
         }
-        /// <p>The name of a remote location to request instance limits for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
+        /// <p>The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The name of a remote location to request instance limits for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
+        /// <p>The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -5015,12 +5020,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.locations(input.into());
             self
         }
-        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5108,12 +5113,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -5178,12 +5183,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -5251,12 +5256,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code format, such as <code>us-west-2</code>.</p>
+        /// <p>A remote location to check for status of port setting updates. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code format, such as <code>us-west-2</code>.</p>
+        /// <p>A remote location to check for status of port setting updates. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -5571,12 +5576,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
+        /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_ids(input.into());
             self
         }
-        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
+        /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5612,7 +5617,7 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p>To retrieve details for all game sessions that are currently running on all locations in a fleet, provide a fleet or alias ID, with an optional status filter. This approach returns details from the fleet's home Region and all remote locations.</p> </li>
     /// <li> <p>To retrieve details for all game sessions that are currently running on a specific fleet location, provide a fleet or alias ID and a location name, with optional status filter. The location can be the fleet's home Region or any remote location.</p> </li>
-    /// <li> <p>To retrieve details for a specific game session, provide the game session ID. This approach looks for the game session ID in all fleets that reside in the AWS Region defined in the request.</p> </li>
+    /// <li> <p>To retrieve details for a specific game session, provide the game session ID. This approach looks for the game session ID in all fleets that reside in the Amazon Web Services Region defined in the request.</p> </li>
     /// </ul>
     /// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p>
     /// <p>If successful, a <code>GameSessionDetail</code> object is returned for each game session that matches the request.</p>
@@ -5698,12 +5703,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_id(input);
             self
         }
-        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -5746,6 +5751,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information, including current status, about a game session placement request. </p>
     /// <p>To get game session placement details, specify the placement ID.</p>
+    /// <p>This operation is not designed to be continually called to track game session status. This practice can cause you to exceed your API limit, which results in errors. Instead, you must configure configure an Amazon Simple Notification Service (SNS) topic to receive notifications from FlexMatch or queues. Continuously polling with <code>DescribeGameSessionPlacement</code> should only be used for games in development with low game session usage. </p>
     /// <p>If successful, a <code>GameSessionPlacement</code> object is returned.</p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
@@ -5805,7 +5811,7 @@ pub mod fluent_builders {
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html"> View Your Queues</a> </p>
     /// <p> <b>Related actions</b> </p>
-    /// <p> <code>CreateGameSessionQueue</code> | <code>DescribeGameSessionQueues</code> | <code>UpdateGameSessionQueue</code> | <code>DeleteGameSessionQueue</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html">DeleteGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGameSessionQueues {
         handle: std::sync::Arc<super::Handle>,
@@ -5892,15 +5898,17 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeGameSessions`.
     ///
     /// <p>Retrieves a set of one or more game sessions in a specific fleet location. You can optionally filter the results by current game session status. Alternatively, use <code>SearchGameSessions</code> to request a set of active game sessions that are filtered by certain criteria. To retrieve the protection policy for game sessions, use <code>DescribeGameSessionDetails</code>.</p>
+    /// <p>This operation is not designed to be continually called to track game session status. This practice can cause you to exceed your API limit, which results in errors. Instead, you must configure configure an Amazon Simple Notification Service (SNS) topic to receive notifications from FlexMatch or queues. Continuously polling with <code>DescribeGameSessions</code> should only be used for games in development with low game session usage. </p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
     /// <li> <p>To retrieve all game sessions that are currently running on all locations in a fleet, provide a fleet or alias ID, with an optional status filter. This approach returns all game sessions in the fleet's home Region and all remote locations.</p> </li>
     /// <li> <p>To retrieve all game sessions that are currently running on a specific fleet location, provide a fleet or alias ID and a location name, with optional status filter. The location can be the fleet's home Region or any remote location.</p> </li>
-    /// <li> <p>To retrieve a specific game session, provide the game session ID. This approach looks for the game session ID in all fleets that reside in the AWS Region defined in the request.</p> </li>
+    /// <li> <p>To retrieve a specific game session, provide the game session ID. This approach looks for the game session ID in all fleets that reside in the Amazon Web Services Region defined in the request.</p> </li>
     /// </ul>
     /// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p>
     /// <p>If successful, a <code>GameSession</code> object is returned for each game session that matches the request.</p>
-    /// <p> <i>Available in GameLift Local.</i> </p>
+    /// <p>This operation is not designed to be continually called to track matchmaking ticket status. This practice can cause you to exceed your API limit, which results in errors. Instead, as a best practice, set up an Amazon Simple Notification Service to receive notifications, and provide the topic ARN in the matchmaking configuration. Continuously poling ticket status with <code>DescribeGameSessions</code> should only be used for games in development with low matchmaking usage.</p>
+    /// <p> <i>Available in Amazon Web Services Local.</i> </p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-find">Find a game session</a> </p>
     /// <p> <b>Related actions</b> </p>
@@ -5983,12 +5991,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_id(input);
             self
         }
-        /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -6128,12 +6136,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The name of a location to retrieve instance information for, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
+        /// <p>The name of a location to retrieve instance information for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The name of a location to retrieve instance information for, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
+        /// <p>The name of a location to retrieve instance information for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -6143,7 +6151,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves one or more matchmaking tickets. Use this operation to retrieve ticket information, including--after a successful match is made--connection information for the resulting new game session. </p>
     /// <p>To request matchmaking tickets, provide a list of up to 10 ticket IDs. If the request is successful, a ticket object is returned for each requested ID that currently exists.</p>
-    /// <p>This operation is not designed to be continually called to track matchmaking ticket status. This practice can cause you to exceed your API limit, which results in errors. Instead, as a best practice, set up an Amazon Simple Notification Service (SNS) to receive notifications, and provide the topic ARN in the matchmaking configuration. Continuously poling ticket status with <code>DescribeMatchmaking</code> should only be used for games in development with low matchmaking usage.</p>
+    /// <p>This operation is not designed to be continually called to track matchmaking ticket status. This practice can cause you to exceed your API limit, which results in errors. Instead, as a best practice, set up an Amazon Simple Notification Service to receive notifications, and provide the topic ARN in the matchmaking configuration. Continuously poling ticket status with <code>DescribeMatchmaking</code> should only be used for games in development with low matchmaking usage.</p>
     /// <p></p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html"> Add FlexMatch to a game client</a> </p>
@@ -6420,7 +6428,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>To request player sessions, specify either a player session ID, game session ID, or player ID. You can filter this request by player session status. Use the pagination parameters to retrieve results as a set of sequential pages. </p>
     /// <p>If successful, a <code>PlayerSession</code> object is returned for each session that matches the request.</p>
-    /// <p> <i>Available in Amazon GameLift Local.</i> </p>
+    /// <p> <i>Available in Amazon Web Services Local.</i> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreatePlayerSession</code> | <code>CreatePlayerSessions</code> | <code>DescribePlayerSessions</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -6667,12 +6675,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::DescribeScalingPoliciesPaginator {
             crate::paginator::DescribeScalingPoliciesPaginator::new(self.handle, self.inner)
         }
-        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet for which to retrieve scaling policies. You can use either the fleet ID or ARN value.</p>
         pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet for which to retrieve scaling policies. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
@@ -6728,12 +6736,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p> CONTENT TODO </p>
+        /// <p> The fleet location. If you don't specify this value, the response contains the scaling policies of every location in the fleet. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p> CONTENT TODO </p>
+        /// <p> The fleet location. If you don't specify this value, the response contains the scaling policies of every location in the fleet. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -6744,7 +6752,7 @@ pub mod fluent_builders {
     /// <p>Retrieves properties for a Realtime script. </p>
     /// <p>To request a script record, specify the script ID. If successful, an object containing the script properties is returned.</p>
     /// <p> <b>Learn more</b> </p>
-    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon Web Services Realtime Servers</a> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -6799,7 +6807,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeVpcPeeringAuthorizations`.
     ///
-    /// <p>Retrieves valid VPC peering authorizations that are pending for the AWS account. This operation returns all VPC peering authorizations and requests for peering. This includes those initiated and received by this account. </p>
+    /// <p>Retrieves valid VPC peering authorizations that are pending for the Amazon Web Services account. This operation returns all VPC peering authorizations and requests for peering. This includes those initiated and received by this account. </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -6845,7 +6853,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVpcPeeringConnections`.
     ///
     /// <p>Retrieves information on VPC peering connections. Use this operation to get peering information for all fleets or for one specific fleet ID. </p>
-    /// <p>To retrieve connection information, call this operation from the AWS account that is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the parameter empty to retrieve all connection records. If successful, the retrieved information includes both active and pending connections. Active connections identify the IpV4 CIDR block that the VPC uses to connect. </p>
+    /// <p>To retrieve connection information, call this operation from the Amazon Web Services account that is used to manage the Amazon Web Services fleets. Specify a fleet ID or leave the parameter empty to retrieve all connection records. If successful, the retrieved information includes both active and pending connections. Active connections identify the IpV4 CIDR block that the VPC uses to connect. </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -6901,7 +6909,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGameSessionLogUrl`.
     ///
     /// <p>Retrieves the location of stored game session logs for a specified game session. When a game session is terminated, GameLift automatically stores the logs in Amazon S3 and retains them for 14 days. Use this URL to download the logs.</p> <note>
-    /// <p>See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS Service Limits</a> page for maximum log file sizes. Log files that exceed this limit are not saved.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">Amazon Web Services Service Limits</a> page for maximum log file sizes. Log files that exceed this limit are not saved.</p>
     /// </note>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
@@ -6961,7 +6969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInstanceAccess`.
     ///
     /// <p>Requests remote access to a fleet instance. Remote access is useful for debugging, gathering benchmarking data, or observing activity in real time. </p>
-    /// <p>To remotely access an instance, you need credentials that match the operating system of the instance. For a Windows instance, GameLift returns a user name and password as strings for use with a Windows Remote Desktop client. For a Linux instance, GameLift returns a user name and RSA private key, also as strings, for use with an SSH client. The private key must be saved in the proper format to a <code>.pem</code> file before using. If you're making this request using the AWS CLI, saving the secret can be handled as part of the <code>GetInstanceAccess</code> request, as shown in one of the examples for this operation. </p>
+    /// <p>To remotely access an instance, you need credentials that match the operating system of the instance. For a Windows instance, GameLift returns a user name and password as strings for use with a Windows Remote Desktop client. For a Linux instance, GameLift returns a user name and RSA private key, also as strings, for use with an SSH client. The private key must be saved in the proper format to a <code>.pem</code> file before using. If you're making this request using the CLI, saving the secret can be handled as part of the <code>GetInstanceAccess</code> request, as shown in one of the examples for this operation. </p>
     /// <p>To request access to a specific instance, specify the IDs of both the instance and the fleet it belongs to. You can retrieve a fleet's instance IDs by calling <code>DescribeInstances</code>. If successful, an <code>InstanceAccess</code> object is returned that contains the instance's IP address and a set of credentials.</p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely Access Fleet Instances</a> </p>
@@ -7030,7 +7038,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAliases`.
     ///
-    /// <p>Retrieves all aliases for this AWS account. You can filter the result set by alias name and/or routing strategy type. Use the pagination parameters to retrieve results in sequential pages.</p> <note>
+    /// <p>Retrieves all aliases for this Amazon Web Services account. You can filter the result set by alias name and/or routing strategy type. Use the pagination parameters to retrieve results in sequential pages.</p> <note>
     /// <p>Returned aliases are not listed in any particular order.</p>
     /// </note>
     /// <p> <b>Related actions</b> </p>
@@ -7136,7 +7144,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBuilds`.
     ///
-    /// <p>Retrieves build resources for all builds associated with the AWS account in use. You can limit results to builds that are in a specific status by using the <code>Status</code> parameter. Use the pagination parameters to retrieve results in a set of sequential pages. </p> <note>
+    /// <p>Retrieves build resources for all builds associated with the Amazon Web Services account in use. You can limit results to builds that are in a specific status by using the <code>Status</code> parameter. Use the pagination parameters to retrieve results in a set of sequential pages. </p> <note>
     /// <p>Build resources are not listed in any particular order.</p>
     /// </note>
     /// <p> <b>Learn more</b> </p>
@@ -7233,7 +7241,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFleets`.
     ///
-    /// <p>Retrieves a collection of fleet resources in an AWS Region. You can call this operation to get fleets in a previously selected default Region (see <a href="https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html">https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html</a>or specify a Region in your request. You can filter the result set to find only those fleets that are deployed with a specific build or script. For fleets that have multiple locations, this operation retrieves fleets based on their home Region only.</p>
+    /// <p>Retrieves a collection of fleet resources in an Amazon Web Services Region. You can call this operation to get fleets in a previously selected default Region (see <a href="https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html">https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html</a>or specify a Region in your request. You can filter the result set to find only those fleets that are deployed with a specific build or script. For fleets that have multiple locations, this operation retrieves fleets based on their home Region only.</p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
     /// <li> <p>To get a list of all fleets in a Region, don't provide a build or script identifier. </p> </li>
@@ -7337,7 +7345,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGameServerGroups`.
     ///
     /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
-    /// <p>Retrieves information on all game servers groups that exist in the current AWS account for the selected Region. Use the pagination parameters to retrieve results in a set of sequential segments. </p>
+    /// <p>Retrieves information on all game servers groups that exist in the current Amazon Web Services account for the selected Region. Use the pagination parameters to retrieve results in a set of sequential segments. </p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
     /// <p> <b>Related actions</b> </p>
@@ -7510,9 +7518,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListScripts`.
     ///
-    /// <p>Retrieves script records for all Realtime scripts that are associated with the AWS account in use. </p>
+    /// <p>Retrieves script records for all Realtime scripts that are associated with the Amazon Web Services account in use. </p>
     /// <p> <b>Learn more</b> </p>
-    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon Web Services Realtime Servers</a> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -7583,7 +7591,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p> Retrieves all tags that are assigned to a GameLift resource. Resource tags are used to organize AWS resources for a range of purposes. This operation handles the permissions necessary to manage tags for the following GameLift resource types:</p>
+    /// <p> Retrieves all tags that are assigned to a GameLift resource. Resource tags are used to organize Amazon Web Services resources for a range of purposes. This operation handles the permissions necessary to manage tags for the following GameLift resource types:</p>
     /// <ul>
     /// <li> <p>Build</p> </li>
     /// <li> <p>Script</p> </li>
@@ -7595,8 +7603,8 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>To list tags for a resource, specify the unique ARN value for the resource.</p>
     /// <p> <b>Learn more</b> </p>
-    /// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <i>AWS General Reference</i> </p>
-    /// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> AWS Tagging Strategies</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i> </p>
+    /// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> Amazon Web Services Tagging Strategies</a> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>TagResource</code> | <code>UntagResource</code> | <code>ListTagsForResource</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -7651,13 +7659,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutScalingPolicy`.
     ///
-    /// <p>Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs Amazon GameLift to track a fleet metric and automatically change the fleet's capacity when a certain threshold is reached. There are two types of scaling policies: target-based and rule-based. Use a target-based policy to quickly and efficiently manage fleet scaling; this option is the most commonly used. Use rule-based policies when you need to exert fine-grained control over auto-scaling. </p>
+    /// <p>Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs Amazon Web Services to track a fleet metric and automatically change the fleet's capacity when a certain threshold is reached. There are two types of scaling policies: target-based and rule-based. Use a target-based policy to quickly and efficiently manage fleet scaling; this option is the most commonly used. Use rule-based policies when you need to exert fine-grained control over auto-scaling. </p>
     /// <p>Fleets can have multiple scaling policies of each type in force at the same time; you can have one target-based policy, one or multiple rule-based scaling policies, or both. We recommend caution, however, because multiple auto-scaling policies can have unintended consequences.</p>
     /// <p>You can temporarily suspend all scaling policies for a fleet by calling <code>StopFleetActions</code> with the fleet action AUTO_SCALING. To resume scaling policies, call <code>StartFleetActions</code> with the same fleet action. To stop just one scaling policy--or to permanently remove it, you must delete the policy with <code>DeleteScalingPolicy</code>.</p>
     /// <p>Learn more about how to work with auto-scaling in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set Up Fleet Automatic Scaling</a>.</p>
     /// <p> <b>Target-based policy</b> </p>
-    /// <p>A target-based policy tracks a single metric: PercentAvailableGameSessions. This metric tells us how much of a fleet's hosting capacity is ready to host game sessions but is not currently in use. This is the fleet's buffer; it measures the additional player demand that the fleet could handle at current capacity. With a target-based policy, you set your ideal buffer size and leave it to Amazon GameLift to take whatever action is needed to maintain that target. </p>
-    /// <p>For example, you might choose to maintain a 10% buffer for a fleet that has the capacity to host 100 simultaneous game sessions. This policy tells Amazon GameLift to take action whenever the fleet's available capacity falls below or rises above 10 game sessions. Amazon GameLift will start new instances or stop unused instances in order to return to the 10% buffer. </p>
+    /// <p>A target-based policy tracks a single metric: PercentAvailableGameSessions. This metric tells us how much of a fleet's hosting capacity is ready to host game sessions but is not currently in use. This is the fleet's buffer; it measures the additional player demand that the fleet could handle at current capacity. With a target-based policy, you set your ideal buffer size and leave it to Amazon Web Services to take whatever action is needed to maintain that target. </p>
+    /// <p>For example, you might choose to maintain a 10% buffer for a fleet that has the capacity to host 100 simultaneous game sessions. This policy tells Amazon Web Services to take action whenever the fleet's available capacity falls below or rises above 10 game sessions. Amazon Web Services will start new instances or stop unused instances in order to return to the 10% buffer. </p>
     /// <p>To create or update a target-based policy, specify a fleet ID and name, and set the policy type to "TargetBased". Specify the metric to track (PercentAvailableGameSessions) and reference a <code>TargetConfiguration</code> object with your desired buffer value. Exclude all other parameters. On a successful request, the policy name is returned. The scaling policy is automatically in force as soon as it's successfully created. If the fleet's auto-scaling actions are temporarily suspended, the new policy will be in force once the fleet actions are restarted.</p>
     /// <p> <b>Rule-based policy</b> </p>
     /// <p>A rule-based policy tracks specified fleet metric, sets a threshold value, and specifies the type of action to initiate when triggered. With a rule-based policy, you can select from several available fleet metrics. Each policy specifies whether to scale up or scale down (and by how much), so you need one policy for each type of action. </p>
@@ -7797,7 +7805,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_evaluation_periods(input);
             self
         }
-        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
         /// <ul>
         /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
         /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -7815,7 +7823,7 @@ pub mod fluent_builders {
             self.inner = self.inner.metric_name(input);
             self
         }
-        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon Web Services with Amazon CloudWatch</a>. </p>
         /// <ul>
         /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
         /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
@@ -7925,12 +7933,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_group_name(input);
             self
         }
-        /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
+        /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
         pub fn game_server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.game_server_id(input.into());
             self
         }
-        /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
+        /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7977,7 +7985,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RequestUploadCredentials`.
     ///
-    /// <p>Retrieves a fresh set of credentials for use when uploading a new set of game build files to Amazon GameLift's Amazon S3. This is done as part of the build creation process; see <code>CreateBuild</code>.</p>
+    /// <p>Retrieves a fresh set of credentials for use when uploading a new set of game build files to Amazon Web Services's Amazon S3. This is done as part of the build creation process; see <code>CreateBuild</code>.</p>
     /// <p>To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code> request. If successful, a new set of credentials are returned, along with the S3 storage location associated with the build ID.</p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"> Create a Build with Files in S3</a> </p>
@@ -8170,6 +8178,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchGameSessions`.
     ///
     /// <p>Retrieves all active game sessions that match a set of search criteria and sorts them into a specified order. </p>
+    /// <p>This operation is not designed to be continually called to track game session status. This practice can cause you to exceed your API limit, which results in errors. Instead, you must configure configure an Amazon Simple Notification Service (SNS) topic to receive notifications from FlexMatch or queues. Continuously polling game session status with <code>DescribeGameSessions</code> should only be used for games in development with low game session usage. </p>
     /// <p>When searching for game sessions, you specify exactly where you want to search and provide a search filter expression, a sort expression, or both. A search request can search only one fleet, but it can search all of a fleet's locations. </p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
@@ -8257,13 +8266,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_id(input);
             self
         }
-        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
         /// <p> </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
         /// <p> </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
@@ -8437,12 +8446,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actions(input);
             self
         }
-        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -8450,10 +8459,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartGameSessionPlacement`.
     ///
-    /// <p>Places a request for a new game session in a queue (see <code>CreateGameSessionQueue</code>). When processing a placement request, Amazon GameLift searches for available resources on the queue's destinations, scanning each until it finds resources or the placement request times out.</p>
-    /// <p>A game session placement request can also request player sessions. When a new game session is successfully created, Amazon GameLift creates a player session for each player included in the request.</p>
-    /// <p>When placing a game session, by default Amazon GameLift tries each fleet in the order they are listed in the queue configuration. Ideally, a queue's destinations are listed in preference order.</p>
-    /// <p>Alternatively, when requesting a game session with players, you can also provide latency data for each player in relevant Regions. Latency data indicates the performance lag a player experiences when connected to a fleet in the Region. Amazon GameLift uses latency data to reorder the list of destinations to place the game session in a Region with minimal lag. If latency data is provided for multiple players, Amazon GameLift calculates each Region's average lag for all players and reorders to get the best game play across all players. </p>
+    /// <p>Places a request for a new game session in a queue (see <code>CreateGameSessionQueue</code>). When processing a placement request, Amazon Web Services searches for available resources on the queue's destinations, scanning each until it finds resources or the placement request times out.</p>
+    /// <p>A game session placement request can also request player sessions. When a new game session is successfully created, Amazon Web Services creates a player session for each player included in the request.</p>
+    /// <p>When placing a game session, by default Amazon Web Services tries each fleet in the order they are listed in the queue configuration. Ideally, a queue's destinations are listed in preference order.</p>
+    /// <p>Alternatively, when requesting a game session with players, you can also provide latency data for each player in relevant Regions. Latency data indicates the performance lag a player experiences when connected to a fleet in the Region. Amazon Web Services uses latency data to reorder the list of destinations to place the game session in a Region with minimal lag. If latency data is provided for multiple players, Amazon Web Services calculates each Region's average lag for all players and reorders to get the best game play across all players. </p>
     /// <p>To place a new game session request, specify the following:</p>
     /// <ul>
     /// <li> <p>The queue name and a set of game session properties and settings</p> </li>
@@ -8571,12 +8580,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
         ///
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
         pub fn player_latencies(mut self, input: crate::model::PlayerLatency) -> Self {
             self.inner = self.inner.player_latencies(input);
             self
         }
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
         pub fn set_player_latencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
@@ -8624,6 +8633,7 @@ pub mod fluent_builders {
     /// <p>When using FlexMatch with GameLift managed hosting, you can request a backfill match from a client service by calling this operation with a <code>GameSession</code> identifier. You also have the option of making backfill requests directly from your game server. In response to a request, FlexMatch creates player sessions for the new players, updates the <code>GameSession</code> resource, and sends updated matchmaking data to the game server. You can request a backfill match at any point after a game session is started. Each game session can have only one active backfill request at a time; a subsequent request automatically replaces the earlier request.</p>
     /// <p>When using FlexMatch as a standalone component, request a backfill match by calling this operation without a game session identifier. As with newly formed matches, matchmaking results are returned in a matchmaking event so that your game can update the game session that is being backfilled.</p>
     /// <p>To request a backfill match, specify a unique ticket ID, the original matchmaking configuration, and matchmaking data for all current players in the game session being backfilled. Optionally, specify the <code>GameSession</code> ARN. If successful, a match backfill ticket is created and returned with status set to QUEUED. Track the status of backfill tickets using the same method for tracking tickets for new matches.</p>
+    /// <p>Only game sessions created by FlexMatch are supported for match backfill.</p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill existing games with FlexMatch</a> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html"> Matchmaking events</a> (reference)</p>
@@ -8669,12 +8679,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
         pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ticket_id(input.into());
             self
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ticket_id(input);
             self
@@ -8711,7 +8721,7 @@ pub mod fluent_builders {
         ///
         /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
         /// <ul>
-        /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> </li>
+        /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> <p>The backfill request must specify the team membership for every player. Do not specify team if you are not using backfill.</p> </li>
         /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
         /// </ul>
         pub fn players(mut self, input: crate::model::Player) -> Self {
@@ -8720,7 +8730,7 @@ pub mod fluent_builders {
         }
         /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
         /// <ul>
-        /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> </li>
+        /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> <p>The backfill request must specify the team membership for every player. Do not specify team if you are not using backfill.</p> </li>
         /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
         /// </ul>
         pub fn set_players(
@@ -8735,7 +8745,7 @@ pub mod fluent_builders {
     ///
     /// <p>Uses FlexMatch to create a game match for a group of players based on custom matchmaking rules. With games that use GameLift managed hosting, this operation also triggers GameLift to find hosting resources and start a new game session for the new match. Each matchmaking request includes information on one or more players and specifies the FlexMatch matchmaker to use. When a request is for multiple players, FlexMatch attempts to build a match that includes all players in the request, placing them in the same team and finding additional players as needed to fill the match. </p>
     /// <p>To start matchmaking, provide a unique ticket ID, specify a matchmaking configuration, and include the players to be matched. You must also include any player attributes that are required by the matchmaking configuration's rule set. If successful, a matchmaking ticket is returned with status set to <code>QUEUED</code>. </p>
-    /// <p>Track matchmaking events to respond as needed and acquire game session connection information for successfully completed matches. Ticket status updates are tracked using event notification through Amazon Simple Notification Service (SNS), which is defined in the matchmaking configuration.</p>
+    /// <p>Track matchmaking events to respond as needed and acquire game session connection information for successfully completed matches. Ticket status updates are tracked using event notification through Amazon Simple Notification Service, which is defined in the matchmaking configuration.</p>
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html"> Add FlexMatch to a game client</a> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Set Up FlexMatch event notification</a> </p>
@@ -8781,12 +8791,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
         pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ticket_id(input.into());
             self
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon Web Services will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ticket_id(input);
             self
@@ -8902,12 +8912,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actions(input);
             self
         }
-        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -9112,7 +9122,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p> Assigns a tag to a GameLift resource. AWS resource tags provide an additional management tool set. You can use tags to organize resources, create IAM permissions policies to manage access to groups of resources, customize AWS cost breakdowns, etc. This operation handles the permissions necessary to manage tags for the following GameLift resource types:</p>
+    /// <p> Assigns a tag to a GameLift resource. Amazon Web Services resource tags provide an additional management tool set. You can use tags to organize resources, create IAM permissions policies to manage access to groups of resources, customize Amazon Web Services cost breakdowns, etc. This operation handles the permissions necessary to manage tags for the following GameLift resource types:</p>
     /// <ul>
     /// <li> <p>Build</p> </li>
     /// <li> <p>Script</p> </li>
@@ -9124,8 +9134,8 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>To add a tag to a resource, specify the unique ARN value for the resource and provide a tag list containing one or more tags. The operation succeeds even if the list includes tags that are already assigned to the specified resource. </p>
     /// <p> <b>Learn more</b> </p>
-    /// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <i>AWS General Reference</i> </p>
-    /// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> AWS Tagging Strategies</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i> </p>
+    /// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> Amazon Web Services Tagging Strategies</a> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>TagResource</code> | <code>UntagResource</code> | <code>ListTagsForResource</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -9181,12 +9191,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> for actual tagging limits.</p>
+        /// <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> for actual tagging limits.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> for actual tagging limits.</p>
+        /// <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9197,7 +9207,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes a tag that is assigned to a GameLift resource. Resource tags are used to organize AWS resources for a range of purposes. This operation handles the permissions necessary to manage tags for the following GameLift resource types:</p>
+    /// <p>Removes a tag that is assigned to a GameLift resource. Resource tags are used to organize Amazon Web Services resources for a range of purposes. This operation handles the permissions necessary to manage tags for the following GameLift resource types:</p>
     /// <ul>
     /// <li> <p>Build</p> </li>
     /// <li> <p>Script</p> </li>
@@ -9209,8 +9219,8 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>To remove a tag from a resource, specify the unique ARN value for the resource and provide a string list containing one or more tags to be removed. This operation succeeds even if the list includes tags that are not currently assigned to the specified resource.</p>
     /// <p> <b>Learn more</b> </p>
-    /// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <i>AWS General Reference</i> </p>
-    /// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> AWS Tagging Strategies</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i> </p>
+    /// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> Amazon Web Services Tagging Strategies</a> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>TagResource</code> | <code>UntagResource</code> | <code>ListTagsForResource</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -9266,12 +9276,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
+        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
+        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9586,7 +9596,7 @@ pub mod fluent_builders {
     /// <p>Updates capacity settings for a fleet. For fleets with multiple locations, use this operation to manage capacity settings in each location individually. Fleet capacity determines the number of game sessions and players that can be hosted based on the fleet configuration. Use this operation to set the following fleet capacity properties: </p>
     /// <ul>
     /// <li> <p>Minimum/maximum size: Set hard limits on fleet capacity. GameLift cannot set the fleet's capacity to a value outside of this range, whether the capacity is changed manually or through automatic scaling. </p> </li>
-    /// <li> <p>Desired capacity: Manually set the number of EC2 instances to be maintained in a fleet location. Before changing a fleet's desired capacity, you may want to call <code>DescribeEC2InstanceLimits</code> to get the maximum capacity of the fleet's EC2 instance type. Alternatively, consider using automatic scaling to adjust capacity based on player demand.</p> </li>
+    /// <li> <p>Desired capacity: Manually set the number of Amazon EC2 instances to be maintained in a fleet location. Before changing a fleet's desired capacity, you may want to call <code>DescribeEC2InstanceLimits</code> to get the maximum capacity of the fleet's Amazon EC2 instance type. Alternatively, consider using automatic scaling to adjust capacity based on player demand.</p> </li>
     /// </ul>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
@@ -9647,12 +9657,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+        /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
         pub fn desired_instances(mut self, input: i32) -> Self {
             self.inner = self.inner.desired_instances(input);
             self
         }
-        /// <p>The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+        /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
         pub fn set_desired_instances(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_instances(input);
             self
@@ -9677,12 +9687,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_size(input);
             self
         }
-        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
+        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
+        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -9968,12 +9978,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_group_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -9982,12 +9992,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).
         ///
-        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        /// <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
             self.inner = self.inner.instance_definitions(input);
             self
         }
-        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        /// <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn set_instance_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -9995,7 +10005,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_definitions(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn game_server_protection_policy(
             mut self,
             input: crate::model::GameServerProtectionPolicy,
@@ -10003,7 +10013,7 @@ pub mod fluent_builders {
             self.inner = self.inner.game_server_protection_policy(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn set_game_server_protection_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerProtectionPolicy>,
@@ -10158,7 +10168,7 @@ pub mod fluent_builders {
     /// <p> <b>Learn more</b> </p>
     /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html"> Using Multi-Region Queues</a> </p>
     /// <p> <b>Related actions</b> </p>
-    /// <p> <code>CreateGameSessionQueue</code> | <code>DescribeGameSessionQueues</code> | <code>UpdateGameSessionQueue</code> | <code>DeleteGameSessionQueue</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html">DeleteGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGameSessionQueue {
         handle: std::sync::Arc<super::Handle>,
@@ -10252,12 +10262,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destinations(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
         pub fn filter_configuration(mut self, input: crate::model::FilterConfiguration) -> Self {
             self.inner = self.inner.filter_configuration(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
         pub fn set_filter_configuration(
             mut self,
             input: std::option::Option<crate::model::FilterConfiguration>,
@@ -10620,9 +10630,9 @@ pub mod fluent_builders {
     /// <p>Updates Realtime script metadata and content.</p>
     /// <p>To update script metadata, specify the script ID and provide updated name and/or version values. </p>
     /// <p>To update script content, provide an updated zip file by pointing to either a local file or an Amazon S3 bucket location. You can use either method regardless of how the original script was uploaded. Use the <i>Version</i> parameter to track updates to the script.</p>
-    /// <p>If the call is successful, the updated metadata is stored in the script record and a revised script is uploaded to the Amazon GameLift service. Once the script is updated and acquired by a fleet instance, the new version is used for all new game sessions. </p>
+    /// <p>If the call is successful, the updated metadata is stored in the script record and a revised script is uploaded to the Amazon Web Services service. Once the script is updated and acquired by a fleet instance, the new version is used for all new game sessions. </p>
     /// <p> <b>Learn more</b> </p>
-    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon Web Services Realtime Servers</a> </p>
     /// <p> <b>Related actions</b> </p>
     /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -10694,12 +10704,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
             self.inner = self.inner.storage_location(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon Web Services to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon Web Services uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -10708,13 +10718,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+        /// <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.zip_file(input);
             self
         }
         /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+        /// <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_zip_file(input);
             self

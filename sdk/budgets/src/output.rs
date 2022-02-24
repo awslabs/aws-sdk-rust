@@ -652,6 +652,98 @@ impl DescribeBudgetPerformanceHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeBudgetNotificationsForAccountOutput {
+    /// <p> A list of budget names and associated notifications for an account. </p>
+    pub budget_notifications_for_account:
+        std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>,
+    /// <p> A generic string.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeBudgetNotificationsForAccountOutput {
+    /// <p> A list of budget names and associated notifications for an account. </p>
+    pub fn budget_notifications_for_account(
+        &self,
+    ) -> std::option::Option<&[crate::model::BudgetNotificationsForAccount]> {
+        self.budget_notifications_for_account.as_deref()
+    }
+    /// <p> A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeBudgetNotificationsForAccountOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeBudgetNotificationsForAccountOutput");
+        formatter.field(
+            "budget_notifications_for_account",
+            &self.budget_notifications_for_account,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput)
+pub mod describe_budget_notifications_for_account_output {
+    /// A builder for [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) budget_notifications_for_account:
+            std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `budget_notifications_for_account`.
+        ///
+        /// To override the contents of this collection use [`set_budget_notifications_for_account`](Self::set_budget_notifications_for_account).
+        ///
+        /// <p> A list of budget names and associated notifications for an account. </p>
+        pub fn budget_notifications_for_account(
+            mut self,
+            input: crate::model::BudgetNotificationsForAccount,
+        ) -> Self {
+            let mut v = self.budget_notifications_for_account.unwrap_or_default();
+            v.push(input);
+            self.budget_notifications_for_account = Some(v);
+            self
+        }
+        /// <p> A list of budget names and associated notifications for an account. </p>
+        pub fn set_budget_notifications_for_account(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>,
+        ) -> Self {
+            self.budget_notifications_for_account = input;
+            self
+        }
+        /// <p> A generic string.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> A generic string.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput)
+        pub fn build(self) -> crate::output::DescribeBudgetNotificationsForAccountOutput {
+            crate::output::DescribeBudgetNotificationsForAccountOutput {
+                budget_notifications_for_account: self.budget_notifications_for_account,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeBudgetNotificationsForAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput)
+    pub fn builder() -> crate::output::describe_budget_notifications_for_account_output::Builder {
+        crate::output::describe_budget_notifications_for_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForBudgetOutput {
     /// <p> A list of the budget action resources information. </p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,

@@ -435,6 +435,42 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionsFor
     }
 }
 
+/// Operation shape for `DescribeBudgetNotificationsForAccount`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_budget_notifications_for_account`](crate::client::Client::describe_budget_notifications_for_account).
+///
+/// See [`crate::client::fluent_builders::DescribeBudgetNotificationsForAccount`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeBudgetNotificationsForAccount {
+    _private: (),
+}
+impl DescribeBudgetNotificationsForAccount {
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountInput`](crate::input::DescribeBudgetNotificationsForAccountInput)
+    pub fn builder() -> crate::input::describe_budget_notifications_for_account_input::Builder {
+        crate::input::describe_budget_notifications_for_account_input::Builder::default()
+    }
+    /// Creates a new `DescribeBudgetNotificationsForAccount` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetNotificationsForAccount {
+    type Output = std::result::Result<
+        crate::output::DescribeBudgetNotificationsForAccountOutput,
+        crate::error::DescribeBudgetNotificationsForAccountError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_budget_notifications_for_account_error(response)
+        } else {
+            crate::operation_deser::parse_describe_budget_notifications_for_account_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `DescribeBudgetPerformanceHistory`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

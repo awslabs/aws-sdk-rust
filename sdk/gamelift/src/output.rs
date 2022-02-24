@@ -55,11 +55,11 @@ impl ValidateMatchmakingRuleSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScriptOutput {
-    /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+    /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
     pub script: std::option::Option<crate::model::Script>,
 }
 impl UpdateScriptOutput {
-    /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+    /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
     pub fn script(&self) -> std::option::Option<&crate::model::Script> {
         self.script.as_ref()
     }
@@ -80,12 +80,12 @@ pub mod update_script_output {
         pub(crate) script: std::option::Option<crate::model::Script>,
     }
     impl Builder {
-        /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+        /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
         pub fn script(mut self, input: crate::model::Script) -> Self {
             self.script = Some(input);
             self
         }
-        /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+        /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
         pub fn set_script(mut self, input: std::option::Option<crate::model::Script>) -> Self {
             self.script = input;
             self
@@ -514,7 +514,7 @@ pub struct UpdateFleetCapacityOutput {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. </p>
     pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.</p>
+    /// <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl UpdateFleetCapacityOutput {
@@ -529,7 +529,7 @@ impl UpdateFleetCapacityOutput {
     pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
-    /// <p>The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.</p>
+    /// <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -580,12 +580,12 @@ pub mod update_fleet_capacity_output {
             self.fleet_arn = input;
             self
         }
-        /// <p>The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -1536,13 +1536,13 @@ impl ResolveAliasOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestUploadCredentialsOutput {
-    /// <p>AWS credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
+    /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
     pub upload_credentials: std::option::Option<crate::model::AwsCredentials>,
     /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
 }
 impl RequestUploadCredentialsOutput {
-    /// <p>AWS credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
+    /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
     pub fn upload_credentials(&self) -> std::option::Option<&crate::model::AwsCredentials> {
         self.upload_credentials.as_ref()
     }
@@ -1569,12 +1569,12 @@ pub mod request_upload_credentials_output {
         pub(crate) storage_location: std::option::Option<crate::model::S3Location>,
     }
     impl Builder {
-        /// <p>AWS credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
+        /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
         pub fn upload_credentials(mut self, input: crate::model::AwsCredentials) -> Self {
             self.upload_credentials = Some(input);
             self
         }
-        /// <p>AWS credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
+        /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
         pub fn set_upload_credentials(
             mut self,
             input: std::option::Option<crate::model::AwsCredentials>,
@@ -2462,12 +2462,12 @@ impl DescribeVpcPeeringConnectionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcPeeringAuthorizationsOutput {
-    /// <p>A collection of objects that describe all valid VPC peering operations for the current AWS account.</p>
+    /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
     pub vpc_peering_authorizations:
         std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
 }
 impl DescribeVpcPeeringAuthorizationsOutput {
-    /// <p>A collection of objects that describe all valid VPC peering operations for the current AWS account.</p>
+    /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
     pub fn vpc_peering_authorizations(
         &self,
     ) -> std::option::Option<&[crate::model::VpcPeeringAuthorization]> {
@@ -2498,7 +2498,7 @@ pub mod describe_vpc_peering_authorizations_output {
         ///
         /// To override the contents of this collection use [`set_vpc_peering_authorizations`](Self::set_vpc_peering_authorizations).
         ///
-        /// <p>A collection of objects that describe all valid VPC peering operations for the current AWS account.</p>
+        /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
         pub fn vpc_peering_authorizations(
             mut self,
             input: crate::model::VpcPeeringAuthorization,
@@ -2508,7 +2508,7 @@ pub mod describe_vpc_peering_authorizations_output {
             self.vpc_peering_authorizations = Some(v);
             self
         }
-        /// <p>A collection of objects that describe all valid VPC peering operations for the current AWS account.</p>
+        /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
         pub fn set_vpc_peering_authorizations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
@@ -3723,7 +3723,7 @@ pub struct DescribeFleetPortSettingsOutput {
     pub inbound_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
     pub update_status: std::option::Option<crate::model::LocationUpdateStatus>,
-    /// <p>The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub location: std::option::Option<std::string::String>,
 }
 impl DescribeFleetPortSettingsOutput {
@@ -3746,7 +3746,7 @@ impl DescribeFleetPortSettingsOutput {
     pub fn update_status(&self) -> std::option::Option<&crate::model::LocationUpdateStatus> {
         self.update_status.as_ref()
     }
-    /// <p>The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -3834,12 +3834,12 @@ pub mod describe_fleet_port_settings_output {
             self.update_status = input;
             self
         }
-        /// <p>The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+        /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -5128,11 +5128,11 @@ impl CreateVpcPeeringAuthorizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScriptOutput {
-    /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+    /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
     pub script: std::option::Option<crate::model::Script>,
 }
 impl CreateScriptOutput {
-    /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+    /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
     pub fn script(&self) -> std::option::Option<&crate::model::Script> {
         self.script.as_ref()
     }
@@ -5153,12 +5153,12 @@ pub mod create_script_output {
         pub(crate) script: std::option::Option<crate::model::Script>,
     }
     impl Builder {
-        /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+        /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
         pub fn script(mut self, input: crate::model::Script) -> Self {
             self.script = Some(input);
             self
         }
-        /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+        /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon Web Services service.</p>
         pub fn set_script(mut self, input: std::option::Option<crate::model::Script>) -> Self {
             self.script = input;
             self
@@ -5530,11 +5530,11 @@ impl CreateGameSessionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGameServerGroupOutput {
-    /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+    /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl CreateGameServerGroupOutput {
-    /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+    /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
     pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
         self.game_server_group.as_ref()
     }
@@ -5555,12 +5555,12 @@ pub mod create_game_server_group_output {
         pub(crate) game_server_group: std::option::Option<crate::model::GameServerGroup>,
     }
     impl Builder {
-        /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+        /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
         pub fn game_server_group(mut self, input: crate::model::GameServerGroup) -> Self {
             self.game_server_group = Some(input);
             self
         }
-        /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+        /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
         pub fn set_game_server_group(
             mut self,
             input: std::option::Option<crate::model::GameServerGroup>,
@@ -5789,7 +5789,7 @@ pub struct CreateBuildOutput {
     ///
     /// _Note: This member has been renamed from `build`._
     pub build_value: std::option::Option<crate::model::Build>,
-    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon Web Services. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
     pub upload_credentials: std::option::Option<crate::model::AwsCredentials>,
     /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
     pub storage_location: std::option::Option<crate::model::S3Location>,
@@ -5801,7 +5801,7 @@ impl CreateBuildOutput {
     pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
         self.build_value.as_ref()
     }
-    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon Web Services. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
     pub fn upload_credentials(&self) -> std::option::Option<&crate::model::AwsCredentials> {
         self.upload_credentials.as_ref()
     }
@@ -5840,12 +5840,12 @@ pub mod create_build_output {
             self.build_value = input;
             self
         }
-        /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+        /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon Web Services. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
         pub fn upload_credentials(mut self, input: crate::model::AwsCredentials) -> Self {
             self.upload_credentials = Some(input);
             self
         }
-        /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+        /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon Web Services. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
         pub fn set_upload_credentials(
             mut self,
             input: std::option::Option<crate::model::AwsCredentials>,

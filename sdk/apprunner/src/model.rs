@@ -1976,7 +1976,13 @@ impl CodeConfigurationValues {
 )]
 pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
+    Corretto11,
+    #[allow(missing_docs)] // documentation missing in model
+    Corretto8,
+    #[allow(missing_docs)] // documentation missing in model
     Nodejs12,
+    #[allow(missing_docs)] // documentation missing in model
+    Nodejs14,
     #[allow(missing_docs)] // documentation missing in model
     Python3,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -1985,7 +1991,10 @@ pub enum Runtime {
 impl std::convert::From<&str> for Runtime {
     fn from(s: &str) -> Self {
         match s {
+            "CORRETTO_11" => Runtime::Corretto11,
+            "CORRETTO_8" => Runtime::Corretto8,
             "NODEJS_12" => Runtime::Nodejs12,
+            "NODEJS_14" => Runtime::Nodejs14,
             "PYTHON_3" => Runtime::Python3,
             other => Runtime::Unknown(other.to_owned()),
         }
@@ -2002,14 +2011,23 @@ impl Runtime {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Runtime::Corretto11 => "CORRETTO_11",
+            Runtime::Corretto8 => "CORRETTO_8",
             Runtime::Nodejs12 => "NODEJS_12",
+            Runtime::Nodejs14 => "NODEJS_14",
             Runtime::Python3 => "PYTHON_3",
             Runtime::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["NODEJS_12", "PYTHON_3"]
+        &[
+            "CORRETTO_11",
+            "CORRETTO_8",
+            "NODEJS_12",
+            "NODEJS_14",
+            "PYTHON_3",
+        ]
     }
 }
 impl AsRef<str> for Runtime {

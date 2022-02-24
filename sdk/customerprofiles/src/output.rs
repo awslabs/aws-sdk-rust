@@ -856,6 +856,8 @@ pub struct PutIntegrationOutput {
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     pub object_type_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
 }
 impl PutIntegrationOutput {
     /// <p>The unique name of the domain.</p>
@@ -892,6 +894,10 @@ impl PutIntegrationOutput {
     {
         self.object_type_names.as_ref()
     }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PutIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -903,6 +909,7 @@ impl std::fmt::Debug for PutIntegrationOutput {
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("tags", &self.tags);
         formatter.field("object_type_names", &self.object_type_names);
+        formatter.field("workflow_id", &self.workflow_id);
         formatter.finish()
     }
 }
@@ -923,6 +930,7 @@ pub mod put_integration_output {
         pub(crate) object_type_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -1034,6 +1042,16 @@ pub mod put_integration_output {
             self.object_type_names = input;
             self
         }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutIntegrationOutput`](crate::output::PutIntegrationOutput)
         pub fn build(self) -> crate::output::PutIntegrationOutput {
             crate::output::PutIntegrationOutput {
@@ -1044,6 +1062,7 @@ pub mod put_integration_output {
                 last_updated_at: self.last_updated_at,
                 tags: self.tags,
                 object_type_names: self.object_type_names,
+                workflow_id: self.workflow_id,
             }
         }
     }
@@ -1106,6 +1125,88 @@ impl MergeProfilesOutput {
     /// Creates a new builder-style object to manufacture [`MergeProfilesOutput`](crate::output::MergeProfilesOutput)
     pub fn builder() -> crate::output::merge_profiles_output::Builder {
         crate::output::merge_profiles_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWorkflowsOutput {
+    /// <p>List containing workflow details.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::ListWorkflowsItem>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListWorkflowsOutput {
+    /// <p>List containing workflow details.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ListWorkflowsItem]> {
+        self.items.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListWorkflowsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListWorkflowsOutput");
+        formatter.field("items", &self.items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput)
+pub mod list_workflows_output {
+    /// A builder for [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListWorkflowsItem>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>List containing workflow details.</p>
+        pub fn items(mut self, input: crate::model::ListWorkflowsItem) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>List containing workflow details.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListWorkflowsItem>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput)
+        pub fn build(self) -> crate::output::ListWorkflowsOutput {
+            crate::output::ListWorkflowsOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListWorkflowsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput)
+    pub fn builder() -> crate::output::list_workflows_output::Builder {
+        crate::output::list_workflows_output::Builder::default()
     }
 }
 
@@ -1767,6 +1868,334 @@ impl ListAccountIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountIntegrationsOutput`](crate::output::ListAccountIntegrationsOutput)
     pub fn builder() -> crate::output::list_account_integrations_output::Builder {
         crate::output::list_account_integrations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetWorkflowStepsOutput {
+    /// <p>Unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub workflow_type: std::option::Option<crate::model::WorkflowType>,
+    /// <p>List containing workflow step details.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::WorkflowStepItem>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetWorkflowStepsOutput {
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+        self.workflow_type.as_ref()
+    }
+    /// <p>List containing workflow step details.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::WorkflowStepItem]> {
+        self.items.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetWorkflowStepsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetWorkflowStepsOutput");
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("workflow_type", &self.workflow_type);
+        formatter.field("items", &self.items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput)
+pub mod get_workflow_steps_output {
+    /// A builder for [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::WorkflowStepItem>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.workflow_type = Some(input);
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn set_workflow_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowType>,
+        ) -> Self {
+            self.workflow_type = input;
+            self
+        }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>List containing workflow step details.</p>
+        pub fn items(mut self, input: crate::model::WorkflowStepItem) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>List containing workflow step details.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WorkflowStepItem>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput)
+        pub fn build(self) -> crate::output::GetWorkflowStepsOutput {
+            crate::output::GetWorkflowStepsOutput {
+                workflow_id: self.workflow_id,
+                workflow_type: self.workflow_type,
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetWorkflowStepsOutput {
+    /// Creates a new builder-style object to manufacture [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput)
+    pub fn builder() -> crate::output::get_workflow_steps_output::Builder {
+        crate::output::get_workflow_steps_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetWorkflowOutput {
+    /// <p>Unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub workflow_type: std::option::Option<crate::model::WorkflowType>,
+    /// <p>Status of workflow execution.</p>
+    pub status: std::option::Option<crate::model::Status>,
+    /// <p>Workflow error messages during execution (if any).</p>
+    pub error_description: std::option::Option<std::string::String>,
+    /// <p>The timestamp that represents when workflow execution started.</p>
+    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp that represents when workflow execution last updated.</p>
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Attributes provided for workflow execution.</p>
+    pub attributes: std::option::Option<crate::model::WorkflowAttributes>,
+    /// <p>Workflow specific execution metrics.</p>
+    pub metrics: std::option::Option<crate::model::WorkflowMetrics>,
+}
+impl GetWorkflowOutput {
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+        self.workflow_type.as_ref()
+    }
+    /// <p>Status of workflow execution.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>Workflow error messages during execution (if any).</p>
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
+    /// <p>The timestamp that represents when workflow execution started.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_date.as_ref()
+    }
+    /// <p>The timestamp that represents when workflow execution last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>Attributes provided for workflow execution.</p>
+    pub fn attributes(&self) -> std::option::Option<&crate::model::WorkflowAttributes> {
+        self.attributes.as_ref()
+    }
+    /// <p>Workflow specific execution metrics.</p>
+    pub fn metrics(&self) -> std::option::Option<&crate::model::WorkflowMetrics> {
+        self.metrics.as_ref()
+    }
+}
+impl std::fmt::Debug for GetWorkflowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetWorkflowOutput");
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("workflow_type", &self.workflow_type);
+        formatter.field("status", &self.status);
+        formatter.field("error_description", &self.error_description);
+        formatter.field("start_date", &self.start_date);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("attributes", &self.attributes);
+        formatter.field("metrics", &self.metrics);
+        formatter.finish()
+    }
+}
+/// See [`GetWorkflowOutput`](crate::output::GetWorkflowOutput)
+pub mod get_workflow_output {
+    /// A builder for [`GetWorkflowOutput`](crate::output::GetWorkflowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
+        pub(crate) status: std::option::Option<crate::model::Status>,
+        pub(crate) error_description: std::option::Option<std::string::String>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) attributes: std::option::Option<crate::model::WorkflowAttributes>,
+        pub(crate) metrics: std::option::Option<crate::model::WorkflowMetrics>,
+    }
+    impl Builder {
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.workflow_type = Some(input);
+            self
+        }
+        /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+        pub fn set_workflow_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowType>,
+        ) -> Self {
+            self.workflow_type = input;
+            self
+        }
+        /// <p>Status of workflow execution.</p>
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Status of workflow execution.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Workflow error messages during execution (if any).</p>
+        pub fn error_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_description = Some(input.into());
+            self
+        }
+        /// <p>Workflow error messages during execution (if any).</p>
+        pub fn set_error_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_description = input;
+            self
+        }
+        /// <p>The timestamp that represents when workflow execution started.</p>
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_date = Some(input);
+            self
+        }
+        /// <p>The timestamp that represents when workflow execution started.</p>
+        pub fn set_start_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_date = input;
+            self
+        }
+        /// <p>The timestamp that represents when workflow execution last updated.</p>
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_at = Some(input);
+            self
+        }
+        /// <p>The timestamp that represents when workflow execution last updated.</p>
+        pub fn set_last_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_at = input;
+            self
+        }
+        /// <p>Attributes provided for workflow execution.</p>
+        pub fn attributes(mut self, input: crate::model::WorkflowAttributes) -> Self {
+            self.attributes = Some(input);
+            self
+        }
+        /// <p>Attributes provided for workflow execution.</p>
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowAttributes>,
+        ) -> Self {
+            self.attributes = input;
+            self
+        }
+        /// <p>Workflow specific execution metrics.</p>
+        pub fn metrics(mut self, input: crate::model::WorkflowMetrics) -> Self {
+            self.metrics = Some(input);
+            self
+        }
+        /// <p>Workflow specific execution metrics.</p>
+        pub fn set_metrics(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowMetrics>,
+        ) -> Self {
+            self.metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetWorkflowOutput`](crate::output::GetWorkflowOutput)
+        pub fn build(self) -> crate::output::GetWorkflowOutput {
+            crate::output::GetWorkflowOutput {
+                workflow_id: self.workflow_id,
+                workflow_type: self.workflow_type,
+                status: self.status,
+                error_description: self.error_description,
+                start_date: self.start_date,
+                last_updated_at: self.last_updated_at,
+                attributes: self.attributes,
+                metrics: self.metrics,
+            }
+        }
+    }
+}
+impl GetWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`GetWorkflowOutput`](crate::output::GetWorkflowOutput)
+    pub fn builder() -> crate::output::get_workflow_output::Builder {
+        crate::output::get_workflow_output::Builder::default()
     }
 }
 
@@ -2502,6 +2931,8 @@ pub struct GetIntegrationOutput {
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     pub object_type_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
 }
 impl GetIntegrationOutput {
     /// <p>The unique name of the domain.</p>
@@ -2538,6 +2969,10 @@ impl GetIntegrationOutput {
     {
         self.object_type_names.as_ref()
     }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2549,6 +2984,7 @@ impl std::fmt::Debug for GetIntegrationOutput {
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("tags", &self.tags);
         formatter.field("object_type_names", &self.object_type_names);
+        formatter.field("workflow_id", &self.workflow_id);
         formatter.finish()
     }
 }
@@ -2569,6 +3005,7 @@ pub mod get_integration_output {
         pub(crate) object_type_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -2680,6 +3117,16 @@ pub mod get_integration_output {
             self.object_type_names = input;
             self
         }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetIntegrationOutput`](crate::output::GetIntegrationOutput)
         pub fn build(self) -> crate::output::GetIntegrationOutput {
             crate::output::GetIntegrationOutput {
@@ -2690,6 +3137,7 @@ pub mod get_integration_output {
                 last_updated_at: self.last_updated_at,
                 tags: self.tags,
                 object_type_names: self.object_type_names,
+                workflow_id: self.workflow_id,
             }
         }
     }
@@ -3376,6 +3824,36 @@ impl GetAutoMergingPreviewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteWorkflowOutput {}
+impl std::fmt::Debug for DeleteWorkflowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteWorkflowOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
+pub mod delete_workflow_output {
+    /// A builder for [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
+        pub fn build(self) -> crate::output::DeleteWorkflowOutput {
+            crate::output::DeleteWorkflowOutput {}
+        }
+    }
+}
+impl DeleteWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
+    pub fn builder() -> crate::output::delete_workflow_output::Builder {
+        crate::output::delete_workflow_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProfileObjectTypeOutput {
     /// <p>A message that indicates the delete request is done.</p>
     pub message: std::option::Option<std::string::String>,
@@ -3748,6 +4226,79 @@ impl CreateProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateProfileOutput`](crate::output::CreateProfileOutput)
     pub fn builder() -> crate::output::create_profile_output::Builder {
         crate::output::create_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateIntegrationWorkflowOutput {
+    /// <p>Unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>A message indicating create request was received.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl CreateIntegrationWorkflowOutput {
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>A message indicating create request was received.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateIntegrationWorkflowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateIntegrationWorkflowOutput");
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput)
+pub mod create_integration_workflow_output {
+    /// A builder for [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        /// <p>Unique identifier for the workflow.</p>
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// <p>A message indicating create request was received.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message indicating create request was received.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput)
+        pub fn build(self) -> crate::output::CreateIntegrationWorkflowOutput {
+            crate::output::CreateIntegrationWorkflowOutput {
+                workflow_id: self.workflow_id,
+                message: self.message,
+            }
+        }
+    }
+}
+impl CreateIntegrationWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput)
+    pub fn builder() -> crate::output::create_integration_workflow_output::Builder {
+        crate::output::create_integration_workflow_output::Builder::default()
     }
 }
 

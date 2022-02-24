@@ -1640,6 +1640,8 @@ impl VpcConfigResponse {
 )]
 pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
+    Dotnet6,
+    #[allow(missing_docs)] // documentation missing in model
     Dotnetcore10,
     #[allow(missing_docs)] // documentation missing in model
     Dotnetcore20,
@@ -1695,6 +1697,7 @@ pub enum Runtime {
 impl std::convert::From<&str> for Runtime {
     fn from(s: &str) -> Self {
         match s {
+            "dotnet6" => Runtime::Dotnet6,
             "dotnetcore1.0" => Runtime::Dotnetcore10,
             "dotnetcore2.0" => Runtime::Dotnetcore20,
             "dotnetcore2.1" => Runtime::Dotnetcore21,
@@ -1735,6 +1738,7 @@ impl Runtime {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Runtime::Dotnet6 => "dotnet6",
             Runtime::Dotnetcore10 => "dotnetcore1.0",
             Runtime::Dotnetcore20 => "dotnetcore2.0",
             Runtime::Dotnetcore21 => "dotnetcore2.1",
@@ -1766,6 +1770,7 @@ impl Runtime {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "dotnet6",
             "dotnetcore1.0",
             "dotnetcore2.0",
             "dotnetcore2.1",

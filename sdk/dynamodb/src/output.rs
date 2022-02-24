@@ -2397,6 +2397,10 @@ pub struct ExecuteStatementOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
+    pub last_evaluated_key: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    >,
 }
 impl ExecuteStatementOutput {
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
@@ -2415,6 +2419,14 @@ impl ExecuteStatementOutput {
     pub fn consumed_capacity(&self) -> std::option::Option<&crate::model::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
+    /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
+    pub fn last_evaluated_key(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+    > {
+        self.last_evaluated_key.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2422,6 +2434,7 @@ impl std::fmt::Debug for ExecuteStatementOutput {
         formatter.field("items", &self.items);
         formatter.field("next_token", &self.next_token);
         formatter.field("consumed_capacity", &self.consumed_capacity);
+        formatter.field("last_evaluated_key", &self.last_evaluated_key);
         formatter.finish()
     }
 }
@@ -2438,6 +2451,9 @@ pub mod execute_statement_output {
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+        pub(crate) last_evaluated_key: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+        >,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -2489,12 +2505,38 @@ pub mod execute_statement_output {
             self.consumed_capacity = input;
             self
         }
+        /// Adds a key-value pair to `last_evaluated_key`.
+        ///
+        /// To override the contents of this collection use [`set_last_evaluated_key`](Self::set_last_evaluated_key).
+        ///
+        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
+        pub fn last_evaluated_key(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::AttributeValue,
+        ) -> Self {
+            let mut hash_map = self.last_evaluated_key.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.last_evaluated_key = Some(hash_map);
+            self
+        }
+        /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
+        pub fn set_last_evaluated_key(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+            >,
+        ) -> Self {
+            self.last_evaluated_key = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput)
         pub fn build(self) -> crate::output::ExecuteStatementOutput {
             crate::output::ExecuteStatementOutput {
                 items: self.items,
                 next_token: self.next_token,
                 consumed_capacity: self.consumed_capacity,
+                last_evaluated_key: self.last_evaluated_key,
             }
         }
     }

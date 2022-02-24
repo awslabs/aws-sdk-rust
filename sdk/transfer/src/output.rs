@@ -237,7 +237,9 @@ pub struct TestIdentityProviderOutput {
     pub response: std::option::Option<std::string::String>,
     /// <p>The HTTP status code that is the response from your API Gateway.</p>
     pub status_code: i32,
-    /// <p>A message that indicates whether the test was successful or not.</p>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note>
+    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+    /// </note>
     pub message: std::option::Option<std::string::String>,
     /// <p>The endpoint of the service used to authenticate a user.</p>
     pub url: std::option::Option<std::string::String>,
@@ -251,7 +253,9 @@ impl TestIdentityProviderOutput {
     pub fn status_code(&self) -> i32 {
         self.status_code
     }
-    /// <p>A message that indicates whether the test was successful or not.</p>
+    /// <p>A message that indicates whether the test was successful or not.</p> <note>
+    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+    /// </note>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -302,12 +306,16 @@ pub mod test_identity_provider_output {
             self.status_code = input;
             self
         }
-        /// <p>A message that indicates whether the test was successful or not.</p>
+        /// <p>A message that indicates whether the test was successful or not.</p> <note>
+        /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+        /// </note>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>A message that indicates whether the test was successful or not.</p>
+        /// <p>A message that indicates whether the test was successful or not.</p> <note>
+        /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+        /// </note>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
