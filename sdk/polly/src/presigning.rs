@@ -220,7 +220,7 @@ pub mod request {
 pub(crate) mod service {
     use crate::presigning::request::PresignedRequest;
     use aws_smithy_http::operation;
-    use http::header::{CONTENT_LENGTH, CONTENT_TYPE, USER_AGENT};
+    use http::header::USER_AGENT;
     use std::future::{ready, Ready};
     use std::marker::PhantomData;
     use std::task::{Context, Poll};
@@ -262,12 +262,6 @@ pub(crate) mod service {
 
         fn call(&mut self, req: operation::Request) -> Self::Future {
             let (mut req, _) = req.into_parts();
-
-            // Remove headers from input serialization that shouldn't be part of the presigned
-            // request since the request body is unsigned and left up to the person making the final
-            // HTTP request.
-            req.headers_mut().remove(CONTENT_LENGTH);
-            req.headers_mut().remove(CONTENT_TYPE);
 
             // Remove user agent headers since the request will not be executed by the AWS Rust SDK.
             req.headers_mut().remove(USER_AGENT);
