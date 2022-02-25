@@ -187,13 +187,19 @@ impl Service<http::Request<SdkBody>> for DynConnector {
 /// to matter in all but the highest-performance settings.
 #[non_exhaustive]
 pub struct DynMiddleware<C>(
-    BoxCloneLayer<
+    ArcCloneLayer<
         aws_smithy_http_tower::dispatch::DispatchService<C>,
         aws_smithy_http::operation::Request,
         aws_smithy_http::operation::Response,
         aws_smithy_http_tower::SendOperationError,
     >,
 );
+
+impl<C> Clone for DynMiddleware<C> {
+    fn clone(&self) -> Self {
+        Self(self.0.clone())
+    }
+}
 
 impl<C> fmt::Debug for DynMiddleware<C> {
     fn fmt(&self, fmt: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -204,7 +210,7 @@ impl<C> fmt::Debug for DynMiddleware<C> {
 impl<C> DynMiddleware<C> {
     /// Construct a new dynamically-dispatched Smithy middleware.
     pub fn new<M: bounds::SmithyMiddleware<C> + Send + Sync + 'static>(middleware: M) -> Self {
-        Self(BoxCloneLayer::new(middleware))
+        Self(ArcCloneLayer::new(middleware))
     }
 }
 

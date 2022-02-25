@@ -9,15 +9,25 @@
 use std::fmt;
 use std::future::Future;
 use std::pin::Pin;
+use std::sync::Arc;
 use std::task::{Context, Poll};
+
 use tower::layer::{layer_fn, Layer};
 use tower::Service;
 
-pub(super) struct BoxCloneLayer<In, T, U, E> {
-    boxed: Box<dyn Layer<In, Service = BoxCloneService<T, U, E>> + Send + Sync>,
+pub(super) struct ArcCloneLayer<In, T, U, E> {
+    inner: Arc<dyn Layer<In, Service = BoxCloneService<T, U, E>> + Send + Sync>,
 }
 
-impl<In, T, U, E> BoxCloneLayer<In, T, U, E> {
+impl<In, T, U, E> Clone for ArcCloneLayer<In, T, U, E> {
+    fn clone(&self) -> Self {
+        Self {
+            inner: self.inner.clone(),
+        }
+    }
+}
+
+impl<In, T, U, E> ArcCloneLayer<In, T, U, E> {
     /// Create a new [`BoxLayer`].
     pub fn new<L>(inner_layer: L) -> Self
     where
@@ -31,22 +41,22 @@ impl<In, T, U, E> BoxCloneLayer<In, T, U, E> {
         });
 
         Self {
-            boxed: Box::new(layer),
+            inner: Arc::new(layer),
         }
     }
 }
 
-impl<In, T, U, E> Layer<In> for BoxCloneLayer<In, T, U, E> {
+impl<In, T, U, E> Layer<In> for ArcCloneLayer<In, T, U, E> {
     type Service = BoxCloneService<T, U, E>;
 
     fn layer(&self, inner: In) -> Self::Service {
-        self.boxed.layer(inner)
+        self.inner.layer(inner)
     }
 }
 
-impl<In, T, U, E> fmt::Debug for BoxCloneLayer<In, T, U, E> {
+impl<In, T, U, E> fmt::Debug for ArcCloneLayer<In, T, U, E> {
     fn fmt(&self, fmt: &mut fmt::Formatter<'_>) -> fmt::Result {
-        fmt.debug_struct("BoxCloneLayer").finish()
+        fmt.debug_struct("ArcCloneLayer").finish()
     }
 }
 
