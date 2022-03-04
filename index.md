@@ -55,7 +55,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Elemental MediaStore | [aws-sdk-mediastore](https://crates.io/crates/aws-sdk-mediastore) ([docs](https://docs.rs/aws-sdk-mediastore)) |
 | AWS Elemental MediaStore Data Plane | [aws-sdk-mediastoredata](https://crates.io/crates/aws-sdk-mediastoredata) ([docs](https://docs.rs/aws-sdk-mediastoredata)) |
 | AWS Fault Injection Simulator | [aws-sdk-fis](https://crates.io/crates/aws-sdk-fis) ([docs](https://docs.rs/aws-sdk-fis)) |
-| AWS Global Accelerator | [aws-sdk-globalaccelerator](https://crates.io/crates/aws-sdk-globalaccelerator) ([docs](https://docs.rs/aws-sdk-globalaccelerator)) |
+| AWS Global Accelerator | [aws-sdk-globalaccelerator](https://crates.io/crates/aws-sdk-globalaccelerator) ([docs](https://docs.rs/aws-sdk-globalaccelerator)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/globalaccelerator)) |
 | AWS Glue | [aws-sdk-glue](https://crates.io/crates/aws-sdk-glue) ([docs](https://docs.rs/aws-sdk-glue)) |
 | AWS Glue DataBrew | [aws-sdk-databrew](https://crates.io/crates/aws-sdk-databrew) ([docs](https://docs.rs/aws-sdk-databrew)) |
 | AWS Greengrass | [aws-sdk-greengrass](https://crates.io/crates/aws-sdk-greengrass) ([docs](https://docs.rs/aws-sdk-greengrass)) |
