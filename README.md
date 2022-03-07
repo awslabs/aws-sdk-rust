@@ -6,7 +6,7 @@ To update it, edit the `aws/SDK_README.md.hb` Handlebars template in that reposi
 
 # The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.8.0-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.56.1-red) [![Usage Guide](https://img.shields.io/badge/Developer_Guide-blue)](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html)
 
-This repo contains the new AWS SDK for Rust (the SDK) and its [public roadmap](https://github.com/awslabs/aws-sdk-rust/projects/1).
+This repo contains the new AWS SDK for Rust (the SDK) and its [public roadmap](https://github.com/orgs/awslabs/projects/50).
 
 **Please Note: The SDK is currently released as a developer preview and is intended strictly for feedback purposes only. Do not use this SDK for production workloads.**
 
