@@ -112,3 +112,19 @@ async fn test_presigning_with_payload_headers() -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
+
+#[tokio::test]
+async fn test_presigned_upload_part() -> Result<(), Box<dyn Error>> {
+    let presigned = presign_input!(s3::input::UploadPartInput::builder()
+        .content_length(12345)
+        .bucket("bucket")
+        .key("key")
+        .part_number(0)
+        .upload_id("upload-id")
+        .build()?);
+    assert_eq!(
+        presigned.uri().to_string(),
+        "https://s3.us-east-1.amazonaws.com/bucket/key?x-id=UploadPart&uploadId=upload-id&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=content-length%3Bhost&X-Amz-Signature=e50e1a4d1dae7465bb7731863a565bdf4137393e3ab4119b5764fb49f5f60b14&X-Amz-Security-Token=notarealsessiontoken"
+    );
+    Ok(())
+}

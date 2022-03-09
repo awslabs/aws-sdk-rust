@@ -46,6 +46,7 @@ members = [
     "examples/sqs",
     "examples/ssm",
     "examples/testing",
+    "examples/tls",
     "examples/transcribestreaming",
     "examples/using-native-tls-instead-of-rustls",
     "sdk/accessanalyzer",
