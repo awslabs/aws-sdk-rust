@@ -15,14 +15,17 @@
 
 pub mod app_name;
 pub mod build_metadata;
+#[deprecated(since = "0.9.0", note = "renamed to sdk_config")]
 pub mod config;
 pub mod credentials;
 #[doc(hidden)]
 pub mod os_shim_internal;
 pub mod region;
+pub mod sdk_config;
 
 pub use aws_smithy_client::http_connector;
 pub use credentials::Credentials;
+pub use sdk_config::SdkConfig;
 
 use std::borrow::Cow;
 

@@ -42,8 +42,8 @@ impl Config {
     pub fn app_name(&self) -> Option<&aws_types::app_name::AppName> {
         self.app_name.as_ref()
     }
-    /// Creates a new [service config](crate::Config) from a [shared `config`](aws_types::config::Config).
-    pub fn new(config: &aws_types::config::Config) -> Self {
+    /// Creates a new [service config](crate::Config) from a [shared `config`](aws_types::sdk_config::SdkConfig).
+    pub fn new(config: &aws_types::sdk_config::SdkConfig) -> Self {
         Builder::from(config).build()
     }
     /// The signature version 4 service signing name to use in the credential scope when signing requests.
@@ -305,8 +305,8 @@ impl Builder {
     }
 }
 
-impl From<&aws_types::config::Config> for Builder {
-    fn from(input: &aws_types::config::Config) -> Self {
+impl From<&aws_types::sdk_config::SdkConfig> for Builder {
+    fn from(input: &aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
         builder = builder.region(input.region().cloned());
         builder.set_retry_config(input.retry_config().cloned());
@@ -318,8 +318,8 @@ impl From<&aws_types::config::Config> for Builder {
     }
 }
 
-impl From<&aws_types::config::Config> for Config {
-    fn from(config: &aws_types::config::Config) -> Self {
-        Builder::from(config).build()
+impl From<&aws_types::sdk_config::SdkConfig> for Config {
+    fn from(sdk_config: &aws_types::sdk_config::SdkConfig) -> Self {
+        Builder::from(sdk_config).build()
     }
 }

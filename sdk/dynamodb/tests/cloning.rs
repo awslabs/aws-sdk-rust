@@ -10,7 +10,7 @@ use aws_types::Credentials;
 // compiling this function validates that fluent builders are cloneable
 #[allow(dead_code)]
 async fn ensure_builders_clone() {
-    let shared_config = aws_types::config::Config::builder()
+    let shared_config = aws_types::SdkConfig::builder()
         .region(Region::new("us-east-4"))
         .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
             "asdf", "asdf", None, None, "test",

@@ -9,7 +9,7 @@ use http::Uri;
 /// Iterative test of loading clients from shared configuration
 #[tokio::test]
 async fn shared_config_testbed() {
-    let shared_config = aws_types::config::Config::builder()
+    let shared_config = aws_types::SdkConfig::builder()
         .region(Region::new("us-east-4"))
         .build();
     let conf = aws_sdk_dynamodb::config::Builder::from(&shared_config)
