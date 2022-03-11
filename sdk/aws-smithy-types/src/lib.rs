@@ -20,6 +20,7 @@ pub mod date_time;
 pub mod primitive;
 pub mod retry;
 pub mod timeout;
+pub mod tristate;
 
 pub use crate::date_time::DateTime;
 

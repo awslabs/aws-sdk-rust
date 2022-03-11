@@ -248,8 +248,8 @@ impl ProviderConfig {
         C::Error: Into<Box<dyn Error + Send + Sync + 'static>>,
     {
         let connector_fn = move |settings: &HttpSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
-            let mut builder =
-                aws_smithy_client::hyper_ext::Adapter::builder().timeout(&settings.timeout_config);
+            let mut builder = aws_smithy_client::hyper_ext::Adapter::builder()
+                .timeout(&settings.http_timeout_config);
             if let Some(sleep) = sleep {
                 builder = builder.sleep_impl(sleep);
             };

@@ -14,7 +14,7 @@ use std::sync::Arc;
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_client::http_connector::HttpConnector;
 use aws_smithy_types::retry::RetryConfig;
-use aws_smithy_types::timeout::TimeoutConfig;
+use aws_smithy_types::timeout;
 
 use crate::app_name::AppName;
 use crate::credentials::SharedCredentialsProvider;
@@ -28,7 +28,7 @@ pub struct SdkConfig {
     region: Option<Region>,
     retry_config: Option<RetryConfig>,
     sleep_impl: Option<Arc<dyn AsyncSleep>>,
-    timeout_config: Option<TimeoutConfig>,
+    timeout_config: Option<timeout::Config>,
     http_connector: Option<HttpConnector>,
 }
 
@@ -40,7 +40,7 @@ pub struct Builder {
     region: Option<Region>,
     retry_config: Option<RetryConfig>,
     sleep_impl: Option<Arc<dyn AsyncSleep>>,
-    timeout_config: Option<TimeoutConfig>,
+    timeout_config: Option<timeout::Config>,
     http_connector: Option<HttpConnector>,
 }
 
@@ -115,36 +115,41 @@ impl Builder {
         self
     }
 
-    /// Set the [`TimeoutConfig`] for the builder
+    /// Set the [`timeout::Config`](aws_smithy_types::timeout::Config) for the builder
     ///
     /// # Examples
     ///
     /// ```rust
     /// # use std::time::Duration;
     /// use aws_types::SdkConfig;
-    /// use aws_smithy_types::timeout::TimeoutConfig;
+    /// use aws_smithy_types::{timeout, tristate::TriState};
     ///
-    /// let timeout_config = TimeoutConfig::new()
-    ///     .with_api_call_attempt_timeout(Some(Duration::from_secs(1)));
+    /// let api_timeout_config = timeout::Api::new()
+    ///     .with_call_attempt_timeout(TriState::Set(Duration::from_secs(2)))
+    ///     .with_call_timeout(TriState::Set(Duration::from_secs(5)));
+    /// let timeout_config = timeout::Config::new()
+    ///     .with_api_timeouts(api_timeout_config);
     /// let config = SdkConfig::builder().timeout_config(timeout_config).build();
     /// ```
-    pub fn timeout_config(mut self, timeout_config: TimeoutConfig) -> Self {
+    pub fn timeout_config(mut self, timeout_config: timeout::Config) -> Self {
         self.set_timeout_config(Some(timeout_config));
         self
     }
 
-    /// Set the [`TimeoutConfig`] for the builder
+    /// Set the [`timeout::Config`](aws_smithy_types::timeout::Config) for the builder
     ///
     /// # Examples
     /// ```rust
     /// # use std::time::Duration;
     /// use aws_types::sdk_config::{SdkConfig, Builder};
-    /// use aws_smithy_types::timeout::TimeoutConfig;
+    /// use aws_smithy_types::{timeout, tristate::TriState};
     ///
     /// fn set_preferred_timeouts(builder: &mut Builder) {
-    ///     let timeout_config = TimeoutConfig::new()
-    ///         .with_api_call_attempt_timeout(Some(Duration::from_secs(2)))
-    ///         .with_api_call_timeout(Some(Duration::from_secs(5)));
+    ///     let api_timeout_config = timeout::Api::new()
+    ///         .with_call_attempt_timeout(TriState::Set(Duration::from_secs(2)))
+    ///         .with_call_timeout(TriState::Set(Duration::from_secs(5)));
+    ///     let timeout_config = timeout::Config::new()
+    ///         .with_api_timeouts(api_timeout_config);
     ///     builder.set_timeout_config(Some(timeout_config));
     /// }
     ///
@@ -152,7 +157,7 @@ impl Builder {
     /// set_preferred_timeouts(&mut builder);
     /// let config = builder.build();
     /// ```
-    pub fn set_timeout_config(&mut self, timeout_config: Option<TimeoutConfig>) -> &mut Self {
+    pub fn set_timeout_config(&mut self, timeout_config: Option<timeout::Config>) -> &mut Self {
         self.timeout_config = timeout_config;
         self
     }
@@ -324,7 +329,7 @@ impl SdkConfig {
     }
 
     /// Configured timeout config
-    pub fn timeout_config(&self) -> Option<&TimeoutConfig> {
+    pub fn timeout_config(&self) -> Option<&timeout::Config> {
         self.timeout_config.as_ref()
     }
 

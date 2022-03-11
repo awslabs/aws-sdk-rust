@@ -5,23 +5,28 @@
 
 //! Load timeout configuration properties from environment variables
 
-use aws_smithy_types::timeout::{parse_str_as_timeout, TimeoutConfig, TimeoutConfigError};
+use crate::parsing::parse_str_as_timeout;
+
+use aws_smithy_types::timeout;
+use aws_smithy_types::tristate::TriState;
 use aws_types::os_shim_internal::Env;
+
 use std::time::Duration;
 
+// Currently unsupported timeouts
 const ENV_VAR_CONNECT_TIMEOUT: &str = "AWS_CONNECT_TIMEOUT";
 const ENV_VAR_TLS_NEGOTIATION_TIMEOUT: &str = "AWS_TLS_NEGOTIATION_TIMEOUT";
 const ENV_VAR_READ_TIMEOUT: &str = "AWS_READ_TIMEOUT";
+
+// Supported timeouts
 const ENV_VAR_API_CALL_ATTEMPT_TIMEOUT: &str = "AWS_API_CALL_ATTEMPT_TIMEOUT";
 const ENV_VAR_API_CALL_TIMEOUT: &str = "AWS_API_CALL_TIMEOUT";
 
 /// Load a timeout_config from environment variables
 ///
-/// This provider will check the values of the following variables in order to build a `TimeoutConfig`
+/// This provider will check the values of the following variables in order to build a
+/// [`timeout::Config`](aws_smithy_types::timeout::Config)
 ///
-/// - `AWS_CONNECT_TIMEOUT`
-/// - `AWS_TLS_NEGOTIATION_TIMEOUT`
-/// - `AWS_READ_TIMEOUT`
 /// - `AWS_API_CALL_ATTEMPT_TIMEOUT`
 /// - `AWS_API_CALL_TIMEOUT`
 ///
@@ -46,34 +51,48 @@ impl EnvironmentVariableTimeoutConfigProvider {
         EnvironmentVariableTimeoutConfigProvider { env }
     }
 
-    /// Attempt to create a new [`TimeoutConfig`] from environment variables
-    pub fn timeout_config(&self) -> Result<TimeoutConfig, TimeoutConfigError> {
-        let connect_timeout = construct_timeout_from_env_var(&self.env, ENV_VAR_CONNECT_TIMEOUT)?;
-        let tls_negotiation_timeout =
-            construct_timeout_from_env_var(&self.env, ENV_VAR_TLS_NEGOTIATION_TIMEOUT)?;
-        let read_timeout = construct_timeout_from_env_var(&self.env, ENV_VAR_READ_TIMEOUT)?;
+    /// Attempt to create a new [`timeout::Config`](aws_smithy_types::timeout::Config) from environment variables
+    pub fn timeout_config(&self) -> Result<timeout::Config, timeout::ConfigError> {
+        // Warn users that set unsupported timeouts in their profile
+        for timeout in [
+            ENV_VAR_CONNECT_TIMEOUT,
+            ENV_VAR_TLS_NEGOTIATION_TIMEOUT,
+            ENV_VAR_READ_TIMEOUT,
+        ] {
+            warn_if_unsupported_timeout_is_set(&self.env, timeout);
+        }
+
         let api_call_attempt_timeout =
             construct_timeout_from_env_var(&self.env, ENV_VAR_API_CALL_ATTEMPT_TIMEOUT)?;
         let api_call_timeout = construct_timeout_from_env_var(&self.env, ENV_VAR_API_CALL_TIMEOUT)?;
 
-        Ok(TimeoutConfig::new()
-            .with_connect_timeout(connect_timeout)
-            .with_tls_negotiation_timeout(tls_negotiation_timeout)
-            .with_read_timeout(read_timeout)
-            .with_api_call_attempt_timeout(api_call_attempt_timeout)
-            .with_api_call_timeout(api_call_timeout))
+        let api_timeouts = timeout::Api::new()
+            .with_call_timeout(api_call_timeout)
+            .with_call_attempt_timeout(api_call_attempt_timeout);
+
+        // Only API-related timeouts are currently supported
+        Ok(timeout::Config::new().with_api_timeouts(api_timeouts))
     }
 }
 
 fn construct_timeout_from_env_var(
     env: &Env,
     var: &'static str,
-) -> Result<Option<Duration>, TimeoutConfigError> {
+) -> Result<TriState<Duration>, timeout::ConfigError> {
     match env.get(var).ok() {
-        Some(timeout) => {
-            parse_str_as_timeout(&timeout, var.into(), "environment variable".into()).map(Some)
-        }
-        None => Ok(None),
+        Some(timeout) => parse_str_as_timeout(&timeout, var.into(), "environment variable".into())
+            .map(TriState::Set),
+        None => Ok(TriState::Unset),
+    }
+}
+
+fn warn_if_unsupported_timeout_is_set(env: &Env, var: &'static str) {
+    if env.get(var).is_ok() {
+        tracing::warn!(
+                "Environment variable for '{}' timeout was set but that feature is currently unimplemented so the setting will be ignored. \
+                To help us prioritize support for this feature, please upvote aws-sdk-rust#151 (https://github.com/awslabs/aws-sdk-rust/issues/151)",
+            var
+        )
     }
 }
 
@@ -81,10 +100,10 @@ fn construct_timeout_from_env_var(
 mod test {
     use super::{
         EnvironmentVariableTimeoutConfigProvider, ENV_VAR_API_CALL_ATTEMPT_TIMEOUT,
-        ENV_VAR_API_CALL_TIMEOUT, ENV_VAR_CONNECT_TIMEOUT, ENV_VAR_READ_TIMEOUT,
-        ENV_VAR_TLS_NEGOTIATION_TIMEOUT,
+        ENV_VAR_API_CALL_TIMEOUT,
     };
-    use aws_smithy_types::timeout::TimeoutConfig;
+    use aws_smithy_types::timeout;
+    use aws_smithy_types::tristate::TriState;
     use aws_types::os_shim_internal::Env;
     use std::time::Duration;
 
@@ -96,33 +115,27 @@ mod test {
     fn no_defaults() {
         let built = test_provider(&[]).timeout_config().unwrap();
 
-        assert_eq!(built.read_timeout(), None);
-        assert_eq!(built.connect_timeout(), None);
-        assert_eq!(built.tls_negotiation_timeout(), None);
-        assert_eq!(built.api_call_attempt_timeout(), None);
-        assert_eq!(built.api_call_timeout(), None);
+        assert_eq!(built.api.call_timeout(), TriState::Unset);
+        assert_eq!(built.api.call_attempt_timeout(), TriState::Unset);
     }
 
     #[test]
     fn all_fields_can_be_set_at_once() {
+        let expected_api_timeouts = timeout::Api::new()
+            .with_call_attempt_timeout(TriState::Set(Duration::from_secs_f32(4.0)))
+            // Some floats can't be represented as f32 so this duration will end up equalling the
+            // duration from the env.
+            .with_call_timeout(TriState::Set(Duration::from_secs_f32(900012350.0)));
+        let expected_timeouts = timeout::Config::new().with_api_timeouts(expected_api_timeouts);
+
         assert_eq!(
             test_provider(&[
-                (ENV_VAR_READ_TIMEOUT, "1.0"),
-                (ENV_VAR_CONNECT_TIMEOUT, "2"),
-                (ENV_VAR_TLS_NEGOTIATION_TIMEOUT, "3.0000"),
                 (ENV_VAR_API_CALL_ATTEMPT_TIMEOUT, "04.000"),
                 (ENV_VAR_API_CALL_TIMEOUT, "900012345.0")
             ])
             .timeout_config()
             .unwrap(),
-            TimeoutConfig::new()
-                .with_read_timeout(Some(Duration::from_secs_f32(1.0)))
-                .with_connect_timeout(Some(Duration::from_secs_f32(2.0)))
-                .with_tls_negotiation_timeout(Some(Duration::from_secs_f32(3.0)))
-                .with_api_call_attempt_timeout(Some(Duration::from_secs_f32(4.0)))
-                // Some floats can't be represented as f32 so this duration will be equal to the
-                // duration from the env.
-                .with_api_call_timeout(Some(Duration::from_secs_f32(900012350.0)))
+            expected_timeouts
         );
     }
 }
