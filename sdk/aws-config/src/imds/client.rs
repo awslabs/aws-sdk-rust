@@ -27,7 +27,7 @@ use aws_smithy_http_tower::map_request::{
     AsyncMapRequestLayer, AsyncMapRequestService, MapRequestLayer, MapRequestService,
 };
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
-use aws_smithy_types::timeout::TimeoutConfig;
+use aws_smithy_types::timeout;
 use aws_types::os_shim_internal::{Env, Fs};
 
 use bytes::Bytes;
@@ -535,10 +535,10 @@ impl Builder {
     /// Build an IMDSv2 Client
     pub async fn build(self) -> Result<Client, BuildError> {
         let config = self.config.unwrap_or_default();
-        let timeout_config = TimeoutConfig::new()
-            .with_connect_timeout(self.connect_timeout.or(DEFAULT_CONNECT_TIMEOUT))
-            .with_read_timeout(self.read_timeout.or(DEFAULT_READ_TIMEOUT));
-        let http_settings = HttpSettings::default().with_timeout_config(timeout_config);
+        let http_timeout_config = timeout::Http::new()
+            .with_connect_timeout(self.connect_timeout.or(DEFAULT_CONNECT_TIMEOUT).into())
+            .with_read_timeout(self.read_timeout.or(DEFAULT_READ_TIMEOUT).into());
+        let http_settings = HttpSettings::default().with_http_timeout_config(http_timeout_config);
         let connector = expect_connector(config.connector(&http_settings));
         let endpoint_source = self
             .endpoint
@@ -547,7 +547,7 @@ impl Builder {
         let endpoint = Endpoint::immutable(endpoint);
         let retry_config = retry::Config::default()
             .with_max_attempts(self.max_attempts.unwrap_or(DEFAULT_ATTEMPTS));
-        let timeout_config = TimeoutConfig::default();
+        let timeout_config = timeout::Config::default();
         let token_loader = token::TokenMiddleware::new(
             connector.clone(),
             config.time_source(),

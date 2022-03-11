@@ -17,7 +17,7 @@
 ///
 pub struct Config {
     app_name: Option<aws_types::app_name::AppName>,
-    pub(crate) timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
+    pub(crate) timeout_config: Option<aws_smithy_types::timeout::Config>,
     pub(crate) sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     pub(crate) retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     pub(crate) endpoint_resolver: ::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>,
@@ -58,7 +58,7 @@ impl Config {
 #[derive(Default)]
 pub struct Builder {
     app_name: Option<aws_types::app_name::AppName>,
-    timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
+    timeout_config: Option<aws_smithy_types::timeout::Config>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     endpoint_resolver: Option<::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
@@ -94,16 +94,15 @@ impl Builder {
     /// ```no_run
     /// # use std::time::Duration;
     /// use aws_sdk_personalizeruntime::config::Config;
-    /// use aws_smithy_types::timeout::TimeoutConfig;
+    /// use aws_smithy_types::{timeout, tristate::TriState};
     ///
-    /// let timeout_config = TimeoutConfig::new()
-    ///     .with_api_call_attempt_timeout(Some(Duration::from_secs(1)));
+    /// let api_timeouts = timeout::Api::new()
+    ///     .with_call_attempt_timeout(TriState::Set(Duration::from_secs(1)));
+    /// let timeout_config = timeout::Config::new()
+    ///     .with_api_timeouts(api_timeouts);
     /// let config = Config::builder().timeout_config(timeout_config).build();
     /// ```
-    pub fn timeout_config(
-        mut self,
-        timeout_config: aws_smithy_types::timeout::TimeoutConfig,
-    ) -> Self {
+    pub fn timeout_config(mut self, timeout_config: aws_smithy_types::timeout::Config) -> Self {
         self.set_timeout_config(Some(timeout_config));
         self
     }
@@ -115,11 +114,13 @@ impl Builder {
     /// ```no_run
     /// # use std::time::Duration;
     /// use aws_sdk_personalizeruntime::config::{Builder, Config};
-    /// use aws_smithy_types::timeout::TimeoutConfig;
+    /// use aws_smithy_types::{timeout, tristate::TriState};
     ///
     /// fn set_request_timeout(builder: &mut Builder) {
-    ///     let timeout_config = TimeoutConfig::new()
-    ///         .with_api_call_timeout(Some(Duration::from_secs(3)));
+    ///     let api_timeouts = timeout::Api::new()
+    ///         .with_call_attempt_timeout(TriState::Set(Duration::from_secs(1)));
+    ///     let timeout_config = timeout::Config::new()
+    ///         .with_api_timeouts(api_timeouts);
     ///     builder.set_timeout_config(Some(timeout_config));
     /// }
     ///
@@ -129,7 +130,7 @@ impl Builder {
     /// ```
     pub fn set_timeout_config(
         &mut self,
-        timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
+        timeout_config: Option<aws_smithy_types::timeout::Config>,
     ) -> &mut Self {
         self.timeout_config = timeout_config;
         self

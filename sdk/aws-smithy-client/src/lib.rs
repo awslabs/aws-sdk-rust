@@ -98,7 +98,7 @@ use aws_smithy_http::retry::ClassifyResponse;
 use aws_smithy_http_tower::dispatch::DispatchLayer;
 use aws_smithy_http_tower::parse_response::ParseResponseLayer;
 use aws_smithy_types::retry::ProvideErrorKind;
-use aws_smithy_types::timeout::TimeoutConfig;
+use aws_smithy_types::tristate::TriState;
 
 /// Smithy service client.
 ///
@@ -128,7 +128,7 @@ pub struct Client<
     connector: Connector,
     middleware: Middleware,
     retry_policy: RetryPolicy,
-    timeout_config: TimeoutConfig,
+    timeout_config: aws_smithy_types::timeout::Config,
     sleep_impl: TriState<Arc<dyn AsyncSleep>>,
 }
 
@@ -164,12 +164,15 @@ impl<C, M> Client<C, M> {
 
 impl<C, M, R> Client<C, M, R> {
     /// Set the client's timeout configuration.
-    pub fn set_timeout_config(&mut self, timeout_config: TimeoutConfig) {
+    pub fn set_timeout_config(&mut self, timeout_config: aws_smithy_types::timeout::Config) {
         self.timeout_config = timeout_config;
     }
 
     /// Set the client's timeout configuration.
-    pub fn with_timeout_config(mut self, timeout_config: TimeoutConfig) -> Self {
+    pub fn with_timeout_config(
+        mut self,
+        timeout_config: aws_smithy_types::timeout::Config,
+    ) -> Self {
         self.set_timeout_config(timeout_config);
         self
     }
@@ -245,7 +248,7 @@ where
         let connector = self.connector.clone();
 
         let timeout_service_params = generate_timeout_service_params_from_timeout_config(
-            &self.timeout_config,
+            &self.timeout_config.api,
             self.sleep_impl.clone().into(),
         );
 
@@ -292,48 +295,3 @@ pub(crate) const MISSING_SLEEP_IMPL_RECOMMENDATION: &str =
      client API, consider using the `aws-config` crate to load a shared config from \
      the environment, and construct a fluent client from that. If you need to use the low-level \
      service client API, then pass in a sleep implementation to make timeouts and retry work.";
-
-/// Utility for tracking set vs. unset vs explicitly disabled
-///
-/// If someone explicitly disables something, we don't need to warn them that it may be missing. This
-/// enum impls `From`/`Into` `Option<T>` for ease of use.
-#[derive(Debug, Clone, Eq, PartialEq)]
-enum TriState<T> {
-    Disabled,
-    Unset,
-    Set(T),
-}
-
-impl<T> TriState<T> {
-    /// Create a TriState, returning `Unset` when `None` is passed
-    pub fn or_unset(t: Option<T>) -> Self {
-        match t {
-            Some(t) => Self::Set(t),
-            None => Self::Unset,
-        }
-    }
-}
-
-impl<T> Default for TriState<T> {
-    fn default() -> Self {
-        Self::Unset
-    }
-}
-
-impl<T> From<Option<T>> for TriState<T> {
-    fn from(t: Option<T>) -> Self {
-        match t {
-            Some(t) => TriState::Set(t),
-            None => TriState::Disabled,
-        }
-    }
-}
-
-impl<T> From<TriState<T>> for Option<T> {
-    fn from(t: TriState<T>) -> Self {
-        match t {
-            TriState::Disabled | TriState::Unset => None,
-            TriState::Set(t) => Some(t),
-        }
-    }
-}

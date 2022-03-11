@@ -9,7 +9,7 @@ use crate::{bounds, erase, retry, Client, TriState, MISSING_SLEEP_IMPL_RECOMMEND
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
-use aws_smithy_types::timeout::TimeoutConfig;
+use aws_smithy_types::timeout;
 
 /// A builder that provides more customization options when constructing a [`Client`].
 ///
@@ -21,7 +21,7 @@ pub struct Builder<C = (), M = (), R = retry::Standard> {
     connector: C,
     middleware: M,
     retry_policy: R,
-    timeout_config: TimeoutConfig,
+    timeout_config: timeout::Config,
     sleep_impl: TriState<Arc<dyn AsyncSleep>>,
 }
 
@@ -180,7 +180,7 @@ impl<C, M> Builder<C, M> {
     }
 
     /// Set a timeout config for the builder
-    pub fn set_timeout_config(&mut self, timeout_config: TimeoutConfig) {
+    pub fn set_timeout_config(&mut self, timeout_config: timeout::Config) {
         self.timeout_config = timeout_config;
     }
 
@@ -296,6 +296,8 @@ mod tests {
     use super::*;
     use crate::never::NeverConnector;
     use aws_smithy_async::rt::sleep::Sleep;
+    use aws_smithy_types::timeout;
+    use aws_smithy_types::tristate::TriState;
     use std::time::Duration;
 
     #[derive(Clone, Debug)]
@@ -333,9 +335,10 @@ mod tests {
         let mut builder = Builder::new()
             .connector(NeverConnector::new())
             .middleware(tower::layer::util::Identity::new());
-        builder.set_timeout_config(
-            TimeoutConfig::new().with_connect_timeout(Some(Duration::from_secs(1))),
-        );
+        let http_timeout_config =
+            timeout::Http::new().with_connect_timeout(TriState::Set(Duration::from_secs(1)));
+        let timeout_config = timeout::Config::new().with_http_timeouts(http_timeout_config);
+        builder.set_timeout_config(timeout_config);
         builder.build();
 
         assert!(logs_contain(TIMEOUTS_WITHOUT_SLEEP_MSG));

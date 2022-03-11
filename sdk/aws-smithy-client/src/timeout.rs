@@ -19,51 +19,8 @@ use crate::SdkError;
 use aws_smithy_async::future::timeout::Timeout;
 use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
 use aws_smithy_http::operation::Operation;
-use aws_smithy_types::timeout::TimeoutConfig;
 use pin_project_lite::pin_project;
 use tower::Layer;
-
-/// Timeout Configuration
-#[derive(Default, Debug, Clone)]
-#[non_exhaustive]
-pub struct Settings {
-    connect_timeout: Option<Duration>,
-    read_timeout: Option<Duration>,
-    _tls_negotiation_timeout: Option<Duration>,
-}
-
-impl Settings {
-    /// Create a new timeout configuration with no timeouts set
-    pub fn new() -> Self {
-        Default::default()
-    }
-
-    /// The configured TCP-connect timeout
-    pub fn connect(&self) -> Option<Duration> {
-        self.connect_timeout
-    }
-
-    /// The configured HTTP-read timeout
-    pub fn read(&self) -> Option<Duration> {
-        self.read_timeout
-    }
-
-    /// Sets the connect timeout
-    pub fn with_connect_timeout(self, connect_timeout: Duration) -> Self {
-        Self {
-            connect_timeout: Some(connect_timeout),
-            ..self
-        }
-    }
-
-    /// Sets the read timeout
-    pub fn with_read_timeout(self, read_timeout: Duration) -> Self {
-        Self {
-            read_timeout: Some(read_timeout),
-            ..self
-        }
-    }
-}
 
 #[derive(Debug)]
 struct RequestTimeoutError {
@@ -109,28 +66,30 @@ pub struct ClientTimeoutParams {
     pub(crate) api_call_attempt: Option<TimeoutServiceParams>,
 }
 
-/// Convert a [`TimeoutConfig`] into an [`ClientTimeoutParams`] in order to create the set of
-/// [`TimeoutService`]s needed by a [`crate::Client`]
+/// Convert a [`timeout::Api`](aws_smithy_types::timeout::Api) into an [`ClientTimeoutParams`] in order to create
+/// the set of [`TimeoutService`]s needed by a [`crate::Client`]
 pub fn generate_timeout_service_params_from_timeout_config(
-    timeout_config: &TimeoutConfig,
+    api_timeout_config: &aws_smithy_types::timeout::Api,
     async_sleep: Option<Arc<dyn AsyncSleep>>,
 ) -> ClientTimeoutParams {
     if let Some(async_sleep) = async_sleep {
         ClientTimeoutParams {
-            api_call: timeout_config
-                .api_call_timeout()
+            api_call: api_timeout_config
+                .call_timeout()
                 .map(|duration| TimeoutServiceParams {
                     duration,
                     kind: "API call (all attempts including retries)",
                     async_sleep: async_sleep.clone(),
-                }),
-            api_call_attempt: timeout_config.api_call_attempt_timeout().map(|duration| {
-                TimeoutServiceParams {
+                })
+                .into(),
+            api_call_attempt: api_timeout_config
+                .call_attempt_timeout()
+                .map(|duration| TimeoutServiceParams {
                     duration,
                     kind: "API call (single attempt)",
                     async_sleep: async_sleep.clone(),
-                }
-            }),
+                })
+                .into(),
         }
     } else {
         Default::default()
@@ -285,11 +244,13 @@ mod test {
     use crate::never::NeverService;
     use crate::timeout::generate_timeout_service_params_from_timeout_config;
     use crate::{SdkError, TimeoutLayer};
+
     use aws_smithy_async::assert_elapsed;
     use aws_smithy_async::rt::sleep::{AsyncSleep, TokioSleep};
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::operation::{Operation, Request};
-    use aws_smithy_types::timeout::TimeoutConfig;
+    use aws_smithy_types::tristate::TriState;
+
     use tower::{Service, ServiceBuilder, ServiceExt};
 
     #[tokio::test]
@@ -297,8 +258,8 @@ mod test {
         let req = Request::new(http::Request::new(SdkBody::empty()));
         let op = Operation::new(req, ());
         let never_service: NeverService<_, (), _> = NeverService::new();
-        let timeout_config =
-            TimeoutConfig::new().with_api_call_timeout(Some(Duration::from_secs_f32(0.25)));
+        let timeout_config = aws_smithy_types::timeout::Api::new()
+            .with_call_timeout(TriState::Set(Duration::from_secs_f32(0.25)));
         let sleep_impl: Option<Arc<dyn AsyncSleep>> = Some(Arc::new(TokioSleep::new()));
         let timeout_service_params =
             generate_timeout_service_params_from_timeout_config(&timeout_config, sleep_impl);

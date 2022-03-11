@@ -8,7 +8,7 @@
 
 use crate::erase::DynConnector;
 use aws_smithy_async::rt::sleep::AsyncSleep;
-use aws_smithy_types::timeout::TimeoutConfig;
+use aws_smithy_types::timeout;
 use std::{fmt::Debug, sync::Arc};
 
 /// Type alias for a Connector factory function.
@@ -59,14 +59,22 @@ impl HttpConnector {
 #[non_exhaustive]
 #[derive(Default, Debug)]
 pub struct HttpSettings {
-    /// Timeout configuration used when sending out requests
-    pub timeout_config: TimeoutConfig,
+    /// Timeout configuration used when making HTTP connections
+    pub http_timeout_config: timeout::Http,
+    /// Timeout configuration used when creating TCP connections
+    pub tcp_timeout_config: timeout::Tcp,
 }
 
 impl HttpSettings {
-    /// Set the Timeout Config to be used when making HTTP requests
-    pub fn with_timeout_config(mut self, timeout_config: TimeoutConfig) -> Self {
-        self.timeout_config = timeout_config;
+    /// Set the HTTP timeouts to be used when making HTTP connections
+    pub fn with_http_timeout_config(mut self, http_timeout_config: timeout::Http) -> Self {
+        self.http_timeout_config = http_timeout_config;
+        self
+    }
+
+    /// Set the TCP timeouts to be used when creating TCP connections
+    pub fn with_tcp_timeout_config(mut self, tcp_timeout_config: timeout::Tcp) -> Self {
+        self.tcp_timeout_config = tcp_timeout_config;
         self
     }
 }

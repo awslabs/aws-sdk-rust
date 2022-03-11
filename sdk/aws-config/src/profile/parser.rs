@@ -366,7 +366,7 @@ mod test {
     #[derive(Deserialize, Debug, Clone)]
     #[serde(rename_all = "camelCase")]
     struct ParserTest {
-        name: String,
+        _name: String,
         input: ParserInput,
         output: ParserOutput,
     }

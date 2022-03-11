@@ -23,7 +23,7 @@ fn base(
     sleep: Option<Arc<dyn AsyncSleep>>,
 ) -> aws_smithy_client::hyper_ext::Builder {
     let mut hyper =
-        aws_smithy_client::hyper_ext::Adapter::builder().timeout(&settings.timeout_config);
+        aws_smithy_client::hyper_ext::Adapter::builder().timeout(&settings.http_timeout_config);
     if let Some(sleep) = sleep {
         hyper = hyper.sleep_impl(sleep);
     }

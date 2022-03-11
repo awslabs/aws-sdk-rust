@@ -13,7 +13,9 @@ use aws_smithy_async::rt::sleep::{AsyncSleep, TokioSleep};
 use aws_smithy_client::never::NeverService;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
-use aws_smithy_types::timeout::TimeoutConfig;
+use aws_smithy_types::timeout;
+use aws_smithy_types::tristate::TriState;
+
 use std::sync::Arc;
 use std::time::Duration;
 
@@ -23,8 +25,9 @@ async fn test_timeout_service_ends_request_that_never_completes() {
         NeverService::new();
     let region = Region::from_static("us-east-2");
     let credentials = Credentials::new("test", "test", None, None, "test");
-    let timeout_config =
-        TimeoutConfig::new().with_api_call_timeout(Some(Duration::from_secs_f32(0.5)));
+    let api_timeouts =
+        timeout::Api::new().with_call_timeout(TriState::Set(Duration::from_secs_f32(0.5)));
+    let timeout_config = timeout::Config::new().with_api_timeouts(api_timeouts);
     let sleep_impl: Arc<dyn AsyncSleep> = Arc::new(TokioSleep::new());
     let config = Config::builder()
         .region(region)
