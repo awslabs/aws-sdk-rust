@@ -621,11 +621,17 @@ pub struct EngineTranscribeSettings {
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     pub content_redaction_type: std::option::Option<crate::model::TranscribeContentRedactionType>,
     /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
     /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
     pub pii_entity_types: std::option::Option<std::string::String>,
     /// <p>The name of the language model used during transcription.</p>
     pub language_model_name: std::option::Option<std::string::String>,
+    /// <p>Automatically identifies the language spoken in media files.</p>
+    pub identify_language: bool,
+    /// <p>Language codes for the languages that you want to identify. You must provide at least 2 codes.</p>
+    pub language_options: std::option::Option<std::string::String>,
+    /// <p>Language code for the preferred language.</p>
+    pub preferred_language: std::option::Option<crate::model::TranscribeLanguageCode>,
 }
 impl EngineTranscribeSettings {
     /// <p>The language code specified for the Amazon Transcribe engine.</p>
@@ -674,7 +680,7 @@ impl EngineTranscribeSettings {
         self.content_redaction_type.as_ref()
     }
     /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
     /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
     pub fn pii_entity_types(&self) -> std::option::Option<&str> {
         self.pii_entity_types.as_deref()
@@ -682,6 +688,18 @@ impl EngineTranscribeSettings {
     /// <p>The name of the language model used during transcription.</p>
     pub fn language_model_name(&self) -> std::option::Option<&str> {
         self.language_model_name.as_deref()
+    }
+    /// <p>Automatically identifies the language spoken in media files.</p>
+    pub fn identify_language(&self) -> bool {
+        self.identify_language
+    }
+    /// <p>Language codes for the languages that you want to identify. You must provide at least 2 codes.</p>
+    pub fn language_options(&self) -> std::option::Option<&str> {
+        self.language_options.as_deref()
+    }
+    /// <p>Language code for the preferred language.</p>
+    pub fn preferred_language(&self) -> std::option::Option<&crate::model::TranscribeLanguageCode> {
+        self.preferred_language.as_ref()
     }
 }
 impl std::fmt::Debug for EngineTranscribeSettings {
@@ -704,6 +722,9 @@ impl std::fmt::Debug for EngineTranscribeSettings {
         formatter.field("content_redaction_type", &self.content_redaction_type);
         formatter.field("pii_entity_types", &self.pii_entity_types);
         formatter.field("language_model_name", &self.language_model_name);
+        formatter.field("identify_language", &self.identify_language);
+        formatter.field("language_options", &self.language_options);
+        formatter.field("preferred_language", &self.preferred_language);
         formatter.finish()
     }
 }
@@ -728,6 +749,9 @@ pub mod engine_transcribe_settings {
             std::option::Option<crate::model::TranscribeContentRedactionType>,
         pub(crate) pii_entity_types: std::option::Option<std::string::String>,
         pub(crate) language_model_name: std::option::Option<std::string::String>,
+        pub(crate) identify_language: std::option::Option<bool>,
+        pub(crate) language_options: std::option::Option<std::string::String>,
+        pub(crate) preferred_language: std::option::Option<crate::model::TranscribeLanguageCode>,
     }
     impl Builder {
         /// <p>The language code specified for the Amazon Transcribe engine.</p>
@@ -862,14 +886,14 @@ pub mod engine_transcribe_settings {
             self
         }
         /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-        /// <p>PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+        /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
         /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.pii_entity_types = Some(input.into());
             self
         }
         /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-        /// <p>PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+        /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
         /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn set_pii_entity_types(
             mut self,
@@ -891,6 +915,42 @@ pub mod engine_transcribe_settings {
             self.language_model_name = input;
             self
         }
+        /// <p>Automatically identifies the language spoken in media files.</p>
+        pub fn identify_language(mut self, input: bool) -> Self {
+            self.identify_language = Some(input);
+            self
+        }
+        /// <p>Automatically identifies the language spoken in media files.</p>
+        pub fn set_identify_language(mut self, input: std::option::Option<bool>) -> Self {
+            self.identify_language = input;
+            self
+        }
+        /// <p>Language codes for the languages that you want to identify. You must provide at least 2 codes.</p>
+        pub fn language_options(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_options = Some(input.into());
+            self
+        }
+        /// <p>Language codes for the languages that you want to identify. You must provide at least 2 codes.</p>
+        pub fn set_language_options(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_options = input;
+            self
+        }
+        /// <p>Language code for the preferred language.</p>
+        pub fn preferred_language(mut self, input: crate::model::TranscribeLanguageCode) -> Self {
+            self.preferred_language = Some(input);
+            self
+        }
+        /// <p>Language code for the preferred language.</p>
+        pub fn set_preferred_language(
+            mut self,
+            input: std::option::Option<crate::model::TranscribeLanguageCode>,
+        ) -> Self {
+            self.preferred_language = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
         pub fn build(self) -> crate::model::EngineTranscribeSettings {
             crate::model::EngineTranscribeSettings {
@@ -907,6 +967,9 @@ pub mod engine_transcribe_settings {
                 content_redaction_type: self.content_redaction_type,
                 pii_entity_types: self.pii_entity_types,
                 language_model_name: self.language_model_name,
+                identify_language: self.identify_language.unwrap_or_default(),
+                language_options: self.language_options,
+                preferred_language: self.preferred_language,
             }
         }
     }
@@ -915,6 +978,104 @@ impl EngineTranscribeSettings {
     /// Creates a new builder-style object to manufacture [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
     pub fn builder() -> crate::model::engine_transcribe_settings::Builder {
         crate::model::engine_transcribe_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscribeLanguageCode {
+    #[allow(missing_docs)] // documentation missing in model
+    DeDe,
+    #[allow(missing_docs)] // documentation missing in model
+    EnAu,
+    #[allow(missing_docs)] // documentation missing in model
+    EnGb,
+    #[allow(missing_docs)] // documentation missing in model
+    EnUs,
+    #[allow(missing_docs)] // documentation missing in model
+    EsUs,
+    #[allow(missing_docs)] // documentation missing in model
+    FrCa,
+    #[allow(missing_docs)] // documentation missing in model
+    FrFr,
+    #[allow(missing_docs)] // documentation missing in model
+    ItIt,
+    #[allow(missing_docs)] // documentation missing in model
+    JaJp,
+    #[allow(missing_docs)] // documentation missing in model
+    KoKr,
+    #[allow(missing_docs)] // documentation missing in model
+    PtBr,
+    #[allow(missing_docs)] // documentation missing in model
+    ZhCn,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscribeLanguageCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "de-DE" => TranscribeLanguageCode::DeDe,
+            "en-AU" => TranscribeLanguageCode::EnAu,
+            "en-GB" => TranscribeLanguageCode::EnGb,
+            "en-US" => TranscribeLanguageCode::EnUs,
+            "es-US" => TranscribeLanguageCode::EsUs,
+            "fr-CA" => TranscribeLanguageCode::FrCa,
+            "fr-FR" => TranscribeLanguageCode::FrFr,
+            "it-IT" => TranscribeLanguageCode::ItIt,
+            "ja-JP" => TranscribeLanguageCode::JaJp,
+            "ko-KR" => TranscribeLanguageCode::KoKr,
+            "pt-BR" => TranscribeLanguageCode::PtBr,
+            "zh-CN" => TranscribeLanguageCode::ZhCn,
+            other => TranscribeLanguageCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscribeLanguageCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeLanguageCode::from(s))
+    }
+}
+impl TranscribeLanguageCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeLanguageCode::DeDe => "de-DE",
+            TranscribeLanguageCode::EnAu => "en-AU",
+            TranscribeLanguageCode::EnGb => "en-GB",
+            TranscribeLanguageCode::EnUs => "en-US",
+            TranscribeLanguageCode::EsUs => "es-US",
+            TranscribeLanguageCode::FrCa => "fr-CA",
+            TranscribeLanguageCode::FrFr => "fr-FR",
+            TranscribeLanguageCode::ItIt => "it-IT",
+            TranscribeLanguageCode::JaJp => "ja-JP",
+            TranscribeLanguageCode::KoKr => "ko-KR",
+            TranscribeLanguageCode::PtBr => "pt-BR",
+            TranscribeLanguageCode::ZhCn => "zh-CN",
+            TranscribeLanguageCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP",
+            "ko-KR", "pt-BR", "zh-CN",
+        ]
+    }
+}
+impl AsRef<str> for TranscribeLanguageCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1246,104 +1407,6 @@ impl AsRef<str> for TranscribeVocabularyFilterMethod {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TranscribeLanguageCode {
-    #[allow(missing_docs)] // documentation missing in model
-    DeDe,
-    #[allow(missing_docs)] // documentation missing in model
-    EnAu,
-    #[allow(missing_docs)] // documentation missing in model
-    EnGb,
-    #[allow(missing_docs)] // documentation missing in model
-    EnUs,
-    #[allow(missing_docs)] // documentation missing in model
-    EsUs,
-    #[allow(missing_docs)] // documentation missing in model
-    FrCa,
-    #[allow(missing_docs)] // documentation missing in model
-    FrFr,
-    #[allow(missing_docs)] // documentation missing in model
-    ItIt,
-    #[allow(missing_docs)] // documentation missing in model
-    JaJp,
-    #[allow(missing_docs)] // documentation missing in model
-    KoKr,
-    #[allow(missing_docs)] // documentation missing in model
-    PtBr,
-    #[allow(missing_docs)] // documentation missing in model
-    ZhCn,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for TranscribeLanguageCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "de-DE" => TranscribeLanguageCode::DeDe,
-            "en-AU" => TranscribeLanguageCode::EnAu,
-            "en-GB" => TranscribeLanguageCode::EnGb,
-            "en-US" => TranscribeLanguageCode::EnUs,
-            "es-US" => TranscribeLanguageCode::EsUs,
-            "fr-CA" => TranscribeLanguageCode::FrCa,
-            "fr-FR" => TranscribeLanguageCode::FrFr,
-            "it-IT" => TranscribeLanguageCode::ItIt,
-            "ja-JP" => TranscribeLanguageCode::JaJp,
-            "ko-KR" => TranscribeLanguageCode::KoKr,
-            "pt-BR" => TranscribeLanguageCode::PtBr,
-            "zh-CN" => TranscribeLanguageCode::ZhCn,
-            other => TranscribeLanguageCode::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for TranscribeLanguageCode {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TranscribeLanguageCode::from(s))
-    }
-}
-impl TranscribeLanguageCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeLanguageCode::DeDe => "de-DE",
-            TranscribeLanguageCode::EnAu => "en-AU",
-            TranscribeLanguageCode::EnGb => "en-GB",
-            TranscribeLanguageCode::EnUs => "en-US",
-            TranscribeLanguageCode::EsUs => "es-US",
-            TranscribeLanguageCode::FrCa => "fr-CA",
-            TranscribeLanguageCode::FrFr => "fr-FR",
-            TranscribeLanguageCode::ItIt => "it-IT",
-            TranscribeLanguageCode::JaJp => "ja-JP",
-            TranscribeLanguageCode::KoKr => "ko-KR",
-            TranscribeLanguageCode::PtBr => "pt-BR",
-            TranscribeLanguageCode::ZhCn => "zh-CN",
-            TranscribeLanguageCode::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP",
-            "ko-KR", "pt-BR", "zh-CN",
-        ]
-    }
-}
-impl AsRef<str> for TranscribeLanguageCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
 /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
 #[non_exhaustive]
@@ -1451,6 +1514,7 @@ pub struct Meeting {
     /// <p>The external meeting ID.</p>
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+    /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
     pub media_region: std::option::Option<std::string::String>,
     /// <p>The media placement for the meeting.</p>
     pub media_placement: std::option::Option<crate::model::MediaPlacement>,
@@ -1471,6 +1535,7 @@ impl Meeting {
         self.external_meeting_id.as_deref()
     }
     /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+    /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
     pub fn media_region(&self) -> std::option::Option<&str> {
         self.media_region.as_deref()
     }
@@ -1549,11 +1614,13 @@ pub mod meeting {
             self
         }
         /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+        /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_region = Some(input.into());
             self
         }
         /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+        /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_region = input;
             self
@@ -1607,7 +1674,7 @@ impl Meeting {
     }
 }
 
-/// <p>The configuration settings of the features available to a meeting.</p>
+/// <p>The configuration settings of the features available to a meeting.&gt;</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeetingFeaturesConfiguration {
@@ -1662,7 +1729,7 @@ impl MeetingFeaturesConfiguration {
     }
 }
 
-/// <p>An optional category of meeting features that contains audio-specific configurations, such as operating parameters for Amazon Voice Focus.</p>
+/// <p>An optional category of meeting features that contains audio-specific configurations, such as operating parameters for Amazon Voice Focus. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioFeatures {

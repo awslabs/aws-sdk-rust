@@ -1149,7 +1149,7 @@ pub struct DescribePackageVersionOutput {
     /// <p>The version's patch version.</p>
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>Whether the version is the latest available.</p>
-    pub is_latest_patch: std::option::Option<bool>,
+    pub is_latest_patch: bool,
     /// <p>The version's status.</p>
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
     /// <p>The version's status description.</p>
@@ -1183,7 +1183,7 @@ impl DescribePackageVersionOutput {
         self.patch_version.as_deref()
     }
     /// <p>Whether the version is the latest available.</p>
-    pub fn is_latest_patch(&self) -> std::option::Option<bool> {
+    pub fn is_latest_patch(&self) -> bool {
         self.is_latest_patch
     }
     /// <p>The version's status.</p>
@@ -1360,7 +1360,7 @@ pub mod describe_package_version_output {
                 package_name: self.package_name,
                 package_version: self.package_version,
                 patch_version: self.patch_version,
-                is_latest_patch: self.is_latest_patch,
+                is_latest_patch: self.is_latest_patch.unwrap_or_default(),
                 status: self.status,
                 status_description: self.status_description,
                 registered_time: self.registered_time,
@@ -2770,6 +2770,11 @@ pub struct DescribeDeviceOutput {
     pub current_networking_status: std::option::Option<crate::model::NetworkStatus>,
     /// <p>The device's lease expiration time.</p>
     pub lease_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Beta software releases available for the device.</p>
+    pub alternate_softwares:
+        std::option::Option<std::vec::Vec<crate::model::AlternateSoftwareMetadata>>,
+    /// <p>The most recent beta software release.</p>
+    pub latest_alternate_software: std::option::Option<std::string::String>,
 }
 impl DescribeDeviceOutput {
     /// <p>The device's ID.</p>
@@ -2837,6 +2842,16 @@ impl DescribeDeviceOutput {
     pub fn lease_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.lease_expiration_time.as_ref()
     }
+    /// <p>Beta software releases available for the device.</p>
+    pub fn alternate_softwares(
+        &self,
+    ) -> std::option::Option<&[crate::model::AlternateSoftwareMetadata]> {
+        self.alternate_softwares.as_deref()
+    }
+    /// <p>The most recent beta software release.</p>
+    pub fn latest_alternate_software(&self) -> std::option::Option<&str> {
+        self.latest_alternate_software.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2856,6 +2871,8 @@ impl std::fmt::Debug for DescribeDeviceOutput {
         formatter.field("networking_configuration", &self.networking_configuration);
         formatter.field("current_networking_status", &self.current_networking_status);
         formatter.field("lease_expiration_time", &self.lease_expiration_time);
+        formatter.field("alternate_softwares", &self.alternate_softwares);
+        formatter.field("latest_alternate_software", &self.latest_alternate_software);
         formatter.finish()
     }
 }
@@ -2883,6 +2900,9 @@ pub mod describe_device_output {
         pub(crate) networking_configuration: std::option::Option<crate::model::NetworkPayload>,
         pub(crate) current_networking_status: std::option::Option<crate::model::NetworkStatus>,
         pub(crate) lease_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) alternate_softwares:
+            std::option::Option<std::vec::Vec<crate::model::AlternateSoftwareMetadata>>,
+        pub(crate) latest_alternate_software: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The device's ID.</p>
@@ -3080,6 +3100,41 @@ pub mod describe_device_output {
             self.lease_expiration_time = input;
             self
         }
+        /// Appends an item to `alternate_softwares`.
+        ///
+        /// To override the contents of this collection use [`set_alternate_softwares`](Self::set_alternate_softwares).
+        ///
+        /// <p>Beta software releases available for the device.</p>
+        pub fn alternate_softwares(
+            mut self,
+            input: crate::model::AlternateSoftwareMetadata,
+        ) -> Self {
+            let mut v = self.alternate_softwares.unwrap_or_default();
+            v.push(input);
+            self.alternate_softwares = Some(v);
+            self
+        }
+        /// <p>Beta software releases available for the device.</p>
+        pub fn set_alternate_softwares(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AlternateSoftwareMetadata>>,
+        ) -> Self {
+            self.alternate_softwares = input;
+            self
+        }
+        /// <p>The most recent beta software release.</p>
+        pub fn latest_alternate_software(mut self, input: impl Into<std::string::String>) -> Self {
+            self.latest_alternate_software = Some(input.into());
+            self
+        }
+        /// <p>The most recent beta software release.</p>
+        pub fn set_latest_alternate_software(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.latest_alternate_software = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
         pub fn build(self) -> crate::output::DescribeDeviceOutput {
             crate::output::DescribeDeviceOutput {
@@ -3098,6 +3153,8 @@ pub mod describe_device_output {
                 networking_configuration: self.networking_configuration,
                 current_networking_status: self.current_networking_status,
                 lease_expiration_time: self.lease_expiration_time,
+                alternate_softwares: self.alternate_softwares,
+                latest_alternate_software: self.latest_alternate_software,
             }
         }
     }

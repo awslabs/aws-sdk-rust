@@ -118,7 +118,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    ///   - [`media_region(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::media_region) / [`set_media_region(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_media_region): <p>The Region in which to create the meeting.</p>  <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
+    ///   - [`media_region(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::media_region) / [`set_media_region(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_media_region): <p>The Region in which to create the meeting.</p>  <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>  <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
     ///   - [`meeting_host_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::meeting_host_id) / [`set_meeting_host_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_meeting_host_id): <p>Reserved.</p>
     ///   - [`external_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::external_meeting_id) / [`set_external_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_external_meeting_id): <p>The external meeting ID.</p>
     ///   - [`notifications_configuration(NotificationsConfiguration)`](crate::client::fluent_builders::CreateMeeting::notifications_configuration) / [`set_notifications_configuration(Option<NotificationsConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
@@ -133,7 +133,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    ///   - [`media_region(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::media_region) / [`set_media_region(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_media_region): <p>The Region in which to create the meeting.</p>
+    ///   - [`media_region(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::media_region) / [`set_media_region(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_media_region): <p>The Region in which to create the meeting.</p>  <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>  <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
     ///   - [`meeting_host_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::meeting_host_id) / [`set_meeting_host_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_meeting_host_id): <p>Reserved.</p>
     ///   - [`external_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::external_meeting_id) / [`set_external_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_external_meeting_id): <p>The external meeting ID.</p>
     ///   - [`meeting_features(MeetingFeaturesConfiguration)`](crate::client::fluent_builders::CreateMeetingWithAttendees::meeting_features) / [`set_meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
@@ -425,13 +425,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Region in which to create the meeting.</p>
-        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
+        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+        /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.media_region(input.into());
             self
         }
         /// <p>The Region in which to create the meeting.</p>
-        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
+        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+        /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_media_region(input);
             self
@@ -551,11 +553,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Region in which to create the meeting.</p>
+        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+        /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.media_region(input.into());
             self
         }
         /// <p>The Region in which to create the meeting.</p>
+        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+        /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_media_region(input);
             self

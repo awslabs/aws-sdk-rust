@@ -4043,6 +4043,8 @@ pub struct CreateMeetingDialOutError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMeetingDialOutErrorKind {
+    /// <p>You don't have permissions to perform the requested operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>The client is permanently forbidden from making the request.</p>
@@ -4063,6 +4065,7 @@ pub enum CreateMeetingDialOutErrorKind {
 impl std::fmt::Display for CreateMeetingDialOutError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateMeetingDialOutErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateMeetingDialOutErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             CreateMeetingDialOutErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             CreateMeetingDialOutErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
@@ -4124,6 +4127,13 @@ impl CreateMeetingDialOutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `CreateMeetingDialOutErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMeetingDialOutErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateMeetingDialOutErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
@@ -4177,6 +4187,7 @@ impl CreateMeetingDialOutError {
 impl std::error::Error for CreateMeetingDialOutError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateMeetingDialOutErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateMeetingDialOutErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateMeetingDialOutErrorKind::ForbiddenException(_inner) => Some(_inner),
             CreateMeetingDialOutErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),

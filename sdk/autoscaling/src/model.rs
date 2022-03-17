@@ -400,9 +400,9 @@ impl LaunchTemplate {
 pub struct LaunchTemplateOverrides {
     /// <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your requested Region and Availability Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The number of capacity units provided by the instance type specified in <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is launched, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling launches instances until the desired capacity is totally fulfilled, even if this results in an overage. For example, if there are two units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an instance with a <code>WeightedCapacity</code> of five units, the instance is launched, and the desired capacity is exceeded by three units. For more information, see <a href="https://docs.aws.amazon.com/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the range of 1–999.</p>
+    /// <p>The number of capacity units provided by the instance type specified in <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is launched, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling launches instances until the desired capacity is totally fulfilled, even if this results in an overage. For example, if there are two units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an instance with a <code>WeightedCapacity</code> of five units, the instance is launched, and the desired capacity is exceeded by three units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the range of 1–999.</p>
     pub weighted_capacity: std::option::Option<std::string::String>,
-    /// <p>Provides the launch template to be used when launching the instance type specified in <code>InstanceType</code>. For example, some instance types might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    /// <p>Provides a launch template for the specified instance type or instance requirements. For example, some instance types might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     pub launch_template_specification:
         std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>The instance requirements. When you specify instance requirements, Amazon EC2 Auto Scaling finds instance types that satisfy your requirements, and then uses your On-Demand and Spot allocation strategies to launch instances from these instance types, in the same way as when you specify a list of specific instance types. </p>
@@ -413,11 +413,11 @@ impl LaunchTemplateOverrides {
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The number of capacity units provided by the instance type specified in <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is launched, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling launches instances until the desired capacity is totally fulfilled, even if this results in an overage. For example, if there are two units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an instance with a <code>WeightedCapacity</code> of five units, the instance is launched, and the desired capacity is exceeded by three units. For more information, see <a href="https://docs.aws.amazon.com/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the range of 1–999.</p>
+    /// <p>The number of capacity units provided by the instance type specified in <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is launched, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling launches instances until the desired capacity is totally fulfilled, even if this results in an overage. For example, if there are two units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an instance with a <code>WeightedCapacity</code> of five units, the instance is launched, and the desired capacity is exceeded by three units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the range of 1–999.</p>
     pub fn weighted_capacity(&self) -> std::option::Option<&str> {
         self.weighted_capacity.as_deref()
     }
-    /// <p>Provides the launch template to be used when launching the instance type specified in <code>InstanceType</code>. For example, some instance types might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    /// <p>Provides a launch template for the specified instance type or instance requirements. For example, some instance types might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     pub fn launch_template_specification(
         &self,
     ) -> std::option::Option<&crate::model::LaunchTemplateSpecification> {
@@ -469,12 +469,12 @@ pub mod launch_template_overrides {
             self.instance_type = input;
             self
         }
-        /// <p>The number of capacity units provided by the instance type specified in <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is launched, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling launches instances until the desired capacity is totally fulfilled, even if this results in an overage. For example, if there are two units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an instance with a <code>WeightedCapacity</code> of five units, the instance is launched, and the desired capacity is exceeded by three units. For more information, see <a href="https://docs.aws.amazon.com/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the range of 1–999.</p>
+        /// <p>The number of capacity units provided by the instance type specified in <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is launched, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling launches instances until the desired capacity is totally fulfilled, even if this results in an overage. For example, if there are two units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an instance with a <code>WeightedCapacity</code> of five units, the instance is launched, and the desired capacity is exceeded by three units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the range of 1–999.</p>
         pub fn weighted_capacity(mut self, input: impl Into<std::string::String>) -> Self {
             self.weighted_capacity = Some(input.into());
             self
         }
-        /// <p>The number of capacity units provided by the instance type specified in <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is launched, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling launches instances until the desired capacity is totally fulfilled, even if this results in an overage. For example, if there are two units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an instance with a <code>WeightedCapacity</code> of five units, the instance is launched, and the desired capacity is exceeded by three units. For more information, see <a href="https://docs.aws.amazon.com/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the range of 1–999.</p>
+        /// <p>The number of capacity units provided by the instance type specified in <code>InstanceType</code> in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is launched, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling launches instances until the desired capacity is totally fulfilled, even if this results in an overage. For example, if there are two units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only launch an instance with a <code>WeightedCapacity</code> of five units, the instance is launched, and the desired capacity is exceeded by three units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the range of 1–999.</p>
         pub fn set_weighted_capacity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -482,7 +482,7 @@ pub mod launch_template_overrides {
             self.weighted_capacity = input;
             self
         }
-        /// <p>Provides the launch template to be used when launching the instance type specified in <code>InstanceType</code>. For example, some instance types might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+        /// <p>Provides a launch template for the specified instance type or instance requirements. For example, some instance types might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
         pub fn launch_template_specification(
             mut self,
             input: crate::model::LaunchTemplateSpecification,
@@ -490,7 +490,7 @@ pub mod launch_template_overrides {
             self.launch_template_specification = Some(input);
             self
         }
-        /// <p>Provides the launch template to be used when launching the instance type specified in <code>InstanceType</code>. For example, some instance types might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+        /// <p>Provides a launch template for the specified instance type or instance requirements. For example, some instance types might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
         pub fn set_launch_template_specification(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -563,9 +563,11 @@ pub struct InstanceRequirements {
     /// <p>Default: Any current or previous generation</p>
     pub instance_generations: std::option::Option<std::vec::Vec<crate::model::InstanceGeneration>>,
     /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>100</code> </p>
     pub spot_max_price_percentage_over_lowest_price: std::option::Option<i32>,
     /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>20</code> </p>
     pub on_demand_max_price_percentage_over_lowest_price: std::option::Option<i32>,
     /// <p>Indicates whether bare metal instance types are included, excluded, or required.</p>
@@ -680,11 +682,13 @@ impl InstanceRequirements {
         self.instance_generations.as_deref()
     }
     /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>100</code> </p>
     pub fn spot_max_price_percentage_over_lowest_price(&self) -> std::option::Option<i32> {
         self.spot_max_price_percentage_over_lowest_price
     }
     /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>20</code> </p>
     pub fn on_demand_max_price_percentage_over_lowest_price(&self) -> std::option::Option<i32> {
         self.on_demand_max_price_percentage_over_lowest_price
@@ -1003,12 +1007,14 @@ pub mod instance_requirements {
             self
         }
         /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+        /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
         /// <p>Default: <code>100</code> </p>
         pub fn spot_max_price_percentage_over_lowest_price(mut self, input: i32) -> Self {
             self.spot_max_price_percentage_over_lowest_price = Some(input);
             self
         }
         /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+        /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
         /// <p>Default: <code>100</code> </p>
         pub fn set_spot_max_price_percentage_over_lowest_price(
             mut self,
@@ -1018,12 +1024,14 @@ pub mod instance_requirements {
             self
         }
         /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+        /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
         /// <p>Default: <code>20</code> </p>
         pub fn on_demand_max_price_percentage_over_lowest_price(mut self, input: i32) -> Self {
             self.on_demand_max_price_percentage_over_lowest_price = Some(input);
             self
         }
         /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+        /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
         /// <p>Default: <code>20</code> </p>
         pub fn set_on_demand_max_price_percentage_over_lowest_price(
             mut self,
@@ -3273,6 +3281,61 @@ impl AsRef<str> for RefreshStrategy {
     }
 }
 
+/// <p>Describes an instance reuse policy for a warm pool. </p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceReusePolicy {
+    /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
+    pub reuse_on_scale_in: std::option::Option<bool>,
+}
+impl InstanceReusePolicy {
+    /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
+    pub fn reuse_on_scale_in(&self) -> std::option::Option<bool> {
+        self.reuse_on_scale_in
+    }
+}
+impl std::fmt::Debug for InstanceReusePolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceReusePolicy");
+        formatter.field("reuse_on_scale_in", &self.reuse_on_scale_in);
+        formatter.finish()
+    }
+}
+/// See [`InstanceReusePolicy`](crate::model::InstanceReusePolicy)
+pub mod instance_reuse_policy {
+    /// A builder for [`InstanceReusePolicy`](crate::model::InstanceReusePolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reuse_on_scale_in: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
+        pub fn reuse_on_scale_in(mut self, input: bool) -> Self {
+            self.reuse_on_scale_in = Some(input);
+            self
+        }
+        /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
+        pub fn set_reuse_on_scale_in(mut self, input: std::option::Option<bool>) -> Self {
+            self.reuse_on_scale_in = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceReusePolicy`](crate::model::InstanceReusePolicy)
+        pub fn build(self) -> crate::model::InstanceReusePolicy {
+            crate::model::InstanceReusePolicy {
+                reuse_on_scale_in: self.reuse_on_scale_in,
+            }
+        }
+    }
+}
+impl InstanceReusePolicy {
+    /// Creates a new builder-style object to manufacture [`InstanceReusePolicy`](crate::model::InstanceReusePolicy)
+    pub fn builder() -> crate::model::instance_reuse_policy::Builder {
+        crate::model::instance_reuse_policy::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3286,6 +3349,8 @@ impl AsRef<str> for RefreshStrategy {
 )]
 pub enum WarmPoolState {
     #[allow(missing_docs)] // documentation missing in model
+    Hibernated,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
@@ -3295,6 +3360,7 @@ pub enum WarmPoolState {
 impl std::convert::From<&str> for WarmPoolState {
     fn from(s: &str) -> Self {
         match s {
+            "Hibernated" => WarmPoolState::Hibernated,
             "Running" => WarmPoolState::Running,
             "Stopped" => WarmPoolState::Stopped,
             other => WarmPoolState::Unknown(other.to_owned()),
@@ -3312,6 +3378,7 @@ impl WarmPoolState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            WarmPoolState::Hibernated => "Hibernated",
             WarmPoolState::Running => "Running",
             WarmPoolState::Stopped => "Stopped",
             WarmPoolState::Unknown(s) => s.as_ref(),
@@ -3319,7 +3386,7 @@ impl WarmPoolState {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["Running", "Stopped"]
+        &["Hibernated", "Running", "Stopped"]
     }
 }
 impl AsRef<str> for WarmPoolState {
@@ -5286,7 +5353,9 @@ pub struct TargetTrackingConfiguration {
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
     pub customized_metric_specification:
         std::option::Option<crate::model::CustomizedMetricSpecification>,
-    /// <p>The target value for the metric.</p>
+    /// <p>The target value for the metric.</p> <note>
+    /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
+    /// </note>
     pub target_value: std::option::Option<f64>,
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
     pub disable_scale_in: std::option::Option<bool>,
@@ -5304,7 +5373,9 @@ impl TargetTrackingConfiguration {
     ) -> std::option::Option<&crate::model::CustomizedMetricSpecification> {
         self.customized_metric_specification.as_ref()
     }
-    /// <p>The target value for the metric.</p>
+    /// <p>The target value for the metric.</p> <note>
+    /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
+    /// </note>
     pub fn target_value(&self) -> std::option::Option<f64> {
         self.target_value
     }
@@ -5375,12 +5446,16 @@ pub mod target_tracking_configuration {
             self.customized_metric_specification = input;
             self
         }
-        /// <p>The target value for the metric.</p>
+        /// <p>The target value for the metric.</p> <note>
+        /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
+        /// </note>
         pub fn target_value(mut self, input: f64) -> Self {
             self.target_value = Some(input);
             self
         }
-        /// <p>The target value for the metric.</p>
+        /// <p>The target value for the metric.</p> <note>
+        /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
+        /// </note>
         pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
             self.target_value = input;
             self
@@ -5641,9 +5716,9 @@ pub struct PredefinedMetricSpecification {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
     /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in an Application Load Balancer target group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received (per instance per minute) for the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out (per instance per minute) for the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count (per target per minute) for your Auto Scaling group.</p> </li>
     /// </ul>
     pub predefined_metric_type: std::option::Option<crate::model::MetricType>,
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
@@ -5671,9 +5746,9 @@ impl PredefinedMetricSpecification {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
     /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in an Application Load Balancer target group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received (per instance per minute) for the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out (per instance per minute) for the Auto Scaling group.</p> </li>
+    /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count (per target per minute) for your Auto Scaling group.</p> </li>
     /// </ul>
     pub fn predefined_metric_type(&self) -> std::option::Option<&crate::model::MetricType> {
         self.predefined_metric_type.as_ref()
@@ -5722,9 +5797,9 @@ pub mod predefined_metric_specification {
         /// <p>The metric type. The following predefined metrics are available:</p>
         /// <ul>
         /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in an Application Load Balancer target group.</p> </li>
+        /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received (per instance per minute) for the Auto Scaling group.</p> </li>
+        /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out (per instance per minute) for the Auto Scaling group.</p> </li>
+        /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count (per target per minute) for your Auto Scaling group.</p> </li>
         /// </ul>
         pub fn predefined_metric_type(mut self, input: crate::model::MetricType) -> Self {
             self.predefined_metric_type = Some(input);
@@ -5733,9 +5808,9 @@ pub mod predefined_metric_specification {
         /// <p>The metric type. The following predefined metrics are available:</p>
         /// <ul>
         /// <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-        /// <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in an Application Load Balancer target group.</p> </li>
+        /// <li> <p> <code>ASGAverageNetworkIn</code> - Average number of bytes received (per instance per minute) for the Auto Scaling group.</p> </li>
+        /// <li> <p> <code>ASGAverageNetworkOut</code> - Average number of bytes sent out (per instance per minute) for the Auto Scaling group.</p> </li>
+        /// <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count (per target per minute) for your Auto Scaling group.</p> </li>
         /// </ul>
         pub fn set_predefined_metric_type(
             mut self,
@@ -6469,6 +6544,8 @@ pub enum LifecycleState {
     #[allow(missing_docs)] // documentation missing in model
     TerminatingWait,
     #[allow(missing_docs)] // documentation missing in model
+    WarmedHibernated,
+    #[allow(missing_docs)] // documentation missing in model
     WarmedPending,
     #[allow(missing_docs)] // documentation missing in model
     WarmedPendingProceed,
@@ -6505,6 +6582,7 @@ impl std::convert::From<&str> for LifecycleState {
             "Terminating" => LifecycleState::Terminating,
             "Terminating:Proceed" => LifecycleState::TerminatingProceed,
             "Terminating:Wait" => LifecycleState::TerminatingWait,
+            "Warmed:Hibernated" => LifecycleState::WarmedHibernated,
             "Warmed:Pending" => LifecycleState::WarmedPending,
             "Warmed:Pending:Proceed" => LifecycleState::WarmedPendingProceed,
             "Warmed:Pending:Wait" => LifecycleState::WarmedPendingWait,
@@ -6542,6 +6620,7 @@ impl LifecycleState {
             LifecycleState::Terminating => "Terminating",
             LifecycleState::TerminatingProceed => "Terminating:Proceed",
             LifecycleState::TerminatingWait => "Terminating:Wait",
+            LifecycleState::WarmedHibernated => "Warmed:Hibernated",
             LifecycleState::WarmedPending => "Warmed:Pending",
             LifecycleState::WarmedPendingProceed => "Warmed:Pending:Proceed",
             LifecycleState::WarmedPendingWait => "Warmed:Pending:Wait",
@@ -6570,6 +6649,7 @@ impl LifecycleState {
             "Terminating",
             "Terminating:Proceed",
             "Terminating:Wait",
+            "Warmed:Hibernated",
             "Warmed:Pending",
             "Warmed:Pending:Proceed",
             "Warmed:Pending:Wait",
@@ -6600,6 +6680,8 @@ pub struct WarmPoolConfiguration {
     pub pool_state: std::option::Option<crate::model::WarmPoolState>,
     /// <p>The status of a warm pool that is marked for deletion.</p>
     pub status: std::option::Option<crate::model::WarmPoolStatus>,
+    /// <p>The instance reuse policy.</p>
+    pub instance_reuse_policy: std::option::Option<crate::model::InstanceReusePolicy>,
 }
 impl WarmPoolConfiguration {
     /// <p>The maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
@@ -6618,6 +6700,10 @@ impl WarmPoolConfiguration {
     pub fn status(&self) -> std::option::Option<&crate::model::WarmPoolStatus> {
         self.status.as_ref()
     }
+    /// <p>The instance reuse policy.</p>
+    pub fn instance_reuse_policy(&self) -> std::option::Option<&crate::model::InstanceReusePolicy> {
+        self.instance_reuse_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for WarmPoolConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6629,6 +6715,7 @@ impl std::fmt::Debug for WarmPoolConfiguration {
         formatter.field("min_size", &self.min_size);
         formatter.field("pool_state", &self.pool_state);
         formatter.field("status", &self.status);
+        formatter.field("instance_reuse_policy", &self.instance_reuse_policy);
         formatter.finish()
     }
 }
@@ -6642,6 +6729,7 @@ pub mod warm_pool_configuration {
         pub(crate) min_size: std::option::Option<i32>,
         pub(crate) pool_state: std::option::Option<crate::model::WarmPoolState>,
         pub(crate) status: std::option::Option<crate::model::WarmPoolStatus>,
+        pub(crate) instance_reuse_policy: std::option::Option<crate::model::InstanceReusePolicy>,
     }
     impl Builder {
         /// <p>The maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
@@ -6690,6 +6778,19 @@ pub mod warm_pool_configuration {
             self.status = input;
             self
         }
+        /// <p>The instance reuse policy.</p>
+        pub fn instance_reuse_policy(mut self, input: crate::model::InstanceReusePolicy) -> Self {
+            self.instance_reuse_policy = Some(input);
+            self
+        }
+        /// <p>The instance reuse policy.</p>
+        pub fn set_instance_reuse_policy(
+            mut self,
+            input: std::option::Option<crate::model::InstanceReusePolicy>,
+        ) -> Self {
+            self.instance_reuse_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WarmPoolConfiguration`](crate::model::WarmPoolConfiguration)
         pub fn build(self) -> crate::model::WarmPoolConfiguration {
             crate::model::WarmPoolConfiguration {
@@ -6697,6 +6798,7 @@ pub mod warm_pool_configuration {
                 min_size: self.min_size,
                 pool_state: self.pool_state,
                 status: self.status,
+                instance_reuse_policy: self.instance_reuse_policy,
             }
         }
     }
@@ -8367,7 +8469,7 @@ impl LoadBalancerState {
     }
 }
 
-/// <p>Describes a lifecycle hook, which enables an Auto Scaling group to be aware of events in the Auto Scaling instance lifecycle, and then perform a custom action when the corresponding lifecycle event occurs.</p>
+/// <p>Describes a lifecycle hook. A lifecycle hook lets you create solutions that are aware of events in the Auto Scaling instance lifecycle, and then perform a custom action on instances when the corresponding lifecycle event occurs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleHook {
@@ -8383,7 +8485,7 @@ pub struct LifecycleHook {
     pub lifecycle_transition: std::option::Option<std::string::String>,
     /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the transition state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.</p>
     pub notification_target_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Additional information that is included any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
     pub notification_metadata: std::option::Option<std::string::String>,
@@ -8415,7 +8517,7 @@ impl LifecycleHook {
     pub fn notification_target_arn(&self) -> std::option::Option<&str> {
         self.notification_target_arn.as_deref()
     }
-    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -8528,12 +8630,12 @@ pub mod lifecycle_hook {
             self.notification_target_arn = input;
             self
         }
-        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -11888,7 +11990,8 @@ pub struct LifecycleHookSpecification {
     pub default_result: std::option::Option<std::string::String>,
     /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the transition state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.</p>
     pub notification_target_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
+    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+    /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl LifecycleHookSpecification {
@@ -11921,7 +12024,8 @@ impl LifecycleHookSpecification {
     pub fn notification_target_arn(&self) -> std::option::Option<&str> {
         self.notification_target_arn.as_deref()
     }
-    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
+    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+    /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -12039,12 +12143,14 @@ pub mod lifecycle_hook_specification {
             self.notification_target_arn = input;
             self
         }
-        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+        /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+        /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self

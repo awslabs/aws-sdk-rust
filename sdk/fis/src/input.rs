@@ -27,6 +27,8 @@ pub mod create_experiment_template_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) log_configuration:
+            std::option::Option<crate::model::CreateExperimentTemplateLogConfigurationInput>,
     }
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -164,6 +166,22 @@ pub mod create_experiment_template_input {
             self.tags = input;
             self
         }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn log_configuration(
+            mut self,
+            input: crate::model::CreateExperimentTemplateLogConfigurationInput,
+        ) -> Self {
+            self.log_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateExperimentTemplateLogConfigurationInput>,
+        ) -> Self {
+            self.log_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateExperimentTemplateInput`](crate::input::CreateExperimentTemplateInput)
         pub fn build(
             self,
@@ -179,6 +197,7 @@ pub mod create_experiment_template_input {
                 actions: self.actions,
                 role_arn: self.role_arn,
                 tags: self.tags,
+                log_configuration: self.log_configuration,
             })
         }
     }
@@ -2422,6 +2441,8 @@ pub mod update_experiment_template_input {
             >,
         >,
         pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) log_configuration:
+            std::option::Option<crate::model::UpdateExperimentTemplateLogConfigurationInput>,
     }
     impl Builder {
         /// <p>The ID of the experiment template.</p>
@@ -2534,6 +2555,22 @@ pub mod update_experiment_template_input {
             self.role_arn = input;
             self
         }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn log_configuration(
+            mut self,
+            input: crate::model::UpdateExperimentTemplateLogConfigurationInput,
+        ) -> Self {
+            self.log_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UpdateExperimentTemplateLogConfigurationInput>,
+        ) -> Self {
+            self.log_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateExperimentTemplateInput`](crate::input::UpdateExperimentTemplateInput)
         pub fn build(
             self,
@@ -2548,6 +2585,7 @@ pub mod update_experiment_template_input {
                 targets: self.targets,
                 actions: self.actions,
                 role_arn: self.role_arn,
+                log_configuration: self.log_configuration,
             })
         }
     }
@@ -2703,6 +2741,9 @@ pub struct UpdateExperimentTemplateInput {
     >,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The configuration for experiment logging.</p>
+    pub log_configuration:
+        std::option::Option<crate::model::UpdateExperimentTemplateLogConfigurationInput>,
 }
 impl UpdateExperimentTemplateInput {
     /// <p>The ID of the experiment template.</p>
@@ -2745,6 +2786,12 @@ impl UpdateExperimentTemplateInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>The configuration for experiment logging.</p>
+    pub fn log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateExperimentTemplateLogConfigurationInput> {
+        self.log_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateExperimentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2755,6 +2802,7 @@ impl std::fmt::Debug for UpdateExperimentTemplateInput {
         formatter.field("targets", &self.targets);
         formatter.field("actions", &self.actions);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }
@@ -3148,6 +3196,9 @@ pub struct CreateExperimentTemplateInput {
     /// <p>The tags to apply to the experiment template.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The configuration for experiment logging.</p>
+    pub log_configuration:
+        std::option::Option<crate::model::CreateExperimentTemplateLogConfigurationInput>,
 }
 impl CreateExperimentTemplateInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -3197,6 +3248,12 @@ impl CreateExperimentTemplateInput {
     {
         self.tags.as_ref()
     }
+    /// <p>The configuration for experiment logging.</p>
+    pub fn log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateExperimentTemplateLogConfigurationInput> {
+        self.log_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateExperimentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3208,6 +3265,7 @@ impl std::fmt::Debug for CreateExperimentTemplateInput {
         formatter.field("actions", &self.actions);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("tags", &self.tags);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }

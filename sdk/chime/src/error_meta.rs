@@ -917,6 +917,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateMeetingDialOutErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
                 crate::error::CreateMeetingDialOutErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }

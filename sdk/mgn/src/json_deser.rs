@@ -1086,6 +1086,18 @@ pub fn deser_operation_crate_operation_get_launch_configuration(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "bootMode" => {
+                        builder = builder.set_boot_mode(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::BootMode::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "copyPrivateIp" => {
                         builder = builder.set_copy_private_ip(
                             aws_smithy_json::deserialize::token::expect_bool_or_null(
@@ -2056,6 +2068,18 @@ pub fn deser_operation_crate_operation_update_launch_configuration(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "bootMode" => {
+                        builder = builder.set_boot_mode(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::BootMode::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "copyPrivateIp" => {
                         builder = builder.set_copy_private_ip(
                             aws_smithy_json::deserialize::token::expect_bool_or_null(
@@ -4499,6 +4523,14 @@ where
                             }
                             "iops" => {
                                 builder = builder.set_iops(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "throughput" => {
+                                builder = builder.set_throughput(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?

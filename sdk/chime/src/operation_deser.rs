@@ -4028,6 +4028,23 @@ pub fn parse_create_meeting_dial_out_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateMeetingDialOutError {
+            meta: generic,
+            kind: crate::error::CreateMeetingDialOutErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMeetingDialOutError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "BadRequestException" => crate::error::CreateMeetingDialOutError {
             meta: generic,
             kind: crate::error::CreateMeetingDialOutErrorKind::BadRequestException({

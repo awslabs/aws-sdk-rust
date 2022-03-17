@@ -1418,16 +1418,16 @@ pub mod create_bucket_input {
         }
         /// <p>The ID of the bundle to use for the bucket.</p>
         /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
-        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
-        /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle after the bucket is created.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle after the bucket is created.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bundle_id = Some(input.into());
             self
         }
         /// <p>The ID of the bundle to use for the bucket.</p>
         /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
-        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
-        /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle after the bucket is created.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle after the bucket is created.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -1437,7 +1437,7 @@ pub mod create_bucket_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag keys and optional values to add to the bucket during creation.</p>
-        /// <p>Use the <code>TagResource</code> action to tag the bucket after it's created.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html">TagResource</a> action to tag the bucket after it's created.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -1445,7 +1445,7 @@ pub mod create_bucket_input {
             self
         }
         /// <p>The tag keys and optional values to add to the bucket during creation.</p>
-        /// <p>Use the <code>TagResource</code> action to tag the bucket after it's created.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html">TagResource</a> action to tag the bucket after it's created.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3645,13 +3645,13 @@ pub mod create_distribution_input {
             self.distribution_name = input;
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn origin(mut self, input: crate::model::InputOrigin) -> Self {
             self.origin = Some(input);
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::InputOrigin>) -> Self {
             self.origin = input;
@@ -7024,13 +7024,13 @@ pub mod delete_bucket_input {
     }
     impl Builder {
         /// <p>The name of the bucket to delete.</p>
-        /// <p>Use the <code>GetBuckets</code> action to get a list of bucket names that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_name = Some(input.into());
             self
         }
         /// <p>The name of the bucket to delete.</p>
-        /// <p>Use the <code>GetBuckets</code> action to get a list of bucket names that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -7039,7 +7039,7 @@ pub mod delete_bucket_input {
         /// <p>You must force delete the bucket if it has one of the following conditions:</p>
         /// <ul>
         /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-        /// <li> <p>The bucket has instances that were granted access to it using the <code>SetResourceAccessForBucket</code> action.</p> </li>
+        /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
         /// <li> <p>The bucket has objects.</p> </li>
         /// <li> <p>The bucket has access keys.</p> </li>
         /// </ul> <important>
@@ -7053,7 +7053,7 @@ pub mod delete_bucket_input {
         /// <p>You must force delete the bucket if it has one of the following conditions:</p>
         /// <ul>
         /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-        /// <li> <p>The bucket has instances that were granted access to it using the <code>SetResourceAccessForBucket</code> action.</p> </li>
+        /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
         /// <li> <p>The bucket has objects.</p> </li>
         /// <li> <p>The bucket has access keys.</p> </li>
         /// </ul> <important>
@@ -7208,13 +7208,13 @@ pub mod delete_bucket_access_key_input {
             self
         }
         /// <p>The ID of the access key to delete.</p>
-        /// <p>Use the <code>GetBucketAccessKeys</code> action to get a list of access key IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
         pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_key_id = Some(input.into());
             self
         }
         /// <p>The ID of the access key to delete.</p>
-        /// <p>Use the <code>GetBucketAccessKeys</code> action to get a list of access key IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9006,6 +9006,7 @@ pub mod delete_key_pair_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_pair_name: std::option::Option<std::string::String>,
+        pub(crate) expected_fingerprint: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the key pair to delete.</p>
@@ -9021,6 +9022,23 @@ pub mod delete_key_pair_input {
             self.key_pair_name = input;
             self
         }
+        /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
+        /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+        /// </note>
+        pub fn expected_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_fingerprint = Some(input.into());
+            self
+        }
+        /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
+        /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+        /// </note>
+        pub fn set_expected_fingerprint(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expected_fingerprint = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteKeyPairInput`](crate::input::DeleteKeyPairInput)
         pub fn build(
             self,
@@ -9030,6 +9048,7 @@ pub mod delete_key_pair_input {
         > {
             Ok(crate::input::DeleteKeyPairInput {
                 key_pair_name: self.key_pair_name,
+                expected_fingerprint: self.expected_fingerprint,
             })
         }
     }
@@ -12355,12 +12374,12 @@ pub mod get_buckets_input {
             self.page_token = input;
             self
         }
-        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <code>SetResourceAccessForBucket</code> action.</p>
+        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
         pub fn include_connected_resources(mut self, input: bool) -> Self {
             self.include_connected_resources = Some(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <code>SetResourceAccessForBucket</code> action.</p>
+        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
         pub fn set_include_connected_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.include_connected_resources = input;
             self
@@ -17598,6 +17617,7 @@ pub mod get_key_pairs_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_token: std::option::Option<std::string::String>,
+        pub(crate) include_default_key_pair: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -17612,6 +17632,16 @@ pub mod get_key_pairs_input {
             self.page_token = input;
             self
         }
+        /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
+        pub fn include_default_key_pair(mut self, input: bool) -> Self {
+            self.include_default_key_pair = Some(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
+        pub fn set_include_default_key_pair(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_default_key_pair = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetKeyPairsInput`](crate::input::GetKeyPairsInput)
         pub fn build(
             self,
@@ -17621,6 +17651,7 @@ pub mod get_key_pairs_input {
         > {
             Ok(crate::input::GetKeyPairsInput {
                 page_token: self.page_token,
+                include_default_key_pair: self.include_default_key_pair,
             })
         }
     }
@@ -25277,13 +25308,13 @@ pub mod update_bucket_bundle_input {
             self
         }
         /// <p>The ID of the new bundle to apply to the bucket.</p>
-        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bundle_id = Some(input.into());
             self
         }
         /// <p>The ID of the new bundle to apply to the bucket.</p>
-        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -25670,13 +25701,13 @@ pub mod update_distribution_input {
             self.distribution_name = input;
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn origin(mut self, input: crate::model::InputOrigin) -> Self {
             self.origin = Some(input);
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::InputOrigin>) -> Self {
             self.origin = input;
@@ -27124,7 +27155,7 @@ pub struct UpdateDistributionInput {
     /// <p>The name of the distribution to update.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     pub distribution_name: std::option::Option<std::string::String>,
-    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub origin: std::option::Option<crate::model::InputOrigin>,
     /// <p>An object that describes the default cache behavior for the distribution.</p>
@@ -27144,7 +27175,7 @@ impl UpdateDistributionInput {
     pub fn distribution_name(&self) -> std::option::Option<&str> {
         self.distribution_name.as_deref()
     }
-    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub fn origin(&self) -> std::option::Option<&crate::model::InputOrigin> {
         self.origin.as_ref()
@@ -27259,7 +27290,7 @@ pub struct UpdateBucketBundleInput {
     /// <p>The name of the bucket for which to update the bundle.</p>
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The ID of the new bundle to apply to the bucket.</p>
-    /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
     pub bundle_id: std::option::Option<std::string::String>,
 }
 impl UpdateBucketBundleInput {
@@ -27268,7 +27299,7 @@ impl UpdateBucketBundleInput {
         self.bucket_name.as_deref()
     }
     /// <p>The ID of the new bundle to apply to the bucket.</p>
-    /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
     pub fn bundle_id(&self) -> std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
@@ -28891,6 +28922,8 @@ pub struct GetKeyPairsInput {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
+    /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
+    pub include_default_key_pair: std::option::Option<bool>,
 }
 impl GetKeyPairsInput {
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -28898,11 +28931,16 @@ impl GetKeyPairsInput {
     pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
+    /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
+    pub fn include_default_key_pair(&self) -> std::option::Option<bool> {
+        self.include_default_key_pair
+    }
 }
 impl std::fmt::Debug for GetKeyPairsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetKeyPairsInput");
         formatter.field("page_token", &self.page_token);
+        formatter.field("include_default_key_pair", &self.include_default_key_pair);
         formatter.finish()
     }
 }
@@ -29938,7 +29976,7 @@ pub struct GetBucketsInput {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <code>SetResourceAccessForBucket</code> action.</p>
+    /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
     pub include_connected_resources: std::option::Option<bool>,
 }
 impl GetBucketsInput {
@@ -29952,7 +29990,7 @@ impl GetBucketsInput {
     pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
-    /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <code>SetResourceAccessForBucket</code> action.</p>
+    /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
     pub fn include_connected_resources(&self) -> std::option::Option<bool> {
         self.include_connected_resources
     }
@@ -30572,17 +30610,28 @@ impl std::fmt::Debug for DeleteKnownHostKeysInput {
 pub struct DeleteKeyPairInput {
     /// <p>The name of the key pair to delete.</p>
     pub key_pair_name: std::option::Option<std::string::String>,
+    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
+    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+    /// </note>
+    pub expected_fingerprint: std::option::Option<std::string::String>,
 }
 impl DeleteKeyPairInput {
     /// <p>The name of the key pair to delete.</p>
     pub fn key_pair_name(&self) -> std::option::Option<&str> {
         self.key_pair_name.as_deref()
     }
+    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
+    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+    /// </note>
+    pub fn expected_fingerprint(&self) -> std::option::Option<&str> {
+        self.expected_fingerprint.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteKeyPairInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteKeyPairInput");
         formatter.field("key_pair_name", &self.key_pair_name);
+        formatter.field("expected_fingerprint", &self.expected_fingerprint);
         formatter.finish()
     }
 }
@@ -30867,7 +30916,7 @@ pub struct DeleteBucketAccessKeyInput {
     /// <p>The name of the bucket that the access key belongs to.</p>
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The ID of the access key to delete.</p>
-    /// <p>Use the <code>GetBucketAccessKeys</code> action to get a list of access key IDs that you can specify.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
     pub access_key_id: std::option::Option<std::string::String>,
 }
 impl DeleteBucketAccessKeyInput {
@@ -30876,7 +30925,7 @@ impl DeleteBucketAccessKeyInput {
         self.bucket_name.as_deref()
     }
     /// <p>The ID of the access key to delete.</p>
-    /// <p>Use the <code>GetBucketAccessKeys</code> action to get a list of access key IDs that you can specify.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
     pub fn access_key_id(&self) -> std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
@@ -30895,13 +30944,13 @@ impl std::fmt::Debug for DeleteBucketAccessKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketInput {
     /// <p>The name of the bucket to delete.</p>
-    /// <p>Use the <code>GetBuckets</code> action to get a list of bucket names that you can specify.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
     /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-    /// <li> <p>The bucket has instances that were granted access to it using the <code>SetResourceAccessForBucket</code> action.</p> </li>
+    /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
     /// <li> <p>The bucket has objects.</p> </li>
     /// <li> <p>The bucket has access keys.</p> </li>
     /// </ul> <important>
@@ -30911,7 +30960,7 @@ pub struct DeleteBucketInput {
 }
 impl DeleteBucketInput {
     /// <p>The name of the bucket to delete.</p>
-    /// <p>Use the <code>GetBuckets</code> action to get a list of bucket names that you can specify.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
@@ -30919,7 +30968,7 @@ impl DeleteBucketInput {
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
     /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-    /// <li> <p>The bucket has instances that were granted access to it using the <code>SetResourceAccessForBucket</code> action.</p> </li>
+    /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
     /// <li> <p>The bucket has objects.</p> </li>
     /// <li> <p>The bucket has access keys.</p> </li>
     /// </ul> <important>
@@ -31928,7 +31977,7 @@ impl std::fmt::Debug for CreateDomainInput {
 pub struct CreateDistributionInput {
     /// <p>The name for the distribution.</p>
     pub distribution_name: std::option::Option<std::string::String>,
-    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub origin: std::option::Option<crate::model::InputOrigin>,
     /// <p>An object that describes the default cache behavior for the distribution.</p>
@@ -31954,7 +32003,7 @@ impl CreateDistributionInput {
     pub fn distribution_name(&self) -> std::option::Option<&str> {
         self.distribution_name.as_deref()
     }
-    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub fn origin(&self) -> std::option::Option<&crate::model::InputOrigin> {
         self.origin.as_ref()
@@ -32555,11 +32604,11 @@ pub struct CreateBucketInput {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The ID of the bundle to use for the bucket.</p>
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
-    /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
-    /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle after the bucket is created.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle after the bucket is created.</p>
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The tag keys and optional values to add to the bucket during creation.</p>
-    /// <p>Use the <code>TagResource</code> action to tag the bucket after it's created.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html">TagResource</a> action to tag the bucket after it's created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A Boolean value that indicates whether to enable versioning of objects in the bucket.</p>
     /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
@@ -32573,13 +32622,13 @@ impl CreateBucketInput {
     }
     /// <p>The ID of the bundle to use for the bucket.</p>
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
-    /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
-    /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle after the bucket is created.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle after the bucket is created.</p>
     pub fn bundle_id(&self) -> std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
     /// <p>The tag keys and optional values to add to the bucket during creation.</p>
-    /// <p>Use the <code>TagResource</code> action to tag the bucket after it's created.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html">TagResource</a> action to tag the bucket after it's created.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

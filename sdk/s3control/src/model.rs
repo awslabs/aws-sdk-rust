@@ -9525,6 +9525,8 @@ pub struct S3CopyObjectOperation {
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
     pub bucket_key_enabled: bool,
+    /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::S3ChecksumAlgorithm>,
 }
 impl S3CopyObjectOperation {
     /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".</p>
@@ -9602,6 +9604,10 @@ impl S3CopyObjectOperation {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
+    /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::S3ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
 }
 impl std::fmt::Debug for S3CopyObjectOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9635,6 +9641,7 @@ impl std::fmt::Debug for S3CopyObjectOperation {
             &self.object_lock_retain_until_date,
         );
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.finish()
     }
 }
@@ -9663,6 +9670,7 @@ pub mod s3_copy_object_operation {
         pub(crate) object_lock_mode: std::option::Option<crate::model::S3ObjectLockMode>,
         pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::S3ChecksumAlgorithm>,
     }
     impl Builder {
         /// <p>Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".</p>
@@ -9900,6 +9908,19 @@ pub mod s3_copy_object_operation {
             self.bucket_key_enabled = input;
             self
         }
+        /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::S3ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For more information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::S3ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// Consumes the builder and constructs a [`S3CopyObjectOperation`](crate::model::S3CopyObjectOperation)
         pub fn build(self) -> crate::model::S3CopyObjectOperation {
             crate::model::S3CopyObjectOperation {
@@ -9920,6 +9941,7 @@ pub mod s3_copy_object_operation {
                 object_lock_mode: self.object_lock_mode,
                 object_lock_retain_until_date: self.object_lock_retain_until_date,
                 bucket_key_enabled: self.bucket_key_enabled.unwrap_or_default(),
+                checksum_algorithm: self.checksum_algorithm,
             }
         }
     }
@@ -9928,6 +9950,69 @@ impl S3CopyObjectOperation {
     /// Creates a new builder-style object to manufacture [`S3CopyObjectOperation`](crate::model::S3CopyObjectOperation)
     pub fn builder() -> crate::model::s3_copy_object_operation::Builder {
         crate::model::s3_copy_object_operation::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum S3ChecksumAlgorithm {
+    #[allow(missing_docs)] // documentation missing in model
+    Crc32,
+    #[allow(missing_docs)] // documentation missing in model
+    Crc32C,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha1,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha256,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for S3ChecksumAlgorithm {
+    fn from(s: &str) -> Self {
+        match s {
+            "CRC32" => S3ChecksumAlgorithm::Crc32,
+            "CRC32C" => S3ChecksumAlgorithm::Crc32C,
+            "SHA1" => S3ChecksumAlgorithm::Sha1,
+            "SHA256" => S3ChecksumAlgorithm::Sha256,
+            other => S3ChecksumAlgorithm::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for S3ChecksumAlgorithm {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(S3ChecksumAlgorithm::from(s))
+    }
+}
+impl S3ChecksumAlgorithm {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            S3ChecksumAlgorithm::Crc32 => "CRC32",
+            S3ChecksumAlgorithm::Crc32C => "CRC32C",
+            S3ChecksumAlgorithm::Sha1 => "SHA1",
+            S3ChecksumAlgorithm::Sha256 => "SHA256",
+            S3ChecksumAlgorithm::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CRC32", "CRC32C", "SHA1", "SHA256"]
+    }
+}
+impl AsRef<str> for S3ChecksumAlgorithm {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

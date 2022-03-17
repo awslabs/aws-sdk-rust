@@ -2321,10 +2321,10 @@ impl NoiseReducer {
 pub struct NoiseReducerTemporalFilterSettings {
     /// Use Aggressive mode for content that has complex motion. Higher values produce stronger temporal filtering. This filters highly complex scenes more aggressively and creates better VQ for low bitrate outputs.
     pub aggressive_mode: i32,
-    /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the sharpness of your output is reduced. You can optionally use Post temporal sharpening (PostTemporalSharpening) to apply sharpening to the edges of your output. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (PostTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+    /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
     pub post_temporal_sharpening:
         std::option::Option<crate::model::NoiseFilterPostTemporalSharpening>,
-    /// Use Post temporal sharpening strength (PostTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), or leave blank, to apply a low amount of sharpening. Set Post temporal sharpening strength to Medium (MEDIUM) to apply medium amount of sharpening. Set Post temporal sharpening strength to High (HIGH) to apply a high amount of sharpening.
+    /// Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
     pub post_temporal_sharpening_strength:
         std::option::Option<crate::model::NoiseFilterPostTemporalSharpeningStrength>,
     /// The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time, high setting improves transcode time at the cost of bit rate.
@@ -2337,13 +2337,13 @@ impl NoiseReducerTemporalFilterSettings {
     pub fn aggressive_mode(&self) -> i32 {
         self.aggressive_mode
     }
-    /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the sharpness of your output is reduced. You can optionally use Post temporal sharpening (PostTemporalSharpening) to apply sharpening to the edges of your output. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (PostTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+    /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
     pub fn post_temporal_sharpening(
         &self,
     ) -> std::option::Option<&crate::model::NoiseFilterPostTemporalSharpening> {
         self.post_temporal_sharpening.as_ref()
     }
-    /// Use Post temporal sharpening strength (PostTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), or leave blank, to apply a low amount of sharpening. Set Post temporal sharpening strength to Medium (MEDIUM) to apply medium amount of sharpening. Set Post temporal sharpening strength to High (HIGH) to apply a high amount of sharpening.
+    /// Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
     pub fn post_temporal_sharpening_strength(
         &self,
     ) -> std::option::Option<&crate::model::NoiseFilterPostTemporalSharpeningStrength> {
@@ -2397,7 +2397,7 @@ pub mod noise_reducer_temporal_filter_settings {
             self.aggressive_mode = input;
             self
         }
-        /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the sharpness of your output is reduced. You can optionally use Post temporal sharpening (PostTemporalSharpening) to apply sharpening to the edges of your output. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (PostTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+        /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
         pub fn post_temporal_sharpening(
             mut self,
             input: crate::model::NoiseFilterPostTemporalSharpening,
@@ -2405,7 +2405,7 @@ pub mod noise_reducer_temporal_filter_settings {
             self.post_temporal_sharpening = Some(input);
             self
         }
-        /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the sharpness of your output is reduced. You can optionally use Post temporal sharpening (PostTemporalSharpening) to apply sharpening to the edges of your output. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (PostTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+        /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
         pub fn set_post_temporal_sharpening(
             mut self,
             input: std::option::Option<crate::model::NoiseFilterPostTemporalSharpening>,
@@ -2413,7 +2413,7 @@ pub mod noise_reducer_temporal_filter_settings {
             self.post_temporal_sharpening = input;
             self
         }
-        /// Use Post temporal sharpening strength (PostTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), or leave blank, to apply a low amount of sharpening. Set Post temporal sharpening strength to Medium (MEDIUM) to apply medium amount of sharpening. Set Post temporal sharpening strength to High (HIGH) to apply a high amount of sharpening.
+        /// Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
         pub fn post_temporal_sharpening_strength(
             mut self,
             input: crate::model::NoiseFilterPostTemporalSharpeningStrength,
@@ -2421,7 +2421,7 @@ pub mod noise_reducer_temporal_filter_settings {
             self.post_temporal_sharpening_strength = Some(input);
             self
         }
-        /// Use Post temporal sharpening strength (PostTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), or leave blank, to apply a low amount of sharpening. Set Post temporal sharpening strength to Medium (MEDIUM) to apply medium amount of sharpening. Set Post temporal sharpening strength to High (HIGH) to apply a high amount of sharpening.
+        /// Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
         pub fn set_post_temporal_sharpening_strength(
             mut self,
             input: std::option::Option<crate::model::NoiseFilterPostTemporalSharpeningStrength>,
@@ -2468,7 +2468,7 @@ impl NoiseReducerTemporalFilterSettings {
     }
 }
 
-/// Use Post temporal sharpening strength (PostTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), or leave blank, to apply a low amount of sharpening. Set Post temporal sharpening strength to Medium (MEDIUM) to apply medium amount of sharpening. Set Post temporal sharpening strength to High (HIGH) to apply a high amount of sharpening.
+/// Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2527,7 +2527,7 @@ impl AsRef<str> for NoiseFilterPostTemporalSharpeningStrength {
     }
 }
 
-/// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the sharpness of your output is reduced. You can optionally use Post temporal sharpening (PostTemporalSharpening) to apply sharpening to the edges of your output. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (PostTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+/// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -19481,7 +19481,7 @@ pub struct MpdSettings {
     pub scte35_esam: std::option::Option<crate::model::MpdScte35Esam>,
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
     pub scte35_source: std::option::Option<crate::model::MpdScte35Source>,
-    /// Applies to DASH outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    /// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
     pub timed_metadata: std::option::Option<crate::model::MpdTimedMetadata>,
 }
 impl MpdSettings {
@@ -19512,7 +19512,7 @@ impl MpdSettings {
     pub fn scte35_source(&self) -> std::option::Option<&crate::model::MpdScte35Source> {
         self.scte35_source.as_ref()
     }
-    /// Applies to DASH outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    /// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
     pub fn timed_metadata(&self) -> std::option::Option<&crate::model::MpdTimedMetadata> {
         self.timed_metadata.as_ref()
     }
@@ -19625,12 +19625,12 @@ pub mod mpd_settings {
             self.scte35_source = input;
             self
         }
-        /// Applies to DASH outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        /// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
         pub fn timed_metadata(mut self, input: crate::model::MpdTimedMetadata) -> Self {
             self.timed_metadata = Some(input);
             self
         }
-        /// Applies to DASH outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        /// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
         pub fn set_timed_metadata(
             mut self,
             input: std::option::Option<crate::model::MpdTimedMetadata>,
@@ -19658,7 +19658,7 @@ impl MpdSettings {
     }
 }
 
-/// Applies to DASH outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+/// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -20828,9 +20828,9 @@ pub struct M3u8Settings {
     pub scte35_pid: i32,
     /// For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
     pub scte35_source: std::option::Option<crate::model::M3u8Scte35Source>,
-    /// Applies to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    /// Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
     pub timed_metadata: std::option::Option<crate::model::TimedMetadata>,
-    /// Packet Identifier (PID) of the timed metadata stream in the transport stream.
+    /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
     pub timed_metadata_pid: i32,
     /// The value of the transport stream ID field in the Program Map Table.
     pub transport_stream_id: i32,
@@ -20898,11 +20898,11 @@ impl M3u8Settings {
     pub fn scte35_source(&self) -> std::option::Option<&crate::model::M3u8Scte35Source> {
         self.scte35_source.as_ref()
     }
-    /// Applies to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    /// Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
     pub fn timed_metadata(&self) -> std::option::Option<&crate::model::TimedMetadata> {
         self.timed_metadata.as_ref()
     }
-    /// Packet Identifier (PID) of the timed metadata stream in the transport stream.
+    /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
     pub fn timed_metadata_pid(&self) -> i32 {
         self.timed_metadata_pid
     }
@@ -21138,12 +21138,12 @@ pub mod m3u8_settings {
             self.scte35_source = input;
             self
         }
-        /// Applies to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        /// Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
         pub fn timed_metadata(mut self, input: crate::model::TimedMetadata) -> Self {
             self.timed_metadata = Some(input);
             self
         }
-        /// Applies to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        /// Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
         pub fn set_timed_metadata(
             mut self,
             input: std::option::Option<crate::model::TimedMetadata>,
@@ -21151,12 +21151,12 @@ pub mod m3u8_settings {
             self.timed_metadata = input;
             self
         }
-        /// Packet Identifier (PID) of the timed metadata stream in the transport stream.
+        /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
         pub fn timed_metadata_pid(mut self, input: i32) -> Self {
             self.timed_metadata_pid = Some(input);
             self
         }
-        /// Packet Identifier (PID) of the timed metadata stream in the transport stream.
+        /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
         pub fn set_timed_metadata_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.timed_metadata_pid = input;
             self
@@ -21214,7 +21214,7 @@ impl M3u8Settings {
     }
 }
 
-/// Applies to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+/// Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -23782,7 +23782,7 @@ pub struct CmfcSettings {
     pub scte35_esam: std::option::Option<crate::model::CmfcScte35Esam>,
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
     pub scte35_source: std::option::Option<crate::model::CmfcScte35Source>,
-    /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    /// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
     pub timed_metadata: std::option::Option<crate::model::CmfcTimedMetadata>,
 }
 impl CmfcSettings {
@@ -23822,7 +23822,7 @@ impl CmfcSettings {
     pub fn scte35_source(&self) -> std::option::Option<&crate::model::CmfcScte35Source> {
         self.scte35_source.as_ref()
     }
-    /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    /// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
     pub fn timed_metadata(&self) -> std::option::Option<&crate::model::CmfcTimedMetadata> {
         self.timed_metadata.as_ref()
     }
@@ -23973,12 +23973,12 @@ pub mod cmfc_settings {
             self.scte35_source = input;
             self
         }
-        /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        /// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
         pub fn timed_metadata(mut self, input: crate::model::CmfcTimedMetadata) -> Self {
             self.timed_metadata = Some(input);
             self
         }
-        /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        /// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
         pub fn set_timed_metadata(
             mut self,
             input: std::option::Option<crate::model::CmfcTimedMetadata>,
@@ -24009,7 +24009,7 @@ impl CmfcSettings {
     }
 }
 
-/// Applies to CMAF outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+/// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -25642,13 +25642,13 @@ impl CaptionDestinationSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebvttDestinationSettings {
-    /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+    /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
     pub accessibility: std::option::Option<crate::model::WebvttAccessibilitySubs>,
     /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
     pub style_passthrough: std::option::Option<crate::model::WebvttStylePassthrough>,
 }
 impl WebvttDestinationSettings {
-    /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+    /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
     pub fn accessibility(&self) -> std::option::Option<&crate::model::WebvttAccessibilitySubs> {
         self.accessibility.as_ref()
     }
@@ -25675,12 +25675,12 @@ pub mod webvtt_destination_settings {
         pub(crate) style_passthrough: std::option::Option<crate::model::WebvttStylePassthrough>,
     }
     impl Builder {
-        /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+        /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
         pub fn accessibility(mut self, input: crate::model::WebvttAccessibilitySubs) -> Self {
             self.accessibility = Some(input);
             self
         }
-        /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+        /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
         pub fn set_accessibility(
             mut self,
             input: std::option::Option<crate::model::WebvttAccessibilitySubs>,
@@ -25772,7 +25772,7 @@ impl AsRef<str> for WebvttStylePassthrough {
     }
 }
 
-/// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+/// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -26344,13 +26344,13 @@ impl AsRef<str> for SccDestinationFramerate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImscDestinationSettings {
-    /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+    /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
     pub accessibility: std::option::Option<crate::model::ImscAccessibilitySubs>,
     /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
     pub style_passthrough: std::option::Option<crate::model::ImscStylePassthrough>,
 }
 impl ImscDestinationSettings {
-    /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+    /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
     pub fn accessibility(&self) -> std::option::Option<&crate::model::ImscAccessibilitySubs> {
         self.accessibility.as_ref()
     }
@@ -26377,12 +26377,12 @@ pub mod imsc_destination_settings {
         pub(crate) style_passthrough: std::option::Option<crate::model::ImscStylePassthrough>,
     }
     impl Builder {
-        /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+        /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
         pub fn accessibility(mut self, input: crate::model::ImscAccessibilitySubs) -> Self {
             self.accessibility = Some(input);
             self
         }
-        /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+        /// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
         pub fn set_accessibility(
             mut self,
             input: std::option::Option<crate::model::ImscAccessibilitySubs>,
@@ -26474,7 +26474,7 @@ impl AsRef<str> for ImscStylePassthrough {
     }
 }
 
-/// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+/// Set Accessibility subtitles (Accessibility) to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -35764,7 +35764,7 @@ pub struct JobTemplateSettings {
     pub output_groups: std::option::Option<std::vec::Vec<crate::model::OutputGroup>>,
     /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
     pub timecode_config: std::option::Option<crate::model::TimecodeConfig>,
-    /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+    /// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
     pub timed_metadata_insertion: std::option::Option<crate::model::TimedMetadataInsertion>,
 }
 impl JobTemplateSettings {
@@ -35818,7 +35818,7 @@ impl JobTemplateSettings {
     pub fn timecode_config(&self) -> std::option::Option<&crate::model::TimecodeConfig> {
         self.timecode_config.as_ref()
     }
-    /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+    /// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
     pub fn timed_metadata_insertion(
         &self,
     ) -> std::option::Option<&crate::model::TimedMetadataInsertion> {
@@ -36020,7 +36020,7 @@ pub mod job_template_settings {
             self.timecode_config = input;
             self
         }
-        /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+        /// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
         pub fn timed_metadata_insertion(
             mut self,
             input: crate::model::TimedMetadataInsertion,
@@ -36028,7 +36028,7 @@ pub mod job_template_settings {
             self.timed_metadata_insertion = Some(input);
             self
         }
-        /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+        /// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
         pub fn set_timed_metadata_insertion(
             mut self,
             input: std::option::Option<crate::model::TimedMetadataInsertion>,
@@ -36062,7 +36062,7 @@ impl JobTemplateSettings {
     }
 }
 
-/// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+/// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimedMetadataInsertion {
@@ -36129,13 +36129,13 @@ impl TimedMetadataInsertion {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Id3Insertion {
-    /// Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+    /// Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
     pub id3: std::option::Option<std::string::String>,
     /// Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
     pub timecode: std::option::Option<std::string::String>,
 }
 impl Id3Insertion {
-    /// Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+    /// Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
     pub fn id3(&self) -> std::option::Option<&str> {
         self.id3.as_deref()
     }
@@ -36162,12 +36162,12 @@ pub mod id3_insertion {
         pub(crate) timecode: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+        /// Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
         pub fn id3(mut self, input: impl Into<std::string::String>) -> Self {
             self.id3 = Some(input.into());
             self
         }
-        /// Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+        /// Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
         pub fn set_id3(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id3 = input;
             self
@@ -38750,6 +38750,9 @@ pub struct HlsGroupSettings {
         std::option::Option<std::vec::Vec<crate::model::HlsCaptionLanguageMapping>>,
     /// Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
     pub caption_language_setting: std::option::Option<crate::model::HlsCaptionLanguageSetting>,
+    /// Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+    pub caption_segment_length_control:
+        std::option::Option<crate::model::HlsCaptionSegmentLengthControl>,
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control http header.
     pub client_cache: std::option::Option<crate::model::HlsClientCache>,
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
@@ -38794,9 +38797,9 @@ pub struct HlsGroupSettings {
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
     pub target_duration_compatibility_mode:
         std::option::Option<crate::model::HlsTargetDurationCompatibilityMode>,
-    /// Indicates ID3 frame that has the timecode.
+    /// Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
     pub timed_metadata_id3_frame: std::option::Option<crate::model::HlsTimedMetadataId3Frame>,
-    /// Timed Metadata interval in seconds.
+    /// Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
     pub timed_metadata_id3_period: i32,
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
     pub timestamp_delta_milliseconds: i32,
@@ -38831,6 +38834,12 @@ impl HlsGroupSettings {
         &self,
     ) -> std::option::Option<&crate::model::HlsCaptionLanguageSetting> {
         self.caption_language_setting.as_ref()
+    }
+    /// Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+    pub fn caption_segment_length_control(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsCaptionSegmentLengthControl> {
+        self.caption_segment_length_control.as_ref()
     }
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control http header.
     pub fn client_cache(&self) -> std::option::Option<&crate::model::HlsClientCache> {
@@ -38930,13 +38939,13 @@ impl HlsGroupSettings {
     ) -> std::option::Option<&crate::model::HlsTargetDurationCompatibilityMode> {
         self.target_duration_compatibility_mode.as_ref()
     }
-    /// Indicates ID3 frame that has the timecode.
+    /// Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
     pub fn timed_metadata_id3_frame(
         &self,
     ) -> std::option::Option<&crate::model::HlsTimedMetadataId3Frame> {
         self.timed_metadata_id3_frame.as_ref()
     }
-    /// Timed Metadata interval in seconds.
+    /// Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
     pub fn timed_metadata_id3_period(&self) -> i32 {
         self.timed_metadata_id3_period
     }
@@ -38954,6 +38963,10 @@ impl std::fmt::Debug for HlsGroupSettings {
         formatter.field("base_url", &self.base_url);
         formatter.field("caption_language_mappings", &self.caption_language_mappings);
         formatter.field("caption_language_setting", &self.caption_language_setting);
+        formatter.field(
+            "caption_segment_length_control",
+            &self.caption_segment_length_control,
+        );
         formatter.field("client_cache", &self.client_cache);
         formatter.field("codec_specification", &self.codec_specification);
         formatter.field("destination", &self.destination);
@@ -39005,6 +39018,8 @@ pub mod hls_group_settings {
             std::option::Option<std::vec::Vec<crate::model::HlsCaptionLanguageMapping>>,
         pub(crate) caption_language_setting:
             std::option::Option<crate::model::HlsCaptionLanguageSetting>,
+        pub(crate) caption_segment_length_control:
+            std::option::Option<crate::model::HlsCaptionSegmentLengthControl>,
         pub(crate) client_cache: std::option::Option<crate::model::HlsClientCache>,
         pub(crate) codec_specification: std::option::Option<crate::model::HlsCodecSpecification>,
         pub(crate) destination: std::option::Option<std::string::String>,
@@ -39134,6 +39149,22 @@ pub mod hls_group_settings {
             input: std::option::Option<crate::model::HlsCaptionLanguageSetting>,
         ) -> Self {
             self.caption_language_setting = input;
+            self
+        }
+        /// Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+        pub fn caption_segment_length_control(
+            mut self,
+            input: crate::model::HlsCaptionSegmentLengthControl,
+        ) -> Self {
+            self.caption_segment_length_control = Some(input);
+            self
+        }
+        /// Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+        pub fn set_caption_segment_length_control(
+            mut self,
+            input: std::option::Option<crate::model::HlsCaptionSegmentLengthControl>,
+        ) -> Self {
+            self.caption_segment_length_control = input;
             self
         }
         /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control http header.
@@ -39409,7 +39440,7 @@ pub mod hls_group_settings {
             self.target_duration_compatibility_mode = input;
             self
         }
-        /// Indicates ID3 frame that has the timecode.
+        /// Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
         pub fn timed_metadata_id3_frame(
             mut self,
             input: crate::model::HlsTimedMetadataId3Frame,
@@ -39417,7 +39448,7 @@ pub mod hls_group_settings {
             self.timed_metadata_id3_frame = Some(input);
             self
         }
-        /// Indicates ID3 frame that has the timecode.
+        /// Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
         pub fn set_timed_metadata_id3_frame(
             mut self,
             input: std::option::Option<crate::model::HlsTimedMetadataId3Frame>,
@@ -39425,12 +39456,12 @@ pub mod hls_group_settings {
             self.timed_metadata_id3_frame = input;
             self
         }
-        /// Timed Metadata interval in seconds.
+        /// Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
         pub fn timed_metadata_id3_period(mut self, input: i32) -> Self {
             self.timed_metadata_id3_period = Some(input);
             self
         }
-        /// Timed Metadata interval in seconds.
+        /// Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
         pub fn set_timed_metadata_id3_period(mut self, input: std::option::Option<i32>) -> Self {
             self.timed_metadata_id3_period = input;
             self
@@ -39454,6 +39485,7 @@ pub mod hls_group_settings {
                 base_url: self.base_url,
                 caption_language_mappings: self.caption_language_mappings,
                 caption_language_setting: self.caption_language_setting,
+                caption_segment_length_control: self.caption_segment_length_control,
                 client_cache: self.client_cache,
                 codec_specification: self.codec_specification,
                 destination: self.destination,
@@ -39489,7 +39521,7 @@ impl HlsGroupSettings {
     }
 }
 
-/// Indicates ID3 frame that has the timecode.
+/// Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -40960,6 +40992,61 @@ impl HlsClientCache {
     }
 }
 impl AsRef<str> for HlsClientCache {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HlsCaptionSegmentLengthControl {
+    #[allow(missing_docs)] // documentation missing in model
+    LargeSegments,
+    #[allow(missing_docs)] // documentation missing in model
+    MatchVideo,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HlsCaptionSegmentLengthControl {
+    fn from(s: &str) -> Self {
+        match s {
+            "LARGE_SEGMENTS" => HlsCaptionSegmentLengthControl::LargeSegments,
+            "MATCH_VIDEO" => HlsCaptionSegmentLengthControl::MatchVideo,
+            other => HlsCaptionSegmentLengthControl::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HlsCaptionSegmentLengthControl {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HlsCaptionSegmentLengthControl::from(s))
+    }
+}
+impl HlsCaptionSegmentLengthControl {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HlsCaptionSegmentLengthControl::LargeSegments => "LARGE_SEGMENTS",
+            HlsCaptionSegmentLengthControl::MatchVideo => "MATCH_VIDEO",
+            HlsCaptionSegmentLengthControl::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["LARGE_SEGMENTS", "MATCH_VIDEO"]
+    }
+}
+impl AsRef<str> for HlsCaptionSegmentLengthControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -46870,6 +46957,8 @@ pub struct VideoSelector {
     pub color_space: std::option::Option<crate::model::ColorSpace>,
     /// There are two sources for color metadata, the input file and the job input settings Color space (ColorSpace) and HDR master display information settings(Hdr10Metadata). The Color space usage setting determines which takes precedence. Choose Force (FORCE) to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings.
     pub color_space_usage: std::option::Option<crate::model::ColorSpaceUsage>,
+    /// Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM) when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata (MDPM). When you do, we recommend you also set Timecode source (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override blank, or set to None (NONE), when your input does not contain MDPM timecode.
+    pub embedded_timecode_override: std::option::Option<crate::model::EmbeddedTimecodeOverride>,
     /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage (ColorSpaceUsage). To specify whether color metadata is included in an output, set Color metadata (ColorMetadata). For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     pub hdr10_metadata: std::option::Option<crate::model::Hdr10Metadata>,
     /// Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
@@ -46893,6 +46982,12 @@ impl VideoSelector {
     /// There are two sources for color metadata, the input file and the job input settings Color space (ColorSpace) and HDR master display information settings(Hdr10Metadata). The Color space usage setting determines which takes precedence. Choose Force (FORCE) to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings.
     pub fn color_space_usage(&self) -> std::option::Option<&crate::model::ColorSpaceUsage> {
         self.color_space_usage.as_ref()
+    }
+    /// Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM) when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata (MDPM). When you do, we recommend you also set Timecode source (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override blank, or set to None (NONE), when your input does not contain MDPM timecode.
+    pub fn embedded_timecode_override(
+        &self,
+    ) -> std::option::Option<&crate::model::EmbeddedTimecodeOverride> {
+        self.embedded_timecode_override.as_ref()
     }
     /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage (ColorSpaceUsage). To specify whether color metadata is included in an output, set Color metadata (ColorMetadata). For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     pub fn hdr10_metadata(&self) -> std::option::Option<&crate::model::Hdr10Metadata> {
@@ -46921,6 +47016,10 @@ impl std::fmt::Debug for VideoSelector {
         formatter.field("alpha_behavior", &self.alpha_behavior);
         formatter.field("color_space", &self.color_space);
         formatter.field("color_space_usage", &self.color_space_usage);
+        formatter.field(
+            "embedded_timecode_override",
+            &self.embedded_timecode_override,
+        );
         formatter.field("hdr10_metadata", &self.hdr10_metadata);
         formatter.field("pid", &self.pid);
         formatter.field("program_number", &self.program_number);
@@ -46938,6 +47037,8 @@ pub mod video_selector {
         pub(crate) alpha_behavior: std::option::Option<crate::model::AlphaBehavior>,
         pub(crate) color_space: std::option::Option<crate::model::ColorSpace>,
         pub(crate) color_space_usage: std::option::Option<crate::model::ColorSpaceUsage>,
+        pub(crate) embedded_timecode_override:
+            std::option::Option<crate::model::EmbeddedTimecodeOverride>,
         pub(crate) hdr10_metadata: std::option::Option<crate::model::Hdr10Metadata>,
         pub(crate) pid: std::option::Option<i32>,
         pub(crate) program_number: std::option::Option<i32>,
@@ -46982,6 +47083,22 @@ pub mod video_selector {
             input: std::option::Option<crate::model::ColorSpaceUsage>,
         ) -> Self {
             self.color_space_usage = input;
+            self
+        }
+        /// Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM) when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata (MDPM). When you do, we recommend you also set Timecode source (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override blank, or set to None (NONE), when your input does not contain MDPM timecode.
+        pub fn embedded_timecode_override(
+            mut self,
+            input: crate::model::EmbeddedTimecodeOverride,
+        ) -> Self {
+            self.embedded_timecode_override = Some(input);
+            self
+        }
+        /// Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM) when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata (MDPM). When you do, we recommend you also set Timecode source (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override blank, or set to None (NONE), when your input does not contain MDPM timecode.
+        pub fn set_embedded_timecode_override(
+            mut self,
+            input: std::option::Option<crate::model::EmbeddedTimecodeOverride>,
+        ) -> Self {
+            self.embedded_timecode_override = input;
             self
         }
         /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage (ColorSpaceUsage). To specify whether color metadata is included in an output, set Color metadata (ColorMetadata). For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
@@ -47046,6 +47163,7 @@ pub mod video_selector {
                 alpha_behavior: self.alpha_behavior,
                 color_space: self.color_space,
                 color_space_usage: self.color_space_usage,
+                embedded_timecode_override: self.embedded_timecode_override,
                 hdr10_metadata: self.hdr10_metadata,
                 pid: self.pid.unwrap_or_default(),
                 program_number: self.program_number.unwrap_or_default(),
@@ -47189,6 +47307,61 @@ impl InputRotate {
     }
 }
 impl AsRef<str> for InputRotate {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM) when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata (MDPM). When you do, we recommend you also set Timecode source (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override blank, or set to None (NONE), when your input does not contain MDPM timecode.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EmbeddedTimecodeOverride {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    UseMdpm,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EmbeddedTimecodeOverride {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => EmbeddedTimecodeOverride::None,
+            "USE_MDPM" => EmbeddedTimecodeOverride::UseMdpm,
+            other => EmbeddedTimecodeOverride::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EmbeddedTimecodeOverride {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EmbeddedTimecodeOverride::from(s))
+    }
+}
+impl EmbeddedTimecodeOverride {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EmbeddedTimecodeOverride::None => "NONE",
+            EmbeddedTimecodeOverride::UseMdpm => "USE_MDPM",
+            EmbeddedTimecodeOverride::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "USE_MDPM"]
+    }
+}
+impl AsRef<str> for EmbeddedTimecodeOverride {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -51866,7 +52039,7 @@ pub struct JobSettings {
     pub output_groups: std::option::Option<std::vec::Vec<crate::model::OutputGroup>>,
     /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
     pub timecode_config: std::option::Option<crate::model::TimecodeConfig>,
-    /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+    /// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
     pub timed_metadata_insertion: std::option::Option<crate::model::TimedMetadataInsertion>,
 }
 impl JobSettings {
@@ -51920,7 +52093,7 @@ impl JobSettings {
     pub fn timecode_config(&self) -> std::option::Option<&crate::model::TimecodeConfig> {
         self.timecode_config.as_ref()
     }
-    /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+    /// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
     pub fn timed_metadata_insertion(
         &self,
     ) -> std::option::Option<&crate::model::TimedMetadataInsertion> {
@@ -52122,7 +52295,7 @@ pub mod job_settings {
             self.timecode_config = input;
             self
         }
-        /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+        /// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
         pub fn timed_metadata_insertion(
             mut self,
             input: crate::model::TimedMetadataInsertion,
@@ -52130,7 +52303,7 @@ pub mod job_settings {
             self.timed_metadata_insertion = Some(input);
             self
         }
-        /// Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+        /// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
         pub fn set_timed_metadata_insertion(
             mut self,
             input: std::option::Option<crate::model::TimedMetadataInsertion>,

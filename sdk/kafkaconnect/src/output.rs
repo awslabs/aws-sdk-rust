@@ -493,6 +493,8 @@ pub struct DescribeCustomPluginOutput {
     pub latest_revision: std::option::Option<crate::model::CustomPluginRevisionSummary>,
     /// <p>The name of the custom plugin.</p>
     pub name: std::option::Option<std::string::String>,
+    /// <p>Details about the state of a custom plugin.</p>
+    pub state_description: std::option::Option<crate::model::StateDescription>,
 }
 impl DescribeCustomPluginOutput {
     /// <p>The time that the custom plugin was created.</p>
@@ -521,6 +523,10 @@ impl DescribeCustomPluginOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>Details about the state of a custom plugin.</p>
+    pub fn state_description(&self) -> std::option::Option<&crate::model::StateDescription> {
+        self.state_description.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeCustomPluginOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -531,6 +537,7 @@ impl std::fmt::Debug for DescribeCustomPluginOutput {
         formatter.field("description", &self.description);
         formatter.field("latest_revision", &self.latest_revision);
         formatter.field("name", &self.name);
+        formatter.field("state_description", &self.state_description);
         formatter.finish()
     }
 }
@@ -546,6 +553,7 @@ pub mod describe_custom_plugin_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) latest_revision: std::option::Option<crate::model::CustomPluginRevisionSummary>,
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) state_description: std::option::Option<crate::model::StateDescription>,
     }
     impl Builder {
         /// <p>The time that the custom plugin was created.</p>
@@ -620,6 +628,19 @@ pub mod describe_custom_plugin_output {
             self.name = input;
             self
         }
+        /// <p>Details about the state of a custom plugin.</p>
+        pub fn state_description(mut self, input: crate::model::StateDescription) -> Self {
+            self.state_description = Some(input);
+            self
+        }
+        /// <p>Details about the state of a custom plugin.</p>
+        pub fn set_state_description(
+            mut self,
+            input: std::option::Option<crate::model::StateDescription>,
+        ) -> Self {
+            self.state_description = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeCustomPluginOutput`](crate::output::DescribeCustomPluginOutput)
         pub fn build(self) -> crate::output::DescribeCustomPluginOutput {
             crate::output::DescribeCustomPluginOutput {
@@ -629,6 +650,7 @@ pub mod describe_custom_plugin_output {
                 description: self.description,
                 latest_revision: self.latest_revision,
                 name: self.name,
+                state_description: self.state_description,
             }
         }
     }
@@ -679,6 +701,8 @@ pub struct DescribeConnectorOutput {
     pub service_execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies which worker configuration was used for the connector.</p>
     pub worker_configuration: std::option::Option<crate::model::WorkerConfigurationDescription>,
+    /// <p>Details about the state of a connector.</p>
+    pub state_description: std::option::Option<crate::model::StateDescription>,
 }
 impl DescribeConnectorOutput {
     /// <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
@@ -754,13 +778,20 @@ impl DescribeConnectorOutput {
     ) -> std::option::Option<&crate::model::WorkerConfigurationDescription> {
         self.worker_configuration.as_ref()
     }
+    /// <p>Details about the state of a connector.</p>
+    pub fn state_description(&self) -> std::option::Option<&crate::model::StateDescription> {
+        self.state_description.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeConnectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectorOutput");
         formatter.field("capacity", &self.capacity);
         formatter.field("connector_arn", &self.connector_arn);
-        formatter.field("connector_configuration", &self.connector_configuration);
+        formatter.field(
+            "connector_configuration",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("connector_description", &self.connector_description);
         formatter.field("connector_name", &self.connector_name);
         formatter.field("connector_state", &self.connector_state);
@@ -783,6 +814,7 @@ impl std::fmt::Debug for DescribeConnectorOutput {
             &self.service_execution_role_arn,
         );
         formatter.field("worker_configuration", &self.worker_configuration);
+        formatter.field("state_description", &self.state_description);
         formatter.finish()
     }
 }
@@ -813,6 +845,7 @@ pub mod describe_connector_output {
         pub(crate) service_execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) worker_configuration:
             std::option::Option<crate::model::WorkerConfigurationDescription>,
+        pub(crate) state_description: std::option::Option<crate::model::StateDescription>,
     }
     impl Builder {
         /// <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
@@ -1050,6 +1083,19 @@ pub mod describe_connector_output {
             self.worker_configuration = input;
             self
         }
+        /// <p>Details about the state of a connector.</p>
+        pub fn state_description(mut self, input: crate::model::StateDescription) -> Self {
+            self.state_description = Some(input);
+            self
+        }
+        /// <p>Details about the state of a connector.</p>
+        pub fn set_state_description(
+            mut self,
+            input: std::option::Option<crate::model::StateDescription>,
+        ) -> Self {
+            self.state_description = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
         pub fn build(self) -> crate::output::DescribeConnectorOutput {
             crate::output::DescribeConnectorOutput {
@@ -1069,6 +1115,7 @@ pub mod describe_connector_output {
                 plugins: self.plugins,
                 service_execution_role_arn: self.service_execution_role_arn,
                 worker_configuration: self.worker_configuration,
+                state_description: self.state_description,
             }
         }
     }
@@ -1077,6 +1124,85 @@ impl DescribeConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
     pub fn builder() -> crate::output::describe_connector_output::Builder {
         crate::output::describe_connector_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCustomPluginOutput {
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
+    pub custom_plugin_arn: std::option::Option<std::string::String>,
+    /// <p>The state of the custom plugin.</p>
+    pub custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
+}
+impl DeleteCustomPluginOutput {
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
+    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+        self.custom_plugin_arn.as_deref()
+    }
+    /// <p>The state of the custom plugin.</p>
+    pub fn custom_plugin_state(&self) -> std::option::Option<&crate::model::CustomPluginState> {
+        self.custom_plugin_state.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteCustomPluginOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCustomPluginOutput");
+        formatter.field("custom_plugin_arn", &self.custom_plugin_arn);
+        formatter.field("custom_plugin_state", &self.custom_plugin_state);
+        formatter.finish()
+    }
+}
+/// See [`DeleteCustomPluginOutput`](crate::output::DeleteCustomPluginOutput)
+pub mod delete_custom_plugin_output {
+    /// A builder for [`DeleteCustomPluginOutput`](crate::output::DeleteCustomPluginOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
+        pub(crate) custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
+        pub fn custom_plugin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_plugin_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
+        pub fn set_custom_plugin_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_plugin_arn = input;
+            self
+        }
+        /// <p>The state of the custom plugin.</p>
+        pub fn custom_plugin_state(mut self, input: crate::model::CustomPluginState) -> Self {
+            self.custom_plugin_state = Some(input);
+            self
+        }
+        /// <p>The state of the custom plugin.</p>
+        pub fn set_custom_plugin_state(
+            mut self,
+            input: std::option::Option<crate::model::CustomPluginState>,
+        ) -> Self {
+            self.custom_plugin_state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCustomPluginOutput`](crate::output::DeleteCustomPluginOutput)
+        pub fn build(self) -> crate::output::DeleteCustomPluginOutput {
+            crate::output::DeleteCustomPluginOutput {
+                custom_plugin_arn: self.custom_plugin_arn,
+                custom_plugin_state: self.custom_plugin_state,
+            }
+        }
+    }
+}
+impl DeleteCustomPluginOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomPluginOutput`](crate::output::DeleteCustomPluginOutput)
+    pub fn builder() -> crate::output::delete_custom_plugin_output::Builder {
+        crate::output::delete_custom_plugin_output::Builder::default()
     }
 }
 

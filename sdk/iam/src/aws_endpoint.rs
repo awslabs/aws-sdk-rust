@@ -24,6 +24,28 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "aws-global-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iam-fips.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "iam",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iam.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "iam-fips",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "iam-fips.amazonaws.com",
@@ -124,6 +146,28 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     "aws-us-gov-global",
                     aws_endpoint::partition::endpoint::Metadata {
                         uri_template: "iam.us-gov.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "aws-us-gov-global-fips",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "iam.us-gov.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "iam-govcloud",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "iam.{region}.amazonaws.com",
                         protocol: aws_endpoint::partition::endpoint::Protocol::Https,
                         signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                         credential_scope: aws_endpoint::CredentialScope::builder()

@@ -155,23 +155,29 @@ impl Client {
         fluent_builders::ExchangeCodeForToken::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ExportComponents`](crate::client::fluent_builders::ExportComponents) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ExportComponents::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ExportComponents::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ExportComponents::set_app_id): <p>The unique ID of the Amplify app to export components to.</p>
     ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::ExportComponents::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::ExportComponents::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ExportComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ExportComponents::set_next_token): <p>The token to request the next page of results.</p>
     /// - On success, responds with [`ExportComponentsOutput`](crate::output::ExportComponentsOutput) with field(s):
     ///   - [`entities(Option<Vec<Component>>)`](crate::output::ExportComponentsOutput::entities): <p>Represents the configuration of the exported components.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ExportComponentsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ExportComponentsError>`](crate::error::ExportComponentsError)
     pub fn export_components(&self) -> fluent_builders::ExportComponents {
         fluent_builders::ExportComponents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ExportThemes`](crate::client::fluent_builders::ExportThemes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ExportThemes::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ExportThemes::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ExportThemes::set_app_id): <p>The unique ID of the Amplify app to export the themes to.</p>
     ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::ExportThemes::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::ExportThemes::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ExportThemes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ExportThemes::set_next_token): <p>The token to request the next page of results.</p>
     /// - On success, responds with [`ExportThemesOutput`](crate::output::ExportThemesOutput) with field(s):
     ///   - [`entities(Option<Vec<Theme>>)`](crate::output::ExportThemesOutput::entities): <p>Represents the configuration of the exported themes.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ExportThemesOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ExportThemesError>`](crate::error::ExportThemesError)
     pub fn export_themes(&self) -> fluent_builders::ExportThemes {
         fluent_builders::ExportThemes::new(self.handle.clone())
@@ -720,6 +726,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ExportComponentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ExportComponentsPaginator {
+            crate::paginator::ExportComponentsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique ID of the Amplify app to export components to.</p>
         pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_id(input.into());
@@ -741,6 +753,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -786,6 +808,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ExportThemesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ExportThemesPaginator {
+            crate::paginator::ExportThemesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique ID of the Amplify app to export the themes to.</p>
         pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_id(input.into());
@@ -807,6 +835,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }

@@ -220,7 +220,7 @@ pub mod create_replication_configuration_template_input {
         ///
         /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
         ///
-        /// <p>Request to configure the Replication Server Secuirity group ID during Replication Settings template creation.</p>
+        /// <p>Request to configure the Replication Server Security group ID during Replication Settings template creation.</p>
         pub fn replication_servers_security_groups_i_ds(
             mut self,
             input: impl Into<std::string::String>,
@@ -232,7 +232,7 @@ pub mod create_replication_configuration_template_input {
             self.replication_servers_security_groups_i_ds = Some(v);
             self
         }
-        /// <p>Request to configure the Replication Server Secuirity group ID during Replication Settings template creation.</p>
+        /// <p>Request to configure the Replication Server Security group ID during Replication Settings template creation.</p>
         pub fn set_replication_servers_security_groups_i_ds(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -269,7 +269,7 @@ pub mod create_replication_configuration_template_input {
             self.use_dedicated_replication_server = input;
             self
         }
-        /// <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
+        /// <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
         pub fn default_large_staging_disk_type(
             mut self,
             input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
@@ -277,7 +277,7 @@ pub mod create_replication_configuration_template_input {
             self.default_large_staging_disk_type = Some(input);
             self
         }
-        /// <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
+        /// <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
         pub fn set_default_large_staging_disk_type(
             mut self,
             input: std::option::Option<
@@ -287,7 +287,7 @@ pub mod create_replication_configuration_template_input {
             self.default_large_staging_disk_type = input;
             self
         }
-        /// <p>Request to configure EBS enryption during Replication Settings template creation.</p>
+        /// <p>Request to configure EBS encryption during Replication Settings template creation.</p>
         pub fn ebs_encryption(
             mut self,
             input: crate::model::ReplicationConfigurationEbsEncryption,
@@ -295,7 +295,7 @@ pub mod create_replication_configuration_template_input {
             self.ebs_encryption = Some(input);
             self
         }
-        /// <p>Request to configure EBS enryption during Replication Settings template creation.</p>
+        /// <p>Request to configure EBS encryption during Replication Settings template creation.</p>
         pub fn set_ebs_encryption(
             mut self,
             input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
@@ -303,12 +303,12 @@ pub mod create_replication_configuration_template_input {
             self.ebs_encryption = input;
             self
         }
-        /// <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
+        /// <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
         pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.ebs_encryption_key_arn = Some(input.into());
             self
         }
-        /// <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
+        /// <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
         pub fn set_ebs_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -356,7 +356,7 @@ pub mod create_replication_configuration_template_input {
         ///
         /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
         ///
-        /// <p>Request to configure Staiging Area tags during Replication Settings template creation.</p>
+        /// <p>Request to configure Staging Area tags during Replication Settings template creation.</p>
         pub fn staging_area_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -367,7 +367,7 @@ pub mod create_replication_configuration_template_input {
             self.staging_area_tags = Some(hash_map);
             self
         }
-        /// <p>Request to configure Staiging Area tags during Replication Settings template creation.</p>
+        /// <p>Request to configure Staging Area tags during Replication Settings template creation.</p>
         pub fn set_staging_area_tags(
             mut self,
             input: std::option::Option<
@@ -1280,22 +1280,22 @@ pub mod describe_jobs_input {
             self.filters = input;
             self
         }
-        /// <p>Request to describe Job log by max results.</p>
+        /// <p>Request to describe job log items by max results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Request to describe Job log by max results.</p>
+        /// <p>Request to describe job log items by max results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Request to describe Job logby next token.</p>
+        /// <p>Request to describe job log items by next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Request to describe Job logby next token.</p>
+        /// <p>Request to describe job log items by next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2070,12 +2070,12 @@ pub mod finalize_cutover_input {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Request to finalize Cutover by Soure Server ID.</p>
+        /// <p>Request to finalize Cutover by Source Server ID.</p>
         pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_server_id = Some(input.into());
             self
         }
-        /// <p>Request to finalize Cutover by Soure Server ID.</p>
+        /// <p>Request to finalize Cutover by Source Server ID.</p>
         pub fn set_source_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2352,12 +2352,12 @@ pub mod get_replication_configuration_input {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Request to get Replication Configuaration by Source Server ID.</p>
+        /// <p>Request to get Replication Configuration by Source Server ID.</p>
         pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_server_id = Some(input.into());
             self
         }
-        /// <p>Request to get Replication Configuaration by Source Server ID.</p>
+        /// <p>Request to get Replication Configuration by Source Server ID.</p>
         pub fn set_source_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4043,6 +4043,7 @@ pub mod update_launch_configuration_input {
         pub(crate) copy_private_ip: std::option::Option<bool>,
         pub(crate) copy_tags: std::option::Option<bool>,
         pub(crate) licensing: std::option::Option<crate::model::Licensing>,
+        pub(crate) boot_mode: std::option::Option<crate::model::BootMode>,
     }
     impl Builder {
         /// <p>Update Launch configuration by Source Server ID request.</p>
@@ -4130,6 +4131,16 @@ pub mod update_launch_configuration_input {
             self.licensing = input;
             self
         }
+        /// <p>Update Launch configuration boot mode request.</p>
+        pub fn boot_mode(mut self, input: crate::model::BootMode) -> Self {
+            self.boot_mode = Some(input);
+            self
+        }
+        /// <p>Update Launch configuration boot mode request.</p>
+        pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
+            self.boot_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLaunchConfigurationInput`](crate::input::UpdateLaunchConfigurationInput)
         pub fn build(
             self,
@@ -4146,6 +4157,7 @@ pub mod update_launch_configuration_input {
                 copy_private_ip: self.copy_private_ip,
                 copy_tags: self.copy_tags,
                 licensing: self.licensing,
+                boot_mode: self.boot_mode,
             })
         }
     }
@@ -5439,6 +5451,8 @@ pub struct UpdateLaunchConfigurationInput {
     pub copy_tags: std::option::Option<bool>,
     /// <p>Update Launch configuration licensing request.</p>
     pub licensing: std::option::Option<crate::model::Licensing>,
+    /// <p>Update Launch configuration boot mode request.</p>
+    pub boot_mode: std::option::Option<crate::model::BootMode>,
 }
 impl UpdateLaunchConfigurationInput {
     /// <p>Update Launch configuration by Source Server ID request.</p>
@@ -5471,6 +5485,10 @@ impl UpdateLaunchConfigurationInput {
     pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
         self.licensing.as_ref()
     }
+    /// <p>Update Launch configuration boot mode request.</p>
+    pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
+        self.boot_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateLaunchConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5485,6 +5503,7 @@ impl std::fmt::Debug for UpdateLaunchConfigurationInput {
         formatter.field("copy_private_ip", &self.copy_private_ip);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
+        formatter.field("boot_mode", &self.boot_mode);
         formatter.finish()
     }
 }
@@ -5556,11 +5575,11 @@ impl std::fmt::Debug for MarkAsArchivedInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReplicationConfigurationInput {
-    /// <p>Request to get Replication Configuaration by Source Server ID.</p>
+    /// <p>Request to get Replication Configuration by Source Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl GetReplicationConfigurationInput {
-    /// <p>Request to get Replication Configuaration by Source Server ID.</p>
+    /// <p>Request to get Replication Configuration by Source Server ID.</p>
     pub fn source_server_id(&self) -> std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
@@ -5598,11 +5617,11 @@ impl std::fmt::Debug for GetLaunchConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FinalizeCutoverInput {
-    /// <p>Request to finalize Cutover by Soure Server ID.</p>
+    /// <p>Request to finalize Cutover by Source Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl FinalizeCutoverInput {
-    /// <p>Request to finalize Cutover by Soure Server ID.</p>
+    /// <p>Request to finalize Cutover by Source Server ID.</p>
     pub fn source_server_id(&self) -> std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
@@ -5870,19 +5889,19 @@ pub struct CreateReplicationConfigurationTemplateInput {
     pub staging_area_subnet_id: std::option::Option<std::string::String>,
     /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
     pub associate_default_security_group: std::option::Option<bool>,
-    /// <p>Request to configure the Replication Server Secuirity group ID during Replication Settings template creation.</p>
+    /// <p>Request to configure the Replication Server Security group ID during Replication Settings template creation.</p>
     pub replication_servers_security_groups_i_ds:
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
     pub use_dedicated_replication_server: std::option::Option<bool>,
-    /// <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
+    /// <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
-    /// <p>Request to configure EBS enryption during Replication Settings template creation.</p>
+    /// <p>Request to configure EBS encryption during Replication Settings template creation.</p>
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
-    /// <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
+    /// <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
     pub bandwidth_throttling: i64,
@@ -5891,7 +5910,7 @@ pub struct CreateReplicationConfigurationTemplateInput {
         std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Request to create Public IP during Replication Settings template creation.</p>
     pub create_public_ip: std::option::Option<bool>,
-    /// <p>Request to configure Staiging Area tags during Replication Settings template creation.</p>
+    /// <p>Request to configure Staging Area tags during Replication Settings template creation.</p>
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Request to configure tags during Replication Settings template creation.</p>
@@ -5907,7 +5926,7 @@ impl CreateReplicationConfigurationTemplateInput {
     pub fn associate_default_security_group(&self) -> std::option::Option<bool> {
         self.associate_default_security_group
     }
-    /// <p>Request to configure the Replication Server Secuirity group ID during Replication Settings template creation.</p>
+    /// <p>Request to configure the Replication Server Security group ID during Replication Settings template creation.</p>
     pub fn replication_servers_security_groups_i_ds(
         &self,
     ) -> std::option::Option<&[std::string::String]> {
@@ -5921,20 +5940,20 @@ impl CreateReplicationConfigurationTemplateInput {
     pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
         self.use_dedicated_replication_server
     }
-    /// <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
+    /// <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
     pub fn default_large_staging_disk_type(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
     {
         self.default_large_staging_disk_type.as_ref()
     }
-    /// <p>Request to configure EBS enryption during Replication Settings template creation.</p>
+    /// <p>Request to configure EBS encryption during Replication Settings template creation.</p>
     pub fn ebs_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
         self.ebs_encryption.as_ref()
     }
-    /// <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
+    /// <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
     pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
         self.ebs_encryption_key_arn.as_deref()
     }
@@ -5952,7 +5971,7 @@ impl CreateReplicationConfigurationTemplateInput {
     pub fn create_public_ip(&self) -> std::option::Option<bool> {
         self.create_public_ip
     }
-    /// <p>Request to configure Staiging Area tags during Replication Settings template creation.</p>
+    /// <p>Request to configure Staging Area tags during Replication Settings template creation.</p>
     pub fn staging_area_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -6213,9 +6232,9 @@ impl std::fmt::Debug for DescribeJobLogItemsInput {
 pub struct DescribeJobsInput {
     /// <p>Request to describe Job log filters.</p>
     pub filters: std::option::Option<crate::model::DescribeJobsRequestFilters>,
-    /// <p>Request to describe Job log by max results.</p>
+    /// <p>Request to describe job log items by max results.</p>
     pub max_results: i32,
-    /// <p>Request to describe Job logby next token.</p>
+    /// <p>Request to describe job log items by next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobsInput {
@@ -6223,11 +6242,11 @@ impl DescribeJobsInput {
     pub fn filters(&self) -> std::option::Option<&crate::model::DescribeJobsRequestFilters> {
         self.filters.as_ref()
     }
-    /// <p>Request to describe Job log by max results.</p>
+    /// <p>Request to describe job log items by max results.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>Request to describe Job logby next token.</p>
+    /// <p>Request to describe job log items by next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

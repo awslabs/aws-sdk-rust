@@ -39,6 +39,16 @@ pub fn serialize_operation_crate_operation_create_revision(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_revoke_revision(
+    input: &crate::input::RevokeRevisionInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_revoke_revision_input(&mut object, input)?;
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_payload_send_api_asset_input(
     payload: std::option::Option<std::string::String>,
 ) -> Result<std::vec::Vec<u8>, aws_smithy_http::operation::BuildError> {

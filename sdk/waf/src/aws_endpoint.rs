@@ -13,6 +13,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
             .partition_endpoint("aws-global")
             .regionalized(aws_endpoint::partition::Regionalized::NotRegionalized)
             .endpoint(
+                "aws",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "waf.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "aws-fips",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "waf-fips.amazonaws.com",
@@ -27,6 +38,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 "aws-global",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "waf.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "aws-global-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "waf-fips.amazonaws.com",
                     protocol: aws_endpoint::partition::endpoint::Protocol::Https,
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()

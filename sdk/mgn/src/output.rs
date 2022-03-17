@@ -829,42 +829,44 @@ impl UpdateReplicationConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchConfigurationOutput {
-    /// <p>Configure launch configuration Source Server ID.</p>
+    /// <p>Launch configuration Source Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
-    /// <p>Configure launch configuration name.</p>
+    /// <p>Launch configuration name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Configure EC2 lauch configuration template ID.</p>
+    /// <p>Launch configuration EC2 Launch template ID.</p>
     pub ec2_launch_template_id: std::option::Option<std::string::String>,
-    /// <p>Configure launch dispostion for launch configuration.</p>
+    /// <p>Launch disposition for launch configuration.</p>
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
-    /// <p>Configure launch configuration Target instance type right sizing method.</p>
+    /// <p>Launch configuration Target instance type right sizing method.</p>
     pub target_instance_type_right_sizing_method:
         std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy Private IP during Launch Configuration.</p>
     pub copy_private_ip: std::option::Option<bool>,
     /// <p>Copy Tags during Launch Configuration.</p>
     pub copy_tags: std::option::Option<bool>,
-    /// <p>Configure launch configuration OS licensing.</p>
+    /// <p>Launch configuration OS licensing.</p>
     pub licensing: std::option::Option<crate::model::Licensing>,
+    /// <p>Launch configuration boot mode.</p>
+    pub boot_mode: std::option::Option<crate::model::BootMode>,
 }
 impl UpdateLaunchConfigurationOutput {
-    /// <p>Configure launch configuration Source Server ID.</p>
+    /// <p>Launch configuration Source Server ID.</p>
     pub fn source_server_id(&self) -> std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
-    /// <p>Configure launch configuration name.</p>
+    /// <p>Launch configuration name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Configure EC2 lauch configuration template ID.</p>
+    /// <p>Launch configuration EC2 Launch template ID.</p>
     pub fn ec2_launch_template_id(&self) -> std::option::Option<&str> {
         self.ec2_launch_template_id.as_deref()
     }
-    /// <p>Configure launch dispostion for launch configuration.</p>
+    /// <p>Launch disposition for launch configuration.</p>
     pub fn launch_disposition(&self) -> std::option::Option<&crate::model::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
-    /// <p>Configure launch configuration Target instance type right sizing method.</p>
+    /// <p>Launch configuration Target instance type right sizing method.</p>
     pub fn target_instance_type_right_sizing_method(
         &self,
     ) -> std::option::Option<&crate::model::TargetInstanceTypeRightSizingMethod> {
@@ -878,9 +880,13 @@ impl UpdateLaunchConfigurationOutput {
     pub fn copy_tags(&self) -> std::option::Option<bool> {
         self.copy_tags
     }
-    /// <p>Configure launch configuration OS licensing.</p>
+    /// <p>Launch configuration OS licensing.</p>
     pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
         self.licensing.as_ref()
+    }
+    /// <p>Launch configuration boot mode.</p>
+    pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
+        self.boot_mode.as_ref()
     }
 }
 impl std::fmt::Debug for UpdateLaunchConfigurationOutput {
@@ -897,6 +903,7 @@ impl std::fmt::Debug for UpdateLaunchConfigurationOutput {
         formatter.field("copy_private_ip", &self.copy_private_ip);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
+        formatter.field("boot_mode", &self.boot_mode);
         formatter.finish()
     }
 }
@@ -915,14 +922,15 @@ pub mod update_launch_configuration_output {
         pub(crate) copy_private_ip: std::option::Option<bool>,
         pub(crate) copy_tags: std::option::Option<bool>,
         pub(crate) licensing: std::option::Option<crate::model::Licensing>,
+        pub(crate) boot_mode: std::option::Option<crate::model::BootMode>,
     }
     impl Builder {
-        /// <p>Configure launch configuration Source Server ID.</p>
+        /// <p>Launch configuration Source Server ID.</p>
         pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_server_id = Some(input.into());
             self
         }
-        /// <p>Configure launch configuration Source Server ID.</p>
+        /// <p>Launch configuration Source Server ID.</p>
         pub fn set_source_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -930,22 +938,22 @@ pub mod update_launch_configuration_output {
             self.source_server_id = input;
             self
         }
-        /// <p>Configure launch configuration name.</p>
+        /// <p>Launch configuration name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Configure launch configuration name.</p>
+        /// <p>Launch configuration name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Configure EC2 lauch configuration template ID.</p>
+        /// <p>Launch configuration EC2 Launch template ID.</p>
         pub fn ec2_launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ec2_launch_template_id = Some(input.into());
             self
         }
-        /// <p>Configure EC2 lauch configuration template ID.</p>
+        /// <p>Launch configuration EC2 Launch template ID.</p>
         pub fn set_ec2_launch_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -953,12 +961,12 @@ pub mod update_launch_configuration_output {
             self.ec2_launch_template_id = input;
             self
         }
-        /// <p>Configure launch dispostion for launch configuration.</p>
+        /// <p>Launch disposition for launch configuration.</p>
         pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
             self.launch_disposition = Some(input);
             self
         }
-        /// <p>Configure launch dispostion for launch configuration.</p>
+        /// <p>Launch disposition for launch configuration.</p>
         pub fn set_launch_disposition(
             mut self,
             input: std::option::Option<crate::model::LaunchDisposition>,
@@ -966,7 +974,7 @@ pub mod update_launch_configuration_output {
             self.launch_disposition = input;
             self
         }
-        /// <p>Configure launch configuration Target instance type right sizing method.</p>
+        /// <p>Launch configuration Target instance type right sizing method.</p>
         pub fn target_instance_type_right_sizing_method(
             mut self,
             input: crate::model::TargetInstanceTypeRightSizingMethod,
@@ -974,7 +982,7 @@ pub mod update_launch_configuration_output {
             self.target_instance_type_right_sizing_method = Some(input);
             self
         }
-        /// <p>Configure launch configuration Target instance type right sizing method.</p>
+        /// <p>Launch configuration Target instance type right sizing method.</p>
         pub fn set_target_instance_type_right_sizing_method(
             mut self,
             input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
@@ -1002,17 +1010,27 @@ pub mod update_launch_configuration_output {
             self.copy_tags = input;
             self
         }
-        /// <p>Configure launch configuration OS licensing.</p>
+        /// <p>Launch configuration OS licensing.</p>
         pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
             self.licensing = Some(input);
             self
         }
-        /// <p>Configure launch configuration OS licensing.</p>
+        /// <p>Launch configuration OS licensing.</p>
         pub fn set_licensing(
             mut self,
             input: std::option::Option<crate::model::Licensing>,
         ) -> Self {
             self.licensing = input;
+            self
+        }
+        /// <p>Launch configuration boot mode.</p>
+        pub fn boot_mode(mut self, input: crate::model::BootMode) -> Self {
+            self.boot_mode = Some(input);
+            self
+        }
+        /// <p>Launch configuration boot mode.</p>
+        pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
+            self.boot_mode = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput)
@@ -1027,6 +1045,7 @@ pub mod update_launch_configuration_output {
                 copy_private_ip: self.copy_private_ip,
                 copy_tags: self.copy_tags,
                 licensing: self.licensing,
+                boot_mode: self.boot_mode,
             }
         }
     }
@@ -2290,42 +2309,44 @@ impl GetReplicationConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLaunchConfigurationOutput {
-    /// <p>Configure launch configuration Source Server ID.</p>
+    /// <p>Launch configuration Source Server ID.</p>
     pub source_server_id: std::option::Option<std::string::String>,
-    /// <p>Configure launch configuration name.</p>
+    /// <p>Launch configuration name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Configure EC2 lauch configuration template ID.</p>
+    /// <p>Launch configuration EC2 Launch template ID.</p>
     pub ec2_launch_template_id: std::option::Option<std::string::String>,
-    /// <p>Configure launch dispostion for launch configuration.</p>
+    /// <p>Launch disposition for launch configuration.</p>
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
-    /// <p>Configure launch configuration Target instance type right sizing method.</p>
+    /// <p>Launch configuration Target instance type right sizing method.</p>
     pub target_instance_type_right_sizing_method:
         std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy Private IP during Launch Configuration.</p>
     pub copy_private_ip: std::option::Option<bool>,
     /// <p>Copy Tags during Launch Configuration.</p>
     pub copy_tags: std::option::Option<bool>,
-    /// <p>Configure launch configuration OS licensing.</p>
+    /// <p>Launch configuration OS licensing.</p>
     pub licensing: std::option::Option<crate::model::Licensing>,
+    /// <p>Launch configuration boot mode.</p>
+    pub boot_mode: std::option::Option<crate::model::BootMode>,
 }
 impl GetLaunchConfigurationOutput {
-    /// <p>Configure launch configuration Source Server ID.</p>
+    /// <p>Launch configuration Source Server ID.</p>
     pub fn source_server_id(&self) -> std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
-    /// <p>Configure launch configuration name.</p>
+    /// <p>Launch configuration name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Configure EC2 lauch configuration template ID.</p>
+    /// <p>Launch configuration EC2 Launch template ID.</p>
     pub fn ec2_launch_template_id(&self) -> std::option::Option<&str> {
         self.ec2_launch_template_id.as_deref()
     }
-    /// <p>Configure launch dispostion for launch configuration.</p>
+    /// <p>Launch disposition for launch configuration.</p>
     pub fn launch_disposition(&self) -> std::option::Option<&crate::model::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
-    /// <p>Configure launch configuration Target instance type right sizing method.</p>
+    /// <p>Launch configuration Target instance type right sizing method.</p>
     pub fn target_instance_type_right_sizing_method(
         &self,
     ) -> std::option::Option<&crate::model::TargetInstanceTypeRightSizingMethod> {
@@ -2339,9 +2360,13 @@ impl GetLaunchConfigurationOutput {
     pub fn copy_tags(&self) -> std::option::Option<bool> {
         self.copy_tags
     }
-    /// <p>Configure launch configuration OS licensing.</p>
+    /// <p>Launch configuration OS licensing.</p>
     pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
         self.licensing.as_ref()
+    }
+    /// <p>Launch configuration boot mode.</p>
+    pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
+        self.boot_mode.as_ref()
     }
 }
 impl std::fmt::Debug for GetLaunchConfigurationOutput {
@@ -2358,6 +2383,7 @@ impl std::fmt::Debug for GetLaunchConfigurationOutput {
         formatter.field("copy_private_ip", &self.copy_private_ip);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
+        formatter.field("boot_mode", &self.boot_mode);
         formatter.finish()
     }
 }
@@ -2376,14 +2402,15 @@ pub mod get_launch_configuration_output {
         pub(crate) copy_private_ip: std::option::Option<bool>,
         pub(crate) copy_tags: std::option::Option<bool>,
         pub(crate) licensing: std::option::Option<crate::model::Licensing>,
+        pub(crate) boot_mode: std::option::Option<crate::model::BootMode>,
     }
     impl Builder {
-        /// <p>Configure launch configuration Source Server ID.</p>
+        /// <p>Launch configuration Source Server ID.</p>
         pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_server_id = Some(input.into());
             self
         }
-        /// <p>Configure launch configuration Source Server ID.</p>
+        /// <p>Launch configuration Source Server ID.</p>
         pub fn set_source_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2391,22 +2418,22 @@ pub mod get_launch_configuration_output {
             self.source_server_id = input;
             self
         }
-        /// <p>Configure launch configuration name.</p>
+        /// <p>Launch configuration name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Configure launch configuration name.</p>
+        /// <p>Launch configuration name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Configure EC2 lauch configuration template ID.</p>
+        /// <p>Launch configuration EC2 Launch template ID.</p>
         pub fn ec2_launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ec2_launch_template_id = Some(input.into());
             self
         }
-        /// <p>Configure EC2 lauch configuration template ID.</p>
+        /// <p>Launch configuration EC2 Launch template ID.</p>
         pub fn set_ec2_launch_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2414,12 +2441,12 @@ pub mod get_launch_configuration_output {
             self.ec2_launch_template_id = input;
             self
         }
-        /// <p>Configure launch dispostion for launch configuration.</p>
+        /// <p>Launch disposition for launch configuration.</p>
         pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
             self.launch_disposition = Some(input);
             self
         }
-        /// <p>Configure launch dispostion for launch configuration.</p>
+        /// <p>Launch disposition for launch configuration.</p>
         pub fn set_launch_disposition(
             mut self,
             input: std::option::Option<crate::model::LaunchDisposition>,
@@ -2427,7 +2454,7 @@ pub mod get_launch_configuration_output {
             self.launch_disposition = input;
             self
         }
-        /// <p>Configure launch configuration Target instance type right sizing method.</p>
+        /// <p>Launch configuration Target instance type right sizing method.</p>
         pub fn target_instance_type_right_sizing_method(
             mut self,
             input: crate::model::TargetInstanceTypeRightSizingMethod,
@@ -2435,7 +2462,7 @@ pub mod get_launch_configuration_output {
             self.target_instance_type_right_sizing_method = Some(input);
             self
         }
-        /// <p>Configure launch configuration Target instance type right sizing method.</p>
+        /// <p>Launch configuration Target instance type right sizing method.</p>
         pub fn set_target_instance_type_right_sizing_method(
             mut self,
             input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
@@ -2463,17 +2490,27 @@ pub mod get_launch_configuration_output {
             self.copy_tags = input;
             self
         }
-        /// <p>Configure launch configuration OS licensing.</p>
+        /// <p>Launch configuration OS licensing.</p>
         pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
             self.licensing = Some(input);
             self
         }
-        /// <p>Configure launch configuration OS licensing.</p>
+        /// <p>Launch configuration OS licensing.</p>
         pub fn set_licensing(
             mut self,
             input: std::option::Option<crate::model::Licensing>,
         ) -> Self {
             self.licensing = input;
+            self
+        }
+        /// <p>Launch configuration boot mode.</p>
+        pub fn boot_mode(mut self, input: crate::model::BootMode) -> Self {
+            self.boot_mode = Some(input);
+            self
+        }
+        /// <p>Launch configuration boot mode.</p>
+        pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
+            self.boot_mode = input;
             self
         }
         /// Consumes the builder and constructs a [`GetLaunchConfigurationOutput`](crate::output::GetLaunchConfigurationOutput)
@@ -2488,6 +2525,7 @@ pub mod get_launch_configuration_output {
                 copy_private_ip: self.copy_private_ip,
                 copy_tags: self.copy_tags,
                 licensing: self.licensing,
+                boot_mode: self.boot_mode,
             }
         }
     }
@@ -3658,7 +3696,7 @@ impl DescribeReplicationConfigurationTemplatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationConfigurationTemplateOutput {
-    /// <p>Replication Configuration template template ID.</p>
+    /// <p>Replication Configuration template ID.</p>
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template ARN.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -3673,14 +3711,14 @@ pub struct CreateReplicationConfigurationTemplateOutput {
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
     pub use_dedicated_replication_server: std::option::Option<bool>,
-    /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+    /// <p>Replication Configuration template use default large Staging Disk type.</p>
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration template EBS encryption.</p>
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
-    /// <p>Replication Configuration template bandwidth throtting.</p>
+    /// <p>Replication Configuration template bandwidth throttling.</p>
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration template data plane routing.</p>
     pub data_plane_routing:
@@ -3695,7 +3733,7 @@ pub struct CreateReplicationConfigurationTemplateOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateReplicationConfigurationTemplateOutput {
-    /// <p>Replication Configuration template template ID.</p>
+    /// <p>Replication Configuration template ID.</p>
     pub fn replication_configuration_template_id(&self) -> std::option::Option<&str> {
         self.replication_configuration_template_id.as_deref()
     }
@@ -3725,7 +3763,7 @@ impl CreateReplicationConfigurationTemplateOutput {
     pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
         self.use_dedicated_replication_server
     }
-    /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+    /// <p>Replication Configuration template use default large Staging Disk type.</p>
     pub fn default_large_staging_disk_type(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
@@ -3742,7 +3780,7 @@ impl CreateReplicationConfigurationTemplateOutput {
     pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
         self.ebs_encryption_key_arn.as_deref()
     }
-    /// <p>Replication Configuration template bandwidth throtting.</p>
+    /// <p>Replication Configuration template bandwidth throttling.</p>
     pub fn bandwidth_throttling(&self) -> i64 {
         self.bandwidth_throttling
     }
@@ -3841,7 +3879,7 @@ pub mod create_replication_configuration_template_output {
         >,
     }
     impl Builder {
-        /// <p>Replication Configuration template template ID.</p>
+        /// <p>Replication Configuration template ID.</p>
         pub fn replication_configuration_template_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -3849,7 +3887,7 @@ pub mod create_replication_configuration_template_output {
             self.replication_configuration_template_id = Some(input.into());
             self
         }
-        /// <p>Replication Configuration template template ID.</p>
+        /// <p>Replication Configuration template ID.</p>
         pub fn set_replication_configuration_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3946,7 +3984,7 @@ pub mod create_replication_configuration_template_output {
             self.use_dedicated_replication_server = input;
             self
         }
-        /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+        /// <p>Replication Configuration template use default large Staging Disk type.</p>
         pub fn default_large_staging_disk_type(
             mut self,
             input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
@@ -3954,7 +3992,7 @@ pub mod create_replication_configuration_template_output {
             self.default_large_staging_disk_type = Some(input);
             self
         }
-        /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+        /// <p>Replication Configuration template use default large Staging Disk type.</p>
         pub fn set_default_large_staging_disk_type(
             mut self,
             input: std::option::Option<
@@ -3993,12 +4031,12 @@ pub mod create_replication_configuration_template_output {
             self.ebs_encryption_key_arn = input;
             self
         }
-        /// <p>Replication Configuration template bandwidth throtting.</p>
+        /// <p>Replication Configuration template bandwidth throttling.</p>
         pub fn bandwidth_throttling(mut self, input: i64) -> Self {
             self.bandwidth_throttling = Some(input);
             self
         }
-        /// <p>Replication Configuration template bandwidth throtting.</p>
+        /// <p>Replication Configuration template bandwidth throttling.</p>
         pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
             self.bandwidth_throttling = input;
             self
@@ -4143,7 +4181,7 @@ impl DeleteReplicationConfigurationTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationTemplateOutput {
-    /// <p>Replication Configuration template template ID.</p>
+    /// <p>Replication Configuration template ID.</p>
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template ARN.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -4158,14 +4196,14 @@ pub struct UpdateReplicationConfigurationTemplateOutput {
     pub replication_server_instance_type: std::option::Option<std::string::String>,
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
     pub use_dedicated_replication_server: std::option::Option<bool>,
-    /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+    /// <p>Replication Configuration template use default large Staging Disk type.</p>
     pub default_large_staging_disk_type:
         std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration template EBS encryption.</p>
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
     pub ebs_encryption_key_arn: std::option::Option<std::string::String>,
-    /// <p>Replication Configuration template bandwidth throtting.</p>
+    /// <p>Replication Configuration template bandwidth throttling.</p>
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration template data plane routing.</p>
     pub data_plane_routing:
@@ -4180,7 +4218,7 @@ pub struct UpdateReplicationConfigurationTemplateOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateReplicationConfigurationTemplateOutput {
-    /// <p>Replication Configuration template template ID.</p>
+    /// <p>Replication Configuration template ID.</p>
     pub fn replication_configuration_template_id(&self) -> std::option::Option<&str> {
         self.replication_configuration_template_id.as_deref()
     }
@@ -4210,7 +4248,7 @@ impl UpdateReplicationConfigurationTemplateOutput {
     pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
         self.use_dedicated_replication_server
     }
-    /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+    /// <p>Replication Configuration template use default large Staging Disk type.</p>
     pub fn default_large_staging_disk_type(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
@@ -4227,7 +4265,7 @@ impl UpdateReplicationConfigurationTemplateOutput {
     pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
         self.ebs_encryption_key_arn.as_deref()
     }
-    /// <p>Replication Configuration template bandwidth throtting.</p>
+    /// <p>Replication Configuration template bandwidth throttling.</p>
     pub fn bandwidth_throttling(&self) -> i64 {
         self.bandwidth_throttling
     }
@@ -4326,7 +4364,7 @@ pub mod update_replication_configuration_template_output {
         >,
     }
     impl Builder {
-        /// <p>Replication Configuration template template ID.</p>
+        /// <p>Replication Configuration template ID.</p>
         pub fn replication_configuration_template_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -4334,7 +4372,7 @@ pub mod update_replication_configuration_template_output {
             self.replication_configuration_template_id = Some(input.into());
             self
         }
-        /// <p>Replication Configuration template template ID.</p>
+        /// <p>Replication Configuration template ID.</p>
         pub fn set_replication_configuration_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4431,7 +4469,7 @@ pub mod update_replication_configuration_template_output {
             self.use_dedicated_replication_server = input;
             self
         }
-        /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+        /// <p>Replication Configuration template use default large Staging Disk type.</p>
         pub fn default_large_staging_disk_type(
             mut self,
             input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
@@ -4439,7 +4477,7 @@ pub mod update_replication_configuration_template_output {
             self.default_large_staging_disk_type = Some(input);
             self
         }
-        /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+        /// <p>Replication Configuration template use default large Staging Disk type.</p>
         pub fn set_default_large_staging_disk_type(
             mut self,
             input: std::option::Option<
@@ -4478,12 +4516,12 @@ pub mod update_replication_configuration_template_output {
             self.ebs_encryption_key_arn = input;
             self
         }
-        /// <p>Replication Configuration template bandwidth throtting.</p>
+        /// <p>Replication Configuration template bandwidth throttling.</p>
         pub fn bandwidth_throttling(mut self, input: i64) -> Self {
             self.bandwidth_throttling = Some(input);
             self
         }
-        /// <p>Replication Configuration template bandwidth throtting.</p>
+        /// <p>Replication Configuration template bandwidth throttling.</p>
         pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
             self.bandwidth_throttling = input;
             self

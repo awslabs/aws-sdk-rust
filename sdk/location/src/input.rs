@@ -5618,6 +5618,7 @@ pub mod get_map_glyphs_input {
         /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
         /// <ul>
         /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
+        /// <li> <p>VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li>
         /// </ul>
         pub fn font_stack(mut self, input: impl Into<std::string::String>) -> Self {
             self.font_stack = Some(input.into());
@@ -5635,6 +5636,7 @@ pub mod get_map_glyphs_input {
         /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
         /// <ul>
         /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
+        /// <li> <p>VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li>
         /// </ul>
         pub fn set_font_stack(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.font_stack = input;
@@ -11901,6 +11903,7 @@ pub struct GetMapGlyphsInput {
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
     /// <ul>
     /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
+    /// <li> <p>VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li>
     /// </ul>
     pub font_stack: std::option::Option<std::string::String>,
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
@@ -11923,6 +11926,7 @@ impl GetMapGlyphsInput {
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
     /// <ul>
     /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
+    /// <li> <p>VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li>
     /// </ul>
     pub fn font_stack(&self) -> std::option::Option<&str> {
         self.font_stack.as_deref()

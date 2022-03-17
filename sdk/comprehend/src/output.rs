@@ -152,6 +152,82 @@ impl StopTrainingDocumentClassifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopTargetedSentimentDetectionJobOutput {
+    /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
+    pub job_status: std::option::Option<crate::model::JobStatus>,
+}
+impl StopTargetedSentimentDetectionJobOutput {
+    /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
+impl std::fmt::Debug for StopTargetedSentimentDetectionJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopTargetedSentimentDetectionJobOutput");
+        formatter.field("job_id", &self.job_id);
+        formatter.field("job_status", &self.job_status);
+        formatter.finish()
+    }
+}
+/// See [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput)
+pub mod stop_targeted_sentiment_detection_job_output {
+    /// A builder for [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+    }
+    impl Builder {
+        /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.job_status = Some(input);
+            self
+        }
+        /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.job_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput)
+        pub fn build(self) -> crate::output::StopTargetedSentimentDetectionJobOutput {
+            crate::output::StopTargetedSentimentDetectionJobOutput {
+                job_id: self.job_id,
+                job_status: self.job_status,
+            }
+        }
+    }
+}
+impl StopTargetedSentimentDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput)
+    pub fn builder() -> crate::output::stop_targeted_sentiment_detection_job_output::Builder {
+        crate::output::stop_targeted_sentiment_detection_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopSentimentDetectionJobOutput {
     /// <p>The identifier of the sentiment detection job to stop.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -773,6 +849,177 @@ impl StartTopicsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput)
     pub fn builder() -> crate::output::start_topics_detection_job_output::Builder {
         crate::output::start_topics_detection_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartTargetedSentimentDetectionJobOutput {
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p> <code>arn:
+    /// <partition>
+    /// :comprehend:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :targeted-sentiment-detection-job/
+    /// <job-id></job-id>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    pub job_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the job. </p>
+    /// <ul>
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// </ul>
+    pub job_status: std::option::Option<crate::model::JobStatus>,
+}
+impl StartTargetedSentimentDetectionJobOutput {
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p> <code>arn:
+    /// <partition>
+    /// :comprehend:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :targeted-sentiment-detection-job/
+    /// <job-id></job-id>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The status of the job. </p>
+    /// <ul>
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// </ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
+impl std::fmt::Debug for StartTargetedSentimentDetectionJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartTargetedSentimentDetectionJobOutput");
+        formatter.field("job_id", &self.job_id);
+        formatter.field("job_arn", &self.job_arn);
+        formatter.field("job_status", &self.job_status);
+        formatter.finish()
+    }
+}
+/// See [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput)
+pub mod start_targeted_sentiment_detection_job_output {
+    /// A builder for [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
+        pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+    }
+    impl Builder {
+        /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p> <code>arn:
+        /// <partition>
+        /// :comprehend:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :targeted-sentiment-detection-job/
+        /// <job-id></job-id>
+        /// </account-id>
+        /// </region>
+        /// </partition></code> </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p> <code>arn:
+        /// <partition>
+        /// :comprehend:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :targeted-sentiment-detection-job/
+        /// <job-id></job-id>
+        /// </account-id>
+        /// </region>
+        /// </partition></code> </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
+            self
+        }
+        /// <p>The status of the job. </p>
+        /// <ul>
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+        /// </ul>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.job_status = Some(input);
+            self
+        }
+        /// <p>The status of the job. </p>
+        /// <ul>
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+        /// </ul>
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.job_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput)
+        pub fn build(self) -> crate::output::StartTargetedSentimentDetectionJobOutput {
+            crate::output::StartTargetedSentimentDetectionJobOutput {
+                job_id: self.job_id,
+                job_arn: self.job_arn,
+                job_status: self.job_status,
+            }
+        }
+    }
+}
+impl StartTargetedSentimentDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput)
+    pub fn builder() -> crate::output::start_targeted_sentiment_detection_job_output::Builder {
+        crate::output::start_targeted_sentiment_detection_job_output::Builder::default()
     }
 }
 
@@ -2089,6 +2336,105 @@ impl ListTopicsDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput)
     pub fn builder() -> crate::output::list_topics_detection_jobs_output::Builder {
         crate::output::list_topics_detection_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTargetedSentimentDetectionJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub targeted_sentiment_detection_job_properties_list:
+        std::option::Option<std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>>,
+    /// <p>Identifies the next page of results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTargetedSentimentDetectionJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub fn targeted_sentiment_detection_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::TargetedSentimentDetectionJobProperties]> {
+        self.targeted_sentiment_detection_job_properties_list
+            .as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTargetedSentimentDetectionJobsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTargetedSentimentDetectionJobsOutput");
+        formatter.field(
+            "targeted_sentiment_detection_job_properties_list",
+            &self.targeted_sentiment_detection_job_properties_list,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput)
+pub mod list_targeted_sentiment_detection_jobs_output {
+    /// A builder for [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) targeted_sentiment_detection_job_properties_list: std::option::Option<
+            std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `targeted_sentiment_detection_job_properties_list`.
+        ///
+        /// To override the contents of this collection use [`set_targeted_sentiment_detection_job_properties_list`](Self::set_targeted_sentiment_detection_job_properties_list).
+        ///
+        /// <p>A list containing the properties of each job that is returned.</p>
+        pub fn targeted_sentiment_detection_job_properties_list(
+            mut self,
+            input: crate::model::TargetedSentimentDetectionJobProperties,
+        ) -> Self {
+            let mut v = self
+                .targeted_sentiment_detection_job_properties_list
+                .unwrap_or_default();
+            v.push(input);
+            self.targeted_sentiment_detection_job_properties_list = Some(v);
+            self
+        }
+        /// <p>A list containing the properties of each job that is returned.</p>
+        pub fn set_targeted_sentiment_detection_job_properties_list(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>,
+            >,
+        ) -> Self {
+            self.targeted_sentiment_detection_job_properties_list = input;
+            self
+        }
+        /// <p>Identifies the next page of results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Identifies the next page of results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput)
+        pub fn build(self) -> crate::output::ListTargetedSentimentDetectionJobsOutput {
+            crate::output::ListTargetedSentimentDetectionJobsOutput {
+                targeted_sentiment_detection_job_properties_list: self
+                    .targeted_sentiment_detection_job_properties_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListTargetedSentimentDetectionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput)
+    pub fn builder() -> crate::output::list_targeted_sentiment_detection_jobs_output::Builder {
+        crate::output::list_targeted_sentiment_detection_jobs_output::Builder::default()
     }
 }
 
@@ -3819,6 +4165,74 @@ impl DescribeTopicsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput)
     pub fn builder() -> crate::output::describe_topics_detection_job_output::Builder {
         crate::output::describe_topics_detection_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTargetedSentimentDetectionJobOutput {
+    /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
+    pub targeted_sentiment_detection_job_properties:
+        std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
+}
+impl DescribeTargetedSentimentDetectionJobOutput {
+    /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
+    pub fn targeted_sentiment_detection_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetedSentimentDetectionJobProperties> {
+        self.targeted_sentiment_detection_job_properties.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeTargetedSentimentDetectionJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeTargetedSentimentDetectionJobOutput");
+        formatter.field(
+            "targeted_sentiment_detection_job_properties",
+            &self.targeted_sentiment_detection_job_properties,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput)
+pub mod describe_targeted_sentiment_detection_job_output {
+    /// A builder for [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) targeted_sentiment_detection_job_properties:
+            std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
+    }
+    impl Builder {
+        /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
+        pub fn targeted_sentiment_detection_job_properties(
+            mut self,
+            input: crate::model::TargetedSentimentDetectionJobProperties,
+        ) -> Self {
+            self.targeted_sentiment_detection_job_properties = Some(input);
+            self
+        }
+        /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
+        pub fn set_targeted_sentiment_detection_job_properties(
+            mut self,
+            input: std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
+        ) -> Self {
+            self.targeted_sentiment_detection_job_properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput)
+        pub fn build(self) -> crate::output::DescribeTargetedSentimentDetectionJobOutput {
+            crate::output::DescribeTargetedSentimentDetectionJobOutput {
+                targeted_sentiment_detection_job_properties: self
+                    .targeted_sentiment_detection_job_properties,
+            }
+        }
+    }
+}
+impl DescribeTargetedSentimentDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput)
+    pub fn builder() -> crate::output::describe_targeted_sentiment_detection_job_output::Builder {
+        crate::output::describe_targeted_sentiment_detection_job_output::Builder::default()
     }
 }
 

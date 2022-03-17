@@ -37,21 +37,21 @@ pub mod create_changeset_input {
             self.dataset_id = input;
             self
         }
-        /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
+        /// <p>The option to indicate how a Changeset will be applied to a Dataset.</p>
         /// <ul>
-        /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
-        /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
-        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
+        /// <li> <p> <code>REPLACE</code> – Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn change_type(mut self, input: crate::model::ChangeType) -> Self {
             self.change_type = Some(input);
             self
         }
-        /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
+        /// <p>The option to indicate how a Changeset will be applied to a Dataset.</p>
         /// <ul>
-        /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
-        /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
-        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
+        /// <li> <p> <code>REPLACE</code> – Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn set_change_type(
             mut self,
@@ -68,7 +68,7 @@ pub mod create_changeset_input {
         /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
         /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
         /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
-        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
         pub fn source_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -83,7 +83,7 @@ pub mod create_changeset_input {
         /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
         /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
         /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
-        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
         pub fn set_source_params(
             mut self,
             input: std::option::Option<
@@ -100,10 +100,10 @@ pub mod create_changeset_input {
         /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
         /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
         /// <ul>
-        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
-        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
-        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
-        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+        /// <li> <p> <code>PARQUET</code> – Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> – CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> – JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> – XML source file format.</p> </li>
         /// </ul>
         /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
         /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -123,10 +123,10 @@ pub mod create_changeset_input {
         /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
         /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
         /// <ul>
-        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
-        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
-        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
-        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+        /// <li> <p> <code>PARQUET</code> – Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> – CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> – JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> – XML source file format.</p> </li>
         /// </ul>
         /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
         /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -328,8 +328,8 @@ pub mod create_dataset_input {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
-        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
+        /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
             self.kind = Some(input);
@@ -337,8 +337,8 @@ pub mod create_dataset_input {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
-        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
+        /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
             self.kind = input;
@@ -621,12 +621,12 @@ pub mod create_data_view_input {
             self.partition_columns = input;
             self
         }
-        /// <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+        /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn as_of_timestamp(mut self, input: i64) -> Self {
             self.as_of_timestamp = Some(input);
             self
         }
-        /// <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+        /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_as_of_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.as_of_timestamp = input;
             self
@@ -790,6 +790,452 @@ impl CreateDataViewInput {
     /// Creates a new builder-style object to manufacture [`CreateDataViewInput`](crate::input::CreateDataViewInput)
     pub fn builder() -> crate::input::create_data_view_input::Builder {
         crate::input::create_data_view_input::Builder::default()
+    }
+}
+
+/// See [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput)
+pub mod create_permission_group_input {
+    /// A builder for [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) application_permissions:
+            std::option::Option<std::vec::Vec<crate::model::ApplicationPermission>>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the permission group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the permission group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A brief description for the permission group.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A brief description for the permission group.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `application_permissions`.
+        ///
+        /// To override the contents of this collection use [`set_application_permissions`](Self::set_application_permissions).
+        ///
+        /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>
+        /// <ul>
+        /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+        /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+        /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+        /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+        /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+        /// </ul>
+        pub fn application_permissions(
+            mut self,
+            input: crate::model::ApplicationPermission,
+        ) -> Self {
+            let mut v = self.application_permissions.unwrap_or_default();
+            v.push(input);
+            self.application_permissions = Some(v);
+            self
+        }
+        /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>
+        /// <ul>
+        /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+        /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+        /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+        /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+        /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+        /// </ul>
+        pub fn set_application_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ApplicationPermission>>,
+        ) -> Self {
+            self.application_permissions = input;
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreatePermissionGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreatePermissionGroupInput {
+                name: self.name,
+                description: self.description,
+                application_permissions: self.application_permissions,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreatePermissionGroupInputOperationOutputAlias = crate::operation::CreatePermissionGroup;
+#[doc(hidden)]
+pub type CreatePermissionGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreatePermissionGroupInput {
+    /// Consumes the builder and constructs an Operation<[`CreatePermissionGroup`](crate::operation::CreatePermissionGroup)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreatePermissionGroup,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreatePermissionGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/permission-group").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreatePermissionGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_permission_group(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreatePermissionGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreatePermissionGroup",
+            "finspacedata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput)
+    pub fn builder() -> crate::input::create_permission_group_input::Builder {
+        crate::input::create_permission_group_input::Builder::default()
+    }
+}
+
+/// See [`CreateUserInput`](crate::input::CreateUserInput)
+pub mod create_user_input {
+    /// A builder for [`CreateUserInput`](crate::input::CreateUserInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) email_address: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::UserType>,
+        pub(crate) first_name: std::option::Option<std::string::String>,
+        pub(crate) last_name: std::option::Option<std::string::String>,
+        pub(crate) api_access: std::option::Option<crate::model::ApiAccess>,
+        pub(crate) api_access_principal_arn: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The email address of the user that you want to register. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
+            self
+        }
+        /// <p>The email address of the user that you want to register. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
+            self
+        }
+        /// <p>The option to indicate the type of user. Use one of the following options to specify this parameter:</p>
+        /// <ul>
+        /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+        /// </ul>
+        pub fn r#type(mut self, input: crate::model::UserType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The option to indicate the type of user. Use one of the following options to specify this parameter:</p>
+        /// <ul>
+        /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+        /// </ul>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The first name of the user that you want to register.</p>
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.first_name = Some(input.into());
+            self
+        }
+        /// <p>The first name of the user that you want to register.</p>
+        pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.first_name = input;
+            self
+        }
+        /// <p>The last name of the user that you want to register.</p>
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_name = Some(input.into());
+            self
+        }
+        /// <p>The last name of the user that you want to register.</p>
+        pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_name = input;
+            self
+        }
+        /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+        /// </ul>
+        pub fn api_access(mut self, input: crate::model::ApiAccess) -> Self {
+            self.api_access = Some(input);
+            self
+        }
+        /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+        /// </ul>
+        pub fn set_api_access(
+            mut self,
+            input: std::option::Option<crate::model::ApiAccess>,
+        ) -> Self {
+            self.api_access = input;
+            self
+        }
+        /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+        pub fn api_access_principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_access_principal_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+        pub fn set_api_access_principal_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.api_access_principal_arn = input;
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateUserInput`](crate::input::CreateUserInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateUserInput {
+                email_address: self.email_address,
+                r#type: self.r#type,
+                first_name: self.first_name,
+                last_name: self.last_name,
+                api_access: self.api_access,
+                api_access_principal_arn: self.api_access_principal_arn,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateUserInputOperationOutputAlias = crate::operation::CreateUser;
+#[doc(hidden)]
+pub type CreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateUserInput {
+    /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateUser,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateUserInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/user").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateUserInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateUser",
+            "finspacedata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::input::CreateUserInput)
+    pub fn builder() -> crate::input::create_user_input::Builder {
+        crate::input::create_user_input::Builder::default()
     }
 }
 
@@ -957,6 +1403,511 @@ impl DeleteDatasetInput {
     }
 }
 
+/// See [`DeletePermissionGroupInput`](crate::input::DeletePermissionGroupInput)
+pub mod delete_permission_group_input {
+    /// A builder for [`DeletePermissionGroupInput`](crate::input::DeletePermissionGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) permission_group_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the permission group that you want to delete.</p>
+        pub fn permission_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.permission_group_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the permission group that you want to delete.</p>
+        pub fn set_permission_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.permission_group_id = input;
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeletePermissionGroupInput`](crate::input::DeletePermissionGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeletePermissionGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeletePermissionGroupInput {
+                permission_group_id: self.permission_group_id,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeletePermissionGroupInputOperationOutputAlias = crate::operation::DeletePermissionGroup;
+#[doc(hidden)]
+pub type DeletePermissionGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeletePermissionGroupInput {
+    /// Consumes the builder and constructs an Operation<[`DeletePermissionGroup`](crate::operation::DeletePermissionGroup)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeletePermissionGroup,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeletePermissionGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_5 = &_input.permission_group_id;
+                let input_5 = input_5.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "permission_group_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let permission_group_id = aws_smithy_http::label::fmt_string(input_5, false);
+                if permission_group_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "permission_group_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/permission-group/{permissionGroupId}",
+                    permissionGroupId = permission_group_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::DeletePermissionGroupInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_6) = &_input.client_token {
+                    query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeletePermissionGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeletePermissionGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeletePermissionGroup",
+            "finspacedata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeletePermissionGroupInput`](crate::input::DeletePermissionGroupInput)
+    pub fn builder() -> crate::input::delete_permission_group_input::Builder {
+        crate::input::delete_permission_group_input::Builder::default()
+    }
+}
+
+/// See [`DisableUserInput`](crate::input::DisableUserInput)
+pub mod disable_user_input {
+    /// A builder for [`DisableUserInput`](crate::input::DisableUserInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the user account that you want to disable.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the user account that you want to disable.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisableUserInput`](crate::input::DisableUserInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisableUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisableUserInput {
+                user_id: self.user_id,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisableUserInputOperationOutputAlias = crate::operation::DisableUser;
+#[doc(hidden)]
+pub type DisableUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DisableUserInput {
+    /// Consumes the builder and constructs an Operation<[`DisableUser`](crate::operation::DisableUser)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisableUser,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DisableUserInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_7 = &_input.user_id;
+                let input_7 = input_7.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let user_id = aws_smithy_http::label::fmt_string(input_7, false);
+                if user_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/user/{userId}/disable", userId = user_id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DisableUserInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_disable_user(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisableUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisableUser",
+            "finspacedata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DisableUserInput`](crate::input::DisableUserInput)
+    pub fn builder() -> crate::input::disable_user_input::Builder {
+        crate::input::disable_user_input::Builder::default()
+    }
+}
+
+/// See [`EnableUserInput`](crate::input::EnableUserInput)
+pub mod enable_user_input {
+    /// A builder for [`EnableUserInput`](crate::input::EnableUserInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the user account that you want to enable.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the user account that you want to enable.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnableUserInput`](crate::input::EnableUserInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::EnableUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::EnableUserInput {
+                user_id: self.user_id,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type EnableUserInputOperationOutputAlias = crate::operation::EnableUser;
+#[doc(hidden)]
+pub type EnableUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl EnableUserInput {
+    /// Consumes the builder and constructs an Operation<[`EnableUser`](crate::operation::EnableUser)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::EnableUser,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::EnableUserInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_8 = &_input.user_id;
+                let input_8 = input_8.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let user_id = aws_smithy_http::label::fmt_string(input_8, false);
+                if user_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/user/{userId}/enable", userId = user_id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::EnableUserInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_enable_user(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::EnableUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "EnableUser",
+            "finspacedata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`EnableUserInput`](crate::input::EnableUserInput)
+    pub fn builder() -> crate::input::enable_user_input::Builder {
+        crate::input::enable_user_input::Builder::default()
+    }
+}
+
 /// See [`GetChangesetInput`](crate::input::GetChangesetInput)
 pub mod get_changeset_input {
     /// A builder for [`GetChangesetInput`](crate::input::GetChangesetInput)
@@ -1025,28 +1976,28 @@ impl GetChangesetInput {
                 _input: &crate::input::GetChangesetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_5 = &_input.dataset_id;
-                let input_5 = input_5.as_ref().ok_or(
+                let input_9 = &_input.dataset_id;
+                let input_9 = input_9.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_9, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_6 = &_input.changeset_id;
-                let input_6 = input_6.as_ref().ok_or(
+                let input_10 = &_input.changeset_id;
+                let input_10 = input_10.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "changeset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let changeset_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let changeset_id = aws_smithy_http::label::fmt_string(input_10, false);
                 if changeset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "changeset_id",
@@ -1182,14 +2133,14 @@ impl GetDatasetInput {
                 _input: &crate::input::GetDatasetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_7 = &_input.dataset_id;
-                let input_7 = input_7.as_ref().ok_or(
+                let input_11 = &_input.dataset_id;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_11, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
@@ -1332,28 +2283,28 @@ impl GetDataViewInput {
                 _input: &crate::input::GetDataViewInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_8 = &_input.dataset_id;
-                let input_8 = input_8.as_ref().ok_or(
+                let input_12 = &_input.dataset_id;
+                let input_12 = input_12.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_12, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_9 = &_input.data_view_id;
-                let input_9 = input_9.as_ref().ok_or(
+                let input_13 = &_input.data_view_id;
+                let input_13 = input_13.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_view_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let data_view_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let data_view_id = aws_smithy_http::label::fmt_string(input_13, false);
                 if data_view_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_view_id",
@@ -1521,10 +2472,10 @@ impl GetProgrammaticAccessCredentialsInput {
                             .encode(),
                     );
                 }
-                if let Some(inner_10) = &_input.environment_id {
+                if let Some(inner_14) = &_input.environment_id {
                     query.push_kv(
                         "environmentId",
-                        &aws_smithy_http::query::fmt_string(&inner_10),
+                        &aws_smithy_http::query::fmt_string(&inner_14),
                     );
                 }
                 Ok(())
@@ -1594,6 +2545,140 @@ impl GetProgrammaticAccessCredentialsInput {
     }
 }
 
+/// See [`GetUserInput`](crate::input::GetUserInput)
+pub mod get_user_input {
+    /// A builder for [`GetUserInput`](crate::input::GetUserInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the user to get data for.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the user to get data for.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetUserInput`](crate::input::GetUserInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::GetUserInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetUserInput {
+                user_id: self.user_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetUserInputOperationOutputAlias = crate::operation::GetUser;
+#[doc(hidden)]
+pub type GetUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetUserInput {
+    /// Consumes the builder and constructs an Operation<[`GetUser`](crate::operation::GetUser)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetUser,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetUserInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_15 = &_input.user_id;
+                let input_15 = input_15.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let user_id = aws_smithy_http::label::fmt_string(input_15, false);
+                if user_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/user/{userId}", userId = user_id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetUserInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetUser::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetUser",
+                    "finspacedata",
+                ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetUserInput`](crate::input::GetUserInput)
+    pub fn builder() -> crate::input::get_user_input::Builder {
+        crate::input::get_user_input::Builder::default()
+    }
+}
+
 /// See [`GetWorkingLocationInput`](crate::input::GetWorkingLocationInput)
 pub mod get_working_location_input {
     /// A builder for [`GetWorkingLocationInput`](crate::input::GetWorkingLocationInput)
@@ -1605,8 +2690,8 @@ pub mod get_working_location_input {
     impl Builder {
         /// <p>Specify the type of the working location.</p>
         /// <ul>
-        /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
-        /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
+        /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+        /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
         /// </ul>
         pub fn location_type(mut self, input: crate::model::LocationType) -> Self {
             self.location_type = Some(input);
@@ -1614,8 +2699,8 @@ pub mod get_working_location_input {
         }
         /// <p>Specify the type of the working location.</p>
         /// <ul>
-        /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
-        /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
+        /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+        /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
         /// </ul>
         pub fn set_location_type(
             mut self,
@@ -1773,12 +2858,12 @@ pub mod list_changesets_input {
             self.max_results = input;
             self
         }
-        /// <p>A token indicating where a results page should begin.</p>
+        /// <p>A token that indicates where a results page should begin.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token indicating where a results page should begin.</p>
+        /// <p>A token that indicates where a results page should begin.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1822,14 +2907,14 @@ impl ListChangesetsInput {
                 _input: &crate::input::ListChangesetsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_11 = &_input.dataset_id;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_16 = &_input.dataset_id;
+                let input_16 = input_16.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_16, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
@@ -1849,14 +2934,14 @@ impl ListChangesetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_12) = &_input.max_results {
+                if let Some(inner_17) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
                     );
                 }
-                if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                if let Some(inner_18) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
                 Ok(())
             }
@@ -1935,12 +3020,12 @@ pub mod list_datasets_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token indicating where a results page should begin.</p>
+        /// <p>A token that indicates where a results page should begin.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token indicating where a results page should begin.</p>
+        /// <p>A token that indicates where a results page should begin.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2001,13 +3086,13 @@ impl ListDatasetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_14) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_14));
+                if let Some(inner_19) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
                 }
-                if let Some(inner_15) = &_input.max_results {
+                if let Some(inner_20) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
                     );
                 }
                 Ok(())
@@ -2098,12 +3183,12 @@ pub mod list_data_views_input {
             self.dataset_id = input;
             self
         }
-        /// <p>A token indicating where a results page should begin.</p>
+        /// <p>A token that indicates where a results page should begin.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token indicating where a results page should begin.</p>
+        /// <p>A token that indicates where a results page should begin.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2157,14 +3242,14 @@ impl ListDataViewsInput {
                 _input: &crate::input::ListDataViewsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_16 = &_input.dataset_id;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_21 = &_input.dataset_id;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_21, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
@@ -2184,13 +3269,13 @@ impl ListDataViewsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_17) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                if let Some(inner_22) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
                 }
-                if let Some(inner_18) = &_input.max_results {
+                if let Some(inner_23) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_23).encode(),
                     );
                 }
                 Ok(())
@@ -2257,6 +3342,473 @@ impl ListDataViewsInput {
     /// Creates a new builder-style object to manufacture [`ListDataViewsInput`](crate::input::ListDataViewsInput)
     pub fn builder() -> crate::input::list_data_views_input::Builder {
         crate::input::list_data_views_input::Builder::default()
+    }
+}
+
+/// See [`ListPermissionGroupsInput`](crate::input::ListPermissionGroupsInput)
+pub mod list_permission_groups_input {
+    /// A builder for [`ListPermissionGroupsInput`](crate::input::ListPermissionGroupsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPermissionGroupsInput`](crate::input::ListPermissionGroupsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListPermissionGroupsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListPermissionGroupsInput {
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListPermissionGroupsInputOperationOutputAlias = crate::operation::ListPermissionGroups;
+#[doc(hidden)]
+pub type ListPermissionGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListPermissionGroupsInput {
+    /// Consumes the builder and constructs an Operation<[`ListPermissionGroups`](crate::operation::ListPermissionGroups)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListPermissionGroups,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListPermissionGroupsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/permission-group").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListPermissionGroupsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_24) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                }
+                if _input.max_results != 0 {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListPermissionGroupsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPermissionGroups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPermissionGroups",
+            "finspacedata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsInput`](crate::input::ListPermissionGroupsInput)
+    pub fn builder() -> crate::input::list_permission_groups_input::Builder {
+        crate::input::list_permission_groups_input::Builder::default()
+    }
+}
+
+/// See [`ListUsersInput`](crate::input::ListUsersInput)
+pub mod list_users_input {
+    /// A builder for [`ListUsersInput`](crate::input::ListUsersInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListUsersInput`](crate::input::ListUsersInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::ListUsersInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListUsersInput {
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListUsersInputOperationOutputAlias = crate::operation::ListUsers;
+#[doc(hidden)]
+pub type ListUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListUsersInput {
+    /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListUsers,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListUsersInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/user").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListUsersInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_25) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+                }
+                if _input.max_results != 0 {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListUsersInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListUsers::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListUsers",
+                    "finspacedata",
+                ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput)
+    pub fn builder() -> crate::input::list_users_input::Builder {
+        crate::input::list_users_input::Builder::default()
+    }
+}
+
+/// See [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput)
+pub mod reset_user_password_input {
+    /// A builder for [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the user that a temporary password is requested for.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the user that a temporary password is requested for.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ResetUserPasswordInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ResetUserPasswordInput {
+                user_id: self.user_id,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ResetUserPasswordInputOperationOutputAlias = crate::operation::ResetUserPassword;
+#[doc(hidden)]
+pub type ResetUserPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ResetUserPasswordInput {
+    /// Consumes the builder and constructs an Operation<[`ResetUserPassword`](crate::operation::ResetUserPassword)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ResetUserPassword,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ResetUserPasswordInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_26 = &_input.user_id;
+                let input_26 = input_26.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let user_id = aws_smithy_http::label::fmt_string(input_26, false);
+                if user_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/user/{userId}/password", userId = user_id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ResetUserPasswordInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_reset_user_password(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ResetUserPassword::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ResetUserPassword",
+            "finspacedata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput)
+    pub fn builder() -> crate::input::reset_user_password_input::Builder {
+        crate::input::reset_user_password_input::Builder::default()
     }
 }
 
@@ -2347,10 +3899,10 @@ pub mod update_changeset_input {
         /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
         /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
         /// <ul>
-        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
-        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
-        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
-        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+        /// <li> <p> <code>PARQUET</code> – Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> – CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> – JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> – XML source file format.</p> </li>
         /// </ul>
         /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
         /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -2370,10 +3922,10 @@ pub mod update_changeset_input {
         /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
         /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
         /// <ul>
-        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
-        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
-        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
-        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+        /// <li> <p> <code>PARQUET</code> – Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> – CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> – JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> – XML source file format.</p> </li>
         /// </ul>
         /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
         /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -2433,28 +3985,28 @@ impl UpdateChangesetInput {
                 _input: &crate::input::UpdateChangesetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_19 = &_input.dataset_id;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_27 = &_input.dataset_id;
+                let input_27 = input_27.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_27, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_20 = &_input.changeset_id;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_28 = &_input.changeset_id;
+                let input_28 = input_28.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "changeset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let changeset_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let changeset_id = aws_smithy_http::label::fmt_string(input_28, false);
                 if changeset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "changeset_id",
@@ -2598,8 +4150,8 @@ pub mod update_dataset_input {
         }
         /// <p>The format in which the Dataset data is structured.</p>
         /// <ul>
-        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
-        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
+        /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
             self.kind = Some(input);
@@ -2607,8 +4159,8 @@ pub mod update_dataset_input {
         }
         /// <p>The format in which the Dataset data is structured.</p>
         /// <ul>
-        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
-        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
+        /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
             self.kind = input;
@@ -2696,14 +4248,14 @@ impl UpdateDatasetInput {
                 _input: &crate::input::UpdateDatasetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.dataset_id;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_29 = &_input.dataset_id;
+                let input_29 = input_29.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_29, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
@@ -2792,6 +4344,647 @@ impl UpdateDatasetInput {
     }
 }
 
+/// See [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput)
+pub mod update_permission_group_input {
+    /// A builder for [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) permission_group_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) application_permissions:
+            std::option::Option<std::vec::Vec<crate::model::ApplicationPermission>>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the permission group to update.</p>
+        pub fn permission_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.permission_group_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the permission group to update.</p>
+        pub fn set_permission_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.permission_group_id = input;
+            self
+        }
+        /// <p>The name of the permission group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the permission group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A brief description for the permission group.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A brief description for the permission group.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `application_permissions`.
+        ///
+        /// To override the contents of this collection use [`set_application_permissions`](Self::set_application_permissions).
+        ///
+        /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+        /// <ul>
+        /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+        /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+        /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+        /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+        /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+        /// </ul>
+        pub fn application_permissions(
+            mut self,
+            input: crate::model::ApplicationPermission,
+        ) -> Self {
+            let mut v = self.application_permissions.unwrap_or_default();
+            v.push(input);
+            self.application_permissions = Some(v);
+            self
+        }
+        /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+        /// <ul>
+        /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+        /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+        /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+        /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+        /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+        /// </ul>
+        pub fn set_application_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ApplicationPermission>>,
+        ) -> Self {
+            self.application_permissions = input;
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdatePermissionGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdatePermissionGroupInput {
+                permission_group_id: self.permission_group_id,
+                name: self.name,
+                description: self.description,
+                application_permissions: self.application_permissions,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdatePermissionGroupInputOperationOutputAlias = crate::operation::UpdatePermissionGroup;
+#[doc(hidden)]
+pub type UpdatePermissionGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdatePermissionGroupInput {
+    /// Consumes the builder and constructs an Operation<[`UpdatePermissionGroup`](crate::operation::UpdatePermissionGroup)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdatePermissionGroup,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdatePermissionGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_30 = &_input.permission_group_id;
+                let input_30 = input_30.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "permission_group_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let permission_group_id = aws_smithy_http::label::fmt_string(input_30, false);
+                if permission_group_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "permission_group_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/permission-group/{permissionGroupId}",
+                    permissionGroupId = permission_group_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdatePermissionGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_permission_group(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdatePermissionGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdatePermissionGroup",
+            "finspacedata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput)
+    pub fn builder() -> crate::input::update_permission_group_input::Builder {
+        crate::input::update_permission_group_input::Builder::default()
+    }
+}
+
+/// See [`UpdateUserInput`](crate::input::UpdateUserInput)
+pub mod update_user_input {
+    /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::UserType>,
+        pub(crate) first_name: std::option::Option<std::string::String>,
+        pub(crate) last_name: std::option::Option<std::string::String>,
+        pub(crate) api_access: std::option::Option<crate::model::ApiAccess>,
+        pub(crate) api_access_principal_arn: std::option::Option<std::string::String>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the user account to update.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the user account to update.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// <p>The option to indicate the type of user.</p>
+        /// <ul>
+        /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+        /// </ul>
+        pub fn r#type(mut self, input: crate::model::UserType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The option to indicate the type of user.</p>
+        /// <ul>
+        /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+        /// </ul>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The first name of the user.</p>
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.first_name = Some(input.into());
+            self
+        }
+        /// <p>The first name of the user.</p>
+        pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.first_name = input;
+            self
+        }
+        /// <p>The last name of the user.</p>
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_name = Some(input.into());
+            self
+        }
+        /// <p>The last name of the user.</p>
+        pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_name = input;
+            self
+        }
+        /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+        /// </ul>
+        pub fn api_access(mut self, input: crate::model::ApiAccess) -> Self {
+            self.api_access = Some(input);
+            self
+        }
+        /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+        /// </ul>
+        pub fn set_api_access(
+            mut self,
+            input: std::option::Option<crate::model::ApiAccess>,
+        ) -> Self {
+            self.api_access = input;
+            self
+        }
+        /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+        pub fn api_access_principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_access_principal_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+        pub fn set_api_access_principal_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.api_access_principal_arn = input;
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateUserInput`](crate::input::UpdateUserInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateUserInput {
+                user_id: self.user_id,
+                r#type: self.r#type,
+                first_name: self.first_name,
+                last_name: self.last_name,
+                api_access: self.api_access,
+                api_access_principal_arn: self.api_access_principal_arn,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateUserInputOperationOutputAlias = crate::operation::UpdateUser;
+#[doc(hidden)]
+pub type UpdateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateUserInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateUser`](crate::operation::UpdateUser)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateUser,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateUserInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_31 = &_input.user_id;
+                let input_31 = input_31.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let user_id = aws_smithy_http::label::fmt_string(input_31, false);
+                if user_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "user_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/user/{userId}", userId = user_id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateUserInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_user(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateUser",
+            "finspacedata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateUserInput`](crate::input::UpdateUserInput)
+    pub fn builder() -> crate::input::update_user_input::Builder {
+        crate::input::update_user_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateUserInput {
+    /// <p>The unique identifier for the user account to update.</p>
+    pub user_id: std::option::Option<std::string::String>,
+    /// <p>The option to indicate the type of user.</p>
+    /// <ul>
+    /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+    /// </ul>
+    pub r#type: std::option::Option<crate::model::UserType>,
+    /// <p>The first name of the user.</p>
+    pub first_name: std::option::Option<std::string::String>,
+    /// <p>The last name of the user.</p>
+    pub last_name: std::option::Option<std::string::String>,
+    /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+    /// </ul>
+    pub api_access: std::option::Option<crate::model::ApiAccess>,
+    /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+    pub api_access_principal_arn: std::option::Option<std::string::String>,
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl UpdateUserInput {
+    /// <p>The unique identifier for the user account to update.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The option to indicate the type of user.</p>
+    /// <ul>
+    /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The first name of the user.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name of the user.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+    /// </ul>
+    pub fn api_access(&self) -> std::option::Option<&crate::model::ApiAccess> {
+        self.api_access.as_ref()
+    }
+    /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+    pub fn api_access_principal_arn(&self) -> std::option::Option<&str> {
+        self.api_access_principal_arn.as_deref()
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateUserInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateUserInput");
+        formatter.field("user_id", &self.user_id);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("api_access", &self.api_access);
+        formatter.field("api_access_principal_arn", &self.api_access_principal_arn);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdatePermissionGroupInput {
+    /// <p>The unique identifier for the permission group to update.</p>
+    pub permission_group_id: std::option::Option<std::string::String>,
+    /// <p>The name of the permission group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A brief description for the permission group.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+    /// <ul>
+    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// </ul>
+    pub application_permissions:
+        std::option::Option<std::vec::Vec<crate::model::ApplicationPermission>>,
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl UpdatePermissionGroupInput {
+    /// <p>The unique identifier for the permission group to update.</p>
+    pub fn permission_group_id(&self) -> std::option::Option<&str> {
+        self.permission_group_id.as_deref()
+    }
+    /// <p>The name of the permission group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A brief description for the permission group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+    /// <ul>
+    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// </ul>
+    pub fn application_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationPermission]> {
+        self.application_permissions.as_deref()
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdatePermissionGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdatePermissionGroupInput");
+        formatter.field("permission_group_id", &self.permission_group_id);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("application_permissions", &self.application_permissions);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
 /// The request for an UpdateDataset operation
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2804,8 +4997,8 @@ pub struct UpdateDatasetInput {
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>A description for the Dataset.</p>
@@ -2830,8 +5023,8 @@ impl UpdateDatasetInput {
     }
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn kind(&self) -> std::option::Option<&crate::model::DatasetKind> {
         self.kind.as_ref()
@@ -2883,10 +5076,10 @@ pub struct UpdateChangesetInput {
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
     /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
     /// <ul>
-    /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
-    /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
-    /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
-    /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+    /// <li> <p> <code>PARQUET</code> – Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> – CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> – JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> – XML source file format.</p> </li>
     /// </ul>
     /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
     /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -2923,10 +5116,10 @@ impl UpdateChangesetInput {
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
     /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
     /// <ul>
-    /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
-    /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
-    /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
-    /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+    /// <li> <p> <code>PARQUET</code> – Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> – CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> – JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> – XML source file format.</p> </li>
     /// </ul>
     /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
     /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -2952,13 +5145,97 @@ impl std::fmt::Debug for UpdateChangesetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResetUserPasswordInput {
+    /// <p>The unique identifier of the user that a temporary password is requested for.</p>
+    pub user_id: std::option::Option<std::string::String>,
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl ResetUserPasswordInput {
+    /// <p>The unique identifier of the user that a temporary password is requested for.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ResetUserPasswordInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResetUserPasswordInput");
+        formatter.field("user_id", &self.user_id);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListUsersInput {
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results per page.</p>
+    pub max_results: i32,
+}
+impl ListUsersInput {
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results per page.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListUsersInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListUsersInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPermissionGroupsInput {
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results per page.</p>
+    pub max_results: i32,
+}
+impl ListPermissionGroupsInput {
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results per page.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListPermissionGroupsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPermissionGroupsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
 /// Request for a list data views.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataViewsInput {
     /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
     pub dataset_id: std::option::Option<std::string::String>,
-    /// <p>A token indicating where a results page should begin.</p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -2968,7 +5245,7 @@ impl ListDataViewsInput {
     pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
-    /// <p>A token indicating where a results page should begin.</p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2991,13 +5268,13 @@ impl std::fmt::Debug for ListDataViewsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
-    /// <p>A token indicating where a results page should begin.</p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results per page.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetsInput {
-    /// <p>A token indicating where a results page should begin.</p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3023,7 +5300,7 @@ pub struct ListChangesetsInput {
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results per page.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token indicating where a results page should begin.</p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChangesetsInput {
@@ -3035,7 +5312,7 @@ impl ListChangesetsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token indicating where a results page should begin.</p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3056,16 +5333,16 @@ impl std::fmt::Debug for ListChangesetsInput {
 pub struct GetWorkingLocationInput {
     /// <p>Specify the type of the working location.</p>
     /// <ul>
-    /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
-    /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
+    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
     pub location_type: std::option::Option<crate::model::LocationType>,
 }
 impl GetWorkingLocationInput {
     /// <p>Specify the type of the working location.</p>
     /// <ul>
-    /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
-    /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
+    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
     pub fn location_type(&self) -> std::option::Option<&crate::model::LocationType> {
         self.location_type.as_ref()
@@ -3075,6 +5352,27 @@ impl std::fmt::Debug for GetWorkingLocationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkingLocationInput");
         formatter.field("location_type", &self.location_type);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetUserInput {
+    /// <p>The unique identifier of the user to get data for.</p>
+    pub user_id: std::option::Option<std::string::String>,
+}
+impl GetUserInput {
+    /// <p>The unique identifier of the user to get data for.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetUserInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetUserInput");
+        formatter.field("user_id", &self.user_id);
         formatter.finish()
     }
 }
@@ -3184,6 +5482,90 @@ impl std::fmt::Debug for GetChangesetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnableUserInput {
+    /// <p>The unique identifier for the user account that you want to enable.</p>
+    pub user_id: std::option::Option<std::string::String>,
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl EnableUserInput {
+    /// <p>The unique identifier for the user account that you want to enable.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for EnableUserInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EnableUserInput");
+        formatter.field("user_id", &self.user_id);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisableUserInput {
+    /// <p>The unique identifier for the user account that you want to disable.</p>
+    pub user_id: std::option::Option<std::string::String>,
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl DisableUserInput {
+    /// <p>The unique identifier for the user account that you want to disable.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DisableUserInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisableUserInput");
+        formatter.field("user_id", &self.user_id);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePermissionGroupInput {
+    /// <p>The unique identifier for the permission group that you want to delete.</p>
+    pub permission_group_id: std::option::Option<std::string::String>,
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl DeletePermissionGroupInput {
+    /// <p>The unique identifier for the permission group that you want to delete.</p>
+    pub fn permission_group_id(&self) -> std::option::Option<&str> {
+        self.permission_group_id.as_deref()
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DeletePermissionGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeletePermissionGroupInput");
+        formatter.field("permission_group_id", &self.permission_group_id);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
 /// The request for a DeleteDataset operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3212,6 +5594,148 @@ impl std::fmt::Debug for DeleteDatasetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateUserInput {
+    /// <p>The email address of the user that you want to register. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
+    pub email_address: std::option::Option<std::string::String>,
+    /// <p>The option to indicate the type of user. Use one of the following options to specify this parameter:</p>
+    /// <ul>
+    /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+    /// </ul>
+    pub r#type: std::option::Option<crate::model::UserType>,
+    /// <p>The first name of the user that you want to register.</p>
+    pub first_name: std::option::Option<std::string::String>,
+    /// <p>The last name of the user that you want to register.</p>
+    pub last_name: std::option::Option<std::string::String>,
+    /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+    /// </ul>
+    pub api_access: std::option::Option<crate::model::ApiAccess>,
+    /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+    pub api_access_principal_arn: std::option::Option<std::string::String>,
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateUserInput {
+    /// <p>The email address of the user that you want to register. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The option to indicate the type of user. Use one of the following options to specify this parameter:</p>
+    /// <ul>
+    /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The first name of the user that you want to register.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name of the user that you want to register.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+    /// </ul>
+    pub fn api_access(&self) -> std::option::Option<&crate::model::ApiAccess> {
+        self.api_access.as_ref()
+    }
+    /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+    pub fn api_access_principal_arn(&self) -> std::option::Option<&str> {
+        self.api_access_principal_arn.as_deref()
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateUserInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateUserInput");
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("api_access", &self.api_access);
+        formatter.field("api_access_principal_arn", &self.api_access_principal_arn);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreatePermissionGroupInput {
+    /// <p>The name of the permission group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A brief description for the permission group.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>
+    /// <ul>
+    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// </ul>
+    pub application_permissions:
+        std::option::Option<std::vec::Vec<crate::model::ApplicationPermission>>,
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl CreatePermissionGroupInput {
+    /// <p>The name of the permission group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A brief description for the permission group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>
+    /// <ul>
+    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// </ul>
+    pub fn application_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationPermission]> {
+        self.application_permissions.as_deref()
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for CreatePermissionGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreatePermissionGroupInput");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("application_permissions", &self.application_permissions);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
 /// Request for creating a data view.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3226,7 +5750,7 @@ pub struct CreateDataViewInput {
     pub sort_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Ordered set of column names used to partition data.</p>
     pub partition_columns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub as_of_timestamp: std::option::Option<i64>,
     /// <p>Options that define the destination type for the Dataview.</p>
     pub destination_type_params: std::option::Option<crate::model::DataViewDestinationTypeParams>,
@@ -3252,7 +5776,7 @@ impl CreateDataViewInput {
     pub fn partition_columns(&self) -> std::option::Option<&[std::string::String]> {
         self.partition_columns.as_deref()
     }
-    /// <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn as_of_timestamp(&self) -> std::option::Option<i64> {
         self.as_of_timestamp
     }
@@ -3287,8 +5811,8 @@ pub struct CreateDatasetInput {
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>Description of a Dataset.</p>
@@ -3313,8 +5837,8 @@ impl CreateDatasetInput {
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn kind(&self) -> std::option::Option<&crate::model::DatasetKind> {
         self.kind.as_ref()
@@ -3365,27 +5889,27 @@ pub struct CreateChangesetInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
     pub dataset_id: std::option::Option<std::string::String>,
-    /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
+    /// <p>The option to indicate how a Changeset will be applied to a Dataset.</p>
     /// <ul>
-    /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
-    /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
-    /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
+    /// <li> <p> <code>REPLACE</code> – Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub change_type: std::option::Option<crate::model::ChangeType>,
     /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
     /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
     /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
     /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
-    /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+    /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
     pub source_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
     /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
     /// <ul>
-    /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
-    /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
-    /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
-    /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+    /// <li> <p> <code>PARQUET</code> – Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> – CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> – JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> – XML source file format.</p> </li>
     /// </ul>
     /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
     /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
@@ -3404,11 +5928,11 @@ impl CreateChangesetInput {
     pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
-    /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
+    /// <p>The option to indicate how a Changeset will be applied to a Dataset.</p>
     /// <ul>
-    /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
-    /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
-    /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
+    /// <li> <p> <code>REPLACE</code> – Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.change_type.as_ref()
@@ -3417,7 +5941,7 @@ impl CreateChangesetInput {
     /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
     /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
     /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
-    /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+    /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
     pub fn source_params(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3427,10 +5951,10 @@ impl CreateChangesetInput {
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
     /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
     /// <ul>
-    /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
-    /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
-    /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
-    /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+    /// <li> <p> <code>PARQUET</code> – Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> – CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> – JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> – XML source file format.</p> </li>
     /// </ul>
     /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
     /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>

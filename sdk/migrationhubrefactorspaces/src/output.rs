@@ -1815,7 +1815,7 @@ pub struct GetApplicationOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID of the application owner.</p>
+    /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the application creator. </p>
     pub created_by_account_id: std::option::Option<std::string::String>,
@@ -1850,7 +1850,7 @@ impl GetApplicationOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Web Services account ID of the application owner.</p>
+    /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
     pub fn owner_account_id(&self) -> std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
@@ -1966,12 +1966,12 @@ pub mod get_application_output {
             self.arn = input;
             self
         }
-        /// <p>The Amazon Web Services account ID of the application owner.</p>
+        /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID of the application owner.</p>
+        /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
         pub fn set_owner_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2346,7 +2346,7 @@ pub struct DeleteRouteOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the service that the route belongs to.</p>
     pub service_id: std::option::Option<std::string::String>,
-    /// <p>he ID of the application that the route belongs to.</p>
+    /// <p>The ID of the application that the route belongs to.</p>
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The current state of the route. </p>
     pub state: std::option::Option<crate::model::RouteState>,
@@ -2366,7 +2366,7 @@ impl DeleteRouteOutput {
     pub fn service_id(&self) -> std::option::Option<&str> {
         self.service_id.as_deref()
     }
-    /// <p>he ID of the application that the route belongs to.</p>
+    /// <p>The ID of the application that the route belongs to.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -2435,12 +2435,12 @@ pub mod delete_route_output {
             self.service_id = input;
             self
         }
-        /// <p>he ID of the application that the route belongs to.</p>
+        /// <p>The ID of the application that the route belongs to.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p>he ID of the application that the route belongs to.</p>
+        /// <p>The ID of the application that the route belongs to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3222,13 +3222,13 @@ pub struct CreateRouteOutput {
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>The route type of the route.</p>
     pub route_type: std::option::Option<crate::model::RouteType>,
-    /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is forwarded to this service.</p>
+    /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The ID of the application in which the route is created.</p>
     pub application_id: std::option::Option<std::string::String>,
     /// <p>onfiguration for the URI path route type. </p>
     pub uri_path_route: std::option::Option<crate::model::UriPathRouteInput>,
-    /// <p>he current state of the route. </p>
+    /// <p>The current state of the route. </p>
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     pub tags:
@@ -3259,7 +3259,7 @@ impl CreateRouteOutput {
     pub fn route_type(&self) -> std::option::Option<&crate::model::RouteType> {
         self.route_type.as_ref()
     }
-    /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is forwarded to this service.</p>
+    /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub fn service_id(&self) -> std::option::Option<&str> {
         self.service_id.as_deref()
     }
@@ -3271,7 +3271,7 @@ impl CreateRouteOutput {
     pub fn uri_path_route(&self) -> std::option::Option<&crate::model::UriPathRouteInput> {
         self.uri_path_route.as_ref()
     }
-    /// <p>he current state of the route. </p>
+    /// <p>The current state of the route. </p>
     pub fn state(&self) -> std::option::Option<&crate::model::RouteState> {
         self.state.as_ref()
     }
@@ -3390,12 +3390,12 @@ pub mod create_route_output {
             self.route_type = input;
             self
         }
-        /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is forwarded to this service.</p>
+        /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_id = Some(input.into());
             self
         }
-        /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is forwarded to this service.</p>
+        /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_id = input;
             self
@@ -3426,12 +3426,12 @@ pub mod create_route_output {
             self.uri_path_route = input;
             self
         }
-        /// <p>he current state of the route. </p>
+        /// <p>The current state of the route. </p>
         pub fn state(mut self, input: crate::model::RouteState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>he current state of the route. </p>
+        /// <p>The current state of the route. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::RouteState>) -> Self {
             self.state = input;
             self
@@ -3785,7 +3785,7 @@ pub struct CreateApplicationOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID of the application owner.</p>
+    /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of application creator.</p>
     pub created_by_account_id: std::option::Option<std::string::String>,
@@ -3818,7 +3818,7 @@ impl CreateApplicationOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Web Services account ID of the application owner.</p>
+    /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
     pub fn owner_account_id(&self) -> std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
@@ -3928,12 +3928,12 @@ pub mod create_application_output {
             self.arn = input;
             self
         }
-        /// <p>The Amazon Web Services account ID of the application owner.</p>
+        /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID of the application owner.</p>
+        /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
         pub fn set_owner_account_id(
             mut self,
             input: std::option::Option<std::string::String>,

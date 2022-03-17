@@ -445,7 +445,9 @@ pub mod create_server_input {
             self.logging_role = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+        /// </note>
         pub fn post_authentication_login_banner(
             mut self,
             input: impl Into<std::string::String>,
@@ -453,7 +455,9 @@ pub mod create_server_input {
             self.post_authentication_login_banner = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+        /// </note>
         pub fn set_post_authentication_login_banner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -461,7 +465,8 @@ pub mod create_server_input {
             self.post_authentication_login_banner = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn pre_authentication_login_banner(
             mut self,
             input: impl Into<std::string::String>,
@@ -469,7 +474,8 @@ pub mod create_server_input {
             self.pre_authentication_login_banner = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn set_pre_authentication_login_banner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5656,7 +5662,9 @@ pub mod update_server_input {
             self.logging_role = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+        /// </note>
         pub fn post_authentication_login_banner(
             mut self,
             input: impl Into<std::string::String>,
@@ -5664,7 +5672,9 @@ pub mod update_server_input {
             self.post_authentication_login_banner = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+        /// </note>
         pub fn set_post_authentication_login_banner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5672,7 +5682,8 @@ pub mod update_server_input {
             self.post_authentication_login_banner = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn pre_authentication_login_banner(
             mut self,
             input: impl Into<std::string::String>,
@@ -5680,7 +5691,8 @@ pub mod update_server_input {
             self.pre_authentication_login_banner = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn set_pre_authentication_login_banner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6303,9 +6315,12 @@ pub struct UpdateServerInput {
     pub identity_provider_details: std::option::Option<crate::model::IdentityProviderDetails>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+    /// </note>
     pub post_authentication_login_banner: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
@@ -6379,11 +6394,14 @@ impl UpdateServerInput {
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+    /// </note>
     pub fn post_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.post_authentication_login_banner.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub fn pre_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.pre_authentication_login_banner.as_deref()
     }
@@ -7527,9 +7545,12 @@ pub struct CreateServerInput {
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+    /// </note>
     pub post_authentication_login_banner: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
@@ -7616,11 +7637,14 @@ impl CreateServerInput {
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+    /// </note>
     pub fn post_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.post_authentication_login_banner.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub fn pre_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.pre_authentication_login_banner.as_deref()
     }

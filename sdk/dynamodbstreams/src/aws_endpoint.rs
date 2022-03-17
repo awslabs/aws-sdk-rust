@@ -14,17 +14,6 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
             .endpoint(
-                "ca-central-1-fips",
-                aws_endpoint::partition::endpoint::Metadata {
-                    uri_template: "dynamodb-fips.ca-central-1.amazonaws.com",
-                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
-                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
-                    credential_scope: aws_endpoint::CredentialScope::builder()
-                        .region("ca-central-1")
-                        .build(),
-                },
-            )
-            .endpoint(
                 "local",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "localhost:8000",
@@ -32,50 +21,6 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("us-east-1")
-                        .build(),
-                },
-            )
-            .endpoint(
-                "us-east-1-fips",
-                aws_endpoint::partition::endpoint::Metadata {
-                    uri_template: "dynamodb-fips.us-east-1.amazonaws.com",
-                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
-                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
-                    credential_scope: aws_endpoint::CredentialScope::builder()
-                        .region("us-east-1")
-                        .build(),
-                },
-            )
-            .endpoint(
-                "us-east-2-fips",
-                aws_endpoint::partition::endpoint::Metadata {
-                    uri_template: "dynamodb-fips.us-east-2.amazonaws.com",
-                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
-                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
-                    credential_scope: aws_endpoint::CredentialScope::builder()
-                        .region("us-east-2")
-                        .build(),
-                },
-            )
-            .endpoint(
-                "us-west-1-fips",
-                aws_endpoint::partition::endpoint::Metadata {
-                    uri_template: "dynamodb-fips.us-west-1.amazonaws.com",
-                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
-                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
-                    credential_scope: aws_endpoint::CredentialScope::builder()
-                        .region("us-west-1")
-                        .build(),
-                },
-            )
-            .endpoint(
-                "us-west-2-fips",
-                aws_endpoint::partition::endpoint::Metadata {
-                    uri_template: "dynamodb-fips.us-west-2.amazonaws.com",
-                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
-                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
-                    credential_scope: aws_endpoint::CredentialScope::builder()
-                        .region("us-west-2")
                         .build(),
                 },
             )
@@ -137,9 +82,20 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
                 .endpoint(
+                    "us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "streams.dynamodb.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .service("dynamodb")
+                            .build(),
+                    },
+                )
+                .endpoint(
                     "us-gov-east-1-fips",
                     aws_endpoint::partition::endpoint::Metadata {
-                        uri_template: "dynamodb.us-gov-east-1.amazonaws.com",
+                        uri_template: "streams.dynamodb.us-gov-east-1.amazonaws.com",
                         protocol: aws_endpoint::partition::endpoint::Protocol::Https,
                         signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                         credential_scope: aws_endpoint::CredentialScope::builder()
@@ -148,9 +104,20 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     },
                 )
                 .endpoint(
+                    "us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "streams.dynamodb.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .service("dynamodb")
+                            .build(),
+                    },
+                )
+                .endpoint(
                     "us-gov-west-1-fips",
                     aws_endpoint::partition::endpoint::Metadata {
-                        uri_template: "dynamodb.us-gov-west-1.amazonaws.com",
+                        uri_template: "streams.dynamodb.us-gov-west-1.amazonaws.com",
                         protocol: aws_endpoint::partition::endpoint::Protocol::Https,
                         signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                         credential_scope: aws_endpoint::CredentialScope::builder()

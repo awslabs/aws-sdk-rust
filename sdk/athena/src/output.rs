@@ -62,6 +62,36 @@ impl UpdatePreparedStatementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateNamedQueryOutput {}
+impl std::fmt::Debug for UpdateNamedQueryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateNamedQueryOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateNamedQueryOutput`](crate::output::UpdateNamedQueryOutput)
+pub mod update_named_query_output {
+    /// A builder for [`UpdateNamedQueryOutput`](crate::output::UpdateNamedQueryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateNamedQueryOutput`](crate::output::UpdateNamedQueryOutput)
+        pub fn build(self) -> crate::output::UpdateNamedQueryOutput {
+            crate::output::UpdateNamedQueryOutput {}
+        }
+    }
+}
+impl UpdateNamedQueryOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNamedQueryOutput`](crate::output::UpdateNamedQueryOutput)
+    pub fn builder() -> crate::output::update_named_query_output::Builder {
+        crate::output::update_named_query_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataCatalogOutput {}
 impl std::fmt::Debug for UpdateDataCatalogOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

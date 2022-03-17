@@ -557,7 +557,7 @@ impl Client {
     /// Constructs a fluent builder for the [`PutRegistryScanningConfiguration`](crate::client::fluent_builders::PutRegistryScanningConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scan_type(ScanType)`](crate::client::fluent_builders::PutRegistryScanningConfiguration::scan_type) / [`set_scan_type(Option<ScanType>)`](crate::client::fluent_builders::PutRegistryScanningConfiguration::set_scan_type): <p>The scanning type to set for the registry.</p>  <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed. Alternatively, you can do manual scans of images with basic scanning.</p>  <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous scanning of all repositories in your registry.</p>
+    ///   - [`scan_type(ScanType)`](crate::client::fluent_builders::PutRegistryScanningConfiguration::scan_type) / [`set_scan_type(Option<ScanType>)`](crate::client::fluent_builders::PutRegistryScanningConfiguration::set_scan_type): <p>The scanning type to set for the registry.</p>  <p>When a registry scanning configuration is not defined, by default the <code>BASIC</code> scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.</p>  <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated vulnerability scanning. You may choose between continuous scanning or scan on push and you may specify filters to determine which individual repositories, or all repositories, are scanned.</p>
     ///   - [`rules(Vec<RegistryScanningRule>)`](crate::client::fluent_builders::PutRegistryScanningConfiguration::rules) / [`set_rules(Option<Vec<RegistryScanningRule>>)`](crate::client::fluent_builders::PutRegistryScanningConfiguration::set_rules): <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
     /// - On success, responds with [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput) with field(s):
     ///   - [`registry_scanning_configuration(Option<RegistryScanningConfiguration>)`](crate::output::PutRegistryScanningConfigurationOutput::registry_scanning_configuration): <p>The scanning configuration for your registry.</p>
@@ -3003,6 +3003,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutImageScanningConfiguration`.
     ///
+    /// <important>
+    /// <p>The <code>PutImageScanningConfiguration</code> API is being deprecated, in favor of specifying the image scanning configuration at the registry level. For more information, see <code>PutRegistryScanningConfiguration</code>.</p>
+    /// </important>
     /// <p>Updates the image scanning configuration for the specified repository.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutImageScanningConfiguration {
@@ -3338,15 +3341,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The scanning type to set for the registry.</p>
-        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed. Alternatively, you can do manual scans of images with basic scanning.</p>
-        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous scanning of all repositories in your registry.</p>
+        /// <p>When a registry scanning configuration is not defined, by default the <code>BASIC</code> scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.</p>
+        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated vulnerability scanning. You may choose between continuous scanning or scan on push and you may specify filters to determine which individual repositories, or all repositories, are scanned.</p>
         pub fn scan_type(mut self, input: crate::model::ScanType) -> Self {
             self.inner = self.inner.scan_type(input);
             self
         }
         /// <p>The scanning type to set for the registry.</p>
-        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed. Alternatively, you can do manual scans of images with basic scanning.</p>
-        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous scanning of all repositories in your registry.</p>
+        /// <p>When a registry scanning configuration is not defined, by default the <code>BASIC</code> scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.</p>
+        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated vulnerability scanning. You may choose between continuous scanning or scan on push and you may specify filters to determine which individual repositories, or all repositories, are scanned.</p>
         pub fn set_scan_type(mut self, input: std::option::Option<crate::model::ScanType>) -> Self {
             self.inner = self.inner.set_scan_type(input);
             self

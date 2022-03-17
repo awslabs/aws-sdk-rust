@@ -6994,6 +6994,19 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "embeddedTimecodeOverride" => {
+                                builder = builder.set_embedded_timecode_override(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::EmbeddedTimecodeOverride::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "hdr10Metadata" => {
                                 builder = builder.set_hdr10_metadata(
                                     crate::json_deser::deser_structure_crate_model_hdr10_metadata(
@@ -12302,6 +12315,21 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::HlsCaptionLanguageSetting::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "captionSegmentLengthControl" => {
+                                builder = builder.set_caption_segment_length_control(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::HlsCaptionSegmentLengthControl::from(
                                                 u.as_ref(),
                                             )
                                         })

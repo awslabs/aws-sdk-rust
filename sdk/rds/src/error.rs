@@ -12,7 +12,7 @@ pub struct AddRoleToDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddRoleToDBClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.</p>
     DbClusterRoleAlreadyExistsFault(crate::error::DbClusterRoleAlreadyExistsFault),
@@ -138,7 +138,7 @@ pub struct AddRoleToDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddRoleToDBInstanceErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The specified <code>RoleArn</code> or <code>FeatureName</code> value is already associated with the DB instance.</p>
     DbInstanceRoleAlreadyExistsFault(crate::error::DbInstanceRoleAlreadyExistsFault),
@@ -377,15 +377,15 @@ pub struct AddTagsToResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsToResourceErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
     /// <p>The specified target group isn't available for a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -644,7 +644,7 @@ pub enum AuthorizeDBSecurityGroupIngressErrorKind {
     AuthorizationAlreadyExistsFault(crate::error::AuthorizationAlreadyExistsFault),
     /// <p>The DB security group authorization quota has been reached.</p>
     AuthorizationQuotaExceededFault(crate::error::AuthorizationQuotaExceededFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>The state of the DB security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
@@ -785,7 +785,7 @@ pub struct BacktrackDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BacktrackDBClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -995,7 +995,7 @@ pub struct CopyDBClusterParameterGroupError {
 pub enum CopyDBClusterParameterGroupErrorKind {
     /// <p>A DB parameter group with the same name exists.</p>
     DbParameterGroupAlreadyExistsFault(crate::error::DbParameterGroupAlreadyExistsFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of DB parameter groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
@@ -1122,7 +1122,7 @@ pub struct CopyDBClusterSnapshotError {
 pub enum CopyDBClusterSnapshotErrorKind {
     /// <p>The user already has a DB cluster snapshot with the given identifier.</p>
     DbClusterSnapshotAlreadyExistsFault(crate::error::DbClusterSnapshotAlreadyExistsFault),
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p>The supplied value isn't a valid DB cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
@@ -1278,7 +1278,7 @@ pub struct CopyDBParameterGroupError {
 pub enum CopyDBParameterGroupErrorKind {
     /// <p>A DB parameter group with the same name exists.</p>
     DbParameterGroupAlreadyExistsFault(crate::error::DbParameterGroupAlreadyExistsFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of DB parameter groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
@@ -1401,9 +1401,9 @@ pub struct CopyDBSnapshotError {
 pub enum CopyDBSnapshotErrorKind {
     /// <p> <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.</p>
     CustomAvailabilityZoneNotFoundFault(crate::error::CustomAvailabilityZoneNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
     DbSnapshotAlreadyExistsFault(crate::error::DbSnapshotAlreadyExistsFault),
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// <p>The state of the DB snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
@@ -1916,21 +1916,21 @@ pub struct CreateDBClusterError {
 pub enum CreateDBClusterErrorKind {
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group. </p>
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
-    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     /// <p>There is insufficient storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
@@ -1940,7 +1940,7 @@ pub enum CreateDBClusterErrorKind {
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The DB subnet group cannot be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
-    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
@@ -2196,9 +2196,9 @@ pub enum CreateDBClusterEndpointErrorKind {
     DbClusterEndpointAlreadyExistsFault(crate::error::DbClusterEndpointAlreadyExistsFault),
     /// <p>The cluster already has the maximum number of custom endpoints.</p>
     DbClusterEndpointQuotaExceededFault(crate::error::DbClusterEndpointQuotaExceededFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -2463,7 +2463,7 @@ pub struct CreateDBClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBClusterSnapshotErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The user already has a DB cluster snapshot with the given identifier.</p>
     DbClusterSnapshotAlreadyExistsFault(crate::error::DbClusterSnapshotAlreadyExistsFault),
@@ -2613,19 +2613,19 @@ pub enum CreateDBInstanceErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     #[allow(missing_docs)] // documentation missing in model
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
@@ -2645,7 +2645,7 @@ pub enum CreateDBInstanceErrorKind {
     ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance. </p>
+    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2901,19 +2901,19 @@ pub struct CreateDBInstanceReadReplicaError {
 pub enum CreateDBInstanceReadReplicaErrorKind {
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
     /// <p>The DBSubnetGroup shouldn't be specified while creating read replicas that lie in the same region as the source instance.</p>
     DbSubnetGroupNotAllowedFault(crate::error::DbSubnetGroupNotAllowedFault),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
@@ -2935,7 +2935,7 @@ pub enum CreateDBInstanceReadReplicaErrorKind {
     ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance. </p>
+    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3608,7 +3608,7 @@ pub struct CreateDBSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBSecurityGroupErrorKind {
-    /// <p> A DB security group with the name specified in <code>DBSecurityGroupName</code> already exists. </p>
+    /// <p>A DB security group with the name specified in <code>DBSecurityGroupName</code> already exists.</p>
     DbSecurityGroupAlreadyExistsFault(crate::error::DbSecurityGroupAlreadyExistsFault),
     /// <p>A DB security group isn't allowed for this action.</p>
     DbSecurityGroupNotSupportedFault(crate::error::DbSecurityGroupNotSupportedFault),
@@ -3735,9 +3735,9 @@ pub struct CreateDBSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBSnapshotErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
     DbSnapshotAlreadyExistsFault(crate::error::DbSnapshotAlreadyExistsFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
@@ -3861,7 +3861,7 @@ pub struct CreateDBSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBSubnetGroupErrorKind {
-    /// <p> <code>DBSubnetGroupName</code> is already used by an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> is already used by an existing DB subnet group.</p>
     DbSubnetGroupAlreadyExistsFault(crate::error::DbSubnetGroupAlreadyExistsFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
@@ -4168,7 +4168,7 @@ pub struct CreateGlobalClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGlobalClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique name) to create a new global database cluster.</p>
     GlobalClusterAlreadyExistsFault(crate::error::GlobalClusterAlreadyExistsFault),
@@ -4620,7 +4620,7 @@ pub struct DeleteDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The user already has a DB cluster snapshot with the given identifier.</p>
     DbClusterSnapshotAlreadyExistsFault(crate::error::DbClusterSnapshotAlreadyExistsFault),
@@ -4880,7 +4880,7 @@ pub struct DeleteDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBClusterParameterGroupErrorKind {
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
@@ -4995,7 +4995,7 @@ pub struct DeleteDBClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBClusterSnapshotErrorKind {
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p>The supplied value isn't a valid DB cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
@@ -5111,9 +5111,9 @@ pub enum DeleteDBInstanceErrorKind {
     DbInstanceAutomatedBackupQuotaExceededFault(
         crate::error::DbInstanceAutomatedBackupQuotaExceededFault,
     ),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
     DbSnapshotAlreadyExistsFault(crate::error::DbSnapshotAlreadyExistsFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -5263,7 +5263,7 @@ pub struct DeleteDBInstanceAutomatedBackupError {
 pub enum DeleteDBInstanceAutomatedBackupErrorKind {
     /// <p>No automated backup for this DB instance was found.</p>
     DbInstanceAutomatedBackupNotFoundFault(crate::error::DbInstanceAutomatedBackupNotFoundFault),
-    /// <p>The automated backup is in an invalid state. For example, this automated backup is associated with an active instance. </p>
+    /// <p>The automated backup is in an invalid state. For example, this automated backup is associated with an active instance.</p>
     InvalidDbInstanceAutomatedBackupStateFault(
         crate::error::InvalidDbInstanceAutomatedBackupStateFault,
     ),
@@ -5382,7 +5382,7 @@ pub struct DeleteDBParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBParameterGroupErrorKind {
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
@@ -5699,7 +5699,7 @@ pub struct DeleteDBSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBSecurityGroupErrorKind {
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>The state of the DB security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
@@ -5807,7 +5807,7 @@ pub struct DeleteDBSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBSnapshotErrorKind {
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// <p>The state of the DB snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
@@ -5911,11 +5911,11 @@ pub struct DeleteDBSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBSubnetGroupErrorKind {
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The DB subnet group cannot be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
-    /// <p> The DB subnet isn't in the <i>available</i> state. </p>
+    /// <p>The DB subnet isn't in the <i>available</i> state.</p>
     InvalidDbSubnetStateFault(crate::error::InvalidDbSubnetStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6134,9 +6134,9 @@ pub struct DeleteGlobalClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGlobalClusterErrorKind {
-    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
-    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6335,7 +6335,7 @@ pub struct DeleteOptionGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteOptionGroupErrorKind {
-    /// <p> The option group isn't in the <i>available</i> state. </p>
+    /// <p>The option group isn't in the <i>available</i> state.</p>
     InvalidOptionGroupStateFault(crate::error::InvalidOptionGroupStateFault),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
@@ -6651,7 +6651,7 @@ pub struct DescribeCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCertificatesErrorKind {
-    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
+    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6844,9 +6844,9 @@ pub struct DescribeDBClusterBacktracksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterBacktracksErrorKind {
-    /// <p> <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack. </p>
+    /// <p> <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack.</p>
     DbClusterBacktrackNotFoundFault(crate::error::DbClusterBacktrackNotFoundFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6952,7 +6952,7 @@ pub struct DescribeDBClusterEndpointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterEndpointsErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7045,7 +7045,7 @@ pub struct DescribeDBClusterParameterGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterParameterGroupsErrorKind {
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7145,7 +7145,7 @@ pub struct DescribeDBClusterParametersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterParametersErrorKind {
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7242,7 +7242,7 @@ pub struct DescribeDBClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClustersErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7335,7 +7335,7 @@ pub struct DescribeDBClusterSnapshotAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterSnapshotAttributesErrorKind {
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7437,7 +7437,7 @@ pub struct DescribeDBClusterSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterSnapshotsErrorKind {
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7716,7 +7716,7 @@ pub struct DescribeDBInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBInstancesErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7809,7 +7809,7 @@ pub struct DescribeDBLogFilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBLogFilesErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7902,7 +7902,7 @@ pub struct DescribeDBParameterGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBParameterGroupsErrorKind {
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7999,7 +7999,7 @@ pub struct DescribeDBParametersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBParametersErrorKind {
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8540,7 +8540,7 @@ pub struct DescribeDBSecurityGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBSecurityGroupsErrorKind {
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8635,7 +8635,7 @@ pub struct DescribeDBSnapshotAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBSnapshotAttributesErrorKind {
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8728,7 +8728,7 @@ pub struct DescribeDBSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBSnapshotsErrorKind {
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8821,7 +8821,7 @@ pub struct DescribeDBSubnetGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBSubnetGroupsErrorKind {
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9436,7 +9436,7 @@ pub struct DescribeGlobalClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGlobalClustersErrorKind {
-    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10273,7 +10273,7 @@ pub struct DescribeValidDBInstanceModificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeValidDBInstanceModificationsErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
@@ -10390,7 +10390,7 @@ pub struct DownloadDBLogFilePortionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DownloadDBLogFilePortionErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p> <code>LogFileName</code> doesn't refer to an existing DB log file.</p>
     DbLogFileNotFoundFault(crate::error::DbLogFileNotFoundFault),
@@ -10494,7 +10494,7 @@ pub struct FailoverDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum FailoverDBClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -10609,13 +10609,13 @@ pub struct FailoverGlobalClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum FailoverGlobalClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10847,15 +10847,15 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
     /// <p>The specified target group isn't available for a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10984,7 +10984,7 @@ pub struct ModifyCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyCertificatesErrorKind {
-    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
+    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11077,7 +11077,7 @@ pub struct ModifyCurrentDBClusterCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyCurrentDBClusterCapacityErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p> <code>Capacity</code> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
     InvalidDbClusterCapacityFault(crate::error::InvalidDbClusterCapacityFault),
@@ -11319,13 +11319,13 @@ pub struct ModifyDBClusterError {
 pub enum ModifyDBClusterErrorKind {
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group. </p>
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -11527,7 +11527,7 @@ pub struct ModifyDBClusterEndpointError {
 pub enum ModifyDBClusterEndpointErrorKind {
     /// <p>The specified custom endpoint doesn't exist.</p>
     DbClusterEndpointNotFoundFault(crate::error::DbClusterEndpointNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The requested operation can't be performed on the endpoint while the endpoint is in this state.</p>
     InvalidDbClusterEndpointStateFault(crate::error::InvalidDbClusterEndpointStateFault),
@@ -11670,7 +11670,7 @@ pub struct ModifyDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBClusterParameterGroupErrorKind {
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
@@ -11785,7 +11785,7 @@ pub struct ModifyDBClusterSnapshotAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBClusterSnapshotAttributeErrorKind {
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p>The supplied value isn't a valid DB cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
@@ -11920,19 +11920,19 @@ pub enum ModifyDBInstanceErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     #[allow(missing_docs)] // documentation missing in model
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
-    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
+    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>The DB upgrade failed because a resource the DB depends on can't be modified.</p>
     DbUpgradeDependencyFailureFault(crate::error::DbUpgradeDependencyFailureFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
@@ -11952,7 +11952,7 @@ pub enum ModifyDBInstanceErrorKind {
     ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance. </p>
+    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12209,7 +12209,7 @@ pub struct ModifyDBParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBParameterGroupErrorKind {
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
@@ -12682,7 +12682,7 @@ pub struct ModifyDBSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBSnapshotErrorKind {
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12775,7 +12775,7 @@ pub struct ModifyDBSnapshotAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBSnapshotAttributeErrorKind {
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// <p>The state of the DB snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
@@ -12898,7 +12898,7 @@ pub struct ModifyDBSubnetGroupError {
 pub enum ModifyDBSubnetGroupErrorKind {
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of subnets in a DB subnet groups.</p>
     DbSubnetQuotaExceededFault(crate::error::DbSubnetQuotaExceededFault),
@@ -13190,13 +13190,13 @@ pub struct ModifyGlobalClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyGlobalClusterErrorKind {
-    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13316,7 +13316,7 @@ pub struct ModifyOptionGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyOptionGroupErrorKind {
-    /// <p> The option group isn't in the <i>available</i> state. </p>
+    /// <p>The option group isn't in the <i>available</i> state.</p>
     InvalidOptionGroupStateFault(crate::error::InvalidOptionGroupStateFault),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
@@ -13420,7 +13420,7 @@ pub struct PromoteReadReplicaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PromoteReadReplicaErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
@@ -13524,7 +13524,7 @@ pub struct PromoteReadReplicaDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PromoteReadReplicaDBClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -13770,7 +13770,7 @@ pub struct RebootDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebootDBClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -13885,7 +13885,7 @@ pub struct RebootDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebootDBInstanceErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
@@ -13989,9 +13989,9 @@ pub struct RegisterDBProxyTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterDBProxyTargetsErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
@@ -14182,11 +14182,11 @@ pub struct RemoveFromGlobalClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveFromGlobalClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
-    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14301,7 +14301,7 @@ pub struct RemoveRoleFromDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveRoleFromDBClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The specified IAM role Amazon Resource Name (ARN) isn't associated with the specified DB cluster.</p>
     DbClusterRoleNotFoundFault(crate::error::DbClusterRoleNotFoundFault),
@@ -14416,7 +14416,7 @@ pub struct RemoveRoleFromDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveRoleFromDBInstanceErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The specified <code>RoleArn</code> value doesn't match the specified feature for the DB instance.</p>
     DbInstanceRoleNotFoundFault(crate::error::DbInstanceRoleNotFoundFault),
@@ -14648,15 +14648,15 @@ pub struct RemoveTagsFromResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsFromResourceErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
     /// <p>The specified target group isn't available for a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14789,7 +14789,7 @@ pub struct ResetDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetDBClusterParameterGroupErrorKind {
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
@@ -14901,7 +14901,7 @@ pub struct ResetDBParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetDBParameterGroupErrorKind {
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
@@ -15011,15 +15011,15 @@ pub struct RestoreDBClusterFromS3Error {
 pub enum RestoreDBClusterFromS3ErrorKind {
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group. </p>
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>There is insufficient storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
@@ -15257,17 +15257,17 @@ pub struct RestoreDBClusterFromSnapshotError {
 pub enum RestoreDBClusterFromSnapshotErrorKind {
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
-    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group. </p>
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>The DB cluster doesn't have enough capacity for the current operation.</p>
     InsufficientDbClusterCapacityFault(crate::error::InsufficientDbClusterCapacityFault),
@@ -15574,17 +15574,17 @@ pub struct RestoreDBClusterToPointInTimeError {
 pub enum RestoreDBClusterToPointInTimeErrorKind {
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group. </p>
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
     DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>The DB cluster doesn't have enough capacity for the current operation.</p>
     InsufficientDbClusterCapacityFault(crate::error::InsufficientDbClusterCapacityFault),
@@ -15918,17 +15918,17 @@ pub enum RestoreDBInstanceFromDBSnapshotErrorKind {
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
@@ -15950,7 +15950,7 @@ pub enum RestoreDBInstanceFromDBSnapshotErrorKind {
     ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance. </p>
+    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16292,13 +16292,13 @@ pub enum RestoreDBInstanceFromS3ErrorKind {
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
@@ -16318,7 +16318,7 @@ pub enum RestoreDBInstanceFromS3ErrorKind {
     ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance. </p>
+    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16578,17 +16578,17 @@ pub enum RestoreDBInstanceToPointInTimeErrorKind {
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
     /// <p>No automated backup for this DB instance was found.</p>
     DbInstanceAutomatedBackupNotFoundFault(crate::error::DbInstanceAutomatedBackupNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
@@ -16606,13 +16606,13 @@ pub enum RestoreDBInstanceToPointInTimeErrorKind {
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
-    /// <p> <code>SourceDBInstanceIdentifier</code> refers to a DB instance with <code>BackupRetentionPeriod</code> equal to 0. </p>
+    /// <p> <code>SourceDBInstanceIdentifier</code> refers to a DB instance with <code>BackupRetentionPeriod</code> equal to 0.</p>
     PointInTimeRestoreNotEnabledFault(crate::error::PointInTimeRestoreNotEnabledFault),
     /// <p>Provisioned IOPS not available in the specified Availability Zone.</p>
     ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance. </p>
+    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16976,7 +16976,7 @@ pub enum RevokeDBSecurityGroupIngressErrorKind {
     /// <p>The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB security group.</p>
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>The state of the DB security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
@@ -17101,9 +17101,9 @@ pub struct StartActivityStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartActivityStreamErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -17249,7 +17249,7 @@ pub struct StartDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartDBClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -17367,13 +17367,13 @@ pub enum StartDBInstanceErrorKind {
     /// <p>The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB security group.</p>
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
@@ -17569,13 +17569,13 @@ pub enum StartDBInstanceAutomatedBackupsReplicationErrorKind {
     DbInstanceAutomatedBackupQuotaExceededFault(
         crate::error::DbInstanceAutomatedBackupQuotaExceededFault,
     ),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance. </p>
+    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17728,9 +17728,9 @@ pub struct StartExportTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartExportTaskErrorKind {
-    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// <p>You can't start an export task that's already running.</p>
     ExportTaskAlreadyExistsFault(crate::error::ExportTaskAlreadyExistsFault),
@@ -17909,9 +17909,9 @@ pub struct StopActivityStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopActivityStreamErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -18046,7 +18046,7 @@ pub struct StopDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopDBClusterErrorKind {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -18161,9 +18161,9 @@ pub struct StopDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopDBInstanceErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
     DbSnapshotAlreadyExistsFault(crate::error::DbSnapshotAlreadyExistsFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -18298,7 +18298,7 @@ pub struct StopDBInstanceAutomatedBackupsReplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopDBInstanceAutomatedBackupsReplicationErrorKind {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
@@ -18469,7 +18469,7 @@ impl InvalidDbInstanceStateFault {
     }
 }
 
-/// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
+/// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstanceNotFoundFault {
@@ -18661,7 +18661,7 @@ impl InvalidDbClusterStateFault {
     }
 }
 
-/// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot. </p>
+/// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSnapshotAlreadyExistsFault {
@@ -18728,7 +18728,7 @@ impl DbSnapshotAlreadyExistsFault {
     }
 }
 
-/// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
+/// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterNotFoundFault {
@@ -19304,7 +19304,7 @@ impl ExportTaskAlreadyExistsFault {
     }
 }
 
-/// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
+/// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSnapshotNotFoundFault {
@@ -19368,7 +19368,7 @@ impl DbSnapshotNotFoundFault {
     }
 }
 
-/// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot. </p>
+/// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshotNotFoundFault {
@@ -19435,7 +19435,7 @@ impl DbClusterSnapshotNotFoundFault {
     }
 }
 
-/// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance. </p>
+/// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageTypeNotSupportedFault {
@@ -19761,7 +19761,7 @@ impl InsufficientDbInstanceCapacityFault {
     }
 }
 
-/// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
+/// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupNotFoundFault {
@@ -20024,7 +20024,7 @@ impl InvalidDbSecurityGroupStateFault {
     }
 }
 
-/// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
+/// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSecurityGroupNotFoundFault {
@@ -20222,7 +20222,7 @@ impl ProvisionedIopsNotAvailableInAzFault {
     }
 }
 
-/// <p> <code>SourceDBInstanceIdentifier</code> refers to a DB instance with <code>BackupRetentionPeriod</code> equal to 0. </p>
+/// <p> <code>SourceDBInstanceIdentifier</code> refers to a DB instance with <code>BackupRetentionPeriod</code> equal to 0.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PointInTimeRestoreNotEnabledFault {
@@ -20478,7 +20478,7 @@ impl InstanceQuotaExceededFault {
     }
 }
 
-/// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
+/// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainNotFoundFault {
@@ -20542,7 +20542,7 @@ impl DomainNotFoundFault {
     }
 }
 
-/// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
+/// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbParameterGroupNotFoundFault {
@@ -21139,7 +21139,7 @@ impl DbClusterQuotaExceededFault {
     }
 }
 
-/// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group. </p>
+/// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterParameterGroupNotFoundFault {
@@ -21797,7 +21797,7 @@ impl DbClusterRoleNotFoundFault {
     }
 }
 
-/// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+/// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGlobalClusterStateFault {
@@ -21861,7 +21861,7 @@ impl InvalidGlobalClusterStateFault {
     }
 }
 
-/// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+/// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalClusterNotFoundFault {
@@ -22321,7 +22321,7 @@ impl ReservedDbInstanceAlreadyExistsFault {
     }
 }
 
-/// <p> The option group isn't in the <i>available</i> state. </p>
+/// <p>The option group isn't in the <i>available</i> state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOptionGroupStateFault {
@@ -23229,7 +23229,7 @@ impl DbUpgradeDependencyFailureFault {
     }
 }
 
-/// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
+/// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateNotFoundFault {
@@ -24079,7 +24079,7 @@ impl DbProxyTargetNotFoundFault {
     }
 }
 
-/// <p> <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack. </p>
+/// <p> <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterBacktrackNotFoundFault {
@@ -24210,7 +24210,7 @@ impl InvalidEventSubscriptionStateFault {
     }
 }
 
-/// <p> The DB subnet isn't in the <i>available</i> state. </p>
+/// <p>The DB subnet isn't in the <i>available</i> state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbSubnetStateFault {
@@ -24274,7 +24274,7 @@ impl InvalidDbSubnetStateFault {
     }
 }
 
-/// <p>The automated backup is in an invalid state. For example, this automated backup is associated with an active instance. </p>
+/// <p>The automated backup is in an invalid state. For example, this automated backup is associated with an active instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbInstanceAutomatedBackupStateFault {
@@ -24792,7 +24792,7 @@ impl DbSubnetGroupQuotaExceededFault {
     }
 }
 
-/// <p> <code>DBSubnetGroupName</code> is already used by an existing DB subnet group. </p>
+/// <p> <code>DBSubnetGroupName</code> is already used by an existing DB subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupAlreadyExistsFault {
@@ -24993,7 +24993,7 @@ impl DbSecurityGroupNotSupportedFault {
     }
 }
 
-/// <p> A DB security group with the name specified in <code>DBSecurityGroupName</code> already exists. </p>
+/// <p>A DB security group with the name specified in <code>DBSecurityGroupName</code> already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSecurityGroupAlreadyExistsFault {

@@ -186,7 +186,7 @@ pub struct UserPoolClientType {
     /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
     pub allowed_o_auth_flows_user_pool_client: std::option::Option<bool>,
     /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
-    /// <p>Amazon Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region in which the user pool resides.</p>
+    /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
     /// </note>
     pub analytics_configuration: std::option::Option<crate::model::AnalyticsConfigurationType>,
     /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
@@ -315,7 +315,7 @@ impl UserPoolClientType {
         self.allowed_o_auth_flows_user_pool_client
     }
     /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
-    /// <p>Amazon Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region in which the user pool resides.</p>
+    /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
     /// </note>
     pub fn analytics_configuration(
         &self,
@@ -764,7 +764,7 @@ pub mod user_pool_client_type {
             self
         }
         /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
-        /// <p>Amazon Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region in which the user pool resides.</p>
+        /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
         /// </note>
         pub fn analytics_configuration(
             mut self,
@@ -774,7 +774,7 @@ pub mod user_pool_client_type {
             self
         }
         /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
-        /// <p>Amazon Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region in which the user pool resides.</p>
+        /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
         /// </note>
         pub fn set_analytics_configuration(
             mut self,
@@ -912,14 +912,14 @@ impl AsRef<str> for PreventUserExistenceErrorTypes {
 }
 
 /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.</p> <note>
-/// <p>In Regions where Pinpoint isn't available, User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In Regions where Pinpoint is available, User Pools will support sending events to Amazon Pinpoint projects within that same Region. </p>
+/// <p>In Regions where Amazon Pinpointisn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyticsConfigurationType {
     /// <p>The application ID for an Amazon Pinpoint application.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -933,7 +933,7 @@ impl AnalyticsConfigurationType {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
     pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
@@ -987,12 +987,12 @@ pub mod analytics_configuration_type {
             self.application_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
         pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpointproject declared by the app ARN.</p>
         pub fn set_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1897,25 +1897,33 @@ impl MessageTemplateType {
     }
 }
 
-/// <p>The SMS configuration type that includes the settings the Amazon Cognito User Pool must call for the Amazon Simple Notification Service service to send an SMS message from your Amazon Web Services account. The Amazon Cognito User Pool makes the request to the Amazon SNS Service by using an Identity and Access Management role that you provide for your Amazon Web Services account.</p>
+/// <p>The SMS configuration type is the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SmsConfigurationType {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS caller. This is the ARN of the IAM role in your Amazon Web Services account that Amazon Cognito will use to send SMS messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>. </p>
     pub sns_caller_arn: std::option::Option<std::string::String>,
-    /// <p>The external ID is a value that you should use to add security to your IAM role that is used to call Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will include it when attempting to assume your IAM role so that you can set your roles trust policy to require the <code>ExternalID</code>. If you use the Amazon Cognito Management Console to create a role for SMS multi-factor authentication (MFA), Amazon Cognito will create a role with the required permissions and a trust policy that demonstrates use of the <code>ExternalId</code>.</p>
+    /// <p>The external ID provides additional security for your IAM role. You can use an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, your Amazon Cognito user pool includes it in the request to assume your IAM role. You can configure the role trust policy to require that Amazon Cognito, and any principal, provide the <code>ExternalID</code>. If you use the Amazon Cognito Management Console to create a role for SMS multi-factor authentication (MFA), Amazon Cognito creates a role with the required permissions and a trust policy that demonstrates use of the <code>ExternalId</code>.</p>
     /// <p>For more information about the <code>ExternalId</code> of a role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to use an external ID when granting access to your Amazon Web Services resources to a third party</a> </p>
     pub external_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services Region to use with Amazon SNS integration. You can choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS alternate Region</b>. </p>
+    /// <p> Amazon Cognito resources in the Asia Pacific (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the Asia Pacific (Tokyo) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS message settings for Amazon Cognito user pools</a>.</p>
+    pub sns_region: std::option::Option<std::string::String>,
 }
 impl SmsConfigurationType {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS caller. This is the ARN of the IAM role in your Amazon Web Services account that Amazon Cognito will use to send SMS messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>. </p>
     pub fn sns_caller_arn(&self) -> std::option::Option<&str> {
         self.sns_caller_arn.as_deref()
     }
-    /// <p>The external ID is a value that you should use to add security to your IAM role that is used to call Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will include it when attempting to assume your IAM role so that you can set your roles trust policy to require the <code>ExternalID</code>. If you use the Amazon Cognito Management Console to create a role for SMS multi-factor authentication (MFA), Amazon Cognito will create a role with the required permissions and a trust policy that demonstrates use of the <code>ExternalId</code>.</p>
+    /// <p>The external ID provides additional security for your IAM role. You can use an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, your Amazon Cognito user pool includes it in the request to assume your IAM role. You can configure the role trust policy to require that Amazon Cognito, and any principal, provide the <code>ExternalID</code>. If you use the Amazon Cognito Management Console to create a role for SMS multi-factor authentication (MFA), Amazon Cognito creates a role with the required permissions and a trust policy that demonstrates use of the <code>ExternalId</code>.</p>
     /// <p>For more information about the <code>ExternalId</code> of a role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to use an external ID when granting access to your Amazon Web Services resources to a third party</a> </p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Region to use with Amazon SNS integration. You can choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS alternate Region</b>. </p>
+    /// <p> Amazon Cognito resources in the Asia Pacific (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the Asia Pacific (Tokyo) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS message settings for Amazon Cognito user pools</a>.</p>
+    pub fn sns_region(&self) -> std::option::Option<&str> {
+        self.sns_region.as_deref()
     }
 }
 impl std::fmt::Debug for SmsConfigurationType {
@@ -1923,6 +1931,7 @@ impl std::fmt::Debug for SmsConfigurationType {
         let mut formatter = f.debug_struct("SmsConfigurationType");
         formatter.field("sns_caller_arn", &self.sns_caller_arn);
         formatter.field("external_id", &self.external_id);
+        formatter.field("sns_region", &self.sns_region);
         formatter.finish()
     }
 }
@@ -1934,6 +1943,7 @@ pub mod sms_configuration_type {
     pub struct Builder {
         pub(crate) sns_caller_arn: std::option::Option<std::string::String>,
         pub(crate) external_id: std::option::Option<std::string::String>,
+        pub(crate) sns_region: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS caller. This is the ARN of the IAM role in your Amazon Web Services account that Amazon Cognito will use to send SMS messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>. </p>
@@ -1949,16 +1959,28 @@ pub mod sms_configuration_type {
             self.sns_caller_arn = input;
             self
         }
-        /// <p>The external ID is a value that you should use to add security to your IAM role that is used to call Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will include it when attempting to assume your IAM role so that you can set your roles trust policy to require the <code>ExternalID</code>. If you use the Amazon Cognito Management Console to create a role for SMS multi-factor authentication (MFA), Amazon Cognito will create a role with the required permissions and a trust policy that demonstrates use of the <code>ExternalId</code>.</p>
+        /// <p>The external ID provides additional security for your IAM role. You can use an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, your Amazon Cognito user pool includes it in the request to assume your IAM role. You can configure the role trust policy to require that Amazon Cognito, and any principal, provide the <code>ExternalID</code>. If you use the Amazon Cognito Management Console to create a role for SMS multi-factor authentication (MFA), Amazon Cognito creates a role with the required permissions and a trust policy that demonstrates use of the <code>ExternalId</code>.</p>
         /// <p>For more information about the <code>ExternalId</code> of a role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to use an external ID when granting access to your Amazon Web Services resources to a third party</a> </p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>The external ID is a value that you should use to add security to your IAM role that is used to call Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will include it when attempting to assume your IAM role so that you can set your roles trust policy to require the <code>ExternalID</code>. If you use the Amazon Cognito Management Console to create a role for SMS multi-factor authentication (MFA), Amazon Cognito will create a role with the required permissions and a trust policy that demonstrates use of the <code>ExternalId</code>.</p>
+        /// <p>The external ID provides additional security for your IAM role. You can use an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, your Amazon Cognito user pool includes it in the request to assume your IAM role. You can configure the role trust policy to require that Amazon Cognito, and any principal, provide the <code>ExternalID</code>. If you use the Amazon Cognito Management Console to create a role for SMS multi-factor authentication (MFA), Amazon Cognito creates a role with the required permissions and a trust policy that demonstrates use of the <code>ExternalId</code>.</p>
         /// <p>For more information about the <code>ExternalId</code> of a role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to use an external ID when granting access to your Amazon Web Services resources to a third party</a> </p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
+            self
+        }
+        /// <p>The Amazon Web Services Region to use with Amazon SNS integration. You can choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS alternate Region</b>. </p>
+        /// <p> Amazon Cognito resources in the Asia Pacific (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the Asia Pacific (Tokyo) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS message settings for Amazon Cognito user pools</a>.</p>
+        pub fn sns_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sns_region = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region to use with Amazon SNS integration. You can choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS alternate Region</b>. </p>
+        /// <p> Amazon Cognito resources in the Asia Pacific (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the Asia Pacific (Tokyo) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS message settings for Amazon Cognito user pools</a>.</p>
+        pub fn set_sns_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_region = input;
             self
         }
         /// Consumes the builder and constructs a [`SmsConfigurationType`](crate::model::SmsConfigurationType)
@@ -1966,6 +1988,7 @@ pub mod sms_configuration_type {
             crate::model::SmsConfigurationType {
                 sns_caller_arn: self.sns_caller_arn,
                 external_id: self.external_id,
+                sns_region: self.sns_region,
             }
         }
     }
@@ -1977,8 +2000,8 @@ impl SmsConfigurationType {
     }
 }
 
-/// <p>The email configuration type.</p> <note>
-/// <p>Amazon Cognito has specific Regions for use with Amazon Simple Email Service. For more information on the supported Regions, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html">Email settings for Amazon Cognito user pools</a>.</p>
+/// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.</p> <note>
+/// <p>Amazon Cognito can send email messages with Amazon Simple Email Service resources in the Amazon Web Services Region where you created your user pool, and in alternate Regions in some cases. For more information on the supported Regions, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html">Email settings for Amazon Cognito user pools</a>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1988,10 +2011,11 @@ pub struct EmailConfigurationType {
     /// <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as the custom FROM address when it emails your users using its built-in email account.</p> </li>
     /// <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by calling Amazon SES on your behalf.</p> </li>
     /// </ul>
+    /// <p>The Region value of the <code>SourceArn</code> parameter must indicate a supported Amazon Web Services Region of your user pool. Typically, the Region in the <code>SourceArn</code> and the user pool Region are the same. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon SES email configuration regions</a> in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito Developer Guide</a>.</p>
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The destination to which the receiver of the email should reply.</p>
     pub reply_to_email_address: std::option::Option<std::string::String>,
-    /// <p>Specifies whether Amazon Cognito emails your users by using its built-in email functionality or your Amazon Simple Email Service email configuration. Specify one of the following values:</p>
+    /// <p>Specifies whether Amazon Cognito uses its built-in functionality to send your users email messages, or uses your Amazon Simple Email Service email configuration. Specify one of the following values:</p>
     /// <dl>
     /// <dt>
     /// COGNITO_DEFAULT
@@ -2028,10 +2052,20 @@ pub struct EmailConfigurationType {
     /// <testuser@example.com></testuser@example.com></code>. This address appears before the body of the email.</p>
     pub from: std::option::Option<std::string::String>,
     /// <p>The set of configuration rules that can be applied to emails sent using Amazon Simple Email Service. A configuration set is applied to an email by including a reference to the configuration set in the headers of the email. Once applied, all of the rules in that configuration set are applied to the email. Configuration sets can be used to apply the following types of rules to emails: </p>
-    /// <ul>
-    /// <li> <p>Event publishing – Amazon Simple Email Service can track the number of send, delivery, open, click, bounce, and complaint events for each email sent. Use event publishing to send information about these events to other Amazon Web Services services such as and Amazon CloudWatch.</p> </li>
-    /// <li> <p>IP pool management – When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p> </li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// Event publishing
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon Simple Email Service can track the number of send, delivery, open, click, bounce, and complaint events for each email sent. Use event publishing to send information about these events to other Amazon Web Services services such as and Amazon CloudWatch</p>
+    /// </dd>
+    /// <dt>
+    /// IP pool management
+    /// </dt>
+    /// <dd>
+    /// <p>When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p>
+    /// </dd>
+    /// </dl>
     pub configuration_set: std::option::Option<std::string::String>,
 }
 impl EmailConfigurationType {
@@ -2040,6 +2074,7 @@ impl EmailConfigurationType {
     /// <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as the custom FROM address when it emails your users using its built-in email account.</p> </li>
     /// <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by calling Amazon SES on your behalf.</p> </li>
     /// </ul>
+    /// <p>The Region value of the <code>SourceArn</code> parameter must indicate a supported Amazon Web Services Region of your user pool. Typically, the Region in the <code>SourceArn</code> and the user pool Region are the same. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon SES email configuration regions</a> in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito Developer Guide</a>.</p>
     pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
@@ -2047,7 +2082,7 @@ impl EmailConfigurationType {
     pub fn reply_to_email_address(&self) -> std::option::Option<&str> {
         self.reply_to_email_address.as_deref()
     }
-    /// <p>Specifies whether Amazon Cognito emails your users by using its built-in email functionality or your Amazon Simple Email Service email configuration. Specify one of the following values:</p>
+    /// <p>Specifies whether Amazon Cognito uses its built-in functionality to send your users email messages, or uses your Amazon Simple Email Service email configuration. Specify one of the following values:</p>
     /// <dl>
     /// <dt>
     /// COGNITO_DEFAULT
@@ -2090,10 +2125,20 @@ impl EmailConfigurationType {
         self.from.as_deref()
     }
     /// <p>The set of configuration rules that can be applied to emails sent using Amazon Simple Email Service. A configuration set is applied to an email by including a reference to the configuration set in the headers of the email. Once applied, all of the rules in that configuration set are applied to the email. Configuration sets can be used to apply the following types of rules to emails: </p>
-    /// <ul>
-    /// <li> <p>Event publishing – Amazon Simple Email Service can track the number of send, delivery, open, click, bounce, and complaint events for each email sent. Use event publishing to send information about these events to other Amazon Web Services services such as and Amazon CloudWatch.</p> </li>
-    /// <li> <p>IP pool management – When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p> </li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// Event publishing
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon Simple Email Service can track the number of send, delivery, open, click, bounce, and complaint events for each email sent. Use event publishing to send information about these events to other Amazon Web Services services such as and Amazon CloudWatch</p>
+    /// </dd>
+    /// <dt>
+    /// IP pool management
+    /// </dt>
+    /// <dd>
+    /// <p>When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p>
+    /// </dd>
+    /// </dl>
     pub fn configuration_set(&self) -> std::option::Option<&str> {
         self.configuration_set.as_deref()
     }
@@ -2128,6 +2173,7 @@ pub mod email_configuration_type {
         /// <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as the custom FROM address when it emails your users using its built-in email account.</p> </li>
         /// <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by calling Amazon SES on your behalf.</p> </li>
         /// </ul>
+        /// <p>The Region value of the <code>SourceArn</code> parameter must indicate a supported Amazon Web Services Region of your user pool. Typically, the Region in the <code>SourceArn</code> and the user pool Region are the same. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon SES email configuration regions</a> in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito Developer Guide</a>.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_arn = Some(input.into());
             self
@@ -2137,6 +2183,7 @@ pub mod email_configuration_type {
         /// <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as the custom FROM address when it emails your users using its built-in email account.</p> </li>
         /// <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by calling Amazon SES on your behalf.</p> </li>
         /// </ul>
+        /// <p>The Region value of the <code>SourceArn</code> parameter must indicate a supported Amazon Web Services Region of your user pool. Typically, the Region in the <code>SourceArn</code> and the user pool Region are the same. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon SES email configuration regions</a> in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito Developer Guide</a>.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
@@ -2154,7 +2201,7 @@ pub mod email_configuration_type {
             self.reply_to_email_address = input;
             self
         }
-        /// <p>Specifies whether Amazon Cognito emails your users by using its built-in email functionality or your Amazon Simple Email Service email configuration. Specify one of the following values:</p>
+        /// <p>Specifies whether Amazon Cognito uses its built-in functionality to send your users email messages, or uses your Amazon Simple Email Service email configuration. Specify one of the following values:</p>
         /// <dl>
         /// <dt>
         /// COGNITO_DEFAULT
@@ -2193,7 +2240,7 @@ pub mod email_configuration_type {
             self.email_sending_account = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon Cognito emails your users by using its built-in email functionality or your Amazon Simple Email Service email configuration. Specify one of the following values:</p>
+        /// <p>Specifies whether Amazon Cognito uses its built-in functionality to send your users email messages, or uses your Amazon Simple Email Service email configuration. Specify one of the following values:</p>
         /// <dl>
         /// <dt>
         /// COGNITO_DEFAULT
@@ -2245,19 +2292,39 @@ pub mod email_configuration_type {
             self
         }
         /// <p>The set of configuration rules that can be applied to emails sent using Amazon Simple Email Service. A configuration set is applied to an email by including a reference to the configuration set in the headers of the email. Once applied, all of the rules in that configuration set are applied to the email. Configuration sets can be used to apply the following types of rules to emails: </p>
-        /// <ul>
-        /// <li> <p>Event publishing – Amazon Simple Email Service can track the number of send, delivery, open, click, bounce, and complaint events for each email sent. Use event publishing to send information about these events to other Amazon Web Services services such as and Amazon CloudWatch.</p> </li>
-        /// <li> <p>IP pool management – When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p> </li>
-        /// </ul>
+        /// <dl>
+        /// <dt>
+        /// Event publishing
+        /// </dt>
+        /// <dd>
+        /// <p>Amazon Simple Email Service can track the number of send, delivery, open, click, bounce, and complaint events for each email sent. Use event publishing to send information about these events to other Amazon Web Services services such as and Amazon CloudWatch</p>
+        /// </dd>
+        /// <dt>
+        /// IP pool management
+        /// </dt>
+        /// <dd>
+        /// <p>When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p>
+        /// </dd>
+        /// </dl>
         pub fn configuration_set(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set = Some(input.into());
             self
         }
         /// <p>The set of configuration rules that can be applied to emails sent using Amazon Simple Email Service. A configuration set is applied to an email by including a reference to the configuration set in the headers of the email. Once applied, all of the rules in that configuration set are applied to the email. Configuration sets can be used to apply the following types of rules to emails: </p>
-        /// <ul>
-        /// <li> <p>Event publishing – Amazon Simple Email Service can track the number of send, delivery, open, click, bounce, and complaint events for each email sent. Use event publishing to send information about these events to other Amazon Web Services services such as and Amazon CloudWatch.</p> </li>
-        /// <li> <p>IP pool management – When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p> </li>
-        /// </ul>
+        /// <dl>
+        /// <dt>
+        /// Event publishing
+        /// </dt>
+        /// <dd>
+        /// <p>Amazon Simple Email Service can track the number of send, delivery, open, click, bounce, and complaint events for each email sent. Use event publishing to send information about these events to other Amazon Web Services services such as and Amazon CloudWatch</p>
+        /// </dd>
+        /// <dt>
+        /// IP pool management
+        /// </dt>
+        /// <dd>
+        /// <p>When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_configuration_set(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5288,7 +5355,7 @@ impl UserContextDataType {
 
 /// <p>An Amazon Pinpoint analytics endpoint.</p>
 /// <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note>
-/// <p>Amazon Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region in which the user pool resides.</p>
+/// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5346,7 +5413,7 @@ impl AnalyticsMetadataType {
     }
 }
 
-/// <p> <i>This data type is no longer supported.</i> You can use it only for SMS multi-factor authentication (MFA) configurations. You can't use it for time-based one-time password (TOTP) software token MFA configurations.</p>
+/// <p> <i>This data type is no longer supported.</i> Applies only to SMS multi-factor authentication (MFA) configurations. Does not apply to time-based one-time password (TOTP) software token MFA configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MfaOptionType {
@@ -5485,7 +5552,7 @@ impl SoftwareTokenMfaConfigType {
 pub struct SmsMfaConfigType {
     /// <p>The SMS authentication message that will be sent to users with the code they must sign in. The message must contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default message will be used.</p>
     pub sms_authentication_message: std::option::Option<std::string::String>,
-    /// <p>The SMS configuration.</p>
+    /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role that you provide for your Amazon Web Services account.</p>
     pub sms_configuration: std::option::Option<crate::model::SmsConfigurationType>,
 }
 impl SmsMfaConfigType {
@@ -5493,7 +5560,7 @@ impl SmsMfaConfigType {
     pub fn sms_authentication_message(&self) -> std::option::Option<&str> {
         self.sms_authentication_message.as_deref()
     }
-    /// <p>The SMS configuration.</p>
+    /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role that you provide for your Amazon Web Services account.</p>
     pub fn sms_configuration(&self) -> std::option::Option<&crate::model::SmsConfigurationType> {
         self.sms_configuration.as_ref()
     }
@@ -5532,12 +5599,12 @@ pub mod sms_mfa_config_type {
             self.sms_authentication_message = input;
             self
         }
-        /// <p>The SMS configuration.</p>
+        /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role that you provide for your Amazon Web Services account.</p>
         pub fn sms_configuration(mut self, input: crate::model::SmsConfigurationType) -> Self {
             self.sms_configuration = Some(input);
             self
         }
-        /// <p>The SMS configuration.</p>
+        /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role that you provide for your Amazon Web Services account.</p>
         pub fn set_sms_configuration(
             mut self,
             input: std::option::Option<crate::model::SmsConfigurationType>,
@@ -6355,7 +6422,7 @@ impl AccountTakeoverActionsType {
 pub struct AccountTakeoverActionType {
     /// <p>Flag specifying whether to send a notification.</p>
     pub notify: bool,
-    /// <p>The event action.</p>
+    /// <p>The action to take in response to the account takeover action. Valid values are:</p>
     /// <ul>
     /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
     /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
@@ -6369,7 +6436,7 @@ impl AccountTakeoverActionType {
     pub fn notify(&self) -> bool {
         self.notify
     }
-    /// <p>The event action.</p>
+    /// <p>The action to take in response to the account takeover action. Valid values are:</p>
     /// <ul>
     /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
     /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
@@ -6410,7 +6477,7 @@ pub mod account_takeover_action_type {
             self.notify = input;
             self
         }
-        /// <p>The event action.</p>
+        /// <p>The action to take in response to the account takeover action. Valid values are:</p>
         /// <ul>
         /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
         /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
@@ -6421,7 +6488,7 @@ pub mod account_takeover_action_type {
             self.event_action = Some(input);
             self
         }
-        /// <p>The event action.</p>
+        /// <p>The action to take in response to the account takeover action. Valid values are:</p>
         /// <ul>
         /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
         /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
@@ -7374,7 +7441,6 @@ pub struct UserType {
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-    /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -7409,7 +7475,6 @@ impl UserType {
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-    /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -7520,7 +7585,6 @@ pub mod user_type {
         /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
         /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
         /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-        /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
         /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
         /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
         /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -7534,7 +7598,6 @@ pub mod user_type {
         /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
         /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
         /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-        /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
         /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
         /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
         /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -8652,21 +8715,31 @@ pub struct UserPoolType {
     pub device_configuration: std::option::Option<crate::model::DeviceConfigurationType>,
     /// <p>A number estimating the size of the user pool.</p>
     pub estimated_number_of_users: i32,
-    /// <p>The email configuration.</p>
+    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages tfrom your user pool.</p>
     pub email_configuration: std::option::Option<crate::model::EmailConfigurationType>,
-    /// <p>The SMS configuration.</p>
+    /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
     pub sms_configuration: std::option::Option<crate::model::SmsConfigurationType>,
     /// <p>The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub user_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The reason why the SMS configuration can't send the messages to your users.</p>
     /// <p>This message might include comma-separated values to describe why your SMS configuration can't send messages to user pool end users.</p>
-    /// <ul>
-    /// <li> <p>InvalidSmsRoleAccessPolicyException - The Identity and Access Management role that Amazon Cognito uses to send SMS messages isn't properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p> </li>
-    /// <li> <p>SNSSandbox - The Amazon Web Services account is in SNS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p> </li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// InvalidSmsRoleAccessPolicyException
+    /// </dt>
+    /// <dd>
+    /// <p>The Identity and Access Management role that Amazon Cognito uses to send SMS messages isn't properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// SNSSandbox
+    /// </dt>
+    /// <dd>
+    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+    /// </dd>
+    /// </dl>
     pub sms_configuration_failure: std::option::Option<std::string::String>,
-    /// <p>The reason why the email configuration can't send the messages to your users.</p>
+    /// <p>Deprecated. Review error codes from API requests with <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information about problems with user pool email configuration.</p>
     pub email_configuration_failure: std::option::Option<std::string::String>,
     /// <p>The domain prefix, if the user pool has a domain associated with it.</p>
     pub domain: std::option::Option<std::string::String>,
@@ -8774,13 +8847,13 @@ impl UserPoolType {
     pub fn estimated_number_of_users(&self) -> i32 {
         self.estimated_number_of_users
     }
-    /// <p>The email configuration.</p>
+    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages tfrom your user pool.</p>
     pub fn email_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EmailConfigurationType> {
         self.email_configuration.as_ref()
     }
-    /// <p>The SMS configuration.</p>
+    /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
     pub fn sms_configuration(&self) -> std::option::Option<&crate::model::SmsConfigurationType> {
         self.sms_configuration.as_ref()
     }
@@ -8793,14 +8866,24 @@ impl UserPoolType {
     }
     /// <p>The reason why the SMS configuration can't send the messages to your users.</p>
     /// <p>This message might include comma-separated values to describe why your SMS configuration can't send messages to user pool end users.</p>
-    /// <ul>
-    /// <li> <p>InvalidSmsRoleAccessPolicyException - The Identity and Access Management role that Amazon Cognito uses to send SMS messages isn't properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p> </li>
-    /// <li> <p>SNSSandbox - The Amazon Web Services account is in SNS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p> </li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// InvalidSmsRoleAccessPolicyException
+    /// </dt>
+    /// <dd>
+    /// <p>The Identity and Access Management role that Amazon Cognito uses to send SMS messages isn't properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// SNSSandbox
+    /// </dt>
+    /// <dd>
+    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+    /// </dd>
+    /// </dl>
     pub fn sms_configuration_failure(&self) -> std::option::Option<&str> {
         self.sms_configuration_failure.as_deref()
     }
-    /// <p>The reason why the email configuration can't send the messages to your users.</p>
+    /// <p>Deprecated. Review error codes from API requests with <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information about problems with user pool email configuration.</p>
     pub fn email_configuration_failure(&self) -> std::option::Option<&str> {
         self.email_configuration_failure.as_deref()
     }
@@ -9219,12 +9302,12 @@ pub mod user_pool_type {
             self.estimated_number_of_users = input;
             self
         }
-        /// <p>The email configuration.</p>
+        /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages tfrom your user pool.</p>
         pub fn email_configuration(mut self, input: crate::model::EmailConfigurationType) -> Self {
             self.email_configuration = Some(input);
             self
         }
-        /// <p>The email configuration.</p>
+        /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages tfrom your user pool.</p>
         pub fn set_email_configuration(
             mut self,
             input: std::option::Option<crate::model::EmailConfigurationType>,
@@ -9232,12 +9315,12 @@ pub mod user_pool_type {
             self.email_configuration = input;
             self
         }
-        /// <p>The SMS configuration.</p>
+        /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
         pub fn sms_configuration(mut self, input: crate::model::SmsConfigurationType) -> Self {
             self.sms_configuration = Some(input);
             self
         }
-        /// <p>The SMS configuration.</p>
+        /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
         pub fn set_sms_configuration(
             mut self,
             input: std::option::Option<crate::model::SmsConfigurationType>,
@@ -9272,20 +9355,40 @@ pub mod user_pool_type {
         }
         /// <p>The reason why the SMS configuration can't send the messages to your users.</p>
         /// <p>This message might include comma-separated values to describe why your SMS configuration can't send messages to user pool end users.</p>
-        /// <ul>
-        /// <li> <p>InvalidSmsRoleAccessPolicyException - The Identity and Access Management role that Amazon Cognito uses to send SMS messages isn't properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p> </li>
-        /// <li> <p>SNSSandbox - The Amazon Web Services account is in SNS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p> </li>
-        /// </ul>
+        /// <dl>
+        /// <dt>
+        /// InvalidSmsRoleAccessPolicyException
+        /// </dt>
+        /// <dd>
+        /// <p>The Identity and Access Management role that Amazon Cognito uses to send SMS messages isn't properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+        /// </dd>
+        /// <dt>
+        /// SNSSandbox
+        /// </dt>
+        /// <dd>
+        /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+        /// </dd>
+        /// </dl>
         pub fn sms_configuration_failure(mut self, input: impl Into<std::string::String>) -> Self {
             self.sms_configuration_failure = Some(input.into());
             self
         }
         /// <p>The reason why the SMS configuration can't send the messages to your users.</p>
         /// <p>This message might include comma-separated values to describe why your SMS configuration can't send messages to user pool end users.</p>
-        /// <ul>
-        /// <li> <p>InvalidSmsRoleAccessPolicyException - The Identity and Access Management role that Amazon Cognito uses to send SMS messages isn't properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p> </li>
-        /// <li> <p>SNSSandbox - The Amazon Web Services account is in SNS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p> </li>
-        /// </ul>
+        /// <dl>
+        /// <dt>
+        /// InvalidSmsRoleAccessPolicyException
+        /// </dt>
+        /// <dd>
+        /// <p>The Identity and Access Management role that Amazon Cognito uses to send SMS messages isn't properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+        /// </dd>
+        /// <dt>
+        /// SNSSandbox
+        /// </dt>
+        /// <dd>
+        /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_sms_configuration_failure(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9293,7 +9396,7 @@ pub mod user_pool_type {
             self.sms_configuration_failure = input;
             self
         }
-        /// <p>The reason why the email configuration can't send the messages to your users.</p>
+        /// <p>Deprecated. Review error codes from API requests with <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information about problems with user pool email configuration.</p>
         pub fn email_configuration_failure(
             mut self,
             input: impl Into<std::string::String>,
@@ -9301,7 +9404,7 @@ pub mod user_pool_type {
             self.email_configuration_failure = Some(input.into());
             self
         }
-        /// <p>The reason why the email configuration can't send the messages to your users.</p>
+        /// <p>Deprecated. Review error codes from API requests with <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information about problems with user pool email configuration.</p>
         pub fn set_email_configuration_failure(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9456,19 +9559,39 @@ impl UserPoolType {
 pub struct UsernameConfigurationType {
     /// <p>Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
     /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”. This is the default value.</p> </li>
-    /// <li> <p> <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p> </li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// True
+    /// </dt>
+    /// <dd>
+    /// <p>Enables case sensitivity for all username input. When this option is set to <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”. This is the default value.</p>
+    /// </dd>
+    /// <dt>
+    /// False
+    /// </dt>
+    /// <dd>
+    /// <p>Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p>
+    /// </dd>
+    /// </dl>
     pub case_sensitive: std::option::Option<bool>,
 }
 impl UsernameConfigurationType {
     /// <p>Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
     /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”. This is the default value.</p> </li>
-    /// <li> <p> <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p> </li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// True
+    /// </dt>
+    /// <dd>
+    /// <p>Enables case sensitivity for all username input. When this option is set to <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”. This is the default value.</p>
+    /// </dd>
+    /// <dt>
+    /// False
+    /// </dt>
+    /// <dd>
+    /// <p>Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p>
+    /// </dd>
+    /// </dl>
     pub fn case_sensitive(&self) -> std::option::Option<bool> {
         self.case_sensitive
     }
@@ -9491,20 +9614,40 @@ pub mod username_configuration_type {
     impl Builder {
         /// <p>Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
         /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”. This is the default value.</p> </li>
-        /// <li> <p> <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p> </li>
-        /// </ul>
+        /// <dl>
+        /// <dt>
+        /// True
+        /// </dt>
+        /// <dd>
+        /// <p>Enables case sensitivity for all username input. When this option is set to <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”. This is the default value.</p>
+        /// </dd>
+        /// <dt>
+        /// False
+        /// </dt>
+        /// <dd>
+        /// <p>Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p>
+        /// </dd>
+        /// </dl>
         pub fn case_sensitive(mut self, input: bool) -> Self {
             self.case_sensitive = Some(input);
             self
         }
         /// <p>Specifies whether username case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
         /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input. When this option is set to <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”. This is the default value.</p> </li>
-        /// <li> <p> <b> <code>False</code> </b>: Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p> </li>
-        /// </ul>
+        /// <dl>
+        /// <dt>
+        /// True
+        /// </dt>
+        /// <dd>
+        /// <p>Enables case sensitivity for all username input. When this option is set to <code>True</code>, users must sign in using the exact capitalization of their given username, such as “UserName”. This is the default value.</p>
+        /// </dd>
+        /// <dt>
+        /// False
+        /// </dt>
+        /// <dd>
+        /// <p>Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_case_sensitive(mut self, input: std::option::Option<bool>) -> Self {
             self.case_sensitive = input;
             self

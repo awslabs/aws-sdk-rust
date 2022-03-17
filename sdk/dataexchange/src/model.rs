@@ -1251,7 +1251,7 @@ impl S3SnapshotAsset {
     }
 }
 
-/// <p>An asset in AWS Data Exchange is a piece of data (S3 object) or a means of fulfilling data (Amazon Redshift datashare or Amazon API Gateway API). The asset can be a structured data file, an image file, or some other data file that can be stored as an S3 object, an Amazon API Gateway API, or an Amazon Redshift datashare (Preview). When you create an import job for your files, API Gateway APIs, or Amazon Redshift datashares, you create an asset in AWS Data Exchange.</p>
+/// <p>An asset in AWS Data Exchange is a piece of data (S3 object) or a means of fulfilling data (Amazon Redshift datashare or Amazon API Gateway API). The asset can be a structured data file, an image file, or some other data file that can be stored as an S3 object, an Amazon API Gateway API, or an Amazon Redshift datashare. When you create an import job for your files, API Gateway APIs, or Amazon Redshift datashares, you create an asset in AWS Data Exchange.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetEntry {
@@ -4413,6 +4413,12 @@ pub struct RevisionEntry {
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    pub revocation_comment: std::option::Option<std::string::String>,
+    /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    pub revoked: bool,
+    /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+    pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RevisionEntry {
     /// <p>The ARN for the revision.</p>
@@ -4448,6 +4454,18 @@ impl RevisionEntry {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    pub fn revocation_comment(&self) -> std::option::Option<&str> {
+        self.revocation_comment.as_deref()
+    }
+    /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    pub fn revoked(&self) -> bool {
+        self.revoked
+    }
+    /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.revoked_at.as_ref()
+    }
 }
 impl std::fmt::Debug for RevisionEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4460,6 +4478,9 @@ impl std::fmt::Debug for RevisionEntry {
         formatter.field("id", &self.id);
         formatter.field("source_id", &self.source_id);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("revocation_comment", &self.revocation_comment);
+        formatter.field("revoked", &self.revoked);
+        formatter.field("revoked_at", &self.revoked_at);
         formatter.finish()
     }
 }
@@ -4477,6 +4498,9 @@ pub mod revision_entry {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) source_id: std::option::Option<std::string::String>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) revocation_comment: std::option::Option<std::string::String>,
+        pub(crate) revoked: std::option::Option<bool>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ARN for the revision.</p>
@@ -4567,6 +4591,42 @@ pub mod revision_entry {
             self.updated_at = input;
             self
         }
+        /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+        pub fn revocation_comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revocation_comment = Some(input.into());
+            self
+        }
+        /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+        pub fn set_revocation_comment(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.revocation_comment = input;
+            self
+        }
+        /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
+        pub fn revoked(mut self, input: bool) -> Self {
+            self.revoked = Some(input);
+            self
+        }
+        /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
+        pub fn set_revoked(mut self, input: std::option::Option<bool>) -> Self {
+            self.revoked = input;
+            self
+        }
+        /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+        pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.revoked_at = Some(input);
+            self
+        }
+        /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+        pub fn set_revoked_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.revoked_at = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RevisionEntry`](crate::model::RevisionEntry)
         pub fn build(self) -> crate::model::RevisionEntry {
             crate::model::RevisionEntry {
@@ -4578,6 +4638,9 @@ pub mod revision_entry {
                 id: self.id,
                 source_id: self.source_id,
                 updated_at: self.updated_at,
+                revocation_comment: self.revocation_comment,
+                revoked: self.revoked.unwrap_or_default(),
+                revoked_at: self.revoked_at,
             }
         }
     }

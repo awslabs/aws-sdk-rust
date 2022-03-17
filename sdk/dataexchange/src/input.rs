@@ -3296,6 +3296,204 @@ impl ListTagsForResourceInput {
     }
 }
 
+/// See [`RevokeRevisionInput`](crate::input::RevokeRevisionInput)
+pub mod revoke_revision_input {
+    /// A builder for [`RevokeRevisionInput`](crate::input::RevokeRevisionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_set_id: std::option::Option<std::string::String>,
+        pub(crate) revision_id: std::option::Option<std::string::String>,
+        pub(crate) revocation_comment: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for a data set.</p>
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_set_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for a data set.</p>
+        pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_set_id = input;
+            self
+        }
+        /// <p>The unique identifier for a revision.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for a revision.</p>
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
+            self
+        }
+        /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+        pub fn revocation_comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revocation_comment = Some(input.into());
+            self
+        }
+        /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+        pub fn set_revocation_comment(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.revocation_comment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RevokeRevisionInput`](crate::input::RevokeRevisionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::RevokeRevisionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RevokeRevisionInput {
+                data_set_id: self.data_set_id,
+                revision_id: self.revision_id,
+                revocation_comment: self.revocation_comment,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type RevokeRevisionInputOperationOutputAlias = crate::operation::RevokeRevision;
+#[doc(hidden)]
+pub type RevokeRevisionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl RevokeRevisionInput {
+    /// Consumes the builder and constructs an Operation<[`RevokeRevision`](crate::operation::RevokeRevision)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RevokeRevision,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RevokeRevisionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_31 = &_input.data_set_id;
+                let input_31 = input_31.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "data_set_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let data_set_id = aws_smithy_http::label::fmt_string(input_31, false);
+                if data_set_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "data_set_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_32 = &_input.revision_id;
+                let input_32 = input_32.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "revision_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let revision_id = aws_smithy_http::label::fmt_string(input_32, false);
+                if revision_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "revision_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/data-sets/{DataSetId}/revisions/{RevisionId}/revoke",
+                    DataSetId = data_set_id,
+                    RevisionId = revision_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RevokeRevisionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_revoke_revision(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RevokeRevision::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RevokeRevision",
+            "dataexchange",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RevokeRevisionInput`](crate::input::RevokeRevisionInput)
+    pub fn builder() -> crate::input::revoke_revision_input::Builder {
+        crate::input::revoke_revision_input::Builder::default()
+    }
+}
+
 /// See [`SendApiAssetInput`](crate::input::SendApiAssetInput)
 pub mod send_api_asset_input {
     /// A builder for [`SendApiAssetInput`](crate::input::SendApiAssetInput)
@@ -3608,14 +3806,14 @@ impl StartJobInput {
                 _input: &crate::input::StartJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.job_id;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_33 = &_input.job_id;
+                let input_33 = input_33.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_33, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -3773,14 +3971,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_32 = &_input.resource_arn;
-                let input_32 = input_32.as_ref().ok_or(
+                let input_34 = &_input.resource_arn;
+                let input_34 = input_34.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_32, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_34, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -3946,14 +4144,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_33 = &_input.resource_arn;
-                let input_33 = input_33.as_ref().ok_or(
+                let input_35 = &_input.resource_arn;
+                let input_35 = input_35.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_33, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_35, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -3969,9 +4167,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.tag_keys {
-                    for inner_35 in inner_34 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_35));
+                if let Some(inner_36) = &_input.tag_keys {
+                    for inner_37 in inner_36 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_37));
                     }
                 }
                 Ok(())
@@ -4133,42 +4331,42 @@ impl UpdateAssetInput {
                 _input: &crate::input::UpdateAssetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.data_set_id;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_38 = &_input.data_set_id;
+                let input_38 = input_38.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let data_set_id = aws_smithy_http::label::fmt_string(input_38, false);
                 if data_set_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_37 = &_input.revision_id;
-                let input_37 = input_37.as_ref().ok_or(
+                let input_39 = &_input.revision_id;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "revision_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let revision_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let revision_id = aws_smithy_http::label::fmt_string(input_39, false);
                 if revision_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "revision_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_38 = &_input.asset_id;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_40 = &_input.asset_id;
+                let input_40 = input_40.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let asset_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let asset_id = aws_smithy_http::label::fmt_string(input_40, false);
                 if asset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
@@ -4343,14 +4541,14 @@ impl UpdateDataSetInput {
                 _input: &crate::input::UpdateDataSetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_39 = &_input.data_set_id;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_41 = &_input.data_set_id;
+                let input_41 = input_41.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let data_set_id = aws_smithy_http::label::fmt_string(input_41, false);
                 if data_set_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
@@ -4510,14 +4708,14 @@ impl UpdateEventActionInput {
                 _input: &crate::input::UpdateEventActionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.event_action_id;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_42 = &_input.event_action_id;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "event_action_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let event_action_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let event_action_id = aws_smithy_http::label::fmt_string(input_42, false);
                 if event_action_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "event_action_id",
@@ -4702,28 +4900,28 @@ impl UpdateRevisionInput {
                 _input: &crate::input::UpdateRevisionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.data_set_id;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_43 = &_input.data_set_id;
+                let input_43 = input_43.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_41, false);
+                let data_set_id = aws_smithy_http::label::fmt_string(input_43, false);
                 if data_set_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_42 = &_input.revision_id;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_44 = &_input.revision_id;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "revision_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let revision_id = aws_smithy_http::label::fmt_string(input_42, false);
+                let revision_id = aws_smithy_http::label::fmt_string(input_44, false);
                 if revision_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "revision_id",
@@ -5119,6 +5317,41 @@ impl std::fmt::Debug for SendApiAssetInput {
         formatter.field("method", &self.method);
         formatter.field("path", &self.path);
         formatter.field("revision_id", &self.revision_id);
+        formatter.finish()
+    }
+}
+
+/// <p>The request body for RevokeRevision.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RevokeRevisionInput {
+    /// <p>The unique identifier for a data set.</p>
+    pub data_set_id: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for a revision.</p>
+    pub revision_id: std::option::Option<std::string::String>,
+    /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    pub revocation_comment: std::option::Option<std::string::String>,
+}
+impl RevokeRevisionInput {
+    /// <p>The unique identifier for a data set.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    pub fn revocation_comment(&self) -> std::option::Option<&str> {
+        self.revocation_comment.as_deref()
+    }
+}
+impl std::fmt::Debug for RevokeRevisionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RevokeRevisionInput");
+        formatter.field("data_set_id", &self.data_set_id);
+        formatter.field("revision_id", &self.revision_id);
+        formatter.field("revocation_comment", &self.revocation_comment);
         formatter.finish()
     }
 }

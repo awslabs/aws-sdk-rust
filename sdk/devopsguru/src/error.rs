@@ -541,6 +541,132 @@ impl std::error::Error for DescribeAnomalyError {
     }
 }
 
+/// Error type for the `DescribeEventSourcesConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeEventSourcesConfigError {
+    /// Kind of error that occurred.
+    pub kind: DescribeEventSourcesConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeEventSourcesConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeEventSourcesConfigErrorKind {
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure in an Amazon service occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to a request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeEventSourcesConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeEventSourcesConfigErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeEventSourcesConfigErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeEventSourcesConfigErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeEventSourcesConfigErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeEventSourcesConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeEventSourcesConfigError {
+    fn code(&self) -> Option<&str> {
+        DescribeEventSourcesConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeEventSourcesConfigError {
+    /// Creates a new `DescribeEventSourcesConfigError`.
+    pub fn new(kind: DescribeEventSourcesConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeEventSourcesConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeEventSourcesConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeEventSourcesConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeEventSourcesConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeEventSourcesConfigErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEventSourcesConfigErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEventSourcesConfigErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEventSourcesConfigErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEventSourcesConfigErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEventSourcesConfigErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEventSourcesConfigErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEventSourcesConfigErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeEventSourcesConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeEventSourcesConfigErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeEventSourcesConfigErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeEventSourcesConfigErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeEventSourcesConfigErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeEventSourcesConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeFeedback` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3188,6 +3314,132 @@ impl std::error::Error for StartCostEstimationError {
             StartCostEstimationErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartCostEstimationErrorKind::ValidationException(_inner) => Some(_inner),
             StartCostEstimationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateEventSourcesConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateEventSourcesConfigError {
+    /// Kind of error that occurred.
+    pub kind: UpdateEventSourcesConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateEventSourcesConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateEventSourcesConfigErrorKind {
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal failure in an Amazon service occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to a request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateEventSourcesConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateEventSourcesConfigErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateEventSourcesConfigErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateEventSourcesConfigErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateEventSourcesConfigErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateEventSourcesConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateEventSourcesConfigError {
+    fn code(&self) -> Option<&str> {
+        UpdateEventSourcesConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateEventSourcesConfigError {
+    /// Creates a new `UpdateEventSourcesConfigError`.
+    pub fn new(kind: UpdateEventSourcesConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateEventSourcesConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateEventSourcesConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateEventSourcesConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateEventSourcesConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateEventSourcesConfigErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventSourcesConfigErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventSourcesConfigErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventSourcesConfigErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventSourcesConfigErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventSourcesConfigErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventSourcesConfigErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventSourcesConfigErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateEventSourcesConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateEventSourcesConfigErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateEventSourcesConfigErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateEventSourcesConfigErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateEventSourcesConfigErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateEventSourcesConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

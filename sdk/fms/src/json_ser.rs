@@ -612,6 +612,11 @@ pub fn serialize_structure_crate_model_security_service_policy_data(
     if let Some(var_122) = &input.managed_service_data {
         object.key("ManagedServiceData").string(var_122.as_str());
     }
+    if let Some(var_123) = &input.policy_option {
+        let mut object_124 = object.key("PolicyOption").start_object();
+        crate::json_ser::serialize_structure_crate_model_policy_option(&mut object_124, var_123)?;
+        object_124.finish();
+    }
     Ok(())
 }
 
@@ -619,11 +624,38 @@ pub fn serialize_structure_crate_model_resource_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceTag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_123) = &input.key {
-        object.key("Key").string(var_123.as_str());
+    if let Some(var_125) = &input.key {
+        object.key("Key").string(var_125.as_str());
     }
-    if let Some(var_124) = &input.value {
-        object.key("Value").string(var_124.as_str());
+    if let Some(var_126) = &input.value {
+        object.key("Value").string(var_126.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_policy_option(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::PolicyOption,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_127) = &input.network_firewall_policy {
+        let mut object_128 = object.key("NetworkFirewallPolicy").start_object();
+        crate::json_ser::serialize_structure_crate_model_network_firewall_policy(
+            &mut object_128,
+            var_127,
+        )?;
+        object_128.finish();
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_model_network_firewall_policy(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::NetworkFirewallPolicy,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_129) = &input.firewall_deployment_model {
+        object
+            .key("FirewallDeploymentModel")
+            .string(var_129.as_str());
     }
     Ok(())
 }

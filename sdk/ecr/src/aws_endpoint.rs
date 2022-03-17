@@ -56,6 +56,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "ap-northeast-3",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.ecr.ap-northeast-3.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-northeast-3")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "ap-south-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "api.ecr.ap-south-1.amazonaws.com",
@@ -89,6 +100,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "ap-southeast-3",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.ecr.ap-southeast-3.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-southeast-3")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "ca-central-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "api.ecr.ca-central-1.amazonaws.com",
@@ -96,6 +118,50 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("ca-central-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "dkr-us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.ecr.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "dkr-us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.ecr.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "dkr-us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.ecr.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "dkr-us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "api.ecr.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-2")
                         .build(),
                 },
             )
@@ -377,6 +443,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                             .build(),
                     },
                 )
+                .endpoint(
+                    "us-iso-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "api.ecr.us-iso-west-1.c2s.ic.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-iso-west-1")
+                            .build(),
+                    },
+                )
                 .build()
                 .expect("invalid partition"),
             aws_endpoint::Partition::builder()
@@ -412,6 +489,28 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     credential_scope: aws_endpoint::CredentialScope::builder().build(),
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+                .endpoint(
+                    "dkr-us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "api.ecr.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "dkr-us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "api.ecr.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
                 .endpoint(
                     "fips-dkr-us-gov-east-1",
                     aws_endpoint::partition::endpoint::Metadata {

@@ -243,6 +243,17 @@ pub fn serialize_structure_crate_model_engine_transcribe_settings(
     if let Some(var_48) = &input.language_model_name {
         object.key("LanguageModelName").string(var_48.as_str());
     }
+    if input.identify_language {
+        object
+            .key("IdentifyLanguage")
+            .boolean(input.identify_language);
+    }
+    if let Some(var_49) = &input.language_options {
+        object.key("LanguageOptions").string(var_49.as_str());
+    }
+    if let Some(var_50) = &input.preferred_language {
+        object.key("PreferredLanguage").string(var_50.as_str());
+    }
     Ok(())
 }
 
@@ -250,25 +261,25 @@ pub fn serialize_structure_crate_model_engine_transcribe_medical_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EngineTranscribeMedicalSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_49) = &input.language_code {
-        object.key("LanguageCode").string(var_49.as_str());
+    if let Some(var_51) = &input.language_code {
+        object.key("LanguageCode").string(var_51.as_str());
     }
-    if let Some(var_50) = &input.specialty {
-        object.key("Specialty").string(var_50.as_str());
+    if let Some(var_52) = &input.specialty {
+        object.key("Specialty").string(var_52.as_str());
     }
-    if let Some(var_51) = &input.r#type {
-        object.key("Type").string(var_51.as_str());
+    if let Some(var_53) = &input.r#type {
+        object.key("Type").string(var_53.as_str());
     }
-    if let Some(var_52) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_52.as_str());
+    if let Some(var_54) = &input.vocabulary_name {
+        object.key("VocabularyName").string(var_54.as_str());
     }
-    if let Some(var_53) = &input.region {
-        object.key("Region").string(var_53.as_str());
+    if let Some(var_55) = &input.region {
+        object.key("Region").string(var_55.as_str());
     }
-    if let Some(var_54) = &input.content_identification_type {
+    if let Some(var_56) = &input.content_identification_type {
         object
             .key("ContentIdentificationType")
-            .string(var_54.as_str());
+            .string(var_56.as_str());
     }
     Ok(())
 }

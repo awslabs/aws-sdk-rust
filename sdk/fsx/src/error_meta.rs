@@ -63,11 +63,11 @@ pub enum Error {
     SnapshotNotFound(crate::error::SnapshotNotFound),
     /// <p>The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.</p>
     SourceBackupUnavailable(crate::error::SourceBackupUnavailable),
-    /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
+    /// <p>No FSx for ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
+    /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

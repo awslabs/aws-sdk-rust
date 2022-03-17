@@ -12,6 +12,26 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
             .endpoint(
+                "ca-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "ca-central-1-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition-fips.ca-central-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ca-central-1")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "rekognition-fips.ca-central-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "rekognition-fips.ca-central-1.amazonaws.com",
@@ -57,6 +77,141 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
             )
             .endpoint(
                 "rekognition-fips.us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition-fips.us-west-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "rekognition.ca-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ca-central-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "rekognition.us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "rekognition.us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "rekognition.us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "rekognition.us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-east-1-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition-fips.us-east-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-east-2-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition-fips.us-east-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-west-1-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition-fips.us-west-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "rekognition.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-west-2-fips",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "rekognition-fips.us-west-2.amazonaws.com",
                     protocol: aws_endpoint::partition::endpoint::Protocol::Https,
@@ -117,6 +272,37 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
                 .endpoint(
                     "rekognition-fips.us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "rekognition-fips.us-gov-west-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "rekognition.us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "rekognition.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "rekognition.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-west-1-fips",
                     aws_endpoint::partition::endpoint::Metadata {
                         uri_template: "rekognition-fips.us-gov-west-1.amazonaws.com",
                         protocol: aws_endpoint::partition::endpoint::Protocol::Https,

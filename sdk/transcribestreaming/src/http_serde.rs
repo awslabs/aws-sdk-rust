@@ -578,6 +578,42 @@ pub fn add_headers_start_stream_transcription(
             builder = builder.header("x-amzn-transcribe-preferred-language", header_value);
         }
     }
+    if let Some(inner_55) = &input.vocabulary_names {
+        let formatted_56 = AsRef::<str>::as_ref(inner_55);
+        if !formatted_56.is_empty() {
+            use std::convert::TryFrom;
+            let header_value = formatted_56;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::BuildError::InvalidField {
+                        field: "vocabulary_names",
+                        details: format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    }
+                })?;
+            builder = builder.header("x-amzn-transcribe-vocabulary-names", header_value);
+        }
+    }
+    if let Some(inner_57) = &input.vocabulary_filter_names {
+        let formatted_58 = AsRef::<str>::as_ref(inner_57);
+        if !formatted_58.is_empty() {
+            use std::convert::TryFrom;
+            let header_value = formatted_58;
+            let header_value =
+                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                    aws_smithy_http::operation::BuildError::InvalidField {
+                        field: "vocabulary_filter_names",
+                        details: format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    }
+                })?;
+            builder = builder.header("x-amzn-transcribe-vocabulary-filter-names", header_value);
+        }
+    }
     Ok(builder)
 }
 
@@ -599,14 +635,14 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     let headers = header_map
         .get_all("x-amzn-transcribe-enable-channel-identification")
         .iter();
-    let var_55 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
-    if var_55.len() > 1 {
+    let var_59 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    if var_59.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_55.len()),
+            format!("expected one item but found {}", var_59.len()),
         ))
     } else {
-        let mut var_55 = var_55;
-        Ok(var_55.pop())
+        let mut var_59 = var_59;
+        Ok(var_59.pop())
     }
 }
 
@@ -636,14 +672,14 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-transcribe-sample-rate").iter();
-    let var_56 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
-    if var_56.len() > 1 {
+    let var_60 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_60.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_56.len()),
+            format!("expected one item but found {}", var_60.len()),
         ))
     } else {
-        let mut var_56 = var_56;
-        Ok(var_56.pop())
+        let mut var_60 = var_60;
+        Ok(var_60.pop())
     }
 }
 
@@ -653,14 +689,14 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     let headers = header_map
         .get_all("x-amzn-transcribe-number-of-channels")
         .iter();
-    let var_57 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
-    if var_57.len() > 1 {
+    let var_61 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_61.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_57.len()),
+            format!("expected one item but found {}", var_61.len()),
         ))
     } else {
-        let mut var_57 = var_57;
-        Ok(var_57.pop())
+        let mut var_61 = var_61;
+        Ok(var_61.pop())
     }
 }
 
@@ -690,14 +726,14 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     let headers = header_map
         .get_all("x-amzn-transcribe-show-speaker-label")
         .iter();
-    let var_58 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
-    if var_58.len() > 1 {
+    let var_62 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    if var_62.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_58.len()),
+            format!("expected one item but found {}", var_62.len()),
         ))
     } else {
-        let mut var_58 = var_58;
-        Ok(var_58.pop())
+        let mut var_62 = var_62;
+        Ok(var_62.pop())
     }
 }
 
@@ -778,14 +814,14 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     let headers = header_map
         .get_all("x-amzn-transcribe-enable-channel-identification")
         .iter();
-    let var_59 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
-    if var_59.len() > 1 {
+    let var_63 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    if var_63.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_59.len()),
+            format!("expected one item but found {}", var_63.len()),
         ))
     } else {
-        let mut var_59 = var_59;
-        Ok(var_59.pop())
+        let mut var_63 = var_63;
+        Ok(var_63.pop())
     }
 }
 
@@ -795,14 +831,14 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     let headers = header_map
         .get_all("x-amzn-transcribe-enable-partial-results-stabilization")
         .iter();
-    let var_60 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
-    if var_60.len() > 1 {
+    let var_64 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    if var_64.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_60.len()),
+            format!("expected one item but found {}", var_64.len()),
         ))
     } else {
-        let mut var_60 = var_60;
-        Ok(var_60.pop())
+        let mut var_64 = var_64;
+        Ok(var_64.pop())
     }
 }
 
@@ -812,14 +848,14 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     let headers = header_map
         .get_all("x-amzn-transcribe-identify-language")
         .iter();
-    let var_61 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
-    if var_61.len() > 1 {
+    let var_65 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    if var_65.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_61.len()),
+            format!("expected one item but found {}", var_65.len()),
         ))
     } else {
-        let mut var_61 = var_61;
-        Ok(var_61.pop())
+        let mut var_65 = var_65;
+        Ok(var_65.pop())
     }
 }
 
@@ -873,14 +909,14 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-transcribe-sample-rate").iter();
-    let var_62 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
-    if var_62.len() > 1 {
+    let var_66 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_66.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_62.len()),
+            format!("expected one item but found {}", var_66.len()),
         ))
     } else {
-        let mut var_62 = var_62;
-        Ok(var_62.pop())
+        let mut var_66 = var_66;
+        Ok(var_66.pop())
     }
 }
 
@@ -890,14 +926,14 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     let headers = header_map
         .get_all("x-amzn-transcribe-number-of-channels")
         .iter();
-    let var_63 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
-    if var_63.len() > 1 {
+    let var_67 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_67.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_63.len()),
+            format!("expected one item but found {}", var_67.len()),
         ))
     } else {
-        let mut var_63 = var_63;
-        Ok(var_63.pop())
+        let mut var_67 = var_67;
+        Ok(var_67.pop())
     }
 }
 
@@ -963,14 +999,14 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     let headers = header_map
         .get_all("x-amzn-transcribe-show-speaker-label")
         .iter();
-    let var_64 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
-    if var_64.len() > 1 {
+    let var_68 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    if var_68.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_64.len()),
+            format!("expected one item but found {}", var_68.len()),
         ))
     } else {
-        let mut var_64 = var_64;
-        Ok(var_64.pop())
+        let mut var_68 = var_68;
+        Ok(var_68.pop())
     }
 }
 
@@ -1015,6 +1051,18 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
     aws_smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_names(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map
+        .get_all("x-amzn-transcribe-vocabulary-filter-names")
+        .iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_name(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
@@ -1023,6 +1071,18 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
 > {
     let headers = header_map
         .get_all("x-amzn-transcribe-vocabulary-name")
+        .iter();
+    aws_smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_names(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
+    let headers = header_map
+        .get_all("x-amzn-transcribe-vocabulary-names")
         .iter();
     aws_smithy_http::header::one_or_none(headers)
 }

@@ -5355,6 +5355,187 @@ impl UpdateDataCatalogInput {
     }
 }
 
+/// See [`UpdateNamedQueryInput`](crate::input::UpdateNamedQueryInput)
+pub mod update_named_query_input {
+    /// A builder for [`UpdateNamedQueryInput`](crate::input::UpdateNamedQueryInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) named_query_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) query_string: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier (UUID) of the query.</p>
+        pub fn named_query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.named_query_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier (UUID) of the query.</p>
+        pub fn set_named_query_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.named_query_id = input;
+            self
+        }
+        /// <p>The name of the query.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the query.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The query description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The query description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The contents of the query with all query statements.</p>
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_string = Some(input.into());
+            self
+        }
+        /// <p>The contents of the query with all query statements.</p>
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_string = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateNamedQueryInput`](crate::input::UpdateNamedQueryInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateNamedQueryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateNamedQueryInput {
+                named_query_id: self.named_query_id,
+                name: self.name,
+                description: self.description,
+                query_string: self.query_string,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateNamedQueryInputOperationOutputAlias = crate::operation::UpdateNamedQuery;
+#[doc(hidden)]
+pub type UpdateNamedQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateNamedQueryInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateNamedQuery`](crate::operation::UpdateNamedQuery)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateNamedQuery,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateNamedQueryInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateNamedQueryInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonAthena.UpdateNamedQuery",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_named_query(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateNamedQuery::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateNamedQuery",
+            "athena",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateNamedQueryInput`](crate::input::UpdateNamedQueryInput)
+    pub fn builder() -> crate::input::update_named_query_input::Builder {
+        crate::input::update_named_query_input::Builder::default()
+    }
+}
+
 /// See [`UpdatePreparedStatementInput`](crate::input::UpdatePreparedStatementInput)
 pub mod update_prepared_statement_input {
     /// A builder for [`UpdatePreparedStatementInput`](crate::input::UpdatePreparedStatementInput)
@@ -5812,6 +5993,48 @@ impl std::fmt::Debug for UpdatePreparedStatementInput {
         formatter.field("work_group", &self.work_group);
         formatter.field("query_statement", &self.query_statement);
         formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateNamedQueryInput {
+    /// <p>The unique identifier (UUID) of the query.</p>
+    pub named_query_id: std::option::Option<std::string::String>,
+    /// <p>The name of the query.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The query description.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The contents of the query with all query statements.</p>
+    pub query_string: std::option::Option<std::string::String>,
+}
+impl UpdateNamedQueryInput {
+    /// <p>The unique identifier (UUID) of the query.</p>
+    pub fn named_query_id(&self) -> std::option::Option<&str> {
+        self.named_query_id.as_deref()
+    }
+    /// <p>The name of the query.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The query description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The contents of the query with all query statements.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateNamedQueryInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateNamedQueryInput");
+        formatter.field("named_query_id", &self.named_query_id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("query_string", &self.query_string);
         formatter.finish()
     }
 }

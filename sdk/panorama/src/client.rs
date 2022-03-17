@@ -177,7 +177,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::DeletePackage::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::DeletePackage::set_package_id): <p>The package's ID.</p>
-    ///   - [`force_delete(bool)`](crate::client::fluent_builders::DeletePackage::force_delete) / [`set_force_delete(Option<bool>)`](crate::client::fluent_builders::DeletePackage::set_force_delete): <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
+    ///   - [`force_delete(bool)`](crate::client::fluent_builders::DeletePackage::force_delete) / [`set_force_delete(bool)`](crate::client::fluent_builders::DeletePackage::set_force_delete): <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     /// - On success, responds with [`DeletePackageOutput`](crate::output::DeletePackageOutput)
 
     /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::error::DeletePackageError)
@@ -260,6 +260,8 @@ impl Client {
     ///   - [`networking_configuration(Option<NetworkPayload>)`](crate::output::DescribeDeviceOutput::networking_configuration): <p>The device's networking configuration.</p>
     ///   - [`current_networking_status(Option<NetworkStatus>)`](crate::output::DescribeDeviceOutput::current_networking_status): <p>The device's networking status.</p>
     ///   - [`lease_expiration_time(Option<DateTime>)`](crate::output::DescribeDeviceOutput::lease_expiration_time): <p>The device's lease expiration time.</p>
+    ///   - [`alternate_softwares(Option<Vec<AlternateSoftwareMetadata>>)`](crate::output::DescribeDeviceOutput::alternate_softwares): <p>Beta software releases available for the device.</p>
+    ///   - [`latest_alternate_software(Option<String>)`](crate::output::DescribeDeviceOutput::latest_alternate_software): <p>The most recent beta software release.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::error::DescribeDeviceError)
     pub fn describe_device(&self) -> fluent_builders::DescribeDevice {
         fluent_builders::DescribeDevice::new(self.handle.clone())
@@ -377,7 +379,7 @@ impl Client {
     ///   - [`package_name(Option<String>)`](crate::output::DescribePackageVersionOutput::package_name): <p>The version's name.</p>
     ///   - [`package_version(Option<String>)`](crate::output::DescribePackageVersionOutput::package_version): <p>The version's version.</p>
     ///   - [`patch_version(Option<String>)`](crate::output::DescribePackageVersionOutput::patch_version): <p>The version's patch version.</p>
-    ///   - [`is_latest_patch(Option<bool>)`](crate::output::DescribePackageVersionOutput::is_latest_patch): <p>Whether the version is the latest available.</p>
+    ///   - [`is_latest_patch(bool)`](crate::output::DescribePackageVersionOutput::is_latest_patch): <p>Whether the version is the latest available.</p>
     ///   - [`status(Option<PackageVersionStatus>)`](crate::output::DescribePackageVersionOutput::status): <p>The version's status.</p>
     ///   - [`status_description(Option<String>)`](crate::output::DescribePackageVersionOutput::status_description): <p>The version's status description.</p>
     ///   - [`registered_time(Option<DateTime>)`](crate::output::DescribePackageVersionOutput::registered_time): <p>The version's registered time.</p>
@@ -550,7 +552,7 @@ impl Client {
     ///   - [`package_id(impl Into<String>)`](crate::client::fluent_builders::RegisterPackageVersion::package_id) / [`set_package_id(Option<String>)`](crate::client::fluent_builders::RegisterPackageVersion::set_package_id): <p>A package ID.</p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::RegisterPackageVersion::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::RegisterPackageVersion::set_package_version): <p>A package version.</p>
     ///   - [`patch_version(impl Into<String>)`](crate::client::fluent_builders::RegisterPackageVersion::patch_version) / [`set_patch_version(Option<String>)`](crate::client::fluent_builders::RegisterPackageVersion::set_patch_version): <p>A patch version.</p>
-    ///   - [`mark_latest(bool)`](crate::client::fluent_builders::RegisterPackageVersion::mark_latest) / [`set_mark_latest(Option<bool>)`](crate::client::fluent_builders::RegisterPackageVersion::set_mark_latest): <p>Whether to mark the new version as the latest version.</p>
+    ///   - [`mark_latest(bool)`](crate::client::fluent_builders::RegisterPackageVersion::mark_latest) / [`set_mark_latest(bool)`](crate::client::fluent_builders::RegisterPackageVersion::set_mark_latest): <p>Whether to mark the new version as the latest version.</p>
     /// - On success, responds with [`RegisterPackageVersionOutput`](crate::output::RegisterPackageVersionOutput)
 
     /// - On failure, responds with [`SdkError<RegisterPackageVersionError>`](crate::error::RegisterPackageVersionError)
@@ -1237,7 +1239,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePackage`.
     ///
-    /// <p>Deletes a package.</p>
+    /// <p>Deletes a package.</p> <note>
+    /// <p>To delete a package, you need permission to call <code>s3:DeleteObject</code> in addition to permissions for the AWS Panorama API.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackage {
         handle: std::sync::Arc<super::Handle>,

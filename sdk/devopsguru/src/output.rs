@@ -62,6 +62,36 @@ impl UpdateResourceCollectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateEventSourcesConfigOutput {}
+impl std::fmt::Debug for UpdateEventSourcesConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateEventSourcesConfigOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput)
+pub mod update_event_sources_config_output {
+    /// A builder for [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput)
+        pub fn build(self) -> crate::output::UpdateEventSourcesConfigOutput {
+            crate::output::UpdateEventSourcesConfigOutput {}
+        }
+    }
+}
+impl UpdateEventSourcesConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput)
+    pub fn builder() -> crate::output::update_event_sources_config_output::Builder {
+        crate::output::update_event_sources_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCostEstimationOutput {}
 impl std::fmt::Debug for StartCostEstimationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2002,6 +2032,63 @@ impl DescribeFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFeedbackOutput`](crate::output::DescribeFeedbackOutput)
     pub fn builder() -> crate::output::describe_feedback_output::Builder {
         crate::output::describe_feedback_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeEventSourcesConfigOutput {
+    /// <p>The name of the event source.</p>
+    pub event_sources: std::option::Option<crate::model::EventSourcesConfig>,
+}
+impl DescribeEventSourcesConfigOutput {
+    /// <p>The name of the event source.</p>
+    pub fn event_sources(&self) -> std::option::Option<&crate::model::EventSourcesConfig> {
+        self.event_sources.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeEventSourcesConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeEventSourcesConfigOutput");
+        formatter.field("event_sources", &self.event_sources);
+        formatter.finish()
+    }
+}
+/// See [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput)
+pub mod describe_event_sources_config_output {
+    /// A builder for [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_sources: std::option::Option<crate::model::EventSourcesConfig>,
+    }
+    impl Builder {
+        /// <p>The name of the event source.</p>
+        pub fn event_sources(mut self, input: crate::model::EventSourcesConfig) -> Self {
+            self.event_sources = Some(input);
+            self
+        }
+        /// <p>The name of the event source.</p>
+        pub fn set_event_sources(
+            mut self,
+            input: std::option::Option<crate::model::EventSourcesConfig>,
+        ) -> Self {
+            self.event_sources = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput)
+        pub fn build(self) -> crate::output::DescribeEventSourcesConfigOutput {
+            crate::output::DescribeEventSourcesConfigOutput {
+                event_sources: self.event_sources,
+            }
+        }
+    }
+}
+impl DescribeEventSourcesConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput)
+    pub fn builder() -> crate::output::describe_event_sources_config_output::Builder {
+        crate::output::describe_event_sources_config_output::Builder::default()
     }
 }
 

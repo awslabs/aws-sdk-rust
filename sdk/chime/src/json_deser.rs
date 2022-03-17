@@ -10165,6 +10165,13 @@ where
                                     )?,
                                 );
                             }
+                            "EnableMediaMetricLogs" => {
+                                builder = builder.set_enable_media_metric_logs(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

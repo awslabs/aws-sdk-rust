@@ -39,8 +39,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.8.0"
-aws-sdk-applicationdiscovery = "0.8.0"
+aws-config = "0.9.0"
+aws-sdk-applicationdiscovery = "0.9.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

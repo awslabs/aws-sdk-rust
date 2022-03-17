@@ -170,7 +170,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_name): <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_index_id): <p>The identifier of the index that should be associated with this data source.</p>
     ///   - [`r#type(DataSourceType)`](crate::client::fluent_builders::CreateDataSource::type) / [`set_type(Option<DataSourceType>)`](crate::client::fluent_builders::CreateDataSource::set_type): <p>The type of repository that contains the data source.</p>
-    ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::CreateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_configuration): <p>The connector configuration information that is required to access the repository.</p>  <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
+    ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::CreateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_configuration): <p>Configuration information that is required to access the data source repository.</p>  <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_description): <p>A description for the data source.</p>
     ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_schedule): <p>Sets the frequency for Amazon Kendra to check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>  <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>  <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
@@ -190,7 +190,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_name): <p>A name for your Amazon Kendra experience.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::CreateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::CreateExperience::set_configuration): <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
+    ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::CreateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::CreateExperience::set_configuration): <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_description): <p>A description for your Amazon Kendra experience.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_client_token): <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
     /// - On success, responds with [`CreateExperienceOutput`](crate::output::CreateExperienceOutput) with field(s):
@@ -360,7 +360,7 @@ impl Client {
     ///   - [`index_id(Option<String>)`](crate::output::DescribeDataSourceOutput::index_id): <p>The identifier of the index that contains the data source.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeDataSourceOutput::name): <p>The name that you gave the data source when it was created.</p>
     ///   - [`r#type(Option<DataSourceType>)`](crate::output::DescribeDataSourceOutput::type): <p>The type of the data source.</p>
-    ///   - [`configuration(Option<DataSourceConfiguration>)`](crate::output::DescribeDataSourceOutput::configuration): <p>Information that describes where the data source is located and how the data source is configured. The specific information in the description depends on the data source provider.</p>
+    ///   - [`configuration(Option<DataSourceConfiguration>)`](crate::output::DescribeDataSourceOutput::configuration): <p>Describes how the data source is configured. The specific information in the description depends on the data source provider.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::created_at): <p>The Unix timestamp of when the data source was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::updated_at): <p>The Unix timestamp of when the data source was last updated.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeDataSourceOutput::description): <p>The description of the data source.</p>
@@ -694,7 +694,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIndices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIndices::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes (<code>DataSourceSummaryItems</code>). </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIndices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIndices::set_max_results): <p>The maximum number of data sources to return.</p>
     /// - On success, responds with [`ListIndicesOutput`](crate::output::ListIndicesOutput) with field(s):
-    ///   - [`index_configuration_summary_items(Option<Vec<IndexConfigurationSummary>>)`](crate::output::ListIndicesOutput::index_configuration_summary_items): <p>An array of summary information for one or more indexes.</p>
+    ///   - [`index_configuration_summary_items(Option<Vec<IndexConfigurationSummary>>)`](crate::output::ListIndicesOutput::index_configuration_summary_items): <p>An array of summary information on the configuration of one or more indexes.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIndicesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     /// - On failure, responds with [`SdkError<ListIndicesError>`](crate::error::ListIndicesError)
     pub fn list_indices(&self) -> fluent_builders::ListIndices {
@@ -768,12 +768,14 @@ impl Client {
     ///   - [`sorting_configuration(SortingConfiguration)`](crate::client::fluent_builders::Query::sorting_configuration) / [`set_sorting_configuration(Option<SortingConfiguration>)`](crate::client::fluent_builders::Query::set_sorting_configuration): <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>  <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
     ///   - [`user_context(UserContext)`](crate::client::fluent_builders::Query::user_context) / [`set_user_context(Option<UserContext>)`](crate::client::fluent_builders::Query::set_user_context): <p>The user context token or user and group information.</p>
     ///   - [`visitor_id(impl Into<String>)`](crate::client::fluent_builders::Query::visitor_id) / [`set_visitor_id(Option<String>)`](crate::client::fluent_builders::Query::set_visitor_id): <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
+    ///   - [`spell_correction_configuration(SpellCorrectionConfiguration)`](crate::client::fluent_builders::Query::spell_correction_configuration) / [`set_spell_correction_configuration(Option<SpellCorrectionConfiguration>)`](crate::client::fluent_builders::Query::set_spell_correction_configuration): <p>Enables suggested spell corrections for queries.</p>
     /// - On success, responds with [`QueryOutput`](crate::output::QueryOutput) with field(s):
     ///   - [`query_id(Option<String>)`](crate::output::QueryOutput::query_id): <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
     ///   - [`result_items(Option<Vec<QueryResultItem>>)`](crate::output::QueryOutput::result_items): <p>The results of the search.</p>
     ///   - [`facet_results(Option<Vec<FacetResult>>)`](crate::output::QueryOutput::facet_results): <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was specified in the <code>Facets</code> input parameter.</p>
     ///   - [`total_number_of_results(Option<i32>)`](crate::output::QueryOutput::total_number_of_results): <p>The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
     ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::QueryOutput::warnings): <p>A list of warning codes and their messages on problems with your query.</p>  <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
+    ///   - [`spell_corrected_queries(Option<Vec<SpellCorrectedQuery>>)`](crate::output::QueryOutput::spell_corrected_queries): <p>A list of information related to suggested spell corrections for a query.</p>
     /// - On failure, responds with [`SdkError<QueryError>`](crate::error::QueryError)
     pub fn query(&self) -> fluent_builders::Query {
         fluent_builders::Query::new(self.handle.clone())
@@ -841,7 +843,7 @@ impl Client {
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_id): <p>The unique identifier of the data source to update.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_name): <p>The name of the data source to update. The name of the data source can't be updated. To rename a data source you must delete the data source and re-create it.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_index_id): <p>The identifier of the index that contains the data source to update.</p>
-    ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::UpdateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_configuration): <p>Configuration information for an Amazon Kendra data source.</p>
+    ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::UpdateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_configuration): <p>Configuration information for an Amazon Kendra data source you want to update.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_description): <p>The new description for the data source.</p>
     ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_schedule): <p>The new update schedule for the data source.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of the new role to use when the data source is accessing resources on your behalf.</p>
@@ -860,7 +862,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_name): <p>The name of your Amazon Kendra experience you want to update.</p>
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::UpdateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::UpdateExperience::set_configuration): <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+    ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::UpdateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::UpdateExperience::set_configuration): <p>Configuration information for your Amazon Kendra you want to update.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_description): <p>The description of your Amazon Kendra experience you want to update.</p>
     /// - On success, responds with [`UpdateExperienceOutput`](crate::output::UpdateExperienceOutput)
 
@@ -875,7 +877,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_name): <p>The name of the index to update.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_role_arn): <p>A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch logs.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_description): <p>A new description for the index.</p>
-    ///   - [`document_metadata_configuration_updates(Vec<DocumentMetadataConfiguration>)`](crate::client::fluent_builders::UpdateIndex::document_metadata_configuration_updates) / [`set_document_metadata_configuration_updates(Option<Vec<DocumentMetadataConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_document_metadata_configuration_updates): <p>The document metadata to update. </p>
+    ///   - [`document_metadata_configuration_updates(Vec<DocumentMetadataConfiguration>)`](crate::client::fluent_builders::UpdateIndex::document_metadata_configuration_updates) / [`set_document_metadata_configuration_updates(Option<Vec<DocumentMetadataConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_document_metadata_configuration_updates): <p>The document metadata you want to update.</p>
     ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::client::fluent_builders::UpdateIndex::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::client::fluent_builders::UpdateIndex::set_capacity_units): <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>  <p>If you are using extra storage units, you can't reduce the storage capacity below that required to meet the storage needs for your index.</p>
     ///   - [`user_token_configurations(Vec<UserTokenConfiguration>)`](crate::client::fluent_builders::UpdateIndex::user_token_configurations) / [`set_user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_user_token_configurations): <p>The user token configuration.</p>
     ///   - [`user_context_policy(UserContextPolicy)`](crate::client::fluent_builders::UpdateIndex::user_context_policy) / [`set_user_context_policy(Option<UserContextPolicy>)`](crate::client::fluent_builders::UpdateIndex::set_user_context_policy): <p>The user context policy.</p>
@@ -1510,14 +1512,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The connector configuration information that is required to access the repository.</p>
+        /// <p>Configuration information that is required to access the data source repository.</p>
         /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>The connector configuration information that is required to access the repository.</p>
+        /// <p>Configuration information that is required to access the data source repository.</p>
         /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
         pub fn set_configuration(
@@ -1696,12 +1698,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
+        /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
         pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
+        /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ExperienceConfiguration>,
@@ -4909,6 +4911,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_visitor_id(input);
             self
         }
+        /// <p>Enables suggested spell corrections for queries.</p>
+        pub fn spell_correction_configuration(
+            mut self,
+            input: crate::model::SpellCorrectionConfiguration,
+        ) -> Self {
+            self.inner = self.inner.spell_correction_configuration(input);
+            self
+        }
+        /// <p>Enables suggested spell corrections for queries.</p>
+        pub fn set_spell_correction_configuration(
+            mut self,
+            input: std::option::Option<crate::model::SpellCorrectionConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_spell_correction_configuration(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `StartDataSourceSyncJob`.
     ///
@@ -5346,12 +5364,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>Configuration information for an Amazon Kendra data source.</p>
+        /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>Configuration information for an Amazon Kendra data source.</p>
+        /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -5505,12 +5523,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+        /// <p>Configuration information for your Amazon Kendra you want to update.</p>
         pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+        /// <p>Configuration information for your Amazon Kendra you want to update.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ExperienceConfiguration>,
@@ -5615,7 +5633,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_document_metadata_configuration_updates`](Self::set_document_metadata_configuration_updates).
         ///
-        /// <p>The document metadata to update. </p>
+        /// <p>The document metadata you want to update.</p>
         pub fn document_metadata_configuration_updates(
             mut self,
             input: crate::model::DocumentMetadataConfiguration,
@@ -5623,7 +5641,7 @@ pub mod fluent_builders {
             self.inner = self.inner.document_metadata_configuration_updates(input);
             self
         }
-        /// <p>The document metadata to update. </p>
+        /// <p>The document metadata you want to update.</p>
         pub fn set_document_metadata_configuration_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,

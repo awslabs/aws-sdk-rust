@@ -139,6 +139,16 @@ impl Client {
     pub fn describe_anomaly(&self) -> fluent_builders::DescribeAnomaly {
         fluent_builders::DescribeAnomaly::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeEventSourcesConfig`](crate::client::fluent_builders::DescribeEventSourcesConfig) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeEventSourcesConfig::send) it.
+
+    /// - On success, responds with [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput) with field(s):
+    ///   - [`event_sources(Option<EventSourcesConfig>)`](crate::output::DescribeEventSourcesConfigOutput::event_sources): <p>The name of the event source.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventSourcesConfigError>`](crate::error::DescribeEventSourcesConfigError)
+    pub fn describe_event_sources_config(&self) -> fluent_builders::DescribeEventSourcesConfig {
+        fluent_builders::DescribeEventSourcesConfig::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeFeedback`](crate::client::fluent_builders::DescribeFeedback) operation.
     ///
     /// - The fluent builder is configurable:
@@ -423,6 +433,16 @@ impl Client {
     pub fn start_cost_estimation(&self) -> fluent_builders::StartCostEstimation {
         fluent_builders::StartCostEstimation::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateEventSourcesConfig`](crate::client::fluent_builders::UpdateEventSourcesConfig) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`event_sources(EventSourcesConfig)`](crate::client::fluent_builders::UpdateEventSourcesConfig::event_sources) / [`set_event_sources(Option<EventSourcesConfig>)`](crate::client::fluent_builders::UpdateEventSourcesConfig::set_event_sources): <p>The name of the event source.</p>
+    /// - On success, responds with [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateEventSourcesConfigError>`](crate::error::UpdateEventSourcesConfigError)
+    pub fn update_event_sources_config(&self) -> fluent_builders::UpdateEventSourcesConfig {
+        fluent_builders::UpdateEventSourcesConfig::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateResourceCollection`](crate::client::fluent_builders::UpdateResourceCollection) operation.
     ///
     /// - The fluent builder is configurable:
@@ -684,6 +704,49 @@ pub mod fluent_builders {
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeEventSourcesConfig`.
+    ///
+    /// <p>This operation lists details about a DevOps Guru event source that is shared with your  account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeEventSourcesConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_event_sources_config_input::Builder,
+    }
+    impl DescribeEventSourcesConfig {
+        /// Creates a new `DescribeEventSourcesConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeEventSourcesConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeEventSourcesConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
         }
     }
     /// Fluent builder constructing a request to `DescribeFeedback`.
@@ -2307,6 +2370,62 @@ pub mod fluent_builders {
         /// <p>The idempotency token used to identify each cost estimate request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateEventSourcesConfig`.
+    ///
+    /// <p>Updates the event source configuration.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateEventSourcesConfig {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_event_sources_config_input::Builder,
+    }
+    impl UpdateEventSourcesConfig {
+        /// Creates a new `UpdateEventSourcesConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateEventSourcesConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateEventSourcesConfigError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the event source.</p>
+        pub fn event_sources(mut self, input: crate::model::EventSourcesConfig) -> Self {
+            self.inner = self.inner.event_sources(input);
+            self
+        }
+        /// <p>The name of the event source.</p>
+        pub fn set_event_sources(
+            mut self,
+            input: std::option::Option<crate::model::EventSourcesConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_event_sources(input);
             self
         }
     }

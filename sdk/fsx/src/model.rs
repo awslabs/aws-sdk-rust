@@ -373,13 +373,16 @@ pub struct OpenZfsVolumeConfiguration {
     pub storage_capacity_reservation_gi_b: std::option::Option<i32>,
     /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
     pub storage_capacity_quota_gi_b: std::option::Option<i32>,
-    /// <p>The method used to compress the data on the volume. Unless a compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+    /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub record_size_ki_b: std::option::Option<i32>,
+    /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub data_compression_type: std::option::Option<crate::model::OpenZfsDataCompressionType>,
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub copy_tags_to_snapshots: std::option::Option<bool>,
     /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
     pub origin_snapshot: std::option::Option<crate::model::OpenZfsOriginSnapshotConfiguration>,
@@ -387,7 +390,7 @@ pub struct OpenZfsVolumeConfiguration {
     pub read_only: std::option::Option<bool>,
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
     pub nfs_exports: std::option::Option<std::vec::Vec<crate::model::OpenZfsNfsExport>>,
-    /// <p>An object specifying how much storage users or groups can use on the volume. </p>
+    /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     pub user_and_group_quotas:
         std::option::Option<std::vec::Vec<crate::model::OpenZfsUserOrGroupQuota>>,
 }
@@ -408,17 +411,22 @@ impl OpenZfsVolumeConfiguration {
     pub fn storage_capacity_quota_gi_b(&self) -> std::option::Option<i32> {
         self.storage_capacity_quota_gi_b
     }
-    /// <p>The method used to compress the data on the volume. Unless a compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+    /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub fn record_size_ki_b(&self) -> std::option::Option<i32> {
+        self.record_size_ki_b
+    }
+    /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub fn data_compression_type(
         &self,
     ) -> std::option::Option<&crate::model::OpenZfsDataCompressionType> {
         self.data_compression_type.as_ref()
     }
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub fn copy_tags_to_snapshots(&self) -> std::option::Option<bool> {
         self.copy_tags_to_snapshots
     }
@@ -436,7 +444,7 @@ impl OpenZfsVolumeConfiguration {
     pub fn nfs_exports(&self) -> std::option::Option<&[crate::model::OpenZfsNfsExport]> {
         self.nfs_exports.as_deref()
     }
-    /// <p>An object specifying how much storage users or groups can use on the volume. </p>
+    /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     pub fn user_and_group_quotas(
         &self,
     ) -> std::option::Option<&[crate::model::OpenZfsUserOrGroupQuota]> {
@@ -456,6 +464,7 @@ impl std::fmt::Debug for OpenZfsVolumeConfiguration {
             "storage_capacity_quota_gi_b",
             &self.storage_capacity_quota_gi_b,
         );
+        formatter.field("record_size_ki_b", &self.record_size_ki_b);
         formatter.field("data_compression_type", &self.data_compression_type);
         formatter.field("copy_tags_to_snapshots", &self.copy_tags_to_snapshots);
         formatter.field("origin_snapshot", &self.origin_snapshot);
@@ -475,6 +484,7 @@ pub mod open_zfs_volume_configuration {
         pub(crate) volume_path: std::option::Option<std::string::String>,
         pub(crate) storage_capacity_reservation_gi_b: std::option::Option<i32>,
         pub(crate) storage_capacity_quota_gi_b: std::option::Option<i32>,
+        pub(crate) record_size_ki_b: std::option::Option<i32>,
         pub(crate) data_compression_type:
             std::option::Option<crate::model::OpenZfsDataCompressionType>,
         pub(crate) copy_tags_to_snapshots: std::option::Option<bool>,
@@ -532,10 +542,21 @@ pub mod open_zfs_volume_configuration {
             self.storage_capacity_quota_gi_b = input;
             self
         }
-        /// <p>The method used to compress the data on the volume. Unless a compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+        /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+        pub fn record_size_ki_b(mut self, input: i32) -> Self {
+            self.record_size_ki_b = Some(input);
+            self
+        }
+        /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+        pub fn set_record_size_ki_b(mut self, input: std::option::Option<i32>) -> Self {
+            self.record_size_ki_b = input;
+            self
+        }
+        /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
         /// <ul>
-        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+        /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
         /// </ul>
         pub fn data_compression_type(
             mut self,
@@ -544,10 +565,11 @@ pub mod open_zfs_volume_configuration {
             self.data_compression_type = Some(input);
             self
         }
-        /// <p>The method used to compress the data on the volume. Unless a compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+        /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
         /// <ul>
-        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+        /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
         /// </ul>
         pub fn set_data_compression_type(
             mut self,
@@ -556,12 +578,12 @@ pub mod open_zfs_volume_configuration {
             self.data_compression_type = input;
             self
         }
-        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
         pub fn copy_tags_to_snapshots(mut self, input: bool) -> Self {
             self.copy_tags_to_snapshots = Some(input);
             self
         }
-        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
         pub fn set_copy_tags_to_snapshots(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_snapshots = input;
             self
@@ -615,7 +637,7 @@ pub mod open_zfs_volume_configuration {
         ///
         /// To override the contents of this collection use [`set_user_and_group_quotas`](Self::set_user_and_group_quotas).
         ///
-        /// <p>An object specifying how much storage users or groups can use on the volume. </p>
+        /// <p>An object specifying how much storage users or groups can use on the volume.</p>
         pub fn user_and_group_quotas(
             mut self,
             input: crate::model::OpenZfsUserOrGroupQuota,
@@ -625,7 +647,7 @@ pub mod open_zfs_volume_configuration {
             self.user_and_group_quotas = Some(v);
             self
         }
-        /// <p>An object specifying how much storage users or groups can use on the volume. </p>
+        /// <p>An object specifying how much storage users or groups can use on the volume.</p>
         pub fn set_user_and_group_quotas(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OpenZfsUserOrGroupQuota>>,
@@ -640,6 +662,7 @@ pub mod open_zfs_volume_configuration {
                 volume_path: self.volume_path,
                 storage_capacity_reservation_gi_b: self.storage_capacity_reservation_gi_b,
                 storage_capacity_quota_gi_b: self.storage_capacity_quota_gi_b,
+                record_size_ki_b: self.record_size_ki_b,
                 data_compression_type: self.data_compression_type,
                 copy_tags_to_snapshots: self.copy_tags_to_snapshots,
                 origin_snapshot: self.origin_snapshot,
@@ -810,7 +833,7 @@ impl AsRef<str> for OpenZfsQuotaType {
     }
 }
 
-/// <p>The Network File System NFS) configurations for mounting an Amazon FSx for OpenZFS file system. </p>
+/// <p>The Network File System (NFS) configurations for mounting an Amazon FSx for OpenZFS file system. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenZfsNfsExport {
@@ -884,23 +907,23 @@ impl OpenZfsNfsExport {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenZfsClientConfiguration {
-    /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>. By default, Amazon FSx uses the wildcard character when specifying the client. </p>
+    /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the wildcard character when specifying the client. </p>
     pub clients: std::option::Option<std::string::String>,
     /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p>
     /// <ul>
-    /// <li> <p> <code>crossmount</code> is used by default. If you don't specify <code>crossmount</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
+    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
     /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
     /// </ul>
     pub options: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl OpenZfsClientConfiguration {
-    /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>. By default, Amazon FSx uses the wildcard character when specifying the client. </p>
+    /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the wildcard character when specifying the client. </p>
     pub fn clients(&self) -> std::option::Option<&str> {
         self.clients.as_deref()
     }
     /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p>
     /// <ul>
-    /// <li> <p> <code>crossmount</code> is used by default. If you don't specify <code>crossmount</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
+    /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
     /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
     /// </ul>
     pub fn options(&self) -> std::option::Option<&[std::string::String]> {
@@ -925,12 +948,12 @@ pub mod open_zfs_client_configuration {
         pub(crate) options: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>. By default, Amazon FSx uses the wildcard character when specifying the client. </p>
+        /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the wildcard character when specifying the client. </p>
         pub fn clients(mut self, input: impl Into<std::string::String>) -> Self {
             self.clients = Some(input.into());
             self
         }
-        /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>. By default, Amazon FSx uses the wildcard character when specifying the client. </p>
+        /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the wildcard character when specifying the client. </p>
         pub fn set_clients(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.clients = input;
             self
@@ -941,7 +964,7 @@ pub mod open_zfs_client_configuration {
         ///
         /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p>
         /// <ul>
-        /// <li> <p> <code>crossmount</code> is used by default. If you don't specify <code>crossmount</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
+        /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
         /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
         /// </ul>
         pub fn options(mut self, input: impl Into<std::string::String>) -> Self {
@@ -952,7 +975,7 @@ pub mod open_zfs_client_configuration {
         }
         /// <p>The options to use when mounting the file system. For a list of options that you can use with Network File System (NFS), see the <a href="https://linux.die.net/man/5/exports">exports(5) - Linux man page</a>. When choosing your options, consider the following:</p>
         /// <ul>
-        /// <li> <p> <code>crossmount</code> is used by default. If you don't specify <code>crossmount</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
+        /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
         /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
         /// </ul>
         pub fn set_options(
@@ -1138,6 +1161,8 @@ impl AsRef<str> for OpenZfsCopyStrategy {
 )]
 pub enum OpenZfsDataCompressionType {
     #[allow(missing_docs)] // documentation missing in model
+    Lz4,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Zstd,
@@ -1147,6 +1172,7 @@ pub enum OpenZfsDataCompressionType {
 impl std::convert::From<&str> for OpenZfsDataCompressionType {
     fn from(s: &str) -> Self {
         match s {
+            "LZ4" => OpenZfsDataCompressionType::Lz4,
             "NONE" => OpenZfsDataCompressionType::None,
             "ZSTD" => OpenZfsDataCompressionType::Zstd,
             other => OpenZfsDataCompressionType::Unknown(other.to_owned()),
@@ -1164,6 +1190,7 @@ impl OpenZfsDataCompressionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OpenZfsDataCompressionType::Lz4 => "LZ4",
             OpenZfsDataCompressionType::None => "NONE",
             OpenZfsDataCompressionType::Zstd => "ZSTD",
             OpenZfsDataCompressionType::Unknown(s) => s.as_ref(),
@@ -1171,7 +1198,7 @@ impl OpenZfsDataCompressionType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["NONE", "ZSTD"]
+        &["LZ4", "NONE", "ZSTD"]
     }
 }
 impl AsRef<str> for OpenZfsDataCompressionType {
@@ -1502,6 +1529,8 @@ pub struct Snapshot {
     /// <li> <p> <code>AVAILABLE</code> - The snapshot is fully available.</p> </li>
     /// </ul>
     pub lifecycle: std::option::Option<crate::model::SnapshotLifecycle>,
+    /// <p>Describes why a resource lifecycle state changed.</p>
+    pub lifecycle_transition_reason: std::option::Option<crate::model::LifecycleTransitionReason>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
@@ -1539,6 +1568,12 @@ impl Snapshot {
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::SnapshotLifecycle> {
         self.lifecycle.as_ref()
     }
+    /// <p>Describes why a resource lifecycle state changed.</p>
+    pub fn lifecycle_transition_reason(
+        &self,
+    ) -> std::option::Option<&crate::model::LifecycleTransitionReason> {
+        self.lifecycle_transition_reason.as_ref()
+    }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -1559,6 +1594,10 @@ impl std::fmt::Debug for Snapshot {
         formatter.field("volume_id", &self.volume_id);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("lifecycle", &self.lifecycle);
+        formatter.field(
+            "lifecycle_transition_reason",
+            &self.lifecycle_transition_reason,
+        );
         formatter.field("tags", &self.tags);
         formatter.field("administrative_actions", &self.administrative_actions);
         formatter.finish()
@@ -1576,6 +1615,8 @@ pub mod snapshot {
         pub(crate) volume_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) lifecycle: std::option::Option<crate::model::SnapshotLifecycle>,
+        pub(crate) lifecycle_transition_reason:
+            std::option::Option<crate::model::LifecycleTransitionReason>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) administrative_actions:
             std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
@@ -1659,6 +1700,22 @@ pub mod snapshot {
             self.lifecycle = input;
             self
         }
+        /// <p>Describes why a resource lifecycle state changed.</p>
+        pub fn lifecycle_transition_reason(
+            mut self,
+            input: crate::model::LifecycleTransitionReason,
+        ) -> Self {
+            self.lifecycle_transition_reason = Some(input);
+            self
+        }
+        /// <p>Describes why a resource lifecycle state changed.</p>
+        pub fn set_lifecycle_transition_reason(
+            mut self,
+            input: std::option::Option<crate::model::LifecycleTransitionReason>,
+        ) -> Self {
+            self.lifecycle_transition_reason = input;
+            self
+        }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -1706,6 +1763,7 @@ pub mod snapshot {
                 volume_id: self.volume_id,
                 creation_time: self.creation_time,
                 lifecycle: self.lifecycle,
+                lifecycle_transition_reason: self.lifecycle_transition_reason,
                 tags: self.tags,
                 administrative_actions: self.administrative_actions,
             }
@@ -1789,6 +1847,60 @@ impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>Describes why a resource lifecycle state changed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LifecycleTransitionReason {
+    /// <p>A detailed error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl LifecycleTransitionReason {
+    /// <p>A detailed error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for LifecycleTransitionReason {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LifecycleTransitionReason");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
+pub mod lifecycle_transition_reason {
+    /// A builder for [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A detailed error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A detailed error message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
+        pub fn build(self) -> crate::model::LifecycleTransitionReason {
+            crate::model::LifecycleTransitionReason {
+                message: self.message,
+            }
+        }
+    }
+}
+impl LifecycleTransitionReason {
+    /// Creates a new builder-style object to manufacture [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
+    pub fn builder() -> crate::model::lifecycle_transition_reason::Builder {
+        crate::model::lifecycle_transition_reason::Builder::default()
     }
 }
 
@@ -2494,7 +2606,7 @@ pub struct OpenZfsFileSystemConfiguration {
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
     /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy. </p>
     pub deployment_type: std::option::Option<crate::model::OpenZfsDeploymentType>,
-    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
     pub throughput_capacity: std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
@@ -2527,7 +2639,7 @@ impl OpenZfsFileSystemConfiguration {
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::OpenZfsDeploymentType> {
         self.deployment_type.as_ref()
     }
-    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
     pub fn throughput_capacity(&self) -> std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -2653,12 +2765,12 @@ pub mod open_zfs_file_system_configuration {
             self.deployment_type = input;
             self
         }
-        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
         pub fn throughput_capacity(mut self, input: i32) -> Self {
             self.throughput_capacity = Some(input);
             self
         }
-        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -2929,7 +3041,9 @@ pub struct OntapFileSystemConfiguration {
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
     /// <p>The ONTAP file system deployment type.</p>
     pub deployment_type: std::option::Option<crate::model::OntapDeploymentType>,
-    /// <p>The IP address range in which the endpoints to access your file system are created.</p>
+    /// <p>The IP address range in which the endpoints to access your file system are created.</p> <important>
+    /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger. If you do not specify this optional parameter, Amazon FSx will automatically select a CIDR block for you.</p>
+    /// </important>
     pub endpoint_ip_address_range: std::option::Option<std::string::String>,
     /// <p>The <code>Management</code> and <code>Intercluster</code> endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror.</p>
     pub endpoints: std::option::Option<crate::model::FileSystemEndpoints>,
@@ -2960,7 +3074,9 @@ impl OntapFileSystemConfiguration {
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::OntapDeploymentType> {
         self.deployment_type.as_ref()
     }
-    /// <p>The IP address range in which the endpoints to access your file system are created.</p>
+    /// <p>The IP address range in which the endpoints to access your file system are created.</p> <important>
+    /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger. If you do not specify this optional parameter, Amazon FSx will automatically select a CIDR block for you.</p>
+    /// </important>
     pub fn endpoint_ip_address_range(&self) -> std::option::Option<&str> {
         self.endpoint_ip_address_range.as_deref()
     }
@@ -3080,12 +3196,16 @@ pub mod ontap_file_system_configuration {
             self.deployment_type = input;
             self
         }
-        /// <p>The IP address range in which the endpoints to access your file system are created.</p>
+        /// <p>The IP address range in which the endpoints to access your file system are created.</p> <important>
+        /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger. If you do not specify this optional parameter, Amazon FSx will automatically select a CIDR block for you.</p>
+        /// </important>
         pub fn endpoint_ip_address_range(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_ip_address_range = Some(input.into());
             self
         }
-        /// <p>The IP address range in which the endpoints to access your file system are created.</p>
+        /// <p>The IP address range in which the endpoints to access your file system are created.</p> <important>
+        /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger. If you do not specify this optional parameter, Amazon FSx will automatically select a CIDR block for you.</p>
+        /// </important>
         pub fn set_endpoint_ip_address_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6170,60 +6290,6 @@ impl AsRef<str> for AdministrativeActionType {
     }
 }
 
-/// <p>Describes why a resource lifecycle state changed.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LifecycleTransitionReason {
-    /// <p>A detailed error message.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl LifecycleTransitionReason {
-    /// <p>A detailed error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for LifecycleTransitionReason {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LifecycleTransitionReason");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-/// See [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
-pub mod lifecycle_transition_reason {
-    /// A builder for [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A detailed error message.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A detailed error message.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
-        pub fn build(self) -> crate::model::LifecycleTransitionReason {
-            crate::model::LifecycleTransitionReason {
-                message: self.message,
-            }
-        }
-    }
-}
-impl LifecycleTransitionReason {
-    /// Creates a new builder-style object to manufacture [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
-    pub fn builder() -> crate::model::lifecycle_transition_reason::Builder {
-        crate::model::lifecycle_transition_reason::Builder::default()
-    }
-}
-
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7024,16 +7090,17 @@ impl AsRef<str> for VolumeLifecycle {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOpenZfsVolumeConfiguration {
-    /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
+    /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved. You can specify a value of <code>-1</code> to unset a volume's storage capacity reservation.</p>
     pub storage_capacity_reservation_gi_b: std::option::Option<i32>,
-    /// <p></p>
-    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume. You can specify a value of <code>-1</code> to unset a volume's storage capacity quota.</p>
     pub storage_capacity_quota_gi_b: std::option::Option<i32>,
-    /// <p></p>
-    /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+    /// <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub record_size_ki_b: std::option::Option<i32>,
+    /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub data_compression_type: std::option::Option<crate::model::OpenZfsDataCompressionType>,
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
@@ -7045,20 +7112,23 @@ pub struct UpdateOpenZfsVolumeConfiguration {
     pub read_only: std::option::Option<bool>,
 }
 impl UpdateOpenZfsVolumeConfiguration {
-    /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
+    /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved. You can specify a value of <code>-1</code> to unset a volume's storage capacity reservation.</p>
     pub fn storage_capacity_reservation_gi_b(&self) -> std::option::Option<i32> {
         self.storage_capacity_reservation_gi_b
     }
-    /// <p></p>
-    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume. You can specify a value of <code>-1</code> to unset a volume's storage capacity quota.</p>
     pub fn storage_capacity_quota_gi_b(&self) -> std::option::Option<i32> {
         self.storage_capacity_quota_gi_b
     }
-    /// <p></p>
-    /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+    /// <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub fn record_size_ki_b(&self) -> std::option::Option<i32> {
+        self.record_size_ki_b
+    }
+    /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub fn data_compression_type(
         &self,
@@ -7091,6 +7161,7 @@ impl std::fmt::Debug for UpdateOpenZfsVolumeConfiguration {
             "storage_capacity_quota_gi_b",
             &self.storage_capacity_quota_gi_b,
         );
+        formatter.field("record_size_ki_b", &self.record_size_ki_b);
         formatter.field("data_compression_type", &self.data_compression_type);
         formatter.field("nfs_exports", &self.nfs_exports);
         formatter.field("user_and_group_quotas", &self.user_and_group_quotas);
@@ -7106,6 +7177,7 @@ pub mod update_open_zfs_volume_configuration {
     pub struct Builder {
         pub(crate) storage_capacity_reservation_gi_b: std::option::Option<i32>,
         pub(crate) storage_capacity_quota_gi_b: std::option::Option<i32>,
+        pub(crate) record_size_ki_b: std::option::Option<i32>,
         pub(crate) data_compression_type:
             std::option::Option<crate::model::OpenZfsDataCompressionType>,
         pub(crate) nfs_exports: std::option::Option<std::vec::Vec<crate::model::OpenZfsNfsExport>>,
@@ -7114,12 +7186,12 @@ pub mod update_open_zfs_volume_configuration {
         pub(crate) read_only: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
+        /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved. You can specify a value of <code>-1</code> to unset a volume's storage capacity reservation.</p>
         pub fn storage_capacity_reservation_gi_b(mut self, input: i32) -> Self {
             self.storage_capacity_reservation_gi_b = Some(input);
             self
         }
-        /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
+        /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved. You can specify a value of <code>-1</code> to unset a volume's storage capacity reservation.</p>
         pub fn set_storage_capacity_reservation_gi_b(
             mut self,
             input: std::option::Option<i32>,
@@ -7127,23 +7199,31 @@ pub mod update_open_zfs_volume_configuration {
             self.storage_capacity_reservation_gi_b = input;
             self
         }
-        /// <p></p>
-        /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+        /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume. You can specify a value of <code>-1</code> to unset a volume's storage capacity quota.</p>
         pub fn storage_capacity_quota_gi_b(mut self, input: i32) -> Self {
             self.storage_capacity_quota_gi_b = Some(input);
             self
         }
-        /// <p></p>
-        /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+        /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume. You can specify a value of <code>-1</code> to unset a volume's storage capacity quota.</p>
         pub fn set_storage_capacity_quota_gi_b(mut self, input: std::option::Option<i32>) -> Self {
             self.storage_capacity_quota_gi_b = input;
             self
         }
-        /// <p></p>
-        /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+        /// <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+        pub fn record_size_ki_b(mut self, input: i32) -> Self {
+            self.record_size_ki_b = Some(input);
+            self
+        }
+        /// <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+        pub fn set_record_size_ki_b(mut self, input: std::option::Option<i32>) -> Self {
+            self.record_size_ki_b = input;
+            self
+        }
+        /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
         /// <ul>
-        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+        /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
         /// </ul>
         pub fn data_compression_type(
             mut self,
@@ -7152,11 +7232,11 @@ pub mod update_open_zfs_volume_configuration {
             self.data_compression_type = Some(input);
             self
         }
-        /// <p></p>
-        /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+        /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
         /// <ul>
-        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+        /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
         /// </ul>
         pub fn set_data_compression_type(
             mut self,
@@ -7221,6 +7301,7 @@ pub mod update_open_zfs_volume_configuration {
             crate::model::UpdateOpenZfsVolumeConfiguration {
                 storage_capacity_reservation_gi_b: self.storage_capacity_reservation_gi_b,
                 storage_capacity_quota_gi_b: self.storage_capacity_quota_gi_b,
+                record_size_ki_b: self.record_size_ki_b,
                 data_compression_type: self.data_compression_type,
                 nfs_exports: self.nfs_exports,
                 user_and_group_quotas: self.user_and_group_quotas,
@@ -8528,13 +8609,13 @@ impl AsRef<str> for ServiceLimit {
 pub struct UpdateFileSystemOpenZfsConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     pub automatic_backup_retention_days: std::option::Option<i32>,
-    /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
     pub copy_tags_to_backups: std::option::Option<bool>,
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub copy_tags_to_volumes: std::option::Option<bool>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
-    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
+    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
     pub throughput_capacity: std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
@@ -8549,11 +8630,11 @@ impl UpdateFileSystemOpenZfsConfiguration {
     pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
         self.automatic_backup_retention_days
     }
-    /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
     pub fn copy_tags_to_backups(&self) -> std::option::Option<bool> {
         self.copy_tags_to_backups
     }
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub fn copy_tags_to_volumes(&self) -> std::option::Option<bool> {
         self.copy_tags_to_volumes
     }
@@ -8561,7 +8642,7 @@ impl UpdateFileSystemOpenZfsConfiguration {
     pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
-    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
+    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
     pub fn throughput_capacity(&self) -> std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -8630,22 +8711,22 @@ pub mod update_file_system_open_zfs_configuration {
             self.automatic_backup_retention_days = input;
             self
         }
-        /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
         pub fn copy_tags_to_backups(mut self, input: bool) -> Self {
             self.copy_tags_to_backups = Some(input);
             self
         }
-        /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
         pub fn set_copy_tags_to_backups(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_backups = input;
             self
         }
-        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
         pub fn copy_tags_to_volumes(mut self, input: bool) -> Self {
             self.copy_tags_to_volumes = Some(input);
             self
         }
-        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
         pub fn set_copy_tags_to_volumes(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_volumes = input;
             self
@@ -8666,12 +8747,12 @@ pub mod update_file_system_open_zfs_configuration {
             self.daily_automatic_backup_start_time = input;
             self
         }
-        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
+        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
         pub fn throughput_capacity(mut self, input: i32) -> Self {
             self.throughput_capacity = Some(input);
             self
         }
-        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
+        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -9719,7 +9800,9 @@ pub struct DataRepositoryAssociation {
     /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     pub failure_details: std::option::Option<crate::model::DataRepositoryFailureDetails>,
     /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
-    /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory. </p>
+    /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+    /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+    /// </note>
     pub file_system_path: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
     pub data_repository_path: std::option::Option<std::string::String>,
@@ -9767,7 +9850,9 @@ impl DataRepositoryAssociation {
         self.failure_details.as_ref()
     }
     /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
-    /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory. </p>
+    /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+    /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+    /// </note>
     pub fn file_system_path(&self) -> std::option::Option<&str> {
         self.file_system_path.as_deref()
     }
@@ -9920,13 +10005,17 @@ pub mod data_repository_association {
             self
         }
         /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
-        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory. </p>
+        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+        /// </note>
         pub fn file_system_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_path = Some(input.into());
             self
         }
         /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
-        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory. </p>
+        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+        /// </note>
         pub fn set_file_system_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13394,23 +13483,29 @@ impl DeleteFileSystemWindowsResponse {
     }
 }
 
-/// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
+/// <p>The configuration object for the Amazon FSx for OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileSystemOpenZfsConfiguration {
-    /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this value to do so. </p>
+    /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip taking a final backup, set this value to <code>true</code>.</p>
     pub skip_final_backup: std::option::Option<bool>,
-    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    /// <p>A list of tags to apply to the file system's final backup.</p>
     pub final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
+    pub options: std::option::Option<std::vec::Vec<crate::model::DeleteFileSystemOpenZfsOption>>,
 }
 impl DeleteFileSystemOpenZfsConfiguration {
-    /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this value to do so. </p>
+    /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip taking a final backup, set this value to <code>true</code>.</p>
     pub fn skip_final_backup(&self) -> std::option::Option<bool> {
         self.skip_final_backup
     }
-    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    /// <p>A list of tags to apply to the file system's final backup.</p>
     pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.final_backup_tags.as_deref()
+    }
+    /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
+    pub fn options(&self) -> std::option::Option<&[crate::model::DeleteFileSystemOpenZfsOption]> {
+        self.options.as_deref()
     }
 }
 impl std::fmt::Debug for DeleteFileSystemOpenZfsConfiguration {
@@ -13418,6 +13513,7 @@ impl std::fmt::Debug for DeleteFileSystemOpenZfsConfiguration {
         let mut formatter = f.debug_struct("DeleteFileSystemOpenZfsConfiguration");
         formatter.field("skip_final_backup", &self.skip_final_backup);
         formatter.field("final_backup_tags", &self.final_backup_tags);
+        formatter.field("options", &self.options);
         formatter.finish()
     }
 }
@@ -13429,14 +13525,16 @@ pub mod delete_file_system_open_zfs_configuration {
     pub struct Builder {
         pub(crate) skip_final_backup: std::option::Option<bool>,
         pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) options:
+            std::option::Option<std::vec::Vec<crate::model::DeleteFileSystemOpenZfsOption>>,
     }
     impl Builder {
-        /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this value to do so. </p>
+        /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip taking a final backup, set this value to <code>true</code>.</p>
         pub fn skip_final_backup(mut self, input: bool) -> Self {
             self.skip_final_backup = Some(input);
             self
         }
-        /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this value to do so. </p>
+        /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip taking a final backup, set this value to <code>true</code>.</p>
         pub fn set_skip_final_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_final_backup = input;
             self
@@ -13445,14 +13543,14 @@ pub mod delete_file_system_open_zfs_configuration {
         ///
         /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
         ///
-        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+        /// <p>A list of tags to apply to the file system's final backup.</p>
         pub fn final_backup_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
             v.push(input);
             self.final_backup_tags = Some(v);
             self
         }
-        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+        /// <p>A list of tags to apply to the file system's final backup.</p>
         pub fn set_final_backup_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13460,11 +13558,31 @@ pub mod delete_file_system_open_zfs_configuration {
             self.final_backup_tags = input;
             self
         }
+        /// Appends an item to `options`.
+        ///
+        /// To override the contents of this collection use [`set_options`](Self::set_options).
+        ///
+        /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
+        pub fn options(mut self, input: crate::model::DeleteFileSystemOpenZfsOption) -> Self {
+            let mut v = self.options.unwrap_or_default();
+            v.push(input);
+            self.options = Some(v);
+            self
+        }
+        /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
+        pub fn set_options(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DeleteFileSystemOpenZfsOption>>,
+        ) -> Self {
+            self.options = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration)
         pub fn build(self) -> crate::model::DeleteFileSystemOpenZfsConfiguration {
             crate::model::DeleteFileSystemOpenZfsConfiguration {
                 skip_final_backup: self.skip_final_backup,
                 final_backup_tags: self.final_backup_tags,
+                options: self.options,
             }
         }
     }
@@ -13473,6 +13591,61 @@ impl DeleteFileSystemOpenZfsConfiguration {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration)
     pub fn builder() -> crate::model::delete_file_system_open_zfs_configuration::Builder {
         crate::model::delete_file_system_open_zfs_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeleteFileSystemOpenZfsOption {
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteChildVolumesAndSnapshots,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DeleteFileSystemOpenZfsOption {
+    fn from(s: &str) -> Self {
+        match s {
+            "DELETE_CHILD_VOLUMES_AND_SNAPSHOTS" => {
+                DeleteFileSystemOpenZfsOption::DeleteChildVolumesAndSnapshots
+            }
+            other => DeleteFileSystemOpenZfsOption::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DeleteFileSystemOpenZfsOption {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeleteFileSystemOpenZfsOption::from(s))
+    }
+}
+impl DeleteFileSystemOpenZfsOption {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeleteFileSystemOpenZfsOption::DeleteChildVolumesAndSnapshots => {
+                "DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"
+            }
+            DeleteFileSystemOpenZfsOption::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"]
+    }
+}
+impl AsRef<str> for DeleteFileSystemOpenZfsOption {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -13887,59 +14060,71 @@ impl CreateOntapVolumeConfiguration {
     }
 }
 
-/// <p>Specifies the configuration of the OpenZFS volume that you are creating.</p>
+/// <p>Specifies the configuration of the Amazon FSx for OpenZFS volume that you are creating.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOpenZfsVolumeConfiguration {
-    /// <p>The ID of the volume to use as the parent volume. </p>
+    /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
     pub parent_volume_id: std::option::Option<std::string::String>,
-    /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
+    /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub storage_capacity_reservation_gi_b: std::option::Option<i32>,
-    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+    /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub storage_capacity_quota_gi_b: std::option::Option<i32>,
-    /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+    /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub record_size_ki_b: std::option::Option<i32>,
+    /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. ZSTD compression provides a higher level of data compression and higher read throughput performance than LZ4 compression.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. LZ4 compression provides a lower level of compression and higher write throughput performance than ZSTD compression.</p> </li>
     /// </ul>
+    /// <p>For more information about volume compression types and the performance of your Amazon FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> File system and volume settings in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub data_compression_type: std::option::Option<crate::model::OpenZfsDataCompressionType>,
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub copy_tags_to_snapshots: std::option::Option<bool>,
     /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
     pub origin_snapshot:
         std::option::Option<crate::model::CreateOpenZfsOriginSnapshotConfiguration>,
-    /// <p>A Boolean value indicating whether the volume is read-only. </p>
+    /// <p>A Boolean value indicating whether the volume is read-only.</p>
     pub read_only: std::option::Option<bool>,
-    /// <p>The configuration object for mounting a Network File System (NFS) file system. </p>
+    /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
     pub nfs_exports: std::option::Option<std::vec::Vec<crate::model::OpenZfsNfsExport>>,
-    /// <p>An object specifying how much storage users or groups can use on the volume. </p>
+    /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     pub user_and_group_quotas:
         std::option::Option<std::vec::Vec<crate::model::OpenZfsUserOrGroupQuota>>,
 }
 impl CreateOpenZfsVolumeConfiguration {
-    /// <p>The ID of the volume to use as the parent volume. </p>
+    /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
     pub fn parent_volume_id(&self) -> std::option::Option<&str> {
         self.parent_volume_id.as_deref()
     }
-    /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
+    /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn storage_capacity_reservation_gi_b(&self) -> std::option::Option<i32> {
         self.storage_capacity_reservation_gi_b
     }
-    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+    /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn storage_capacity_quota_gi_b(&self) -> std::option::Option<i32> {
         self.storage_capacity_quota_gi_b
     }
-    /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+    /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub fn record_size_ki_b(&self) -> std::option::Option<i32> {
+        self.record_size_ki_b
+    }
+    /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. ZSTD compression provides a higher level of data compression and higher read throughput performance than LZ4 compression.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. LZ4 compression provides a lower level of compression and higher write throughput performance than ZSTD compression.</p> </li>
     /// </ul>
+    /// <p>For more information about volume compression types and the performance of your Amazon FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> File system and volume settings in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn data_compression_type(
         &self,
     ) -> std::option::Option<&crate::model::OpenZfsDataCompressionType> {
         self.data_compression_type.as_ref()
     }
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub fn copy_tags_to_snapshots(&self) -> std::option::Option<bool> {
         self.copy_tags_to_snapshots
     }
@@ -13949,15 +14134,15 @@ impl CreateOpenZfsVolumeConfiguration {
     ) -> std::option::Option<&crate::model::CreateOpenZfsOriginSnapshotConfiguration> {
         self.origin_snapshot.as_ref()
     }
-    /// <p>A Boolean value indicating whether the volume is read-only. </p>
+    /// <p>A Boolean value indicating whether the volume is read-only.</p>
     pub fn read_only(&self) -> std::option::Option<bool> {
         self.read_only
     }
-    /// <p>The configuration object for mounting a Network File System (NFS) file system. </p>
+    /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
     pub fn nfs_exports(&self) -> std::option::Option<&[crate::model::OpenZfsNfsExport]> {
         self.nfs_exports.as_deref()
     }
-    /// <p>An object specifying how much storage users or groups can use on the volume. </p>
+    /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     pub fn user_and_group_quotas(
         &self,
     ) -> std::option::Option<&[crate::model::OpenZfsUserOrGroupQuota]> {
@@ -13976,6 +14161,7 @@ impl std::fmt::Debug for CreateOpenZfsVolumeConfiguration {
             "storage_capacity_quota_gi_b",
             &self.storage_capacity_quota_gi_b,
         );
+        formatter.field("record_size_ki_b", &self.record_size_ki_b);
         formatter.field("data_compression_type", &self.data_compression_type);
         formatter.field("copy_tags_to_snapshots", &self.copy_tags_to_snapshots);
         formatter.field("origin_snapshot", &self.origin_snapshot);
@@ -13994,6 +14180,7 @@ pub mod create_open_zfs_volume_configuration {
         pub(crate) parent_volume_id: std::option::Option<std::string::String>,
         pub(crate) storage_capacity_reservation_gi_b: std::option::Option<i32>,
         pub(crate) storage_capacity_quota_gi_b: std::option::Option<i32>,
+        pub(crate) record_size_ki_b: std::option::Option<i32>,
         pub(crate) data_compression_type:
             std::option::Option<crate::model::OpenZfsDataCompressionType>,
         pub(crate) copy_tags_to_snapshots: std::option::Option<bool>,
@@ -14005,12 +14192,12 @@ pub mod create_open_zfs_volume_configuration {
             std::option::Option<std::vec::Vec<crate::model::OpenZfsUserOrGroupQuota>>,
     }
     impl Builder {
-        /// <p>The ID of the volume to use as the parent volume. </p>
+        /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
         pub fn parent_volume_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_volume_id = Some(input.into());
             self
         }
-        /// <p>The ID of the volume to use as the parent volume. </p>
+        /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
         pub fn set_parent_volume_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14018,12 +14205,12 @@ pub mod create_open_zfs_volume_configuration {
             self.parent_volume_id = input;
             self
         }
-        /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
+        /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
         pub fn storage_capacity_reservation_gi_b(mut self, input: i32) -> Self {
             self.storage_capacity_reservation_gi_b = Some(input);
             self
         }
-        /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
+        /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
         pub fn set_storage_capacity_reservation_gi_b(
             mut self,
             input: std::option::Option<i32>,
@@ -14031,21 +14218,35 @@ pub mod create_open_zfs_volume_configuration {
             self.storage_capacity_reservation_gi_b = input;
             self
         }
-        /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+        /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
         pub fn storage_capacity_quota_gi_b(mut self, input: i32) -> Self {
             self.storage_capacity_quota_gi_b = Some(input);
             self
         }
-        /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+        /// <p>Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i> specify a storage capacity quota, set this to <code>-1</code>. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
         pub fn set_storage_capacity_quota_gi_b(mut self, input: std::option::Option<i32>) -> Self {
             self.storage_capacity_quota_gi_b = input;
             self
         }
-        /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+        /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+        pub fn record_size_ki_b(mut self, input: i32) -> Self {
+            self.record_size_ki_b = Some(input);
+            self
+        }
+        /// <p>Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. We recommend using the default setting for the majority of use cases. Generally, workloads that write in fixed small or large record sizes may benefit from setting a custom record size, like database workloads (small record size) or media streaming workloads (large record size). For additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance"> ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+        pub fn set_record_size_ki_b(mut self, input: std::option::Option<i32>) -> Self {
+            self.record_size_ki_b = input;
+            self
+        }
+        /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
         /// <ul>
-        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. ZSTD compression provides a higher level of data compression and higher read throughput performance than LZ4 compression.</p> </li>
+        /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. LZ4 compression provides a lower level of compression and higher write throughput performance than ZSTD compression.</p> </li>
         /// </ul>
+        /// <p>For more information about volume compression types and the performance of your Amazon FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> File system and volume settings in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
         pub fn data_compression_type(
             mut self,
             input: crate::model::OpenZfsDataCompressionType,
@@ -14053,11 +14254,13 @@ pub mod create_open_zfs_volume_configuration {
             self.data_compression_type = Some(input);
             self
         }
-        /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+        /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
         /// <ul>
-        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. ZSTD compression provides a higher level of data compression and higher read throughput performance than LZ4 compression.</p> </li>
+        /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. LZ4 compression provides a lower level of compression and higher write throughput performance than ZSTD compression.</p> </li>
         /// </ul>
+        /// <p>For more information about volume compression types and the performance of your Amazon FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> File system and volume settings in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
         pub fn set_data_compression_type(
             mut self,
             input: std::option::Option<crate::model::OpenZfsDataCompressionType>,
@@ -14065,12 +14268,12 @@ pub mod create_open_zfs_volume_configuration {
             self.data_compression_type = input;
             self
         }
-        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
         pub fn copy_tags_to_snapshots(mut self, input: bool) -> Self {
             self.copy_tags_to_snapshots = Some(input);
             self
         }
-        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
         pub fn set_copy_tags_to_snapshots(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_snapshots = input;
             self
@@ -14091,12 +14294,12 @@ pub mod create_open_zfs_volume_configuration {
             self.origin_snapshot = input;
             self
         }
-        /// <p>A Boolean value indicating whether the volume is read-only. </p>
+        /// <p>A Boolean value indicating whether the volume is read-only.</p>
         pub fn read_only(mut self, input: bool) -> Self {
             self.read_only = Some(input);
             self
         }
-        /// <p>A Boolean value indicating whether the volume is read-only. </p>
+        /// <p>A Boolean value indicating whether the volume is read-only.</p>
         pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
             self.read_only = input;
             self
@@ -14105,14 +14308,14 @@ pub mod create_open_zfs_volume_configuration {
         ///
         /// To override the contents of this collection use [`set_nfs_exports`](Self::set_nfs_exports).
         ///
-        /// <p>The configuration object for mounting a Network File System (NFS) file system. </p>
+        /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
         pub fn nfs_exports(mut self, input: crate::model::OpenZfsNfsExport) -> Self {
             let mut v = self.nfs_exports.unwrap_or_default();
             v.push(input);
             self.nfs_exports = Some(v);
             self
         }
-        /// <p>The configuration object for mounting a Network File System (NFS) file system. </p>
+        /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
         pub fn set_nfs_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OpenZfsNfsExport>>,
@@ -14124,7 +14327,7 @@ pub mod create_open_zfs_volume_configuration {
         ///
         /// To override the contents of this collection use [`set_user_and_group_quotas`](Self::set_user_and_group_quotas).
         ///
-        /// <p>An object specifying how much storage users or groups can use on the volume. </p>
+        /// <p>An object specifying how much storage users or groups can use on the volume.</p>
         pub fn user_and_group_quotas(
             mut self,
             input: crate::model::OpenZfsUserOrGroupQuota,
@@ -14134,7 +14337,7 @@ pub mod create_open_zfs_volume_configuration {
             self.user_and_group_quotas = Some(v);
             self
         }
-        /// <p>An object specifying how much storage users or groups can use on the volume. </p>
+        /// <p>An object specifying how much storage users or groups can use on the volume.</p>
         pub fn set_user_and_group_quotas(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OpenZfsUserOrGroupQuota>>,
@@ -14148,6 +14351,7 @@ pub mod create_open_zfs_volume_configuration {
                 parent_volume_id: self.parent_volume_id,
                 storage_capacity_reservation_gi_b: self.storage_capacity_reservation_gi_b,
                 storage_capacity_quota_gi_b: self.storage_capacity_quota_gi_b,
+                record_size_ki_b: self.record_size_ki_b,
                 data_compression_type: self.data_compression_type,
                 copy_tags_to_snapshots: self.copy_tags_to_snapshots,
                 origin_snapshot: self.origin_snapshot,
@@ -14603,7 +14807,7 @@ impl SelfManagedActiveDirectoryConfiguration {
     }
 }
 
-/// <p>The OpenZFS configuration properties for the file system that you are creating.</p>
+/// <p>The Amazon FSx for OpenZFS configuration properties for the file system that you are creating.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFileSystemOpenZfsConfiguration {
@@ -14615,7 +14819,7 @@ pub struct CreateFileSystemOpenZfsConfiguration {
     pub copy_tags_to_volumes: std::option::Option<bool>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
-    /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.</p>
+    /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.</p>
     pub deployment_type: std::option::Option<crate::model::OpenZfsDeploymentType>,
     /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional throughput capacity that you provision.</p>
     pub throughput_capacity: std::option::Option<i32>,
@@ -14647,7 +14851,7 @@ impl CreateFileSystemOpenZfsConfiguration {
     pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
-    /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.</p>
+    /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.</p>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::OpenZfsDeploymentType> {
         self.deployment_type.as_ref()
     }
@@ -14767,12 +14971,12 @@ pub mod create_file_system_open_zfs_configuration {
             self.daily_automatic_backup_start_time = input;
             self
         }
-        /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.</p>
+        /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.</p>
         pub fn deployment_type(mut self, input: crate::model::OpenZfsDeploymentType) -> Self {
             self.deployment_type = Some(input);
             self
         }
-        /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.</p>
+        /// <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.</p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::OpenZfsDeploymentType>,
@@ -14871,10 +15075,13 @@ impl CreateFileSystemOpenZfsConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenZfsCreateRootVolumeConfiguration {
-    /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+    /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub record_size_ki_b: std::option::Option<i32>,
+    /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub data_compression_type: std::option::Option<crate::model::OpenZfsDataCompressionType>,
     /// <p>The configuration object for mounting a file system.</p>
@@ -14882,16 +15089,21 @@ pub struct OpenZfsCreateRootVolumeConfiguration {
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     pub user_and_group_quotas:
         std::option::Option<std::vec::Vec<crate::model::OpenZfsUserOrGroupQuota>>,
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
     pub copy_tags_to_snapshots: std::option::Option<bool>,
     /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
     pub read_only: std::option::Option<bool>,
 }
 impl OpenZfsCreateRootVolumeConfiguration {
-    /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+    /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    pub fn record_size_ki_b(&self) -> std::option::Option<i32> {
+        self.record_size_ki_b
+    }
+    /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     pub fn data_compression_type(
         &self,
@@ -14908,7 +15120,7 @@ impl OpenZfsCreateRootVolumeConfiguration {
     ) -> std::option::Option<&[crate::model::OpenZfsUserOrGroupQuota]> {
         self.user_and_group_quotas.as_deref()
     }
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
     pub fn copy_tags_to_snapshots(&self) -> std::option::Option<bool> {
         self.copy_tags_to_snapshots
     }
@@ -14920,6 +15132,7 @@ impl OpenZfsCreateRootVolumeConfiguration {
 impl std::fmt::Debug for OpenZfsCreateRootVolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpenZfsCreateRootVolumeConfiguration");
+        formatter.field("record_size_ki_b", &self.record_size_ki_b);
         formatter.field("data_compression_type", &self.data_compression_type);
         formatter.field("nfs_exports", &self.nfs_exports);
         formatter.field("user_and_group_quotas", &self.user_and_group_quotas);
@@ -14934,6 +15147,7 @@ pub mod open_zfs_create_root_volume_configuration {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) record_size_ki_b: std::option::Option<i32>,
         pub(crate) data_compression_type:
             std::option::Option<crate::model::OpenZfsDataCompressionType>,
         pub(crate) nfs_exports: std::option::Option<std::vec::Vec<crate::model::OpenZfsNfsExport>>,
@@ -14943,10 +15157,21 @@ pub mod open_zfs_create_root_volume_configuration {
         pub(crate) read_only: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+        /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+        pub fn record_size_ki_b(mut self, input: i32) -> Self {
+            self.record_size_ki_b = Some(input);
+            self
+        }
+        /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+        pub fn set_record_size_ki_b(mut self, input: std::option::Option<i32>) -> Self {
+            self.record_size_ki_b = input;
+            self
+        }
+        /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
         /// <ul>
-        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+        /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
         /// </ul>
         pub fn data_compression_type(
             mut self,
@@ -14955,10 +15180,11 @@ pub mod open_zfs_create_root_volume_configuration {
             self.data_compression_type = Some(input);
             self
         }
-        /// <p>Specifies the method used to compress the data on the volume. Unless the compression type is specified, volumes inherit the <code>DataCompressionType</code> value of their parent volume.</p>
+        /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
         /// <ul>
-        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume.</p> </li>
-        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD) compression algorithm. This algorithm reduces the amount of space used on your volume and has very little impact on compute resources.</p> </li>
+        /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
+        /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
+        /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
         /// </ul>
         pub fn set_data_compression_type(
             mut self,
@@ -15008,12 +15234,12 @@ pub mod open_zfs_create_root_volume_configuration {
             self.user_and_group_quotas = input;
             self
         }
-        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
         pub fn copy_tags_to_snapshots(mut self, input: bool) -> Self {
             self.copy_tags_to_snapshots = Some(input);
             self
         }
-        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
         pub fn set_copy_tags_to_snapshots(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_snapshots = input;
             self
@@ -15031,6 +15257,7 @@ pub mod open_zfs_create_root_volume_configuration {
         /// Consumes the builder and constructs a [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration)
         pub fn build(self) -> crate::model::OpenZfsCreateRootVolumeConfiguration {
             crate::model::OpenZfsCreateRootVolumeConfiguration {
+                record_size_ki_b: self.record_size_ki_b,
                 data_compression_type: self.data_compression_type,
                 nfs_exports: self.nfs_exports,
                 user_and_group_quotas: self.user_and_group_quotas,
@@ -15089,8 +15316,8 @@ pub struct CreateFileSystemLustreConfiguration {
     /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
     /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html"> Automatically import updates from your S3 bucket</a>.</p> <note>
-    /// <p>This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to create a data repository association to link your Lustre file system to a data repository.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3"> Automatically import updates from your S3 bucket</a>.</p> <note>
+    /// <p>This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
     /// </note>
     pub auto_import_policy: std::option::Option<crate::model::AutoImportPolicyType>,
     /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision. </p>
@@ -15163,8 +15390,8 @@ impl CreateFileSystemLustreConfiguration {
     /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
     /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html"> Automatically import updates from your S3 bucket</a>.</p> <note>
-    /// <p>This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to create a data repository association to link your Lustre file system to a data repository.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3"> Automatically import updates from your S3 bucket</a>.</p> <note>
+    /// <p>This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
     /// </note>
     pub fn auto_import_policy(&self) -> std::option::Option<&crate::model::AutoImportPolicyType> {
         self.auto_import_policy.as_ref()
@@ -15359,8 +15586,8 @@ pub mod create_file_system_lustre_configuration {
         /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
         /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html"> Automatically import updates from your S3 bucket</a>.</p> <note>
-        /// <p>This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to create a data repository association to link your Lustre file system to a data repository.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3"> Automatically import updates from your S3 bucket</a>.</p> <note>
+        /// <p>This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
         /// </note>
         pub fn auto_import_policy(mut self, input: crate::model::AutoImportPolicyType) -> Self {
             self.auto_import_policy = Some(input);
@@ -15373,8 +15600,8 @@ pub mod create_file_system_lustre_configuration {
         /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
         /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html"> Automatically import updates from your S3 bucket</a>.</p> <note>
-        /// <p>This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to create a data repository association to link your Lustre file system to a data repository.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3"> Automatically import updates from your S3 bucket</a>.</p> <note>
+        /// <p>This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
         /// </note>
         pub fn set_auto_import_policy(
             mut self,
@@ -15909,7 +16136,9 @@ pub struct CreateFileSystemOntapConfiguration {
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
     /// <p>Specifies the FSx for ONTAP file system deployment type to use in creating the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment type.</p>
     pub deployment_type: std::option::Option<crate::model::OntapDeploymentType>,
-    /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p>
+    /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
+    /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
+    /// </important>
     pub endpoint_ip_address_range: std::option::Option<std::string::String>,
     /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user with which you administer your file system using the NetApp ONTAP CLI and REST API.</p>
     pub fsx_admin_password: std::option::Option<std::string::String>,
@@ -15940,7 +16169,9 @@ impl CreateFileSystemOntapConfiguration {
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::OntapDeploymentType> {
         self.deployment_type.as_ref()
     }
-    /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p>
+    /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
+    /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
+    /// </important>
     pub fn endpoint_ip_address_range(&self) -> std::option::Option<&str> {
         self.endpoint_ip_address_range.as_deref()
     }
@@ -16060,12 +16291,16 @@ pub mod create_file_system_ontap_configuration {
             self.deployment_type = input;
             self
         }
-        /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p>
+        /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
+        /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
+        /// </important>
         pub fn endpoint_ip_address_range(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_ip_address_range = Some(input.into());
             self
         }
-        /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p>
+        /// <p>Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p> <important>
+        /// <p>The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be at least /30 or larger.</p>
+        /// </important>
         pub fn set_endpoint_ip_address_range(
             mut self,
             input: std::option::Option<std::string::String>,

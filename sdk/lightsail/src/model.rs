@@ -1656,7 +1656,6 @@ impl DomainEntry {
 
 /// <p>Describes the per-path cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.</p>
 /// <p>A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache.</p>
-/// <p>if the cacheBehavior's behavior is set to 'cache', then</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheBehaviorPerPath {
@@ -2650,7 +2649,7 @@ impl CacheBehavior {
 }
 
 /// <p>Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.</p>
-/// <p>An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.</p>
+/// <p>An origin can be a Lightsail instance, bucket, or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputOrigin {
@@ -4597,7 +4596,7 @@ pub struct Bucket {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the bundle currently applied to the bucket.</p>
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
-    /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle of a bucket.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle of a bucket.</p>
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the distribution was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -4621,12 +4620,12 @@ pub struct Bucket {
     pub object_versioning: std::option::Option<std::string::String>,
     /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
     /// <p>You can update a bucket's bundle only one time within a monthly AWS billing cycle.</p>
-    /// <p>Use the <code>UpdateBucketBundle</code> action to change a bucket's bundle.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
     pub able_to_update_bundle: std::option::Option<bool>,
     /// <p>An array of strings that specify the AWS account IDs that have read-only access to the bucket.</p>
     pub readonly_access_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
-    /// <p>Use the <code>SetResourceAccessForBucket</code> action to update the instances that have access to a bucket.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
     pub resources_receiving_access:
         std::option::Option<std::vec::Vec<crate::model::ResourceReceivingAccess>>,
     /// <p>An object that describes the state of the bucket.</p>
@@ -4649,7 +4648,7 @@ impl Bucket {
     }
     /// <p>The ID of the bundle currently applied to the bucket.</p>
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
-    /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle of a bucket.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle of a bucket.</p>
     pub fn bundle_id(&self) -> std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
@@ -4689,7 +4688,7 @@ impl Bucket {
     }
     /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
     /// <p>You can update a bucket's bundle only one time within a monthly AWS billing cycle.</p>
-    /// <p>Use the <code>UpdateBucketBundle</code> action to change a bucket's bundle.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
     pub fn able_to_update_bundle(&self) -> std::option::Option<bool> {
         self.able_to_update_bundle
     }
@@ -4698,7 +4697,7 @@ impl Bucket {
         self.readonly_access_accounts.as_deref()
     }
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
-    /// <p>Use the <code>SetResourceAccessForBucket</code> action to update the instances that have access to a bucket.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
     pub fn resources_receiving_access(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceReceivingAccess]> {
@@ -4802,14 +4801,14 @@ pub mod bucket {
         }
         /// <p>The ID of the bundle currently applied to the bucket.</p>
         /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
-        /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle of a bucket.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle of a bucket.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bundle_id = Some(input.into());
             self
         }
         /// <p>The ID of the bundle currently applied to the bucket.</p>
         /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
-        /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle of a bucket.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle of a bucket.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -4916,14 +4915,14 @@ pub mod bucket {
         }
         /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
         /// <p>You can update a bucket's bundle only one time within a monthly AWS billing cycle.</p>
-        /// <p>Use the <code>UpdateBucketBundle</code> action to change a bucket's bundle.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
         pub fn able_to_update_bundle(mut self, input: bool) -> Self {
             self.able_to_update_bundle = Some(input);
             self
         }
         /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
         /// <p>You can update a bucket's bundle only one time within a monthly AWS billing cycle.</p>
-        /// <p>Use the <code>UpdateBucketBundle</code> action to change a bucket's bundle.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
         pub fn set_able_to_update_bundle(mut self, input: std::option::Option<bool>) -> Self {
             self.able_to_update_bundle = input;
             self
@@ -4952,7 +4951,7 @@ pub mod bucket {
         /// To override the contents of this collection use [`set_resources_receiving_access`](Self::set_resources_receiving_access).
         ///
         /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
-        /// <p>Use the <code>SetResourceAccessForBucket</code> action to update the instances that have access to a bucket.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
         pub fn resources_receiving_access(
             mut self,
             input: crate::model::ResourceReceivingAccess,
@@ -4963,7 +4962,7 @@ pub mod bucket {
             self
         }
         /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
-        /// <p>Use the <code>SetResourceAccessForBucket</code> action to update the instances that have access to a bucket.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
         pub fn set_resources_receiving_access(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceReceivingAccess>>,
@@ -16906,7 +16905,7 @@ pub struct LightsailDistribution {
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The name of the SSL/TLS certificate attached to the distribution, if any.</p>
     pub certificate_name: std::option::Option<std::string::String>,
-    /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance or load balancer.</p>
+    /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub origin: std::option::Option<crate::model::Origin>,
     /// <p>The public DNS of the origin.</p>
@@ -16977,7 +16976,7 @@ impl LightsailDistribution {
     pub fn certificate_name(&self) -> std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
-    /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance or load balancer.</p>
+    /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub fn origin(&self) -> std::option::Option<&crate::model::Origin> {
         self.origin.as_ref()
@@ -17214,13 +17213,13 @@ pub mod lightsail_distribution {
             self.certificate_name = input;
             self
         }
-        /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance or load balancer.</p>
+        /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn origin(mut self, input: crate::model::Origin) -> Self {
             self.origin = Some(input);
             self
         }
-        /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance or load balancer.</p>
+        /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::Origin>) -> Self {
             self.origin = input;
@@ -17365,7 +17364,7 @@ impl LightsailDistribution {
 }
 
 /// <p>Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.</p>
-/// <p>An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.</p>
+/// <p>An origin can be a Lightsail instance, bucket, or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Origin {
@@ -20764,7 +20763,7 @@ impl BucketBundle {
 }
 
 /// <p>Describes an access key for an Amazon Lightsail bucket.</p>
-/// <p>Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two access keys per bucket. Use the <code>CreateBucketAccessKey</code> action to create an access key for a specific bucket. For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> <important>
+/// <p>Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two access keys per bucket. Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action to create an access key for a specific bucket. For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> <important>
 /// <p>The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you first create an access key; you cannot get the secret access key later. If you lose the secret access key, you must create a new access key.</p>
 /// </important>
 #[non_exhaustive]
@@ -20781,7 +20780,7 @@ pub struct AccessKey {
     /// <p>The timestamp when the access key was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that describes the last time the access key was used.</p> <note>
-    /// <p>This object does not include data in the response of a <code>CreateBucketAccessKey</code> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
+    /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
     /// </note>
     pub last_used: std::option::Option<crate::model::AccessKeyLastUsed>,
 }
@@ -20805,7 +20804,7 @@ impl AccessKey {
         self.created_at.as_ref()
     }
     /// <p>An object that describes the last time the access key was used.</p> <note>
-    /// <p>This object does not include data in the response of a <code>CreateBucketAccessKey</code> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
+    /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
     /// </note>
     pub fn last_used(&self) -> std::option::Option<&crate::model::AccessKeyLastUsed> {
         self.last_used.as_ref()
@@ -20889,14 +20888,14 @@ pub mod access_key {
             self
         }
         /// <p>An object that describes the last time the access key was used.</p> <note>
-        /// <p>This object does not include data in the response of a <code>CreateBucketAccessKey</code> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
+        /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
         /// </note>
         pub fn last_used(mut self, input: crate::model::AccessKeyLastUsed) -> Self {
             self.last_used = Some(input);
             self
         }
         /// <p>An object that describes the last time the access key was used.</p> <note>
-        /// <p>This object does not include data in the response of a <code>CreateBucketAccessKey</code> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
+        /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
         /// </note>
         pub fn set_last_used(
             mut self,
@@ -20925,7 +20924,7 @@ impl AccessKey {
 }
 
 /// <p>Describes the last time an access key was used.</p> <note>
-/// <p>This object does not include data in the response of a <code>CreateBucketAccessKey</code> action.</p>
+/// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

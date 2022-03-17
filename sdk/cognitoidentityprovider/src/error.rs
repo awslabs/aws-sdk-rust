@@ -9265,8 +9265,6 @@ pub enum ForgotPasswordErrorKind {
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
-    /// <p>This exception is thrown when a user isn't confirmed successfully.</p>
-    UserNotConfirmedException(crate::error::UserNotConfirmedException),
     /// <p>This exception is thrown when a user isn't found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -9290,7 +9288,6 @@ impl std::fmt::Display for ForgotPasswordError {
             ForgotPasswordErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ForgotPasswordErrorKind::UnexpectedLambdaException(_inner) => _inner.fmt(f),
             ForgotPasswordErrorKind::UserLambdaValidationException(_inner) => _inner.fmt(f),
-            ForgotPasswordErrorKind::UserNotConfirmedException(_inner) => _inner.fmt(f),
             ForgotPasswordErrorKind::UserNotFoundException(_inner) => _inner.fmt(f),
             ForgotPasswordErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -9437,13 +9434,6 @@ impl ForgotPasswordError {
             ForgotPasswordErrorKind::UserLambdaValidationException(_)
         )
     }
-    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::UserNotConfirmedException`.
-    pub fn is_user_not_confirmed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ForgotPasswordErrorKind::UserNotConfirmedException(_)
-        )
-    }
     /// Returns `true` if the error kind is `ForgotPasswordErrorKind::UserNotFoundException`.
     pub fn is_user_not_found_exception(&self) -> bool {
         matches!(
@@ -9470,7 +9460,6 @@ impl std::error::Error for ForgotPasswordError {
             ForgotPasswordErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ForgotPasswordErrorKind::UnexpectedLambdaException(_inner) => Some(_inner),
             ForgotPasswordErrorKind::UserLambdaValidationException(_inner) => Some(_inner),
-            ForgotPasswordErrorKind::UserNotConfirmedException(_inner) => Some(_inner),
             ForgotPasswordErrorKind::UserNotFoundException(_inner) => Some(_inner),
             ForgotPasswordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }

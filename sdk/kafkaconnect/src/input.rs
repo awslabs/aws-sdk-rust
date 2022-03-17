@@ -850,6 +850,151 @@ impl DeleteConnectorInput {
     }
 }
 
+/// See [`DeleteCustomPluginInput`](crate::input::DeleteCustomPluginInput)
+pub mod delete_custom_plugin_input {
+    /// A builder for [`DeleteCustomPluginInput`](crate::input::DeleteCustomPluginInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+        pub fn custom_plugin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_plugin_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+        pub fn set_custom_plugin_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_plugin_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCustomPluginInput`](crate::input::DeleteCustomPluginInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteCustomPluginInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteCustomPluginInput {
+                custom_plugin_arn: self.custom_plugin_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteCustomPluginInputOperationOutputAlias = crate::operation::DeleteCustomPlugin;
+#[doc(hidden)]
+pub type DeleteCustomPluginInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteCustomPluginInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteCustomPlugin`](crate::operation::DeleteCustomPlugin)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteCustomPlugin,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteCustomPluginInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_3 = &_input.custom_plugin_arn;
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "custom_plugin_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let custom_plugin_arn = aws_smithy_http::label::fmt_string(input_3, false);
+                if custom_plugin_arn.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "custom_plugin_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/custom-plugins/{customPluginArn}",
+                    customPluginArn = custom_plugin_arn
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteCustomPluginInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteCustomPlugin::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteCustomPlugin",
+            "kafkaconnect",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteCustomPluginInput`](crate::input::DeleteCustomPluginInput)
+    pub fn builder() -> crate::input::delete_custom_plugin_input::Builder {
+        crate::input::delete_custom_plugin_input::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectorInput`](crate::input::DescribeConnectorInput)
 pub mod describe_connector_input {
     /// A builder for [`DescribeConnectorInput`](crate::input::DescribeConnectorInput)
@@ -909,14 +1054,14 @@ impl DescribeConnectorInput {
                 _input: &crate::input::DescribeConnectorInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_3 = &_input.connector_arn;
-                let input_3 = input_3.as_ref().ok_or(
+                let input_4 = &_input.connector_arn;
+                let input_4 = input_4.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "connector_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let connector_arn = aws_smithy_http::label::fmt_string(input_3, false);
+                let connector_arn = aws_smithy_http::label::fmt_string(input_4, false);
                 if connector_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "connector_arn",
@@ -1054,14 +1199,14 @@ impl DescribeCustomPluginInput {
                 _input: &crate::input::DescribeCustomPluginInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_4 = &_input.custom_plugin_arn;
-                let input_4 = input_4.as_ref().ok_or(
+                let input_5 = &_input.custom_plugin_arn;
+                let input_5 = input_5.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "custom_plugin_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let custom_plugin_arn = aws_smithy_http::label::fmt_string(input_4, false);
+                let custom_plugin_arn = aws_smithy_http::label::fmt_string(input_5, false);
                 if custom_plugin_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "custom_plugin_arn",
@@ -1200,14 +1345,14 @@ impl DescribeWorkerConfigurationInput {
                 _input: &crate::input::DescribeWorkerConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_5 = &_input.worker_configuration_arn;
-                let input_5 = input_5.as_ref().ok_or(
+                let input_6 = &_input.worker_configuration_arn;
+                let input_6 = input_6.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "worker_configuration_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let worker_configuration_arn = aws_smithy_http::label::fmt_string(input_5, false);
+                let worker_configuration_arn = aws_smithy_http::label::fmt_string(input_6, false);
                 if worker_configuration_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "worker_configuration_arn",
@@ -1377,10 +1522,10 @@ impl ListConnectorsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_6) = &_input.connector_name_prefix {
+                if let Some(inner_7) = &_input.connector_name_prefix {
                     query.push_kv(
                         "connectorNamePrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
+                        &aws_smithy_http::query::fmt_string(&inner_7),
                     );
                 }
                 if _input.max_results != 0 {
@@ -1389,8 +1534,8 @@ impl ListConnectorsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                if let Some(inner_8) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
                 }
                 Ok(())
             }
@@ -1541,8 +1686,8 @@ impl ListCustomPluginsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_8) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                if let Some(inner_9) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
                 }
                 Ok(())
             }
@@ -1694,8 +1839,8 @@ impl ListWorkerConfigurationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                if let Some(inner_10) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
                 }
                 Ok(())
             }
@@ -1853,14 +1998,14 @@ impl UpdateConnectorInput {
                 _input: &crate::input::UpdateConnectorInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_10 = &_input.connector_arn;
-                let input_10 = input_10.as_ref().ok_or(
+                let input_11 = &_input.connector_arn;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "connector_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let connector_arn = aws_smithy_http::label::fmt_string(input_10, false);
+                let connector_arn = aws_smithy_http::label::fmt_string(input_11, false);
                 if connector_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "connector_arn",
@@ -1880,10 +2025,10 @@ impl UpdateConnectorInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_11) = &_input.current_version {
+                if let Some(inner_12) = &_input.current_version {
                     query.push_kv(
                         "currentVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
+                        &aws_smithy_http::query::fmt_string(&inner_12),
                     );
                 }
                 Ok(())
@@ -2159,6 +2304,27 @@ impl std::fmt::Debug for DescribeConnectorInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCustomPluginInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+    pub custom_plugin_arn: std::option::Option<std::string::String>,
+}
+impl DeleteCustomPluginInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+        self.custom_plugin_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteCustomPluginInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCustomPluginInput");
+        formatter.field("custom_plugin_arn", &self.custom_plugin_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
     pub connector_arn: std::option::Option<std::string::String>,
@@ -2214,7 +2380,10 @@ impl std::fmt::Debug for CreateWorkerConfigurationInput {
         let mut formatter = f.debug_struct("CreateWorkerConfigurationInput");
         formatter.field("description", &self.description);
         formatter.field("name", &self.name);
-        formatter.field("properties_file_content", &self.properties_file_content);
+        formatter.field(
+            "properties_file_content",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.finish()
     }
 }
@@ -2354,7 +2523,10 @@ impl std::fmt::Debug for CreateConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectorInput");
         formatter.field("capacity", &self.capacity);
-        formatter.field("connector_configuration", &self.connector_configuration);
+        formatter.field(
+            "connector_configuration",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("connector_description", &self.connector_description);
         formatter.field("connector_name", &self.connector_name);
         formatter.field("kafka_cluster", &self.kafka_cluster);

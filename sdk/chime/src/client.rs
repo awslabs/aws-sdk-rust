@@ -253,7 +253,7 @@ impl Client {
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstance::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAppInstance::set_name): <p>The name of the <code>AppInstance</code>.</p>
     ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstance::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::CreateAppInstance::set_metadata): <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstance::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAppInstance::set_client_request_token): <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAppInstance::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAppInstance::set_tags): <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAppInstance::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAppInstance::set_tags): <p>Tags assigned to the <code>AppInstance</code>.</p>
     /// - On success, responds with [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::output::CreateAppInstanceOutput::app_instance_arn): <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
     /// - On failure, responds with [`SdkError<CreateAppInstanceError>`](crate::error::CreateAppInstanceError)
@@ -3476,12 +3476,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+        /// <p>Tags assigned to the <code>AppInstance</code>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+        /// <p>Tags assigned to the <code>AppInstance</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16075,7 +16075,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSipMediaApplicationCall`.
     ///
-    /// <p>Allows you to trigger a Lambda function at any time while a call is active, and replace the current actions with new actions returned by the invocation.</p>
+    /// <p>Invokes the AWS Lambda function associated with the SIP media application and transaction ID in an update request. The Lambda function can then return a new set of actions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSipMediaApplicationCall {
         handle: std::sync::Arc<super::Handle>,

@@ -4165,9 +4165,12 @@ pub struct DescribedServer {
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+    /// </note>
     pub post_authentication_login_banner: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
@@ -4239,11 +4242,14 @@ impl DescribedServer {
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+    /// </note>
     pub fn post_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.post_authentication_login_banner.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub fn pre_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.pre_authentication_login_banner.as_deref()
     }
@@ -4470,7 +4476,9 @@ pub mod described_server {
             self.logging_role = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+        /// </note>
         pub fn post_authentication_login_banner(
             mut self,
             input: impl Into<std::string::String>,
@@ -4478,7 +4486,9 @@ pub mod described_server {
             self.post_authentication_login_banner = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+        /// </note>
         pub fn set_post_authentication_login_banner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4486,7 +4496,8 @@ pub mod described_server {
             self.post_authentication_login_banner = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn pre_authentication_login_banner(
             mut self,
             input: impl Into<std::string::String>,
@@ -4494,7 +4505,8 @@ pub mod described_server {
             self.pre_authentication_login_banner = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn set_pre_authentication_login_banner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5257,13 +5269,37 @@ impl ExecutionStepResult {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionError {
-    /// <p>Specifies the error type: currently, the only valid value is <code>PERMISSION_DENIED</code>, which occurs if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p>
+    /// <p>Specifies the error type.</p>
+    /// <ul>
+    /// <li> <p> <code>ALREADY_EXISTS</code>: occurs for a copy step, if the overwrite option is not selected and a file with the same name already exists in the target location.</p> </li>
+    /// <li> <p> <code>BAD_REQUEST</code>: a general bad request: for example, a step that attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files can be tagged.</p> </li>
+    /// <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when the custom step provided a callback that indicates failure.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a variety of reasons.</p> </li>
+    /// <li> <p> <code>NOT_FOUND</code>: occurs when a requested entity, for example a source file for a copy step, does not exist.</p> </li>
+    /// <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code>: occurs when the execution times out.</p> <note>
+    /// <p> You can set the <code>TimeoutSeconds</code> for a custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p>
+    /// </note> </li>
+    /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
+    /// </ul>
     pub r#type: std::option::Option<crate::model::ExecutionErrorType>,
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl ExecutionError {
-    /// <p>Specifies the error type: currently, the only valid value is <code>PERMISSION_DENIED</code>, which occurs if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p>
+    /// <p>Specifies the error type.</p>
+    /// <ul>
+    /// <li> <p> <code>ALREADY_EXISTS</code>: occurs for a copy step, if the overwrite option is not selected and a file with the same name already exists in the target location.</p> </li>
+    /// <li> <p> <code>BAD_REQUEST</code>: a general bad request: for example, a step that attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files can be tagged.</p> </li>
+    /// <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when the custom step provided a callback that indicates failure.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a variety of reasons.</p> </li>
+    /// <li> <p> <code>NOT_FOUND</code>: occurs when a requested entity, for example a source file for a copy step, does not exist.</p> </li>
+    /// <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code>: occurs when the execution times out.</p> <note>
+    /// <p> You can set the <code>TimeoutSeconds</code> for a custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p>
+    /// </note> </li>
+    /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
+    /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ExecutionErrorType> {
         self.r#type.as_ref()
     }
@@ -5290,12 +5326,36 @@ pub mod execution_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the error type: currently, the only valid value is <code>PERMISSION_DENIED</code>, which occurs if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p>
+        /// <p>Specifies the error type.</p>
+        /// <ul>
+        /// <li> <p> <code>ALREADY_EXISTS</code>: occurs for a copy step, if the overwrite option is not selected and a file with the same name already exists in the target location.</p> </li>
+        /// <li> <p> <code>BAD_REQUEST</code>: a general bad request: for example, a step that attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files can be tagged.</p> </li>
+        /// <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when the custom step provided a callback that indicates failure.</p> </li>
+        /// <li> <p> <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a variety of reasons.</p> </li>
+        /// <li> <p> <code>NOT_FOUND</code>: occurs when a requested entity, for example a source file for a copy step, does not exist.</p> </li>
+        /// <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p> </li>
+        /// <li> <p> <code>TIMEOUT</code>: occurs when the execution times out.</p> <note>
+        /// <p> You can set the <code>TimeoutSeconds</code> for a custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p>
+        /// </note> </li>
+        /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
+        /// </ul>
         pub fn r#type(mut self, input: crate::model::ExecutionErrorType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Specifies the error type: currently, the only valid value is <code>PERMISSION_DENIED</code>, which occurs if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p>
+        /// <p>Specifies the error type.</p>
+        /// <ul>
+        /// <li> <p> <code>ALREADY_EXISTS</code>: occurs for a copy step, if the overwrite option is not selected and a file with the same name already exists in the target location.</p> </li>
+        /// <li> <p> <code>BAD_REQUEST</code>: a general bad request: for example, a step that attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files can be tagged.</p> </li>
+        /// <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when the custom step provided a callback that indicates failure.</p> </li>
+        /// <li> <p> <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a variety of reasons.</p> </li>
+        /// <li> <p> <code>NOT_FOUND</code>: occurs when a requested entity, for example a source file for a copy step, does not exist.</p> </li>
+        /// <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p> </li>
+        /// <li> <p> <code>TIMEOUT</code>: occurs when the execution times out.</p> <note>
+        /// <p> You can set the <code>TimeoutSeconds</code> for a custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p>
+        /// </note> </li>
+        /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ExecutionErrorType>,
@@ -5342,14 +5402,35 @@ impl ExecutionError {
 )]
 pub enum ExecutionErrorType {
     #[allow(missing_docs)] // documentation missing in model
+    AlreadyExists,
+    #[allow(missing_docs)] // documentation missing in model
+    BadRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomStepFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    InternalServerError,
+    #[allow(missing_docs)] // documentation missing in model
+    NotFound,
+    #[allow(missing_docs)] // documentation missing in model
     PermissionDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    Throttled,
+    #[allow(missing_docs)] // documentation missing in model
+    Timeout,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ExecutionErrorType {
     fn from(s: &str) -> Self {
         match s {
+            "ALREADY_EXISTS" => ExecutionErrorType::AlreadyExists,
+            "BAD_REQUEST" => ExecutionErrorType::BadRequest,
+            "CUSTOM_STEP_FAILED" => ExecutionErrorType::CustomStepFailed,
+            "INTERNAL_SERVER_ERROR" => ExecutionErrorType::InternalServerError,
+            "NOT_FOUND" => ExecutionErrorType::NotFound,
             "PERMISSION_DENIED" => ExecutionErrorType::PermissionDenied,
+            "THROTTLED" => ExecutionErrorType::Throttled,
+            "TIMEOUT" => ExecutionErrorType::Timeout,
             other => ExecutionErrorType::Unknown(other.to_owned()),
         }
     }
@@ -5365,13 +5446,29 @@ impl ExecutionErrorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ExecutionErrorType::AlreadyExists => "ALREADY_EXISTS",
+            ExecutionErrorType::BadRequest => "BAD_REQUEST",
+            ExecutionErrorType::CustomStepFailed => "CUSTOM_STEP_FAILED",
+            ExecutionErrorType::InternalServerError => "INTERNAL_SERVER_ERROR",
+            ExecutionErrorType::NotFound => "NOT_FOUND",
             ExecutionErrorType::PermissionDenied => "PERMISSION_DENIED",
+            ExecutionErrorType::Throttled => "THROTTLED",
+            ExecutionErrorType::Timeout => "TIMEOUT",
             ExecutionErrorType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["PERMISSION_DENIED"]
+        &[
+            "ALREADY_EXISTS",
+            "BAD_REQUEST",
+            "CUSTOM_STEP_FAILED",
+            "INTERNAL_SERVER_ERROR",
+            "NOT_FOUND",
+            "PERMISSION_DENIED",
+            "THROTTLED",
+            "TIMEOUT",
+        ]
     }
 }
 impl AsRef<str> for ExecutionErrorType {

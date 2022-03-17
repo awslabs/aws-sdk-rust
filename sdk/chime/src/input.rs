@@ -2478,14 +2478,14 @@ pub mod create_app_instance_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+        /// <p>Tags assigned to the <code>AppInstance</code>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+        /// <p>Tags assigned to the <code>AppInstance</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -39511,7 +39511,7 @@ pub struct CreateAppInstanceInput {
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    /// <p>Tags assigned to the <code>AppInstance</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAppInstanceInput {
@@ -39527,7 +39527,7 @@ impl CreateAppInstanceInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    /// <p>Tags assigned to the <code>AppInstance</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

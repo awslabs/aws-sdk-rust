@@ -372,6 +372,8 @@ pub struct NetworkPayload {
     pub ethernet0: std::option::Option<crate::model::EthernetPayload>,
     /// <p>Settings for Ethernet port 1.</p>
     pub ethernet1: std::option::Option<crate::model::EthernetPayload>,
+    /// <p>Network time protocol (NTP) server settings.</p>
+    pub ntp: std::option::Option<crate::model::NtpPayload>,
 }
 impl NetworkPayload {
     /// <p>Settings for Ethernet port 0.</p>
@@ -382,12 +384,17 @@ impl NetworkPayload {
     pub fn ethernet1(&self) -> std::option::Option<&crate::model::EthernetPayload> {
         self.ethernet1.as_ref()
     }
+    /// <p>Network time protocol (NTP) server settings.</p>
+    pub fn ntp(&self) -> std::option::Option<&crate::model::NtpPayload> {
+        self.ntp.as_ref()
+    }
 }
 impl std::fmt::Debug for NetworkPayload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkPayload");
         formatter.field("ethernet0", &self.ethernet0);
         formatter.field("ethernet1", &self.ethernet1);
+        formatter.field("ntp", &self.ntp);
         formatter.finish()
     }
 }
@@ -399,6 +406,7 @@ pub mod network_payload {
     pub struct Builder {
         pub(crate) ethernet0: std::option::Option<crate::model::EthernetPayload>,
         pub(crate) ethernet1: std::option::Option<crate::model::EthernetPayload>,
+        pub(crate) ntp: std::option::Option<crate::model::NtpPayload>,
     }
     impl Builder {
         /// <p>Settings for Ethernet port 0.</p>
@@ -427,11 +435,22 @@ pub mod network_payload {
             self.ethernet1 = input;
             self
         }
+        /// <p>Network time protocol (NTP) server settings.</p>
+        pub fn ntp(mut self, input: crate::model::NtpPayload) -> Self {
+            self.ntp = Some(input);
+            self
+        }
+        /// <p>Network time protocol (NTP) server settings.</p>
+        pub fn set_ntp(mut self, input: std::option::Option<crate::model::NtpPayload>) -> Self {
+            self.ntp = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NetworkPayload`](crate::model::NetworkPayload)
         pub fn build(self) -> crate::model::NetworkPayload {
             crate::model::NetworkPayload {
                 ethernet0: self.ethernet0,
                 ethernet1: self.ethernet1,
+                ntp: self.ntp,
             }
         }
     }
@@ -440,6 +459,69 @@ impl NetworkPayload {
     /// Creates a new builder-style object to manufacture [`NetworkPayload`](crate::model::NetworkPayload)
     pub fn builder() -> crate::model::network_payload::Builder {
         crate::model::network_payload::Builder::default()
+    }
+}
+
+/// <p>Network time protocol (NTP) server settings. Use this option to connect to local NTP servers instead of <code>pool.ntp.org</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NtpPayload {
+    /// <p>NTP servers to use, in order of preference.</p>
+    pub ntp_servers: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl NtpPayload {
+    /// <p>NTP servers to use, in order of preference.</p>
+    pub fn ntp_servers(&self) -> std::option::Option<&[std::string::String]> {
+        self.ntp_servers.as_deref()
+    }
+}
+impl std::fmt::Debug for NtpPayload {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NtpPayload");
+        formatter.field("ntp_servers", &self.ntp_servers);
+        formatter.finish()
+    }
+}
+/// See [`NtpPayload`](crate::model::NtpPayload)
+pub mod ntp_payload {
+    /// A builder for [`NtpPayload`](crate::model::NtpPayload)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ntp_servers: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `ntp_servers`.
+        ///
+        /// To override the contents of this collection use [`set_ntp_servers`](Self::set_ntp_servers).
+        ///
+        /// <p>NTP servers to use, in order of preference.</p>
+        pub fn ntp_servers(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ntp_servers.unwrap_or_default();
+            v.push(input.into());
+            self.ntp_servers = Some(v);
+            self
+        }
+        /// <p>NTP servers to use, in order of preference.</p>
+        pub fn set_ntp_servers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ntp_servers = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NtpPayload`](crate::model::NtpPayload)
+        pub fn build(self) -> crate::model::NtpPayload {
+            crate::model::NtpPayload {
+                ntp_servers: self.ntp_servers,
+            }
+        }
+    }
+}
+impl NtpPayload {
+    /// Creates a new builder-style object to manufacture [`NtpPayload`](crate::model::NtpPayload)
+    pub fn builder() -> crate::model::ntp_payload::Builder {
+        crate::model::ntp_payload::Builder::default()
     }
 }
 
@@ -1096,6 +1178,8 @@ impl AsRef<str> for PackageImportJobStatus {
 )]
 pub enum PackageImportJobType {
     #[allow(missing_docs)] // documentation missing in model
+    MarketplaceNodePackageVersion,
+    #[allow(missing_docs)] // documentation missing in model
     NodePackageVersion,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1103,6 +1187,9 @@ pub enum PackageImportJobType {
 impl std::convert::From<&str> for PackageImportJobType {
     fn from(s: &str) -> Self {
         match s {
+            "MARKETPLACE_NODE_PACKAGE_VERSION" => {
+                PackageImportJobType::MarketplaceNodePackageVersion
+            }
             "NODE_PACKAGE_VERSION" => PackageImportJobType::NodePackageVersion,
             other => PackageImportJobType::Unknown(other.to_owned()),
         }
@@ -1119,13 +1206,16 @@ impl PackageImportJobType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PackageImportJobType::MarketplaceNodePackageVersion => {
+                "MARKETPLACE_NODE_PACKAGE_VERSION"
+            }
             PackageImportJobType::NodePackageVersion => "NODE_PACKAGE_VERSION",
             PackageImportJobType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["NODE_PACKAGE_VERSION"]
+        &["MARKETPLACE_NODE_PACKAGE_VERSION", "NODE_PACKAGE_VERSION"]
     }
 }
 impl AsRef<str> for PackageImportJobType {
@@ -3363,7 +3453,7 @@ pub struct PackageVersionOutputConfig {
     /// <p>The output's package version.</p>
     pub package_version: std::option::Option<std::string::String>,
     /// <p>Indicates that the version is recommended for all users.</p>
-    pub mark_latest: std::option::Option<bool>,
+    pub mark_latest: bool,
 }
 impl PackageVersionOutputConfig {
     /// <p>The output's package name.</p>
@@ -3375,7 +3465,7 @@ impl PackageVersionOutputConfig {
         self.package_version.as_deref()
     }
     /// <p>Indicates that the version is recommended for all users.</p>
-    pub fn mark_latest(&self) -> std::option::Option<bool> {
+    pub fn mark_latest(&self) -> bool {
         self.mark_latest
     }
 }
@@ -3437,7 +3527,7 @@ pub mod package_version_output_config {
             crate::model::PackageVersionOutputConfig {
                 package_name: self.package_name,
                 package_version: self.package_version,
-                mark_latest: self.mark_latest,
+                mark_latest: self.mark_latest.unwrap_or_default(),
             }
         }
     }
@@ -4327,6 +4417,60 @@ impl AsRef<str> for DeviceType {
     }
 }
 
+/// <p>Details about a beta appliance software update.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlternateSoftwareMetadata {
+    /// <p>The appliance software version.</p>
+    pub version: std::option::Option<std::string::String>,
+}
+impl AlternateSoftwareMetadata {
+    /// <p>The appliance software version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
+impl std::fmt::Debug for AlternateSoftwareMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AlternateSoftwareMetadata");
+        formatter.field("version", &self.version);
+        formatter.finish()
+    }
+}
+/// See [`AlternateSoftwareMetadata`](crate::model::AlternateSoftwareMetadata)
+pub mod alternate_software_metadata {
+    /// A builder for [`AlternateSoftwareMetadata`](crate::model::AlternateSoftwareMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The appliance software version.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        /// <p>The appliance software version.</p>
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlternateSoftwareMetadata`](crate::model::AlternateSoftwareMetadata)
+        pub fn build(self) -> crate::model::AlternateSoftwareMetadata {
+            crate::model::AlternateSoftwareMetadata {
+                version: self.version,
+            }
+        }
+    }
+}
+impl AlternateSoftwareMetadata {
+    /// Creates a new builder-style object to manufacture [`AlternateSoftwareMetadata`](crate::model::AlternateSoftwareMetadata)
+    pub fn builder() -> crate::model::alternate_software_metadata::Builder {
+        crate::model::alternate_software_metadata::Builder::default()
+    }
+}
+
 /// <p>The network status of a device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4335,6 +4479,10 @@ pub struct NetworkStatus {
     pub ethernet0_status: std::option::Option<crate::model::EthernetStatus>,
     /// <p>The status of Ethernet port 1.</p>
     pub ethernet1_status: std::option::Option<crate::model::EthernetStatus>,
+    /// <p>Details about a network time protocol (NTP) server connection.</p>
+    pub ntp_status: std::option::Option<crate::model::NtpStatus>,
+    /// <p>When the network status changed.</p>
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl NetworkStatus {
     /// <p>The status of Ethernet port 0.</p>
@@ -4345,12 +4493,22 @@ impl NetworkStatus {
     pub fn ethernet1_status(&self) -> std::option::Option<&crate::model::EthernetStatus> {
         self.ethernet1_status.as_ref()
     }
+    /// <p>Details about a network time protocol (NTP) server connection.</p>
+    pub fn ntp_status(&self) -> std::option::Option<&crate::model::NtpStatus> {
+        self.ntp_status.as_ref()
+    }
+    /// <p>When the network status changed.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for NetworkStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkStatus");
         formatter.field("ethernet0_status", &self.ethernet0_status);
         formatter.field("ethernet1_status", &self.ethernet1_status);
+        formatter.field("ntp_status", &self.ntp_status);
+        formatter.field("last_updated_time", &self.last_updated_time);
         formatter.finish()
     }
 }
@@ -4362,6 +4520,8 @@ pub mod network_status {
     pub struct Builder {
         pub(crate) ethernet0_status: std::option::Option<crate::model::EthernetStatus>,
         pub(crate) ethernet1_status: std::option::Option<crate::model::EthernetStatus>,
+        pub(crate) ntp_status: std::option::Option<crate::model::NtpStatus>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The status of Ethernet port 0.</p>
@@ -4390,11 +4550,39 @@ pub mod network_status {
             self.ethernet1_status = input;
             self
         }
+        /// <p>Details about a network time protocol (NTP) server connection.</p>
+        pub fn ntp_status(mut self, input: crate::model::NtpStatus) -> Self {
+            self.ntp_status = Some(input);
+            self
+        }
+        /// <p>Details about a network time protocol (NTP) server connection.</p>
+        pub fn set_ntp_status(
+            mut self,
+            input: std::option::Option<crate::model::NtpStatus>,
+        ) -> Self {
+            self.ntp_status = input;
+            self
+        }
+        /// <p>When the network status changed.</p>
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_time = Some(input);
+            self
+        }
+        /// <p>When the network status changed.</p>
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NetworkStatus`](crate::model::NetworkStatus)
         pub fn build(self) -> crate::model::NetworkStatus {
             crate::model::NetworkStatus {
                 ethernet0_status: self.ethernet0_status,
                 ethernet1_status: self.ethernet1_status,
+                ntp_status: self.ntp_status,
+                last_updated_time: self.last_updated_time,
             }
         }
     }
@@ -4403,6 +4591,163 @@ impl NetworkStatus {
     /// Creates a new builder-style object to manufacture [`NetworkStatus`](crate::model::NetworkStatus)
     pub fn builder() -> crate::model::network_status::Builder {
         crate::model::network_status::Builder::default()
+    }
+}
+
+/// <p>Details about an NTP server connection.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NtpStatus {
+    /// <p>The connection's status.</p>
+    pub connection_status: std::option::Option<crate::model::NetworkConnectionStatus>,
+    /// <p>The IP address of the server.</p>
+    pub ip_address: std::option::Option<std::string::String>,
+    /// <p>The domain name of the server.</p>
+    pub ntp_server_name: std::option::Option<std::string::String>,
+}
+impl NtpStatus {
+    /// <p>The connection's status.</p>
+    pub fn connection_status(&self) -> std::option::Option<&crate::model::NetworkConnectionStatus> {
+        self.connection_status.as_ref()
+    }
+    /// <p>The IP address of the server.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The domain name of the server.</p>
+    pub fn ntp_server_name(&self) -> std::option::Option<&str> {
+        self.ntp_server_name.as_deref()
+    }
+}
+impl std::fmt::Debug for NtpStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NtpStatus");
+        formatter.field("connection_status", &self.connection_status);
+        formatter.field("ip_address", &self.ip_address);
+        formatter.field("ntp_server_name", &self.ntp_server_name);
+        formatter.finish()
+    }
+}
+/// See [`NtpStatus`](crate::model::NtpStatus)
+pub mod ntp_status {
+    /// A builder for [`NtpStatus`](crate::model::NtpStatus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connection_status: std::option::Option<crate::model::NetworkConnectionStatus>,
+        pub(crate) ip_address: std::option::Option<std::string::String>,
+        pub(crate) ntp_server_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The connection's status.</p>
+        pub fn connection_status(mut self, input: crate::model::NetworkConnectionStatus) -> Self {
+            self.connection_status = Some(input);
+            self
+        }
+        /// <p>The connection's status.</p>
+        pub fn set_connection_status(
+            mut self,
+            input: std::option::Option<crate::model::NetworkConnectionStatus>,
+        ) -> Self {
+            self.connection_status = input;
+            self
+        }
+        /// <p>The IP address of the server.</p>
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
+            self
+        }
+        /// <p>The IP address of the server.</p>
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
+            self
+        }
+        /// <p>The domain name of the server.</p>
+        pub fn ntp_server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ntp_server_name = Some(input.into());
+            self
+        }
+        /// <p>The domain name of the server.</p>
+        pub fn set_ntp_server_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ntp_server_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NtpStatus`](crate::model::NtpStatus)
+        pub fn build(self) -> crate::model::NtpStatus {
+            crate::model::NtpStatus {
+                connection_status: self.connection_status,
+                ip_address: self.ip_address,
+                ntp_server_name: self.ntp_server_name,
+            }
+        }
+    }
+}
+impl NtpStatus {
+    /// Creates a new builder-style object to manufacture [`NtpStatus`](crate::model::NtpStatus)
+    pub fn builder() -> crate::model::ntp_status::Builder {
+        crate::model::ntp_status::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NetworkConnectionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Connected,
+    #[allow(missing_docs)] // documentation missing in model
+    Connecting,
+    #[allow(missing_docs)] // documentation missing in model
+    NotConnected,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for NetworkConnectionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONNECTED" => NetworkConnectionStatus::Connected,
+            "CONNECTING" => NetworkConnectionStatus::Connecting,
+            "NOT_CONNECTED" => NetworkConnectionStatus::NotConnected,
+            other => NetworkConnectionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for NetworkConnectionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NetworkConnectionStatus::from(s))
+    }
+}
+impl NetworkConnectionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NetworkConnectionStatus::Connected => "CONNECTED",
+            NetworkConnectionStatus::Connecting => "CONNECTING",
+            NetworkConnectionStatus::NotConnected => "NOT_CONNECTED",
+            NetworkConnectionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CONNECTED", "CONNECTING", "NOT_CONNECTED"]
+    }
+}
+impl AsRef<str> for NetworkConnectionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4498,61 +4843,6 @@ impl EthernetStatus {
     /// Creates a new builder-style object to manufacture [`EthernetStatus`](crate::model::EthernetStatus)
     pub fn builder() -> crate::model::ethernet_status::Builder {
         crate::model::ethernet_status::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum NetworkConnectionStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Connected,
-    #[allow(missing_docs)] // documentation missing in model
-    NotConnected,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for NetworkConnectionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONNECTED" => NetworkConnectionStatus::Connected,
-            "NOT_CONNECTED" => NetworkConnectionStatus::NotConnected,
-            other => NetworkConnectionStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for NetworkConnectionStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkConnectionStatus::from(s))
-    }
-}
-impl NetworkConnectionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NetworkConnectionStatus::Connected => "CONNECTED",
-            NetworkConnectionStatus::NotConnected => "NOT_CONNECTED",
-            NetworkConnectionStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["CONNECTED", "NOT_CONNECTED"]
-    }
-}
-impl AsRef<str> for NetworkConnectionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 

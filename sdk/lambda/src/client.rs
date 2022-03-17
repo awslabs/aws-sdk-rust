@@ -120,6 +120,7 @@ impl Client {
     ///   - [`event_source_token(impl Into<String>)`](crate::client::fluent_builders::AddPermission::event_source_token) / [`set_event_source_token(Option<String>)`](crate::client::fluent_builders::AddPermission::set_event_source_token): <p>For Alexa Smart Home functions, a token that must be supplied by the invoker.</p>
     ///   - [`qualifier(impl Into<String>)`](crate::client::fluent_builders::AddPermission::qualifier) / [`set_qualifier(Option<String>)`](crate::client::fluent_builders::AddPermission::set_qualifier): <p>Specify a version or alias to add permissions to a published version of the function.</p>
     ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::AddPermission::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::AddPermission::set_revision_id): <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
+    ///   - [`principal_org_id(impl Into<String>)`](crate::client::fluent_builders::AddPermission::principal_org_id) / [`set_principal_org_id(Option<String>)`](crate::client::fluent_builders::AddPermission::set_principal_org_id): <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
     /// - On success, responds with [`AddPermissionOutput`](crate::output::AddPermissionOutput) with field(s):
     ///   - [`statement(Option<String>)`](crate::output::AddPermissionOutput::statement): <p>The permission statement that's added to the function policy.</p>
     /// - On failure, responds with [`SdkError<AddPermissionError>`](crate::error::AddPermissionError)
@@ -1337,8 +1338,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddPermission`.
     ///
-    /// <p>Grants an Amazon Web Services service or another account permission to use a function. You can apply the policy at the function level, or specify a qualifier to restrict access to a single version or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the function. Note: Lambda does not support adding policies to version $LATEST.</p>
-    /// <p>To grant permission to another account, specify the account ID as the <code>Principal</code>. For Amazon Web Services services, the principal is a domain-style identifier defined by the service, like <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web Services services, you can also specify the ARN of the associated resource as the <code>SourceArn</code>. If you grant permission to a service principal without specifying the source, other accounts could potentially configure resources in their account to invoke your Lambda function.</p>
+    /// <p>Grants an Amazon Web Services service, account, or organization permission to use a function. You can apply the policy at the function level, or specify a qualifier to restrict access to a single version or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the function. Note: Lambda does not support adding policies to version $LATEST.</p>
+    /// <p>To grant permission to another account, specify the account ID as the <code>Principal</code>. To grant permission to an organization defined in Organizations, specify the organization ID as the <code>PrincipalOrgID</code>. For Amazon Web Services services, the principal is a domain-style identifier defined by the service, like <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web Services services, you can also specify the ARN of the associated resource as the <code>SourceArn</code>. If you grant permission to a service principal without specifying the source, other accounts could potentially configure resources in their account to invoke your Lambda function.</p>
     /// <p>This action adds a statement to a resource-based permissions policy for the function. For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda Function Policies</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddPermission {
@@ -1492,6 +1493,19 @@ pub mod fluent_builders {
         /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_revision_id(input);
+            self
+        }
+        /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
+        pub fn principal_org_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_org_id(input.into());
+            self
+        }
+        /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
+        pub fn set_principal_org_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_principal_org_id(input);
             self
         }
     }

@@ -1989,6 +1989,19 @@ where
                                     crate::json_deser::deser_structure_crate_model_auto_branch_creation_config(tokens)?
                                 );
                             }
+                            "repositoryCloneMethod" => {
+                                builder = builder.set_repository_clone_method(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::RepositoryCloneMethod::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

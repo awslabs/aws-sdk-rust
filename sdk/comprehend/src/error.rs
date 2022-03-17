@@ -3458,6 +3458,153 @@ impl std::error::Error for DescribeSentimentDetectionJobError {
     }
 }
 
+/// Error type for the `DescribeTargetedSentimentDetectionJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeTargetedSentimentDetectionJobError {
+    /// Kind of error that occurred.
+    pub kind: DescribeTargetedSentimentDetectionJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeTargetedSentimentDetectionJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeTargetedSentimentDetectionJobErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified job was not found. Check the job ID and try again.</p>
+    JobNotFoundException(crate::error::JobNotFoundException),
+    /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeTargetedSentimentDetectionJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeTargetedSentimentDetectionJobErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeTargetedSentimentDetectionJobErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeTargetedSentimentDetectionJobErrorKind::JobNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeTargetedSentimentDetectionJobError {
+    fn code(&self) -> Option<&str> {
+        DescribeTargetedSentimentDetectionJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeTargetedSentimentDetectionJobError {
+    /// Creates a new `DescribeTargetedSentimentDetectionJobError`.
+    pub fn new(
+        kind: DescribeTargetedSentimentDetectionJobErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeTargetedSentimentDetectionJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeTargetedSentimentDetectionJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeTargetedSentimentDetectionJobErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTargetedSentimentDetectionJobErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTargetedSentimentDetectionJobErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTargetedSentimentDetectionJobErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTargetedSentimentDetectionJobErrorKind::JobNotFoundException`.
+    pub fn is_job_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTargetedSentimentDetectionJobErrorKind::JobNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTargetedSentimentDetectionJobErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeTargetedSentimentDetectionJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeTargetedSentimentDetectionJobErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DescribeTargetedSentimentDetectionJobErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            DescribeTargetedSentimentDetectionJobErrorKind::JobNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `DescribeTopicsDetectionJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6169,6 +6316,151 @@ impl std::error::Error for ListTagsForResourceError {
     }
 }
 
+/// Error type for the `ListTargetedSentimentDetectionJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTargetedSentimentDetectionJobsError {
+    /// Kind of error that occurred.
+    pub kind: ListTargetedSentimentDetectionJobsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTargetedSentimentDetectionJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTargetedSentimentDetectionJobsErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
+    InvalidFilterException(crate::error::InvalidFilterException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTargetedSentimentDetectionJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTargetedSentimentDetectionJobsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListTargetedSentimentDetectionJobsErrorKind::InvalidFilterException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListTargetedSentimentDetectionJobsErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListTargetedSentimentDetectionJobsErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListTargetedSentimentDetectionJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTargetedSentimentDetectionJobsError {
+    fn code(&self) -> Option<&str> {
+        ListTargetedSentimentDetectionJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTargetedSentimentDetectionJobsError {
+    /// Creates a new `ListTargetedSentimentDetectionJobsError`.
+    pub fn new(
+        kind: ListTargetedSentimentDetectionJobsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTargetedSentimentDetectionJobsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTargetedSentimentDetectionJobsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTargetedSentimentDetectionJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTargetedSentimentDetectionJobsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTargetedSentimentDetectionJobsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTargetedSentimentDetectionJobsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTargetedSentimentDetectionJobsErrorKind::InvalidFilterException`.
+    pub fn is_invalid_filter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTargetedSentimentDetectionJobsErrorKind::InvalidFilterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTargetedSentimentDetectionJobsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTargetedSentimentDetectionJobsErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTargetedSentimentDetectionJobsErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTargetedSentimentDetectionJobsErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for ListTargetedSentimentDetectionJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTargetedSentimentDetectionJobsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            ListTargetedSentimentDetectionJobsErrorKind::InvalidFilterException(_inner) => {
+                Some(_inner)
+            }
+            ListTargetedSentimentDetectionJobsErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            ListTargetedSentimentDetectionJobsErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            ListTargetedSentimentDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListTopicsDetectionJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7475,6 +7767,166 @@ impl std::error::Error for StartSentimentDetectionJobError {
     }
 }
 
+/// Error type for the `StartTargetedSentimentDetectionJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartTargetedSentimentDetectionJobError {
+    /// Kind of error that occurred.
+    pub kind: StartTargetedSentimentDetectionJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartTargetedSentimentDetectionJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartTargetedSentimentDetectionJobErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
+    KmsKeyValidationException(crate::error::KmsKeyValidationException),
+    /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
+    TooManyTagsException(crate::error::TooManyTagsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartTargetedSentimentDetectionJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartTargetedSentimentDetectionJobErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartTargetedSentimentDetectionJobErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartTargetedSentimentDetectionJobErrorKind::KmsKeyValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartTargetedSentimentDetectionJobErrorKind::TooManyTagsException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartTargetedSentimentDetectionJobError {
+    fn code(&self) -> Option<&str> {
+        StartTargetedSentimentDetectionJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartTargetedSentimentDetectionJobError {
+    /// Creates a new `StartTargetedSentimentDetectionJobError`.
+    pub fn new(
+        kind: StartTargetedSentimentDetectionJobErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartTargetedSentimentDetectionJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartTargetedSentimentDetectionJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartTargetedSentimentDetectionJobErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTargetedSentimentDetectionJobErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartTargetedSentimentDetectionJobErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTargetedSentimentDetectionJobErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartTargetedSentimentDetectionJobErrorKind::KmsKeyValidationException`.
+    pub fn is_kms_key_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTargetedSentimentDetectionJobErrorKind::KmsKeyValidationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartTargetedSentimentDetectionJobErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartTargetedSentimentDetectionJobErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTargetedSentimentDetectionJobErrorKind::TooManyTagsException(_)
+        )
+    }
+}
+impl std::error::Error for StartTargetedSentimentDetectionJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartTargetedSentimentDetectionJobErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            StartTargetedSentimentDetectionJobErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            StartTargetedSentimentDetectionJobErrorKind::KmsKeyValidationException(_inner) => {
+                Some(_inner)
+            }
+            StartTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            StartTargetedSentimentDetectionJobErrorKind::TooManyTagsException(_inner) => {
+                Some(_inner)
+            }
+            StartTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StartTopicsDetectionJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8311,6 +8763,136 @@ impl std::error::Error for StopSentimentDetectionJobError {
             StopSentimentDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StopSentimentDetectionJobErrorKind::JobNotFoundException(_inner) => Some(_inner),
             StopSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StopTargetedSentimentDetectionJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopTargetedSentimentDetectionJobError {
+    /// Kind of error that occurred.
+    pub kind: StopTargetedSentimentDetectionJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StopTargetedSentimentDetectionJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopTargetedSentimentDetectionJobErrorKind {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified job was not found. Check the job ID and try again.</p>
+    JobNotFoundException(crate::error::JobNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StopTargetedSentimentDetectionJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopTargetedSentimentDetectionJobErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            StopTargetedSentimentDetectionJobErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            StopTargetedSentimentDetectionJobErrorKind::JobNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            StopTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StopTargetedSentimentDetectionJobError {
+    fn code(&self) -> Option<&str> {
+        StopTargetedSentimentDetectionJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopTargetedSentimentDetectionJobError {
+    /// Creates a new `StopTargetedSentimentDetectionJobError`.
+    pub fn new(
+        kind: StopTargetedSentimentDetectionJobErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StopTargetedSentimentDetectionJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StopTargetedSentimentDetectionJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StopTargetedSentimentDetectionJobErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopTargetedSentimentDetectionJobErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopTargetedSentimentDetectionJobErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopTargetedSentimentDetectionJobErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopTargetedSentimentDetectionJobErrorKind::JobNotFoundException`.
+    pub fn is_job_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopTargetedSentimentDetectionJobErrorKind::JobNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for StopTargetedSentimentDetectionJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopTargetedSentimentDetectionJobErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            StopTargetedSentimentDetectionJobErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            StopTargetedSentimentDetectionJobErrorKind::JobNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            StopTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

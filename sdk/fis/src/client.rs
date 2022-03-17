@@ -101,6 +101,7 @@ impl Client {
     ///   - [`actions(HashMap<String, CreateExperimentTemplateActionInput>)`](crate::client::fluent_builders::CreateExperimentTemplate::actions) / [`set_actions(Option<HashMap<String, CreateExperimentTemplateActionInput>>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_actions): <p>The actions for the experiment.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateExperimentTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_tags): <p>The tags to apply to the experiment template.</p>
+    ///   - [`log_configuration(CreateExperimentTemplateLogConfigurationInput)`](crate::client::fluent_builders::CreateExperimentTemplate::log_configuration) / [`set_log_configuration(Option<CreateExperimentTemplateLogConfigurationInput>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_log_configuration): <p>The configuration for experiment logging.</p>
     /// - On success, responds with [`CreateExperimentTemplateOutput`](crate::output::CreateExperimentTemplateOutput) with field(s):
     ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::output::CreateExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
     /// - On failure, responds with [`SdkError<CreateExperimentTemplateError>`](crate::error::CreateExperimentTemplateError)
@@ -272,6 +273,7 @@ impl Client {
     ///   - [`targets(HashMap<String, UpdateExperimentTemplateTargetInput>)`](crate::client::fluent_builders::UpdateExperimentTemplate::targets) / [`set_targets(Option<HashMap<String, UpdateExperimentTemplateTargetInput>>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_targets): <p>The targets for the experiment.</p>
     ///   - [`actions(HashMap<String, UpdateExperimentTemplateActionInputItem>)`](crate::client::fluent_builders::UpdateExperimentTemplate::actions) / [`set_actions(Option<HashMap<String, UpdateExperimentTemplateActionInputItem>>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_actions): <p>The actions for the experiment.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
+    ///   - [`log_configuration(UpdateExperimentTemplateLogConfigurationInput)`](crate::client::fluent_builders::UpdateExperimentTemplate::log_configuration) / [`set_log_configuration(Option<UpdateExperimentTemplateLogConfigurationInput>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_log_configuration): <p>The configuration for experiment logging.</p>
     /// - On success, responds with [`UpdateExperimentTemplateOutput`](crate::output::UpdateExperimentTemplateOutput) with field(s):
     ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::output::UpdateExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
     /// - On failure, responds with [`SdkError<UpdateExperimentTemplateError>`](crate::error::UpdateExperimentTemplateError)
@@ -461,6 +463,22 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn log_configuration(
+            mut self,
+            input: crate::model::CreateExperimentTemplateLogConfigurationInput,
+        ) -> Self {
+            self.inner = self.inner.log_configuration(input);
+            self
+        }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateExperimentTemplateLogConfigurationInput>,
+        ) -> Self {
+            self.inner = self.inner.set_log_configuration(input);
             self
         }
     }
@@ -1493,6 +1511,22 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
+            self
+        }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn log_configuration(
+            mut self,
+            input: crate::model::UpdateExperimentTemplateLogConfigurationInput,
+        ) -> Self {
+            self.inner = self.inner.log_configuration(input);
+            self
+        }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UpdateExperimentTemplateLogConfigurationInput>,
+        ) -> Self {
+            self.inner = self.inner.set_log_configuration(input);
             self
         }
     }

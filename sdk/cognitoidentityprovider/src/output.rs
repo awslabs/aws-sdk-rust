@@ -2197,7 +2197,9 @@ impl ListDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateAuthOutput {
     /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
-    /// <p>Valid values include the following. Note that all of these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
+    /// <p>Valid values include the following:</p> <note>
+    /// <p>All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
+    /// </note>
     /// <ul>
     /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
     /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
@@ -2219,7 +2221,9 @@ pub struct InitiateAuthOutput {
 }
 impl InitiateAuthOutput {
     /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
-    /// <p>Valid values include the following. Note that all of these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
+    /// <p>Valid values include the following:</p> <note>
+    /// <p>All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
+    /// </note>
     /// <ul>
     /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
     /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
@@ -2277,7 +2281,9 @@ pub mod initiate_auth_output {
     }
     impl Builder {
         /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
-        /// <p>Valid values include the following. Note that all of these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
+        /// <p>Valid values include the following:</p> <note>
+        /// <p>All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
+        /// </note>
         /// <ul>
         /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
         /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
@@ -2292,7 +2298,9 @@ pub mod initiate_auth_output {
             self
         }
         /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
-        /// <p>Valid values include the following. Note that all of these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
+        /// <p>Valid values include the following:</p> <note>
+        /// <p>All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
+        /// </note>
         /// <ul>
         /// <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>
         /// <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
@@ -5382,7 +5390,6 @@ pub struct AdminGetUserOutput {
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-    /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -5421,7 +5428,6 @@ impl AdminGetUserOutput {
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-    /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -5544,7 +5550,6 @@ pub mod admin_get_user_output {
         /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
         /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
         /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-        /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
         /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
         /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
         /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -5558,7 +5563,6 @@ pub mod admin_get_user_output {
         /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
         /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
         /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-        /// <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>
         /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
         /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
         /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>

@@ -12,11 +12,11 @@ pub struct AssociateMemberAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateMemberAccountErrorKind {
-    /// <p>Internal server error.</p>
+    /// <p>(Discontinued) Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
+    /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. </p>
+    /// <p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -127,13 +127,13 @@ pub struct AssociateS3ResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateS3ResourcesErrorKind {
-    /// <p>You do not have required permissions to access the requested resource.</p>
+    /// <p>(Discontinued) You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Internal server error.</p>
+    /// <p>(Discontinued) Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
+    /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. </p>
+    /// <p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -253,9 +253,9 @@ pub struct DisassociateMemberAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateMemberAccountErrorKind {
-    /// <p>Internal server error.</p>
+    /// <p>(Discontinued) Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
+    /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -357,11 +357,11 @@ pub struct DisassociateS3ResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateS3ResourcesErrorKind {
-    /// <p>You do not have required permissions to access the requested resource.</p>
+    /// <p>(Discontinued) You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Internal server error.</p>
+    /// <p>(Discontinued) Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
+    /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -472,9 +472,9 @@ pub struct ListMemberAccountsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMemberAccountsErrorKind {
-    /// <p>Internal server error.</p>
+    /// <p>(Discontinued) Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
+    /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -576,11 +576,11 @@ pub struct ListS3ResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListS3ResourcesErrorKind {
-    /// <p>You do not have required permissions to access the requested resource.</p>
+    /// <p>(Discontinued) You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Internal server error.</p>
+    /// <p>(Discontinued) Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
+    /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -688,11 +688,11 @@ pub struct UpdateS3ResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateS3ResourcesErrorKind {
-    /// <p>You do not have required permissions to access the requested resource.</p>
+    /// <p>(Discontinued) You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Internal server error.</p>
+    /// <p>(Discontinued) Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
+    /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -787,7 +787,7 @@ impl std::error::Error for UpdateS3ResourcesError {
     }
 }
 
-/// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
+/// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
@@ -891,7 +891,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>Internal server error.</p>
+/// <p>(Discontinued) Internal server error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalException {
@@ -976,7 +976,7 @@ impl InternalException {
     }
 }
 
-/// <p>You do not have required permissions to access the requested resource.</p>
+/// <p>(Discontinued) You do not have required permissions to access the requested resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -1064,7 +1064,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. </p>
+/// <p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

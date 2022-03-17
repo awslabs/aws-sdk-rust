@@ -36,12 +36,12 @@ pub mod start_medical_stream_transcription_input {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate of the input audio in Hertz.</p>
+        /// <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self
         }
-        /// <p>The sample rate of the input audio in Hertz.</p>
+        /// <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -370,6 +370,8 @@ pub mod start_stream_transcription_input {
         pub(crate) identify_language: std::option::Option<bool>,
         pub(crate) language_options: std::option::Option<std::string::String>,
         pub(crate) preferred_language: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) vocabulary_names: std::option::Option<std::string::String>,
+        pub(crate) vocabulary_filter_names: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The language code of the input audio stream.</p>
@@ -385,12 +387,12 @@ pub mod start_stream_transcription_input {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+        /// <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self
         }
-        /// <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+        /// <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -408,12 +410,14 @@ pub mod start_stream_transcription_input {
             self.media_encoding = input;
             self
         }
-        /// <p>The name of the vocabulary to use when processing the transcription job.</p>
+        /// <p>The name of the custom vocabulary you want to use with your transcription.</p>
+        /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> operation instead.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
             self
         }
-        /// <p>The name of the vocabulary to use when processing the transcription job.</p>
+        /// <p>The name of the custom vocabulary you want to use with your transcription.</p>
+        /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> operation instead.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -449,12 +453,14 @@ pub mod start_stream_transcription_input {
             self.audio_stream = input;
             self
         }
-        /// <p>The name of the vocabulary filter you've created that is unique to your account. Provide the name in this field to successfully use it in a stream.</p>
+        /// <p>The name of the vocabulary filter you want to use with your transcription.</p>
+        /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
-        /// <p>The name of the vocabulary filter you've created that is unique to your account. Provide the name in this field to successfully use it in a stream.</p>
+        /// <p>The name of the vocabulary filter you want to use with your transcription.</p>
+        /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -490,14 +496,12 @@ pub mod start_stream_transcription_input {
         }
         /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>
         /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
-        /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn enable_channel_identification(mut self, input: bool) -> Self {
             self.enable_channel_identification = Some(input);
             self
         }
         /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>
         /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
-        /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn set_enable_channel_identification(
             mut self,
             input: std::option::Option<bool>,
@@ -649,6 +653,40 @@ pub mod start_stream_transcription_input {
             self.preferred_language = input;
             self
         }
+        /// <p>The names of the custom vocabularies you want to use with your transcription.</p>
+        /// <p>Note that if the custom vocabularies you specify are in languages that don't match the language identified in your media, your job fails.</p>
+        /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> operation instead.</p>
+        pub fn vocabulary_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_names = Some(input.into());
+            self
+        }
+        /// <p>The names of the custom vocabularies you want to use with your transcription.</p>
+        /// <p>Note that if the custom vocabularies you specify are in languages that don't match the language identified in your media, your job fails.</p>
+        /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> operation instead.</p>
+        pub fn set_vocabulary_names(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_names = input;
+            self
+        }
+        /// <p>The names of the vocabulary filters you want to use with your transcription.</p>
+        /// <p>Note that if the vocabulary filters you specify are in languages that don't match the language identified in your media, your job fails.</p>
+        /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> operation instead.</p>
+        pub fn vocabulary_filter_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_filter_names = Some(input.into());
+            self
+        }
+        /// <p>The names of the vocabulary filters you want to use with your transcription.</p>
+        /// <p>Note that if the vocabulary filters you specify are in languages that don't match the language identified in your media, your job fails.</p>
+        /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> operation instead.</p>
+        pub fn set_vocabulary_filter_names(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_filter_names = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartStreamTranscriptionInput`](crate::input::StartStreamTranscriptionInput)
         pub fn build(
             self,
@@ -704,6 +742,10 @@ pub mod start_stream_transcription_input {
                     language_options: self.language_options
                     ,
                     preferred_language: self.preferred_language
+                    ,
+                    vocabulary_names: self.vocabulary_names
+                    ,
+                    vocabulary_filter_names: self.vocabulary_filter_names
                     ,
                 }
             )
@@ -833,17 +875,19 @@ impl StartStreamTranscriptionInput {
 pub struct StartStreamTranscriptionInput {
     /// <p>The language code of the input audio stream.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+    /// <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio.</p>
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
-    /// <p>The name of the vocabulary to use when processing the transcription job.</p>
+    /// <p>The name of the custom vocabulary you want to use with your transcription.</p>
+    /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> operation instead.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>A identifier for the transcription session. Use this parameter when you want to retry a session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in the response.</p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
     pub audio_stream: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
-    /// <p>The name of the vocabulary filter you've created that is unique to your account. Provide the name in this field to successfully use it in a stream.</p>
+    /// <p>The name of the vocabulary filter you want to use with your transcription.</p>
+    /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The manner in which you use your vocabulary filter to filter words in your transcript. <code>Remove</code> removes filtered words from your transcription results. <code>Mask</code> masks filtered words with a <code>***</code> in your transcription results. <code>Tag</code> keeps the filtered words in your transcription results and tags them. The tag appears as <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
     pub vocabulary_filter_method: std::option::Option<crate::model::VocabularyFilterMethod>,
@@ -851,7 +895,6 @@ pub struct StartStreamTranscriptionInput {
     pub show_speaker_label: bool,
     /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>
     /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
-    /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     pub enable_channel_identification: bool,
     /// <p>The number of channels that are in your audio stream.</p>
     pub number_of_channels: std::option::Option<i32>,
@@ -880,13 +923,21 @@ pub struct StartStreamTranscriptionInput {
     /// <p>Optional. From the subset of languages codes you provided for <code>LanguageOptions</code>, you can select one preferred language for your transcription.</p>
     /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
     pub preferred_language: std::option::Option<crate::model::LanguageCode>,
+    /// <p>The names of the custom vocabularies you want to use with your transcription.</p>
+    /// <p>Note that if the custom vocabularies you specify are in languages that don't match the language identified in your media, your job fails.</p>
+    /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> operation instead.</p>
+    pub vocabulary_names: std::option::Option<std::string::String>,
+    /// <p>The names of the vocabulary filters you want to use with your transcription.</p>
+    /// <p>Note that if the vocabulary filters you specify are in languages that don't match the language identified in your media, your job fails.</p>
+    /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> operation instead.</p>
+    pub vocabulary_filter_names: std::option::Option<std::string::String>,
 }
 impl StartStreamTranscriptionInput {
     /// <p>The language code of the input audio stream.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+    /// <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -894,7 +945,8 @@ impl StartStreamTranscriptionInput {
     pub fn media_encoding(&self) -> std::option::Option<&crate::model::MediaEncoding> {
         self.media_encoding.as_ref()
     }
-    /// <p>The name of the vocabulary to use when processing the transcription job.</p>
+    /// <p>The name of the custom vocabulary you want to use with your transcription.</p>
+    /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> operation instead.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
@@ -908,7 +960,8 @@ impl StartStreamTranscriptionInput {
     ) -> &aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream> {
         &self.audio_stream
     }
-    /// <p>The name of the vocabulary filter you've created that is unique to your account. Provide the name in this field to successfully use it in a stream.</p>
+    /// <p>The name of the vocabulary filter you want to use with your transcription.</p>
+    /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>
     pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
@@ -924,7 +977,6 @@ impl StartStreamTranscriptionInput {
     }
     /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>
     /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
-    /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     pub fn enable_channel_identification(&self) -> bool {
         self.enable_channel_identification
     }
@@ -981,6 +1033,18 @@ impl StartStreamTranscriptionInput {
     pub fn preferred_language(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.preferred_language.as_ref()
     }
+    /// <p>The names of the custom vocabularies you want to use with your transcription.</p>
+    /// <p>Note that if the custom vocabularies you specify are in languages that don't match the language identified in your media, your job fails.</p>
+    /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> operation instead.</p>
+    pub fn vocabulary_names(&self) -> std::option::Option<&str> {
+        self.vocabulary_names.as_deref()
+    }
+    /// <p>The names of the vocabulary filters you want to use with your transcription.</p>
+    /// <p>Note that if the vocabulary filters you specify are in languages that don't match the language identified in your media, your job fails.</p>
+    /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> operation instead.</p>
+    pub fn vocabulary_filter_names(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_names.as_deref()
+    }
 }
 impl std::fmt::Debug for StartStreamTranscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1014,6 +1078,8 @@ impl std::fmt::Debug for StartStreamTranscriptionInput {
         formatter.field("identify_language", &self.identify_language);
         formatter.field("language_options", &self.language_options);
         formatter.field("preferred_language", &self.preferred_language);
+        formatter.field("vocabulary_names", &self.vocabulary_names);
+        formatter.field("vocabulary_filter_names", &self.vocabulary_filter_names);
         formatter.finish()
     }
 }
@@ -1023,7 +1089,7 @@ impl std::fmt::Debug for StartStreamTranscriptionInput {
 pub struct StartMedicalStreamTranscriptionInput {
     /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US English (en-US). </p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate of the input audio in Hertz.</p>
+    /// <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio.</p>
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
@@ -1054,7 +1120,7 @@ impl StartMedicalStreamTranscriptionInput {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The sample rate of the input audio in Hertz.</p>
+    /// <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
         self.media_sample_rate_hertz
     }

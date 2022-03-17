@@ -5160,6 +5160,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_zendesk_destination_properties(tokens)?
                                 );
                             }
+                            "Marketo" => {
+                                builder = builder.set_marketo(
+                                    crate::json_deser::deser_structure_crate_model_marketo_destination_properties(tokens)?
+                                );
+                            }
                             "CustomConnector" => {
                                 builder = builder.set_custom_connector(
                                     crate::json_deser::deser_structure_crate_model_custom_connector_destination_properties(tokens)?
@@ -8410,6 +8415,57 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_marketo_destination_properties<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::MarketoDestinationProperties>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::MarketoDestinationProperties::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "object" => {
+                                builder = builder.set_object(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "errorHandlingConfig" => {
+                                builder = builder.set_error_handling_config(
+                                    crate::json_deser::deser_structure_crate_model_error_handling_config(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

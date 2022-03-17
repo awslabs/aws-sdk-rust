@@ -94,7 +94,19 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder().build(),
                 })
-                .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+                .partition_endpoint("aws-iso-b-global")
+                .regionalized(aws_endpoint::partition::Regionalized::NotRegionalized)
+                .endpoint(
+                    "aws-iso-b-global",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "route53.sc2s.sgov.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-isob-east-1")
+                            .build(),
+                    },
+                )
                 .build()
                 .expect("invalid partition"),
             aws_endpoint::Partition::builder()

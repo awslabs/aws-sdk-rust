@@ -97,6 +97,72 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataView {
     }
 }
 
+/// Operation shape for `CreatePermissionGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_permission_group`](crate::client::Client::create_permission_group).
+///
+/// See [`crate::client::fluent_builders::CreatePermissionGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreatePermissionGroup {
+    _private: (),
+}
+impl CreatePermissionGroup {
+    /// Creates a new builder-style object to manufacture [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput)
+    pub fn builder() -> crate::input::create_permission_group_input::Builder {
+        crate::input::create_permission_group_input::Builder::default()
+    }
+    /// Creates a new `CreatePermissionGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreatePermissionGroup {
+    type Output = std::result::Result<
+        crate::output::CreatePermissionGroupOutput,
+        crate::error::CreatePermissionGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_permission_group_error(response)
+        } else {
+            crate::operation_deser::parse_create_permission_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateUser`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_user`](crate::client::Client::create_user).
+///
+/// See [`crate::client::fluent_builders::CreateUser`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateUser {
+    _private: (),
+}
+impl CreateUser {
+    /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::input::CreateUserInput)
+    pub fn builder() -> crate::input::create_user_input::Builder {
+        crate::input::create_user_input::Builder::default()
+    }
+    /// Creates a new `CreateUser` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateUser {
+    type Output =
+        std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_user_error(response)
+        } else {
+            crate::operation_deser::parse_create_user_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteDataset`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -125,6 +191,104 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
             crate::operation_deser::parse_delete_dataset_error(response)
         } else {
             crate::operation_deser::parse_delete_dataset_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeletePermissionGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_permission_group`](crate::client::Client::delete_permission_group).
+///
+/// See [`crate::client::fluent_builders::DeletePermissionGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeletePermissionGroup {
+    _private: (),
+}
+impl DeletePermissionGroup {
+    /// Creates a new builder-style object to manufacture [`DeletePermissionGroupInput`](crate::input::DeletePermissionGroupInput)
+    pub fn builder() -> crate::input::delete_permission_group_input::Builder {
+        crate::input::delete_permission_group_input::Builder::default()
+    }
+    /// Creates a new `DeletePermissionGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionGroup {
+    type Output = std::result::Result<
+        crate::output::DeletePermissionGroupOutput,
+        crate::error::DeletePermissionGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_permission_group_error(response)
+        } else {
+            crate::operation_deser::parse_delete_permission_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DisableUser`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disable_user`](crate::client::Client::disable_user).
+///
+/// See [`crate::client::fluent_builders::DisableUser`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisableUser {
+    _private: (),
+}
+impl DisableUser {
+    /// Creates a new builder-style object to manufacture [`DisableUserInput`](crate::input::DisableUserInput)
+    pub fn builder() -> crate::input::disable_user_input::Builder {
+        crate::input::disable_user_input::Builder::default()
+    }
+    /// Creates a new `DisableUser` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisableUser {
+    type Output =
+        std::result::Result<crate::output::DisableUserOutput, crate::error::DisableUserError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disable_user_error(response)
+        } else {
+            crate::operation_deser::parse_disable_user_response(response)
+        }
+    }
+}
+
+/// Operation shape for `EnableUser`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`enable_user`](crate::client::Client::enable_user).
+///
+/// See [`crate::client::fluent_builders::EnableUser`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct EnableUser {
+    _private: (),
+}
+impl EnableUser {
+    /// Creates a new builder-style object to manufacture [`EnableUserInput`](crate::input::EnableUserInput)
+    pub fn builder() -> crate::input::enable_user_input::Builder {
+        crate::input::enable_user_input::Builder::default()
+    }
+    /// Creates a new `EnableUser` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for EnableUser {
+    type Output =
+        std::result::Result<crate::output::EnableUserOutput, crate::error::EnableUserError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_enable_user_error(response)
+        } else {
+            crate::operation_deser::parse_enable_user_response(response)
         }
     }
 }
@@ -259,6 +423,37 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProgrammaticAccessCre
     }
 }
 
+/// Operation shape for `GetUser`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_user`](crate::client::Client::get_user).
+///
+/// See [`crate::client::fluent_builders::GetUser`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetUser {
+    _private: (),
+}
+impl GetUser {
+    /// Creates a new builder-style object to manufacture [`GetUserInput`](crate::input::GetUserInput)
+    pub fn builder() -> crate::input::get_user_input::Builder {
+        crate::input::get_user_input::Builder::default()
+    }
+    /// Creates a new `GetUser` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetUser {
+    type Output = std::result::Result<crate::output::GetUserOutput, crate::error::GetUserError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_user_error(response)
+        } else {
+            crate::operation_deser::parse_get_user_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetWorkingLocation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -389,6 +584,105 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataViews {
     }
 }
 
+/// Operation shape for `ListPermissionGroups`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_permission_groups`](crate::client::Client::list_permission_groups).
+///
+/// See [`crate::client::fluent_builders::ListPermissionGroups`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListPermissionGroups {
+    _private: (),
+}
+impl ListPermissionGroups {
+    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsInput`](crate::input::ListPermissionGroupsInput)
+    pub fn builder() -> crate::input::list_permission_groups_input::Builder {
+        crate::input::list_permission_groups_input::Builder::default()
+    }
+    /// Creates a new `ListPermissionGroups` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListPermissionGroups {
+    type Output = std::result::Result<
+        crate::output::ListPermissionGroupsOutput,
+        crate::error::ListPermissionGroupsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_permission_groups_error(response)
+        } else {
+            crate::operation_deser::parse_list_permission_groups_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListUsers`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_users`](crate::client::Client::list_users).
+///
+/// See [`crate::client::fluent_builders::ListUsers`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListUsers {
+    _private: (),
+}
+impl ListUsers {
+    /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput)
+    pub fn builder() -> crate::input::list_users_input::Builder {
+        crate::input::list_users_input::Builder::default()
+    }
+    /// Creates a new `ListUsers` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
+    type Output = std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_users_error(response)
+        } else {
+            crate::operation_deser::parse_list_users_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ResetUserPassword`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`reset_user_password`](crate::client::Client::reset_user_password).
+///
+/// See [`crate::client::fluent_builders::ResetUserPassword`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ResetUserPassword {
+    _private: (),
+}
+impl ResetUserPassword {
+    /// Creates a new builder-style object to manufacture [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput)
+    pub fn builder() -> crate::input::reset_user_password_input::Builder {
+        crate::input::reset_user_password_input::Builder::default()
+    }
+    /// Creates a new `ResetUserPassword` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ResetUserPassword {
+    type Output = std::result::Result<
+        crate::output::ResetUserPasswordOutput,
+        crate::error::ResetUserPasswordError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_reset_user_password_error(response)
+        } else {
+            crate::operation_deser::parse_reset_user_password_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateChangeset`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -451,6 +745,72 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataset {
             crate::operation_deser::parse_update_dataset_error(response)
         } else {
             crate::operation_deser::parse_update_dataset_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdatePermissionGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_permission_group`](crate::client::Client::update_permission_group).
+///
+/// See [`crate::client::fluent_builders::UpdatePermissionGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdatePermissionGroup {
+    _private: (),
+}
+impl UpdatePermissionGroup {
+    /// Creates a new builder-style object to manufacture [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput)
+    pub fn builder() -> crate::input::update_permission_group_input::Builder {
+        crate::input::update_permission_group_input::Builder::default()
+    }
+    /// Creates a new `UpdatePermissionGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdatePermissionGroup {
+    type Output = std::result::Result<
+        crate::output::UpdatePermissionGroupOutput,
+        crate::error::UpdatePermissionGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_permission_group_error(response)
+        } else {
+            crate::operation_deser::parse_update_permission_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateUser`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_user`](crate::client::Client::update_user).
+///
+/// See [`crate::client::fluent_builders::UpdateUser`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateUser {
+    _private: (),
+}
+impl UpdateUser {
+    /// Creates a new builder-style object to manufacture [`UpdateUserInput`](crate::input::UpdateUserInput)
+    pub fn builder() -> crate::input::update_user_input::Builder {
+        crate::input::update_user_input::Builder::default()
+    }
+    /// Creates a new `UpdateUser` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateUser {
+    type Output =
+        std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_user_error(response)
+        } else {
+            crate::operation_deser::parse_update_user_response(response)
         }
     }
 }

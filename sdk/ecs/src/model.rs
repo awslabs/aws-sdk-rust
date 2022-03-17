@@ -989,6 +989,8 @@ impl AsRef<str> for ScaleUnit {
 }
 
 /// <p>The details for the service registry.</p>
+/// <p>Each service may be associated with one service registry. Multiple service registries for each service are not supported.</p>
+/// <p>When you add, update, or remove the service registries configuration, Amazon ECS starts a new deployment. New tasks are registered and deregistered to the updated service registry configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceRegistry {
@@ -1104,6 +1106,9 @@ impl ServiceRegistry {
 
 /// <p>The load balancer configuration to use with a service or task set.</p>
 /// <p>For specific notes and restrictions regarding the use of load balancers with services and task sets, see the CreateService and CreateTaskSet actions.</p>
+/// <p>When you add, update, or remove a load blaancer configuration, Amazon ECS starts a new deployment with the updated Elastic Load Balancing configuration. This causes tasks to register to and deregister from load balancers.</p>
+/// <p>We recommend that you verify this on a test environment before you update the Elastic Load Balancing configuration. </p>
+/// <p>A service-linked role is required for services that use multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Service-linked roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancer {
@@ -1721,7 +1726,7 @@ pub struct Service {
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
     /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p> </li>
-    /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This taskmeets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
+    /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note> </li>
     /// </ul>
@@ -1742,7 +1747,7 @@ pub struct Service {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The principal that created the service.</p>
     pub created_by: std::option::Option<std::string::String>,
-    /// <p>Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Determines whether to use Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub enable_ecs_managed_tags: bool,
     /// <p>Determines whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
     pub propagate_tags: std::option::Option<crate::model::PropagateTags>,
@@ -1859,7 +1864,7 @@ impl Service {
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
     /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p> </li>
-    /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This taskmeets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
+    /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note> </li>
     /// </ul>
@@ -1890,7 +1895,7 @@ impl Service {
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Determines whether to use Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn enable_ecs_managed_tags(&self) -> bool {
         self.enable_ecs_managed_tags
     }
@@ -2338,7 +2343,7 @@ pub mod service {
         /// <p>There are two service scheduler strategies available.</p>
         /// <ul>
         /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p> </li>
-        /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This taskmeets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
+        /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
         /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
         /// </note> </li>
         /// </ul>
@@ -2350,7 +2355,7 @@ pub mod service {
         /// <p>There are two service scheduler strategies available.</p>
         /// <ul>
         /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p> </li>
-        /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This taskmeets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
+        /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
         /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
         /// </note> </li>
         /// </ul>
@@ -2423,12 +2428,12 @@ pub mod service {
             self.created_by = input;
             self
         }
-        /// <p>Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>Determines whether to use Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
             self.enable_ecs_managed_tags = Some(input);
             self
         }
-        /// <p>Determines whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>Determines whether to use Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_ecs_managed_tags = input;
             self
@@ -2514,6 +2519,8 @@ impl Service {
 )]
 pub enum PropagateTags {
     #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
     Service,
     #[allow(missing_docs)] // documentation missing in model
     TaskDefinition,
@@ -2523,6 +2530,7 @@ pub enum PropagateTags {
 impl std::convert::From<&str> for PropagateTags {
     fn from(s: &str) -> Self {
         match s {
+            "NONE" => PropagateTags::None,
             "SERVICE" => PropagateTags::Service,
             "TASK_DEFINITION" => PropagateTags::TaskDefinition,
             other => PropagateTags::Unknown(other.to_owned()),
@@ -2540,6 +2548,7 @@ impl PropagateTags {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PropagateTags::None => "NONE",
             PropagateTags::Service => "SERVICE",
             PropagateTags::TaskDefinition => "TASK_DEFINITION",
             PropagateTags::Unknown(s) => s.as_ref(),
@@ -2547,7 +2556,7 @@ impl PropagateTags {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["SERVICE", "TASK_DEFINITION"]
+        &["NONE", "SERVICE", "TASK_DEFINITION"]
     }
 }
 impl AsRef<str> for PropagateTags {
@@ -3851,21 +3860,21 @@ impl DeploymentConfiguration {
 /// <note>
 /// <p>The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.</p>
 /// </note>
-/// <p>The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't reach a steady state. If enabled, a service deployment will transition to a failed state and stop launching new tasks. You can also enable Amazon ECS to roll back your service to the last completed deployment after a failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+/// <p>The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't reach a steady state. If enabled, a service deployment will transition to a failed state and stop launching new tasks. You can also configure Amazon ECS to roll back your service to the last completed deployment after a failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentCircuitBreaker {
-    /// <p>Determines whether to enable the deployment circuit breaker logic for the service.</p>
+    /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
     pub enable: bool,
-    /// <p>Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub rollback: bool,
 }
 impl DeploymentCircuitBreaker {
-    /// <p>Determines whether to enable the deployment circuit breaker logic for the service.</p>
+    /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
     pub fn enable(&self) -> bool {
         self.enable
     }
-    /// <p>Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(&self) -> bool {
         self.rollback
     }
@@ -3888,22 +3897,22 @@ pub mod deployment_circuit_breaker {
         pub(crate) rollback: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Determines whether to enable the deployment circuit breaker logic for the service.</p>
+        /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
         pub fn enable(mut self, input: bool) -> Self {
             self.enable = Some(input);
             self
         }
-        /// <p>Determines whether to enable the deployment circuit breaker logic for the service.</p>
+        /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
         pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.enable = input;
             self
         }
-        /// <p>Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+        /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
         pub fn rollback(mut self, input: bool) -> Self {
             self.rollback = Some(input);
             self
         }
-        /// <p>Determines whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+        /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
         pub fn set_rollback(mut self, input: std::option::Option<bool>) -> Self {
             self.rollback = input;
             self
@@ -5028,7 +5037,7 @@ impl KeyValuePair {
     }
 }
 
-/// <p>An attribute is a name-value pair that's associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+/// <p>An attribute is a name-value pair that's associated with an Amazon ECS object. Use attributes to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attribute {
@@ -6281,7 +6290,7 @@ impl Cluster {
     }
 }
 
-/// <p>The settings to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster.</p>
+/// <p>The settings to use when creating a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSetting {
@@ -6607,7 +6616,7 @@ pub struct ExecuteCommandLogConfiguration {
     /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
     pub cloud_watch_log_group_name: std::option::Option<std::string::String>,
-    /// <p>Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
+    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
     pub cloud_watch_encryption_enabled: bool,
     /// <p>The name of the S3 bucket to send logs to.</p> <note>
     /// <p>The S3 bucket must already be created.</p>
@@ -6625,7 +6634,7 @@ impl ExecuteCommandLogConfiguration {
     pub fn cloud_watch_log_group_name(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_name.as_deref()
     }
-    /// <p>Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
+    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
     pub fn cloud_watch_encryption_enabled(&self) -> bool {
         self.cloud_watch_encryption_enabled
     }
@@ -6691,12 +6700,12 @@ pub mod execute_command_log_configuration {
             self.cloud_watch_log_group_name = input;
             self
         }
-        /// <p>Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
+        /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
         pub fn cloud_watch_encryption_enabled(mut self, input: bool) -> Self {
             self.cloud_watch_encryption_enabled = Some(input);
             self
         }
-        /// <p>Determines whether to enable encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
+        /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be disabled.</p>
         pub fn set_cloud_watch_encryption_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -7413,7 +7422,7 @@ impl AsRef<str> for ManagedTerminationProtection {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedScaling {
-    /// <p>Determines whether to enable managed scaling for the capacity provider.</p>
+    /// <p>Determines whether to use managed scaling for the capacity provider.</p>
     pub status: std::option::Option<crate::model::ManagedScalingStatus>,
     /// <p>The target capacity value for the capacity provider. The specified value must be greater than <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> results in the Amazon EC2 instances in your Auto Scaling group being completely used.</p>
     pub target_capacity: std::option::Option<i32>,
@@ -7425,7 +7434,7 @@ pub struct ManagedScaling {
     pub instance_warmup_period: std::option::Option<i32>,
 }
 impl ManagedScaling {
-    /// <p>Determines whether to enable managed scaling for the capacity provider.</p>
+    /// <p>Determines whether to use managed scaling for the capacity provider.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ManagedScalingStatus> {
         self.status.as_ref()
     }
@@ -7470,12 +7479,12 @@ pub mod managed_scaling {
         pub(crate) instance_warmup_period: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Determines whether to enable managed scaling for the capacity provider.</p>
+        /// <p>Determines whether to use managed scaling for the capacity provider.</p>
         pub fn status(mut self, input: crate::model::ManagedScalingStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Determines whether to enable managed scaling for the capacity provider.</p>
+        /// <p>Determines whether to use managed scaling for the capacity provider.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ManagedScalingStatus>,
@@ -8433,6 +8442,15 @@ pub struct Task {
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service.</p>
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The following are valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
+    /// <li> <p> <code>EssentialContainerExited</code> </p> </li>
+    /// <li> <p> <code>UserInitiated</code> </p> </li>
+    /// <li> <p> <code>TerminationNotice</code> </p> </li>
+    /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
+    /// <li> <p> <code>SpotInterruption</code> </p> </li>
+    /// </ul>
     pub stop_code: std::option::Option<crate::model::TaskStopCode>,
     /// <p>The Unix timestamp for the time when the task was stopped. More specifically, it's for the time when the task transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code> state.</p>
     pub stopped_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -8595,6 +8613,15 @@ impl Task {
         self.started_by.as_deref()
     }
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The following are valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
+    /// <li> <p> <code>EssentialContainerExited</code> </p> </li>
+    /// <li> <p> <code>UserInitiated</code> </p> </li>
+    /// <li> <p> <code>TerminationNotice</code> </p> </li>
+    /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
+    /// <li> <p> <code>SpotInterruption</code> </p> </li>
+    /// </ul>
     pub fn stop_code(&self) -> std::option::Option<&crate::model::TaskStopCode> {
         self.stop_code.as_ref()
     }
@@ -9127,11 +9154,29 @@ pub mod task {
             self
         }
         /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+        /// <p>The following are valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
+        /// <li> <p> <code>EssentialContainerExited</code> </p> </li>
+        /// <li> <p> <code>UserInitiated</code> </p> </li>
+        /// <li> <p> <code>TerminationNotice</code> </p> </li>
+        /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
+        /// <li> <p> <code>SpotInterruption</code> </p> </li>
+        /// </ul>
         pub fn stop_code(mut self, input: crate::model::TaskStopCode) -> Self {
             self.stop_code = Some(input);
             self
         }
         /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+        /// <p>The following are valid values:</p>
+        /// <ul>
+        /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
+        /// <li> <p> <code>EssentialContainerExited</code> </p> </li>
+        /// <li> <p> <code>UserInitiated</code> </p> </li>
+        /// <li> <p> <code>TerminationNotice</code> </p> </li>
+        /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
+        /// <li> <p> <code>SpotInterruption</code> </p> </li>
+        /// </ul>
         pub fn set_stop_code(
             mut self,
             input: std::option::Option<crate::model::TaskStopCode>,
@@ -9314,11 +9359,7 @@ impl Task {
 }
 
 /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note>
-/// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
-/// <ul>
-/// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
-/// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
-/// </ul>
+/// <p>This parameter is only supported for tasks hosted on Fargate using Linux platform version <code>1.4.0</code> or later. This parameter is not supported for Windows containers on Fargate.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11142,7 +11183,7 @@ pub struct TaskDefinition {
     /// </note>
     pub ipc_mode: std::option::Option<crate::model::IpcMode>,
     /// <p>The configuration details for the App Mesh proxy.</p>
-    /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
     /// <p>The Unix timestamp for the time when the task definition was registered.</p>
     pub registered_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -11282,7 +11323,7 @@ impl TaskDefinition {
         self.ipc_mode.as_ref()
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
-    /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn proxy_configuration(&self) -> std::option::Option<&crate::model::ProxyConfiguration> {
         self.proxy_configuration.as_ref()
     }
@@ -11736,13 +11777,13 @@ pub mod task_definition {
             self
         }
         /// <p>The configuration details for the App Mesh proxy.</p>
-        /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn proxy_configuration(mut self, input: crate::model::ProxyConfiguration) -> Self {
             self.proxy_configuration = Some(input);
             self
         }
         /// <p>The configuration details for the App Mesh proxy.</p>
-        /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_proxy_configuration(
             mut self,
             input: std::option::Option<crate::model::ProxyConfiguration>,
@@ -11841,7 +11882,7 @@ impl TaskDefinition {
 }
 
 /// <p>The configuration details for the App Mesh proxy.</p>
-/// <p>For tasks that use the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> </p>
+/// <p>For tasks that use the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProxyConfiguration {
@@ -13004,7 +13045,7 @@ pub struct EfsVolumeConfiguration {
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.</p>
     /// </important>
     pub root_directory: std::option::Option<std::string::String>,
-    /// <p>Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+    /// <p>Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub transit_encryption: std::option::Option<crate::model::EfsTransitEncryption>,
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub transit_encryption_port: std::option::Option<i32>,
@@ -13022,7 +13063,7 @@ impl EfsVolumeConfiguration {
     pub fn root_directory(&self) -> std::option::Option<&str> {
         self.root_directory.as_deref()
     }
-    /// <p>Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+    /// <p>Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub fn transit_encryption(&self) -> std::option::Option<&crate::model::EfsTransitEncryption> {
         self.transit_encryption.as_ref()
     }
@@ -13091,12 +13132,12 @@ pub mod efs_volume_configuration {
             self.root_directory = input;
             self
         }
-        /// <p>Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+        /// <p>Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
         pub fn transit_encryption(mut self, input: crate::model::EfsTransitEncryption) -> Self {
             self.transit_encryption = Some(input);
             self
         }
-        /// <p>Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+        /// <p>Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
         pub fn set_transit_encryption(
             mut self,
             input: std::option::Option<crate::model::EfsTransitEncryption>,
@@ -13787,7 +13828,7 @@ pub struct ContainerDefinition {
     /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub secrets: std::option::Option<std::vec::Vec<crate::model::Secret>>,
     /// <p>The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.</p>
-    /// <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent to turn on container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>For tasks using the Fargate launch type, the task or service requires the following platforms:</p>
     /// <ul>
     /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
@@ -13802,7 +13843,7 @@ pub struct ContainerDefinition {
     /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
-    /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to enable a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to use a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub start_timeout: std::option::Option<i32>,
     /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own.</p>
     /// <p>For tasks using the Fargate launch type, the task or service requires the following platforms:</p>
@@ -13811,7 +13852,7 @@ pub struct ContainerDefinition {
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// <p>The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.</p>
-    /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to enable a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to use a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub stop_timeout: std::option::Option<i32>,
     /// <p>The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>The <code>hostname</code> parameter is not supported if you're using the <code>awsvpc</code> network mode.</p>
@@ -14028,7 +14069,7 @@ impl ContainerDefinition {
         self.secrets.as_deref()
     }
     /// <p>The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.</p>
-    /// <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent to turn on container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>For tasks using the Fargate launch type, the task or service requires the following platforms:</p>
     /// <ul>
     /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
@@ -14045,7 +14086,7 @@ impl ContainerDefinition {
     /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
-    /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to enable a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to use a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn start_timeout(&self) -> std::option::Option<i32> {
         self.start_timeout
     }
@@ -14056,7 +14097,7 @@ impl ContainerDefinition {
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// <p>The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.</p>
-    /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to enable a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to use a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn stop_timeout(&self) -> std::option::Option<i32> {
         self.stop_timeout
     }
@@ -14665,7 +14706,7 @@ pub mod container_definition {
         /// To override the contents of this collection use [`set_depends_on`](Self::set_depends_on).
         ///
         /// <p>The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.</p>
-        /// <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent to turn on container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <p>For tasks using the Fargate launch type, the task or service requires the following platforms:</p>
         /// <ul>
         /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
@@ -14678,7 +14719,7 @@ pub mod container_definition {
             self
         }
         /// <p>The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.</p>
-        /// <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent to turn on container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <p>For tasks using the Fargate launch type, the task or service requires the following platforms:</p>
         /// <ul>
         /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
@@ -14699,7 +14740,7 @@ pub mod container_definition {
         /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
         /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
         /// </ul>
-        /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to enable a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to use a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn start_timeout(mut self, input: i32) -> Self {
             self.start_timeout = Some(input);
             self
@@ -14712,7 +14753,7 @@ pub mod container_definition {
         /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
         /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
         /// </ul>
-        /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to enable a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to use a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_start_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.start_timeout = input;
             self
@@ -14724,7 +14765,7 @@ pub mod container_definition {
         /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
         /// </ul>
         /// <p>The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.</p>
-        /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to enable a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to use a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn stop_timeout(mut self, input: i32) -> Self {
             self.stop_timeout = Some(input);
             self
@@ -14736,7 +14777,7 @@ pub mod container_definition {
         /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
         /// </ul>
         /// <p>The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.</p>
-        /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to enable a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to use a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_stop_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.stop_timeout = input;
             self
@@ -15405,7 +15446,9 @@ impl SystemControl {
     }
 }
 
-/// <p>An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).</p>
+/// <p>An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).</p> <note>
+/// <p>The Amazon ECS container agent only monitors and reports on the health checks specified in the task definition. Amazon ECS does not monitor Docker health checks that are embedded in a container image and not specified in the container definition. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image.</p>
+/// </note>
 /// <p>You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.</p>
 /// <p>The following describes the possible <code>healthStatus</code> values for a container:</p>
 /// <ul>
@@ -15760,7 +15803,8 @@ impl LogConfiguration {
 pub struct Secret {
     /// <p>The name of the secret.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p> <note>
+    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
+    /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
     /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
     /// </note>
     pub value_from: std::option::Option<std::string::String>,
@@ -15770,7 +15814,8 @@ impl Secret {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p> <note>
+    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
+    /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
     /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
     /// </note>
     pub fn value_from(&self) -> std::option::Option<&str> {
@@ -15805,14 +15850,16 @@ pub mod secret {
             self.name = input;
             self
         }
-        /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p> <note>
+        /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
+        /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
         /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
         /// </note>
         pub fn value_from(mut self, input: impl Into<std::string::String>) -> Self {
             self.value_from = Some(input.into());
             self
         }
-        /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p> <note>
+        /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
+        /// <p>For information about the require Identity and Access Management permissions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam">Required IAM permissions for Amazon ECS secrets</a> (for Secrets Manager) or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html">Required IAM permissions for Amazon ECS secrets</a> (for Systems Manager Parameter store) in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
         /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.</p>
         /// </note>
         pub fn set_value_from(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -16213,7 +16260,7 @@ impl HostEntry {
 }
 
 /// <p>The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.</p>
-/// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+/// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent to use container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
 /// <p>For tasks that use the Fargate launch type, the task or service requires the following platforms:</p>
 /// <ul>
 /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
@@ -17849,7 +17896,7 @@ impl AsRef<str> for TaskDefinitionFamilyStatus {
 pub struct Session {
     /// <p>The ID of the execute command session.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>A URL back to managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
+    /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
     pub stream_url: std::option::Option<std::string::String>,
     /// <p>An encrypted token value containing session and caller information. It's used to authenticate the connection to the container.</p>
     pub token_value: std::option::Option<std::string::String>,
@@ -17859,7 +17906,7 @@ impl Session {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>A URL back to managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
+    /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
     pub fn stream_url(&self) -> std::option::Option<&str> {
         self.stream_url.as_deref()
     }
@@ -17898,12 +17945,12 @@ pub mod session {
             self.session_id = input;
             self
         }
-        /// <p>A URL back to managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
+        /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
         pub fn stream_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_url = Some(input.into());
             self
         }
-        /// <p>A URL back to managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
+        /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
         pub fn set_stream_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_url = input;
             self

@@ -2068,6 +2068,8 @@ pub enum Profile {
     #[allow(missing_docs)] // documentation missing in model
     Hbbtv15,
     #[allow(missing_docs)] // documentation missing in model
+    Hybridcast,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2076,6 +2078,7 @@ impl std::convert::From<&str> for Profile {
     fn from(s: &str) -> Self {
         match s {
             "HBBTV_1_5" => Profile::Hbbtv15,
+            "HYBRIDCAST" => Profile::Hybridcast,
             "NONE" => Profile::None,
             other => Profile::Unknown(other.to_owned()),
         }
@@ -2093,13 +2096,14 @@ impl Profile {
     pub fn as_str(&self) -> &str {
         match self {
             Profile::Hbbtv15 => "HBBTV_1_5",
+            Profile::Hybridcast => "HYBRIDCAST",
             Profile::None => "NONE",
             Profile::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["HBBTV_1_5", "NONE"]
+        &["HBBTV_1_5", "HYBRIDCAST", "NONE"]
     }
 }
 impl AsRef<str> for Profile {

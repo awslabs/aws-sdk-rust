@@ -95,7 +95,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartMedicalStreamTranscription::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_language_code): <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US English (en-US). </p>
-    ///   - [`media_sample_rate_hertz(i32)`](crate::client::fluent_builders::StartMedicalStreamTranscription::media_sample_rate_hertz) / [`set_media_sample_rate_hertz(Option<i32>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_media_sample_rate_hertz): <p>The sample rate of the input audio in Hertz.</p>
+    ///   - [`media_sample_rate_hertz(i32)`](crate::client::fluent_builders::StartMedicalStreamTranscription::media_sample_rate_hertz) / [`set_media_sample_rate_hertz(Option<i32>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_media_sample_rate_hertz): <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     ///   - [`media_encoding(MediaEncoding)`](crate::client::fluent_builders::StartMedicalStreamTranscription::media_encoding) / [`set_media_encoding(Option<MediaEncoding>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_media_encoding): <p>The encoding used for the input audio.</p>
     ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_vocabulary_name): <p>The name of the medical custom vocabulary to use when processing the real-time stream.</p>
     ///   - [`specialty(Specialty)`](crate::client::fluent_builders::StartMedicalStreamTranscription::specialty) / [`set_specialty(Option<Specialty>)`](crate::client::fluent_builders::StartMedicalStreamTranscription::set_specialty): <p>The medical specialty of the clinician or provider.</p>
@@ -109,7 +109,7 @@ impl Client {
     /// - On success, responds with [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::StartMedicalStreamTranscriptionOutput::request_id): <p>An identifier for the streaming transcription.</p>
     ///   - [`language_code(Option<LanguageCode>)`](crate::output::StartMedicalStreamTranscriptionOutput::language_code): <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English (en-US).</p>
-    ///   - [`media_sample_rate_hertz(Option<i32>)`](crate::output::StartMedicalStreamTranscriptionOutput::media_sample_rate_hertz): <p>The sample rate of the input audio in Hertz.</p>
+    ///   - [`media_sample_rate_hertz(Option<i32>)`](crate::output::StartMedicalStreamTranscriptionOutput::media_sample_rate_hertz): <p>The sample rate of the input audio, in Hertz (Hz).</p>
     ///   - [`media_encoding(Option<MediaEncoding>)`](crate::output::StartMedicalStreamTranscriptionOutput::media_encoding): <p>The encoding used for the input audio stream.</p>
     ///   - [`vocabulary_name(Option<String>)`](crate::output::StartMedicalStreamTranscriptionOutput::vocabulary_name): <p>The name of the vocabulary used when processing the stream.</p>
     ///   - [`specialty(Option<Specialty>)`](crate::output::StartMedicalStreamTranscriptionOutput::specialty): <p>The specialty in the medical domain.</p>
@@ -130,15 +130,15 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartStreamTranscription::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartStreamTranscription::set_language_code): <p>The language code of the input audio stream.</p>
-    ///   - [`media_sample_rate_hertz(i32)`](crate::client::fluent_builders::StartStreamTranscription::media_sample_rate_hertz) / [`set_media_sample_rate_hertz(Option<i32>)`](crate::client::fluent_builders::StartStreamTranscription::set_media_sample_rate_hertz): <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+    ///   - [`media_sample_rate_hertz(i32)`](crate::client::fluent_builders::StartStreamTranscription::media_sample_rate_hertz) / [`set_media_sample_rate_hertz(Option<i32>)`](crate::client::fluent_builders::StartStreamTranscription::set_media_sample_rate_hertz): <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     ///   - [`media_encoding(MediaEncoding)`](crate::client::fluent_builders::StartStreamTranscription::media_encoding) / [`set_media_encoding(Option<MediaEncoding>)`](crate::client::fluent_builders::StartStreamTranscription::set_media_encoding): <p>The encoding used for the input audio.</p>
-    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_vocabulary_name): <p>The name of the vocabulary to use when processing the transcription job.</p>
+    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_vocabulary_name): <p>The name of the custom vocabulary you want to use with your transcription.</p>  <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> operation instead.</p>
     ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_session_id): <p>A identifier for the transcription session. Use this parameter when you want to retry a session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in the response.</p>
     ///   - [`audio_stream(EventStreamInput<crate::model::AudioStream>)`](crate::client::fluent_builders::StartStreamTranscription::audio_stream) / [`set_audio_stream(EventStreamInput<crate::model::AudioStream>)`](crate::client::fluent_builders::StartStreamTranscription::set_audio_stream): <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
-    ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_vocabulary_filter_name): <p>The name of the vocabulary filter you've created that is unique to your account. Provide the name in this field to successfully use it in a stream.</p>
+    ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_vocabulary_filter_name): <p>The name of the vocabulary filter you want to use with your transcription.</p>  <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>
     ///   - [`vocabulary_filter_method(VocabularyFilterMethod)`](crate::client::fluent_builders::StartStreamTranscription::vocabulary_filter_method) / [`set_vocabulary_filter_method(Option<VocabularyFilterMethod>)`](crate::client::fluent_builders::StartStreamTranscription::set_vocabulary_filter_method): <p>The manner in which you use your vocabulary filter to filter words in your transcript. <code>Remove</code> removes filtered words from your transcription results. <code>Mask</code> masks filtered words with a <code>***</code> in your transcription results. <code>Tag</code> keeps the filtered words in your transcription results and tags them. The tag appears as <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
     ///   - [`show_speaker_label(bool)`](crate::client::fluent_builders::StartStreamTranscription::show_speaker_label) / [`set_show_speaker_label(bool)`](crate::client::fluent_builders::StartStreamTranscription::set_show_speaker_label): <p>When <code>true</code>, enables speaker identification in your media stream.</p>
-    ///   - [`enable_channel_identification(bool)`](crate::client::fluent_builders::StartStreamTranscription::enable_channel_identification) / [`set_enable_channel_identification(bool)`](crate::client::fluent_builders::StartStreamTranscription::set_enable_channel_identification): <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>  <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>  <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+    ///   - [`enable_channel_identification(bool)`](crate::client::fluent_builders::StartStreamTranscription::enable_channel_identification) / [`set_enable_channel_identification(bool)`](crate::client::fluent_builders::StartStreamTranscription::set_enable_channel_identification): <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>  <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
     ///   - [`number_of_channels(i32)`](crate::client::fluent_builders::StartStreamTranscription::number_of_channels) / [`set_number_of_channels(Option<i32>)`](crate::client::fluent_builders::StartStreamTranscription::set_number_of_channels): <p>The number of channels that are in your audio stream.</p>
     ///   - [`enable_partial_results_stabilization(bool)`](crate::client::fluent_builders::StartStreamTranscription::enable_partial_results_stabilization) / [`set_enable_partial_results_stabilization(bool)`](crate::client::fluent_builders::StartStreamTranscription::set_enable_partial_results_stabilization): <p>When <code>true</code>, instructs Amazon Transcribe to present transcription results that have the partial results stabilized. Normally, any word or phrase from one partial result can change in a subsequent partial result. With partial results stabilization enabled, only the last few words of one partial result can change in another partial result.</p>
     ///   - [`partial_results_stability(PartialResultsStability)`](crate::client::fluent_builders::StartStreamTranscription::partial_results_stability) / [`set_partial_results_stability(Option<PartialResultsStability>)`](crate::client::fluent_builders::StartStreamTranscription::set_partial_results_stability): <p>You can use this field to set the stability level of the transcription results. A higher stability level means that the transcription results are less likely to change. Higher stability levels can come with lower overall transcription accuracy.</p>
@@ -149,28 +149,32 @@ impl Client {
     ///   - [`identify_language(bool)`](crate::client::fluent_builders::StartStreamTranscription::identify_language) / [`set_identify_language(bool)`](crate::client::fluent_builders::StartStreamTranscription::set_identify_language): <p>Optional. Set this value to <code>true</code> to enable language identification for your media stream.</p>
     ///   - [`language_options(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::language_options) / [`set_language_options(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_language_options): <p>An object containing a list of languages that might be present in your audio.</p>  <p>You must provide two or more language codes to help Amazon Transcribe identify the correct language of your media stream with the highest possible accuracy. You can only select one variant per language; for example, you can't include both <code>en-US</code> and <code>en-UK</code> in the same request.</p>  <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
     ///   - [`preferred_language(LanguageCode)`](crate::client::fluent_builders::StartStreamTranscription::preferred_language) / [`set_preferred_language(Option<LanguageCode>)`](crate::client::fluent_builders::StartStreamTranscription::set_preferred_language): <p>Optional. From the subset of languages codes you provided for <code>LanguageOptions</code>, you can select one preferred language for your transcription.</p>  <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+    ///   - [`vocabulary_names(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::vocabulary_names) / [`set_vocabulary_names(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_vocabulary_names): <p>The names of the custom vocabularies you want to use with your transcription.</p>  <p>Note that if the custom vocabularies you specify are in languages that don't match the language identified in your media, your job fails.</p>  <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> operation instead.</p>
+    ///   - [`vocabulary_filter_names(impl Into<String>)`](crate::client::fluent_builders::StartStreamTranscription::vocabulary_filter_names) / [`set_vocabulary_filter_names(Option<String>)`](crate::client::fluent_builders::StartStreamTranscription::set_vocabulary_filter_names): <p>The names of the vocabulary filters you want to use with your transcription.</p>  <p>Note that if the vocabulary filters you specify are in languages that don't match the language identified in your media, your job fails.</p>  <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> operation instead.</p>
     /// - On success, responds with [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput) with field(s):
-    ///   - [`request_id(Option<String>)`](crate::output::StartStreamTranscriptionOutput::request_id): <p>An identifier for the streaming transcription.</p>
+    ///   - [`request_id(Option<String>)`](crate::output::StartStreamTranscriptionOutput::request_id): <p>An identifier for the transcription.</p>
     ///   - [`language_code(Option<LanguageCode>)`](crate::output::StartStreamTranscriptionOutput::language_code): <p>The language code of the input audio stream.</p>
-    ///   - [`media_sample_rate_hertz(Option<i32>)`](crate::output::StartStreamTranscriptionOutput::media_sample_rate_hertz): <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+    ///   - [`media_sample_rate_hertz(Option<i32>)`](crate::output::StartStreamTranscriptionOutput::media_sample_rate_hertz): <p>The sample rate, in Hertz (Hz), for the input audio stream.</p>
     ///   - [`media_encoding(Option<MediaEncoding>)`](crate::output::StartStreamTranscriptionOutput::media_encoding): <p>The encoding used for the input audio stream.</p>
-    ///   - [`vocabulary_name(Option<String>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_name): <p>The name of the vocabulary used when processing the stream.</p>
+    ///   - [`vocabulary_name(Option<String>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_name): <p>The name of the custom vocabulary used when processing the stream.</p>
     ///   - [`session_id(Option<String>)`](crate::output::StartStreamTranscriptionOutput::session_id): <p>An identifier for a specific transcription session.</p>
     ///   - [`transcript_result_stream(Receiver<crate::model::TranscriptResultStream, crate::error::StartStreamTranscriptionError>)`](crate::output::StartStreamTranscriptionOutput::transcript_result_stream): <p>Represents the stream of transcription events from Amazon Transcribe to your application.</p>
-    ///   - [`vocabulary_filter_name(Option<String>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_filter_name): <p>The name of the vocabulary filter used in your media stream.</p>
-    ///   - [`vocabulary_filter_method(Option<VocabularyFilterMethod>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_filter_method): <p>The vocabulary filtering method used in the media stream.</p>
-    ///   - [`show_speaker_label(bool)`](crate::output::StartStreamTranscriptionOutput::show_speaker_label): <p>Shows whether speaker identification was enabled in the stream.</p>
-    ///   - [`enable_channel_identification(bool)`](crate::output::StartStreamTranscriptionOutput::enable_channel_identification): <p>Shows whether channel identification has been enabled in the stream.</p>
+    ///   - [`vocabulary_filter_name(Option<String>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_filter_name): <p>The name of the vocabulary filter used when processing the stream.</p>
+    ///   - [`vocabulary_filter_method(Option<VocabularyFilterMethod>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_filter_method): <p>The vocabulary filtering method used when processing the stream.</p>
+    ///   - [`show_speaker_label(bool)`](crate::output::StartStreamTranscriptionOutput::show_speaker_label): <p>Shows whether speaker identification was enabled in the transcription.</p>
+    ///   - [`enable_channel_identification(bool)`](crate::output::StartStreamTranscriptionOutput::enable_channel_identification): <p>Shows whether channel identification was enabled in the stream.</p>
     ///   - [`number_of_channels(Option<i32>)`](crate::output::StartStreamTranscriptionOutput::number_of_channels): <p>The number of channels identified in the stream.</p>
-    ///   - [`enable_partial_results_stabilization(bool)`](crate::output::StartStreamTranscriptionOutput::enable_partial_results_stabilization): <p>Shows whether partial results stabilization has been enabled in the stream.</p>
+    ///   - [`enable_partial_results_stabilization(bool)`](crate::output::StartStreamTranscriptionOutput::enable_partial_results_stabilization): <p>Shows whether partial results stabilization was enabled in the transcription.</p>
     ///   - [`partial_results_stability(Option<PartialResultsStability>)`](crate::output::StartStreamTranscriptionOutput::partial_results_stability): <p>If partial results stabilization has been enabled in the stream, shows the stability level.</p>
     ///   - [`content_identification_type(Option<ContentIdentificationType>)`](crate::output::StartStreamTranscriptionOutput::content_identification_type): <p>Shows whether content identification was enabled in this stream.</p>
     ///   - [`content_redaction_type(Option<ContentRedactionType>)`](crate::output::StartStreamTranscriptionOutput::content_redaction_type): <p>Shows whether content redaction was enabled in this stream.</p>
     ///   - [`pii_entity_types(Option<String>)`](crate::output::StartStreamTranscriptionOutput::pii_entity_types): <p>Lists the PII entity types you specified in your request.</p>
-    ///   - [`language_model_name(Option<String>)`](crate::output::StartStreamTranscriptionOutput::language_model_name): <p>The name of the language model used in your media stream.</p>
+    ///   - [`language_model_name(Option<String>)`](crate::output::StartStreamTranscriptionOutput::language_model_name): <p>The name of the custom language model used in the transcription.</p>
     ///   - [`identify_language(bool)`](crate::output::StartStreamTranscriptionOutput::identify_language): <p>The language code of the language identified in your media stream.</p>
     ///   - [`language_options(Option<String>)`](crate::output::StartStreamTranscriptionOutput::language_options): <p>The language codes used in the identification of your media stream's predominant language.</p>
     ///   - [`preferred_language(Option<LanguageCode>)`](crate::output::StartStreamTranscriptionOutput::preferred_language): <p>The preferred language you specified in your request.</p>
+    ///   - [`vocabulary_names(Option<String>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_names): <p>The name of the custom vocabulary used when processing the stream.</p>
+    ///   - [`vocabulary_filter_names(Option<String>)`](crate::output::StartStreamTranscriptionOutput::vocabulary_filter_names): <p>The name of the vocabulary filter used when processing the stream.</p>
     /// - On failure, responds with [`SdkError<StartStreamTranscriptionError>`](crate::error::StartStreamTranscriptionError)
     pub fn start_stream_transcription(&self) -> fluent_builders::StartStreamTranscription {
         fluent_builders::StartStreamTranscription::new(self.handle.clone())
@@ -239,12 +243,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>The sample rate of the input audio in Hertz.</p>
+        /// <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.inner = self.inner.media_sample_rate_hertz(input);
             self
         }
-        /// <p>The sample rate of the input audio in Hertz.</p>
+        /// <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_media_sample_rate_hertz(input);
             self
@@ -443,12 +447,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+        /// <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.inner = self.inner.media_sample_rate_hertz(input);
             self
         }
-        /// <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+        /// <p>The sample rate of the input audio (in Hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_media_sample_rate_hertz(input);
             self
@@ -466,12 +470,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_media_encoding(input);
             self
         }
-        /// <p>The name of the vocabulary to use when processing the transcription job.</p>
+        /// <p>The name of the custom vocabulary you want to use with your transcription.</p>
+        /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> operation instead.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_name(input.into());
             self
         }
-        /// <p>The name of the vocabulary to use when processing the transcription job.</p>
+        /// <p>The name of the custom vocabulary you want to use with your transcription.</p>
+        /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> operation instead.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -507,12 +513,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_audio_stream(input);
             self
         }
-        /// <p>The name of the vocabulary filter you've created that is unique to your account. Provide the name in this field to successfully use it in a stream.</p>
+        /// <p>The name of the vocabulary filter you want to use with your transcription.</p>
+        /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_filter_name(input.into());
             self
         }
-        /// <p>The name of the vocabulary filter you've created that is unique to your account. Provide the name in this field to successfully use it in a stream.</p>
+        /// <p>The name of the vocabulary filter you want to use with your transcription.</p>
+        /// <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -548,14 +556,12 @@ pub mod fluent_builders {
         }
         /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>
         /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
-        /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn enable_channel_identification(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_channel_identification(input);
             self
         }
         /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>
         /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
-        /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn set_enable_channel_identification(
             mut self,
             input: std::option::Option<bool>,
@@ -705,6 +711,40 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::LanguageCode>,
         ) -> Self {
             self.inner = self.inner.set_preferred_language(input);
+            self
+        }
+        /// <p>The names of the custom vocabularies you want to use with your transcription.</p>
+        /// <p>Note that if the custom vocabularies you specify are in languages that don't match the language identified in your media, your job fails.</p>
+        /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> operation instead.</p>
+        pub fn vocabulary_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_names(input.into());
+            self
+        }
+        /// <p>The names of the custom vocabularies you want to use with your transcription.</p>
+        /// <p>Note that if the custom vocabularies you specify are in languages that don't match the language identified in your media, your job fails.</p>
+        /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> operation instead.</p>
+        pub fn set_vocabulary_names(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vocabulary_names(input);
+            self
+        }
+        /// <p>The names of the vocabulary filters you want to use with your transcription.</p>
+        /// <p>Note that if the vocabulary filters you specify are in languages that don't match the language identified in your media, your job fails.</p>
+        /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> operation instead.</p>
+        pub fn vocabulary_filter_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_filter_names(input.into());
+            self
+        }
+        /// <p>The names of the vocabulary filters you want to use with your transcription.</p>
+        /// <p>Note that if the vocabulary filters you specify are in languages that don't match the language identified in your media, your job fails.</p>
+        /// <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> operation instead.</p>
+        pub fn set_vocabulary_filter_names(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vocabulary_filter_names(input);
             self
         }
     }

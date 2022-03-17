@@ -401,6 +401,8 @@ pub struct CreateJobError {
 pub enum CreateJobErrorKind {
     /// <p>Access to the resource is denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
+    ConflictException(crate::error::ConflictException),
     /// An exception occurred with the service.
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource couldn't be found.</p>
@@ -416,6 +418,7 @@ impl std::fmt::Display for CreateJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -478,6 +481,10 @@ impl CreateJobError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::AccessDeniedException(_))
     }
+    /// Returns `true` if the error kind is `CreateJobErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateJobErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `CreateJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::InternalServerException(_))
@@ -499,6 +506,7 @@ impl std::error::Error for CreateJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateJobErrorKind::ConflictException(_inner) => Some(_inner),
             CreateJobErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateJobErrorKind::ThrottlingException(_inner) => Some(_inner),
@@ -2445,6 +2453,145 @@ impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `RevokeRevision` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RevokeRevisionError {
+    /// Kind of error that occurred.
+    pub kind: RevokeRevisionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `RevokeRevision` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RevokeRevisionErrorKind {
+    /// <p>Access to the resource is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request couldn't be completed because it conflicted with the current state of the resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// An exception occurred with the service.
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource couldn't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The limit on the number of requests per second was exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The request was invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RevokeRevisionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RevokeRevisionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            RevokeRevisionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            RevokeRevisionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            RevokeRevisionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            RevokeRevisionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            RevokeRevisionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            RevokeRevisionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RevokeRevisionError {
+    fn code(&self) -> Option<&str> {
+        RevokeRevisionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RevokeRevisionError {
+    /// Creates a new `RevokeRevisionError`.
+    pub fn new(kind: RevokeRevisionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RevokeRevisionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RevokeRevisionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RevokeRevisionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RevokeRevisionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RevokeRevisionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeRevisionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RevokeRevisionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, RevokeRevisionErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `RevokeRevisionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeRevisionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RevokeRevisionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeRevisionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RevokeRevisionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, RevokeRevisionErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `RevokeRevisionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, RevokeRevisionErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for RevokeRevisionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RevokeRevisionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            RevokeRevisionErrorKind::ConflictException(_inner) => Some(_inner),
+            RevokeRevisionErrorKind::InternalServerException(_inner) => Some(_inner),
+            RevokeRevisionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            RevokeRevisionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            RevokeRevisionErrorKind::ValidationException(_inner) => Some(_inner),
+            RevokeRevisionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

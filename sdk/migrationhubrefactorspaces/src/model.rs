@@ -2332,9 +2332,9 @@ impl AsRef<str> for NetworkFabricType {
 pub struct ApplicationSummary {
     /// <p>The name of the application. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>he Amazon Resource Name (ARN) of the application. </p>
+    /// <p>The Amazon Resource Name (ARN) of the application. </p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID of the application owner.</p>
+    /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the application creator. </p>
     pub created_by_account_id: std::option::Option<std::string::String>,
@@ -2365,11 +2365,11 @@ impl ApplicationSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>he Amazon Resource Name (ARN) of the application. </p>
+    /// <p>The Amazon Resource Name (ARN) of the application. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Web Services account ID of the application owner.</p>
+    /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
     pub fn owner_account_id(&self) -> std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
@@ -2475,22 +2475,22 @@ pub mod application_summary {
             self.name = input;
             self
         }
-        /// <p>he Amazon Resource Name (ARN) of the application. </p>
+        /// <p>The Amazon Resource Name (ARN) of the application. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>he Amazon Resource Name (ARN) of the application. </p>
+        /// <p>The Amazon Resource Name (ARN) of the application. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The Amazon Web Services account ID of the application owner.</p>
+        /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID of the application owner.</p>
+        /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
         pub fn set_owner_account_id(
             mut self,
             input: std::option::Option<std::string::String>,

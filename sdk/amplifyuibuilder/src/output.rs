@@ -5,17 +5,24 @@
 pub struct ExportThemesOutput {
     /// <p>Represents the configuration of the exported themes.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::Theme>>,
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ExportThemesOutput {
     /// <p>Represents the configuration of the exported themes.</p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::Theme]> {
         self.entities.as_deref()
     }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportThemesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportThemesOutput");
         formatter.field("entities", &self.entities);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -26,6 +33,7 @@ pub mod export_themes_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Theme>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -47,10 +55,21 @@ pub mod export_themes_output {
             self.entities = input;
             self
         }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExportThemesOutput`](crate::output::ExportThemesOutput)
         pub fn build(self) -> crate::output::ExportThemesOutput {
             crate::output::ExportThemesOutput {
                 entities: self.entities,
+                next_token: self.next_token,
             }
         }
     }
@@ -340,17 +359,24 @@ impl GetThemeOutput {
 pub struct ExportComponentsOutput {
     /// <p>Represents the configuration of the exported components.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::Component>>,
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ExportComponentsOutput {
     /// <p>Represents the configuration of the exported components.</p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::Component]> {
         self.entities.as_deref()
     }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportComponentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportComponentsOutput");
         formatter.field("entities", &self.entities);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -361,6 +387,7 @@ pub mod export_components_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Component>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -382,10 +409,21 @@ pub mod export_components_output {
             self.entities = input;
             self
         }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExportComponentsOutput`](crate::output::ExportComponentsOutput)
         pub fn build(self) -> crate::output::ExportComponentsOutput {
             crate::output::ExportComponentsOutput {
                 entities: self.entities,
+                next_token: self.next_token,
             }
         }
     }

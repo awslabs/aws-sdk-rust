@@ -2084,9 +2084,6 @@ where
                 crate::error::ForgotPasswordErrorKind::UserLambdaValidationException(inner) => {
                     Error::UserLambdaValidationException(inner)
                 }
-                crate::error::ForgotPasswordErrorKind::UserNotConfirmedException(inner) => {
-                    Error::UserNotConfirmedException(inner)
-                }
                 crate::error::ForgotPasswordErrorKind::UserNotFoundException(inner) => {
                     Error::UserNotFoundException(inner)
                 }

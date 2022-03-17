@@ -3334,7 +3334,10 @@ impl std::fmt::Debug for WorkerConfigurationRevisionDescription {
         let mut formatter = f.debug_struct("WorkerConfigurationRevisionDescription");
         formatter.field("creation_time", &self.creation_time);
         formatter.field("description", &self.description);
-        formatter.field("properties_file_content", &self.properties_file_content);
+        formatter.field(
+            "properties_file_content",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("revision", &self.revision);
         formatter.finish()
     }
@@ -3412,6 +3415,79 @@ impl WorkerConfigurationRevisionDescription {
     /// Creates a new builder-style object to manufacture [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription)
     pub fn builder() -> crate::model::worker_configuration_revision_description::Builder {
         crate::model::worker_configuration_revision_description::Builder::default()
+    }
+}
+
+/// <p>Details about the state of a resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StateDescription {
+    /// <p>A code that describes the state of a resource.</p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A message that describes the state of a resource.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl StateDescription {
+    /// <p>A code that describes the state of a resource.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A message that describes the state of a resource.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for StateDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StateDescription");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`StateDescription`](crate::model::StateDescription)
+pub mod state_description {
+    /// A builder for [`StateDescription`](crate::model::StateDescription)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A code that describes the state of a resource.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>A code that describes the state of a resource.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A message that describes the state of a resource.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message that describes the state of a resource.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StateDescription`](crate::model::StateDescription)
+        pub fn build(self) -> crate::model::StateDescription {
+            crate::model::StateDescription {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl StateDescription {
+    /// Creates a new builder-style object to manufacture [`StateDescription`](crate::model::StateDescription)
+    pub fn builder() -> crate::model::state_description::Builder {
+        crate::model::state_description::Builder::default()
     }
 }
 
