@@ -9286,23 +9286,6 @@ pub fn parse_forgot_password_error(
                 tmp
             }),
         },
-        "UserNotConfirmedException" => crate::error::ForgotPasswordError {
-            meta: generic,
-            kind: crate::error::ForgotPasswordErrorKind::UserNotConfirmedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::user_not_confirmed_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_user_not_confirmed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ForgotPasswordError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
         "UserNotFoundException" => crate::error::ForgotPasswordError {
             meta: generic,
             kind: crate::error::ForgotPasswordErrorKind::UserNotFoundException({

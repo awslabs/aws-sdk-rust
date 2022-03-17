@@ -94,6 +94,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     },
                 )
                 .endpoint(
+                    "us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "greengrass.us-gov-east-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
                     "us-gov-west-1",
                     aws_endpoint::partition::endpoint::Metadata {
                         uri_template: "greengrass.us-gov-west-1.amazonaws.com",

@@ -34,6 +34,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "ap-northeast-3",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "s3-control.ap-northeast-3.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-northeast-3")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "ap-south-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "s3-control.ap-south-1.amazonaws.com",

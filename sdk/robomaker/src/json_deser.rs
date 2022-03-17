@@ -7635,6 +7635,13 @@ where
                                     )?,
                                 );
                             }
+                            "outputLocation" => {
+                                builder = builder.set_output_location(
+                                    crate::json_deser::deser_structure_crate_model_output_location(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

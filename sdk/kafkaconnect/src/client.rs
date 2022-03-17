@@ -157,6 +157,17 @@ impl Client {
     pub fn delete_connector(&self) -> fluent_builders::DeleteConnector {
         fluent_builders::DeleteConnector::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteCustomPlugin`](crate::client::fluent_builders::DeleteCustomPlugin) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`custom_plugin_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomPlugin::custom_plugin_arn) / [`set_custom_plugin_arn(Option<String>)`](crate::client::fluent_builders::DeleteCustomPlugin::set_custom_plugin_arn): <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+    /// - On success, responds with [`DeleteCustomPluginOutput`](crate::output::DeleteCustomPluginOutput) with field(s):
+    ///   - [`custom_plugin_arn(Option<String>)`](crate::output::DeleteCustomPluginOutput::custom_plugin_arn): <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
+    ///   - [`custom_plugin_state(Option<CustomPluginState>)`](crate::output::DeleteCustomPluginOutput::custom_plugin_state): <p>The state of the custom plugin.</p>
+    /// - On failure, responds with [`SdkError<DeleteCustomPluginError>`](crate::error::DeleteCustomPluginError)
+    pub fn delete_custom_plugin(&self) -> fluent_builders::DeleteCustomPlugin {
+        fluent_builders::DeleteCustomPlugin::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeConnector`](crate::client::fluent_builders::DescribeConnector) operation.
     ///
     /// - The fluent builder is configurable:
@@ -178,6 +189,7 @@ impl Client {
     ///   - [`plugins(Option<Vec<PluginDescription>>)`](crate::output::DescribeConnectorOutput::plugins): <p>Specifies which plugins were used for this connector.</p>
     ///   - [`service_execution_role_arn(Option<String>)`](crate::output::DescribeConnectorOutput::service_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
     ///   - [`worker_configuration(Option<WorkerConfigurationDescription>)`](crate::output::DescribeConnectorOutput::worker_configuration): <p>Specifies which worker configuration was used for the connector.</p>
+    ///   - [`state_description(Option<StateDescription>)`](crate::output::DescribeConnectorOutput::state_description): <p>Details about the state of a connector.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectorError>`](crate::error::DescribeConnectorError)
     pub fn describe_connector(&self) -> fluent_builders::DescribeConnector {
         fluent_builders::DescribeConnector::new(self.handle.clone())
@@ -193,6 +205,7 @@ impl Client {
     ///   - [`description(Option<String>)`](crate::output::DescribeCustomPluginOutput::description): <p>The description of the custom plugin.</p>
     ///   - [`latest_revision(Option<CustomPluginRevisionSummary>)`](crate::output::DescribeCustomPluginOutput::latest_revision): <p>The latest successfully created revision of the custom plugin. If there are no successfully created revisions, this field will be absent.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeCustomPluginOutput::name): <p>The name of the custom plugin.</p>
+    ///   - [`state_description(Option<StateDescription>)`](crate::output::DescribeCustomPluginOutput::state_description): <p>Details about the state of a custom plugin.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomPluginError>`](crate::error::DescribeCustomPluginError)
     pub fn describe_custom_plugin(&self) -> fluent_builders::DescribeCustomPlugin {
         fluent_builders::DescribeCustomPlugin::new(self.handle.clone())
@@ -720,6 +733,62 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_current_version(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteCustomPlugin`.
+    ///
+    /// <p>Deletes a custom plugin.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteCustomPlugin {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_custom_plugin_input::Builder,
+    }
+    impl DeleteCustomPlugin {
+        /// Creates a new `DeleteCustomPlugin`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteCustomPluginOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteCustomPluginError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+        pub fn custom_plugin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_plugin_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
+        pub fn set_custom_plugin_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_custom_plugin_arn(input);
             self
         }
     }

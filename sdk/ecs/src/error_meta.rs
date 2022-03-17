@@ -45,7 +45,13 @@ pub enum Error {
     ServiceNotActiveException(crate::error::ServiceNotActiveException),
     /// <p>The specified service wasn't found. You can view your available services with <code>ListServices</code>. Amazon ECS services are cluster specific and Region specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    /// <p>The target container isn't properly configured with the execute command agent or the container is no longer active or running.</p>
+    /// <p>The execute command cannot run. This error can be caused by any of the following configuration issues:</p>
+    /// <ul>
+    /// <li> <p>Incorrect IAM permissions</p> </li>
+    /// <li> <p>The SSM agent is not installed or is not running</p> </li>
+    /// <li> <p> There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for for Systems Manager Session Manager</p> </li>
+    /// </ul>
+    /// <p>For information about how to troubleshoot the issues, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Troubleshooting issues with ECS Exec</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     TargetNotConnectedException(crate::error::TargetNotConnectedException),
     /// <p>The specified target wasn't found. You can view your available container instances with <code>ListContainerInstances</code>. Amazon ECS container instances are cluster-specific and Region-specific.</p>
     TargetNotFoundException(crate::error::TargetNotFoundException),

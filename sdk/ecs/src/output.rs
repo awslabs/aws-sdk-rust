@@ -57,11 +57,11 @@ impl UpdateTaskSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServicePrimaryTaskSetOutput {
-    /// <p>Details about the task set.</p>
+    /// <p>etails about the task set.</p>
     pub task_set: std::option::Option<crate::model::TaskSet>,
 }
 impl UpdateServicePrimaryTaskSetOutput {
-    /// <p>Details about the task set.</p>
+    /// <p>etails about the task set.</p>
     pub fn task_set(&self) -> std::option::Option<&crate::model::TaskSet> {
         self.task_set.as_ref()
     }
@@ -82,12 +82,12 @@ pub mod update_service_primary_task_set_output {
         pub(crate) task_set: std::option::Option<crate::model::TaskSet>,
     }
     impl Builder {
-        /// <p>Details about the task set.</p>
+        /// <p>etails about the task set.</p>
         pub fn task_set(mut self, input: crate::model::TaskSet) -> Self {
             self.task_set = Some(input);
             self
         }
-        /// <p>Details about the task set.</p>
+        /// <p>etails about the task set.</p>
         pub fn set_task_set(mut self, input: std::option::Option<crate::model::TaskSet>) -> Self {
             self.task_set = input;
             self

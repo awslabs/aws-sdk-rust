@@ -126,6 +126,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                             .build(),
                     },
                 )
+                .endpoint(
+                    "us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "support.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
                 .build()
                 .expect("invalid partition"),
         ],

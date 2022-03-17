@@ -23091,8 +23091,12 @@ pub struct DescribeImageAttributeOutput {
     pub ramdisk_id: std::option::Option<crate::model::AttributeValue>,
     /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub sriov_net_support: std::option::Option<crate::model::AttributeValue>,
-    /// <p>Describes a value for a resource attribute that is a String.</p>
+    /// <p>The boot mode.</p>
     pub boot_mode: std::option::Option<crate::model::AttributeValue>,
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
+    /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
+    /// </note>
+    pub last_launched_time: std::option::Option<crate::model::AttributeValue>,
 }
 impl DescribeImageAttributeOutput {
     /// <p>The block device mapping entries.</p>
@@ -23129,9 +23133,15 @@ impl DescribeImageAttributeOutput {
     pub fn sriov_net_support(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.sriov_net_support.as_ref()
     }
-    /// <p>Describes a value for a resource attribute that is a String.</p>
+    /// <p>The boot mode.</p>
     pub fn boot_mode(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.boot_mode.as_ref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
+    /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
+    /// </note>
+    pub fn last_launched_time(&self) -> std::option::Option<&crate::model::AttributeValue> {
+        self.last_launched_time.as_ref()
     }
 }
 impl std::fmt::Debug for DescribeImageAttributeOutput {
@@ -23146,6 +23156,7 @@ impl std::fmt::Debug for DescribeImageAttributeOutput {
         formatter.field("ramdisk_id", &self.ramdisk_id);
         formatter.field("sriov_net_support", &self.sriov_net_support);
         formatter.field("boot_mode", &self.boot_mode);
+        formatter.field("last_launched_time", &self.last_launched_time);
         formatter.finish()
     }
 }
@@ -23166,6 +23177,7 @@ pub mod describe_image_attribute_output {
         pub(crate) ramdisk_id: std::option::Option<crate::model::AttributeValue>,
         pub(crate) sriov_net_support: std::option::Option<crate::model::AttributeValue>,
         pub(crate) boot_mode: std::option::Option<crate::model::AttributeValue>,
+        pub(crate) last_launched_time: std::option::Option<crate::model::AttributeValue>,
     }
     impl Builder {
         /// Appends an item to `block_device_mappings`.
@@ -23287,17 +23299,34 @@ pub mod describe_image_attribute_output {
             self.sriov_net_support = input;
             self
         }
-        /// <p>Describes a value for a resource attribute that is a String.</p>
+        /// <p>The boot mode.</p>
         pub fn boot_mode(mut self, input: crate::model::AttributeValue) -> Self {
             self.boot_mode = Some(input);
             self
         }
-        /// <p>Describes a value for a resource attribute that is a String.</p>
+        /// <p>The boot mode.</p>
         pub fn set_boot_mode(
             mut self,
             input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
             self.boot_mode = input;
+            self
+        }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
+        /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
+        /// </note>
+        pub fn last_launched_time(mut self, input: crate::model::AttributeValue) -> Self {
+            self.last_launched_time = Some(input);
+            self
+        }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
+        /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
+        /// </note>
+        pub fn set_last_launched_time(
+            mut self,
+            input: std::option::Option<crate::model::AttributeValue>,
+        ) -> Self {
+            self.last_launched_time = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeImageAttributeOutput`](crate::output::DescribeImageAttributeOutput)
@@ -23312,6 +23341,7 @@ pub mod describe_image_attribute_output {
                 ramdisk_id: self.ramdisk_id,
                 sriov_net_support: self.sriov_net_support,
                 boot_mode: self.boot_mode,
+                last_launched_time: self.last_launched_time,
             }
         }
     }

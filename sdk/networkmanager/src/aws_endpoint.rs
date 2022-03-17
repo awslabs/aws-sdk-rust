@@ -10,7 +10,19 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                 credential_scope: aws_endpoint::CredentialScope::builder().build(),
             })
-            .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+            .partition_endpoint("aws-global")
+            .regionalized(aws_endpoint::partition::Regionalized::NotRegionalized)
+            .endpoint(
+                "aws-global",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "networkmanager.us-west-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-2")
+                        .build(),
+                },
+            )
             .build()
             .expect("invalid partition"),
         vec![
@@ -59,7 +71,19 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder().build(),
                 })
-                .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+                .partition_endpoint("aws-us-gov-global")
+                .regionalized(aws_endpoint::partition::Regionalized::NotRegionalized)
+                .endpoint(
+                    "aws-us-gov-global",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "networkmanager.us-gov-west-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
                 .build()
                 .expect("invalid partition"),
         ],

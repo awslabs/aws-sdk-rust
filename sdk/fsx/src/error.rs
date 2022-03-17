@@ -451,7 +451,7 @@ pub enum CreateBackupErrorKind {
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
+    /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1277,7 +1277,7 @@ pub enum CreateSnapshotErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
-    /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
+    /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1560,7 +1560,7 @@ pub enum CreateVolumeErrorKind {
     MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
     /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
-    /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
+    /// <p>No FSx for ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
@@ -1717,7 +1717,7 @@ pub enum CreateVolumeFromBackupErrorKind {
     MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
     /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
-    /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
+    /// <p>No FSx for ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2402,7 +2402,7 @@ pub enum DeleteStorageVirtualMachineErrorKind {
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
+    /// <p>No FSx for ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2536,7 +2536,7 @@ pub enum DeleteVolumeErrorKind {
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
+    /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2655,7 +2655,7 @@ pub enum DescribeBackupsErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
+    /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3393,7 +3393,7 @@ pub enum DescribeStorageVirtualMachinesErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
+    /// <p>No FSx for ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3515,7 +3515,7 @@ pub enum DescribeVolumesErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
+    /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4014,7 +4014,7 @@ pub enum RestoreVolumeFromSnapshotErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
+    /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4791,7 +4791,7 @@ pub enum UpdateStorageVirtualMachineErrorKind {
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
+    /// <p>No FSx for ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
@@ -4938,7 +4938,7 @@ pub enum UpdateVolumeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>A volume configuration is required for this operation.</p>
     MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
-    /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
+    /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5045,7 +5045,7 @@ impl std::error::Error for UpdateVolumeError {
     }
 }
 
-/// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
+/// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VolumeNotFound {
@@ -5450,7 +5450,7 @@ impl UnsupportedOperation {
     }
 }
 
-/// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
+/// <p>No FSx for ONTAP SVMs were found based upon the supplied parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageVirtualMachineNotFound {

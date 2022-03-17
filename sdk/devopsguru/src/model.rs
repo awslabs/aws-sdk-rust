@@ -671,6 +671,182 @@ impl AsRef<str> for UpdateResourceCollectionAction {
     }
 }
 
+/// <p>Describes the event sources.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventSourcesConfig {
+    /// <p></p>
+    pub amazon_code_guru_profiler:
+        std::option::Option<crate::model::AmazonCodeGuruProfilerIntegration>,
+}
+impl EventSourcesConfig {
+    /// <p></p>
+    pub fn amazon_code_guru_profiler(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonCodeGuruProfilerIntegration> {
+        self.amazon_code_guru_profiler.as_ref()
+    }
+}
+impl std::fmt::Debug for EventSourcesConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventSourcesConfig");
+        formatter.field("amazon_code_guru_profiler", &self.amazon_code_guru_profiler);
+        formatter.finish()
+    }
+}
+/// See [`EventSourcesConfig`](crate::model::EventSourcesConfig)
+pub mod event_sources_config {
+    /// A builder for [`EventSourcesConfig`](crate::model::EventSourcesConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) amazon_code_guru_profiler:
+            std::option::Option<crate::model::AmazonCodeGuruProfilerIntegration>,
+    }
+    impl Builder {
+        /// <p></p>
+        pub fn amazon_code_guru_profiler(
+            mut self,
+            input: crate::model::AmazonCodeGuruProfilerIntegration,
+        ) -> Self {
+            self.amazon_code_guru_profiler = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_amazon_code_guru_profiler(
+            mut self,
+            input: std::option::Option<crate::model::AmazonCodeGuruProfilerIntegration>,
+        ) -> Self {
+            self.amazon_code_guru_profiler = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventSourcesConfig`](crate::model::EventSourcesConfig)
+        pub fn build(self) -> crate::model::EventSourcesConfig {
+            crate::model::EventSourcesConfig {
+                amazon_code_guru_profiler: self.amazon_code_guru_profiler,
+            }
+        }
+    }
+}
+impl EventSourcesConfig {
+    /// Creates a new builder-style object to manufacture [`EventSourcesConfig`](crate::model::EventSourcesConfig)
+    pub fn builder() -> crate::model::event_sources_config::Builder {
+        crate::model::event_sources_config::Builder::default()
+    }
+}
+
+/// <p>Information about your account's integration with Amazon CodeGuru Profiler.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AmazonCodeGuruProfilerIntegration {
+    /// <p>The status of the CodeGuru Profiler integration.</p>
+    pub status: std::option::Option<crate::model::EventSourceOptInStatus>,
+}
+impl AmazonCodeGuruProfilerIntegration {
+    /// <p>The status of the CodeGuru Profiler integration.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EventSourceOptInStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for AmazonCodeGuruProfilerIntegration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AmazonCodeGuruProfilerIntegration");
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`AmazonCodeGuruProfilerIntegration`](crate::model::AmazonCodeGuruProfilerIntegration)
+pub mod amazon_code_guru_profiler_integration {
+    /// A builder for [`AmazonCodeGuruProfilerIntegration`](crate::model::AmazonCodeGuruProfilerIntegration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::EventSourceOptInStatus>,
+    }
+    impl Builder {
+        /// <p>The status of the CodeGuru Profiler integration.</p>
+        pub fn status(mut self, input: crate::model::EventSourceOptInStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the CodeGuru Profiler integration.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::EventSourceOptInStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AmazonCodeGuruProfilerIntegration`](crate::model::AmazonCodeGuruProfilerIntegration)
+        pub fn build(self) -> crate::model::AmazonCodeGuruProfilerIntegration {
+            crate::model::AmazonCodeGuruProfilerIntegration {
+                status: self.status,
+            }
+        }
+    }
+}
+impl AmazonCodeGuruProfilerIntegration {
+    /// Creates a new builder-style object to manufacture [`AmazonCodeGuruProfilerIntegration`](crate::model::AmazonCodeGuruProfilerIntegration)
+    pub fn builder() -> crate::model::amazon_code_guru_profiler_integration::Builder {
+        crate::model::amazon_code_guru_profiler_integration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EventSourceOptInStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EventSourceOptInStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => EventSourceOptInStatus::Disabled,
+            "ENABLED" => EventSourceOptInStatus::Enabled,
+            other => EventSourceOptInStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EventSourceOptInStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EventSourceOptInStatus::from(s))
+    }
+}
+impl EventSourceOptInStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EventSourceOptInStatus::Disabled => "DISABLED",
+            EventSourceOptInStatus::Enabled => "ENABLED",
+            EventSourceOptInStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for EventSourceOptInStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Information about a filter used to specify which Amazon Web Services resources are analyzed to create a monthly DevOps Guru cost estimate. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2788,6 +2964,8 @@ pub struct Recommendation {
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
     pub related_anomalies:
         std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedAnomaly>>,
+    /// <p>The category type of the recommendation.</p>
+    pub category: std::option::Option<std::string::String>,
 }
 impl Recommendation {
     /// <p> A description of the problem. </p>
@@ -2818,6 +2996,10 @@ impl Recommendation {
     ) -> std::option::Option<&[crate::model::RecommendationRelatedAnomaly]> {
         self.related_anomalies.as_deref()
     }
+    /// <p>The category type of the recommendation.</p>
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
 }
 impl std::fmt::Debug for Recommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2828,6 +3010,7 @@ impl std::fmt::Debug for Recommendation {
         formatter.field("reason", &self.reason);
         formatter.field("related_events", &self.related_events);
         formatter.field("related_anomalies", &self.related_anomalies);
+        formatter.field("category", &self.category);
         formatter.finish()
     }
 }
@@ -2845,6 +3028,7 @@ pub mod recommendation {
             std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedEvent>>,
         pub(crate) related_anomalies:
             std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedAnomaly>>,
+        pub(crate) category: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> A description of the problem. </p>
@@ -2928,6 +3112,16 @@ pub mod recommendation {
             self.related_anomalies = input;
             self
         }
+        /// <p>The category type of the recommendation.</p>
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.category = Some(input.into());
+            self
+        }
+        /// <p>The category type of the recommendation.</p>
+        pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.category = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Recommendation`](crate::model::Recommendation)
         pub fn build(self) -> crate::model::Recommendation {
             crate::model::Recommendation {
@@ -2937,6 +3131,7 @@ pub mod recommendation {
                 reason: self.reason,
                 related_events: self.related_events,
                 related_anomalies: self.related_anomalies,
+                category: self.category,
             }
         }
     }
@@ -7694,6 +7889,10 @@ pub struct ProactiveAnomalySummary {
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p> A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to the anomalous behavior that generated this anomaly. </p>
     pub limit: std::option::Option<f64>,
+    /// <p>Returns the metadata of the source.</p>
+    pub source_metadata: std::option::Option<crate::model::AnomalySourceMetadata>,
+    /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
+    pub anomaly_resources: std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
 }
 impl ProactiveAnomalySummary {
     /// <p>The ID of the anomaly.</p>
@@ -7742,6 +7941,14 @@ impl ProactiveAnomalySummary {
     pub fn limit(&self) -> std::option::Option<f64> {
         self.limit
     }
+    /// <p>Returns the metadata of the source.</p>
+    pub fn source_metadata(&self) -> std::option::Option<&crate::model::AnomalySourceMetadata> {
+        self.source_metadata.as_ref()
+    }
+    /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
+    pub fn anomaly_resources(&self) -> std::option::Option<&[crate::model::AnomalyResource]> {
+        self.anomaly_resources.as_deref()
+    }
 }
 impl std::fmt::Debug for ProactiveAnomalySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7760,6 +7967,8 @@ impl std::fmt::Debug for ProactiveAnomalySummary {
         formatter.field("associated_insight_id", &self.associated_insight_id);
         formatter.field("resource_collection", &self.resource_collection);
         formatter.field("limit", &self.limit);
+        formatter.field("source_metadata", &self.source_metadata);
+        formatter.field("anomaly_resources", &self.anomaly_resources);
         formatter.finish()
     }
 }
@@ -7781,6 +7990,9 @@ pub mod proactive_anomaly_summary {
         pub(crate) associated_insight_id: std::option::Option<std::string::String>,
         pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollection>,
         pub(crate) limit: std::option::Option<f64>,
+        pub(crate) source_metadata: std::option::Option<crate::model::AnomalySourceMetadata>,
+        pub(crate) anomaly_resources:
+            std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
     }
     impl Builder {
         /// <p>The ID of the anomaly.</p>
@@ -7923,6 +8135,38 @@ pub mod proactive_anomaly_summary {
             self.limit = input;
             self
         }
+        /// <p>Returns the metadata of the source.</p>
+        pub fn source_metadata(mut self, input: crate::model::AnomalySourceMetadata) -> Self {
+            self.source_metadata = Some(input);
+            self
+        }
+        /// <p>Returns the metadata of the source.</p>
+        pub fn set_source_metadata(
+            mut self,
+            input: std::option::Option<crate::model::AnomalySourceMetadata>,
+        ) -> Self {
+            self.source_metadata = input;
+            self
+        }
+        /// Appends an item to `anomaly_resources`.
+        ///
+        /// To override the contents of this collection use [`set_anomaly_resources`](Self::set_anomaly_resources).
+        ///
+        /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
+        pub fn anomaly_resources(mut self, input: crate::model::AnomalyResource) -> Self {
+            let mut v = self.anomaly_resources.unwrap_or_default();
+            v.push(input);
+            self.anomaly_resources = Some(v);
+            self
+        }
+        /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
+        pub fn set_anomaly_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
+        ) -> Self {
+            self.anomaly_resources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProactiveAnomalySummary`](crate::model::ProactiveAnomalySummary)
         pub fn build(self) -> crate::model::ProactiveAnomalySummary {
             crate::model::ProactiveAnomalySummary {
@@ -7937,6 +8181,8 @@ pub mod proactive_anomaly_summary {
                 associated_insight_id: self.associated_insight_id,
                 resource_collection: self.resource_collection,
                 limit: self.limit,
+                source_metadata: self.source_metadata,
+                anomaly_resources: self.anomaly_resources,
             }
         }
     }
@@ -7945,6 +8191,104 @@ impl ProactiveAnomalySummary {
     /// Creates a new builder-style object to manufacture [`ProactiveAnomalySummary`](crate::model::ProactiveAnomalySummary)
     pub fn builder() -> crate::model::proactive_anomaly_summary::Builder {
         crate::model::proactive_anomaly_summary::Builder::default()
+    }
+}
+
+/// <p>Metadata about an anomaly. The anomaly is detected using analysis of the metric data  over a period of time</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnomalySourceMetadata {
+    /// <p>The source of the anomaly.</p>
+    pub source: std::option::Option<std::string::String>,
+    /// <p>The name of the anomaly's resource.</p>
+    pub source_resource_name: std::option::Option<std::string::String>,
+    /// <p>The anomaly's resource type.</p>
+    pub source_resource_type: std::option::Option<std::string::String>,
+}
+impl AnomalySourceMetadata {
+    /// <p>The source of the anomaly.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The name of the anomaly's resource.</p>
+    pub fn source_resource_name(&self) -> std::option::Option<&str> {
+        self.source_resource_name.as_deref()
+    }
+    /// <p>The anomaly's resource type.</p>
+    pub fn source_resource_type(&self) -> std::option::Option<&str> {
+        self.source_resource_type.as_deref()
+    }
+}
+impl std::fmt::Debug for AnomalySourceMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnomalySourceMetadata");
+        formatter.field("source", &self.source);
+        formatter.field("source_resource_name", &self.source_resource_name);
+        formatter.field("source_resource_type", &self.source_resource_type);
+        formatter.finish()
+    }
+}
+/// See [`AnomalySourceMetadata`](crate::model::AnomalySourceMetadata)
+pub mod anomaly_source_metadata {
+    /// A builder for [`AnomalySourceMetadata`](crate::model::AnomalySourceMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source: std::option::Option<std::string::String>,
+        pub(crate) source_resource_name: std::option::Option<std::string::String>,
+        pub(crate) source_resource_type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The source of the anomaly.</p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
+            self
+        }
+        /// <p>The source of the anomaly.</p>
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
+            self
+        }
+        /// <p>The name of the anomaly's resource.</p>
+        pub fn source_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_resource_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the anomaly's resource.</p>
+        pub fn set_source_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_resource_name = input;
+            self
+        }
+        /// <p>The anomaly's resource type.</p>
+        pub fn source_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_resource_type = Some(input.into());
+            self
+        }
+        /// <p>The anomaly's resource type.</p>
+        pub fn set_source_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_resource_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnomalySourceMetadata`](crate::model::AnomalySourceMetadata)
+        pub fn build(self) -> crate::model::AnomalySourceMetadata {
+            crate::model::AnomalySourceMetadata {
+                source: self.source,
+                source_resource_name: self.source_resource_name,
+                source_resource_type: self.source_resource_type,
+            }
+        }
+    }
+}
+impl AnomalySourceMetadata {
+    /// Creates a new builder-style object to manufacture [`AnomalySourceMetadata`](crate::model::AnomalySourceMetadata)
+    pub fn builder() -> crate::model::anomaly_source_metadata::Builder {
+        crate::model::anomaly_source_metadata::Builder::default()
     }
 }
 
@@ -9401,6 +9745,8 @@ pub struct ReactiveInsight {
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
     pub ssm_ops_item_id: std::option::Option<std::string::String>,
+    /// <p>Describes the reactive insight.</p>
+    pub description: std::option::Option<std::string::String>,
 }
 impl ReactiveInsight {
     /// <p> The ID of a reactive insight. </p>
@@ -9431,6 +9777,10 @@ impl ReactiveInsight {
     pub fn ssm_ops_item_id(&self) -> std::option::Option<&str> {
         self.ssm_ops_item_id.as_deref()
     }
+    /// <p>Describes the reactive insight.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for ReactiveInsight {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9442,6 +9792,7 @@ impl std::fmt::Debug for ReactiveInsight {
         formatter.field("insight_time_range", &self.insight_time_range);
         formatter.field("resource_collection", &self.resource_collection);
         formatter.field("ssm_ops_item_id", &self.ssm_ops_item_id);
+        formatter.field("description", &self.description);
         formatter.finish()
     }
 }
@@ -9458,6 +9809,7 @@ pub mod reactive_insight {
         pub(crate) insight_time_range: std::option::Option<crate::model::InsightTimeRange>,
         pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollection>,
         pub(crate) ssm_ops_item_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The ID of a reactive insight. </p>
@@ -9545,6 +9897,16 @@ pub mod reactive_insight {
             self.ssm_ops_item_id = input;
             self
         }
+        /// <p>Describes the reactive insight.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Describes the reactive insight.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReactiveInsight`](crate::model::ReactiveInsight)
         pub fn build(self) -> crate::model::ReactiveInsight {
             crate::model::ReactiveInsight {
@@ -9555,6 +9917,7 @@ pub mod reactive_insight {
                 insight_time_range: self.insight_time_range,
                 resource_collection: self.resource_collection,
                 ssm_ops_item_id: self.ssm_ops_item_id,
+                description: self.description,
             }
         }
     }
@@ -9586,6 +9949,8 @@ pub struct ProactiveInsight {
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
     pub ssm_ops_item_id: std::option::Option<std::string::String>,
+    /// <p>Describes the proactive insight.</p>
+    pub description: std::option::Option<std::string::String>,
 }
 impl ProactiveInsight {
     /// <p>The ID of the proactive insight. </p>
@@ -9620,6 +9985,10 @@ impl ProactiveInsight {
     pub fn ssm_ops_item_id(&self) -> std::option::Option<&str> {
         self.ssm_ops_item_id.as_deref()
     }
+    /// <p>Describes the proactive insight.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for ProactiveInsight {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9632,6 +10001,7 @@ impl std::fmt::Debug for ProactiveInsight {
         formatter.field("prediction_time_range", &self.prediction_time_range);
         formatter.field("resource_collection", &self.resource_collection);
         formatter.field("ssm_ops_item_id", &self.ssm_ops_item_id);
+        formatter.field("description", &self.description);
         formatter.finish()
     }
 }
@@ -9649,6 +10019,7 @@ pub mod proactive_insight {
         pub(crate) prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
         pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollection>,
         pub(crate) ssm_ops_item_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the proactive insight. </p>
@@ -9749,6 +10120,16 @@ pub mod proactive_insight {
             self.ssm_ops_item_id = input;
             self
         }
+        /// <p>Describes the proactive insight.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Describes the proactive insight.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProactiveInsight`](crate::model::ProactiveInsight)
         pub fn build(self) -> crate::model::ProactiveInsight {
             crate::model::ProactiveInsight {
@@ -9760,6 +10141,7 @@ pub mod proactive_insight {
                 prediction_time_range: self.prediction_time_range,
                 resource_collection: self.resource_collection,
                 ssm_ops_item_id: self.ssm_ops_item_id,
+                description: self.description,
             }
         }
     }
@@ -10138,6 +10520,10 @@ pub struct ProactiveAnomaly {
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p> A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to the anomalous behavior that generated this anomaly. </p>
     pub limit: std::option::Option<f64>,
+    /// <p>The metadata for the anomaly.</p>
+    pub source_metadata: std::option::Option<crate::model::AnomalySourceMetadata>,
+    /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
+    pub anomaly_resources: std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
 }
 impl ProactiveAnomaly {
     /// <p> The ID of a proactive anomaly. </p>
@@ -10186,6 +10572,14 @@ impl ProactiveAnomaly {
     pub fn limit(&self) -> std::option::Option<f64> {
         self.limit
     }
+    /// <p>The metadata for the anomaly.</p>
+    pub fn source_metadata(&self) -> std::option::Option<&crate::model::AnomalySourceMetadata> {
+        self.source_metadata.as_ref()
+    }
+    /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
+    pub fn anomaly_resources(&self) -> std::option::Option<&[crate::model::AnomalyResource]> {
+        self.anomaly_resources.as_deref()
+    }
 }
 impl std::fmt::Debug for ProactiveAnomaly {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10204,6 +10598,8 @@ impl std::fmt::Debug for ProactiveAnomaly {
         formatter.field("associated_insight_id", &self.associated_insight_id);
         formatter.field("resource_collection", &self.resource_collection);
         formatter.field("limit", &self.limit);
+        formatter.field("source_metadata", &self.source_metadata);
+        formatter.field("anomaly_resources", &self.anomaly_resources);
         formatter.finish()
     }
 }
@@ -10225,6 +10621,9 @@ pub mod proactive_anomaly {
         pub(crate) associated_insight_id: std::option::Option<std::string::String>,
         pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollection>,
         pub(crate) limit: std::option::Option<f64>,
+        pub(crate) source_metadata: std::option::Option<crate::model::AnomalySourceMetadata>,
+        pub(crate) anomaly_resources:
+            std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
     }
     impl Builder {
         /// <p> The ID of a proactive anomaly. </p>
@@ -10367,6 +10766,38 @@ pub mod proactive_anomaly {
             self.limit = input;
             self
         }
+        /// <p>The metadata for the anomaly.</p>
+        pub fn source_metadata(mut self, input: crate::model::AnomalySourceMetadata) -> Self {
+            self.source_metadata = Some(input);
+            self
+        }
+        /// <p>The metadata for the anomaly.</p>
+        pub fn set_source_metadata(
+            mut self,
+            input: std::option::Option<crate::model::AnomalySourceMetadata>,
+        ) -> Self {
+            self.source_metadata = input;
+            self
+        }
+        /// Appends an item to `anomaly_resources`.
+        ///
+        /// To override the contents of this collection use [`set_anomaly_resources`](Self::set_anomaly_resources).
+        ///
+        /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
+        pub fn anomaly_resources(mut self, input: crate::model::AnomalyResource) -> Self {
+            let mut v = self.anomaly_resources.unwrap_or_default();
+            v.push(input);
+            self.anomaly_resources = Some(v);
+            self
+        }
+        /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
+        pub fn set_anomaly_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AnomalyResource>>,
+        ) -> Self {
+            self.anomaly_resources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProactiveAnomaly`](crate::model::ProactiveAnomaly)
         pub fn build(self) -> crate::model::ProactiveAnomaly {
             crate::model::ProactiveAnomaly {
@@ -10381,6 +10812,8 @@ pub mod proactive_anomaly {
                 associated_insight_id: self.associated_insight_id,
                 resource_collection: self.resource_collection,
                 limit: self.limit,
+                source_metadata: self.source_metadata,
+                anomaly_resources: self.anomaly_resources,
             }
         }
     }

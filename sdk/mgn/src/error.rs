@@ -16,7 +16,7 @@ pub enum ChangeServerLifeCycleStateErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -144,7 +144,7 @@ pub struct CreateReplicationConfigurationTemplateError {
 pub enum CreateReplicationConfigurationTemplateErrorKind {
     /// <p>Operating denied due to a file permission or access check error.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -278,7 +278,7 @@ pub enum DeleteJobErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -387,7 +387,7 @@ pub enum DeleteReplicationConfigurationTemplateErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -519,7 +519,7 @@ pub enum DeleteSourceServerErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -632,7 +632,7 @@ pub struct DeleteVcenterClientError {
 pub enum DeleteVcenterClientErrorKind {
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -745,7 +745,7 @@ pub struct DescribeJobLogItemsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobLogItemsErrorKind {
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -849,7 +849,7 @@ pub struct DescribeJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobsErrorKind {
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -952,7 +952,7 @@ pub struct DescribeReplicationConfigurationTemplatesError {
 pub enum DescribeReplicationConfigurationTemplatesErrorKind {
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -1082,7 +1082,7 @@ pub struct DescribeSourceServersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSourceServersErrorKind {
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -1188,7 +1188,7 @@ pub struct DescribeVcenterClientsError {
 pub enum DescribeVcenterClientsErrorKind {
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -1305,7 +1305,7 @@ pub enum DisconnectFromServiceErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1420,7 +1420,7 @@ pub enum FinalizeCutoverErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -1538,7 +1538,7 @@ pub struct GetLaunchConfigurationError {
 pub enum GetLaunchConfigurationErrorKind {
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1642,7 +1642,7 @@ pub struct GetReplicationConfigurationError {
 pub enum GetReplicationConfigurationErrorKind {
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1995,7 +1995,7 @@ pub enum MarkAsArchivedErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2105,7 +2105,7 @@ pub struct RetryDataReplicationError {
 pub enum RetryDataReplicationErrorKind {
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -2220,7 +2220,7 @@ pub struct StartCutoverError {
 pub enum StartCutoverErrorKind {
     /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -2333,7 +2333,7 @@ pub enum StartReplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request could not be completed because its exceeded the service quota.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -2463,7 +2463,7 @@ pub struct StartTestError {
 pub enum StartTestErrorKind {
     /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -2697,7 +2697,7 @@ pub struct TerminateTargetInstancesError {
 pub enum TerminateTargetInstancesErrorKind {
     /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -2946,7 +2946,7 @@ pub enum UpdateLaunchConfigurationErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -3078,7 +3078,7 @@ pub enum UpdateReplicationConfigurationErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -3224,7 +3224,7 @@ pub enum UpdateReplicationConfigurationTemplateErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -3371,7 +3371,7 @@ pub enum UpdateSourceServerReplicationTypeErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
@@ -3629,7 +3629,7 @@ impl ValidationException {
     }
 }
 
-/// <p>Unitialized account exception.</p>
+/// <p>Uninitialized account exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UninitializedAccountException {
@@ -3848,9 +3848,9 @@ pub struct ConflictException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
-    /// <p>A conflict occured when prompting for the Resource ID.</p>
+    /// <p>A conflict occurred when prompting for the Resource ID.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>A conflict occured when prompting for resource type.</p>
+    /// <p>A conflict occurred when prompting for resource type.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -3858,11 +3858,11 @@ impl ConflictException {
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>A conflict occured when prompting for the Resource ID.</p>
+    /// <p>A conflict occurred when prompting for the Resource ID.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>A conflict occured when prompting for resource type.</p>
+    /// <p>A conflict occurred when prompting for resource type.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -3925,22 +3925,22 @@ pub mod conflict_exception {
             self.code = input;
             self
         }
-        /// <p>A conflict occured when prompting for the Resource ID.</p>
+        /// <p>A conflict occurred when prompting for the Resource ID.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>A conflict occured when prompting for the Resource ID.</p>
+        /// <p>A conflict occurred when prompting for the Resource ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>A conflict occured when prompting for resource type.</p>
+        /// <p>A conflict occurred when prompting for resource type.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>A conflict occured when prompting for resource type.</p>
+        /// <p>A conflict occurred when prompting for resource type.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4059,7 +4059,7 @@ pub struct ServiceQuotaExceededException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
-    /// <p>Exceeded the service quota resource Id.</p>
+    /// <p>Exceeded the service quota resource ID.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Exceeded the service quota resource type.</p>
     pub resource_type: std::option::Option<std::string::String>,
@@ -4073,7 +4073,7 @@ impl ServiceQuotaExceededException {
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>Exceeded the service quota resource Id.</p>
+    /// <p>Exceeded the service quota resource ID.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -4152,12 +4152,12 @@ pub mod service_quota_exceeded_exception {
             self.code = input;
             self
         }
-        /// <p>Exceeded the service quota resource Id.</p>
+        /// <p>Exceeded the service quota resource ID.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>Exceeded the service quota resource Id.</p>
+        /// <p>Exceeded the service quota resource ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self

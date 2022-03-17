@@ -135,6 +135,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnector {
     }
 }
 
+/// Operation shape for `DeleteCustomPlugin`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_custom_plugin`](crate::client::Client::delete_custom_plugin).
+///
+/// See [`crate::client::fluent_builders::DeleteCustomPlugin`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteCustomPlugin {
+    _private: (),
+}
+impl DeleteCustomPlugin {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomPluginInput`](crate::input::DeleteCustomPluginInput)
+    pub fn builder() -> crate::input::delete_custom_plugin_input::Builder {
+        crate::input::delete_custom_plugin_input::Builder::default()
+    }
+    /// Creates a new `DeleteCustomPlugin` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomPlugin {
+    type Output = std::result::Result<
+        crate::output::DeleteCustomPluginOutput,
+        crate::error::DeleteCustomPluginError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_custom_plugin_error(response)
+        } else {
+            crate::operation_deser::parse_delete_custom_plugin_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeConnector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

@@ -107,6 +107,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`routing_control_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_routing_control_arn): <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
     ///   - [`routing_control_state(RoutingControlState)`](crate::client::fluent_builders::UpdateRoutingControlState::routing_control_state) / [`set_routing_control_state(Option<RoutingControlState>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_routing_control_state): <p>The state of the routing control. You can set the value to be On or Off.</p>
+    ///   - [`safety_rules_to_override(Vec<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::safety_rules_to_override) / [`set_safety_rules_to_override(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_safety_rules_to_override): <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     /// - On success, responds with [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput)
 
     /// - On failure, responds with [`SdkError<UpdateRoutingControlStateError>`](crate::error::UpdateRoutingControlStateError)
@@ -117,6 +118,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`update_routing_control_state_entries(Vec<UpdateRoutingControlStateEntry>)`](crate::client::fluent_builders::UpdateRoutingControlStates::update_routing_control_state_entries) / [`set_update_routing_control_state_entries(Option<Vec<UpdateRoutingControlStateEntry>>)`](crate::client::fluent_builders::UpdateRoutingControlStates::set_update_routing_control_state_entries): <p>A set of routing control entries that you want to update.</p>
+    ///   - [`safety_rules_to_override(Vec<String>)`](crate::client::fluent_builders::UpdateRoutingControlStates::safety_rules_to_override) / [`set_safety_rules_to_override(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRoutingControlStates::set_safety_rules_to_override): <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     /// - On success, responds with [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput)
 
     /// - On failure, responds with [`SdkError<UpdateRoutingControlStatesError>`](crate::error::UpdateRoutingControlStatesError)
@@ -134,9 +136,15 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `GetRoutingControlState`.
     ///
-    /// <p>Get the state for a routing control. A routing control is a simple on/off switch that you can use to route traffic to cells. When the state is On, traffic flows to a cell. When it's off, traffic does not flow. </p>
-    /// <p>Before you can create a routing control, you first must create a cluster to host the control. For more information, see <a href="https://docs.aws.amazon.com/recovery-cluster/latest/api/cluster.html">CreateCluster</a>. Access one of the endpoints for the cluster to get or update the routing control state to redirect traffic.</p>
-    /// <p>For more information about working with routing controls, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a> in the Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <p>Get the state for a routing control. A routing control is a simple on/off switch that you can use to route traffic to cells. When the state is On, traffic flows to a cell. When it's Off, traffic does not flow. </p>
+    /// <p>Before you can create a routing control, you must first create a cluster to host the control in a control panel. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.create.html"> Create routing control structures</a> in the Amazon Route 53 Application Recovery Controller Developer Guide. Then you access one of the endpoints for the cluster to get or update the routing control state to redirect traffic. </p>
+    /// <p> <i>You must specify Regional endpoints when you work with API cluster operations to get or update routing control states in Application Recovery Controller.</i> </p>
+    /// <p>To see a code example for getting a routing control state, including accessing Regional cluster endpoints in sequence, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/service_code_examples_actions.html">API examples</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <p>Learn more about working with routing controls in the following topics in the Amazon Route 53 Application Recovery Controller Developer Guide:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.html"> Viewing and updating routing control states</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Working with routing controls overall</a> </p> </li>
+    /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoutingControlState {
         handle: std::sync::Arc<super::Handle>,
@@ -192,8 +200,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRoutingControlState`.
     ///
-    /// <p>Set the state of the routing control to reroute traffic. You can set the value to be On or Off. When the state is On, traffic flows to a cell. When it's off, traffic does not flow.</p>
-    /// <p>For more information about working with routing controls, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a> in the Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <p>Set the state of the routing control to reroute traffic. You can set the value to be On or Off. When the state is On, traffic flows to a cell. When it's Off, traffic does not flow.</p>
+    /// <p>With Application Recovery Controller, you can add safety rules for routing controls, which are safeguards for routing control state updates that help prevent unexpected outcomes, like fail open traffic routing. However, there are scenarios when you might want to bypass the routing control safeguards that are enforced with safety rules that you've configured. For example, you might want to fail over quickly for disaster recovery, and one or more safety rules might be unexpectedly preventing you from updating a routing control state to reroute traffic. In a "break glass" scenario like this, you can override one or more safety rules to change a routing control state and fail over your application.</p>
+    /// <p>The <code>SafetyRulesToOverride</code> property enables you override one or more safety rules and update routing control states. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <p> <i>You must specify Regional endpoints when you work with API cluster operations to get or update routing control states in Application Recovery Controller.</i> </p>
+    /// <p>To see a code example for getting a routing control state, including accessing Regional cluster endpoints in sequence, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/service_code_examples_actions.html">API examples</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.html"> Viewing and updating routing control states</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Working with routing controls overall</a> </p> </li>
+    /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingControlState {
         handle: std::sync::Arc<super::Handle>,
@@ -259,11 +274,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_routing_control_state(input);
             self
         }
+        /// Appends an item to `SafetyRulesToOverride`.
+        ///
+        /// To override the contents of this collection use [`set_safety_rules_to_override`](Self::set_safety_rules_to_override).
+        ///
+        /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+        pub fn safety_rules_to_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.safety_rules_to_override(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+        pub fn set_safety_rules_to_override(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_safety_rules_to_override(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateRoutingControlStates`.
     ///
-    /// <p>Set multiple routing control states. You can set the value for each state to be On or Off. When the state is On, traffic flows to a cell. When it's off, traffic does not flow.</p>
-    /// <p>For more information about working with routing controls, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a> in the Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <p>Set multiple routing control states. You can set the value for each state to be On or Off. When the state is On, traffic flows to a cell. When it's Off, traffic does not flow.</p>
+    /// <p>With Application Recovery Controller, you can add safety rules for routing controls, which are safeguards for routing control state updates that help prevent unexpected outcomes, like fail open traffic routing. However, there are scenarios when you might want to bypass the routing control safeguards that are enforced with safety rules that you've configured. For example, you might want to fail over quickly for disaster recovery, and one or more safety rules might be unexpectedly preventing you from updating a routing control state to reroute traffic. In a "break glass" scenario like this, you can override one or more safety rules to change a routing control state and fail over your application.</p>
+    /// <p>The <code>SafetyRulesToOverride</code> property enables you override one or more safety rules and update routing control states. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <p> <i>You must specify Regional endpoints when you work with API cluster operations to get or update routing control states in Application Recovery Controller.</i> </p>
+    /// <p>To see a code example for getting a routing control state, including accessing Regional cluster endpoints in sequence, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/service_code_examples_actions.html">API examples</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.html"> Viewing and updating routing control states</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Working with routing controls overall</a> </p> </li>
+    /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingControlStates {
         handle: std::sync::Arc<super::Handle>,
@@ -321,6 +362,25 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,
         ) -> Self {
             self.inner = self.inner.set_update_routing_control_state_entries(input);
+            self
+        }
+        /// Appends an item to `SafetyRulesToOverride`.
+        ///
+        /// To override the contents of this collection use [`set_safety_rules_to_override`](Self::set_safety_rules_to_override).
+        ///
+        /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+        pub fn safety_rules_to_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.safety_rules_to_override(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+        pub fn set_safety_rules_to_override(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_safety_rules_to_override(input);
             self
         }
     }

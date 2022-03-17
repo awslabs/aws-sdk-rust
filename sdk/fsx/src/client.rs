@@ -146,7 +146,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_file_system_id): <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    ///   - [`file_system_path(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::file_system_path) / [`set_file_system_path(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_file_system_path): <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>  <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
+    ///   - [`file_system_path(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::file_system_path) / [`set_file_system_path(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_file_system_path): <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>  <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>   <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>  </note>
     ///   - [`data_repository_path(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::data_repository_path) / [`set_data_repository_path(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_data_repository_path): <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
     ///   - [`batch_import_meta_data_on_create(bool)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::batch_import_meta_data_on_create) / [`set_batch_import_meta_data_on_create(Option<bool>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_batch_import_meta_data_on_create): <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
     ///   - [`imported_file_chunk_size(i32)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::imported_file_chunk_size) / [`set_imported_file_chunk_size(Option<i32>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_imported_file_chunk_size): <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>  <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
@@ -593,7 +593,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateSnapshot::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateSnapshot::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateSnapshot::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateSnapshot::set_name): <p>The name of the snapshot to update. </p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateSnapshot::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateSnapshot::set_name): <p>The name of the snapshot to update.</p>
     ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSnapshot::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::UpdateSnapshot::set_snapshot_id): <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
     /// - On success, responds with [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<Snapshot>)`](crate::output::UpdateSnapshotOutput::snapshot): <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the snapshot that you updated.</p>
@@ -1093,13 +1093,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
-        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
+        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+        /// </note>
         pub fn file_system_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.file_system_path(input.into());
             self
         }
         /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
-        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
+        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+        /// </note>
         pub fn set_file_system_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1634,7 +1638,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFileSystemFromBackup`.
     ///
     /// <p>Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or Amazon FSx for OpenZFS file system from an existing Amazon FSx backup.</p>
-    /// <p>If a file system with the specified client request token exists and the parameters match, this operation returns the description of the file system. If a client request token with the specified by the file system exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file system with the specified client request token doesn't exist, this operation does the following:</p>
+    /// <p>If a file system with the specified client request token exists and the parameters match, this operation returns the description of the file system. If a file system with the specified client request token exists but the parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file system with the specified client request token doesn't exist, this operation does the following:</p>
     /// <ul>
     /// <li> <p>Creates a new Amazon FSx file system from backup with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
     /// <li> <p>Returns the description of the file system.</p> </li>
@@ -1877,14 +1881,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSnapshot`.
     ///
-    /// <p>Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With snapshots, you can easily undo file changes and compare file versions by restoring the volume to a previous version.</p>
-    /// <p>If a snapshot with the specified client request token exists, and the parameters match, this operation returns the description of the existing snapshot. If a snapshot with the specified client request token exists, and the parameters don't match, this operation returns <code>IncompatibleParameterError</code>. If a snapshot with the specified client request token doesn't exist, <code>CreateSnapshot</code> does the following: </p>
+    /// <p>Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With snapshots, you can easily undo file changes and compare file versions by restoring the volume to a previous version.</p>
+    /// <p>If a snapshot with the specified client request token exists, and the parameters match, this operation returns the description of the existing snapshot. If a snapshot with the specified client request token exists, and the parameters don't match, this operation returns <code>IncompatibleParameterError</code>. If a snapshot with the specified client request token doesn't exist, <code>CreateSnapshot</code> does the following:</p>
     /// <ul>
     /// <li> <p>Creates a new OpenZFS snapshot with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
     /// <li> <p>Returns the description of the snapshot.</p> </li>
     /// </ul>
     /// <p>By using the idempotent operation, you can retry a <code>CreateSnapshot</code> operation without the risk of creating an extra snapshot. This approach can be useful when an initial call fails in a way that makes it unclear whether a snapshot was created. If you use the same client request token and the initial call created a snapshot, the operation returns a successful result because all the parameters are the same.</p>
-    /// <p>The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state is still <code>CREATING</code>. You can check the snapshot creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a> operation, which returns the snapshot state along with other information. </p>
+    /// <p>The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state is still <code>CREATING</code>. You can check the snapshot creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a> operation, which returns the snapshot state along with other information.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshot {
         handle: std::sync::Arc<super::Handle>,
@@ -2128,7 +2132,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVolume`.
     ///
-    /// <p>Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage volume.</p>
+    /// <p>Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage volume.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVolume {
         handle: std::sync::Arc<super::Handle>,
@@ -2637,7 +2641,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSnapshot`.
     ///
-    /// <p>Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system backup. </p>
+    /// <p>Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no longer exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system backup. </p>
     /// <p>The <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears with the lifecycle status of <code>DELETING</code> until the deletion is complete.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSnapshot {
@@ -3379,7 +3383,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSnapshots`.
     ///
-    /// <p>Returns the description of specific Amazon FSx snapshots, if a <code>SnapshotIds</code> value is provided. Otherwise, this operation returns all snapshots owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
+    /// <p>Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <code>SnapshotIds</code> value is provided. Otherwise, this operation returns all snapshots owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
     /// <p>When retrieving all snapshots, you can optionally specify the <code>MaxResults</code> parameter to limit the number of snapshots in a response. If more backups remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response. </p>
     /// <p>Use this operation in an iterative process to retrieve a list of your snapshots. <code>DescribeSnapshots</code> is called first without a <code>NextToken</code> value. Then the operation continues to be called with the <code>NextToken</code> parameter set to the value of the last <code>NextToken</code> value until a response has no <code>NextToken</code> value.</p>
     /// <p>When using this operation, keep the following in mind:</p>
@@ -4477,7 +4481,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSnapshot`.
     ///
-    /// <p>Updates the name of a snapshot. </p>
+    /// <p>Updates the name of an Amazon FSx for OpenZFS snapshot.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSnapshot {
         handle: std::sync::Arc<super::Handle>,
@@ -4530,12 +4534,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The name of the snapshot to update. </p>
+        /// <p>The name of the snapshot to update.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the snapshot to update. </p>
+        /// <p>The name of the snapshot to update.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self

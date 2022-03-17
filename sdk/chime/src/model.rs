@@ -5842,7 +5842,7 @@ pub struct EngineTranscribeSettings {
     /// <p>The stabity level of a partial results transcription. Determines how stable you want the transcription results to be. A higher level means the transcription results are less likely to change.</p>
     pub partial_results_stability:
         std::option::Option<crate::model::TranscribePartialResultsStability>,
-    /// <p>Set this field to <code>PII</code> to identify personal health information in the transcription output.</p>
+    /// <p>Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.</p>
     pub content_identification_type:
         std::option::Option<crate::model::TranscribeContentIdentificationType>,
     /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
@@ -5887,7 +5887,7 @@ impl EngineTranscribeSettings {
     ) -> std::option::Option<&crate::model::TranscribePartialResultsStability> {
         self.partial_results_stability.as_ref()
     }
-    /// <p>Set this field to <code>PII</code> to identify personal health information in the transcription output.</p>
+    /// <p>Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.</p>
     pub fn content_identification_type(
         &self,
     ) -> std::option::Option<&crate::model::TranscribeContentIdentificationType> {
@@ -6053,7 +6053,7 @@ pub mod engine_transcribe_settings {
             self.partial_results_stability = input;
             self
         }
-        /// <p>Set this field to <code>PII</code> to identify personal health information in the transcription output.</p>
+        /// <p>Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.</p>
         pub fn content_identification_type(
             mut self,
             input: crate::model::TranscribeContentIdentificationType,
@@ -6061,7 +6061,7 @@ pub mod engine_transcribe_settings {
             self.content_identification_type = Some(input);
             self
         }
-        /// <p>Set this field to <code>PII</code> to identify personal health information in the transcription output.</p>
+        /// <p>Set this field to <code>PII</code> to identify personally identifiable information in the transcription output.</p>
         pub fn set_content_identification_type(
             mut self,
             input: std::option::Option<crate::model::TranscribeContentIdentificationType>,
@@ -7534,19 +7534,26 @@ impl AsRef<str> for OriginationRouteProtocol {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
-    /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
+    /// <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
     pub enable_sip_logs: std::option::Option<bool>,
+    /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to CloudWatch logs.</p>
+    pub enable_media_metric_logs: std::option::Option<bool>,
 }
 impl LoggingConfiguration {
-    /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
+    /// <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
     pub fn enable_sip_logs(&self) -> std::option::Option<bool> {
         self.enable_sip_logs
+    }
+    /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to CloudWatch logs.</p>
+    pub fn enable_media_metric_logs(&self) -> std::option::Option<bool> {
+        self.enable_media_metric_logs
     }
 }
 impl std::fmt::Debug for LoggingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoggingConfiguration");
         formatter.field("enable_sip_logs", &self.enable_sip_logs);
+        formatter.field("enable_media_metric_logs", &self.enable_media_metric_logs);
         formatter.finish()
     }
 }
@@ -7557,22 +7564,34 @@ pub mod logging_configuration {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_sip_logs: std::option::Option<bool>,
+        pub(crate) enable_media_metric_logs: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
+        /// <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
         pub fn enable_sip_logs(mut self, input: bool) -> Self {
             self.enable_sip_logs = Some(input);
             self
         }
-        /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
+        /// <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
         pub fn set_enable_sip_logs(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_sip_logs = input;
+            self
+        }
+        /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to CloudWatch logs.</p>
+        pub fn enable_media_metric_logs(mut self, input: bool) -> Self {
+            self.enable_media_metric_logs = Some(input);
+            self
+        }
+        /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to CloudWatch logs.</p>
+        pub fn set_enable_media_metric_logs(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_media_metric_logs = input;
             self
         }
         /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::model::LoggingConfiguration)
         pub fn build(self) -> crate::model::LoggingConfiguration {
             crate::model::LoggingConfiguration {
                 enable_sip_logs: self.enable_sip_logs,
+                enable_media_metric_logs: self.enable_media_metric_logs,
             }
         }
     }
@@ -8974,7 +8993,7 @@ pub struct MediaPlacement {
     pub signaling_url: std::option::Option<std::string::String>,
     /// <p>The turn control URL.</p>
     pub turn_control_url: std::option::Option<std::string::String>,
-    /// <p>The event ingestion URL.</p>
+    /// <p>The event ingestion URL to which you send client meeting events.</p>
     pub event_ingestion_url: std::option::Option<std::string::String>,
 }
 impl MediaPlacement {
@@ -9006,7 +9025,7 @@ impl MediaPlacement {
     pub fn turn_control_url(&self) -> std::option::Option<&str> {
         self.turn_control_url.as_deref()
     }
-    /// <p>The event ingestion URL.</p>
+    /// <p>The event ingestion URL to which you send client meeting events.</p>
     pub fn event_ingestion_url(&self) -> std::option::Option<&str> {
         self.event_ingestion_url.as_deref()
     }
@@ -9132,12 +9151,12 @@ pub mod media_placement {
             self.turn_control_url = input;
             self
         }
-        /// <p>The event ingestion URL.</p>
+        /// <p>The event ingestion URL to which you send client meeting events.</p>
         pub fn event_ingestion_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_ingestion_url = Some(input.into());
             self
         }
-        /// <p>The event ingestion URL.</p>
+        /// <p>The event ingestion URL to which you send client meeting events.</p>
         pub fn set_event_ingestion_url(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -794,13 +794,17 @@ pub mod create_data_repository_association_input {
             self
         }
         /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
-        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
+        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+        /// </note>
         pub fn file_system_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_path = Some(input.into());
             self
         }
         /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
-        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
+        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+        /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+        /// </note>
         pub fn set_file_system_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7106,12 +7110,12 @@ pub mod update_snapshot_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The name of the snapshot to update. </p>
+        /// <p>The name of the snapshot to update.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the snapshot to update. </p>
+        /// <p>The name of the snapshot to update.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7771,7 +7775,7 @@ impl std::fmt::Debug for UpdateStorageVirtualMachineInput {
 pub struct UpdateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The name of the snapshot to update. </p>
+    /// <p>The name of the snapshot to update.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -7781,7 +7785,7 @@ impl UpdateSnapshotInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The name of the snapshot to update. </p>
+    /// <p>The name of the snapshot to update.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -9324,7 +9328,9 @@ pub struct CreateDataRepositoryAssociationInput {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
-    /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
+    /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+    /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+    /// </note>
     pub file_system_path: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
     pub data_repository_path: std::option::Option<std::string::String>,
@@ -9346,7 +9352,9 @@ impl CreateDataRepositoryAssociationInput {
         self.file_system_id.as_deref()
     }
     /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
-    /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
+    /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
+    /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only 1 data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
+    /// </note>
     pub fn file_system_path(&self) -> std::option::Option<&str> {
         self.file_system_path.as_deref()
     }

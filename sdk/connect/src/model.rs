@@ -2130,6 +2130,8 @@ pub enum InstanceStorageResourceType {
     #[allow(missing_docs)] // documentation missing in model
     MediaStreams,
     #[allow(missing_docs)] // documentation missing in model
+    RealTimeContactAnalysisSegments,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduledReports,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2142,6 +2144,9 @@ impl std::convert::From<&str> for InstanceStorageResourceType {
             "CHAT_TRANSCRIPTS" => InstanceStorageResourceType::ChatTranscripts,
             "CONTACT_TRACE_RECORDS" => InstanceStorageResourceType::ContactTraceRecords,
             "MEDIA_STREAMS" => InstanceStorageResourceType::MediaStreams,
+            "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS" => {
+                InstanceStorageResourceType::RealTimeContactAnalysisSegments
+            }
             "SCHEDULED_REPORTS" => InstanceStorageResourceType::ScheduledReports,
             other => InstanceStorageResourceType::Unknown(other.to_owned()),
         }
@@ -2163,6 +2168,9 @@ impl InstanceStorageResourceType {
             InstanceStorageResourceType::ChatTranscripts => "CHAT_TRANSCRIPTS",
             InstanceStorageResourceType::ContactTraceRecords => "CONTACT_TRACE_RECORDS",
             InstanceStorageResourceType::MediaStreams => "MEDIA_STREAMS",
+            InstanceStorageResourceType::RealTimeContactAnalysisSegments => {
+                "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS"
+            }
             InstanceStorageResourceType::ScheduledReports => "SCHEDULED_REPORTS",
             InstanceStorageResourceType::Unknown(s) => s.as_ref(),
         }
@@ -2175,6 +2183,7 @@ impl InstanceStorageResourceType {
             "CHAT_TRANSCRIPTS",
             "CONTACT_TRACE_RECORDS",
             "MEDIA_STREAMS",
+            "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS",
             "SCHEDULED_REPORTS",
         ]
     }
@@ -3188,13 +3197,13 @@ impl AsRef<str> for VoiceRecordingTrack {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChatMessage {
-    /// <p>The type of the content. Supported types are text and plain.</p>
+    /// <p>The type of the content. Supported types are <code>text/plain</code>.</p>
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The content of the chat message.</p>
     pub content: std::option::Option<std::string::String>,
 }
 impl ChatMessage {
-    /// <p>The type of the content. Supported types are text and plain.</p>
+    /// <p>The type of the content. Supported types are <code>text/plain</code>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -3221,12 +3230,12 @@ pub mod chat_message {
         pub(crate) content: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of the content. Supported types are text and plain.</p>
+        /// <p>The type of the content. Supported types are <code>text/plain</code>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>The type of the content. Supported types are text and plain.</p>
+        /// <p>The type of the content. Supported types are <code>text/plain</code>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self

@@ -140,17 +140,17 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
-/// <p>A routing control state.</p>
+/// <p>A routing control state entry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoutingControlStateEntry {
-    /// <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+    /// <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The routing control state in a set of routing control state entries.</p>
     pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
 }
 impl UpdateRoutingControlStateEntry {
-    /// <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+    /// <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
     pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
@@ -177,12 +177,12 @@ pub mod update_routing_control_state_entry {
         pub(crate) routing_control_state: std::option::Option<crate::model::RoutingControlState>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+        /// <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
         pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.routing_control_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+        /// <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
         pub fn set_routing_control_arn(
             mut self,
             input: std::option::Option<std::string::String>,

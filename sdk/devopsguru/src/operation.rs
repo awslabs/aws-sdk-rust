@@ -135,6 +135,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAnomaly {
     }
 }
 
+/// Operation shape for `DescribeEventSourcesConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_event_sources_config`](crate::client::Client::describe_event_sources_config).
+///
+/// See [`crate::client::fluent_builders::DescribeEventSourcesConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeEventSourcesConfig {
+    _private: (),
+}
+impl DescribeEventSourcesConfig {
+    /// Creates a new builder-style object to manufacture [`DescribeEventSourcesConfigInput`](crate::input::DescribeEventSourcesConfigInput)
+    pub fn builder() -> crate::input::describe_event_sources_config_input::Builder {
+        crate::input::describe_event_sources_config_input::Builder::default()
+    }
+    /// Creates a new `DescribeEventSourcesConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeEventSourcesConfig {
+    type Output = std::result::Result<
+        crate::output::DescribeEventSourcesConfigOutput,
+        crate::error::DescribeEventSourcesConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_event_sources_config_error(response)
+        } else {
+            crate::operation_deser::parse_describe_event_sources_config_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeFeedback`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -810,6 +844,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCostEstimation {
             crate::operation_deser::parse_start_cost_estimation_error(response)
         } else {
             crate::operation_deser::parse_start_cost_estimation_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateEventSourcesConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_event_sources_config`](crate::client::Client::update_event_sources_config).
+///
+/// See [`crate::client::fluent_builders::UpdateEventSourcesConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateEventSourcesConfig {
+    _private: (),
+}
+impl UpdateEventSourcesConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateEventSourcesConfigInput`](crate::input::UpdateEventSourcesConfigInput)
+    pub fn builder() -> crate::input::update_event_sources_config_input::Builder {
+        crate::input::update_event_sources_config_input::Builder::default()
+    }
+    /// Creates a new `UpdateEventSourcesConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateEventSourcesConfig {
+    type Output = std::result::Result<
+        crate::output::UpdateEventSourcesConfigOutput,
+        crate::error::UpdateEventSourcesConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_event_sources_config_error(response)
+        } else {
+            crate::operation_deser::parse_update_event_sources_config_response(response)
         }
     }
 }

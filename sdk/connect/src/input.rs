@@ -18425,6 +18425,8 @@ pub mod start_chat_contact_input {
         pub(crate) initial_message: std::option::Option<crate::model::ChatMessage>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) chat_duration_in_minutes: std::option::Option<i32>,
+        pub(crate) supported_messaging_content_types:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -18525,6 +18527,28 @@ pub mod start_chat_contact_input {
             self.chat_duration_in_minutes = input;
             self
         }
+        /// Appends an item to `supported_messaging_content_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_messaging_content_types`](Self::set_supported_messaging_content_types).
+        ///
+        /// <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
+        pub fn supported_messaging_content_types(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.supported_messaging_content_types.unwrap_or_default();
+            v.push(input.into());
+            self.supported_messaging_content_types = Some(v);
+            self
+        }
+        /// <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
+        pub fn set_supported_messaging_content_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_messaging_content_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartChatContactInput`](crate::input::StartChatContactInput)
         pub fn build(
             self,
@@ -18540,6 +18564,7 @@ pub mod start_chat_contact_input {
                 initial_message: self.initial_message,
                 client_token: self.client_token,
                 chat_duration_in_minutes: self.chat_duration_in_minutes,
+                supported_messaging_content_types: self.supported_messaging_content_types,
             })
         }
     }
@@ -28748,6 +28773,8 @@ pub struct StartChatContactInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
     pub chat_duration_in_minutes: std::option::Option<i32>,
+    /// <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
+    pub supported_messaging_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartChatContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -28783,6 +28810,10 @@ impl StartChatContactInput {
     pub fn chat_duration_in_minutes(&self) -> std::option::Option<i32> {
         self.chat_duration_in_minutes
     }
+    /// <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
+    pub fn supported_messaging_content_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_messaging_content_types.as_deref()
+    }
 }
 impl std::fmt::Debug for StartChatContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28794,6 +28825,10 @@ impl std::fmt::Debug for StartChatContactInput {
         formatter.field("initial_message", &self.initial_message);
         formatter.field("client_token", &self.client_token);
         formatter.field("chat_duration_in_minutes", &self.chat_duration_in_minutes);
+        formatter.field(
+            "supported_messaging_content_types",
+            &self.supported_messaging_content_types,
+        );
         formatter.finish()
     }
 }

@@ -59,17 +59,6 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                             .build(),
                     },
                 )
-                .endpoint(
-                    "fips-aws-cn-global",
-                    aws_endpoint::partition::endpoint::Metadata {
-                        uri_template: "organizations.cn-northwest-1.amazonaws.com.cn",
-                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
-                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
-                        credential_scope: aws_endpoint::CredentialScope::builder()
-                            .region("cn-northwest-1")
-                            .build(),
-                    },
-                )
                 .build()
                 .expect("invalid partition"),
             aws_endpoint::Partition::builder()

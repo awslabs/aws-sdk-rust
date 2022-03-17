@@ -34,6 +34,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "fips-us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "cognito-idp-fips.us-west-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "fips-us-west-2",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "cognito-idp-fips.us-west-2.amazonaws.com",
@@ -42,6 +53,42 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("us-west-2")
                         .build(),
+                },
+            )
+            .endpoint(
+                "us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "cognito-idp.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "cognito-idp.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "cognito-idp.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "cognito-idp.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
                 },
             )
             .build()
@@ -102,6 +149,15 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                         credential_scope: aws_endpoint::CredentialScope::builder()
                             .region("us-gov-west-1")
                             .build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "cognito-idp.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
                     },
                 )
                 .build()

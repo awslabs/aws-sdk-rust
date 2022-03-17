@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct StartStreamTranscriptionOutput {
-    /// <p>An identifier for the streaming transcription.</p>
+    /// <p>An identifier for the transcription.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The language code of the input audio stream.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+    /// <p>The sample rate, in Hertz (Hz), for the input audio stream.</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio stream.</p>
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
-    /// <p>The name of the vocabulary used when processing the stream.</p>
+    /// <p>The name of the custom vocabulary used when processing the stream.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>An identifier for a specific transcription session.</p>
     pub session_id: std::option::Option<std::string::String>,
@@ -19,17 +19,17 @@ pub struct StartStreamTranscriptionOutput {
         crate::model::TranscriptResultStream,
         crate::error::StartStreamTranscriptionError,
     >,
-    /// <p>The name of the vocabulary filter used in your media stream.</p>
+    /// <p>The name of the vocabulary filter used when processing the stream.</p>
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
-    /// <p>The vocabulary filtering method used in the media stream.</p>
+    /// <p>The vocabulary filtering method used when processing the stream.</p>
     pub vocabulary_filter_method: std::option::Option<crate::model::VocabularyFilterMethod>,
-    /// <p>Shows whether speaker identification was enabled in the stream.</p>
+    /// <p>Shows whether speaker identification was enabled in the transcription.</p>
     pub show_speaker_label: bool,
-    /// <p>Shows whether channel identification has been enabled in the stream.</p>
+    /// <p>Shows whether channel identification was enabled in the stream.</p>
     pub enable_channel_identification: bool,
     /// <p>The number of channels identified in the stream.</p>
     pub number_of_channels: std::option::Option<i32>,
-    /// <p>Shows whether partial results stabilization has been enabled in the stream.</p>
+    /// <p>Shows whether partial results stabilization was enabled in the transcription.</p>
     pub enable_partial_results_stabilization: bool,
     /// <p>If partial results stabilization has been enabled in the stream, shows the stability level.</p>
     pub partial_results_stability: std::option::Option<crate::model::PartialResultsStability>,
@@ -39,7 +39,7 @@ pub struct StartStreamTranscriptionOutput {
     pub content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
     /// <p>Lists the PII entity types you specified in your request.</p>
     pub pii_entity_types: std::option::Option<std::string::String>,
-    /// <p>The name of the language model used in your media stream.</p>
+    /// <p>The name of the custom language model used in the transcription.</p>
     pub language_model_name: std::option::Option<std::string::String>,
     /// <p>The language code of the language identified in your media stream.</p>
     pub identify_language: bool,
@@ -47,9 +47,13 @@ pub struct StartStreamTranscriptionOutput {
     pub language_options: std::option::Option<std::string::String>,
     /// <p>The preferred language you specified in your request.</p>
     pub preferred_language: std::option::Option<crate::model::LanguageCode>,
+    /// <p>The name of the custom vocabulary used when processing the stream.</p>
+    pub vocabulary_names: std::option::Option<std::string::String>,
+    /// <p>The name of the vocabulary filter used when processing the stream.</p>
+    pub vocabulary_filter_names: std::option::Option<std::string::String>,
 }
 impl StartStreamTranscriptionOutput {
-    /// <p>An identifier for the streaming transcription.</p>
+    /// <p>An identifier for the transcription.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -57,7 +61,7 @@ impl StartStreamTranscriptionOutput {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+    /// <p>The sample rate, in Hertz (Hz), for the input audio stream.</p>
     pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -65,7 +69,7 @@ impl StartStreamTranscriptionOutput {
     pub fn media_encoding(&self) -> std::option::Option<&crate::model::MediaEncoding> {
         self.media_encoding.as_ref()
     }
-    /// <p>The name of the vocabulary used when processing the stream.</p>
+    /// <p>The name of the custom vocabulary used when processing the stream.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
@@ -82,21 +86,21 @@ impl StartStreamTranscriptionOutput {
     > {
         &self.transcript_result_stream
     }
-    /// <p>The name of the vocabulary filter used in your media stream.</p>
+    /// <p>The name of the vocabulary filter used when processing the stream.</p>
     pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
-    /// <p>The vocabulary filtering method used in the media stream.</p>
+    /// <p>The vocabulary filtering method used when processing the stream.</p>
     pub fn vocabulary_filter_method(
         &self,
     ) -> std::option::Option<&crate::model::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
-    /// <p>Shows whether speaker identification was enabled in the stream.</p>
+    /// <p>Shows whether speaker identification was enabled in the transcription.</p>
     pub fn show_speaker_label(&self) -> bool {
         self.show_speaker_label
     }
-    /// <p>Shows whether channel identification has been enabled in the stream.</p>
+    /// <p>Shows whether channel identification was enabled in the stream.</p>
     pub fn enable_channel_identification(&self) -> bool {
         self.enable_channel_identification
     }
@@ -104,7 +108,7 @@ impl StartStreamTranscriptionOutput {
     pub fn number_of_channels(&self) -> std::option::Option<i32> {
         self.number_of_channels
     }
-    /// <p>Shows whether partial results stabilization has been enabled in the stream.</p>
+    /// <p>Shows whether partial results stabilization was enabled in the transcription.</p>
     pub fn enable_partial_results_stabilization(&self) -> bool {
         self.enable_partial_results_stabilization
     }
@@ -130,7 +134,7 @@ impl StartStreamTranscriptionOutput {
     pub fn pii_entity_types(&self) -> std::option::Option<&str> {
         self.pii_entity_types.as_deref()
     }
-    /// <p>The name of the language model used in your media stream.</p>
+    /// <p>The name of the custom language model used in the transcription.</p>
     pub fn language_model_name(&self) -> std::option::Option<&str> {
         self.language_model_name.as_deref()
     }
@@ -145,6 +149,14 @@ impl StartStreamTranscriptionOutput {
     /// <p>The preferred language you specified in your request.</p>
     pub fn preferred_language(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.preferred_language.as_ref()
+    }
+    /// <p>The name of the custom vocabulary used when processing the stream.</p>
+    pub fn vocabulary_names(&self) -> std::option::Option<&str> {
+        self.vocabulary_names.as_deref()
+    }
+    /// <p>The name of the vocabulary filter used when processing the stream.</p>
+    pub fn vocabulary_filter_names(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_names.as_deref()
     }
 }
 impl std::fmt::Debug for StartStreamTranscriptionOutput {
@@ -180,6 +192,8 @@ impl std::fmt::Debug for StartStreamTranscriptionOutput {
         formatter.field("identify_language", &self.identify_language);
         formatter.field("language_options", &self.language_options);
         formatter.field("preferred_language", &self.preferred_language);
+        formatter.field("vocabulary_names", &self.vocabulary_names);
+        formatter.field("vocabulary_filter_names", &self.vocabulary_filter_names);
         formatter.finish()
     }
 }
@@ -218,14 +232,16 @@ pub mod start_stream_transcription_output {
         pub(crate) identify_language: std::option::Option<bool>,
         pub(crate) language_options: std::option::Option<std::string::String>,
         pub(crate) preferred_language: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) vocabulary_names: std::option::Option<std::string::String>,
+        pub(crate) vocabulary_filter_names: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier for the streaming transcription.</p>
+        /// <p>An identifier for the transcription.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>An identifier for the streaming transcription.</p>
+        /// <p>An identifier for the transcription.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -243,12 +259,12 @@ pub mod start_stream_transcription_output {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+        /// <p>The sample rate, in Hertz (Hz), for the input audio stream.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self
         }
-        /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+        /// <p>The sample rate, in Hertz (Hz), for the input audio stream.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -266,12 +282,12 @@ pub mod start_stream_transcription_output {
             self.media_encoding = input;
             self
         }
-        /// <p>The name of the vocabulary used when processing the stream.</p>
+        /// <p>The name of the custom vocabulary used when processing the stream.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
             self
         }
-        /// <p>The name of the vocabulary used when processing the stream.</p>
+        /// <p>The name of the custom vocabulary used when processing the stream.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -313,12 +329,12 @@ pub mod start_stream_transcription_output {
             self.transcript_result_stream = input;
             self
         }
-        /// <p>The name of the vocabulary filter used in your media stream.</p>
+        /// <p>The name of the vocabulary filter used when processing the stream.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
-        /// <p>The name of the vocabulary filter used in your media stream.</p>
+        /// <p>The name of the vocabulary filter used when processing the stream.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -326,7 +342,7 @@ pub mod start_stream_transcription_output {
             self.vocabulary_filter_name = input;
             self
         }
-        /// <p>The vocabulary filtering method used in the media stream.</p>
+        /// <p>The vocabulary filtering method used when processing the stream.</p>
         pub fn vocabulary_filter_method(
             mut self,
             input: crate::model::VocabularyFilterMethod,
@@ -334,7 +350,7 @@ pub mod start_stream_transcription_output {
             self.vocabulary_filter_method = Some(input);
             self
         }
-        /// <p>The vocabulary filtering method used in the media stream.</p>
+        /// <p>The vocabulary filtering method used when processing the stream.</p>
         pub fn set_vocabulary_filter_method(
             mut self,
             input: std::option::Option<crate::model::VocabularyFilterMethod>,
@@ -342,22 +358,22 @@ pub mod start_stream_transcription_output {
             self.vocabulary_filter_method = input;
             self
         }
-        /// <p>Shows whether speaker identification was enabled in the stream.</p>
+        /// <p>Shows whether speaker identification was enabled in the transcription.</p>
         pub fn show_speaker_label(mut self, input: bool) -> Self {
             self.show_speaker_label = Some(input);
             self
         }
-        /// <p>Shows whether speaker identification was enabled in the stream.</p>
+        /// <p>Shows whether speaker identification was enabled in the transcription.</p>
         pub fn set_show_speaker_label(mut self, input: std::option::Option<bool>) -> Self {
             self.show_speaker_label = input;
             self
         }
-        /// <p>Shows whether channel identification has been enabled in the stream.</p>
+        /// <p>Shows whether channel identification was enabled in the stream.</p>
         pub fn enable_channel_identification(mut self, input: bool) -> Self {
             self.enable_channel_identification = Some(input);
             self
         }
-        /// <p>Shows whether channel identification has been enabled in the stream.</p>
+        /// <p>Shows whether channel identification was enabled in the stream.</p>
         pub fn set_enable_channel_identification(
             mut self,
             input: std::option::Option<bool>,
@@ -375,12 +391,12 @@ pub mod start_stream_transcription_output {
             self.number_of_channels = input;
             self
         }
-        /// <p>Shows whether partial results stabilization has been enabled in the stream.</p>
+        /// <p>Shows whether partial results stabilization was enabled in the transcription.</p>
         pub fn enable_partial_results_stabilization(mut self, input: bool) -> Self {
             self.enable_partial_results_stabilization = Some(input);
             self
         }
-        /// <p>Shows whether partial results stabilization has been enabled in the stream.</p>
+        /// <p>Shows whether partial results stabilization was enabled in the transcription.</p>
         pub fn set_enable_partial_results_stabilization(
             mut self,
             input: std::option::Option<bool>,
@@ -446,12 +462,12 @@ pub mod start_stream_transcription_output {
             self.pii_entity_types = input;
             self
         }
-        /// <p>The name of the language model used in your media stream.</p>
+        /// <p>The name of the custom language model used in the transcription.</p>
         pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_model_name = Some(input.into());
             self
         }
-        /// <p>The name of the language model used in your media stream.</p>
+        /// <p>The name of the custom language model used in the transcription.</p>
         pub fn set_language_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -493,6 +509,32 @@ pub mod start_stream_transcription_output {
             input: std::option::Option<crate::model::LanguageCode>,
         ) -> Self {
             self.preferred_language = input;
+            self
+        }
+        /// <p>The name of the custom vocabulary used when processing the stream.</p>
+        pub fn vocabulary_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_names = Some(input.into());
+            self
+        }
+        /// <p>The name of the custom vocabulary used when processing the stream.</p>
+        pub fn set_vocabulary_names(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_names = input;
+            self
+        }
+        /// <p>The name of the vocabulary filter used when processing the stream.</p>
+        pub fn vocabulary_filter_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_filter_names = Some(input.into());
+            self
+        }
+        /// <p>The name of the vocabulary filter used when processing the stream.</p>
+        pub fn set_vocabulary_filter_names(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_filter_names = input;
             self
         }
         /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput)
@@ -553,6 +595,10 @@ pub mod start_stream_transcription_output {
                     ,
                     preferred_language: self.preferred_language
                     ,
+                    vocabulary_names: self.vocabulary_names
+                    ,
+                    vocabulary_filter_names: self.vocabulary_filter_names
+                    ,
                 }
             )
         }
@@ -572,7 +618,7 @@ pub struct StartMedicalStreamTranscriptionOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English (en-US).</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate of the input audio in Hertz.</p>
+    /// <p>The sample rate of the input audio, in Hertz (Hz).</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio stream.</p>
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
@@ -608,7 +654,7 @@ impl StartMedicalStreamTranscriptionOutput {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The sample rate of the input audio in Hertz.</p>
+    /// <p>The sample rate of the input audio, in Hertz (Hz).</p>
     pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -735,12 +781,12 @@ pub mod start_medical_stream_transcription_output {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate of the input audio in Hertz.</p>
+        /// <p>The sample rate of the input audio, in Hertz (Hz).</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self
         }
-        /// <p>The sample rate of the input audio in Hertz.</p>
+        /// <p>The sample rate of the input audio, in Hertz (Hz).</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self

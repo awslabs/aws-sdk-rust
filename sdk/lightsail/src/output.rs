@@ -6990,6 +6990,8 @@ pub struct DownloadDefaultKeyPairOutput {
     pub public_key_base64: std::option::Option<std::string::String>,
     /// <p>A base64-encoded RSA private key.</p>
     pub private_key_base64: std::option::Option<std::string::String>,
+    /// <p>The timestamp when the default key pair was created.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DownloadDefaultKeyPairOutput {
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
@@ -7000,12 +7002,17 @@ impl DownloadDefaultKeyPairOutput {
     pub fn private_key_base64(&self) -> std::option::Option<&str> {
         self.private_key_base64.as_deref()
     }
+    /// <p>The timestamp when the default key pair was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
 }
 impl std::fmt::Debug for DownloadDefaultKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DownloadDefaultKeyPairOutput");
         formatter.field("public_key_base64", &self.public_key_base64);
         formatter.field("private_key_base64", &self.private_key_base64);
+        formatter.field("created_at", &self.created_at);
         formatter.finish()
     }
 }
@@ -7017,6 +7024,7 @@ pub mod download_default_key_pair_output {
     pub struct Builder {
         pub(crate) public_key_base64: std::option::Option<std::string::String>,
         pub(crate) private_key_base64: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
@@ -7045,11 +7053,25 @@ pub mod download_default_key_pair_output {
             self.private_key_base64 = input;
             self
         }
+        /// <p>The timestamp when the default key pair was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The timestamp when the default key pair was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DownloadDefaultKeyPairOutput`](crate::output::DownloadDefaultKeyPairOutput)
         pub fn build(self) -> crate::output::DownloadDefaultKeyPairOutput {
             crate::output::DownloadDefaultKeyPairOutput {
                 public_key_base64: self.public_key_base64,
                 private_key_base64: self.private_key_base64,
+                created_at: self.created_at,
             }
         }
     }

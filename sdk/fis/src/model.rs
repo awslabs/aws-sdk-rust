@@ -27,6 +27,8 @@ pub struct ExperimentTemplate {
     /// <p>The tags for the experiment template.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The configuration for experiment logging.</p>
+    pub log_configuration: std::option::Option<crate::model::ExperimentTemplateLogConfiguration>,
 }
 impl ExperimentTemplate {
     /// <p>The ID of the experiment template.</p>
@@ -78,6 +80,12 @@ impl ExperimentTemplate {
     {
         self.tags.as_ref()
     }
+    /// <p>The configuration for experiment logging.</p>
+    pub fn log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExperimentTemplateLogConfiguration> {
+        self.log_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ExperimentTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -91,6 +99,7 @@ impl std::fmt::Debug for ExperimentTemplate {
         formatter.field("last_update_time", &self.last_update_time);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("tags", &self.tags);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }
@@ -116,6 +125,8 @@ pub mod experiment_template {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) log_configuration:
+            std::option::Option<crate::model::ExperimentTemplateLogConfiguration>,
     }
     impl Builder {
         /// <p>The ID of the experiment template.</p>
@@ -279,6 +290,22 @@ pub mod experiment_template {
             self.tags = input;
             self
         }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn log_configuration(
+            mut self,
+            input: crate::model::ExperimentTemplateLogConfiguration,
+        ) -> Self {
+            self.log_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ExperimentTemplateLogConfiguration>,
+        ) -> Self {
+            self.log_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExperimentTemplate`](crate::model::ExperimentTemplate)
         pub fn build(self) -> crate::model::ExperimentTemplate {
             crate::model::ExperimentTemplate {
@@ -291,6 +318,7 @@ pub mod experiment_template {
                 last_update_time: self.last_update_time,
                 role_arn: self.role_arn,
                 tags: self.tags,
+                log_configuration: self.log_configuration,
             }
         }
     }
@@ -299,6 +327,253 @@ impl ExperimentTemplate {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplate`](crate::model::ExperimentTemplate)
     pub fn builder() -> crate::model::experiment_template::Builder {
         crate::model::experiment_template::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration for experiment logging.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperimentTemplateLogConfiguration {
+    /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    pub cloud_watch_logs_configuration:
+        std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration>,
+    /// <p>The configuration for experiment logging to Amazon S3.</p>
+    pub s3_configuration: std::option::Option<crate::model::ExperimentTemplateS3LogConfiguration>,
+    /// <p>The schema version.</p>
+    pub log_schema_version: std::option::Option<i32>,
+}
+impl ExperimentTemplateLogConfiguration {
+    /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    pub fn cloud_watch_logs_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration> {
+        self.cloud_watch_logs_configuration.as_ref()
+    }
+    /// <p>The configuration for experiment logging to Amazon S3.</p>
+    pub fn s3_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExperimentTemplateS3LogConfiguration> {
+        self.s3_configuration.as_ref()
+    }
+    /// <p>The schema version.</p>
+    pub fn log_schema_version(&self) -> std::option::Option<i32> {
+        self.log_schema_version
+    }
+}
+impl std::fmt::Debug for ExperimentTemplateLogConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperimentTemplateLogConfiguration");
+        formatter.field(
+            "cloud_watch_logs_configuration",
+            &self.cloud_watch_logs_configuration,
+        );
+        formatter.field("s3_configuration", &self.s3_configuration);
+        formatter.field("log_schema_version", &self.log_schema_version);
+        formatter.finish()
+    }
+}
+/// See [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration)
+pub mod experiment_template_log_configuration {
+    /// A builder for [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cloud_watch_logs_configuration:
+            std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration>,
+        pub(crate) s3_configuration:
+            std::option::Option<crate::model::ExperimentTemplateS3LogConfiguration>,
+        pub(crate) log_schema_version: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+        pub fn cloud_watch_logs_configuration(
+            mut self,
+            input: crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration,
+        ) -> Self {
+            self.cloud_watch_logs_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+        pub fn set_cloud_watch_logs_configuration(
+            mut self,
+            input: std::option::Option<
+                crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration,
+            >,
+        ) -> Self {
+            self.cloud_watch_logs_configuration = input;
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon S3.</p>
+        pub fn s3_configuration(
+            mut self,
+            input: crate::model::ExperimentTemplateS3LogConfiguration,
+        ) -> Self {
+            self.s3_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon S3.</p>
+        pub fn set_s3_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ExperimentTemplateS3LogConfiguration>,
+        ) -> Self {
+            self.s3_configuration = input;
+            self
+        }
+        /// <p>The schema version.</p>
+        pub fn log_schema_version(mut self, input: i32) -> Self {
+            self.log_schema_version = Some(input);
+            self
+        }
+        /// <p>The schema version.</p>
+        pub fn set_log_schema_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.log_schema_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration)
+        pub fn build(self) -> crate::model::ExperimentTemplateLogConfiguration {
+            crate::model::ExperimentTemplateLogConfiguration {
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
+                s3_configuration: self.s3_configuration,
+                log_schema_version: self.log_schema_version,
+            }
+        }
+    }
+}
+impl ExperimentTemplateLogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration)
+    pub fn builder() -> crate::model::experiment_template_log_configuration::Builder {
+        crate::model::experiment_template_log_configuration::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration for experiment logging to Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperimentTemplateS3LogConfiguration {
+    /// <p>The name of the destination bucket.</p>
+    pub bucket_name: std::option::Option<std::string::String>,
+    /// <p>The bucket prefix.</p>
+    pub prefix: std::option::Option<std::string::String>,
+}
+impl ExperimentTemplateS3LogConfiguration {
+    /// <p>The name of the destination bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The bucket prefix.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
+impl std::fmt::Debug for ExperimentTemplateS3LogConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperimentTemplateS3LogConfiguration");
+        formatter.field("bucket_name", &self.bucket_name);
+        formatter.field("prefix", &self.prefix);
+        formatter.finish()
+    }
+}
+/// See [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration)
+pub mod experiment_template_s3_log_configuration {
+    /// A builder for [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket_name: std::option::Option<std::string::String>,
+        pub(crate) prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the destination bucket.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the destination bucket.</p>
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_name = input;
+            self
+        }
+        /// <p>The bucket prefix.</p>
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
+            self
+        }
+        /// <p>The bucket prefix.</p>
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration)
+        pub fn build(self) -> crate::model::ExperimentTemplateS3LogConfiguration {
+            crate::model::ExperimentTemplateS3LogConfiguration {
+                bucket_name: self.bucket_name,
+                prefix: self.prefix,
+            }
+        }
+    }
+}
+impl ExperimentTemplateS3LogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration)
+    pub fn builder() -> crate::model::experiment_template_s3_log_configuration::Builder {
+        crate::model::experiment_template_s3_log_configuration::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration for experiment logging to Amazon CloudWatch Logs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperimentTemplateCloudWatchLogsLogConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    pub log_group_arn: std::option::Option<std::string::String>,
+}
+impl ExperimentTemplateCloudWatchLogsLogConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+        self.log_group_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ExperimentTemplateCloudWatchLogsLogConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperimentTemplateCloudWatchLogsLogConfiguration");
+        formatter.field("log_group_arn", &self.log_group_arn);
+        formatter.finish()
+    }
+}
+/// See [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration)
+pub mod experiment_template_cloud_watch_logs_log_configuration {
+    /// A builder for [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) log_group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration)
+        pub fn build(self) -> crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration {
+            crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration {
+                log_group_arn: self.log_group_arn,
+            }
+        }
+    }
+}
+impl ExperimentTemplateCloudWatchLogsLogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration)
+    pub fn builder() -> crate::model::experiment_template_cloud_watch_logs_log_configuration::Builder
+    {
+        crate::model::experiment_template_cloud_watch_logs_log_configuration::Builder::default()
     }
 }
 
@@ -851,6 +1126,257 @@ impl ExperimentTemplateTargetFilter {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter)
     pub fn builder() -> crate::model::experiment_template_target_filter::Builder {
         crate::model::experiment_template_target_filter::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration for experiment logging.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateExperimentTemplateLogConfigurationInput {
+    /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    pub cloud_watch_logs_configuration:
+        std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
+    /// <p>The configuration for experiment logging to Amazon S3.</p>
+    pub s3_configuration:
+        std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
+    /// <p>The schema version.</p>
+    pub log_schema_version: std::option::Option<i32>,
+}
+impl UpdateExperimentTemplateLogConfigurationInput {
+    /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    pub fn cloud_watch_logs_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>
+    {
+        self.cloud_watch_logs_configuration.as_ref()
+    }
+    /// <p>The configuration for experiment logging to Amazon S3.</p>
+    pub fn s3_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExperimentTemplateS3LogConfigurationInput> {
+        self.s3_configuration.as_ref()
+    }
+    /// <p>The schema version.</p>
+    pub fn log_schema_version(&self) -> std::option::Option<i32> {
+        self.log_schema_version
+    }
+}
+impl std::fmt::Debug for UpdateExperimentTemplateLogConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateExperimentTemplateLogConfigurationInput");
+        formatter.field(
+            "cloud_watch_logs_configuration",
+            &self.cloud_watch_logs_configuration,
+        );
+        formatter.field("s3_configuration", &self.s3_configuration);
+        formatter.field("log_schema_version", &self.log_schema_version);
+        formatter.finish()
+    }
+}
+/// See [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput)
+pub mod update_experiment_template_log_configuration_input {
+    /// A builder for [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cloud_watch_logs_configuration: std::option::Option<
+            crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
+        >,
+        pub(crate) s3_configuration:
+            std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
+        pub(crate) log_schema_version: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+        pub fn cloud_watch_logs_configuration(
+            mut self,
+            input: crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
+        ) -> Self {
+            self.cloud_watch_logs_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+        pub fn set_cloud_watch_logs_configuration(
+            mut self,
+            input: std::option::Option<
+                crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
+            >,
+        ) -> Self {
+            self.cloud_watch_logs_configuration = input;
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon S3.</p>
+        pub fn s3_configuration(
+            mut self,
+            input: crate::model::ExperimentTemplateS3LogConfigurationInput,
+        ) -> Self {
+            self.s3_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon S3.</p>
+        pub fn set_s3_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
+        ) -> Self {
+            self.s3_configuration = input;
+            self
+        }
+        /// <p>The schema version.</p>
+        pub fn log_schema_version(mut self, input: i32) -> Self {
+            self.log_schema_version = Some(input);
+            self
+        }
+        /// <p>The schema version.</p>
+        pub fn set_log_schema_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.log_schema_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput)
+        pub fn build(self) -> crate::model::UpdateExperimentTemplateLogConfigurationInput {
+            crate::model::UpdateExperimentTemplateLogConfigurationInput {
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
+                s3_configuration: self.s3_configuration,
+                log_schema_version: self.log_schema_version,
+            }
+        }
+    }
+}
+impl UpdateExperimentTemplateLogConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput)
+    pub fn builder() -> crate::model::update_experiment_template_log_configuration_input::Builder {
+        crate::model::update_experiment_template_log_configuration_input::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration for experiment logging to Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperimentTemplateS3LogConfigurationInput {
+    /// <p>The name of the destination bucket.</p>
+    pub bucket_name: std::option::Option<std::string::String>,
+    /// <p>The bucket prefix.</p>
+    pub prefix: std::option::Option<std::string::String>,
+}
+impl ExperimentTemplateS3LogConfigurationInput {
+    /// <p>The name of the destination bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The bucket prefix.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
+impl std::fmt::Debug for ExperimentTemplateS3LogConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperimentTemplateS3LogConfigurationInput");
+        formatter.field("bucket_name", &self.bucket_name);
+        formatter.field("prefix", &self.prefix);
+        formatter.finish()
+    }
+}
+/// See [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput)
+pub mod experiment_template_s3_log_configuration_input {
+    /// A builder for [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket_name: std::option::Option<std::string::String>,
+        pub(crate) prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the destination bucket.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the destination bucket.</p>
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_name = input;
+            self
+        }
+        /// <p>The bucket prefix.</p>
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
+            self
+        }
+        /// <p>The bucket prefix.</p>
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput)
+        pub fn build(self) -> crate::model::ExperimentTemplateS3LogConfigurationInput {
+            crate::model::ExperimentTemplateS3LogConfigurationInput {
+                bucket_name: self.bucket_name,
+                prefix: self.prefix,
+            }
+        }
+    }
+}
+impl ExperimentTemplateS3LogConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput)
+    pub fn builder() -> crate::model::experiment_template_s3_log_configuration_input::Builder {
+        crate::model::experiment_template_s3_log_configuration_input::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration for experiment logging to Amazon CloudWatch Logs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    pub log_group_arn: std::option::Option<std::string::String>,
+}
+impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+        self.log_group_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperimentTemplateCloudWatchLogsLogConfigurationInput");
+        formatter.field("log_group_arn", &self.log_group_arn);
+        formatter.finish()
+    }
+}
+/// See [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput)
+pub mod experiment_template_cloud_watch_logs_log_configuration_input {
+    /// A builder for [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) log_group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput)
+        pub fn build(self) -> crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+            crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+                log_group_arn: self.log_group_arn,
+            }
+        }
+    }
+}
+impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput)
+    pub fn builder(
+    ) -> crate::model::experiment_template_cloud_watch_logs_log_configuration_input::Builder {
+        crate::model::experiment_template_cloud_watch_logs_log_configuration_input::Builder::default(
+        )
     }
 }
 
@@ -1443,6 +1969,8 @@ pub struct Experiment {
     /// <p>The tags for the experiment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The configuration for experiment logging.</p>
+    pub log_configuration: std::option::Option<crate::model::ExperimentLogConfiguration>,
 }
 impl Experiment {
     /// <p>The ID of the experiment.</p>
@@ -1500,6 +2028,12 @@ impl Experiment {
     {
         self.tags.as_ref()
     }
+    /// <p>The configuration for experiment logging.</p>
+    pub fn log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExperimentLogConfiguration> {
+        self.log_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for Experiment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1515,6 +2049,7 @@ impl std::fmt::Debug for Experiment {
         formatter.field("start_time", &self.start_time);
         formatter.field("end_time", &self.end_time);
         formatter.field("tags", &self.tags);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }
@@ -1542,6 +2077,7 @@ pub mod experiment {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) log_configuration: std::option::Option<crate::model::ExperimentLogConfiguration>,
     }
     impl Builder {
         /// <p>The ID of the experiment.</p>
@@ -1723,6 +2259,22 @@ pub mod experiment {
             self.tags = input;
             self
         }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn log_configuration(
+            mut self,
+            input: crate::model::ExperimentLogConfiguration,
+        ) -> Self {
+            self.log_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging.</p>
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ExperimentLogConfiguration>,
+        ) -> Self {
+            self.log_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Experiment`](crate::model::Experiment)
         pub fn build(self) -> crate::model::Experiment {
             crate::model::Experiment {
@@ -1737,6 +2289,7 @@ pub mod experiment {
                 start_time: self.start_time,
                 end_time: self.end_time,
                 tags: self.tags,
+                log_configuration: self.log_configuration,
             }
         }
     }
@@ -1745,6 +2298,250 @@ impl Experiment {
     /// Creates a new builder-style object to manufacture [`Experiment`](crate::model::Experiment)
     pub fn builder() -> crate::model::experiment::Builder {
         crate::model::experiment::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration for experiment logging.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperimentLogConfiguration {
+    /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    pub cloud_watch_logs_configuration:
+        std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
+    /// <p>The configuration for experiment logging to Amazon S3.</p>
+    pub s3_configuration: std::option::Option<crate::model::ExperimentS3LogConfiguration>,
+    /// <p>The schema version.</p>
+    pub log_schema_version: std::option::Option<i32>,
+}
+impl ExperimentLogConfiguration {
+    /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    pub fn cloud_watch_logs_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExperimentCloudWatchLogsLogConfiguration> {
+        self.cloud_watch_logs_configuration.as_ref()
+    }
+    /// <p>The configuration for experiment logging to Amazon S3.</p>
+    pub fn s3_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExperimentS3LogConfiguration> {
+        self.s3_configuration.as_ref()
+    }
+    /// <p>The schema version.</p>
+    pub fn log_schema_version(&self) -> std::option::Option<i32> {
+        self.log_schema_version
+    }
+}
+impl std::fmt::Debug for ExperimentLogConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperimentLogConfiguration");
+        formatter.field(
+            "cloud_watch_logs_configuration",
+            &self.cloud_watch_logs_configuration,
+        );
+        formatter.field("s3_configuration", &self.s3_configuration);
+        formatter.field("log_schema_version", &self.log_schema_version);
+        formatter.finish()
+    }
+}
+/// See [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration)
+pub mod experiment_log_configuration {
+    /// A builder for [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cloud_watch_logs_configuration:
+            std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
+        pub(crate) s3_configuration:
+            std::option::Option<crate::model::ExperimentS3LogConfiguration>,
+        pub(crate) log_schema_version: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+        pub fn cloud_watch_logs_configuration(
+            mut self,
+            input: crate::model::ExperimentCloudWatchLogsLogConfiguration,
+        ) -> Self {
+            self.cloud_watch_logs_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+        pub fn set_cloud_watch_logs_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
+        ) -> Self {
+            self.cloud_watch_logs_configuration = input;
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon S3.</p>
+        pub fn s3_configuration(
+            mut self,
+            input: crate::model::ExperimentS3LogConfiguration,
+        ) -> Self {
+            self.s3_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon S3.</p>
+        pub fn set_s3_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ExperimentS3LogConfiguration>,
+        ) -> Self {
+            self.s3_configuration = input;
+            self
+        }
+        /// <p>The schema version.</p>
+        pub fn log_schema_version(mut self, input: i32) -> Self {
+            self.log_schema_version = Some(input);
+            self
+        }
+        /// <p>The schema version.</p>
+        pub fn set_log_schema_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.log_schema_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration)
+        pub fn build(self) -> crate::model::ExperimentLogConfiguration {
+            crate::model::ExperimentLogConfiguration {
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
+                s3_configuration: self.s3_configuration,
+                log_schema_version: self.log_schema_version,
+            }
+        }
+    }
+}
+impl ExperimentLogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration)
+    pub fn builder() -> crate::model::experiment_log_configuration::Builder {
+        crate::model::experiment_log_configuration::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration for experiment logging to Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperimentS3LogConfiguration {
+    /// <p>The name of the destination bucket.</p>
+    pub bucket_name: std::option::Option<std::string::String>,
+    /// <p>The bucket prefix.</p>
+    pub prefix: std::option::Option<std::string::String>,
+}
+impl ExperimentS3LogConfiguration {
+    /// <p>The name of the destination bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The bucket prefix.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
+impl std::fmt::Debug for ExperimentS3LogConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperimentS3LogConfiguration");
+        formatter.field("bucket_name", &self.bucket_name);
+        formatter.field("prefix", &self.prefix);
+        formatter.finish()
+    }
+}
+/// See [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration)
+pub mod experiment_s3_log_configuration {
+    /// A builder for [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket_name: std::option::Option<std::string::String>,
+        pub(crate) prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the destination bucket.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the destination bucket.</p>
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_name = input;
+            self
+        }
+        /// <p>The bucket prefix.</p>
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
+            self
+        }
+        /// <p>The bucket prefix.</p>
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration)
+        pub fn build(self) -> crate::model::ExperimentS3LogConfiguration {
+            crate::model::ExperimentS3LogConfiguration {
+                bucket_name: self.bucket_name,
+                prefix: self.prefix,
+            }
+        }
+    }
+}
+impl ExperimentS3LogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration)
+    pub fn builder() -> crate::model::experiment_s3_log_configuration::Builder {
+        crate::model::experiment_s3_log_configuration::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration for experiment logging to Amazon CloudWatch Logs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExperimentCloudWatchLogsLogConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    pub log_group_arn: std::option::Option<std::string::String>,
+}
+impl ExperimentCloudWatchLogsLogConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+        self.log_group_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ExperimentCloudWatchLogsLogConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExperimentCloudWatchLogsLogConfiguration");
+        formatter.field("log_group_arn", &self.log_group_arn);
+        formatter.finish()
+    }
+}
+/// See [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration)
+pub mod experiment_cloud_watch_logs_log_configuration {
+    /// A builder for [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) log_group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration)
+        pub fn build(self) -> crate::model::ExperimentCloudWatchLogsLogConfiguration {
+            crate::model::ExperimentCloudWatchLogsLogConfiguration {
+                log_group_arn: self.log_group_arn,
+            }
+        }
+    }
+}
+impl ExperimentCloudWatchLogsLogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration)
+    pub fn builder() -> crate::model::experiment_cloud_watch_logs_log_configuration::Builder {
+        crate::model::experiment_cloud_watch_logs_log_configuration::Builder::default()
     }
 }
 
@@ -3758,6 +4555,125 @@ impl ActionParameter {
     /// Creates a new builder-style object to manufacture [`ActionParameter`](crate::model::ActionParameter)
     pub fn builder() -> crate::model::action_parameter::Builder {
         crate::model::action_parameter::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration for experiment logging.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateExperimentTemplateLogConfigurationInput {
+    /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    pub cloud_watch_logs_configuration:
+        std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
+    /// <p>The configuration for experiment logging to Amazon S3.</p>
+    pub s3_configuration:
+        std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
+    /// <p>The schema version.</p>
+    pub log_schema_version: std::option::Option<i32>,
+}
+impl CreateExperimentTemplateLogConfigurationInput {
+    /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+    pub fn cloud_watch_logs_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>
+    {
+        self.cloud_watch_logs_configuration.as_ref()
+    }
+    /// <p>The configuration for experiment logging to Amazon S3.</p>
+    pub fn s3_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExperimentTemplateS3LogConfigurationInput> {
+        self.s3_configuration.as_ref()
+    }
+    /// <p>The schema version.</p>
+    pub fn log_schema_version(&self) -> std::option::Option<i32> {
+        self.log_schema_version
+    }
+}
+impl std::fmt::Debug for CreateExperimentTemplateLogConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateExperimentTemplateLogConfigurationInput");
+        formatter.field(
+            "cloud_watch_logs_configuration",
+            &self.cloud_watch_logs_configuration,
+        );
+        formatter.field("s3_configuration", &self.s3_configuration);
+        formatter.field("log_schema_version", &self.log_schema_version);
+        formatter.finish()
+    }
+}
+/// See [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput)
+pub mod create_experiment_template_log_configuration_input {
+    /// A builder for [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cloud_watch_logs_configuration: std::option::Option<
+            crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
+        >,
+        pub(crate) s3_configuration:
+            std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
+        pub(crate) log_schema_version: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+        pub fn cloud_watch_logs_configuration(
+            mut self,
+            input: crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
+        ) -> Self {
+            self.cloud_watch_logs_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
+        pub fn set_cloud_watch_logs_configuration(
+            mut self,
+            input: std::option::Option<
+                crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
+            >,
+        ) -> Self {
+            self.cloud_watch_logs_configuration = input;
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon S3.</p>
+        pub fn s3_configuration(
+            mut self,
+            input: crate::model::ExperimentTemplateS3LogConfigurationInput,
+        ) -> Self {
+            self.s3_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration for experiment logging to Amazon S3.</p>
+        pub fn set_s3_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
+        ) -> Self {
+            self.s3_configuration = input;
+            self
+        }
+        /// <p>The schema version.</p>
+        pub fn log_schema_version(mut self, input: i32) -> Self {
+            self.log_schema_version = Some(input);
+            self
+        }
+        /// <p>The schema version.</p>
+        pub fn set_log_schema_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.log_schema_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput)
+        pub fn build(self) -> crate::model::CreateExperimentTemplateLogConfigurationInput {
+            crate::model::CreateExperimentTemplateLogConfigurationInput {
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
+                s3_configuration: self.s3_configuration,
+                log_schema_version: self.log_schema_version,
+            }
+        }
+    }
+}
+impl CreateExperimentTemplateLogConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput)
+    pub fn builder() -> crate::model::create_experiment_template_log_configuration_input::Builder {
+        crate::model::create_experiment_template_log_configuration_input::Builder::default()
     }
 }
 

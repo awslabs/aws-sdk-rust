@@ -56,6 +56,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 },
             )
             .endpoint(
+                "ap-northeast-3",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "waf-regional.ap-northeast-3.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-northeast-3")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "ap-south-1",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "waf-regional.ap-south-1.amazonaws.com",
@@ -206,6 +217,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("ap-northeast-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-ap-northeast-3",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "waf-regional-fips.ap-northeast-3.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-northeast-3")
                         .build(),
                 },
             )
@@ -464,6 +486,50 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     credential_scope: aws_endpoint::CredentialScope::builder().build(),
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+                .endpoint(
+                    "cn-north-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "waf-regional.cn-north-1.amazonaws.com.cn",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("cn-north-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "cn-northwest-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "waf-regional.cn-northwest-1.amazonaws.com.cn",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("cn-northwest-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "fips-cn-north-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "waf-regional-fips.cn-north-1.amazonaws.com.cn",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("cn-north-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "fips-cn-northwest-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "waf-regional-fips.cn-northwest-1.amazonaws.com.cn",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("cn-northwest-1")
+                            .build(),
+                    },
+                )
                 .build()
                 .expect("invalid partition"),
             aws_endpoint::Partition::builder()
@@ -501,6 +567,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
                 .endpoint(
+                    "fips-us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "waf-regional-fips.us-gov-east-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
                     "fips-us-gov-west-1",
                     aws_endpoint::partition::endpoint::Metadata {
                         uri_template: "waf-regional-fips.us-gov-west-1.amazonaws.com",
@@ -508,6 +585,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                         signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                         credential_scope: aws_endpoint::CredentialScope::builder()
                             .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "waf-regional.us-gov-east-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-east-1")
                             .build(),
                     },
                 )

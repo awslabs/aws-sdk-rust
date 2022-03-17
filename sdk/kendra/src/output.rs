@@ -368,6 +368,9 @@ pub struct QueryOutput {
     /// <p>A list of warning codes and their messages on problems with your query.</p>
     /// <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
+    /// <p>A list of information related to suggested spell corrections for a query.</p>
+    pub spell_corrected_queries:
+        std::option::Option<std::vec::Vec<crate::model::SpellCorrectedQuery>>,
 }
 impl QueryOutput {
     /// <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
@@ -391,6 +394,12 @@ impl QueryOutput {
     pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
         self.warnings.as_deref()
     }
+    /// <p>A list of information related to suggested spell corrections for a query.</p>
+    pub fn spell_corrected_queries(
+        &self,
+    ) -> std::option::Option<&[crate::model::SpellCorrectedQuery]> {
+        self.spell_corrected_queries.as_deref()
+    }
 }
 impl std::fmt::Debug for QueryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -400,6 +409,7 @@ impl std::fmt::Debug for QueryOutput {
         formatter.field("facet_results", &self.facet_results);
         formatter.field("total_number_of_results", &self.total_number_of_results);
         formatter.field("warnings", &self.warnings);
+        formatter.field("spell_corrected_queries", &self.spell_corrected_queries);
         formatter.finish()
     }
 }
@@ -414,6 +424,8 @@ pub mod query_output {
         pub(crate) facet_results: std::option::Option<std::vec::Vec<crate::model::FacetResult>>,
         pub(crate) total_number_of_results: std::option::Option<i32>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
+        pub(crate) spell_corrected_queries:
+            std::option::Option<std::vec::Vec<crate::model::SpellCorrectedQuery>>,
     }
     impl Builder {
         /// <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
@@ -495,6 +507,25 @@ pub mod query_output {
             self.warnings = input;
             self
         }
+        /// Appends an item to `spell_corrected_queries`.
+        ///
+        /// To override the contents of this collection use [`set_spell_corrected_queries`](Self::set_spell_corrected_queries).
+        ///
+        /// <p>A list of information related to suggested spell corrections for a query.</p>
+        pub fn spell_corrected_queries(mut self, input: crate::model::SpellCorrectedQuery) -> Self {
+            let mut v = self.spell_corrected_queries.unwrap_or_default();
+            v.push(input);
+            self.spell_corrected_queries = Some(v);
+            self
+        }
+        /// <p>A list of information related to suggested spell corrections for a query.</p>
+        pub fn set_spell_corrected_queries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SpellCorrectedQuery>>,
+        ) -> Self {
+            self.spell_corrected_queries = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryOutput`](crate::output::QueryOutput)
         pub fn build(self) -> crate::output::QueryOutput {
             crate::output::QueryOutput {
@@ -503,6 +534,7 @@ pub mod query_output {
                 facet_results: self.facet_results,
                 total_number_of_results: self.total_number_of_results,
                 warnings: self.warnings,
+                spell_corrected_queries: self.spell_corrected_queries,
             }
         }
     }
@@ -793,14 +825,14 @@ impl ListQuerySuggestionsBlockListsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIndicesOutput {
-    /// <p>An array of summary information for one or more indexes.</p>
+    /// <p>An array of summary information on the configuration of one or more indexes.</p>
     pub index_configuration_summary_items:
         std::option::Option<std::vec::Vec<crate::model::IndexConfigurationSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIndicesOutput {
-    /// <p>An array of summary information for one or more indexes.</p>
+    /// <p>An array of summary information on the configuration of one or more indexes.</p>
     pub fn index_configuration_summary_items(
         &self,
     ) -> std::option::Option<&[crate::model::IndexConfigurationSummary]> {
@@ -837,7 +869,7 @@ pub mod list_indices_output {
         ///
         /// To override the contents of this collection use [`set_index_configuration_summary_items`](Self::set_index_configuration_summary_items).
         ///
-        /// <p>An array of summary information for one or more indexes.</p>
+        /// <p>An array of summary information on the configuration of one or more indexes.</p>
         pub fn index_configuration_summary_items(
             mut self,
             input: crate::model::IndexConfigurationSummary,
@@ -847,7 +879,7 @@ pub mod list_indices_output {
             self.index_configuration_summary_items = Some(v);
             self
         }
-        /// <p>An array of summary information for one or more indexes.</p>
+        /// <p>An array of summary information on the configuration of one or more indexes.</p>
         pub fn set_index_configuration_summary_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IndexConfigurationSummary>>,
@@ -3788,7 +3820,7 @@ pub struct DescribeDataSourceOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the data source.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>Information that describes where the data source is located and how the data source is configured. The specific information in the description depends on the data source provider.</p>
+    /// <p>Describes how the data source is configured. The specific information in the description depends on the data source provider.</p>
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>The Unix timestamp of when the data source was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -3828,7 +3860,7 @@ impl DescribeDataSourceOutput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>Information that describes where the data source is located and how the data source is configured. The specific information in the description depends on the data source provider.</p>
+    /// <p>Describes how the data source is configured. The specific information in the description depends on the data source provider.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.configuration.as_ref()
     }
@@ -3961,12 +3993,12 @@ pub mod describe_data_source_output {
             self.r#type = input;
             self
         }
-        /// <p>Information that describes where the data source is located and how the data source is configured. The specific information in the description depends on the data source provider.</p>
+        /// <p>Describes how the data source is configured. The specific information in the description depends on the data source provider.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Information that describes where the data source is located and how the data source is configured. The specific information in the description depends on the data source provider.</p>
+        /// <p>Describes how the data source is configured. The specific information in the description depends on the data source provider.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,

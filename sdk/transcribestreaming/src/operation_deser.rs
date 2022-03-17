@@ -274,9 +274,17 @@ pub fn parse_start_stream_transcription(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_name(response.headers())
                                     .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyFilterName from header `x-amzn-transcribe-vocabulary-filter-name"))?
         );
+        output = output.set_vocabulary_filter_names(
+            crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_names(response.headers())
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyFilterNames from header `x-amzn-transcribe-vocabulary-filter-names"))?
+        );
         output = output.set_vocabulary_name(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_name(response.headers())
                                     .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name"))?
+        );
+        output = output.set_vocabulary_names(
+            crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_names(response.headers())
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyNames from header `x-amzn-transcribe-vocabulary-names"))?
         );
         output
             .build()

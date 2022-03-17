@@ -833,6 +833,34 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeTargetedSentimentDetectionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeTargetedSentimentDetectionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeTargetedSentimentDetectionJobErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DescribeTargetedSentimentDetectionJobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::DescribeTargetedSentimentDetectionJobErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
+                crate::error::DescribeTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTopicsDetectionJobError, R>>
     for Error
 where
@@ -1432,6 +1460,31 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::ListTargetedSentimentDetectionJobsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListTargetedSentimentDetectionJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListTargetedSentimentDetectionJobsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::ListTargetedSentimentDetectionJobsErrorKind::InvalidFilterException(inner) => Error::InvalidFilterException(inner),
+                crate::error::ListTargetedSentimentDetectionJobsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::ListTargetedSentimentDetectionJobsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::ListTargetedSentimentDetectionJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTopicsDetectionJobsError, R>>
     for Error
 where
@@ -1711,6 +1764,32 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::StartTargetedSentimentDetectionJobError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::StartTargetedSentimentDetectionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::KmsKeyValidationException(inner) => Error::KmsKeyValidationException(inner),
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartTopicsDetectionJobError, R>>
     for Error
 where
@@ -1898,6 +1977,29 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::StopTargetedSentimentDetectionJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::StopTargetedSentimentDetectionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::StopTargetedSentimentDetectionJobErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::StopTargetedSentimentDetectionJobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::StopTargetedSentimentDetectionJobErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
+                crate::error::StopTargetedSentimentDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

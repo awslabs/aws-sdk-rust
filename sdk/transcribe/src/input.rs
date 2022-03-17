@@ -10,12 +10,12 @@ pub mod create_call_analytics_category_input {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     }
     impl Builder {
-        /// <p>The name that you choose for your category when you create it. </p>
+        /// <p>A unique name, chosen by you, for your call analytics category. For example, <code>sentiment-positive-last30seconds</code>.</p>
         pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.category_name = Some(input.into());
             self
         }
-        /// <p>The name that you choose for your category when you create it. </p>
+        /// <p>A unique name, chosen by you, for your call analytics category. For example, <code>sentiment-positive-last30seconds</code>.</p>
         pub fn set_category_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27,14 +27,14 @@ pub mod create_call_analytics_category_input {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral.</p>
+        /// <p>Rules make up a call analytics category. When creating a call analytics category, you must create between 1 and 20 rules for your category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral.</p>
+        /// <p>Rules make up a call analytics category. When creating a call analytics category, you must create between 1 and 20 rules for your category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -179,12 +179,12 @@ pub mod create_language_model_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The language of the input text you're using to train your custom language model.</p>
+        /// <p>The language of your custom language model; note that the language code you select must match the language of your training and tuning data.</p>
         pub fn language_code(mut self, input: crate::model::ClmLanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input text you're using to train your custom language model.</p>
+        /// <p>The language of your custom language model; note that the language code you select must match the language of your training and tuning data.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::ClmLanguageCode>,
@@ -192,16 +192,14 @@ pub mod create_language_model_input {
             self.language_code = input;
             self
         }
-        /// <p>The Amazon Transcribe standard language model, or base model used to create your custom language model.</p>
-        /// <p>If you want to use your custom language model to transcribe audio with a sample rate of 16,000 Hz or greater, choose <code>Wideband</code>.</p>
-        /// <p>If you want to use your custom language model to transcribe audio with a sample rate that is less than 16,000 Hz, choose <code>Narrowband</code>.</p>
+        /// <p>The Amazon Transcribe standard language model, or base model, used to create your custom language model. Amazon Transcribe offers two options for base models: Wideband and Narrowband.</p>
+        /// <p>If the audio you want to transcribe has a sample rate of 16,000 Hz or greater, choose <code>WideBand</code>. To transcribe audio with a sample rate less than 16,000 Hz, choose <code>NarrowBand</code>.</p>
         pub fn base_model_name(mut self, input: crate::model::BaseModelName) -> Self {
             self.base_model_name = Some(input);
             self
         }
-        /// <p>The Amazon Transcribe standard language model, or base model used to create your custom language model.</p>
-        /// <p>If you want to use your custom language model to transcribe audio with a sample rate of 16,000 Hz or greater, choose <code>Wideband</code>.</p>
-        /// <p>If you want to use your custom language model to transcribe audio with a sample rate that is less than 16,000 Hz, choose <code>Narrowband</code>.</p>
+        /// <p>The Amazon Transcribe standard language model, or base model, used to create your custom language model. Amazon Transcribe offers two options for base models: Wideband and Narrowband.</p>
+        /// <p>If the audio you want to transcribe has a sample rate of 16,000 Hz or greater, choose <code>WideBand</code>. To transcribe audio with a sample rate less than 16,000 Hz, choose <code>NarrowBand</code>.</p>
         pub fn set_base_model_name(
             mut self,
             input: std::option::Option<crate::model::BaseModelName>,
@@ -209,22 +207,24 @@ pub mod create_language_model_input {
             self.base_model_name = input;
             self
         }
-        /// <p>The name you choose for your custom language model when you create it.</p>
+        /// <p>The name of your new custom language model.</p>
+        /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a language model with the same name as a previous language model, you get a <code>ConflictException</code> error.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_name = Some(input.into());
             self
         }
-        /// <p>The name you choose for your custom language model when you create it.</p>
+        /// <p>The name of your new custom language model.</p>
+        /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a language model with the same name as a previous language model, you get a <code>ConflictException</code> error.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
         }
-        /// <p>Contains the data access role and the Amazon S3 prefixes to read the required input files to create a custom language model.</p>
+        /// <p>Contains your data access role ARN (Amazon Resource Name) and the Amazon S3 locations of your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.input_data_config = Some(input);
             self
         }
-        /// <p>Contains the data access role and the Amazon S3 prefixes to read the required input files to create a custom language model.</p>
+        /// <p>Contains your data access role ARN (Amazon Resource Name) and the Amazon S3 locations of your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -236,14 +236,14 @@ pub mod create_language_model_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new language model at the time you create this new model.</p>
+        /// <p>Optionally add tags, each in the form of a key:value pair, to your new language model. See also: .</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new language model at the time you create this new model.</p>
+        /// <p>Optionally add tags, each in the form of a key:value pair, to your new language model. See also: .</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -390,12 +390,14 @@ pub mod create_medical_vocabulary_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the custom vocabulary. This case-sensitive name must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
+        /// <p>The name of your new vocabulary.</p>
+        /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom vocabulary. This case-sensitive name must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
+        /// <p>The name of your new vocabulary.</p>
+        /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -403,12 +405,12 @@ pub mod create_medical_vocabulary_input {
             self.vocabulary_name = input;
             self
         }
-        /// <p>The language code for the language used for the entries in your custom vocabulary. The language code of your custom vocabulary must match the language code of your transcription job. US English (en-US) is the only language code available for Amazon Transcribe Medical.</p>
+        /// <p>The language code that represents the language of the entries in your custom vocabulary. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code for the language used for the entries in your custom vocabulary. The language code of your custom vocabulary must match the language code of your transcription job. US English (en-US) is the only language code available for Amazon Transcribe Medical.</p>
+        /// <p>The language code that represents the language of the entries in your custom vocabulary. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -416,42 +418,16 @@ pub mod create_medical_vocabulary_input {
             self.language_code = input;
             self
         }
-        /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>
-        /// <p> <code>https://s3.
-        /// <aws-region>
-        /// .amazonaws.com/
-        /// <bucket-name>
-        /// /
-        /// <keyprefix>
-        /// /
-        /// <objectkey></objectkey>
-        /// </keyprefix>
-        /// </bucket-name>
-        /// </aws-region></code> </p>
-        /// <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>
-        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
-        /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
+        /// <p>The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling.</p>
+        /// <p>Here's an example URI path:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code> </p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_file_uri = Some(input.into());
             self
         }
-        /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>
-        /// <p> <code>https://s3.
-        /// <aws-region>
-        /// .amazonaws.com/
-        /// <bucket-name>
-        /// /
-        /// <keyprefix>
-        /// /
-        /// <objectkey></objectkey>
-        /// </keyprefix>
-        /// </bucket-name>
-        /// </aws-region></code> </p>
-        /// <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>
-        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
-        /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
+        /// <p>The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling.</p>
+        /// <p>Here's an example URI path:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code> </p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -463,14 +439,16 @@ pub mod create_medical_vocabulary_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create this new vocabulary.</p>
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create the new vocabulary.</p>
+        /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create this new vocabulary.</p>
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create the new vocabulary.</p>
+        /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -620,12 +598,14 @@ pub mod create_vocabulary_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account. The name is case sensitive. If you try to create a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.</p>
+        /// <p>The name of your new vocabulary.</p>
+        /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
             self
         }
-        /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account. The name is case sensitive. If you try to create a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.</p>
+        /// <p>The name of your new vocabulary.</p>
+        /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -633,12 +613,12 @@ pub mod create_vocabulary_input {
             self.vocabulary_name = input;
             self
         }
-        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>table-language-matrix</code>.</p>
+        /// <p>The language code that represents the language of the entries in your custom vocabulary. Each vocabulary must contain terms in only one language. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>table-language-matrix</code>.</p>
+        /// <p>The language code that represents the language of the entries in your custom vocabulary. Each vocabulary must contain terms in only one language. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -650,14 +630,16 @@ pub mod create_vocabulary_input {
         ///
         /// To override the contents of this collection use [`set_phrases`](Self::set_phrases).
         ///
-        /// <p>An array of strings that contains the vocabulary entries. </p>
+        /// <p>Use this flag to include a list of terms within your request.</p>
+        /// <p>Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>; you must choose one or the other.</p>
         pub fn phrases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.phrases.unwrap_or_default();
             v.push(input.into());
             self.phrases = Some(v);
             self
         }
-        /// <p>An array of strings that contains the vocabulary entries. </p>
+        /// <p>Use this flag to include a list of terms within your request.</p>
+        /// <p>Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>; you must choose one or the other.</p>
         pub fn set_phrases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -665,44 +647,18 @@ pub mod create_vocabulary_input {
             self.phrases = input;
             self
         }
-        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-        /// <p> <code>https://s3.
-        /// <amazon web services-region>
-        /// .amazonaws.com/
-        /// <awsdoc-example-bucket>
-        /// /
-        /// <keyprefix>
-        /// /
-        /// <objectkey>
-        /// </objectkey>
-        /// </keyprefix>
-        /// </awsdoc-example-bucket>
-        /// </amazon></code> </p>
-        /// <p>For example:</p>
-        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
-        /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
+        /// <p>The S3 location of the text file that contains your custom vocabulary. The URI must be located in the same region as the API endpoint you're calling.</p>
+        /// <p>Here's an example URI path:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code> </p>
+        /// <p>Note that if you include <code>VocabularyFileUri</code> in your request, you cannot use the <code>Phrases</code> flag; you must choose one or the other.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_file_uri = Some(input.into());
             self
         }
-        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-        /// <p> <code>https://s3.
-        /// <amazon web services-region>
-        /// .amazonaws.com/
-        /// <awsdoc-example-bucket>
-        /// /
-        /// <keyprefix>
-        /// /
-        /// <objectkey>
-        /// </objectkey>
-        /// </keyprefix>
-        /// </awsdoc-example-bucket>
-        /// </amazon></code> </p>
-        /// <p>For example:</p>
-        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
-        /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
+        /// <p>The S3 location of the text file that contains your custom vocabulary. The URI must be located in the same region as the API endpoint you're calling.</p>
+        /// <p>Here's an example URI path:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code> </p>
+        /// <p>Note that if you include <code>VocabularyFileUri</code> in your request, you cannot use the <code>Phrases</code> flag; you must choose one or the other.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -714,14 +670,14 @@ pub mod create_vocabulary_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary at the time you create this new vocabulary.</p>
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new custom vocabulary at the time you create this new vocabulary.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary at the time you create this new vocabulary.</p>
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new custom vocabulary at the time you create this new vocabulary.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -869,12 +825,14 @@ pub mod create_vocabulary_filter_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The vocabulary filter name. The name must be unique within the account that contains it. If you try to create a vocabulary filter with the same name as another vocabulary filter, you get a <code>ConflictException</code> error.</p>
+        /// <p>The name of your new vocabulary filter.</p>
+        /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary filter with the same name as a previous vocabulary filter, you get a <code>ConflictException</code> error.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
-        /// <p>The vocabulary filter name. The name must be unique within the account that contains it. If you try to create a vocabulary filter with the same name as another vocabulary filter, you get a <code>ConflictException</code> error.</p>
+        /// <p>The name of your new vocabulary filter.</p>
+        /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary filter with the same name as a previous vocabulary filter, you get a <code>ConflictException</code> error.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -899,16 +857,16 @@ pub mod create_vocabulary_filter_input {
         ///
         /// To override the contents of this collection use [`set_words`](Self::set_words).
         ///
-        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
-        /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
+        /// <p>The words you want in your vocabulary filter. Only use characters specified in the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language you're transcribing.</p>
+        /// <p>Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
         pub fn words(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.words.unwrap_or_default();
             v.push(input.into());
             self.words = Some(v);
             self
         }
-        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
-        /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
+        /// <p>The words you want in your vocabulary filter. Only use characters specified in the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language you're transcribing.</p>
+        /// <p>Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
         pub fn set_words(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -917,15 +875,15 @@ pub mod create_vocabulary_filter_input {
             self
         }
         /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
-        /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
-        /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
+        /// <p>Your vocabulary filter file must be less than 50 KB in size.</p>
+        /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
         pub fn vocabulary_filter_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_filter_file_uri = Some(input.into());
             self
         }
         /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
-        /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
-        /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
+        /// <p>Your vocabulary filter file must be less than 50 KB in size.</p>
+        /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
         pub fn set_vocabulary_filter_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -937,14 +895,14 @@ pub mod create_vocabulary_filter_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary filter at the time you create this new vocabulary filter.</p>
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you create this new vocabulary filter.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary filter at the time you create this new vocabulary filter.</p>
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you create this new vocabulary filter.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1090,12 +1048,12 @@ pub mod delete_call_analytics_category_input {
         pub(crate) category_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the call analytics category that you're choosing to delete. The value is case sensitive. </p>
+        /// <p>The name of the call analytics category you want to delete. Category names are case-sensitive.</p>
         pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.category_name = Some(input.into());
             self
         }
-        /// <p>The name of the call analytics category that you're choosing to delete. The value is case sensitive. </p>
+        /// <p>The name of the call analytics category you want to delete. Category names are case-sensitive.</p>
         pub fn set_category_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1235,12 +1193,12 @@ pub mod delete_call_analytics_job_input {
         pub(crate) call_analytics_job_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the call analytics job you want to delete.</p>
+        /// <p>The name of the call analytics job you want to delete. Job names are case-sensitive.</p>
         pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.call_analytics_job_name = Some(input.into());
             self
         }
-        /// <p>The name of the call analytics job you want to delete.</p>
+        /// <p>The name of the call analytics job you want to delete. Job names are case-sensitive.</p>
         pub fn set_call_analytics_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1382,12 +1340,12 @@ pub mod delete_language_model_input {
         pub(crate) model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the model you're choosing to delete.</p>
+        /// <p>The name of the model you want to delete. Model names are case-sensitive.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_name = Some(input.into());
             self
         }
-        /// <p>The name of the model you're choosing to delete.</p>
+        /// <p>The name of the model you want to delete. Model names are case-sensitive.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -1524,7 +1482,7 @@ pub mod delete_medical_transcription_job_input {
         pub(crate) medical_transcription_job_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name you provide to the <code>DeleteMedicalTranscriptionJob</code> object to delete a transcription job.</p>
+        /// <p>The name of the medical transcription job you want to delete. Job names are case-sensitive.</p>
         pub fn medical_transcription_job_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -1532,7 +1490,7 @@ pub mod delete_medical_transcription_job_input {
             self.medical_transcription_job_name = Some(input.into());
             self
         }
-        /// <p>The name you provide to the <code>DeleteMedicalTranscriptionJob</code> object to delete a transcription job.</p>
+        /// <p>The name of the medical transcription job you want to delete. Job names are case-sensitive.</p>
         pub fn set_medical_transcription_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1673,12 +1631,12 @@ pub mod delete_medical_vocabulary_input {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the vocabulary that you want to delete.</p>
+        /// <p>The name of the vocabulary that you want to delete. Vocabulary names are case-sensitive.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
             self
         }
-        /// <p>The name of the vocabulary that you want to delete.</p>
+        /// <p>The name of the vocabulary that you want to delete. Vocabulary names are case-sensitive.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1821,12 +1779,12 @@ pub mod delete_transcription_job_input {
         pub(crate) transcription_job_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the transcription job to be deleted.</p>
+        /// <p>The name of the transcription job you want to delete. Job names are case-sensitive.</p>
         pub fn transcription_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.transcription_job_name = Some(input.into());
             self
         }
-        /// <p>The name of the transcription job to be deleted.</p>
+        /// <p>The name of the transcription job you want to delete. Job names are case-sensitive.</p>
         pub fn set_transcription_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1968,12 +1926,12 @@ pub mod delete_vocabulary_input {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the vocabulary to delete. </p>
+        /// <p>The name of the vocabulary you want to delete. Vocabulary names are case-sensitive.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
             self
         }
-        /// <p>The name of the vocabulary to delete. </p>
+        /// <p>The name of the vocabulary you want to delete. Vocabulary names are case-sensitive.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2113,12 +2071,12 @@ pub mod delete_vocabulary_filter_input {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the vocabulary filter to remove.</p>
+        /// <p>The name of the vocabulary filter you want to delete. Vocabulary filter names are case-sensitive.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
-        /// <p>The name of the vocabulary filter to remove.</p>
+        /// <p>The name of the vocabulary filter you want to delete. Vocabulary filter names are case-sensitive.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2260,12 +2218,12 @@ pub mod describe_language_model_input {
         pub(crate) model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the custom language model you submit to get more information.</p>
+        /// <p>The name of the custom language model you want described. Model names are case-sensitive.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom language model you submit to get more information.</p>
+        /// <p>The name of the custom language model you want described. Model names are case-sensitive.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -2404,12 +2362,12 @@ pub mod get_call_analytics_category_input {
         pub(crate) category_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the category you want information about. This value is case sensitive.</p>
+        /// <p>The name of the category you want information about. Category names are case sensitive.</p>
         pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.category_name = Some(input.into());
             self
         }
-        /// <p>The name of the category you want information about. This value is case sensitive.</p>
+        /// <p>The name of the category you want information about. Category names are case sensitive.</p>
         pub fn set_category_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2552,12 +2510,12 @@ pub mod get_call_analytics_job_input {
         pub(crate) call_analytics_job_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the analytics job you want information about. This value is case sensitive. </p>
+        /// <p>The name of the analytics job you want information about. This value is case sensitive.</p>
         pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.call_analytics_job_name = Some(input.into());
             self
         }
-        /// <p>The name of the analytics job you want information about. This value is case sensitive. </p>
+        /// <p>The name of the analytics job you want information about. This value is case sensitive.</p>
         pub fn set_call_analytics_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2699,7 +2657,7 @@ pub mod get_medical_transcription_job_input {
         pub(crate) medical_transcription_job_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the medical transcription job.</p>
+        /// <p>The name of the medical transcription job you want information about. This value is case sensitive.</p>
         pub fn medical_transcription_job_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -2707,7 +2665,7 @@ pub mod get_medical_transcription_job_input {
             self.medical_transcription_job_name = Some(input.into());
             self
         }
-        /// <p>The name of the medical transcription job.</p>
+        /// <p>The name of the medical transcription job you want information about. This value is case sensitive.</p>
         pub fn set_medical_transcription_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2847,12 +2805,12 @@ pub mod get_medical_vocabulary_input {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the vocabulary that you want information about. The value is case sensitive. </p>
+        /// <p>The name of the medical vocabulary you want information about. This value is case sensitive.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
             self
         }
-        /// <p>The name of the vocabulary that you want information about. The value is case sensitive. </p>
+        /// <p>The name of the medical vocabulary you want information about. This value is case sensitive.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5729,14 +5687,14 @@ pub mod start_medical_transcription_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+        /// <p>Add tags to an Amazon Transcribe Medical transcription job.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+        /// <p>Add tags to an Amazon Transcribe Medical transcription job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6886,20 +6844,9 @@ pub mod update_medical_vocabulary_input {
             self
         }
         /// <p>The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:</p>
-        /// <p> <code> https://s3.
-        /// <aws-region>
-        /// .amazonaws.com/
-        /// <bucket-name>
-        /// /
-        /// <keyprefix>
-        /// /
-        /// <objectkey>
-        /// </objectkey>
-        /// </keyprefix>
-        /// </bucket-name>
-        /// </aws-region></code> </p>
+        /// <p> <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code> </p>
         /// <p>For example:</p>
-        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6907,20 +6854,9 @@ pub mod update_medical_vocabulary_input {
             self
         }
         /// <p>The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:</p>
-        /// <p> <code> https://s3.
-        /// <aws-region>
-        /// .amazonaws.com/
-        /// <bucket-name>
-        /// /
-        /// <keyprefix>
-        /// /
-        /// <objectkey>
-        /// </objectkey>
-        /// </keyprefix>
-        /// </bucket-name>
-        /// </aws-region></code> </p>
+        /// <p> <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code> </p>
         /// <p>For example:</p>
-        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
@@ -7116,19 +7052,9 @@ pub mod update_vocabulary_input {
             self
         }
         /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-        /// <p> <code>https://s3.
-        /// <aws-region>
-        /// .amazonaws.com/
-        /// <awsdoc-example-bucket>
-        /// /
-        /// <keyprefix>
-        /// /
-        /// <objectkey></objectkey>
-        /// </keyprefix>
-        /// </awsdoc-example-bucket>
-        /// </aws-region></code> </p>
+        /// <p> <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code> </p>
         /// <p>For example:</p>
-        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7136,19 +7062,9 @@ pub mod update_vocabulary_input {
             self
         }
         /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-        /// <p> <code>https://s3.
-        /// <aws-region>
-        /// .amazonaws.com/
-        /// <awsdoc-example-bucket>
-        /// /
-        /// <keyprefix>
-        /// /
-        /// <objectkey></objectkey>
-        /// </keyprefix>
-        /// </awsdoc-example-bucket>
-        /// </aws-region></code> </p>
+        /// <p> <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code> </p>
         /// <p>For example:</p>
-        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
@@ -7528,19 +7444,9 @@ pub struct UpdateVocabularyInput {
     /// <p>An array of strings containing the vocabulary entries.</p>
     pub phrases: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-    /// <p> <code>https://s3.
-    /// <aws-region>
-    /// .amazonaws.com/
-    /// <awsdoc-example-bucket>
-    /// /
-    /// <keyprefix>
-    /// /
-    /// <objectkey></objectkey>
-    /// </keyprefix>
-    /// </awsdoc-example-bucket>
-    /// </aws-region></code> </p>
+    /// <p> <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code> </p>
     /// <p>For example:</p>
-    /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
+    /// <p> <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
     /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom Vocabularies</a>.</p>
     pub vocabulary_file_uri: std::option::Option<std::string::String>,
@@ -7559,19 +7465,9 @@ impl UpdateVocabularyInput {
         self.phrases.as_deref()
     }
     /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-    /// <p> <code>https://s3.
-    /// <aws-region>
-    /// .amazonaws.com/
-    /// <awsdoc-example-bucket>
-    /// /
-    /// <keyprefix>
-    /// /
-    /// <objectkey></objectkey>
-    /// </keyprefix>
-    /// </awsdoc-example-bucket>
-    /// </aws-region></code> </p>
+    /// <p> <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code> </p>
     /// <p>For example:</p>
-    /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
+    /// <p> <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
     /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom Vocabularies</a>.</p>
     pub fn vocabulary_file_uri(&self) -> std::option::Option<&str> {
@@ -7598,20 +7494,9 @@ pub struct UpdateMedicalVocabularyInput {
     /// <p>The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:</p>
-    /// <p> <code> https://s3.
-    /// <aws-region>
-    /// .amazonaws.com/
-    /// <bucket-name>
-    /// /
-    /// <keyprefix>
-    /// /
-    /// <objectkey>
-    /// </objectkey>
-    /// </keyprefix>
-    /// </bucket-name>
-    /// </aws-region></code> </p>
+    /// <p> <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code> </p>
     /// <p>For example:</p>
-    /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
+    /// <p> <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
     /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
     pub vocabulary_file_uri: std::option::Option<std::string::String>,
@@ -7626,20 +7511,9 @@ impl UpdateMedicalVocabularyInput {
         self.language_code.as_ref()
     }
     /// <p>The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:</p>
-    /// <p> <code> https://s3.
-    /// <aws-region>
-    /// .amazonaws.com/
-    /// <bucket-name>
-    /// /
-    /// <keyprefix>
-    /// /
-    /// <objectkey>
-    /// </objectkey>
-    /// </keyprefix>
-    /// </bucket-name>
-    /// </aws-region></code> </p>
+    /// <p> <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code> </p>
     /// <p>For example:</p>
-    /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
+    /// <p> <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
     /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
     pub fn vocabulary_file_uri(&self) -> std::option::Option<&str> {
@@ -7987,7 +7861,7 @@ pub struct StartMedicalTranscriptionJobInput {
     pub specialty: std::option::Option<crate::model::Specialty>,
     /// <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or more speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to single-speaker dictated speech, such as clinical notes.</p>
     pub r#type: std::option::Option<crate::model::Type>,
-    /// <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+    /// <p>Add tags to an Amazon Transcribe Medical transcription job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartMedicalTranscriptionJobInput {
@@ -8066,7 +7940,7 @@ impl StartMedicalTranscriptionJobInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
     }
-    /// <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+    /// <p>Add tags to an Amazon Transcribe Medical transcription job.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -8606,11 +8480,11 @@ impl std::fmt::Debug for GetTranscriptionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMedicalVocabularyInput {
-    /// <p>The name of the vocabulary that you want information about. The value is case sensitive. </p>
+    /// <p>The name of the medical vocabulary you want information about. This value is case sensitive.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
 }
 impl GetMedicalVocabularyInput {
-    /// <p>The name of the vocabulary that you want information about. The value is case sensitive. </p>
+    /// <p>The name of the medical vocabulary you want information about. This value is case sensitive.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
@@ -8627,11 +8501,11 @@ impl std::fmt::Debug for GetMedicalVocabularyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMedicalTranscriptionJobInput {
-    /// <p>The name of the medical transcription job.</p>
+    /// <p>The name of the medical transcription job you want information about. This value is case sensitive.</p>
     pub medical_transcription_job_name: std::option::Option<std::string::String>,
 }
 impl GetMedicalTranscriptionJobInput {
-    /// <p>The name of the medical transcription job.</p>
+    /// <p>The name of the medical transcription job you want information about. This value is case sensitive.</p>
     pub fn medical_transcription_job_name(&self) -> std::option::Option<&str> {
         self.medical_transcription_job_name.as_deref()
     }
@@ -8651,11 +8525,11 @@ impl std::fmt::Debug for GetMedicalTranscriptionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCallAnalyticsJobInput {
-    /// <p>The name of the analytics job you want information about. This value is case sensitive. </p>
+    /// <p>The name of the analytics job you want information about. This value is case sensitive.</p>
     pub call_analytics_job_name: std::option::Option<std::string::String>,
 }
 impl GetCallAnalyticsJobInput {
-    /// <p>The name of the analytics job you want information about. This value is case sensitive. </p>
+    /// <p>The name of the analytics job you want information about. This value is case sensitive.</p>
     pub fn call_analytics_job_name(&self) -> std::option::Option<&str> {
         self.call_analytics_job_name.as_deref()
     }
@@ -8672,11 +8546,11 @@ impl std::fmt::Debug for GetCallAnalyticsJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCallAnalyticsCategoryInput {
-    /// <p>The name of the category you want information about. This value is case sensitive.</p>
+    /// <p>The name of the category you want information about. Category names are case sensitive.</p>
     pub category_name: std::option::Option<std::string::String>,
 }
 impl GetCallAnalyticsCategoryInput {
-    /// <p>The name of the category you want information about. This value is case sensitive.</p>
+    /// <p>The name of the category you want information about. Category names are case sensitive.</p>
     pub fn category_name(&self) -> std::option::Option<&str> {
         self.category_name.as_deref()
     }
@@ -8693,11 +8567,11 @@ impl std::fmt::Debug for GetCallAnalyticsCategoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLanguageModelInput {
-    /// <p>The name of the custom language model you submit to get more information.</p>
+    /// <p>The name of the custom language model you want described. Model names are case-sensitive.</p>
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DescribeLanguageModelInput {
-    /// <p>The name of the custom language model you submit to get more information.</p>
+    /// <p>The name of the custom language model you want described. Model names are case-sensitive.</p>
     pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -8714,11 +8588,11 @@ impl std::fmt::Debug for DescribeLanguageModelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVocabularyFilterInput {
-    /// <p>The name of the vocabulary filter to remove.</p>
+    /// <p>The name of the vocabulary filter you want to delete. Vocabulary filter names are case-sensitive.</p>
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
 }
 impl DeleteVocabularyFilterInput {
-    /// <p>The name of the vocabulary filter to remove.</p>
+    /// <p>The name of the vocabulary filter you want to delete. Vocabulary filter names are case-sensitive.</p>
     pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
@@ -8735,11 +8609,11 @@ impl std::fmt::Debug for DeleteVocabularyFilterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVocabularyInput {
-    /// <p>The name of the vocabulary to delete. </p>
+    /// <p>The name of the vocabulary you want to delete. Vocabulary names are case-sensitive.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
 }
 impl DeleteVocabularyInput {
-    /// <p>The name of the vocabulary to delete. </p>
+    /// <p>The name of the vocabulary you want to delete. Vocabulary names are case-sensitive.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
@@ -8756,11 +8630,11 @@ impl std::fmt::Debug for DeleteVocabularyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTranscriptionJobInput {
-    /// <p>The name of the transcription job to be deleted.</p>
+    /// <p>The name of the transcription job you want to delete. Job names are case-sensitive.</p>
     pub transcription_job_name: std::option::Option<std::string::String>,
 }
 impl DeleteTranscriptionJobInput {
-    /// <p>The name of the transcription job to be deleted.</p>
+    /// <p>The name of the transcription job you want to delete. Job names are case-sensitive.</p>
     pub fn transcription_job_name(&self) -> std::option::Option<&str> {
         self.transcription_job_name.as_deref()
     }
@@ -8777,11 +8651,11 @@ impl std::fmt::Debug for DeleteTranscriptionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMedicalVocabularyInput {
-    /// <p>The name of the vocabulary that you want to delete.</p>
+    /// <p>The name of the vocabulary that you want to delete. Vocabulary names are case-sensitive.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
 }
 impl DeleteMedicalVocabularyInput {
-    /// <p>The name of the vocabulary that you want to delete.</p>
+    /// <p>The name of the vocabulary that you want to delete. Vocabulary names are case-sensitive.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
@@ -8798,11 +8672,11 @@ impl std::fmt::Debug for DeleteMedicalVocabularyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMedicalTranscriptionJobInput {
-    /// <p>The name you provide to the <code>DeleteMedicalTranscriptionJob</code> object to delete a transcription job.</p>
+    /// <p>The name of the medical transcription job you want to delete. Job names are case-sensitive.</p>
     pub medical_transcription_job_name: std::option::Option<std::string::String>,
 }
 impl DeleteMedicalTranscriptionJobInput {
-    /// <p>The name you provide to the <code>DeleteMedicalTranscriptionJob</code> object to delete a transcription job.</p>
+    /// <p>The name of the medical transcription job you want to delete. Job names are case-sensitive.</p>
     pub fn medical_transcription_job_name(&self) -> std::option::Option<&str> {
         self.medical_transcription_job_name.as_deref()
     }
@@ -8822,11 +8696,11 @@ impl std::fmt::Debug for DeleteMedicalTranscriptionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLanguageModelInput {
-    /// <p>The name of the model you're choosing to delete.</p>
+    /// <p>The name of the model you want to delete. Model names are case-sensitive.</p>
     pub model_name: std::option::Option<std::string::String>,
 }
 impl DeleteLanguageModelInput {
-    /// <p>The name of the model you're choosing to delete.</p>
+    /// <p>The name of the model you want to delete. Model names are case-sensitive.</p>
     pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -8843,11 +8717,11 @@ impl std::fmt::Debug for DeleteLanguageModelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCallAnalyticsJobInput {
-    /// <p>The name of the call analytics job you want to delete.</p>
+    /// <p>The name of the call analytics job you want to delete. Job names are case-sensitive.</p>
     pub call_analytics_job_name: std::option::Option<std::string::String>,
 }
 impl DeleteCallAnalyticsJobInput {
-    /// <p>The name of the call analytics job you want to delete.</p>
+    /// <p>The name of the call analytics job you want to delete. Job names are case-sensitive.</p>
     pub fn call_analytics_job_name(&self) -> std::option::Option<&str> {
         self.call_analytics_job_name.as_deref()
     }
@@ -8864,11 +8738,11 @@ impl std::fmt::Debug for DeleteCallAnalyticsJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCallAnalyticsCategoryInput {
-    /// <p>The name of the call analytics category that you're choosing to delete. The value is case sensitive. </p>
+    /// <p>The name of the call analytics category you want to delete. Category names are case-sensitive.</p>
     pub category_name: std::option::Option<std::string::String>,
 }
 impl DeleteCallAnalyticsCategoryInput {
-    /// <p>The name of the call analytics category that you're choosing to delete. The value is case sensitive. </p>
+    /// <p>The name of the call analytics category you want to delete. Category names are case-sensitive.</p>
     pub fn category_name(&self) -> std::option::Option<&str> {
         self.category_name.as_deref()
     }
@@ -8885,22 +8759,24 @@ impl std::fmt::Debug for DeleteCallAnalyticsCategoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVocabularyFilterInput {
-    /// <p>The vocabulary filter name. The name must be unique within the account that contains it. If you try to create a vocabulary filter with the same name as another vocabulary filter, you get a <code>ConflictException</code> error.</p>
+    /// <p>The name of your new vocabulary filter.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary filter with the same name as a previous vocabulary filter, you get a <code>ConflictException</code> error.</p>
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The language code of the words in the vocabulary filter. All words in the filter must be in the same language. The vocabulary filter can only be used with transcription jobs in the specified language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
-    /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
+    /// <p>The words you want in your vocabulary filter. Only use characters specified in the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language you're transcribing.</p>
+    /// <p>Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
     pub words: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
-    /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
-    /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
+    /// <p>Your vocabulary filter file must be less than 50 KB in size.</p>
+    /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
     pub vocabulary_filter_file_uri: std::option::Option<std::string::String>,
-    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary filter at the time you create this new vocabulary filter.</p>
+    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you create this new vocabulary filter.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateVocabularyFilterInput {
-    /// <p>The vocabulary filter name. The name must be unique within the account that contains it. If you try to create a vocabulary filter with the same name as another vocabulary filter, you get a <code>ConflictException</code> error.</p>
+    /// <p>The name of your new vocabulary filter.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary filter with the same name as a previous vocabulary filter, you get a <code>ConflictException</code> error.</p>
     pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_name.as_deref()
     }
@@ -8908,18 +8784,18 @@ impl CreateVocabularyFilterInput {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
-    /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
+    /// <p>The words you want in your vocabulary filter. Only use characters specified in the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character sets</a> for the language you're transcribing.</p>
+    /// <p>Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
     pub fn words(&self) -> std::option::Option<&[std::string::String]> {
         self.words.as_deref()
     }
     /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
-    /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
-    /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
+    /// <p>Your vocabulary filter file must be less than 50 KB in size.</p>
+    /// <p>Note that if you include <code>VocabularyFilterFileUri</code> in your request, you cannot use <code>Words</code>; you must choose one or the other.</p>
     pub fn vocabulary_filter_file_uri(&self) -> std::option::Option<&str> {
         self.vocabulary_filter_file_uri.as_deref()
     }
-    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary filter at the time you create this new vocabulary filter.</p>
+    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new vocabulary filter at the time you create this new vocabulary filter.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -8943,67 +8819,45 @@ impl std::fmt::Debug for CreateVocabularyFilterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVocabularyInput {
-    /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account. The name is case sensitive. If you try to create a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.</p>
+    /// <p>The name of your new vocabulary.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>table-language-matrix</code>.</p>
+    /// <p>The language code that represents the language of the entries in your custom vocabulary. Each vocabulary must contain terms in only one language. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>An array of strings that contains the vocabulary entries. </p>
+    /// <p>Use this flag to include a list of terms within your request.</p>
+    /// <p>Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>; you must choose one or the other.</p>
     pub phrases: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-    /// <p> <code>https://s3.
-    /// <amazon web services-region>
-    /// .amazonaws.com/
-    /// <awsdoc-example-bucket>
-    /// /
-    /// <keyprefix>
-    /// /
-    /// <objectkey>
-    /// </objectkey>
-    /// </keyprefix>
-    /// </awsdoc-example-bucket>
-    /// </amazon></code> </p>
-    /// <p>For example:</p>
-    /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
-    /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
+    /// <p>The S3 location of the text file that contains your custom vocabulary. The URI must be located in the same region as the API endpoint you're calling.</p>
+    /// <p>Here's an example URI path:</p>
+    /// <p> <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code> </p>
+    /// <p>Note that if you include <code>VocabularyFileUri</code> in your request, you cannot use the <code>Phrases</code> flag; you must choose one or the other.</p>
     pub vocabulary_file_uri: std::option::Option<std::string::String>,
-    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary at the time you create this new vocabulary.</p>
+    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new custom vocabulary at the time you create this new vocabulary.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateVocabularyInput {
-    /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account. The name is case sensitive. If you try to create a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.</p>
+    /// <p>The name of your new vocabulary.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
-    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>table-language-matrix</code>.</p>
+    /// <p>The language code that represents the language of the entries in your custom vocabulary. Each vocabulary must contain terms in only one language. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>An array of strings that contains the vocabulary entries. </p>
+    /// <p>Use this flag to include a list of terms within your request.</p>
+    /// <p>Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>; you must choose one or the other.</p>
     pub fn phrases(&self) -> std::option::Option<&[std::string::String]> {
         self.phrases.as_deref()
     }
-    /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-    /// <p> <code>https://s3.
-    /// <amazon web services-region>
-    /// .amazonaws.com/
-    /// <awsdoc-example-bucket>
-    /// /
-    /// <keyprefix>
-    /// /
-    /// <objectkey>
-    /// </objectkey>
-    /// </keyprefix>
-    /// </awsdoc-example-bucket>
-    /// </amazon></code> </p>
-    /// <p>For example:</p>
-    /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
-    /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
+    /// <p>The S3 location of the text file that contains your custom vocabulary. The URI must be located in the same region as the API endpoint you're calling.</p>
+    /// <p>Here's an example URI path:</p>
+    /// <p> <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code> </p>
+    /// <p>Note that if you include <code>VocabularyFileUri</code> in your request, you cannot use the <code>Phrases</code> flag; you must choose one or the other.</p>
     pub fn vocabulary_file_uri(&self) -> std::option::Option<&str> {
         self.vocabulary_file_uri.as_deref()
     }
-    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary at the time you create this new vocabulary.</p>
+    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new custom vocabulary at the time you create this new vocabulary.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -9024,59 +8878,37 @@ impl std::fmt::Debug for CreateVocabularyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMedicalVocabularyInput {
-    /// <p>The name of the custom vocabulary. This case-sensitive name must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
+    /// <p>The name of your new vocabulary.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>The language code for the language used for the entries in your custom vocabulary. The language code of your custom vocabulary must match the language code of your transcription job. US English (en-US) is the only language code available for Amazon Transcribe Medical.</p>
+    /// <p>The language code that represents the language of the entries in your custom vocabulary. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>
-    /// <p> <code>https://s3.
-    /// <aws-region>
-    /// .amazonaws.com/
-    /// <bucket-name>
-    /// /
-    /// <keyprefix>
-    /// /
-    /// <objectkey></objectkey>
-    /// </keyprefix>
-    /// </bucket-name>
-    /// </aws-region></code> </p>
-    /// <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>
-    /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
-    /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
+    /// <p>The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling.</p>
+    /// <p>Here's an example URI path:</p>
+    /// <p> <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code> </p>
     pub vocabulary_file_uri: std::option::Option<std::string::String>,
-    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create this new vocabulary.</p>
+    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create the new vocabulary.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMedicalVocabularyInput {
-    /// <p>The name of the custom vocabulary. This case-sensitive name must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
+    /// <p>The name of your new vocabulary.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
     pub fn vocabulary_name(&self) -> std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
-    /// <p>The language code for the language used for the entries in your custom vocabulary. The language code of your custom vocabulary must match the language code of your transcription job. US English (en-US) is the only language code available for Amazon Transcribe Medical.</p>
+    /// <p>The language code that represents the language of the entries in your custom vocabulary. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>
-    /// <p> <code>https://s3.
-    /// <aws-region>
-    /// .amazonaws.com/
-    /// <bucket-name>
-    /// /
-    /// <keyprefix>
-    /// /
-    /// <objectkey></objectkey>
-    /// </keyprefix>
-    /// </bucket-name>
-    /// </aws-region></code> </p>
-    /// <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>
-    /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
-    /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
+    /// <p>The Amazon S3 location (URI) of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling.</p>
+    /// <p>Here's an example URI path:</p>
+    /// <p> <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code> </p>
     pub fn vocabulary_file_uri(&self) -> std::option::Option<&str> {
         self.vocabulary_file_uri.as_deref()
     }
-    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create this new vocabulary.</p>
+    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create the new vocabulary.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -9096,39 +8928,39 @@ impl std::fmt::Debug for CreateMedicalVocabularyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLanguageModelInput {
-    /// <p>The language of the input text you're using to train your custom language model.</p>
+    /// <p>The language of your custom language model; note that the language code you select must match the language of your training and tuning data.</p>
     pub language_code: std::option::Option<crate::model::ClmLanguageCode>,
-    /// <p>The Amazon Transcribe standard language model, or base model used to create your custom language model.</p>
-    /// <p>If you want to use your custom language model to transcribe audio with a sample rate of 16,000 Hz or greater, choose <code>Wideband</code>.</p>
-    /// <p>If you want to use your custom language model to transcribe audio with a sample rate that is less than 16,000 Hz, choose <code>Narrowband</code>.</p>
+    /// <p>The Amazon Transcribe standard language model, or base model, used to create your custom language model. Amazon Transcribe offers two options for base models: Wideband and Narrowband.</p>
+    /// <p>If the audio you want to transcribe has a sample rate of 16,000 Hz or greater, choose <code>WideBand</code>. To transcribe audio with a sample rate less than 16,000 Hz, choose <code>NarrowBand</code>.</p>
     pub base_model_name: std::option::Option<crate::model::BaseModelName>,
-    /// <p>The name you choose for your custom language model when you create it.</p>
+    /// <p>The name of your new custom language model.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a language model with the same name as a previous language model, you get a <code>ConflictException</code> error.</p>
     pub model_name: std::option::Option<std::string::String>,
-    /// <p>Contains the data access role and the Amazon S3 prefixes to read the required input files to create a custom language model.</p>
+    /// <p>Contains your data access role ARN (Amazon Resource Name) and the Amazon S3 locations of your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
-    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new language model at the time you create this new model.</p>
+    /// <p>Optionally add tags, each in the form of a key:value pair, to your new language model. See also: .</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateLanguageModelInput {
-    /// <p>The language of the input text you're using to train your custom language model.</p>
+    /// <p>The language of your custom language model; note that the language code you select must match the language of your training and tuning data.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::ClmLanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The Amazon Transcribe standard language model, or base model used to create your custom language model.</p>
-    /// <p>If you want to use your custom language model to transcribe audio with a sample rate of 16,000 Hz or greater, choose <code>Wideband</code>.</p>
-    /// <p>If you want to use your custom language model to transcribe audio with a sample rate that is less than 16,000 Hz, choose <code>Narrowband</code>.</p>
+    /// <p>The Amazon Transcribe standard language model, or base model, used to create your custom language model. Amazon Transcribe offers two options for base models: Wideband and Narrowband.</p>
+    /// <p>If the audio you want to transcribe has a sample rate of 16,000 Hz or greater, choose <code>WideBand</code>. To transcribe audio with a sample rate less than 16,000 Hz, choose <code>NarrowBand</code>.</p>
     pub fn base_model_name(&self) -> std::option::Option<&crate::model::BaseModelName> {
         self.base_model_name.as_ref()
     }
-    /// <p>The name you choose for your custom language model when you create it.</p>
+    /// <p>The name of your new custom language model.</p>
+    /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a language model with the same name as a previous language model, you get a <code>ConflictException</code> error.</p>
     pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
-    /// <p>Contains the data access role and the Amazon S3 prefixes to read the required input files to create a custom language model.</p>
+    /// <p>Contains your data access role ARN (Amazon Resource Name) and the Amazon S3 locations of your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.</p>
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>Adds one or more tags, each in the form of a key:value pair, to a new language model at the time you create this new model.</p>
+    /// <p>Optionally add tags, each in the form of a key:value pair, to your new language model. See also: .</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -9149,17 +8981,17 @@ impl std::fmt::Debug for CreateLanguageModelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCallAnalyticsCategoryInput {
-    /// <p>The name that you choose for your category when you create it. </p>
+    /// <p>A unique name, chosen by you, for your call analytics category. For example, <code>sentiment-positive-last30seconds</code>.</p>
     pub category_name: std::option::Option<std::string::String>,
-    /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral.</p>
+    /// <p>Rules make up a call analytics category. When creating a call analytics category, you must create between 1 and 20 rules for your category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
 impl CreateCallAnalyticsCategoryInput {
-    /// <p>The name that you choose for your category when you create it. </p>
+    /// <p>A unique name, chosen by you, for your call analytics category. For example, <code>sentiment-positive-last30seconds</code>.</p>
     pub fn category_name(&self) -> std::option::Option<&str> {
         self.category_name.as_deref()
     }
-    /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral.</p>
+    /// <p>Rules make up a call analytics category. When creating a call analytics category, you must create between 1 and 20 rules for your category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }

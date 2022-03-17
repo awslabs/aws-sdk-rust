@@ -15,7 +15,7 @@ pub enum Error {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Reached throttling quota exception.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Unitialized account exception.</p>
+    /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),

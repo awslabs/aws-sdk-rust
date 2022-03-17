@@ -357,6 +357,10 @@ pub struct ResultConfigurationUpdates {
     pub expected_bucket_owner: std::option::Option<std::string::String>,
     /// <p>If set to "true", removes the Amazon Web Services account ID previously specified for <code>ResultConfiguration$ExpectedBucketOwner</code>. If set to "false" or not set, and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub remove_expected_bucket_owner: std::option::Option<bool>,
+    /// <p>The ACL configuration for the query results.</p>
+    pub acl_configuration: std::option::Option<crate::model::AclConfiguration>,
+    /// <p>If set to <code>true</code>, indicates that the previously-specified ACL configuration for queries in this workgroup should be ignored and set to null. If set to <code>false</code> or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub remove_acl_configuration: std::option::Option<bool>,
 }
 impl ResultConfigurationUpdates {
     /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
@@ -386,6 +390,14 @@ impl ResultConfigurationUpdates {
     pub fn remove_expected_bucket_owner(&self) -> std::option::Option<bool> {
         self.remove_expected_bucket_owner
     }
+    /// <p>The ACL configuration for the query results.</p>
+    pub fn acl_configuration(&self) -> std::option::Option<&crate::model::AclConfiguration> {
+        self.acl_configuration.as_ref()
+    }
+    /// <p>If set to <code>true</code>, indicates that the previously-specified ACL configuration for queries in this workgroup should be ignored and set to null. If set to <code>false</code> or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn remove_acl_configuration(&self) -> std::option::Option<bool> {
+        self.remove_acl_configuration
+    }
 }
 impl std::fmt::Debug for ResultConfigurationUpdates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -402,6 +414,8 @@ impl std::fmt::Debug for ResultConfigurationUpdates {
             "remove_expected_bucket_owner",
             &self.remove_expected_bucket_owner,
         );
+        formatter.field("acl_configuration", &self.acl_configuration);
+        formatter.field("remove_acl_configuration", &self.remove_acl_configuration);
         formatter.finish()
     }
 }
@@ -418,6 +432,8 @@ pub mod result_configuration_updates {
         pub(crate) remove_encryption_configuration: std::option::Option<bool>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
         pub(crate) remove_expected_bucket_owner: std::option::Option<bool>,
+        pub(crate) acl_configuration: std::option::Option<crate::model::AclConfiguration>,
+        pub(crate) remove_acl_configuration: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
@@ -500,6 +516,29 @@ pub mod result_configuration_updates {
             self.remove_expected_bucket_owner = input;
             self
         }
+        /// <p>The ACL configuration for the query results.</p>
+        pub fn acl_configuration(mut self, input: crate::model::AclConfiguration) -> Self {
+            self.acl_configuration = Some(input);
+            self
+        }
+        /// <p>The ACL configuration for the query results.</p>
+        pub fn set_acl_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AclConfiguration>,
+        ) -> Self {
+            self.acl_configuration = input;
+            self
+        }
+        /// <p>If set to <code>true</code>, indicates that the previously-specified ACL configuration for queries in this workgroup should be ignored and set to null. If set to <code>false</code> or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        pub fn remove_acl_configuration(mut self, input: bool) -> Self {
+            self.remove_acl_configuration = Some(input);
+            self
+        }
+        /// <p>If set to <code>true</code>, indicates that the previously-specified ACL configuration for queries in this workgroup should be ignored and set to null. If set to <code>false</code> or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        pub fn set_remove_acl_configuration(mut self, input: std::option::Option<bool>) -> Self {
+            self.remove_acl_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResultConfigurationUpdates`](crate::model::ResultConfigurationUpdates)
         pub fn build(self) -> crate::model::ResultConfigurationUpdates {
             crate::model::ResultConfigurationUpdates {
@@ -509,6 +548,8 @@ pub mod result_configuration_updates {
                 remove_encryption_configuration: self.remove_encryption_configuration,
                 expected_bucket_owner: self.expected_bucket_owner,
                 remove_expected_bucket_owner: self.remove_expected_bucket_owner,
+                acl_configuration: self.acl_configuration,
+                remove_acl_configuration: self.remove_acl_configuration,
             }
         }
     }
@@ -517,6 +558,114 @@ impl ResultConfigurationUpdates {
     /// Creates a new builder-style object to manufacture [`ResultConfigurationUpdates`](crate::model::ResultConfigurationUpdates)
     pub fn builder() -> crate::model::result_configuration_updates::Builder {
         crate::model::result_configuration_updates::Builder::default()
+    }
+}
+
+/// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. When Athena stores query results in Amazon S3, the canned ACL is set with the <code>x-amz-acl</code> request header. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html#object-ownership-overview">Object Ownership settings</a> in the <i>Amazon S3 User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AclConfiguration {
+    /// <p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub s3_acl_option: std::option::Option<crate::model::S3AclOption>,
+}
+impl AclConfiguration {
+    /// <p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn s3_acl_option(&self) -> std::option::Option<&crate::model::S3AclOption> {
+        self.s3_acl_option.as_ref()
+    }
+}
+impl std::fmt::Debug for AclConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AclConfiguration");
+        formatter.field("s3_acl_option", &self.s3_acl_option);
+        formatter.finish()
+    }
+}
+/// See [`AclConfiguration`](crate::model::AclConfiguration)
+pub mod acl_configuration {
+    /// A builder for [`AclConfiguration`](crate::model::AclConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_acl_option: std::option::Option<crate::model::S3AclOption>,
+    }
+    impl Builder {
+        /// <p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn s3_acl_option(mut self, input: crate::model::S3AclOption) -> Self {
+            self.s3_acl_option = Some(input);
+            self
+        }
+        /// <p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_s3_acl_option(
+            mut self,
+            input: std::option::Option<crate::model::S3AclOption>,
+        ) -> Self {
+            self.s3_acl_option = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AclConfiguration`](crate::model::AclConfiguration)
+        pub fn build(self) -> crate::model::AclConfiguration {
+            crate::model::AclConfiguration {
+                s3_acl_option: self.s3_acl_option,
+            }
+        }
+    }
+}
+impl AclConfiguration {
+    /// Creates a new builder-style object to manufacture [`AclConfiguration`](crate::model::AclConfiguration)
+    pub fn builder() -> crate::model::acl_configuration::Builder {
+        crate::model::acl_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum S3AclOption {
+    #[allow(missing_docs)] // documentation missing in model
+    BucketOwnerFullControl,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for S3AclOption {
+    fn from(s: &str) -> Self {
+        match s {
+            "BUCKET_OWNER_FULL_CONTROL" => S3AclOption::BucketOwnerFullControl,
+            other => S3AclOption::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for S3AclOption {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(S3AclOption::from(s))
+    }
+}
+impl S3AclOption {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            S3AclOption::BucketOwnerFullControl => "BUCKET_OWNER_FULL_CONTROL",
+            S3AclOption::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["BUCKET_OWNER_FULL_CONTROL"]
+    }
+}
+impl AsRef<str> for S3AclOption {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -854,6 +1003,8 @@ pub struct ResultConfiguration {
     /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
     /// <p>This is a client-side setting. If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the ACL configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. For more information, see <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub acl_configuration: std::option::Option<crate::model::AclConfiguration>,
 }
 impl ResultConfiguration {
     /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the query results location using one of the ways: either for individual queries using either this setting (client-side), or in the workgroup, using <code>WorkGroupConfiguration</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If workgroup settings override client-side settings, then the query uses the settings specified for the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
@@ -871,6 +1022,10 @@ impl ResultConfiguration {
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
+    /// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the ACL configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. For more information, see <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    pub fn acl_configuration(&self) -> std::option::Option<&crate::model::AclConfiguration> {
+        self.acl_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ResultConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -878,6 +1033,7 @@ impl std::fmt::Debug for ResultConfiguration {
         formatter.field("output_location", &self.output_location);
         formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field("acl_configuration", &self.acl_configuration);
         formatter.finish()
     }
 }
@@ -891,6 +1047,7 @@ pub mod result_configuration {
         pub(crate) encryption_configuration:
             std::option::Option<crate::model::EncryptionConfiguration>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) acl_configuration: std::option::Option<crate::model::AclConfiguration>,
     }
     impl Builder {
         /// <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the query results location using one of the ways: either for individual queries using either this setting (client-side), or in the workgroup, using <code>WorkGroupConfiguration</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If workgroup settings override client-side settings, then the query uses the settings specified for the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
@@ -937,12 +1094,26 @@ pub mod result_configuration {
             self.expected_bucket_owner = input;
             self
         }
+        /// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the ACL configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. For more information, see <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        pub fn acl_configuration(mut self, input: crate::model::AclConfiguration) -> Self {
+            self.acl_configuration = Some(input);
+            self
+        }
+        /// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. This is a client-side setting. If workgroup settings override client-side settings, then the query uses the ACL configuration that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. For more information, see <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        pub fn set_acl_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AclConfiguration>,
+        ) -> Self {
+            self.acl_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResultConfiguration`](crate::model::ResultConfiguration)
         pub fn build(self) -> crate::model::ResultConfiguration {
             crate::model::ResultConfiguration {
                 output_location: self.output_location,
                 encryption_configuration: self.encryption_configuration,
                 expected_bucket_owner: self.expected_bucket_owner,
+                acl_configuration: self.acl_configuration,
             }
         }
     }
@@ -2051,7 +2222,7 @@ impl WorkGroupConfiguration {
     }
 }
 
-/// <p>The metadata and rows that comprise a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <code>GetQueryResults</code>.</p>
+/// <p>The metadata and rows that make up a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <code>GetQueryResults</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultSet {
@@ -2486,7 +2657,7 @@ impl AsRef<str> for ColumnNullable {
     }
 }
 
-/// <p>The rows that comprise a query result table.</p>
+/// <p>The rows that make up a query result table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Row {
@@ -3188,14 +3359,14 @@ impl QueryExecutionStatus {
     }
 }
 
-/// <p>Provides information about an Athena query error. The <code>AthenaError</code> feature provides standardized error information to help you understand failed queries and take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code> field that specifies whether the cause of the failed query is due to system error, user error, or unknown error.</p>
+/// <p>Provides information about an Athena query error. The <code>AthenaError</code> feature provides standardized error information to help you understand failed queries and take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code> field that specifies whether the cause of the failed query is due to system error, user error, or other error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AthenaError {
     /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
     /// <p> <b>1</b> - System</p>
     /// <p> <b>2</b> - User</p>
-    /// <p> <b>3</b> - Unknown</p>
+    /// <p> <b>3</b> - Other</p>
     pub error_category: std::option::Option<i32>,
     /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
     pub error_type: std::option::Option<i32>,
@@ -3204,7 +3375,7 @@ impl AthenaError {
     /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
     /// <p> <b>1</b> - System</p>
     /// <p> <b>2</b> - User</p>
-    /// <p> <b>3</b> - Unknown</p>
+    /// <p> <b>3</b> - Other</p>
     pub fn error_category(&self) -> std::option::Option<i32> {
         self.error_category
     }
@@ -3234,7 +3405,7 @@ pub mod athena_error {
         /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
         /// <p> <b>1</b> - System</p>
         /// <p> <b>2</b> - User</p>
-        /// <p> <b>3</b> - Unknown</p>
+        /// <p> <b>3</b> - Other</p>
         pub fn error_category(mut self, input: i32) -> Self {
             self.error_category = Some(input);
             self
@@ -3242,7 +3413,7 @@ pub mod athena_error {
         /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
         /// <p> <b>1</b> - System</p>
         /// <p> <b>2</b> - User</p>
-        /// <p> <b>3</b> - Unknown</p>
+        /// <p> <b>3</b> - Other</p>
         pub fn set_error_category(mut self, input: std::option::Option<i32>) -> Self {
             self.error_category = input;
             self
@@ -3541,7 +3712,7 @@ impl PreparedStatement {
     }
 }
 
-/// <p>A query, where <code>QueryString</code> is the list of SQL query statements that comprise the query.</p>
+/// <p>A query, where <code>QueryString</code> contains the SQL statements that make up the query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NamedQuery {
@@ -3551,7 +3722,7 @@ pub struct NamedQuery {
     pub description: std::option::Option<std::string::String>,
     /// <p>The database to which the query belongs.</p>
     pub database: std::option::Option<std::string::String>,
-    /// <p>The SQL query statements that comprise the query.</p>
+    /// <p>The SQL statements that make up the query.</p>
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the query.</p>
     pub named_query_id: std::option::Option<std::string::String>,
@@ -3571,7 +3742,7 @@ impl NamedQuery {
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
-    /// <p>The SQL query statements that comprise the query.</p>
+    /// <p>The SQL statements that make up the query.</p>
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
@@ -3640,12 +3811,12 @@ pub mod named_query {
             self.database = input;
             self
         }
-        /// <p>The SQL query statements that comprise the query.</p>
+        /// <p>The SQL statements that make up the query.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_string = Some(input.into());
             self
         }
-        /// <p>The SQL query statements that comprise the query.</p>
+        /// <p>The SQL statements that make up the query.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_string = input;
             self

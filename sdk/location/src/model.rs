@@ -731,7 +731,7 @@ pub struct DevicePositionUpdate {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
+    /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The accuracy of the device position.</p>
     pub accuracy: std::option::Option<crate::model::PositionalAccuracy>,
@@ -749,7 +749,7 @@ impl DevicePositionUpdate {
     pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
-    /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
+    /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
     pub fn position(&self) -> std::option::Option<&[f64]> {
         self.position.as_deref()
     }
@@ -819,14 +819,14 @@ pub mod device_position_update {
         ///
         /// To override the contents of this collection use [`set_position`](Self::set_position).
         ///
-        /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
+        /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
         pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
             v.push(input);
             self.position = Some(v);
             self
         }
-        /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
+        /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.position = input;
             self
@@ -1434,7 +1434,7 @@ where
     }
 }
 
-/// <p>The result for one <code>SnappedDeparturePosition</code> <code>SnappedDestinationPosition</code> pair.</p>
+/// <p>The result for the calculated route of one <code>DeparturePosition</code> <code>DestinationPosition</code> pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteMatrixEntry {
@@ -1670,7 +1670,7 @@ pub struct CalculateRouteTruckModeOptions {
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub avoid_ferries: std::option::Option<bool>,
-    /// <p>Avoids ferries when calculating routes.</p>
+    /// <p>Avoids tolls when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub avoid_tolls: std::option::Option<bool>,
@@ -1686,7 +1686,7 @@ impl CalculateRouteTruckModeOptions {
     pub fn avoid_ferries(&self) -> std::option::Option<bool> {
         self.avoid_ferries
     }
-    /// <p>Avoids ferries when calculating routes.</p>
+    /// <p>Avoids tolls when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn avoid_tolls(&self) -> std::option::Option<bool> {
@@ -1737,14 +1737,14 @@ pub mod calculate_route_truck_mode_options {
             self.avoid_ferries = input;
             self
         }
-        /// <p>Avoids ferries when calculating routes.</p>
+        /// <p>Avoids tolls when calculating routes.</p>
         /// <p>Default Value: <code>false</code> </p>
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn avoid_tolls(mut self, input: bool) -> Self {
             self.avoid_tolls = Some(input);
             self
         }
-        /// <p>Avoids ferries when calculating routes.</p>
+        /// <p>Avoids tolls when calculating routes.</p>
         /// <p>Default Value: <code>false</code> </p>
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn set_avoid_tolls(mut self, input: std::option::Option<bool>) -> Self {
@@ -4815,9 +4815,9 @@ pub struct MapConfiguration {
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
-    /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
-    /// <p>When using HERE as your data provider, and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE Technologies maps for Asset Management. See the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
-    /// </note> </li>
+    /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+    /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
+    /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
     /// </ul>
     pub style: std::option::Option<std::string::String>,
 }
@@ -4834,9 +4834,9 @@ impl MapConfiguration {
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
-    /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
-    /// <p>When using HERE as your data provider, and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE Technologies maps for Asset Management. See the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
-    /// </note> </li>
+    /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+    /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
+    /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
     /// </ul>
     pub fn style(&self) -> std::option::Option<&str> {
         self.style.as_deref()
@@ -4870,9 +4870,9 @@ pub mod map_configuration {
         /// </ul>
         /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
         /// <ul>
-        /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
-        /// <p>When using HERE as your data provider, and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE Technologies maps for Asset Management. See the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
-        /// </note> </li>
+        /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+        /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
+        /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
         /// </ul>
         pub fn style(mut self, input: impl Into<std::string::String>) -> Self {
             self.style = Some(input.into());
@@ -4890,9 +4890,9 @@ pub mod map_configuration {
         /// </ul>
         /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
         /// <ul>
-        /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
-        /// <p>When using HERE as your data provider, and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE Technologies maps for Asset Management. See the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
-        /// </note> </li>
+        /// <li> <p> <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> </li>
+        /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
+        /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
         /// </ul>
         pub fn set_style(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.style = input;

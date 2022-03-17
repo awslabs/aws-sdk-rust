@@ -4222,6 +4222,149 @@ impl DescribeSentimentDetectionJobInput {
     }
 }
 
+/// See [`DescribeTargetedSentimentDetectionJobInput`](crate::input::DescribeTargetedSentimentDetectionJobInput)
+pub mod describe_targeted_sentiment_detection_job_input {
+    /// A builder for [`DescribeTargetedSentimentDetectionJobInput`](crate::input::DescribeTargetedSentimentDetectionJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTargetedSentimentDetectionJobInput`](crate::input::DescribeTargetedSentimentDetectionJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeTargetedSentimentDetectionJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeTargetedSentimentDetectionJobInput {
+                job_id: self.job_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeTargetedSentimentDetectionJobInputOperationOutputAlias =
+    crate::operation::DescribeTargetedSentimentDetectionJob;
+#[doc(hidden)]
+pub type DescribeTargetedSentimentDetectionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeTargetedSentimentDetectionJobInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeTargetedSentimentDetectionJob`](crate::operation::DescribeTargetedSentimentDetectionJob)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeTargetedSentimentDetectionJob,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeTargetedSentimentDetectionJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeTargetedSentimentDetectionJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Comprehend_20171127.DescribeTargetedSentimentDetectionJob",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_targeted_sentiment_detection_job(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeTargetedSentimentDetectionJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeTargetedSentimentDetectionJob",
+            "comprehend",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeTargetedSentimentDetectionJobInput`](crate::input::DescribeTargetedSentimentDetectionJobInput)
+    pub fn builder() -> crate::input::describe_targeted_sentiment_detection_job_input::Builder {
+        crate::input::describe_targeted_sentiment_detection_job_input::Builder::default()
+    }
+}
+
 /// See [`DescribeTopicsDetectionJobInput`](crate::input::DescribeTopicsDetectionJobInput)
 pub mod describe_topics_detection_job_input {
     /// A builder for [`DescribeTopicsDetectionJobInput`](crate::input::DescribeTopicsDetectionJobInput)
@@ -7693,6 +7836,176 @@ impl ListTagsForResourceInput {
     }
 }
 
+/// See [`ListTargetedSentimentDetectionJobsInput`](crate::input::ListTargetedSentimentDetectionJobsInput)
+pub mod list_targeted_sentiment_detection_jobs_input {
+    /// A builder for [`ListTargetedSentimentDetectionJobsInput`](crate::input::ListTargetedSentimentDetectionJobsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filter: std::option::Option<crate::model::TargetedSentimentDetectionJobFilter>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+        pub fn filter(mut self, input: crate::model::TargetedSentimentDetectionJobFilter) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::TargetedSentimentDetectionJobFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
+        /// <p>Identifies the next page of results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Identifies the next page of results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return in each page. The default is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return in each page. The default is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTargetedSentimentDetectionJobsInput`](crate::input::ListTargetedSentimentDetectionJobsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListTargetedSentimentDetectionJobsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListTargetedSentimentDetectionJobsInput {
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTargetedSentimentDetectionJobsInputOperationOutputAlias =
+    crate::operation::ListTargetedSentimentDetectionJobs;
+#[doc(hidden)]
+pub type ListTargetedSentimentDetectionJobsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListTargetedSentimentDetectionJobsInput {
+    /// Consumes the builder and constructs an Operation<[`ListTargetedSentimentDetectionJobs`](crate::operation::ListTargetedSentimentDetectionJobs)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTargetedSentimentDetectionJobs,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListTargetedSentimentDetectionJobsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTargetedSentimentDetectionJobsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Comprehend_20171127.ListTargetedSentimentDetectionJobs",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_targeted_sentiment_detection_jobs(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTargetedSentimentDetectionJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTargetedSentimentDetectionJobs",
+            "comprehend",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsInput`](crate::input::ListTargetedSentimentDetectionJobsInput)
+    pub fn builder() -> crate::input::list_targeted_sentiment_detection_jobs_input::Builder {
+        crate::input::list_targeted_sentiment_detection_jobs_input::Builder::default()
+    }
+}
+
 /// See [`ListTopicsDetectionJobsInput`](crate::input::ListTopicsDetectionJobsInput)
 pub mod list_topics_detection_jobs_input {
     /// A builder for [`ListTopicsDetectionJobsInput`](crate::input::ListTopicsDetectionJobsInput)
@@ -9982,6 +10295,286 @@ impl StartSentimentDetectionJobInput {
     }
 }
 
+/// See [`StartTargetedSentimentDetectionJobInput`](crate::input::StartTargetedSentimentDetectionJobInput)
+pub mod start_targeted_sentiment_detection_job_input {
+    /// A builder for [`StartTargetedSentimentDetectionJobInput`](crate::input::StartTargetedSentimentDetectionJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
+        pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
+        pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The input properties for an inference job.</p>
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.input_data_config = Some(input);
+            self
+        }
+        /// <p>The input properties for an inference job.</p>
+        pub fn set_input_data_config(
+            mut self,
+            input: std::option::Option<crate::model::InputDataConfig>,
+        ) -> Self {
+            self.input_data_config = input;
+            self
+        }
+        /// <p>Specifies where to send the output files. </p>
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.output_data_config = Some(input);
+            self
+        }
+        /// <p>Specifies where to send the output files. </p>
+        pub fn set_output_data_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputDataConfig>,
+        ) -> Self {
+            self.output_data_config = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_access_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
+        pub fn set_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_access_role_arn = input;
+            self
+        }
+        /// <p>The identifier of the job.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn set_volume_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.volume_kms_key_id = input;
+            self
+        }
+        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.vpc_config = Some(input);
+            self
+        }
+        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to be associated with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Tags to be associated with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartTargetedSentimentDetectionJobInput`](crate::input::StartTargetedSentimentDetectionJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartTargetedSentimentDetectionJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartTargetedSentimentDetectionJobInput {
+                input_data_config: self.input_data_config,
+                output_data_config: self.output_data_config,
+                data_access_role_arn: self.data_access_role_arn,
+                job_name: self.job_name,
+                language_code: self.language_code,
+                client_request_token: self.client_request_token,
+                volume_kms_key_id: self.volume_kms_key_id,
+                vpc_config: self.vpc_config,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartTargetedSentimentDetectionJobInputOperationOutputAlias =
+    crate::operation::StartTargetedSentimentDetectionJob;
+#[doc(hidden)]
+pub type StartTargetedSentimentDetectionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl StartTargetedSentimentDetectionJobInput {
+    /// Consumes the builder and constructs an Operation<[`StartTargetedSentimentDetectionJob`](crate::operation::StartTargetedSentimentDetectionJob)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartTargetedSentimentDetectionJob,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        if self.client_request_token.is_none() {
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartTargetedSentimentDetectionJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartTargetedSentimentDetectionJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Comprehend_20171127.StartTargetedSentimentDetectionJob",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_targeted_sentiment_detection_job(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartTargetedSentimentDetectionJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartTargetedSentimentDetectionJob",
+            "comprehend",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartTargetedSentimentDetectionJobInput`](crate::input::StartTargetedSentimentDetectionJobInput)
+    pub fn builder() -> crate::input::start_targeted_sentiment_detection_job_input::Builder {
+        crate::input::start_targeted_sentiment_detection_job_input::Builder::default()
+    }
+}
+
 /// See [`StartTopicsDetectionJobInput`](crate::input::StartTopicsDetectionJobInput)
 pub mod start_topics_detection_job_input {
     /// A builder for [`StartTopicsDetectionJobInput`](crate::input::StartTopicsDetectionJobInput)
@@ -11122,6 +11715,149 @@ impl StopSentimentDetectionJobInput {
     }
 }
 
+/// See [`StopTargetedSentimentDetectionJobInput`](crate::input::StopTargetedSentimentDetectionJobInput)
+pub mod stop_targeted_sentiment_detection_job_input {
+    /// A builder for [`StopTargetedSentimentDetectionJobInput`](crate::input::StopTargetedSentimentDetectionJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopTargetedSentimentDetectionJobInput`](crate::input::StopTargetedSentimentDetectionJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StopTargetedSentimentDetectionJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StopTargetedSentimentDetectionJobInput {
+                job_id: self.job_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StopTargetedSentimentDetectionJobInputOperationOutputAlias =
+    crate::operation::StopTargetedSentimentDetectionJob;
+#[doc(hidden)]
+pub type StopTargetedSentimentDetectionJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl StopTargetedSentimentDetectionJobInput {
+    /// Consumes the builder and constructs an Operation<[`StopTargetedSentimentDetectionJob`](crate::operation::StopTargetedSentimentDetectionJob)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopTargetedSentimentDetectionJob,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StopTargetedSentimentDetectionJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopTargetedSentimentDetectionJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Comprehend_20171127.StopTargetedSentimentDetectionJob",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_targeted_sentiment_detection_job(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopTargetedSentimentDetectionJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopTargetedSentimentDetectionJob",
+            "comprehend",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobInput`](crate::input::StopTargetedSentimentDetectionJobInput)
+    pub fn builder() -> crate::input::stop_targeted_sentiment_detection_job_input::Builder {
+        crate::input::stop_targeted_sentiment_detection_job_input::Builder::default()
+    }
+}
+
 /// See [`StopTrainingDocumentClassifierInput`](crate::input::StopTrainingDocumentClassifierInput)
 pub mod stop_training_document_classifier_input {
     /// A builder for [`StopTrainingDocumentClassifierInput`](crate::input::StopTrainingDocumentClassifierInput)
@@ -12073,6 +12809,27 @@ impl std::fmt::Debug for StopTrainingDocumentClassifierInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopTargetedSentimentDetectionJobInput {
+    /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+    pub job_id: std::option::Option<std::string::String>,
+}
+impl StopTargetedSentimentDetectionJobInput {
+    /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
+impl std::fmt::Debug for StopTargetedSentimentDetectionJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopTargetedSentimentDetectionJobInput");
+        formatter.field("job_id", &self.job_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopSentimentDetectionJobInput {
     /// <p>The identifier of the sentiment detection job to stop.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -12273,6 +13030,91 @@ impl std::fmt::Debug for StartTopicsDetectionJobInput {
         formatter.field("data_access_role_arn", &self.data_access_role_arn);
         formatter.field("job_name", &self.job_name);
         formatter.field("number_of_topics", &self.number_of_topics);
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+        formatter.field("vpc_config", &self.vpc_config);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartTargetedSentimentDetectionJobInput {
+    /// <p>The input properties for an inference job.</p>
+    pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
+    /// <p>Specifies where to send the output files. </p>
+    pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
+    pub data_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of the job.</p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub language_code: std::option::Option<crate::model::LanguageCode>,
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub volume_kms_key_id: std::option::Option<std::string::String>,
+    /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+    /// <p>Tags to be associated with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl StartTargetedSentimentDetectionJobInput {
+    /// <p>The input properties for an inference job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Specifies where to send the output files. </p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The identifier of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Tags to be associated with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for StartTargetedSentimentDetectionJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartTargetedSentimentDetectionJobInput");
+        formatter.field("input_data_config", &self.input_data_config);
+        formatter.field("output_data_config", &self.output_data_config);
+        formatter.field("data_access_role_arn", &self.data_access_role_arn);
+        formatter.field("job_name", &self.job_name);
+        formatter.field("language_code", &self.language_code);
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
         formatter.field("vpc_config", &self.vpc_config);
@@ -12924,6 +13766,43 @@ impl ListTopicsDetectionJobsInput {
 impl std::fmt::Debug for ListTopicsDetectionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTopicsDetectionJobsInput");
+        formatter.field("filter", &self.filter);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTargetedSentimentDetectionJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    pub filter: std::option::Option<crate::model::TargetedSentimentDetectionJobFilter>,
+    /// <p>Identifies the next page of results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListTargetedSentimentDetectionJobsInput {
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetedSentimentDetectionJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListTargetedSentimentDetectionJobsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTargetedSentimentDetectionJobsInput");
         formatter.field("filter", &self.filter);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
@@ -13610,6 +14489,27 @@ impl DescribeTopicsDetectionJobInput {
 impl std::fmt::Debug for DescribeTopicsDetectionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTopicsDetectionJobInput");
+        formatter.field("job_id", &self.job_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTargetedSentimentDetectionJobInput {
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeTargetedSentimentDetectionJobInput {
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeTargetedSentimentDetectionJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeTargetedSentimentDetectionJobInput");
         formatter.field("job_id", &self.job_id);
         formatter.finish()
     }

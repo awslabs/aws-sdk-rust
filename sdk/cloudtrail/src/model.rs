@@ -2384,7 +2384,7 @@ impl ResourceTag {
 pub struct Query {
     /// <p>The ID of a query.</p>
     pub query_id: std::option::Option<std::string::String>,
-    /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     pub query_status: std::option::Option<crate::model::QueryStatus>,
     /// <p>The creation time of a query.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2394,7 +2394,7 @@ impl Query {
     pub fn query_id(&self) -> std::option::Option<&str> {
         self.query_id.as_deref()
     }
-    /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     pub fn query_status(&self) -> std::option::Option<&crate::model::QueryStatus> {
         self.query_status.as_ref()
     }
@@ -2433,12 +2433,12 @@ pub mod query {
             self.query_id = input;
             self
         }
-        /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+        /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
         pub fn query_status(mut self, input: crate::model::QueryStatus) -> Self {
             self.query_status = Some(input);
             self
         }
-        /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+        /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
         pub fn set_query_status(
             mut self,
             input: std::option::Option<crate::model::QueryStatus>,
@@ -2498,6 +2498,8 @@ pub enum QueryStatus {
     Queued,
     #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
+    TimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -2509,6 +2511,7 @@ impl std::convert::From<&str> for QueryStatus {
             "FINISHED" => QueryStatus::Finished,
             "QUEUED" => QueryStatus::Queued,
             "RUNNING" => QueryStatus::Running,
+            "TIMED_OUT" => QueryStatus::TimedOut,
             other => QueryStatus::Unknown(other.to_owned()),
         }
     }
@@ -2529,12 +2532,20 @@ impl QueryStatus {
             QueryStatus::Finished => "FINISHED",
             QueryStatus::Queued => "QUEUED",
             QueryStatus::Running => "RUNNING",
+            QueryStatus::TimedOut => "TIMED_OUT",
             QueryStatus::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["CANCELLED", "FAILED", "FINISHED", "QUEUED", "RUNNING"]
+        &[
+            "CANCELLED",
+            "FAILED",
+            "FINISHED",
+            "QUEUED",
+            "RUNNING",
+            "TIMED_OUT",
+        ]
     }
 }
 impl AsRef<str> for QueryStatus {
@@ -3314,6 +3325,8 @@ pub struct QueryStatistics {
     pub results_count: std::option::Option<i32>,
     /// <p>The total number of results returned by a query.</p>
     pub total_results_count: std::option::Option<i32>,
+    /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
+    pub bytes_scanned: std::option::Option<i64>,
 }
 impl QueryStatistics {
     /// <p>The number of results returned.</p>
@@ -3324,12 +3337,17 @@ impl QueryStatistics {
     pub fn total_results_count(&self) -> std::option::Option<i32> {
         self.total_results_count
     }
+    /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
+    pub fn bytes_scanned(&self) -> std::option::Option<i64> {
+        self.bytes_scanned
+    }
 }
 impl std::fmt::Debug for QueryStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryStatistics");
         formatter.field("results_count", &self.results_count);
         formatter.field("total_results_count", &self.total_results_count);
+        formatter.field("bytes_scanned", &self.bytes_scanned);
         formatter.finish()
     }
 }
@@ -3341,6 +3359,7 @@ pub mod query_statistics {
     pub struct Builder {
         pub(crate) results_count: std::option::Option<i32>,
         pub(crate) total_results_count: std::option::Option<i32>,
+        pub(crate) bytes_scanned: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The number of results returned.</p>
@@ -3363,11 +3382,22 @@ pub mod query_statistics {
             self.total_results_count = input;
             self
         }
+        /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
+        pub fn bytes_scanned(mut self, input: i64) -> Self {
+            self.bytes_scanned = Some(input);
+            self
+        }
+        /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
+        pub fn set_bytes_scanned(mut self, input: std::option::Option<i64>) -> Self {
+            self.bytes_scanned = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryStatistics`](crate::model::QueryStatistics)
         pub fn build(self) -> crate::model::QueryStatistics {
             crate::model::QueryStatistics {
                 results_count: self.results_count,
                 total_results_count: self.total_results_count,
+                bytes_scanned: self.bytes_scanned,
             }
         }
     }
@@ -3387,6 +3417,8 @@ pub struct QueryStatisticsForDescribeQuery {
     pub events_matched: std::option::Option<i64>,
     /// <p>The number of events that the query scanned in the event data store.</p>
     pub events_scanned: std::option::Option<i64>,
+    /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
+    pub bytes_scanned: std::option::Option<i64>,
     /// <p>The query's run time, in milliseconds.</p>
     pub execution_time_in_millis: std::option::Option<i32>,
     /// <p>The creation time of the query.</p>
@@ -3400,6 +3432,10 @@ impl QueryStatisticsForDescribeQuery {
     /// <p>The number of events that the query scanned in the event data store.</p>
     pub fn events_scanned(&self) -> std::option::Option<i64> {
         self.events_scanned
+    }
+    /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
+    pub fn bytes_scanned(&self) -> std::option::Option<i64> {
+        self.bytes_scanned
     }
     /// <p>The query's run time, in milliseconds.</p>
     pub fn execution_time_in_millis(&self) -> std::option::Option<i32> {
@@ -3415,6 +3451,7 @@ impl std::fmt::Debug for QueryStatisticsForDescribeQuery {
         let mut formatter = f.debug_struct("QueryStatisticsForDescribeQuery");
         formatter.field("events_matched", &self.events_matched);
         formatter.field("events_scanned", &self.events_scanned);
+        formatter.field("bytes_scanned", &self.bytes_scanned);
         formatter.field("execution_time_in_millis", &self.execution_time_in_millis);
         formatter.field("creation_time", &self.creation_time);
         formatter.finish()
@@ -3428,6 +3465,7 @@ pub mod query_statistics_for_describe_query {
     pub struct Builder {
         pub(crate) events_matched: std::option::Option<i64>,
         pub(crate) events_scanned: std::option::Option<i64>,
+        pub(crate) bytes_scanned: std::option::Option<i64>,
         pub(crate) execution_time_in_millis: std::option::Option<i32>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -3450,6 +3488,16 @@ pub mod query_statistics_for_describe_query {
         /// <p>The number of events that the query scanned in the event data store.</p>
         pub fn set_events_scanned(mut self, input: std::option::Option<i64>) -> Self {
             self.events_scanned = input;
+            self
+        }
+        /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
+        pub fn bytes_scanned(mut self, input: i64) -> Self {
+            self.bytes_scanned = Some(input);
+            self
+        }
+        /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
+        pub fn set_bytes_scanned(mut self, input: std::option::Option<i64>) -> Self {
+            self.bytes_scanned = input;
             self
         }
         /// <p>The query's run time, in milliseconds.</p>
@@ -3480,6 +3528,7 @@ pub mod query_statistics_for_describe_query {
             crate::model::QueryStatisticsForDescribeQuery {
                 events_matched: self.events_matched,
                 events_scanned: self.events_scanned,
+                bytes_scanned: self.bytes_scanned,
                 execution_time_in_millis: self.execution_time_in_millis,
                 creation_time: self.creation_time,
             }

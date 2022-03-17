@@ -11667,14 +11667,14 @@ pub mod put_conformance_pack_input {
             self
         }
         /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
+        /// <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
         /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-        /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
+        /// <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
         /// </note>
         pub fn set_template_body(
             mut self,
@@ -15736,7 +15736,7 @@ pub struct PutConformancePackInput {
     /// </note>
     pub template_s3_uri: std::option::Option<std::string::String>,
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-    /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
+    /// <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
@@ -15763,7 +15763,7 @@ impl PutConformancePackInput {
         self.template_s3_uri.as_deref()
     }
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
-    /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
+    /// <p>You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()

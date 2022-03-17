@@ -193,8 +193,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_bucket_name): <p>The name for the bucket.</p>  <p>For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_bundle_id): <p>The ID of the bundle to use for the bucket.</p>  <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>  <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>  <p>Use the <code>UpdateBucketBundle</code> action to change the bundle after the bucket is created.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBucket::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBucket::set_tags): <p>The tag keys and optional values to add to the bucket during creation.</p>  <p>Use the <code>TagResource</code> action to tag the bucket after it's created.</p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_bundle_id): <p>The ID of the bundle to use for the bucket.</p>  <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>  <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>  <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle after the bucket is created.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBucket::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBucket::set_tags): <p>The tag keys and optional values to add to the bucket during creation.</p>  <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html">TagResource</a> action to tag the bucket after it's created.</p>
     ///   - [`enable_object_versioning(bool)`](crate::client::fluent_builders::CreateBucket::enable_object_versioning) / [`set_enable_object_versioning(Option<bool>)`](crate::client::fluent_builders::CreateBucket::set_enable_object_versioning): <p>A Boolean value that indicates whether to enable versioning of objects in the bucket.</p>  <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// - On success, responds with [`CreateBucketOutput`](crate::output::CreateBucketOutput) with field(s):
     ///   - [`bucket(Option<Bucket>)`](crate::output::CreateBucketOutput::bucket): <p>An object that describes the bucket that is created.</p>
@@ -339,7 +339,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::CreateDistribution::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::CreateDistribution::set_distribution_name): <p>The name for the distribution.</p>
-    ///   - [`origin(InputOrigin)`](crate::client::fluent_builders::CreateDistribution::origin) / [`set_origin(Option<InputOrigin>)`](crate::client::fluent_builders::CreateDistribution::set_origin): <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>  <p>The distribution pulls, caches, and serves content from the origin.</p>
+    ///   - [`origin(InputOrigin)`](crate::client::fluent_builders::CreateDistribution::origin) / [`set_origin(Option<InputOrigin>)`](crate::client::fluent_builders::CreateDistribution::set_origin): <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>  <p>The distribution pulls, caches, and serves content from the origin.</p>
     ///   - [`default_cache_behavior(CacheBehavior)`](crate::client::fluent_builders::CreateDistribution::default_cache_behavior) / [`set_default_cache_behavior(Option<CacheBehavior>)`](crate::client::fluent_builders::CreateDistribution::set_default_cache_behavior): <p>An object that describes the default cache behavior for the distribution.</p>
     ///   - [`cache_behavior_settings(CacheSettings)`](crate::client::fluent_builders::CreateDistribution::cache_behavior_settings) / [`set_cache_behavior_settings(Option<CacheSettings>)`](crate::client::fluent_builders::CreateDistribution::set_cache_behavior_settings): <p>An object that describes the cache behavior settings for the distribution.</p>
     ///   - [`cache_behaviors(Vec<CacheBehaviorPerPath>)`](crate::client::fluent_builders::CreateDistribution::cache_behaviors) / [`set_cache_behaviors(Option<Vec<CacheBehaviorPerPath>>)`](crate::client::fluent_builders::CreateDistribution::set_cache_behaviors): <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
@@ -553,8 +553,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteBucket`](crate::client::fluent_builders::DeleteBucket) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBucket::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::DeleteBucket::set_bucket_name): <p>The name of the bucket to delete.</p>  <p>Use the <code>GetBuckets</code> action to get a list of bucket names that you can specify.</p>
-    ///   - [`force_delete(bool)`](crate::client::fluent_builders::DeleteBucket::force_delete) / [`set_force_delete(Option<bool>)`](crate::client::fluent_builders::DeleteBucket::set_force_delete): <p>A Boolean value that indicates whether to force delete the bucket.</p>  <p>You must force delete the bucket if it has one of the following conditions:</p>  <ul>   <li> <p>The bucket is the origin of a distribution.</p> </li>   <li> <p>The bucket has instances that were granted access to it using the <code>SetResourceAccessForBucket</code> action.</p> </li>   <li> <p>The bucket has objects.</p> </li>   <li> <p>The bucket has access keys.</p> </li>  </ul> <important>   <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>  </important>
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBucket::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::DeleteBucket::set_bucket_name): <p>The name of the bucket to delete.</p>  <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
+    ///   - [`force_delete(bool)`](crate::client::fluent_builders::DeleteBucket::force_delete) / [`set_force_delete(Option<bool>)`](crate::client::fluent_builders::DeleteBucket::set_force_delete): <p>A Boolean value that indicates whether to force delete the bucket.</p>  <p>You must force delete the bucket if it has one of the following conditions:</p>  <ul>   <li> <p>The bucket is the origin of a distribution.</p> </li>   <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>   <li> <p>The bucket has objects.</p> </li>   <li> <p>The bucket has access keys.</p> </li>  </ul> <important>   <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>  </important>
     /// - On success, responds with [`DeleteBucketOutput`](crate::output::DeleteBucketOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteBucketOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteBucketError>`](crate::error::DeleteBucketError)
@@ -565,7 +565,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketAccessKey::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::DeleteBucketAccessKey::set_bucket_name): <p>The name of the bucket that the access key belongs to.</p>
-    ///   - [`access_key_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketAccessKey::access_key_id) / [`set_access_key_id(Option<String>)`](crate::client::fluent_builders::DeleteBucketAccessKey::set_access_key_id): <p>The ID of the access key to delete.</p>  <p>Use the <code>GetBucketAccessKeys</code> action to get a list of access key IDs that you can specify.</p>
+    ///   - [`access_key_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketAccessKey::access_key_id) / [`set_access_key_id(Option<String>)`](crate::client::fluent_builders::DeleteBucketAccessKey::set_access_key_id): <p>The ID of the access key to delete.</p>  <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
     /// - On success, responds with [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteBucketAccessKeyOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteBucketAccessKeyError>`](crate::error::DeleteBucketAccessKeyError)
@@ -690,6 +690,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`key_pair_name(impl Into<String>)`](crate::client::fluent_builders::DeleteKeyPair::key_pair_name) / [`set_key_pair_name(Option<String>)`](crate::client::fluent_builders::DeleteKeyPair::set_key_pair_name): <p>The name of the key pair to delete.</p>
+    ///   - [`expected_fingerprint(impl Into<String>)`](crate::client::fluent_builders::DeleteKeyPair::expected_fingerprint) / [`set_expected_fingerprint(Option<String>)`](crate::client::fluent_builders::DeleteKeyPair::set_expected_fingerprint): <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>   <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>  </note>
     /// - On success, responds with [`DeleteKeyPairOutput`](crate::output::DeleteKeyPairOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::output::DeleteKeyPairOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteKeyPairError>`](crate::error::DeleteKeyPairError)
@@ -817,6 +818,7 @@ impl Client {
     /// - On success, responds with [`DownloadDefaultKeyPairOutput`](crate::output::DownloadDefaultKeyPairOutput) with field(s):
     ///   - [`public_key_base64(Option<String>)`](crate::output::DownloadDefaultKeyPairOutput::public_key_base64): <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     ///   - [`private_key_base64(Option<String>)`](crate::output::DownloadDefaultKeyPairOutput::private_key_base64): <p>A base64-encoded RSA private key.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DownloadDefaultKeyPairOutput::created_at): <p>The timestamp when the default key pair was created.</p>
     /// - On failure, responds with [`SdkError<DownloadDefaultKeyPairError>`](crate::error::DownloadDefaultKeyPairError)
     pub fn download_default_key_pair(&self) -> fluent_builders::DownloadDefaultKeyPair {
         fluent_builders::DownloadDefaultKeyPair::new(self.handle.clone())
@@ -932,7 +934,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::GetBuckets::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::GetBuckets::set_bucket_name): <p>The name of the bucket for which to return information.</p>  <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
     ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetBuckets::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetBuckets::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    ///   - [`include_connected_resources(bool)`](crate::client::fluent_builders::GetBuckets::include_connected_resources) / [`set_include_connected_resources(Option<bool>)`](crate::client::fluent_builders::GetBuckets::set_include_connected_resources): <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <code>SetResourceAccessForBucket</code> action.</p>
+    ///   - [`include_connected_resources(bool)`](crate::client::fluent_builders::GetBuckets::include_connected_resources) / [`set_include_connected_resources(Option<bool>)`](crate::client::fluent_builders::GetBuckets::set_include_connected_resources): <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
     /// - On success, responds with [`GetBucketsOutput`](crate::output::GetBucketsOutput) with field(s):
     ///   - [`buckets(Option<Vec<Bucket>>)`](crate::output::GetBucketsOutput::buckets): <p>An array of objects that describe buckets.</p>
     ///   - [`next_page_token(Option<String>)`](crate::output::GetBucketsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -1303,6 +1305,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetKeyPairs::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetKeyPairs::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    ///   - [`include_default_key_pair(bool)`](crate::client::fluent_builders::GetKeyPairs::include_default_key_pair) / [`set_include_default_key_pair(Option<bool>)`](crate::client::fluent_builders::GetKeyPairs::set_include_default_key_pair): <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
     /// - On success, responds with [`GetKeyPairsOutput`](crate::output::GetKeyPairsOutput) with field(s):
     ///   - [`key_pairs(Option<Vec<KeyPair>>)`](crate::output::GetKeyPairsOutput::key_pairs): <p>An array of key-value pairs containing information about the key pairs.</p>
     ///   - [`next_page_token(Option<String>)`](crate::output::GetKeyPairsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -1856,7 +1859,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBucketBundle::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::UpdateBucketBundle::set_bucket_name): <p>The name of the bucket for which to update the bundle.</p>
-    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBucketBundle::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::UpdateBucketBundle::set_bundle_id): <p>The ID of the new bundle to apply to the bucket.</p>  <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBucketBundle::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::UpdateBucketBundle::set_bundle_id): <p>The ID of the new bundle to apply to the bucket.</p>  <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
     /// - On success, responds with [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::output::UpdateBucketBundleOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateBucketBundleError>`](crate::error::UpdateBucketBundleError)
@@ -1881,7 +1884,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDistribution::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::UpdateDistribution::set_distribution_name): <p>The name of the distribution to update.</p>  <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    ///   - [`origin(InputOrigin)`](crate::client::fluent_builders::UpdateDistribution::origin) / [`set_origin(Option<InputOrigin>)`](crate::client::fluent_builders::UpdateDistribution::set_origin): <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>  <p>The distribution pulls, caches, and serves content from the origin.</p>
+    ///   - [`origin(InputOrigin)`](crate::client::fluent_builders::UpdateDistribution::origin) / [`set_origin(Option<InputOrigin>)`](crate::client::fluent_builders::UpdateDistribution::set_origin): <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>  <p>The distribution pulls, caches, and serves content from the origin.</p>
     ///   - [`default_cache_behavior(CacheBehavior)`](crate::client::fluent_builders::UpdateDistribution::default_cache_behavior) / [`set_default_cache_behavior(Option<CacheBehavior>)`](crate::client::fluent_builders::UpdateDistribution::set_default_cache_behavior): <p>An object that describes the default cache behavior for the distribution.</p>
     ///   - [`cache_behavior_settings(CacheSettings)`](crate::client::fluent_builders::UpdateDistribution::cache_behavior_settings) / [`set_cache_behavior_settings(Option<CacheSettings>)`](crate::client::fluent_builders::UpdateDistribution::set_cache_behavior_settings): <p>An object that describes the cache behavior settings for the distribution.</p> <note>   <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>  </note>
     ///   - [`cache_behaviors(Vec<CacheBehaviorPerPath>)`](crate::client::fluent_builders::UpdateDistribution::cache_behaviors) / [`set_cache_behaviors(Option<Vec<CacheBehaviorPerPath>>)`](crate::client::fluent_builders::UpdateDistribution::set_cache_behaviors): <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
@@ -2684,16 +2687,16 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the bundle to use for the bucket.</p>
         /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
-        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
-        /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle after the bucket is created.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle after the bucket is created.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The ID of the bundle to use for the bucket.</p>
         /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
-        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
-        /// <p>Use the <code>UpdateBucketBundle</code> action to change the bundle after the bucket is created.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle after the bucket is created.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
@@ -2703,13 +2706,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag keys and optional values to add to the bucket during creation.</p>
-        /// <p>Use the <code>TagResource</code> action to tag the bucket after it's created.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html">TagResource</a> action to tag the bucket after it's created.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the bucket during creation.</p>
-        /// <p>Use the <code>TagResource</code> action to tag the bucket after it's created.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html">TagResource</a> action to tag the bucket after it's created.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2733,7 +2736,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBucketAccessKey`.
     ///
     /// <p>Creates a new access key for the specified Amazon Lightsail bucket. Access keys consist of an access key ID and corresponding secret access key.</p>
-    /// <p>Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two access keys per bucket. Use the <code>GetBucketAccessKeys</code> action to get a list of current access keys for a specific bucket. For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> <important>
+    /// <p>Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two access keys per bucket. Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of current access keys for a specific bucket. For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> <important>
     /// <p>The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you first create an access key; you cannot get the secret access key later. If you lose the secret access key, you must create a new access key.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3865,13 +3868,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_distribution_name(input);
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn origin(mut self, input: crate::model::InputOrigin) -> Self {
             self.inner = self.inner.origin(input);
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::InputOrigin>) -> Self {
             self.inner = self.inner.set_origin(input);
@@ -4680,7 +4683,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateKeyPair`.
     ///
-    /// <p>Creates an SSH key pair.</p>
+    /// <p>Creates a custom SSH key pair that you can use with an Amazon Lightsail instance.</p> <note>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html">DownloadDefaultKeyPair</a> action to create a Lightsail default key pair in an Amazon Web Services Region where a default key pair does not currently exist.</p>
+    /// </note>
     /// <p>The <code>create key pair</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateKeyPair {
@@ -5843,13 +5848,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket to delete.</p>
-        /// <p>Use the <code>GetBuckets</code> action to get a list of bucket names that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket_name(input.into());
             self
         }
         /// <p>The name of the bucket to delete.</p>
-        /// <p>Use the <code>GetBuckets</code> action to get a list of bucket names that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action to get a list of bucket names that you can specify.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bucket_name(input);
             self
@@ -5858,7 +5863,7 @@ pub mod fluent_builders {
         /// <p>You must force delete the bucket if it has one of the following conditions:</p>
         /// <ul>
         /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-        /// <li> <p>The bucket has instances that were granted access to it using the <code>SetResourceAccessForBucket</code> action.</p> </li>
+        /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
         /// <li> <p>The bucket has objects.</p> </li>
         /// <li> <p>The bucket has access keys.</p> </li>
         /// </ul> <important>
@@ -5872,7 +5877,7 @@ pub mod fluent_builders {
         /// <p>You must force delete the bucket if it has one of the following conditions:</p>
         /// <ul>
         /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-        /// <li> <p>The bucket has instances that were granted access to it using the <code>SetResourceAccessForBucket</code> action.</p> </li>
+        /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
         /// <li> <p>The bucket has objects.</p> </li>
         /// <li> <p>The bucket has access keys.</p> </li>
         /// </ul> <important>
@@ -5938,13 +5943,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the access key to delete.</p>
-        /// <p>Use the <code>GetBucketAccessKeys</code> action to get a list of access key IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
         pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_key_id(input.into());
             self
         }
         /// <p>The ID of the access key to delete.</p>
-        /// <p>Use the <code>GetBucketAccessKeys</code> action to get a list of access key IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6624,7 +6629,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteKeyPair`.
     ///
-    /// <p>Deletes a specific SSH key pair.</p>
+    /// <p>Deletes the specified key pair by removing the public key from Amazon Lightsail.</p>
+    /// <p>You can delete key pairs that were created using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html">ImportKeyPair</a> and <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html">CreateKeyPair</a> actions, as well as the Lightsail default key pair. A new default key pair will not be created unless you launch an instance without specifying a custom key pair, or you call the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html">DownloadDefaultKeyPair</a> API. </p>
     /// <p>The <code>delete key pair</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>key pair name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKeyPair {
@@ -6676,6 +6682,23 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_key_pair_name(input);
+            self
+        }
+        /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
+        /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+        /// </note>
+        pub fn expected_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_fingerprint(input.into());
+            self
+        }
+        /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
+        /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+        /// </note>
+        pub fn set_expected_fingerprint(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_fingerprint(input);
             self
         }
     }
@@ -7356,7 +7379,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DownloadDefaultKeyPair`.
     ///
-    /// <p>Downloads the default SSH key pair from the user's account.</p>
+    /// <p>Downloads the regional Amazon Lightsail default key pair.</p>
+    /// <p>This action also creates a Lightsail default key pair if a default key pair does not currently exist in the Amazon Web Services Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DownloadDefaultKeyPair {
         handle: std::sync::Arc<super::Handle>,
@@ -7791,7 +7815,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBucketAccessKeys`.
     ///
     /// <p>Returns the existing access key IDs for the specified Amazon Lightsail bucket.</p> <important>
-    /// <p>This action does not return the secret access key value of an access key. You can get a secret access key only when you create it from the response of the <code>CreateBucketAccessKey</code> action. If you lose the secret access key, you must create a new access key.</p>
+    /// <p>This action does not return the secret access key value of an access key. You can get a secret access key only when you create it from the response of the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If you lose the secret access key, you must create a new access key.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketAccessKeys {
@@ -7847,7 +7871,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the bundles that you can apply to a Amazon Lightsail bucket.</p>
     /// <p>The bucket bundle specifies the monthly cost, storage quota, and data transfer quota for a bucket.</p>
-    /// <p>Use the <code>UpdateBucketBundle</code> action to update the bundle for a bucket.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to update the bundle for a bucket.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketBundles {
         handle: std::sync::Arc<super::Handle>,
@@ -8131,12 +8155,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_page_token(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <code>SetResourceAccessForBucket</code> action.</p>
+        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
         pub fn include_connected_resources(mut self, input: bool) -> Self {
             self.inner = self.inner.include_connected_resources(input);
             self
         }
-        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <code>SetResourceAccessForBucket</code> action.</p>
+        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
         pub fn set_include_connected_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_connected_resources(input);
             self
@@ -9680,7 +9704,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetExportSnapshotRecords`.
     ///
     /// <p>Returns all export snapshot records created as a result of the <code>export snapshot</code> operation.</p>
-    /// <p>An export snapshot record can be used to create a new Amazon EC2 instance and its related resources with the <code>CreateCloudFormationStack</code> action.</p>
+    /// <p>An export snapshot record can be used to create a new Amazon EC2 instance and its related resources with the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCloudFormationStack.html">CreateCloudFormationStack</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExportSnapshotRecords {
         handle: std::sync::Arc<super::Handle>,
@@ -10418,6 +10442,16 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
+        pub fn include_default_key_pair(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_default_key_pair(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether to include the default key pair in the response of your request.</p>
+        pub fn set_include_default_key_pair(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_default_key_pair(input);
             self
         }
     }
@@ -13870,7 +13904,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBucketBundle`.
     ///
     /// <p>Updates the bundle, or storage plan, of an existing Amazon Lightsail bucket.</p>
-    /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a bucket's bundle only one time within a monthly AWS billing cycle. To determine if you can update a bucket's bundle, use the <code>GetBuckets</code> action. The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can currently update a bucket's bundle.</p>
+    /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a bucket's bundle only one time within a monthly AWS billing cycle. To determine if you can update a bucket's bundle, use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action. The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can currently update a bucket's bundle.</p>
     /// <p>Update a bucket's bundle if it's consistently going over its storage space or data transfer quota, or if a bucket's usage is consistently in the lower range of its storage space or data transfer quota. Due to the unpredictable usage fluctuations that a bucket might experience, we strongly recommend that you update a bucket's bundle only as a long-term strategy, instead of as a short-term, monthly cost-cutting measure. Choose a bucket bundle that will provide the bucket with ample storage space and data transfer for a long time to come.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBucketBundle {
@@ -13922,13 +13956,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the new bundle to apply to the bucket.</p>
-        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The ID of the new bundle to apply to the bucket.</p>
-        /// <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
+        /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
@@ -14117,13 +14151,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_distribution_name(input);
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn origin(mut self, input: crate::model::InputOrigin) -> Self {
             self.inner = self.inner.origin(input);
             self
         }
-        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>
+        /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::InputOrigin>) -> Self {
             self.inner = self.inner.set_origin(input);

@@ -7868,7 +7868,7 @@ impl std::fmt::Debug for UpdateBranchInput {
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
         formatter.field("enable_performance_mode", &self.enable_performance_mode);
-        formatter.field("build_spec", &self.build_spec);
+        formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("ttl", &self.ttl);
         formatter.field("display_name", &self.display_name);
         formatter.field(
@@ -8028,7 +8028,7 @@ impl std::fmt::Debug for UpdateAppInput {
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_rules", &self.custom_rules);
-        formatter.field("build_spec", &self.build_spec);
+        formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_headers", &self.custom_headers);
         formatter.field(
             "enable_auto_branch_creation",
@@ -9201,7 +9201,7 @@ impl std::fmt::Debug for CreateBranchInput {
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
         formatter.field("enable_performance_mode", &self.enable_performance_mode);
         formatter.field("tags", &self.tags);
-        formatter.field("build_spec", &self.build_spec);
+        formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("ttl", &self.ttl);
         formatter.field("display_name", &self.display_name);
         formatter.field(
@@ -9410,7 +9410,7 @@ impl std::fmt::Debug for CreateAppInput {
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_rules", &self.custom_rules);
         formatter.field("tags", &self.tags);
-        formatter.field("build_spec", &self.build_spec);
+        formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_headers", &self.custom_headers);
         formatter.field(
             "enable_auto_branch_creation",

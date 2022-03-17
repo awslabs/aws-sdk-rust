@@ -12,6 +12,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
             .endpoint(
+                "dms",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "dms.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
                 "dms-fips",
                 aws_endpoint::partition::endpoint::Metadata {
                     uri_template: "dms-fips.us-west-1.amazonaws.com",
@@ -19,6 +30,86 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                     credential_scope: aws_endpoint::CredentialScope::builder()
                         .region("us-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "dms.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-east-1-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "dms-fips.us-east-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "dms.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-east-2-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "dms-fips.us-east-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "dms.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-west-1-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "dms-fips.us-west-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "dms.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-west-2-fips",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "dms-fips.us-west-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-2")
                         .build(),
                 },
             )
@@ -48,6 +139,17 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
                 .endpoint(
+                    "dms",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.{region}.c2s.ic.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-iso-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
                     "dms-fips",
                     aws_endpoint::partition::endpoint::Metadata {
                         uri_template: "dms.us-iso-east-1.c2s.ic.gov",
@@ -55,6 +157,46 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                         signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
                         credential_scope: aws_endpoint::CredentialScope::builder()
                             .region("us-iso-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-iso-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.{region}.c2s.ic.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
+                .endpoint(
+                    "us-iso-east-1-fips",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.us-iso-east-1.c2s.ic.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-iso-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-iso-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.{region}.c2s.ic.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
+                .endpoint(
+                    "us-iso-west-1-fips",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.us-iso-west-1.c2s.ic.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-iso-west-1")
                             .build(),
                     },
                 )
@@ -71,7 +213,38 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
                 .endpoint(
+                    "dms",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.{region}.sc2s.sgov.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-isob-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
                     "dms-fips",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.us-isob-east-1.sc2s.sgov.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-isob-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-isob-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.{region}.sc2s.sgov.gov",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
+                .endpoint(
+                    "us-isob-east-1-fips",
                     aws_endpoint::partition::endpoint::Metadata {
                         uri_template: "dms.us-isob-east-1.sc2s.sgov.gov",
                         protocol: aws_endpoint::partition::endpoint::Protocol::Https,
@@ -94,7 +267,58 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
                 .endpoint(
+                    "dms",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
                     "dms-fips",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.us-gov-west-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-east-1-fips",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.us-gov-east-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "dms.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-west-1-fips",
                     aws_endpoint::partition::endpoint::Metadata {
                         uri_template: "dms.us-gov-west-1.amazonaws.com",
                         protocol: aws_endpoint::partition::endpoint::Protocol::Https,

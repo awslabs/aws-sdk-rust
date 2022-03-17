@@ -653,6 +653,165 @@ impl std::error::Error for DeleteConnectorError {
     }
 }
 
+/// Error type for the `DeleteCustomPlugin` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteCustomPluginError {
+    /// Kind of error that occurred.
+    pub kind: DeleteCustomPluginErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteCustomPlugin` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteCustomPluginErrorKind {
+    /// <p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteCustomPluginError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteCustomPluginErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteCustomPluginErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteCustomPluginErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteCustomPluginErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteCustomPluginErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteCustomPluginErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteCustomPluginErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DeleteCustomPluginErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteCustomPluginError {
+    fn code(&self) -> Option<&str> {
+        DeleteCustomPluginError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteCustomPluginError {
+    /// Creates a new `DeleteCustomPluginError`.
+    pub fn new(kind: DeleteCustomPluginErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteCustomPluginError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteCustomPluginErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteCustomPluginError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteCustomPluginErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteCustomPluginErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomPluginErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomPluginErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomPluginErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomPluginErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomPluginErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomPluginErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomPluginErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomPluginErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomPluginErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomPluginErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomPluginErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomPluginErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomPluginErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteCustomPluginError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteCustomPluginErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteCustomPluginErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteCustomPluginErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteCustomPluginErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteCustomPluginErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteCustomPluginErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteCustomPluginErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DeleteCustomPluginErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeConnector` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

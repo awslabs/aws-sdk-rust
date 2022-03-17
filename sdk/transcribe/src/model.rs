@@ -2271,13 +2271,13 @@ impl LanguageIdSettings {
     }
 }
 
-/// <p>Specify the output format for your subtitle file.</p>
+/// <p>Choose the output format for your subtitle file and the S3 location where you want your file saved.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubtitlesOutput {
     /// <p>Specify the output format for your subtitle file; if you select both SRT and VTT formats, two output files are generated.</p>
     pub formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
-    /// <p>Choose the output location for your subtitle file. This location must be an S3 bucket.</p>
+    /// <p>Contains the output location for your subtitle file. This location must be an S3 bucket.</p>
     pub subtitle_file_uris: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SubtitlesOutput {
@@ -2285,7 +2285,7 @@ impl SubtitlesOutput {
     pub fn formats(&self) -> std::option::Option<&[crate::model::SubtitleFormat]> {
         self.formats.as_deref()
     }
-    /// <p>Choose the output location for your subtitle file. This location must be an S3 bucket.</p>
+    /// <p>Contains the output location for your subtitle file. This location must be an S3 bucket.</p>
     pub fn subtitle_file_uris(&self) -> std::option::Option<&[std::string::String]> {
         self.subtitle_file_uris.as_deref()
     }
@@ -2331,14 +2331,14 @@ pub mod subtitles_output {
         ///
         /// To override the contents of this collection use [`set_subtitle_file_uris`](Self::set_subtitle_file_uris).
         ///
-        /// <p>Choose the output location for your subtitle file. This location must be an S3 bucket.</p>
+        /// <p>Contains the output location for your subtitle file. This location must be an S3 bucket.</p>
         pub fn subtitle_file_uris(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subtitle_file_uris.unwrap_or_default();
             v.push(input.into());
             self.subtitle_file_uris = Some(v);
             self
         }
-        /// <p>Choose the output location for your subtitle file. This location must be an S3 bucket.</p>
+        /// <p>Contains the output location for your subtitle file. This location must be an S3 bucket.</p>
         pub fn set_subtitle_file_uris(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3263,17 +3263,10 @@ impl Transcript {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Media {
     /// <p>The S3 object location of the input media file. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-    /// <p> <code> s3://
-    /// <awsdoc-example-bucket>
-    /// /
-    /// <keyprefix>
-    /// /
-    /// <objectkey></objectkey>
-    /// </keyprefix>
-    /// </awsdoc-example-bucket></code> </p>
+    /// <p> <code>s3://DOC-EXAMPLE-BUCKET/keyprefix/objectkey</code> </p>
     /// <p>For example:</p>
-    /// <p> <code>s3://AWSDOC-EXAMPLE-BUCKET/example.mp4</code> </p>
-    /// <p> <code>s3://AWSDOC-EXAMPLE-BUCKET/mediadocs/example.mp4</code> </p>
+    /// <p> <code>s3://DOC-EXAMPLE-BUCKET/example.flac</code> </p>
+    /// <p> <code>s3://DOC-EXAMPLE-BUCKET/mediafiles/example.flac</code> </p>
     /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     pub media_file_uri: std::option::Option<std::string::String>,
     /// <p>The S3 object location for your redacted output media file. This is only supported for call analytics jobs.</p>
@@ -3281,17 +3274,10 @@ pub struct Media {
 }
 impl Media {
     /// <p>The S3 object location of the input media file. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-    /// <p> <code> s3://
-    /// <awsdoc-example-bucket>
-    /// /
-    /// <keyprefix>
-    /// /
-    /// <objectkey></objectkey>
-    /// </keyprefix>
-    /// </awsdoc-example-bucket></code> </p>
+    /// <p> <code>s3://DOC-EXAMPLE-BUCKET/keyprefix/objectkey</code> </p>
     /// <p>For example:</p>
-    /// <p> <code>s3://AWSDOC-EXAMPLE-BUCKET/example.mp4</code> </p>
-    /// <p> <code>s3://AWSDOC-EXAMPLE-BUCKET/mediadocs/example.mp4</code> </p>
+    /// <p> <code>s3://DOC-EXAMPLE-BUCKET/example.flac</code> </p>
+    /// <p> <code>s3://DOC-EXAMPLE-BUCKET/mediafiles/example.flac</code> </p>
     /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     pub fn media_file_uri(&self) -> std::option::Option<&str> {
         self.media_file_uri.as_deref()
@@ -3320,34 +3306,20 @@ pub mod media {
     }
     impl Builder {
         /// <p>The S3 object location of the input media file. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-        /// <p> <code> s3://
-        /// <awsdoc-example-bucket>
-        /// /
-        /// <keyprefix>
-        /// /
-        /// <objectkey></objectkey>
-        /// </keyprefix>
-        /// </awsdoc-example-bucket></code> </p>
+        /// <p> <code>s3://DOC-EXAMPLE-BUCKET/keyprefix/objectkey</code> </p>
         /// <p>For example:</p>
-        /// <p> <code>s3://AWSDOC-EXAMPLE-BUCKET/example.mp4</code> </p>
-        /// <p> <code>s3://AWSDOC-EXAMPLE-BUCKET/mediadocs/example.mp4</code> </p>
+        /// <p> <code>s3://DOC-EXAMPLE-BUCKET/example.flac</code> </p>
+        /// <p> <code>s3://DOC-EXAMPLE-BUCKET/mediafiles/example.flac</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         pub fn media_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_file_uri = Some(input.into());
             self
         }
         /// <p>The S3 object location of the input media file. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
-        /// <p> <code> s3://
-        /// <awsdoc-example-bucket>
-        /// /
-        /// <keyprefix>
-        /// /
-        /// <objectkey></objectkey>
-        /// </keyprefix>
-        /// </awsdoc-example-bucket></code> </p>
+        /// <p> <code>s3://DOC-EXAMPLE-BUCKET/keyprefix/objectkey</code> </p>
         /// <p>For example:</p>
-        /// <p> <code>s3://AWSDOC-EXAMPLE-BUCKET/example.mp4</code> </p>
-        /// <p> <code>s3://AWSDOC-EXAMPLE-BUCKET/mediadocs/example.mp4</code> </p>
+        /// <p> <code>s3://DOC-EXAMPLE-BUCKET/example.flac</code> </p>
+        /// <p> <code>s3://DOC-EXAMPLE-BUCKET/mediafiles/example.flac</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         pub fn set_media_file_uri(
             mut self,
@@ -6088,7 +6060,7 @@ pub struct LanguageModel {
     pub base_model_name: std::option::Option<crate::model::BaseModelName>,
     /// <p>The creation status of a custom language model. When the status is <code>COMPLETED</code> the model is ready for use.</p>
     pub model_status: std::option::Option<crate::model::ModelStatus>,
-    /// <p>Whether the base model used for the custom language model is up to date. If this field is <code>true</code> then you are running the most up-to-date version of the base model in your custom language model.</p>
+    /// <p>Whether the base model used for the custom language model is up to date. If this field is <code>false</code> then you are running the most up-to-date version of the base model in your custom language model.</p>
     pub upgrade_availability: std::option::Option<bool>,
     /// <p>The reason why the custom language model couldn't be created.</p>
     pub failure_reason: std::option::Option<std::string::String>,
@@ -6120,7 +6092,7 @@ impl LanguageModel {
     pub fn model_status(&self) -> std::option::Option<&crate::model::ModelStatus> {
         self.model_status.as_ref()
     }
-    /// <p>Whether the base model used for the custom language model is up to date. If this field is <code>true</code> then you are running the most up-to-date version of the base model in your custom language model.</p>
+    /// <p>Whether the base model used for the custom language model is up to date. If this field is <code>false</code> then you are running the most up-to-date version of the base model in your custom language model.</p>
     pub fn upgrade_availability(&self) -> std::option::Option<bool> {
         self.upgrade_availability
     }
@@ -6240,12 +6212,12 @@ pub mod language_model {
             self.model_status = input;
             self
         }
-        /// <p>Whether the base model used for the custom language model is up to date. If this field is <code>true</code> then you are running the most up-to-date version of the base model in your custom language model.</p>
+        /// <p>Whether the base model used for the custom language model is up to date. If this field is <code>false</code> then you are running the most up-to-date version of the base model in your custom language model.</p>
         pub fn upgrade_availability(mut self, input: bool) -> Self {
             self.upgrade_availability = Some(input);
             self
         }
-        /// <p>Whether the base model used for the custom language model is up to date. If this field is <code>true</code> then you are running the most up-to-date version of the base model in your custom language model.</p>
+        /// <p>Whether the base model used for the custom language model is up to date. If this field is <code>false</code> then you are running the most up-to-date version of the base model in your custom language model.</p>
         pub fn set_upgrade_availability(mut self, input: std::option::Option<bool>) -> Self {
             self.upgrade_availability = input;
             self

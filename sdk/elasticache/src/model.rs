@@ -11375,7 +11375,7 @@ impl AsRef<str> for SourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineDefaults {
     /// <p>Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.x</code> </p>
     pub cache_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -11387,7 +11387,7 @@ pub struct EngineDefaults {
 }
 impl EngineDefaults {
     /// <p>Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.x</code> </p>
     pub fn cache_parameter_group_family(&self) -> std::option::Option<&str> {
         self.cache_parameter_group_family.as_deref()
     }
@@ -11436,7 +11436,7 @@ pub mod engine_defaults {
     }
     impl Builder {
         /// <p>Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
-        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.x</code> </p>
         pub fn cache_parameter_group_family(
             mut self,
             input: impl Into<std::string::String>,
@@ -11445,7 +11445,7 @@ pub mod engine_defaults {
             self
         }
         /// <p>Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
-        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.x</code> </p>
         pub fn set_cache_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12269,7 +12269,7 @@ pub struct CacheEngineVersion {
     /// <p>The version number of the cache engine.</p>
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The name of the cache parameter group family associated with this cache engine.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> </p>
     pub cache_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description of the cache engine.</p>
     pub cache_engine_description: std::option::Option<std::string::String>,
@@ -12286,7 +12286,7 @@ impl CacheEngineVersion {
         self.engine_version.as_deref()
     }
     /// <p>The name of the cache parameter group family associated with this cache engine.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> </p>
     pub fn cache_parameter_group_family(&self) -> std::option::Option<&str> {
         self.cache_parameter_group_family.as_deref()
     }
@@ -12353,7 +12353,7 @@ pub mod cache_engine_version {
             self
         }
         /// <p>The name of the cache parameter group family associated with this cache engine.</p>
-        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> </p>
         pub fn cache_parameter_group_family(
             mut self,
             input: impl Into<std::string::String>,
@@ -12362,7 +12362,7 @@ pub mod cache_engine_version {
             self
         }
         /// <p>The name of the cache parameter group family associated with this cache engine.</p>
-        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+        /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> </p>
         pub fn set_cache_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,

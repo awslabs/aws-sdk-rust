@@ -2811,11 +2811,15 @@ pub struct SimulationApplicationConfig {
     /// <p>A list of world configurations.</p>
     pub world_configs: std::option::Option<std::vec::Vec<crate::model::WorldConfig>>,
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub use_default_upload_configurations: std::option::Option<bool>,
     /// <p>Information about tools configured for the simulation application.</p>
     pub tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub use_default_tools: std::option::Option<bool>,
 }
 impl SimulationApplicationConfig {
@@ -2842,7 +2846,9 @@ impl SimulationApplicationConfig {
         self.world_configs.as_deref()
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub fn use_default_upload_configurations(&self) -> std::option::Option<bool> {
         self.use_default_upload_configurations
     }
@@ -2850,7 +2856,9 @@ impl SimulationApplicationConfig {
     pub fn tools(&self) -> std::option::Option<&[crate::model::Tool]> {
         self.tools.as_deref()
     }
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub fn use_default_tools(&self) -> std::option::Option<bool> {
         self.use_default_tools
     }
@@ -2964,13 +2972,17 @@ pub mod simulation_application_config {
             self
         }
         /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-        /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
+        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// </important>
         pub fn use_default_upload_configurations(mut self, input: bool) -> Self {
             self.use_default_upload_configurations = Some(input);
             self
         }
         /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-        /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
+        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// </important>
         pub fn set_use_default_upload_configurations(
             mut self,
             input: std::option::Option<bool>,
@@ -2997,12 +3009,16 @@ pub mod simulation_application_config {
             self.tools = input;
             self
         }
-        /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+        /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// </important>
         pub fn use_default_tools(mut self, input: bool) -> Self {
             self.use_default_tools = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+        /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// </important>
         pub fn set_use_default_tools(mut self, input: std::option::Option<bool>) -> Self {
             self.use_default_tools = input;
             self
@@ -3870,11 +3886,15 @@ pub struct RobotApplicationConfig {
     pub upload_configurations:
         std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub use_default_upload_configurations: std::option::Option<bool>,
     /// <p>Information about tools configured for the robot application.</p>
     pub tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub use_default_tools: std::option::Option<bool>,
 }
 impl RobotApplicationConfig {
@@ -3897,7 +3917,9 @@ impl RobotApplicationConfig {
         self.upload_configurations.as_deref()
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub fn use_default_upload_configurations(&self) -> std::option::Option<bool> {
         self.use_default_upload_configurations
     }
@@ -3905,7 +3927,9 @@ impl RobotApplicationConfig {
     pub fn tools(&self) -> std::option::Option<&[crate::model::Tool]> {
         self.tools.as_deref()
     }
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub fn use_default_tools(&self) -> std::option::Option<bool> {
         self.use_default_tools
     }
@@ -3998,13 +4022,17 @@ pub mod robot_application_config {
             self
         }
         /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-        /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
+        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// </important>
         pub fn use_default_upload_configurations(mut self, input: bool) -> Self {
             self.use_default_upload_configurations = Some(input);
             self
         }
         /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-        /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
+        /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// </important>
         pub fn set_use_default_upload_configurations(
             mut self,
             input: std::option::Option<bool>,
@@ -4031,12 +4059,16 @@ pub mod robot_application_config {
             self.tools = input;
             self
         }
-        /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+        /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// </important>
         pub fn use_default_tools(mut self, input: bool) -> Self {
             self.use_default_tools = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+        /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// </important>
         pub fn set_use_default_tools(mut self, input: std::option::Option<bool>) -> Self {
             self.use_default_tools = input;
             self
@@ -4121,11 +4153,15 @@ impl AsRef<str> for FailureBehavior {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfig {
-    /// <p>A boolean indicating whether to record all ROS topics.</p>
+    /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub record_all_ros_topics: std::option::Option<bool>,
 }
 impl LoggingConfig {
-    /// <p>A boolean indicating whether to record all ROS topics.</p>
+    /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
+    /// <p>This API is no longer supported and will throw an error if used.</p>
+    /// </important>
     pub fn record_all_ros_topics(&self) -> std::option::Option<bool> {
         self.record_all_ros_topics
     }
@@ -4146,12 +4182,16 @@ pub mod logging_config {
         pub(crate) record_all_ros_topics: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A boolean indicating whether to record all ROS topics.</p>
+        /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
+        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// </important>
         pub fn record_all_ros_topics(mut self, input: bool) -> Self {
             self.record_all_ros_topics = Some(input);
             self
         }
-        /// <p>A boolean indicating whether to record all ROS topics.</p>
+        /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
+        /// <p>This API is no longer supported and will throw an error if used.</p>
+        /// </important>
         pub fn set_record_all_ros_topics(mut self, input: std::option::Option<bool>) -> Self {
             self.record_all_ros_topics = input;
             self
@@ -5733,6 +5773,8 @@ pub struct WorldExportJobSummary {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of worlds.</p>
     pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The output location.</p>
+    pub output_location: std::option::Option<crate::model::OutputLocation>,
 }
 impl WorldExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
@@ -5789,6 +5831,10 @@ impl WorldExportJobSummary {
     pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
         self.worlds.as_deref()
     }
+    /// <p>The output location.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+        self.output_location.as_ref()
+    }
 }
 impl std::fmt::Debug for WorldExportJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5797,6 +5843,7 @@ impl std::fmt::Debug for WorldExportJobSummary {
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
         formatter.field("worlds", &self.worlds);
+        formatter.field("output_location", &self.output_location);
         formatter.finish()
     }
 }
@@ -5810,6 +5857,7 @@ pub mod world_export_job_summary {
         pub(crate) status: std::option::Option<crate::model::WorldExportJobStatus>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) worlds: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) output_location: std::option::Option<crate::model::OutputLocation>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
@@ -5943,6 +5991,19 @@ pub mod world_export_job_summary {
             self.worlds = input;
             self
         }
+        /// <p>The output location.</p>
+        pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
+            self.output_location = Some(input);
+            self
+        }
+        /// <p>The output location.</p>
+        pub fn set_output_location(
+            mut self,
+            input: std::option::Option<crate::model::OutputLocation>,
+        ) -> Self {
+            self.output_location = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorldExportJobSummary`](crate::model::WorldExportJobSummary)
         pub fn build(self) -> crate::model::WorldExportJobSummary {
             crate::model::WorldExportJobSummary {
@@ -5950,6 +6011,7 @@ pub mod world_export_job_summary {
                 status: self.status,
                 created_at: self.created_at,
                 worlds: self.worlds,
+                output_location: self.output_location,
             }
         }
     }

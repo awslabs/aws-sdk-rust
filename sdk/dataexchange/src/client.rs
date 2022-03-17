@@ -174,6 +174,9 @@ impl Client {
     ///   - [`source_id(Option<String>)`](crate::output::CreateRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRevisionOutput::tags): <p>The tags for the revision.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::CreateRevisionOutput::updated_at): <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    ///   - [`revocation_comment(Option<String>)`](crate::output::CreateRevisionOutput::revocation_comment): <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    ///   - [`revoked(bool)`](crate::output::CreateRevisionOutput::revoked): <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    ///   - [`revoked_at(Option<DateTime>)`](crate::output::CreateRevisionOutput::revoked_at): <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<CreateRevisionError>`](crate::error::CreateRevisionError)
     pub fn create_revision(&self) -> fluent_builders::CreateRevision {
         fluent_builders::CreateRevision::new(self.handle.clone())
@@ -309,6 +312,9 @@ impl Client {
     ///   - [`source_id(Option<String>)`](crate::output::GetRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetRevisionOutput::tags): <p>The tags for the revision.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::GetRevisionOutput::updated_at): <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    ///   - [`revocation_comment(Option<String>)`](crate::output::GetRevisionOutput::revocation_comment): <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    ///   - [`revoked(bool)`](crate::output::GetRevisionOutput::revoked): <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    ///   - [`revoked_at(Option<DateTime>)`](crate::output::GetRevisionOutput::revoked_at): <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<GetRevisionError>`](crate::error::GetRevisionError)
     pub fn get_revision(&self) -> fluent_builders::GetRevision {
         fluent_builders::GetRevision::new(self.handle.clone())
@@ -394,6 +400,28 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`RevokeRevision`](crate::client::fluent_builders::RevokeRevision) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::RevokeRevision::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::RevokeRevision::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::RevokeRevision::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::RevokeRevision::set_revision_id): <p>The unique identifier for a revision.</p>
+    ///   - [`revocation_comment(impl Into<String>)`](crate::client::fluent_builders::RevokeRevision::revocation_comment) / [`set_revocation_comment(Option<String>)`](crate::client::fluent_builders::RevokeRevision::set_revocation_comment): <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    /// - On success, responds with [`RevokeRevisionOutput`](crate::output::RevokeRevisionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::RevokeRevisionOutput::arn): <p>The ARN for the revision.</p>
+    ///   - [`comment(Option<String>)`](crate::output::RevokeRevisionOutput::comment): <p>An optional comment about the revision.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::RevokeRevisionOutput::created_at): <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    ///   - [`data_set_id(Option<String>)`](crate::output::RevokeRevisionOutput::data_set_id): <p>The unique identifier for the data set associated with this revision.</p>
+    ///   - [`finalized(bool)`](crate::output::RevokeRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>  <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    ///   - [`id(Option<String>)`](crate::output::RevokeRevisionOutput::id): <p>The unique identifier for the revision.</p>
+    ///   - [`source_id(Option<String>)`](crate::output::RevokeRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::RevokeRevisionOutput::updated_at): <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    ///   - [`revocation_comment(Option<String>)`](crate::output::RevokeRevisionOutput::revocation_comment): <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    ///   - [`revoked(bool)`](crate::output::RevokeRevisionOutput::revoked): <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    ///   - [`revoked_at(Option<DateTime>)`](crate::output::RevokeRevisionOutput::revoked_at): <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<RevokeRevisionError>`](crate::error::RevokeRevisionError)
+    pub fn revoke_revision(&self) -> fluent_builders::RevokeRevision {
+        fluent_builders::RevokeRevision::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SendApiAsset`](crate::client::fluent_builders::SendApiAsset) operation.
     ///
@@ -520,6 +548,9 @@ impl Client {
     ///   - [`id(Option<String>)`](crate::output::UpdateRevisionOutput::id): <p>The unique identifier for the revision.</p>
     ///   - [`source_id(Option<String>)`](crate::output::UpdateRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::UpdateRevisionOutput::updated_at): <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    ///   - [`revocation_comment(Option<String>)`](crate::output::UpdateRevisionOutput::revocation_comment): <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+    ///   - [`revoked(bool)`](crate::output::UpdateRevisionOutput::revoked): <p>A status indicating that subscribers' access to the revision was revoked.</p>
+    ///   - [`revoked_at(Option<DateTime>)`](crate::output::UpdateRevisionOutput::revoked_at): <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<UpdateRevisionError>`](crate::error::UpdateRevisionError)
     pub fn update_revision(&self) -> fluent_builders::UpdateRevision {
         fluent_builders::UpdateRevision::new(self.handle.clone())
@@ -1911,6 +1942,82 @@ pub mod fluent_builders {
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RevokeRevision`.
+    ///
+    /// <p>This operation revokes subscribers' access to a revision.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RevokeRevision {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::revoke_revision_input::Builder,
+    }
+    impl RevokeRevision {
+        /// Creates a new `RevokeRevision`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RevokeRevisionOutput,
+            aws_smithy_http::result::SdkError<crate::error::RevokeRevisionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for a data set.</p>
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for a data set.</p>
+        pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_data_set_id(input);
+            self
+        }
+        /// <p>The unique identifier for a revision.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for a revision.</p>
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_revision_id(input);
+            self
+        }
+        /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+        pub fn revocation_comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revocation_comment(input.into());
+            self
+        }
+        /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
+        pub fn set_revocation_comment(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_revocation_comment(input);
             self
         }
     }

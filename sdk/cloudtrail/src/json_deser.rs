@@ -4441,6 +4441,14 @@ where
                                     .map(|v| v.to_i64()),
                                 );
                             }
+                            "BytesScanned" => {
+                                builder = builder.set_bytes_scanned(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
                             "ExecutionTimeInMillis" => {
                                 builder = builder.set_execution_time_in_millis(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
@@ -4617,6 +4625,14 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_i32()),
+                                );
+                            }
+                            "BytesScanned" => {
+                                builder = builder.set_bytes_scanned(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

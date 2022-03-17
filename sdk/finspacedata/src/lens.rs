@@ -28,3 +28,23 @@ pub(crate) fn reflens_structure_crate_output_list_data_views_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn reflens_structure_crate_output_list_permission_groups_output_next_token(
+    input: &crate::output::ListPermissionGroupsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_users_output_next_token(
+    input: &crate::output::ListUsersOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

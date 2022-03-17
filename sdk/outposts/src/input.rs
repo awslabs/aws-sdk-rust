@@ -2665,6 +2665,12 @@ pub mod list_sites_input {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) operating_address_country_code_filter:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) operating_address_state_or_region_filter:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) operating_address_city_filter:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The pagination token.</p>
@@ -2687,6 +2693,82 @@ pub mod list_sites_input {
             self.max_results = input;
             self
         }
+        /// Appends an item to `operating_address_country_code_filter`.
+        ///
+        /// To override the contents of this collection use [`set_operating_address_country_code_filter`](Self::set_operating_address_country_code_filter).
+        ///
+        /// <p> A filter for the country code of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn operating_address_country_code_filter(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self
+                .operating_address_country_code_filter
+                .unwrap_or_default();
+            v.push(input.into());
+            self.operating_address_country_code_filter = Some(v);
+            self
+        }
+        /// <p> A filter for the country code of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn set_operating_address_country_code_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.operating_address_country_code_filter = input;
+            self
+        }
+        /// Appends an item to `operating_address_state_or_region_filter`.
+        ///
+        /// To override the contents of this collection use [`set_operating_address_state_or_region_filter`](Self::set_operating_address_state_or_region_filter).
+        ///
+        /// <p> A filter for the state/region of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn operating_address_state_or_region_filter(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self
+                .operating_address_state_or_region_filter
+                .unwrap_or_default();
+            v.push(input.into());
+            self.operating_address_state_or_region_filter = Some(v);
+            self
+        }
+        /// <p> A filter for the state/region of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn set_operating_address_state_or_region_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.operating_address_state_or_region_filter = input;
+            self
+        }
+        /// Appends an item to `operating_address_city_filter`.
+        ///
+        /// To override the contents of this collection use [`set_operating_address_city_filter`](Self::set_operating_address_city_filter).
+        ///
+        /// <p> A filter for the city of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn operating_address_city_filter(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.operating_address_city_filter.unwrap_or_default();
+            v.push(input.into());
+            self.operating_address_city_filter = Some(v);
+            self
+        }
+        /// <p> A filter for the city of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn set_operating_address_city_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.operating_address_city_filter = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSitesInput`](crate::input::ListSitesInput)
         pub fn build(
             self,
@@ -2695,6 +2777,10 @@ pub mod list_sites_input {
             Ok(crate::input::ListSitesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
+                operating_address_country_code_filter: self.operating_address_country_code_filter,
+                operating_address_state_or_region_filter: self
+                    .operating_address_state_or_region_filter,
+                operating_address_city_filter: self.operating_address_city_filter,
             })
         }
     }
@@ -2739,6 +2825,30 @@ impl ListSitesInput {
                         "MaxResults",
                         aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
                     );
+                }
+                if let Some(inner_34) = &_input.operating_address_country_code_filter {
+                    for inner_35 in inner_34 {
+                        query.push_kv(
+                            "OperatingAddressCountryCodeFilter",
+                            &aws_smithy_http::query::fmt_string(&inner_35),
+                        );
+                    }
+                }
+                if let Some(inner_36) = &_input.operating_address_state_or_region_filter {
+                    for inner_37 in inner_36 {
+                        query.push_kv(
+                            "OperatingAddressStateOrRegionFilter",
+                            &aws_smithy_http::query::fmt_string(&inner_37),
+                        );
+                    }
+                }
+                if let Some(inner_38) = &_input.operating_address_city_filter {
+                    for inner_39 in inner_38 {
+                        query.push_kv(
+                            "OperatingAddressCityFilter",
+                            &aws_smithy_http::query::fmt_string(&inner_39),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2861,14 +2971,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_34 = &_input.resource_arn;
-                let input_34 = input_34.as_ref().ok_or(
+                let input_40 = &_input.resource_arn;
+                let input_40 = input_40.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_34, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -3028,14 +3138,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_35 = &_input.resource_arn;
-                let input_35 = input_35.as_ref().ok_or(
+                let input_41 = &_input.resource_arn;
+                let input_41 = input_41.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_35, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_41, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -3201,14 +3311,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.resource_arn;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_42 = &_input.resource_arn;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_36, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_42, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -3224,9 +3334,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_37) = &_input.tag_keys {
-                    for inner_38 in inner_37 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_38));
+                if let Some(inner_43) = &_input.tag_keys {
+                    for inner_44 in inner_43 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_44));
                     }
                 }
                 Ok(())
@@ -3395,14 +3505,14 @@ impl UpdateOutpostInput {
                 _input: &crate::input::UpdateOutpostInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_39 = &_input.outpost_id;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_45 = &_input.outpost_id;
+                let input_45 = input_45.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "outpost_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let outpost_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let outpost_id = aws_smithy_http::label::fmt_string(input_45, false);
                 if outpost_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "outpost_id",
@@ -3583,14 +3693,14 @@ impl UpdateSiteInput {
                 _input: &crate::input::UpdateSiteInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.site_id;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_46 = &_input.site_id;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let site_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let site_id = aws_smithy_http::label::fmt_string(input_46, false);
                 if site_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
@@ -3762,14 +3872,14 @@ impl UpdateSiteAddressInput {
                 _input: &crate::input::UpdateSiteAddressInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.site_id;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_47 = &_input.site_id;
+                let input_47 = input_47.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let site_id = aws_smithy_http::label::fmt_string(input_41, false);
+                let site_id = aws_smithy_http::label::fmt_string(input_47, false);
                 if site_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
@@ -4127,14 +4237,14 @@ impl UpdateSiteRackPhysicalPropertiesInput {
                 _input: &crate::input::UpdateSiteRackPhysicalPropertiesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.site_id;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_48 = &_input.site_id;
+                let input_48 = input_48.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let site_id = aws_smithy_http::label::fmt_string(input_42, false);
+                let site_id = aws_smithy_http::label::fmt_string(input_48, false);
                 if site_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
@@ -4599,6 +4709,17 @@ pub struct ListSitesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p> A filter for the country code of the Outpost site. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub operating_address_country_code_filter:
+        std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> A filter for the state/region of the Outpost site. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub operating_address_state_or_region_filter:
+        std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> A filter for the city of the Outpost site. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub operating_address_city_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListSitesInput {
     /// <p>The pagination token.</p>
@@ -4609,12 +4730,43 @@ impl ListSitesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
+    /// <p> A filter for the country code of the Outpost site. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub fn operating_address_country_code_filter(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.operating_address_country_code_filter.as_deref()
+    }
+    /// <p> A filter for the state/region of the Outpost site. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub fn operating_address_state_or_region_filter(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.operating_address_state_or_region_filter.as_deref()
+    }
+    /// <p> A filter for the city of the Outpost site. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub fn operating_address_city_filter(&self) -> std::option::Option<&[std::string::String]> {
+        self.operating_address_city_filter.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSitesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSitesInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field(
+            "operating_address_country_code_filter",
+            &self.operating_address_country_code_filter,
+        );
+        formatter.field(
+            "operating_address_state_or_region_filter",
+            &self.operating_address_state_or_region_filter,
+        );
+        formatter.field(
+            "operating_address_city_filter",
+            &self.operating_address_city_filter,
+        );
         formatter.finish()
     }
 }

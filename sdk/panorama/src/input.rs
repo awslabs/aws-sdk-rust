@@ -1236,7 +1236,7 @@ pub mod delete_package_input {
         > {
             Ok(crate::input::DeletePackageInput {
                 package_id: self.package_id,
-                force_delete: self.force_delete,
+                force_delete: self.force_delete.unwrap_or_default(),
             })
         }
     }
@@ -1288,10 +1288,10 @@ impl DeletePackageInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.force_delete {
+                if _input.force_delete {
                     query.push_kv(
                         "ForceDelete",
-                        aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        aws_smithy_types::primitive::Encoder::from(_input.force_delete).encode(),
                     );
                 }
                 Ok(())
@@ -1481,42 +1481,42 @@ impl DeregisterPackageVersionInput {
                 _input: &crate::input::DeregisterPackageVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_4 = &_input.package_id;
-                let input_4 = input_4.as_ref().ok_or(
+                let input_3 = &_input.package_id;
+                let input_3 = input_3.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let package_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let package_id = aws_smithy_http::label::fmt_string(input_3, false);
                 if package_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_5 = &_input.package_version;
-                let input_5 = input_5.as_ref().ok_or(
+                let input_4 = &_input.package_version;
+                let input_4 = input_4.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_version",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let package_version = aws_smithy_http::label::fmt_string(input_5, false);
+                let package_version = aws_smithy_http::label::fmt_string(input_4, false);
                 if package_version.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_version",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_6 = &_input.patch_version;
-                let input_6 = input_6.as_ref().ok_or(
+                let input_5 = &_input.patch_version;
+                let input_5 = input_5.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "patch_version",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let patch_version = aws_smithy_http::label::fmt_string(input_6, false);
+                let patch_version = aws_smithy_http::label::fmt_string(input_5, false);
                 if patch_version.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "patch_version",
@@ -1538,16 +1538,16 @@ impl DeregisterPackageVersionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_7) = &_input.owner_account {
+                if let Some(inner_6) = &_input.owner_account {
                     query.push_kv(
                         "OwnerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
+                        &aws_smithy_http::query::fmt_string(&inner_6),
                     );
                 }
-                if let Some(inner_8) = &_input.updated_latest_patch_version {
+                if let Some(inner_7) = &_input.updated_latest_patch_version {
                     query.push_kv(
                         "UpdatedLatestPatchVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_8),
+                        &aws_smithy_http::query::fmt_string(&inner_7),
                     );
                 }
                 Ok(())
@@ -1677,14 +1677,14 @@ impl DescribeApplicationInstanceInput {
                 _input: &crate::input::DescribeApplicationInstanceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_9 = &_input.application_instance_id;
-                let input_9 = input_9.as_ref().ok_or(
+                let input_8 = &_input.application_instance_id;
+                let input_8 = input_8.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_instance_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let application_instance_id = aws_smithy_http::label::fmt_string(input_8, false);
                 if application_instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
@@ -1824,14 +1824,14 @@ impl DescribeApplicationInstanceDetailsInput {
                 _input: &crate::input::DescribeApplicationInstanceDetailsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_10 = &_input.application_instance_id;
-                let input_10 = input_10.as_ref().ok_or(
+                let input_9 = &_input.application_instance_id;
+                let input_9 = input_9.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_instance_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let application_instance_id = aws_smithy_http::label::fmt_string(input_9, false);
                 if application_instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
@@ -1966,14 +1966,14 @@ impl DescribeDeviceInput {
                 _input: &crate::input::DescribeDeviceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_11 = &_input.device_id;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_10 = &_input.device_id;
+                let input_10 = input_10.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let device_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let device_id = aws_smithy_http::label::fmt_string(input_10, false);
                 if device_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
@@ -2104,14 +2104,14 @@ impl DescribeDeviceJobInput {
                 _input: &crate::input::DescribeDeviceJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_12 = &_input.job_id;
-                let input_12 = input_12.as_ref().ok_or(
+                let input_11 = &_input.job_id;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_11, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -2256,14 +2256,14 @@ impl DescribeNodeInput {
                 _input: &crate::input::DescribeNodeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_13 = &_input.node_id;
-                let input_13 = input_13.as_ref().ok_or(
+                let input_12 = &_input.node_id;
+                let input_12 = input_12.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "node_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let node_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let node_id = aws_smithy_http::label::fmt_string(input_12, false);
                 if node_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "node_id",
@@ -2279,10 +2279,10 @@ impl DescribeNodeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_14) = &_input.owner_account {
+                if let Some(inner_13) = &_input.owner_account {
                     query.push_kv(
                         "OwnerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_14),
+                        &aws_smithy_http::query::fmt_string(&inner_13),
                     );
                 }
                 Ok(())
@@ -2409,14 +2409,14 @@ impl DescribeNodeFromTemplateJobInput {
                 _input: &crate::input::DescribeNodeFromTemplateJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_15 = &_input.job_id;
-                let input_15 = input_15.as_ref().ok_or(
+                let input_14 = &_input.job_id;
+                let input_14 = input_14.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_14, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -2547,14 +2547,14 @@ impl DescribePackageInput {
                 _input: &crate::input::DescribePackageInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_16 = &_input.package_id;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_15 = &_input.package_id;
+                let input_15 = input_15.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let package_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let package_id = aws_smithy_http::label::fmt_string(input_15, false);
                 if package_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
@@ -2690,14 +2690,14 @@ impl DescribePackageImportJobInput {
                 _input: &crate::input::DescribePackageImportJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_17 = &_input.job_id;
-                let input_17 = input_17.as_ref().ok_or(
+                let input_16 = &_input.job_id;
+                let input_16 = input_16.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_16, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -2873,28 +2873,28 @@ impl DescribePackageVersionInput {
                 _input: &crate::input::DescribePackageVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_18 = &_input.package_id;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_17 = &_input.package_id;
+                let input_17 = input_17.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let package_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let package_id = aws_smithy_http::label::fmt_string(input_17, false);
                 if package_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_19 = &_input.package_version;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_18 = &_input.package_version;
+                let input_18 = input_18.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_version",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let package_version = aws_smithy_http::label::fmt_string(input_19, false);
+                let package_version = aws_smithy_http::label::fmt_string(input_18, false);
                 if package_version.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_version",
@@ -2915,16 +2915,16 @@ impl DescribePackageVersionInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_20) = &_input.owner_account {
+                if let Some(inner_19) = &_input.owner_account {
                     query.push_kv(
                         "OwnerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_20),
+                        &aws_smithy_http::query::fmt_string(&inner_19),
                     );
                 }
-                if let Some(inner_21) = &_input.patch_version {
+                if let Some(inner_20) = &_input.patch_version {
                     query.push_kv(
                         "PatchVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_21),
+                        &aws_smithy_http::query::fmt_string(&inner_20),
                     );
                 }
                 Ok(())
@@ -3079,14 +3079,14 @@ impl ListApplicationInstanceDependenciesInput {
                 _input: &crate::input::ListApplicationInstanceDependenciesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_22 = &_input.application_instance_id;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_21 = &_input.application_instance_id;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_instance_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let application_instance_id = aws_smithy_http::label::fmt_string(input_21, false);
                 if application_instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
@@ -3112,8 +3112,8 @@ impl ListApplicationInstanceDependenciesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_23) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                if let Some(inner_22) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
                 }
                 Ok(())
             }
@@ -3267,14 +3267,14 @@ impl ListApplicationInstanceNodeInstancesInput {
                 _input: &crate::input::ListApplicationInstanceNodeInstancesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_24 = &_input.application_instance_id;
-                let input_24 = input_24.as_ref().ok_or(
+                let input_23 = &_input.application_instance_id;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_instance_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let application_instance_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if application_instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
@@ -3300,8 +3300,8 @@ impl ListApplicationInstanceNodeInstancesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_25) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+                if let Some(inner_24) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
                 }
                 Ok(())
             }
@@ -3474,13 +3474,13 @@ impl ListApplicationInstancesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_26) = &_input.device_id {
-                    query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_26));
+                if let Some(inner_25) = &_input.device_id {
+                    query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_25));
                 }
-                if let Some(inner_27) = &_input.status_filter {
+                if let Some(inner_26) = &_input.status_filter {
                     query.push_kv(
                         "statusFilter",
-                        &aws_smithy_http::query::fmt_string(&inner_27),
+                        &aws_smithy_http::query::fmt_string(&inner_26),
                     );
                 }
                 if _input.max_results != 0 {
@@ -3489,8 +3489,8 @@ impl ListApplicationInstancesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_28) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                if let Some(inner_27) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
                 }
                 Ok(())
             }
@@ -3635,8 +3635,8 @@ impl ListDevicesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_29) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_29));
+                if let Some(inner_28) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_28));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3799,11 +3799,11 @@ impl ListDevicesJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_30) = &_input.device_id {
-                    query.push_kv("DeviceId", &aws_smithy_http::query::fmt_string(&inner_30));
+                if let Some(inner_29) = &_input.device_id {
+                    query.push_kv("DeviceId", &aws_smithy_http::query::fmt_string(&inner_29));
                 }
-                if let Some(inner_31) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                if let Some(inner_30) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_30));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3955,8 +3955,8 @@ impl ListNodeFromTemplateJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_32) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                if let Some(inner_31) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4177,35 +4177,35 @@ impl ListNodesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_33) = &_input.category {
-                    query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_33));
+                if let Some(inner_32) = &_input.category {
+                    query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_32));
                 }
-                if let Some(inner_34) = &_input.owner_account {
+                if let Some(inner_33) = &_input.owner_account {
                     query.push_kv(
                         "ownerAccount",
+                        &aws_smithy_http::query::fmt_string(&inner_33),
+                    );
+                }
+                if let Some(inner_34) = &_input.package_name {
+                    query.push_kv(
+                        "packageName",
                         &aws_smithy_http::query::fmt_string(&inner_34),
                     );
                 }
-                if let Some(inner_35) = &_input.package_name {
+                if let Some(inner_35) = &_input.package_version {
                     query.push_kv(
-                        "packageName",
+                        "packageVersion",
                         &aws_smithy_http::query::fmt_string(&inner_35),
                     );
                 }
-                if let Some(inner_36) = &_input.package_version {
+                if let Some(inner_36) = &_input.patch_version {
                     query.push_kv(
-                        "packageVersion",
+                        "patchVersion",
                         &aws_smithy_http::query::fmt_string(&inner_36),
                     );
                 }
-                if let Some(inner_37) = &_input.patch_version {
-                    query.push_kv(
-                        "patchVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_37),
-                    );
-                }
-                if let Some(inner_38) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+                if let Some(inner_37) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4354,8 +4354,8 @@ impl ListPackageImportJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_39));
+                if let Some(inner_38) = &_input.next_token {
+                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_38));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4512,8 +4512,8 @@ impl ListPackagesInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_40) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                if let Some(inner_39) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_39));
                 }
                 Ok(())
             }
@@ -4638,14 +4638,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.resource_arn;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_40 = &_input.resource_arn;
+                let input_40 = input_40.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_41, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -4997,7 +4997,7 @@ pub mod register_package_version_input {
                 package_id: self.package_id,
                 package_version: self.package_version,
                 patch_version: self.patch_version,
-                mark_latest: self.mark_latest,
+                mark_latest: self.mark_latest.unwrap_or_default(),
             })
         }
     }
@@ -5026,42 +5026,42 @@ impl RegisterPackageVersionInput {
                 _input: &crate::input::RegisterPackageVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.package_id;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_41 = &_input.package_id;
+                let input_41 = input_41.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let package_id = aws_smithy_http::label::fmt_string(input_42, false);
+                let package_id = aws_smithy_http::label::fmt_string(input_41, false);
                 if package_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_43 = &_input.package_version;
-                let input_43 = input_43.as_ref().ok_or(
+                let input_42 = &_input.package_version;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_version",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let package_version = aws_smithy_http::label::fmt_string(input_43, false);
+                let package_version = aws_smithy_http::label::fmt_string(input_42, false);
                 if package_version.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_version",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_44 = &_input.patch_version;
-                let input_44 = input_44.as_ref().ok_or(
+                let input_43 = &_input.patch_version;
+                let input_43 = input_43.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "patch_version",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let patch_version = aws_smithy_http::label::fmt_string(input_44, false);
+                let patch_version = aws_smithy_http::label::fmt_string(input_43, false);
                 if patch_version.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "patch_version",
@@ -5218,14 +5218,14 @@ impl RemoveApplicationInstanceInput {
                 _input: &crate::input::RemoveApplicationInstanceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_45 = &_input.application_instance_id;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_44 = &_input.application_instance_id;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application_instance_id = aws_smithy_http::label::fmt_string(input_45, false);
+                let application_instance_id = aws_smithy_http::label::fmt_string(input_44, false);
                 if application_instance_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_instance_id",
@@ -5389,14 +5389,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_46 = &_input.resource_arn;
-                let input_46 = input_46.as_ref().ok_or(
+                let input_45 = &_input.resource_arn;
+                let input_45 = input_45.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_45, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5562,14 +5562,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_47 = &_input.resource_arn;
-                let input_47 = input_47.as_ref().ok_or(
+                let input_46 = &_input.resource_arn;
+                let input_46 = input_46.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_47, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -5585,9 +5585,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_48) = &_input.tag_keys {
-                    for inner_49 in inner_48 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_49));
+                if let Some(inner_47) = &_input.tag_keys {
+                    for inner_48 in inner_47 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_48));
                     }
                 }
                 Ok(())
@@ -5725,14 +5725,14 @@ impl UpdateDeviceMetadataInput {
                 _input: &crate::input::UpdateDeviceMetadataInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_50 = &_input.device_id;
-                let input_50 = input_50.as_ref().ok_or(
+                let input_49 = &_input.device_id;
+                let input_49 = input_49.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let device_id = aws_smithy_http::label::fmt_string(input_50, false);
+                let device_id = aws_smithy_http::label::fmt_string(input_49, false);
                 if device_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
@@ -5945,7 +5945,7 @@ pub struct RegisterPackageVersionInput {
     /// <p>A patch version.</p>
     pub patch_version: std::option::Option<std::string::String>,
     /// <p>Whether to mark the new version as the latest version.</p>
-    pub mark_latest: std::option::Option<bool>,
+    pub mark_latest: bool,
 }
 impl RegisterPackageVersionInput {
     /// <p>An owner account.</p>
@@ -5965,7 +5965,7 @@ impl RegisterPackageVersionInput {
         self.patch_version.as_deref()
     }
     /// <p>Whether to mark the new version as the latest version.</p>
-    pub fn mark_latest(&self) -> std::option::Option<bool> {
+    pub fn mark_latest(&self) -> bool {
         self.mark_latest
     }
 }
@@ -6646,7 +6646,7 @@ pub struct DeletePackageInput {
     /// <p>The package's ID.</p>
     pub package_id: std::option::Option<std::string::String>,
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
-    pub force_delete: std::option::Option<bool>,
+    pub force_delete: bool,
 }
 impl DeletePackageInput {
     /// <p>The package's ID.</p>
@@ -6654,7 +6654,7 @@ impl DeletePackageInput {
         self.package_id.as_deref()
     }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
-    pub fn force_delete(&self) -> std::option::Option<bool> {
+    pub fn force_delete(&self) -> bool {
         self.force_delete
     }
 }

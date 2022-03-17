@@ -2658,7 +2658,13 @@ pub enum ExecuteCommandErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The target container isn't properly configured with the execute command agent or the container is no longer active or running.</p>
+    /// <p>The execute command cannot run. This error can be caused by any of the following configuration issues:</p>
+    /// <ul>
+    /// <li> <p>Incorrect IAM permissions</p> </li>
+    /// <li> <p>The SSM agent is not installed or is not running</p> </li>
+    /// <li> <p> There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for for Systems Manager Session Manager</p> </li>
+    /// </ul>
+    /// <p>For information about how to troubleshoot the issues, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Troubleshooting issues with ECS Exec</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     TargetNotConnectedException(crate::error::TargetNotConnectedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7979,7 +7985,13 @@ impl AttributeLimitExceededException {
     }
 }
 
-/// <p>The target container isn't properly configured with the execute command agent or the container is no longer active or running.</p>
+/// <p>The execute command cannot run. This error can be caused by any of the following configuration issues:</p>
+/// <ul>
+/// <li> <p>Incorrect IAM permissions</p> </li>
+/// <li> <p>The SSM agent is not installed or is not running</p> </li>
+/// <li> <p> There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for for Systems Manager Session Manager</p> </li>
+/// </ul>
+/// <p>For information about how to troubleshoot the issues, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Troubleshooting issues with ECS Exec</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetNotConnectedException {

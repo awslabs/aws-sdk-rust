@@ -1109,14 +1109,14 @@ pub mod create_data_source_input {
             self.r#type = input;
             self
         }
-        /// <p>The connector configuration information that is required to access the repository.</p>
+        /// <p>Configuration information that is required to access the data source repository.</p>
         /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>The connector configuration information that is required to access the repository.</p>
+        /// <p>Configuration information that is required to access the data source repository.</p>
         /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
         pub fn set_configuration(
@@ -1403,12 +1403,12 @@ pub mod create_experience_input {
             self.role_arn = input;
             self
         }
-        /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
+        /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
         pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
+        /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ExperienceConfiguration>,
@@ -7791,6 +7791,8 @@ pub mod query_input {
         pub(crate) sorting_configuration: std::option::Option<crate::model::SortingConfiguration>,
         pub(crate) user_context: std::option::Option<crate::model::UserContext>,
         pub(crate) visitor_id: std::option::Option<std::string::String>,
+        pub(crate) spell_correction_configuration:
+            std::option::Option<crate::model::SpellCorrectionConfiguration>,
     }
     impl Builder {
         /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
@@ -7970,6 +7972,22 @@ pub mod query_input {
             self.visitor_id = input;
             self
         }
+        /// <p>Enables suggested spell corrections for queries.</p>
+        pub fn spell_correction_configuration(
+            mut self,
+            input: crate::model::SpellCorrectionConfiguration,
+        ) -> Self {
+            self.spell_correction_configuration = Some(input);
+            self
+        }
+        /// <p>Enables suggested spell corrections for queries.</p>
+        pub fn set_spell_correction_configuration(
+            mut self,
+            input: std::option::Option<crate::model::SpellCorrectionConfiguration>,
+        ) -> Self {
+            self.spell_correction_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryInput`](crate::input::QueryInput)
         pub fn build(
             self,
@@ -7989,6 +8007,7 @@ pub mod query_input {
                 sorting_configuration: self.sorting_configuration,
                 user_context: self.user_context,
                 visitor_id: self.visitor_id,
+                spell_correction_configuration: self.spell_correction_configuration,
             })
         }
     }
@@ -8982,12 +9001,12 @@ pub mod update_data_source_input {
             self.index_id = input;
             self
         }
-        /// <p>Configuration information for an Amazon Kendra data source.</p>
+        /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
         pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Configuration information for an Amazon Kendra data source.</p>
+        /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -9242,12 +9261,12 @@ pub mod update_experience_input {
             self.role_arn = input;
             self
         }
-        /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+        /// <p>Configuration information for your Amazon Kendra you want to update.</p>
         pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+        /// <p>Configuration information for your Amazon Kendra you want to update.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ExperienceConfiguration>,
@@ -9457,7 +9476,7 @@ pub mod update_index_input {
         ///
         /// To override the contents of this collection use [`set_document_metadata_configuration_updates`](Self::set_document_metadata_configuration_updates).
         ///
-        /// <p>The document metadata to update. </p>
+        /// <p>The document metadata you want to update.</p>
         pub fn document_metadata_configuration_updates(
             mut self,
             input: crate::model::DocumentMetadataConfiguration,
@@ -9469,7 +9488,7 @@ pub mod update_index_input {
             self.document_metadata_configuration_updates = Some(v);
             self
         }
-        /// <p>The document metadata to update. </p>
+        /// <p>The document metadata you want to update.</p>
         pub fn set_document_metadata_configuration_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
@@ -10540,7 +10559,7 @@ pub struct UpdateIndexInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A new description for the index.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The document metadata to update. </p>
+    /// <p>The document metadata you want to update.</p>
     pub document_metadata_configuration_updates:
         std::option::Option<std::vec::Vec<crate::model::DocumentMetadataConfiguration>>,
     /// <p>Sets the number of additional storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day.</p>
@@ -10572,7 +10591,7 @@ impl UpdateIndexInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The document metadata to update. </p>
+    /// <p>The document metadata you want to update.</p>
     pub fn document_metadata_configuration_updates(
         &self,
     ) -> std::option::Option<&[crate::model::DocumentMetadataConfiguration]> {
@@ -10634,7 +10653,7 @@ pub struct UpdateExperienceInput {
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+    /// <p>Configuration information for your Amazon Kendra you want to update.</p>
     pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
     /// <p>The description of your Amazon Kendra experience you want to update.</p>
     pub description: std::option::Option<std::string::String>,
@@ -10656,7 +10675,7 @@ impl UpdateExperienceInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO field name that contains the identifiers of your users, such as their emails.</p>
+    /// <p>Configuration information for your Amazon Kendra you want to update.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::ExperienceConfiguration> {
         self.configuration.as_ref()
     }
@@ -10688,7 +10707,7 @@ pub struct UpdateDataSourceInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The identifier of the index that contains the data source to update.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>Configuration information for an Amazon Kendra data source.</p>
+    /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>The new description for the data source.</p>
     pub description: std::option::Option<std::string::String>,
@@ -10716,7 +10735,7 @@ impl UpdateDataSourceInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>Configuration information for an Amazon Kendra data source.</p>
+    /// <p>Configuration information for an Amazon Kendra data source you want to update.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.configuration.as_ref()
     }
@@ -10954,6 +10973,9 @@ pub struct QueryInput {
     pub user_context: std::option::Option<crate::model::UserContext>,
     /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
     pub visitor_id: std::option::Option<std::string::String>,
+    /// <p>Enables suggested spell corrections for queries.</p>
+    pub spell_correction_configuration:
+        std::option::Option<crate::model::SpellCorrectionConfiguration>,
 }
 impl QueryInput {
     /// <p>The unique identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
@@ -11013,6 +11035,12 @@ impl QueryInput {
     pub fn visitor_id(&self) -> std::option::Option<&str> {
         self.visitor_id.as_deref()
     }
+    /// <p>Enables suggested spell corrections for queries.</p>
+    pub fn spell_correction_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SpellCorrectionConfiguration> {
+        self.spell_correction_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for QueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11035,6 +11063,10 @@ impl std::fmt::Debug for QueryInput {
         formatter.field("sorting_configuration", &self.sorting_configuration);
         formatter.field("user_context", &self.user_context);
         formatter.field("visitor_id", &self.visitor_id);
+        formatter.field(
+            "spell_correction_configuration",
+            &self.spell_correction_configuration,
+        );
         formatter.finish()
     }
 }
@@ -12475,7 +12507,7 @@ pub struct CreateExperienceInput {
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
+    /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     pub configuration: std::option::Option<crate::model::ExperienceConfiguration>,
     /// <p>A description for your Amazon Kendra experience.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12495,7 +12527,7 @@ impl CreateExperienceInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Provides the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
+    /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::ExperienceConfiguration> {
         self.configuration.as_ref()
     }
@@ -12531,7 +12563,7 @@ pub struct CreateDataSourceInput {
     pub index_id: std::option::Option<std::string::String>,
     /// <p>The type of repository that contains the data source.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>The connector configuration information that is required to access the repository.</p>
+    /// <p>Configuration information that is required to access the data source repository.</p>
     /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
     pub configuration: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -12568,7 +12600,7 @@ impl CreateDataSourceInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>The connector configuration information that is required to access the repository.</p>
+    /// <p>Configuration information that is required to access the data source repository.</p>
     /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::DataSourceConfiguration> {

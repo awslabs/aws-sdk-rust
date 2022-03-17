@@ -482,6 +482,19 @@ impl Client {
     pub fn update_data_catalog(&self) -> fluent_builders::UpdateDataCatalog {
         fluent_builders::UpdateDataCatalog::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateNamedQuery`](crate::client::fluent_builders::UpdateNamedQuery) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`named_query_id(impl Into<String>)`](crate::client::fluent_builders::UpdateNamedQuery::named_query_id) / [`set_named_query_id(Option<String>)`](crate::client::fluent_builders::UpdateNamedQuery::set_named_query_id): <p>The unique identifier (UUID) of the query.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateNamedQuery::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateNamedQuery::set_name): <p>The name of the query.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateNamedQuery::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateNamedQuery::set_description): <p>The query description.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::UpdateNamedQuery::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::UpdateNamedQuery::set_query_string): <p>The contents of the query with all query statements.</p>
+    /// - On success, responds with [`UpdateNamedQueryOutput`](crate::output::UpdateNamedQueryOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateNamedQueryError>`](crate::error::UpdateNamedQueryError)
+    pub fn update_named_query(&self) -> fluent_builders::UpdateNamedQuery {
+        fluent_builders::UpdateNamedQuery::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdatePreparedStatement`](crate::client::fluent_builders::UpdatePreparedStatement) operation.
     ///
     /// - The fluent builder is configurable:
@@ -2942,6 +2955,92 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_parameters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateNamedQuery`.
+    ///
+    /// <p>Updates a <code>NamedQuery</code> object. The database or workgroup cannot be updated.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateNamedQuery {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_named_query_input::Builder,
+    }
+    impl UpdateNamedQuery {
+        /// Creates a new `UpdateNamedQuery`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateNamedQueryOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateNamedQueryError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier (UUID) of the query.</p>
+        pub fn named_query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.named_query_id(input.into());
+            self
+        }
+        /// <p>The unique identifier (UUID) of the query.</p>
+        pub fn set_named_query_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_named_query_id(input);
+            self
+        }
+        /// <p>The name of the query.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the query.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The query description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The query description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The contents of the query with all query statements.</p>
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(input.into());
+            self
+        }
+        /// <p>The contents of the query with all query statements.</p>
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_string(input);
             self
         }
     }

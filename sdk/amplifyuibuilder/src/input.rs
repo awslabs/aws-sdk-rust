@@ -1032,6 +1032,7 @@ pub mod export_components_input {
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique ID of the Amplify app to export components to.</p>
@@ -1057,6 +1058,16 @@ pub mod export_components_input {
             self.environment_name = input;
             self
         }
+        /// <p>The token to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExportComponentsInput`](crate::input::ExportComponentsInput)
         pub fn build(
             self,
@@ -1067,6 +1078,7 @@ pub mod export_components_input {
             Ok(crate::input::ExportComponentsInput {
                 app_id: self.app_id,
                 environment_name: self.environment_name,
+                next_token: self.next_token,
             })
         }
     }
@@ -1132,6 +1144,16 @@ impl ExportComponentsInput {
                 .expect("formatting should succeed");
                 Ok(())
             }
+            fn uri_query(
+                _input: &crate::input::ExportComponentsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_16) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                }
+                Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ExportComponentsInput,
@@ -1140,6 +1162,7 @@ impl ExportComponentsInput {
             {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1204,6 +1227,7 @@ pub mod export_themes_input {
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique ID of the Amplify app to export the themes to.</p>
@@ -1229,6 +1253,16 @@ pub mod export_themes_input {
             self.environment_name = input;
             self
         }
+        /// <p>The token to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExportThemesInput`](crate::input::ExportThemesInput)
         pub fn build(
             self,
@@ -1239,6 +1273,7 @@ pub mod export_themes_input {
             Ok(crate::input::ExportThemesInput {
                 app_id: self.app_id,
                 environment_name: self.environment_name,
+                next_token: self.next_token,
             })
         }
     }
@@ -1267,28 +1302,28 @@ impl ExportThemesInput {
                 _input: &crate::input::ExportThemesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_16 = &_input.app_id;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_17 = &_input.app_id;
+                let input_17 = input_17.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let app_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_17, false);
                 if app_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_17 = &_input.environment_name;
-                let input_17 = input_17.as_ref().ok_or(
+                let input_18 = &_input.environment_name;
+                let input_18 = input_18.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_18, false);
                 if environment_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
@@ -1304,6 +1339,16 @@ impl ExportThemesInput {
                 .expect("formatting should succeed");
                 Ok(())
             }
+            fn uri_query(
+                _input: &crate::input::ExportThemesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_19) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                }
+                Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ExportThemesInput,
@@ -1312,6 +1357,7 @@ impl ExportThemesInput {
             {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1451,42 +1497,42 @@ impl GetComponentInput {
                 _input: &crate::input::GetComponentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_18 = &_input.app_id;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_20 = &_input.app_id;
+                let input_20 = input_20.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let app_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_20, false);
                 if app_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_19 = &_input.environment_name;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_21 = &_input.environment_name;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_19, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_21, false);
                 if environment_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_20 = &_input.id;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_22 = &_input.id;
+                let input_22 = input_22.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_20, false);
+                let id = aws_smithy_http::label::fmt_string(input_22, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -1648,42 +1694,42 @@ impl GetThemeInput {
                 _input: &crate::input::GetThemeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.app_id;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_23 = &_input.app_id;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let app_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if app_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_22 = &_input.environment_name;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_24 = &_input.environment_name;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_22, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_24, false);
                 if environment_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_23 = &_input.id;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_25 = &_input.id;
+                let input_25 = input_25.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_23, false);
+                let id = aws_smithy_http::label::fmt_string(input_25, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -1857,28 +1903,28 @@ impl ListComponentsInput {
                 _input: &crate::input::ListComponentsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_24 = &_input.app_id;
-                let input_24 = input_24.as_ref().ok_or(
+                let input_26 = &_input.app_id;
+                let input_26 = input_26.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let app_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_26, false);
                 if app_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_25 = &_input.environment_name;
-                let input_25 = input_25.as_ref().ok_or(
+                let input_27 = &_input.environment_name;
+                let input_27 = input_27.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_25, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_27, false);
                 if environment_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
@@ -1899,8 +1945,8 @@ impl ListComponentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_26) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
+                if let Some(inner_28) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -2070,28 +2116,28 @@ impl ListThemesInput {
                 _input: &crate::input::ListThemesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_27 = &_input.app_id;
-                let input_27 = input_27.as_ref().ok_or(
+                let input_29 = &_input.app_id;
+                let input_29 = input_29.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let app_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_29, false);
                 if app_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_28 = &_input.environment_name;
-                let input_28 = input_28.as_ref().ok_or(
+                let input_30 = &_input.environment_name;
+                let input_30 = input_30.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_28, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_30, false);
                 if environment_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
@@ -2112,8 +2158,8 @@ impl ListThemesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_29) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_29));
+                if let Some(inner_31) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -2262,14 +2308,14 @@ impl RefreshTokenInput {
                 _input: &crate::input::RefreshTokenInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_30 = &_input.provider;
-                let input_30 = input_30.as_ref().ok_or(
+                let input_32 = &_input.provider;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "provider",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let provider = aws_smithy_http::label::fmt_string(input_30, false);
+                let provider = aws_smithy_http::label::fmt_string(input_32, false);
                 if provider.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "provider",
@@ -2471,42 +2517,42 @@ impl UpdateComponentInput {
                 _input: &crate::input::UpdateComponentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.app_id;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_33 = &_input.app_id;
+                let input_33 = input_33.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let app_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_33, false);
                 if app_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_32 = &_input.environment_name;
-                let input_32 = input_32.as_ref().ok_or(
+                let input_34 = &_input.environment_name;
+                let input_34 = input_34.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_32, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_34, false);
                 if environment_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_33 = &_input.id;
-                let input_33 = input_33.as_ref().ok_or(
+                let input_35 = &_input.id;
+                let input_35 = input_35.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_33, false);
+                let id = aws_smithy_http::label::fmt_string(input_35, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -2528,10 +2574,10 @@ impl UpdateComponentInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_34) = &_input.client_token {
+                if let Some(inner_36) = &_input.client_token {
                     query.push_kv(
                         "clientToken",
-                        &aws_smithy_http::query::fmt_string(&inner_34),
+                        &aws_smithy_http::query::fmt_string(&inner_36),
                     );
                 }
                 Ok(())
@@ -2730,42 +2776,42 @@ impl UpdateThemeInput {
                 _input: &crate::input::UpdateThemeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_35 = &_input.app_id;
-                let input_35 = input_35.as_ref().ok_or(
+                let input_37 = &_input.app_id;
+                let input_37 = input_37.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let app_id = aws_smithy_http::label::fmt_string(input_35, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_37, false);
                 if app_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_36 = &_input.environment_name;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_38 = &_input.environment_name;
+                let input_38 = input_38.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_36, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_38, false);
                 if environment_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_37 = &_input.id;
-                let input_37 = input_37.as_ref().ok_or(
+                let input_39 = &_input.id;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_37, false);
+                let id = aws_smithy_http::label::fmt_string(input_39, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -2787,10 +2833,10 @@ impl UpdateThemeInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_38) = &_input.client_token {
+                if let Some(inner_40) = &_input.client_token {
                     query.push_kv(
                         "clientToken",
-                        &aws_smithy_http::query::fmt_string(&inner_38),
+                        &aws_smithy_http::query::fmt_string(&inner_40),
                     );
                 }
                 Ok(())
@@ -2882,6 +2928,8 @@ pub struct ExportThemesInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub environment_name: std::option::Option<std::string::String>,
+    /// <p>The token to request the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ExportThemesInput {
     /// <p>The unique ID of the Amplify app to export the themes to.</p>
@@ -2892,12 +2940,17 @@ impl ExportThemesInput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportThemesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportThemesInput");
         formatter.field("app_id", &self.app_id);
         formatter.field("environment_name", &self.environment_name);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -3113,6 +3166,8 @@ pub struct ExportComponentsInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub environment_name: std::option::Option<std::string::String>,
+    /// <p>The token to request the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ExportComponentsInput {
     /// <p>The unique ID of the Amplify app to export components to.</p>
@@ -3123,12 +3178,17 @@ impl ExportComponentsInput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportComponentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportComponentsInput");
         formatter.field("app_id", &self.app_id);
         formatter.field("environment_name", &self.environment_name);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }

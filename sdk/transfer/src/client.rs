@@ -120,8 +120,8 @@ impl Client {
     ///   - [`identity_provider_details(IdentityProviderDetails)`](crate::client::fluent_builders::CreateServer::identity_provider_details) / [`set_identity_provider_details(Option<IdentityProviderDetails>)`](crate::client::fluent_builders::CreateServer::set_identity_provider_details): <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
     ///   - [`identity_provider_type(IdentityProviderType)`](crate::client::fluent_builders::CreateServer::identity_provider_type) / [`set_identity_provider_type(Option<IdentityProviderType>)`](crate::client::fluent_builders::CreateServer::set_identity_provider_type): <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>  <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>  <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>  <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
     ///   - [`logging_role(impl Into<String>)`](crate::client::fluent_builders::CreateServer::logging_role) / [`set_logging_role(Option<String>)`](crate::client::fluent_builders::CreateServer::set_logging_role): <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
-    ///   - [`post_authentication_login_banner(impl Into<String>)`](crate::client::fluent_builders::CreateServer::post_authentication_login_banner) / [`set_post_authentication_login_banner(Option<String>)`](crate::client::fluent_builders::CreateServer::set_post_authentication_login_banner): (undocumented)
-    ///   - [`pre_authentication_login_banner(impl Into<String>)`](crate::client::fluent_builders::CreateServer::pre_authentication_login_banner) / [`set_pre_authentication_login_banner(Option<String>)`](crate::client::fluent_builders::CreateServer::set_pre_authentication_login_banner): (undocumented)
+    ///   - [`post_authentication_login_banner(impl Into<String>)`](crate::client::fluent_builders::CreateServer::post_authentication_login_banner) / [`set_post_authentication_login_banner(Option<String>)`](crate::client::fluent_builders::CreateServer::set_post_authentication_login_banner): <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>   <p>The SFTP protocol does not support post-authentication display banners.</p>  </note>
+    ///   - [`pre_authentication_login_banner(impl Into<String>)`](crate::client::fluent_builders::CreateServer::pre_authentication_login_banner) / [`set_pre_authentication_login_banner(Option<String>)`](crate::client::fluent_builders::CreateServer::set_pre_authentication_login_banner): <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>  <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     ///   - [`protocols(Vec<Protocol>)`](crate::client::fluent_builders::CreateServer::protocols) / [`set_protocols(Option<Vec<Protocol>>)`](crate::client::fluent_builders::CreateServer::set_protocols): <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>  <ul>   <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>   <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>   <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>  </ul> <note>   <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p>   <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>   <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>   <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>  </note>
     ///   - [`protocol_details(ProtocolDetails)`](crate::client::fluent_builders::CreateServer::protocol_details) / [`set_protocol_details(Option<ProtocolDetails>)`](crate::client::fluent_builders::CreateServer::set_protocol_details): <p>The protocol settings that are configured for your server.</p>  <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>  <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
     ///   - [`security_policy_name(impl Into<String>)`](crate::client::fluent_builders::CreateServer::security_policy_name) / [`set_security_policy_name(Option<String>)`](crate::client::fluent_builders::CreateServer::set_security_policy_name): <p>Specifies the name of the security policy that is attached to the server.</p>
@@ -499,8 +499,8 @@ impl Client {
     ///   - [`host_key(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::host_key) / [`set_host_key(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_host_key): <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p> <important>   <p>If you aren't planning to migrate existing users from an existing server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>  </important>  <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User Guide</i>.</p>
     ///   - [`identity_provider_details(IdentityProviderDetails)`](crate::client::fluent_builders::UpdateServer::identity_provider_details) / [`set_identity_provider_details(Option<IdentityProviderDetails>)`](crate::client::fluent_builders::UpdateServer::set_identity_provider_details): <p>An array containing all of the information required to call a customer's authentication API method.</p>
     ///   - [`logging_role(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::logging_role) / [`set_logging_role(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_logging_role): <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
-    ///   - [`post_authentication_login_banner(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::post_authentication_login_banner) / [`set_post_authentication_login_banner(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_post_authentication_login_banner): (undocumented)
-    ///   - [`pre_authentication_login_banner(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::pre_authentication_login_banner) / [`set_pre_authentication_login_banner(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_pre_authentication_login_banner): (undocumented)
+    ///   - [`post_authentication_login_banner(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::post_authentication_login_banner) / [`set_post_authentication_login_banner(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_post_authentication_login_banner): <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>   <p>The SFTP protocol does not support post-authentication display banners.</p>  </note>
+    ///   - [`pre_authentication_login_banner(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::pre_authentication_login_banner) / [`set_pre_authentication_login_banner(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_pre_authentication_login_banner): <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>  <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     ///   - [`protocols(Vec<Protocol>)`](crate::client::fluent_builders::UpdateServer::protocols) / [`set_protocols(Option<Vec<Protocol>>)`](crate::client::fluent_builders::UpdateServer::set_protocols): <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>  <ul>   <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>   <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>   <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>  </ul> <note>   <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>   <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>   <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>   <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>  </note>
     ///   - [`security_policy_name(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::security_policy_name) / [`set_security_policy_name(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_security_policy_name): <p>Specifies the name of the security policy that is attached to the server.</p>
     ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateServer::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::UpdateServer::set_server_id): <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
@@ -895,7 +895,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging_role(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+        /// </note>
         pub fn post_authentication_login_banner(
             mut self,
             input: impl Into<std::string::String>,
@@ -903,7 +905,9 @@ pub mod fluent_builders {
             self.inner = self.inner.post_authentication_login_banner(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+        /// </note>
         pub fn set_post_authentication_login_banner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -911,7 +915,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_post_authentication_login_banner(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn pre_authentication_login_banner(
             mut self,
             input: impl Into<std::string::String>,
@@ -919,7 +924,8 @@ pub mod fluent_builders {
             self.inner = self.inner.pre_authentication_login_banner(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn set_pre_authentication_login_banner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3441,7 +3447,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging_role(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+        /// </note>
         pub fn post_authentication_login_banner(
             mut self,
             input: impl Into<std::string::String>,
@@ -3449,7 +3457,9 @@ pub mod fluent_builders {
             self.inner = self.inner.post_authentication_login_banner(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+        /// </note>
         pub fn set_post_authentication_login_banner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3457,7 +3467,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_post_authentication_login_banner(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn pre_authentication_login_banner(
             mut self,
             input: impl Into<std::string::String>,
@@ -3465,7 +3476,8 @@ pub mod fluent_builders {
             self.inner = self.inner.pre_authentication_login_banner(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn set_pre_authentication_login_banner(
             mut self,
             input: std::option::Option<std::string::String>,

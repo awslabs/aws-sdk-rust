@@ -68,3 +68,73 @@ pub(crate) fn reflens_structure_crate_output_list_workflows_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_accesses_output_accesses(
+    input: crate::output::ListAccessesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ListedAccess>> {
+    let input = match input.accesses {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_executions_output_executions(
+    input: crate::output::ListExecutionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ListedExecution>> {
+    let input = match input.executions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_security_policies_output_security_policy_names(
+    input: crate::output::ListSecurityPoliciesOutput,
+) -> std::option::Option<std::vec::Vec<std::string::String>> {
+    let input = match input.security_policy_names {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_servers_output_servers(
+    input: crate::output::ListServersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ListedServer>> {
+    let input = match input.servers {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_tags_for_resource_output_tags(
+    input: crate::output::ListTagsForResourceOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Tag>> {
+    let input = match input.tags {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_users_output_users(
+    input: crate::output::ListUsersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ListedUser>> {
+    let input = match input.users {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_workflows_output_workflows(
+    input: crate::output::ListWorkflowsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ListedWorkflow>> {
+    let input = match input.workflows {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

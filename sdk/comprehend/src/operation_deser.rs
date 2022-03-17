@@ -3073,6 +3073,103 @@ pub fn parse_describe_sentiment_detection_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_targeted_sentiment_detection_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTargetedSentimentDetectionJobOutput,
+    crate::error::DescribeTargetedSentimentDetectionJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeTargetedSentimentDetectionJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::DescribeTargetedSentimentDetectionJobError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::DescribeTargetedSentimentDetectionJobError { meta: generic, kind: crate::error::DescribeTargetedSentimentDetectionJobErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetedSentimentDetectionJobError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidRequestException" => crate::error::DescribeTargetedSentimentDetectionJobError { meta: generic, kind: crate::error::DescribeTargetedSentimentDetectionJobErrorKind::InvalidRequestException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetedSentimentDetectionJobError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "JobNotFoundException" => crate::error::DescribeTargetedSentimentDetectionJobError { meta: generic, kind: crate::error::DescribeTargetedSentimentDetectionJobErrorKind::JobNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::job_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_job_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetedSentimentDetectionJobError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "TooManyRequestsException" => crate::error::DescribeTargetedSentimentDetectionJobError { meta: generic, kind: crate::error::DescribeTargetedSentimentDetectionJobErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetedSentimentDetectionJobError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeTargetedSentimentDetectionJobError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_targeted_sentiment_detection_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTargetedSentimentDetectionJobOutput,
+    crate::error::DescribeTargetedSentimentDetectionJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_targeted_sentiment_detection_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_targeted_sentiment_detection_job(response.body().as_ref(), output).map_err(crate::error::DescribeTargetedSentimentDetectionJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_topics_detection_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -5400,6 +5497,127 @@ pub fn parse_list_tags_for_resource_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_targeted_sentiment_detection_jobs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListTargetedSentimentDetectionJobsOutput,
+    crate::error::ListTargetedSentimentDetectionJobsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListTargetedSentimentDetectionJobsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListTargetedSentimentDetectionJobsError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListTargetedSentimentDetectionJobsError {
+            meta: generic,
+            kind:
+                crate::error::ListTargetedSentimentDetectionJobsErrorKind::InternalServerException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::internal_server_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTargetedSentimentDetectionJobsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "InvalidFilterException" => crate::error::ListTargetedSentimentDetectionJobsError {
+            meta: generic,
+            kind: crate::error::ListTargetedSentimentDetectionJobsErrorKind::InvalidFilterException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_filter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_filter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTargetedSentimentDetectionJobsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "InvalidRequestException" => crate::error::ListTargetedSentimentDetectionJobsError {
+            meta: generic,
+            kind:
+                crate::error::ListTargetedSentimentDetectionJobsErrorKind::InvalidRequestException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_request_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTargetedSentimentDetectionJobsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "TooManyRequestsException" => crate::error::ListTargetedSentimentDetectionJobsError {
+            meta: generic,
+            kind:
+                crate::error::ListTargetedSentimentDetectionJobsErrorKind::TooManyRequestsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::too_many_requests_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTargetedSentimentDetectionJobsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        _ => crate::error::ListTargetedSentimentDetectionJobsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_targeted_sentiment_detection_jobs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListTargetedSentimentDetectionJobsOutput,
+    crate::error::ListTargetedSentimentDetectionJobsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_targeted_sentiment_detection_jobs_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_targeted_sentiment_detection_jobs(response.body().as_ref(), output).map_err(crate::error::ListTargetedSentimentDetectionJobsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_topics_detection_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -6593,6 +6811,148 @@ pub fn parse_start_sentiment_detection_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_targeted_sentiment_detection_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartTargetedSentimentDetectionJobOutput,
+    crate::error::StartTargetedSentimentDetectionJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartTargetedSentimentDetectionJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StartTargetedSentimentDetectionJobError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::StartTargetedSentimentDetectionJobError {
+            meta: generic,
+            kind:
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::InternalServerException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::internal_server_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartTargetedSentimentDetectionJobError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "InvalidRequestException" => crate::error::StartTargetedSentimentDetectionJobError {
+            meta: generic,
+            kind:
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::InvalidRequestException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_request_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartTargetedSentimentDetectionJobError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "KmsKeyValidationException" => crate::error::StartTargetedSentimentDetectionJobError {
+            meta: generic,
+            kind:
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::KmsKeyValidationException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::kms_key_validation_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_kms_key_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartTargetedSentimentDetectionJobError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "TooManyRequestsException" => crate::error::StartTargetedSentimentDetectionJobError {
+            meta: generic,
+            kind:
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::too_many_requests_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartTargetedSentimentDetectionJobError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "TooManyTagsException" => crate::error::StartTargetedSentimentDetectionJobError {
+            meta: generic,
+            kind: crate::error::StartTargetedSentimentDetectionJobErrorKind::TooManyTagsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::too_many_tags_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartTargetedSentimentDetectionJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::StartTargetedSentimentDetectionJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_targeted_sentiment_detection_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartTargetedSentimentDetectionJobOutput,
+    crate::error::StartTargetedSentimentDetectionJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::start_targeted_sentiment_detection_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_start_targeted_sentiment_detection_job(response.body().as_ref(), output).map_err(crate::error::StartTargetedSentimentDetectionJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_topics_detection_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -7289,6 +7649,102 @@ pub fn parse_stop_sentiment_detection_job_response(
             output,
         )
         .map_err(crate::error::StopSentimentDetectionJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_targeted_sentiment_detection_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopTargetedSentimentDetectionJobOutput,
+    crate::error::StopTargetedSentimentDetectionJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StopTargetedSentimentDetectionJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StopTargetedSentimentDetectionJobError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::StopTargetedSentimentDetectionJobError {
+            meta: generic,
+            kind: crate::error::StopTargetedSentimentDetectionJobErrorKind::InternalServerException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopTargetedSentimentDetectionJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "InvalidRequestException" => crate::error::StopTargetedSentimentDetectionJobError {
+            meta: generic,
+            kind: crate::error::StopTargetedSentimentDetectionJobErrorKind::InvalidRequestException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_request_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopTargetedSentimentDetectionJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "JobNotFoundException" => crate::error::StopTargetedSentimentDetectionJobError {
+            meta: generic,
+            kind: crate::error::StopTargetedSentimentDetectionJobErrorKind::JobNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::job_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_job_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopTargetedSentimentDetectionJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StopTargetedSentimentDetectionJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_targeted_sentiment_detection_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopTargetedSentimentDetectionJobOutput,
+    crate::error::StopTargetedSentimentDetectionJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::stop_targeted_sentiment_detection_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_stop_targeted_sentiment_detection_job(response.body().as_ref(), output).map_err(crate::error::StopTargetedSentimentDetectionJobError::unhandled)?;
         output.build()
     })
 }

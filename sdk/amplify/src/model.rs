@@ -882,7 +882,7 @@ impl std::fmt::Debug for Branch {
         formatter.field("enable_performance_mode", &self.enable_performance_mode);
         formatter.field("thumbnail_url", &self.thumbnail_url);
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
-        formatter.field("build_spec", &self.build_spec);
+        formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("ttl", &self.ttl);
         formatter.field("associated_resources", &self.associated_resources);
         formatter.field(
@@ -1420,7 +1420,7 @@ pub struct App {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The description for the Amplify app. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The repository for the Amplify app. </p>
+    /// <p> The Git repository for the Amplify app. </p>
     pub repository: std::option::Option<std::string::String>,
     /// <p> The platform for the Amplify app. </p>
     pub platform: std::option::Option<crate::model::Platform>,
@@ -1457,6 +1457,8 @@ pub struct App {
     pub auto_branch_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
     pub auto_branch_creation_config: std::option::Option<crate::model::AutoBranchCreationConfig>,
+    /// <p>The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.</p>
+    pub repository_clone_method: std::option::Option<crate::model::RepositoryCloneMethod>,
 }
 impl App {
     /// <p> The unique ID of the Amplify app. </p>
@@ -1482,7 +1484,7 @@ impl App {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The repository for the Amplify app. </p>
+    /// <p> The Git repository for the Amplify app. </p>
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
@@ -1559,6 +1561,12 @@ impl App {
     ) -> std::option::Option<&crate::model::AutoBranchCreationConfig> {
         self.auto_branch_creation_config.as_ref()
     }
+    /// <p>The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.</p>
+    pub fn repository_clone_method(
+        &self,
+    ) -> std::option::Option<&crate::model::RepositoryCloneMethod> {
+        self.repository_clone_method.as_ref()
+    }
 }
 impl std::fmt::Debug for App {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1584,7 +1592,7 @@ impl std::fmt::Debug for App {
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_rules", &self.custom_rules);
         formatter.field("production_branch", &self.production_branch);
-        formatter.field("build_spec", &self.build_spec);
+        formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_headers", &self.custom_headers);
         formatter.field(
             "enable_auto_branch_creation",
@@ -1598,6 +1606,7 @@ impl std::fmt::Debug for App {
             "auto_branch_creation_config",
             &self.auto_branch_creation_config,
         );
+        formatter.field("repository_clone_method", &self.repository_clone_method);
         formatter.finish()
     }
 }
@@ -1636,6 +1645,8 @@ pub mod app {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_branch_creation_config:
             std::option::Option<crate::model::AutoBranchCreationConfig>,
+        pub(crate) repository_clone_method:
+            std::option::Option<crate::model::RepositoryCloneMethod>,
     }
     impl Builder {
         /// <p> The unique ID of the Amplify app. </p>
@@ -1703,12 +1714,12 @@ pub mod app {
             self.description = input;
             self
         }
-        /// <p> The repository for the Amplify app. </p>
+        /// <p> The Git repository for the Amplify app. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository = Some(input.into());
             self
         }
-        /// <p> The repository for the Amplify app. </p>
+        /// <p> The Git repository for the Amplify app. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.repository = input;
             self
@@ -1946,6 +1957,22 @@ pub mod app {
             self.auto_branch_creation_config = input;
             self
         }
+        /// <p>The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.</p>
+        pub fn repository_clone_method(
+            mut self,
+            input: crate::model::RepositoryCloneMethod,
+        ) -> Self {
+            self.repository_clone_method = Some(input);
+            self
+        }
+        /// <p>The authentication protocol to use to access the Git repository for an Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify <code>SSH</code>.</p>
+        pub fn set_repository_clone_method(
+            mut self,
+            input: std::option::Option<crate::model::RepositoryCloneMethod>,
+        ) -> Self {
+            self.repository_clone_method = input;
+            self
+        }
         /// Consumes the builder and constructs a [`App`](crate::model::App)
         pub fn build(self) -> crate::model::App {
             crate::model::App {
@@ -1972,6 +1999,7 @@ pub mod app {
                 enable_auto_branch_creation: self.enable_auto_branch_creation,
                 auto_branch_creation_patterns: self.auto_branch_creation_patterns,
                 auto_branch_creation_config: self.auto_branch_creation_config,
+                repository_clone_method: self.repository_clone_method,
             }
         }
     }
@@ -1980,6 +2008,65 @@ impl App {
     /// Creates a new builder-style object to manufacture [`App`](crate::model::App)
     pub fn builder() -> crate::model::app::Builder {
         crate::model::app::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RepositoryCloneMethod {
+    #[allow(missing_docs)] // documentation missing in model
+    Sigv4,
+    #[allow(missing_docs)] // documentation missing in model
+    Ssh,
+    #[allow(missing_docs)] // documentation missing in model
+    Token,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RepositoryCloneMethod {
+    fn from(s: &str) -> Self {
+        match s {
+            "SIGV4" => RepositoryCloneMethod::Sigv4,
+            "SSH" => RepositoryCloneMethod::Ssh,
+            "TOKEN" => RepositoryCloneMethod::Token,
+            other => RepositoryCloneMethod::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RepositoryCloneMethod {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RepositoryCloneMethod::from(s))
+    }
+}
+impl RepositoryCloneMethod {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RepositoryCloneMethod::Sigv4 => "SIGV4",
+            RepositoryCloneMethod::Ssh => "SSH",
+            RepositoryCloneMethod::Token => "TOKEN",
+            RepositoryCloneMethod::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["SIGV4", "SSH", "TOKEN"]
+    }
+}
+impl AsRef<str> for RepositoryCloneMethod {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2066,7 +2153,7 @@ impl std::fmt::Debug for AutoBranchCreationConfig {
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
         formatter.field("enable_performance_mode", &self.enable_performance_mode);
-        formatter.field("build_spec", &self.build_spec);
+        formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field(
             "enable_pull_request_preview",
             &self.enable_pull_request_preview,
@@ -2618,6 +2705,8 @@ impl CustomRule {
 pub enum Platform {
     #[allow(missing_docs)] // documentation missing in model
     Web,
+    #[allow(missing_docs)] // documentation missing in model
+    WebDynamic,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -2625,6 +2714,7 @@ impl std::convert::From<&str> for Platform {
     fn from(s: &str) -> Self {
         match s {
             "WEB" => Platform::Web,
+            "WEB_DYNAMIC" => Platform::WebDynamic,
             other => Platform::Unknown(other.to_owned()),
         }
     }
@@ -2641,12 +2731,13 @@ impl Platform {
     pub fn as_str(&self) -> &str {
         match self {
             Platform::Web => "WEB",
+            Platform::WebDynamic => "WEB_DYNAMIC",
             Platform::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["WEB"]
+        &["WEB", "WEB_DYNAMIC"]
     }
 }
 impl AsRef<str> for Platform {

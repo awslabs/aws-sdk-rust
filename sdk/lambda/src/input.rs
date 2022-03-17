@@ -271,6 +271,7 @@ pub mod add_permission_input {
         pub(crate) event_source_token: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
+        pub(crate) principal_org_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -388,6 +389,19 @@ pub mod add_permission_input {
             self.revision_id = input;
             self
         }
+        /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
+        pub fn principal_org_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.principal_org_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
+        pub fn set_principal_org_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.principal_org_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AddPermissionInput`](crate::input::AddPermissionInput)
         pub fn build(
             self,
@@ -405,6 +419,7 @@ pub mod add_permission_input {
                 event_source_token: self.event_source_token,
                 qualifier: self.qualifier,
                 revision_id: self.revision_id,
+                principal_org_id: self.principal_org_id,
             })
         }
     }
@@ -15129,6 +15144,8 @@ pub struct AddPermissionInput {
     pub qualifier: std::option::Option<std::string::String>,
     /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
+    /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
+    pub principal_org_id: std::option::Option<std::string::String>,
 }
 impl AddPermissionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
@@ -15175,6 +15192,10 @@ impl AddPermissionInput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
+    /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
+    pub fn principal_org_id(&self) -> std::option::Option<&str> {
+        self.principal_org_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AddPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15188,6 +15209,7 @@ impl std::fmt::Debug for AddPermissionInput {
         formatter.field("event_source_token", &self.event_source_token);
         formatter.field("qualifier", &self.qualifier);
         formatter.field("revision_id", &self.revision_id);
+        formatter.field("principal_org_id", &self.principal_org_id);
         formatter.finish()
     }
 }

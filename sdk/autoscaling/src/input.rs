@@ -1378,13 +1378,13 @@ pub mod create_auto_scaling_group_input {
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+        /// <p>Required if you are adding an <code>ELB</code> health check.</p>
         pub fn health_check_grace_period(mut self, input: i32) -> Self {
             self.health_check_grace_period = Some(input);
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+        /// <p>Required if you are adding an <code>ELB</code> health check.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_grace_period = input;
             self
@@ -8413,14 +8413,14 @@ pub mod put_lifecycle_hook_input {
             self.lifecycle_transition = input;
             self
         }
-        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
-        /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+        /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
-        /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+        /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -9441,6 +9441,7 @@ pub mod put_warm_pool_input {
         pub(crate) max_group_prepared_capacity: std::option::Option<i32>,
         pub(crate) min_size: std::option::Option<i32>,
         pub(crate) pool_state: std::option::Option<crate::model::WarmPoolState>,
+        pub(crate) instance_reuse_policy: std::option::Option<crate::model::InstanceReusePolicy>,
     }
     impl Builder {
         /// <p>The name of the Auto Scaling group.</p>
@@ -9497,6 +9498,19 @@ pub mod put_warm_pool_input {
             self.pool_state = input;
             self
         }
+        /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
+        pub fn instance_reuse_policy(mut self, input: crate::model::InstanceReusePolicy) -> Self {
+            self.instance_reuse_policy = Some(input);
+            self
+        }
+        /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
+        pub fn set_instance_reuse_policy(
+            mut self,
+            input: std::option::Option<crate::model::InstanceReusePolicy>,
+        ) -> Self {
+            self.instance_reuse_policy = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutWarmPoolInput`](crate::input::PutWarmPoolInput)
         pub fn build(
             self,
@@ -9509,6 +9523,7 @@ pub mod put_warm_pool_input {
                 max_group_prepared_capacity: self.max_group_prepared_capacity,
                 min_size: self.min_size,
                 pool_state: self.pool_state,
+                instance_reuse_policy: self.instance_reuse_policy,
             })
         }
     }
@@ -11181,13 +11196,13 @@ pub mod update_auto_scaling_group_input {
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+        /// <p>Required if you are adding an <code>ELB</code> health check.</p>
         pub fn health_check_grace_period(mut self, input: i32) -> Self {
             self.health_check_grace_period = Some(input);
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+        /// <p>Required if you are adding an <code>ELB</code> health check.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_grace_period = input;
             self
@@ -11476,7 +11491,7 @@ pub struct UpdateAutoScalingGroupInput {
     /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.</p>
     pub health_check_type: std::option::Option<std::string::String>,
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+    /// <p>Required if you are adding an <code>ELB</code> health check.</p>
     pub health_check_grace_period: std::option::Option<i32>,
     /// <p>The name of an existing placement group into which to launch your instances, if any. A placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub placement_group: std::option::Option<std::string::String>,
@@ -11547,7 +11562,7 @@ impl UpdateAutoScalingGroupInput {
         self.health_check_type.as_deref()
     }
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+    /// <p>Required if you are adding an <code>ELB</code> health check.</p>
     pub fn health_check_grace_period(&self) -> std::option::Option<i32> {
         self.health_check_grace_period
     }
@@ -11975,6 +11990,8 @@ pub struct PutWarmPoolInput {
     pub min_size: std::option::Option<i32>,
     /// <p>Sets the instance state to transition to after the lifecycle actions are complete. Default is <code>Stopped</code>.</p>
     pub pool_state: std::option::Option<crate::model::WarmPoolState>,
+    /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
+    pub instance_reuse_policy: std::option::Option<crate::model::InstanceReusePolicy>,
 }
 impl PutWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
@@ -11997,6 +12014,10 @@ impl PutWarmPoolInput {
     pub fn pool_state(&self) -> std::option::Option<&crate::model::WarmPoolState> {
         self.pool_state.as_ref()
     }
+    /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
+    pub fn instance_reuse_policy(&self) -> std::option::Option<&crate::model::InstanceReusePolicy> {
+        self.instance_reuse_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for PutWarmPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12008,6 +12029,7 @@ impl std::fmt::Debug for PutWarmPoolInput {
         );
         formatter.field("min_size", &self.min_size);
         formatter.field("pool_state", &self.pool_state);
+        formatter.field("instance_reuse_policy", &self.instance_reuse_policy);
         formatter.finish()
     }
 }
@@ -12336,8 +12358,8 @@ pub struct PutLifecycleHookInput {
     /// </ul>
     /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub lifecycle_transition: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
-    /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
+    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+    /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic.</p>
     /// <p>If you specify an empty string, this overrides the current ARN.</p>
@@ -12370,8 +12392,8 @@ impl PutLifecycleHookInput {
     pub fn lifecycle_transition(&self) -> std::option::Option<&str> {
         self.lifecycle_transition.as_deref()
     }
-    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
-    /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
+    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
+    /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -13915,7 +13937,7 @@ pub struct CreateAutoScalingGroupInput {
     /// <p>The service to use for the health checks. The valid values are <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer (ELB) health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub health_check_type: std::option::Option<std::string::String>,
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+    /// <p>Required if you are adding an <code>ELB</code> health check.</p>
     pub health_check_grace_period: std::option::Option<i32>,
     /// <p>The name of an existing placement group into which to launch your instances, if any. A placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub placement_group: std::option::Option<std::string::String>,
@@ -14010,7 +14032,7 @@ impl CreateAutoScalingGroupInput {
         self.health_check_type.as_deref()
     }
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+    /// <p>Required if you are adding an <code>ELB</code> health check.</p>
     pub fn health_check_grace_period(&self) -> std::option::Option<i32> {
         self.health_check_grace_period
     }

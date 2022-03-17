@@ -9,7 +9,7 @@ pub struct DbInstanceAutomatedBackup {
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region associated with the automated backup.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The customer id of the instance that is/was associated with the automated backup. </p>
+    /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>Earliest and latest time an instance can be restored to.</p>
     pub restore_window: std::option::Option<crate::model::RestoreWindow>,
@@ -30,7 +30,7 @@ pub struct DbInstanceAutomatedBackup {
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>Provides the VPC ID associated with the DB instance</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>Provides the date and time that the DB instance was created. </p>
+    /// <p>Provides the date and time that the DB instance was created.</p>
     pub instance_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The license model of an automated backup.</p>
     pub master_username: std::option::Option<std::string::String>,
@@ -40,7 +40,7 @@ pub struct DbInstanceAutomatedBackup {
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>License model information for the automated backup.</p>
     pub license_model: std::option::Option<std::string::String>,
-    /// <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+    /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
     pub iops: std::option::Option<i32>,
     /// <p>The option group the automated backup is associated with. If omitted, the default option group for the engine specified is used.</p>
     pub option_group_name: std::option::Option<std::string::String>,
@@ -80,7 +80,7 @@ impl DbInstanceAutomatedBackup {
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The customer id of the instance that is/was associated with the automated backup. </p>
+    /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
     pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
@@ -115,7 +115,7 @@ impl DbInstanceAutomatedBackup {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>Provides the date and time that the DB instance was created. </p>
+    /// <p>Provides the date and time that the DB instance was created.</p>
     pub fn instance_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.instance_create_time.as_ref()
     }
@@ -135,7 +135,7 @@ impl DbInstanceAutomatedBackup {
     pub fn license_model(&self) -> std::option::Option<&str> {
         self.license_model.as_deref()
     }
-    /// <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+    /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
@@ -301,12 +301,12 @@ pub mod db_instance_automated_backup {
             self.region = input;
             self
         }
-        /// <p>The customer id of the instance that is/was associated with the automated backup. </p>
+        /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
         pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_instance_identifier = Some(input.into());
             self
         }
-        /// <p>The customer id of the instance that is/was associated with the automated backup. </p>
+        /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
         pub fn set_db_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -394,12 +394,12 @@ pub mod db_instance_automated_backup {
             self.vpc_id = input;
             self
         }
-        /// <p>Provides the date and time that the DB instance was created. </p>
+        /// <p>Provides the date and time that the DB instance was created.</p>
         pub fn instance_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.instance_create_time = Some(input);
             self
         }
-        /// <p>Provides the date and time that the DB instance was created. </p>
+        /// <p>Provides the date and time that the DB instance was created.</p>
         pub fn set_instance_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -456,12 +456,12 @@ pub mod db_instance_automated_backup {
             self.license_model = input;
             self
         }
-        /// <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+        /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
         pub fn iops(mut self, input: i32) -> Self {
             self.iops = Some(input);
             self
         }
-        /// <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+        /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
             self
@@ -798,8 +798,8 @@ impl RestoreWindow {
     }
 }
 
-/// <p>Contains the details of an Amazon RDS DB instance. </p>
-/// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>. </p>
+/// <p>Contains the details of an Amazon RDS DB instance.</p>
+/// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstance {
@@ -831,11 +831,11 @@ pub struct DbInstance {
     pub allocated_storage: i32,
     /// <p>Provides the date and time the DB instance was created.</p>
     pub instance_create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
     pub backup_retention_period: i32,
-    /// <p> A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements. </p>
+    /// <p>A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
     pub db_security_groups:
         std::option::Option<std::vec::Vec<crate::model::DbSecurityGroupMembership>>,
     /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
@@ -883,7 +883,7 @@ pub struct DbInstance {
         std::option::Option<std::vec::Vec<crate::model::OptionGroupMembership>>,
     /// <p>If present, specifies the name of the character set that this instance is associated with.</p>
     pub character_set_name: std::option::Option<std::string::String>,
-    /// <p>The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2. </p>
+    /// <p>The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.</p>
     pub nchar_character_set_name: std::option::Option<std::string::String>,
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
     pub secondary_availability_zone: std::option::Option<std::string::String>,
@@ -904,7 +904,7 @@ pub struct DbInstance {
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies whether the DB instance is encrypted.</p>
     pub storage_encrypted: bool,
-    /// <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB instance. </p>
+    /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB instance.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
@@ -923,11 +923,11 @@ pub struct DbInstance {
     pub enhanced_monitoring_resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
     pub monitoring_role_arn: std::option::Option<std::string::String>,
-    /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>. </p>
+    /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub promotion_tier: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
     pub db_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The time zone of the DB instance. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified. </p>
+    /// <p>The time zone of the DB instance. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified.</p>
     pub timezone: std::option::Option<std::string::String>,
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines</p>
@@ -942,16 +942,16 @@ pub struct DbInstance {
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
+    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
     /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub enabled_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     pub processor_features: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
-    /// <p>Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>. </p>
+    /// <p>Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     pub deletion_protection: bool,
-    /// <p> The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance. </p>
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.</p>
     pub associated_roles: std::option::Option<std::vec::Vec<crate::model::DbInstanceRole>>,
     /// <p>Specifies the listener connection endpoint for SQL Server Always On.</p>
     pub listener_endpoint: std::option::Option<crate::model::Endpoint>,
@@ -981,7 +981,7 @@ pub struct DbInstance {
     pub activity_stream_engine_native_audit_fields_included: std::option::Option<bool>,
     /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
     pub automation_mode: std::option::Option<crate::model::AutomationMode>,
-    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440. </p>
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
     pub resume_full_automation_mode_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
@@ -989,7 +989,7 @@ pub struct DbInstance {
     /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
     /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
     /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.</p>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub custom_iam_instance_profile: std::option::Option<std::string::String>,
     /// <p>Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub backup_target: std::option::Option<std::string::String>,
@@ -1043,7 +1043,7 @@ impl DbInstance {
     pub fn instance_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.instance_create_time.as_ref()
     }
-    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
@@ -1051,7 +1051,7 @@ impl DbInstance {
     pub fn backup_retention_period(&self) -> i32 {
         self.backup_retention_period
     }
-    /// <p> A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements. </p>
+    /// <p>A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
     pub fn db_security_groups(
         &self,
     ) -> std::option::Option<&[crate::model::DbSecurityGroupMembership]> {
@@ -1145,7 +1145,7 @@ impl DbInstance {
     pub fn character_set_name(&self) -> std::option::Option<&str> {
         self.character_set_name.as_deref()
     }
-    /// <p>The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2. </p>
+    /// <p>The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.</p>
     pub fn nchar_character_set_name(&self) -> std::option::Option<&str> {
         self.nchar_character_set_name.as_deref()
     }
@@ -1184,7 +1184,7 @@ impl DbInstance {
     pub fn storage_encrypted(&self) -> bool {
         self.storage_encrypted
     }
-    /// <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB instance. </p>
+    /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB instance.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -1219,7 +1219,7 @@ impl DbInstance {
     pub fn monitoring_role_arn(&self) -> std::option::Option<&str> {
         self.monitoring_role_arn.as_deref()
     }
-    /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>. </p>
+    /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn promotion_tier(&self) -> std::option::Option<i32> {
         self.promotion_tier
     }
@@ -1227,7 +1227,7 @@ impl DbInstance {
     pub fn db_instance_arn(&self) -> std::option::Option<&str> {
         self.db_instance_arn.as_deref()
     }
-    /// <p>The time zone of the DB instance. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified. </p>
+    /// <p>The time zone of the DB instance. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified.</p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
     }
@@ -1250,7 +1250,7 @@ impl DbInstance {
     pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
+    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
     }
@@ -1263,11 +1263,11 @@ impl DbInstance {
     pub fn processor_features(&self) -> std::option::Option<&[crate::model::ProcessorFeature]> {
         self.processor_features.as_deref()
     }
-    /// <p>Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>. </p>
+    /// <p>Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     pub fn deletion_protection(&self) -> bool {
         self.deletion_protection
     }
-    /// <p> The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance. </p>
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.</p>
     pub fn associated_roles(&self) -> std::option::Option<&[crate::model::DbInstanceRole]> {
         self.associated_roles.as_deref()
     }
@@ -1326,7 +1326,7 @@ impl DbInstance {
     pub fn automation_mode(&self) -> std::option::Option<&crate::model::AutomationMode> {
         self.automation_mode.as_ref()
     }
-    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440. </p>
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
     pub fn resume_full_automation_mode_time(
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
@@ -1338,7 +1338,7 @@ impl DbInstance {
     /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
     /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
     /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.</p>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn custom_iam_instance_profile(&self) -> std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
     }
@@ -1715,12 +1715,12 @@ pub mod db_instance {
             self.instance_create_time = input;
             self
         }
-        /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+        /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
         pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.preferred_backup_window = Some(input.into());
             self
         }
-        /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+        /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1742,7 +1742,7 @@ pub mod db_instance {
         ///
         /// To override the contents of this collection use [`set_db_security_groups`](Self::set_db_security_groups).
         ///
-        /// <p> A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements. </p>
+        /// <p>A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
         pub fn db_security_groups(
             mut self,
             input: crate::model::DbSecurityGroupMembership,
@@ -1752,7 +1752,7 @@ pub mod db_instance {
             self.db_security_groups = Some(v);
             self
         }
-        /// <p> A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements. </p>
+        /// <p>A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
         pub fn set_db_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DbSecurityGroupMembership>>,
@@ -2046,12 +2046,12 @@ pub mod db_instance {
             self.character_set_name = input;
             self
         }
-        /// <p>The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2. </p>
+        /// <p>The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.</p>
         pub fn nchar_character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.nchar_character_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2. </p>
+        /// <p>The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.</p>
         pub fn set_nchar_character_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2166,13 +2166,13 @@ pub mod db_instance {
             self.storage_encrypted = input;
             self
         }
-        /// <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB instance. </p>
+        /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB instance.</p>
         /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB instance. </p>
+        /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB instance.</p>
         /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
@@ -2276,12 +2276,12 @@ pub mod db_instance {
             self.monitoring_role_arn = input;
             self
         }
-        /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>. </p>
+        /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn promotion_tier(mut self, input: i32) -> Self {
             self.promotion_tier = Some(input);
             self
         }
-        /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>. </p>
+        /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
             self.promotion_tier = input;
             self
@@ -2299,12 +2299,12 @@ pub mod db_instance {
             self.db_instance_arn = input;
             self
         }
-        /// <p>The time zone of the DB instance. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified. </p>
+        /// <p>The time zone of the DB instance. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified.</p>
         pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.timezone = Some(input.into());
             self
         }
-        /// <p>The time zone of the DB instance. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified. </p>
+        /// <p>The time zone of the DB instance. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -2365,12 +2365,12 @@ pub mod db_instance {
             self.performance_insights_kms_key_id = input;
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
         pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
             self.performance_insights_retention_period = Some(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
         pub fn set_performance_insights_retention_period(
             mut self,
             input: std::option::Option<i32>,
@@ -2421,12 +2421,12 @@ pub mod db_instance {
             self.processor_features = input;
             self
         }
-        /// <p>Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>. </p>
+        /// <p>Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
-        /// <p>Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>. </p>
+        /// <p>Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
@@ -2435,14 +2435,14 @@ pub mod db_instance {
         ///
         /// To override the contents of this collection use [`set_associated_roles`](Self::set_associated_roles).
         ///
-        /// <p> The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance. </p>
+        /// <p>The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.</p>
         pub fn associated_roles(mut self, input: crate::model::DbInstanceRole) -> Self {
             let mut v = self.associated_roles.unwrap_or_default();
             v.push(input);
             self.associated_roles = Some(v);
             self
         }
-        /// <p> The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance. </p>
+        /// <p>The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.</p>
         pub fn set_associated_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DbInstanceRole>>,
@@ -2631,7 +2631,7 @@ pub mod db_instance {
             self.automation_mode = input;
             self
         }
-        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440. </p>
+        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
         pub fn resume_full_automation_mode_time(
             mut self,
             input: aws_smithy_types::DateTime,
@@ -2639,7 +2639,7 @@ pub mod db_instance {
             self.resume_full_automation_mode_time = Some(input);
             self
         }
-        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440. </p>
+        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
         pub fn set_resume_full_automation_mode_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2653,7 +2653,7 @@ pub mod db_instance {
         /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
         /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
         /// </ul>
-        /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.</p>
+        /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
         pub fn custom_iam_instance_profile(
             mut self,
             input: impl Into<std::string::String>,
@@ -2667,7 +2667,7 @@ pub mod db_instance {
         /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
         /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
         /// </ul>
-        /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.</p>
+        /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
         pub fn set_custom_iam_instance_profile(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3134,7 +3134,7 @@ impl Endpoint {
 pub struct DbInstanceRole {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB instance.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>. </p>
+    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub feature_name: std::option::Option<std::string::String>,
     /// <p>Describes the state of association between the IAM role and the DB instance. The Status property returns one of the following values:</p>
     /// <ul>
@@ -3149,7 +3149,7 @@ impl DbInstanceRole {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>. </p>
+    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn feature_name(&self) -> std::option::Option<&str> {
         self.feature_name.as_deref()
     }
@@ -3193,12 +3193,12 @@ pub mod db_instance_role {
             self.role_arn = input;
             self
         }
-        /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>. </p>
+        /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
         pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.feature_name = Some(input.into());
             self
         }
-        /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>. </p>
+        /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feature_name = input;
             self
@@ -3567,7 +3567,7 @@ impl DbInstanceStatusInfo {
 pub struct OptionGroupMembership {
     /// <p>The name of the option group that the instance belongs to.</p>
     pub option_group_name: std::option::Option<std::string::String>,
-    /// <p>The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>, <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>. </p>
+    /// <p>The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>, <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>.</p>
     pub status: std::option::Option<std::string::String>,
 }
 impl OptionGroupMembership {
@@ -3575,7 +3575,7 @@ impl OptionGroupMembership {
     pub fn option_group_name(&self) -> std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
-    /// <p>The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>, <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>. </p>
+    /// <p>The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>, <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -3611,12 +3611,12 @@ pub mod option_group_membership {
             self.option_group_name = input;
             self
         }
-        /// <p>The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>, <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>. </p>
+        /// <p>The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>, <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>, <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>. </p>
+        /// <p>The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>, <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3692,7 +3692,7 @@ impl AsRef<str> for ReplicaMode {
     }
 }
 
-/// <p> This data type is used as a response element in the <code>ModifyDBInstance</code> operation and contains changes that will be applied during the next maintenance window. </p>
+/// <p>This data type is used as a response element in the <code>ModifyDBInstance</code> operation and contains changes that will be applied during the next maintenance window.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingModifiedValues {
@@ -3732,7 +3732,7 @@ pub struct PendingModifiedValues {
     pub iam_database_authentication_enabled: std::option::Option<bool>,
     /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all-paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
     pub automation_mode: std::option::Option<crate::model::AutomationMode>,
-    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440. </p>
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
     pub resume_full_automation_mode_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PendingModifiedValues {
@@ -3807,7 +3807,7 @@ impl PendingModifiedValues {
     pub fn automation_mode(&self) -> std::option::Option<&crate::model::AutomationMode> {
         self.automation_mode.as_ref()
     }
-    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440. </p>
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
     pub fn resume_full_automation_mode_time(
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
@@ -4090,7 +4090,7 @@ pub mod pending_modified_values {
             self.automation_mode = input;
             self
         }
-        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440. </p>
+        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
         pub fn resume_full_automation_mode_time(
             mut self,
             input: aws_smithy_types::DateTime,
@@ -4098,7 +4098,7 @@ pub mod pending_modified_values {
             self.resume_full_automation_mode_time = Some(input);
             self
         }
-        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440. </p>
+        /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
         pub fn set_resume_full_automation_mode_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4229,8 +4229,8 @@ impl PendingCloudwatchLogsExports {
     }
 }
 
-/// <p>Contains the details of an Amazon RDS DB subnet group. </p>
-/// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action. </p>
+/// <p>Contains the details of an Amazon RDS DB subnet group.</p>
+/// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroup {
@@ -4242,7 +4242,7 @@ pub struct DbSubnetGroup {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Provides the status of the DB subnet group.</p>
     pub subnet_group_status: std::option::Option<std::string::String>,
-    /// <p> Contains a list of <code>Subnet</code> elements. </p>
+    /// <p>Contains a list of <code>Subnet</code> elements.</p>
     pub subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
     pub db_subnet_group_arn: std::option::Option<std::string::String>,
@@ -4264,7 +4264,7 @@ impl DbSubnetGroup {
     pub fn subnet_group_status(&self) -> std::option::Option<&str> {
         self.subnet_group_status.as_deref()
     }
-    /// <p> Contains a list of <code>Subnet</code> elements. </p>
+    /// <p>Contains a list of <code>Subnet</code> elements.</p>
     pub fn subnets(&self) -> std::option::Option<&[crate::model::Subnet]> {
         self.subnets.as_deref()
     }
@@ -4358,14 +4358,14 @@ pub mod db_subnet_group {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p> Contains a list of <code>Subnet</code> elements. </p>
+        /// <p>Contains a list of <code>Subnet</code> elements.</p>
         pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input);
             self.subnets = Some(v);
             self
         }
-        /// <p> Contains a list of <code>Subnet</code> elements. </p>
+        /// <p>Contains a list of <code>Subnet</code> elements.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
@@ -4406,14 +4406,14 @@ impl DbSubnetGroup {
     }
 }
 
-/// <p> This data type is used as a response element for the <code>DescribeDBSubnetGroups</code> operation. </p>
+/// <p>This data type is used as a response element for the <code>DescribeDBSubnetGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subnet {
     /// <p>The identifier of the subnet.</p>
     pub subnet_identifier: std::option::Option<std::string::String>,
     /// <p>Contains Availability Zone information.</p>
-    /// <p> This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
+    /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
     pub subnet_availability_zone: std::option::Option<crate::model::AvailabilityZone>,
     /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
@@ -4427,7 +4427,7 @@ impl Subnet {
         self.subnet_identifier.as_deref()
     }
     /// <p>Contains Availability Zone information.</p>
-    /// <p> This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
+    /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
     pub fn subnet_availability_zone(&self) -> std::option::Option<&crate::model::AvailabilityZone> {
         self.subnet_availability_zone.as_ref()
     }
@@ -4477,13 +4477,13 @@ pub mod subnet {
             self
         }
         /// <p>Contains Availability Zone information.</p>
-        /// <p> This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
+        /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
         pub fn subnet_availability_zone(mut self, input: crate::model::AvailabilityZone) -> Self {
             self.subnet_availability_zone = Some(input);
             self
         }
         /// <p>Contains Availability Zone information.</p>
-        /// <p> This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
+        /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
         pub fn set_subnet_availability_zone(
             mut self,
             input: std::option::Option<crate::model::AvailabilityZone>,
@@ -4591,7 +4591,7 @@ impl Outpost {
 }
 
 /// <p>Contains Availability Zone information.</p>
-/// <p> This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
+/// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityZone {
@@ -4889,13 +4889,11 @@ impl DbSecurityGroupMembership {
     }
 }
 
-/// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster. </p>
+/// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
 /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
 /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
 /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
-/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p> <note>
-/// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
-/// </note>
+/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbCluster {
@@ -4925,7 +4923,7 @@ pub struct DbCluster {
     pub earliest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the connection endpoint for the primary instance of the DB cluster.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Aurora Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Aurora distributes the connection requests among the Aurora Replicas in the DB cluster. This functionality can help balance your read workload across multiple Aurora Replicas in your DB cluster. </p>
+    /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Aurora Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Aurora distributes the connection requests among the Aurora Replicas in the DB cluster. This functionality can help balance your read workload across multiple Aurora Replicas in your DB cluster.</p>
     /// <p>If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Aurora Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
     pub reader_endpoint: std::option::Option<std::string::String>,
     /// <p>Identifies all custom endpoints associated with the cluster.</p>
@@ -4945,7 +4943,7 @@ pub struct DbCluster {
     /// <p>Provides the list of option group memberships for this DB cluster.</p>
     pub db_cluster_option_group_memberships:
         std::option::Option<std::vec::Vec<crate::model::DbClusterOptionGroupStatus>>,
-    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
@@ -4986,22 +4984,22 @@ pub struct DbCluster {
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
     /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub enabled_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is paused.</p>
-    /// <p>For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0 (zero) when the cluster is paused.</p>
+    /// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub capacity: std::option::Option<i32>,
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     pub engine_mode: std::option::Option<std::string::String>,
     /// <p>Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub scaling_configuration_info: std::option::Option<crate::model::ScalingConfigurationInfo>,
-    /// <p>Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. </p>
+    /// <p>Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
-    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is enabled.</p>
+    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub http_endpoint_enabled: std::option::Option<bool>,
-    /// <p>The mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously. </p>
+    /// <p>The mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
     pub activity_stream_mode: std::option::Option<crate::model::ActivityStreamMode>,
     /// <p>The status of the database activity stream.</p>
     pub activity_stream_status: std::option::Option<crate::model::ActivityStreamStatus>,
@@ -5112,7 +5110,7 @@ impl DbCluster {
     pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Aurora Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Aurora distributes the connection requests among the Aurora Replicas in the DB cluster. This functionality can help balance your read workload across multiple Aurora Replicas in your DB cluster. </p>
+    /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Aurora Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Aurora distributes the connection requests among the Aurora Replicas in the DB cluster. This functionality can help balance your read workload across multiple Aurora Replicas in your DB cluster.</p>
     /// <p>If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Aurora Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
     pub fn reader_endpoint(&self) -> std::option::Option<&str> {
         self.reader_endpoint.as_deref()
@@ -5151,7 +5149,7 @@ impl DbCluster {
     ) -> std::option::Option<&[crate::model::DbClusterOptionGroupStatus]> {
         self.db_cluster_option_group_memberships.as_deref()
     }
-    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
@@ -5231,8 +5229,8 @@ impl DbCluster {
     pub fn enabled_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
         self.enabled_cloudwatch_logs_exports.as_deref()
     }
-    /// <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is paused.</p>
-    /// <p>For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0 (zero) when the cluster is paused.</p>
+    /// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn capacity(&self) -> std::option::Option<i32> {
         self.capacity
     }
@@ -5242,23 +5240,23 @@ impl DbCluster {
         self.engine_mode.as_deref()
     }
     /// <p>Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn scaling_configuration_info(
         &self,
     ) -> std::option::Option<&crate::model::ScalingConfigurationInfo> {
         self.scaling_configuration_info.as_ref()
     }
-    /// <p>Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. </p>
+    /// <p>Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
-    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is enabled.</p>
+    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn http_endpoint_enabled(&self) -> std::option::Option<bool> {
         self.http_endpoint_enabled
     }
-    /// <p>The mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously. </p>
+    /// <p>The mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
     pub fn activity_stream_mode(&self) -> std::option::Option<&crate::model::ActivityStreamMode> {
         self.activity_stream_mode.as_ref()
     }
@@ -5733,13 +5731,13 @@ pub mod db_cluster {
             self.endpoint = input;
             self
         }
-        /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Aurora Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Aurora distributes the connection requests among the Aurora Replicas in the DB cluster. This functionality can help balance your read workload across multiple Aurora Replicas in your DB cluster. </p>
+        /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Aurora Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Aurora distributes the connection requests among the Aurora Replicas in the DB cluster. This functionality can help balance your read workload across multiple Aurora Replicas in your DB cluster.</p>
         /// <p>If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Aurora Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
         pub fn reader_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.reader_endpoint = Some(input.into());
             self
         }
-        /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Aurora Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Aurora distributes the connection requests among the Aurora Replicas in the DB cluster. This functionality can help balance your read workload across multiple Aurora Replicas in your DB cluster. </p>
+        /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Aurora Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Aurora distributes the connection requests among the Aurora Replicas in the DB cluster. This functionality can help balance your read workload across multiple Aurora Replicas in your DB cluster.</p>
         /// <p>If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Aurora Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
         pub fn set_reader_endpoint(
             mut self,
@@ -5858,12 +5856,12 @@ pub mod db_cluster {
             self.db_cluster_option_group_memberships = input;
             self
         }
-        /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+        /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
         pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.preferred_backup_window = Some(input.into());
             self
         }
-        /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+        /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6142,14 +6140,14 @@ pub mod db_cluster {
             self.enabled_cloudwatch_logs_exports = input;
             self
         }
-        /// <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is paused.</p>
-        /// <p>For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0 (zero) when the cluster is paused.</p>
+        /// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn capacity(mut self, input: i32) -> Self {
             self.capacity = Some(input);
             self
         }
-        /// <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is paused.</p>
-        /// <p>For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0 (zero) when the cluster is paused.</p>
+        /// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.capacity = input;
             self
@@ -6167,7 +6165,7 @@ pub mod db_cluster {
             self
         }
         /// <p>Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn scaling_configuration_info(
             mut self,
             input: crate::model::ScalingConfigurationInfo,
@@ -6176,7 +6174,7 @@ pub mod db_cluster {
             self
         }
         /// <p>Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_scaling_configuration_info(
             mut self,
             input: std::option::Option<crate::model::ScalingConfigurationInfo>,
@@ -6184,36 +6182,36 @@ pub mod db_cluster {
             self.scaling_configuration_info = input;
             self
         }
-        /// <p>Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. </p>
+        /// <p>Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
-        /// <p>Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. </p>
+        /// <p>Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
         }
-        /// <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
-        /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is enabled.</p>
+        /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn http_endpoint_enabled(mut self, input: bool) -> Self {
             self.http_endpoint_enabled = Some(input);
             self
         }
-        /// <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
-        /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is enabled.</p>
+        /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_http_endpoint_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.http_endpoint_enabled = input;
             self
         }
-        /// <p>The mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously. </p>
+        /// <p>The mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
         pub fn activity_stream_mode(mut self, input: crate::model::ActivityStreamMode) -> Self {
             self.activity_stream_mode = Some(input);
             self
         }
-        /// <p>The mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously. </p>
+        /// <p>The mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
         pub fn set_activity_stream_mode(
             mut self,
             input: std::option::Option<crate::model::ActivityStreamMode>,
@@ -6821,7 +6819,7 @@ impl AsRef<str> for WriteForwardingStatus {
 }
 
 /// <p>Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingConfigurationInfo {
@@ -6830,11 +6828,11 @@ pub struct ScalingConfigurationInfo {
     /// <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     pub max_capacity: std::option::Option<i32>,
     /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-    /// <p>When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.</p>
+    /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
     pub auto_pause: std::option::Option<bool>,
     /// <p>The remaining amount of time, in seconds, before the Aurora DB cluster in <code>serverless</code> mode is paused. A DB cluster can be paused only when it's idle (it has no connections).</p>
     pub seconds_until_auto_pause: std::option::Option<i32>,
-    /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
+    /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless v1 cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
     pub timeout_action: std::option::Option<std::string::String>,
@@ -6851,7 +6849,7 @@ impl ScalingConfigurationInfo {
         self.max_capacity
     }
     /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-    /// <p>When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.</p>
+    /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
     pub fn auto_pause(&self) -> std::option::Option<bool> {
         self.auto_pause
     }
@@ -6859,7 +6857,7 @@ impl ScalingConfigurationInfo {
     pub fn seconds_until_auto_pause(&self) -> std::option::Option<i32> {
         self.seconds_until_auto_pause
     }
-    /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
+    /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless v1 cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
     pub fn timeout_action(&self) -> std::option::Option<&str> {
@@ -6917,13 +6915,13 @@ pub mod scaling_configuration_info {
             self
         }
         /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-        /// <p>When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.</p>
+        /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
         pub fn auto_pause(mut self, input: bool) -> Self {
             self.auto_pause = Some(input);
             self
         }
         /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-        /// <p>When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.</p>
+        /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
         pub fn set_auto_pause(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_pause = input;
             self
@@ -6938,14 +6936,14 @@ pub mod scaling_configuration_info {
             self.seconds_until_auto_pause = input;
             self
         }
-        /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
+        /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless v1 cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
         /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
         /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
         pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
             self.timeout_action = Some(input.into());
             self
         }
-        /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
+        /// <p>The action that occurs when Aurora times out while attempting to change the capacity of an Aurora Serverless v1 cluster. The value is either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
         /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
         /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
         pub fn set_timeout_action(
@@ -6998,7 +6996,7 @@ pub struct DbClusterRole {
     /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon Web Services on your behalf.</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>. </p>
+    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub feature_name: std::option::Option<std::string::String>,
 }
 impl DbClusterRole {
@@ -7015,7 +7013,7 @@ impl DbClusterRole {
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>. </p>
+    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn feature_name(&self) -> std::option::Option<&str> {
         self.feature_name.as_deref()
     }
@@ -7070,12 +7068,12 @@ pub mod db_cluster_role {
             self.status = input;
             self
         }
-        /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>. </p>
+        /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
         pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.feature_name = Some(input.into());
             self
         }
-        /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>. </p>
+        /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feature_name = input;
             self
@@ -7107,7 +7105,7 @@ pub struct DbClusterMember {
     pub is_cluster_writer: bool,
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
     pub db_cluster_parameter_group_status: std::option::Option<std::string::String>,
-    /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>. </p>
+    /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub promotion_tier: std::option::Option<i32>,
 }
 impl DbClusterMember {
@@ -7123,7 +7121,7 @@ impl DbClusterMember {
     pub fn db_cluster_parameter_group_status(&self) -> std::option::Option<&str> {
         self.db_cluster_parameter_group_status.as_deref()
     }
-    /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>. </p>
+    /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn promotion_tier(&self) -> std::option::Option<i32> {
         self.promotion_tier
     }
@@ -7192,12 +7190,12 @@ pub mod db_cluster_member {
             self.db_cluster_parameter_group_status = input;
             self
         }
-        /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>. </p>
+        /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn promotion_tier(mut self, input: i32) -> Self {
             self.promotion_tier = Some(input);
             self
         }
-        /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>. </p>
+        /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
             self.promotion_tier = input;
             self
@@ -7302,8 +7300,8 @@ impl DbClusterOptionGroupStatus {
     }
 }
 
-/// <p>Contains the details for an Amazon RDS DB security group. </p>
-/// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action. </p>
+/// <p>Contains the details for an Amazon RDS DB security group.</p>
+/// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSecurityGroup {
@@ -7315,9 +7313,9 @@ pub struct DbSecurityGroup {
     pub db_security_group_description: std::option::Option<std::string::String>,
     /// <p>Provides the VpcId of the DB security group.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+    /// <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
     pub ec2_security_groups: std::option::Option<std::vec::Vec<crate::model::Ec2SecurityGroup>>,
-    /// <p> Contains a list of <code>IPRange</code> elements. </p>
+    /// <p>Contains a list of <code>IPRange</code> elements.</p>
     pub ip_ranges: std::option::Option<std::vec::Vec<crate::model::IpRange>>,
     /// <p>The Amazon Resource Name (ARN) for the DB security group.</p>
     pub db_security_group_arn: std::option::Option<std::string::String>,
@@ -7339,11 +7337,11 @@ impl DbSecurityGroup {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+    /// <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
     pub fn ec2_security_groups(&self) -> std::option::Option<&[crate::model::Ec2SecurityGroup]> {
         self.ec2_security_groups.as_deref()
     }
-    /// <p> Contains a list of <code>IPRange</code> elements. </p>
+    /// <p>Contains a list of <code>IPRange</code> elements.</p>
     pub fn ip_ranges(&self) -> std::option::Option<&[crate::model::IpRange]> {
         self.ip_ranges.as_deref()
     }
@@ -7437,14 +7435,14 @@ pub mod db_security_group {
         ///
         /// To override the contents of this collection use [`set_ec2_security_groups`](Self::set_ec2_security_groups).
         ///
-        /// <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+        /// <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
         pub fn ec2_security_groups(mut self, input: crate::model::Ec2SecurityGroup) -> Self {
             let mut v = self.ec2_security_groups.unwrap_or_default();
             v.push(input);
             self.ec2_security_groups = Some(v);
             self
         }
-        /// <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+        /// <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
         pub fn set_ec2_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2SecurityGroup>>,
@@ -7456,14 +7454,14 @@ pub mod db_security_group {
         ///
         /// To override the contents of this collection use [`set_ip_ranges`](Self::set_ip_ranges).
         ///
-        /// <p> Contains a list of <code>IPRange</code> elements. </p>
+        /// <p>Contains a list of <code>IPRange</code> elements.</p>
         pub fn ip_ranges(mut self, input: crate::model::IpRange) -> Self {
             let mut v = self.ip_ranges.unwrap_or_default();
             v.push(input);
             self.ip_ranges = Some(v);
             self
         }
-        /// <p> Contains a list of <code>IPRange</code> elements. </p>
+        /// <p>Contains a list of <code>IPRange</code> elements.</p>
         pub fn set_ip_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpRange>>,
@@ -7505,7 +7503,7 @@ impl DbSecurityGroup {
     }
 }
 
-/// <p> This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action. </p>
+/// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpRange {
@@ -7593,7 +7591,7 @@ pub struct Ec2SecurityGroup {
     pub ec2_security_group_name: std::option::Option<std::string::String>,
     /// <p>Specifies the id of the EC2 security group.</p>
     pub ec2_security_group_id: std::option::Option<std::string::String>,
-    /// <p> Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+    /// <p>Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
 }
 impl Ec2SecurityGroup {
@@ -7609,7 +7607,7 @@ impl Ec2SecurityGroup {
     pub fn ec2_security_group_id(&self) -> std::option::Option<&str> {
         self.ec2_security_group_id.as_deref()
     }
-    /// <p> Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+    /// <p>Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
         self.ec2_security_group_owner_id.as_deref()
     }
@@ -7675,7 +7673,7 @@ pub mod ec2_security_group {
             self.ec2_security_group_id = input;
             self
         }
-        /// <p> Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+        /// <p>Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
         pub fn ec2_security_group_owner_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -7683,7 +7681,7 @@ pub mod ec2_security_group {
             self.ec2_security_group_owner_id = Some(input.into());
             self
         }
-        /// <p> Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+        /// <p>Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
         pub fn set_ec2_security_group_owner_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7709,8 +7707,8 @@ impl Ec2SecurityGroup {
     }
 }
 
-/// <p>Contains the scaling configuration of an Aurora Serverless DB cluster.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+/// <p>Contains the scaling configuration of an Aurora Serverless v1 DB cluster.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingConfiguration {
@@ -7725,7 +7723,7 @@ pub struct ScalingConfiguration {
     /// <p>The maximum capacity must be greater than or equal to the minimum capacity.</p>
     pub max_capacity: std::option::Option<i32>,
     /// <p>A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
-    /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it. </p>
+    /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
     /// </note>
     pub auto_pause: std::option::Option<bool>,
     /// <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.</p>
@@ -7734,11 +7732,11 @@ pub struct ScalingConfiguration {
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
-    /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from finding a scaling point might be dropped.</p>
+    /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
     /// </important>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub timeout_action: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in seconds, that Aurora Serverless tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
+    /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
     /// <p>Specify a value between 60 and 600 seconds.</p>
     pub seconds_before_timeout: std::option::Option<i32>,
 }
@@ -7758,7 +7756,7 @@ impl ScalingConfiguration {
         self.max_capacity
     }
     /// <p>A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
-    /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it. </p>
+    /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
     /// </note>
     pub fn auto_pause(&self) -> std::option::Option<bool> {
         self.auto_pause
@@ -7771,13 +7769,13 @@ impl ScalingConfiguration {
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
-    /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from finding a scaling point might be dropped.</p>
+    /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
     /// </important>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn timeout_action(&self) -> std::option::Option<&str> {
         self.timeout_action.as_deref()
     }
-    /// <p>The amount of time, in seconds, that Aurora Serverless tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
+    /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
     /// <p>Specify a value between 60 and 600 seconds.</p>
     pub fn seconds_before_timeout(&self) -> std::option::Option<i32> {
         self.seconds_before_timeout
@@ -7842,14 +7840,14 @@ pub mod scaling_configuration {
             self
         }
         /// <p>A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
-        /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it. </p>
+        /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
         /// </note>
         pub fn auto_pause(mut self, input: bool) -> Self {
             self.auto_pause = Some(input);
             self
         }
         /// <p>A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
-        /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it. </p>
+        /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
         /// </note>
         pub fn set_auto_pause(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_pause = input;
@@ -7870,9 +7868,9 @@ pub mod scaling_configuration {
         /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
         /// <p> <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
         /// <p> <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
-        /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from finding a scaling point might be dropped.</p>
+        /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
             self.timeout_action = Some(input.into());
             self
@@ -7880,9 +7878,9 @@ pub mod scaling_configuration {
         /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
         /// <p> <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
         /// <p> <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
-        /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from finding a scaling point might be dropped.</p>
+        /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_timeout_action(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7890,13 +7888,13 @@ pub mod scaling_configuration {
             self.timeout_action = input;
             self
         }
-        /// <p>The amount of time, in seconds, that Aurora Serverless tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
+        /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
         /// <p>Specify a value between 60 and 600 seconds.</p>
         pub fn seconds_before_timeout(mut self, input: i32) -> Self {
             self.seconds_before_timeout = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Aurora Serverless tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
+        /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
         /// <p>Specify a value between 60 and 600 seconds.</p>
         pub fn set_seconds_before_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.seconds_before_timeout = input;
@@ -7922,7 +7920,7 @@ impl ScalingConfiguration {
     }
 }
 
-/// <p> This data type is used as a request parameter in the <code>ModifyDBParameterGroup</code> and <code>ResetDBParameterGroup</code> actions. </p>
+/// <p>This data type is used as a request parameter in the <code>ModifyDBParameterGroup</code> and <code>ResetDBParameterGroup</code> actions.</p>
 /// <p>This data type is used as a response element in the <code>DescribeEngineDefaultParameters</code> and <code>DescribeDBParameters</code> actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7941,7 +7939,7 @@ pub struct Parameter {
     pub data_type: std::option::Option<std::string::String>,
     /// <p>Specifies the valid range of values for the parameter.</p>
     pub allowed_values: std::option::Option<std::string::String>,
-    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+    /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub is_modifiable: bool,
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub minimum_engine_version: std::option::Option<std::string::String>,
@@ -7979,7 +7977,7 @@ impl Parameter {
     pub fn allowed_values(&self) -> std::option::Option<&str> {
         self.allowed_values.as_deref()
     }
-    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+    /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn is_modifiable(&self) -> bool {
         self.is_modifiable
     }
@@ -8111,12 +8109,12 @@ pub mod parameter {
             self.allowed_values = input;
             self
         }
-        /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+        /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
         pub fn is_modifiable(mut self, input: bool) -> Self {
             self.is_modifiable = Some(input);
             self
         }
-        /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+        /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
         pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_modifiable = input;
             self
@@ -8523,36 +8521,36 @@ impl EventSubscription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalCluster {
-    /// <p> Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster. </p>
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
     pub global_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p> The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.</p>
     pub global_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global database cluster.</p>
     pub global_cluster_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the current state of this global database cluster.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p> The Aurora database engine used by the global database cluster. </p>
+    /// <p>The Aurora database engine used by the global database cluster.</p>
     pub engine: std::option::Option<std::string::String>,
     /// <p>Indicates the database engine version.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p> The default database name within the new global database cluster. </p>
+    /// <p>The default database name within the new global database cluster.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p> The storage encryption setting for the global database cluster. </p>
+    /// <p>The storage encryption setting for the global database cluster.</p>
     pub storage_encrypted: std::option::Option<bool>,
-    /// <p> The deletion protection setting for the new global database cluster. </p>
+    /// <p>The deletion protection setting for the new global database cluster.</p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p> The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item. </p>
+    /// <p>The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item.</p>
     pub global_cluster_members:
         std::option::Option<std::vec::Vec<crate::model::GlobalClusterMember>>,
-    /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>). </p>
+    /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
     pub failover_state: std::option::Option<crate::model::FailoverState>,
 }
 impl GlobalCluster {
-    /// <p> Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster. </p>
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
     pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
-    /// <p> The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.</p>
     pub fn global_cluster_resource_id(&self) -> std::option::Option<&str> {
         self.global_cluster_resource_id.as_deref()
     }
@@ -8564,7 +8562,7 @@ impl GlobalCluster {
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p> The Aurora database engine used by the global database cluster. </p>
+    /// <p>The Aurora database engine used by the global database cluster.</p>
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -8572,25 +8570,25 @@ impl GlobalCluster {
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p> The default database name within the new global database cluster. </p>
+    /// <p>The default database name within the new global database cluster.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p> The storage encryption setting for the global database cluster. </p>
+    /// <p>The storage encryption setting for the global database cluster.</p>
     pub fn storage_encrypted(&self) -> std::option::Option<bool> {
         self.storage_encrypted
     }
-    /// <p> The deletion protection setting for the new global database cluster. </p>
+    /// <p>The deletion protection setting for the new global database cluster.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p> The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item. </p>
+    /// <p>The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item.</p>
     pub fn global_cluster_members(
         &self,
     ) -> std::option::Option<&[crate::model::GlobalClusterMember]> {
         self.global_cluster_members.as_deref()
     }
-    /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>). </p>
+    /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
     pub fn failover_state(&self) -> std::option::Option<&crate::model::FailoverState> {
         self.failover_state.as_ref()
     }
@@ -8635,12 +8633,12 @@ pub mod global_cluster {
         pub(crate) failover_state: std::option::Option<crate::model::FailoverState>,
     }
     impl Builder {
-        /// <p> Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster. </p>
+        /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
         pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.global_cluster_identifier = Some(input.into());
             self
         }
-        /// <p> Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster. </p>
+        /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
         pub fn set_global_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8648,12 +8646,12 @@ pub mod global_cluster {
             self.global_cluster_identifier = input;
             self
         }
-        /// <p> The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed. </p>
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.</p>
         pub fn global_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.global_cluster_resource_id = Some(input.into());
             self
         }
-        /// <p> The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed. </p>
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.</p>
         pub fn set_global_cluster_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8684,12 +8682,12 @@ pub mod global_cluster {
             self.status = input;
             self
         }
-        /// <p> The Aurora database engine used by the global database cluster. </p>
+        /// <p>The Aurora database engine used by the global database cluster.</p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine = Some(input.into());
             self
         }
-        /// <p> The Aurora database engine used by the global database cluster. </p>
+        /// <p>The Aurora database engine used by the global database cluster.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -8707,12 +8705,12 @@ pub mod global_cluster {
             self.engine_version = input;
             self
         }
-        /// <p> The default database name within the new global database cluster. </p>
+        /// <p>The default database name within the new global database cluster.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p> The default database name within the new global database cluster. </p>
+        /// <p>The default database name within the new global database cluster.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8720,22 +8718,22 @@ pub mod global_cluster {
             self.database_name = input;
             self
         }
-        /// <p> The storage encryption setting for the global database cluster. </p>
+        /// <p>The storage encryption setting for the global database cluster.</p>
         pub fn storage_encrypted(mut self, input: bool) -> Self {
             self.storage_encrypted = Some(input);
             self
         }
-        /// <p> The storage encryption setting for the global database cluster. </p>
+        /// <p>The storage encryption setting for the global database cluster.</p>
         pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.storage_encrypted = input;
             self
         }
-        /// <p> The deletion protection setting for the new global database cluster. </p>
+        /// <p>The deletion protection setting for the new global database cluster.</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
-        /// <p> The deletion protection setting for the new global database cluster. </p>
+        /// <p>The deletion protection setting for the new global database cluster.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
@@ -8744,14 +8742,14 @@ pub mod global_cluster {
         ///
         /// To override the contents of this collection use [`set_global_cluster_members`](Self::set_global_cluster_members).
         ///
-        /// <p> The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item. </p>
+        /// <p>The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item.</p>
         pub fn global_cluster_members(mut self, input: crate::model::GlobalClusterMember) -> Self {
             let mut v = self.global_cluster_members.unwrap_or_default();
             v.push(input);
             self.global_cluster_members = Some(v);
             self
         }
-        /// <p> The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item. </p>
+        /// <p>The list of cluster IDs for secondary clusters within the global database cluster. Currently limited to 1 item.</p>
         pub fn set_global_cluster_members(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalClusterMember>>,
@@ -8759,12 +8757,12 @@ pub mod global_cluster {
             self.global_cluster_members = input;
             self
         }
-        /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>). </p>
+        /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
         pub fn failover_state(mut self, input: crate::model::FailoverState) -> Self {
             self.failover_state = Some(input);
             self
         }
-        /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>). </p>
+        /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
         pub fn set_failover_state(
             mut self,
             input: std::option::Option<crate::model::FailoverState>,
@@ -8797,33 +8795,33 @@ impl GlobalCluster {
     }
 }
 
-/// <p>Contains the state of scheduled or in-process failover operations on an Aurora global database (<code>GlobalCluster</code>). This Data type is empty unless a failover operation is scheduled or is currently underway on the Aurora global database. </p>
+/// <p>Contains the state of scheduled or in-process failover operations on an Aurora global database (<code>GlobalCluster</code>). This Data type is empty unless a failover operation is scheduled or is currently underway on the Aurora global database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverState {
-    /// <p>The current status of the Aurora global database (<code>GlobalCluster</code>). Possible values are as follows: </p>
+    /// <p>The current status of the Aurora global database (<code>GlobalCluster</code>). Possible values are as follows:</p>
     /// <ul>
     /// <li> <p>pending  A request to fail over the Aurora global database (<code>GlobalCluster</code>) has been received by the service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster are being verified before the failover process can start.</p> </li>
-    /// <li> <p>failing-over  This status covers the range of Aurora internal operations that take place during the failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and synchronizing replicas. </p> </li>
-    /// <li> <p>cancelling  The request to fail over the Aurora global database (<code>GlobalCluster</code>) was cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states. </p> </li>
+    /// <li> <p>failing-over  This status covers the range of Aurora internal operations that take place during the failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and synchronizing replicas.</p> </li>
+    /// <li> <p>cancelling  The request to fail over the Aurora global database (<code>GlobalCluster</code>) was cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::FailoverStatus>,
-    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state.</p>
     pub from_db_cluster_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being promoted, and which is associated with this state.</p>
     pub to_db_cluster_arn: std::option::Option<std::string::String>,
 }
 impl FailoverState {
-    /// <p>The current status of the Aurora global database (<code>GlobalCluster</code>). Possible values are as follows: </p>
+    /// <p>The current status of the Aurora global database (<code>GlobalCluster</code>). Possible values are as follows:</p>
     /// <ul>
     /// <li> <p>pending  A request to fail over the Aurora global database (<code>GlobalCluster</code>) has been received by the service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster are being verified before the failover process can start.</p> </li>
-    /// <li> <p>failing-over  This status covers the range of Aurora internal operations that take place during the failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and synchronizing replicas. </p> </li>
-    /// <li> <p>cancelling  The request to fail over the Aurora global database (<code>GlobalCluster</code>) was cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states. </p> </li>
+    /// <li> <p>failing-over  This status covers the range of Aurora internal operations that take place during the failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and synchronizing replicas.</p> </li>
+    /// <li> <p>cancelling  The request to fail over the Aurora global database (<code>GlobalCluster</code>) was cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::FailoverStatus> {
         self.status.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state.</p>
     pub fn from_db_cluster_arn(&self) -> std::option::Option<&str> {
         self.from_db_cluster_arn.as_deref()
     }
@@ -8852,21 +8850,21 @@ pub mod failover_state {
         pub(crate) to_db_cluster_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The current status of the Aurora global database (<code>GlobalCluster</code>). Possible values are as follows: </p>
+        /// <p>The current status of the Aurora global database (<code>GlobalCluster</code>). Possible values are as follows:</p>
         /// <ul>
         /// <li> <p>pending  A request to fail over the Aurora global database (<code>GlobalCluster</code>) has been received by the service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster are being verified before the failover process can start.</p> </li>
-        /// <li> <p>failing-over  This status covers the range of Aurora internal operations that take place during the failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and synchronizing replicas. </p> </li>
-        /// <li> <p>cancelling  The request to fail over the Aurora global database (<code>GlobalCluster</code>) was cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states. </p> </li>
+        /// <li> <p>failing-over  This status covers the range of Aurora internal operations that take place during the failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and synchronizing replicas.</p> </li>
+        /// <li> <p>cancelling  The request to fail over the Aurora global database (<code>GlobalCluster</code>) was cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::FailoverStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current status of the Aurora global database (<code>GlobalCluster</code>). Possible values are as follows: </p>
+        /// <p>The current status of the Aurora global database (<code>GlobalCluster</code>). Possible values are as follows:</p>
         /// <ul>
         /// <li> <p>pending  A request to fail over the Aurora global database (<code>GlobalCluster</code>) has been received by the service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster are being verified before the failover process can start.</p> </li>
-        /// <li> <p>failing-over  This status covers the range of Aurora internal operations that take place during the failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and synchronizing replicas. </p> </li>
-        /// <li> <p>cancelling  The request to fail over the Aurora global database (<code>GlobalCluster</code>) was cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states. </p> </li>
+        /// <li> <p>failing-over  This status covers the range of Aurora internal operations that take place during the failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and synchronizing replicas.</p> </li>
+        /// <li> <p>cancelling  The request to fail over the Aurora global database (<code>GlobalCluster</code>) was cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -8875,12 +8873,12 @@ pub mod failover_state {
             self.status = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state.</p>
         pub fn from_db_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.from_db_cluster_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state.</p>
         pub fn set_from_db_cluster_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8977,29 +8975,29 @@ impl AsRef<str> for FailoverStatus {
     }
 }
 
-/// <p> A data structure with information about any primary and secondary clusters associated with an Aurora global database. </p>
+/// <p>A data structure with information about any primary and secondary clusters associated with an Aurora global database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalClusterMember {
-    /// <p> The Amazon Resource Name (ARN) for each Aurora cluster. </p>
+    /// <p>The Amazon Resource Name (ARN) for each Aurora cluster.</p>
     pub db_cluster_arn: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global database. </p>
+    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global database.</p>
     pub readers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> Specifies whether the Aurora cluster is the primary cluster (that is, has read-write capability) for the Aurora global database with which it is associated. </p>
+    /// <p>Specifies whether the Aurora cluster is the primary cluster (that is, has read-write capability) for the Aurora global database with which it is associated.</p>
     pub is_writer: bool,
     /// <p>Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
     pub global_write_forwarding_status: std::option::Option<crate::model::WriteForwardingStatus>,
 }
 impl GlobalClusterMember {
-    /// <p> The Amazon Resource Name (ARN) for each Aurora cluster. </p>
+    /// <p>The Amazon Resource Name (ARN) for each Aurora cluster.</p>
     pub fn db_cluster_arn(&self) -> std::option::Option<&str> {
         self.db_cluster_arn.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global database. </p>
+    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global database.</p>
     pub fn readers(&self) -> std::option::Option<&[std::string::String]> {
         self.readers.as_deref()
     }
-    /// <p> Specifies whether the Aurora cluster is the primary cluster (that is, has read-write capability) for the Aurora global database with which it is associated. </p>
+    /// <p>Specifies whether the Aurora cluster is the primary cluster (that is, has read-write capability) for the Aurora global database with which it is associated.</p>
     pub fn is_writer(&self) -> bool {
         self.is_writer
     }
@@ -9036,12 +9034,12 @@ pub mod global_cluster_member {
             std::option::Option<crate::model::WriteForwardingStatus>,
     }
     impl Builder {
-        /// <p> The Amazon Resource Name (ARN) for each Aurora cluster. </p>
+        /// <p>The Amazon Resource Name (ARN) for each Aurora cluster.</p>
         pub fn db_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for each Aurora cluster. </p>
+        /// <p>The Amazon Resource Name (ARN) for each Aurora cluster.</p>
         pub fn set_db_cluster_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9053,14 +9051,14 @@ pub mod global_cluster_member {
         ///
         /// To override the contents of this collection use [`set_readers`](Self::set_readers).
         ///
-        /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global database. </p>
+        /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global database.</p>
         pub fn readers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.readers.unwrap_or_default();
             v.push(input.into());
             self.readers = Some(v);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global database. </p>
+        /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global database.</p>
         pub fn set_readers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9068,12 +9066,12 @@ pub mod global_cluster_member {
             self.readers = input;
             self
         }
-        /// <p> Specifies whether the Aurora cluster is the primary cluster (that is, has read-write capability) for the Aurora global database with which it is associated. </p>
+        /// <p>Specifies whether the Aurora cluster is the primary cluster (that is, has read-write capability) for the Aurora global database with which it is associated.</p>
         pub fn is_writer(mut self, input: bool) -> Self {
             self.is_writer = Some(input);
             self
         }
-        /// <p> Specifies whether the Aurora cluster is the primary cluster (that is, has read-write capability) for the Aurora global database with which it is associated. </p>
+        /// <p>Specifies whether the Aurora cluster is the primary cluster (that is, has read-write capability) for the Aurora global database with which it is associated.</p>
         pub fn set_is_writer(mut self, input: std::option::Option<bool>) -> Self {
             self.is_writer = input;
             self
@@ -9313,7 +9311,7 @@ impl DbProxyTarget {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetHealth {
-    /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target: </p>
+    /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
     /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
     pub state: std::option::Option<crate::model::TargetState>,
     /// <p>The reason for the current health <code>State</code> of the RDS Proxy target.</p>
@@ -9322,7 +9320,7 @@ pub struct TargetHealth {
     pub description: std::option::Option<std::string::String>,
 }
 impl TargetHealth {
-    /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target: </p>
+    /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
     /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
     pub fn state(&self) -> std::option::Option<&crate::model::TargetState> {
         self.state.as_ref()
@@ -9356,13 +9354,13 @@ pub mod target_health {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target: </p>
+        /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
         /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
         pub fn state(mut self, input: crate::model::TargetState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target: </p>
+        /// <p>The current state of the connection health lifecycle for the RDS Proxy target. The following is a typical lifecycle example for the states of an RDS Proxy target:</p>
         /// <p> <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code> &gt; <code>unavailable</code> &gt; <code>available</code> </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::TargetState>) -> Self {
             self.state = input;
@@ -9658,7 +9656,7 @@ impl AsRef<str> for TargetType {
     }
 }
 
-/// <p> This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions. </p>
+/// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedDbInstance {
@@ -10045,7 +10043,7 @@ impl ReservedDbInstance {
     }
 }
 
-/// <p> This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>DescribeReservedDBInstancesOfferings</code> actions. </p>
+/// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>DescribeReservedDBInstancesOfferings</code> actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecurringCharge {
@@ -10138,9 +10136,9 @@ pub struct OptionGroup {
     pub major_engine_version: std::option::Option<std::string::String>,
     /// <p>Indicates what options are available in the option group.</p>
     pub options: std::option::Option<std::vec::Vec<crate::model::Option>>,
-    /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances. </p>
+    /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
     pub allows_vpc_and_non_vpc_instance_memberships: bool,
-    /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field. </p>
+    /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the option group.</p>
     pub option_group_arn: std::option::Option<std::string::String>,
@@ -10166,11 +10164,11 @@ impl OptionGroup {
     pub fn options(&self) -> std::option::Option<&[crate::model::Option]> {
         self.options.as_deref()
     }
-    /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances. </p>
+    /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
     pub fn allows_vpc_and_non_vpc_instance_memberships(&self) -> bool {
         self.allows_vpc_and_non_vpc_instance_memberships
     }
-    /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field. </p>
+    /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -10280,12 +10278,12 @@ pub mod option_group {
             self.options = input;
             self
         }
-        /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances. </p>
+        /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
         pub fn allows_vpc_and_non_vpc_instance_memberships(mut self, input: bool) -> Self {
             self.allows_vpc_and_non_vpc_instance_memberships = Some(input);
             self
         }
-        /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances. </p>
+        /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
         pub fn set_allows_vpc_and_non_vpc_instance_memberships(
             mut self,
             input: std::option::Option<bool>,
@@ -10293,12 +10291,12 @@ pub mod option_group {
             self.allows_vpc_and_non_vpc_instance_memberships = input;
             self
         }
-        /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field. </p>
+        /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field. </p>
+        /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -11188,8 +11186,8 @@ impl DbSnapshotAttribute {
     }
 }
 
-/// <p>Contains the details of an Amazon RDS DB snapshot. </p>
-/// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action. </p>
+/// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+/// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSnapshot {
@@ -11237,12 +11235,12 @@ pub struct DbSnapshot {
     pub tde_credential_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether the DB snapshot is encrypted.</p>
     pub encrypted: bool,
-    /// <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot. </p>
+    /// <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
     pub db_snapshot_arn: std::option::Option<std::string::String>,
-    /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified. </p>
+    /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified.</p>
     pub timezone: std::option::Option<std::string::String>,
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     pub iam_database_authentication_enabled: bool,
@@ -11346,7 +11344,7 @@ impl DbSnapshot {
     pub fn encrypted(&self) -> bool {
         self.encrypted
     }
-    /// <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot. </p>
+    /// <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -11355,7 +11353,7 @@ impl DbSnapshot {
     pub fn db_snapshot_arn(&self) -> std::option::Option<&str> {
         self.db_snapshot_arn.as_deref()
     }
-    /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified. </p>
+    /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified.</p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
     }
@@ -11734,13 +11732,13 @@ pub mod db_snapshot {
             self.encrypted = input;
             self
         }
-        /// <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot. </p>
+        /// <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot.</p>
         /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot. </p>
+        /// <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot.</p>
         /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
@@ -11759,12 +11757,12 @@ pub mod db_snapshot {
             self.db_snapshot_arn = input;
             self
         }
-        /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified. </p>
+        /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified.</p>
         pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.timezone = Some(input.into());
             self
         }
-        /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified. </p>
+        /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -12124,13 +12122,13 @@ impl DbProxyTargetGroup {
 pub struct ConnectionPoolConfigurationInfo {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     pub max_connections_percent: i32,
-    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
+    /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
     pub max_idle_connections_percent: i32,
     /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
     pub connection_borrow_timeout: i32,
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
     pub session_pinning_filters: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
     pub init_query: std::option::Option<std::string::String>,
 }
 impl ConnectionPoolConfigurationInfo {
@@ -12138,7 +12136,7 @@ impl ConnectionPoolConfigurationInfo {
     pub fn max_connections_percent(&self) -> i32 {
         self.max_connections_percent
     }
-    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
+    /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
     pub fn max_idle_connections_percent(&self) -> i32 {
         self.max_idle_connections_percent
     }
@@ -12150,7 +12148,7 @@ impl ConnectionPoolConfigurationInfo {
     pub fn session_pinning_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.session_pinning_filters.as_deref()
     }
-    /// <p> One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
     pub fn init_query(&self) -> std::option::Option<&str> {
         self.init_query.as_deref()
     }
@@ -12192,12 +12190,12 @@ pub mod connection_pool_configuration_info {
             self.max_connections_percent = input;
             self
         }
-        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
+        /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
         pub fn max_idle_connections_percent(mut self, input: i32) -> Self {
             self.max_idle_connections_percent = Some(input);
             self
         }
-        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
+        /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
         pub fn set_max_idle_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.max_idle_connections_percent = input;
             self
@@ -12231,12 +12229,12 @@ pub mod connection_pool_configuration_info {
             self.session_pinning_filters = input;
             self
         }
-        /// <p> One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+        /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
         pub fn init_query(mut self, input: impl Into<std::string::String>) -> Self {
             self.init_query = Some(input.into());
             self
         }
-        /// <p> One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+        /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
         pub fn set_init_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.init_query = input;
             self
@@ -12268,7 +12266,7 @@ pub struct ConnectionPoolConfiguration {
     /// <p>Default: 100</p>
     /// <p>Constraints: between 1 and 100</p>
     pub max_connections_percent: std::option::Option<i32>,
-    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
+    /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
     /// <p>Default: 50</p>
     /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
     pub max_idle_connections_percent: std::option::Option<i32>,
@@ -12279,7 +12277,7 @@ pub struct ConnectionPoolConfiguration {
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior.</p>
     /// <p>Default: no session pinning filters</p>
     pub session_pinning_filters: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
     /// <p>Default: no initialization query</p>
     pub init_query: std::option::Option<std::string::String>,
 }
@@ -12290,7 +12288,7 @@ impl ConnectionPoolConfiguration {
     pub fn max_connections_percent(&self) -> std::option::Option<i32> {
         self.max_connections_percent
     }
-    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
+    /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
     /// <p>Default: 50</p>
     /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
     pub fn max_idle_connections_percent(&self) -> std::option::Option<i32> {
@@ -12307,7 +12305,7 @@ impl ConnectionPoolConfiguration {
     pub fn session_pinning_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.session_pinning_filters.as_deref()
     }
-    /// <p> One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
     /// <p>Default: no initialization query</p>
     pub fn init_query(&self) -> std::option::Option<&str> {
         self.init_query.as_deref()
@@ -12354,14 +12352,14 @@ pub mod connection_pool_configuration {
             self.max_connections_percent = input;
             self
         }
-        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
+        /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
         /// <p>Default: 50</p>
         /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
         pub fn max_idle_connections_percent(mut self, input: i32) -> Self {
             self.max_idle_connections_percent = Some(input);
             self
         }
-        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
+        /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
         /// <p>Default: 50</p>
         /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
         pub fn set_max_idle_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
@@ -12403,13 +12401,13 @@ pub mod connection_pool_configuration {
             self.session_pinning_filters = input;
             self
         }
-        /// <p> One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+        /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
         /// <p>Default: no initialization query</p>
         pub fn init_query(mut self, input: impl Into<std::string::String>) -> Self {
             self.init_query = Some(input.into());
             self
         }
-        /// <p> One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+        /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
         /// <p>Default: no initialization query</p>
         pub fn set_init_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.init_query = input;
@@ -13980,7 +13978,7 @@ impl DbClusterSnapshotAttribute {
     }
 }
 
-/// <p>A time zone associated with a <code>DBInstance</code> or a <code>DBSnapshot</code>. This data type is an element in the response to the <code>DescribeDBInstances</code>, the <code>DescribeDBSnapshots</code>, and the <code>DescribeDBEngineVersions</code> actions. </p>
+/// <p>A time zone associated with a <code>DBInstance</code> or a <code>DBSnapshot</code>. This data type is an element in the response to the <code>DescribeDBInstances</code>, the <code>DescribeDBSnapshots</code>, and the <code>DescribeDBEngineVersions</code> actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Timezone {
@@ -14255,7 +14253,7 @@ impl UpgradeTarget {
     }
 }
 
-/// <p> This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>. </p>
+/// <p>This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CharacterSet {
@@ -14747,22 +14745,22 @@ impl InstallationMediaFailureCause {
     }
 }
 
-/// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
+/// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidDbInstanceModificationsMessage {
-    /// <p>Valid storage options for your DB instance. </p>
+    /// <p>Valid storage options for your DB instance.</p>
     pub storage: std::option::Option<std::vec::Vec<crate::model::ValidStorageOptions>>,
-    /// <p>Valid processor features for your DB instance. </p>
+    /// <p>Valid processor features for your DB instance.</p>
     pub valid_processor_features:
         std::option::Option<std::vec::Vec<crate::model::AvailableProcessorFeature>>,
 }
 impl ValidDbInstanceModificationsMessage {
-    /// <p>Valid storage options for your DB instance. </p>
+    /// <p>Valid storage options for your DB instance.</p>
     pub fn storage(&self) -> std::option::Option<&[crate::model::ValidStorageOptions]> {
         self.storage.as_deref()
     }
-    /// <p>Valid processor features for your DB instance. </p>
+    /// <p>Valid processor features for your DB instance.</p>
     pub fn valid_processor_features(
         &self,
     ) -> std::option::Option<&[crate::model::AvailableProcessorFeature]> {
@@ -14792,14 +14790,14 @@ pub mod valid_db_instance_modifications_message {
         ///
         /// To override the contents of this collection use [`set_storage`](Self::set_storage).
         ///
-        /// <p>Valid storage options for your DB instance. </p>
+        /// <p>Valid storage options for your DB instance.</p>
         pub fn storage(mut self, input: crate::model::ValidStorageOptions) -> Self {
             let mut v = self.storage.unwrap_or_default();
             v.push(input);
             self.storage = Some(v);
             self
         }
-        /// <p>Valid storage options for your DB instance. </p>
+        /// <p>Valid storage options for your DB instance.</p>
         pub fn set_storage(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidStorageOptions>>,
@@ -14811,7 +14809,7 @@ pub mod valid_db_instance_modifications_message {
         ///
         /// To override the contents of this collection use [`set_valid_processor_features`](Self::set_valid_processor_features).
         ///
-        /// <p>Valid processor features for your DB instance. </p>
+        /// <p>Valid processor features for your DB instance.</p>
         pub fn valid_processor_features(
             mut self,
             input: crate::model::AvailableProcessorFeature,
@@ -14821,7 +14819,7 @@ pub mod valid_db_instance_modifications_message {
             self.valid_processor_features = Some(v);
             self
         }
-        /// <p>Valid processor features for your DB instance. </p>
+        /// <p>Valid processor features for your DB instance.</p>
         pub fn set_valid_processor_features(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AvailableProcessorFeature>>,
@@ -14944,35 +14942,35 @@ impl AvailableProcessorFeature {
     }
 }
 
-/// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. </p>
+/// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidStorageOptions {
-    /// <p>The valid storage types for your DB instance. For example, gp2, io1. </p>
+    /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
     pub storage_type: std::option::Option<std::string::String>,
-    /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384. </p>
+    /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.</p>
     pub storage_size: std::option::Option<std::vec::Vec<crate::model::Range>>,
-    /// <p>The valid range of provisioned IOPS. For example, 1000-20000. </p>
+    /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
     pub provisioned_iops: std::option::Option<std::vec::Vec<crate::model::Range>>,
-    /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage. </p>
+    /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
     pub iops_to_storage_ratio: std::option::Option<std::vec::Vec<crate::model::DoubleRange>>,
     /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub supports_storage_autoscaling: bool,
 }
 impl ValidStorageOptions {
-    /// <p>The valid storage types for your DB instance. For example, gp2, io1. </p>
+    /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
     }
-    /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384. </p>
+    /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.</p>
     pub fn storage_size(&self) -> std::option::Option<&[crate::model::Range]> {
         self.storage_size.as_deref()
     }
-    /// <p>The valid range of provisioned IOPS. For example, 1000-20000. </p>
+    /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
     pub fn provisioned_iops(&self) -> std::option::Option<&[crate::model::Range]> {
         self.provisioned_iops.as_deref()
     }
-    /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage. </p>
+    /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
     pub fn iops_to_storage_ratio(&self) -> std::option::Option<&[crate::model::DoubleRange]> {
         self.iops_to_storage_ratio.as_deref()
     }
@@ -15009,12 +15007,12 @@ pub mod valid_storage_options {
         pub(crate) supports_storage_autoscaling: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The valid storage types for your DB instance. For example, gp2, io1. </p>
+        /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
             self
         }
-        /// <p>The valid storage types for your DB instance. For example, gp2, io1. </p>
+        /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
             self
@@ -15023,14 +15021,14 @@ pub mod valid_storage_options {
         ///
         /// To override the contents of this collection use [`set_storage_size`](Self::set_storage_size).
         ///
-        /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384. </p>
+        /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.</p>
         pub fn storage_size(mut self, input: crate::model::Range) -> Self {
             let mut v = self.storage_size.unwrap_or_default();
             v.push(input);
             self.storage_size = Some(v);
             self
         }
-        /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384. </p>
+        /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.</p>
         pub fn set_storage_size(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Range>>,
@@ -15042,14 +15040,14 @@ pub mod valid_storage_options {
         ///
         /// To override the contents of this collection use [`set_provisioned_iops`](Self::set_provisioned_iops).
         ///
-        /// <p>The valid range of provisioned IOPS. For example, 1000-20000. </p>
+        /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
         pub fn provisioned_iops(mut self, input: crate::model::Range) -> Self {
             let mut v = self.provisioned_iops.unwrap_or_default();
             v.push(input);
             self.provisioned_iops = Some(v);
             self
         }
-        /// <p>The valid range of provisioned IOPS. For example, 1000-20000. </p>
+        /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
         pub fn set_provisioned_iops(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Range>>,
@@ -15061,14 +15059,14 @@ pub mod valid_storage_options {
         ///
         /// To override the contents of this collection use [`set_iops_to_storage_ratio`](Self::set_iops_to_storage_ratio).
         ///
-        /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage. </p>
+        /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
         pub fn iops_to_storage_ratio(mut self, input: crate::model::DoubleRange) -> Self {
             let mut v = self.iops_to_storage_ratio.unwrap_or_default();
             v.push(input);
             self.iops_to_storage_ratio = Some(v);
             self
         }
-        /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage. </p>
+        /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
         pub fn set_iops_to_storage_ratio(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DoubleRange>>,
@@ -15189,7 +15187,7 @@ pub struct Range {
     pub from: i32,
     /// <p>The maximum value in the range.</p>
     pub to: i32,
-    /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000... </p>
+    /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
     pub step: std::option::Option<i32>,
 }
 impl Range {
@@ -15201,7 +15199,7 @@ impl Range {
     pub fn to(&self) -> i32 {
         self.to
     }
-    /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000... </p>
+    /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
     pub fn step(&self) -> std::option::Option<i32> {
         self.step
     }
@@ -15246,12 +15244,12 @@ pub mod range {
             self.to = input;
             self
         }
-        /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000... </p>
+        /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
         pub fn step(mut self, input: i32) -> Self {
             self.step = Some(input);
             self
         }
-        /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000... </p>
+        /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
         pub fn set_step(mut self, input: std::option::Option<i32>) -> Self {
             self.step = input;
             self
@@ -15392,7 +15390,7 @@ impl SourceRegion {
     }
 }
 
-/// <p> This data type is used as a response element in the <code>DescribeReservedDBInstancesOfferings</code> action. </p>
+/// <p>This data type is used as a response element in the <code>DescribeReservedDBInstancesOfferings</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedDbInstancesOffering {
@@ -15909,7 +15907,7 @@ impl PendingMaintenanceAction {
 }
 
 /// <p>Contains a list of available options for a DB instance.</p>
-/// <p> This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code> action. </p>
+/// <p>This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrderableDbInstanceOption {
@@ -15972,7 +15970,6 @@ pub struct OrderableDbInstanceOption {
     /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub supports_global_databases: bool,
     /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
-    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub supports_clusters: bool,
 }
@@ -16093,7 +16090,6 @@ impl OrderableDbInstanceOption {
         self.supports_global_databases
     }
     /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
-    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn supports_clusters(&self) -> bool {
         self.supports_clusters
@@ -16550,14 +16546,12 @@ pub mod orderable_db_instance_option {
             self
         }
         /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
-        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn supports_clusters(mut self, input: bool) -> Self {
             self.supports_clusters = Some(input);
             self
         }
         /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
-        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn set_supports_clusters(mut self, input: std::option::Option<bool>) -> Self {
             self.supports_clusters = input;
@@ -16636,11 +16630,11 @@ pub struct OptionGroupOption {
     pub persistent: bool,
     /// <p>Permanent options can never be removed from an option group. An option group containing a permanent option can't be removed from a DB instance.</p>
     pub permanent: bool,
-    /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later. </p>
+    /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later.</p>
     pub requires_auto_minor_engine_version_upgrade: bool,
-    /// <p>If true, you can only use this option with a DB instance that is in a VPC. </p>
+    /// <p>If true, you can only use this option with a DB instance that is in a VPC.</p>
     pub vpc_only: bool,
-    /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available. </p>
+    /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available.</p>
     pub supports_option_version_downgrade: std::option::Option<bool>,
     /// <p>The option settings that are available (and the default value) for each option in an option group.</p>
     pub option_group_option_settings:
@@ -16694,15 +16688,15 @@ impl OptionGroupOption {
     pub fn permanent(&self) -> bool {
         self.permanent
     }
-    /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later. </p>
+    /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later.</p>
     pub fn requires_auto_minor_engine_version_upgrade(&self) -> bool {
         self.requires_auto_minor_engine_version_upgrade
     }
-    /// <p>If true, you can only use this option with a DB instance that is in a VPC. </p>
+    /// <p>If true, you can only use this option with a DB instance that is in a VPC.</p>
     pub fn vpc_only(&self) -> bool {
         self.vpc_only
     }
-    /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available. </p>
+    /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available.</p>
     pub fn supports_option_version_downgrade(&self) -> std::option::Option<bool> {
         self.supports_option_version_downgrade
     }
@@ -16919,12 +16913,12 @@ pub mod option_group_option {
             self.permanent = input;
             self
         }
-        /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later. </p>
+        /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later.</p>
         pub fn requires_auto_minor_engine_version_upgrade(mut self, input: bool) -> Self {
             self.requires_auto_minor_engine_version_upgrade = Some(input);
             self
         }
-        /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later. </p>
+        /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later.</p>
         pub fn set_requires_auto_minor_engine_version_upgrade(
             mut self,
             input: std::option::Option<bool>,
@@ -16932,22 +16926,22 @@ pub mod option_group_option {
             self.requires_auto_minor_engine_version_upgrade = input;
             self
         }
-        /// <p>If true, you can only use this option with a DB instance that is in a VPC. </p>
+        /// <p>If true, you can only use this option with a DB instance that is in a VPC.</p>
         pub fn vpc_only(mut self, input: bool) -> Self {
             self.vpc_only = Some(input);
             self
         }
-        /// <p>If true, you can only use this option with a DB instance that is in a VPC. </p>
+        /// <p>If true, you can only use this option with a DB instance that is in a VPC.</p>
         pub fn set_vpc_only(mut self, input: std::option::Option<bool>) -> Self {
             self.vpc_only = input;
             self
         }
-        /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available. </p>
+        /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available.</p>
         pub fn supports_option_version_downgrade(mut self, input: bool) -> Self {
             self.supports_option_version_downgrade = Some(input);
             self
         }
-        /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available. </p>
+        /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available.</p>
         pub fn set_supports_option_version_downgrade(
             mut self,
             input: std::option::Option<bool>,
@@ -17622,12 +17616,12 @@ impl InstallationMedia {
     }
 }
 
-/// <p>Contains the details of a snapshot export to Amazon S3. </p>
-/// <p>This data type is used as a response element in the <code>DescribeExportTasks</code> action. </p>
+/// <p>Contains the details of a snapshot export to Amazon S3.</p>
+/// <p>This data type is used as a response element in the <code>DescribeExportTasks</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportTask {
-    /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to. </p>
+    /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
     pub export_task_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
     pub source_arn: std::option::Option<std::string::String>,
@@ -17649,9 +17643,9 @@ pub struct ExportTask {
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
     pub s3_prefix: std::option::Option<std::string::String>,
-    /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
+    /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key. </p>
+    /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The progress status of the export task.</p>
     pub status: std::option::Option<std::string::String>,
@@ -17665,7 +17659,7 @@ pub struct ExportTask {
     pub warning_message: std::option::Option<std::string::String>,
 }
 impl ExportTask {
-    /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to. </p>
+    /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
     pub fn export_task_identifier(&self) -> std::option::Option<&str> {
         self.export_task_identifier.as_deref()
     }
@@ -17703,11 +17697,11 @@ impl ExportTask {
     pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
-    /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
+    /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key. </p>
+    /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -17779,12 +17773,12 @@ pub mod export_task {
         pub(crate) warning_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to. </p>
+        /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
         pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.export_task_identifier = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to. </p>
+        /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
         pub fn set_export_task_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17892,22 +17886,22 @@ pub mod export_task {
             self.s3_prefix = input;
             self
         }
-        /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
+        /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
-        /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
+        /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
         }
-        /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key. </p>
+        /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key. </p>
+        /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -17997,7 +17991,7 @@ impl ExportTask {
     }
 }
 
-/// <p> This data type is used as a response element in the <code>DescribeEvents</code> action. </p>
+/// <p>This data type is used as a response element in the <code>DescribeEvents</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
@@ -18331,13 +18325,13 @@ impl EventCategoriesMap {
     }
 }
 
-/// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action. </p>
+/// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineDefaults {
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
     pub db_parameter_group_family: std::option::Option<std::string::String>,
-    /// <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
+    /// <p>An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains a list of engine default parameters.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -18347,7 +18341,7 @@ impl EngineDefaults {
     pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
         self.db_parameter_group_family.as_deref()
     }
-    /// <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
+    /// <p>An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -18389,12 +18383,12 @@ pub mod engine_defaults {
             self.db_parameter_group_family = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
+        /// <p>An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . </p>
+        /// <p>An optional pagination token provided by a previous EngineDefaults request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -18435,8 +18429,8 @@ impl EngineDefaults {
     }
 }
 
-/// <p>Contains the details of an Amazon RDS DB parameter group. </p>
-/// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action. </p>
+/// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+/// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbParameterGroup {
@@ -18651,7 +18645,7 @@ impl DescribeDbLogFilesDetails {
     }
 }
 
-/// <p> This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>. </p>
+/// <p>This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbEngineVersion {
@@ -18665,16 +18659,16 @@ pub struct DbEngineVersion {
     pub db_engine_description: std::option::Option<std::string::String>,
     /// <p>The description of the database engine version.</p>
     pub db_engine_version_description: std::option::Option<std::string::String>,
-    /// <p> The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified. </p>
+    /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub default_character_set: std::option::Option<crate::model::CharacterSet>,
-    /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation. </p>
+    /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-    /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation. </p>
+    /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub supported_nchar_character_sets:
         std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
     pub valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
-    /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action. </p>
+    /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
     pub supported_timezones: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
     pub exportable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18684,7 +18678,7 @@ pub struct DbEngineVersion {
     pub supports_read_replica: bool,
     /// <p>A list of the supported DB engine modes.</p>
     pub supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> A list of features supported by the DB engine. </p>
+    /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine
@@ -18740,15 +18734,15 @@ impl DbEngineVersion {
     pub fn db_engine_version_description(&self) -> std::option::Option<&str> {
         self.db_engine_version_description.as_deref()
     }
-    /// <p> The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified. </p>
+    /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
         self.default_character_set.as_ref()
     }
-    /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation. </p>
+    /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
         self.supported_character_sets.as_deref()
     }
-    /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation. </p>
+    /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub fn supported_nchar_character_sets(
         &self,
     ) -> std::option::Option<&[crate::model::CharacterSet]> {
@@ -18758,7 +18752,7 @@ impl DbEngineVersion {
     pub fn valid_upgrade_target(&self) -> std::option::Option<&[crate::model::UpgradeTarget]> {
         self.valid_upgrade_target.as_deref()
     }
-    /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action. </p>
+    /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
     pub fn supported_timezones(&self) -> std::option::Option<&[crate::model::Timezone]> {
         self.supported_timezones.as_deref()
     }
@@ -18778,7 +18772,7 @@ impl DbEngineVersion {
     pub fn supported_engine_modes(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_engine_modes.as_deref()
     }
-    /// <p> A list of features supported by the DB engine. </p>
+    /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine
@@ -18987,12 +18981,12 @@ pub mod db_engine_version {
             self.db_engine_version_description = input;
             self
         }
-        /// <p> The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified. </p>
+        /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
         pub fn default_character_set(mut self, input: crate::model::CharacterSet) -> Self {
             self.default_character_set = Some(input);
             self
         }
-        /// <p> The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified. </p>
+        /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
         pub fn set_default_character_set(
             mut self,
             input: std::option::Option<crate::model::CharacterSet>,
@@ -19004,14 +18998,14 @@ pub mod db_engine_version {
         ///
         /// To override the contents of this collection use [`set_supported_character_sets`](Self::set_supported_character_sets).
         ///
-        /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation. </p>
+        /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
         pub fn supported_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_character_sets.unwrap_or_default();
             v.push(input);
             self.supported_character_sets = Some(v);
             self
         }
-        /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation. </p>
+        /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
         pub fn set_supported_character_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
@@ -19023,14 +19017,14 @@ pub mod db_engine_version {
         ///
         /// To override the contents of this collection use [`set_supported_nchar_character_sets`](Self::set_supported_nchar_character_sets).
         ///
-        /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation. </p>
+        /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
         pub fn supported_nchar_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_nchar_character_sets.unwrap_or_default();
             v.push(input);
             self.supported_nchar_character_sets = Some(v);
             self
         }
-        /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation. </p>
+        /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
         pub fn set_supported_nchar_character_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
@@ -19061,14 +19055,14 @@ pub mod db_engine_version {
         ///
         /// To override the contents of this collection use [`set_supported_timezones`](Self::set_supported_timezones).
         ///
-        /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action. </p>
+        /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
         pub fn supported_timezones(mut self, input: crate::model::Timezone) -> Self {
             let mut v = self.supported_timezones.unwrap_or_default();
             v.push(input);
             self.supported_timezones = Some(v);
             self
         }
-        /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action. </p>
+        /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
         pub fn set_supported_timezones(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
@@ -19141,7 +19135,7 @@ pub mod db_engine_version {
         ///
         /// To override the contents of this collection use [`set_supported_feature_names`](Self::set_supported_feature_names).
         ///
-        /// <p> A list of features supported by the DB engine. </p>
+        /// <p>A list of features supported by the DB engine.</p>
         /// <p>The supported features vary by DB engine and DB engine version.</p>
         /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
         /// <p> <code>aws rds describe-db-engine-versions --engine
@@ -19158,7 +19152,7 @@ pub mod db_engine_version {
             self.supported_feature_names = Some(v);
             self
         }
-        /// <p> A list of features supported by the DB engine. </p>
+        /// <p>A list of features supported by the DB engine.</p>
         /// <p>The supported features vary by DB engine and DB engine version.</p>
         /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
         /// <p> <code>aws rds describe-db-engine-versions --engine
@@ -19359,8 +19353,8 @@ impl DbEngineVersion {
     }
 }
 
-/// <p>Contains the details for an Amazon RDS DB cluster snapshot </p>
-/// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action. </p>
+/// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+/// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshot {
@@ -19905,8 +19899,8 @@ impl DbClusterSnapshot {
     }
 }
 
-/// <p>Contains the details of an Amazon RDS DB cluster parameter group. </p>
-/// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action. </p>
+/// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
+/// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterParameterGroup {

@@ -201,7 +201,7 @@ impl Client {
     /// - On success, responds with [`DescribeQueryOutput`](crate::output::DescribeQueryOutput) with field(s):
     ///   - [`query_id(Option<String>)`](crate::output::DescribeQueryOutput::query_id): <p>The ID of the query.</p>
     ///   - [`query_string(Option<String>)`](crate::output::DescribeQueryOutput::query_string): <p>The SQL code of a query.</p>
-    ///   - [`query_status(Option<QueryStatus>)`](crate::output::DescribeQueryOutput::query_status): <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code> </p>
+    ///   - [`query_status(Option<QueryStatus>)`](crate::output::DescribeQueryOutput::query_status): <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> </p>
     ///   - [`query_statistics(Option<QueryStatisticsForDescribeQuery>)`](crate::output::DescribeQueryOutput::query_statistics): <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
     ///   - [`error_message(Option<String>)`](crate::output::DescribeQueryOutput::error_message): <p>The error message returned if a query failed.</p>
     /// - On failure, responds with [`SdkError<DescribeQueryError>`](crate::error::DescribeQueryError)
@@ -270,7 +270,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetQueryResults::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetQueryResults::set_next_token): <p>A token you can use to get the next page of query results.</p>
     ///   - [`max_query_results(i32)`](crate::client::fluent_builders::GetQueryResults::max_query_results) / [`set_max_query_results(Option<i32>)`](crate::client::fluent_builders::GetQueryResults::set_max_query_results): <p>The maximum number of query results to display on a single page.</p>
     /// - On success, responds with [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput) with field(s):
-    ///   - [`query_status(Option<QueryStatus>)`](crate::output::GetQueryResultsOutput::query_status): <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    ///   - [`query_status(Option<QueryStatus>)`](crate::output::GetQueryResultsOutput::query_status): <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     ///   - [`query_statistics(Option<QueryStatistics>)`](crate::output::GetQueryResultsOutput::query_statistics): <p>Shows the count of query results.</p>
     ///   - [`query_result_rows(Option<Vec<Vec<HashMap<String, String>>>>)`](crate::output::GetQueryResultsOutput::query_result_rows): <p>Contains the individual event results of the query.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetQueryResultsOutput::next_token): <p>A token you can use to get the next page of query results.</p>
@@ -351,7 +351,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListQueries::set_max_results): <p>The maximum number of queries to show on a page.</p>
     ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListQueries::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListQueries::set_start_time): <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
     ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListQueries::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListQueries::set_end_time): <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
-    ///   - [`query_status(QueryStatus)`](crate::client::fluent_builders::ListQueries::query_status) / [`set_query_status(Option<QueryStatus>)`](crate::client::fluent_builders::ListQueries::set_query_status): <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    ///   - [`query_status(QueryStatus)`](crate::client::fluent_builders::ListQueries::query_status) / [`set_query_status(Option<QueryStatus>)`](crate::client::fluent_builders::ListQueries::set_query_status): <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     /// - On success, responds with [`ListQueriesOutput`](crate::output::ListQueriesOutput) with field(s):
     ///   - [`queries(Option<Vec<Query>>)`](crate::output::ListQueriesOutput::queries): <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListQueriesOutput::next_token): <p>A token you can use to get the next page of results.</p>
@@ -627,7 +627,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelQuery`.
     ///
-    /// <p>Cancels a query if the query is not in a terminated state, such as <code>CANCELLED</code>, <code>FAILED</code> or <code>FINISHED</code>. You must specify an ARN value for <code>EventDataStore</code>. The ID of the query that you want to cancel is also required. When you run <code>CancelQuery</code>, the query status might show as <code>CANCELLED</code> even if the operation is not yet finished.</p>
+    /// <p>Cancels a query if the query is not in a terminated state, such as <code>CANCELLED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>FINISHED</code>. You must specify an ARN value for <code>EventDataStore</code>. The ID of the query that you want to cancel is also required. When you run <code>CancelQuery</code>, the query status might show as <code>CANCELLED</code> even if the operation is not yet finished.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelQuery {
         handle: std::sync::Arc<super::Handle>,
@@ -1874,7 +1874,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListQueries`.
     ///
-    /// <p>Returns a list of queries and query statuses for the past seven days. You must specify an ARN value for <code>EventDataStore</code>. Optionally, to shorten the list of results, you can specify a time range, formatted as timestamps, by adding <code>StartTime</code> and <code>EndTime</code> parameters, and a <code>QueryStatus</code> value. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    /// <p>Returns a list of queries and query statuses for the past seven days. You must specify an ARN value for <code>EventDataStore</code>. Optionally, to shorten the list of results, you can specify a time range, formatted as timestamps, by adding <code>StartTime</code> and <code>EndTime</code> parameters, and a <code>QueryStatus</code> value. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQueries {
         handle: std::sync::Arc<super::Handle>,
@@ -1979,12 +1979,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+        /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
         pub fn query_status(mut self, input: crate::model::QueryStatus) -> Self {
             self.inner = self.inner.query_status(input);
             self
         }
-        /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+        /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
         pub fn set_query_status(
             mut self,
             input: std::option::Option<crate::model::QueryStatus>,

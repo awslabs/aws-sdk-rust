@@ -104,7 +104,7 @@ impl Client {
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::CreateApplicationOutput::name): <p>The name of the application.</p>
     ///   - [`arn(Option<String>)`](crate::output::CreateApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`owner_account_id(Option<String>)`](crate::output::CreateApplicationOutput::owner_account_id): <p>The Amazon Web Services account ID of the application owner.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::CreateApplicationOutput::owner_account_id): <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
     ///   - [`created_by_account_id(Option<String>)`](crate::output::CreateApplicationOutput::created_by_account_id): <p>The Amazon Web Services account ID of application creator.</p>
     ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationOutput::application_id): <p>The unique identifier of the application.</p>
     ///   - [`environment_id(Option<String>)`](crate::output::CreateApplicationOutput::environment_id): <p>The ID of the environment in which the application is created.</p>
@@ -158,10 +158,10 @@ impl Client {
     ///   - [`owner_account_id(Option<String>)`](crate::output::CreateRouteOutput::owner_account_id): <p>The Amazon Web Services account ID of the route owner.</p>
     ///   - [`created_by_account_id(Option<String>)`](crate::output::CreateRouteOutput::created_by_account_id): <p>The Amazon Web Services account ID of the route creator.</p>
     ///   - [`route_type(Option<RouteType>)`](crate::output::CreateRouteOutput::route_type): <p>The route type of the route.</p>
-    ///   - [`service_id(Option<String>)`](crate::output::CreateRouteOutput::service_id): <p>The ID of service in which the rute iscreated. Traffic that matches this route is forwarded to this service.</p>
+    ///   - [`service_id(Option<String>)`](crate::output::CreateRouteOutput::service_id): <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     ///   - [`application_id(Option<String>)`](crate::output::CreateRouteOutput::application_id): <p>The ID of the application in which the route is created.</p>
     ///   - [`uri_path_route(Option<UriPathRouteInput>)`](crate::output::CreateRouteOutput::uri_path_route): <p>onfiguration for the URI path route type. </p>
-    ///   - [`state(Option<RouteState>)`](crate::output::CreateRouteOutput::state): <p>he current state of the route. </p>
+    ///   - [`state(Option<RouteState>)`](crate::output::CreateRouteOutput::state): <p>The current state of the route. </p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRouteOutput::tags): <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::output::CreateRouteOutput::last_updated_time): <p>A timestamp that indicates when the route was last updated. </p>
     ///   - [`created_time(Option<DateTime>)`](crate::output::CreateRouteOutput::created_time): <p>A timestamp that indicates when the route is created.</p>
@@ -253,7 +253,7 @@ impl Client {
     ///   - [`route_id(Option<String>)`](crate::output::DeleteRouteOutput::route_id): <p>The ID of the route to delete.</p>
     ///   - [`arn(Option<String>)`](crate::output::DeleteRouteOutput::arn): <p>The Amazon Resource Name (ARN) of the route.</p>
     ///   - [`service_id(Option<String>)`](crate::output::DeleteRouteOutput::service_id): <p>The ID of the service that the route belongs to.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::DeleteRouteOutput::application_id): <p>he ID of the application that the route belongs to.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::DeleteRouteOutput::application_id): <p>The ID of the application that the route belongs to.</p>
     ///   - [`state(Option<RouteState>)`](crate::output::DeleteRouteOutput::state): <p>The current state of the route. </p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DeleteRouteOutput::last_updated_time): <p>A timestamp that indicates when the route was last updated. </p>
     /// - On failure, responds with [`SdkError<DeleteRouteError>`](crate::error::DeleteRouteError)
@@ -286,7 +286,7 @@ impl Client {
     /// - On success, responds with [`GetApplicationOutput`](crate::output::GetApplicationOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::GetApplicationOutput::name): <p>The name of the application.</p>
     ///   - [`arn(Option<String>)`](crate::output::GetApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`owner_account_id(Option<String>)`](crate::output::GetApplicationOutput::owner_account_id): <p>The Amazon Web Services account ID of the application owner.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::GetApplicationOutput::owner_account_id): <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
     ///   - [`created_by_account_id(Option<String>)`](crate::output::GetApplicationOutput::created_by_account_id): <p>The Amazon Web Services account ID of the application creator. </p>
     ///   - [`application_id(Option<String>)`](crate::output::GetApplicationOutput::application_id): <p>The unique identifier of the application.</p>
     ///   - [`environment_id(Option<String>)`](crate::output::GetApplicationOutput::environment_id): <p>The unique identifier of the environment.</p>
@@ -514,7 +514,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
-    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account that owns the environment also owns the applications created inside the environment, regardless of the account that creates the application. Refactor Spaces provisions the Amazon API Gateway and Network Load Balancer for the application proxy inside your account.</p>
+    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account that owns the environment also owns the applications created inside the environment, regardless of the account that creates the application. Refactor Spaces provisions an Amazon API Gateway, API Gateway VPC link, and Network Load Balancer for the application proxy inside your account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication {
         handle: std::sync::Arc<super::Handle>,
@@ -649,7 +649,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEnvironment`.
     ///
-    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The caller owns the environment resource, and they are referred to as the <i>environment owner</i>. The environment owner has cross-account visibility and control of Refactor Spaces resources that are added to the environment by other accounts that the environment is shared with. When creating an environment, Refactor Spaces provisions a transit gateway in your account.</p>
+    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The caller owns the environment resource, and all Refactor Spaces applications, services, and routes created within the environment. They are referred to as the <i>environment owner</i>. The environment owner has cross-account visibility and control of Refactor Spaces resources that are added to the environment by other accounts that the environment is shared with. When creating an environment, Refactor Spaces provisions a transit gateway in your account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment {
         handle: std::sync::Arc<super::Handle>,
@@ -763,12 +763,13 @@ pub mod fluent_builders {
     /// <ul>
     /// <li> <p>If the service has a URL endpoint, and the endpoint resolves to a private IP address, Refactor Spaces routes traffic using the API Gateway VPC link. </p> </li>
     /// <li> <p>If the service has a URL endpoint, and the endpoint resolves to a public IP address, Refactor Spaces routes traffic over the public internet.</p> </li>
-    /// <li> <p>If the service has an Lambda function endpoint, then Refactor Spaces uses the API Gateway Lambda integration.</p> </li>
+    /// <li> <p>If the service has an Lambda function endpoint, then Refactor Spaces configures the Lambda function's resource policy to allow the application's API Gateway to invoke the function.</p> </li>
     /// </ul>
-    /// <p>A health check is performed on the service when the route is created. If the health check fails, the route transitions to <code>FAILED</code>, and no traffic is sent to the service.</p>
+    /// <p>A one-time health check is performed on the service when the route is created. If the health check fails, the route transitions to <code>FAILED</code>, and no traffic is sent to the service.</p>
     /// <p>For Lambda functions, the Lambda function state is checked. If the function is not active, the function configuration is updated so that Lambda resources are provisioned. If the Lambda state is <code>Failed</code>, then the route creation fails. For more information, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's State response parameter</a> in the <i>Lambda Developer Guide</i>.</p>
     /// <p>For public URLs, a connection is opened to the public endpoint. If the URL is not reachable, the health check fails. For private URLs, a target group is created and the target group health check is run.</p>
     /// <p>The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and <code>HealthCheckPath</code> are the same protocol, port, and path specified in the URL or health URL, if used. All other settings use the default values, as described in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health checks for your target groups</a>. The health check is considered successful if at least one target within the target group transitions to a healthy state.</p>
+    /// <p>Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs, publicly-signed certificates are supported. Private Certificate Authorities (CAs) are permitted only if the CA's domain is publicly resolvable.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoute {
         handle: std::sync::Arc<super::Handle>,
@@ -910,7 +911,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateService`.
     ///
     /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces service. The account owner of the service is always the environment owner, regardless of which account in the environment creates the service. Services have either a URL endpoint in a virtual private cloud (VPC), or a Lambda function endpoint.</p> <important>
-    /// <p>If an Amazon Web Services resourceis launched in a service VPC, and you want it to be accessible to all of an environment’s services with VPCs and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more cross-account constraints, apply your own security group.</p>
+    /// <p>If an Amazon Web Services resource is launched in a service VPC, and you want it to be accessible to all of an environment’s services with VPCs and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more cross-account constraints, apply your own security group.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService {
@@ -1921,7 +1922,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEnvironmentVpcs`.
     ///
-    /// <p>Lists all the virtual private clouds (VPCs) that are part of an Amazon Web Services Migration Hub Refactor Spaces environment. </p>
+    /// <p>Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual private clouds (VPCs) that are part of the environment. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentVpcs {
         handle: std::sync::Arc<super::Handle>,

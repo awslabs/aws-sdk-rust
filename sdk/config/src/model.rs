@@ -227,6 +227,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     InternetGateway,
     #[allow(missing_docs)] // documentation missing in model
+    LaunchTemplate,
+    #[allow(missing_docs)] // documentation missing in model
     NatGateway,
     #[allow(missing_docs)] // documentation missing in model
     NetworkAcl,
@@ -256,6 +258,8 @@ pub enum ResourceType {
     VpnGateway,
     #[allow(missing_docs)] // documentation missing in model
     Volume,
+    #[allow(missing_docs)] // documentation missing in model
+    EcrPublicRepository,
     #[allow(missing_docs)] // documentation missing in model
     EcrRepository,
     #[allow(missing_docs)] // documentation missing in model
@@ -429,6 +433,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::EC2::Host" => ResourceType::Host,
             "AWS::EC2::Instance" => ResourceType::Instance,
             "AWS::EC2::InternetGateway" => ResourceType::InternetGateway,
+            "AWS::EC2::LaunchTemplate" => ResourceType::LaunchTemplate,
             "AWS::EC2::NatGateway" => ResourceType::NatGateway,
             "AWS::EC2::NetworkAcl" => ResourceType::NetworkAcl,
             "AWS::EC2::NetworkInterface" => ResourceType::NetworkInterface,
@@ -444,6 +449,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::EC2::VPNConnection" => ResourceType::VpnConnection,
             "AWS::EC2::VPNGateway" => ResourceType::VpnGateway,
             "AWS::EC2::Volume" => ResourceType::Volume,
+            "AWS::ECR::PublicRepository" => ResourceType::EcrPublicRepository,
             "AWS::ECR::Repository" => ResourceType::EcrRepository,
             "AWS::ECS::Cluster" => ResourceType::EcsCluster,
             "AWS::ECS::Service" => ResourceType::EcsService,
@@ -561,6 +567,7 @@ impl ResourceType {
             ResourceType::Host => "AWS::EC2::Host",
             ResourceType::Instance => "AWS::EC2::Instance",
             ResourceType::InternetGateway => "AWS::EC2::InternetGateway",
+            ResourceType::LaunchTemplate => "AWS::EC2::LaunchTemplate",
             ResourceType::NatGateway => "AWS::EC2::NatGateway",
             ResourceType::NetworkAcl => "AWS::EC2::NetworkAcl",
             ResourceType::NetworkInterface => "AWS::EC2::NetworkInterface",
@@ -576,6 +583,7 @@ impl ResourceType {
             ResourceType::VpnConnection => "AWS::EC2::VPNConnection",
             ResourceType::VpnGateway => "AWS::EC2::VPNGateway",
             ResourceType::Volume => "AWS::EC2::Volume",
+            ResourceType::EcrPublicRepository => "AWS::ECR::PublicRepository",
             ResourceType::EcrRepository => "AWS::ECR::Repository",
             ResourceType::EcsCluster => "AWS::ECS::Cluster",
             ResourceType::EcsService => "AWS::ECS::Service",
@@ -684,6 +692,7 @@ impl ResourceType {
             "AWS::EC2::Host",
             "AWS::EC2::Instance",
             "AWS::EC2::InternetGateway",
+            "AWS::EC2::LaunchTemplate",
             "AWS::EC2::NatGateway",
             "AWS::EC2::NetworkAcl",
             "AWS::EC2::NetworkInterface",
@@ -699,6 +708,7 @@ impl ResourceType {
             "AWS::EC2::VPNConnection",
             "AWS::EC2::VPNGateway",
             "AWS::EC2::Volume",
+            "AWS::ECR::PublicRepository",
             "AWS::ECR::Repository",
             "AWS::ECS::Cluster",
             "AWS::ECS::Service",

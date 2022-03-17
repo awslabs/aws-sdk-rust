@@ -1175,7 +1175,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSecrets`.
     ///
-    /// <p>Lists the secrets that are stored by Secrets Manager in the Amazon Web Services account. </p>
+    /// <p>Lists the secrets that are stored by Secrets Manager in the Amazon Web Services account, not including secrets that are marked for deletion. To see secrets marked for deletion, use the Secrets Manager console.</p>
     /// <p>To list the versions of a secret, use <code>ListSecretVersionIds</code>.</p>
     /// <p>To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>, call <code>GetSecretValue</code>.</p>
     /// <p>For information about finding secrets in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Enhanced search capabilities for secrets in Secrets Manager</a>.</p>

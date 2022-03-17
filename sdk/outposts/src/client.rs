@@ -286,6 +286,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSites::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSites::set_next_token): <p>The pagination token.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSites::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSites::set_max_results): <p>The maximum page size.</p>
+    ///   - [`operating_address_country_code_filter(Vec<String>)`](crate::client::fluent_builders::ListSites::operating_address_country_code_filter) / [`set_operating_address_country_code_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListSites::set_operating_address_country_code_filter): <p> A filter for the country code of the Outpost site. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`operating_address_state_or_region_filter(Vec<String>)`](crate::client::fluent_builders::ListSites::operating_address_state_or_region_filter) / [`set_operating_address_state_or_region_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListSites::set_operating_address_state_or_region_filter): <p> A filter for the state/region of the Outpost site. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`operating_address_city_filter(Vec<String>)`](crate::client::fluent_builders::ListSites::operating_address_city_filter) / [`set_operating_address_city_filter(Option<Vec<String>>)`](crate::client::fluent_builders::ListSites::set_operating_address_city_filter): <p> A filter for the city of the Outpost site. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     /// - On success, responds with [`ListSitesOutput`](crate::output::ListSitesOutput) with field(s):
     ///   - [`sites(Option<Vec<Site>>)`](crate::output::ListSitesOutput::sites): <p>Information about the sites.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSitesOutput::next_token): <p>The pagination token.</p>
@@ -1627,7 +1630,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSites`.
     ///
-    /// <p>Lists the sites for your Amazon Web Services account.</p>
+    /// <p>Create a list of the Outpost sites for your Amazon Web Services account. Add operating address filters to your request to return a more specific list of results. Use filters to match site city, country code, or state/region of the operating address. </p>
+    /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSites {
         handle: std::sync::Arc<super::Handle>,
@@ -1691,6 +1695,78 @@ pub mod fluent_builders {
         /// <p>The maximum page size.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `OperatingAddressCountryCodeFilter`.
+        ///
+        /// To override the contents of this collection use [`set_operating_address_country_code_filter`](Self::set_operating_address_country_code_filter).
+        ///
+        /// <p> A filter for the country code of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn operating_address_country_code_filter(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .operating_address_country_code_filter(input.into());
+            self
+        }
+        /// <p> A filter for the country code of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn set_operating_address_country_code_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_operating_address_country_code_filter(input);
+            self
+        }
+        /// Appends an item to `OperatingAddressStateOrRegionFilter`.
+        ///
+        /// To override the contents of this collection use [`set_operating_address_state_or_region_filter`](Self::set_operating_address_state_or_region_filter).
+        ///
+        /// <p> A filter for the state/region of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn operating_address_state_or_region_filter(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .operating_address_state_or_region_filter(input.into());
+            self
+        }
+        /// <p> A filter for the state/region of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn set_operating_address_state_or_region_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_operating_address_state_or_region_filter(input);
+            self
+        }
+        /// Appends an item to `OperatingAddressCityFilter`.
+        ///
+        /// To override the contents of this collection use [`set_operating_address_city_filter`](Self::set_operating_address_city_filter).
+        ///
+        /// <p> A filter for the city of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn operating_address_city_filter(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.operating_address_city_filter(input.into());
+            self
+        }
+        /// <p> A filter for the city of the Outpost site. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn set_operating_address_city_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_operating_address_city_filter(input);
             self
         }
     }

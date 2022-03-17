@@ -11,6 +11,116 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 credential_scope: aws_endpoint::CredentialScope::builder().build(),
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+            .endpoint(
+                "ap-northeast-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "grafana.ap-northeast-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-northeast-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "ap-northeast-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "grafana.ap-northeast-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-northeast-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "ap-southeast-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "grafana.ap-southeast-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-southeast-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "ap-southeast-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "grafana.ap-southeast-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ap-southeast-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "eu-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "grafana.eu-central-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("eu-central-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "eu-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "grafana.eu-west-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("eu-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "eu-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "grafana.eu-west-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("eu-west-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "grafana.us-east-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "grafana.us-east-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "grafana.us-west-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-2")
+                        .build(),
+                },
+            )
             .build()
             .expect("invalid partition"),
         vec![

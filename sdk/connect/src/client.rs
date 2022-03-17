@@ -1329,6 +1329,7 @@ impl Client {
     ///   - [`initial_message(ChatMessage)`](crate::client::fluent_builders::StartChatContact::initial_message) / [`set_initial_message(Option<ChatMessage>)`](crate::client::fluent_builders::StartChatContact::set_initial_message): <p>The initial message to be sent to the newly created chat.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     ///   - [`chat_duration_in_minutes(i32)`](crate::client::fluent_builders::StartChatContact::chat_duration_in_minutes) / [`set_chat_duration_in_minutes(Option<i32>)`](crate::client::fluent_builders::StartChatContact::set_chat_duration_in_minutes): <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+    ///   - [`supported_messaging_content_types(Vec<String>)`](crate::client::fluent_builders::StartChatContact::supported_messaging_content_types) / [`set_supported_messaging_content_types(Option<Vec<String>>)`](crate::client::fluent_builders::StartChatContact::set_supported_messaging_content_types): <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
     /// - On success, responds with [`StartChatContactOutput`](crate::output::StartChatContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::output::StartChatContactOutput::contact_id): <p>The identifier of this contact within the Amazon Connect instance. </p>
     ///   - [`participant_id(Option<String>)`](crate::output::StartChatContactOutput::participant_id): <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
@@ -10404,10 +10405,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_chat_duration_in_minutes(input);
             self
         }
+        /// Appends an item to `SupportedMessagingContentTypes`.
+        ///
+        /// To override the contents of this collection use [`set_supported_messaging_content_types`](Self::set_supported_messaging_content_types).
+        ///
+        /// <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
+        pub fn supported_messaging_content_types(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.supported_messaging_content_types(input.into());
+            self
+        }
+        /// <p>The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.</p>
+        pub fn set_supported_messaging_content_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_supported_messaging_content_types(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `StartContactRecording`.
     ///
-    /// <p>Starts recording the contact when the agent joins the call. StartContactRecording is a one-time action. For example, if you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend and resume it, such as when collecting sensitive information (for example, a credit card number), use SuspendContactRecording and ResumeContactRecording.</p>
+    /// <p>Starts recording the contact: </p>
+    /// <ul>
+    /// <li> <p>If the API is called <i>before</i> the agent joins the call, recording starts when the agent joins the call.</p> </li>
+    /// <li> <p>If the API is called <i>after</i> the agent joins the call, recording starts at the time of the API call.</p> </li>
+    /// </ul>
+    /// <p>StartContactRecording is a one-time action. For example, if you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend and resume it, such as when collecting sensitive information (for example, a credit card number), use SuspendContactRecording and ResumeContactRecording.</p>
     /// <p>You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set recording behavior</a> block.</p>
     /// <p>Only voice recordings are supported at this time.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -10947,7 +10973,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopContact`.
     ///
-    /// <p>Ends the specified contact.</p>
+    /// <p>Ends the specified contact. This call does not work for the following initiation methods:</p>
+    /// <ul>
+    /// <li> <p>CALLBACK</p> </li>
+    /// <li> <p>DISCONNECT</p> </li>
+    /// <li> <p>TRANSFER</p> </li>
+    /// <li> <p>QUEUE_TRANSFER</p> </li>
+    /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopContact {
         handle: std::sync::Arc<super::Handle>,

@@ -847,6 +847,42 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSentimentDetecti
     }
 }
 
+/// Operation shape for `DescribeTargetedSentimentDetectionJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_targeted_sentiment_detection_job`](crate::client::Client::describe_targeted_sentiment_detection_job).
+///
+/// See [`crate::client::fluent_builders::DescribeTargetedSentimentDetectionJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeTargetedSentimentDetectionJob {
+    _private: (),
+}
+impl DescribeTargetedSentimentDetectionJob {
+    /// Creates a new builder-style object to manufacture [`DescribeTargetedSentimentDetectionJobInput`](crate::input::DescribeTargetedSentimentDetectionJobInput)
+    pub fn builder() -> crate::input::describe_targeted_sentiment_detection_job_input::Builder {
+        crate::input::describe_targeted_sentiment_detection_job_input::Builder::default()
+    }
+    /// Creates a new `DescribeTargetedSentimentDetectionJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeTargetedSentimentDetectionJob {
+    type Output = std::result::Result<
+        crate::output::DescribeTargetedSentimentDetectionJobOutput,
+        crate::error::DescribeTargetedSentimentDetectionJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_targeted_sentiment_detection_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_targeted_sentiment_detection_job_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `DescribeTopicsDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1553,6 +1589,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
+/// Operation shape for `ListTargetedSentimentDetectionJobs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_targeted_sentiment_detection_jobs`](crate::client::Client::list_targeted_sentiment_detection_jobs).
+///
+/// See [`crate::client::fluent_builders::ListTargetedSentimentDetectionJobs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTargetedSentimentDetectionJobs {
+    _private: (),
+}
+impl ListTargetedSentimentDetectionJobs {
+    /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsInput`](crate::input::ListTargetedSentimentDetectionJobsInput)
+    pub fn builder() -> crate::input::list_targeted_sentiment_detection_jobs_input::Builder {
+        crate::input::list_targeted_sentiment_detection_jobs_input::Builder::default()
+    }
+    /// Creates a new `ListTargetedSentimentDetectionJobs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTargetedSentimentDetectionJobs {
+    type Output = std::result::Result<
+        crate::output::ListTargetedSentimentDetectionJobsOutput,
+        crate::error::ListTargetedSentimentDetectionJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_targeted_sentiment_detection_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_targeted_sentiment_detection_jobs_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListTopicsDetectionJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1859,6 +1929,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSentimentDetectionJ
     }
 }
 
+/// Operation shape for `StartTargetedSentimentDetectionJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_targeted_sentiment_detection_job`](crate::client::Client::start_targeted_sentiment_detection_job).
+///
+/// See [`crate::client::fluent_builders::StartTargetedSentimentDetectionJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartTargetedSentimentDetectionJob {
+    _private: (),
+}
+impl StartTargetedSentimentDetectionJob {
+    /// Creates a new builder-style object to manufacture [`StartTargetedSentimentDetectionJobInput`](crate::input::StartTargetedSentimentDetectionJobInput)
+    pub fn builder() -> crate::input::start_targeted_sentiment_detection_job_input::Builder {
+        crate::input::start_targeted_sentiment_detection_job_input::Builder::default()
+    }
+    /// Creates a new `StartTargetedSentimentDetectionJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartTargetedSentimentDetectionJob {
+    type Output = std::result::Result<
+        crate::output::StartTargetedSentimentDetectionJobOutput,
+        crate::error::StartTargetedSentimentDetectionJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_targeted_sentiment_detection_job_error(response)
+        } else {
+            crate::operation_deser::parse_start_targeted_sentiment_detection_job_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartTopicsDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2093,6 +2197,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StopSentimentDetectionJo
             crate::operation_deser::parse_stop_sentiment_detection_job_error(response)
         } else {
             crate::operation_deser::parse_stop_sentiment_detection_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopTargetedSentimentDetectionJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_targeted_sentiment_detection_job`](crate::client::Client::stop_targeted_sentiment_detection_job).
+///
+/// See [`crate::client::fluent_builders::StopTargetedSentimentDetectionJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopTargetedSentimentDetectionJob {
+    _private: (),
+}
+impl StopTargetedSentimentDetectionJob {
+    /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobInput`](crate::input::StopTargetedSentimentDetectionJobInput)
+    pub fn builder() -> crate::input::stop_targeted_sentiment_detection_job_input::Builder {
+        crate::input::stop_targeted_sentiment_detection_job_input::Builder::default()
+    }
+    /// Creates a new `StopTargetedSentimentDetectionJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopTargetedSentimentDetectionJob {
+    type Output = std::result::Result<
+        crate::output::StopTargetedSentimentDetectionJobOutput,
+        crate::error::StopTargetedSentimentDetectionJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_targeted_sentiment_detection_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_targeted_sentiment_detection_job_response(response)
         }
     }
 }

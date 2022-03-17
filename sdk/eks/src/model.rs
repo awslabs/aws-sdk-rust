@@ -4287,6 +4287,8 @@ pub enum NodegroupIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     Ec2SubnetInvalidConfiguration,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2SubnetMissingIpv6Assignment,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SubnetNotFound,
     #[allow(missing_docs)] // documentation missing in model
     IamInstanceProfileNotFound,
@@ -4324,6 +4326,7 @@ impl std::convert::From<&str> for NodegroupIssueCode {
             }
             "Ec2SecurityGroupNotFound" => NodegroupIssueCode::Ec2SecurityGroupNotFound,
             "Ec2SubnetInvalidConfiguration" => NodegroupIssueCode::Ec2SubnetInvalidConfiguration,
+            "Ec2SubnetMissingIpv6Assignment" => NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment,
             "Ec2SubnetNotFound" => NodegroupIssueCode::Ec2SubnetNotFound,
             "IamInstanceProfileNotFound" => NodegroupIssueCode::IamInstanceProfileNotFound,
             "IamLimitExceeded" => NodegroupIssueCode::IamLimitExceeded,
@@ -4363,6 +4366,7 @@ impl NodegroupIssueCode {
             }
             NodegroupIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
             NodegroupIssueCode::Ec2SubnetInvalidConfiguration => "Ec2SubnetInvalidConfiguration",
+            NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment => "Ec2SubnetMissingIpv6Assignment",
             NodegroupIssueCode::Ec2SubnetNotFound => "Ec2SubnetNotFound",
             NodegroupIssueCode::IamInstanceProfileNotFound => "IamInstanceProfileNotFound",
             NodegroupIssueCode::IamLimitExceeded => "IamLimitExceeded",
@@ -4387,6 +4391,7 @@ impl NodegroupIssueCode {
             "Ec2SecurityGroupDeletionFailure",
             "Ec2SecurityGroupNotFound",
             "Ec2SubnetInvalidConfiguration",
+            "Ec2SubnetMissingIpv6Assignment",
             "Ec2SubnetNotFound",
             "IamInstanceProfileNotFound",
             "IamLimitExceeded",

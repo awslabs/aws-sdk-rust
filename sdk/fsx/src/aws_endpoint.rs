@@ -11,6 +11,216 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 credential_scope: aws_endpoint::CredentialScope::builder().build(),
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+            .endpoint(
+                "ca-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "fips-ca-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx-fips.ca-central-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ca-central-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-prod-ca-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx-fips.ca-central-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ca-central-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-prod-us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx-fips.us-east-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-prod-us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx-fips.us-east-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-prod-us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx-fips.us-west-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-prod-us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx-fips.us-west-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx-fips.us-east-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx-fips.us-east-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx-fips.us-west-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx-fips.us-west-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "prod-ca-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("ca-central-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "prod-us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "prod-us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-east-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "prod-us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-1")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "prod-us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .region("us-west-2")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "fsx.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
             .build()
             .expect("invalid partition"),
         vec![
@@ -60,6 +270,90 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     credential_scope: aws_endpoint::CredentialScope::builder().build(),
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+                .endpoint(
+                    "fips-prod-us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "fsx-fips.us-gov-east-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "fips-prod-us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "fsx-fips.us-gov-west-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "fips-us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "fsx-fips.us-gov-east-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "fips-us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "fsx-fips.us-gov-west-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "prod-us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "fsx.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-east-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "prod-us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "fsx.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .region("us-gov-west-1")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "fsx.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "fsx.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                    },
+                )
                 .build()
                 .expect("invalid partition"),
         ],

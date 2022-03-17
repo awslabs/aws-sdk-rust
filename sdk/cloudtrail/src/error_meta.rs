@@ -30,7 +30,7 @@ pub enum Error {
     ),
     /// <p>The event data store against which you ran your query is inactive.</p>
     InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
-    /// <p>The specified query cannot be canceled because it is in the <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
+    /// <p>The specified query cannot be canceled because it is in the <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> state.</p>
     InactiveQueryException(crate::error::InactiveQueryException),
     /// <p>If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
     InsightNotEnabledException(crate::error::InsightNotEnabledException),

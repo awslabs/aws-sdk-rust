@@ -13,6 +13,116 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                     .build(),
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+            .endpoint(
+                "ca-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iot.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("execute-api")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-ca-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iot-fips.ca-central-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("execute-api")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iot-fips.us-east-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("execute-api")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iot-fips.us-east-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("execute-api")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iot-fips.us-west-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("execute-api")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "fips-us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iot-fips.us-west-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("execute-api")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iot.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("execute-api")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iot.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("execute-api")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iot.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("execute-api")
+                        .build(),
+                },
+            )
+            .endpoint(
+                "us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "iot.{region}.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder()
+                        .service("execute-api")
+                        .build(),
+                },
+            )
             .build()
             .expect("invalid partition"),
         vec![
@@ -66,6 +176,50 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                         .build(),
                 })
                 .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+                .endpoint(
+                    "fips-us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "iot-fips.us-gov-east-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .service("execute-api")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "fips-us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "iot-fips.us-gov-west-1.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .service("execute-api")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-east-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "iot.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .service("execute-api")
+                            .build(),
+                    },
+                )
+                .endpoint(
+                    "us-gov-west-1",
+                    aws_endpoint::partition::endpoint::Metadata {
+                        uri_template: "iot.{region}.amazonaws.com",
+                        protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                        signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                        credential_scope: aws_endpoint::CredentialScope::builder()
+                            .service("execute-api")
+                            .build(),
+                    },
+                )
                 .build()
                 .expect("invalid partition"),
         ],

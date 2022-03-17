@@ -1242,10 +1242,6 @@ pub mod create_cache_cluster_input {
         /// <ul>
         /// <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>
         /// </ul> </li>
-        /// <li> <p>Memory optimized with data tiering:</p>
-        /// <ul>
-        /// <li> <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
-        /// </ul> </li>
         /// <li> <p>Memory optimized:</p>
         /// <ul>
         /// <li> <p>Current generation: </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> <note>
@@ -1278,10 +1274,6 @@ pub mod create_cache_cluster_input {
         /// <li> <p>Compute optimized:</p>
         /// <ul>
         /// <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>
-        /// </ul> </li>
-        /// <li> <p>Memory optimized with data tiering:</p>
-        /// <ul>
-        /// <li> <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
         /// </ul> </li>
         /// <li> <p>Memory optimized:</p>
         /// <ul>
@@ -17992,10 +17984,6 @@ pub struct CreateCacheClusterInput {
     /// <ul>
     /// <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>
     /// </ul> </li>
-    /// <li> <p>Memory optimized with data tiering:</p>
-    /// <ul>
-    /// <li> <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
-    /// </ul> </li>
     /// <li> <p>Memory optimized:</p>
     /// <ul>
     /// <li> <p>Current generation: </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> <note>
@@ -18141,10 +18129,6 @@ impl CreateCacheClusterInput {
     /// <li> <p>Compute optimized:</p>
     /// <ul>
     /// <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Memory optimized with data tiering:</p>
-    /// <ul>
-    /// <li> <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
     /// </ul> </li>
     /// <li> <p>Memory optimized:</p>
     /// <ul>

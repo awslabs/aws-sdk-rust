@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You do not have required permissions to access the requested resource.</p>
+    /// <p>(Discontinued) You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Internal server error.</p>
+    /// <p>(Discontinued) Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
+    /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. </p>
+    /// <p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

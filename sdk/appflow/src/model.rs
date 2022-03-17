@@ -3024,6 +3024,8 @@ pub struct DestinationConnectorProperties {
     pub customer_profiles: std::option::Option<crate::model::CustomerProfilesDestinationProperties>,
     /// <p>The properties required to query Zendesk.</p>
     pub zendesk: std::option::Option<crate::model::ZendeskDestinationProperties>,
+    /// <p>The properties required to query Marketo.</p>
+    pub marketo: std::option::Option<crate::model::MarketoDestinationProperties>,
     /// <p>The properties that are required to query the custom Connector.</p>
     pub custom_connector: std::option::Option<crate::model::CustomConnectorDestinationProperties>,
     /// <p>The properties required to query SAPOData.</p>
@@ -3078,6 +3080,10 @@ impl DestinationConnectorProperties {
     pub fn zendesk(&self) -> std::option::Option<&crate::model::ZendeskDestinationProperties> {
         self.zendesk.as_ref()
     }
+    /// <p>The properties required to query Marketo.</p>
+    pub fn marketo(&self) -> std::option::Option<&crate::model::MarketoDestinationProperties> {
+        self.marketo.as_ref()
+    }
     /// <p>The properties that are required to query the custom Connector.</p>
     pub fn custom_connector(
         &self,
@@ -3102,6 +3108,7 @@ impl std::fmt::Debug for DestinationConnectorProperties {
         formatter.field("honeycode", &self.honeycode);
         formatter.field("customer_profiles", &self.customer_profiles);
         formatter.field("zendesk", &self.zendesk);
+        formatter.field("marketo", &self.marketo);
         formatter.field("custom_connector", &self.custom_connector);
         formatter.field("sapo_data", &self.sapo_data);
         formatter.finish()
@@ -3126,6 +3133,7 @@ pub mod destination_connector_properties {
         pub(crate) customer_profiles:
             std::option::Option<crate::model::CustomerProfilesDestinationProperties>,
         pub(crate) zendesk: std::option::Option<crate::model::ZendeskDestinationProperties>,
+        pub(crate) marketo: std::option::Option<crate::model::MarketoDestinationProperties>,
         pub(crate) custom_connector:
             std::option::Option<crate::model::CustomConnectorDestinationProperties>,
         pub(crate) sapo_data: std::option::Option<crate::model::SapoDataDestinationProperties>,
@@ -3270,6 +3278,19 @@ pub mod destination_connector_properties {
             self.zendesk = input;
             self
         }
+        /// <p>The properties required to query Marketo.</p>
+        pub fn marketo(mut self, input: crate::model::MarketoDestinationProperties) -> Self {
+            self.marketo = Some(input);
+            self
+        }
+        /// <p>The properties required to query Marketo.</p>
+        pub fn set_marketo(
+            mut self,
+            input: std::option::Option<crate::model::MarketoDestinationProperties>,
+        ) -> Self {
+            self.marketo = input;
+            self
+        }
         /// <p>The properties that are required to query the custom Connector.</p>
         pub fn custom_connector(
             mut self,
@@ -3312,6 +3333,7 @@ pub mod destination_connector_properties {
                 honeycode: self.honeycode,
                 customer_profiles: self.customer_profiles,
                 zendesk: self.zendesk,
+                marketo: self.marketo,
                 custom_connector: self.custom_connector,
                 sapo_data: self.sapo_data,
             }
@@ -3894,6 +3916,82 @@ impl CustomConnectorDestinationProperties {
     /// Creates a new builder-style object to manufacture [`CustomConnectorDestinationProperties`](crate::model::CustomConnectorDestinationProperties)
     pub fn builder() -> crate::model::custom_connector_destination_properties::Builder {
         crate::model::custom_connector_destination_properties::Builder::default()
+    }
+}
+
+/// <p>The properties that Amazon AppFlow applies when you use Marketo as a flow destination.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MarketoDestinationProperties {
+    /// <p>The object specified in the Marketo flow destination.</p>
+    pub object: std::option::Option<std::string::String>,
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
+}
+impl MarketoDestinationProperties {
+    /// <p>The object specified in the Marketo flow destination.</p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
+        self.error_handling_config.as_ref()
+    }
+}
+impl std::fmt::Debug for MarketoDestinationProperties {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MarketoDestinationProperties");
+        formatter.field("object", &self.object);
+        formatter.field("error_handling_config", &self.error_handling_config);
+        formatter.finish()
+    }
+}
+/// See [`MarketoDestinationProperties`](crate::model::MarketoDestinationProperties)
+pub mod marketo_destination_properties {
+    /// A builder for [`MarketoDestinationProperties`](crate::model::MarketoDestinationProperties)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) object: std::option::Option<std::string::String>,
+        pub(crate) error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
+    }
+    impl Builder {
+        /// <p>The object specified in the Marketo flow destination.</p>
+        pub fn object(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object = Some(input.into());
+            self
+        }
+        /// <p>The object specified in the Marketo flow destination.</p>
+        pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object = input;
+            self
+        }
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+        pub fn error_handling_config(mut self, input: crate::model::ErrorHandlingConfig) -> Self {
+            self.error_handling_config = Some(input);
+            self
+        }
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+        pub fn set_error_handling_config(
+            mut self,
+            input: std::option::Option<crate::model::ErrorHandlingConfig>,
+        ) -> Self {
+            self.error_handling_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MarketoDestinationProperties`](crate::model::MarketoDestinationProperties)
+        pub fn build(self) -> crate::model::MarketoDestinationProperties {
+            crate::model::MarketoDestinationProperties {
+                object: self.object,
+                error_handling_config: self.error_handling_config,
+            }
+        }
+    }
+}
+impl MarketoDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`MarketoDestinationProperties`](crate::model::MarketoDestinationProperties)
+    pub fn builder() -> crate::model::marketo_destination_properties::Builder {
+        crate::model::marketo_destination_properties::Builder::default()
     }
 }
 

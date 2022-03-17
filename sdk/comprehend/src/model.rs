@@ -241,13 +241,14 @@ impl VpcConfig {
     }
 }
 
-/// <p>Provides configuration parameters for the output of topic detection jobs.</p>
+/// <p>Provides configuration parameters for the output of inference jobs.</p>
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDataConfig {
     /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output file.</p>
     /// <p>When the topic detection job is finished, the service creates an output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.</p>
+    /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
     /// <ul>
@@ -261,6 +262,7 @@ pub struct OutputDataConfig {
 impl OutputDataConfig {
     /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output file.</p>
     /// <p>When the topic detection job is finished, the service creates an output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.</p>
+    /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -295,12 +297,14 @@ pub mod output_data_config {
     impl Builder {
         /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output file.</p>
         /// <p>When the topic detection job is finished, the service creates an output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.</p>
+        /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
         /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output file.</p>
         /// <p>When the topic detection job is finished, the service creates an output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.</p>
+        /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -1816,6 +1820,507 @@ impl TopicsDetectionJobFilter {
     }
 }
 
+/// <p>Provides information about a targeted sentiment detection job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TargetedSentimentDetectionJobProperties {
+    /// <p>The identifier assigned to the targeted sentiment detection job.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p> <code>arn:
+    /// <partition>
+    /// :comprehend:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :targeted-sentiment-detection-job/
+    /// <job-id></job-id>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    pub job_arn: std::option::Option<std::string::String>,
+    /// <p>The name that you assigned to the targeted sentiment detection job.</p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The current status of the targeted sentiment detection job. If the status is <code>FAILED</code>, the <code>Messages</code> field shows the reason for the failure.</p>
+    pub job_status: std::option::Option<crate::model::JobStatus>,
+    /// <p>A description of the status of a job.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The time that the targeted sentiment detection job was submitted for processing.</p>
+    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time that the targeted sentiment detection job ended.</p>
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The input properties for an inference job.</p>
+    pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
+    /// <p>Provides configuration parameters for the output of inference jobs.</p>
+    /// <p></p>
+    pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
+    /// <p>The language code of the input documents.</p>
+    pub language_code: std::option::Option<crate::model::LanguageCode>,
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.</p>
+    pub data_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub volume_kms_key_id: std::option::Option<std::string::String>,
+    /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+}
+impl TargetedSentimentDetectionJobProperties {
+    /// <p>The identifier assigned to the targeted sentiment detection job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p> <code>arn:
+    /// <partition>
+    /// :comprehend:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :targeted-sentiment-detection-job/
+    /// <job-id></job-id>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name that you assigned to the targeted sentiment detection job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The current status of the targeted sentiment detection job. If the status is <code>FAILED</code>, the <code>Messages</code> field shows the reason for the failure.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>A description of the status of a job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time that the targeted sentiment detection job was submitted for processing.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The time that the targeted sentiment detection job ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+    /// <p>The input properties for an inference job.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>Provides configuration parameters for the output of inference jobs.</p>
+    /// <p></p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The language code of the input documents.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+}
+impl std::fmt::Debug for TargetedSentimentDetectionJobProperties {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TargetedSentimentDetectionJobProperties");
+        formatter.field("job_id", &self.job_id);
+        formatter.field("job_arn", &self.job_arn);
+        formatter.field("job_name", &self.job_name);
+        formatter.field("job_status", &self.job_status);
+        formatter.field("message", &self.message);
+        formatter.field("submit_time", &self.submit_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("input_data_config", &self.input_data_config);
+        formatter.field("output_data_config", &self.output_data_config);
+        formatter.field("language_code", &self.language_code);
+        formatter.field("data_access_role_arn", &self.data_access_role_arn);
+        formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+        formatter.field("vpc_config", &self.vpc_config);
+        formatter.finish()
+    }
+}
+/// See [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties)
+pub mod targeted_sentiment_detection_job_properties {
+    /// A builder for [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
+        pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
+    }
+    impl Builder {
+        /// <p>The identifier assigned to the targeted sentiment detection job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier assigned to the targeted sentiment detection job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p> <code>arn:
+        /// <partition>
+        /// :comprehend:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :targeted-sentiment-detection-job/
+        /// <job-id></job-id>
+        /// </account-id>
+        /// </region>
+        /// </partition></code> </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p> <code>arn:
+        /// <partition>
+        /// :comprehend:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :targeted-sentiment-detection-job/
+        /// <job-id></job-id>
+        /// </account-id>
+        /// </region>
+        /// </partition></code> </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
+            self
+        }
+        /// <p>The name that you assigned to the targeted sentiment detection job.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name that you assigned to the targeted sentiment detection job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The current status of the targeted sentiment detection job. If the status is <code>FAILED</code>, the <code>Messages</code> field shows the reason for the failure.</p>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.job_status = Some(input);
+            self
+        }
+        /// <p>The current status of the targeted sentiment detection job. If the status is <code>FAILED</code>, the <code>Messages</code> field shows the reason for the failure.</p>
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.job_status = input;
+            self
+        }
+        /// <p>A description of the status of a job.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A description of the status of a job.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The time that the targeted sentiment detection job was submitted for processing.</p>
+        pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.submit_time = Some(input);
+            self
+        }
+        /// <p>The time that the targeted sentiment detection job was submitted for processing.</p>
+        pub fn set_submit_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.submit_time = input;
+            self
+        }
+        /// <p>The time that the targeted sentiment detection job ended.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p>The time that the targeted sentiment detection job ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p>The input properties for an inference job.</p>
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.input_data_config = Some(input);
+            self
+        }
+        /// <p>The input properties for an inference job.</p>
+        pub fn set_input_data_config(
+            mut self,
+            input: std::option::Option<crate::model::InputDataConfig>,
+        ) -> Self {
+            self.input_data_config = input;
+            self
+        }
+        /// <p>Provides configuration parameters for the output of inference jobs.</p>
+        /// <p></p>
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.output_data_config = Some(input);
+            self
+        }
+        /// <p>Provides configuration parameters for the output of inference jobs.</p>
+        /// <p></p>
+        pub fn set_output_data_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputDataConfig>,
+        ) -> Self {
+            self.output_data_config = input;
+            self
+        }
+        /// <p>The language code of the input documents.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        /// <p>The language code of the input documents.</p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.</p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_access_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.</p>
+        pub fn set_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_access_role_arn = input;
+            self
+        }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn set_volume_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.volume_kms_key_id = input;
+            self
+        }
+        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.vpc_config = Some(input);
+            self
+        }
+        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties)
+        pub fn build(self) -> crate::model::TargetedSentimentDetectionJobProperties {
+            crate::model::TargetedSentimentDetectionJobProperties {
+                job_id: self.job_id,
+                job_arn: self.job_arn,
+                job_name: self.job_name,
+                job_status: self.job_status,
+                message: self.message,
+                submit_time: self.submit_time,
+                end_time: self.end_time,
+                input_data_config: self.input_data_config,
+                output_data_config: self.output_data_config,
+                language_code: self.language_code,
+                data_access_role_arn: self.data_access_role_arn,
+                volume_kms_key_id: self.volume_kms_key_id,
+                vpc_config: self.vpc_config,
+            }
+        }
+    }
+}
+impl TargetedSentimentDetectionJobProperties {
+    /// Creates a new builder-style object to manufacture [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties)
+    pub fn builder() -> crate::model::targeted_sentiment_detection_job_properties::Builder {
+        crate::model::targeted_sentiment_detection_job_properties::Builder::default()
+    }
+}
+
+/// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TargetedSentimentDetectionJobFilter {
+    /// <p>Filters on the name of the job.</p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
+    pub job_status: std::option::Option<crate::model::JobStatus>,
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
+    pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
+    pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl TargetedSentimentDetectionJobFilter {
+    /// <p>Filters on the name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
+    pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.submit_time_before.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
+    pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.submit_time_after.as_ref()
+    }
+}
+impl std::fmt::Debug for TargetedSentimentDetectionJobFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TargetedSentimentDetectionJobFilter");
+        formatter.field("job_name", &self.job_name);
+        formatter.field("job_status", &self.job_status);
+        formatter.field("submit_time_before", &self.submit_time_before);
+        formatter.field("submit_time_after", &self.submit_time_after);
+        formatter.finish()
+    }
+}
+/// See [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter)
+pub mod targeted_sentiment_detection_job_filter {
+    /// A builder for [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Filters on the name of the job.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>Filters on the name of the job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.job_status = Some(input);
+            self
+        }
+        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.job_status = input;
+            self
+        }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
+        pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.submit_time_before = Some(input);
+            self
+        }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
+        pub fn set_submit_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.submit_time_before = input;
+            self
+        }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
+        pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.submit_time_after = Some(input);
+            self
+        }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
+        pub fn set_submit_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.submit_time_after = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter)
+        pub fn build(self) -> crate::model::TargetedSentimentDetectionJobFilter {
+            crate::model::TargetedSentimentDetectionJobFilter {
+                job_name: self.job_name,
+                job_status: self.job_status,
+                submit_time_before: self.submit_time_before,
+                submit_time_after: self.submit_time_after,
+            }
+        }
+    }
+}
+impl TargetedSentimentDetectionJobFilter {
+    /// Creates a new builder-style object to manufacture [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter)
+    pub fn builder() -> crate::model::targeted_sentiment_detection_job_filter::Builder {
+        crate::model::targeted_sentiment_detection_job_filter::Builder::default()
+    }
+}
+
 /// <p>Provides information about a sentiment detection job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2683,12 +3188,14 @@ impl PiiEntitiesDetectionJobProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PiiOutputDataConfig {
     /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. </p>
+    /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an analysis job.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl PiiOutputDataConfig {
     /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. </p>
+    /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -2716,11 +3223,13 @@ pub mod pii_output_data_config {
     }
     impl Builder {
         /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. </p>
+        /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
         /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. </p>
+        /// <p> For a PII entity detection job, the output file is plain text, not a compressed archive. The output file name is the same as the input file, with <code>.out</code> appended at the end. </p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -4823,7 +5332,7 @@ pub struct EntityRecognizerEvaluationMetrics {
     pub precision: std::option::Option<f64>,
     /// <p>A measure of how complete the recognizer results are for the test data. High recall means that the recognizer returned most of the relevant results.</p>
     pub recall: std::option::Option<f64>,
-    /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
+    /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. For plain text entity recognizer models, the range is 0 to 100, where 100 is the best score. For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best score. </p>
     pub f1_score: std::option::Option<f64>,
 }
 impl EntityRecognizerEvaluationMetrics {
@@ -4835,7 +5344,7 @@ impl EntityRecognizerEvaluationMetrics {
     pub fn recall(&self) -> std::option::Option<f64> {
         self.recall
     }
-    /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
+    /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. For plain text entity recognizer models, the range is 0 to 100, where 100 is the best score. For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best score. </p>
     pub fn f1_score(&self) -> std::option::Option<f64> {
         self.f1_score
     }
@@ -4880,12 +5389,12 @@ pub mod entity_recognizer_evaluation_metrics {
             self.recall = input;
             self
         }
-        /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
+        /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. For plain text entity recognizer models, the range is 0 to 100, where 100 is the best score. For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best score. </p>
         pub fn f1_score(mut self, input: f64) -> Self {
             self.f1_score = Some(input);
             self
         }
-        /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
+        /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. For plain text entity recognizer models, the range is 0 to 100, where 100 is the best score. For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best score. </p>
         pub fn set_f1_score(mut self, input: std::option::Option<f64>) -> Self {
             self.f1_score = input;
             self

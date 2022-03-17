@@ -220,6 +220,7 @@ members = [
     "sdk/kafka",
     "sdk/kafkaconnect",
     "sdk/kendra",
+    "sdk/keyspaces",
     "sdk/kinesis",
     "sdk/kinesisanalytics",
     "sdk/kinesisanalyticsv2",

@@ -394,6 +394,18 @@ impl Client {
     ) -> fluent_builders::DescribeSentimentDetectionJob {
         fluent_builders::DescribeSentimentDetectionJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeTargetedSentimentDetectionJob`](crate::client::fluent_builders::DescribeTargetedSentimentDetectionJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTargetedSentimentDetectionJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeTargetedSentimentDetectionJob::set_job_id): <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// - On success, responds with [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput) with field(s):
+    ///   - [`targeted_sentiment_detection_job_properties(Option<TargetedSentimentDetectionJobProperties>)`](crate::output::DescribeTargetedSentimentDetectionJobOutput::targeted_sentiment_detection_job_properties): <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
+    /// - On failure, responds with [`SdkError<DescribeTargetedSentimentDetectionJobError>`](crate::error::DescribeTargetedSentimentDetectionJobError)
+    pub fn describe_targeted_sentiment_detection_job(
+        &self,
+    ) -> fluent_builders::DescribeTargetedSentimentDetectionJob {
+        fluent_builders::DescribeTargetedSentimentDetectionJob::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeTopicsDetectionJob`](crate::client::fluent_builders::DescribeTopicsDetectionJob) operation.
     ///
     /// - The fluent builder is configurable:
@@ -671,6 +683,22 @@ impl Client {
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListTargetedSentimentDetectionJobs`](crate::client::fluent_builders::ListTargetedSentimentDetectionJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTargetedSentimentDetectionJobs::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filter(TargetedSentimentDetectionJobFilter)`](crate::client::fluent_builders::ListTargetedSentimentDetectionJobs::filter) / [`set_filter(Option<TargetedSentimentDetectionJobFilter>)`](crate::client::fluent_builders::ListTargetedSentimentDetectionJobs::set_filter): <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTargetedSentimentDetectionJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTargetedSentimentDetectionJobs::set_next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTargetedSentimentDetectionJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTargetedSentimentDetectionJobs::set_max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - On success, responds with [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput) with field(s):
+    ///   - [`targeted_sentiment_detection_job_properties_list(Option<Vec<TargetedSentimentDetectionJobProperties>>)`](crate::output::ListTargetedSentimentDetectionJobsOutput::targeted_sentiment_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTargetedSentimentDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListTargetedSentimentDetectionJobsError>`](crate::error::ListTargetedSentimentDetectionJobsError)
+    pub fn list_targeted_sentiment_detection_jobs(
+        &self,
+    ) -> fluent_builders::ListTargetedSentimentDetectionJobs {
+        fluent_builders::ListTargetedSentimentDetectionJobs::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListTopicsDetectionJobs`](crate::client::fluent_builders::ListTopicsDetectionJobs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTopicsDetectionJobs::into_paginator).
     ///
@@ -842,6 +870,28 @@ impl Client {
     pub fn start_sentiment_detection_job(&self) -> fluent_builders::StartSentimentDetectionJob {
         fluent_builders::StartSentimentDetectionJob::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`StartTargetedSentimentDetectionJob`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_input_data_config): <p>The input properties for an inference job.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_output_data_config): <p>Specifies where to send the output files. </p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_job_name): <p>The identifier of the job.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`volume_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::volume_kms_key_id) / [`set_volume_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_volume_kms_key_id): <p>ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_vpc_config): <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob::set_tags): <p>Tags to be associated with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// - On success, responds with [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartTargetedSentimentDetectionJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::StartTargetedSentimentDetectionJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :targeted-sentiment-detection-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartTargetedSentimentDetectionJobOutput::job_status): <p>The status of the job. </p>  <ul>   <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>   <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>   <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>   <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<StartTargetedSentimentDetectionJobError>`](crate::error::StartTargetedSentimentDetectionJobError)
+    pub fn start_targeted_sentiment_detection_job(
+        &self,
+    ) -> fluent_builders::StartTargetedSentimentDetectionJob {
+        fluent_builders::StartTargetedSentimentDetectionJob::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`StartTopicsDetectionJob`](crate::client::fluent_builders::StartTopicsDetectionJob) operation.
     ///
     /// - The fluent builder is configurable:
@@ -929,6 +979,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<StopSentimentDetectionJobError>`](crate::error::StopSentimentDetectionJobError)
     pub fn stop_sentiment_detection_job(&self) -> fluent_builders::StopSentimentDetectionJob {
         fluent_builders::StopSentimentDetectionJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StopTargetedSentimentDetectionJob`](crate::client::fluent_builders::StopTargetedSentimentDetectionJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::StopTargetedSentimentDetectionJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::StopTargetedSentimentDetectionJob::set_job_id): <p>The identifier of the targeted sentiment detection job to stop.</p>
+    /// - On success, responds with [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StopTargetedSentimentDetectionJobOutput::job_id): <p>The identifier of the targeted sentiment detection job to stop.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StopTargetedSentimentDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
+    /// - On failure, responds with [`SdkError<StopTargetedSentimentDetectionJobError>`](crate::error::StopTargetedSentimentDetectionJobError)
+    pub fn stop_targeted_sentiment_detection_job(
+        &self,
+    ) -> fluent_builders::StopTargetedSentimentDetectionJob {
+        fluent_builders::StopTargetedSentimentDetectionJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StopTrainingDocumentClassifier`](crate::client::fluent_builders::StopTrainingDocumentClassifier) operation.
     ///
@@ -2873,6 +2936,61 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeTargetedSentimentDetectionJob`.
+    ///
+    /// <p>Gets the properties associated with a targeted sentiment detection job. Use this operation to get the status of the job.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeTargetedSentimentDetectionJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_targeted_sentiment_detection_job_input::Builder,
+    }
+    impl DescribeTargetedSentimentDetectionJob {
+        /// Creates a new `DescribeTargetedSentimentDetectionJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeTargetedSentimentDetectionJobOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeTargetedSentimentDetectionJobError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
+            self
+        }
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeTopicsDetectionJob`.
     ///
     /// <p>Gets the properties associated with a topic detection job. Use this operation to get the status of a detection job.</p>
@@ -4457,6 +4575,95 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTargetedSentimentDetectionJobs`.
+    ///
+    /// <p>Gets a list of targeted sentiment detection jobs that you have submitted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTargetedSentimentDetectionJobs {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_targeted_sentiment_detection_jobs_input::Builder,
+    }
+    impl ListTargetedSentimentDetectionJobs {
+        /// Creates a new `ListTargetedSentimentDetectionJobs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTargetedSentimentDetectionJobsOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListTargetedSentimentDetectionJobsError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTargetedSentimentDetectionJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListTargetedSentimentDetectionJobsPaginator {
+            crate::paginator::ListTargetedSentimentDetectionJobsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+        pub fn filter(mut self, input: crate::model::TargetedSentimentDetectionJobFilter) -> Self {
+            self.inner = self.inner.filter(input);
+            self
+        }
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::TargetedSentimentDetectionJobFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_filter(input);
+            self
+        }
+        /// <p>Identifies the next page of results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Identifies the next page of results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in each page. The default is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return in each page. The default is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTopicsDetectionJobs`.
     ///
     /// <p>Gets a list of the topic detection jobs that you have submitted.</p>
@@ -5618,7 +5825,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSentimentDetectionJob`.
     ///
-    /// <p>Starts an asynchronous sentiment detection job for a collection of documents. use the operation to track the status of a job.</p>
+    /// <p>Starts an asynchronous sentiment detection job for a collection of documents. Use the operation to track the status of a job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSentimentDetectionJob {
         handle: std::sync::Arc<super::Handle>,
@@ -5777,6 +5984,177 @@ pub mod fluent_builders {
             self
         }
         /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartTargetedSentimentDetectionJob`.
+    ///
+    /// <p>Starts an asynchronous targeted sentiment detection job for a collection of documents. Use the operation to track the status of a job.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartTargetedSentimentDetectionJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_targeted_sentiment_detection_job_input::Builder,
+    }
+    impl StartTargetedSentimentDetectionJob {
+        /// Creates a new `StartTargetedSentimentDetectionJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartTargetedSentimentDetectionJobOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::StartTargetedSentimentDetectionJobError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The input properties for an inference job.</p>
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
+            self
+        }
+        /// <p>The input properties for an inference job.</p>
+        pub fn set_input_data_config(
+            mut self,
+            input: std::option::Option<crate::model::InputDataConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_input_data_config(input);
+            self
+        }
+        /// <p>Specifies where to send the output files. </p>
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
+            self
+        }
+        /// <p>Specifies where to send the output files. </p>
+        pub fn set_output_data_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputDataConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_output_data_config(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based permissions</a>.</p>
+        pub fn set_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_access_role_arn(input);
+            self
+        }
+        /// <p>The identifier of the job.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
+            self
+        }
+        /// <p>The identifier of the job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
+            self
+        }
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.inner = self.inner.set_language_code(input);
+            self
+        }
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
+            self
+        }
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_kms_key_id(input.into());
+            self
+        }
+        /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// </ul>
+        pub fn set_volume_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_volume_kms_key_id(input);
+            self
+        }
+        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
+            self
+        }
+        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_config(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to be associated with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Tags to be associated with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6276,6 +6654,62 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the sentiment detection job to stop.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StopTargetedSentimentDetectionJob`.
+    ///
+    /// <p>Stops a targeted sentiment detection job in progress.</p>
+    /// <p>If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is be stopped and put into the <code>STOPPED</code> state.</p>
+    /// <p>If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception. </p>
+    /// <p>When a job is stopped, any documents already processed are written to the output location.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StopTargetedSentimentDetectionJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::stop_targeted_sentiment_detection_job_input::Builder,
+    }
+    impl StopTargetedSentimentDetectionJob {
+        /// Creates a new `StopTargetedSentimentDetectionJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StopTargetedSentimentDetectionJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::StopTargetedSentimentDetectionJobError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
+            self
+        }
+        /// <p>The identifier of the targeted sentiment detection job to stop.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self

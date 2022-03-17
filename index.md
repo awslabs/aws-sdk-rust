@@ -205,6 +205,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Import/Export Snowball | [aws-sdk-snowball](https://crates.io/crates/aws-sdk-snowball) ([docs](https://docs.rs/aws-sdk-snowball)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/snowball)) |
 | Amazon Inspector | [aws-sdk-inspector](https://crates.io/crates/aws-sdk-inspector) ([docs](https://docs.rs/aws-sdk-inspector)) |
 | Amazon Interactive Video Service | [aws-sdk-ivs](https://crates.io/crates/aws-sdk-ivs) ([docs](https://docs.rs/aws-sdk-ivs)) |
+| Amazon Keyspaces | [aws-sdk-keyspaces](https://crates.io/crates/aws-sdk-keyspaces) ([docs](https://docs.rs/aws-sdk-keyspaces)) |
 | Amazon Kinesis | [aws-sdk-kinesis](https://crates.io/crates/aws-sdk-kinesis) ([docs](https://docs.rs/aws-sdk-kinesis)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/kinesis)) |
 | Amazon Kinesis Analytics | [aws-sdk-kinesisanalytics](https://crates.io/crates/aws-sdk-kinesisanalytics) ([docs](https://docs.rs/aws-sdk-kinesisanalytics)) |
 | Amazon Kinesis Analytics | [aws-sdk-kinesisanalyticsv2](https://crates.io/crates/aws-sdk-kinesisanalyticsv2) ([docs](https://docs.rs/aws-sdk-kinesisanalyticsv2)) |

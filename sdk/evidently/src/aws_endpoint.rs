@@ -11,6 +11,87 @@ pub fn endpoint_resolver() -> impl aws_endpoint::ResolveAwsEndpoint {
                 credential_scope: aws_endpoint::CredentialScope::builder().build(),
             })
             .regionalized(aws_endpoint::partition::Regionalized::Regionalized)
+            .endpoint(
+                "ap-northeast-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "evidently.ap-northeast-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "ap-southeast-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "evidently.ap-southeast-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "ap-southeast-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "evidently.ap-southeast-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "eu-central-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "evidently.eu-central-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "eu-north-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "evidently.eu-north-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "eu-west-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "evidently.eu-west-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-east-1",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "evidently.us-east-1.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-east-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "evidently.us-east-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
+            .endpoint(
+                "us-west-2",
+                aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "evidently.us-west-2.amazonaws.com",
+                    protocol: aws_endpoint::partition::endpoint::Protocol::Https,
+                    signature_versions: aws_endpoint::partition::endpoint::SignatureVersion::V4,
+                    credential_scope: aws_endpoint::CredentialScope::builder().build(),
+                },
+            )
             .build()
             .expect("invalid partition"),
         vec![
