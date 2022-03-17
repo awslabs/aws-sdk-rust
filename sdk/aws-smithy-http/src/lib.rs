@@ -20,6 +20,7 @@
 pub mod body;
 pub mod endpoint;
 pub mod header;
+pub mod http_versions;
 pub mod label;
 pub mod middleware;
 pub mod operation;
