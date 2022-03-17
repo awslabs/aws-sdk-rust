@@ -99,6 +99,9 @@ impl AllocateStaticIpInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -267,6 +270,9 @@ impl AttachCertificateToDistributionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -433,6 +439,9 @@ impl AttachDiskInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -601,6 +610,9 @@ impl AttachInstancesToLoadBalancerInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -759,6 +771,9 @@ impl AttachLoadBalancerTlsCertificateInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -916,6 +931,9 @@ impl AttachStaticIpInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1073,6 +1091,9 @@ impl CloseInstancePublicPortsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1325,6 +1346,9 @@ impl CopySnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1521,6 +1545,9 @@ impl CreateBucketInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1662,6 +1689,9 @@ impl CreateBucketAccessKeyInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1865,6 +1895,9 @@ impl CreateCertificateInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2016,6 +2049,9 @@ impl CreateCloudFormationStackInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2197,6 +2233,9 @@ impl CreateContactMethodInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2489,6 +2528,9 @@ impl CreateContainerServiceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2673,6 +2715,9 @@ impl CreateContainerServiceDeploymentInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2792,6 +2837,9 @@ impl CreateContainerServiceRegistryLoginInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3004,6 +3052,9 @@ impl CreateDiskInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3315,6 +3366,9 @@ impl CreateDiskFromSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3515,6 +3569,9 @@ impl CreateDiskSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3781,6 +3838,9 @@ impl CreateDistributionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3947,6 +4007,9 @@ impl CreateDomainInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4101,6 +4164,9 @@ impl CreateDomainEntryInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4405,6 +4471,9 @@ impl CreateInstancesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4803,6 +4872,9 @@ impl CreateInstancesFromSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4985,6 +5057,9 @@ impl CreateInstanceSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5150,6 +5225,9 @@ impl CreateKeyPairInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5422,6 +5500,9 @@ impl CreateLoadBalancerInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5645,6 +5726,9 @@ impl CreateLoadBalancerTlsCertificateInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6076,6 +6160,9 @@ impl CreateRelationalDatabaseInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6384,6 +6471,9 @@ impl CreateRelationalDatabaseFromSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6578,6 +6668,9 @@ impl CreateRelationalDatabaseSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6717,6 +6810,9 @@ impl DeleteAlarmInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6871,6 +6967,9 @@ impl DeleteAutoSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7042,6 +7141,9 @@ impl DeleteBucketInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7200,6 +7302,9 @@ impl DeleteBucketAccessKeyInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7344,6 +7449,9 @@ impl DeleteCertificateInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7490,6 +7598,9 @@ impl DeleteContactMethodInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7649,6 +7760,9 @@ impl DeleteContainerImageInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7790,6 +7904,9 @@ impl DeleteContainerServiceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7941,6 +8058,9 @@ impl DeleteDiskInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8083,6 +8203,9 @@ impl DeleteDiskSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8227,6 +8350,9 @@ impl DeleteDistributionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8366,6 +8492,9 @@ impl DeleteDomainInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8520,6 +8649,9 @@ impl DeleteDomainEntryInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8674,6 +8806,9 @@ impl DeleteInstanceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8818,6 +8953,9 @@ impl DeleteInstanceSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8960,6 +9098,9 @@ impl DeleteKeyPairInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9104,6 +9245,9 @@ impl DeleteKnownHostKeysInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9246,6 +9390,9 @@ impl DeleteLoadBalancerInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9418,6 +9565,9 @@ impl DeleteLoadBalancerTlsCertificateInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9613,6 +9763,9 @@ impl DeleteRelationalDatabaseInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9759,6 +9912,9 @@ impl DeleteRelationalDatabaseSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9904,6 +10060,9 @@ impl DetachCertificateFromDistributionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10043,6 +10202,9 @@ impl DetachDiskInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10207,6 +10369,9 @@ impl DetachInstancesFromLoadBalancerInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10349,6 +10514,9 @@ impl DetachStaticIpInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10506,6 +10674,9 @@ impl DisableAddOnInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10626,6 +10797,9 @@ impl DownloadDefaultKeyPairInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10783,6 +10957,9 @@ impl EnableAddOnInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10925,6 +11102,9 @@ impl ExportSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11066,6 +11246,9 @@ impl GetActiveNamesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11236,6 +11419,9 @@ impl GetAlarmsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11376,6 +11562,9 @@ impl GetAutoSnapshotsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11529,6 +11718,9 @@ impl GetBlueprintsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11670,6 +11862,9 @@ impl GetBucketAccessKeysInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -11809,6 +12004,9 @@ impl GetBucketBundlesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -12076,6 +12274,9 @@ impl GetBucketMetricDataInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -12243,6 +12444,9 @@ impl GetBucketsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -12396,6 +12600,9 @@ impl GetBundlesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -12580,6 +12787,9 @@ impl GetCertificatesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -12722,6 +12932,9 @@ impl GetCloudFormationStackRecordsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -12872,6 +13085,9 @@ impl GetContactMethodsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -12993,6 +13209,9 @@ impl GetContainerApiMetadataInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -13132,6 +13351,9 @@ impl GetContainerImagesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -13420,6 +13642,9 @@ impl GetContainerLogInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -13560,6 +13785,9 @@ impl GetContainerServiceDeploymentsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -13846,6 +14074,9 @@ impl GetContainerServiceMetricDataInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -13967,6 +14198,9 @@ impl GetContainerServicePowersInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -14124,6 +14358,9 @@ impl GetContainerServicesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -14261,6 +14498,9 @@ impl GetDiskInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -14398,6 +14638,9 @@ impl GetDisksInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -14538,6 +14781,9 @@ impl GetDiskSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -14679,6 +14925,9 @@ impl GetDiskSnapshotsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -14799,6 +15048,9 @@ impl GetDistributionBundlesInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -14946,6 +15198,9 @@ impl GetDistributionLatestCacheResetInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -15243,6 +15498,9 @@ impl GetDistributionMetricDataInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -15401,6 +15659,9 @@ impl GetDistributionsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -15538,6 +15799,9 @@ impl GetDomainInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -15677,6 +15941,9 @@ impl GetDomainsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -15821,6 +16088,9 @@ impl GetExportSnapshotRecordsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -15963,6 +16233,9 @@ impl GetInstanceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -16123,6 +16396,9 @@ impl GetInstanceAccessDetailsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -16397,6 +16673,9 @@ impl GetInstanceMetricDataInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -16541,6 +16820,9 @@ impl GetInstancePortStatesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -16682,6 +16964,9 @@ impl GetInstancesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -16824,6 +17109,9 @@ impl GetInstanceSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -16967,6 +17255,9 @@ impl GetInstanceSnapshotsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -17109,6 +17400,9 @@ impl GetInstanceStateInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -17251,6 +17545,9 @@ impl GetKeyPairInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -17392,6 +17689,9 @@ impl GetKeyPairsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -17534,6 +17834,9 @@ impl GetLoadBalancerInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -17812,6 +18115,9 @@ impl GetLoadBalancerMetricDataInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -17953,6 +18259,9 @@ impl GetLoadBalancersInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -18096,6 +18405,9 @@ impl GetLoadBalancerTlsCertificatesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -18235,6 +18547,9 @@ impl GetOperationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -18376,6 +18691,9 @@ impl GetOperationsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -18535,6 +18853,9 @@ impl GetOperationsForResourceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -18690,6 +19011,9 @@ impl GetRegionsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -18834,6 +19158,9 @@ impl GetRelationalDatabaseInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -18976,6 +19303,9 @@ impl GetRelationalDatabaseBlueprintsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -19118,6 +19448,9 @@ impl GetRelationalDatabaseBundlesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -19290,6 +19623,9 @@ impl GetRelationalDatabaseEventsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -19530,6 +19866,9 @@ impl GetRelationalDatabaseLogEventsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -19673,6 +20012,9 @@ impl GetRelationalDatabaseLogStreamsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -19839,6 +20181,9 @@ impl GetRelationalDatabaseMasterUserPasswordInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -20128,6 +20473,9 @@ impl GetRelationalDatabaseMetricDataInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -20285,6 +20633,9 @@ impl GetRelationalDatabaseParametersInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -20428,6 +20779,9 @@ impl GetRelationalDatabasesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -20574,6 +20928,9 @@ impl GetRelationalDatabaseSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -20716,6 +21073,9 @@ impl GetRelationalDatabaseSnapshotsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -20858,6 +21218,9 @@ impl GetStaticIpInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -20999,6 +21362,9 @@ impl GetStaticIpsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -21156,6 +21522,9 @@ impl ImportKeyPairInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -21274,6 +21643,9 @@ impl IsVpcPeeredInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -21431,6 +21803,9 @@ impl OpenInstancePublicPortsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -21547,6 +21922,9 @@ impl PeerVpcInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -21906,6 +22284,9 @@ impl PutAlarmInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -22069,6 +22450,9 @@ impl PutInstancePublicPortsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -22211,6 +22595,9 @@ impl RebootInstanceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -22356,6 +22743,9 @@ impl RebootRelationalDatabaseInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -22543,6 +22933,9 @@ impl RegisterContainerImageInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -22685,6 +23078,9 @@ impl ReleaseStaticIpInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -22831,6 +23227,9 @@ impl ResetDistributionCacheInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -22974,6 +23373,9 @@ impl SendContactMethodVerificationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -23154,6 +23556,9 @@ impl SetIpAddressTypeInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -23333,6 +23738,9 @@ impl SetResourceAccessForBucketInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -23475,6 +23883,9 @@ impl StartInstanceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -23620,6 +24031,9 @@ impl StartRelationalDatabaseInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -23778,6 +24192,9 @@ impl StopInstanceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -23940,6 +24357,9 @@ impl StopRelationalDatabaseInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -24115,6 +24535,9 @@ impl TagResourceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -24276,6 +24699,9 @@ impl TestAlarmInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -24390,6 +24816,9 @@ impl UnpeerVpcInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -24563,6 +24992,9 @@ impl UntagResourceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -24778,6 +25210,9 @@ impl UpdateBucketInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -24931,6 +25366,9 @@ impl UpdateBucketBundleInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -25156,6 +25594,9 @@ impl UpdateContainerServiceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -25382,6 +25823,9 @@ impl UpdateDistributionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -25543,6 +25987,9 @@ impl UpdateDistributionBundleInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -25697,6 +26144,9 @@ impl UpdateDomainEntryInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -25869,6 +26319,9 @@ impl UpdateLoadBalancerAttributeInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -26187,6 +26640,9 @@ impl UpdateRelationalDatabaseInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -26352,6 +26808,9 @@ impl UpdateRelationalDatabaseParametersInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),

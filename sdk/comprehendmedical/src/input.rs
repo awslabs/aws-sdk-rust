@@ -97,6 +97,9 @@ impl DescribeEntitiesDetectionV2JobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -236,6 +239,9 @@ impl DescribeIcd10CmInferenceJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -378,6 +384,9 @@ impl DescribePhiDetectionJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -517,6 +526,9 @@ impl DescribeRxNormInferenceJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -657,6 +669,9 @@ impl DescribeSnomedctInferenceJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -794,6 +809,9 @@ impl DetectEntitiesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -931,6 +949,9 @@ impl DetectEntitiesV2Input {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1066,6 +1087,9 @@ impl DetectPhiInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1201,6 +1225,9 @@ impl InferIcd10CmInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1338,6 +1365,9 @@ impl InferRxNormInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1475,6 +1505,9 @@ impl InferSnomedctInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1641,6 +1674,9 @@ impl ListEntitiesDetectionV2JobsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1810,6 +1846,9 @@ impl ListIcd10CmInferenceJobsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1978,6 +2017,9 @@ impl ListPhiDetectionJobsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2147,6 +2189,9 @@ impl ListRxNormInferenceJobsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2316,6 +2361,9 @@ impl ListSnomedctInferenceJobsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2545,6 +2593,9 @@ impl StartEntitiesDetectionV2JobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2777,6 +2828,9 @@ impl StartIcd10CmInferenceJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3008,6 +3062,9 @@ impl StartPhiDetectionJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3240,6 +3297,9 @@ impl StartRxNormInferenceJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3472,6 +3532,9 @@ impl StartSnomedctInferenceJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3611,6 +3674,9 @@ impl StopEntitiesDetectionV2JobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3753,6 +3819,9 @@ impl StopIcd10CmInferenceJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3894,6 +3963,9 @@ impl StopPhiDetectionJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4035,6 +4107,9 @@ impl StopRxNormInferenceJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4177,6 +4252,9 @@ impl StopSnomedctInferenceJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),

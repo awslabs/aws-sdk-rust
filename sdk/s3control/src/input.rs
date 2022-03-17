@@ -204,6 +204,9 @@ impl CreateAccessPointInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -400,6 +403,9 @@ impl CreateAccessPointForObjectLambdaInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -735,6 +741,9 @@ impl CreateBucketInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1024,6 +1033,9 @@ impl CreateJobInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1217,6 +1229,9 @@ impl CreateMultiRegionAccessPointInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1401,6 +1416,9 @@ impl DeleteAccessPointInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1569,6 +1587,9 @@ impl DeleteAccessPointForObjectLambdaInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1755,6 +1776,9 @@ impl DeleteAccessPointPolicyInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -1924,6 +1948,9 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2108,6 +2135,9 @@ impl DeleteBucketInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2300,6 +2330,9 @@ impl DeleteBucketLifecycleConfigurationInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2484,6 +2517,9 @@ impl DeleteBucketPolicyInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2672,6 +2708,9 @@ impl DeleteBucketTaggingInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -2832,6 +2871,9 @@ impl DeleteJobTaggingInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3027,6 +3069,9 @@ impl DeleteMultiRegionAccessPointInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3163,6 +3208,9 @@ impl DeletePublicAccessBlockInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3331,6 +3379,9 @@ impl DeleteStorageLensConfigurationInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3500,6 +3551,9 @@ impl DeleteStorageLensConfigurationTaggingInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3660,6 +3714,9 @@ impl DescribeJobInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -3846,6 +3903,9 @@ impl DescribeMultiRegionAccessPointOperationInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4030,6 +4090,9 @@ impl GetAccessPointInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4198,6 +4261,9 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4367,6 +4433,9 @@ impl GetAccessPointForObjectLambdaInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4552,6 +4621,9 @@ impl GetAccessPointPolicyInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4721,6 +4793,9 @@ impl GetAccessPointPolicyForObjectLambdaInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -4887,6 +4962,9 @@ impl GetAccessPointPolicyStatusInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5055,6 +5133,9 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5238,6 +5319,9 @@ impl GetBucketInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5428,6 +5512,9 @@ impl GetBucketLifecycleConfigurationInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5612,6 +5699,9 @@ impl GetBucketPolicyInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5800,6 +5890,9 @@ impl GetBucketTaggingInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -5960,6 +6053,9 @@ impl GetJobTaggingInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6136,6 +6232,9 @@ impl GetMultiRegionAccessPointInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6318,6 +6417,9 @@ impl GetMultiRegionAccessPointPolicyInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6501,6 +6603,9 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6636,6 +6741,9 @@ impl GetPublicAccessBlockInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6802,6 +6910,9 @@ impl GetStorageLensConfigurationInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -6971,6 +7082,9 @@ impl GetStorageLensConfigurationTaggingInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7184,6 +7298,9 @@ impl ListAccessPointsInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7363,6 +7480,9 @@ impl ListAccessPointsForObjectLambdaInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7564,6 +7684,9 @@ impl ListJobsInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7752,6 +7875,9 @@ impl ListMultiRegionAccessPointsInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -7942,6 +8068,9 @@ impl ListRegionalBucketsInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8102,6 +8231,9 @@ impl ListStorageLensConfigurationsInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8298,6 +8430,9 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8512,6 +8647,9 @@ impl PutAccessPointPolicyInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8706,6 +8844,9 @@ impl PutAccessPointPolicyForObjectLambdaInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -8923,6 +9064,9 @@ impl PutBucketLifecycleConfigurationInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9168,6 +9312,9 @@ impl PutBucketPolicyInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9396,6 +9543,9 @@ impl PutBucketTaggingInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9591,6 +9741,9 @@ impl PutJobTaggingInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9789,6 +9942,9 @@ impl PutMultiRegionAccessPointPolicyInput {
             );
             Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -9959,6 +10115,9 @@ impl PutPublicAccessBlockInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10182,6 +10341,9 @@ impl PutStorageLensConfigurationInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10389,6 +10551,9 @@ impl PutStorageLensConfigurationTaggingInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10575,6 +10740,9 @@ impl UpdateJobPriorityInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),
@@ -10785,6 +10953,9 @@ impl UpdateJobStatusInput {
             ))
         }?;
         request.properties_mut().insert(endpoint_prefix);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
             aws_types::os_shim_internal::Env::real(),
             crate::API_METADATA.clone(),

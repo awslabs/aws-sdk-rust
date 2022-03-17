@@ -18,6 +18,10 @@ features = ["rustls"]
 path = "../../sdk/aws-smithy-client"
 version = "0.38.0"
 
+[dependencies.aws-smithy-types]
+path = "../../sdk/aws-smithy-types"
+version = "0.38.0"
+
 [dependencies.tokio]
 version = "1"
 features = ["full"]
