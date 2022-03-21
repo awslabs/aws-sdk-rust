@@ -41,6 +41,7 @@ members = [
     "examples/sending-presigned-requests",
     "examples/ses",
     "examples/setting-timeouts",
+    "examples/sitewise",
     "examples/snowball",
     "examples/sns",
     "examples/sqs",
