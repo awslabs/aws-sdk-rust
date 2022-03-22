@@ -3,7 +3,7 @@ name = "aws-smithy-eventstream-fuzz"
 version = "0.1.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "John DiSanti <jdisanti@amazon.com>"]
 publish = false
-edition = "2018"
+edition = "2021"
 
 [package.metadata]
 cargo-fuzz = true
