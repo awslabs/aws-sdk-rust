@@ -28,7 +28,7 @@ pub fn serialize_structure_crate_input_create_secret_input(
     if let Some(var_6) = &input.secret_binary {
         object
             .key("SecretBinary")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_6));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_6.as_ref()));
     }
     if let Some(var_7) = &input.secret_string {
         object.key("SecretString").string(var_7.as_str());
@@ -246,7 +246,7 @@ pub fn serialize_structure_crate_input_put_secret_value_input(
     if let Some(var_49) = &input.secret_binary {
         object
             .key("SecretBinary")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_49));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_49.as_ref()));
     }
     if let Some(var_50) = &input.secret_string {
         object.key("SecretString").string(var_50.as_str());
@@ -417,7 +417,7 @@ pub fn serialize_structure_crate_input_update_secret_input(
     if let Some(var_84) = &input.secret_binary {
         object
             .key("SecretBinary")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_84));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_84.as_ref()));
     }
     if let Some(var_85) = &input.secret_string {
         object.key("SecretString").string(var_85.as_str());

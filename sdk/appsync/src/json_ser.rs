@@ -304,7 +304,7 @@ pub fn serialize_structure_crate_input_start_schema_creation_input(
     if let Some(var_63) = &input.definition {
         object
             .key("definition")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_63));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_63.as_ref()));
     }
     Ok(())
 }

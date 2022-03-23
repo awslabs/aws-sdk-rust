@@ -1369,7 +1369,7 @@ pub fn serialize_structure_crate_input_put_file_input(
     if let Some(var_268) = &input.file_content {
         object
             .key("fileContent")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_268));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_268.as_ref()));
     }
     if let Some(var_269) = &input.file_path {
         object.key("filePath").string(var_269.as_str());
@@ -1673,7 +1673,7 @@ pub fn serialize_structure_crate_model_put_file_entry(
     if let Some(var_324) = &input.file_content {
         object
             .key("fileContent")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_324));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_324.as_ref()));
     }
     if let Some(var_325) = &input.source_file {
         let mut object_326 = object.key("sourceFile").start_object();
@@ -1853,7 +1853,7 @@ pub fn serialize_structure_crate_model_replace_content_entry(
     if let Some(var_360) = &input.content {
         object
             .key("content")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_360));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_360.as_ref()));
     }
     if let Some(var_361) = &input.file_mode {
         object.key("fileMode").string(var_361.as_str());

@@ -642,7 +642,7 @@ pub fn serialize_structure_crate_model_raw_message(
     if let Some(var_117) = &input.data {
         object
             .key("Data")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_117));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_117.as_ref()));
     }
     Ok(())
 }

@@ -161,7 +161,7 @@ pub fn serialize_structure_crate_input_create_configuration_input(
     if let Some(var_40) = &input.server_properties {
         object
             .key("serverProperties")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_40));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_40.as_ref()));
     }
     Ok(())
 }
@@ -300,7 +300,7 @@ pub fn serialize_structure_crate_input_update_configuration_input(
     if let Some(var_64) = &input.server_properties {
         object
             .key("serverProperties")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_64));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_64.as_ref()));
     }
     Ok(())
 }

@@ -50,7 +50,7 @@ pub fn serialize_structure_crate_input_export_certificate_input(
     if let Some(var_9) = &input.passphrase {
         object
             .key("Passphrase")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_9));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_9.as_ref()));
     }
     Ok(())
 }
@@ -75,17 +75,17 @@ pub fn serialize_structure_crate_input_import_certificate_input(
     if let Some(var_12) = &input.certificate {
         object
             .key("Certificate")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_12));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_12.as_ref()));
     }
     if let Some(var_13) = &input.private_key {
         object
             .key("PrivateKey")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_13));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_13.as_ref()));
     }
     if let Some(var_14) = &input.certificate_chain {
         object
             .key("CertificateChain")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_14));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_14.as_ref()));
     }
     if let Some(var_15) = &input.tags {
         let mut array_16 = object.key("Tags").start_array();

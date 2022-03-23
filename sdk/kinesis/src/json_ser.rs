@@ -342,7 +342,7 @@ pub fn serialize_structure_crate_input_put_record_input(
     if let Some(var_61) = &input.data {
         object
             .key("Data")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_61));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_61.as_ref()));
     }
     if let Some(var_62) = &input.partition_key {
         object.key("PartitionKey").string(var_62.as_str());
@@ -534,7 +534,7 @@ pub fn serialize_structure_crate_model_put_records_request_entry(
     if let Some(var_95) = &input.data {
         object
             .key("Data")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_95));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_95.as_ref()));
     }
     if let Some(var_96) = &input.explicit_hash_key {
         object.key("ExplicitHashKey").string(var_96.as_str());

@@ -1766,7 +1766,7 @@ pub fn serialize_structure_crate_model_code_content(
     if let Some(var_335) = &input.zip_file_content {
         object
             .key("ZipFileContent")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_335));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_335.as_ref()));
     }
     if let Some(var_336) = &input.s3_content_location {
         let mut object_337 = object.key("S3ContentLocation").start_object();
@@ -1978,7 +1978,7 @@ pub fn serialize_structure_crate_model_code_content_update(
     if let Some(var_377) = &input.zip_file_content_update {
         object
             .key("ZipFileContentUpdate")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_377));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_377.as_ref()));
     }
     if let Some(var_378) = &input.s3_content_location_update {
         let mut object_379 = object.key("S3ContentLocationUpdate").start_object();

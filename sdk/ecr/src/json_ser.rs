@@ -792,7 +792,7 @@ pub fn serialize_structure_crate_input_upload_layer_part_input(
     if let Some(var_161) = &input.layer_part_blob {
         object
             .key("layerPartBlob")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_161));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_161.as_ref()));
     }
     Ok(())
 }

@@ -1911,7 +1911,7 @@ pub fn serialize_union_crate_model_attribute_value(
         crate::model::AttributeValue::B(inner) => {
             object_63
                 .key("B")
-                .string_unchecked(&aws_smithy_types::base64::encode(inner));
+                .string_unchecked(&aws_smithy_types::base64::encode(inner.as_ref()));
         }
         crate::model::AttributeValue::Ss(inner) => {
             let mut array_453 = object_63.key("SS").start_array();
@@ -1937,7 +1937,7 @@ pub fn serialize_union_crate_model_attribute_value(
                 {
                     array_457
                         .value()
-                        .string_unchecked(&aws_smithy_types::base64::encode(item_458));
+                        .string_unchecked(&aws_smithy_types::base64::encode(item_458.as_ref()));
                 }
             }
             array_457.finish();

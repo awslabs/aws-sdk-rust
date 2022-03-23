@@ -1606,7 +1606,7 @@ pub fn serialize_structure_crate_model_byte_match_statement(
     if let Some(var_354) = &input.search_string {
         object
             .key("SearchString")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_354));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_354.as_ref()));
     }
     if let Some(var_355) = &input.field_to_match {
         let mut object_356 = object.key("FieldToMatch").start_object();

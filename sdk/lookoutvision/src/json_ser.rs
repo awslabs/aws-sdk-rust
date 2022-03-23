@@ -115,7 +115,7 @@ pub fn serialize_structure_crate_input_update_dataset_entries_input(
     if let Some(var_23) = &input.changes {
         object
             .key("Changes")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_23));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_23.as_ref()));
     }
     Ok(())
 }

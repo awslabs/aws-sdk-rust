@@ -9,7 +9,7 @@ pub fn serialize_structure_crate_input_create_alert_manager_definition_input(
     if let Some(var_2) = &input.data {
         object
             .key("data")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_2));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_2.as_ref()));
     }
     Ok(())
 }
@@ -24,7 +24,7 @@ pub fn serialize_structure_crate_input_create_rule_groups_namespace_input(
     if let Some(var_4) = &input.data {
         object
             .key("data")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_4));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_4.as_ref()));
     }
     if let Some(var_5) = &input.name {
         object.key("name").string(var_5.as_str());
@@ -73,7 +73,7 @@ pub fn serialize_structure_crate_input_put_alert_manager_definition_input(
     if let Some(var_17) = &input.data {
         object
             .key("data")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_17));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_17.as_ref()));
     }
     Ok(())
 }
@@ -88,7 +88,7 @@ pub fn serialize_structure_crate_input_put_rule_groups_namespace_input(
     if let Some(var_19) = &input.data {
         object
             .key("data")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_19));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_19.as_ref()));
     }
     Ok(())
 }

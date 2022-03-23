@@ -6255,7 +6255,7 @@ pub fn serialize_structure_crate_model_decimal_number(
     if let Some(var_1293) = &input.unscaled_value {
         object
             .key("UnscaledValue")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_1293));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_1293.as_ref()));
     }
     {
         object.key("Scale").number(

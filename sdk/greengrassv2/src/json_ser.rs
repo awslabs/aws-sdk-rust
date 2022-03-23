@@ -55,7 +55,7 @@ pub fn serialize_structure_crate_input_create_component_version_input(
     if let Some(var_11) = &input.inline_recipe {
         object
             .key("inlineRecipe")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_11));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_11.as_ref()));
     }
     if let Some(var_12) = &input.lambda_function {
         let mut object_13 = object.key("lambdaFunction").start_object();

@@ -312,7 +312,7 @@ pub fn serialize_structure_crate_input_start_import_input(
     if let Some(var_83) = &input.payload {
         object
             .key("payload")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_83));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_83.as_ref()));
     }
     if let Some(var_84) = &input.resource_type {
         object.key("resourceType").string(var_84.as_str());

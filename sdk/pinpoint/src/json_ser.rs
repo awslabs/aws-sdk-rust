@@ -3805,7 +3805,7 @@ pub fn serialize_structure_crate_model_raw_email(
     if let Some(var_894) = &input.data {
         object
             .key("Data")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_894));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_894.as_ref()));
     }
     Ok(())
 }

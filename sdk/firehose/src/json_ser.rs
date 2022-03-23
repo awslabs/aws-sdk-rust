@@ -869,7 +869,7 @@ pub fn serialize_structure_crate_model_record(
     if let Some(var_195) = &input.data {
         object
             .key("Data")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_195));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_195.as_ref()));
     }
     Ok(())
 }

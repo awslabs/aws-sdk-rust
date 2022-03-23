@@ -147,7 +147,7 @@ pub fn serialize_structure_crate_input_decrypt_input(
     if let Some(var_33) = &input.ciphertext_blob {
         object
             .key("CiphertextBlob")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_33));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_33.as_ref()));
     }
     if let Some(var_34) = &input.encryption_context {
         let mut object_35 = object.key("EncryptionContext").start_object();
@@ -307,7 +307,7 @@ pub fn serialize_structure_crate_input_encrypt_input(
     if let Some(var_60) = &input.plaintext {
         object
             .key("Plaintext")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_60));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_60.as_ref()));
     }
     if let Some(var_61) = &input.encryption_context {
         let mut object_62 = object.key("EncryptionContext").start_object();
@@ -553,12 +553,12 @@ pub fn serialize_structure_crate_input_import_key_material_input(
     if let Some(var_120) = &input.import_token {
         object
             .key("ImportToken")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_120));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_120.as_ref()));
     }
     if let Some(var_121) = &input.encrypted_key_material {
         object
             .key("EncryptedKeyMaterial")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_121));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_121.as_ref()));
     }
     if let Some(var_122) = &input.valid_to {
         object
@@ -716,7 +716,7 @@ pub fn serialize_structure_crate_input_re_encrypt_input(
     if let Some(var_146) = &input.ciphertext_blob {
         object
             .key("CiphertextBlob")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_146));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_146.as_ref()));
     }
     if let Some(var_147) = &input.source_encryption_context {
         let mut object_148 = object.key("SourceEncryptionContext").start_object();
@@ -854,7 +854,7 @@ pub fn serialize_structure_crate_input_sign_input(
     if let Some(var_178) = &input.message {
         object
             .key("Message")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_178));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_178.as_ref()));
     }
     if let Some(var_179) = &input.message_type {
         object.key("MessageType").string(var_179.as_str());
@@ -982,7 +982,7 @@ pub fn serialize_structure_crate_input_verify_input(
     if let Some(var_204) = &input.message {
         object
             .key("Message")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_204));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_204.as_ref()));
     }
     if let Some(var_205) = &input.message_type {
         object.key("MessageType").string(var_205.as_str());
@@ -990,7 +990,7 @@ pub fn serialize_structure_crate_input_verify_input(
     if let Some(var_206) = &input.signature {
         object
             .key("Signature")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_206));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_206.as_ref()));
     }
     if let Some(var_207) = &input.signing_algorithm {
         object.key("SigningAlgorithm").string(var_207.as_str());

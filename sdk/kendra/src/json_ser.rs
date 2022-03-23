@@ -1481,7 +1481,7 @@ pub fn serialize_structure_crate_model_document(
     if let Some(var_318) = &input.blob {
         object
             .key("Blob")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_318));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_318.as_ref()));
     }
     if let Some(var_319) = &input.s3_path {
         let mut object_320 = object.key("S3Path").start_object();

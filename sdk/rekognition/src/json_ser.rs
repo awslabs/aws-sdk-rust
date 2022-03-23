@@ -1223,7 +1223,7 @@ pub fn serialize_structure_crate_model_image(
     if let Some(var_244) = &input.bytes {
         object
             .key("Bytes")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_244));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_244.as_ref()));
     }
     if let Some(var_245) = &input.s3_object {
         let mut object_246 = object.key("S3Object").start_object();
@@ -1514,7 +1514,7 @@ pub fn serialize_structure_crate_model_dataset_changes(
     if let Some(var_295) = &input.ground_truth {
         object
             .key("GroundTruth")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_295));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_295.as_ref()));
     }
     Ok(())
 }

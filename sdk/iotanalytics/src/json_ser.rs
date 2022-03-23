@@ -255,7 +255,7 @@ pub fn serialize_structure_crate_input_run_pipeline_activity_input(
             {
                 array_66
                     .value()
-                    .string_unchecked(&aws_smithy_types::base64::encode(item_67));
+                    .string_unchecked(&aws_smithy_types::base64::encode(item_67.as_ref()));
             }
         }
         array_66.finish();
@@ -460,7 +460,7 @@ pub fn serialize_structure_crate_model_message(
     if let Some(var_113) = &input.payload {
         object
             .key("payload")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_113));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_113.as_ref()));
     }
     Ok(())
 }
