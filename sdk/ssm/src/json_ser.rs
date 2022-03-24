@@ -5663,7 +5663,7 @@ pub fn serialize_structure_crate_model_maintenance_window_lambda_parameters(
     if let Some(var_1282) = &input.payload {
         object
             .key("Payload")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_1282.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_1282));
     }
     Ok(())
 }

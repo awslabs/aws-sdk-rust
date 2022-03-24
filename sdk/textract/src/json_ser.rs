@@ -242,7 +242,7 @@ pub fn serialize_structure_crate_model_document(
     if let Some(var_55) = &input.bytes {
         object
             .key("Bytes")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_55.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_55));
     }
     if let Some(var_56) = &input.s3_object {
         let mut object_57 = object.key("S3Object").start_object();

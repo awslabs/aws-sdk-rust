@@ -1688,7 +1688,7 @@ pub fn serialize_structure_crate_model_model_endpoint_data_blob(
     if let Some(var_371) = &input.byte_buffer {
         object
             .key("byteBuffer")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_371.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_371));
     }
     if let Some(var_372) = &input.content_type {
         object.key("contentType").string(var_372.as_str());

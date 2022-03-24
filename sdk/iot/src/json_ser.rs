@@ -3064,7 +3064,7 @@ pub fn serialize_structure_crate_model_mqtt_context(
     if let Some(var_663) = &input.password {
         object
             .key("password")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_663.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_663));
     }
     if let Some(var_664) = &input.client_id {
         object.key("clientId").string(var_664.as_str());
@@ -4485,7 +4485,7 @@ pub fn serialize_structure_crate_model_code_signing_signature(
     if let Some(var_944) = &input.inline_document {
         object
             .key("inlineDocument")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_944.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_944));
     }
     Ok(())
 }

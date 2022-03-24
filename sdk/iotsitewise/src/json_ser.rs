@@ -846,7 +846,7 @@ pub fn serialize_structure_crate_model_image_file(
     if let Some(var_198) = &input.data {
         object
             .key("data")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_198.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_198));
     }
     if let Some(var_199) = &input.r#type {
         object.key("type").string(var_199.as_str());

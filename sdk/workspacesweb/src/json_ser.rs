@@ -151,7 +151,7 @@ pub fn serialize_structure_crate_input_create_trust_store_input(
             {
                 array_44
                     .value()
-                    .string_unchecked(&aws_smithy_types::base64::encode(item_45.as_ref()));
+                    .string_unchecked(&aws_smithy_types::base64::encode(item_45));
             }
         }
         array_44.finish();
@@ -319,7 +319,7 @@ pub fn serialize_structure_crate_input_update_trust_store_input(
             {
                 array_85
                     .value()
-                    .string_unchecked(&aws_smithy_types::base64::encode(item_86.as_ref()));
+                    .string_unchecked(&aws_smithy_types::base64::encode(item_86));
             }
         }
         array_85.finish();

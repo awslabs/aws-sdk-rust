@@ -229,12 +229,12 @@ pub fn serialize_structure_crate_input_import_certificate_authority_certificate_
     if let Some(var_36) = &input.certificate {
         object
             .key("Certificate")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_36.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_36));
     }
     if let Some(var_37) = &input.certificate_chain {
         object
             .key("CertificateChain")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_37.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_37));
     }
     Ok(())
 }
@@ -256,7 +256,7 @@ pub fn serialize_structure_crate_input_issue_certificate_input(
     if let Some(var_41) = &input.csr {
         object
             .key("Csr")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_41.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_41));
     }
     if let Some(var_42) = &input.signing_algorithm {
         object.key("SigningAlgorithm").string(var_42.as_str());

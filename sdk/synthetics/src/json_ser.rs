@@ -272,7 +272,7 @@ pub fn serialize_structure_crate_model_canary_code_input(
     if let Some(var_61) = &input.zip_file {
         object
             .key("ZipFile")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_61.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_61));
     }
     if let Some(var_62) = &input.handler {
         object.key("Handler").string(var_62.as_str());

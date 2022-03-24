@@ -330,7 +330,7 @@ pub fn serialize_structure_crate_model_terminology_data(
     if let Some(var_66) = &input.file {
         object
             .key("File")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_66.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_66));
     }
     if let Some(var_67) = &input.format {
         object.key("Format").string(var_67.as_str());

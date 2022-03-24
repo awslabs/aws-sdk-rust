@@ -1855,7 +1855,7 @@ pub fn serialize_union_crate_model_typed_attribute_value(
         crate::model::TypedAttributeValue::BinaryValue(inner) => {
             object_249
                 .key("BinaryValue")
-                .string_unchecked(&aws_smithy_types::base64::encode(inner.as_ref()));
+                .string_unchecked(&aws_smithy_types::base64::encode(inner));
         }
         crate::model::TypedAttributeValue::BooleanValue(inner) => {
             object_249.key("BooleanValue").boolean(*inner);

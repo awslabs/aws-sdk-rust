@@ -2002,7 +2002,7 @@ pub fn serialize_structure_crate_input_set_ui_customization_input(
     if let Some(var_436) = &input.image_file {
         object
             .key("ImageFile")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_436.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_436));
     }
     Ok(())
 }

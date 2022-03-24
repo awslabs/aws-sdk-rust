@@ -653,7 +653,7 @@ pub fn serialize_structure_crate_input_update_function_code_input(
     if let Some(var_152) = &input.zip_file {
         object
             .key("ZipFile")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_152.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_152));
     }
     Ok(())
 }
@@ -897,7 +897,7 @@ pub fn serialize_structure_crate_model_function_code(
     if let Some(var_206) = &input.zip_file {
         object
             .key("ZipFile")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_206.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_206));
     }
     if let Some(var_207) = &input.s3_bucket {
         object.key("S3Bucket").string(var_207.as_str());
@@ -1032,7 +1032,7 @@ pub fn serialize_structure_crate_model_layer_version_content_input(
     if let Some(var_235) = &input.zip_file {
         object
             .key("ZipFile")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_235.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_235));
     }
     Ok(())
 }

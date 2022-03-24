@@ -1108,7 +1108,7 @@ pub fn serialize_structure_crate_input_import_certificate_input(
     if let Some(var_252) = &input.certificate_wallet {
         object
             .key("CertificateWallet")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_252.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_252));
     }
     if let Some(var_253) = &input.tags {
         let mut array_254 = object.key("Tags").start_array();

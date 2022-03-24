@@ -231,7 +231,7 @@ pub fn serialize_union_crate_model_field(
         crate::model::Field::BlobValue(inner) => {
             object_42
                 .key("blobValue")
-                .string_unchecked(&aws_smithy_types::base64::encode(inner.as_ref()));
+                .string_unchecked(&aws_smithy_types::base64::encode(inner));
         }
         crate::model::Field::ArrayValue(inner) => {
             let mut object_45 = object_42.key("arrayValue").start_object();

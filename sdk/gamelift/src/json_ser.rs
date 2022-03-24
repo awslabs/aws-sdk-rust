@@ -631,7 +631,7 @@ pub fn serialize_structure_crate_input_create_script_input(
     if let Some(var_165) = &input.zip_file {
         object
             .key("ZipFile")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_165.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_165));
     }
     if let Some(var_166) = &input.tags {
         let mut array_167 = object.key("Tags").start_array();
@@ -2308,7 +2308,7 @@ pub fn serialize_structure_crate_input_update_script_input(
     if let Some(var_491) = &input.zip_file {
         object
             .key("ZipFile")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_491.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_491));
     }
     Ok(())
 }

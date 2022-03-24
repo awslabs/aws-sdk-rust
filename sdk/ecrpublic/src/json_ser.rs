@@ -425,7 +425,7 @@ pub fn serialize_structure_crate_input_upload_layer_part_input(
     if let Some(var_84) = &input.layer_part_blob {
         object
             .key("layerPartBlob")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_84.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_84));
     }
     Ok(())
 }
@@ -471,7 +471,7 @@ pub fn serialize_structure_crate_model_repository_catalog_data_input(
     if let Some(var_94) = &input.logo_image_blob {
         object
             .key("logoImageBlob")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_94.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_94));
     }
     if let Some(var_95) = &input.about_text {
         object.key("aboutText").string(var_95.as_str());

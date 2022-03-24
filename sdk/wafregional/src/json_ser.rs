@@ -1593,7 +1593,7 @@ pub fn serialize_structure_crate_model_byte_match_tuple(
     if let Some(var_258) = &input.target_string {
         object
             .key("TargetString")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_258.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_258));
     }
     if let Some(var_259) = &input.text_transformation {
         object.key("TextTransformation").string(var_259.as_str());

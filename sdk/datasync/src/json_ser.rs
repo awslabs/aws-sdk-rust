@@ -223,12 +223,12 @@ pub fn serialize_structure_crate_input_create_location_hdfs_input(
     if let Some(var_57) = &input.kerberos_keytab {
         object
             .key("KerberosKeytab")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_57.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_57));
     }
     if let Some(var_58) = &input.kerberos_krb5_conf {
         object
             .key("KerberosKrb5Conf")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_58.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_58));
     }
     if let Some(var_59) = &input.agent_arns {
         let mut array_60 = object.key("AgentArns").start_array();
@@ -929,12 +929,12 @@ pub fn serialize_structure_crate_input_update_location_hdfs_input(
     if let Some(var_206) = &input.kerberos_keytab {
         object
             .key("KerberosKeytab")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_206.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_206));
     }
     if let Some(var_207) = &input.kerberos_krb5_conf {
         object
             .key("KerberosKrb5Conf")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_207.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_207));
     }
     if let Some(var_208) = &input.agent_arns {
         let mut array_209 = object.key("AgentArns").start_array();

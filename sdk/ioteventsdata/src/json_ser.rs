@@ -213,7 +213,7 @@ pub fn serialize_structure_crate_model_message(
     if let Some(var_43) = &input.payload {
         object
             .key("payload")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_43.as_ref()));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_43));
     }
     if let Some(var_44) = &input.timestamp {
         let mut object_45 = object.key("timestamp").start_object();
