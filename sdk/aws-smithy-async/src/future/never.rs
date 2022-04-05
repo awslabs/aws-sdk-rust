@@ -11,10 +11,11 @@ use std::task::{Context, Poll};
 
 /// Future that never completes.
 #[non_exhaustive]
-#[derive(Default)]
+#[derive(Default, Debug)]
 pub struct Never;
 
 impl Never {
+    /// Create a new `Never` future that never resolves
     pub fn new() -> Never {
         Default::default()
     }

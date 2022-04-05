@@ -44,6 +44,45 @@
 //! let client = aws_sdk_dynamodb::Client::new(&config);
 //! # }
 //! ```
+//!
+//! Override configuration after construction of `SdkConfig`:
+//!
+//! ```no_run
+//! # use aws_types::SdkConfig;
+//! # mod aws_sdk_dynamodb {
+//! #   pub mod config {
+//! #     pub struct Builder;
+//! #     impl Builder {
+//! #       pub fn credentials_provider(
+//! #         self,
+//! #         credentials_provider: impl aws_types::credentials::ProvideCredentials + 'static) -> Self { self }
+//! #       pub fn build(self) -> Builder { self }
+//! #     }
+//! #     impl From<&aws_types::SdkConfig> for Builder {
+//! #       fn from(_: &aws_types::SdkConfig) -> Self {
+//! #           todo!()
+//! #       }
+//! #     }
+//! #   }
+//! #   pub struct Client;
+//! #   impl Client {
+//! #     pub fn from_conf(conf: config::Builder) -> Self { Client }
+//! #     pub fn new(config: &aws_types::SdkConfig) -> Self { Client }
+//! #   }
+//! # }
+//! # async fn docs() {
+//! # use aws_config::meta::region::RegionProviderChain;
+//! # fn custom_provider(base: &SdkConfig) -> impl aws_types::credentials::ProvideCredentials {
+//! #   base.credentials_provider().unwrap().clone()
+//! # }
+//! let sdk_config = aws_config::load_from_env().await;
+//! let custom_credentials_provider = custom_provider(&sdk_config);
+//! let dynamo_config = aws_sdk_dynamodb::config::Builder::from(&sdk_config)
+//!   .credentials_provider(custom_credentials_provider)
+//!   .build();
+//! let client = aws_sdk_dynamodb::Client::from_conf(dynamo_config);
+//! # }
+//! ```
 
 #[allow(dead_code)]
 const PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
