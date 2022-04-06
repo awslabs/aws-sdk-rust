@@ -2,5 +2,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: 💬 General Question
-    url: https://github.com/aws/aws-iot-device-sdk-java-v2/discussions/categories/q-a
+    url: https://github.com/aws/aws-sdk-rust/discussions/categories/q-a
     about: Please ask and answer questions as a discussion thread

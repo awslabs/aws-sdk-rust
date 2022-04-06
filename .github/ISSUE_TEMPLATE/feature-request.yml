@@ -45,15 +45,13 @@ body:
           required: false
         - label: This feature might incur a breaking change
           required: false
-  - type: input
-    id: sdk-version
+  - type: textarea
     attributes:
-      label: SDK version used
-    validations:
-      required: true
-  - type: input
-    id: environment
-    attributes:
-      label: Environment details (OS name and version, etc.)
-    validations:
-        required: true
+      label: A note for the community
+      value: |
+        <!-- Please keep this note for the community -->
+        ### Community Note
+        * Please vote on this issue by adding a 👍 [reaction](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) to the original issue to help the community and maintainers prioritize this request
+        * Please do not leave "+1" or "me too" comments, they generate extra noise for issue followers and do not help prioritize the request
+        * If you are interested in working on this issue, please leave a comment
+        <!-- Thank you for keeping this note for the community -->
