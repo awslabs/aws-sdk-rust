@@ -65,6 +65,12 @@ impl From<Region> for SigningRegion {
     }
 }
 
+impl From<&'static str> for SigningRegion {
+    fn from(region: &'static str) -> Self {
+        Self::from_static(region)
+    }
+}
+
 impl SigningRegion {
     /// Creates a `SigningRegion` from a static str.
     pub const fn from_static(region: &'static str) -> Self {

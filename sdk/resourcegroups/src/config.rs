@@ -236,13 +236,36 @@ impl Builder {
         self.retry_config = retry_config;
         self
     }
-    // TODO(docs): include an example of using a static endpoint
-    /// Sets the endpoint resolver to use when making requests.
+    /// Overrides the endpoint resolver to use when making requests.
+    ///
+    /// When unset, the client will used a generated endpoint resolver based on the endpoint metadata
+    /// for `aws_sdk_resourcegroups`.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// use aws_types::region::Region;
+    /// use aws_sdk_resourcegroups::config::{Builder, Config};
+    /// use aws_sdk_resourcegroups::Endpoint;
+    ///
+    /// let config = aws_sdk_resourcegroups::Config::builder()
+    ///     .endpoint_resolver(
+    ///         Endpoint::immutable("http://localhost:8080".parse().expect("valid URI"))
+    ///     ).build();
+    /// ```
     pub fn endpoint_resolver(
         mut self,
         endpoint_resolver: impl aws_endpoint::ResolveAwsEndpoint + 'static,
     ) -> Self {
         self.endpoint_resolver = Some(::std::sync::Arc::new(endpoint_resolver));
+        self
+    }
+
+    /// Sets the endpoint resolver to use when making requests.
+    pub fn set_endpoint_resolver(
+        &mut self,
+        endpoint_resolver: Option<std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
+    ) -> &mut Self {
+        self.endpoint_resolver = endpoint_resolver;
         self
     }
     /// Sets the AWS region to use when making requests.
@@ -303,6 +326,7 @@ impl From<&aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
         builder = builder.region(input.region().cloned());
+        builder.set_endpoint_resolver(input.endpoint_resolver().clone());
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
         builder.set_sleep_impl(input.sleep_impl().clone());
